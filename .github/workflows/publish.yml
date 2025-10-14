@@ -20,7 +20,7 @@ jobs:
       run: exit 1
 
     - name: Install dependencies
-      run: sudo apt-get install -y python3-paramiko python3-lxml ca-certificates openssl
+      run: sudo apt-get update && sudo apt-get install -y python3-paramiko python3-lxml ca-certificates openssl
 
     - name: Update CA certificates
       run: sudo update-ca-certificates
