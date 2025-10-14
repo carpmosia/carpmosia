@@ -20,7 +20,10 @@ jobs:
       run: exit 1
 
     - name: Install dependencies
-      run: sudo apt-get install -y python3-paramiko python3-lxml
+      run: sudo apt-get install -y python3-paramiko python3-lxml ca-certificates
+      
+    - name: Update CA certificates
+      run: sudo update-ca-certificates
 
     - uses: actions/checkout@v4.2.2
       with:
