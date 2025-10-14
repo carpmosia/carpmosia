@@ -12,7 +12,7 @@ If you want to host or create content for Carpmosia, this is the repo you need. 
 
 <div class="header" align="center">
 
-[Discord](https://discord.ss14.io/) | (https://store.steampowered.com/app/1255460/Space_Station_14/) | [Standalone Download](https://spacestation14.com/about/nightlies/)
+[Discord](https://discord.gg/ZACStvA8uV) | [Upstream](https://github.com/space-wizards/space-station-14) | [Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Standalone Download](https://spacestation14.com/about/nightlies/)
 
 </div>
 
@@ -27,7 +27,7 @@ We also have lots of resources for new contributors to the project.
 
 ## Contributing
 
-We are happy to accept contributions from anybody. Get in Discord if you want to help. We've got a [list of issues](https://github.com/carpmosia/carpmosia/issues) that need to be done and anybody can pick them up. Don't be afraid to ask for help either! For upstream issues, please visit [here](https://github.com/space-wizards/space-station-14-content/issues).
+We are happy to accept contributions from anybody. Get in Discord if you want to help. We've got a [list of issues](https://github.com/carpmosia/carpmosia/issues) that need to be done and anybody can pick them up. Don't be afraid to ask for help either! For upstream issues, please check [here](https://github.com/space-wizards/space-station-14/issues).
 Just make sure your changes and pull requests are in accordance with the [contribution guidelines](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html).
 
 We are not currently accepting translations of the game on our main repository. If you would like to translate the game into another language, consider creating a fork or contributing to a fork.
