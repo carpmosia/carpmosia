@@ -15,7 +15,7 @@ RELEASE_DIR = "release"
 # CONFIGURATION PARAMETERS
 # Forks should change these to publish to their own infrastructure.
 #
-ROBUST_CDN_URL = "https://carp-cdn.atakku.dev/"
+ROBUST_CDN_URL = "https://carp-cdn-upload.atakku.dev:35210"
 FORK_ID = "carpmosia"
 
 def main():
