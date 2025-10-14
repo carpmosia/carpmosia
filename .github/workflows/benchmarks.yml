@@ -30,7 +30,7 @@ jobs:
         script: |
           mkdir benchmark_run_content_${{ github.sha }}
           cd benchmark_run_content_${{ github.sha }}
-          git clone https://github.com/space-wizards/space-station-14.git repo_dir --recursive
+          git clone https://github.com/carpmosia/carpmosia.git repo_dir --recursive
           cd repo_dir
           git checkout ${{ github.sha }}
           cd Content.Benchmarks

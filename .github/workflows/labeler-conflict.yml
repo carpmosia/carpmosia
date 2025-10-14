@@ -12,6 +12,10 @@ jobs:
   Label:
     if: ( github.event.pull_request.draft == false ) && ( github.actor != 'PJBot' )
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
     steps:
       - name: Check for Merge Conflicts
         uses: eps1lon/actions-label-merge-conflict@v3.0.0
