@@ -293,6 +293,13 @@ namespace Content.Server.Kitchen.EntitySystems
             }
         }
         // Carpmosia-start - Insert storage contents into reagent grinder
+        /// <summary>
+        /// DoAfter function for interacting with the grinder with an item with a storage component.
+        /// Moves any Extractable items from the storage of the held item to the grinder's container.
+        /// </summary>
+        /// <param name="uid">The grinder uid</param>
+        /// <param name="comp">The grinder component</param>
+        /// <param name="args">DoAfter args</param>
         private void OnContainerDoAfter(EntityUid uid, ReagentGrinderComponent comp, ContainerDoAfterEvent args)
         {
             // If there's no storage component, we leave
