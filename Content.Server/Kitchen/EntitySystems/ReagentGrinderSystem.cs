@@ -6,7 +6,7 @@ using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Destructible;
-using Content.Shared.DoAfter;
+using Content.Shared.DoAfter; // Carpmosia - Insert storage contents into reagent grinder
 using Content.Shared.FixedPoint;
 using Content.Shared.Interaction;
 using Content.Shared.Kitchen;
@@ -25,7 +25,7 @@ using Content.Server.Construction.Completions;
 using Content.Server.Jittering;
 using Content.Shared.Jittering;
 using Content.Shared.Power;
-using Content.Shared.Storage;
+using Content.Shared.Storage; // Carpmosia - Insert storage contents into reagent grinder
 
 namespace Content.Server.Kitchen.EntitySystems
 {
@@ -42,7 +42,7 @@ namespace Content.Server.Kitchen.EntitySystems
         [Dependency] private readonly SharedAppearanceSystem _appearanceSystem = default!;
         [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
         [Dependency] private readonly SharedDestructibleSystem _destructible = default!;
-        [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
+        [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!; // Carpmosia - Insert storage contents into reagent grinder
         [Dependency] private readonly RandomHelperSystem _randomHelper = default!;
         [Dependency] private readonly JitteringSystem _jitter = default!;
 
@@ -64,7 +64,7 @@ namespace Content.Server.Kitchen.EntitySystems
             SubscribeLocalEvent<ReagentGrinderComponent, ReagentGrinderStartMessage>(OnStartMessage);
             SubscribeLocalEvent<ReagentGrinderComponent, ReagentGrinderEjectChamberAllMessage>(OnEjectChamberAllMessage);
             SubscribeLocalEvent<ReagentGrinderComponent, ReagentGrinderEjectChamberContentMessage>(OnEjectChamberContentMessage);
-            SubscribeLocalEvent<ReagentGrinderComponent, ContainerDoAfterEvent>(OnContainerDoAfter);
+            SubscribeLocalEvent<ReagentGrinderComponent, ContainerDoAfterEvent>(OnContainerDoAfter); // Carpmosia - Insert storage contents into reagent grinder
         }
 
         private void OnToggleAutoModeMessage(Entity<ReagentGrinderComponent> entity, ref ReagentGrinderToggleAutoModeMessage message)
@@ -179,6 +179,7 @@ namespace Content.Server.Kitchen.EntitySystems
 
             if (!HasComp<ExtractableComponent>(heldEnt))
             {
+                // Carpmosia-start - Insert storage contents into reagent grinder
                 if (HasComp<StorageComponent>(heldEnt))
                 {
                     var doAfter = new DoAfterArgs(EntityManager, args.User, 0.5f, new ContainerDoAfterEvent(), entity, entity, used: heldEnt)
@@ -192,6 +193,7 @@ namespace Content.Server.Kitchen.EntitySystems
                 }
 
                 else if (!HasComp<FitsInDispenserComponent>(heldEnt))
+                // Carpmosia-end
                 {
                     // This is ugly but we can't use whitelistFailPopup because there are 2 containers with different whitelists.
                     _popupSystem.PopupEntity(Loc.GetString("reagent-grinder-component-cannot-put-entity-message"), entity.Owner, args.User);
@@ -290,14 +292,7 @@ namespace Content.Server.Kitchen.EntitySystems
                 UpdateUiState(entity);
             }
         }
-
-        /// <summary>
-        /// DoAfter function for interacting with the grinder with an item with a storage component.
-        /// Moves any Extractable items from the storage of the held item to the grinder's container.
-        /// </summary>
-        /// <param name="uid">The grinder</param>
-        /// <param name="comp">The grinder component</param>
-        /// <param name="args">DoAfter args</param>
+        // Carpmosia-start - Insert storage contents into reagent grinder
         private void OnContainerDoAfter(EntityUid uid, ReagentGrinderComponent comp, ContainerDoAfterEvent args)
         {
             // If there's no storage component, we leave
@@ -331,6 +326,7 @@ namespace Content.Server.Kitchen.EntitySystems
 
             args.Handled = true;
         }
+        // Carpmosia-end
 
         /// <summary>
         /// The wzhzhzh of the grinder. Processes the contents of the grinder and puts the output in the beaker.
