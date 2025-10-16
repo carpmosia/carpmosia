@@ -24,7 +24,7 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 60 #Carpmosia-edit - reagentStorage&Transfer
+        maxVol: 60 # Carpmosia-edit - reagentStorage&Transfer
   - type: MixableSolution
     solution: beaker
   - type: FitsInDispenser
@@ -124,7 +124,7 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 60 #Carpmosia-edit - reagentStorage&Transfer
+        maxVol: 60 # Carpmosia-edit - reagentStorage&Transfer
   - type: MixableSolution
     solution: beaker
   - type: FitsInDispenser
@@ -193,10 +193,10 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 60 #Carpmosia-edit - reagentStorage&Transfer
+        maxVol: 60 # Carpmosia-edit - reagentStorage&Transfer
         reagents:
         - ReagentId: Cryoxadone
-          Quantity: 60 #Carpmosia-edit - reagentStorage&Transfer
+          Quantity: 60 # Carpmosia-edit - reagentStorage&Transfer
 
 - type: entity
   name: large beaker
@@ -219,7 +219,7 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 120 #Carpmosia-edit - reagentStorage&Transfer
+        maxVol: 120 # Carpmosia-edit - reagentStorage&Transfer
   - type: Appearance
   - type: SolutionContainerVisuals
     maxFillLevels: 6
