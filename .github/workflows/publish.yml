@@ -59,7 +59,6 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         DISCORD_WEBHOOK_URL: ${{ secrets.CHANGELOG_DISCORD_WEBHOOK }}
-        SSL_CERT_FILE: /etc/ssl/certs/ca-certificates.crt
 
     # - name: Publish changelog (RSS)
     #   continue-on-error: true
