@@ -2,11 +2,11 @@
 
 on:
   push:
-    branches: [ master, staging, stable ]
+    branches: [ dev, stable ]
   merge_group:
   pull_request:
     types: [ opened, reopened, synchronize, ready_for_review ]
-    branches: [ master, staging, stable ]
+    branches: [ dev, stable ]
 
 jobs:
   build:

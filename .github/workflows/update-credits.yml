@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4.2.2
         with:
-          ref: master
+          ref: dev
 
       - name: Get this week's Contributors
         shell: pwsh
@@ -50,5 +50,5 @@ jobs:
           commit-message: Update Credits
           title: Update Credits
           body: This is an automated Pull Request. This PR updates the github contributors in the credits section.
-          author: PJBot <pieterjan.briers+bot@gmail.com>
+          author: AkuBot <atakkudev+github.akubot@gmail.com>
           branch: automated/credits-${{env.NOW}}
