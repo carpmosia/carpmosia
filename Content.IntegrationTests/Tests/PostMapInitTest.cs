@@ -97,6 +97,7 @@ namespace Content.IntegrationTests.Tests
             "Saltern",
             "Reach",
             "Oasis",
+			"Oasis2", //Modification - Carpmosia
             "Amber",
             "Plasma",
             "Elkridge",
