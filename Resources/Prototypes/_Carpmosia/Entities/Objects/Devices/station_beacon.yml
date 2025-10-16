@@ -1,0 +1,183 @@
+- type: entity
+  parent: DefaultStationBeaconAI
+  id: DefaultStationBeaconAILobby
+  suffix: AI Lobby
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-ai-lobby
+
+- type: entity
+  parent: DefaultStationBeaconCommand
+  id: DefaultStationBeaconBSO
+  suffix: BSO
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-bso
+
+- type: entity
+  parent: DefaultStationBeaconCommand
+  id: DefaultStationBeaconCaptainOffice
+  suffix: Captain's Office
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-captain-office
+
+- type: entity
+  parent: DefaultStationBeaconCommand
+  id: DefaultStationBeaconConference
+  suffix: Conference
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-conference
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: DefaultStationBeaconGenpop
+  suffix: Genpop
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-genpop
+
+- type: entity
+  parent: DefaultStationBeaconSecurity
+  id: DefaultStationBeaconInterrogation
+  suffix: Interrogation
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-interrogation
+
+- type: entity
+  parent: DefaultStationBeaconMedical
+  id: DefaultStationBeaconExam
+  suffix: Examination
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-exam
+
+- type: entity
+  parent: DefaultStationBeaconMedical
+  id: DefaultStationBeaconVirology
+  suffix: Virology
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-virology
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconPAChamber
+  suffix: PA Chamber
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-pa-chamber
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconPAStorage
+  suffix: PA Storage
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-pa-storage
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconShuttleBay
+  suffix: Shuttle Bay
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-shuttle-bay
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconSMESAME
+  suffix: SMES (AME)
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-smes-ame
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconSMESPA
+  suffix: SMES (PA)
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-smes-pa
+
+- type: entity
+  parent: DefaultStationBeaconEngineering
+  id: DefaultStationBeaconSMESTEG
+  suffix: SMES (TEG)
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-smes-teg
+
+- type: entity
+  parent: DefaultStationBeaconService
+  id: DefaultStationBeaconBarn
+  suffix: Barnyard
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-barn
+
+- type: entity
+  parent: DefaultStationBeaconService
+  id: DefaultStationBeaconZoo
+  suffix: Zoo
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-zoo
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconFiringRange
+  suffix: Firing Range
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-firing-range
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconObservatory
+  suffix: Observatory
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-observatory
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconClownMime
+  suffix: Clown & Mime
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-clown-mime
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconStage
+  suffix: Stage
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-stage
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconSalon
+  suffix: Salon
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-salon
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconCourtyard
+  suffix: Courtyard
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-courtyard
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconArcade
+  suffix: Arcade
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-arcade
