@@ -203,13 +203,14 @@
   physicalDesc: reagent-physical-desc-bubbling
   flavor: medicine
   color: "#32cd32"
+  worksOnTheDead: true # Carpmosia
   metabolisms:
     Medicine:
       effects:
         - !type:HealthChange
           conditions:
           - !type:Temperature
-            max: 213.0
+            max: 150.0 # this is still arbitrary but they gotta be colder - Carpmosia
           damage:
             types:
              Cellular: -2
@@ -1275,7 +1276,7 @@
         - !type:HealthChange
           conditions:
           - !type:Temperature
-            max: 213.0
+            max: 150.0 # Carpmosia
           damage:
             groups:
               Brute: -4
@@ -1483,7 +1484,6 @@
         damage:
           groups:
             Brute: 3
-            Genetic: 1
           types:
             Poison: -6
             Radiation: -3
