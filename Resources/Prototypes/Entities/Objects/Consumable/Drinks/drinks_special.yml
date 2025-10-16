@@ -49,10 +49,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 120 # Carpmosia-edit - reagentStorage&Transfer
+        maxVol: 120 # Carpmosia-edit - reagentStorage
         reagents:
         - ReagentId: Tea
-          Quantity: 120 # Carpmosia-edit - reagentStorage&Transfer
+          Quantity: 120 # Carpmosia-edit - reagentStorage
   - type: Sprite
     sprite: Objects/Consumable/Drinks/teapot.rsi
   - type: FitsInDispenser
@@ -118,7 +118,7 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 120 # Carpmosia-edit - reagentStorage&Transfer
+        maxVol: 120 # Carpmosia-edit - reagentStorage
   - type: FitsInDispenser
     solution: drink
   - type: ExaminableSolution
