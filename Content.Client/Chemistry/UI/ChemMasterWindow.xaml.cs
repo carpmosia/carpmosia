@@ -118,10 +118,12 @@ namespace Content.Client.Chemistry.UI
                 ("10", ChemMasterReagentAmount.U10, StyleBase.ButtonOpenBoth),
                 ("15", ChemMasterReagentAmount.U15, StyleBase.ButtonOpenBoth),
                 ("20", ChemMasterReagentAmount.U20, StyleBase.ButtonOpenBoth),
-                ("25", ChemMasterReagentAmount.U25, StyleBase.ButtonOpenBoth),
+                // Carpmosia-start - reagentStorage&TransferMK2
                 ("30", ChemMasterReagentAmount.U30, StyleBase.ButtonOpenBoth),
-                ("50", ChemMasterReagentAmount.U50, StyleBase.ButtonOpenBoth),
-                ("100", ChemMasterReagentAmount.U100, StyleBase.ButtonOpenBoth),
+                ("40", ChemMasterReagentAmount.U40, StyleBase.ButtonOpenBoth),
+                ("60", ChemMasterReagentAmount.U60, StyleBase.ButtonOpenBoth),
+                ("120", ChemMasterReagentAmount.U120, StyleBase.ButtonOpenBoth),
+                // Carpmosia-end - reagentStorage&TransferMK2
                 (Loc.GetString("chem-master-window-buffer-all-amount"), ChemMasterReagentAmount.All, StyleBase.ButtonOpenLeft),
             };
 
