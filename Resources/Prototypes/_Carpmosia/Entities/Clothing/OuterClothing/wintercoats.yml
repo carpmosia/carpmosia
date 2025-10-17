@@ -1,0 +1,21 @@
+- type: entity
+  parent: [ClothingOuterWinterCoatToggleable, BaseSecurityContraband, AllowSuitStorageClothing]
+  id: ClothingOuterWinterSecArmored
+  name: security armored winter coat
+  description: A warm winter coat with an integrated type I aramid armor vest.
+  components:
+    - type: Sprite
+      sprite: _Carpmosia/Clothing/OuterClothing/WinterCoats/security_armored.rsi
+    - type: Item
+      sprite: _Carpmosia/Clothing/OuterClothing/WinterCoats/security_armored.rsi
+    - type: Clothing
+      sprite: _Carpmosia/Clothing/OuterClothing/WinterCoats/security_armored.rsi
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.70
+          Slash: 0.70
+          Piercing: 0.70
+          Heat: 0.80
+    - type: ExplosionResistance
+      damageCoefficient: 0.90

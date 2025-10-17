@@ -667,25 +667,14 @@
     clothingPrototype: ClothingHeadHatHoodWinterSci
 
 - type: entity
-  parent: [ClothingOuterWinterCoatToggleable, BaseSecurityContraband]
+  parent: [ClothingOuterWinterCoatToggleable, BaseSecurityContraband, AllowSuitStorageClothing]
   id: ClothingOuterWinterSec
   name: security winter coat
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
-    layers:
-    - state: SEC-icon
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: SEC-inhand-left
-      right:
-      - state: SEC-inhand-right
+    sprite: _Carpmosia/Clothing/OuterClothing/WinterCoats/security.rsi # Carpmosia edit - armored winter coats
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
-    clothingVisuals:
-      outerClothing:
-      - state: SEC-equipped-OUTERCLOTHING
+    sprite: _Carpmosia/Clothing/OuterClothing/WinterCoats/security.rsi # Carpmosia edit - armored winter coats
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterSec
 
