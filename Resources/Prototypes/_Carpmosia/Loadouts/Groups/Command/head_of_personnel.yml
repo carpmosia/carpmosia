@@ -1,6 +1,8 @@
-# - type: loadoutGroup
-#   id: HeadOfPersonnelHead
-#   parent: [BaseHead, CommonHead]
+- type: loadoutGroup
+  id: HeadOfPersonnelHead
+  parent: [BaseHead, CommonHead]
+  loadouts:
+  - HoPHead
 
 # - type: loadoutGroup
 #   id: HeadOfPersonnelGlasses
@@ -10,21 +12,31 @@
 #   id: HeadOfPersonnelMask
 #   parent: [BaseMask, CommonMask]
 
-# - type: loadoutGroup
-#   id: HeadOfPersonnelNeck
-#   parent: [BaseNeck, CommonNeck]
+- type: loadoutGroup
+  id: HeadOfPersonnelNeck
+  parent: [BaseNeck, CommonNeck]
+  loadouts:
+  - HoPCloak
+  - HoPMantle
 
 # - type: loadoutGroup
 #   id: HeadOfPersonnelGloves
 #   parent: [BaseGloves, CommonGloves]
 
-# - type: loadoutGroup
-#   id: HeadOfPersonnelJumpsuit
-#   parent: [BaseJumpsuit, CommonJumpsuit]
+- type: loadoutGroup
+  id: HeadOfPersonnelJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit]
+  - HoPJumpsuit
+  - HoPJumpskirt
 
-# - type: loadoutGroup
-#   id: HeadOfPersonnelBackpack
-#   parent: [BaseBackpack, CommonBackpack]
+- type: loadoutGroup
+  id: HeadOfPersonnelBackpack
+  parent: [BaseBackpack, CommonBackpack]
+  loadouts:
+  - CommonBackpack
+  - CommonSatchel
+  - CommonDuffel
+  - HoPBackpackIan
 
 # - type: loadoutGroup
 #   id: HeadOfPersonnelPDA
@@ -34,9 +46,11 @@
 #   id: HeadOfPersonnelBelt
 #   parent: [BaseBelt, CommonBelt]
 
-# - type: loadoutGroup
-#   id: HeadOfPersonnelOuterClothing
-#   parent: [BaseOuterClothing, CommonOuterClothing]
+- type: loadoutGroup
+  id: HeadOfPersonnelOuterClothing
+  parent: [BaseOuterClothing, CommonOuterClothing]
+  loadouts:
+  - HoPWintercoat
 
 # - type: loadoutGroup
 #   id: HeadOfPersonnelShoes
@@ -46,6 +60,6 @@
 #   id: HeadOfPersonnelSpecial
 #   parent: [BaseSpecialSpecial, CommonSpecialSpecial]
 
-# - type: loadoutGroup
-#   id: HeadOfPersonnelTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets]
+- type: loadoutGroup
+  id: HeadOfPersonnelTrinkets
+  parent: [BaseTrinkets, CommonTrinkets]
