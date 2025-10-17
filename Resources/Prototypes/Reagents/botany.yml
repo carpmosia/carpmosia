@@ -242,7 +242,12 @@
           shouldHave: false
         - !type:ReagentThreshold
           reagent: Ammonia
+        # Carpmosia-Begin - Avali organ interaction
+        - !type:OrganType
+          type: Avali
+          shouldHave: false
           min: 0.8
+        # Carpmosia-End
       - !type:PopupMessage
         type: Local
         visualType: Medium

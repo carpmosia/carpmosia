@@ -284,6 +284,12 @@
         conditions:
         - !type:OrganType
           type: Slime
+      # Carpmosia-begin - Avali nitrogen breathing
+      - !type:Oxygenate
+        conditions:
+        - !type:OrganType
+          type: Avali
+      # Carpmosia-end
       # Converts Nitrogen into CO2
       - !type:ModifyLungGas
         conditions:
@@ -299,6 +305,15 @@
         ratios:
           NitrousOxide: 1.0
           Nitrogen: -1.0
+      # Carpmosia-begin - Avali nitrogen breathing
+      - !type:ModifyLungGas
+        conditions:
+        - !type:OrganType
+          type: Avali
+        ratios:
+          Ammonia: 1.0
+          Nitrogen: -1.0
+      # Carpmosia-end
 
 - type: reagent
   id: NitrousOxide

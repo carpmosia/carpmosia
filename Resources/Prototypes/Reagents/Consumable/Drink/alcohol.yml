@@ -190,6 +190,15 @@
         damage:
           groups:
             Brute: -1
+      # Carpmosia-Begin - Avali organ interaction
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Avali
+        damage:
+          types:
+            Bloodloss: 0.5
+      # Carpmosia-End
       - !type:ChemVomit
         probability: 0.04
         conditions:

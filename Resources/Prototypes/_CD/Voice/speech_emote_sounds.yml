@@ -5,8 +5,20 @@
   sounds:
     Scream:
       path: /Audio/_CD/Voice/Avali/avali_scream.ogg
-#    Laugh:
-#      path: /Audio/_CD/Voice/Avali/avali_laugh.ogg
+# Carpmosia-Begin - Extra default sounds
+    Laugh:
+      path: /Audio/_CD/Voice/Avali/avali_laugh.ogg
+    Honk:
+      collection: BikeHorn
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: DeathGasp
+# Carpmosia-End
 
 - type: emoteSounds
   id: FemaleAvali
@@ -15,5 +27,17 @@
   sounds:
     Scream:
       path: /Audio/_CD/Voice/Avali/avali_scream.ogg
-#    Laugh:
-#      path: /Audio/_CD/Voice/Avali/avali_laugh.ogg
+    Laugh:
+      path: /Audio/_CD/Voice/Avali/avali_laugh.ogg
+# Carpmosia-Begin - Extra default sounds
+    Honk:
+      collection: BikeHorn
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
+# Carpmosia-End

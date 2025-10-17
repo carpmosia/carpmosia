@@ -8,14 +8,15 @@
   - type: HumanoidAppearance
     species: Avali
   - type: Hunger
+    baseDecayRate: 0.03 # Carpmosia - Slightly lower decay-rate than scurrets
   - type: Thirst
   - type: Icon
-    sprite: _Starlight/Mobs/Species/Avali/parts.rsi # Carpmosia - Starlight sprites
+    sprite: _Starlight/Mobs/Species/Avali/parts.rsi # Carpmosia - Using Starlight sprites
     state: full
   - type: Body
     prototype: Avali
     requiredLegs: 2
-# Carpmosia-Begin - Starlight sprites and displacements
+    # Carpmosia-Begin - Using Starlight sprites and displacements
   - type: Inventory
     speciesId: moth
     displacements:
@@ -29,12 +30,15 @@
           32:
             sprite: _Starlight/Mobs/Species/Avali/displacement.rsi # Harmony change added displacements
             state: mask
-# Carpmosia-End
+    # Carpmosia-End
   - type: Butcherable
     butcheringType: Spike
     spawned:
     - id: FoodMeatChicken
       amount: 3
+  - type: Speech
+    speechVerb: Parrot # RMC did it right.
+    speechSounds: MaleAvali
   - type: Fixtures
     fixtures:
       fix1:
@@ -47,7 +51,6 @@
         - MobMask
         layer:
         - MobLayer
-  - type: FloorOcclusion
   - type: Vocal
     sounds:
       Male: MaleAvali
@@ -55,7 +58,7 @@
       Unsexed: MaleAvali
   - type: Damageable
     damageContainer: Biological
-    damageModifierSet: Moth # PLACEHOLDER for now :3
+    damageModifierSet: Avali
   - type: DamageVisuals
     damageOverlayGroups:
       Brute:
@@ -65,7 +68,7 @@
     bloodReagent: AmmoniaBlood
   - type: MeleeWeapon
     soundHit:
-      path: /Audio/Weapons/pierce.ogg
+      collection: AlienClaw # Carpmosia - Use the right sound for their weapon
     angle: 30
     animation: WeaponArcClaw
     damage:
@@ -76,6 +79,19 @@
     coldDamageThreshold: 223
     currentTemperature: 296.15
     specificHeat: 48
+# Carpmosia-Begin - Species specific damage temperature thresholds
+    coldDamage:
+      types:
+        Cold : 0.05
+    heatDamage:
+      types:
+        Heat : 3
+  - type: TemperatureSpeed
+    thresholds:
+      265: 0.8
+      251: 0.6
+      226: 0.4
+# Carpmosia-End
   - type: ThermalRegulator
     metabolismHeat: 400 # icebirb go brrr
     radiatedHeat: 100
@@ -88,7 +104,7 @@
 - type: entity
   parent: BaseSpeciesDummy
   id: MobAvaliDummy
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: A dummy avali meant to be used in character setup.
   components:
   - type: HumanoidAppearance

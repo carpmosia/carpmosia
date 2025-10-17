@@ -18,11 +18,13 @@
       - right_leg
       - left_leg
       organs:
-        heart: OrganHumanHeart
-        lungs: OrganHumanLungs
-        stomach: OrganReptilianStomach
-        liver: OrganHumanLiver
-        kidneys: OrganHumanKidneys
+      # Carpmosia-Start - Avali organs
+        heart: OrganAvaliHeart
+        lungs: OrganAvaliLungs
+        stomach: OrganAvaliStomach
+        liver: OrganAvaliLiver
+        kidneys: OrganAvaliKidneys
+      # Carpmosia-End
     right_arm:
       part: RightArmAvali
       connections:
