@@ -108,12 +108,13 @@ namespace Content.Shared.Chemistry
         U10 = 10,
         U15 = 15,
         U20 = 20,
-        // Carpmosia-start - reagentTransfer
+        U25 = 25,
         U30 = 30,
-        U40 = 40,
-        U60 = 60,
-        U120 = 120,
-        // Carpmosia-end - reagentTransfer
+        U40 = 40, // Carpmosia-edit - reagentTransfer
+        U50 = 50,
+        U60 = 60, // Carpmosia-edit - reagentTransfer
+        U100 = 100,
+        U120 = 120, // Carpmosia-edit - reagentTransfer
         All,
     }
 
