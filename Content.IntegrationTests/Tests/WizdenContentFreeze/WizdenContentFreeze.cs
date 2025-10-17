@@ -26,6 +26,11 @@ public sealed class WizdenContentFreeze
         var recipesCount = protoMan.Count<FoodRecipePrototype>();
         var recipesLimit = 218;
 
+        // Carpmosia-start - unfreeze the microwave
+        recipesCount = 0;
+        recipesLimit = 0;
+        // Carpmosia-end - unfreeze the microwave
+
         if (recipesCount > recipesLimit)
         {
             Assert.Fail($"PLEASE STOP ADDING NEW MICROWAVE RECIPES. MICROWAVE RECIPES ARE FROZEN AND NEED TO BE REPLACED WITH PROPER COOKING MECHANICS! See https://github.com/space-wizards/space-station-14/issues/8524. Keep it under {recipesLimit}. Current count: {recipesCount}");
