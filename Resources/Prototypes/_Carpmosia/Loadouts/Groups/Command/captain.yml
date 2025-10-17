@@ -1,6 +1,9 @@
-# - type: loadoutGroup
-#   id: CaptainHead
-#   parent: [BaseHead, CommonHead]
+- type: loadoutGroup
+  id: CaptainHead
+  parent: [BaseHead, CommonHead]
+  loadouts:
+  - CaptainHead
+  - CaptainCap
 
 # - type: loadoutGroup
 #   id: CaptainGlasses
@@ -10,21 +13,34 @@
 #   id: CaptainMask
 #   parent: [BaseMask, CommonMask]
 
-# - type: loadoutGroup
-#   id: CaptainNeck
-#   parent: [BaseNeck, CommonNeck]
+- type: loadoutGroup
+  id: CaptainNeck
+  parent: [BaseNeck, CommonNeck]
+  loadouts:
+  - CaptainCloak
+  - CaptainCloakFormal
+  - CaptainMantle
 
 # - type: loadoutGroup
 #   id: CaptainGloves
 #   parent: [BaseGloves, CommonGloves]
 
-# - type: loadoutGroup
-#   id: CaptainJumpsuit
-#   parent: [BaseJumpsuit, CommonJumpsuit]
+- type: loadoutGroup
+  id: CaptainJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit]
+  loadouts:
+  - CaptainJumpsuit
+  - CaptainJumpskirt
+  - CaptainFormalSuit
+  - CaptainFormalSkirt
 
-# - type: loadoutGroup
-#   id: CaptainBackpack
-#   parent: [BaseBackpack, CommonBackpack]
+- type: loadoutGroup
+  id: CaptainBackpack
+  parent: [BaseBackpack, CommonBackpack]
+  loadouts:
+  - CaptainBackpack
+  - CaptainSatchel
+  - CaptainDuffel
 
 # - type: loadoutGroup
 #   id: CaptainPDA
@@ -34,9 +50,12 @@
 #   id: CaptainBelt
 #   parent: [BaseBelt, CommonBelt]
 
-# - type: loadoutGroup
-#   id: CaptainOuterClothing
-#   parent: [BaseOuterClothing, CommonOuterClothing]
+- type: loadoutGroup
+  id: CaptainOuterClothing
+  parent: [BaseOuterClothing, CommonOuterClothing]
+  loadouts:
+  - CaptainOuterClothing
+  - CaptainWintercoat
 
 # - type: loadoutGroup
 #   id: CaptainShoes
@@ -46,6 +65,6 @@
 #   id: CaptainSpecial
 #   parent: [BaseSpecialSpecial, CommonSpecialSpecial]
 
-# - type: loadoutGroup
-#   id: CaptainTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets]
+- type: loadoutGroup
+  id: CaptainTrinkets
+  parent: [BaseTrinkets, CommonTrinkets]
