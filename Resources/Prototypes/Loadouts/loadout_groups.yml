@@ -1099,20 +1099,20 @@
   - SecurityPDA
   - SeniorOfficerPDA
 
-- type: loadoutGroup
-  id: DetectiveHead
-  name: loadout-group-detective-head
-  minLimit: 0
-  loadouts:
-  - DetectiveFedora
-  - DetectiveFedoraGrey
+# - type: loadoutGroup
+#   id: DetectiveHead
+#   name: loadout-group-detective-head
+#   minLimit: 0
+#   loadouts:
+#   - DetectiveFedora
+#   - DetectiveFedoraGrey
 
-- type: loadoutGroup
-  id: DetectiveNeck
-  name: loadout-group-detective-neck
-  minLimit: 0
-  loadouts:
-  - DetectiveTie
+# - type: loadoutGroup
+#   id: DetectiveNeck
+#   name: loadout-group-detective-neck
+#   minLimit: 0
+#   loadouts:
+#   - DetectiveTie
 
 # - type: loadoutGroup
 #   id: DetectiveJumpsuit
@@ -1148,12 +1148,12 @@
   - EmergencyOxygenSecurity
   - LoadoutSpeciesVoxNitrogen
 
-- type: loadoutGroup
-  id: SecurityStar
-  name: loadout-group-security-star
-  minLimit: 0
-  loadouts:
-  - SecStar
+# - type: loadoutGroup
+#   id: SecurityStar
+#   name: loadout-group-security-star
+#   minLimit: 0
+#   loadouts:
+#   - SecStar
 
 # Medical
 # - type: loadoutGroup

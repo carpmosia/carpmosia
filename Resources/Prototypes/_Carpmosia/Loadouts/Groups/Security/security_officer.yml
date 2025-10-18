@@ -10,9 +10,9 @@
 #   id: SecurityOfficerMask
 #   parent: [BaseMask, CommonMask, SecurityMask]
 
-# - type: loadoutGroup
-#   id: SecurityOfficerNeck
-#   parent: [BaseNeck, CommonNeck, SecurityNeck]
+- type: loadoutGroup
+  id: SecurityOfficerNeck
+  parent: [BaseNeck, CommonNeck, SecurityNeck]
 
 # - type: loadoutGroup
 #   id: SecurityOfficerGloves

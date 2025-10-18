@@ -1,6 +1,9 @@
-# - type: loadoutGroup
-#   id: DetectiveHead
-#   parent: [BaseHead, CommonHead, SecurityHead]
+- type: loadoutGroup
+  id: DetectiveHead
+  parent: [BaseHead, CommonHead, SecurityHead]
+  loadouts:
+  - DetectiveFedora
+  - DetectiveFedoraGrey
 
 # - type: loadoutGroup
 #   id: DetectiveGlasses
@@ -10,9 +13,11 @@
 #   id: DetectiveMask
 #   parent: [BaseMask, CommonMask, SecurityMask]
 
-# - type: loadoutGroup
-#   id: DetectiveNeck
-#   parent: [BaseNeck, CommonNeck, SecurityNeck]
+- type: loadoutGroup
+  id: DetectiveNeck
+  parent: [BaseNeck, CommonNeck, SecurityNeck]
+  loadouts:
+  - DetectiveTie
 
 # - type: loadoutGroup
 #   id: DetectiveGloves
