@@ -20,7 +20,7 @@ reagent-name-carribean-lovers = Carribean Lovers
 reagent-desc-carribean-lovers = The drink to unite two people, coming with a couple's discount.
 
 reagent-name-the-last-word = The Last word
-reagent-desc-the-last-word = An elegant conclusion of the speech, perfect for the  
+reagent-desc-the-last-word = An elegant conclusion of the speech, perfect for making a public statement. 
 
 reagent-name-coffee-flip = Coffee Flip
 reagent-desc-coffee-flip = Perfect for breakfast to start a new day, but also works as a dessert cocktail.
