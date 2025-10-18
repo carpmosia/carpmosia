@@ -13,6 +13,7 @@
 - type: loadoutGroup
   id: MimeMask
   parent: [BaseMask, CommonMask, CivilianMask]
+  minLimit: 1
   loadouts:
   - MimeMask
   - MimeMaskSad

@@ -63,8 +63,8 @@
   id: BaseShoes
   abstract: true
   name: loadout-group-base-shoes
-  minLimit: 0
-  defaultSelected: 1
+  minLimit: 1
+#  defaultSelected: 1
 
 - type: loadoutGroup
   id: BaseSpecial
@@ -77,3 +77,4 @@
   abstract: true
   name: loadout-group-base-trinkets
   minLimit: 0
+  maxLimit: 3
