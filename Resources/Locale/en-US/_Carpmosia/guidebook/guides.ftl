@@ -1,4 +1,4 @@
-guide-entry-rules-carpmosia-only = Server Rules
+guide-entry-carpmosia-rules = Server Rules
 
 
 guide-entry-carpmosia-rules-core = C0
