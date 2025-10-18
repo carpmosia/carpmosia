@@ -1,14 +1,22 @@
-# - type: loadoutGroup
-#   id: MimeHead
-#   parent: [BaseHead, CommonHead, CivilianHead]
+- type: loadoutGroup
+  id: MimeHead
+  parent: [BaseHead, CommonHead, CivilianHead]
+  loadouts:
+  - MimeHead
+  - MimeFrenchBeret
+  - MimeCap
 
 # - type: loadoutGroup
 #   id: MimeGlasses
 #   parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
 
-# - type: loadoutGroup
-#   id: MimeMask
-#   parent: [BaseMask, CommonMask, CivilianMask]
+- type: loadoutGroup
+  id: MimeMask
+  parent: [BaseMask, CommonMask, CivilianMask]
+  loadouts:
+  - MimeMask
+  - MimeMaskSad
+  - MimeMaskScared
 
 # - type: loadoutGroup
 #   id: MimeNeck
@@ -18,25 +26,37 @@
 #   id: MimeGloves
 #   parent: [BaseGloves, CommonGloves, CivilianGloves]
 
-# - type: loadoutGroup
-#   id: MimeJumpsuit
-#   parent: [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit]
+- type: loadoutGroup
+  id: MimeJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit]
+  loadouts:
+  - MimeJumpsuit
+  - MimeJumpskirt
 
-# - type: loadoutGroup
-#   id: MimeBackpack
-#   parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
+- type: loadoutGroup
+  id: MimeBackpack
+  parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
+  loadouts:
+  - MimeBackpack
+  - MimeSatchel
+  - MimeDuffel
 
 # - type: loadoutGroup
 #   id: MimePDA
 #   parent: [BasePDA, CommonPDA, CivilianPDA]
 
-# - type: loadoutGroup
-#   id: MimeBelt
-#   parent: [BaseBelt, CommonBelt, CivilianBelt]
+- type: loadoutGroup
+  id: MimeBelt
+  parent: [BaseBelt, CommonBelt, CivilianBelt]
+  loadouts:
+  - MimeSuspendersRed
+  - MimeSuspendersBlack
 
-# - type: loadoutGroup
-#   id: MimeOuterClothing
-#   parent: [BaseOuterClothing, CommonOuterClothing, CivilianOuterClothing]
+- type: loadoutGroup
+  id: MimeOuterClothing
+  parent: [BaseOuterClothing, CommonOuterClothing, CivilianOuterClothing]
+  loadouts:
+  - MimeWintercoat
 
 # - type: loadoutGroup
 #   id: MimeShoes

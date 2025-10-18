@@ -18,9 +18,12 @@
 #   id: MusicianGloves
 #   parent: [BaseGloves, CommonGloves, CivilianGloves]
 
-# - type: loadoutGroup
-#   id: MusicianJumpsuit
-#   parent: [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit]
+- type: loadoutGroup
+  id: MusicianJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit]
+  loadouts:
+  - MusicianJumpsuit
+  - MusicianJumpskirt
 
 # - type: loadoutGroup
 #   id: MusicianBackpack
@@ -34,17 +37,51 @@
 #   id: MusicianBelt
 #   parent: [BaseBelt, CommonBelt, CivilianBelt]
 
-# - type: loadoutGroup
-#   id: MusicianOuterClothing
-#   parent: [BaseOuterClothing, CommonOuterClothing, CivilianOuterClothing]
+- type: loadoutGroup
+  id: MusicianOuterClothing
+  parent: [BaseOuterClothing, CommonOuterClothing, CivilianOuterClothing]
+  loadouts:
+  - MusicianWintercoat
 
 # - type: loadoutGroup
 #   id: MusicianShoes
 #   parent: [BaseShoes, CommonShoes, CivilianShoes]
 
-# - type: loadoutGroup
-#   id: MusicianSpecial
-#   parent: BaseSpecial
+- type: loadoutGroup
+  id: MusicianSpecial
+  parent: BaseSpecial
+  name: loadout-group-instruments
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - Glockenspiel
+  - MusicBox
+  - Xylophone
+  - Microphone
+  - Synthesizer
+  - Kalimba
+  - Woodblock
+  - ElectricGuitar
+  - BassGuitar
+  - RockGuitar
+  - AcousticGuitar
+  - Banjo
+  - Violin
+  - Viola
+  - Cello
+  - Trumpet
+  - Trombone
+  - FrenchHorn
+  - Euphonium
+  - Saxophone
+  - Accordion
+  - Harmonica
+  - Clarinet
+  - Flute
+  - Recorder
+  - PanFlute
+  - Ocarina
+  - Bagpipe
 
 - type: loadoutGroup
   id: MusicianTrinkets

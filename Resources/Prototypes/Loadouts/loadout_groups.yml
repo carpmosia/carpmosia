@@ -474,22 +474,22 @@
 #   - JesterHat
 #   - JesterAltHat
 
-- type: loadoutGroup
-  id: ClownJumpsuit
-  name: loadout-group-clown-jumpsuit
-  loadouts:
-  - ClownSuit
-  - ClownSkirt
-  - JesterSuit
-  - JesterAltSuit
+# - type: loadoutGroup
+#   id: ClownJumpsuit
+#   name: loadout-group-clown-jumpsuit
+#   loadouts:
+#   - ClownSuit
+#   - ClownSkirt
+#   - JesterSuit
+#   - JesterAltSuit
 
-- type: loadoutGroup
-  id: ClownBackpack
-  name: loadout-group-clown-backpack
-  loadouts:
-  - ClownBackpack
-  - ClownSatchel
-  - ClownDuffel
+# - type: loadoutGroup
+#   id: ClownBackpack
+#   name: loadout-group-clown-backpack
+#   loadouts:
+#   - ClownBackpack
+#   - ClownSatchel
+#   - ClownDuffel
 
 - type: loadoutGroup
   id: ClownOuterClothing
@@ -499,12 +499,12 @@
   - ClownRobes
   - ClownWintercoat
 
-- type: loadoutGroup
-  id: ClownShoes
-  name: loadout-group-clown-shoes
-  loadouts:
-  - ClownShoes
-  - JesterShoes
+# - type: loadoutGroup
+#   id: ClownShoes
+#   name: loadout-group-clown-shoes
+#   loadouts:
+#   - ClownShoes
+#   - JesterShoes
 
 - type: loadoutGroup
   id: SurvivalClown
@@ -516,51 +516,51 @@
   - EmergencyOxygenClown
   - LoadoutSpeciesVoxNitrogen
 
-- type: loadoutGroup
-  id: MimeHead
-  name: loadout-group-mime-head
-  minLimit: 0
-  loadouts:
-  - MimeHead
-  - MimeFrenchBeret
-  - MimeCap
+# - type: loadoutGroup
+#   id: MimeHead
+#   name: loadout-group-mime-head
+#   minLimit: 0
+#   loadouts:
+#   - MimeHead
+#   - MimeFrenchBeret
+#   - MimeCap
 
-- type: loadoutGroup
-  id: MimeMask
-  name: loadout-group-mime-mask
-  loadouts:
-  - MimeMask
-  - MimeMaskSad
-  - MimeMaskScared
+# - type: loadoutGroup
+#   id: MimeMask
+#   name: loadout-group-mime-mask
+#   loadouts:
+#   - MimeMask
+#   - MimeMaskSad
+#   - MimeMaskScared
 
-- type: loadoutGroup
-  id: MimeJumpsuit
-  name: loadout-group-mime-jumpsuit
-  loadouts:
-  - MimeJumpsuit
-  - MimeJumpskirt
+# - type: loadoutGroup
+#   id: MimeJumpsuit
+#   name: loadout-group-mime-jumpsuit
+#   loadouts:
+#   - MimeJumpsuit
+#   - MimeJumpskirt
 
-- type: loadoutGroup
-  id: MimeBackpack
-  name: loadout-group-mime-backpack
-  loadouts:
-  - MimeBackpack
-  - MimeSatchel
-  - MimeDuffel
+# - type: loadoutGroup
+#   id: MimeBackpack
+#   name: loadout-group-mime-backpack
+#   loadouts:
+#   - MimeBackpack
+#   - MimeSatchel
+#   - MimeDuffel
 
-- type: loadoutGroup
-  id: MimeOuterClothing
-  name: loadout-group-mime-outerclothing
-  minLimit: 0
-  loadouts:
-  - MimeWintercoat
+# - type: loadoutGroup
+#   id: MimeOuterClothing
+#   name: loadout-group-mime-outerclothing
+#   minLimit: 0
+#   loadouts:
+#   - MimeWintercoat
 
-- type: loadoutGroup
-  id: MimeBelt
-  name: loadout-group-mime-belt
-  loadouts:
-  - MimeSuspendersRed
-  - MimeSuspendersBlack
+# - type: loadoutGroup
+#   id: MimeBelt
+#   name: loadout-group-mime-belt
+#   loadouts:
+#   - MimeSuspendersRed
+#   - MimeSuspendersBlack
 
 - type: loadoutGroup
   id: SurvivalMime
@@ -573,54 +573,54 @@
   - EmergencySpeciesMothMime
   - LoadoutSpeciesVoxNitrogen
 
-- type: loadoutGroup
-  id: MusicianJumpsuit
-  name: loadout-group-musician-jumpsuit
-  loadouts:
-  - MusicianJumpsuit
-  - MusicianJumpskirt
+# - type: loadoutGroup
+#   id: MusicianJumpsuit
+#   name: loadout-group-musician-jumpsuit
+#   loadouts:
+#   - MusicianJumpsuit
+#   - MusicianJumpskirt
 
-- type: loadoutGroup
-  id: MusicianOuterClothing
-  name: loadout-group-musician-outerclothing
-  minLimit: 0
-  loadouts:
-  - MusicianWintercoat
+# - type: loadoutGroup
+#   id: MusicianOuterClothing
+#   name: loadout-group-musician-outerclothing
+#   minLimit: 0
+#   loadouts:
+#   - MusicianWintercoat
 
-- type: loadoutGroup
-  id: Instruments
-  name: loadout-group-instruments
-  minLimit: 0
-  maxLimit: 2
-  loadouts:
-  - Glockenspiel
-  - MusicBox
-  - Xylophone
-  - Microphone
-  - Synthesizer
-  - Kalimba
-  - Woodblock
-  - ElectricGuitar
-  - BassGuitar
-  - RockGuitar
-  - AcousticGuitar
-  - Banjo
-  - Violin
-  - Viola
-  - Cello
-  - Trumpet
-  - Trombone
-  - FrenchHorn
-  - Euphonium
-  - Saxophone
-  - Accordion
-  - Harmonica
-  - Clarinet
-  - Flute
-  - Recorder
-  - PanFlute
-  - Ocarina
-  - Bagpipe
+# - type: loadoutGroup
+#   id: Instruments
+#   name: loadout-group-instruments
+#   minLimit: 0
+#   maxLimit: 2
+#   loadouts:
+#   - Glockenspiel
+#   - MusicBox
+#   - Xylophone
+#   - Microphone
+#   - Synthesizer
+#   - Kalimba
+#   - Woodblock
+#   - ElectricGuitar
+#   - BassGuitar
+#   - RockGuitar
+#   - AcousticGuitar
+#   - Banjo
+#   - Violin
+#   - Viola
+#   - Cello
+#   - Trumpet
+#   - Trombone
+#   - FrenchHorn
+#   - Euphonium
+#   - Saxophone
+#   - Accordion
+#   - Harmonica
+#   - Clarinet
+#   - Flute
+#   - Recorder
+#   - PanFlute
+#   - Ocarina
+#   - Bagpipe
 
 # Cargo
 - type: loadoutGroup
