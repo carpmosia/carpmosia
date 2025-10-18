@@ -1,6 +1,9 @@
-# - type: loadoutGroup
-#   id: WardenHead
-#   parent: [BaseHead, CommonHead, SecurityHead]
+- type: loadoutGroup
+  id: WardenHead
+  parent: [BaseHead, CommonHead, SecurityHead]
+  loadouts:
+  - WardenHead
+  - WardenBeret
 
 # - type: loadoutGroup
 #   id: WardenGlasses
@@ -18,9 +21,12 @@
 #   id: WardenGloves
 #   parent: [BaseGloves, CommonGloves, SecurityGloves]
 
-# - type: loadoutGroup
-#   id: WardenJumpsuit
-#   parent: [BaseJumpsuit, CommonJumpsuit, SecurityJumpsuit]
+- type: loadoutGroup
+  id: WardenJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, SecurityJumpsuit]
+  loadouts:
+  - WardenJumpsuit
+  - WardenJumpskirt
 
 # - type: loadoutGroup
 #   id: WardenBackpack
@@ -34,9 +40,12 @@
 #   id: WardenBelt
 #   parent: [BaseBelt, CommonBelt, SecurityBelt]
 
-# - type: loadoutGroup
-#   id: WardenOuterClothing
-#   parent: [BaseOuterClothing, CommonOuterClothing, SecurityOuterClothing]
+- type: loadoutGroup
+  id: WardenOuterClothing
+  parent: [BaseOuterClothing, CommonOuterClothing, SecurityOuterClothing]
+  loadouts:
+  - WardenCoat
+  - WardenArmoredWinterCoat
 
 # - type: loadoutGroup
 #   id: WardenShoes

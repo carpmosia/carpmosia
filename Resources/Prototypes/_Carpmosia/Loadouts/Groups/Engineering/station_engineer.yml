@@ -26,9 +26,12 @@
 #   id: StationEngineerBackpack
 #   parent: [BaseBackpack, CommonBackpack, EngineeringBackpack]
 
-# - type: loadoutGroup
-#   id: StationEngineerPDA
-#   parent: [BasePDA, CommonPDA, EngineeringPDA]
+- type: loadoutGroup
+  id: StationEngineerPDA
+  parent: [BasePDA, CommonPDA, EngineeringPDA]
+  loadouts:
+  - StationEngineerPDA
+  - SeniorEngineerPDA
 
 # - type: loadoutGroup
 #   id: StationEngineerBelt

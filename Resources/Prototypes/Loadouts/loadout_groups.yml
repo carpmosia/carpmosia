@@ -768,12 +768,12 @@
   - BrownShoes
   - EngineeringWinterBoots
 
-- type: loadoutGroup
-  id: TechnicalAssistantJumpsuit
-  name: loadout-group-technical-assistant-jumpsuit
-  loadouts:
-  - YellowJumpsuit
-  - YellowJumpskirt
+# - type: loadoutGroup
+#   id: TechnicalAssistantJumpsuit
+#   name: loadout-group-technical-assistant-jumpsuit
+#   loadouts:
+#   - YellowJumpsuit
+#   - YellowJumpskirt
 
 - type: loadoutGroup
   id: StationEngineerHead
@@ -818,42 +818,42 @@
   - WorkBoots
   - EngineeringWinterBoots
 
-- type: loadoutGroup
-  id: StationEngineerID
-  name: loadout-group-station-engineer-id
-  loadouts:
-  - StationEngineerPDA
-  - SeniorEngineerPDA
+# - type: loadoutGroup
+#   id: StationEngineerID
+#   name: loadout-group-station-engineer-id
+#   loadouts:
+#   - StationEngineerPDA
+#   - SeniorEngineerPDA
 
-- type: loadoutGroup
-  id: AtmosphericTechnicianJumpsuit
-  name: loadout-group-atmospheric-technician-jumpsuit
-  loadouts:
-  - AtmosphericTechnicianJumpsuit
-  - AtmosphericTechnicianJumpskirt
-  - AtmosphericTechnicianJumpsuitCasual
+# - type: loadoutGroup
+#   id: AtmosphericTechnicianJumpsuit
+#   name: loadout-group-atmospheric-technician-jumpsuit
+#   loadouts:
+#   - AtmosphericTechnicianJumpsuit
+#   - AtmosphericTechnicianJumpskirt
+#   - AtmosphericTechnicianJumpsuitCasual
 
-- type: loadoutGroup
-  id: AtmosphericTechnicianOuterClothing
-  name: loadout-group-atmospheric-technician-outerclothing
-  minLimit: 0
-  loadouts:
-  - AtmosphericTechnicianWintercoat
+# - type: loadoutGroup
+#   id: AtmosphericTechnicianOuterClothing
+#   name: loadout-group-atmospheric-technician-outerclothing
+#   minLimit: 0
+#   loadouts:
+#   - AtmosphericTechnicianWintercoat
 
-- type: loadoutGroup
-  id: AtmosphericTechnicianBackpack
-  name: loadout-group-atmospheric-technician-backpack
-  loadouts:
-  - AtmosphericTechnicianBackpack
-  - AtmosphericTechnicianSatchel
-  - AtmosphericTechnicianDuffel
+# - type: loadoutGroup
+#   id: AtmosphericTechnicianBackpack
+#   name: loadout-group-atmospheric-technician-backpack
+#   loadouts:
+#   - AtmosphericTechnicianBackpack
+#   - AtmosphericTechnicianSatchel
+#   - AtmosphericTechnicianDuffel
 
-- type: loadoutGroup
-  id: AtmosphericTechnicianShoes
-  name: loadout-group-atmospheric-technician-shoes
-  loadouts:
-  - WhiteShoes
-  - EngineeringWinterBoots
+# - type: loadoutGroup
+#   id: AtmosphericTechnicianShoes
+#   name: loadout-group-atmospheric-technician-shoes
+#   loadouts:
+#   - WhiteShoes
+#   - EngineeringWinterBoots
 
 - type: loadoutGroup
   id: SurvivalExtended
@@ -982,61 +982,61 @@
   - WhiteJumpskirt
 
 # Security
-- type: loadoutGroup
-  id: HeadofSecurityHead
-  name: loadout-group-head-of-security-head
-  minLimit: 0
-  loadouts:
-  - HeadofSecurityHead
-  - HeadofSecurityBeret
+# - type: loadoutGroup
+#   id: HeadofSecurityHead
+#   name: loadout-group-head-of-security-head
+#   minLimit: 0
+#   loadouts:
+#   - HeadofSecurityHead
+#   - HeadofSecurityBeret
 
-- type: loadoutGroup
-  id: HeadofSecurityJumpsuit
-  name: loadout-group-head-of-security-jumpsuit
-  loadouts:
-  - HeadofSecurityJumpsuit
-  - HeadofSecurityJumpskirt
-  - HeadofSecurityTurtleneck
-  - HeadofSecurityTurtleneckSkirt
-  - HeadofSecurityFormalSuit
-  - HeadofSecurityFormalSkirt
+# - type: loadoutGroup
+#   id: HeadofSecurityJumpsuit
+#   name: loadout-group-head-of-security-jumpsuit
+#   loadouts:
+#   - HeadofSecurityJumpsuit
+#   - HeadofSecurityJumpskirt
+#   - HeadofSecurityTurtleneck
+#   - HeadofSecurityTurtleneckSkirt
+#   - HeadofSecurityFormalSuit
+#   - HeadofSecurityFormalSkirt
 
-- type: loadoutGroup
-  id: HeadofSecurityNeck
-  name: loadout-group-head-of-security-neck
-  minLimit: 0
-  loadouts:
-  - HeadofSecurityCloak
-  - HeadofSecurityMantle
+# - type: loadoutGroup
+#   id: HeadofSecurityNeck
+#   name: loadout-group-head-of-security-neck
+#   minLimit: 0
+#   loadouts:
+#   - HeadofSecurityCloak
+#   - HeadofSecurityMantle
 
-- type: loadoutGroup
-  id: HeadofSecurityOuterClothing
-  name: loadout-group-head-of-security-outerclothing
-  loadouts:
-  - HeadofSecurityCoat
-  - HeadofSecurityWinterCoat
+# - type: loadoutGroup
+#   id: HeadofSecurityOuterClothing
+#   name: loadout-group-head-of-security-outerclothing
+#   loadouts:
+#   - HeadofSecurityCoat
+#   - HeadofSecurityWinterCoat
 
-- type: loadoutGroup
-  id: WardenHead
-  name: loadout-group-warden-head
-  minLimit: 0
-  loadouts:
-  - WardenHead
-  - WardenBeret
+# - type: loadoutGroup
+#   id: WardenHead
+#   name: loadout-group-warden-head
+#   minLimit: 0
+#   loadouts:
+#   - WardenHead
+#   - WardenBeret
 
-- type: loadoutGroup
-  id: WardenJumpsuit
-  name: loadout-group-warden-jumpsuit
-  loadouts:
-  - WardenJumpsuit
-  - WardenJumpskirt
+# - type: loadoutGroup
+#   id: WardenJumpsuit
+#   name: loadout-group-warden-jumpsuit
+#   loadouts:
+#   - WardenJumpsuit
+#   - WardenJumpskirt
 
-- type: loadoutGroup
-  id: WardenOuterClothing
-  name: loadout-group-warden-outerclothing
-  loadouts:
-  - WardenCoat
-  - WardenArmoredWinterCoat
+# - type: loadoutGroup
+#   id: WardenOuterClothing
+#   name: loadout-group-warden-outerclothing
+#   loadouts:
+#   - WardenCoat
+#   - WardenArmoredWinterCoat
 
 - type: loadoutGroup
   id: SecurityHead
@@ -1112,14 +1112,14 @@
   loadouts:
   - DetectiveTie
 
-- type: loadoutGroup
-  id: DetectiveJumpsuit
-  name: loadout-group-detective-jumpsuit
-  loadouts:
-  - DetectiveJumpsuit
-  - DetectiveJumpskirt
-  - NoirJumpsuit
-  - NoirJumpskirt
+# - type: loadoutGroup
+#   id: DetectiveJumpsuit
+#   name: loadout-group-detective-jumpsuit
+#   loadouts:
+#   - DetectiveJumpsuit
+#   - DetectiveJumpskirt
+#   - NoirJumpsuit
+#   - NoirJumpskirt
 
 - type: loadoutGroup
   id: DetectiveOuterClothing

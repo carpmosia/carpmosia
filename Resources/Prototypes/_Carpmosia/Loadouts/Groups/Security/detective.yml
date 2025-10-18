@@ -18,9 +18,14 @@
 #   id: DetectiveGloves
 #   parent: [BaseGloves, CommonGloves, SecurityGloves]
 
-# - type: loadoutGroup
-#   id: DetectiveJumpsuit
-#   parent: [BaseJumpsuit, CommonJumpsuit, SecurityJumpsuit]
+- type: loadoutGroup
+  id: DetectiveJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, SecurityJumpsuit]
+  loadouts:
+  - DetectiveJumpsuit
+  - DetectiveJumpskirt
+  - NoirJumpsuit
+  - NoirJumpskirt
 
 # - type: loadoutGroup
 #   id: DetectiveBackpack

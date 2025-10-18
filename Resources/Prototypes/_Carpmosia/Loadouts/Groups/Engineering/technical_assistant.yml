@@ -18,9 +18,12 @@
 #   id: TechnicalAssistantGloves
 #   parent: [BaseGloves, CommonGloves, EngineeringGloves]
 
-# - type: loadoutGroup
-#   id: TechnicalAssistantJumpsuit
-#   parent: [BaseJumpsuit, CommonJumpsuit, EngineeringJumpsuit]
+- type: loadoutGroup
+  id: TechnicalAssistantJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, EngineeringJumpsuit]
+  loadouts:
+  - YellowJumpsuit
+  - YellowJumpskirt
 
 # - type: loadoutGroup
 #   id: TechnicalAssistantBackpack
