@@ -1196,39 +1196,39 @@
 #   - BrownShoes
 #   - MedicalWinterBoots
 
-- type: loadoutGroup
-  id: MedicalDoctorHead
-  name: loadout-group-medical-doctor-head
-  minLimit: 0
-  loadouts:
-  - MedicalBeret
-  - SeniorPhysicianBeret
-  - MedicalHeadMirror
-  - BlueSurgeryCap
-  - GreenSurgeryCap
-  - PurpleSurgeryCap
-  - NurseHat
+# - type: loadoutGroup
+#   id: MedicalDoctorHead
+#   name: loadout-group-medical-doctor-head
+#   minLimit: 0
+#   loadouts:
+#   - MedicalBeret
+#   - SeniorPhysicianBeret
+#   - MedicalHeadMirror
+#   - BlueSurgeryCap
+#   - GreenSurgeryCap
+#   - PurpleSurgeryCap
+#   - NurseHat
 
-- type: loadoutGroup
-  id: MedicalDoctorJumpsuit
-  name: loadout-group-medical-doctor-jumpsuit
-  loadouts:
-  - MedicalDoctorJumpsuit
-  - MedicalDoctorJumpskirt
-  - SeniorPhysicianJumpsuit
-  - SeniorPhysicianJumpskirt
-  - MedicalBlueScrubs
-  - MedicalGreenScrubs
-  - MedicalPurpleScrubs
+# - type: loadoutGroup
+#   id: MedicalDoctorJumpsuit
+#   name: loadout-group-medical-doctor-jumpsuit
+#   loadouts:
+#   - MedicalDoctorJumpsuit
+#   - MedicalDoctorJumpskirt
+#   - SeniorPhysicianJumpsuit
+#   - SeniorPhysicianJumpskirt
+#   - MedicalBlueScrubs
+#   - MedicalGreenScrubs
+#   - MedicalPurpleScrubs
 
-- type: loadoutGroup
-  id: MedicalDoctorOuterClothing
-  name: loadout-group-medical-doctor-outerclothing
-  minLimit: 0
-  loadouts:
-  - RegularLabCoat
-  - MedicalDoctorWintercoat
-  - SeniorPhysicianLabCoat
+# - type: loadoutGroup
+#   id: MedicalDoctorOuterClothing
+#   name: loadout-group-medical-doctor-outerclothing
+#   minLimit: 0
+#   loadouts:
+#   - RegularLabCoat
+#   - MedicalDoctorWintercoat
+#   - SeniorPhysicianLabCoat
 
 - type: loadoutGroup
   id: MedicalBackpack
@@ -1298,27 +1298,27 @@
 #   - ChemistSatchel
 #   - ChemistDuffel
 
-- type: loadoutGroup
-  id: ParamedicHead
-  name: loadout-group-paramedic-head
-  minLimit: 0
-  loadouts:
-  - ParamedicHead
+# - type: loadoutGroup
+#   id: ParamedicHead
+#   name: loadout-group-paramedic-head
+#   minLimit: 0
+#   loadouts:
+#   - ParamedicHead
 
-- type: loadoutGroup
-  id: ParamedicJumpsuit
-  name: loadout-group-paramedic-jumpsuit
-  loadouts:
-  - ParamedicJumpsuit
-  - ParamedicJumpskirt
+# - type: loadoutGroup
+#   id: ParamedicJumpsuit
+#   name: loadout-group-paramedic-jumpsuit
+#   loadouts:
+#   - ParamedicJumpsuit
+#   - ParamedicJumpskirt
 
-- type: loadoutGroup
-  id: ParamedicOuterClothing
-  name: loadout-group-paramedic-outerclothing
-  minLimit: 0
-  loadouts:
-  - ParamedicWindbreaker
-  - ParamedicWintercoat
+# - type: loadoutGroup
+#   id: ParamedicOuterClothing
+#   name: loadout-group-paramedic-outerclothing
+#   minLimit: 0
+#   loadouts:
+#   - ParamedicWindbreaker
+#   - ParamedicWintercoat
 
 # - type: loadoutGroup
 #   id: ParamedicShoes

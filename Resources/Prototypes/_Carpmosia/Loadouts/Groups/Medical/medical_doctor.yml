@@ -1,6 +1,14 @@
-# - type: loadoutGroup
-#   id: MedicalDoctorHead
-#   parent: [BaseHead, CommonHead, MedicalHead]
+- type: loadoutGroup
+  id: MedicalDoctorHead
+  parent: [BaseHead, CommonHead, MedicalHead]
+  loadouts:
+  - MedicalBeret
+  - SeniorPhysicianBeret
+  - MedicalHeadMirror
+  - BlueSurgeryCap
+  - GreenSurgeryCap
+  - PurpleSurgeryCap
+  - NurseHat
 
 # - type: loadoutGroup
 #   id: MedicalDoctorGlasses
@@ -18,9 +26,17 @@
 #   id: MedicalDoctorGloves
 #   parent: [BaseGloves, CommonGloves, MedicalGloves]
 
-# - type: loadoutGroup
-#   id: MedicalDoctorJumpsuit
-#   parent: [BaseJumpsuit, CommonJumpsuit, MedicalJumpsuit]
+- type: loadoutGroup
+  id: MedicalDoctorJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, MedicalJumpsuit]
+  loadouts:
+  - MedicalDoctorJumpsuit
+  - MedicalDoctorJumpskirt
+  - SeniorPhysicianJumpsuit
+  - SeniorPhysicianJumpskirt
+  - MedicalBlueScrubs
+  - MedicalGreenScrubs
+  - MedicalPurpleScrubs
 
 # - type: loadoutGroup
 #   id: MedicalDoctorBackpack
@@ -37,9 +53,13 @@
 #   id: MedicalDoctorBelt
 #   parent: [BaseBelt, CommonBelt, MedicalBelt]
 
-# - type: loadoutGroup
-#   id: MedicalDoctorOuterClothing
-#   parent: [BaseOuterClothing, CommonOuterClothing, MedicalOuterClothing]
+- type: loadoutGroup
+  id: MedicalDoctorOuterClothing
+  parent: [BaseOuterClothing, CommonOuterClothing, MedicalOuterClothing]
+  loadouts:
+  - RegularLabCoat
+  - MedicalDoctorWintercoat
+  - SeniorPhysicianLabCoat
 
 # - type: loadoutGroup
 #   id: MedicalDoctorShoes
