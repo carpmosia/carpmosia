@@ -18,9 +18,12 @@
 #   id: ResearchAssistantGloves
 #   parent: [BaseGloves, CommonGloves, ScienceGloves]
 
-# - type: loadoutGroup
-#   id: ResearchAssistantJumpsuit
-#   parent: [BaseJumpsuit, CommonJumpsuit, ScienceJumpsuit]
+- type: loadoutGroup
+  id: ResearchAssistantJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, ScienceJumpsuit]
+  loadouts:
+  - WhiteJumpsuit
+  - WhiteJumpskirt
 
 # - type: loadoutGroup
 #   id: ResearchAssistantBackpack

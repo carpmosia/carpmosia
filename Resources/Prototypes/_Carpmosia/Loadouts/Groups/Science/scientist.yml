@@ -1,6 +1,10 @@
-# - type: loadoutGroup
-#   id: ScientistHead
-#   parent: [BaseHead, CommonHead, ScienceHead]
+- type: loadoutGroup
+  id: ScientistHead
+  parent: [BaseHead, CommonHead, ScienceHead]
+  loadouts:
+  - RoboticistCap
+  - SkullBandana
+  - ScientificBeret
 
 # - type: loadoutGroup
 #   id: ScientistGlasses
@@ -10,37 +14,68 @@
 #   id: ScientistMask
 #   parent: [BaseMask, CommonMask, ScienceMask]
 
-# - type: loadoutGroup
-#   id: ScientistNeck
-#   parent: [BaseNeck, CommonNeck, ScienceNeck]
+- type: loadoutGroup
+  id: ScientistNeck
+  parent: [BaseNeck, CommonNeck, ScienceNeck]
+  loadouts:
+  - ScientistTie
 
-# - type: loadoutGroup
-#   id: ScientistGloves
-#   parent: [BaseGloves, CommonGloves, ScienceGloves]
+- type: loadoutGroup
+  id: ScientistGloves
+  parent: [BaseGloves, CommonGloves, ScienceGloves]
+  loadouts:
+  - LatexGloves
+  - PurpleGloves
+  - RobohandsGloves
 
-# - type: loadoutGroup
-#   id: ScientistJumpsuit
-#   parent: [BaseJumpsuit, CommonJumpsuit, ScienceJumpsuit]
+- type: loadoutGroup
+  id: ScientistJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, ScienceJumpsuit]
+  loadouts:
+  - ScientistJumpsuit
+  - ScientistJumpskirt
+  - RoboticistJumpsuit
+  - RoboticistJumpskirt
+  - SeniorResearcherJumpsuit
+  - SeniorResearcherJumpskirt
 
-# - type: loadoutGroup
-#   id: ScientistBackpack
-#   parent: [BaseBackpack, CommonBackpack, ScienceBackpack]
+- type: loadoutGroup
+  id: ScientistBackpack
+  parent: [BaseBackpack, CommonBackpack, ScienceBackpack]
+  loadouts:
+  - ScientistBackpack
+  - ScientistSatchel
+  - ScientistDuffel
 
-# - type: loadoutGroup
-#   id: ScientistPDA
-#   parent: [BasePDA, CommonPDA, SciencePDA]
+- type: loadoutGroup
+  id: ScientistPDA
+  parent: [BasePDA, CommonPDA, SciencePDA]
+  loadouts:
+  - ScientistPDA
+  - SeniorResearcherPDA
 
 # - type: loadoutGroup
 #   id: ScientistBelt
 #   parent: [BaseBelt, CommonBelt, ScienceBelt]
 
-# - type: loadoutGroup
-#   id: ScientistOuterClothing
-#   parent: [BaseOuterClothing, CommonOuterClothing, ScienceOuterClothing]
+- type: loadoutGroup
+  id: ScientistOuterClothing
+  parent: [BaseOuterClothing, CommonOuterClothing, ScienceOuterClothing]
+  loadouts:
+  - RegularLabCoat
+  - ScienceLabCoat
+  - ScienceWintercoat
+  - RoboticistLabCoat
+  - RoboticistWintercoat
+  - SeniorResearcherLabCoat
 
-# - type: loadoutGroup
-#   id: ScientistShoes
-#   parent: [BaseShoes, CommonShoes, ScienceShoes]
+- type: loadoutGroup
+  id: ScientistShoes
+  parent: [BaseShoes, CommonShoes, ScienceShoes]
+  loadouts:
+  - WhiteShoes
+  - BlackShoes
+  - ScienceWinterBoots
 
 # - type: loadoutGroup
 #   id: ScientistSpecial
