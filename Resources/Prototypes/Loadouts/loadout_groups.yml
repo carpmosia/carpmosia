@@ -777,48 +777,48 @@
 #   - YellowJumpsuit
 #   - YellowJumpskirt
 
-- type: loadoutGroup
-  id: StationEngineerHead
-  name: loadout-group-station-engineer-head
-  minLimit: 0
-  loadouts:
-  - StationEngineerHardhatYellow
-  - StationEngineerHardhatOrange
-  - StationEngineerHardhatRed
-  - SeniorEngineerBeret
+# - type: loadoutGroup
+#   id: StationEngineerHead
+#   name: loadout-group-station-engineer-head
+#   minLimit: 0
+#   loadouts:
+#   - StationEngineerHardhatYellow
+#   - StationEngineerHardhatOrange
+#   - StationEngineerHardhatRed
+#   - SeniorEngineerBeret
 
-- type: loadoutGroup
-  id: StationEngineerJumpsuit
-  name: loadout-group-station-engineer-jumpsuit
-  loadouts:
-  - StationEngineerJumpsuit
-  - StationEngineerJumpskirt
-  - StationEngineerHazardsuit
-  - SeniorEngineerJumpsuit
-  - SeniorEngineerJumpskirt
+# - type: loadoutGroup
+#   id: StationEngineerJumpsuit
+#   name: loadout-group-station-engineer-jumpsuit
+#   loadouts:
+#   - StationEngineerJumpsuit
+#   - StationEngineerJumpskirt
+#   - StationEngineerHazardsuit
+#   - SeniorEngineerJumpsuit
+#   - SeniorEngineerJumpskirt
 
-- type: loadoutGroup
-  id: StationEngineerBackpack
-  name: loadout-group-station-engineer-backpack
-  loadouts:
-  - StationEngineerBackpack
-  - StationEngineerSatchel
-  - StationEngineerDuffel
+# - type: loadoutGroup
+#   id: StationEngineerBackpack
+#   name: loadout-group-station-engineer-backpack
+#   loadouts:
+#   - StationEngineerBackpack
+#   - StationEngineerSatchel
+#   - StationEngineerDuffel
 
-- type: loadoutGroup
-  id: StationEngineerOuterClothing
-  name: loadout-group-station-engineer-outerclothing
-  minLimit: 0
-  loadouts:
-  - StationEngineerOuterVest
-  - StationEngineerWintercoat
+# - type: loadoutGroup
+#   id: StationEngineerOuterClothing
+#   name: loadout-group-station-engineer-outerclothing
+#   minLimit: 0
+#   loadouts:
+#   - StationEngineerOuterVest
+#   - StationEngineerWintercoat
 
-- type: loadoutGroup
-  id: StationEngineerShoes
-  name: loadout-group-station-engineer-shoes
-  loadouts:
-  - WorkBoots
-  - EngineeringWinterBoots
+# - type: loadoutGroup
+#   id: StationEngineerShoes
+#   name: loadout-group-station-engineer-shoes
+#   loadouts:
+#   - WorkBoots
+#   - EngineeringWinterBoots
 
 # - type: loadoutGroup
 #   id: StationEngineerID
