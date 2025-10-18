@@ -10,17 +10,30 @@
 #   id: LawyerMask
 #   parent: [BaseMask, CommonMask, CivilianMask]
 
-# - type: loadoutGroup
-#   id: LawyerNeck
-#   parent: [BaseNeck, CommonNeck, CivilianNeck]
+- type: loadoutGroup
+  id: LawyerNeck
+  parent: [BaseNeck, CommonNeck, CivilianNeck]
+  loadouts:
+  - LawyerNeck
 
 # - type: loadoutGroup
 #   id: LawyerGloves
 #   parent: [BaseGloves, CommonGloves, CivilianGloves]
 
-# - type: loadoutGroup
-#   id: LawyerJumpsuit
-#   parent: [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit]
+- type: loadoutGroup
+  id: LawyerJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit]
+  loadouts:
+  - LawyerJumpsuit
+  - LawyerJumpskirt
+  - LawyerJumpsuitBlue
+  - LawyerJumpskirtBlue
+  - LawyerJumpsuitPurple
+  - LawyerJumpskirtPurple
+  - LawyerJumpsuitRed
+  - LawyerJumpskirtRed
+  - LawyerJumpsuitGood
+  - LawyerJumpskirtGood
 
 # - type: loadoutGroup
 #   id: LawyerBackpack
