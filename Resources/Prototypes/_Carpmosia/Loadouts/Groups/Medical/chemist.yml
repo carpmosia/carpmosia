@@ -14,9 +14,9 @@
 #   id: ChemistNeck
 #   parent: [BaseNeck, CommonNeck, MedicalNeck]
 
-# - type: loadoutGroup
-#   id: ChemistGloves
-#   parent: [BaseGloves, CommonGloves, MedicalGloves]
+- type: loadoutGroup
+  id: ChemistGloves
+  parent: [BaseGloves, CommonGloves, MedicalGloves]
 
 - type: loadoutGroup
   id: ChemistJumpsuit

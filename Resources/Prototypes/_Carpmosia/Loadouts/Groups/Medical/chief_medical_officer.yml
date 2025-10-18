@@ -20,9 +20,9 @@
   - ChiefMedicalOfficerCloak
   - ChiefMedicalOfficerMantle
 
-# - type: loadoutGroup
-#   id: ChiefMedicalOfficerGloves
-#   parent: [BaseGloves, CommonGloves, MedicalGloves]
+- type: loadoutGroup
+  id: ChiefMedicalOfficerGloves
+  parent: [BaseGloves, CommonGloves, MedicalGloves]
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerJumpsuit

@@ -1252,13 +1252,13 @@
 #   - MedicalDoctorPDA
 #   - SeniorPhysicianPDA
 
-- type: loadoutGroup
-  id: MedicalGloves
-  name: loadout-group-medical-gloves
-  minLimit: 0
-  loadouts:
-  - LatexGloves
-  - NitrileGloves
+# - type: loadoutGroup
+#   id: MedicalGloves
+#   name: loadout-group-medical-gloves
+#   minLimit: 0
+#   loadouts:
+#   - LatexGloves
+#   - NitrileGloves
 
 - type: loadoutGroup
   id: MedicalMask

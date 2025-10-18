@@ -16,9 +16,9 @@
 #   id: ParamedicNeck
 #   parent: [BaseNeck, CommonNeck, MedicalNeck]
 
-# - type: loadoutGroup
-#   id: ParamedicGloves
-#   parent: [BaseGloves, CommonGloves, MedicalGloves]
+- type: loadoutGroup
+  id: ParamedicGloves
+  parent: [BaseGloves, CommonGloves, MedicalGloves]
 
 - type: loadoutGroup
   id: ParamedicJumpsuit

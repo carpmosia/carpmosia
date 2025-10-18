@@ -22,9 +22,9 @@
 #   id: MedicalDoctorNeck
 #   parent: [BaseNeck, CommonNeck, MedicalNeck]
 
-# - type: loadoutGroup
-#   id: MedicalDoctorGloves
-#   parent: [BaseGloves, CommonGloves, MedicalGloves]
+- type: loadoutGroup
+  id: MedicalDoctorGloves
+  parent: [BaseGloves, CommonGloves, MedicalGloves]
 
 - type: loadoutGroup
   id: MedicalDoctorJumpsuit

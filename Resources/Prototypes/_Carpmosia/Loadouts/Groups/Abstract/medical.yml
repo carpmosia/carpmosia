@@ -17,6 +17,9 @@
 - type: loadoutGroup
   id: MedicalGloves
   abstract: true
+  loadouts:
+  - LatexGloves
+  - NitrileGloves
 
 - type: loadoutGroup
   id: MedicalJumpsuit
