@@ -3,19 +3,19 @@
   groups:
   # - GroupTankHarness
   # Common groups
-  # - DetectiveHead
+  - DetectiveHead
   # - DetectiveGlasses
   # - DetectiveMask
-  # - DetectiveNeck
+  - DetectiveNeck
   # - DetectiveGloves
-  # - DetectiveJumpsuit
-  # - DetectiveBackpack
+  - DetectiveJumpsuit
+  - DetectiveBackpack
   # - DetectivePDA
   # - DetectiveBelt
-  # - DetectiveOuterClothing
-  # - DetectiveShoes
+  - DetectiveOuterClothing
+  - DetectiveShoes
   # Backpack fills
-  # - Survival
-  # - GroupSpeciesBreathTool
+  - DetectiveSurvival
+  - GroupSpeciesBreathToolSecurity
   # - DetectiveSpecial
-  # - DetectiveTrinkets
+  - DetectiveTrinkets
