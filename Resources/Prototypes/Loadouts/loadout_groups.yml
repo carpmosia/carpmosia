@@ -493,13 +493,13 @@
 #   - ClownSatchel
 #   - ClownDuffel
 
-- type: loadoutGroup
-  id: ClownOuterClothing
-  name: loadout-group-clown-outerclothing
-  minLimit: 0
-  loadouts:
-  - ClownRobes
-  - ClownWintercoat
+# - type: loadoutGroup
+#   id: ClownOuterClothing
+#   name: loadout-group-clown-outerclothing
+#   minLimit: 0
+#   loadouts:
+#   - ClownRobes
+#   - ClownWintercoat
 
 # - type: loadoutGroup
 #   id: ClownShoes
@@ -708,27 +708,27 @@
 #   - CargoTechnicianPDA
 #   - SeniorCourierPDA
 
-- type: loadoutGroup
-  id: SalvageSpecialistBackpack
-  name: loadout-group-salvage-specialist-backpack
-  loadouts:
-  - SalvageSpecialistBackpack
-  - SalvageSpecialistSatchel
-  - SalvageSpecialistDuffel
+# - type: loadoutGroup
+#   id: SalvageSpecialistBackpack
+#   name: loadout-group-salvage-specialist-backpack
+#   loadouts:
+#   - SalvageSpecialistBackpack
+#   - SalvageSpecialistSatchel
+#   - SalvageSpecialistDuffel
 
-- type: loadoutGroup
-  id: SalvageSpecialistOuterClothing
-  name: loadout-group-salvage-specialist-outerclothing
-  minLimit: 0
-  loadouts:
-  - SalvageSpecialistWintercoat
+# - type: loadoutGroup
+#   id: SalvageSpecialistOuterClothing
+#   name: loadout-group-salvage-specialist-outerclothing
+#   minLimit: 0
+#   loadouts:
+#   - SalvageSpecialistWintercoat
 
-- type: loadoutGroup
-  id: SalvageSpecialistShoes
-  name: loadout-group-salvage-specialist-shoes
-  loadouts:
-  - SalvageBoots
-  - CargoWinterBoots
+# - type: loadoutGroup
+#   id: SalvageSpecialistShoes
+#   name: loadout-group-salvage-specialist-shoes
+#   loadouts:
+#   - SalvageBoots
+#   - CargoWinterBoots
 
 # Engineering
 - type: loadoutGroup

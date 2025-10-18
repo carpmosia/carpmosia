@@ -46,9 +46,12 @@
 #   id: ClownBelt
 #   parent: [BaseBelt, CommonBelt, CivilianBelt]
 
-# - type: loadoutGroup
-#   id: ClownOuterClothing
-#   parent: [BaseOuterClothing, CommonOuterClothing, CivilianOuterClothing]
+- type: loadoutGroup
+  id: ClownOuterClothing
+  parent: [BaseOuterClothing, CommonOuterClothing, CivilianOuterClothing]
+  loadouts:
+  - ClownRobes
+  - ClownWintercoat
 
 - type: loadoutGroup
   id: ClownShoes

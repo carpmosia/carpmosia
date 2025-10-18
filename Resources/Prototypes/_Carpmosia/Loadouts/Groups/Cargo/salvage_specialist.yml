@@ -22,9 +22,13 @@
 #   id: SalvageSpecialistJumpsuit
 #   parent: [BaseJumpsuit, CommonJumpsuit, CargoJumpsuit]
 
-# - type: loadoutGroup
-#   id: SalvageSpecialistBackpack
-#   parent: [BaseBackpack, CommonBackpack, CargoBackpack]
+- type: loadoutGroup
+  id: SalvageSpecialistBackpack
+  parent: [BaseBackpack, CommonBackpack, CargoBackpack]
+  loadouts:
+  - SalvageSpecialistBackpack
+  - SalvageSpecialistSatchel
+  - SalvageSpecialistDuffel
 
 # - type: loadoutGroup
 #   id: SalvageSpecialistPDA
@@ -34,13 +38,18 @@
 #   id: SalvageSpecialistBelt
 #   parent: [BaseBelt, CommonBelt, CargoBelt]
 
-# - type: loadoutGroup
-#   id: SalvageSpecialistOuterClothing
-#   parent: [BaseOuterClothing, CommonOuterClothing, CargoOuterClothing]
+- type: loadoutGroup
+  id: SalvageSpecialistOuterClothing
+  parent: [BaseOuterClothing, CommonOuterClothing, CargoOuterClothing]
+  loadouts:
+  - SalvageSpecialistWintercoat
 
-# - type: loadoutGroup
-#   id: SalvageSpecialistShoes
-#   parent: [BaseShoes, CommonShoes, CargoShoes]
+- type: loadoutGroup
+  id: SalvageSpecialistShoes
+  parent: [BaseShoes, CommonShoes, CargoShoes]
+  loadouts:
+  - SalvageBoots
+  - CargoWinterBoots
 
 # - type: loadoutGroup
 #   id: SalvageSpecialistSpecial
