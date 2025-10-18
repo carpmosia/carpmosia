@@ -3,333 +3,333 @@
 
 - type: guideEntry
   id: CarpmosiaRules
-  name: guide-entry-rules-carpmosia-only
+  name: guide-entry-carpmosia-rules-only
   ruleEntry: true
   priority: 10
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/CarpmosiaRules.xml"
 
 - type: guideEntry
-  id: CoreRules-Carpmosia
+  id: CarpmosiaCoreRules
   name: guide-entry-carpmosia-rules-core
   ruleEntry: true
   priority: 10
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/CoreRules/RuleC0.xml"
   children:
-  - RuleC1-Carpmosia
-  - RuleC2-Carpmosia
-  - RuleC3-Carpmosia
-  - RuleC4-Carpmosia
-  - RuleC5-Carpmosia
-  - RuleC6-Carpmosia
-  - RuleC7-Carpmosia
-  - RuleC8-Carpmosia
-  - RuleC9-Carpmosia
-  - RuleC10-Carpmosia
-  - RuleC11-Carpmosia
-  - RuleC12-Carpmosia
-  - RuleC13-Carpmosia
-  - RuleC14-Carpmosia
+  - CarpmosiaRuleC1
+  - CarpmosiaRuleC2
+  - CarpmosiaRuleC3
+  - CarpmosiaRuleC4
+  - CarpmosiaRuleC5
+  - CarpmosiaRuleC6
+  - CarpmosiaRuleC7
+  - CarpmosiaRuleC8
+  - CarpmosiaRuleC9
+  - CarpmosiaRuleC10
+  - CarpmosiaRuleC11
+  - CarpmosiaRuleC12
+  - CarpmosiaRuleC13
+  - CarpmosiaRuleC14
 
 - type: guideEntry
-  id: RuleC1-Carpmosia
+  id: CarpmosiaRuleC1
   name: guide-entry-carpmosia-rules-c1
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/CoreRules/RuleC1Admins.xml"
 
 - type: guideEntry
-  id: RuleC2-Carpmosia
+  id: CarpmosiaRuleC2
   name: guide-entry-carpmosia-rules-c2
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/CoreRules/RuleC2DBAD.xml"
 
 - type: guideEntry
-  id: RuleC3-Carpmosia
+  id: CarpmosiaRuleC3
   name: guide-entry-carpmosia-rules-c3
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/CoreRules/RuleC3NoHate.xml"
 
 - type: guideEntry
-  id: RuleC4-Carpmosia
+  id: CarpmosiaRuleC4
   name: guide-entry-carpmosia-rules-c4
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/CoreRules/RuleC4NoERP.xml"
 
 - type: guideEntry
-  id: RuleC5-Carpmosia
+  id: CarpmosiaRuleC5
   name: guide-entry-carpmosia-rules-c5
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/CoreRules/RuleC5Metacomms.xml"
 
 - type: guideEntry
-  id: RuleC6-Carpmosia
+  id: CarpmosiaRuleC6
   name: guide-entry-carpmosia-rules-c6
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/CoreRules/RuleC6BanEvasion.xml"
 
 - type: guideEntry
-  id: RuleC7-Carpmosia
+  id: CarpmosiaRuleC7
   name: guide-entry-carpmosia-rules-c7
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/CoreRules/RuleC7EnglishOnly.xml"
 
 - type: guideEntry
-  id: RuleC8-Carpmosia
+  id: CarpmosiaRuleC8
   name: guide-entry-carpmosia-rules-c8
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/CoreRules/RuleC8Exploits.xml"
 
 - type: guideEntry
-  id: RuleC9-Carpmosia
+  id: CarpmosiaRuleC9
   name: guide-entry-carpmosia-rules-c9
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/CoreRules/RuleC9Multikey.xml"
 
 - type: guideEntry
-  id: RuleC10-Carpmosia
+  id: CarpmosiaRuleC10
   name: guide-entry-carpmosia-rules-c10
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/CoreRules/RuleC10AHelp.xml"
 
 - type: guideEntry
-  id: RuleC11-Carpmosia
+  id: CarpmosiaRuleC11
   name: guide-entry-carpmosia-rules-c11
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/CoreRules/RuleC11AhelpThreats.xml"
 
 - type: guideEntry
-  id: RuleC12-Carpmosia
+  id: CarpmosiaRuleC12
   name: guide-entry-carpmosia-rules-c12
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/CoreRules/RuleC12MinAge.xml"
 
 - type: guideEntry
-  id: RuleC13-Carpmosia
+  id: CarpmosiaRuleC13
   name: guide-entry-carpmosia-rules-c13
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/CoreRules/RuleC13CharacterNames.xml"
 
 - type: guideEntry
-  id: RuleC14-Carpmosia
+  id: CarpmosiaRuleC14
   name: guide-entry-carpmosia-rules-c14
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/CoreRules/RuleC14ICinOOC.xml"
 
 - type: guideEntry
-  id: RoleplayRules-Carpmosia
+  id: RoleplayRules
   name: guide-entry-carpmosia-rules-roleplay
   ruleEntry: true
   priority: 10
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/RoleplayRules/RuleR0.xml"
   children:
-  - RuleR1-Carpmosia
-  - RuleR2-Carpmosia
-  - RuleR3-Carpmosia
-  - RuleR4-Carpmosia
-  - RuleR5-Carpmosia
-  - RuleR6-Carpmosia
-  - RuleR7-Carpmosia
-  - RuleR8-Carpmosia
-  - RuleR9-Carpmosia
-  - RuleR10-Carpmosia
-  - RuleR11-Carpmosia
-  - RuleR12-Carpmosia
-  - RuleR13-Carpmosia
-  - RuleR14-Carpmosia
-  - RuleR15-Carpmosia
-  - RuleR16-Carpmosia
-  - RuleR17-Carpmosia
+  - CarpmosiaRuleR1
+  - CarpmosiaRuleR2
+  - CarpmosiaRuleR3
+  - CarpmosiaRuleR4
+  - CarpmosiaRuleR5
+  - CarpmosiaRuleR6
+  - CarpmosiaRuleR7
+  - CarpmosiaRuleR8
+  - CarpmosiaRuleR9
+  - CarpmosiaRuleR10
+  - CarpmosiaRuleR11
+  - CarpmosiaRuleR12
+  - CarpmosiaRuleR13
+  - CarpmosiaRuleR14
+  - CarpmosiaRuleR15
+  - CarpmosiaRuleR16
+  - CarpmosiaRuleR17
 
 - type: guideEntry
-  id: RuleR1-Carpmosia
+  id: CarpmosiaRuleR1
   name: guide-entry-carpmosia-rules-r1
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/RoleplayRules/RuleR1Silicons.xml"
 
 - type: guideEntry
-  id: RuleR2-Carpmosia
+  id: CarpmosiaRuleR2
   name: guide-entry-carpmosia-rules-r2
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/RoleplayRules/RuleR2Familiars.xml"
 
 - type: guideEntry
-  id: RuleR3-Carpmosia
+  id: CarpmosiaRuleR3
   name: guide-entry-carpmosia-rules-r3
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/RoleplayRules/RuleR3NormalRP.xml"
 
 - type: guideEntry
-  id: RuleR4-Carpmosia
+  id: CarpmosiaRuleR4
   name: guide-entry-carpmosia-rules-r4
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/RoleplayRules/RuleR4Metashield.xml"
 
 - type: guideEntry
-  id: RuleR5-Carpmosia
+  id: CarpmosiaRuleR5
   name: guide-entry-carpmosia-rules-r5
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/RoleplayRules/RuleR5Arrivals.xml"
 
 - type: guideEntry
-  id: RuleR6-Carpmosia
+  id: CarpmosiaRuleR6
   name: guide-entry-carpmosia-rules-r6
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/RoleplhayRules/RuleR6SelfAntag.xml"
 
 - type: guideEntry
-  id: RuleR7-Carpmosia
+  id: CarpmosiaRuleR7
   name: guide-entry-carpmosia-rules-r7
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/RoleplayRules/RuleR7RoundStalling.xml"
 
 - type: guideEntry
-  id: RuleR8-Carpmosia
+  id: CarpmosiaRuleR8
   name: guide-entry-carpmosia-rules-r8
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/RoleplayRules/RuleR8NoFriendlyAntag.xml"
 
 - type: guideEntry
-  id: RuleR9-Carpmosia
+  id: CarpmosiaRuleR9
   name: guide-entry-carpmosia-rules-r9
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/RoleplayRules/RuleR9MassSabotage.xml"
 
 - type: guideEntry
-  id: RuleR10-Carpmosia
+  id: CarpmosiaRuleR10
   name: guide-entry-carpmosia-rules-r10
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/RoleplayRules/RuleR10Subordination.xml"
 
 - type: guideEntry
-  id: RuleR11-Carpmosia
+  id: CarpmosiaRuleR11
   name: guide-entry-carpmosia-rules-r11
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/RoleplayRules/RuleR11Escalation.xml"
   children:
-  - RuleR11-1-Carpmosia
-  - RuleR11-2-Carpmosia
+  - CarpmosiaRuleR11-1
+  - CarpmosiaRuleR11-2
 
 - type: guideEntry
-  id: RuleR11-1-Carpmosia
+  id: CarpmosiaRuleR11-1
   name: guide-entry-carpmosia-rules-r11-1
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/RoleplayRules/RuleR11-1AnimalEscalation.xml"
 
 - type: guideEntry
-  id: RuleR11-2-Carpmosia
+  id: CarpmosiaRuleR11-2
   name: guide-entry-carpmosia-rules-r11-2
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/RoleplayRules/RuleR11-2ConflictTypes.xml"
 
 - type: guideEntry
-  id: RuleR12-Carpmosia
+  id: CarpmosiaRuleR12
   name: guide-entry-carpmosia-rules-r12
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/RoleplayRules/RuleR12RoleAbandonment.xml"
 
 - type: guideEntry
-  id: RuleR13-Carpmosia
+  id: CarpmosiaRuleR13
   name: guide-entry-carpmosia-rules-r13
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/RoleplayRules/RuleR13PerformRole.xml"
 
 - type: guideEntry
-  id: RuleR14-Carpmosia
+  id: CarpmosiaRuleR14
   name: guide-entry-carpmosia-rules-r14
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/RoleplayRules/RuleR14SecComStandard.xml"
 
 - type: guideEntry
-  id: RuleR15-Carpmosia
+  id: CarpmosiaRuleR15
   name: guide-entry-carpmosia-rules-r15
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/RoleplayRules/RuleR15SpaceLaw.xml"
 
 - type: guideEntry
-  id: RuleR16-Carpmosia
+  id: CarpmosiaRuleR16
   name: guide-entry-carpmosia-rules-r16
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/RoleplayRules/RuleR16NoPowergaming.xml"
 
 - type: guideEntry
-  id: RuleR17-Carpmosia
+  id: CarpmosiaRuleR17
   name: guide-entry-carpmosia-rules-r17
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/RoleplayRules/RuleR17NoValidhunting.xml"
 
 - type: guideEntry
-  id: SiliconRules-Carpmosia
+  id: SiliconRules
   name: guide-entry-carpmosia-rules-silicon
   ruleEntry: true
   priority: 10
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/SiliconRules/RuleS0.xml"
   children:
-  - RuleS1-Carpmosia
-  - RuleS2-Carpmosia
-  - RuleS3-Carpmosia
-  - RuleS4-Carpmosia
-  - RuleS5-Carpmosia
-  - RuleS6-Carpmosia
-  - RuleS7-Carpmosia
-  - RuleS8-Carpmosia
-  - RuleS9-Carpmosia
-  - RuleS10-Carpmosia
+  - CarpmosiaRuleS1
+  - CarpmosiaRuleS2
+  - CarpmosiaRuleS3
+  - CarpmosiaRuleS4
+  - CarpmosiaRuleS5
+  - CarpmosiaRuleS6
+  - CarpmosiaRuleS7
+  - CarpmosiaRuleS8
+  - CarpmosiaRuleS9
+  - CarpmosiaRuleS10
 
 - type: guideEntry
-  id: RuleS1-Carpmosia
+  id: CarpmosiaRuleS1
   name: guide-entry-carpmosia-rules-s1
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/SiliconRules/RuleS1Laws.xml"
 
 - type: guideEntry
-  id: RuleS2-Carpmosia
+  id: CarpmosiaRuleS2
   name: guide-entry-carpmosia-rules-s2
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/SiliconRules/RuleS2LawPriority.xml"
 
 - type: guideEntry
-  id: RuleS3-Carpmosia
+  id: CarpmosiaRuleS3
   name: guide-entry-carpmosia-rules-s3
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/SiliconRules/RuleS3LawRedefinition.xml"
 
 - type: guideEntry
-  id: RuleS4-Carpmosia
+  id: CarpmosiaRuleS4
   name: guide-entry-carpmosia-rules-s4
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/SiliconRules/RuleS4RequestChanges.xml"
 
 - type: guideEntry
-  id: RuleS5-Carpmosia
+  id: CarpmosiaRuleS5
   name: guide-entry-carpmosia-rules-s5
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/SiliconRules/RuleS5FreeSilicon.xml"
 
 - type: guideEntry
-  id: RuleS6-Carpmosia
+  id: CarpmosiaRuleS6
   name: guide-entry-carpmosia-rules-s6
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/SiliconRules/RuleS6UnreasonableOrders.xml"
 
 - type: guideEntry
-  id: RuleS7-Carpmosia
+  id: CarpmosiaRuleS7
   name: guide-entry-carpmosia-rules-s7
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/SiliconRules/RuleS7Consistency.xml"
 
 - type: guideEntry
-  id: RuleS8-Carpmosia
+  id: CarpmosiaRuleS8
   name: guide-entry-carpmosia-rules-s8
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/SiliconRules/RuleS8DefaultCrewDefinition.xml"
 
 - type: guideEntry
-  id: RuleS9-Carpmosia
+  id: CarpmosiaRuleS9
   name: guide-entry-carpmosia-rules-s9
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/SiliconRules/RuleS9DefaultHarmDefinition.xml"
 
 - type: guideEntry
-  id: RuleS10-Carpmosia
+  id: CarpmosiaRuleS10
   name: guide-entry-carpmosia-rules-s10
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/SiliconRules/RuleS10OrderConflicts.xml"
