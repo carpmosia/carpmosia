@@ -1,21 +1,21 @@
 - type: roleLoadout
   id: JobTechnicalAssistant
   groups:
-  # - GroupTankHarness
+  - GroupTankHarness
   # Common groups
   # - TechnicalAssistantHead
   # - TechnicalAssistantGlasses
   # - TechnicalAssistantMask
   # - TechnicalAssistantNeck
   # - TechnicalAssistantGloves
-  # - TechnicalAssistantJumpsuit
-  # - TechnicalAssistantBackpack
+  - TechnicalAssistantJumpsuit
+  - TechnicalAssistantBackpack
   # - TechnicalAssistantPDA
   # - TechnicalAssistantBelt
   # - TechnicalAssistantOuterClothing
   # - TechnicalAssistantShoes
   # Backpack fills
-  # - Survival
-  # - GroupSpeciesBreathTool
+  - TechnicalAssistantSurvival
+  - GroupSpeciesBreathTool
   # - TechnicalAssistantSpecial
-  # - TechnicalAssistantTrinkets
+  - TechnicalAssistantTrinkets

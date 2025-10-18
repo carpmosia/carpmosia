@@ -1,21 +1,21 @@
 - type: roleLoadout
   id: JobParamedic
   groups:
-  # - GroupTankHarness
+  - GroupTankHarness
   # Common groups
-  # - ParamedicHead
-  # - ParamedicGlasses
-  # - ParamedicMask
+  - ParamedicHead
+  - ParamedicGlasses
+  - ParamedicMask
   # - ParamedicNeck
-  # - ParamedicGloves
-  # - ParamedicJumpsuit
-  # - ParamedicBackpack
+  - ParamedicGloves
+  - ParamedicJumpsuit
+  - ParamedicBackpack
   # - ParamedicPDA
   # - ParamedicBelt
-  # - ParamedicOuterClothing
-  # - ParamedicShoes
+  - ParamedicOuterClothing
+  - ParamedicShoes
   # Backpack fills
-  # - Survival
-  # - GroupSpeciesBreathTool
+  - ParamedicSurvival
+  - GroupSpeciesBreathToolMedical
   # - ParamedicSpecial
-  # - ParamedicTrinkets
+  - ParamedicTrinkets

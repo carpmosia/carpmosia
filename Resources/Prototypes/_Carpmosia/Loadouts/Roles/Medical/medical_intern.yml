@@ -1,21 +1,21 @@
 - type: roleLoadout
   id: JobMedicalIntern
   groups:
-  # - GroupTankHarness
+  - GroupTankHarness
   # Common groups
   # - MedicalInternHead
-  # - MedicalInternGlasses
+  - MedicalInternGlasses
   # - MedicalInternMask
   # - MedicalInternNeck
   # - MedicalInternGloves
-  # - MedicalInternJumpsuit
-  # - MedicalInternBackpack
+  - MedicalInternJumpsuit
+  - MedicalInternBackpack
   # - MedicalInternPDA
   # - MedicalInternBelt
   # - MedicalInternOuterClothing
   # - MedicalInternShoes
   # Backpack fills
-  # - Survival
-  # - GroupSpeciesBreathTool
+  - MedicalInternSurvival
+  - GroupSpeciesBreathToolMedical
   # - MedicalInternSpecial
-  # - MedicalInternTrinkets
+  - MedicalInternTrinkets

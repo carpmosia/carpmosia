@@ -1,21 +1,21 @@
 - type: roleLoadout
   id: JobStationEngineer
   groups:
-  # - GroupTankHarness
+  - GroupTankHarness
   # Common groups
-  # - StationEngineerHead
+  - StationEngineerHead
   # - StationEngineerGlasses
   # - StationEngineerMask
   # - StationEngineerNeck
   # - StationEngineerGloves
-  # - StationEngineerJumpsuit
-  # - StationEngineerBackpack
-  # - StationEngineerPDA
+  - StationEngineerJumpsuit
+  - StationEngineerBackpack
+  - StationEngineerPDA
   # - StationEngineerBelt
-  # - StationEngineerOuterClothing
-  # - StationEngineerShoes
+  - StationEngineerOuterClothing
+  - StationEngineerShoes
   # Backpack fills
-  # - Survival
-  # - GroupSpeciesBreathTool
+  - StationEngineerSurvival
+  - GroupSpeciesBreathTool
   # - StationEngineerSpecial
-  # - StationEngineerTrinkets
+  - StationEngineerTrinkets

@@ -1,21 +1,21 @@
 - type: roleLoadout
   id: JobAtmosphericTechnician
   groups:
-  # - GroupTankHarness
+  - GroupTankHarness
   # Common groups
   # - AtmosphericTechnicianHead
   # - AtmosphericTechnicianGlasses
   # - AtmosphericTechnicianMask
   # - AtmosphericTechnicianNeck
   # - AtmosphericTechnicianGloves
-  # - AtmosphericTechnicianJumpsuit
-  # - AtmosphericTechnicianBackpack
+  - AtmosphericTechnicianJumpsuit
+  - AtmosphericTechnicianBackpack
   # - AtmosphericTechnicianPDA
   # - AtmosphericTechnicianBelt
-  # - AtmosphericTechnicianOuterClothing
-  # - AtmosphericTechnicianShoes
+  - AtmosphericTechnicianOuterClothing
+  - AtmosphericTechnicianShoes
   # Backpack fills
-  # - Survival
-  # - GroupSpeciesBreathTool
+  - AtmosphericTechnicianSurvival
+  - GroupSpeciesBreathTool
   # - AtmosphericTechnicianSpecial
-  # - AtmosphericTechnicianTrinkets
+  - AtmosphericTechnicianTrinkets

@@ -1,21 +1,21 @@
 - type: roleLoadout
   id: JobChemist
   groups:
-  # - GroupTankHarness
+  - GroupTankHarness
   # Common groups
   # - ChemistHead
   # - ChemistGlasses
-  # - ChemistMask
+  - ChemistMask
   # - ChemistNeck
-  # - ChemistGloves
-  # - ChemistJumpsuit
-  # - ChemistBackpack
+  - ChemistGloves
+  - ChemistJumpsuit
+  - ChemistBackpack
   # - ChemistPDA
   # - ChemistBelt
-  # - ChemistOuterClothing
-  # - ChemistShoes
+  - ChemistOuterClothing
+  - ChemistShoes
   # Backpack fills
-  # - Survival
-  # - GroupSpeciesBreathTool
+  - ChemistSurvival
+  - GroupSpeciesBreathToolMedical
   # - ChemistSpecial
-  # - ChemistTrinkets
+  - ChemistTrinkets

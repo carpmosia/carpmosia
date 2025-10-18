@@ -1,21 +1,21 @@
 - type: roleLoadout
   id: JobChiefMedicalOfficer
   groups:
-  # - GroupTankHarness
+  - GroupTankHarness
   # Common groups
-  # - ChiefMedicalOfficerHead
-  # - ChiefMedicalOfficerGlasses
-  # - ChiefMedicalOfficerMask
-  # - ChiefMedicalOfficerNeck
-  # - ChiefMedicalOfficerGloves
-  # - ChiefMedicalOfficerJumpsuit
-  # - ChiefMedicalOfficerBackpack
+  - ChiefMedicalOfficerHead
+  - ChiefMedicalOfficerGlasses
+  - ChiefMedicalOfficerMask
+  - ChiefMedicalOfficerNeck
+  - ChiefMedicalOfficerGloves
+  - ChiefMedicalOfficerJumpsuit
+  - ChiefMedicalOfficerBackpack
   # - ChiefMedicalOfficerPDA
   # - ChiefMedicalOfficerBelt
-  # - ChiefMedicalOfficerOuterClothing
-  # - ChiefMedicalOfficerShoes
+  - ChiefMedicalOfficerOuterClothing
+  - ChiefMedicalOfficerShoes
   # Backpack fills
-  # - Survival
-  # - GroupSpeciesBreathTool
+  - ChiefMedicalOfficerSurvival
+  - GroupSpeciesBreathToolMedical
   # - ChiefMedicalOfficerSpecial
-  # - ChiefMedicalOfficerTrinkets
+  - ChiefMedicalOfficerTrinkets
