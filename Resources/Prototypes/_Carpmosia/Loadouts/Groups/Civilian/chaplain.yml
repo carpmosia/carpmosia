@@ -1,26 +1,41 @@
-# - type: loadoutGroup
-#   id: ChaplainHead
-#   parent: [BaseHead, CommonHead, CivilianHead]
+- type: loadoutGroup
+  id: ChaplainHead
+  parent: [BaseHead, CommonHead, CivilianHead]
+  loadouts:
+  - ChaplainHead
+  - ChaplainNunHood
+  - ChaplainPlagueHat
+  - ChaplainWitchHat
+  - ChaplainWitchHatAlt
 
 # - type: loadoutGroup
 #   id: ChaplainGlasses
 #   parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
 
-# - type: loadoutGroup
-#   id: ChaplainMask
-#   parent: [BaseMask, CommonMask, CivilianMask]
+- type: loadoutGroup
+  id: ChaplainMask
+  parent: [BaseMask, CommonMask, CivilianMask]
+  loadouts:
+  - ChaplainMask
 
-# - type: loadoutGroup
-#   id: ChaplainNeck
-#   parent: [BaseNeck, CommonNeck, CivilianNeck]
+- type: loadoutGroup
+  id: ChaplainNeck
+  parent: [BaseNeck, CommonNeck, CivilianNeck]
+  loadouts:
+  - ChaplainNeck
 
 # - type: loadoutGroup
 #   id: ChaplainGloves
 #   parent: [BaseGloves, CommonGloves, CivilianGloves]
 
-# - type: loadoutGroup
-#   id: ChaplainJumpsuit
-#   parent: [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit]
+- type: loadoutGroup
+  id: ChaplainJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit]
+  loadouts:
+  - ChaplainJumpsuit
+  - ChaplainJumpskirt
+  - ChaplainRobesLight
+  - ChaplainRobesDark
 
 # - type: loadoutGroup
 #   id: ChaplainBackpack
@@ -34,9 +49,14 @@
 #   id: ChaplainBelt
 #   parent: [BaseBelt, CommonBelt, CivilianBelt]
 
-# - type: loadoutGroup
-#   id: ChaplainOuterClothing
-#   parent: [BaseOuterClothing, CommonOuterClothing, CivilianOuterClothing]
+- type: loadoutGroup
+  id: ChaplainOuterClothing
+  parent: [BaseOuterClothing, CommonOuterClothing, CivilianOuterClothing]
+  loadouts:
+  - ChaplainPlagueSuit
+  - ChaplainNunRobe
+  - ChaplainBlackHoodie
+  - ChaplainHoodie
 
 # - type: loadoutGroup
 #   id: ChaplainShoes

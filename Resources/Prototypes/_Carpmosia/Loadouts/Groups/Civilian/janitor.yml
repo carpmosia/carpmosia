@@ -1,6 +1,8 @@
-# - type: loadoutGroup
-#   id: JanitorHead
-#   parent: [BaseHead, CommonHead, CivilianHead]
+- type: loadoutGroup
+  id: JanitorHead
+  parent: [BaseHead, CommonHead, CivilianHead]
+  loadouts:
+  - JanitorHead
 
 # - type: loadoutGroup
 #   id: JanitorGlasses
@@ -14,13 +16,20 @@
 #   id: JanitorNeck
 #   parent: [BaseNeck, CommonNeck, CivilianNeck]
 
-# - type: loadoutGroup
-#   id: JanitorGloves
-#   parent: [BaseGloves, CommonGloves, CivilianGloves]
+- type: loadoutGroup
+  id: JanitorGloves
+  parent: [BaseGloves, CommonGloves, CivilianGloves]
+  loadouts:
+  - JanitorRubberGloves
+  - OrangeGloves
+  - PurpleGloves
 
-# - type: loadoutGroup
-#   id: JanitorJumpsuit
-#   parent: [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit]
+- type: loadoutGroup
+  id: JanitorJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit]
+  loadouts:
+  - JanitorJumpsuit
+  - JanitorJumpskirt
 
 # - type: loadoutGroup
 #   id: JanitorBackpack
@@ -34,9 +43,11 @@
 #   id: JanitorBelt
 #   parent: [BaseBelt, CommonBelt, CivilianBelt]
 
-# - type: loadoutGroup
-#   id: JanitorOuterClothing
-#   parent: [BaseOuterClothing, CommonOuterClothing, CivilianOuterClothing]
+- type: loadoutGroup
+  id: JanitorOuterClothing
+  parent: [BaseOuterClothing, CommonOuterClothing, CivilianOuterClothing]
+  loadouts:
+  - JanitorWintercoat
 
 # - type: loadoutGroup
 #   id: JanitorShoes
