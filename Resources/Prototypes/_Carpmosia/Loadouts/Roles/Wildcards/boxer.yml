@@ -1,21 +1,21 @@
 - type: roleLoadout
   id: JobBoxer
   groups:
-  # - GroupTankHarness
+  - GroupTankHarness
   # Common groups
   # - BoxerHead
-  # - BoxerGlasses
+  - BoxerGlasses
   # - BoxerMask
   # - BoxerNeck
-  # - BoxerGloves
-  # - BoxerJumpsuit
-  # - BoxerBackpack
+  - BoxerGloves
+  - BoxerJumpsuit
+  - BoxerBackpack
   # - BoxerPDA
   # - BoxerBelt
   # - BoxerOuterClothing
   # - BoxerShoes
   # Backpack fills
-  # - Survival
-  # - GroupSpeciesBreathTool
+  - BoxerSurvival
+  - GroupSpeciesBreathTool
   # - BoxerSpecial
-  # - BoxerTrinkets
+  - BoxerTrinkets

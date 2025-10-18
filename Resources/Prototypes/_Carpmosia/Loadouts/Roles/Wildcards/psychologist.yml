@@ -1,21 +1,21 @@
 - type: roleLoadout
   id: JobPsychologist
   groups:
-  # - GroupTankHarness
+  - GroupTankHarness
   # Common groups
   # - PsychologistHead
-  # - PsychologistGlasses
+  - PsychologistGlasses
   # - PsychologistMask
   # - PsychologistNeck
   # - PsychologistGloves
-  # - PsychologistJumpsuit
-  # - PsychologistBackpack
+  - PsychologistJumpsuit
+  - PsychologistBackpack
   # - PsychologistPDA
   # - PsychologistBelt
   # - PsychologistOuterClothing
   # - PsychologistShoes
   # Backpack fills
-  # - Survival
-  # - GroupSpeciesBreathTool
+  - PsychologistSurvival
+  - GroupSpeciesBreathTool
   # - PsychologistSpecial
-  # - PsychologistTrinkets
+  - PsychologistTrinkets
