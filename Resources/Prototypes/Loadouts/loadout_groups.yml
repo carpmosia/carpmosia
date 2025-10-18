@@ -385,17 +385,17 @@
   loadouts:
   - ChaplainNeck
 
-- type: loadoutGroup
-  id: ChaplainBible
-  name: loadout-group-chaplain-bible
-  minLimit: 1
-  loadouts:
-  - Bible
-  - BibleNanoTrasen
-  - BibleDruid
-  - BibleHonk
-  - BibleRatvar
-  - BibleNarsie
+# - type: loadoutGroup
+#   id: ChaplainBible
+#   name: loadout-group-chaplain-bible
+#   minLimit: 1
+#   loadouts:
+#   - Bible
+#   - BibleNanoTrasen
+#   - BibleDruid
+#   - BibleHonk
+#   - BibleRatvar
+#   - BibleNarsie
 
 - type: loadoutGroup
   id: JanitorHead
@@ -427,44 +427,44 @@
   loadouts:
   - JanitorWintercoat
 
-- type: loadoutGroup
-  id: JanitorPlunger
-  name: loadout-group-janitor-plunger
-  minLimit: 0
-  loadouts:
-  - JanitorGoldenPlunger
+# - type: loadoutGroup
+#   id: JanitorPlunger
+#   name: loadout-group-janitor-plunger
+#   minLimit: 0
+#   loadouts:
+#   - JanitorGoldenPlunger
 
-- type: loadoutGroup
-  id: BotanistHead
-  name: loadout-group-botanist-head
-  minLimit: 0
-  loadouts:
-  - BotanistHead
-  - BotanistBandana
+# - type: loadoutGroup
+#   id: BotanistHead
+#   name: loadout-group-botanist-head
+#   minLimit: 0
+#   loadouts:
+#   - BotanistHead
+#   - BotanistBandana
 
-- type: loadoutGroup
-  id: BotanistJumpsuit
-  name: loadout-group-botanist-jumpsuit
-  loadouts:
-  - BotanistJumpsuit
-  - BotanistJumpskirt
-  - BotanistOveralls
+# - type: loadoutGroup
+#   id: BotanistJumpsuit
+#   name: loadout-group-botanist-jumpsuit
+#   loadouts:
+#   - BotanistJumpsuit
+#   - BotanistJumpskirt
+#   - BotanistOveralls
 
-- type: loadoutGroup
-  id: BotanistBackpack
-  name: loadout-group-botanist-backpack
-  loadouts:
-  - BotanistBackpack
-  - BotanistSatchel
-  - BotanistDuffel
+# - type: loadoutGroup
+#   id: BotanistBackpack
+#   name: loadout-group-botanist-backpack
+#   loadouts:
+#   - BotanistBackpack
+#   - BotanistSatchel
+#   - BotanistDuffel
 
-- type: loadoutGroup
-  id: BotanistOuterClothing
-  name: loadout-group-botanist-outerclothing
-  minLimit: 0
-  loadouts:
-  - BotanistApron
-  - BotanistWintercoat
+# - type: loadoutGroup
+#   id: BotanistOuterClothing
+#   name: loadout-group-botanist-outerclothing
+#   minLimit: 0
+#   loadouts:
+#   - BotanistApron
+#   - BotanistWintercoat
 
 # - type: loadoutGroup
 #   id: ClownHead

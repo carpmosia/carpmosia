@@ -42,9 +42,18 @@
 #   id: ChaplainShoes
 #   parent: [BaseShoes, CommonShoes, CivilianShoes]
 
-# - type: loadoutGroup
-#   id: ChaplainSpecial
-#   parent: [BaseSpecial, CommonSpecial, CivilianSpecial]
+- type: loadoutGroup
+  id: ChaplainSpecial
+  name: loadout-group-chaplain-bible
+  minLimit: 1
+  parent: BaseSpecial
+  loadouts:
+  - Bible
+  - BibleNanoTrasen
+  - BibleDruid
+  - BibleHonk
+  - BibleRatvar
+  - BibleNarsie
 
 - type: loadoutGroup
   id: ChaplainTrinkets

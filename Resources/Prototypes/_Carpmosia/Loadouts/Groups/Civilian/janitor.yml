@@ -42,9 +42,12 @@
 #   id: JanitorShoes
 #   parent: [BaseShoes, CommonShoes, CivilianShoes]
 
-# - type: loadoutGroup
-#   id: JanitorSpecial
-#   parent: [BaseSpecial, CommonSpecial, CivilianSpecial]
+- type: loadoutGroup
+  id: JanitorSpecial
+  parent: BaseSpecial
+  name: loadout-group-janitor-plunger
+  loadouts:
+  - JanitorGoldenPlunger
 
 - type: loadoutGroup
   id: JanitorTrinkets
