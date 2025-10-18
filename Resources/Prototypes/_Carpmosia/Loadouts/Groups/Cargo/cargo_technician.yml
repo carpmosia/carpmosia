@@ -1,10 +1,12 @@
-# - type: loadoutGroup
-#   id: CargoTechnicianHead
-#   parent: [BaseHead, CommonHead]
+- type: loadoutGroup
+  id: CargoTechnicianHead
+  parent: [BaseHead, CommonHead]
+  loadouts:
+  - CargoTechnicianHead
 
-# - type: loadoutGroup
-#   id: CargoTechnicianGlasses
-#   parent: [BaseGlasses, CommonGlasses]
+- type: loadoutGroup
+  id: CargoTechnicianGlasses
+  parent: [BaseGlasses, CommonGlasses]
 
 # - type: loadoutGroup
 #   id: CargoTechnicianMask
@@ -18,34 +20,49 @@
 #   id: CargoTechnicianGloves
 #   parent: [BaseGloves, CommonGloves]
 
-# - type: loadoutGroup
-#   id: CargoTechnicianJumpsuit
-#   parent: [BaseJumpsuit, CommonJumpsuit]
+- type: loadoutGroup
+  id: CargoTechnicianJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit]
+  loadouts:
+  - CargoTechnicianJumpsuit
+  - CargoTechnicianJumpskirt
 
-# - type: loadoutGroup
-#   id: CargoTechnicianBackpack
-#   parent: [BaseBackpack, CommonBackpack]
+- type: loadoutGroup
+  id: CargoTechnicianBackpack
+  parent: [BaseBackpack, CommonBackpack]
+  loadouts:
+  - CargoTechnicianBackpack
+  - CargoTechnicianSatchel
+  - CargoTechnicianDuffel
 
-# - type: loadoutGroup
-#   id: CargoTechnicianPDA
-#   parent: [BasePDA, CommonPDA]
+- type: loadoutGroup
+  id: CargoTechnicianPDA
+  parent: [BasePDA, CommonPDA]
+  loadouts:
+  - CargoTechnicianPDA
+  - SeniorCourierPDA
 
 # - type: loadoutGroup
 #   id: CargoTechnicianBelt
 #   parent: [BaseBelt, CommonBelt]
 
-# - type: loadoutGroup
-#   id: CargoTechnicianOuterClothing
-#   parent: [BaseOuterClothing, CommonOuterClothing]
+- type: loadoutGroup
+  id: CargoTechnicianOuterClothing
+  parent: [BaseOuterClothing, CommonOuterClothing]
+  loadouts:
+  - CargoTechnicianWintercoat
 
-# - type: loadoutGroup
-#   id: CargoTechnicianShoes
-#   parent: [BaseShoes, CommonShoes]
+- type: loadoutGroup
+  id: CargoTechnicianShoes
+  parent: [BaseShoes, CommonShoes]
+  loadouts:
+  - BlackShoes
+  - CargoWinterBoots
 
 # - type: loadoutGroup
 #   id: CargoTechnicianSpecial
 #   parent: [BaseSpecialSpecial, CommonSpecialSpecial]
 
-# - type: loadoutGroup
-#   id: CargoTechnicianTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets]
+- type: loadoutGroup
+  id: CargoTechnicianTrinkets
+  parent: [BaseTrinkets, CommonTrinkets]
