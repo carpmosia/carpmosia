@@ -14,13 +14,21 @@
 #   id: BoxerNeck
 #   parent: [BaseNeck, CommonNeck, WildcardsNeck]
 
-# - type: loadoutGroup
-#   id: BoxerGloves
-#   parent: [BaseGloves, CommonGloves, WildcardsGloves]
+- type: loadoutGroup
+  id: BoxerGloves
+  parent: [BaseGloves, CommonGloves, WildcardsGloves]
+  loadouts:
+  - RedBoxingGloves
+  - BlueBoxingGloves
+  - GreenBoxingGloves
+  - YellowBoxingGloves
 
-# - type: loadoutGroup
-#   id: BoxerJumpsuit
-#   parent: [BaseJumpsuit, CommonJumpsuit, WildcardsJumpsuit]
+- type: loadoutGroup
+  id: BoxerJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, WildcardsJumpsuit]
+  loadouts:
+  - BoxerShorts
+  - BoxerShortsWithTop
 
 # - type: loadoutGroup
 #   id: BoxerBackpack
@@ -46,6 +54,6 @@
 #   id: BoxerSpecial
 #   parent: [BaseSpecial, CommonSpecial, WildcardsSpecial]
 
-# - type: loadoutGroup
-#   id: BoxerTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets, WildcardsTrinkets]
+- type: loadoutGroup
+  id: BoxerTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, WildcardsTrinkets]

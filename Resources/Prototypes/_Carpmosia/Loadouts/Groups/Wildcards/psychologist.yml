@@ -18,9 +18,12 @@
 #   id: PsychologistGloves
 #   parent: [BaseGloves, CommonGloves, WildcardsGloves]
 
-# - type: loadoutGroup
-#   id: PsychologistJumpsuit
-#   parent: [BaseJumpsuit, CommonJumpsuit, WildcardsJumpsuit]
+- type: loadoutGroup
+  id: PsychologistJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, WildcardsJumpsuit]
+  loadouts:
+  - PsychologistJumpsuit
+  - PsychologistJumpskirt
 
 # - type: loadoutGroup
 #   id: PsychologistBackpack
@@ -46,6 +49,6 @@
 #   id: PsychologistSpecial
 #   parent: [BaseSpecial, CommonSpecial, WildcardsSpecial]
 
-# - type: loadoutGroup
-#   id: PsychologistTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets, WildcardsTrinkets]
+- type: loadoutGroup
+  id: PsychologistTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, WildcardsTrinkets]

@@ -1,5 +1,3 @@
-# Carpmosia-rework - massive loadout rework
-
 # Miscellaneous
 - type: loadoutGroup
   id: Trinkets
@@ -64,14 +62,14 @@
   - TowelColorWhite
   - TowelColorYellow
 
-# - type: loadoutGroup
-#   id: Glasses
-#   name: loadout-group-glasses
-#   minLimit: 0
-#   loadouts:
-#   - Glasses
-#   - GlassesJamjar
-#   - GlassesJensen
+- type: loadoutGroup
+  id: Glasses
+  name: loadout-group-glasses
+  minLimit: 0
+  loadouts:
+  - Glasses
+  - GlassesJamjar
+  - GlassesJensen
 
 - type: loadoutGroup
   id: GroupTankHarness
@@ -117,84 +115,84 @@
   - LoadoutSpeciesPocketDoubleOxygen
 
 # Command
-# - type: loadoutGroup
-#   id: CaptainHead
-#   name: loadout-group-captain-head
-#   minLimit: 0
-#   loadouts:
-#   - CaptainHead
-#   - CaptainCap
+- type: loadoutGroup
+  id: CaptainHead
+  name: loadout-group-captain-head
+  minLimit: 0
+  loadouts:
+  - CaptainHead
+  - CaptainCap
 
-# - type: loadoutGroup
-#   id: CaptainJumpsuit
-#   name: loadout-group-captain-jumpsuit
-#   loadouts:
-#   - CaptainJumpsuit
-#   - CaptainJumpskirt
-#   - CaptainFormalSuit
-#   - CaptainFormalSkirt
+- type: loadoutGroup
+  id: CaptainJumpsuit
+  name: loadout-group-captain-jumpsuit
+  loadouts:
+  - CaptainJumpsuit
+  - CaptainJumpskirt
+  - CaptainFormalSuit
+  - CaptainFormalSkirt
 
-# - type: loadoutGroup
-#   id: CaptainNeck
-#   name: loadout-group-captain-neck
-#   minLimit: 0
-#   loadouts:
-#   - CaptainCloak
-#   - CaptainCloakFormal
-#   - CaptainMantle
+- type: loadoutGroup
+  id: CaptainNeck
+  name: loadout-group-captain-neck
+  minLimit: 0
+  loadouts:
+  - CaptainCloak
+  - CaptainCloakFormal
+  - CaptainMantle
 
-# - type: loadoutGroup
-#   id: CaptainBackpack
-#   name: loadout-group-captain-backpack
-#   loadouts:
-#   - CaptainBackpack
-#   - CaptainSatchel
-#   - CaptainDuffel
+- type: loadoutGroup
+  id: CaptainBackpack
+  name: loadout-group-captain-backpack
+  loadouts:
+  - CaptainBackpack
+  - CaptainSatchel
+  - CaptainDuffel
 
-# - type: loadoutGroup
-#   id: CaptainOuterClothing
-#   name: loadout-group-captain-outerclothing
-#   loadouts:
-#   - CaptainOuterClothing
-#   - CaptainWintercoat
+- type: loadoutGroup
+  id: CaptainOuterClothing
+  name: loadout-group-captain-outerclothing
+  loadouts:
+  - CaptainOuterClothing
+  - CaptainWintercoat
 
-# - type: loadoutGroup
-#   id: HoPHead
-#   name: loadout-group-hop-head
-#   minLimit: 0
-#   loadouts:
-#   - HoPHead
+- type: loadoutGroup
+  id: HoPHead
+  name: loadout-group-hop-head
+  minLimit: 0
+  loadouts:
+  - HoPHead
 
-# - type: loadoutGroup
-#   id: HoPJumpsuit
-#   name: loadout-group-hop-jumpsuit
-#   loadouts:
-#   - HoPJumpsuit
-#   - HoPJumpskirt
+- type: loadoutGroup
+  id: HoPJumpsuit
+  name: loadout-group-hop-jumpsuit
+  loadouts:
+  - HoPJumpsuit
+  - HoPJumpskirt
 
-# - type: loadoutGroup
-#   id: HoPNeck
-#   name: loadout-group-hop-neck
-#   minLimit: 0
-#   loadouts:
-#   - HoPCloak
-#   - HoPMantle
+- type: loadoutGroup
+  id: HoPNeck
+  name: loadout-group-hop-neck
+  minLimit: 0
+  loadouts:
+  - HoPCloak
+  - HoPMantle
 
-# - type: loadoutGroup
-#   id: HoPBackpack
-#   name: loadout-group-hop-backpack
-#   loadouts:
-#   - CommonBackpack
-#   - CommonSatchel
-#   - CommonDuffel
-#   - HoPBackpackIan
+- type: loadoutGroup
+  id: HoPBackpack
+  name: loadout-group-hop-backpack
+  loadouts:
+  - CommonBackpack
+  - CommonSatchel
+  - CommonDuffel
+  - HoPBackpackIan
 
-# - type: loadoutGroup
-#   id: HoPOuterClothing
-#   name: loadout-group-hop-outerclothing
-#   minLimit: 0
-#   loadouts:
-#   - HoPWintercoat
+- type: loadoutGroup
+  id: HoPOuterClothing
+  name: loadout-group-hop-outerclothing
+  minLimit: 0
+  loadouts:
+  - HoPWintercoat
 
 # Civilian
 - type: loadoutGroup
@@ -468,45 +466,45 @@
   - BotanistApron
   - BotanistWintercoat
 
-# - type: loadoutGroup
-#   id: ClownHead
-#   name: loadout-group-clown-head
-#   minLimit: 0
-#   loadouts:
-#   - JesterHat
-#   - JesterAltHat
+- type: loadoutGroup
+  id: ClownHead
+  name: loadout-group-clown-head
+  minLimit: 0
+  loadouts:
+  - JesterHat
+  - JesterAltHat
 
-# - type: loadoutGroup
-#   id: ClownJumpsuit
-#   name: loadout-group-clown-jumpsuit
-#   loadouts:
-#   - ClownSuit
-#   - ClownSkirt
-#   - JesterSuit
-#   - JesterAltSuit
+- type: loadoutGroup
+  id: ClownJumpsuit
+  name: loadout-group-clown-jumpsuit
+  loadouts:
+  - ClownSuit
+  - ClownSkirt
+  - JesterSuit
+  - JesterAltSuit
 
-# - type: loadoutGroup
-#   id: ClownBackpack
-#   name: loadout-group-clown-backpack
-#   loadouts:
-#   - ClownBackpack
-#   - ClownSatchel
-#   - ClownDuffel
+- type: loadoutGroup
+  id: ClownBackpack
+  name: loadout-group-clown-backpack
+  loadouts:
+  - ClownBackpack
+  - ClownSatchel
+  - ClownDuffel
 
-# - type: loadoutGroup
-#   id: ClownOuterClothing
-#   name: loadout-group-clown-outerclothing
-#   minLimit: 0
-#   loadouts:
-#   - ClownRobes
-#   - ClownWintercoat
+- type: loadoutGroup
+  id: ClownOuterClothing
+  name: loadout-group-clown-outerclothing
+  minLimit: 0
+  loadouts:
+  - ClownRobes
+  - ClownWintercoat
 
-# - type: loadoutGroup
-#   id: ClownShoes
-#   name: loadout-group-clown-shoes
-#   loadouts:
-#   - ClownShoes
-#   - JesterShoes
+- type: loadoutGroup
+  id: ClownShoes
+  name: loadout-group-clown-shoes
+  loadouts:
+  - ClownShoes
+  - JesterShoes
 
 - type: loadoutGroup
   id: SurvivalClown
@@ -665,48 +663,48 @@
   - BrownShoes
   - CargoWinterBoots
 
-# - type: loadoutGroup
-#   id: CargoTechnicianHead
-#   name: loadout-group-cargo-technician-head
-#   minLimit: 0
-#   loadouts:
-#   - CargoTechnicianHead
+- type: loadoutGroup
+  id: CargoTechnicianHead
+  name: loadout-group-cargo-technician-head
+  minLimit: 0
+  loadouts:
+  - CargoTechnicianHead
 
-# - type: loadoutGroup
-#   id: CargoTechnicianJumpsuit
-#   name: loadout-group-cargo-technician-jumpsuit
-#   loadouts:
-#   - CargoTechnicianJumpsuit
-#   - CargoTechnicianJumpskirt
+- type: loadoutGroup
+  id: CargoTechnicianJumpsuit
+  name: loadout-group-cargo-technician-jumpsuit
+  loadouts:
+  - CargoTechnicianJumpsuit
+  - CargoTechnicianJumpskirt
 
-# - type: loadoutGroup
-#   id: CargoTechnicianBackpack
-#   name: loadout-group-cargo-technician-backpack
-#   loadouts:
-#   - CargoTechnicianBackpack
-#   - CargoTechnicianSatchel
-#   - CargoTechnicianDuffel
+- type: loadoutGroup
+  id: CargoTechnicianBackpack
+  name: loadout-group-cargo-technician-backpack
+  loadouts:
+  - CargoTechnicianBackpack
+  - CargoTechnicianSatchel
+  - CargoTechnicianDuffel
 
-# - type: loadoutGroup
-#   id: CargoTechnicianOuterClothing
-#   name: loadout-group-cargo-technician-outerclothing
-#   minLimit: 0
-#   loadouts:
-#   - CargoTechnicianWintercoat
+- type: loadoutGroup
+  id: CargoTechnicianOuterClothing
+  name: loadout-group-cargo-technician-outerclothing
+  minLimit: 0
+  loadouts:
+  - CargoTechnicianWintercoat
 
-# - type: loadoutGroup
-#   id: CargoTechnicianShoes
-#   name: loadout-group-cargo-technician-shoes
-#   loadouts:
-#   - BlackShoes
-#   - CargoWinterBoots
+- type: loadoutGroup
+  id: CargoTechnicianShoes
+  name: loadout-group-cargo-technician-shoes
+  loadouts:
+  - BlackShoes
+  - CargoWinterBoots
 
-# - type: loadoutGroup
-#   id: CargoTechnicianID
-#   name: loadout-group-cargo-technician-id
-#   loadouts:
-#   - CargoTechnicianPDA
-#   - SeniorCourierPDA
+- type: loadoutGroup
+  id: CargoTechnicianID
+  name: loadout-group-cargo-technician-id
+  loadouts:
+  - CargoTechnicianPDA
+  - SeniorCourierPDA
 
 - type: loadoutGroup
   id: SalvageSpecialistBackpack
@@ -1350,35 +1348,35 @@
   - LoadoutSpeciesVoxNitrogen
 
 # Wildcards
-- type: loadoutGroup
-  id: ReporterJumpsuit
-  name: loadout-group-reporter-jumpsuit
-  loadouts:
-  - ReporterJumpsuit
-  - JournalistJumpsuit
+# - type: loadoutGroup
+#   id: ReporterJumpsuit
+#   name: loadout-group-reporter-jumpsuit
+#   loadouts:
+#   - ReporterJumpsuit
+#   - JournalistJumpsuit
 
-- type: loadoutGroup
-  id: PsychologistJumpsuit
-  name: loadout-group-psychologist-jumpsuit
-  loadouts:
-  - PsychologistJumpsuit
-  - PsychologistJumpskirt
+# - type: loadoutGroup
+#   id: PsychologistJumpsuit
+#   name: loadout-group-psychologist-jumpsuit
+#   loadouts:
+#   - PsychologistJumpsuit
+#   - PsychologistJumpskirt
 
-- type: loadoutGroup
-  id: BoxerJumpsuit
-  name: loadout-group-boxer-jumpsuit
-  loadouts:
-  - BoxerShorts
-  - BoxerShortsWithTop
+# - type: loadoutGroup
+#   id: BoxerJumpsuit
+#   name: loadout-group-boxer-jumpsuit
+#   loadouts:
+#   - BoxerShorts
+#   - BoxerShortsWithTop
 
-- type: loadoutGroup
-  id: BoxerGloves
-  name: loadout-group-boxer-gloves
-  loadouts:
-  - RedBoxingGloves
-  - BlueBoxingGloves
-  - GreenBoxingGloves
-  - YellowBoxingGloves
+# - type: loadoutGroup
+#   id: BoxerGloves
+#   name: loadout-group-boxer-gloves
+#   loadouts:
+#   - RedBoxingGloves
+#   - BlueBoxingGloves
+#   - GreenBoxingGloves
+#   - YellowBoxingGloves
 
 # Other
 - type: loadoutGroup

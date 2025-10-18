@@ -46,6 +46,6 @@
 #   id: ZookeeperSpecial
 #   parent: [BaseSpecial, CommonSpecial, WildcardsSpecial]
 
-# - type: loadoutGroup
-#   id: ZookeeperTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets, WildcardsTrinkets]
+- type: loadoutGroup
+  id: ZookeeperTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, WildcardsTrinkets]

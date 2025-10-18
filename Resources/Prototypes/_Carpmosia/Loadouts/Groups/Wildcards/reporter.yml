@@ -18,9 +18,12 @@
 #   id: ReporterGloves
 #   parent: [BaseGloves, CommonGloves, WildcardsGloves]
 
-# - type: loadoutGroup
-#   id: ReporterJumpsuit
-#   parent: [BaseJumpsuit, CommonJumpsuit, WildcardsJumpsuit]
+- type: loadoutGroup
+  id: ReporterJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, WildcardsJumpsuit]
+  loadouts:
+  - ReporterJumpsuit
+  - JournalistJumpsuit
 
 # - type: loadoutGroup
 #   id: ReporterBackpack
@@ -46,6 +49,6 @@
 #   id: ReporterSpecial
 #   parent: [BaseSpecial, CommonSpecial, WildcardsSpecial]
 
-# - type: loadoutGroup
-#   id: ReporterTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets, WildcardsTrinkets]
+- type: loadoutGroup
+  id: ReporterTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, WildcardsTrinkets]
