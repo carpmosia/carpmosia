@@ -1,21 +1,21 @@
 - type: roleLoadout
   id: JobPassenger
   groups:
-  # - GroupTankHarness
+  - GroupTankHarness
   # Common groups
   # - PassengerHead
-  # - PassengerGlasses
-  # - PassengerMask
-  # - PassengerNeck
-  # - PassengerGloves
-  # - PassengerJumpsuit
-  # - PassengerBackpack
+  - PassengerGlasses
+  - PassengerMask
+  - PassengerNeck
+  - PassengerGloves
+  - PassengerJumpsuit
+  - PassengerBackpack
   # - PassengerPDA
   # - PassengerBelt
-  # - PassengerOuterClothing
-  # - PassengerShoes
+  - PassengerOuterClothing
+  - PassengerShoes
   # Backpack fills
-  # - Survival
-  # - GroupSpeciesBreathTool
+  - PassengerSurvival
+  - GroupSpeciesBreathTool
   # - PassengerSpecial
-  # - PassengerTrinkets
+  - PassengerTrinkets

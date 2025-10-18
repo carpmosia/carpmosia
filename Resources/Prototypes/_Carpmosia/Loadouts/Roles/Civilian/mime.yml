@@ -1,21 +1,22 @@
 - type: roleLoadout
   id: JobMime
+  canCustomizeName: true
   groups:
-  # - GroupTankHarness
+  - GroupTankHarness
   # Common groups
-  # - MimeHead
-  # - MimeGlasses
-  # - MimeMask
+  - MimeHead
+  - MimeGlasses
+  - MimeMask
   # - MimeNeck
   # - MimeGloves
-  # - MimeJumpsuit
-  # - MimeBackpack
+  - MimeJumpsuit
+  - MimeBackpack
   # - MimePDA
-  # - MimeBelt
-  # - MimeOuterClothing
+  - MimeBelt
+  - MimeOuterClothing
   # - MimeShoes
   # Backpack fills
-  # - Survival
+  - MimeSurvival
   # - GroupSpeciesBreathTool
   # - MimeSpecial
-  # - MimeTrinkets
+  - MimeTrinkets

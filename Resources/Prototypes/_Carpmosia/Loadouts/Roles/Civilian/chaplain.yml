@@ -1,21 +1,21 @@
 - type: roleLoadout
   id: JobChaplain
   groups:
-  # - GroupTankHarness
+  - GroupTankHarness
   # Common groups
-  # - ChaplainHead
-  # - ChaplainGlasses
-  # - ChaplainMask
-  # - ChaplainNeck
+  - ChaplainHead
+  - ChaplainGlasses
+  - ChaplainMask
+  - ChaplainNeck
   # - ChaplainGloves
-  # - ChaplainJumpsuit
-  # - ChaplainBackpack
+  - ChaplainJumpsuit
+  - ChaplainBackpack
   # - ChaplainPDA
   # - ChaplainBelt
-  # - ChaplainOuterClothing
+  - ChaplainOuterClothing
   # - ChaplainShoes
   # Backpack fills
-  # - Survival
-  # - GroupSpeciesBreathTool
-  # - ChaplainSpecial
-  # - ChaplainTrinkets
+  - ChaplainSurvival
+  - GroupSpeciesBreathTool
+  - ChaplainSpecial
+  - ChaplainTrinkets

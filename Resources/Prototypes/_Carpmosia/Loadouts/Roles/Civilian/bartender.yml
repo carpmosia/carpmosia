@@ -1,21 +1,21 @@
 - type: roleLoadout
   id: JobBartender
   groups:
-  # - GroupTankHarness
+  - GroupTankHarness
   # Common groups
-  # - BartenderHead
-  # - BartenderGlasses
+  - BartenderHead
+  - BartenderGlasses
   # - BartenderMask
   # - BartenderNeck
   # - BartenderGloves
-  # - BartenderJumpsuit
-  # - BartenderBackpack
+  - BartenderJumpsuit
+  - BartenderBackpack
   # - BartenderPDA
   # - BartenderBelt
-  # - BartenderOuterClothing
+  - BartenderOuterClothing
   # - BartenderShoes
   # Backpack fills
-  # - Survival
-  # - GroupSpeciesBreathTool
-  # - BartenderSpecial
-  # - BartenderTrinkets
+  - BartenderSurvival
+  - GroupSpeciesBreathTool
+  - BartenderSpecial
+  - BartenderTrinkets

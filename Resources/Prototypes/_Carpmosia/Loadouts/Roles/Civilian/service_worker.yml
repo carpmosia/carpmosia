@@ -1,21 +1,21 @@
 - type: roleLoadout
   id: JobServiceWorker
   groups:
-  # - GroupTankHarness
+  - GroupTankHarness
   # Common groups
   # - ServiceWorkerHead
-  # - ServiceWorkerGlasses
+  - ServiceWorkerGlasses
   # - ServiceWorkerMask
   # - ServiceWorkerNeck
   # - ServiceWorkerGloves
-  # - ServiceWorkerJumpsuit
-  # - ServiceWorkerBackpack
+  - ServiceWorkerJumpsuit
+  - ServiceWorkerBackpack
   # - ServiceWorkerPDA
   # - ServiceWorkerBelt
   # - ServiceWorkerOuterClothing
   # - ServiceWorkerShoes
   # Backpack fills
-  # - Survival
-  # - GroupSpeciesBreathTool
+  - ServiceWorkerSurvival
+  - GroupSpeciesBreathTool
   # - ServiceWorkerSpecial
-  # - ServiceWorkerTrinkets
+  - ServiceWorkerTrinkets

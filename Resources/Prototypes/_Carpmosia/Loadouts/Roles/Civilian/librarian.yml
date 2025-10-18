@@ -1,21 +1,21 @@
 - type: roleLoadout
   id: JobLibrarian
   groups:
-  # - GroupTankHarness
+  - GroupTankHarness
   # Common groups
   # - LibrarianHead
-  # - LibrarianGlasses
+  - LibrarianGlasses
   # - LibrarianMask
   # - LibrarianNeck
   # - LibrarianGloves
-  # - LibrarianJumpsuit
-  # - LibrarianBackpack
+  - LibrarianJumpsuit
+  - LibrarianBackpack
   # - LibrarianPDA
   # - LibrarianBelt
   # - LibrarianOuterClothing
   # - LibrarianShoes
   # Backpack fills
-  # - Survival
-  # - GroupSpeciesBreathTool
+  - LibrarianSurvival
+  - GroupSpeciesBreathTool
   # - LibrarianSpecial
-  # - LibrarianTrinkets
+  - LibrarianTrinkets

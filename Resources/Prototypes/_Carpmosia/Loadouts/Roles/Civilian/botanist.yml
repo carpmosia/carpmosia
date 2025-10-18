@@ -1,21 +1,21 @@
 - type: roleLoadout
   id: JobBotanist
   groups:
-  # - GroupTankHarness
+  - GroupTankHarness
   # Common groups
-  # - BotanistHead
-  # - BotanistGlasses
+  - BotanistHead
+  - BotanistGlasses
   # - BotanistMask
   # - BotanistNeck
   # - BotanistGloves
-  # - BotanistJumpsuit
-  # - BotanistBackpack
+  - BotanistJumpsuit
+  - BotanistBackpack
   # - BotanistPDA
   # - BotanistBelt
-  # - BotanistOuterClothing
+  - BotanistOuterClothing
   # - BotanistShoes
   # Backpack fills
-  # - Survival
-  # - GroupSpeciesBreathTool
+  - BotanistSurvival
+  - GroupSpeciesBreathTool
   # - BotanistSpecial
-  # - BotanistTrinkets
+  - BotanistTrinkets

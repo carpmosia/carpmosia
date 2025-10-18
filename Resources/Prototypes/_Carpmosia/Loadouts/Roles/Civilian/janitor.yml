@@ -1,21 +1,21 @@
 - type: roleLoadout
   id: JobJanitor
   groups:
-  # - GroupTankHarness
+  - GroupTankHarness
   # Common groups
-  # - JanitorHead
-  # - JanitorGlasses
+  - JanitorHead
+  - JanitorGlasses
   # - JanitorMask
   # - JanitorNeck
-  # - JanitorGloves
-  # - JanitorJumpsuit
-  # - JanitorBackpack
+  - JanitorGloves
+  - JanitorJumpsuit
+  - JanitorBackpack
   # - JanitorPDA
   # - JanitorBelt
-  # - JanitorOuterClothing
+  - JanitorOuterClothing
   # - JanitorShoes
   # Backpack fills
-  # - Survival
-  # - GroupSpeciesBreathTool
-  # - JanitorSpecial
-  # - JanitorTrinkets
+  - JanitorSurvival
+  - GroupSpeciesBreathTool
+  - JanitorSpecial
+  - JanitorTrinkets
