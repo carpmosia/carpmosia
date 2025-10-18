@@ -1,0 +1,13 @@
+loadout-group-base-head = Head
+loadout-group-base-glasses = Glasses
+loadout-group-base-mask = Mask
+loadout-group-base-neck = Neck
+loadout-group-base-gloves = Gloves
+loadout-group-base-jumpsuit = Jumpsuit
+loadout-group-base-backpack = Backpack
+loadout-group-base-pda = PDA
+loadout-group-base-belt = Belt
+loadout-group-base-outerclothing = Outer clothing
+loadout-group-base-shoes = Shoes
+loadout-group-base-special = Special
+loadout-group-base-trinkets = Trinkets
