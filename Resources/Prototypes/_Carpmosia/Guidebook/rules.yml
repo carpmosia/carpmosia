@@ -15,20 +15,20 @@
   priority: 10
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/CoreRules/RuleC0.xml"
   children:
-  - RuleC1
-  - RuleC2
-  - RuleC3
-  - RuleC4
-  - RuleC5
-  - RuleC6
-  - RuleC7
-  - RuleC8
-  - RuleC9
-  - RuleC10
-  - RuleC11
-  - RuleC12
-  - RuleC13
-  - RuleC14
+  - RuleC1-Carpmosia
+  - RuleC2-Carpmosia
+  - RuleC3-Carpmosia
+  - RuleC4-Carpmosia
+  - RuleC5-Carpmosia
+  - RuleC6-Carpmosia
+  - RuleC7-Carpmosia
+  - RuleC8-Carpmosia
+  - RuleC9-Carpmosia
+  - RuleC10-Carpmosia
+  - RuleC11-Carpmosia
+  - RuleC12-Carpmosia
+  - RuleC13-Carpmosia
+  - RuleC14-Carpmosia
 
 - type: guideEntry
   id: RuleC1-Carpmosia
@@ -121,23 +121,23 @@
   priority: 10
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/RoleplayRules/RuleR0.xml"
   children:
-  - RuleR1
-  - RuleR2
-  - RuleR3
-  - RuleR4
-  - RuleR5
-  - RuleR6
-  - RuleR7
-  - RuleR8
-  - RuleR9
-  - RuleR10
-  - RuleR11
-  - RuleR12
-  - RuleR13
-  - RuleR14
-  - RuleR15
-  - RuleR16
-  - RuleR17
+  - RuleR1-Carpmosia
+  - RuleR2-Carpmosia
+  - RuleR3-Carpmosia
+  - RuleR4-Carpmosia
+  - RuleR5-Carpmosia
+  - RuleR6-Carpmosia
+  - RuleR7-Carpmosia
+  - RuleR8-Carpmosia
+  - RuleR9-Carpmosia
+  - RuleR10-Carpmosia
+  - RuleR11-Carpmosia
+  - RuleR12-Carpmosia
+  - RuleR13-Carpmosia
+  - RuleR14-Carpmosia
+  - RuleR15-Carpmosia
+  - RuleR16-Carpmosia
+  - RuleR17-Carpmosia
 
 - type: guideEntry
   id: RuleR1-Carpmosia
@@ -205,8 +205,8 @@
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/RoleplayRules/RuleR11Escalation.xml"
   children:
-  - RuleR11-1
-  - RuleR11-2
+  - RuleR11-1-Carpmosia
+  - RuleR11-2-Carpmosia
 
 - type: guideEntry
   id: RuleR11-1-Carpmosia
@@ -263,16 +263,16 @@
   priority: 10
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/SiliconRules/RuleS0.xml"
   children:
-  - RuleS1
-  - RuleS2
-  - RuleS3
-  - RuleS4
-  - RuleS5
-  - RuleS6
-  - RuleS7
-  - RuleS8
-  - RuleS9
-  - RuleS10
+  - RuleS1-Carpmosia
+  - RuleS2-Carpmosia
+  - RuleS3-Carpmosia
+  - RuleS4-Carpmosia
+  - RuleS5-Carpmosia
+  - RuleS6-Carpmosia
+  - RuleS7-Carpmosia
+  - RuleS8-Carpmosia
+  - RuleS9-Carpmosia
+  - RuleS10-Carpmosia
 
 - type: guideEntry
   id: RuleS1-Carpmosia
@@ -334,32 +334,3 @@
   ruleEntry: true
   text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/SiliconRules/RuleS10OrderConflicts.xml"
 
-
-- type: guideEntry
-  id: MRPRules-Carpmosia
-  name: guide-entry-carpmosia-rules-mrp-m0
-  ruleEntry: true
-  priority: 10
-  text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/MRPRules/RuleM0.xml"
-  children:
-  - RuleM1
-
-- type: guideEntry
-  id: RuleM1-Carpmosia
-  name: guide-entry-carpmosia-rules-m1
-  ruleEntry: true
-  text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/MRPRules/RuleM1DoNotPowergame.xml"
-
-# Ban-Related Guide Entries are used as hyperlinks in certain Ruleset Guide Entry explanations.
-
-- type: guideEntry
-  id: BanTypes-Carpmosia
-  name: guide-entry-carpmosia-rules-ban-types
-  ruleEntry: true
-  text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/BanTypes.xml"
-
-- type: guideEntry
-  id: BanDurations-Carpmosia
-  name: guide-entry-carpmosia-rules-ban-durations
-  ruleEntry: true
-  text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/BanDurations.xml"
