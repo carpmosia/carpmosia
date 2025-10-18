@@ -1,21 +1,21 @@
 - type: roleLoadout
   id: JobResearchAssistant
   groups:
-  # - GroupTankHarness
+  - GroupTankHarness
   # Common groups
   # - ResearchAssistantHead
-  # - ResearchAssistantGlasses
+  - ResearchAssistantGlasses
   # - ResearchAssistantMask
   # - ResearchAssistantNeck
   # - ResearchAssistantGloves
-  # - ResearchAssistantJumpsuit
-  # - ResearchAssistantBackpack
+  - ResearchAssistantJumpsuit
+  - ResearchAssistantBackpack
   # - ResearchAssistantPDA
   # - ResearchAssistantBelt
   # - ResearchAssistantOuterClothing
   # - ResearchAssistantShoes
   # Backpack fills
-  # - Survival
-  # - GroupSpeciesBreathTool
+  - ResearchAssistantSurvival
+  - GroupSpeciesBreathTool
   # - ResearchAssistantSpecial
-  # - ResearchAssistantTrinkets
+  - ResearchAssistantTrinkets
