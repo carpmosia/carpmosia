@@ -11,7 +11,7 @@
     baseDecayRate: 0.03 # Carpmosia - Slightly lower decay-rate than scurrets
   - type: Thirst
   - type: Icon
-    sprite: _Starlight/Mobs/Species/Avali/parts.rsi # Carpmosia - Using Starlight sprites
+    sprite: _Carpmosia/Mobs/Species/Avali/parts.rsi # Carpmosia - Using Starlight sprites
     state: full
   - type: Body
     prototype: Avali
@@ -23,12 +23,12 @@
       head:
         sizeMaps:
           32:
-            sprite: _Starlight/Mobs/Species/Avali/displacement.rsi # Harmony change added displacements
+            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Harmony change added displacements
             state: head
       mask:
         sizeMaps:
           32:
-            sprite: _Starlight/Mobs/Species/Avali/displacement.rsi # Harmony change added displacements
+            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Harmony change added displacements
             state: mask
     # Carpmosia-End
   - type: Butcherable
