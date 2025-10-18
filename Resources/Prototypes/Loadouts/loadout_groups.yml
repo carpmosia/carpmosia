@@ -1040,27 +1040,27 @@
 #   - WardenCoat
 #   - WardenArmoredWinterCoat
 
-- type: loadoutGroup
-  id: SecurityHead
-  name: loadout-group-security-head
-  minLimit: 0
-  loadouts:
-  - SecurityHelmet
-  - SecurityBeret
-  - SecurityHat
-  - TrooperHat
+# - type: loadoutGroup
+#   id: SecurityHead
+#   name: loadout-group-security-head
+#   minLimit: 0
+#   loadouts:
+#   - SecurityHelmet
+#   - SecurityBeret
+#   - SecurityHat
+#   - TrooperHat
 
-- type: loadoutGroup
-  id: SecurityJumpsuit
-  name: loadout-group-security-jumpsuit
-  loadouts:
-  - SecurityJumpsuit
-  - SecurityJumpskirt
-  - SecurityJumpsuitGrey
-  - SecurityJumpskirtGrey
-  - SeniorOfficerJumpsuit
-  - SeniorOfficerJumpskirt
-  - TrooperUniform
+# - type: loadoutGroup
+#   id: SecurityJumpsuit
+#   name: loadout-group-security-jumpsuit
+#   loadouts:
+#   - SecurityJumpsuit
+#   - SecurityJumpskirt
+#   - SecurityJumpsuitGrey
+#   - SecurityJumpskirtGrey
+#   - SeniorOfficerJumpsuit
+#   - SeniorOfficerJumpskirt
+#   - TrooperUniform
 
 - type: loadoutGroup
   id: SecurityBackpack
@@ -1077,13 +1077,13 @@
   - SecurityBelt
   - SecurityWebbing
 
-- type: loadoutGroup
-  id: SecurityOuterClothing
-  name: loadout-group-security-outerclothing
-  loadouts:
-  - ArmorVest
-  - ArmorVestSlim
-  - SecurityOfficerWintercoat
+# - type: loadoutGroup
+#   id: SecurityOuterClothing
+#   name: loadout-group-security-outerclothing
+#   loadouts:
+#   - ArmorVest
+#   - ArmorVestSlim
+#   - SecurityOfficerWintercoat
 
 - type: loadoutGroup
   id: SecurityShoes
@@ -1092,12 +1092,12 @@
   - JackBoots
   - SecurityWinterBoots
 
-- type: loadoutGroup
-  id: SecurityPDA
-  name: loadout-group-security-id
-  loadouts:
-  - SecurityPDA
-  - SeniorOfficerPDA
+# - type: loadoutGroup
+#   id: SecurityPDA
+#   name: loadout-group-security-id
+#   loadouts:
+#   - SecurityPDA
+#   - SeniorOfficerPDA
 
 # - type: loadoutGroup
 #   id: DetectiveHead
