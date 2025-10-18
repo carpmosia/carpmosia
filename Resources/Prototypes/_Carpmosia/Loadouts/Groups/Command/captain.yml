@@ -53,6 +53,7 @@
 - type: loadoutGroup
   id: CaptainOuterClothing
   parent: [BaseOuterClothing, CommonOuterClothing]
+  minLimit: 1
   loadouts:
   - CaptainOuterClothing
   - CaptainWintercoat
