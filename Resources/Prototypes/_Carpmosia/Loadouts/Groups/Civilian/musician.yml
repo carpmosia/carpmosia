@@ -1,0 +1,88 @@
+# - type: loadoutGroup
+#   id: MusicianHead
+#   parent: [BaseHead, CommonHead, CivilianHead]
+
+- type: loadoutGroup
+  id: MusicianGlasses
+  parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
+
+# - type: loadoutGroup
+#   id: MusicianMask
+#   parent: [BaseMask, CommonMask, CivilianMask]
+
+# - type: loadoutGroup
+#   id: MusicianNeck
+#   parent: [BaseNeck, CommonNeck, CivilianNeck]
+
+# - type: loadoutGroup
+#   id: MusicianGloves
+#   parent: [BaseGloves, CommonGloves, CivilianGloves]
+
+- type: loadoutGroup
+  id: MusicianJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit]
+  loadouts:
+  - MusicianJumpsuit
+  - MusicianJumpskirt
+
+- type: loadoutGroup
+  id: MusicianBackpack
+  parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
+
+# - type: loadoutGroup
+#   id: MusicianPDA
+#   parent: [BasePDA, CommonPDA, CivilianPDA]
+
+# - type: loadoutGroup
+#   id: MusicianBelt
+#   parent: [BaseBelt, CommonBelt, CivilianBelt]
+
+- type: loadoutGroup
+  id: MusicianOuterClothing
+  parent: [BaseOuterClothing, CommonOuterClothing, CivilianOuterClothing]
+  loadouts:
+  - MusicianWintercoat
+
+# - type: loadoutGroup
+#   id: MusicianShoes
+#   parent: [BaseShoes, CommonShoes, CivilianShoes]
+
+- type: loadoutGroup
+  id: MusicianSpecial
+  parent: BaseSpecial
+  name: loadout-group-instruments
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - Glockenspiel
+  - MusicBox
+  - Xylophone
+  - Microphone
+  - Synthesizer
+  - Kalimba
+  - Woodblock
+  - ElectricGuitar
+  - BassGuitar
+  - RockGuitar
+  - AcousticGuitar
+  - Banjo
+  - Violin
+  - Viola
+  - Cello
+  - Trumpet
+  - Trombone
+  - FrenchHorn
+  - Euphonium
+  - Saxophone
+  - Accordion
+  - Harmonica
+  - Clarinet
+  - Flute
+  - Recorder
+  - PanFlute
+  - Ocarina
+  - Bagpipe
+
+- type: loadoutGroup
+  id: MusicianTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]

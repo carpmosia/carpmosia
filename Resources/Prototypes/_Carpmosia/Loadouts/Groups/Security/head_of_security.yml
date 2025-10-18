@@ -1,0 +1,68 @@
+- type: loadoutGroup
+  id: HeadOfSecurityHead
+  parent: [BaseHead, CommonHead, SecurityHead]
+  loadouts:
+  - HeadofSecurityHead
+  - HeadofSecurityBeret
+
+# - type: loadoutGroup
+#   id: HeadOfSecurityGlasses
+#   parent: [BaseGlasses, CommonGlasses, SecurityGlasses]
+
+# - type: loadoutGroup
+#   id: HeadOfSecurityMask
+#   parent: [BaseMask, CommonMask, SecurityMask]
+
+- type: loadoutGroup
+  id: HeadOfSecurityNeck
+  parent: [BaseNeck, CommonNeck, SecurityNeck]
+  loadouts:
+  - HeadofSecurityCloak
+  - HeadofSecurityMantle
+
+# - type: loadoutGroup
+#   id: HeadOfSecurityGloves
+#   parent: [BaseGloves, CommonGloves, SecurityGloves]
+
+- type: loadoutGroup
+  id: HeadOfSecurityJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, SecurityJumpsuit]
+  loadouts:
+  - HeadofSecurityJumpsuit
+  - HeadofSecurityJumpskirt
+  - HeadofSecurityTurtleneck
+  - HeadofSecurityTurtleneckSkirt
+  - HeadofSecurityFormalSuit
+  - HeadofSecurityFormalSkirt
+
+- type: loadoutGroup
+  id: HeadOfSecurityBackpack
+  parent: [BaseBackpack, CommonBackpack, SecurityBackpack]
+
+# - type: loadoutGroup
+#   id: HeadOfSecurityPDA
+#   parent: [BasePDA, CommonPDA, SecurityPDA]
+
+- type: loadoutGroup
+  id: HeadOfSecurityBelt
+  parent: [BaseBelt, CommonBelt, SecurityBelt]
+
+- type: loadoutGroup
+  id: HeadOfSecurityOuterClothing
+  parent: [BaseOuterClothing, CommonOuterClothing, SecurityOuterClothing]
+  minLimit: 1
+  loadouts:
+  - HeadofSecurityCoat
+  - HeadofSecurityWinterCoat
+
+- type: loadoutGroup
+  id: HeadOfSecurityShoes
+  parent: [BaseShoes, CommonShoes, SecurityShoes]
+
+# - type: loadoutGroup
+#   id: HeadOfSecuritySpecial
+#   parent: BaseSpecial
+
+- type: loadoutGroup
+  id: HeadOfSecurityTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, SecurityTrinkets]

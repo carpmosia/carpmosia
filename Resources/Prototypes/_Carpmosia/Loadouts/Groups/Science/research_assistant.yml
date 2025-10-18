@@ -1,0 +1,54 @@
+# - type: loadoutGroup
+#   id: ResearchAssistantHead
+#   parent: [BaseHead, CommonHead, ScienceHead]
+
+- type: loadoutGroup
+  id: ResearchAssistantGlasses
+  parent: [BaseGlasses, CommonGlasses, ScienceGlasses]
+
+# - type: loadoutGroup
+#   id: ResearchAssistantMask
+#   parent: [BaseMask, CommonMask, ScienceMask]
+
+# - type: loadoutGroup
+#   id: ResearchAssistantNeck
+#   parent: [BaseNeck, CommonNeck, ScienceNeck]
+
+# - type: loadoutGroup
+#   id: ResearchAssistantGloves
+#   parent: [BaseGloves, CommonGloves, ScienceGloves]
+
+- type: loadoutGroup
+  id: ResearchAssistantJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, ScienceJumpsuit]
+  loadouts:
+  - WhiteJumpsuit
+  - WhiteJumpskirt
+
+- type: loadoutGroup
+  id: ResearchAssistantBackpack
+  parent: [BaseBackpack, CommonBackpack, ScienceBackpack]
+
+# - type: loadoutGroup
+#   id: ResearchAssistantPDA
+#   parent: [BasePDA, CommonPDA, SciencePDA]
+
+# - type: loadoutGroup
+#   id: ResearchAssistantBelt
+#   parent: [BaseBelt, CommonBelt, ScienceBelt]
+
+# - type: loadoutGroup
+#   id: ResearchAssistantOuterClothing
+#   parent: [BaseOuterClothing, CommonOuterClothing, ScienceOuterClothing]
+
+# - type: loadoutGroup
+#   id: ResearchAssistantShoes
+#   parent: [BaseShoes, CommonShoes, ScienceShoes]
+
+# - type: loadoutGroup
+#   id: ResearchAssistantSpecial
+#   parent: BaseSpecial
+
+- type: loadoutGroup
+  id: ResearchAssistantTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, ScienceTrinkets]

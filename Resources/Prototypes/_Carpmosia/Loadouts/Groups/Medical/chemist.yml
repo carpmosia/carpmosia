@@ -1,0 +1,62 @@
+# - type: loadoutGroup
+#   id: ChemistHead
+#   parent: [BaseHead, CommonHead, MedicalHead]
+
+# - type: loadoutGroup
+#   id: ChemistGlasses
+#   parent: [BaseGlasses, CommonGlasses, MedicalGlasses]
+
+- type: loadoutGroup
+  id: ChemistMask
+  parent: [BaseMask, CommonMask, MedicalMask]
+
+# - type: loadoutGroup
+#   id: ChemistNeck
+#   parent: [BaseNeck, CommonNeck, MedicalNeck]
+
+- type: loadoutGroup
+  id: ChemistGloves
+  parent: [BaseGloves, CommonGloves, MedicalGloves]
+
+- type: loadoutGroup
+  id: ChemistJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, MedicalJumpsuit]
+  loadouts:
+  - ChemistJumpsuit
+  - ChemistJumpskirt
+
+- type: loadoutGroup
+  id: ChemistBackpack
+  parent: [BaseBackpack, CommonBackpack]
+  loadouts:
+  - ChemistBackpack
+  - ChemistSatchel
+  - ChemistDuffel
+
+# - type: loadoutGroup
+#   id: ChemistPDA
+#   parent: [BasePDA, CommonPDA, MedicalPDA]
+
+# - type: loadoutGroup
+#   id: ChemistBelt
+#   parent: [BaseBelt, CommonBelt, MedicalBelt]
+
+- type: loadoutGroup
+  id: ChemistOuterClothing
+  parent: [BaseOuterClothing, CommonOuterClothing, MedicalOuterClothing]
+  loadouts:
+  - RegularLabCoat
+  - ChemistLabCoat
+  - ChemistWintercoat
+
+- type: loadoutGroup
+  id: ChemistShoes
+  parent: [BaseShoes, CommonShoes, MedicalShoes]
+
+# - type: loadoutGroup
+#   id: ChemistSpecial
+#   parent: BaseSpecial
+
+- type: loadoutGroup
+  id: ChemistTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, MedicalTrinkets]

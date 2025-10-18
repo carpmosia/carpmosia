@@ -1,0 +1,72 @@
+- type: loadoutGroup
+  id: SecurityOfficerHead
+  parent: [BaseHead, CommonHead, SecurityHead]
+  loadouts:
+  - SecurityHelmet
+  - SecurityBeret
+  - SecurityHat
+  - TrooperHat
+
+# - type: loadoutGroup
+#   id: SecurityOfficerGlasses
+#   parent: [BaseGlasses, CommonGlasses, SecurityGlasses]
+
+# - type: loadoutGroup
+#   id: SecurityOfficerMask
+#   parent: [BaseMask, CommonMask, SecurityMask]
+
+- type: loadoutGroup
+  id: SecurityOfficerNeck
+  parent: [BaseNeck, CommonNeck, SecurityNeck]
+
+# - type: loadoutGroup
+#   id: SecurityOfficerGloves
+#   parent: [BaseGloves, CommonGloves, SecurityGloves]
+
+- type: loadoutGroup
+  id: SecurityOfficerJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, SecurityJumpsuit]
+  loadouts:
+  - SecurityJumpsuit
+  - SecurityJumpskirt
+  - SecurityJumpsuitGrey
+  - SecurityJumpskirtGrey
+  - SeniorOfficerJumpsuit
+  - SeniorOfficerJumpskirt
+  - TrooperUniform
+
+- type: loadoutGroup
+  id: SecurityOfficerBackpack
+  parent: [BaseBackpack, CommonBackpack, SecurityBackpack]
+
+- type: loadoutGroup
+  id: SecurityOfficerPDA
+  parent: [BasePDA, CommonPDA, SecurityPDA]
+  loadouts:
+  - SecurityPDA
+  - SeniorOfficerPDA
+
+- type: loadoutGroup
+  id: SecurityOfficerBelt
+  parent: [BaseBelt, CommonBelt, SecurityBelt]
+
+- type: loadoutGroup
+  id: SecurityOfficerOuterClothing
+  parent: [BaseOuterClothing, CommonOuterClothing, SecurityOuterClothing]
+  minLimit: 1
+  loadouts:
+  - ArmorVest
+  - ArmorVestSlim
+  - SecurityOfficerWintercoat
+
+- type: loadoutGroup
+  id: SecurityOfficerShoes
+  parent: [BaseShoes, CommonShoes, SecurityShoes]
+
+# - type: loadoutGroup
+#   id: SecurityOfficerSpecial
+#   parent: BaseSpecial
+
+- type: loadoutGroup
+  id: SecurityOfficerTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, SecurityTrinkets]

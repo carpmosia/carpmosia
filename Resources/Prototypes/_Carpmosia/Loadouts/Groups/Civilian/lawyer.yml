@@ -1,0 +1,64 @@
+# - type: loadoutGroup
+#   id: LawyerHead
+#   parent: [BaseHead, CommonHead, CivilianHead]
+
+- type: loadoutGroup
+  id: LawyerGlasses
+  parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
+
+# - type: loadoutGroup
+#   id: LawyerMask
+#   parent: [BaseMask, CommonMask, CivilianMask]
+
+- type: loadoutGroup
+  id: LawyerNeck
+  parent: [BaseNeck, CommonNeck, CivilianNeck]
+  loadouts:
+  - LawyerNeck
+
+# - type: loadoutGroup
+#   id: LawyerGloves
+#   parent: [BaseGloves, CommonGloves, CivilianGloves]
+
+- type: loadoutGroup
+  id: LawyerJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit]
+  loadouts:
+  - LawyerJumpsuit
+  - LawyerJumpskirt
+  - LawyerJumpsuitBlue
+  - LawyerJumpskirtBlue
+  - LawyerJumpsuitPurple
+  - LawyerJumpskirtPurple
+  - LawyerJumpsuitRed
+  - LawyerJumpskirtRed
+  - LawyerJumpsuitGood
+  - LawyerJumpskirtGood
+
+- type: loadoutGroup
+  id: LawyerBackpack
+  parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
+
+# - type: loadoutGroup
+#   id: LawyerPDA
+#   parent: [BasePDA, CommonPDA, CivilianPDA]
+
+# - type: loadoutGroup
+#   id: LawyerBelt
+#   parent: [BaseBelt, CommonBelt, CivilianBelt]
+
+# - type: loadoutGroup
+#   id: LawyerOuterClothing
+#   parent: [BaseOuterClothing, CommonOuterClothing, CivilianOuterClothing]
+
+# - type: loadoutGroup
+#   id: LawyerShoes
+#   parent: [BaseShoes, CommonShoes, CivilianShoes]
+
+# - type: loadoutGroup
+#   id: LawyerSpecial
+#   parent: BaseSpecial
+
+- type: loadoutGroup
+  id: LawyerTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]

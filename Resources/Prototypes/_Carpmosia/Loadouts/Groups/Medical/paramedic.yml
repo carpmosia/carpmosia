@@ -1,0 +1,61 @@
+- type: loadoutGroup
+  id: ParamedicHead
+  parent: [BaseHead, CommonHead, MedicalHead]
+  loadouts:
+  - ParamedicHead
+
+- type: loadoutGroup
+  id: ParamedicGlasses
+  parent: [BaseGlasses, CommonGlasses, MedicalGlasses]
+
+- type: loadoutGroup
+  id: ParamedicMask
+  parent: [BaseMask, CommonMask, MedicalMask]
+
+# - type: loadoutGroup
+#   id: ParamedicNeck
+#   parent: [BaseNeck, CommonNeck, MedicalNeck]
+
+- type: loadoutGroup
+  id: ParamedicGloves
+  parent: [BaseGloves, CommonGloves, MedicalGloves]
+
+- type: loadoutGroup
+  id: ParamedicJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, MedicalJumpsuit]
+  loadouts:
+  - ParamedicJumpsuit
+  - ParamedicJumpskirt
+
+- type: loadoutGroup
+  id: ParamedicBackpack
+  parent: [BaseBackpack, CommonBackpack, MedicalBackpack]
+
+# - type: loadoutGroup
+#   id: ParamedicPDA
+#   parent: [BasePDA, CommonPDA, MedicalPDA]
+
+# - type: loadoutGroup
+#   id: ParamedicBelt
+#   parent: [BaseBelt, CommonBelt, MedicalBelt]
+
+- type: loadoutGroup
+  id: ParamedicOuterClothing
+  parent: [BaseOuterClothing, CommonOuterClothing, MedicalOuterClothing]
+  loadouts:
+  - ParamedicWindbreaker
+  - ParamedicWintercoat
+
+- type: loadoutGroup
+  id: ParamedicShoes
+  parent: [BaseShoes, CommonShoes, MedicalShoes]
+  loadouts:
+  - BlueShoes
+
+# - type: loadoutGroup
+#   id: ParamedicSpecial
+#   parent: BaseSpecial
+
+- type: loadoutGroup
+  id: ParamedicTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, MedicalTrinkets]

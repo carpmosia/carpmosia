@@ -1,0 +1,62 @@
+- type: loadoutGroup
+  id: ChefHead
+  parent: [BaseHead, CommonHead, CivilianHead]
+  loadouts:
+  - ChefHead
+
+- type: loadoutGroup
+  id: ChefGlasses
+  parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
+
+- type: loadoutGroup
+  id: ChefMask
+  parent: [BaseMask, CommonMask, CivilianMask]
+  loadouts:
+  - ChefMask
+
+# - type: loadoutGroup
+#   id: ChefNeck
+#   parent: [BaseNeck, CommonNeck, CivilianNeck]
+
+# - type: loadoutGroup
+#   id: ChefGloves
+#   parent: [BaseGloves, CommonGloves, CivilianGloves]
+
+- type: loadoutGroup
+  id: ChefJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit]
+  loadouts:
+  - ChefJumpsuit
+  - ChefJumpskirt
+
+- type: loadoutGroup
+  id: ChefBackpack
+  parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
+
+# - type: loadoutGroup
+#   id: ChefPDA
+#   parent: [BasePDA, CommonPDA, CivilianPDA]
+
+# - type: loadoutGroup
+#   id: ChefBelt
+#   parent: [BaseBelt, CommonBelt, CivilianBelt]
+
+- type: loadoutGroup
+  id: ChefOuterClothing
+  parent: [BaseOuterClothing, CommonOuterClothing, CivilianOuterClothing]
+  loadouts:
+  - ChefApron
+  - ChefJacket
+  - ChefWintercoat
+
+# - type: loadoutGroup
+#   id: ChefShoes
+#   parent: [BaseShoes, CommonShoes, CivilianShoes]
+
+# - type: loadoutGroup
+#   id: ChefSpecial
+#   parent: BaseSpecial
+
+- type: loadoutGroup
+  id: ChefTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]

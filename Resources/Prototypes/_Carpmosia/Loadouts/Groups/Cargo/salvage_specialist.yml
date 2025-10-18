@@ -1,0 +1,60 @@
+# - type: loadoutGroup
+#   id: SalvageSpecialistHead
+#   parent: [BaseHead, CommonHead, CargoHead]
+
+- type: loadoutGroup
+  id: SalvageSpecialistGlasses
+  parent: [BaseGlasses, CommonGlasses, CargoGlasses]
+
+# - type: loadoutGroup
+#   id: SalvageSpecialistMask
+#   parent: [BaseMask, CommonMask, CargoMask]
+
+# - type: loadoutGroup
+#   id: SalvageSpecialistNeck
+#   parent: [BaseNeck, CommonNeck, CargoNeck]
+
+# - type: loadoutGroup
+#   id: SalvageSpecialistGloves
+#   parent: [BaseGloves, CommonGloves, CargoGloves]
+
+# - type: loadoutGroup
+#   id: SalvageSpecialistJumpsuit
+#   parent: [BaseJumpsuit, CommonJumpsuit, CargoJumpsuit]
+
+- type: loadoutGroup
+  id: SalvageSpecialistBackpack
+  parent: [BaseBackpack, CommonBackpack]
+  loadouts:
+  - SalvageSpecialistBackpack
+  - SalvageSpecialistSatchel
+  - SalvageSpecialistDuffel
+
+# - type: loadoutGroup
+#   id: SalvageSpecialistPDA
+#   parent: [BasePDA, CommonPDA, CargoPDA]
+
+# - type: loadoutGroup
+#   id: SalvageSpecialistBelt
+#   parent: [BaseBelt, CommonBelt, CargoBelt]
+
+- type: loadoutGroup
+  id: SalvageSpecialistOuterClothing
+  parent: [BaseOuterClothing, CommonOuterClothing, CargoOuterClothing]
+  loadouts:
+  - SalvageSpecialistWintercoat
+
+- type: loadoutGroup
+  id: SalvageSpecialistShoes
+  parent: [BaseShoes, CommonShoes, CargoShoes]
+  loadouts:
+  - SalvageBoots
+  - CargoWinterBoots
+
+# - type: loadoutGroup
+#   id: SalvageSpecialistSpecial
+#   parent: BaseSpecial
+
+- type: loadoutGroup
+  id: SalvageSpecialistTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, CargoTrinkets]

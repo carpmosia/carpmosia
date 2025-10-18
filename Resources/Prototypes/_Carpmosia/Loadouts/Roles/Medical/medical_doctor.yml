@@ -1,0 +1,21 @@
+- type: roleLoadout
+  id: JobMedicalDoctor
+  groups:
+  - GroupTankHarness
+  # Common groups
+  - MedicalDoctorHead
+  - MedicalDoctorGlasses
+  - MedicalDoctorMask
+  # - MedicalDoctorNeck
+  - MedicalDoctorGloves
+  - MedicalDoctorJumpsuit
+  - MedicalDoctorBackpack
+  - MedicalDoctorPDA
+  # - MedicalDoctorBelt
+  - MedicalDoctorOuterClothing
+  - MedicalDoctorShoes
+  # Backpack fills
+  - SurvivalMedical
+  - GroupSpeciesBreathToolMedical
+  # - MedicalDoctorSpecial
+  - MedicalDoctorTrinkets

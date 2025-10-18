@@ -1,0 +1,64 @@
+- type: loadoutGroup
+  id: CargoTechnicianHead
+  parent: [BaseHead, CommonHead, CargoHead]
+  loadouts:
+  - CargoTechnicianHead
+
+- type: loadoutGroup
+  id: CargoTechnicianGlasses
+  parent: [BaseGlasses, CommonGlasses, CargoGlasses]
+
+# - type: loadoutGroup
+#   id: CargoTechnicianMask
+#   parent: [BaseMask, CommonMask, CargoMask]
+
+# - type: loadoutGroup
+#   id: CargoTechnicianNeck
+#   parent: [BaseNeck, CommonNeck, CargoNeck]
+
+# - type: loadoutGroup
+#   id: CargoTechnicianGloves
+#   parent: [BaseGloves, CommonGloves, CargoGloves]
+
+- type: loadoutGroup
+  id: CargoTechnicianJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, CargoJumpsuit]
+  loadouts:
+  - CargoTechnicianJumpsuit
+  - CargoTechnicianJumpskirt
+
+- type: loadoutGroup
+  id: CargoTechnicianBackpack
+  parent: [BaseBackpack, CommonBackpack, CargoBackpack]
+
+- type: loadoutGroup
+  id: CargoTechnicianPDA
+  parent: [BasePDA, CommonPDA, CargoPDA]
+  loadouts:
+  - CargoTechnicianPDA
+  - SeniorCourierPDA
+
+# - type: loadoutGroup
+#   id: CargoTechnicianBelt
+#   parent: [BaseBelt, CommonBelt, CargoBelt]
+
+- type: loadoutGroup
+  id: CargoTechnicianOuterClothing
+  parent: [BaseOuterClothing, CommonOuterClothing, CargoOuterClothing]
+  loadouts:
+  - CargoTechnicianWintercoat
+
+- type: loadoutGroup
+  id: CargoTechnicianShoes
+  parent: [BaseShoes, CommonShoes, CargoShoes]
+  loadouts:
+  - BlackShoes
+  - CargoWinterBoots
+
+# - type: loadoutGroup
+#   id: CargoTechnicianSpecial
+#   parent: BaseSpecial
+
+- type: loadoutGroup
+  id: CargoTechnicianTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, CargoTrinkets]
