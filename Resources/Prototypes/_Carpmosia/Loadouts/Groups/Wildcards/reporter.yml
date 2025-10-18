@@ -2,9 +2,9 @@
 #   id: ReporterHead
 #   parent: [BaseHead, CommonHead, WildcardsHead]
 
-# - type: loadoutGroup
-#   id: ReporterGlasses
-#   parent: [BaseGlasses, CommonGlasses, WildcardsGlasses]
+- type: loadoutGroup
+  id: ReporterGlasses
+  parent: [BaseGlasses, CommonGlasses, WildcardsGlasses]
 
 # - type: loadoutGroup
 #   id: ReporterMask
@@ -25,9 +25,9 @@
   - ReporterJumpsuit
   - JournalistJumpsuit
 
-# - type: loadoutGroup
-#   id: ReporterBackpack
-#   parent: [BaseBackpack, CommonBackpack, WildcardsBackpack]
+- type: loadoutGroup
+  id: ReporterBackpack
+  parent: [BaseBackpack, CommonBackpack, WildcardsBackpack]
 
 # - type: loadoutGroup
 #   id: ReporterPDA

@@ -30,9 +30,9 @@
   - ResearchDirectorJumpsuit
   - ResearchDirectorJumpskirt
 
-# - type: loadoutGroup
-#   id: ResearchDirectorBackpack
-#   parent: [BaseBackpack, CommonBackpack, ScienceBackpack]
+- type: loadoutGroup
+  id: ResearchDirectorBackpack
+  parent: [BaseBackpack, CommonBackpack, ScienceBackpack]
 
 # - type: loadoutGroup
 #   id: ResearchDirectorPDA

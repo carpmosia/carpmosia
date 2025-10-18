@@ -32,7 +32,7 @@
 
 - type: loadoutGroup
   id: ClownBackpack
-  parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
+  parent: [BaseBackpack, CommonBackpack]
   loadouts:
   - ClownBackpack
   - ClownSatchel

@@ -5,10 +5,15 @@
 - type: loadoutGroup
   id: MedicalGlasses
   abstract: true
+  loadouts:
+  - MedicalHud
+  - MedicalEyePatchHud
 
 - type: loadoutGroup
   id: MedicalMask
   abstract: true
+  loadouts:
+  - SterileMask
 
 - type: loadoutGroup
   id: MedicalNeck
@@ -28,6 +33,10 @@
 - type: loadoutGroup
   id: MedicalBackpack
   abstract: true
+  loadouts:
+  - MedicalDoctorBackpack
+  - MedicalDoctorSatchel
+  - MedicalDoctorDuffel
 
 - type: loadoutGroup
   id: MedicalPDA
@@ -44,6 +53,9 @@
 - type: loadoutGroup
   id: MedicalShoes
   abstract: true
+  loadouts:
+  - WhiteShoes
+  - MedicalWinterBoots
 
 - type: loadoutGroup
   id: MedicalTrinkets

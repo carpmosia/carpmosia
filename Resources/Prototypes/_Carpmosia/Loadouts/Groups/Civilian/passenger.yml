@@ -34,9 +34,9 @@
   - RainbowJumpsuit
   - RainbowJumpskirt
 
-# - type: loadoutGroup
-#   id: PassengerBackpack
-#   parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
+- type: loadoutGroup
+  id: PassengerBackpack
+  parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
 
 # - type: loadoutGroup
 #   id: PassengerPDA
@@ -52,9 +52,12 @@
   loadouts:
   - PassengerWintercoat
 
-# - type: loadoutGroup
-#   id: PassengerShoes
-#   parent: [BaseShoes, CommonShoes, CivilianShoes]
+- type: loadoutGroup
+  id: PassengerShoes
+  parent: [BaseShoes, CommonShoes, CivilianShoes]
+  loadouts:
+  - BlackShoes
+  - WinterBoots
 
 # - type: loadoutGroup
 #   id: PassengerSpecial

@@ -25,9 +25,9 @@
   - MusicianJumpsuit
   - MusicianJumpskirt
 
-# - type: loadoutGroup
-#   id: MusicianBackpack
-#   parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
+- type: loadoutGroup
+  id: MusicianBackpack
+  parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
 
 # - type: loadoutGroup
 #   id: MusicianPDA

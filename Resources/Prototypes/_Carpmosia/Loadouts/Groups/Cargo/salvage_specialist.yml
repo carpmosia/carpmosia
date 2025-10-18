@@ -24,7 +24,7 @@
 
 - type: loadoutGroup
   id: SalvageSpecialistBackpack
-  parent: [BaseBackpack, CommonBackpack, CargoBackpack]
+  parent: [BaseBackpack, CommonBackpack]
   loadouts:
   - SalvageSpecialistBackpack
   - SalvageSpecialistSatchel

@@ -22,9 +22,9 @@
 #   id: ServiceWorkerJumpsuit
 #   parent: [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit]
 
-# - type: loadoutGroup
-#   id: ServiceWorkerBackpack
-#   parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
+- type: loadoutGroup
+  id: ServiceWorkerBackpack
+  parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
 
 # - type: loadoutGroup
 #   id: ServiceWorkerPDA

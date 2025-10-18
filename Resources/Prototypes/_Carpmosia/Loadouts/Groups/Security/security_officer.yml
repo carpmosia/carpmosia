@@ -35,9 +35,9 @@
   - SeniorOfficerJumpskirt
   - TrooperUniform
 
-# - type: loadoutGroup
-#   id: SecurityOfficerBackpack
-#   parent: [BaseBackpack, CommonBackpack, SecurityBackpack]
+- type: loadoutGroup
+  id: SecurityOfficerBackpack
+  parent: [BaseBackpack, CommonBackpack, SecurityBackpack]
 
 - type: loadoutGroup
   id: SecurityOfficerPDA
@@ -46,9 +46,9 @@
   - SecurityPDA
   - SeniorOfficerPDA
 
-# - type: loadoutGroup
-#   id: SecurityOfficerBelt
-#   parent: [BaseBelt, CommonBelt, SecurityBelt]
+- type: loadoutGroup
+  id: SecurityOfficerBelt
+  parent: [BaseBelt, CommonBelt, SecurityBelt]
 
 - type: loadoutGroup
   id: SecurityOfficerOuterClothing
@@ -59,9 +59,9 @@
   - ArmorVestSlim
   - SecurityOfficerWintercoat
 
-# - type: loadoutGroup
-#   id: SecurityOfficerShoes
-#   parent: [BaseShoes, CommonShoes, SecurityShoes]
+- type: loadoutGroup
+  id: SecurityOfficerShoes
+  parent: [BaseShoes, CommonShoes, SecurityShoes]
 
 # - type: loadoutGroup
 #   id: SecurityOfficerSpecial

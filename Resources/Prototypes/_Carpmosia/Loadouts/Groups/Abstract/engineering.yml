@@ -25,6 +25,10 @@
 - type: loadoutGroup
   id: EngineeringBackpack
   abstract: true
+  loadouts:
+  - StationEngineerBackpack
+  - StationEngineerSatchel
+  - StationEngineerDuffel
 
 - type: loadoutGroup
   id: EngineeringPDA

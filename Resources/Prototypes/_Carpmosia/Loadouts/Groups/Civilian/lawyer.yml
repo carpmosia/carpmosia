@@ -35,9 +35,9 @@
   - LawyerJumpsuitGood
   - LawyerJumpskirtGood
 
-# - type: loadoutGroup
-#   id: LawyerBackpack
-#   parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
+- type: loadoutGroup
+  id: LawyerBackpack
+  parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
 
 # - type: loadoutGroup
 #   id: LawyerPDA

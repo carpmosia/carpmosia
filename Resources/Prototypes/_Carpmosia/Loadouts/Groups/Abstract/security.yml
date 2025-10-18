@@ -27,6 +27,10 @@
 - type: loadoutGroup
   id: SecurityBackpack
   abstract: true
+  loadouts:
+  - SecurityBackpack
+  - SecuritySatchel
+  - SecurityDuffel
 
 - type: loadoutGroup
   id: SecurityPDA
@@ -35,6 +39,9 @@
 - type: loadoutGroup
   id: SecurityBelt
   abstract: true
+  loadouts:
+  - SecurityBelt
+  - SecurityWebbing
 
 - type: loadoutGroup
   id: SecurityOuterClothing
@@ -43,6 +50,9 @@
 - type: loadoutGroup
   id: SecurityShoes
   abstract: true
+  loadouts:
+  - JackBoots
+  - SecurityWinterBoots
 
 - type: loadoutGroup
   id: SecurityTrinkets

@@ -221,13 +221,13 @@
 #   loadouts:
 #   - PassengerGloves
 
-- type: loadoutGroup
-  id: CommonBackpack
-  name: loadout-group-backpack
-  loadouts:
-  - CommonBackpack
-  - CommonSatchel
-  - CommonDuffel
+# - type: loadoutGroup
+#   id: CommonBackpack
+#   name: loadout-group-backpack
+#   loadouts:
+#   - CommonBackpack
+#   - CommonSatchel
+#   - CommonDuffel
 
 # - type: loadoutGroup
 #   id: PassengerNeck
@@ -243,12 +243,12 @@
 #   loadouts:
 #   - PassengerWintercoat
 
-- type: loadoutGroup
-  id: PassengerShoes
-  name: loadout-group-passenger-shoes
-  loadouts:
-  - BlackShoes
-  - WinterBoots
+# - type: loadoutGroup
+#   id: PassengerShoes
+#   name: loadout-group-passenger-shoes
+#   loadouts:
+#   - BlackShoes
+#   - WinterBoots
 
 # - type: loadoutGroup
 #   id: BartenderHead
@@ -1062,20 +1062,20 @@
 #   - SeniorOfficerJumpskirt
 #   - TrooperUniform
 
-- type: loadoutGroup
-  id: SecurityBackpack
-  name: loadout-group-security-backpack
-  loadouts:
-  - SecurityBackpack
-  - SecuritySatchel
-  - SecurityDuffel
+# - type: loadoutGroup
+#   id: SecurityBackpack
+#   name: loadout-group-security-backpack
+#   loadouts:
+#   - SecurityBackpack
+#   - SecuritySatchel
+#   - SecurityDuffel
 
-- type: loadoutGroup
-  id: SecurityBelt
-  name: loadout-group-security-belt
-  loadouts:
-  - SecurityBelt
-  - SecurityWebbing
+# - type: loadoutGroup
+#   id: SecurityBelt
+#   name: loadout-group-security-belt
+#   loadouts:
+#   - SecurityBelt
+#   - SecurityWebbing
 
 # - type: loadoutGroup
 #   id: SecurityOuterClothing
@@ -1085,12 +1085,12 @@
 #   - ArmorVestSlim
 #   - SecurityOfficerWintercoat
 
-- type: loadoutGroup
-  id: SecurityShoes
-  name: loadout-group-security-shoes
-  loadouts:
-  - JackBoots
-  - SecurityWinterBoots
+# - type: loadoutGroup
+#   id: SecurityShoes
+#   name: loadout-group-security-shoes
+#   loadouts:
+#   - JackBoots
+#   - SecurityWinterBoots
 
 # - type: loadoutGroup
 #   id: SecurityPDA
@@ -1230,20 +1230,20 @@
 #   - MedicalDoctorWintercoat
 #   - SeniorPhysicianLabCoat
 
-- type: loadoutGroup
-  id: MedicalBackpack
-  name: loadout-group-medical-doctor-backpack
-  loadouts:
-  - MedicalDoctorBackpack
-  - MedicalDoctorSatchel
-  - MedicalDoctorDuffel
+# - type: loadoutGroup
+#   id: MedicalBackpack
+#   name: loadout-group-medical-doctor-backpack
+#   loadouts:
+#   - MedicalDoctorBackpack
+#   - MedicalDoctorSatchel
+#   - MedicalDoctorDuffel
 
-- type: loadoutGroup
-  id: MedicalShoes
-  name: loadout-group-medical-doctor-shoes
-  loadouts:
-  - WhiteShoes
-  - MedicalWinterBoots
+# - type: loadoutGroup
+#   id: MedicalShoes
+#   name: loadout-group-medical-doctor-shoes
+#   loadouts:
+#   - WhiteShoes
+#   - MedicalWinterBoots
 
 # - type: loadoutGroup
 #   id: MedicalDoctorPDA
@@ -1260,12 +1260,12 @@
 #   - LatexGloves
 #   - NitrileGloves
 
-- type: loadoutGroup
-  id: MedicalMask
-  name: loadout-group-medical-mask
-  minLimit: 0
-  loadouts:
-  - SterileMask
+# - type: loadoutGroup
+#   id: MedicalMask
+#   name: loadout-group-medical-mask
+#   minLimit: 0
+#   loadouts:
+#   - SterileMask
 
 # - type: loadoutGroup
 #   id: MedicalInternJumpsuit
@@ -1328,16 +1328,16 @@
 #   - WhiteShoes
 #   - MedicalWinterBoots
 
-- type: loadoutGroup
-  id: MedicalEyewear
-  name: loadout-group-medical-glasses
-  minLimit: 0
-  loadouts:
-  - MedicalHud
-  - MedicalEyePatchHud
-  - Glasses
-  - GlassesJamjar
-  - GlassesJensen
+# - type: loadoutGroup
+#   id: MedicalEyewear
+#   name: loadout-group-medical-glasses
+#   minLimit: 0
+#   loadouts:
+#   - MedicalHud
+#   - MedicalEyePatchHud
+#   - Glasses
+#   - GlassesJamjar
+#   - GlassesJensen
 
 - type: loadoutGroup
   id: SurvivalMedical

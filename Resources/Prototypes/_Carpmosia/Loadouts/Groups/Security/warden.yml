@@ -28,17 +28,17 @@
   - WardenJumpsuit
   - WardenJumpskirt
 
-# - type: loadoutGroup
-#   id: WardenBackpack
-#   parent: [BaseBackpack, CommonBackpack, SecurityBackpack]
+- type: loadoutGroup
+  id: WardenBackpack
+  parent: [BaseBackpack, CommonBackpack, SecurityBackpack]
 
 # - type: loadoutGroup
 #   id: WardenPDA
 #   parent: [BasePDA, CommonPDA, SecurityPDA]
 
-# - type: loadoutGroup
-#   id: WardenBelt
-#   parent: [BaseBelt, CommonBelt, SecurityBelt]
+- type: loadoutGroup
+  id: WardenBelt
+  parent: [BaseBelt, CommonBelt, SecurityBelt]
 
 - type: loadoutGroup
   id: WardenOuterClothing
@@ -48,9 +48,9 @@
   - WardenCoat
   - WardenArmoredWinterCoat
 
-# - type: loadoutGroup
-#   id: WardenShoes
-#   parent: [BaseShoes, CommonShoes, SecurityShoes]
+- type: loadoutGroup
+  id: WardenShoes
+  parent: [BaseShoes, CommonShoes, SecurityShoes]
 
 # - type: loadoutGroup
 #   id: WardenSpecial

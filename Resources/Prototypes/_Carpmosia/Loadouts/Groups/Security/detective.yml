@@ -32,9 +32,9 @@
   - NoirJumpsuit
   - NoirJumpskirt
 
-# - type: loadoutGroup
-#   id: DetectiveBackpack
-#   parent: [BaseBackpack, CommonBackpack, SecurityBackpack]
+- type: loadoutGroup
+  id: DetectiveBackpack
+  parent: [BaseBackpack, CommonBackpack, SecurityBackpack]
 
 # - type: loadoutGroup
 #   id: DetectivePDA
@@ -53,9 +53,9 @@
   - DetectiveCoat
   - DetectiveCoatGrey
 
-# - type: loadoutGroup
-#   id: DetectiveShoes
-#   parent: [BaseShoes, CommonShoes, SecurityShoes]
+- type: loadoutGroup
+  id: DetectiveShoes
+  parent: [BaseShoes, CommonShoes, SecurityShoes]
 
 # - type: loadoutGroup
 #   id: DetectiveSpecial

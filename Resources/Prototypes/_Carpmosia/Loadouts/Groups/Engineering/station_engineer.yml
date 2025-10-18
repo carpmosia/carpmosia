@@ -36,10 +36,6 @@
 - type: loadoutGroup
   id: StationEngineerBackpack
   parent: [BaseBackpack, CommonBackpack, EngineeringBackpack]
-  loadouts:
-  - StationEngineerBackpack
-  - StationEngineerSatchel
-  - StationEngineerDuffel
 
 - type: loadoutGroup
   id: StationEngineerPDA

@@ -25,6 +25,10 @@
 - type: loadoutGroup
   id: ScienceBackpack
   abstract: true
+  loadouts:
+  - ScientistBackpack
+  - ScientistSatchel
+  - ScientistDuffel
 
 - type: loadoutGroup
   id: SciencePDA

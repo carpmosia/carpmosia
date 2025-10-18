@@ -6,9 +6,9 @@
 #   id: ChemistGlasses
 #   parent: [BaseGlasses, CommonGlasses, MedicalGlasses]
 
-# - type: loadoutGroup
-#   id: ChemistMask
-#   parent: [BaseMask, CommonMask, MedicalMask]
+- type: loadoutGroup
+  id: ChemistMask
+  parent: [BaseMask, CommonMask, MedicalMask]
 
 # - type: loadoutGroup
 #   id: ChemistNeck
@@ -27,7 +27,7 @@
 
 - type: loadoutGroup
   id: ChemistBackpack
-  parent: [BaseBackpack, CommonBackpack, MedicalBackpack]
+  parent: [BaseBackpack, MedicalBackpack]
   loadouts:
   - ChemistBackpack
   - ChemistSatchel
@@ -49,9 +49,9 @@
   - ChemistLabCoat
   - ChemistWintercoat
 
-# - type: loadoutGroup
-#   id: ChemistShoes
-#   parent: [BaseShoes, CommonShoes, MedicalShoes]
+- type: loadoutGroup
+  id: ChemistShoes
+  parent: [BaseShoes, CommonShoes, MedicalShoes]
 
 # - type: loadoutGroup
 #   id: ChemistSpecial

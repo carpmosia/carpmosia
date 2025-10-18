@@ -6,6 +6,10 @@
 - type: loadoutGroup
   id: CommonGlasses
   abstract: true
+  loadouts:
+  - Glasses
+  - GlassesJamjar
+  - GlassesJensen
 
 - type: loadoutGroup
   id: CommonMask
@@ -18,10 +22,6 @@
 - type: loadoutGroup
   id: CommonGloves
   abstract: true
-  loadouts:
-  - Glasses
-  - GlassesJamjar
-  - GlassesJensen
 
 - type: loadoutGroup
   id: CommonJumpsuit

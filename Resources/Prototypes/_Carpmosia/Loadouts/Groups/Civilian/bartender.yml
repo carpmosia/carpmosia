@@ -5,9 +5,9 @@
   - BartenderHead
   - BartenderBowler
 
-# - type: loadoutGroup
-#   id: BartenderGlasses
-#   parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
+- type: loadoutGroup
+  id: BartenderGlasses
+  parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
 
 # - type: loadoutGroup
 #   id: BartenderMask
@@ -29,9 +29,9 @@
   - BartenderJumpskirt
   - BartenderJumpsuitPurple
 
-# - type: loadoutGroup
-#   id: BartenderBackpack
-#   parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
+- type: loadoutGroup
+  id: BartenderBackpack
+  parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
 
 # - type: loadoutGroup
 #   id: BartenderPDA

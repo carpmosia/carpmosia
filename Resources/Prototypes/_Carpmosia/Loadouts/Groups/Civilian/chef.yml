@@ -4,9 +4,9 @@
   loadouts:
   - ChefHead
 
-# - type: loadoutGroup
-#   id: ChefGlasses
-#   parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
+- type: loadoutGroup
+  id: ChefGlasses
+  parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
 
 - type: loadoutGroup
   id: ChefMask
@@ -29,9 +29,9 @@
   - ChefJumpsuit
   - ChefJumpskirt
 
-# - type: loadoutGroup
-#   id: ChefBackpack
-#   parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
+- type: loadoutGroup
+  id: ChefBackpack
+  parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
 
 # - type: loadoutGroup
 #   id: ChefPDA

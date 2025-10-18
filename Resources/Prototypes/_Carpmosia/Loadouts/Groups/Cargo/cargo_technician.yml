@@ -30,10 +30,6 @@
 - type: loadoutGroup
   id: CargoTechnicianBackpack
   parent: [BaseBackpack, CommonBackpack, CargoBackpack]
-  loadouts:
-  - CargoTechnicianBackpack
-  - CargoTechnicianSatchel
-  - CargoTechnicianDuffel
 
 - type: loadoutGroup
   id: CargoTechnicianPDA

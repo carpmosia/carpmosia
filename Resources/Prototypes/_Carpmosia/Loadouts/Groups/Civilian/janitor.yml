@@ -31,9 +31,9 @@
   - JanitorJumpsuit
   - JanitorJumpskirt
 
-# - type: loadoutGroup
-#   id: JanitorBackpack
-#   parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
+- type: loadoutGroup
+  id: JanitorBackpack
+  parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
 
 # - type: loadoutGroup
 #   id: JanitorPDA

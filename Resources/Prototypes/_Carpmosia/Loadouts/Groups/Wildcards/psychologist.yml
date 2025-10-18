@@ -2,9 +2,9 @@
 #   id: PsychologistHead
 #   parent: [BaseHead, CommonHead, WildcardsHead]
 
-# - type: loadoutGroup
-#   id: PsychologistGlasses
-#   parent: [BaseGlasses, CommonGlasses, WildcardsGlasses]
+- type: loadoutGroup
+  id: PsychologistGlasses
+  parent: [BaseGlasses, CommonGlasses, WildcardsGlasses]
 
 # - type: loadoutGroup
 #   id: PsychologistMask
@@ -25,9 +25,9 @@
   - PsychologistJumpsuit
   - PsychologistJumpskirt
 
-# - type: loadoutGroup
-#   id: PsychologistBackpack
-#   parent: [BaseBackpack, CommonBackpack, WildcardsBackpack]
+- type: loadoutGroup
+  id: PsychologistBackpack
+  parent: [BaseBackpack, CommonBackpack, MedicalBackpack]
 
 # - type: loadoutGroup
 #   id: PsychologistPDA

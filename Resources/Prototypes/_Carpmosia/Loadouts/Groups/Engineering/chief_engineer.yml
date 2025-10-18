@@ -33,9 +33,9 @@
   - ChiefEngineerTurtleneck
   - ChiefEngineerTurtleneckSkirt
 
-# - type: loadoutGroup
-#   id: ChiefEngineerBackpack
-#   parent: [BaseBackpack, CommonBackpack, EngineeringBackpack]
+- type: loadoutGroup
+  id: ChiefEngineerBackpack
+  parent: [BaseBackpack, CommonBackpack, EngineeringBackpack]
 
 # - type: loadoutGroup
 #   id: ChiefEngineerPDA

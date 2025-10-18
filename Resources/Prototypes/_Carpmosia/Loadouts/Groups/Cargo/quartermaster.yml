@@ -34,9 +34,9 @@
   - QuartermasterTurtleneckSkirt
   - QuartermasterFormalSuit
 
-# - type: loadoutGroup
-#   id: QuartermasterBackpack
-#   parent: [BaseBackpack, CommonBackpack, CargoBackpack]
+- type: loadoutGroup
+  id: QuartermasterBackpack
+  parent: [BaseBackpack, CommonBackpack, CargoBackpack]
 
 # - type: loadoutGroup
 #   id: QuartermasterPDA

@@ -25,6 +25,10 @@
 - type: loadoutGroup
   id: CargoBackpack
   abstract: true
+  loadouts:
+  - CargoTechnicianBackpack
+  - CargoTechnicianSatchel
+  - CargoTechnicianDuffel
 
 - type: loadoutGroup
   id: CargoPDA

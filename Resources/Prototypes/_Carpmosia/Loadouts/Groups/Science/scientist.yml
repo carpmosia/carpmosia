@@ -42,10 +42,6 @@
 - type: loadoutGroup
   id: ScientistBackpack
   parent: [BaseBackpack, CommonBackpack, ScienceBackpack]
-  loadouts:
-  - ScientistBackpack
-  - ScientistSatchel
-  - ScientistDuffel
 
 - type: loadoutGroup
   id: ScientistPDA

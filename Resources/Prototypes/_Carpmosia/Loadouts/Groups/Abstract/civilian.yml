@@ -25,6 +25,10 @@
 - type: loadoutGroup
   id: CivilianBackpack
   abstract: true
+  loadouts:
+  - CommonBackpack
+  - CommonSatchel
+  - CommonDuffel
 
 - type: loadoutGroup
   id: CivilianPDA

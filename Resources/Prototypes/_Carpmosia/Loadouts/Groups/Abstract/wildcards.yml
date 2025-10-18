@@ -25,6 +25,10 @@
 - type: loadoutGroup
   id: WildcardsBackpack
   abstract: true
+  loadouts:
+  - CommonBackpack
+  - CommonSatchel
+  - CommonDuffel
 
 - type: loadoutGroup
   id: WildcardsPDA

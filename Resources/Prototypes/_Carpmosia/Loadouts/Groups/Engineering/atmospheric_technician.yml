@@ -28,7 +28,7 @@
 
 - type: loadoutGroup
   id: AtmosphericTechnicianBackpack
-  parent: [BaseBackpack, CommonBackpack, EngineeringBackpack]
+  parent: [BaseBackpack, CommonBackpack]
   loadouts:
   - AtmosphericTechnicianBackpack
   - AtmosphericTechnicianSatchel

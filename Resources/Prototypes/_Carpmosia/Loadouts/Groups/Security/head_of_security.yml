@@ -35,17 +35,17 @@
   - HeadofSecurityFormalSuit
   - HeadofSecurityFormalSkirt
 
-# - type: loadoutGroup
-#   id: HeadOfSecurityBackpack
-#   parent: [BaseBackpack, CommonBackpack, SecurityBackpack]
+- type: loadoutGroup
+  id: HeadOfSecurityBackpack
+  parent: [BaseBackpack, CommonBackpack, SecurityBackpack]
 
 # - type: loadoutGroup
 #   id: HeadOfSecurityPDA
 #   parent: [BasePDA, CommonPDA, SecurityPDA]
 
-# - type: loadoutGroup
-#   id: HeadOfSecurityBelt
-#   parent: [BaseBelt, CommonBelt, SecurityBelt]
+- type: loadoutGroup
+  id: HeadOfSecurityBelt
+  parent: [BaseBelt, CommonBelt, SecurityBelt]
 
 - type: loadoutGroup
   id: HeadOfSecurityOuterClothing
@@ -55,9 +55,9 @@
   - HeadofSecurityCoat
   - HeadofSecurityWinterCoat
 
-# - type: loadoutGroup
-#   id: HeadOfSecurityShoes
-#   parent: [BaseShoes, CommonShoes, SecurityShoes]
+- type: loadoutGroup
+  id: HeadOfSecurityShoes
+  parent: [BaseShoes, CommonShoes, SecurityShoes]
 
 # - type: loadoutGroup
 #   id: HeadOfSecuritySpecial

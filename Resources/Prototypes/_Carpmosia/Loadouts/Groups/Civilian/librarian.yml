@@ -27,9 +27,9 @@
   - CuratorJumpsuit
   - CuratorJumpskirt
 
-# - type: loadoutGroup
-#   id: LibrarianBackpack
-#   parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
+- type: loadoutGroup
+  id: LibrarianBackpack
+  parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
 
 # - type: loadoutGroup
 #   id: LibrarianPDA

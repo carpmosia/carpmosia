@@ -2,9 +2,9 @@
 #   id: BoxerHead
 #   parent: [BaseHead, CommonHead, WildcardsHead]
 
-# - type: loadoutGroup
-#   id: BoxerGlasses
-#   parent: [BaseGlasses, CommonGlasses, WildcardsGlasses]
+- type: loadoutGroup
+  id: BoxerGlasses
+  parent: [BaseGlasses, CommonGlasses, WildcardsGlasses]
 
 # - type: loadoutGroup
 #   id: BoxerMask
@@ -31,9 +31,9 @@
   - BoxerShorts
   - BoxerShortsWithTop
 
-# - type: loadoutGroup
-#   id: BoxerBackpack
-#   parent: [BaseBackpack, CommonBackpack, WildcardsBackpack]
+- type: loadoutGroup
+  id: BoxerBackpack
+  parent: [BaseBackpack, CommonBackpack, WildcardsBackpack]
 
 # - type: loadoutGroup
 #   id: BoxerPDA

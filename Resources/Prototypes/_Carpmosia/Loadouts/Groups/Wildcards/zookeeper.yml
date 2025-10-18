@@ -2,9 +2,9 @@
 #   id: ZookeeperHead
 #   parent: [BaseHead, CommonHead, WildcardsHead]
 
-# - type: loadoutGroup
-#   id: ZookeeperGlasses
-#   parent: [BaseGlasses, CommonGlasses, WildcardsGlasses]
+- type: loadoutGroup
+  id: ZookeeperGlasses
+  parent: [BaseGlasses, CommonGlasses, WildcardsGlasses]
 
 # - type: loadoutGroup
 #   id: ZookeeperMask
@@ -22,9 +22,9 @@
 #   id: ZookeeperJumpsuit
 #   parent: [BaseJumpsuit, CommonJumpsuit, WildcardsJumpsuit]
 
-# - type: loadoutGroup
-#   id: ZookeeperBackpack
-#   parent: [BaseBackpack, CommonBackpack, WildcardsBackpack]
+- type: loadoutGroup
+  id: ZookeeperBackpack
+  parent: [BaseBackpack, CommonBackpack, WildcardsBackpack]
 
 # - type: loadoutGroup
 #   id: ZookeeperPDA

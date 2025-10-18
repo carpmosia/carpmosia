@@ -5,13 +5,13 @@
   - ChiefMedicalOfficerBeret
   - CMOMedicalHeadMirror
 
-# - type: loadoutGroup
-#   id: ChiefMedicalOfficerGlasses
-#   parent: [BaseGlasses, CommonGlasses, MedicalGlasses]
+- type: loadoutGroup
+  id: ChiefMedicalOfficerGlasses
+  parent: [BaseGlasses, CommonGlasses, MedicalGlasses]
 
-# - type: loadoutGroup
-#   id: ChiefMedicalOfficerMask
-#   parent: [BaseMask, CommonMask, MedicalMask]
+- type: loadoutGroup
+  id: ChiefMedicalOfficerMask
+  parent: [BaseMask, CommonMask, MedicalMask]
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerNeck
@@ -33,9 +33,9 @@
   - ChiefMedicalOfficerTurtleneckJumpsuit
   - ChiefMedicalOfficerTurtleneckJumpskirt
 
-# - type: loadoutGroup
-#   id: ChiefMedicalOfficerBackpack
-#   parent: [BaseBackpack, CommonBackpack, MedicalBackpack]
+- type: loadoutGroup
+  id: ChiefMedicalOfficerBackpack
+  parent: [BaseBackpack, CommonBackpack, MedicalBackpack]
 
 # - type: loadoutGroup
 #   id: ChiefMedicalOfficerPDA

@@ -10,13 +10,13 @@
   - PurpleSurgeryCap
   - NurseHat
 
-# - type: loadoutGroup
-#   id: MedicalDoctorGlasses
-#   parent: [BaseGlasses, CommonGlasses, MedicalGlasses]
+- type: loadoutGroup
+  id: MedicalDoctorGlasses
+  parent: [BaseGlasses, CommonGlasses, MedicalGlasses]
 
-# - type: loadoutGroup
-#   id: MedicalDoctorMask
-#   parent: [BaseMask, CommonMask, MedicalMask]
+- type: loadoutGroup
+  id: MedicalDoctorMask
+  parent: [BaseMask, CommonMask, MedicalMask]
 
 # - type: loadoutGroup
 #   id: MedicalDoctorNeck
@@ -38,9 +38,9 @@
   - MedicalGreenScrubs
   - MedicalPurpleScrubs
 
-# - type: loadoutGroup
-#   id: MedicalDoctorBackpack
-#   parent: [BaseBackpack, CommonBackpack, MedicalBackpack]
+- type: loadoutGroup
+  id: MedicalDoctorBackpack
+  parent: [BaseBackpack, CommonBackpack, MedicalBackpack]
 
 - type: loadoutGroup
   id: MedicalDoctorPDA
@@ -61,9 +61,9 @@
   - MedicalDoctorWintercoat
   - SeniorPhysicianLabCoat
 
-# - type: loadoutGroup
-#   id: MedicalDoctorShoes
-#   parent: [BaseShoes, CommonShoes, MedicalShoes]
+- type: loadoutGroup
+  id: MedicalDoctorShoes
+  parent: [BaseShoes, CommonShoes, MedicalShoes]
 
 # - type: loadoutGroup
 #   id: MedicalDoctorSpecial

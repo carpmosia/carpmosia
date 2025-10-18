@@ -4,13 +4,13 @@
   loadouts:
   - ParamedicHead
 
-# - type: loadoutGroup
-#   id: ParamedicGlasses
-#   parent: [BaseGlasses, CommonGlasses, MedicalGlasses]
+- type: loadoutGroup
+  id: ParamedicGlasses
+  parent: [BaseGlasses, CommonGlasses, MedicalGlasses]
 
-# - type: loadoutGroup
-#   id: ParamedicMask
-#   parent: [BaseMask, CommonMask, MedicalMask]
+- type: loadoutGroup
+  id: ParamedicMask
+  parent: [BaseMask, CommonMask, MedicalMask]
 
 # - type: loadoutGroup
 #   id: ParamedicNeck
@@ -27,9 +27,9 @@
   - ParamedicJumpsuit
   - ParamedicJumpskirt
 
-# - type: loadoutGroup
-#   id: ParamedicBackpack
-#   parent: [BaseBackpack, CommonBackpack, MedicalBackpack]
+- type: loadoutGroup
+  id: ParamedicBackpack
+  parent: [BaseBackpack, CommonBackpack, MedicalBackpack]
 
 # - type: loadoutGroup
 #   id: ParamedicPDA

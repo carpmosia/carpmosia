@@ -35,7 +35,7 @@
 
 - type: loadoutGroup
   id: MimeBackpack
-  parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
+  parent: [BaseBackpack, CommonBackpack]
   loadouts:
   - MimeBackpack
   - MimeSatchel
