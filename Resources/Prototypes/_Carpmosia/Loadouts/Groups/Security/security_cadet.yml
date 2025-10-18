@@ -18,9 +18,12 @@
 #   id: SecurityCadetGloves
 #   parent: [BaseGloves, CommonGloves, SecurityGloves]
 
-# - type: loadoutGroup
-#   id: SecurityCadetJumpsuit
-#   parent: [BaseJumpsuit, CommonJumpsuit, SecurityJumpsuit]
+- type: loadoutGroup
+  id: SecurityCadetJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, SecurityJumpsuit]
+  loadouts:
+  - RedJumpsuit
+  - RedJumpskirt
 
 # - type: loadoutGroup
 #   id: SecurityCadetBackpack

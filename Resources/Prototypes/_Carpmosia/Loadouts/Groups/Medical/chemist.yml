@@ -18,13 +18,20 @@
 #   id: ChemistGloves
 #   parent: [BaseGloves, CommonGloves, MedicalGloves]
 
-# - type: loadoutGroup
-#   id: ChemistJumpsuit
-#   parent: [BaseJumpsuit, CommonJumpsuit, MedicalJumpsuit]
+- type: loadoutGroup
+  id: ChemistJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, MedicalJumpsuit]
+  loadouts:
+  - ChemistJumpsuit
+  - ChemistJumpskirt
 
-# - type: loadoutGroup
-#   id: ChemistBackpack
-#   parent: [BaseBackpack, CommonBackpack, MedicalBackpack]
+- type: loadoutGroup
+  id: ChemistBackpack
+  parent: [BaseBackpack, CommonBackpack, MedicalBackpack]
+  loadouts:
+  - ChemistBackpack
+  - ChemistSatchel
+  - ChemistDuffel
 
 # - type: loadoutGroup
 #   id: ChemistPDA
@@ -34,9 +41,13 @@
 #   id: ChemistBelt
 #   parent: [BaseBelt, CommonBelt, MedicalBelt]
 
-# - type: loadoutGroup
-#   id: ChemistOuterClothing
-#   parent: [BaseOuterClothing, CommonOuterClothing, MedicalOuterClothing]
+- type: loadoutGroup
+  id: ChemistOuterClothing
+  parent: [BaseOuterClothing, CommonOuterClothing, MedicalOuterClothing]
+  loadouts:
+  - RegularLabCoat
+  - ChemistLabCoat
+  - ChemistWintercoat
 
 # - type: loadoutGroup
 #   id: ChemistShoes

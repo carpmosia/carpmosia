@@ -1,6 +1,9 @@
-# - type: loadoutGroup
-#   id: ChiefMedicalOfficerHead
-#   parent: [BaseHead, CommonHead, MedicalHead]
+- type: loadoutGroup
+  id: ChiefMedicalOfficerHead
+  parent: [BaseHead, CommonHead, MedicalHead]
+  loadouts:
+  - ChiefMedicalOfficerBeret
+  - CMOMedicalHeadMirror
 
 # - type: loadoutGroup
 #   id: ChiefMedicalOfficerGlasses
@@ -10,9 +13,12 @@
 #   id: ChiefMedicalOfficerMask
 #   parent: [BaseMask, CommonMask, MedicalMask]
 
-# - type: loadoutGroup
-#   id: ChiefMedicalOfficerNeck
-#   parent: [BaseNeck, CommonNeck, MedicalNeck]
+- type: loadoutGroup
+  id: ChiefMedicalOfficerNeck
+  parent: [BaseNeck, CommonNeck, MedicalNeck]
+  loadouts:
+  - ChiefMedicalOfficerCloak
+  - ChiefMedicalOfficerMantle
 
 # - type: loadoutGroup
 #   id: ChiefMedicalOfficerGloves
@@ -38,9 +44,12 @@
 #   id: ChiefMedicalOfficerOuterClothing
 #   parent: [BaseOuterClothing, CommonOuterClothing, MedicalOuterClothing]
 
-# - type: loadoutGroup
-#   id: ChiefMedicalOfficerShoes
-#   parent: [BaseShoes, CommonShoes, MedicalShoes]
+- type: loadoutGroup
+  id: ChiefMedicalOfficerShoes
+  parent: [BaseShoes, CommonShoes, MedicalShoes]
+  loadouts:
+  - BrownShoes
+  - MedicalWinterBoots
 
 # - type: loadoutGroup
 #   id: ChiefMedicalOfficerSpecial

@@ -50,6 +50,7 @@
 - type: loadoutGroup
   id: HeadOfSecurityOuterClothing
   parent: [BaseOuterClothing, CommonOuterClothing, SecurityOuterClothing]
+  minLimit: 1
   loadouts:
   - HeadofSecurityCoat
   - HeadofSecurityWinterCoat

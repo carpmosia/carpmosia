@@ -38,9 +38,13 @@
 #   id: ParamedicOuterClothing
 #   parent: [BaseOuterClothing, CommonOuterClothing, MedicalOuterClothing]
 
-# - type: loadoutGroup
-#   id: ParamedicShoes
-#   parent: [BaseShoes, CommonShoes, MedicalShoes]
+- type: loadoutGroup
+  id: ParamedicShoes
+  parent: [BaseShoes, CommonShoes, MedicalShoes]
+  loadouts:
+  - BlueShoes
+  - WhiteShoes
+  - MedicalWinterBoots
 
 # - type: loadoutGroup
 #   id: ParamedicSpecial

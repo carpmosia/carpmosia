@@ -1121,20 +1121,20 @@
 #   - NoirJumpsuit
 #   - NoirJumpskirt
 
-- type: loadoutGroup
-  id: DetectiveOuterClothing
-  name: loadout-group-detective-outerclothing
-  loadouts:
-  - DetectiveArmorVest
-  - DetectiveCoat
-  - DetectiveCoatGrey
+# - type: loadoutGroup
+#   id: DetectiveOuterClothing
+#   name: loadout-group-detective-outerclothing
+#   loadouts:
+#   - DetectiveArmorVest
+#   - DetectiveCoat
+#   - DetectiveCoatGrey
 
-- type: loadoutGroup
-  id: SecurityCadetJumpsuit
-  name: loadout-group-security-cadet-jumpsuit
-  loadouts:
-  - RedJumpsuit
-  - RedJumpskirt
+# - type: loadoutGroup
+#   id: SecurityCadetJumpsuit
+#   name: loadout-group-security-cadet-jumpsuit
+#   loadouts:
+#   - RedJumpsuit
+#   - RedJumpskirt
 
 - type: loadoutGroup
   id: SurvivalSecurity
@@ -1154,13 +1154,13 @@
   - SecStar
 
 # Medical
-- type: loadoutGroup
-  id: ChiefMedicalOfficerHead
-  name: loadout-group-chief-medical-officer-head
-  minLimit: 0
-  loadouts:
-  - ChiefMedicalOfficerBeret
-  - CMOMedicalHeadMirror
+# - type: loadoutGroup
+#   id: ChiefMedicalOfficerHead
+#   name: loadout-group-chief-medical-officer-head
+#   minLimit: 0
+#   loadouts:
+#   - ChiefMedicalOfficerBeret
+#   - CMOMedicalHeadMirror
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerJumpsuit
@@ -1179,20 +1179,20 @@
   - ChiefMedicalOfficerLabCoat
   - ChiefMedicalOfficerWintercoat
 
-- type: loadoutGroup
-  id: ChiefMedicalOfficerNeck
-  name: loadout-group-chief-medical-officer-neck
-  minLimit: 0
-  loadouts:
-  - ChiefMedicalOfficerCloak
-  - ChiefMedicalOfficerMantle
+# - type: loadoutGroup
+#   id: ChiefMedicalOfficerNeck
+#   name: loadout-group-chief-medical-officer-neck
+#   minLimit: 0
+#   loadouts:
+#   - ChiefMedicalOfficerCloak
+#   - ChiefMedicalOfficerMantle
 
-- type: loadoutGroup
-  id: ChiefMedicalOfficerShoes
-  name: loadout-group-chief-medical-officer-shoes
-  loadouts:
-  - BrownShoes
-  - MedicalWinterBoots
+# - type: loadoutGroup
+#   id: ChiefMedicalOfficerShoes
+#   name: loadout-group-chief-medical-officer-shoes
+#   loadouts:
+#   - BrownShoes
+#   - MedicalWinterBoots
 
 - type: loadoutGroup
   id: MedicalDoctorHead
@@ -1243,12 +1243,12 @@
   - WhiteShoes
   - MedicalWinterBoots
 
-- type: loadoutGroup
-  id: MedicalDoctorPDA
-  name: loadout-group-medical-doctor-id
-  loadouts:
-  - MedicalDoctorPDA
-  - SeniorPhysicianPDA
+# - type: loadoutGroup
+#   id: MedicalDoctorPDA
+#   name: loadout-group-medical-doctor-id
+#   loadouts:
+#   - MedicalDoctorPDA
+#   - SeniorPhysicianPDA
 
 - type: loadoutGroup
   id: MedicalGloves
@@ -1265,36 +1265,36 @@
   loadouts:
   - SterileMask
 
-- type: loadoutGroup
-  id: MedicalInternJumpsuit
-  name: loadout-group-medical-intern-jumpsuit
-  loadouts:
-  - WhiteJumpsuit
-  - WhiteJumpskirt
+# - type: loadoutGroup
+#   id: MedicalInternJumpsuit
+#   name: loadout-group-medical-intern-jumpsuit
+#   loadouts:
+#   - WhiteJumpsuit
+#   - WhiteJumpskirt
 
-- type: loadoutGroup
-  id: ChemistJumpsuit
-  name: loadout-group-chemist-jumpsuit
-  loadouts:
-  - ChemistJumpsuit
-  - ChemistJumpskirt
+# - type: loadoutGroup
+#   id: ChemistJumpsuit
+#   name: loadout-group-chemist-jumpsuit
+#   loadouts:
+#   - ChemistJumpsuit
+#   - ChemistJumpskirt
 
-- type: loadoutGroup
-  id: ChemistOuterClothing
-  name: loadout-group-chemist-outerclothing
-  minLimit: 0
-  loadouts:
-  - RegularLabCoat
-  - ChemistLabCoat
-  - ChemistWintercoat
+# - type: loadoutGroup
+#   id: ChemistOuterClothing
+#   name: loadout-group-chemist-outerclothing
+#   minLimit: 0
+#   loadouts:
+#   - RegularLabCoat
+#   - ChemistLabCoat
+#   - ChemistWintercoat
 
-- type: loadoutGroup
-  id: ChemistBackpack
-  name: loadout-group-chemist-backpack
-  loadouts:
-  - ChemistBackpack
-  - ChemistSatchel
-  - ChemistDuffel
+# - type: loadoutGroup
+#   id: ChemistBackpack
+#   name: loadout-group-chemist-backpack
+#   loadouts:
+#   - ChemistBackpack
+#   - ChemistSatchel
+#   - ChemistDuffel
 
 - type: loadoutGroup
   id: ParamedicHead
@@ -1318,13 +1318,13 @@
   - ParamedicWindbreaker
   - ParamedicWintercoat
 
-- type: loadoutGroup
-  id: ParamedicShoes
-  name: loadout-group-paramedic-shoes
-  loadouts:
-  - BlueShoes
-  - WhiteShoes
-  - MedicalWinterBoots
+# - type: loadoutGroup
+#   id: ParamedicShoes
+#   name: loadout-group-paramedic-shoes
+#   loadouts:
+#   - BlueShoes
+#   - WhiteShoes
+#   - MedicalWinterBoots
 
 - type: loadoutGroup
   id: MedicalEyewear

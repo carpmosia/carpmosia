@@ -18,9 +18,12 @@
 #   id: MedicalInternGloves
 #   parent: [BaseGloves, CommonGloves, MedicalGloves]
 
-# - type: loadoutGroup
-#   id: MedicalInternJumpsuit
-#   parent: [BaseJumpsuit, CommonJumpsuit, MedicalJumpsuit]
+- type: loadoutGroup
+  id: MedicalInternJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, MedicalJumpsuit]
+  loadouts:
+  - WhiteJumpsuit
+  - WhiteJumpskirt
 
 # - type: loadoutGroup
 #   id: MedicalInternBackpack

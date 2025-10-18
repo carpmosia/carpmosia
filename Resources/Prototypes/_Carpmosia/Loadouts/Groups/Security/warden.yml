@@ -43,6 +43,7 @@
 - type: loadoutGroup
   id: WardenOuterClothing
   parent: [BaseOuterClothing, CommonOuterClothing, SecurityOuterClothing]
+  minLimit: 1
   loadouts:
   - WardenCoat
   - WardenArmoredWinterCoat

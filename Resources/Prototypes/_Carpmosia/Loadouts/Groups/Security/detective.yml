@@ -39,9 +39,14 @@
 #   id: DetectiveBelt
 #   parent: [BaseBelt, CommonBelt, SecurityBelt]
 
-# - type: loadoutGroup
-#   id: DetectiveOuterClothing
-#   parent: [BaseOuterClothing, CommonOuterClothing, SecurityOuterClothing]
+- type: loadoutGroup
+  id: DetectiveOuterClothing
+  parent: [BaseOuterClothing, CommonOuterClothing, SecurityOuterClothing]
+  minLimit: 1
+  loadouts:
+  - DetectiveArmorVest
+  - DetectiveCoat
+  - DetectiveCoatGrey
 
 # - type: loadoutGroup
 #   id: DetectiveShoes

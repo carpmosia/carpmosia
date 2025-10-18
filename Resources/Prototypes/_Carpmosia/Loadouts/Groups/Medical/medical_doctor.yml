@@ -26,9 +26,12 @@
 #   id: MedicalDoctorBackpack
 #   parent: [BaseBackpack, CommonBackpack, MedicalBackpack]
 
-# - type: loadoutGroup
-#   id: MedicalDoctorPDA
-#   parent: [BasePDA, CommonPDA, MedicalPDA]
+- type: loadoutGroup
+  id: MedicalDoctorPDA
+  parent: [BasePDA, CommonPDA, MedicalPDA]
+  loadouts:
+  - MedicalDoctorPDA
+  - SeniorPhysicianPDA
 
 # - type: loadoutGroup
 #   id: MedicalDoctorBelt
