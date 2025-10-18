@@ -46,6 +46,6 @@
 #   id: CaptainSpecial
 #   parent: [BaseSpecial, CommonSpecial, CommandSpecial]
 
-# - type: loadoutGroup
-#   id: CaptainTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets, CommandTrinkets]
+- type: loadoutGroup
+  id: CaptainTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, CommandTrinkets]

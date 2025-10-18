@@ -46,6 +46,6 @@
 #   id: CargoTechnicianSpecial
 #   parent: [BaseSpecial, CommonSpecial, CargoSpecial]
 
-# - type: loadoutGroup
-#   id: CargoTechnicianTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets, CargoTrinkets]
+- type: loadoutGroup
+  id: CargoTechnicianTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, CargoTrinkets]

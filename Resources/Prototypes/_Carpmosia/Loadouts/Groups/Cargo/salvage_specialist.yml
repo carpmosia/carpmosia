@@ -46,6 +46,6 @@
 #   id: SalvageSpecialistSpecial
 #   parent: [BaseSpecial, CommonSpecial, CargoSpecial]
 
-# - type: loadoutGroup
-#   id: SalvageSpecialistTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets, CargoTrinkets]
+- type: loadoutGroup
+  id: SalvageSpecialistTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, CargoTrinkets]

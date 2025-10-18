@@ -46,6 +46,6 @@
 #   id: BartenderSpecial
 #   parent: [BaseSpecial, CommonSpecial, CivilianSpecial]
 
-# - type: loadoutGroup
-#   id: BartenderTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]
+- type: loadoutGroup
+  id: BartenderTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]

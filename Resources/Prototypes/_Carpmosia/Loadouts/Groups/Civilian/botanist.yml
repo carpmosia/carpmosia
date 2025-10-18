@@ -46,6 +46,6 @@
 #   id: BotanistSpecial
 #   parent: [BaseSpecial, CommonSpecial, CivilianSpecial]
 
-# - type: loadoutGroup
-#   id: BotanistTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]
+- type: loadoutGroup
+  id: BotanistTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]

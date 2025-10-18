@@ -46,6 +46,6 @@
 #   id: ResearchAssistantSpecial
 #   parent: [BaseSpecial, CommonSpecial, ScienceSpecial]
 
-# - type: loadoutGroup
-#   id: ResearchAssistantTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets, ScienceTrinkets]
+- type: loadoutGroup
+  id: ResearchAssistantTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, ScienceTrinkets]

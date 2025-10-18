@@ -46,6 +46,6 @@
 #   id: MusicianSpecial
 #   parent: [BaseSpecial, CommonSpecial, CivilianSpecial]
 
-# - type: loadoutGroup
-#   id: MusicianTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]
+- type: loadoutGroup
+  id: MusicianTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]

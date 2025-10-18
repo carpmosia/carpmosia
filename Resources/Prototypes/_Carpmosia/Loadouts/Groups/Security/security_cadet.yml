@@ -46,6 +46,6 @@
 #   id: SecurityCadetSpecial
 #   parent: [BaseSpecial, CommonSpecial, SecuritySpecial]
 
-# - type: loadoutGroup
-#   id: SecurityCadetTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets, SecurityTrinkets]
+- type: loadoutGroup
+  id: SecurityCadetTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, SecurityTrinkets]

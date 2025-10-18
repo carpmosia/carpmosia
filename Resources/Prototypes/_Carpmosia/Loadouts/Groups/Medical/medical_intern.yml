@@ -46,6 +46,6 @@
 #   id: MedicalInternSpecial
 #   parent: [BaseSpecial, CommonSpecial, MedicalSpecial]
 
-# - type: loadoutGroup
-#   id: MedicalInternTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets, MedicalTrinkets]
+- type: loadoutGroup
+  id: MedicalInternTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, MedicalTrinkets]

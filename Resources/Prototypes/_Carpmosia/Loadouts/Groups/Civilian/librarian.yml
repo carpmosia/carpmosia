@@ -46,6 +46,6 @@
 #   id: LibrarianSpecial
 #   parent: [BaseSpecial, CommonSpecial, CivilianSpecial]
 
-# - type: loadoutGroup
-#   id: LibrarianTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]
+- type: loadoutGroup
+  id: LibrarianTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]

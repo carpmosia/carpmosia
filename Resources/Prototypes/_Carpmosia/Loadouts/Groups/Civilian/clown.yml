@@ -1,6 +1,9 @@
-# - type: loadoutGroup
-#   id: ClownHead
-#   parent: [BaseHead, CommonHead, CivilianHead]
+- type: loadoutGroup
+  id: ClownHead
+  parent: [BaseHead, CommonHead, CivilianHead]
+  loadouts:
+  - JesterHat
+  - JesterAltHat
 
 # - type: loadoutGroup
 #   id: ClownGlasses
@@ -46,6 +49,6 @@
 #   id: ClownSpecial
 #   parent: [BaseSpecial, CommonSpecial, CivilianSpecial]
 
-# - type: loadoutGroup
-#   id: ClownTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]
+- type: loadoutGroup
+  id: ClownTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]

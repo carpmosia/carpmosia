@@ -46,6 +46,6 @@
 #   id: PassengerSpecial
 #   parent: [BaseSpecial, CommonSpecial, CivilianSpecial]
 
-# - type: loadoutGroup
-#   id: PassengerTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]
+- type: loadoutGroup
+  id: PassengerTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]

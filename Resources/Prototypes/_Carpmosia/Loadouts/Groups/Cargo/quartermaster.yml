@@ -46,6 +46,6 @@
 #   id: QuartermasterSpecial
 #   parent: [BaseSpecial, CommonSpecial, CargoSpecial]
 
-# - type: loadoutGroup
-#   id: QuartermasterTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets, CargoTrinkets]
+- type: loadoutGroup
+  id: QuartermasterTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, CargoTrinkets]

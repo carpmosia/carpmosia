@@ -46,6 +46,6 @@
 #   id: AtmosphericTechnicianSpecial
 #   parent: [BaseSpecial, CommonSpecial, EngineeringSpecial]
 
-# - type: loadoutGroup
-#   id: AtmosphericTechnicianTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets, EngineeringTrinkets]
+- type: loadoutGroup
+  id: AtmosphericTechnicianTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, EngineeringTrinkets]

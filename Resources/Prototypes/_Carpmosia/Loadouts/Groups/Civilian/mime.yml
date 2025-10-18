@@ -46,6 +46,6 @@
 #   id: MimeSpecial
 #   parent: [BaseSpecial, CommonSpecial, CivilianSpecial]
 
-# - type: loadoutGroup
-#   id: MimeTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]
+- type: loadoutGroup
+  id: MimeTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]

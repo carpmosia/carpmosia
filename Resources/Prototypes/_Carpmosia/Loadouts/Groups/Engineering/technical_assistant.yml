@@ -46,6 +46,6 @@
 #   id: TechnicalAssistantSpecial
 #   parent: [BaseSpecial, CommonSpecial, EngineeringSpecial]
 
-# - type: loadoutGroup
-#   id: TechnicalAssistantTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets, EngineeringTrinkets]
+- type: loadoutGroup
+  id: TechnicalAssistantTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, EngineeringTrinkets]

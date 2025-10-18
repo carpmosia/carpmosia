@@ -46,6 +46,6 @@
 #   id: ChefSpecial
 #   parent: [BaseSpecial, CommonSpecial, CivilianSpecial]
 
-# - type: loadoutGroup
-#   id: ChefTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]
+- type: loadoutGroup
+  id: ChefTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]

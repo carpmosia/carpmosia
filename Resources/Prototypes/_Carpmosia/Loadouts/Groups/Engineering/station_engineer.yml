@@ -46,6 +46,6 @@
 #   id: StationEngineerSpecial
 #   parent: [BaseSpecial, CommonSpecial, EngineeringSpecial]
 
-# - type: loadoutGroup
-#   id: StationEngineerTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets, EngineeringTrinkets]
+- type: loadoutGroup
+  id: StationEngineerTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, EngineeringTrinkets]

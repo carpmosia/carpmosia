@@ -46,6 +46,6 @@
 #   id: ChaplainSpecial
 #   parent: [BaseSpecial, CommonSpecial, CivilianSpecial]
 
-# - type: loadoutGroup
-#   id: ChaplainTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]
+- type: loadoutGroup
+  id: ChaplainTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]

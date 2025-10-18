@@ -46,6 +46,6 @@
 #   id: DetectiveSpecial
 #   parent: [BaseSpecial, CommonSpecial, SecuritySpecial]
 
-# - type: loadoutGroup
-#   id: DetectiveTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets, SecurityTrinkets]
+- type: loadoutGroup
+  id: DetectiveTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, SecurityTrinkets]

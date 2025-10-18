@@ -46,6 +46,6 @@
 #   id: LawyerSpecial
 #   parent: [BaseSpecial, CommonSpecial, CivilianSpecial]
 
-# - type: loadoutGroup
-#   id: LawyerTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]
+- type: loadoutGroup
+  id: LawyerTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]

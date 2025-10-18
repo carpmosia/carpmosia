@@ -46,6 +46,6 @@
 #   id: HeadOfPersonnelSpecial
 #   parent: [BaseSpecial, CommonSpecial, CommandSpecial]
 
-# - type: loadoutGroup
-#   id: HeadOfPersonnelTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets, CommandTrinkets]
+- type: loadoutGroup
+  id: HeadOfPersonnelTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, CommandTrinkets]

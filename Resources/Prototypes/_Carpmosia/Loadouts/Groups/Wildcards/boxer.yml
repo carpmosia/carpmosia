@@ -17,6 +17,7 @@
 - type: loadoutGroup
   id: BoxerGloves
   parent: [BaseGloves, CommonGloves, WildcardsGloves]
+  minLimit: 1
   loadouts:
   - RedBoxingGloves
   - BlueBoxingGloves

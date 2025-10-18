@@ -46,6 +46,6 @@
 #   id: ServiceWorkerSpecial
 #   parent: [BaseSpecial, CommonSpecial, CivilianSpecial]
 
-# - type: loadoutGroup
-#   id: ServiceWorkerTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]
+- type: loadoutGroup
+  id: ServiceWorkerTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]

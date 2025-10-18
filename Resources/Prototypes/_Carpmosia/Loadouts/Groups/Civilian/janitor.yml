@@ -46,6 +46,6 @@
 #   id: JanitorSpecial
 #   parent: [BaseSpecial, CommonSpecial, CivilianSpecial]
 
-# - type: loadoutGroup
-#   id: JanitorTrinkets
-#   parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]
+- type: loadoutGroup
+  id: JanitorTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]
