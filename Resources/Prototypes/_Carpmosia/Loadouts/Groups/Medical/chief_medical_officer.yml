@@ -24,9 +24,14 @@
 #   id: ChiefMedicalOfficerGloves
 #   parent: [BaseGloves, CommonGloves, MedicalGloves]
 
-# - type: loadoutGroup
-#   id: ChiefMedicalOfficerJumpsuit
-#   parent: [BaseJumpsuit, CommonJumpsuit, MedicalJumpsuit]
+- type: loadoutGroup
+  id: ChiefMedicalOfficerJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, MedicalJumpsuit]
+  loadouts:
+  - ChiefMedicalOfficerJumpsuit
+  - ChiefMedicalOfficerJumpskirt
+  - ChiefMedicalOfficerTurtleneckJumpsuit
+  - ChiefMedicalOfficerTurtleneckJumpskirt
 
 # - type: loadoutGroup
 #   id: ChiefMedicalOfficerBackpack
@@ -40,9 +45,12 @@
 #   id: ChiefMedicalOfficerBelt
 #   parent: [BaseBelt, CommonBelt, MedicalBelt]
 
-# - type: loadoutGroup
-#   id: ChiefMedicalOfficerOuterClothing
-#   parent: [BaseOuterClothing, CommonOuterClothing, MedicalOuterClothing]
+- type: loadoutGroup
+  id: ChiefMedicalOfficerOuterClothing
+  parent: [BaseOuterClothing, CommonOuterClothing, MedicalOuterClothing]
+  loadouts:
+  - ChiefMedicalOfficerLabCoat
+  - ChiefMedicalOfficerWintercoat
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerShoes
