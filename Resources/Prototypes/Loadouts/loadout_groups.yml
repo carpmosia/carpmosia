@@ -195,29 +195,29 @@
   - HoPWintercoat
 
 # Civilian
-- type: loadoutGroup
-  id: PassengerJumpsuit
-  name: loadout-group-passenger-jumpsuit
-  loadouts:
-  - GreyJumpsuit
-  - GreyJumpskirt
-  - AncientJumpsuit
-  - RainbowJumpsuit
-  - RainbowJumpskirt
+# - type: loadoutGroup
+#   id: PassengerJumpsuit
+#   name: loadout-group-passenger-jumpsuit
+#   loadouts:
+#   - GreyJumpsuit
+#   - GreyJumpskirt
+#   - AncientJumpsuit
+#   - RainbowJumpsuit
+#   - RainbowJumpskirt
 
-- type: loadoutGroup
-  id: PassengerFace
-  name: loadout-group-passenger-mask
-  minLimit: 0
-  loadouts:
-  - PassengerFace
+# - type: loadoutGroup
+#   id: PassengerFace
+#   name: loadout-group-passenger-mask
+#   minLimit: 0
+#   loadouts:
+#   - PassengerFace
 
-- type: loadoutGroup
-  id: PassengerGloves
-  name: loadout-group-passenger-gloves
-  minLimit: 0
-  loadouts:
-  - PassengerGloves
+# - type: loadoutGroup
+#   id: PassengerGloves
+#   name: loadout-group-passenger-gloves
+#   minLimit: 0
+#   loadouts:
+#   - PassengerGloves
 
 - type: loadoutGroup
   id: CommonBackpack
@@ -227,19 +227,19 @@
   - CommonSatchel
   - CommonDuffel
 
-- type: loadoutGroup
-  id: PassengerNeck
-  name: loadout-group-passenger-neck
-  minLimit: 0
-  loadouts:
-  - Mantle
+# - type: loadoutGroup
+#   id: PassengerNeck
+#   name: loadout-group-passenger-neck
+#   minLimit: 0
+#   loadouts:
+#   - Mantle
 
-- type: loadoutGroup
-  id: PassengerOuterClothing
-  name: loadout-group-passenger-outerclothing
-  minLimit: 0
-  loadouts:
-  - PassengerWintercoat
+# - type: loadoutGroup
+#   id: PassengerOuterClothing
+#   name: loadout-group-passenger-outerclothing
+#   minLimit: 0
+#   loadouts:
+#   - PassengerWintercoat
 
 - type: loadoutGroup
   id: PassengerShoes

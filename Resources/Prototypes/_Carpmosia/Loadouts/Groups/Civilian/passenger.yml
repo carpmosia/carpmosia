@@ -6,21 +6,33 @@
 #   id: PassengerGlasses
 #   parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
 
-# - type: loadoutGroup
-#   id: PassengerMask
-#   parent: [BaseMask, CommonMask, CivilianMask]
+- type: loadoutGroup
+  id: PassengerMask
+  parent: [BaseMask, CommonMask, CivilianMask]
+  loadouts:
+  - PassengerFace
 
-# - type: loadoutGroup
-#   id: PassengerNeck
-#   parent: [BaseNeck, CommonNeck, CivilianNeck]
+- type: loadoutGroup
+  id: PassengerNeck
+  parent: [BaseNeck, CommonNeck, CivilianNeck]
+  loadouts:
+  - Mantle
 
-# - type: loadoutGroup
-#   id: PassengerGloves
-#   parent: [BaseGloves, CommonGloves, CivilianGloves]
+- type: loadoutGroup
+  id: PassengerGloves
+  parent: [BaseGloves, CommonGloves, CivilianGloves]
+  loadouts:
+  - PassengerGloves
 
-# - type: loadoutGroup
-#   id: PassengerJumpsuit
-#   parent: [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit]
+- type: loadoutGroup
+  id: PassengerJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit]
+  loadouts:
+  - GreyJumpsuit
+  - GreyJumpskirt
+  - AncientJumpsuit
+  - RainbowJumpsuit
+  - RainbowJumpskirt
 
 # - type: loadoutGroup
 #   id: PassengerBackpack
@@ -34,9 +46,11 @@
 #   id: PassengerBelt
 #   parent: [BaseBelt, CommonBelt, CivilianBelt]
 
-# - type: loadoutGroup
-#   id: PassengerOuterClothing
-#   parent: [BaseOuterClothing, CommonOuterClothing, CivilianOuterClothing]
+- type: loadoutGroup
+  id: PassengerOuterClothing
+  parent: [BaseOuterClothing, CommonOuterClothing, CivilianOuterClothing]
+  loadouts:
+  - PassengerWintercoat
 
 # - type: loadoutGroup
 #   id: PassengerShoes
