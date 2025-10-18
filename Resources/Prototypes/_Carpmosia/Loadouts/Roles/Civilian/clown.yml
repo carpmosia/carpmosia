@@ -1,21 +1,22 @@
 - type: roleLoadout
   id: JobClown
+  canCustomizeName: true
   groups:
-  # - GroupTankHarness
+  - GroupTankHarness
   # Common groups
-  # - ClownHead
-  # - ClownGlasses
+  - ClownHead
+  - ClownGlasses
   # - ClownMask
   # - ClownNeck
   # - ClownGloves
-  # - ClownJumpsuit
-  # - ClownBackpack
+  - ClownJumpsuit
+  - ClownBackpack
   # - ClownPDA
   # - ClownBelt
-  # - ClownOuterClothing
-  # - ClownShoes
+  - ClownOuterClothing
+  - ClownShoes
   # Backpack fills
-  # - Survival
+  - SurvivalClown
   # - GroupSpeciesBreathTool
   # - ClownSpecial
-  # - ClownTrinkets
+  - ClownTrinkets
