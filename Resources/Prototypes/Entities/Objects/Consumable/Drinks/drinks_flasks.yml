@@ -6,7 +6,7 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 60 # Carpmosia-modification: reagentStorage
+        maxVol: 60 # Carpmosia-edit - reagentStorage
   - type: Sprite
     sprite: Objects/Consumable/Drinks/flask.rsi
   - type: FitsInDispenser
@@ -29,7 +29,7 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 60 # Carpmosia-modification: reagentStorage
+        maxVol: 60 # Carpmosia-edit - reagentStorage
   - type: Sprite
     sprite: Objects/Consumable/Drinks/flask_old.rsi
   - type: FitsInDispenser
@@ -58,7 +58,7 @@
       drink:
         reagents:
         - ReagentId: Water
-          Quantity: 60 # Carpmosia-modification: reagentStorage
+          Quantity: 60 # Carpmosia-edit - reagentStorage
   - type: TrashOnSolutionEmpty
     solution: drink
 
