@@ -4,9 +4,9 @@
   loadouts:
   - JanitorHead
 
-# - type: loadoutGroup
-#   id: JanitorGlasses
-#   parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
+- type: loadoutGroup
+  id: JanitorGlasses
+  parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
 
 # - type: loadoutGroup
 #   id: JanitorMask
@@ -56,7 +56,6 @@
 - type: loadoutGroup
   id: JanitorSpecial
   parent: BaseSpecial
-  name: loadout-group-janitor-plunger
   loadouts:
   - JanitorGoldenPlunger
 

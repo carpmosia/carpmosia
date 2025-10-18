@@ -2,9 +2,9 @@
 #   id: ServiceWorkerHead
 #   parent: [BaseHead, CommonHead, CivilianHead]
 
-# - type: loadoutGroup
-#   id: ServiceWorkerGlasses
-#   parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
+- type: loadoutGroup
+  id: ServiceWorkerGlasses
+  parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
 
 # - type: loadoutGroup
 #   id: ServiceWorkerMask
@@ -18,9 +18,9 @@
 #   id: ServiceWorkerGloves
 #   parent: [BaseGloves, CommonGloves, CivilianGloves]
 
-# - type: loadoutGroup
-#   id: ServiceWorkerJumpsuit
-#   parent: [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit]
+- type: loadoutGroup
+  id: ServiceWorkerJumpsuit
+  parent: BartenderJumpsuit # [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit] LoadoutReworkTODO
 
 - type: loadoutGroup
   id: ServiceWorkerBackpack

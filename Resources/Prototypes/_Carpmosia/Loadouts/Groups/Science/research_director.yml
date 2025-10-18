@@ -4,9 +4,9 @@
   loadouts:
   - ResearchDirectorBeret
 
-# - type: loadoutGroup
-#   id: ResearchDirectorGlasses
-#   parent: [BaseGlasses, CommonGlasses, ScienceGlasses]
+- type: loadoutGroup
+  id: ResearchDirectorGlasses
+  parent: [BaseGlasses, CommonGlasses, ScienceGlasses]
 
 # - type: loadoutGroup
 #   id: ResearchDirectorMask
@@ -19,9 +19,9 @@
   - ResearchDirectorMantle
   - ResearchDirectorCloak
 
-# - type: loadoutGroup
-#   id: ResearchDirectorGloves
-#   parent: [BaseGloves, CommonGloves, ScienceGloves]
+- type: loadoutGroup
+  id: ResearchDirectorGloves
+  parent: [BaseGloves, CommonGloves, ScienceGloves]
 
 - type: loadoutGroup
   id: ResearchDirectorJumpsuit

@@ -4,9 +4,9 @@
   loadouts:
   - CargoTechnicianHead
 
-# - type: loadoutGroup
-#   id: CargoTechnicianGlasses
-#   parent: [BaseGlasses, CommonGlasses, CargoGlasses]
+- type: loadoutGroup
+  id: CargoTechnicianGlasses
+  parent: [BaseGlasses, CommonGlasses, CargoGlasses]
 
 # - type: loadoutGroup
 #   id: CargoTechnicianMask

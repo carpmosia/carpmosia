@@ -2,9 +2,9 @@
 #   id: PassengerHead
 #   parent: [BaseHead, CommonHead, CivilianHead]
 
-# - type: loadoutGroup
-#   id: PassengerGlasses
-#   parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
+- type: loadoutGroup
+  id: PassengerGlasses
+  parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
 
 - type: loadoutGroup
   id: PassengerMask

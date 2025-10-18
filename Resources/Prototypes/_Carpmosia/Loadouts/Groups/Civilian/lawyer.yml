@@ -2,9 +2,9 @@
 #   id: LawyerHead
 #   parent: [BaseHead, CommonHead, CivilianHead]
 
-# - type: loadoutGroup
-#   id: LawyerGlasses
-#   parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
+- type: loadoutGroup
+  id: LawyerGlasses
+  parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
 
 # - type: loadoutGroup
 #   id: LawyerMask

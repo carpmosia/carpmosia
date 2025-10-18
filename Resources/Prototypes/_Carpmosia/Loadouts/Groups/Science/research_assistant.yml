@@ -2,9 +2,9 @@
 #   id: ResearchAssistantHead
 #   parent: [BaseHead, CommonHead, ScienceHead]
 
-# - type: loadoutGroup
-#   id: ResearchAssistantGlasses
-#   parent: [BaseGlasses, CommonGlasses, ScienceGlasses]
+- type: loadoutGroup
+  id: ResearchAssistantGlasses
+  parent: [BaseGlasses, CommonGlasses, ScienceGlasses]
 
 # - type: loadoutGroup
 #   id: ResearchAssistantMask

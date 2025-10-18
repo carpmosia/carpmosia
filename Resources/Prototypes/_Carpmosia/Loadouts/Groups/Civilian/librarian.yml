@@ -2,9 +2,9 @@
 #   id: LibrarianHead
 #   parent: [BaseHead, CommonHead, CivilianHead]
 
-# - type: loadoutGroup
-#   id: LibrarianGlasses
-#   parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
+- type: loadoutGroup
+  id: LibrarianGlasses
+  parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
 
 # - type: loadoutGroup
 #   id: LibrarianMask

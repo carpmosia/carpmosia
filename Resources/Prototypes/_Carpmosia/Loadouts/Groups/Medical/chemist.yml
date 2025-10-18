@@ -27,7 +27,7 @@
 
 - type: loadoutGroup
   id: ChemistBackpack
-  parent: [BaseBackpack, MedicalBackpack]
+  parent: [BaseBackpack, CommonBackpack]
   loadouts:
   - ChemistBackpack
   - ChemistSatchel
