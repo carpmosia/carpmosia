@@ -1,21 +1,21 @@
 - type: roleLoadout
   id: JobSalvageSpecialist
   groups:
-  # - GroupTankHarness
+  - GroupTankHarness
   # Common groups
   # - SalvageSpecialistHead
-  # - SalvageSpecialistGlasses
+  - SalvageSpecialistGlasses
   # - SalvageSpecialistMask
   # - SalvageSpecialistNeck
   # - SalvageSpecialistGloves
   # - SalvageSpecialistJumpsuit
-  # - SalvageSpecialistBackpack
+  - SalvageSpecialistBackpack
   # - SalvageSpecialistPDA
   # - SalvageSpecialistBelt
-  # - SalvageSpecialistOuterClothing
-  # - SalvageSpecialistShoes
+  - SalvageSpecialistOuterClothing
+  - SalvageSpecialistShoes
   # Backpack fills
-  # - Survival
-  # - GroupSpeciesBreathTool
+  - SalvageSpecialistSurvival
+  - GroupSpeciesBreathTool
   # - SalvageSpecialistSpecial
-  # - SalvageSpecialistTrinkets
+  - SalvageSpecialistTrinkets
