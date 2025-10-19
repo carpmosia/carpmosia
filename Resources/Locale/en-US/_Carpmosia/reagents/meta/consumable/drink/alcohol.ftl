@@ -2,7 +2,7 @@ reagent-name-angostura = Angostura
 reagent-desc-angostura = Concentrated bitters based on herbs and spices. While being used for flavoring cocktails, bitters are not potable to drink on their own.
 
 reagent-name-sweet-revenge = Sweet Revenge
-reagent-desc-sweet-revenge = Strong, sweet and best served cold. 
+reagent-desc-sweet-revenge = Strong, sweet and best served cold. It leaves a bitter aftertaste.
 
 reagent-name-old-fashioned = Old Fashioned
 reagent-desc-old-fashioned = There are cocktails and there is Old Fashioned.
