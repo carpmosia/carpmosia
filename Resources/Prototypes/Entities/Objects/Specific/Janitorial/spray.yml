@@ -27,7 +27,7 @@
   - type: SolutionContainerManager
     solutions:
       spray:
-        maxVol: 100
+        maxVol: 120 # Carpmosia-edit - extendedReagentStorage
   - type: RefillableSolution
     solution: spray
   - type: DrainableSolution
@@ -61,7 +61,7 @@
   - type: SolutionContainerManager
     solutions:
       spray:
-        maxVol: 250
+        maxVol: 300 # Carpmosia-edit - extendedReagentStorage
   - type: Spray
     transferAmount: 15
     sprayedPrototype: BigVapor
@@ -82,10 +82,10 @@
   - type: SolutionContainerManager
     solutions:
       spray:
-        maxVol: 100
+        maxVol: 120 # Carpmosia-edit - extendedReagentStorage
         reagents:
         - ReagentId: Water
-          Quantity: 100
+          Quantity: 120 # Carpmosia-edit - extendedReagentStorage
 
 - type: entity
   name: space cleaner
@@ -97,10 +97,10 @@
   - type: SolutionContainerManager
     solutions:
       spray:
-        maxVol: 100
+        maxVol: 120 # Carpmosia-edit - extendedReagentStorage
         reagents:
         - ReagentId: SpaceCleaner
-          Quantity: 100
+          Quantity: 120 # Carpmosia-edit - extendedReagentStorage
   - type: Tag
     tags:
       - Spray
@@ -115,10 +115,10 @@
   - type: SolutionContainerManager
     solutions:
       spray:
-        maxVol: 200
+        maxVol: 240 # Carpmosia-edit - extendedReagentStorage
         reagents:
         - ReagentId: SpaceCleaner
-          Quantity: 200
+          Quantity: 240 # Carpmosia-edit - extendedReagentStorage
 
 - type: entity
   parent: MegaSprayBottle
@@ -130,10 +130,10 @@
   - type: SolutionContainerManager
     solutions:
       spray:
-        maxVol: 500
+        maxVol: 600 # Carpmosia-edit - extendedReagentStorage
         reagents:
         - ReagentId: SpaceCleaner
-          Quantity: 500
+          Quantity: 600 # Carpmosia-edit - extendedReagentStorage
 
 # Vapor
 - type: entity
