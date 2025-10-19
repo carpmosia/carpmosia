@@ -64,7 +64,7 @@ namespace Content.Server.Kitchen.EntitySystems
             SubscribeLocalEvent<ReagentGrinderComponent, ReagentGrinderStartMessage>(OnStartMessage);
             SubscribeLocalEvent<ReagentGrinderComponent, ReagentGrinderEjectChamberAllMessage>(OnEjectChamberAllMessage);
             SubscribeLocalEvent<ReagentGrinderComponent, ReagentGrinderEjectChamberContentMessage>(OnEjectChamberContentMessage);
-            SubscribeLocalEvent<ReagentGrinderComponent, ContainerDoAfterEvent>(OnContainerDoAfter); // Carpmosia - Insert storage contents into reagent grinder
+            SubscribeLocalEvent<ReagentGrinderComponent, ContainerDoAfterEvent>(OnContainerDoAfter); // Carpmosia-edit - Insert storage contents into reagent grinder
         }
 
         private void OnToggleAutoModeMessage(Entity<ReagentGrinderComponent> entity, ref ReagentGrinderToggleAutoModeMessage message)
@@ -193,7 +193,7 @@ namespace Content.Server.Kitchen.EntitySystems
                 }
 
                 else if (!HasComp<FitsInDispenserComponent>(heldEnt))
-                // Carpmosia-end
+                // Carpmosia-end - Insert storage contents into reagent grinder
                 {
                     // This is ugly but we can't use whitelistFailPopup because there are 2 containers with different whitelists.
                     _popupSystem.PopupEntity(Loc.GetString("reagent-grinder-component-cannot-put-entity-message"), entity.Owner, args.User);
