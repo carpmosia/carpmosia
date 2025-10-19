@@ -333,7 +333,7 @@ namespace Content.Server.Kitchen.EntitySystems
 
             args.Handled = true;
         }
-        // Carpmosia-end
+        // Carpmosia-end - Insert storage contents into reagent grinder
 
         /// <summary>
         /// The wzhzhzh of the grinder. Processes the contents of the grinder and puts the output in the beaker.
