@@ -436,6 +436,10 @@ public abstract class SharedDisposalUnitSystem : EntitySystem
 
     protected void OnEmagged(EntityUid uid, DisposalUnitComponent component, ref GotEmaggedEvent args)
     {
+        // Carpmosia-start - Emagging mailing units
+        component.Blacklist = null;
+        component.Whitelist = null;
+        // Carpmosia-end - Emagging mailing units
         component.DisablePressure = true;
         args.Handled = true;
     }
