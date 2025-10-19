@@ -112,7 +112,7 @@
     sprite: Structures/Machines/stasis_bed.rsi
     state: icon
   discipline: CivilianServices
-  tier: 2
+  tier: 1 # Caprmosia edit - easier chemistries
   cost: 7500
   recipeUnlocks:
   - StasisBedMachineCircuitboard
@@ -225,7 +225,7 @@
     sprite: Objects/Specific/Chemistry/beaker_bluespace.rsi
     state: beakerbluespace
   discipline: CivilianServices
-  tier: 3
+  tier: 2 # Carpmosia edit - easier chemistries
   cost: 10000
   recipeUnlocks:
   - BluespaceBeaker
