@@ -269,7 +269,7 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 1000
+        maxVol: 1200 # Carpmosia-edit - bluespaceChemTweaks
 
 - type: entity
   name: dropper
@@ -503,10 +503,18 @@
   - type: SolutionContainerManager
     solutions:
       injector:
-        maxVol: 100
+        maxVol: 120 # Carpmosia-edit - bluespaceChemTweaks
   - type: Injector
     delay: 2.5
     injectOnly: false
+    # Carpmosia-start - bluespaceChemTweaks
+    transferAmounts:
+    - 5
+    - 10
+    - 15
+    - 30
+    currentTransferAmount: 30
+    # Carpmosia-end - bluespaceChemTweaks
   - type: SolutionContainerVisuals
     maxFillLevels: 2
     fillBaseName: syringe
