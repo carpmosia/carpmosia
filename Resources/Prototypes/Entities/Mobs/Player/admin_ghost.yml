@@ -155,6 +155,7 @@
     iconOn: { sprite: Interface/Actions/actions_ai.rsi, state: comms_console }
     keywords: [ "AI", "console", "interface" ]
     priority: -6
+    checkCanInteract: false # Carpmosia-edit - let ghosts view mass scanner interface
   - type: InstantAction
     event: !type:ToggleIntrinsicUIEvent { key: enum.RadarConsoleUiKey.Key }
 

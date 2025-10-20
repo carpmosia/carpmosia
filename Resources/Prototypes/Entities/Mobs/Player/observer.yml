@@ -78,7 +78,7 @@
   - type: Tag
     tags: # BAD: Intentional removal of inherited tag
     - AllowGhostShownByEvent
-# Carpmosia-start - let ghosts view mass scanner interface
+  # Carpmosia-start - let ghosts view mass scanner interface
   - type: UserInterface
     interfaces:
       enum.RadarConsoleUiKey.Key:
@@ -86,10 +86,10 @@
   - type: IntrinsicUI
     uis:
       enum.RadarConsoleUiKey.Key:
-        toggleAction: ActionGhostShowRadar
+        toggleAction: ActionAGhostShowRadar
   - type: RadarConsole
     followEntity: true
-# Carpmosia-end - let ghosts view mass scanner interface
+  # Carpmosia-end - let ghosts view mass scanner interface
 
 - type: entity
   parent: BaseMentalAction
@@ -154,19 +154,3 @@
     iconOn: Interface/Actions/ghostHearingToggled.png
   - type: InstantAction
     event: !type:ToggleGhostHearingActionEvent
-
-# Carpmosia-start - let ghosts view mass scanner interface
-- type: entity
-  id: ActionGhostShowRadar
-  name: Mass Scanner Interface
-  description: View a Mass Scanner Interface.
-  components:
-  - type: Action
-    icon: { sprite: Interface/Actions/actions_ai.rsi, state: mass_scanner }
-    iconOn: { sprite: Interface/Actions/actions_ai.rsi, state: comms_console }
-    keywords: [ "AI", "console", "interface" ]
-    priority: 10
-    checkCanInteract: false
-  - type: InstantAction
-    event: !type:ToggleIntrinsicUIEvent { key: enum.RadarConsoleUiKey.Key }
-# Carpmosia-end - let ghosts view mass scanner interface
