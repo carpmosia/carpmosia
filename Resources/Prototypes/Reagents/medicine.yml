@@ -1282,9 +1282,11 @@
           - !type:Temperature
             max: 150.0 # Carpmosia-edit - New Cryonics Plus
           damage:
+            # Carpmosia-start - New Cryonics Plus
             Brute: -3
             Burn: -4
             Toxin: -2
+            # Carpmosia-end - New Cryonics Plus
 
 - type: reagent
   id : Aloxadone
