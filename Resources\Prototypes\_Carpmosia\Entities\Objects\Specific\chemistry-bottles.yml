@@ -1,0 +1,29 @@
+- type: entity
+  id: ChemistryBottleTraumoxadone
+  suffix: traumoxadone
+  parent: BaseChemistryBottleFilled
+  components:
+  - type: Label
+    currentLabel: reagent-name-traumoxadone
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Traumoxadone
+          Quantity: 30
+
+- type: entity
+  id: ChemistryBottleStelloxadone
+  suffix: stelloxadone
+  parent: BaseChemistryBottleFilled
+  components:
+  - type: Label
+    currentLabel: reagent-name-stelloxadone
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Stelloxadone
+          Quantity: 30
