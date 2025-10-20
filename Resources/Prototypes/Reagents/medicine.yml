@@ -173,7 +173,7 @@
   physicalDesc: reagent-physical-desc-fizzy
   flavor: medicine
   color: "#0091ff"
-  worksOnTheDead: true # Carpmosia
+  worksOnTheDead: true # Carpmosia-edit - New Cryonics Plus
   plantMetabolism:
   - !type:PlantAdjustToxins
     amount: -5
@@ -183,8 +183,10 @@
   metabolisms:
     Medicine:
       effects:
-        - !type:ModifyBloodLevel # Carpmosia
+        # Carpmosia-start - New Cryonics Plus
+        - !type:ModifyBloodLevel
           amount: 4
+        # Carpmosia-end - New Cryonics Plus
         - !type:HealthChange
           conditions:
           - !type:Temperature
@@ -192,8 +194,10 @@
             max: 213.0
           damage:
           # todo scale with temp like SS13
-            groups: # Carpmosia
+            # Carpmosia-start - New Cryonics Plus
+            groups:
               Airloss: -10
+            # Carpmosia-end - New Cryonics Plus
 
 - type: reagent
   id: Doxarubixadone
@@ -203,14 +207,14 @@
   physicalDesc: reagent-physical-desc-bubbling
   flavor: medicine
   color: "#32cd32"
-  worksOnTheDead: true # Carpmosia
+  worksOnTheDead: true # Carpmosia-edit - New Cryonics Plus
   metabolisms:
     Medicine:
       effects:
         - !type:HealthChange
           conditions:
           - !type:Temperature
-            max: 150.0 # this is still arbitrary but they gotta be colder - Carpmosia
+            max: 150.0 # this is still arbitrary but they gotta be colder # Carpmosia-edit - New Cryonics Plus
           damage:
             types:
              Cellular: -2
@@ -1273,10 +1277,10 @@
   metabolisms:
     Medicine:
       effects:
-        - !type:EvenHealthChange # Carpmosia
+        - !type:EvenHealthChange # Carpmosia-edit - New Cryonics Plus
           conditions:
           - !type:Temperature
-            max: 150.0 # Carpmosia
+            max: 150.0 # Carpmosia-edit - New Cryonics Plus
           damage:
             Brute: -3
             Burn: -4
