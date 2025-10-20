@@ -227,6 +227,9 @@
   - type: Log
     spawnedPrototype: SheetSteel1
     spawnCount: 1
+  - type: PhysicalComposition # Carpmosia-edit - recyclable produce
+    materialComposition:
+      Steel: 100
 
 - type: entity
   name: nettle
@@ -1812,6 +1815,9 @@
   - type: ToolRefinable
     refineResult:
     - id: SheetGlass1
+  - type: PhysicalComposition # Carpmosia-edit - recyclable produce
+    materialComposition:
+      Glass: 100
   - type: Destructible
     thresholds:
     - trigger:
