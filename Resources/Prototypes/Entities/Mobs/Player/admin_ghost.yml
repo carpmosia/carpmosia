@@ -178,6 +178,7 @@
     iconOn: { sprite: Interface/Actions/actions_ai.rsi, state: crew_monitor }
     keywords: [ "AI", "console", "interface" ]
     priority: -8
+    checkCanInteract: false # Carpmosia-edit - let replays view stuff
   - type: InstantAction
     event: !type:ToggleIntrinsicUIEvent { key: enum.CrewMonitoringUIKey.Key }
 
