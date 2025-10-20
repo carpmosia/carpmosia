@@ -13,11 +13,13 @@ reagent-desc-arithrazine = A mildly unstable medication used for the most extrem
 reagent-name-bicaridine = bicaridine
 reagent-desc-bicaridine = An analgesic which is highly effective at treating brute damage. It's useful for stabilizing people who have been severely beaten, as well as treating less life-threatening injuries.
 
+## Carpmosia-start - New Cryonics Plus
 reagent-name-cryoxadone = cryoxadone
-reagent-desc-cryoxadone = Required for the proper function of cryogenics. Heals all standard types of damage, but only works in temperatures under 213K. It can treat and rejuvenate plants when applied in small doses.
+reagent-desc-cryoxadone = An essential precursor in all cryonics medicine. Used to treat bloodloss and asphyxiation, as well as to restore bodily fluids such as blood. It can treat and rejuvenate plants when applied in small doses. Works regardless of the patient being alive or dead.
 
 reagent-name-doxarubixadone = doxarubixadone
-reagent-desc-doxarubixadone = A cryogenics chemical. Heals cellular damage caused by dangerous gasses and chemicals.
+reagent-desc-doxarubixadone = A cryonics medicine used to undo cellular damage caused by dangerous gasses and chemicals. Works regardless of the patient being alive or dead.
+## Carpmosia-end - New Cryonics Plus
 
 reagent-name-dermaline = dermaline
 reagent-desc-dermaline = An advanced chemical that is more effective at treating burn damage than kelotane.
