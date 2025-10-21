@@ -4,7 +4,7 @@
   text: "/ServerInfo/Guidebook/Mobs/Species.xml"
   children:
   - Arachnid
-  - Avali # Carpmosia - Add Avali to the Guidebook
+  - Avali # Carpmosia-edit - Avali port
   - Diona
   - Dwarf
   - Human
@@ -19,12 +19,12 @@
   name: species-name-arachnid
   text: "/ServerInfo/Guidebook/Mobs/Arachnid.xml"
 
-# Carpmosia-Begin - Port Avali into Carpmosia
+# Carpmosia-start - Avali port
 - type: guideEntry
   id: Avali
   name: species-name-avali
   text: "/ServerInfo/_Carpmosia/Guidebook/Mobs/Avali.xml"
-# Carpmosia-End - Port Avali into Carpmosia
+# Carpmosia-end - Avali port
 
 - type: guideEntry
   id: Diona

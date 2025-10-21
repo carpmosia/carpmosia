@@ -284,12 +284,12 @@
         conditions:
         - !type:OrganType
           type: Slime
-      # Carpmosia-begin - Port Avali into Carpmosia
+      # Carpmosia-start - Avali port
       - !type:Oxygenate
         conditions:
         - !type:OrganType
           type: Avali
-      # Carpmosia-end
+      # Carpmosia-end - Avali port
       # Converts Nitrogen into CO2
       - !type:ModifyLungGas
         conditions:
@@ -305,7 +305,7 @@
         ratios:
           NitrousOxide: 1.0
           Nitrogen: -1.0
-      # Carpmosia-begin - Port Avali into Carpmosia
+      # Carpmosia-start - Avali port
       - !type:ModifyLungGas
         conditions:
         - !type:OrganType
@@ -313,7 +313,7 @@
         ratios:
           Ammonia: 1.0
           Nitrogen: -1.0
-      # Carpmosia-end
+      # Carpmosia-end - Avali port
 
 - type: reagent
   id: NitrousOxide

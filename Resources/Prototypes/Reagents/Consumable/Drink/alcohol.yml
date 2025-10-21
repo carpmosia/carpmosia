@@ -190,7 +190,7 @@
         damage:
           groups:
             Brute: -1
-      # Carpmosia-Begin - Port Avali into Carpmosia
+      # Carpmosia-start - Avali port
       - !type:HealthChange
         conditions:
         - !type:OrganType
@@ -198,7 +198,7 @@
         damage:
           types:
             Bloodloss: 0.5
-      # Carpmosia-End
+      # Carpmosia-end - Avali port
       - !type:ChemVomit
         probability: 0.04
         conditions:
