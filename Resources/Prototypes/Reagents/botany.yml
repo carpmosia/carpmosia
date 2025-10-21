@@ -240,8 +240,6 @@
         - !type:OrganType
           type: Vox
           shouldHave: false
-        - !type:ReagentThreshold
-          reagent: Ammonia
         # Carpmosia-start - Avali port
         - !type:OrganType
           type: Avali
