@@ -123,9 +123,9 @@
   - type: GhostTakeoverAvailable
   - type: GhostRole
     makeSentient: true
-    name: ghost-role-information-slimes-name-carpmosia
-    description: ghost-role-information-slimes-description-carpmosia
-    rules: ghost-role-information-nonantagonist-rules-carpmosia
+    name: ghost-role-information-slimes-name
+    description: ghost-role-information-slimes-description
+    rules: ghost-role-information-nonantagonist-rules
     raffle:
       settings: short
   - type: Speech
@@ -163,8 +163,8 @@
       factions:
         - SimpleHostile
     - type: GhostRole
-      description: ghost-role-information-angry-slimes-description
-      rules: ghost-role-information-angry-slimes-rules
+      description: ghost-role-information-angry-slimes-description-carpmosia
+      rules: ghost-role-information-angry-slimes-rules-carpmosia
       mindRoles:
       - MindRoleGhostRoleTeamAntagonist
       raffle:
@@ -203,8 +203,8 @@
       factions:
         - SimpleHostile
     - type: GhostRole
-      description: ghost-role-information-angry-slimes-description
-      rules: ghost-role-information-angry-slimes-rules
+      description: ghost-role-information-angry-slimes-description-carpmosia
+      rules: ghost-role-information-angry-slimes-rules-carpmosia
       mindRoles:
       - MindRoleGhostRoleTeamAntagonist
       raffle:
@@ -242,8 +242,8 @@
       factions:
         - SimpleHostile
     - type: GhostRole
-      description: ghost-role-information-angry-slimes-description
-      rules: ghost-role-information-angry-slimes-rules
+      description: ghost-role-information-angry-slimes-description-carpmosia
+      rules: ghost-role-information-angry-slimes-rules-carpmosia
       mindRoles:
       - MindRoleGhostRoleTeamAntagonist
       raffle:
