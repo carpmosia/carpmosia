@@ -184,10 +184,12 @@
       - SurgeryTool
       - Dropper
       components:
-      defib: # Carpmosia-edit - civilian research tweaks
+      # Carpmosia-start - civilian research tweaks
+      defib:
         whitelist:
           components:
           - Defibrillator
+      # Carpmosia-end - civilian research tweaks
       - Hypospray
       - Injector
       - Pill
