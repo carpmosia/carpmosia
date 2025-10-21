@@ -41,3 +41,13 @@
       amount: 1
     - id: SheetRGlass1
       amount: 2
+
+  - type: entity
+    id: CrateR&DServer
+    parent: CrateScienceSecure
+    name: R&D Server
+    description:
+    components:
+    - type: StorageFill
+      contents:
+      - id: ResearchAndDevelopmentServer
