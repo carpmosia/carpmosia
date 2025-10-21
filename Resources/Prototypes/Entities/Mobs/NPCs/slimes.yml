@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   name: basic slime
   id: BaseMobAdultSlimes
   parent: [ SimpleMobBase, MobCombat ]
@@ -123,9 +123,9 @@
   - type: GhostTakeoverAvailable
   - type: GhostRole
     makeSentient: true
-    name: ghost-role-information-slimes-name
-    description: ghost-role-information-slimes-description
-    rules: ghost-role-information-nonantagonist-rules
+    name: ghost-role-information-slimes-name-carpmosia
+    description: ghost-role-information-slimes-description-carpmosia
+    rules: ghost-role-information-nonantagonist-rules-carpmosia
     raffle:
       settings: short
   - type: Speech

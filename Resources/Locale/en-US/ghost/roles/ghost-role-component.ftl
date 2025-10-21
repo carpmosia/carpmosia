@@ -50,7 +50,9 @@ ghost-role-information-snailspeed-description = A little snail with snailborn th
 ghost-role-information-snoth-name = Snoth
 ghost-role-information-snoth-description = A little snoth who doesn't mind a bit of space. Just stay on grid!
 
-#Spider moved to _Carpmosia/Ghost/Roles
+ghost-role-information-giant-spider-name = Giant Spider
+ghost-role-information-giant-spider-description = This station's inhabitants look mighty tasty and cool, and your sticky web is perfect to catch them or make a home with them!
+ghost-role-information-giant-spider-rules = You are a [color={role-type-free-agent-color}][bold]{role-type-free-agent-name}[/bold][/color] with all other giant spiders.
 
 ghost-role-information-cognizine-description = Made conscious with the magic of cognizine.
 
@@ -63,7 +65,9 @@ ghost-role-information-hamlet-description = Lives in the station bridge, has a b
 ghost-role-information-slimes-name = Slime
 ghost-role-information-slimes-description = An ordinary slime with no special needs or interests. You are friendly to others.
 
-#Slime moved to _Carpmosia/Ghost/Roles
+ghost-role-information-angry-slimes-name = Slime
+ghost-role-information-angry-slimes-description = Everyone around you alerts your instincts, could they be friend or foe?
+ghost-role-information-angry-slimes-rules = You are a [color={role-type-free-agent-color}][bold]{role-type-free-agent-name}[/bold][/color] with all other angry slimes but maybe you can be differnt, you could be friendly.
 
 ghost-role-information-smile-name = Smile the Slime
 ghost-role-information-smile-description = The sweetest creature in the world. Smile slime!
