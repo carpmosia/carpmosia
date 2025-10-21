@@ -8,29 +8,27 @@
   - type: HumanoidAppearance
     species: Avali
   - type: Hunger
-    baseDecayRate: 0.03 # Carpmosia - Slightly lower decay-rate than scurrets
+    baseDecayRate: 0.03 # Slightly lower decay-rate than scurrets
   - type: Thirst
   - type: Icon
-    sprite: _Carpmosia/Mobs/Species/Avali/parts.rsi # Carpmosia-Edit - Using Starlight sprites
+    sprite: _Carpmosia/Mobs/Species/Avali/parts.rsi # Starlight sprites
     state: full
   - type: Body
     prototype: Avali
     requiredLegs: 2
-    # Carpmosia-Begin - Port Avali into Carpmosia
   - type: Inventory
     speciesId: moth
     displacements:
       head:
         sizeMaps:
           32:
-            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Displacements from Starlight
+            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Starlight sprites
             state: head
       mask:
         sizeMaps:
           32:
-            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Displacements from Starlight
+            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Starlight sprites
             state: mask
-    # Carpmosia-End - Port Avali into Carpmosia
   - type: Butcherable
     butcheringType: Spike
     spawned:
@@ -68,7 +66,7 @@
     bloodReagent: AmmoniaBlood
   - type: MeleeWeapon
     soundHit:
-      collection: AlienClaw # Carpmosia-edit - Use the right sound for their weapon
+      collection: AlienClaw
     angle: 30
     animation: WeaponArcClaw
     damage:
@@ -79,7 +77,6 @@
     coldDamageThreshold: 223
     currentTemperature: 296.15
     specificHeat: 48
-# Carpmosia-Begin - Port Avali into Carpmosia
     coldDamage:
       types:
         Cold : 0.05
@@ -91,7 +88,6 @@
       265: 0.8
       251: 0.6
       226: 0.4
-# Carpmosia-End - Port Avali into Carpmosia
   - type: ThermalRegulator
     metabolismHeat: 400 # icebirb go brrr
     radiatedHeat: 100
@@ -109,5 +105,3 @@
   components:
   - type: HumanoidAppearance
     species: Avali
-
-# Chirp!
