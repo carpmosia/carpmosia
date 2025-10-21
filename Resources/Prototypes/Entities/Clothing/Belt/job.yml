@@ -184,7 +184,10 @@
       - SurgeryTool
       - Dropper
       components:
-      - Defibrillator # Carpmosia edit - civilian research tweaks
+      defib: # Carpmosia-edit - civilian research tweaks
+        whitelist:
+          components:
+          - Defibrillator
       - Hypospray
       - Injector
       - Pill
@@ -210,10 +213,20 @@
         whitelist:
           tags:
           - Spray
-      defib: # Carpmosia edit - civilian research tweaks
+      # spray_med:
+      #   whitelist:
+      #     tags:
+      #     - SprayMedical
+      # wrench_medical:
+      #   whitelist:
+      #     tags:
+      #     - WrenchMedical
+      # Carpmosia-start - civilian research tweaks
+      defib:
         whitelist:
           components:
           - Defibrillator
+      # Carpmosia-end - civilian research tweaks
       wrench:
         whitelist:
           tags:
