@@ -53,10 +53,10 @@
   components:
   - type: GhostRole
     name: ghost-role-information-closet-skeleton-name
-    description: ghost-role-information-closet-skeleton-description
-    rules: ghost-role-information-freeagent-rules
+    description: ghost-role-information-closet-skeleton-description-nonantagonist
+    rules: ghost-role-information-nonantagonist-rules
     mindRoles:
-    - MindRoleGhostRoleFreeAgent
+    - MindRoleGhostRoleNeutral
     raffle:
       settings: default
   - type: GhostTakeoverAvailable
