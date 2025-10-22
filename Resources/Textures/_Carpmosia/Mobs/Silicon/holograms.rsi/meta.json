@@ -1,0 +1,57 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "ai_carp taken from https://github.com/tgstation/tgstation/commit/b143783881fb7418213026857cb8c569636e259e#diff-8dd94e19fdb2ff341b57e31bce101298, modified for use as AI hologram by korczoczek. ai_arachnid https://github.com/tgstation/tgstation/blob/8024397cc81c5f47f74cf4279e35728487d0a1a7/icons/mob/human_parts.dmi for acting as a base, modified by PixelTheKermit (github) for SS14, modified for use as AI hologram by korczoczek. ai_diona https://github.com/ParadiseSS13/Paradise/commit/924e8cc949a40ea64a978656dbbc0b43b4a8f33a and modified by EmoGarbage, modified for use as AI hologram by korczoczek. ai_cookie sprites made by Aleksh for Space Station 14, modified for use as AI hologram by korczoczek. ai_moth https://github.com/tgstation/tgstation/commit/1d0eadcb126fc3581eed33490f4be2a88157af58, modified by https://github.com/PixelTheKermit, modified for use as AI hologram by korczoczek. ai_reptilian https://github.com/tgstation/tgstation/blob/8024397cc81c5f47f74cf4279e35728487d0a1a7/icons/mob/human_parts_greyscale.dmi, modified for use as AI hologram by korczoczek. ai_vox taken from https://github.com/vgstation-coders/vgstation13 at 02ff588d59b3c560c685d9ca75e882d32a72d8cb, and modified by Bhijn, Errant and Flareguy, modified for use as AI hologram by korczoczek. ai_vulpkanin Made by FairlySadPanda (Github/Discord); with help from ScarKy0 (Github/Discord), modified for use as AI hologram by korczoczek. ai_avali sprites by Github MozarteanChaos / Discord mozarteanchaos (213813868282118144) and modified by Github Zeyria / Discord zeyria (232964236186353664), modified for use as AI hologram by korczoczek",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "ai_carp",
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
+        },
+        {
+            "name": "ai_arachnid"
+        },
+        {
+            "name": "ai_avali"
+        },
+        {
+            "name": "ai_cookie"
+        },
+        {
+            "name": "ai_diona"
+        },
+        {
+            "name": "ai_moth"
+        },
+        {
+            "name": "ai_reptilian"
+        },
+        {
+            "name": "ai_vox"
+        },
+        {
+            "name": "ai_vulpkanin"
+        }
+    ]
+}
