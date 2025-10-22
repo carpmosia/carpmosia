@@ -127,20 +127,6 @@
     Dead:
       sprite: Mobs/Silicon/station_ai.rsi
       state: "ai_dead"
-      
-# Carpmosia-start - more AI customization options
-- type: stationAiCustomization
-  parent: StationAiIconBase
-  id: StationAiIconCarp
-  name: station-ai-icon-carp
-  layerData:
-    Occupied:
-      sprite: _Carpmosia/Mobs/Silicon/station_ai.rsi
-      state: "ai_carp"
-    Dead:
-      sprite: _Carpmosia/Mobs/Silicon/station_ai.rsi
-      state: "ai_carp_dead"
-# Carpmosia-end - more AI customization options
 
 # Holograms
 - type: stationAiCustomization
