@@ -1,0 +1,9 @@
+  - type: entity
+    id: CrateR&DServer
+    parent: CrateScienceSecure
+    name: R&D Server
+    description: The central hub for all research activities on the station. Contains a Research and Development Server.
+    components:
+    - type: StorageFill
+      contents:
+      - id: ResearchAndDevelopmentServer
