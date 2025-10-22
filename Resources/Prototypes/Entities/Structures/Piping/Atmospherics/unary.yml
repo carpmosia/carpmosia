@@ -43,7 +43,7 @@
       drawdepth: FloorObjects
       sprite: Structures/Piping/Atmospherics/vent.rsi
       layers:
-        - sprite: Structures/Piping/Atmospherics/pipe.rsi
+        - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Carpmosia-edit - 5 pipe layers
           state: pipeUnaryConnectors
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: vent_off
@@ -93,7 +93,7 @@
       drawdepth: FloorObjects
       sprite: Structures/Piping/Atmospherics/vent.rsi
       layers:
-        - sprite: Structures/Piping/Atmospherics/pipe.rsi
+        - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Carpmosia-edit - 5 pipe layers
           state: pipeUnaryConnectors
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: vent_passive
@@ -133,7 +133,7 @@
       drawdepth: FloorObjects
       sprite: Structures/Piping/Atmospherics/scrubber.rsi
       layers:
-        - sprite: Structures/Piping/Atmospherics/pipe.rsi
+        - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Carpmosia-edit - 5 pipe layers
           state: pipeUnaryConnectors
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: scrub_off
@@ -181,7 +181,7 @@
       sprite: Structures/Piping/Atmospherics/outletinjector.rsi
       layers:
         - state: pipeUnaryConnectors
-          sprite: Structures/Piping/Atmospherics/pipe.rsi
+          sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Carpmosia-edit - 5 pipe layers
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: injector
           map: [ "enum.SubfloorLayers.FirstLayer" ]

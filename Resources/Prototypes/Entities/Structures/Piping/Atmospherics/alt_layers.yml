@@ -25,7 +25,7 @@
   components:
   - type: Sprite
     drawdepth: ThinPipeAlt1
-    sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Carpmosia-edit - 5 pipe layers
   - type: Construction
     node: straightAlt1
 
@@ -36,7 +36,7 @@
   components:
   - type: Sprite
     drawdepth: ThinPipeAlt2
-    sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Carpmosia-edit - 5 pipe layers
   - type: Construction
     node: straightAlt2
 
@@ -48,7 +48,7 @@
   components:
   - type: Sprite
     drawdepth: ThinPipeAlt1
-    sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Carpmosia-edit - 5 pipe layers
   - type: Construction
     node: halfAlt1
 
@@ -59,7 +59,7 @@
   components:
   - type: Sprite
     drawdepth: ThinPipeAlt2
-    sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Carpmosia-edit - 5 pipe layers
   - type: Construction
     node: halfAlt2
 
@@ -71,7 +71,7 @@
   components:
   - type: Sprite
     drawdepth: ThinPipeAlt1
-    sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Carpmosia-edit - 5 pipe layers
   - type: Construction
     node: bendAlt1
 
@@ -82,7 +82,7 @@
   components:
   - type: Sprite
     drawdepth: ThinPipeAlt2
-    sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Carpmosia-edit - 5 pipe layers
   - type: Construction
     node: bendAlt2
 
@@ -94,7 +94,7 @@
   components:
   - type: Sprite
     drawdepth: ThinPipeAlt1
-    sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Carpmosia-edit - 5 pipe layers
   - type: Construction
     node: tjunctionAlt1
 
@@ -105,7 +105,7 @@
   components:
   - type: Sprite
     drawdepth: ThinPipeAlt2
-    sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Carpmosia-edit - 5 pipe layers
   - type: Construction
     node: tjunctionAlt2
 
@@ -117,7 +117,7 @@
   components:
   - type: Sprite
     drawdepth: ThinPipeAlt1
-    sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Carpmosia-edit - 5 pipe layers
   - type: Construction
     node: fourwayAlt1
 
@@ -128,7 +128,7 @@
   components:
   - type: Sprite
     drawdepth: ThinPipeAlt2
-    sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Carpmosia-edit - 5 pipe layers
   - type: Construction
     node: fourwayAlt2
 
@@ -142,7 +142,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/pump_alt1.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Carpmosia-edit - 5 pipe layers
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpPressure
@@ -158,7 +158,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/pump_alt2.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Carpmosia-edit - 5 pipe layers
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpPressure
@@ -176,7 +176,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/pump_alt1.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Carpmosia-edit - 5 pipe layers
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpVolume
@@ -192,7 +192,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/pump_alt2.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Carpmosia-edit - 5 pipe layers
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpVolume
@@ -210,7 +210,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/pump_alt1.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Carpmosia-edit - 5 pipe layers
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpPassiveGate
@@ -226,7 +226,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/pump_alt2.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Carpmosia-edit - 5 pipe layers
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpPassiveGate
@@ -244,7 +244,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/pump_alt1.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Carpmosia-edit - 5 pipe layers
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpManualValve
@@ -260,7 +260,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/pump_alt2.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Carpmosia-edit - 5 pipe layers
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpManualValve
@@ -278,7 +278,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/pump_alt1.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Carpmosia-edit - 5 pipe layers
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpSignalValve
@@ -294,7 +294,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/pump_alt2.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Carpmosia-edit - 5 pipe layers
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpSignalValve
@@ -312,7 +312,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/gas_pipe_sensor_alt1.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Carpmosia-edit - 5 pipe layers
       map: [ "enum.PipeVisualLayers.Pipe" ]
       state: pipeStraight
     - map: ["base"]
@@ -331,7 +331,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/gas_pipe_sensor_alt2.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Carpmosia-edit - 5 pipe layers
       map: [ "enum.PipeVisualLayers.Pipe" ]
       state: pipeStraight
     - map: ["base"]
@@ -352,7 +352,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/gas_pipe_sensor_alt1.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Carpmosia-edit - 5 pipe layers
       map: [ "enum.PipeVisualLayers.Pipe" ]
       state: pipeStraight
     - map: ["base"]
@@ -369,7 +369,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/gas_pipe_sensor_alt2.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Carpmosia-edit - 5 pipe layers
       map: [ "enum.PipeVisualLayers.Pipe" ]
       state: pipeStraight
     - map: ["base"]
@@ -388,7 +388,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/gas_pipe_sensor_alt1.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Carpmosia-edit - 5 pipe layers
       map: [ "enum.PipeVisualLayers.Pipe" ]
       state: pipeStraight
     - map: ["base"]
@@ -405,7 +405,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/gas_pipe_sensor_alt2.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Carpmosia-edit - 5 pipe layers
       map: [ "enum.PipeVisualLayers.Pipe" ]
       state: pipeStraight
     - map: ["base"]
@@ -424,7 +424,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/gas_pipe_sensor_alt1.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Carpmosia-edit - 5 pipe layers
       map: [ "enum.PipeVisualLayers.Pipe" ]
       state: pipeStraight
     - map: ["base"]
@@ -441,7 +441,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/gas_pipe_sensor_alt2.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Carpmosia-edit - 5 pipe layers
       map: [ "enum.PipeVisualLayers.Pipe" ]
       state: pipeStraight
     - map: ["base"]
@@ -460,7 +460,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/gas_pipe_sensor_alt1.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Carpmosia-edit - 5 pipe layers
       map: [ "enum.PipeVisualLayers.Pipe" ]
       state: pipeStraight
     - map: ["base"]
@@ -477,7 +477,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/gas_pipe_sensor_alt2.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Carpmosia-edit - 5 pipe layers
       map: [ "enum.PipeVisualLayers.Pipe" ]
       state: pipeStraight
     - map: ["base"]
@@ -496,7 +496,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/gas_pipe_sensor_alt1.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Carpmosia-edit - 5 pipe layers
       map: [ "enum.PipeVisualLayers.Pipe" ]
       state: pipeStraight
     - map: ["base"]
@@ -513,7 +513,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/gas_pipe_sensor_alt2.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Carpmosia-edit - 5 pipe layers
       map: [ "enum.PipeVisualLayers.Pipe" ]
       state: pipeStraight
     - map: ["base"]
@@ -532,7 +532,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/pump_alt1.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Carpmosia-edit - 5 pipe layers
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpPressureRegulator
@@ -548,7 +548,7 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/pump_alt2.rsi
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Carpmosia-edit - 5 pipe layers
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: pumpPressureRegulator

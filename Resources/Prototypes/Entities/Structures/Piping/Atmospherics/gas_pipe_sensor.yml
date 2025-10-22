@@ -10,7 +10,7 @@
     sprite: Structures/Piping/Atmospherics/gas_pipe_sensor.rsi
     drawdepth: BelowFloor
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe.rsi
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Carpmosia-edit - 5 pipe layers
       map: [ "enum.PipeVisualLayers.Pipe" ]
       state: pipeStraight
     - map: ["base"]
@@ -20,10 +20,10 @@
       shader: unshaded
   - type: AtmosPipeLayers
     spriteRsiPaths:
+      # Carpmosia-start - 5 pipe layers
       Primary: Structures/Piping/Atmospherics/gas_pipe_sensor.rsi
       Secondary: Structures/Piping/Atmospherics/gas_pipe_sensor_alt1.rsi
       Tertiary: Structures/Piping/Atmospherics/gas_pipe_sensor_alt2.rsi
-      # Carpmosia-start - 5 pipe layers
       Quaternary: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt3.rsi
       Quinary: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt4.rsi
       # Carpmosia-end - 5 pipe layers

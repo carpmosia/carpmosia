@@ -46,7 +46,7 @@
       - !type:DoActsBehavior
         acts: ["Breakage"]
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/pipe.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi
     drawdepth: ThinPipe
     visible: false
   - type: Appearance
@@ -74,10 +74,10 @@
   - type: AtmosPipeLayers
     spriteLayersRsiPaths:
       enum.PipeVisualLayers.Pipe:
-        Primary: Structures/Piping/Atmospherics/pipe.rsi
-        Secondary: Structures/Piping/Atmospherics/pipe_alt1.rsi
-        Tertiary: Structures/Piping/Atmospherics/pipe_alt2.rsi
         # Carpmosia-start - 5 pipe layers
+        Primary: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi
+        Secondary: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi
+        Tertiary: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi
         Quaternary: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi
         Quinary: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi
         # Carpmosia-end - 5 pipe layers
@@ -327,7 +327,7 @@
   description: It used to hold gas.
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/pipe.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi
     drawdepth: ThinPipe
     state: pipeBroken
     layers:
