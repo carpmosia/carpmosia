@@ -15,14 +15,16 @@
           enum.OpenableVisuals.Layer:
             True: {state: "jug_open"} # lid off
             False: {state: "jug"} # lid on
+    # Carpmosia-end - Closeable Jugs
     - type: Sprite
       sprite: Objects/Specific/Chemistry/jug.rsi
       layers:
         - state: jug
-          map: ["enum.OpenableVisuals.Layer"]
+          map: ["enum.OpenableVisuals.Layer"] # Carpmosia-edit - Closeable Jugs
         - state: jug1
           map: [ "enum.SolutionContainerLayers.Fill" ]
           visible: false
+    # Carpmosia-start - Closeable Jugs
     - type: Openable
       sound:
         collection: bottleOpenSounds
