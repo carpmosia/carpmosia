@@ -1,0 +1,135 @@
+- type: reaction
+  id: Angostura
+  reactants:
+    Vodka:
+      amount: 4
+    Enzyme:
+      amount: 1
+    JuiceOrange:
+      amount: 1
+  products:
+    Angostura: 3
+
+- type: reaction
+  id: SweetRevenge
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    Whiskey:
+      amount: 3
+    Ice:
+      amount: 1
+    JuiceBerry: 
+      amount: 1
+    Angostura:
+      amount: 1
+  products:
+    SweetRevenge: 6
+
+- type: reaction
+  id: OldFashioned
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    Whiskey:
+      amount: 3
+    Ice:
+      amount: 1
+    Sugar: 
+      amount: 1
+    Angostura: 
+      amount: 1
+  products:
+    OldFashioned: 6
+
+- type: reaction
+  id: LLB
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    Lemonade:
+      amount: 1
+    JuiceLime:
+      amount: 1
+    Angostura: 
+      amount: 1
+    Ice:
+      amount: 1
+  products:
+    LLB: 4
+
+- type: reaction
+  id: RobRoy
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    Whiskey:
+      amount: 2
+    Vermouth:
+      amount: 1
+    Angostura: 
+      amount: 1
+  products:
+    RobRoy: 4
+
+- type: reaction
+  id: Gunner
+  reactants:
+    Ale:
+      amount: 1
+    SolDry:
+      amount: 1
+    Angostura: 
+      amount: 1
+  products:
+    Gunner: 3
+    
+- type: reaction
+  id: CarribeanLovers
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    Grenadine:
+      amount: 1
+    Rum:
+      amount: 1
+    JuiceLime: 
+      amount: 1
+    JuiceOrange:
+      amount: 1
+    JuiceBerry:
+      amount: 1
+    MelonLiquor: 
+      amount: 1
+  products:
+    CarribeanLovers: 6
+
+- type: reaction
+  id: TheLastWord
+  reactants:
+    Gin:
+      amount: 1
+    MelonLiquor:
+      amount: 1
+    JuiceBerry: 
+      amount: 1
+    JuiceLime: 
+      amount: 1
+  products:
+    TheLastWord: 4
+
+- type: reaction
+  id: CoffeeFlip
+  reactants:
+    IcedCoffee:
+      amount: 2
+    DarkandStormy:
+      amount: 1
+    Rum: 
+      amount: 1
+    Egg: 
+      amount: 1
+    Sugar: 
+      amount: 1
+  products:
+    CoffeeFlip: 6

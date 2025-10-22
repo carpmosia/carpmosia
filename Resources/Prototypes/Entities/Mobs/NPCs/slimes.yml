@@ -163,10 +163,12 @@
       factions:
         - SimpleHostile
     - type: GhostRole
-      description: ghost-role-information-angry-slimes-description
-      rules: ghost-role-information-angry-slimes-rules
+      # Carpmosia-start - Slime free agent
+      description: ghost-role-information-angry-slimes-description-carpmosia 
+      rules: ghost-role-information-angry-slimes-rules-carpmosia
+      # Carpmosia-end - Slime free agent
       mindRoles:
-      - MindRoleGhostRoleTeamAntagonist
+      - MindRoleGhostRoleFreeAgent # Carpmosia-edit - Slime free agent
       raffle:
         settings: short
 
@@ -203,10 +205,12 @@
       factions:
         - SimpleHostile
     - type: GhostRole
-      description: ghost-role-information-angry-slimes-description
-      rules: ghost-role-information-angry-slimes-rules
+      # Carpmosia-start - Slime free agent
+      description: ghost-role-information-angry-slimes-description-carpmosia 
+      rules: ghost-role-information-angry-slimes-rules-carpmosia
+      # Carpmosia-end - Slime free agent
       mindRoles:
-      - MindRoleGhostRoleTeamAntagonist
+      - MindRoleGhostRoleFreeAgent # Carpmosia-edit - Slime free agent
       raffle:
         settings: short
 
@@ -242,9 +246,11 @@
       factions:
         - SimpleHostile
     - type: GhostRole
-      description: ghost-role-information-angry-slimes-description
-      rules: ghost-role-information-angry-slimes-rules
+      # Carpmosia-start - Slime free agent
+      description: ghost-role-information-angry-slimes-description-carpmosia 
+      rules: ghost-role-information-angry-slimes-rules-carpmosia
+      # Carpmosia-end - Slime free agent
       mindRoles:
-      - MindRoleGhostRoleTeamAntagonist
+      - MindRoleGhostRoleFreeAgent # Carpmosia-edit - Slime free agent
       raffle:
         settings: short

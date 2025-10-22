@@ -1,0 +1,12 @@
+- type: technology
+  id: CompactDefib
+  name: research-technology-portable-resuscitation
+  icon:
+    sprite: Objects/Specific/Medical/defibsmall.rsi
+    state: icon
+  discipline: CivilianServices
+  tier: 2
+  cost: 5000
+  recipeUnlocks:
+  - CompactDefibrillator
+

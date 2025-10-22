@@ -2563,11 +2563,13 @@
       task: SimpleHostileCompound
   - type: GhostRole
     makeSentient: true
-    name: ghost-role-information-giant-spider-name
-    description: ghost-role-information-giant-spider-description
-    rules: ghost-role-information-giant-spider-rules
+    # Carpmosia-start - Spider free agent
+    name: ghost-role-information-giant-spider-name-carpmosia 
+    description: ghost-role-information-giant-spider-description-carpmosia
+    rules: ghost-role-information-giant-spider-rules-carpmosia
+    # Carpmosia-end - Spider free agent
     mindRoles:
-    - MindRoleGhostRoleTeamAntagonist
+    - MindRoleGhostRoleFreeAgent # Carpmosia-edit - Spider free agent
     raffle:
       settings: short
   - type: GhostTakeoverAvailable
