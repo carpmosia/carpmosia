@@ -2,7 +2,9 @@
   id: ReaserchandDevlopmentServer
   icon:
     sprite: Structures/Machines/server.rsi
-    state: server
+    layers: 
+      state: server
+      state: variant-research
   product: CrateR&DServer
   cost: 10000
   category: cargoproduct-category-name-science
