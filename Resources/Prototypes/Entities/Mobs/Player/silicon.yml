@@ -452,6 +452,10 @@
       state: ai_female
   - type: NameIdentifier
     group: StationAi
+  # Carpmosia-start - sAI Ionstorms
+  - type: IonStormTarget
+    chance: 0.25
+  # Carpmosia-end - sAI Ionstorms
 
 # Hologram projection that the AI's eye tracks.
 - type: entity
