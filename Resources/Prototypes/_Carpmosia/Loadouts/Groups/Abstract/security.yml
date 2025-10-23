@@ -5,6 +5,11 @@
 - type: loadoutGroup
   id: SecurityGlasses
   abstract: true
+  minLimit: 1
+  loadouts:
+  - SecurityGlasses
+  - SecurityVisor
+  - SecurityGlassesNoir
 
 - type: loadoutGroup
   id: SecurityMask

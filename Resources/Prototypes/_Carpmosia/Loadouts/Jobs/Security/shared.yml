@@ -1,0 +1,27 @@
+- type: loadoutEffectGroup
+  id: CompetentDetective
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobDetective
+      time: 20h
+       
+- type: loadout
+  id: SecurityGlasses
+  equipment:
+    eyes: ClothingEyesGlassesSecurity
+
+- type: loadout
+  id: SecurityVisor
+  equipment:
+    eyes: ClothingEyesVisorSecurity
+
+- type: loadout
+  id: SecurityGlassesNoir
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: CompetentDetective
+  equipment:
+    eyes: ClothingEyesGlassesNoir
+
