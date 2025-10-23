@@ -620,7 +620,7 @@
   - type: Transform
     noRot: false
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/heatexchanger.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/heatexchanger.rsi # Carpmosia-edit - 5 pipe layers
     layers:
     - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Carpmosia-edit - 5 pipe layers
       state: pipeStraight
