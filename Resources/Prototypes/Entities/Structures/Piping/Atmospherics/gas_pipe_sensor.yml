@@ -7,7 +7,7 @@
     mode: AlignAtmosPipeLayers
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/gas_pipe_sensor.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor.rsi # Carpmosia-edit - 5 pipe layers
     drawdepth: BelowFloor
     layers:
     - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Carpmosia-edit - 5 pipe layers
@@ -21,9 +21,9 @@
   - type: AtmosPipeLayers
     spriteRsiPaths:
       # Carpmosia-start - 5 pipe layers
-      Primary: Structures/Piping/Atmospherics/gas_pipe_sensor.rsi
-      Secondary: Structures/Piping/Atmospherics/gas_pipe_sensor_alt1.rsi
-      Tertiary: Structures/Piping/Atmospherics/gas_pipe_sensor_alt2.rsi
+      Primary: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor.rsi
+      Secondary: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt1.rsi
+      Tertiary: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt2.rsi
       Quaternary: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt3.rsi
       Quinary: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt4.rsi
       # Carpmosia-end - 5 pipe layers
