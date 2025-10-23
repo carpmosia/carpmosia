@@ -1,0 +1,1 @@
+ghost-role-information-closet-skeleton-description-nonantagonist = You are arguably one of the oldest members of the station! Get your old job back, choose another one, or simply wander around the station! Remember, you're still a crewmember.
