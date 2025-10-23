@@ -58,10 +58,10 @@
     rules: ghost-role-information-nonantagonist-rules
     # Carpmosia-rework - Closet Skeletons are not antags.
     mindRoles:
-    - MindRoleGhostRoleNeutral
+    - MindRoleGhostRoleNeutral # Carpmosia-edit - Closet Skeletons are not antags.
     raffle:
       settings: default
   - type: GhostTakeoverAvailable
   - type: Loadout
-    prototypes: [SkeletonPassengerGear] # Carpmosia-edit - They need to be useful to crew.
+    prototypes: [SkeletonPassengerGear] # Carpmosia-edit - Closet Skeletons are not antags.
   - type: RandomHumanoidAppearance
