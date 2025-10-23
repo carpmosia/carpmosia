@@ -74,10 +74,7 @@ namespace Content.IntegrationTests.Tests
         {
             "/Maps/centcomm.yml",
             "/Maps/Shuttles/AdminSpawn/**", // admin gaming
-            // Carpmosia-start - Revert #38190
-            "/Maps/gate.yml", // Contains positronic brain and LSE-1200c "Perforator"
-            "/Maps/meta.yml", // Contains warden's rubber stamp
-            // Carpmosia-end - Revert #38190
+            "/Maps/_Carpmosia/Legacy/**", // Carpmosia-edit - Revert #38190
         };
 
         /// <summary>
