@@ -1,7 +1,7 @@
 - type: gameMap
   id: Feint
   mapName: 'Feint'
-  mapPath: /Maps/_Ronstation/feint.yml
+  mapPath: /Maps/_Carpmosia/feint.yml
   minPlayers: 10
   maxPlayers: 35 
   stations:
@@ -14,7 +14,7 @@
           !type:NanotrasenNameGenerator
           prefixCreator: '-TE'
       - type: StationEmergencyShuttle
-        emergencyShuttlePath: /Maps/_Ronstation/Shuttles/emergency_feint.yml
+        emergencyShuttlePath: /Maps/_Carpmosia/Shuttles/emergency_feint.yml
       - type: StationJobs
         availableJobs: # 44 jobs total w/o latejoins & interns, 59 jobs total w/ latejoins & interns
           # command (7)
