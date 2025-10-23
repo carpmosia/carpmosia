@@ -370,10 +370,10 @@
     pipeLayersLocked: true
   - type: PipeAppearance
     sprite:
-    - { sprite: Structures/Piping/Atmospherics/manifold.rsi, state: pipeConnector }
-    - { sprite: Structures/Piping/Atmospherics/manifold.rsi, state: pipeConnector_alt1 }
-    - { sprite: Structures/Piping/Atmospherics/manifold.rsi, state: pipeConnector_alt2 }
     # Carpmosia-start - 5 pipe layers
+    - { sprite: _Carpmosia/Structures/Piping/Atmospherics/manifold.rsi, state: pipeConnector }
+    - { sprite: _Carpmosia/Structures/Piping/Atmospherics/manifold.rsi, state: pipeConnector_alt1 }
+    - { sprite: _Carpmosia/Structures/Piping/Atmospherics/manifold.rsi, state: pipeConnector_alt2 }
     - { sprite: _Carpmosia/Structures/Piping/Atmospherics/manifold.rsi, state: pipeConnector_alt3 }
     - { sprite: _Carpmosia/Structures/Piping/Atmospherics/manifold.rsi, state: pipeConnector_alt4 }
     # Carpmosia-end - 5 pipe layers

@@ -24,10 +24,10 @@
         pipeDirection: South
   - type: AtmosPipeLayers
     spriteRsiPaths:
-      Primary: Structures/Piping/Atmospherics/pump.rsi
-      Secondary: Structures/Piping/Atmospherics/pump_alt1.rsi
-      Tertiary: Structures/Piping/Atmospherics/pump_alt2.rsi
       # Carpmosia-start - 5 pipe layers
+      Primary: _Carpmosia/Structures/Piping/Atmospherics/pump.rsi
+      Secondary: _Carpmosia/Structures/Piping/Atmospherics/pump_alt1.rsi
+      Tertiary: _Carpmosia/Structures/Piping/Atmospherics/pump_alt2.rsi
       Quaternary: _Carpmosia/Structures/Piping/Atmospherics/pump_alt3.rsi
       Quinary: _Carpmosia/Structures/Piping/Atmospherics/pump_alt4.rsi
       # Carpmosia-end - 5 pipe layers
@@ -52,7 +52,7 @@
     visibleLayers:
     - enum.SubfloorLayers.FirstLayer
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/pump.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pump.rsi # Carpmosia-edit - 5 pipe layers
     layers:
     - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Carpmosia-edit - 5 pipe layers
       state: pipeStraight
@@ -120,7 +120,7 @@
       visibleLayers:
       - enum.SubfloorLayers.FirstLayer
     - type: Sprite
-      sprite: Structures/Piping/Atmospherics/pump.rsi
+      sprite: _Carpmosia/Structures/Piping/Atmospherics/pump.rsi # Carpmosia-edit - 5 pipe layers
       layers:
         - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Carpmosia-edit - 5 pipe layers
           state: pipeStraight
@@ -192,7 +192,7 @@
     visibleLayers:
     - enum.SubfloorLayers.FirstLayer
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/pump.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pump.rsi # Carpmosia-edit - 5 pipe layers
     layers:
     - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Carpmosia-edit - 5 pipe layers
       state: pipeStraight
@@ -254,7 +254,7 @@
       visibleLayers:
       - enum.SubfloorLayers.FirstLayer
     - type: Sprite
-      sprite: Structures/Piping/Atmospherics/pump.rsi
+      sprite: _Carpmosia/Structures/Piping/Atmospherics/pump.rsi # Carpmosia-edit - 5 pipe layers
       layers:
         - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Carpmosia-edit - 5 pipe layers
           state: pipeStraight
@@ -301,7 +301,7 @@
       visibleLayers:
       - enum.SubfloorLayers.FirstLayer
     - type: Sprite
-      sprite: Structures/Piping/Atmospherics/pump.rsi
+      sprite: _Carpmosia/Structures/Piping/Atmospherics/pump.rsi # Carpmosia-edit - 5 pipe layers
       layers:
         - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Carpmosia-edit - 5 pipe layers
           state: pipeStraight
@@ -366,7 +366,7 @@
     visibleLayers:
     - enum.SubfloorLayers.FirstLayer
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/pump.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pump.rsi # Carpmosia-edit - 5 pipe layers
     layers:
     - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Carpmosia-edit - 5 pipe layers
       state: pipeStraight
