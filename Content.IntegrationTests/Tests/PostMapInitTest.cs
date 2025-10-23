@@ -73,7 +73,11 @@ namespace Content.IntegrationTests.Tests
         private static readonly string[] DoNotMapWhitelist =
         {
             "/Maps/centcomm.yml",
-            "/Maps/Shuttles/AdminSpawn/**" // admin gaming
+            "/Maps/Shuttles/AdminSpawn/**", // admin gaming
+            // Carpmosia-start - Revert #38190
+            "/Maps/gate.yml", // Contains positronic brain and LSE-1200c "Perforator"
+            "/Maps/meta.yml", // Contains warden's rubber stamp
+            // Carpmosia-end - Revert #38190
         };
 
         /// <summary>
@@ -104,6 +108,15 @@ namespace Content.IntegrationTests.Tests
             "Relic",
             "dm01-entryway",
             "Exo",
+            // Carpmosia-start - Revert #38190
+            "Meta",
+            "Omega",
+            "Core",
+            "Train",
+            "Gate",
+            "Convex",
+            "Loop",
+            // Carpmosia-end - Revert #38190
         };
 
         private static readonly ProtoId<EntityCategoryPrototype> DoNotMapCategory = "DoNotMap";
