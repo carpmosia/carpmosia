@@ -97,6 +97,7 @@ namespace Content.IntegrationTests.Tests
             "Saltern",
             "Reach",
             "Oasis",
+            "Oasis2", // Carpmosia-edit - Oasis2 port
             "Amber",
             "Plasma",
             "Elkridge",
