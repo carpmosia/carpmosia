@@ -1,0 +1,30 @@
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: BaseAntagSpawner
+  id: SpawnPointGhostSpiderClanCyborg
+  components:
+  - type: GhostRole
+    name: ghost-role-information-derelict-cyborg-name
+    description: ghost-role-information-derelict-cyborg-description
+    rules: ghost-role-information-silicon-rules
+    mindRoles:
+    - MindRoleSubvertedSilicon
+    raffle:
+      settings: default
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Mobs/Silicon/chassis.rsi
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: SpawnPointGhostSpiderClanCyborg
+  id: GhostSpiderClanCyborg
+  components:
+  - type: GhostRole
+    name: ghost-role-information-spider-clan-borg-name
+    description: ghost-role-information-spider-clan-borg-description
+    rules: ghost-role-information-spider-clan-borg-rules
+    raffle:
+      settings: default

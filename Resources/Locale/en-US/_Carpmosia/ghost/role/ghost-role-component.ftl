@@ -7,3 +7,7 @@ ghost-role-information-giant-spider-rules-carpmosia = You are a [color={role-typ
 ghost-role-information-angry-slimes-name-carpmosia = Slime
 ghost-role-information-angry-slimes-description-carpmosia = Everyone around you alerts your instincts, could they be friend or foe?
 ghost-role-information-angry-slimes-rules-carpmosia = You are a [color={role-type-free-agent-color}][bold]{role-type-free-agent-name}[/bold][/color] with all other angry slimes but maybe you can be differnt, you could be friendly.
+
+ghost-role-information-spider-clan-borg-name = Spider Clan Cyborg
+ghost-role-information-spider-clan-borg-description = You are a cybernetic member of the Spider Clan, your mission is to help your clan members with their objectives.
+ghost-role-information-spider-clan-borg-rules = You are a [color={role-type-antagonist-color}][bold]{role-type-antagonist-name}[/bold][/color] with all other Spider Clan members.
