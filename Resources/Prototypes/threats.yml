@@ -2,8 +2,13 @@
 - type: weightedRandom
   id: NinjaThreats
   weights:
-    Dragon: 1
-    Revenant: 1
+  # Carpmosia-start - terror update
+    Dragon: 0.2
+    Revenant: 0
+    Spiders: 0.7
+    Borgs: 0.7
+    LoneOp: 0.2
+   # Carpmosia-end - terror update
 
 - type: ninjaHackingThreat
   id: Dragon

@@ -1,0 +1,14 @@
+- type: ninjaHackingThreat
+  id: Spiders
+  announcement: spider-clan-operatives
+  rule:
+
+- type: ninjaHackingThreat
+  id: Borgs
+  announcement: spider-borgs
+  rule:
+
+- type: ninjaHackingThreat
+  id: LoneOp
+  announcement: lone-op
+  rule: LoneOpsSpawn
