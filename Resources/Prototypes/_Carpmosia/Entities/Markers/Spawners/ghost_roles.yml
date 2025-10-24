@@ -1,25 +1,86 @@
+#ment to be in a /base_brog_chassis
+
 - type: entity
-  categories: [ HideSpawnMenu, Spawner ]
-  parent: BaseAntagSpawner
-  id: SpawnPointGhostSpiderClanCyborg
+  id: BaseBorgChassisSyndicateSpider
+  parent: BaseBorgChassis
+  abstract: true
   components:
-  - type: GhostRole
-    name: ghost-role-information-derelict-cyborg-name
-    description: ghost-role-information-derelict-cyborg-description
-    rules: ghost-role-information-silicon-rules
-    mindRoles:
-    - MindRoleSubvertedSilicon
-    raffle:
-      settings: default
-  - type: Sprite
-    sprite: Markers/jobs.rsi
-    layers:
-    - state: green
-    - sprite: Mobs/Silicon/chassis.rsi
+  - type: NpcFactionMember
+    factions:
+    - Syndicate
+  - type: Access
+    tags:
+    - NuclearOperative
+    - SyndicateAgent
+  - type: AccessReader
+    access: [["SyndicateAgent"], ["NuclearOperative"]]
+  - type: SiliconLawProvider
+    laws: Ninja
+    subverted: true
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+    - Common
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+  - type: ShowJobIcons
+  - type: MovementAlwaysTouching
+  - type: Speech
+    speechSounds: SyndieBorg
+    allowedEmotes:
+    - Laugh
+  - type: Vocal
+    sounds:
+      Unsexed: UnisexSiliconSyndicate
+  - type: PointLight
+    color: "#dd200b"
+
+
+
+#Ment to be in a /borg_chassis
+
+- type: entity
+  id: BorgChassisSyndicateSaboteurSpider
+  parent: BaseBorgChassisSyndicateSpider
+  name: syndicate saboteur cyborg
+  description: A streamlined engineering cyborg, equipped with covert modules. Its chameleon projector lets it disguise itself as a Nanotrasen cyborg.
+  components:
+    - type: Sprite
+      layers:
+        - state: synd_engi
+        - state: synd_engi_e
+          map: ["enum.BorgVisualLayers.Light"]
+          shader: unshaded
+          visible: false
+        - state: synd_engi_l
+          shader: unshaded
+          map: ["light"]
+          visible: false
+    - type: BorgChassis
+      maxModules: 6
+      moduleWhitelist:
+        tags:
+          - BorgModuleGeneric
+          - BorgModuleEngineering
+          - BorgModuleSyndicate
+      hasMindState: synd_engi_e
+      noMindState: synd_engi
+    - type: ShowHealthBars
+      damageContainers:
+      - Inorganic
+      - Silicon
+    - type: InteractionPopup
+      interactSuccessString: petting-success-syndicate-cyborg
+      interactFailureString: petting-failure-syndicate-cyborg
+      interactSuccessSound:
+        path: /Audio/Ambience/Objects/periodic_beep.ogg
+
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
-  parent: SpawnPointGhostSpiderClanCyborg
+  parent: BorgChassisSyndicateSaboteur
   id: GhostSpiderClanCyborg
   components:
   - type: GhostRole
