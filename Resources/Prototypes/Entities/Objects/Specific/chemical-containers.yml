@@ -77,7 +77,7 @@
       thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 240 # Carpmosia-edit - extendedReagentStorage
+          damage: 200
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
