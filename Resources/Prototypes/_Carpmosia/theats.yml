@@ -1,12 +1,12 @@
 - type: ninjaHackingThreat
   id: Spiders
   announcement: spider-clan-operatives
-  rule:
+  rule: NinjaSpiderSpawn
 
 - type: ninjaHackingThreat
   id: Borgs
   announcement: spider-borgs
-  rule:
+  rule: SpiderClanCyborgEvent
 
 - type: ninjaHackingThreat
   id: LoneOp

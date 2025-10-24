@@ -1,6 +1,6 @@
 - type: entity
   parent: BaseGameRule
-  id: SpiderclanCyborgEvent
+  id: SpiderClanCyborgEvent
   components:
   - type: SpaceSpawnRule
     spawnDistance: 0
@@ -13,3 +13,13 @@
       min: 1
       max: 1
       pickPlayer: false
+
+      #might not work copyied from normal vent spider spawner
+- type: entity
+  id: NinjaSpiderSpawn
+  parent: BaseStationEventShortDelay
+  components:
+  - type: VentCrittersRule
+    entries:
+    - id: MobGiantSpiderAngry
+      prob: 0.05
