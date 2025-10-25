@@ -1,0 +1,68 @@
+- type: loadoutGroup
+  id: QuartermasterHead
+  parent: [BaseHead, CommonHead, CargoHead]
+  loadouts:
+  - QuartermasterHead
+  - QuartermasterBeret
+
+- type: loadoutGroup
+  id: QuartermasterGlasses
+  parent: [BaseGlasses, CommonGlasses, CargoGlasses]
+
+# - type: loadoutGroup
+#   id: QuartermasterMask
+#   parent: [BaseMask, CommonMask, CargoMask]
+
+- type: loadoutGroup
+  id: QuartermasterNeck
+  parent: [BaseNeck, CommonNeck, CargoNeck]
+  loadouts:
+  - QuartermasterCloak
+  - QuartermasterMantle
+
+# - type: loadoutGroup
+#   id: QuartermasterGloves
+#   parent: [BaseGloves, CommonGloves, CargoGloves]
+
+- type: loadoutGroup
+  id: QuartermasterJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, CargoJumpsuit]
+  loadouts:
+  - QuartermasterJumpsuit
+  - QuartermasterJumpskirt
+  - QuartermasterTurtleneck
+  - QuartermasterTurtleneckSkirt
+  - QuartermasterFormalSuit
+
+- type: loadoutGroup
+  id: QuartermasterBackpack
+  parent: [BaseBackpack, CommonBackpack, CargoBackpack]
+
+# - type: loadoutGroup
+#   id: QuartermasterPDA
+#   parent: [BasePDA, CommonPDA, CargoPDA]
+
+# - type: loadoutGroup
+#   id: QuartermasterBelt
+#   parent: [BaseBelt, CommonBelt, CargoBelt]
+
+- type: loadoutGroup
+  id: QuartermasterOuterClothing
+  parent: [BaseOuterClothing, CommonOuterClothing, CargoOuterClothing]
+  loadouts:
+  - QuartermasterWintercoat
+
+- type: loadoutGroup
+  id: QuartermasterShoes
+  parent: [BaseShoes, CommonShoes, CargoShoes]
+  loadouts:
+  - BrownShoes
+  - CargoWinterBoots
+
+# - type: loadoutGroup
+#   id: QuartermasterSpecial
+#   parent: BaseSpecial
+
+- type: loadoutGroup
+  id: QuartermasterTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, CargoTrinkets]

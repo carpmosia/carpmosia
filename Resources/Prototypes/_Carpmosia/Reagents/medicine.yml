@@ -1,0 +1,42 @@
+- type: reagent
+  id: Traumoxadone
+  name: reagent-name-traumoxadone
+  group: Medicine
+  desc: reagent-desc-traumoxadone
+  physicalDesc: reagent-physical-desc-cloudy
+  flavor: medicine
+  color: "#69304D"
+  worksOnTheDead: true
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:EvenHealthChange
+        conditions:
+        - !type:Temperature
+          max: 213.0
+        damage:
+          Brute: -4
+
+- type: reagent
+  id: Stelloxadone
+  name: reagent-name-stelloxadone
+  group: Medicine
+  desc: reagent-desc-stelloxadone
+  physicalDesc: reagent-physical-desc-murky
+  flavor: medicine
+  color: "#FFC683"
+  worksOnTheDead: true
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:Temperature
+          max: 213.0
+        damage:
+          groups:
+            Brute: 3
+          types:
+            Poison: -6
+            Radiation: -3
+

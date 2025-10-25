@@ -1,0 +1,56 @@
+# - type: loadoutGroup
+#   id: LibrarianHead
+#   parent: [BaseHead, CommonHead, CivilianHead]
+
+- type: loadoutGroup
+  id: LibrarianGlasses
+  parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
+
+# - type: loadoutGroup
+#   id: LibrarianMask
+#   parent: [BaseMask, CommonMask, CivilianMask]
+
+# - type: loadoutGroup
+#   id: LibrarianNeck
+#   parent: [BaseNeck, CommonNeck, CivilianNeck]
+
+# - type: loadoutGroup
+#   id: LibrarianGloves
+#   parent: [BaseGloves, CommonGloves, CivilianGloves]
+
+- type: loadoutGroup
+  id: LibrarianJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit]
+  loadouts:
+  - LibrarianJumpsuit
+  - LibrarianJumpskirt
+  - CuratorJumpsuit
+  - CuratorJumpskirt
+
+- type: loadoutGroup
+  id: LibrarianBackpack
+  parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
+
+# - type: loadoutGroup
+#   id: LibrarianPDA
+#   parent: [BasePDA, CommonPDA, CivilianPDA]
+
+# - type: loadoutGroup
+#   id: LibrarianBelt
+#   parent: [BaseBelt, CommonBelt, CivilianBelt]
+
+# - type: loadoutGroup
+#   id: LibrarianOuterClothing
+#   parent: [BaseOuterClothing, CommonOuterClothing, CivilianOuterClothing]
+
+# - type: loadoutGroup
+#   id: LibrarianShoes
+#   parent: [BaseShoes, CommonShoes, CivilianShoes]
+
+# - type: loadoutGroup
+#   id: LibrarianSpecial
+#   parent: BaseSpecial
+
+- type: loadoutGroup
+  id: LibrarianTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]

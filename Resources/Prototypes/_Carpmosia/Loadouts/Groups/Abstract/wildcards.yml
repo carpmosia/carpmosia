@@ -1,0 +1,51 @@
+- type: loadoutGroup
+  id: WildcardsHead
+  abstract: true
+
+- type: loadoutGroup
+  id: WildcardsGlasses
+  abstract: true
+
+- type: loadoutGroup
+  id: WildcardsMask
+  abstract: true
+
+- type: loadoutGroup
+  id: WildcardsNeck
+  abstract: true
+
+- type: loadoutGroup
+  id: WildcardsGloves
+  abstract: true
+
+- type: loadoutGroup
+  id: WildcardsJumpsuit
+  abstract: true
+
+- type: loadoutGroup
+  id: WildcardsBackpack
+  abstract: true
+  loadouts:
+  - CommonBackpack
+  - CommonSatchel
+  - CommonDuffel
+
+- type: loadoutGroup
+  id: WildcardsPDA
+  abstract: true
+
+- type: loadoutGroup
+  id: WildcardsBelt
+  abstract: true
+
+- type: loadoutGroup
+  id: WildcardsOuterClothing
+  abstract: true
+
+- type: loadoutGroup
+  id: WildcardsShoes
+  abstract: true
+
+- type: loadoutGroup
+  id: WildcardsTrinkets
+  abstract: true

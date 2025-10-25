@@ -1,0 +1,54 @@
+# - type: loadoutGroup
+#   id: MedicalInternHead
+#   parent: [BaseHead, CommonHead, MedicalHead]
+
+- type: loadoutGroup
+  id: MedicalInternGlasses
+  parent: [BaseGlasses, CommonGlasses, MedicalGlasses]
+
+# - type: loadoutGroup
+#   id: MedicalInternMask
+#   parent: [BaseMask, CommonMask, MedicalMask]
+
+# - type: loadoutGroup
+#   id: MedicalInternNeck
+#   parent: [BaseNeck, CommonNeck, MedicalNeck]
+
+# - type: loadoutGroup
+#   id: MedicalInternGloves
+#   parent: [BaseGloves, CommonGloves, MedicalGloves]
+
+- type: loadoutGroup
+  id: MedicalInternJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, MedicalJumpsuit]
+  loadouts:
+  - WhiteJumpsuit
+  - WhiteJumpskirt
+
+- type: loadoutGroup
+  id: MedicalInternBackpack
+  parent: [BaseBackpack, CommonBackpack, MedicalBackpack]
+
+# - type: loadoutGroup
+#   id: MedicalInternPDA
+#   parent: [BasePDA, CommonPDA, MedicalPDA]
+
+# - type: loadoutGroup
+#   id: MedicalInternBelt
+#   parent: [BaseBelt, CommonBelt, MedicalBelt]
+
+# - type: loadoutGroup
+#   id: MedicalInternOuterClothing
+#   parent: [BaseOuterClothing, CommonOuterClothing, MedicalOuterClothing]
+
+# - type: loadoutGroup
+#   id: MedicalInternShoes
+#   parent: [BaseShoes, CommonShoes, MedicalShoes]
+
+# - type: loadoutGroup
+#   id: MedicalInternSpecial
+#   parent: BaseSpecial
+
+- type: loadoutGroup
+  id: MedicalInternTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, MedicalTrinkets]

@@ -1,0 +1,69 @@
+- type: loadoutGroup
+  id: ClownHead
+  parent: [BaseHead, CommonHead, CivilianHead]
+  loadouts:
+  - JesterHat
+  - JesterAltHat
+
+- type: loadoutGroup
+  id: ClownGlasses
+  parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
+
+# - type: loadoutGroup
+#   id: ClownMask
+#   parent: [BaseMask, CommonMask, CivilianMask]
+
+# - type: loadoutGroup
+#   id: ClownNeck
+#   parent: [BaseNeck, CommonNeck, CivilianNeck]
+
+# - type: loadoutGroup
+#   id: ClownGloves
+#   parent: [BaseGloves, CommonGloves, CivilianGloves]
+
+- type: loadoutGroup
+  id: ClownJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit]
+  loadouts:
+  - ClownSuit
+  - ClownSkirt
+  - JesterSuit
+  - JesterAltSuit
+
+- type: loadoutGroup
+  id: ClownBackpack
+  parent: [BaseBackpack, CommonBackpack]
+  loadouts:
+  - ClownBackpack
+  - ClownSatchel
+  - ClownDuffel
+
+# - type: loadoutGroup
+#   id: ClownPDA
+#   parent: [BasePDA, CommonPDA, CivilianPDA]
+
+# - type: loadoutGroup
+#   id: ClownBelt
+#   parent: [BaseBelt, CommonBelt, CivilianBelt]
+
+- type: loadoutGroup
+  id: ClownOuterClothing
+  parent: [BaseOuterClothing, CommonOuterClothing, CivilianOuterClothing]
+  loadouts:
+  - ClownRobes
+  - ClownWintercoat
+
+- type: loadoutGroup
+  id: ClownShoes
+  parent: [BaseShoes, CommonShoes, CivilianShoes]
+  loadouts:
+  - ClownShoes
+  - JesterShoes
+
+# - type: loadoutGroup
+#   id: ClownSpecial
+#   parent: BaseSpecial
+
+- type: loadoutGroup
+  id: ClownTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]

@@ -1,0 +1,64 @@
+- type: loadoutGroup
+  id: BartenderHead
+  parent: [BaseHead, CommonHead, CivilianHead]
+  loadouts:
+  - BartenderHead
+  - BartenderBowler
+
+- type: loadoutGroup
+  id: BartenderGlasses
+  parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
+
+# - type: loadoutGroup
+#   id: BartenderMask
+#   parent: [BaseMask, CommonMask, CivilianMask]
+
+# - type: loadoutGroup
+#   id: BartenderNeck
+#   parent: [BaseNeck, CommonNeck, CivilianNeck]
+
+# - type: loadoutGroup
+#   id: BartenderGloves
+#   parent: [BaseGloves, CommonGloves, CivilianGloves]
+
+- type: loadoutGroup
+  id: BartenderJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit]
+  loadouts:
+  - BartenderJumpsuit
+  - BartenderJumpskirt
+  - BartenderJumpsuitPurple
+
+- type: loadoutGroup
+  id: BartenderBackpack
+  parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
+
+# - type: loadoutGroup
+#   id: BartenderPDA
+#   parent: [BasePDA, CommonPDA, CivilianPDA]
+
+# - type: loadoutGroup
+#   id: BartenderBelt
+#   parent: [BaseBelt, CommonBelt, CivilianBelt]
+
+- type: loadoutGroup
+  id: BartenderOuterClothing
+  parent: [BaseOuterClothing, CommonOuterClothing, CivilianOuterClothing]
+  loadouts:
+  - BartenderVest
+  - BartenderApron
+  - BartenderWintercoat
+
+# - type: loadoutGroup
+#   id: BartenderShoes
+#   parent: [BaseShoes, CommonShoes, CivilianShoes]
+
+- type: loadoutGroup
+  id: BartenderSpecial
+  parent: BaseSpecial
+  loadouts:
+  - BartenderGoldenShaker
+
+- type: loadoutGroup
+  id: BartenderTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]

@@ -1,0 +1,66 @@
+- type: loadoutGroup
+  id: DetectiveHead
+  parent: [BaseHead, CommonHead, SecurityHead]
+  loadouts:
+  - DetectiveFedora
+  - DetectiveFedoraGrey
+
+# - type: loadoutGroup
+#   id: DetectiveGlasses
+#   parent: [BaseGlasses, CommonGlasses, SecurityGlasses]
+
+# - type: loadoutGroup
+#   id: DetectiveMask
+#   parent: [BaseMask, CommonMask, SecurityMask]
+
+- type: loadoutGroup
+  id: DetectiveNeck
+  parent: [BaseNeck, CommonNeck, SecurityNeck]
+  loadouts:
+  - DetectiveTie
+
+# - type: loadoutGroup
+#   id: DetectiveGloves
+#   parent: [BaseGloves, CommonGloves, SecurityGloves]
+
+- type: loadoutGroup
+  id: DetectiveJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, SecurityJumpsuit]
+  loadouts:
+  - DetectiveJumpsuit
+  - DetectiveJumpskirt
+  - NoirJumpsuit
+  - NoirJumpskirt
+
+- type: loadoutGroup
+  id: DetectiveBackpack
+  parent: [BaseBackpack, CommonBackpack, SecurityBackpack]
+
+# - type: loadoutGroup
+#   id: DetectivePDA
+#   parent: [BasePDA, CommonPDA, SecurityPDA]
+
+# - type: loadoutGroup
+#   id: DetectiveBelt
+#   parent: [BaseBelt, CommonBelt, SecurityBelt]
+
+- type: loadoutGroup
+  id: DetectiveOuterClothing
+  parent: [BaseOuterClothing, CommonOuterClothing, SecurityOuterClothing]
+  minLimit: 1
+  loadouts:
+  - DetectiveArmorVest
+  - DetectiveCoat
+  - DetectiveCoatGrey
+
+- type: loadoutGroup
+  id: DetectiveShoes
+  parent: [BaseShoes, CommonShoes, SecurityShoes]
+
+# - type: loadoutGroup
+#   id: DetectiveSpecial
+#   parent: BaseSpecial
+
+- type: loadoutGroup
+  id: DetectiveTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, SecurityTrinkets]

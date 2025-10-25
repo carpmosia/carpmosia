@@ -1,0 +1,51 @@
+# - type: loadoutGroup
+#   id: ServiceWorkerHead
+#   parent: [BaseHead, CommonHead, CivilianHead]
+
+- type: loadoutGroup
+  id: ServiceWorkerGlasses
+  parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
+
+# - type: loadoutGroup
+#   id: ServiceWorkerMask
+#   parent: [BaseMask, CommonMask, CivilianMask]
+
+# - type: loadoutGroup
+#   id: ServiceWorkerNeck
+#   parent: [BaseNeck, CommonNeck, CivilianNeck]
+
+# - type: loadoutGroup
+#   id: ServiceWorkerGloves
+#   parent: [BaseGloves, CommonGloves, CivilianGloves]
+
+- type: loadoutGroup
+  id: ServiceWorkerJumpsuit
+  parent: BartenderJumpsuit # [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit] LoadoutReworkTODO
+
+- type: loadoutGroup
+  id: ServiceWorkerBackpack
+  parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
+
+# - type: loadoutGroup
+#   id: ServiceWorkerPDA
+#   parent: [BasePDA, CommonPDA, CivilianPDA]
+
+# - type: loadoutGroup
+#   id: ServiceWorkerBelt
+#   parent: [BaseBelt, CommonBelt, CivilianBelt]
+
+# - type: loadoutGroup
+#   id: ServiceWorkerOuterClothing
+#   parent: [BaseOuterClothing, CommonOuterClothing, CivilianOuterClothing]
+
+# - type: loadoutGroup
+#   id: ServiceWorkerShoes
+#   parent: [BaseShoes, CommonShoes, CivilianShoes]
+
+# - type: loadoutGroup
+#   id: ServiceWorkerSpecial
+#   parent: BaseSpecial
+
+- type: loadoutGroup
+  id: ServiceWorkerTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]

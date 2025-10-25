@@ -240,6 +240,11 @@
         - !type:OrganType
           type: Vox
           shouldHave: false
+        # Carpmosia-start - Avali port
+        - !type:OrganType
+          type: Avali
+          shouldHave: false
+        # Carpmosia-end - Avali port
         - !type:ReagentThreshold
           reagent: Ammonia
           min: 0.8

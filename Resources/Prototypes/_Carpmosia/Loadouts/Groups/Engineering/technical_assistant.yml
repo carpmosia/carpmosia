@@ -1,0 +1,54 @@
+# - type: loadoutGroup
+#   id: TechnicalAssistantHead
+#   parent: [BaseHead, CommonHead, EngineeringHead]
+
+# - type: loadoutGroup
+#   id: TechnicalAssistantGlasses
+#   parent: [BaseGlasses, CommonGlasses, EngineeringGlasses]
+
+# - type: loadoutGroup
+#   id: TechnicalAssistantMask
+#   parent: [BaseMask, CommonMask, EngineeringMask]
+
+# - type: loadoutGroup
+#   id: TechnicalAssistantNeck
+#   parent: [BaseNeck, CommonNeck, EngineeringNeck]
+
+# - type: loadoutGroup
+#   id: TechnicalAssistantGloves
+#   parent: [BaseGloves, CommonGloves, EngineeringGloves]
+
+- type: loadoutGroup
+  id: TechnicalAssistantJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, EngineeringJumpsuit]
+  loadouts:
+  - YellowJumpsuit
+  - YellowJumpskirt
+
+- type: loadoutGroup
+  id: TechnicalAssistantBackpack
+  parent: [BaseBackpack, CommonBackpack, EngineeringBackpack]
+
+# - type: loadoutGroup
+#   id: TechnicalAssistantPDA
+#   parent: [BasePDA, CommonPDA, EngineeringPDA]
+
+# - type: loadoutGroup
+#   id: TechnicalAssistantBelt
+#   parent: [BaseBelt, CommonBelt, EngineeringBelt]
+
+# - type: loadoutGroup
+#   id: TechnicalAssistantOuterClothing
+#   parent: [BaseOuterClothing, CommonOuterClothing, EngineeringOuterClothing]
+
+# - type: loadoutGroup
+#   id: TechnicalAssistantShoes
+#   parent: [BaseShoes, CommonShoes, EngineeringShoes]
+
+# - type: loadoutGroup
+#   id: TechnicalAssistantSpecial
+#   parent: BaseSpecial
+
+- type: loadoutGroup
+  id: TechnicalAssistantTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, EngineeringTrinkets]

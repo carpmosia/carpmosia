@@ -1,0 +1,64 @@
+# - type: loadoutGroup
+#   id: AtmosphericTechnicianHead
+#   parent: [BaseHead, CommonHead, EngineeringHead]
+
+# - type: loadoutGroup
+#   id: AtmosphericTechnicianGlasses
+#   parent: [BaseGlasses, CommonGlasses, EngineeringGlasses]
+
+# - type: loadoutGroup
+#   id: AtmosphericTechnicianMask
+#   parent: [BaseMask, CommonMask, EngineeringMask]
+
+# - type: loadoutGroup
+#   id: AtmosphericTechnicianNeck
+#   parent: [BaseNeck, CommonNeck, EngineeringNeck]
+
+# - type: loadoutGroup
+#   id: AtmosphericTechnicianGloves
+#   parent: [BaseGloves, CommonGloves, EngineeringGloves]
+
+- type: loadoutGroup
+  id: AtmosphericTechnicianJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, EngineeringJumpsuit]
+  loadouts:
+  - AtmosphericTechnicianJumpsuit
+  - AtmosphericTechnicianJumpskirt
+  - AtmosphericTechnicianJumpsuitCasual
+
+- type: loadoutGroup
+  id: AtmosphericTechnicianBackpack
+  parent: [BaseBackpack, CommonBackpack]
+  loadouts:
+  - AtmosphericTechnicianBackpack
+  - AtmosphericTechnicianSatchel
+  - AtmosphericTechnicianDuffel
+
+# - type: loadoutGroup
+#   id: AtmosphericTechnicianPDA
+#   parent: [BasePDA, CommonPDA, EngineeringPDA]
+
+# - type: loadoutGroup
+#   id: AtmosphericTechnicianBelt
+#   parent: [BaseBelt, CommonBelt, EngineeringBelt]
+
+- type: loadoutGroup
+  id: AtmosphericTechnicianOuterClothing
+  parent: [BaseOuterClothing, CommonOuterClothing, EngineeringOuterClothing]
+  loadouts:
+  - AtmosphericTechnicianWintercoat
+
+- type: loadoutGroup
+  id: AtmosphericTechnicianShoes
+  parent: [BaseShoes, CommonShoes, EngineeringShoes]
+  loadouts:
+  - WhiteShoes
+  - EngineeringWinterBoots
+
+# - type: loadoutGroup
+#   id: AtmosphericTechnicianSpecial
+#   parent: BaseSpecial
+
+- type: loadoutGroup
+  id: AtmosphericTechnicianTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, EngineeringTrinkets]

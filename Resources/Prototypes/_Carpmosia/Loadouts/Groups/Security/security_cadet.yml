@@ -1,0 +1,54 @@
+# - type: loadoutGroup
+#   id: SecurityCadetHead
+#   parent: [BaseHead, CommonHead, SecurityHead]
+
+# - type: loadoutGroup
+#   id: SecurityCadetGlasses
+#   parent: [BaseGlasses, CommonGlasses, SecurityGlasses]
+
+# - type: loadoutGroup
+#   id: SecurityCadetMask
+#   parent: [BaseMask, CommonMask, SecurityMask]
+
+# - type: loadoutGroup
+#   id: SecurityCadetNeck
+#   parent: [BaseNeck, CommonNeck, SecurityNeck]
+
+# - type: loadoutGroup
+#   id: SecurityCadetGloves
+#   parent: [BaseGloves, CommonGloves, SecurityGloves]
+
+- type: loadoutGroup
+  id: SecurityCadetJumpsuit
+  parent: [BaseJumpsuit, CommonJumpsuit, SecurityJumpsuit]
+  loadouts:
+  - RedJumpsuit
+  - RedJumpskirt
+
+- type: loadoutGroup
+  id: SecurityCadetBackpack
+  parent: [BaseBackpack, CommonBackpack, SecurityBackpack]
+
+# - type: loadoutGroup
+#   id: SecurityCadetPDA
+#   parent: [BasePDA, CommonPDA, SecurityPDA]
+
+# - type: loadoutGroup
+#   id: SecurityCadetBelt
+#   parent: [BaseBelt, CommonBelt, SecurityBelt]
+
+# - type: loadoutGroup
+#   id: SecurityCadetOuterClothing
+#   parent: [BaseOuterClothing, CommonOuterClothing, SecurityOuterClothing]
+
+# - type: loadoutGroup
+#   id: SecurityCadetShoes
+#   parent: [BaseShoes, CommonShoes, SecurityShoes]
+
+# - type: loadoutGroup
+#   id: SecurityCadetSpecial
+#   parent: BaseSpecial
+
+- type: loadoutGroup
+  id: SecurityCadetTrinkets
+  parent: [BaseTrinkets, CommonTrinkets, SecurityTrinkets]
