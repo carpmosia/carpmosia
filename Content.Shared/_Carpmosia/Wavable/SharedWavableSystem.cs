@@ -56,11 +56,8 @@ public sealed partial class SharedWavableSystem : EntitySystem
         Wave(uid, args.User);
 
         args.Handled = true;
-
-        //TODO - add delay
-        /* if (HasComp<UseDelayComponent>(uid) && !component.UseDelayOnWield)
-            args.ApplyDelay = false; */
     }
+
     /// <summary>
     ///     Waves the given entity, no matter what
     /// </summary>
