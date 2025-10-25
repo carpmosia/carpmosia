@@ -95,6 +95,7 @@ namespace Content.IntegrationTests.Tests
             "Marathon",
             "MeteorArena",
             "Saltern",
+			"Saltern2", // Carpmosia-edit - Saltern2 port
             "Reach",
             "Oasis",
             "Oasis2", // Carpmosia-edit - Oasis2 port
