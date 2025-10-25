@@ -7,6 +7,5 @@ namespace Content.Shared.Wavable.Components;
 [Access(typeof(SharedWavableSystem))]
 public sealed partial class WavableComponent : Component
 {
-    [DataField]
-    public LocId? WavableExamineMessage = "wavable-component-examine";
+
 }

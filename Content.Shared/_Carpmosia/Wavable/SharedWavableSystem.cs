@@ -43,13 +43,11 @@ public sealed partial class SharedWavableSystem : EntitySystem
 
     private void OnExamine(Entity<WavableComponent> entity, ref ExaminedEvent args)
     {
-        if(entity.Comp.WavableExamineMessage != null)
-            args.PushText(Loc.GetString(entity.Comp.WavableExamineMessage));
+        args.PushText(Loc.GetString("wavable-component-examine"));
     }
 
     private void OnUseInHand(EntityUid uid, WavableComponent component, UseInHandEvent args)
     {
-
         if(args.Handled)
             return;
 
