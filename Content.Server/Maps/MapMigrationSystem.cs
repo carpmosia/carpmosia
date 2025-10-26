@@ -63,8 +63,8 @@ public sealed class MapMigrationSystem : EntitySystem
     private void OnBeforeReadEvent(BeforeEntityReadEvent ev)
     {
     // Carpmosia-start - Starlight migration system
-        foreach (var file in _migrationFiles) // Carpmosia-edit - Starlight migration system
-            ReadMigrations(ev, file); // Carpmosia-edit - Starlight migration system
+        foreach (var file in _migrationFiles)
+            ReadMigrations(ev, file);
     }
 
     private void ReadMigrations(BeforeEntityReadEvent ev, string file)
