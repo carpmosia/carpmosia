@@ -22,7 +22,14 @@ public sealed class MapMigrationSystem : EntitySystem
 #pragma warning restore CS0414
     [Dependency] private readonly IResourceManager _resMan = default!;
 
-    private const string MigrationFile = "/migration.yml";
+    // Carpmosia-start - Starlight migration system
+    private static readonly string[] _migrationFiles =
+    [
+        "/migration.yml",
+        "/_Carpmosia/migration.yml"
+    ];
+    // Carpmosia-end- Starlight migration system
+
 
     public override void Initialize()
     {
@@ -30,23 +37,17 @@ public sealed class MapMigrationSystem : EntitySystem
         SubscribeLocalEvent<BeforeEntityReadEvent>(OnBeforeReadEvent);
 
 #if DEBUG
-        if (!TryReadFile(out var mappings))
-            return;
-
-        // Verify that all of the entries map to valid entity prototypes.
-        foreach (var node in mappings.Children.Values)
-        {
-            var newId = ((ValueDataNode) node).Value;
-            if (!string.IsNullOrEmpty(newId) && newId != "null")
-                DebugTools.Assert(_protoMan.HasIndex<EntityPrototype>(newId), $"{newId} is not an entity prototype.");
-        }
+        // Carpmosia-start - Starlight migration system
+        foreach (var file in _migrationFiles)
+            ValidateMigrations(file);
+        // Carpmosia-end - Starlight migration system
 #endif
     }
 
-    private bool TryReadFile([NotNullWhen(true)] out MappingDataNode? mappings)
+    private bool TryReadFile(string file, [NotNullWhen(true)] out MappingDataNode? mappings) // Carpmosia-edit - Starlight migration system
     {
         mappings = null;
-        var path = new ResPath(MigrationFile);
+        var path = new ResPath(file); // Carpmosia-edit - Starlight migration system
         if (!_resMan.TryContentFileRead(path, out var stream))
             return false;
 
@@ -62,7 +63,15 @@ public sealed class MapMigrationSystem : EntitySystem
 
     private void OnBeforeReadEvent(BeforeEntityReadEvent ev)
     {
-        if (!TryReadFile(out var mappings))
+    // Carpmosia-start - Starlight migration system
+        foreach (var file in _migrationFiles) // Carpmosia-edit - Starlight migration system
+            ReadMigrations(ev, file); // Carpmosia-edit - Starlight migration system
+    }
+
+    private void ReadMigrations(BeforeEntityReadEvent ev, string file)
+    {
+    // Carpmosia-end - Starlight migration system
+        if (!TryReadFile(file, out var mappings)) // Carpmosia-edit - Starlight migration system
             return;
 
         foreach (var (key, value) in mappings)
@@ -76,4 +85,20 @@ public sealed class MapMigrationSystem : EntitySystem
                 ev.RenamedPrototypes.Add(key, valueNode.Value);
         }
     }
+
+    // Carpmosia-start - Starlight migration system
+    private void ValidateMigrations(string file)
+    {
+        if (!TryReadFile(file, out var mappings))
+            return;
+
+        // Verify that all of the entries map to valid entity prototypes.
+        foreach (var node in mappings.Children.Values)
+        {
+            var newId = ((ValueDataNode)node).Value;
+            if (!string.IsNullOrEmpty(newId) && newId != "null")
+                DebugTools.Assert(_protoMan.HasIndex<EntityPrototype>(newId), $"{newId} is not an entity prototype.");
+        }
+    }
+    // Carpmosia-end - Starlight migration system
 }
