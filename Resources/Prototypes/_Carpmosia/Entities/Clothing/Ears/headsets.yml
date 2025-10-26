@@ -1,0 +1,16 @@
+- type: entity
+  parent: [ClothingHeadset, BaseLawyerContraband]
+  id: ClothingHeadsetLawyer
+  name: lawyer headset
+  description: To keep in the know about current legal cases and domestic issues.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeySecurity
+      - EncryptionKeyService
+      - EncryptionKeyCommon
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/security.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/security.rsi
