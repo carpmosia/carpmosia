@@ -30,7 +30,6 @@ public sealed class MapMigrationSystem : EntitySystem
     ];
     // Carpmosia-end- Starlight migration system
 
-
     public override void Initialize()
     {
         base.Initialize();
