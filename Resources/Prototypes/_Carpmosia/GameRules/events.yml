@@ -5,9 +5,8 @@
   - type: SpaceSpawnRule
     spawnDistance: 0
   - type: AntagSpawner
-    prototype: PlayerBorgSpiderclan #make this soon
+    prototype: PlayerBorgSyndicateSaboteurGhostRole #make this soon - Sabioteur borg for now
   - type: AntagSelection
-    #Is this needed?
     definitions:
     - spawnerPrototype: SpawnPointGhostSpiderClanCyborg
 

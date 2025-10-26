@@ -1,3 +1,19 @@
+#ment to be in a /silicon
+
+- type: entity
+  id: PlayerBorgSyndicateSaboteurGhostRoleSpider
+  parent: PlayerBorgSyndicateSaboteurBattery
+  suffix: Ghost role
+  components:
+    - type: GhostRole
+      name: ghost-role-information-syndicate-cyborg-saboteur-name
+      description: ghost-role-information-syndicate-cyborg-description
+      rules: ghost-role-information-silicon-rules
+      raffle:
+        settings: default
+      job: Borg
+    - type: GhostTakeoverAvailable
+
 #ment to be in a /base_brog_chassis
 
 - type: entity
@@ -80,12 +96,12 @@
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
-  parent: BorgChassisSyndicateSaboteur
-  id: GhostSpiderClanCyborg
+  parent: BorgChassisSyndicateSaboteurSpider
+  id: SpawnPointGhostSpiderClanCyborg
   components:
   - type: GhostRole
     name: ghost-role-information-spider-clan-borg-name
     description: ghost-role-information-spider-clan-borg-description
-    rules: ghost-role-information-spider-clan-borg-rules
+    rules: ghost-role-information-silicon-rules
     raffle:
       settings: default
