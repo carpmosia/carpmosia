@@ -71,6 +71,7 @@ public abstract partial class SharedGunSystem : EntitySystem
     protected const string AmmoExamineColor = "yellow";
     protected const string FireRateExamineColor = "yellow";
     public const string ModeExamineColor = "cyan";
+    private static readonly ProtoId<TagPrototype> TrashTag = "Trash"; // Carpmosia-edit - make spent casings trash
 
     public override void Initialize()
     {
@@ -452,6 +453,8 @@ public abstract partial class SharedGunSystem : EntitySystem
 
         cartridge.Spent = spent;
         Appearance.SetData(uid, AmmoVisuals.Spent, spent);
+        EnsureComp<TagComponent>(uid); // Carpmosia-edit - make spent casings trash
+        TagSystem.AddTag(uid, TrashTag); // Carpmosia-edit - make spent casings trash
     }
 
     /// <summary>
