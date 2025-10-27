@@ -453,8 +453,10 @@ public abstract partial class SharedGunSystem : EntitySystem
 
         cartridge.Spent = spent;
         Appearance.SetData(uid, AmmoVisuals.Spent, spent);
-        EnsureComp<TagComponent>(uid); // Carpmosia-edit - make spent casings trash
-        TagSystem.AddTag(uid, TrashTag); // Carpmosia-edit - make spent casings trash
+        // Carpmosia-start - make spent casings trash
+        EnsureComp<TagComponent>(uid);
+        TagSystem.AddTag(uid, TrashTag);
+        // Carpmosia-end - make spent casings trash
     }
 
     /// <summary>
