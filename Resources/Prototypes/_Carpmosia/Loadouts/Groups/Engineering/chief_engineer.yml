@@ -5,9 +5,10 @@
   - ChiefEngineerHead
   - ChiefEngineerBeret
 
-# - type: loadoutGroup
-#   parent: [ EngineeringGlasses, CommonGlasses ]
-#   id: ChiefEngineerGlasses
+- type: loadoutGroup
+  parent: [ EngineeringGlasses, CommonGlasses ]
+  id: ChiefEngineerGlasses
+  defaultSelected: 1
 
 # - type: loadoutGroup
 #   parent: [ EngineeringMask, CommonMask ]

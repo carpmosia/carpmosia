@@ -2,9 +2,9 @@
 #   parent: [ MedicalHead, CommonHead ]
 #   id: ChemistHead
 
-# - type: loadoutGroup
-#   parent: [ MedicalGlasses, CommonGlasses ]
-#   id: ChemistGlasses
+- type: loadoutGroup
+  parent: [ MedicalGlasses, CommonGlasses ]
+  id: ChemistGlasses
 
 - type: loadoutGroup
   parent: [ MedicalMask, CommonMask ]

@@ -2,9 +2,10 @@
 #   parent: [ EngineeringHead, CommonHead ]
 #   id: AtmosphericTechnicianHead
 
-# - type: loadoutGroup
-#   parent: [ EngineeringGlasses, CommonGlasses ]
-#   id: AtmosphericTechnicianGlasses
+- type: loadoutGroup
+  parent: [ EngineeringGlasses, CommonGlasses ]
+  id: AtmosphericTechnicianGlasses
+  defaultSelected: 1
 
 # - type: loadoutGroup
 #   parent: [ EngineeringMask, CommonMask ]

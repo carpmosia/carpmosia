@@ -2,9 +2,10 @@
 #   parent: [ SecurityHead, CommonHead ]
 #   id: SecurityCadetHead
 
-# - type: loadoutGroup
-#   parent: [ SecurityGlasses, CommonGlasses ]
-#   id: SecurityCadetGlasses
+- type: loadoutGroup
+  parent: [ SecurityGlasses, CommonGlasses ]
+  id: SecurityCadetGlasses
+  defaultSelected: 1
 
 # - type: loadoutGroup
 #   parent: [ SecurityMask, CommonMask ]

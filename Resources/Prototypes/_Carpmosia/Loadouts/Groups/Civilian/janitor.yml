@@ -54,6 +54,8 @@
 - type: loadoutGroup
   parent: [ CommonShoes, CivilianShoes ]
   id: JanitorShoes
+  loadouts:
+  - GaloshesShoes
 
 - type: loadoutGroup
   parent: BaseSpecial

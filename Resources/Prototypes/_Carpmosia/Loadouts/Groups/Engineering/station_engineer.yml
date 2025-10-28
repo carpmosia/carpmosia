@@ -7,9 +7,10 @@
   - StationEngineerHardhatRed
   - SeniorEngineerBeret
 
-# - type: loadoutGroup
-#   parent: [ EngineeringGlasses, CommonGlasses ]
-#   id: StationEngineerGlasses
+- type: loadoutGroup
+  parent: [ EngineeringGlasses, CommonGlasses ]
+  id: StationEngineerGlasses
+  defaultSelected: 1
 
 # - type: loadoutGroup
 #   parent: [ EngineeringMask, CommonMask ]
