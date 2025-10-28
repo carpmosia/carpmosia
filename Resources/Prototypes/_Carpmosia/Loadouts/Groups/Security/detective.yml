@@ -1,31 +1,31 @@
 - type: loadoutGroup
+  parent: [ SecurityHead, CommonHead ]
   id: DetectiveHead
-  parent: [BaseHead, CommonHead, SecurityHead]
   loadouts:
   - DetectiveFedora
   - DetectiveFedoraGrey
 
 # - type: loadoutGroup
+#   parent: [ SecurityGlasses, CommonGlasses ]
 #   id: DetectiveGlasses
-#   parent: [BaseGlasses, CommonGlasses, SecurityGlasses]
 
 # - type: loadoutGroup
+#   parent: [ SecurityMask, CommonMask ]
 #   id: DetectiveMask
-#   parent: [BaseMask, CommonMask, SecurityMask]
 
 - type: loadoutGroup
+  parent: [ SecurityNeck, CommonNeck ]
   id: DetectiveNeck
-  parent: [BaseNeck, CommonNeck, SecurityNeck]
   loadouts:
   - DetectiveTie
 
 # - type: loadoutGroup
+#   parent: [ SecurityGloves, CommonGloves ]
 #   id: DetectiveGloves
-#   parent: [BaseGloves, CommonGloves, SecurityGloves]
 
 - type: loadoutGroup
+  parent: [ SecurityJumpsuit, CommonJumpsuit ]
   id: DetectiveJumpsuit
-  parent: [BaseJumpsuit, CommonJumpsuit, SecurityJumpsuit]
   loadouts:
   - DetectiveJumpsuit
   - DetectiveJumpskirt
@@ -33,20 +33,20 @@
   - NoirJumpskirt
 
 - type: loadoutGroup
+  parent: [ SecurityBackpack, CommonBackpack ]
   id: DetectiveBackpack
-  parent: [BaseBackpack, CommonBackpack, SecurityBackpack]
 
 # - type: loadoutGroup
+#   parent: [ SecurityPDA, CommonPDA ]
 #   id: DetectivePDA
-#   parent: [BasePDA, CommonPDA, SecurityPDA]
 
 # - type: loadoutGroup
+#   parent: [ SecurityBelt, CommonBelt ]
 #   id: DetectiveBelt
-#   parent: [BaseBelt, CommonBelt, SecurityBelt]
 
 - type: loadoutGroup
+  parent: [ SecurityOuterClothing, CommonOuterClothing ]
   id: DetectiveOuterClothing
-  parent: [BaseOuterClothing, CommonOuterClothing, SecurityOuterClothing]
   minLimit: 1
   loadouts:
   - DetectiveArmorVest
@@ -54,13 +54,13 @@
   - DetectiveCoatGrey
 
 - type: loadoutGroup
+  parent: [ CommonShoes, SecurityShoes ]
   id: DetectiveShoes
-  parent: [BaseShoes, CommonShoes, SecurityShoes]
 
 # - type: loadoutGroup
-#   id: DetectiveSpecial
 #   parent: BaseSpecial
+#   id: DetectiveSpecial
 
 - type: loadoutGroup
+  parent: [ SecurityTrinkets, CommonTrinkets ]
   id: DetectiveTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, SecurityTrinkets]

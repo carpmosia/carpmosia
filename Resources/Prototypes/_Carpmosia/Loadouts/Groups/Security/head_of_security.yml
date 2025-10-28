@@ -1,32 +1,32 @@
 - type: loadoutGroup
+  parent: [ SecurityHead, CommonHead ]
   id: HeadOfSecurityHead
-  parent: [BaseHead, CommonHead, SecurityHead]
   loadouts:
   - HeadofSecurityHead
   - HeadofSecurityBeret
 
 # - type: loadoutGroup
+#   parent: [ SecurityGlasses, CommonGlasses ]
 #   id: HeadOfSecurityGlasses
-#   parent: [BaseGlasses, CommonGlasses, SecurityGlasses]
 
 # - type: loadoutGroup
+#   parent: [ SecurityMask, CommonMask ]
 #   id: HeadOfSecurityMask
-#   parent: [BaseMask, CommonMask, SecurityMask]
 
 - type: loadoutGroup
+  parent: [ SecurityNeck, CommonNeck ]
   id: HeadOfSecurityNeck
-  parent: [BaseNeck, CommonNeck, SecurityNeck]
   loadouts:
   - HeadofSecurityCloak
   - HeadofSecurityMantle
 
 # - type: loadoutGroup
+#   parent: [ SecurityGloves, CommonGloves ]
 #   id: HeadOfSecurityGloves
-#   parent: [BaseGloves, CommonGloves, SecurityGloves]
 
 - type: loadoutGroup
+  parent: [ SecurityJumpsuit, CommonJumpsuit ]
   id: HeadOfSecurityJumpsuit
-  parent: [BaseJumpsuit, CommonJumpsuit, SecurityJumpsuit]
   loadouts:
   - HeadofSecurityJumpsuit
   - HeadofSecurityJumpskirt
@@ -36,33 +36,33 @@
   - HeadofSecurityFormalSkirt
 
 - type: loadoutGroup
+  parent: [ SecurityBackpack, CommonBackpack ]
   id: HeadOfSecurityBackpack
-  parent: [BaseBackpack, CommonBackpack, SecurityBackpack]
 
 # - type: loadoutGroup
+#   parent: [ SecurityPDA, CommonPDA ]
 #   id: HeadOfSecurityPDA
-#   parent: [BasePDA, CommonPDA, SecurityPDA]
 
 - type: loadoutGroup
+  parent: [ SecurityBelt, CommonBelt ]
   id: HeadOfSecurityBelt
-  parent: [BaseBelt, CommonBelt, SecurityBelt]
 
 - type: loadoutGroup
+  parent: [ SecurityOuterClothing, CommonOuterClothing ]
   id: HeadOfSecurityOuterClothing
-  parent: [BaseOuterClothing, CommonOuterClothing, SecurityOuterClothing]
   minLimit: 1
   loadouts:
   - HeadofSecurityCoat
   - HeadofSecurityWinterCoat
 
 - type: loadoutGroup
+  parent: [ CommonShoes, SecurityShoes ]
   id: HeadOfSecurityShoes
-  parent: [BaseShoes, CommonShoes, SecurityShoes]
 
 # - type: loadoutGroup
-#   id: HeadOfSecuritySpecial
 #   parent: BaseSpecial
+#   id: HeadOfSecuritySpecial
 
 - type: loadoutGroup
+  parent: [ SecurityTrinkets, CommonTrinkets ]
   id: HeadOfSecurityTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, SecurityTrinkets]

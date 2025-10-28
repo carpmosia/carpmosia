@@ -1,6 +1,6 @@
 - type: loadoutGroup
+  parent: [ SecurityHead, CommonHead ]
   id: SecurityOfficerHead
-  parent: [BaseHead, CommonHead, SecurityHead]
   loadouts:
   - SecurityHelmet
   - SecurityBeret
@@ -8,24 +8,24 @@
   - TrooperHat
 
 # - type: loadoutGroup
+#   parent: [ SecurityGlasses, CommonGlasses ]
 #   id: SecurityOfficerGlasses
-#   parent: [BaseGlasses, CommonGlasses, SecurityGlasses]
 
 # - type: loadoutGroup
+#   parent: [ SecurityMask, CommonMask ]
 #   id: SecurityOfficerMask
-#   parent: [BaseMask, CommonMask, SecurityMask]
 
 - type: loadoutGroup
+  parent: [ SecurityNeck, CommonNeck ]
   id: SecurityOfficerNeck
-  parent: [BaseNeck, CommonNeck, SecurityNeck]
 
 # - type: loadoutGroup
+#   parent: [ SecurityGloves, CommonGloves ]
 #   id: SecurityOfficerGloves
-#   parent: [BaseGloves, CommonGloves, SecurityGloves]
 
 - type: loadoutGroup
+  parent: [ SecurityJumpsuit, CommonJumpsuit ]
   id: SecurityOfficerJumpsuit
-  parent: [BaseJumpsuit, CommonJumpsuit, SecurityJumpsuit]
   loadouts:
   - SecurityJumpsuit
   - SecurityJumpskirt
@@ -36,23 +36,23 @@
   - TrooperUniform
 
 - type: loadoutGroup
+  parent: [ SecurityBackpack, CommonBackpack ]
   id: SecurityOfficerBackpack
-  parent: [BaseBackpack, CommonBackpack, SecurityBackpack]
 
 - type: loadoutGroup
+  parent: [ SecurityPDA, CommonPDA ]
   id: SecurityOfficerPDA
-  parent: [BasePDA, CommonPDA, SecurityPDA]
   loadouts:
   - SecurityPDA
   - SeniorOfficerPDA
 
 - type: loadoutGroup
+  parent: [ SecurityBelt, CommonBelt ]
   id: SecurityOfficerBelt
-  parent: [BaseBelt, CommonBelt, SecurityBelt]
 
 - type: loadoutGroup
+  parent: [ SecurityOuterClothing, CommonOuterClothing ]
   id: SecurityOfficerOuterClothing
-  parent: [BaseOuterClothing, CommonOuterClothing, SecurityOuterClothing]
   minLimit: 1
   loadouts:
   - ArmorVest
@@ -60,13 +60,13 @@
   - SecurityOfficerWintercoat
 
 - type: loadoutGroup
+  parent: [ CommonShoes, SecurityShoes ]
   id: SecurityOfficerShoes
-  parent: [BaseShoes, CommonShoes, SecurityShoes]
 
 # - type: loadoutGroup
-#   id: SecurityOfficerSpecial
 #   parent: BaseSpecial
+#   id: SecurityOfficerSpecial
 
 - type: loadoutGroup
+  parent: [ SecurityTrinkets, CommonTrinkets ]
   id: SecurityOfficerTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, SecurityTrinkets]
