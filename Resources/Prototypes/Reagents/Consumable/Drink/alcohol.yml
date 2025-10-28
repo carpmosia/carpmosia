@@ -198,7 +198,7 @@
       # Carpmosia-start - Avali port
       - !type:HealthChange
         conditions:
-        - !type:OrganType
+        - !type:MetabolizerTypeCondition
           type: [ Avali ]
         damage:
           types:
