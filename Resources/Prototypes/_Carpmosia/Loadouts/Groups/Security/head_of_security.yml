@@ -5,9 +5,10 @@
   - HeadofSecurityHead
   - HeadofSecurityBeret
 
-# - type: loadoutGroup
-#   id: HeadOfSecurityGlasses
-#   parent: [BaseGlasses, CommonGlasses, SecurityGlasses]
+- type: loadoutGroup
+  id: HeadOfSecurityGlasses
+  parent: [BaseGlasses, SecurityGlasses] # no CommonGlasses fuck you
+  minLimit: 1
 
 # - type: loadoutGroup
 #   id: HeadOfSecurityMask

@@ -34,12 +34,14 @@
   storage:
     back:
     - PlushieLizard
+  groupBy: "lizards" # Carpmosia-edit - Organize lizard plushies
 
 - type: loadout
   id: PlushieSpaceLizard
   storage:
     back:
     - PlushieSpaceLizard
+  groupBy: "lizards" # Carpmosia-edit - Organize lizard plushies
 
 - type: loadout
   id: ThreeCandles

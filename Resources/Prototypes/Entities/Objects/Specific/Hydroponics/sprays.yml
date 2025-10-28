@@ -14,10 +14,10 @@
   - type: SolutionContainerManager
     solutions:
       spray:
-        maxVol: 100
+        maxVol: 120 # Carpmosia-edit - extendedReagentStorage
         reagents:
         - ReagentId: PlantBGone
-          Quantity: 100
+          Quantity: 120 # Carpmosia-edit - extendedReagentStorage
   - type: DrainableSolution
     solution: spray
   - type: Item
@@ -37,10 +37,10 @@
   - type: SolutionContainerManager
     solutions:
       spray:
-        maxVol: 50
+        maxVol: 60 # Carpmosia-edit - extendedReagentStorage
         reagents:
         - ReagentId: WeedKiller
-          Quantity: 50
+          Quantity: 60 # Carpmosia-edit - extendedReagentStorage
   - type: DrainableSolution
     solution: spray
   - type: Spillable
@@ -65,10 +65,10 @@
   - type: SolutionContainerManager
     solutions:
       spray:
-        maxVol: 50
+        maxVol: 60 # Carpmosia-edit - extendedReagentStorage
         reagents:
         - ReagentId: PestKiller
-          Quantity: 50
+          Quantity: 60 # Carpmosia-edit - extendedReagentStorage
   - type: DrainableSolution
     solution: spray
   - type: Item

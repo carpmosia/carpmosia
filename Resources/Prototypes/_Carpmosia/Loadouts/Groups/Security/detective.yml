@@ -5,9 +5,10 @@
   - DetectiveFedora
   - DetectiveFedoraGrey
 
-# - type: loadoutGroup
-#   id: DetectiveGlasses
-#   parent: [BaseGlasses, CommonGlasses, SecurityGlasses]
+- type: loadoutGroup
+  id: DetectiveGlasses
+  parent: [BaseGlasses, SecurityGlasses] # no CommonGlasses fuck you
+  minLimit: 1
 
 # - type: loadoutGroup
 #   id: DetectiveMask
