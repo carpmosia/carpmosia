@@ -1,51 +1,65 @@
 - type: loadoutGroup
+  abstract: true
+  parent: BaseHead
   id: CargoHead
-  abstract: true
 
 - type: loadoutGroup
+  abstract: true
+  parent: BaseGlasses
   id: CargoGlasses
-  abstract: true
 
 - type: loadoutGroup
+  abstract: true
+  parent: BaseMask
   id: CargoMask
-  abstract: true
 
 - type: loadoutGroup
+  abstract: true
+  parent: BaseNeck
   id: CargoNeck
-  abstract: true
 
 - type: loadoutGroup
+  abstract: true
+  parent: BaseGloves
   id: CargoGloves
-  abstract: true
 
 - type: loadoutGroup
+  abstract: true
+  parent: BaseJumpsuit
   id: CargoJumpsuit
-  abstract: true
 
 - type: loadoutGroup
-  id: CargoBackpack
   abstract: true
+  parent: BaseBackpack
+  id: CargoBackpack
   loadouts:
   - CargoTechnicianBackpack
   - CargoTechnicianSatchel
   - CargoTechnicianDuffel
 
 - type: loadoutGroup
+  abstract: true
+  parent: BasePDA
   id: CargoPDA
-  abstract: true
 
 - type: loadoutGroup
+  abstract: true
+  parent: BaseBelt
   id: CargoBelt
-  abstract: true
 
 - type: loadoutGroup
+  abstract: true
+  parent: BaseOuterClothing
   id: CargoOuterClothing
-  abstract: true
 
 - type: loadoutGroup
+  abstract: true
+  parent: BaseShoes
   id: CargoShoes
-  abstract: true
+  loadouts:
+  - CargoWinterBoots
 
 - type: loadoutGroup
-  id: CargoTrinkets
   abstract: true
+  parent: BaseTrinkets
+  id: CargoTrinkets
