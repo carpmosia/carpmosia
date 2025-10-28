@@ -5,9 +5,10 @@
   - HeadofSecurityHead
   - HeadofSecurityBeret
 
-# - type: loadoutGroup
-#   parent: [ SecurityGlasses, CommonGlasses ]
-#   id: HeadOfSecurityGlasses
+- type: loadoutGroup
+  parent: [ SecurityGlasses, CommonGlasses ]
+  id: HeadOfSecurityGlasses
+  defaultSelected: 1
 
 # - type: loadoutGroup
 #   parent: [ SecurityMask, CommonMask ]

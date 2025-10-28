@@ -5,9 +5,10 @@
   - DetectiveFedora
   - DetectiveFedoraGrey
 
-# - type: loadoutGroup
-#   parent: [ SecurityGlasses, CommonGlasses ]
-#   id: DetectiveGlasses
+- type: loadoutGroup
+  parent: [ SecurityGlasses, CommonGlasses ]
+  id: DetectiveGlasses
+  defaultSelected: 1
 
 # - type: loadoutGroup
 #   parent: [ SecurityMask, CommonMask ]

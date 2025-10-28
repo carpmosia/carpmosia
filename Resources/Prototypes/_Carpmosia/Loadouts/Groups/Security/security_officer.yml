@@ -7,9 +7,10 @@
   - SecurityHat
   - TrooperHat
 
-# - type: loadoutGroup
-#   parent: [ SecurityGlasses, CommonGlasses ]
-#   id: SecurityOfficerGlasses
+- type: loadoutGroup
+  parent: [ SecurityGlasses, CommonGlasses ]
+  id: SecurityOfficerGlasses
+  defaultSelected: 1
 
 # - type: loadoutGroup
 #   parent: [ SecurityMask, CommonMask ]

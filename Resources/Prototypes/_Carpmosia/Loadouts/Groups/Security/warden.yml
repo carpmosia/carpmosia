@@ -5,9 +5,10 @@
   - WardenHead
   - WardenBeret
 
-# - type: loadoutGroup
-#   parent: [ SecurityGlasses, CommonGlasses ]
-#   id: WardenGlasses
+- type: loadoutGroup
+  parent: [ SecurityGlasses, CommonGlasses ]
+  id: WardenGlasses
+  defaultSelected: 1
 
 # - type: loadoutGroup
 #   parent: [ SecurityMask, CommonMask ]
