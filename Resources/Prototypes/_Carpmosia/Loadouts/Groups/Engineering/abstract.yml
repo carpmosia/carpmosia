@@ -1,0 +1,65 @@
+- type: loadoutGroup
+  abstract: true
+  parent: CommonHead
+  id: EngineeringHead
+
+- type: loadoutGroup
+  abstract: true
+  parent: CommonGlasses
+  id: EngineeringGlasses
+
+- type: loadoutGroup
+  abstract: true
+  parent: CommonMask
+  id: EngineeringMask
+
+- type: loadoutGroup
+  abstract: true
+  parent: CommonNeck
+  id: EngineeringNeck
+
+- type: loadoutGroup
+  abstract: true
+  parent: CommonGloves
+  id: EngineeringGloves
+
+- type: loadoutGroup
+  abstract: true
+  parent: CommonJumpsuit
+  id: EngineeringJumpsuit
+
+- type: loadoutGroup
+  abstract: true
+  parent: CommonBackpack
+  id: EngineeringBackpack
+  loadouts:
+  - StationEngineerBackpack
+  - StationEngineerSatchel
+  - StationEngineerDuffel
+
+- type: loadoutGroup
+  abstract: true
+  parent: CommonPDA
+  id: EngineeringPDA
+
+- type: loadoutGroup
+  abstract: true
+  parent: CommonBelt
+  id: EngineeringBelt
+
+- type: loadoutGroup
+  abstract: true
+  parent: CommonOuterClothing
+  id: EngineeringOuterClothing
+
+- type: loadoutGroup
+  abstract: true
+  parent: CommonShoes
+  id: EngineeringShoes
+  loadouts:
+  - EngineeringWinterBoots
+
+- type: loadoutGroup
+  abstract: true
+  parent: CommonTrinkets
+  id: EngineeringTrinkets

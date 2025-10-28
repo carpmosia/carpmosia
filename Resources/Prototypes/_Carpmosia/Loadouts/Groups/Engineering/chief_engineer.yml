@@ -1,32 +1,32 @@
 - type: loadoutGroup
+  parent: [ EngineeringHead, CommonHead ]
   id: ChiefEngineerHead
-  parent: [BaseHead, CommonHead, EngineeringHead]
   loadouts:
   - ChiefEngineerHead
   - ChiefEngineerBeret
 
 # - type: loadoutGroup
+#   parent: [ EngineeringGlasses, CommonGlasses ]
 #   id: ChiefEngineerGlasses
-#   parent: [BaseGlasses, CommonGlasses, EngineeringGlasses]
 
 # - type: loadoutGroup
+#   parent: [ EngineeringMask, CommonMask ]
 #   id: ChiefEngineerMask
-#   parent: [BaseMask, CommonMask, EngineeringMask]
 
 - type: loadoutGroup
+  parent: [ EngineeringNeck, CommonNeck ]
   id: ChiefEngineerNeck
-  parent: [BaseNeck, CommonNeck, EngineeringNeck]
   loadouts:
   - ChiefEngineerCloak
   - ChiefEngineerMantle
 
 # - type: loadoutGroup
+#   parent: [ EngineeringGloves, CommonGloves ]
 #   id: ChiefEngineerGloves
-#   parent: [BaseGloves, CommonGloves, EngineeringGloves]
 
 - type: loadoutGroup
+  parent: [ EngineeringJumpsuit, CommonJumpsuit ]
   id: ChiefEngineerJumpsuit
-  parent: [BaseJumpsuit, CommonJumpsuit, EngineeringJumpsuit]
   loadouts:
   - ChiefEngineerJumpsuit
   - ChiefEngineerJumpskirt
@@ -34,34 +34,31 @@
   - ChiefEngineerTurtleneckSkirt
 
 - type: loadoutGroup
+  parent: [ EngineeringBackpack, CommonBackpack ]
   id: ChiefEngineerBackpack
-  parent: [BaseBackpack, CommonBackpack, EngineeringBackpack]
 
 # - type: loadoutGroup
+#   parent: [ EngineeringPDA, CommonPDA ]
 #   id: ChiefEngineerPDA
-#   parent: [BasePDA, CommonPDA, EngineeringPDA]
 
 # - type: loadoutGroup
+#   parent: [ EngineeringBelt, CommonBelt ]
 #   id: ChiefEngineerBelt
-#   parent: [BaseBelt, CommonBelt, EngineeringBelt]
 
 - type: loadoutGroup
+  parent: [ EngineeringOuterClothing, CommonOuterClothing ]
   id: ChiefEngineerOuterClothing
-  parent: [BaseOuterClothing, CommonOuterClothing, EngineeringOuterClothing]
   loadouts:
   - ChiefEngineerWintercoat
 
 - type: loadoutGroup
+  parent: [ CommonShoes, EngineeringShoes ]
   id: ChiefEngineerShoes
-  parent: [BaseShoes, CommonShoes, EngineeringShoes]
-  loadouts:
-  - BrownShoes
-  - EngineeringWinterBoots
 
 # - type: loadoutGroup
-#   id: ChiefEngineerSpecial
 #   parent: BaseSpecial
+#   id: ChiefEngineerSpecial
 
 - type: loadoutGroup
+  parent: [ EngineeringTrinkets, CommonTrinkets ]
   id: ChiefEngineerTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, EngineeringTrinkets]
