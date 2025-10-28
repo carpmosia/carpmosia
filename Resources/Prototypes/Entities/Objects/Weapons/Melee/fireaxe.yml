@@ -39,9 +39,11 @@
     slots:
     - back
   - type: Tool
-    speedModifier: 0.4 # Carpmosia-edit - Plating axing
+    # Carpmosia-start - Plating axing
+    speedModifier: 0.4
     useSound:
       path: /Audio/Items/crowbar.ogg
+    # Carpmosia-end - Plating axing
     qualities:
       - Prying
       - Axing # Carpmosia-edit - Plating axing
