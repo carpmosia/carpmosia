@@ -1,51 +1,60 @@
 # - type: loadoutGroup
 #   parent: [ CivilianHead, CommonHead ]
-#   id: ServiceWorkerHead
+#   id: BoxerHead
 
 - type: loadoutGroup
   parent: [ CivilianGlasses, CommonGlasses ]
-  id: ServiceWorkerGlasses
+  id: BoxerGlasses
 
 # - type: loadoutGroup
 #   parent: [ CivilianMask, CommonMask ]
-#   id: ServiceWorkerMask
+#   id: BoxerMask
 
 # - type: loadoutGroup
 #   parent: [ CivilianNeck, CommonNeck ]
-#   id: ServiceWorkerNeck
+#   id: BoxerNeck
 
-# - type: loadoutGroup
-#   parent: [ CivilianGloves, CommonGloves ]
-#   id: ServiceWorkerGloves
+- type: loadoutGroup
+  parent: [ CivilianGloves, CommonGloves ]
+  id: BoxerGloves
+  minLimit: 1
+  loadouts:
+  - RedBoxingGloves
+  - BlueBoxingGloves
+  - GreenBoxingGloves
+  - YellowBoxingGloves
 
 - type: loadoutGroup
   parent: [ CivilianJumpsuit, CommonJumpsuit ]
-  id: ServiceWorkerJumpsuit
+  id: BoxerJumpsuit
+  loadouts:
+  - BoxerShorts
+  - BoxerShortsWithTop
 
 - type: loadoutGroup
   parent: [ CivilianBackpack, CommonBackpack ]
-  id: ServiceWorkerBackpack
+  id: BoxerBackpack
 
 # - type: loadoutGroup
 #   parent: [ CivilianPDA, CommonPDA ]
-#   id: ServiceWorkerPDA
+#   id: BoxerPDA
 
 # - type: loadoutGroup
 #   parent: [ CivilianBelt, CommonBelt ]
-#   id: ServiceWorkerBelt
+#   id: BoxerBelt
 
 # - type: loadoutGroup
 #   parent: [ CivilianOuterClothing, CommonOuterClothing ]
-#   id: ServiceWorkerOuterClothing
+#   id: BoxerOuterClothing
 
 - type: loadoutGroup
   parent: [ CommonShoes, CivilianShoes ]
-  id: ServiceWorkerShoes
+  id: BoxerShoes
 
 # - type: loadoutGroup
 #   parent: BaseSpecial
-#   id: ServiceWorkerSpecial
+#   id: BoxerSpecial
 
 - type: loadoutGroup
   parent: [ CivilianTrinkets, CommonTrinkets ]
-  id: ServiceWorkerTrinkets
+  id: BoxerTrinkets

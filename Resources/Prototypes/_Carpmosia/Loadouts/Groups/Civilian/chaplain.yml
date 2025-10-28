@@ -1,6 +1,6 @@
 - type: loadoutGroup
+  parent: [ CivilianHead, CommonHead ]
   id: ChaplainHead
-  parent: [BaseHead, CommonHead, CivilianHead]
   loadouts:
   - ChaplainHead
   - ChaplainNunHood
@@ -9,28 +9,28 @@
   - ChaplainWitchHatAlt
 
 - type: loadoutGroup
+  parent: [ CivilianGlasses, CommonGlasses ]
   id: ChaplainGlasses
-  parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
 
 - type: loadoutGroup
+  parent: [ CivilianMask, CommonMask ]
   id: ChaplainMask
-  parent: [BaseMask, CommonMask, CivilianMask]
   loadouts:
   - ChaplainMask
 
 - type: loadoutGroup
+  parent: [ CivilianNeck, CommonNeck ]
   id: ChaplainNeck
-  parent: [BaseNeck, CommonNeck, CivilianNeck]
   loadouts:
   - ChaplainNeck
 
 # - type: loadoutGroup
+#   parent: [ CivilianGloves, CommonGloves ]
 #   id: ChaplainGloves
-#   parent: [BaseGloves, CommonGloves, CivilianGloves]
 
 - type: loadoutGroup
+  parent: [ CivilianJumpsuit, CommonJumpsuit ]
   id: ChaplainJumpsuit
-  parent: [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit]
   loadouts:
   - ChaplainJumpsuit
   - ChaplainJumpskirt
@@ -38,20 +38,20 @@
   - ChaplainRobesDark
 
 - type: loadoutGroup
+  parent: [ CivilianBackpack, CommonBackpack ]
   id: ChaplainBackpack
-  parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
 
 # - type: loadoutGroup
+#   parent: [ CivilianPDA, CommonPDA ]
 #   id: ChaplainPDA
-#   parent: [BasePDA, CommonPDA, CivilianPDA]
 
 # - type: loadoutGroup
+#   parent: [ CivilianBelt, CommonBelt ]
 #   id: ChaplainBelt
-#   parent: [BaseBelt, CommonBelt, CivilianBelt]
 
 - type: loadoutGroup
+  parent: [ CivilianOuterClothing, CommonOuterClothing ]
   id: ChaplainOuterClothing
-  parent: [BaseOuterClothing, CommonOuterClothing, CivilianOuterClothing]
   loadouts:
   - ChaplainPlagueSuit
   - ChaplainNunRobe
@@ -59,14 +59,14 @@
   - ChaplainHoodie
 
 # - type: loadoutGroup
+#   parent: [ CommonShoes, CivilianShoes ]
 #   id: ChaplainShoes
-#   parent: [BaseShoes, CommonShoes, CivilianShoes]
 
 - type: loadoutGroup
+  parent: BaseSpecial
   id: ChaplainSpecial
   name: loadout-group-chaplain-bible
   minLimit: 1
-  parent: BaseSpecial
   loadouts:
   - Bible
   - BibleNanoTrasen
@@ -76,5 +76,5 @@
   - BibleNarsie
 
 - type: loadoutGroup
+  parent: [ CivilianTrinkets, CommonTrinkets ]
   id: ChaplainTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]

@@ -1,65 +1,65 @@
 - type: loadoutGroup
+  parent: [ CivilianHead, CommonHead ]
   id: BotanistHead
-  parent: [BaseHead, CommonHead, CivilianHead]
   loadouts:
   - BotanistHead
   - BotanistBandana
 
 - type: loadoutGroup
+  parent: [ CivilianGlasses, CommonGlasses ]
   id: BotanistGlasses
-  parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
 
 # - type: loadoutGroup
+#   parent: [ CivilianMask, CommonMask ]
 #   id: BotanistMask
-#   parent: [BaseMask, CommonMask, CivilianMask]
 
 # - type: loadoutGroup
+#   parent: [ CivilianNeck, CommonNeck ]
 #   id: BotanistNeck
-#   parent: [BaseNeck, CommonNeck, CivilianNeck]
 
 # - type: loadoutGroup
+#   parent: [ CivilianGloves, CommonGloves ]
 #   id: BotanistGloves
-#   parent: [BaseGloves, CommonGloves, CivilianGloves]
 
 - type: loadoutGroup
+  parent: [ CivilianJumpsuit, CommonJumpsuit ]
   id: BotanistJumpsuit
-  parent: [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit]
   loadouts:
   - BotanistJumpsuit
   - BotanistJumpskirt
   - BotanistOveralls
 
 - type: loadoutGroup
+  parent: [ CivilianBackpack, CommonBackpack ]
   id: BotanistBackpack
-  parent: [BaseBackpack, CommonBackpack]
   loadouts:
   - BotanistBackpack
   - BotanistSatchel
   - BotanistDuffel
 
 # - type: loadoutGroup
+#   parent: [ CivilianPDA, CommonPDA ]
 #   id: BotanistPDA
-#   parent: [BasePDA, CommonPDA, CivilianPDA]
 
 # - type: loadoutGroup
+#   parent: [ CivilianBelt, CommonBelt ]
 #   id: BotanistBelt
-#   parent: [BaseBelt, CommonBelt, CivilianBelt]
 
 - type: loadoutGroup
+  parent: [ CivilianOuterClothing, CommonOuterClothing ]
   id: BotanistOuterClothing
-  parent: [BaseOuterClothing, CommonOuterClothing, CivilianOuterClothing]
   loadouts:
   - BotanistApron
   - BotanistWintercoat
 
-# - type: loadoutGroup
-#   id: BotanistShoes
-#   parent: [BaseShoes, CommonShoes, CivilianShoes]
+- type: loadoutGroup
+  parent: [ CommonShoes, CivilianShoes ]
+  id: BotanistShoes
 
 # - type: loadoutGroup
-#   id: BotanistSpecial
 #   parent: BaseSpecial
+#   id: BotanistSpecial
 
 - type: loadoutGroup
+  parent: [ CivilianTrinkets, CommonTrinkets ]
   id: BotanistTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]

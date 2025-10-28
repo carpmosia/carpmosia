@@ -1,18 +1,18 @@
 - type: loadoutGroup
+  parent: [ CivilianHead, CommonHead ]
   id: MimeHead
-  parent: [BaseHead, CommonHead, CivilianHead]
   loadouts:
   - MimeHead
   - MimeFrenchBeret
   - MimeCap
 
 - type: loadoutGroup
+  parent: [ CivilianGlasses, CommonGlasses ]
   id: MimeGlasses
-  parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
 
 - type: loadoutGroup
+  parent: [ CivilianMask, CommonMask ]
   id: MimeMask
-  parent: [BaseMask, CommonMask, CivilianMask]
   minLimit: 1
   loadouts:
   - MimeMask
@@ -20,53 +20,53 @@
   - MimeMaskScared
 
 # - type: loadoutGroup
+#   parent: [ CivilianNeck, CommonNeck ]
 #   id: MimeNeck
-#   parent: [BaseNeck, CommonNeck, CivilianNeck]
 
 # - type: loadoutGroup
+#   parent: [ CivilianGloves, CommonGloves ]
 #   id: MimeGloves
-#   parent: [BaseGloves, CommonGloves, CivilianGloves]
 
 - type: loadoutGroup
+  parent: [ CivilianJumpsuit, CommonJumpsuit ]
   id: MimeJumpsuit
-  parent: [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit]
   loadouts:
   - MimeJumpsuit
   - MimeJumpskirt
 
 - type: loadoutGroup
+  parent: [ CivilianBackpack, CommonBackpack ]
   id: MimeBackpack
-  parent: [BaseBackpack, CommonBackpack]
   loadouts:
   - MimeBackpack
   - MimeSatchel
   - MimeDuffel
 
 # - type: loadoutGroup
+#   parent: [ CivilianPDA, CommonPDA ]
 #   id: MimePDA
-#   parent: [BasePDA, CommonPDA, CivilianPDA]
 
 - type: loadoutGroup
+  parent: [ CivilianBelt, CommonBelt ]
   id: MimeBelt
-  parent: [BaseBelt, CommonBelt, CivilianBelt]
   loadouts:
   - MimeSuspendersRed
   - MimeSuspendersBlack
 
 - type: loadoutGroup
+  parent: [ CivilianOuterClothing, CommonOuterClothing ]
   id: MimeOuterClothing
-  parent: [BaseOuterClothing, CommonOuterClothing, CivilianOuterClothing]
   loadouts:
   - MimeWintercoat
 
-# - type: loadoutGroup
-#   id: MimeShoes
-#   parent: [BaseShoes, CommonShoes, CivilianShoes]
+- type: loadoutGroup
+  parent: [ CommonShoes, CivilianShoes ]
+  id: MimeShoes
 
 # - type: loadoutGroup
-#   id: MimeSpecial
 #   parent: BaseSpecial
+#   id: MimeSpecial
 
 - type: loadoutGroup
+  parent: [ CivilianTrinkets, CommonTrinkets ]
   id: MimeTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]

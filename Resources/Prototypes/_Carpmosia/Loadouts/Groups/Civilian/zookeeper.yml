@@ -1,51 +1,51 @@
 # - type: loadoutGroup
 #   parent: [ CivilianHead, CommonHead ]
-#   id: ServiceWorkerHead
+#   id: ZookeeperHead
 
 - type: loadoutGroup
   parent: [ CivilianGlasses, CommonGlasses ]
-  id: ServiceWorkerGlasses
+  id: ZookeeperGlasses
 
 # - type: loadoutGroup
 #   parent: [ CivilianMask, CommonMask ]
-#   id: ServiceWorkerMask
+#   id: ZookeeperMask
 
 # - type: loadoutGroup
 #   parent: [ CivilianNeck, CommonNeck ]
-#   id: ServiceWorkerNeck
+#   id: ZookeeperNeck
 
 # - type: loadoutGroup
 #   parent: [ CivilianGloves, CommonGloves ]
-#   id: ServiceWorkerGloves
+#   id: ZookeeperGloves
 
-- type: loadoutGroup
-  parent: [ CivilianJumpsuit, CommonJumpsuit ]
-  id: ServiceWorkerJumpsuit
+# - type: loadoutGroup
+#   parent: [ CivilianJumpsuit, CommonJumpsuit ]
+#   id: ZookeeperJumpsuit
 
 - type: loadoutGroup
   parent: [ CivilianBackpack, CommonBackpack ]
-  id: ServiceWorkerBackpack
+  id: ZookeeperBackpack
 
 # - type: loadoutGroup
 #   parent: [ CivilianPDA, CommonPDA ]
-#   id: ServiceWorkerPDA
+#   id: ZookeeperPDA
 
 # - type: loadoutGroup
 #   parent: [ CivilianBelt, CommonBelt ]
-#   id: ServiceWorkerBelt
+#   id: ZookeeperBelt
 
 # - type: loadoutGroup
 #   parent: [ CivilianOuterClothing, CommonOuterClothing ]
-#   id: ServiceWorkerOuterClothing
+#   id: ZookeeperOuterClothing
 
 - type: loadoutGroup
   parent: [ CommonShoes, CivilianShoes ]
-  id: ServiceWorkerShoes
+  id: ZookeeperShoes
 
 # - type: loadoutGroup
 #   parent: BaseSpecial
-#   id: ServiceWorkerSpecial
+#   id: ZookeeperSpecial
 
 - type: loadoutGroup
   parent: [ CivilianTrinkets, CommonTrinkets ]
-  id: ServiceWorkerTrinkets
+  id: ZookeeperTrinkets
