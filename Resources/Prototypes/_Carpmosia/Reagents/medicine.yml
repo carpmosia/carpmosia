@@ -12,7 +12,7 @@
       effects:
       - !type:EvenHealthChange
         conditions:
-        - !type:Temperature
+        - !type:TemperatureCondition
           max: 213.0
         damage:
           Brute: -4
@@ -31,7 +31,7 @@
       effects:
       - !type:HealthChange
         conditions:
-        - !type:Temperature
+        - !type:TemperatureCondition
           max: 213.0
         damage:
           groups:

@@ -22,7 +22,13 @@ public sealed class MapMigrationSystem : EntitySystem
 #pragma warning restore CS0414
     [Dependency] private readonly IResourceManager _resMan = default!;
 
-    private const string MigrationFile = "/migration.yml";
+    // Carpmosia-start - Migration system
+    private static readonly string[] _migrationFiles =
+    [
+        "/migration.yml",
+        "/_Carpmosia/migration.yml"
+    ];
+    // Carpmosia-end - Migration system
 
     public override void Initialize()
     {
@@ -30,7 +36,8 @@ public sealed class MapMigrationSystem : EntitySystem
         SubscribeLocalEvent<BeforeEntityReadEvent>(OnBeforeReadEvent);
 
 #if DEBUG
-        if (!TryReadFile(out var mappings))
+        foreach (var file in _migrationFiles) { // Carpmosia-edit - Migration system // Fuck formatting to avoid conflicts in the future
+        if (!TryReadFile(file, out var mappings)) // Carpmosia-edit - Migration system 
             return;
 
         // Verify that all of the entries map to valid entity prototypes.
@@ -40,13 +47,14 @@ public sealed class MapMigrationSystem : EntitySystem
             if (!string.IsNullOrEmpty(newId) && newId != "null")
                 DebugTools.Assert(_protoMan.HasIndex<EntityPrototype>(newId), $"{newId} is not an entity prototype.");
         }
+        } // Carpmosia-edit - Migration system
 #endif
     }
 
-    private bool TryReadFile([NotNullWhen(true)] out MappingDataNode? mappings)
+    private bool TryReadFile(string file, [NotNullWhen(true)] out MappingDataNode? mappings) // Carpmosia-edit - Migration system
     {
         mappings = null;
-        var path = new ResPath(MigrationFile);
+        var path = new ResPath(file); // Carpmosia-edit - Migration system
         if (!_resMan.TryContentFileRead(path, out var stream))
             return false;
 
@@ -62,7 +70,8 @@ public sealed class MapMigrationSystem : EntitySystem
 
     private void OnBeforeReadEvent(BeforeEntityReadEvent ev)
     {
-        if (!TryReadFile(out var mappings))
+        foreach (var file in _migrationFiles) { // Carpmosia-edit - Migration system // Fuck formatting to avoid conflicts in the future
+        if (!TryReadFile(file, out var mappings)) // Carpmosia-edit - Migration system
             return;
 
         foreach (var (key, value) in mappings)
@@ -75,5 +84,6 @@ public sealed class MapMigrationSystem : EntitySystem
             else
                 ev.RenamedPrototypes.Add(key, valueNode.Value);
         }
+        } // Carpmosia-edit - Migration system
     }
 }
