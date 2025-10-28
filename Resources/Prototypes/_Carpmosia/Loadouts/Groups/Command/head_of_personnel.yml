@@ -1,38 +1,38 @@
 - type: loadoutGroup
+  parent: [ CommandHead, CommonHead ]
   id: HeadOfPersonnelHead
-  parent: [BaseHead, CommonHead, CommandHead]
   loadouts:
   - HoPHead
 
 - type: loadoutGroup
+  parent: [ CommandGlasses, CommonGlasses ]
   id: HeadOfPersonnelGlasses
-  parent: [BaseGlasses, CommonGlasses, CommandGlasses]
 
 # - type: loadoutGroup
+#   parent: [ CommandMask, CommonMask ]
 #   id: HeadOfPersonnelMask
-#   parent: [BaseMask, CommonMask, CommandMask]
 
 - type: loadoutGroup
+  parent: [ CommandNeck, CommonNeck ]
   id: HeadOfPersonnelNeck
-  parent: [BaseNeck, CommonNeck, CommandNeck]
   loadouts:
   - HoPCloak
   - HoPMantle
 
 # - type: loadoutGroup
+#   parent: [ CommandGloves, CommonGloves ]
 #   id: HeadOfPersonnelGloves
-#   parent: [BaseGloves, CommonGloves, CommandGloves]
 
 - type: loadoutGroup
+  parent: [ CommandJumpsuit, CommonJumpsuit ]
   id: HeadOfPersonnelJumpsuit
-  parent: [BaseJumpsuit, CommonJumpsuit, CommandJumpsuit]
   loadouts:
   - HoPJumpsuit
   - HoPJumpskirt
 
 - type: loadoutGroup
+  parent: [ CommandBackpack, CommonBackpack ]
   id: HeadOfPersonnelBackpack
-  parent: [BaseBackpack, CommonBackpack, CommandBackpack]
   loadouts:
   - CommonBackpack
   - CommonSatchel
@@ -40,27 +40,27 @@
   - HoPBackpackIan
 
 # - type: loadoutGroup
+#   parent: [ CommandPDA, CommonPDA ]
 #   id: HeadOfPersonnelPDA
-#   parent: [BasePDA, CommonPDA, CommandPDA]
 
 # - type: loadoutGroup
+#   parent: [ CommandBelt, CommonBelt ]
 #   id: HeadOfPersonnelBelt
-#   parent: [BaseBelt, CommonBelt, CommandBelt]
 
 - type: loadoutGroup
+  parent: [ CommandOuterClothing, CommonOuterClothing ]
   id: HeadOfPersonnelOuterClothing
-  parent: [BaseOuterClothing, CommonOuterClothing, CommandOuterClothing]
   loadouts:
   - HoPWintercoat
 
 # - type: loadoutGroup
+#   parent: [ CommonShoes, CommandShoes ]
 #   id: HeadOfPersonnelShoes
-#   parent: [BaseShoes, CommonShoes, CommandShoes]
 
 # - type: loadoutGroup
-#   id: HeadOfPersonnelSpecial
 #   parent: BaseSpecial
+#   id: HeadOfPersonnelSpecial
 
 - type: loadoutGroup
+  parent: [ CommandTrinkets, CommonTrinkets ]
   id: HeadOfPersonnelTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, CommandTrinkets]
