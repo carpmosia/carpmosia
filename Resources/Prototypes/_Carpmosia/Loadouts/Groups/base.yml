@@ -1,80 +1,80 @@
 # Base loadouts to define common names and limits
 - type: loadoutGroup
-  id: BaseHead
   abstract: true
+  id: BaseHead
   name: loadout-group-base-head
   minLimit: 0
 
 - type: loadoutGroup
-  id: BaseGlasses
   abstract: true
+  id: BaseGlasses
   name: loadout-group-base-glasses
   minLimit: 0
 
 - type: loadoutGroup
-  id: BaseMask
   abstract: true
+  id: BaseMask
   name: loadout-group-base-mask
   minLimit: 0
 
 - type: loadoutGroup
-  id: BaseNeck
   abstract: true
+  id: BaseNeck
   name: loadout-group-base-neck
   minLimit: 0
 
 - type: loadoutGroup
-  id: BaseGloves
   abstract: true
+  id: BaseGloves
   name: loadout-group-base-gloves
   minLimit: 0
 
 - type: loadoutGroup
-  id: BaseJumpsuit
   abstract: true
+  id: BaseJumpsuit
   name: loadout-group-base-jumpsuit
   minLimit: 1
 
 - type: loadoutGroup
-  id: BaseBackpack
   abstract: true
+  id: BaseBackpack
   name: loadout-group-base-backpack
   minLimit: 1
 
 - type: loadoutGroup
-  id: BasePDA
   abstract: true
+  id: BasePDA
   name: loadout-group-base-pda
   minLimit: 1
 
 - type: loadoutGroup
-  id: BaseBelt
   abstract: true
+  id: BaseBelt
   name: loadout-group-base-belt
   minLimit: 1
 
 - type: loadoutGroup
-  id: BaseOuterClothing
   abstract: true
+  id: BaseOuterClothing
   name: loadout-group-base-outerclothing
   minLimit: 0
 
 - type: loadoutGroup
-  id: BaseShoes
   abstract: true
+  id: BaseShoes
   name: loadout-group-base-shoes
   minLimit: 1
 #  defaultSelected: 1
 
 - type: loadoutGroup
-  id: BaseSpecial
   abstract: true
+  id: BaseSpecial
   name: loadout-group-base-special
   minLimit: 0
 
 - type: loadoutGroup
-  id: BaseTrinkets
   abstract: true
+  id: BaseTrinkets
   name: loadout-group-base-trinkets
   minLimit: 0
   maxLimit: 3

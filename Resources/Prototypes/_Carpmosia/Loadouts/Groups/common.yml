@@ -1,48 +1,62 @@
 # Common loadouts to be inherited by every other group
 - type: loadoutGroup
-  id: CommonHead
   abstract: true
+  parent: BaseHead
+  id: CommonHead
 
 - type: loadoutGroup
-  id: CommonGlasses
   abstract: true
+  parent: BaseGlasses
+  id: CommonGlasses
   loadouts:
   - Glasses
   - GlassesJamjar
   - GlassesJensen
 
 - type: loadoutGroup
+  abstract: true
+  parent: BaseMask
   id: CommonMask
-  abstract: true
 
 - type: loadoutGroup
+  abstract: true
+  parent: BaseNeck
   id: CommonNeck
-  abstract: true
 
 - type: loadoutGroup
+  abstract: true
+  parent: BaseGloves
   id: CommonGloves
-  abstract: true
 
 - type: loadoutGroup
+  abstract: true
+  parent: BaseJumpsuit
   id: CommonJumpsuit
-  abstract: true
 
 - type: loadoutGroup
+  abstract: true
+  parent: BaseBackpack
   id: CommonBackpack
-  abstract: true
 
 - type: loadoutGroup
+  abstract: true
+  parent: BasePDA
   id: CommonPDA
-  abstract: true
 
 - type: loadoutGroup
+  abstract: true
+  parent: BaseBelt
   id: CommonBelt
-  abstract: true
 
 - type: loadoutGroup
+  abstract: true
+  parent: BaseOuterClothing
   id: CommonOuterClothing
-  abstract: true
 
 - type: loadoutGroup
-  id: CommonShoes
   abstract: true
+  parent: BaseShoes
+  id: CommonShoes
+  loadouts:
+  - WhiteShoes
+  - BlackShoes
