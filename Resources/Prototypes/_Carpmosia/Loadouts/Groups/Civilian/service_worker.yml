@@ -21,6 +21,10 @@
 - type: loadoutGroup
   parent: [ CivilianJumpsuit, CommonJumpsuit ]
   id: ServiceWorkerJumpsuit
+  loadouts:
+  - BartenderJumpsuit
+  - BartenderJumpskirt
+  - BartenderJumpsuitPurple
 
 - type: loadoutGroup
   parent: [ CivilianBackpack, CommonBackpack ]

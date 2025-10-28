@@ -49,9 +49,9 @@
   - BartenderApron
   - BartenderWintercoat
 
-# - type: loadoutGroup
-#   parent: [ CommonShoes, CivilianShoes ]
-#   id: BartenderShoes
+- type: loadoutGroup
+  parent: [ CommonShoes, CivilianShoes ]
+  id: BartenderShoes
 
 - type: loadoutGroup
   parent: BaseSpecial
