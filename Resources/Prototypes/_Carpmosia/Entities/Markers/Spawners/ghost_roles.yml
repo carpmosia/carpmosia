@@ -4,8 +4,8 @@
   id: SpawnPointGhostDerelictCyborgSpiderClan
   components:
   - type: GhostRole
-    name: ghost-role-information-derelict-cyborg-name
-    description: ghost-role-information-derelict-cyborg-description
+    name: ghost-role-information-syndicate-cyborg-saboteur-name
+    description: ghost-role-information-syndicate-cyborg-description
     rules: ghost-role-information-silicon-rules
     mindRoles:
     - MindRoleSubvertedSilicon
@@ -23,7 +23,7 @@
 
 - type: entity
   id: PlayerBorgSyndicateSaboteurGhostRoleSpider
-  parent: PlayerBorgSyndicateSaboteurBattery
+  parent: PlayerBorgSyndicateSaboteurBatterySpiderClan
   suffix: Ghost role
   components:
     - type: GhostRole
@@ -34,6 +34,27 @@
         settings: default
       job: Borg
     - type: GhostTakeoverAvailable
+
+
+- type: entity
+  id: PlayerBorgSyndicateSaboteurBatterySpiderClan
+  parent: BorgChassisSyndicateSaboteurSpider
+  suffix: Battery, Module, Operative
+  components:
+  - type: NukeOperative
+  - type: ContainerFill
+    containers:
+      borg_brain:
+        - PositronicBrain
+      borg_module:
+        - BorgModuleTool
+        - BorgModuleOperative
+        - BorgModuleSyndicateWeapon
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellHyper
 
 #ment to be in a /base_brog_chassis
 
@@ -102,6 +123,9 @@
           - BorgModuleGeneric
           - BorgModuleEngineering
           - BorgModuleSyndicate
+          - BorgModuleSyndicateAssault
+          - XenoborgModuleCloakDevice
+          - XenoborgModuleChameleonProjector
       hasMindState: synd_engi_e
       noMindState: synd_engi
     - type: ShowHealthBars
