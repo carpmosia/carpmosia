@@ -1,54 +1,54 @@
 # - type: loadoutGroup
 #   parent: [ MedicalHead, CommonHead ]
-#   id: MedicalInternHead
+#   id: PsychologistHead
 
 - type: loadoutGroup
   parent: [ MedicalGlasses, CommonGlasses ]
-  id: MedicalInternGlasses
+  id: PsychologistGlasses
 
 # - type: loadoutGroup
 #   parent: [ MedicalMask, CommonMask ]
-#   id: MedicalInternMask
+#   id: PsychologistMask
 
 # - type: loadoutGroup
 #   parent: [ MedicalNeck, CommonNeck ]
-#   id: MedicalInternNeck
+#   id: PsychologistNeck
 
 # - type: loadoutGroup
 #   parent: [ MedicalGloves, CommonGloves ]
-#   id: MedicalInternGloves
+#   id: PsychologistGloves
 
 - type: loadoutGroup
   parent: [ MedicalJumpsuit, CommonJumpsuit ]
-  id: MedicalInternJumpsuit
+  id: PsychologistJumpsuit
   loadouts:
-  - WhiteJumpsuit
-  - WhiteJumpskirt
+  - PsychologistJumpsuit
+  - PsychologistJumpskirt
 
 - type: loadoutGroup
   parent: [ MedicalBackpack, CommonBackpack ]
-  id: MedicalInternBackpack
+  id: PsychologistBackpack
 
 # - type: loadoutGroup
 #   parent: [ MedicalPDA, CommonPDA ]
-#   id: MedicalInternPDA
+#   id: PsychologistPDA
 
 # - type: loadoutGroup
 #   parent: [ MedicalBelt, CommonBelt ]
-#   id: MedicalInternBelt
+#   id: PsychologistBelt
 
 # - type: loadoutGroup
 #   parent: [ MedicalOuterClothing, CommonOuterClothing ]
-#   id: MedicalInternOuterClothing
+#   id: PsychologistOuterClothing
 
 - type: loadoutGroup
   parent: [ CommonShoes, MedicalShoes ]
-  id: MedicalInternShoes
+  id: PsychologistShoes
 
 # - type: loadoutGroup
 #   parent: BaseSpecial
-#   id: MedicalInternSpecial
+#   id: PsychologistSpecial
 
 - type: loadoutGroup
   parent: [ MedicalTrinkets, CommonTrinkets ]
-  id: MedicalInternTrinkets
+  id: PsychologistTrinkets

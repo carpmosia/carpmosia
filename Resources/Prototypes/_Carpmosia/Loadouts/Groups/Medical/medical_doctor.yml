@@ -1,6 +1,6 @@
 - type: loadoutGroup
+  parent: [ MedicalHead, CommonHead ]
   id: MedicalDoctorHead
-  parent: [BaseHead, CommonHead, MedicalHead]
   loadouts:
   - MedicalBeret
   - SeniorPhysicianBeret
@@ -11,24 +11,24 @@
   - NurseHat
 
 - type: loadoutGroup
+  parent: [ MedicalGlasses, CommonGlasses ]
   id: MedicalDoctorGlasses
-  parent: [BaseGlasses, CommonGlasses, MedicalGlasses]
 
 - type: loadoutGroup
+  parent: [ MedicalMask, CommonMask ]
   id: MedicalDoctorMask
-  parent: [BaseMask, CommonMask, MedicalMask]
 
 # - type: loadoutGroup
+#   parent: [ MedicalNeck, CommonNeck ]
 #   id: MedicalDoctorNeck
-#   parent: [BaseNeck, CommonNeck, MedicalNeck]
 
 - type: loadoutGroup
+  parent: [ MedicalGloves, CommonGloves ]
   id: MedicalDoctorGloves
-  parent: [BaseGloves, CommonGloves, MedicalGloves]
 
 - type: loadoutGroup
+  parent: [ MedicalJumpsuit, CommonJumpsuit ]
   id: MedicalDoctorJumpsuit
-  parent: [BaseJumpsuit, CommonJumpsuit, MedicalJumpsuit]
   loadouts:
   - MedicalDoctorJumpsuit
   - MedicalDoctorJumpskirt
@@ -39,36 +39,36 @@
   - MedicalPurpleScrubs
 
 - type: loadoutGroup
+  parent: [ MedicalBackpack, CommonBackpack ]
   id: MedicalDoctorBackpack
-  parent: [BaseBackpack, CommonBackpack, MedicalBackpack]
 
 - type: loadoutGroup
+  parent: [ MedicalPDA, CommonPDA ]
   id: MedicalDoctorPDA
-  parent: [BasePDA, CommonPDA, MedicalPDA]
   loadouts:
   - MedicalDoctorPDA
   - SeniorPhysicianPDA
 
 # - type: loadoutGroup
+#   parent: [ MedicalBelt, CommonBelt ]
 #   id: MedicalDoctorBelt
-#   parent: [BaseBelt, CommonBelt, MedicalBelt]
 
 - type: loadoutGroup
+  parent: [ MedicalOuterClothing, CommonOuterClothing ]
   id: MedicalDoctorOuterClothing
-  parent: [BaseOuterClothing, CommonOuterClothing, MedicalOuterClothing]
   loadouts:
   - RegularLabCoat
   - MedicalDoctorWintercoat
   - SeniorPhysicianLabCoat
 
 - type: loadoutGroup
+  parent: [ CommonShoes, MedicalShoes ]
   id: MedicalDoctorShoes
-  parent: [BaseShoes, CommonShoes, MedicalShoes]
 
 # - type: loadoutGroup
-#   id: MedicalDoctorSpecial
 #   parent: BaseSpecial
+#   id: MedicalDoctorSpecial
 
 - type: loadoutGroup
+  parent: [ MedicalTrinkets, CommonTrinkets ]
   id: MedicalDoctorTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, MedicalTrinkets]

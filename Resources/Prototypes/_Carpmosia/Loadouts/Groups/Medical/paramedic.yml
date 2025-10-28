@@ -1,61 +1,59 @@
 - type: loadoutGroup
+  parent: [ MedicalHead, CommonHead ]
   id: ParamedicHead
-  parent: [BaseHead, CommonHead, MedicalHead]
   loadouts:
   - ParamedicHead
 
 - type: loadoutGroup
+  parent: [ MedicalGlasses, CommonGlasses ]
   id: ParamedicGlasses
-  parent: [BaseGlasses, CommonGlasses, MedicalGlasses]
 
 - type: loadoutGroup
+  parent: [ MedicalMask, CommonMask ]
   id: ParamedicMask
-  parent: [BaseMask, CommonMask, MedicalMask]
 
 # - type: loadoutGroup
+#   parent: [ MedicalNeck, CommonNeck ]
 #   id: ParamedicNeck
-#   parent: [BaseNeck, CommonNeck, MedicalNeck]
 
 - type: loadoutGroup
+  parent: [ MedicalGloves, CommonGloves ]
   id: ParamedicGloves
-  parent: [BaseGloves, CommonGloves, MedicalGloves]
 
 - type: loadoutGroup
+  parent: [ MedicalJumpsuit, CommonJumpsuit ]
   id: ParamedicJumpsuit
-  parent: [BaseJumpsuit, CommonJumpsuit, MedicalJumpsuit]
   loadouts:
   - ParamedicJumpsuit
   - ParamedicJumpskirt
 
 - type: loadoutGroup
+  parent: [ MedicalBackpack, CommonBackpack ]
   id: ParamedicBackpack
-  parent: [BaseBackpack, CommonBackpack, MedicalBackpack]
 
 # - type: loadoutGroup
+#   parent: [ MedicalPDA, CommonPDA ]
 #   id: ParamedicPDA
-#   parent: [BasePDA, CommonPDA, MedicalPDA]
 
 # - type: loadoutGroup
+#   parent: [ MedicalBelt, CommonBelt ]
 #   id: ParamedicBelt
-#   parent: [BaseBelt, CommonBelt, MedicalBelt]
 
 - type: loadoutGroup
+  parent: [ MedicalOuterClothing, CommonOuterClothing ]
   id: ParamedicOuterClothing
-  parent: [BaseOuterClothing, CommonOuterClothing, MedicalOuterClothing]
   loadouts:
   - ParamedicWindbreaker
   - ParamedicWintercoat
 
 - type: loadoutGroup
+  parent: [ CommonShoes, MedicalShoes ]
   id: ParamedicShoes
-  parent: [BaseShoes, CommonShoes, MedicalShoes]
-  loadouts:
-  - BlueShoes
 
 # - type: loadoutGroup
-#   id: ParamedicSpecial
 #   parent: BaseSpecial
+#   id: ParamedicSpecial
 
 - type: loadoutGroup
+  parent: [ MedicalTrinkets, CommonTrinkets ]
   id: ParamedicTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, MedicalTrinkets]

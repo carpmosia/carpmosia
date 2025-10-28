@@ -1,62 +1,73 @@
 - type: loadoutGroup
-  id: MedicalHead
   abstract: true
+  parent: BaseHead
+  id: MedicalHead
 
 - type: loadoutGroup
-  id: MedicalGlasses
   abstract: true
+  parent: BaseGlasses
+  id: MedicalGlasses
   loadouts:
   - MedicalHud
   - MedicalEyePatchHud
 
 - type: loadoutGroup
-  id: MedicalMask
   abstract: true
+  parent: BaseMask
+  id: MedicalMask
   loadouts:
   - SterileMask
 
 - type: loadoutGroup
-  id: MedicalNeck
   abstract: true
+  parent: BaseNeck
+  id: MedicalNeck
 
 - type: loadoutGroup
-  id: MedicalGloves
   abstract: true
+  parent: BaseGloves
+  id: MedicalGloves
   loadouts:
   - LatexGloves
   - NitrileGloves
 
 - type: loadoutGroup
-  id: MedicalJumpsuit
   abstract: true
+  parent: BaseJumpsuit
+  id: MedicalJumpsuit
 
 - type: loadoutGroup
-  id: MedicalBackpack
   abstract: true
+  parent: BaseBackpack
+  id: MedicalBackpack
   loadouts:
   - MedicalDoctorBackpack
   - MedicalDoctorSatchel
   - MedicalDoctorDuffel
 
 - type: loadoutGroup
+  abstract: true
+  parent: BasePDA
   id: MedicalPDA
-  abstract: true
 
 - type: loadoutGroup
+  abstract: true
+  parent: BaseBelt
   id: MedicalBelt
-  abstract: true
 
 - type: loadoutGroup
+  abstract: true
+  parent: BaseOuterClothing
   id: MedicalOuterClothing
-  abstract: true
 
 - type: loadoutGroup
-  id: MedicalShoes
   abstract: true
+  parent: BaseShoes
+  id: MedicalShoes
   loadouts:
-  - WhiteShoes
   - MedicalWinterBoots
 
 - type: loadoutGroup
-  id: MedicalTrinkets
   abstract: true
+  parent: BaseTrinkets
+  id: MedicalTrinkets
