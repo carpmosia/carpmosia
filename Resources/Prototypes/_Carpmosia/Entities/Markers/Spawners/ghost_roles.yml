@@ -71,7 +71,6 @@
     - NuclearOperative
     - SyndicateAgent
   - type: AccessReader
-    access: [["SyndicateAgent"], ["NuclearOperative"]]
   - type: SiliconLawProvider
     laws: Ninja
     subverted: true
@@ -103,7 +102,7 @@
   id: BorgChassisSpiderClan
   parent: BaseBorgChassisSpiderClan
   name: Spider clan cyborg
-  description: You are a spider clan cyborg, built for stealth and sabotage. Your mission is to help compleat the mission of the spider clan operatives by any means necessary.
+  description: A spider clan cyborg, built for stealth and sabotage. Known to help compleat the mission of any the spider clan memberrs by any means necessary.
   components:
     - type: Sprite
       layers:
