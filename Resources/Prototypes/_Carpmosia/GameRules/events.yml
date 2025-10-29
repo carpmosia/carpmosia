@@ -5,12 +5,12 @@
   - type: SpaceSpawnRule
     spawnDistance: 0
   - type: AntagSpawner
-    prototype: PlayerBorgSpiderClanGhostRole #TODO: Make new sprite for it
+    prototype: PlayerBorgSyndicateSaboteurGhostRoleSpider #make this soon - Sabioteur borg for now
   - type: AntagSelection
     definitions:
     - spawnerPrototype: SpawnPointGhostSpiderClanCyborg
 
-      #TODO: fix...
+      #might not work copyied from normal vent spider spawner
 - type: entity
   id: NinjaSpiderSpawn
   parent: BaseStationEventShortDelay
