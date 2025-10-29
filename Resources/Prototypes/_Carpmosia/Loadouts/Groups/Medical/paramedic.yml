@@ -12,9 +12,9 @@
   parent: [ MedicalMask, CommonMask ]
   id: ParamedicMask
 
-# - type: loadoutGroup
-#   parent: [ MedicalNeck, CommonNeck ]
-#   id: ParamedicNeck
+- type: loadoutGroup
+  parent: [ MedicalNeck, CommonNeck ]
+  id: ParamedicNeck
 
 - type: loadoutGroup
   parent: [ MedicalGloves, CommonGloves ]

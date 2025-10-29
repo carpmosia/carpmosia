@@ -11,9 +11,9 @@
 #   parent: [ SecurityMask, CommonMask ]
 #   id: SecurityCadetMask
 
-# - type: loadoutGroup
-#   parent: [ SecurityNeck, CommonNeck ]
-#   id: SecurityCadetNeck
+- type: loadoutGroup
+  parent: [ SecurityNeck, CommonNeck ]
+  id: SecurityCadetNeck
 
 # - type: loadoutGroup
 #   parent: [ SecurityGloves, CommonGloves ]

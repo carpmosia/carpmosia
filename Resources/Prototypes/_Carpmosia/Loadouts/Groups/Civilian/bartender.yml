@@ -13,9 +13,9 @@
 #   parent: [ CivilianMask, CommonMask ]
 #   id: BartenderMask
 
-# - type: loadoutGroup
-#   parent: [ CivilianNeck, CommonNeck ]
-#   id: BartenderNeck
+- type: loadoutGroup
+  parent: [ CivilianNeck, CommonNeck ]
+  id: BartenderNeck
 
 # - type: loadoutGroup
 #   parent: [ CivilianGloves, CommonGloves ]

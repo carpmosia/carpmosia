@@ -1,6 +1,6 @@
 - type: loadoutGroup
   abstract: true
-  parent: [ BaseTrinkets, TrinketLizards, TrinketSmokeables, TrinketFolders, TrinketPins, TrinketCanes, TrinketTowels ]
+  parent: [ BaseTrinkets, TrinketLizards, TrinketSmokeables, TrinketFolders, TrinketCanes, TrinketTowels ]
   id: CommonTrinkets
   loadouts:
   - FlowerWreath
@@ -72,29 +72,6 @@
   - BoxFolderBaseThreePapers
   - BoxFolderPlasticClipboardThreePapers
   - BoxFolderClipboardThreePapers
-
-- type: loadoutGroup
-  abstract: true
-  id: TrinketPins
-  loadouts:
-  - ClothingNeckLGBTPin
-  - ClothingNeckAllyPin
-  - ClothingNeckAromanticPin
-  - ClothingNeckAsexualPin
-  - ClothingNeckAroacePin
-  - ClothingNeckBisexualPin
-  - ClothingNeckGayPin
-  - ClothingNeckIntersexPin
-  - ClothingNeckLesbianPin
-  - ClothingNeckNonBinaryPin
-  - ClothingNeckPansexualPin
-  - ClothingNeckPluralPin
-  - ClothingNeckOmnisexualPin
-  - ClothingNeckGenderqueerPin
-  - ClothingNeckGenderfluidPin
-  - ClothingNeckTransPin
-  - ClothingNeckAutismPin
-  - ClothingNeckGoldAutismPin
 
 - type: loadoutGroup
   abstract: true

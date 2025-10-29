@@ -10,9 +10,9 @@
 #   parent: [ CargoMask, CommonMask ]
 #   id: SalvageSpecialistMask
 
-# - type: loadoutGroup
-#   parent: [ CargoNeck, CommonNeck ]
-#   id: SalvageSpecialistNeck
+- type: loadoutGroup
+  parent: [ CargoNeck, CommonNeck ]
+  id: SalvageSpecialistNeck
 
 # - type: loadoutGroup
 #   parent: [ CargoGloves, CommonGloves ]

@@ -12,9 +12,9 @@
 #   parent: [ CivilianMask, CommonMask ]
 #   id: JanitorMask
 
-# - type: loadoutGroup
-#   parent: [ CivilianNeck, CommonNeck ]
-#   id: JanitorNeck
+- type: loadoutGroup
+  parent: [ CivilianNeck, CommonNeck ]
+  id: JanitorNeck
 
 - type: loadoutGroup
   parent: [ CivilianGloves, CommonGloves ]

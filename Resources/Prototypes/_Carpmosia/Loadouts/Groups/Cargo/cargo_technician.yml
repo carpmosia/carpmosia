@@ -12,9 +12,9 @@
 #   parent: [ CargoMask, CommonMask ]
 #   id: CargoTechnicianMask
 
-# - type: loadoutGroup
-#   parent: [ CargoNeck, CommonNeck ]
-#   id: CargoTechnicianNeck
+- type: loadoutGroup
+  parent: [ CargoNeck, CommonNeck ]
+  id: CargoTechnicianNeck
 
 # - type: loadoutGroup
 #   parent: [ CargoGloves, CommonGloves ]

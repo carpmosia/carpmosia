@@ -10,9 +10,9 @@
 #   parent: [ ScienceMask, CommonMask ]
 #   id: ResearchAssistantMask
 
-# - type: loadoutGroup
-#   parent: [ ScienceNeck, CommonNeck ]
-#   id: ResearchAssistantNeck
+- type: loadoutGroup
+  parent: [ ScienceNeck, CommonNeck ]
+  id: ResearchAssistantNeck
 
 # - type: loadoutGroup
 #   parent: [ ScienceGloves, CommonGloves ]

@@ -10,9 +10,9 @@
 #   parent: [ CivilianMask, CommonMask ]
 #   id: LibrarianMask
 
-# - type: loadoutGroup
-#   parent: [ CivilianNeck, CommonNeck ]
-#   id: LibrarianNeck
+- type: loadoutGroup
+  parent: [ CivilianNeck, CommonNeck ]
+  id: LibrarianNeck
 
 # - type: loadoutGroup
 #   parent: [ CivilianGloves, CommonGloves ]

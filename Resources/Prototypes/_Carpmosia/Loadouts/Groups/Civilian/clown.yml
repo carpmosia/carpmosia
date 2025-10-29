@@ -13,9 +13,9 @@
 #   parent: [ CivilianMask, CommonMask ]
 #   id: ClownMask
 
-# - type: loadoutGroup
-#   parent: [ CivilianNeck, CommonNeck ]
-#   id: ClownNeck
+- type: loadoutGroup
+  parent: [ CivilianNeck, CommonNeck ]
+  id: ClownNeck
 
 # - type: loadoutGroup
 #   parent: [ CivilianGloves, CommonGloves ]

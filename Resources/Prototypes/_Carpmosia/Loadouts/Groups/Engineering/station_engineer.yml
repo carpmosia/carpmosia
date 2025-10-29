@@ -16,9 +16,9 @@
 #   parent: [ EngineeringMask, CommonMask ]
 #   id: StationEngineerMask
 
-# - type: loadoutGroup
-#   parent: [ EngineeringNeck, CommonNeck ]
-#   id: StationEngineerNeck
+- type: loadoutGroup
+  parent: [ EngineeringNeck, CommonNeck ]
+  id: StationEngineerNeck
 
 # - type: loadoutGroup
 #   parent: [ EngineeringGloves, CommonGloves ]
