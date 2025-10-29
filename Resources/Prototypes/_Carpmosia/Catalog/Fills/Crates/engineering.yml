@@ -1,0 +1,12 @@
+- type: entity
+  parent: CrateEngineeringSecure
+  id: CrateEngineeringTeg
+  name: thermo-electric generator crate
+  description: 1 thermo-electric generator flatpack and 2 circulator flatpacks.
+  components:
+  - type: StorageFill
+    contents:
+    - id: TegFlatpack
+      amount: 1
+    - id: CirculatorFlatpack
+      amount: 2
