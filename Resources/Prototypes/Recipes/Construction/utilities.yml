@@ -606,10 +606,18 @@
   startNode: start
   targetNode: ventpump
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
   canBuildInImpassable: false
   conditions:
   - !type:NoUnstackableInTile
+  # Carpmosia-start - Atmos Alt Prototypes
+  alternativePrototypes:
+  - GasVentPump
+  - GasVentPumpAlt1
+  - GasVentPumpAlt2
+  - GasVentPumpAlt3
+  - GasVentPumpAlt4
+  # Carpmosia-end - Atmos Alt Prototypes
 
 - type: construction
   id: GasPassiveVent
@@ -617,10 +625,18 @@
   startNode: start
   targetNode: passivevent
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
   canBuildInImpassable: false
   conditions:
   - !type:NoUnstackableInTile
+  # Carpmosia-start - Atmos Alt Prototypes
+  alternativePrototypes:
+  - GasPassiveVent
+  - GasPassiveVentAlt1
+  - GasPassiveVentAlt2
+  - GasPassiveVentAlt3
+  - GasPassiveVentAlt4
+  # Carpmosia-end - Atmos Alt Prototypes
 
 - type: construction
   id: GasVentScrubber
@@ -628,10 +644,18 @@
   startNode: start
   targetNode: ventscrubber
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
   canBuildInImpassable: false
   conditions:
   - !type:NoUnstackableInTile
+  # Carpmosia-start - Atmos Alt Prototypes
+  alternativePrototypes:
+  - GasVentScrubber
+  - GasVentScrubberAlt1
+  - GasVentScrubberAlt2
+  - GasVentScrubberAlt3
+  - GasVentScrubberAlt4
+  # Carpmosia-end - Atmos Alt Prototypes
 
 - type: construction
   id: GasOutletInjector
@@ -639,10 +663,18 @@
   startNode: start
   targetNode: outletinjector
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
   canBuildInImpassable: false
   conditions:
   - !type:NoUnstackableInTile
+  # Carpmosia-start - Atmos Alt Prototypes
+  alternativePrototypes:
+  - GasOutletInjector
+  - GasOutletInjectorAlt1
+  - GasOutletInjectorAlt2
+  - GasOutletInjectorAlt3
+  - GasOutletInjectorAlt4
+  # Carpmosia-end - Atmos Alt Prototypes
 
 # ATMOS BINARY
 - type: construction
