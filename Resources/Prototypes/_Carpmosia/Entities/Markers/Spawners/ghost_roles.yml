@@ -48,8 +48,8 @@
         - PositronicBrain
       borg_module:
         - BorgModuleTool
-        - BorgModuleOperative
         - BorgModuleSyndicateWeapon
+        - XenoborgModuleCloakDevice
   - type: ItemSlots
     slots:
       cell_slot:
@@ -123,11 +123,10 @@
           - BorgModuleGeneric
           - BorgModuleEngineering
           - BorgModuleSyndicate
-          - BorgModuleSyndicateAssault
-          - XenoborgModuleCloakDevice
-          - XenoborgModuleChameleonProjector
+          - XenoborgModuleStealth
       hasMindState: synd_engi_e
       noMindState: synd_engi
+    - type: MovementAlwaysTouching #Allow it to move in space freely
     - type: ShowHealthBars
       damageContainers:
       - Inorganic
