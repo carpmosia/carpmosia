@@ -5,17 +5,18 @@
   - type: SpaceSpawnRule
     spawnDistance: 0
   - type: AntagSpawner
-    prototype: PlayerBorgSyndicateSaboteurGhostRoleSpider #make this soon - Sabioteur borg for now
+    prototype: PlayerBorgSliderClanGhostRole 
   - type: AntagSelection
     definitions:
     - spawnerPrototype: SpawnPointGhostSpiderClanCyborg
 
-      #might not work copyied from normal vent spider spawner
+      #TODO: fix this shit
+      #TODO: Make what spawns the "Hunter" spiders (/texture/mobs/animals/siders.rsi)
 - type: entity
   id: NinjaSpiderSpawn
   parent: BaseStationEventShortDelay
   components:
   - type: VentCrittersRule
     entries:
-    - id: MobGiantSpiderAngry
+    - id: MobGiantSpierAngry
       prob: 0.05

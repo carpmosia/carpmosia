@@ -4,140 +4,19 @@
   id: SpawnPointGhostDerelictCyborgSpiderClan
   components:
   - type: GhostRole
-    name: ghost-role-information-syndicate-cyborg-saboteur-name
-    description: ghost-role-information-syndicate-cyborg-description
+    name: ghost-role-information-spider-clan-borg-name
+    description: ghost-role-information-spider-clan-borg-description
     rules: ghost-role-information-silicon-rules
     mindRoles:
     - MindRoleSubvertedSilicon
     raffle:
       settings: default
-  - type: Sprite
+  - type: Sprite #TODO: new sprite
     sprite: Markers/jobs.rsi
     layers:
     - state: green
-    - sprite: Mobs/Silicon/chassis.rsi
+    - sprite: Mobs/Silicon/chassis.rsi 
       state: derelict_icon
-
-
-#ment to be in a /silicon
-
-- type: entity
-  id: PlayerBorgSyndicateSaboteurGhostRoleSpider
-  parent: PlayerBorgSyndicateSaboteurBatterySpiderClan
-  suffix: Ghost role
-  components:
-    - type: GhostRole
-      name: ghost-role-information-syndicate-cyborg-saboteur-name
-      description: ghost-role-information-syndicate-cyborg-description
-      rules: ghost-role-information-silicon-rules
-      raffle:
-        settings: default
-      job: Borg
-    - type: GhostTakeoverAvailable
-
-
-- type: entity
-  id: PlayerBorgSyndicateSaboteurBatterySpiderClan
-  parent: BorgChassisSyndicateSaboteurSpider
-  suffix: Battery, Module, Operative
-  components:
-  - type: NukeOperative
-  - type: ContainerFill
-    containers:
-      borg_brain:
-        - PositronicBrain
-      borg_module:
-        - BorgModuleTool
-        - BorgModuleOperative
-        - BorgModuleSyndicateWeapon
-  - type: ItemSlots
-    slots:
-      cell_slot:
-        name: power-cell-slot-component-slot-name-default
-        startingItem: PowerCellHyper
-
-#ment to be in a /base_brog_chassis
-
-- type: entity
-  id: BaseBorgChassisSyndicateSpider
-  parent: BaseBorgChassis
-  abstract: true
-  components:
-  - type: NpcFactionMember
-    factions:
-    - Syndicate
-  - type: Access
-    tags:
-    - NuclearOperative
-    - SyndicateAgent
-  - type: AccessReader
-    access: [["SyndicateAgent"], ["NuclearOperative"]]
-  - type: SiliconLawProvider
-    laws: Ninja
-    subverted: true
-  - type: IntrinsicRadioTransmitter
-    channels:
-    - Binary
-    - Common
-  - type: ActiveRadio
-    channels:
-    - Binary
-    - Common
-  - type: ShowJobIcons
-  - type: MovementAlwaysTouching
-  - type: Speech
-    speechSounds: SyndieBorg
-    allowedEmotes:
-    - Laugh
-  - type: Vocal
-    sounds:
-      Unsexed: UnisexSiliconSyndicate
-  - type: PointLight
-    color: "#dd200b"
-
-
-
-#Ment to be in a /borg_chassis
-
-- type: entity
-  id: BorgChassisSyndicateSaboteurSpider
-  parent: BaseBorgChassisSyndicateSpider
-  name: syndicate saboteur cyborg
-  description: A streamlined engineering cyborg, equipped with covert modules. Its chameleon projector lets it disguise itself as a Nanotrasen cyborg.
-  components:
-    - type: Sprite
-      layers:
-        - state: synd_engi
-        - state: synd_engi_e
-          map: ["enum.BorgVisualLayers.Light"]
-          shader: unshaded
-          visible: false
-        - state: synd_engi_l
-          shader: unshaded
-          map: ["light"]
-          visible: false
-    - type: BorgChassis
-      maxModules: 6
-      moduleWhitelist:
-        tags:
-          - BorgModuleGeneric
-          - BorgModuleEngineering
-          - BorgModuleSyndicate
-          - BorgModuleSyndicateAssault
-          - XenoborgModuleCloakDevice
-          - XenoborgModuleChameleonProjector
-      hasMindState: synd_engi_e
-      noMindState: synd_engi
-    - type: ShowHealthBars
-      damageContainers:
-      - Inorganic
-      - Silicon
-    - type: InteractionPopup
-      interactSuccessString: petting-success-syndicate-cyborg
-      interactFailureString: petting-failure-syndicate-cyborg
-      interactSuccessSound:
-        path: /Audio/Ambience/Objects/periodic_beep.ogg
-
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
