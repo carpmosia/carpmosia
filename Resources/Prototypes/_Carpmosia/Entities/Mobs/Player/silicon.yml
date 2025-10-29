@@ -1,0 +1,34 @@
+- type: entity
+  id: PlayerBorgSliderClanGhostRole
+  parent: PlayerBorgSpiderClanBattery
+  suffix: Ghost role
+  components:
+    - type: GhostRole
+      name: ghost-role-information-spider-clan-borg-name
+      description: ghost-role-information-spider-clan-borg-description
+      rules: ghost-role-information-silicon-rules
+      raffle:
+        settings: default
+      job: Borg
+    - type: GhostTakeoverAvailable
+
+
+- type: entity
+  id: PlayerBorgSpiderClanBattery
+  parent: BorgChassisSpiderClan
+  suffix: Battery, Module, Operative
+  components:
+  - type: NukeOperative
+  - type: ContainerFill
+    containers:
+      borg_brain:
+        - PositronicBrain
+      borg_module:
+        - BorgModuleTool
+        - BorgModuleSyndicateWeapon
+        - XenoborgModuleCloakDevice
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellHyper

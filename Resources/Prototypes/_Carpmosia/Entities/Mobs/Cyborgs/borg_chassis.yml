@@ -1,0 +1,37 @@
+- type: entity
+  id: BorgChassisSpiderClan
+  parent: BaseBorgChassisSpiderClan
+  name: Spider clan cyborg
+  description: A spider clan cyborg, built for stealth and sabotage. Known to help compleat the mission of any the spider clan memberrs by any means necessary.
+  components:
+    - type: Sprite
+      layers:
+        - state: synd_engi
+        - state: synd_engi_e
+          map: ["enum.BorgVisualLayers.Light"]
+          shader: unshaded
+          visible: false
+        - state: synd_engi_l
+          shader: unshaded
+          map: ["light"]
+          visible: false
+    - type: BorgChassis
+      maxModules: 6
+      moduleWhitelist:
+        tags:
+          - BorgModuleGeneric
+          - BorgModuleEngineering
+          - BorgModuleSyndicate
+          - XenoborgModuleStealth
+      hasMindState: synd_engi_e
+      noMindState: synd_engi
+    - type: MovementAlwaysTouching #Allow it to move in space freely
+    - type: ShowHealthBars
+      damageContainers:
+      - Inorganic
+      - Silicon
+    - type: InteractionPopup
+      interactSuccessString: petting-success-syndicate-cyborg
+      interactFailureString: petting-failure-syndicate-cyborg
+      interactSuccessSound:
+        path: /Audio/Ambience/Objects/periodic_beep.ogg

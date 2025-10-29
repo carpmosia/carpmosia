@@ -1,0 +1,35 @@
+- type: entity
+  id: BaseBorgChassisSpiderClan
+  parent: BaseBorgChassis
+  abstract: true
+  components:
+  - type: NpcFactionMember
+    factions:
+    - Syndicate
+  - type: Access
+    tags:
+    - NuclearOperative
+    - SyndicateAgent
+  - type: AccessReader
+  - type: SiliconLawProvider
+    laws: Ninja
+    subverted: true
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+    - Common
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+  - type: ShowJobIcons
+  - type: MovementAlwaysTouching
+  - type: Speech
+    speechSounds: SyndieBorg
+    allowedEmotes:
+    - Laugh
+  - type: Vocal
+    sounds:
+      Unsexed: UnisexSiliconSyndicate
+  - type: PointLight
+    color: "#dd200b"
