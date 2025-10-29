@@ -16,9 +16,8 @@
 - type: entity
   id: PlayerBorgSpiderClanBattery
   parent: BorgChassisSpiderClan
-  suffix: Battery, Module, Operative
+  suffix: Battery, Module
   components:
-  - type: NukeOperative
   - type: ContainerFill
     containers:
       borg_brain:

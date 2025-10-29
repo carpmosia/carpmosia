@@ -11,11 +11,11 @@
     - MindRoleSubvertedSilicon
     raffle:
       settings: default
-  - type: Sprite
+  - type: Sprite #TODO: new sprite
     sprite: Markers/jobs.rsi
     layers:
     - state: green
-    - sprite: Mobs/Silicon/chassis.rsi
+    - sprite: Mobs/Silicon/chassis.rsi 
       state: derelict_icon
 
 - type: entity
