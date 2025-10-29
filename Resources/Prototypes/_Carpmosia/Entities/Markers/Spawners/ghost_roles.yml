@@ -1,7 +1,7 @@
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
   parent: BaseAntagSpawner
-  id: SpawnPointGhostDerelictCyborgSpiderClan
+  id: SpawnPointGhostSpiderClan
   components:
   - type: GhostRole
     name: ghost-role-information-syndicate-cyborg-saboteur-name
@@ -22,8 +22,8 @@
 #ment to be in a /silicon
 
 - type: entity
-  id: PlayerBorgSyndicateSaboteurGhostRoleSpider
-  parent: PlayerBorgSyndicateSaboteurBatterySpiderClan
+  id: PlayerBorgSpiderClanGhostRole
+  parent: PlayerBorgSpiderClanBattery
   suffix: Ghost role
   components:
     - type: GhostRole
@@ -37,8 +37,8 @@
 
 
 - type: entity
-  id: PlayerBorgSyndicateSaboteurBatterySpiderClan
-  parent: BorgChassisSyndicateSaboteurSpider
+  id: PlayerBorgSpiderClanBattery
+  parent: BorgChassisSpiderClan
   suffix: Battery, Module, Operative
   components:
   - type: NukeOperative
@@ -50,6 +50,7 @@
         - BorgModuleTool
         - BorgModuleOperative
         - BorgModuleSyndicateWeapon
+        - XenoborgModuleCloakDevice
   - type: ItemSlots
     slots:
       cell_slot:
@@ -59,7 +60,7 @@
 #ment to be in a /base_brog_chassis
 
 - type: entity
-  id: BaseBorgChassisSyndicateSpider
+  id: BaseBorgChassisSpiderClan
   parent: BaseBorgChassis
   abstract: true
   components:
@@ -100,9 +101,9 @@
 #Ment to be in a /borg_chassis
 
 - type: entity
-  id: BorgChassisSyndicateSaboteurSpider
-  parent: BaseBorgChassisSyndicateSpider
-  name: syndicate saboteur cyborg
+  id: BorgChassisSpiderClan
+  parent: BaseBorgChassisSpiderClan
+  name: spider clan cyborg
   description: A streamlined engineering cyborg, equipped with covert modules. Its chameleon projector lets it disguise itself as a Nanotrasen cyborg.
   components:
     - type: Sprite
@@ -125,7 +126,6 @@
           - BorgModuleSyndicate
           - BorgModuleSyndicateAssault
           - XenoborgModuleCloakDevice
-          - XenoborgModuleChameleonProjector
       hasMindState: synd_engi_e
       noMindState: synd_engi
     - type: ShowHealthBars
@@ -141,7 +141,7 @@
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
-  parent: SpawnPointGhostDerelictCyborgSpiderClan
+  parent: SpawnPointGhostSpiderClan
   id: SpawnPointGhostSpiderClanCyborg
   components:
   - type: GhostRole
