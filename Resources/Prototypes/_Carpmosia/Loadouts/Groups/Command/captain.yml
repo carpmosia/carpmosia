@@ -8,6 +8,8 @@
 - type: loadoutGroup
   parent: [ CommandGlasses, CommonGlasses ]
   id: CaptainGlasses
+  loadouts:
+  - CommandGlasses
 
 # - type: loadoutGroup
 #   parent: [ CommandMask, CommonMask ]

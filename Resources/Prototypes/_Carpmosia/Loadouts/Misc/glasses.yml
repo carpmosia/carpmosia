@@ -1,9 +1,19 @@
 - type: loadout
-  id: EngineeringGoggles
+  id: MesonGlasses
   equipment:
     eyes: ClothingEyesGlassesMeson
 
 - type: loadout
-  id: ChemistryGoggles
+  id: ChemicalGlasses
   equipment:
     eyes: ClothingEyesGlassesChemical
+
+- type: loadout
+  id: CommandGlasses
+  equipment:
+    eyes: ClothingEyesGlassesCommand
+
+- type: loadout
+  id: CommandHud
+  equipment:
+    eyes: ClothingEyesHudCommand
