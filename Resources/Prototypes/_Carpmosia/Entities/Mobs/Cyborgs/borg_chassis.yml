@@ -4,17 +4,18 @@
   name: Spider clan cyborg
   description: A spider clan cyborg, built for stealth and sabotage. Known to help compleat the mission of any the spider clan memberrs by any means necessary.
   components:
-    - type: Sprite #TODO: new sprite
+    - type: Sprite
       layers:
-        - state: synd_engi
-        - state: synd_engi_e
-          map: ["enum.BorgVisualLayers.Light"]
-          shader: unshaded
-          visible: false
-        - state: synd_engi_l
-          shader: unshaded
-          map: ["light"]
-          visible: false
+      - map: ["movement"]
+       state: clan-spider
+       sprite: _Carpmosia/Mobs/Silicon/chassis.rsi
+    - type: SpriteMovement
+      movementLayers:
+        movement:
+          state: clan-spider-moving
+      noMovementLayers:
+        movement:
+          state: clan-spider
     - type: BorgChassis
       maxModules: 6
       moduleWhitelist:
@@ -23,8 +24,6 @@
           - BorgModuleEngineering
           - BorgModuleSyndicate
           - XenoborgModuleStealth
-      hasMindState: synd_engi_e
-      noMindState: synd_engi
     - type: MovementAlwaysTouching #Allow it to move in space freely
     - type: ShowHealthBars
       damageContainers:
