@@ -772,6 +772,78 @@
   - GasPortAlt3
   - GasPortAlt4
 
+- type: construction
+  id: GasDualPortVentPumpAlt1
+  hide: true
+  graph: GasBinary
+  startNode: start
+  targetNode: dualportventpumpAlt1
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  conditions:
+    - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasDualPortVentPump
+  - GasDualPortVentPumpAlt1
+  - GasDualPortVentPumpAlt2
+  - GasDualPortVentPumpAlt3
+  - GasDualPortVentPumpAlt4
+
+- type: construction
+  id: GasDualPortVentPumpAlt2
+  hide: true
+  graph: GasBinary
+  startNode: start
+  targetNode: dualportventpumpAlt2
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  conditions:
+    - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasDualPortVentPump
+  - GasDualPortVentPumpAlt1
+  - GasDualPortVentPumpAlt2
+  - GasDualPortVentPumpAlt3
+  - GasDualPortVentPumpAlt4
+
+- type: construction
+  id: GasDualPortVentPumpAlt3
+  hide: true
+  graph: GasBinary
+  startNode: start
+  targetNode: dualportventpumpAlt3
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  conditions:
+    - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasDualPortVentPump
+  - GasDualPortVentPumpAlt1
+  - GasDualPortVentPumpAlt2
+  - GasDualPortVentPumpAlt3
+  - GasDualPortVentPumpAlt4
+
+- type: construction
+  id: GasDualPortVentPumpAlt4
+  hide: true
+  graph: GasBinary
+  startNode: start
+  targetNode: dualportventpumpAlt4
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  conditions:
+    - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasDualPortVentPump
+  - GasDualPortVentPumpAlt1
+  - GasDualPortVentPumpAlt2
+  - GasDualPortVentPumpAlt3
+  - GasDualPortVentPumpAlt4
+
 # ATMOS TRINARY
 - type: construction
   id: GasFilterAlt1

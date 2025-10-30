@@ -1056,8 +1056,16 @@
   startNode: start
   targetNode: dualportventpump
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
   canBuildInImpassable: false
+  # Carpmosia-start - Atmos Alt Prototypes
+  alternativePrototypes:
+  - GasDualPortVentPump
+  - GasDualPortVentPumpAlt1
+  - GasDualPortVentPumpAlt2
+  - GasDualPortVentPumpAlt3
+  - GasDualPortVentPumpAlt4
+  # Carpmosia-end - Atmos Alt Prototypes
 
 - type: construction
   id: HeatExchanger
