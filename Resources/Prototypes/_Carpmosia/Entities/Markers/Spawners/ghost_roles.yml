@@ -11,12 +11,12 @@
     - MindRoleSubvertedSilicon
     raffle:
       settings: default
-  - type: Sprite #TODO: new sprite
+  - type: Sprite #TODO: new sprite (and make it work)
     sprite: Markers/jobs.rsi
     layers:
     - state: green
     - sprite: _Carpmosia/Mobs/Silicon/chassis.rsi 
-      state: derelict_icon
+      state: clan_spider_icon
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
