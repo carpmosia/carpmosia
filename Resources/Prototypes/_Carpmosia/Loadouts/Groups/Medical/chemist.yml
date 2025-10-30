@@ -5,6 +5,9 @@
 - type: loadoutGroup
   parent: [ MedicalGlasses, CommonGlasses ]
   id: ChemistGlasses
+  defaultSelected: 1
+  loadouts:
+  - ChemistryGoggles
 
 - type: loadoutGroup
   parent: [ MedicalMask, CommonMask ]

@@ -57,11 +57,8 @@
   - StationEngineerWintercoat
 
 - type: loadoutGroup
-  parent: [ CommonShoes, EngineeringShoes ]
+  parent: [ PriorityEngineeringShoes, CommonShoes, EngineeringShoes ]
   id: StationEngineerShoes
-  loadouts:
-  - WorkBoots
-  - EngineeringWinterBoots
 
 # - type: loadoutGroup
 #   parent: BaseSpecial

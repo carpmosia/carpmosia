@@ -57,6 +57,13 @@
 - type: loadoutGroup
   abstract: true
   parent: BaseShoes
+  id: PriorityEngineeringShoes
+  loadouts:
+  - WorkBoots
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseShoes
   id: EngineeringShoes
   loadouts:
   - EngineeringWinterBoots
