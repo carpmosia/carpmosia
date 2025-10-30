@@ -53,14 +53,14 @@ namespace Content.Client.Chemistry.UI
             {
                 // For every button decide which stylebase to have
                 // Every row has 10 buttons
-                String styleBase = StyleBase.ButtonOpenBoth;
+                String styleBase = StyleClass.ButtonOpenBoth;
                 uint modulo = i % 10;
                 if (i > 0 && modulo == 0)
-                    styleBase = StyleBase.ButtonOpenRight;
+                    styleBase = StyleClass.ButtonOpenRight;
                 else if (i > 0 && modulo == 9)
-                    styleBase = StyleBase.ButtonOpenLeft;
+                    styleBase = StyleClass.ButtonOpenLeft;
                 else if (i == 0)
-                    styleBase = StyleBase.ButtonOpenRight;
+                    styleBase = StyleClass.ButtonOpenRight;
 
                 // Generate buttons
                 PillTypeButtons[i] = new Button
@@ -113,19 +113,19 @@ namespace Content.Client.Chemistry.UI
 
             var buttonConfigs = new (string text, ChemMasterReagentAmount amount, string styleClass)[]
             {
-                ("1", ChemMasterReagentAmount.U1, StyleBase.ButtonOpenBoth),
-                ("5", ChemMasterReagentAmount.U5, StyleBase.ButtonOpenBoth),
-                ("10", ChemMasterReagentAmount.U10, StyleBase.ButtonOpenBoth),
-                ("15", ChemMasterReagentAmount.U15, StyleBase.ButtonOpenBoth),
-                ("20", ChemMasterReagentAmount.U20, StyleBase.ButtonOpenBoth),
-                ("25", ChemMasterReagentAmount.U25, StyleBase.ButtonOpenBoth),
-                ("30", ChemMasterReagentAmount.U30, StyleBase.ButtonOpenBoth),
-                ("40", ChemMasterReagentAmount.U40, StyleBase.ButtonOpenBoth), // Carpmosia-edit - reagentTransfer
-                ("50", ChemMasterReagentAmount.U50, StyleBase.ButtonOpenBoth),
-                ("60", ChemMasterReagentAmount.U60, StyleBase.ButtonOpenBoth), // Carpmosia-edit - reagentTransfer
-                ("100", ChemMasterReagentAmount.U100, StyleBase.ButtonOpenBoth),
-                ("120", ChemMasterReagentAmount.U120, StyleBase.ButtonOpenBoth), // Carpmosia-edit - reagentTransfer
-                (Loc.GetString("chem-master-window-buffer-all-amount"), ChemMasterReagentAmount.All, StyleBase.ButtonOpenLeft),
+                ("1", ChemMasterReagentAmount.U1, StyleClass.ButtonOpenBoth),
+                ("5", ChemMasterReagentAmount.U5, StyleClass.ButtonOpenBoth),
+                ("10", ChemMasterReagentAmount.U10, StyleClass.ButtonOpenBoth),
+                ("15", ChemMasterReagentAmount.U15, StyleClass.ButtonOpenBoth),
+                ("20", ChemMasterReagentAmount.U20, StyleClass.ButtonOpenBoth),
+                ("25", ChemMasterReagentAmount.U25, StyleClass.ButtonOpenBoth),
+                ("30", ChemMasterReagentAmount.U30, StyleClass.ButtonOpenBoth),
+                ("40", ChemMasterReagentAmount.U40, StyleClass.ButtonOpenBoth), // Carpmosia-edit - reagentTransfer
+                ("50", ChemMasterReagentAmount.U50, StyleClass.ButtonOpenBoth),
+                ("60", ChemMasterReagentAmount.U60, StyleClass.ButtonOpenBoth), // Carpmosia-edit - reagentTransfer
+                ("100", ChemMasterReagentAmount.U100, StyleClass.ButtonOpenBoth),
+                ("120", ChemMasterReagentAmount.U120, StyleClass.ButtonOpenBoth), // Carpmosia-edit - reagentTransfer
+                (Loc.GetString("chem-master-window-buffer-all-amount"), ChemMasterReagentAmount.All, StyleClass.ButtonOpenLeft),
             };
 
             var buttons = new List<ReagentButton>();
@@ -255,7 +255,7 @@ namespace Content.Client.Chemistry.UI
             var bufferVol = new Label
             {
                 Text = $"{state.BufferCurrentVolume}u",
-                StyleClasses = { StyleNano.StyleClassLabelSecondaryColor }
+                StyleClasses = { StyleClass.LabelWeak }
             };
             bufferHBox.AddChild(bufferVol);
 
@@ -324,7 +324,7 @@ namespace Content.Client.Chemistry.UI
                     new Label
                     {
                         Text = $"{info.CurrentVolume}/{info.MaxVolume}",
-                        StyleClasses = { StyleNano.StyleClassLabelSecondaryColor }
+                        StyleClasses = { StyleClass.LabelWeak }
                     }
                 }
             });
@@ -379,7 +379,7 @@ namespace Content.Client.Chemistry.UI
                     new Label
                     {
                         Text = $"{quantity}u",
-                        StyleClasses = { StyleNano.StyleClassLabelSecondaryColor }
+                        StyleClasses = { StyleClass.LabelWeak }
                     },
 
                     // Padding

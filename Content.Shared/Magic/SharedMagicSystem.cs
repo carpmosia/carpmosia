@@ -4,8 +4,10 @@ using Content.Shared.Body.Systems;
 using Content.Shared.Charges.Components;
 using Content.Shared.Charges.Systems;
 using Content.Shared.Coordinates.Helpers;
+using Content.Shared.Damage; // Carpmosia-edit - Wizard Smite Rework
 using Content.Shared.Doors.Components;
 using Content.Shared.Doors.Systems;
+using Content.Shared.FixedPoint; // Carpmosia-edit - Wizard Smite Rework
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
@@ -15,6 +17,8 @@ using Content.Shared.Magic.Components;
 using Content.Shared.Magic.Events;
 using Content.Shared.Maps;
 using Content.Shared.Mind;
+using Content.Shared.Mobs.Components; // Carpmosia-edit - Wizard Smite Rework
+using Content.Shared.Mobs.Systems; // Carpmosia-edit - Wizard Smite Rework
 using Content.Shared.Physics;
 using Content.Shared.Popups;
 using Content.Shared.Speech.Muting;
@@ -66,6 +70,9 @@ public abstract class SharedMagicSystem : EntitySystem
     [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly TurfSystem _turf = default!;
     [Dependency] private readonly SharedChargesSystem _charges = default!;
+    [Dependency] private readonly DamageableSystem _damageableSystem = default!; // Carpmosia-edit - Wizard Smite Rework
+    [Dependency] private readonly MobStateSystem _mobStateSystem = default!; // Carpmosia-edit - Wizard Smite Rework
+    [Dependency] private readonly MobThresholdSystem _mobThresholdSystem = default!; // Carpmosia-edit - Wizard Smite Rework
 
     private static readonly ProtoId<TagPrototype> InvalidForGlobalSpawnSpellTag = "InvalidForGlobalSpawnSpell";
 
@@ -80,6 +87,7 @@ public abstract class SharedMagicSystem : EntitySystem
         SubscribeLocalEvent<ProjectileSpellEvent>(OnProjectileSpell);
         SubscribeLocalEvent<ChangeComponentsSpellEvent>(OnChangeComponentsSpell);
         SubscribeLocalEvent<SmiteSpellEvent>(OnSmiteSpell);
+        SubscribeLocalEvent<DamageSmiteSpellEvent>(OnDamageSmiteSpell); // Carpmosia-edit - Wizard Smite Rework
         SubscribeLocalEvent<KnockSpellEvent>(OnKnockSpell);
         SubscribeLocalEvent<ChargeSpellEvent>(OnChargeSpell);
         SubscribeLocalEvent<RandomGlobalSpawnSpellEvent>(OnRandomGlobalSpawnSpell);
@@ -394,6 +402,33 @@ public abstract class SharedMagicSystem : EntitySystem
 
         _body.GibBody(ev.Target, true, body);
     }
+    // Carpmosia-start - Wizard Smite Rework
+    private void OnDamageSmiteSpell(DamageSmiteSpellEvent ev)
+    {
+        FixedPoint2 dealtDamage = ev.Damage;
+        DamageSpecifier dspec = new DamageSpecifier();
+
+        if (HasComp<MobStateComponent>(ev.Target))
+        {
+            // Prevent use on dead and critical targets
+            if (_mobStateSystem.IsCritical(ev.Target) || _mobStateSystem.IsDead(ev.Target))
+                return;
+        }
+        if (TryComp<DamageableComponent>(ev.Target, out var damageable) && TryComp<MobThresholdsComponent>(ev.Target, out var thresholds))
+        {
+            if (_mobThresholdSystem.TryGetIncapThreshold(ev.Target, out var threshold, thresholds))
+                dealtDamage = (FixedPoint2)threshold - damageable.TotalDamage;
+        }
+
+        if (ev.Handled || !PassesSpellPrerequisites(ev.Action, ev.Performer))
+            return;
+
+        ev.Handled = true;
+
+        dspec.DamageDict.Add(ev.DamageType, dealtDamage);
+        _damageableSystem.TryChangeDamage(ev.Target, dspec, true);
+    }
+    // Carpmosia-end - Wizard Smite Rework
 
     // End Touch Spells
     #endregion

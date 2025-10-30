@@ -1,0 +1,8 @@
+- type: entity
+  parent: BaseItem
+  id: BaseHandyFlag
+  abstract: true
+  components:
+    - type: Wavable
+    - type: UseDelay
+      delay: 0.5

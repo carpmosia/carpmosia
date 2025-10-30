@@ -71,10 +71,10 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 1000
+        maxVol: 1200 # Carpmosia-edit - extendedReagentStorage
         reagents:
         - ReagentId: SpaceLube
-          Quantity: 1000
+          Quantity: 1200 # Carpmosia-edit - extendedReagentStorage
   - type: SolutionRegeneration
     solution: beaker
     generated:
