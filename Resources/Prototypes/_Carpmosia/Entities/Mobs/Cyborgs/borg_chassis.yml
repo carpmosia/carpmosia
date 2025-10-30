@@ -9,13 +9,6 @@
       - map: ["movement"]
        state: clan-spider
        sprite: _Carpmosia/Mobs/Silicon/chassis.rsi
-    - type: SpriteMovement
-      movementLayers:
-        movement:
-          state: clan-spider-moving
-      noMovementLayers:
-        movement:
-          state: clan-spider
     - type: BorgChassis
       maxModules: 6
       moduleWhitelist:
