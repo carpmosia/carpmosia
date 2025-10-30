@@ -6,8 +6,8 @@
   components:
     - type: Sprite #TODO: new sprite (and make it work)
       layers:
-        sprite: _Carpmosia/Mobs/Silicon/chassis.rsi
         state: clan_spider
+        sprite: _Carpmosia/Mobs/Silicon/chassis.rsi
     - type: BorgChassis
       maxModules: 6
       moduleWhitelist:
