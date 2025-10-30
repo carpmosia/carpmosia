@@ -1075,11 +1075,19 @@
   startNode: start
   targetNode: filter
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
   canBuildInImpassable: false
   mirror: GasFilterFlipped
   conditions:
     - !type:NoUnstackableInTile
+  # Carpmosia-start - Atmos Alt Prototypes
+  alternativePrototypes:
+  - GasFilter
+  - GasFilterAlt1
+  - GasFilterAlt2
+  - GasFilterAlt3
+  - GasFilterAlt4
+  # Carpmosia-end - Atmos Alt Prototypes
 
 - type: construction
   id: GasFilterFlipped
@@ -1088,11 +1096,19 @@
   startNode: start
   targetNode: filterflipped
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
   canBuildInImpassable: false
   mirror: GasFilter
   conditions:
     - !type:NoUnstackableInTile
+  # Carpmosia-start - Atmos Alt Prototypes
+  alternativePrototypes:
+  - GasFilterFlipped
+  - GasFilterFlippedAlt1
+  - GasFilterFlippedAlt2
+  - GasFilterFlippedAlt3
+  - GasFilterFlippedAlt4
+  # Carpmosia-end - Atmos Alt Prototypes
 
 - type: construction
   id: GasMixer
@@ -1100,11 +1116,19 @@
   startNode: start
   targetNode: mixer
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
   canBuildInImpassable: false
   mirror: GasMixerFlipped
   conditions:
     - !type:NoUnstackableInTile
+  # Carpmosia-start - Atmos Alt Prototypes
+  alternativePrototypes:
+  - GasMixer
+  - GasMixerAlt1
+  - GasMixerAlt2
+  - GasMixerAlt3
+  - GasMixerAlt4
+  # Carpmosia-end - Atmos Alt Prototypes
 
 - type: construction
   id: GasMixerFlipped
@@ -1113,11 +1137,19 @@
   startNode: start
   targetNode: mixerflipped
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
   canBuildInImpassable: false
   mirror: GasMixer
   conditions:
     - !type:NoUnstackableInTile
+  # Carpmosia-start - Atmos Alt Prototypes
+  alternativePrototypes:
+  - GasMixerFlipped
+  - GasMixerFlippedAlt1
+  - GasMixerFlippedAlt2
+  - GasMixerFlippedAlt3
+  - GasMixerFlippedAlt4
+  # Carpmosia-end - Atmos Alt Prototypes
 
 - type: construction
   id: PressureControlledValve
@@ -1125,10 +1157,18 @@
   startNode: start
   targetNode: pneumaticvalve
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
   canBuildInImpassable: false
   conditions:
     - !type:NoUnstackableInTile
+  # Carpmosia-start - Atmos Alt Prototypes
+  alternativePrototypes:
+  - PressureControlledValve
+  - PressureControlledValveAlt1
+  - PressureControlledValveAlt2
+  - PressureControlledValveAlt3
+  - PressureControlledValveAlt4
+  # Carpmosia-end - Atmos Alt Prototypes
 
 # INTERCOM
 - type: construction

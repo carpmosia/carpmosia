@@ -693,3 +693,360 @@
   - SignalControlledValveAlt2
   - SignalControlledValveAlt3
   - SignalControlledValveAlt4
+
+# ATMOS TRINARY
+- type: construction
+  id: GasFilterAlt1
+  graph: GasTrinary
+  startNode: start
+  targetNode: filterAlt1
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  mirror: GasFilterFlippedAlt1
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasFilter
+  - GasFilterAlt1
+  - GasFilterAlt2
+  - GasFilterAlt3
+  - GasFilterAlt4
+
+- type: construction
+  id: GasFilterAlt2
+  graph: GasTrinary
+  startNode: start
+  targetNode: filterAlt2
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  mirror: GasFilterFlippedAlt2
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasFilter
+  - GasFilterAlt1
+  - GasFilterAlt2
+  - GasFilterAlt3
+  - GasFilterAlt4
+
+- type: construction
+  id: GasFilterAlt3
+  graph: GasTrinary
+  startNode: start
+  targetNode: filterAlt3
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  mirror: GasFilterFlippedAlt3
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasFilter
+  - GasFilterAlt1
+  - GasFilterAlt2
+  - GasFilterAlt3
+  - GasFilterAlt4
+
+- type: construction
+  id: GasFilterAlt4
+  graph: GasTrinary
+  startNode: start
+  targetNode: filterAlt4
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  mirror: GasFilterFlippedAlt4
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasFilter
+  - GasFilterAlt1
+  - GasFilterAlt2
+  - GasFilterAlt3
+  - GasFilterAlt4
+
+- type: construction
+  id: GasFilterFlippedAlt1
+  graph: GasTrinary
+  startNode: start
+  targetNode: filterflippedAlt1
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  mirror: GasFilterAlt1
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasFilterFlipped
+  - GasFilterFlippedAlt1
+  - GasFilterFlippedAlt2
+  - GasFilterFlippedAlt3
+  - GasFilterFlippedAlt4
+
+- type: construction
+  id: GasFilterFlippedAlt2
+  graph: GasTrinary
+  startNode: start
+  targetNode: filterflippedAlt2
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  mirror: GasFilterAlt2
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasFilterFlipped
+  - GasFilterFlippedAlt1
+  - GasFilterFlippedAlt2
+  - GasFilterFlippedAlt3
+  - GasFilterFlippedAlt4
+
+- type: construction
+  id: GasFilterFlippedAlt3
+  graph: GasTrinary
+  startNode: start
+  targetNode: filterflippedAlt3
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  mirror: GasFilterAlt3
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasFilterFlipped
+  - GasFilterFlippedAlt1
+  - GasFilterFlippedAlt2
+  - GasFilterFlippedAlt3
+  - GasFilterFlippedAlt4
+
+- type: construction
+  id: GasFilterFlippedAlt4
+  graph: GasTrinary
+  startNode: start
+  targetNode: filterflippedAlt4
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  mirror: GasFilterAlt4
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasFilterFlipped
+  - GasFilterFlippedAlt1
+  - GasFilterFlippedAlt2
+  - GasFilterFlippedAlt3
+  - GasFilterFlippedAlt4
+
+- type: construction
+  id: GasMixerAlt1
+  graph: GasTrinary
+  startNode: start
+  targetNode: mixerAlt1
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  mirror: GasMixerFlippedAlt1
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasMixer
+  - GasMixerAlt1
+  - GasMixerAlt2
+  - GasMixerAlt3
+  - GasMixerAlt4
+
+- type: construction
+  id: GasMixerAlt2
+  graph: GasTrinary
+  startNode: start
+  targetNode: mixerAlt2
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  mirror: GasMixerFlippedAlt2
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasMixer
+  - GasMixerAlt1
+  - GasMixerAlt2
+  - GasMixerAlt3
+  - GasMixerAlt4
+
+- type: construction
+  id: GasMixerAlt3
+  graph: GasTrinary
+  startNode: start
+  targetNode: mixerAlt3
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  mirror: GasMixerFlippedAlt3
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasMixer
+  - GasMixerAlt1
+  - GasMixerAlt2
+  - GasMixerAlt3
+  - GasMixerAlt4
+
+- type: construction
+  id: GasMixerAlt4
+  graph: GasTrinary
+  startNode: start
+  targetNode: mixerAlt4
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  mirror: GasMixerFlippedAlt4
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasMixer
+  - GasMixerAlt1
+  - GasMixerAlt2
+  - GasMixerAlt3
+  - GasMixerAlt4
+
+- type: construction
+  id: GasMixerFlippedAlt1
+  graph: GasTrinary
+  startNode: start
+  targetNode: mixerflippedAlt1
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  mirror: GasMixerAlt1
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasMixerFlipped
+  - GasMixerFlippedAlt1
+  - GasMixerFlippedAlt2
+  - GasMixerFlippedAlt3
+  - GasMixerFlippedAlt4
+
+- type: construction
+  id: GasMixerFlippedAlt2
+  graph: GasTrinary
+  startNode: start
+  targetNode: mixerflippedAlt2
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  mirror: GasMixerAlt2
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasMixerFlipped
+  - GasMixerFlippedAlt1
+  - GasMixerFlippedAlt2
+  - GasMixerFlippedAlt3
+  - GasMixerFlippedAlt4
+
+- type: construction
+  id: GasMixerFlippedAlt3
+  graph: GasTrinary
+  startNode: start
+  targetNode: mixerflippedAlt3
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  mirror: GasMixerAlt3
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasMixerFlipped
+  - GasMixerFlippedAlt1
+  - GasMixerFlippedAlt2
+  - GasMixerFlippedAlt3
+  - GasMixerFlippedAlt4
+
+- type: construction
+  id: GasMixerFlippedAlt4
+  graph: GasTrinary
+  startNode: start
+  targetNode: mixerflippedAlt4
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  mirror: GasMixerAlt4
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasMixerFlipped
+  - GasMixerFlippedAlt1
+  - GasMixerFlippedAlt2
+  - GasMixerFlippedAlt3
+  - GasMixerFlippedAlt4
+
+- type: construction
+  id: PressureControlledValveAlt1
+  graph: GasTrinary
+  startNode: start
+  targetNode: pneumaticvalveAlt1
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - PressureControlledValve
+  - PressureControlledValveAlt1
+  - PressureControlledValveAlt2
+  - PressureControlledValveAlt3
+  - PressureControlledValveAlt4
+
+- type: construction
+  id: PressureControlledValveAlt2
+  graph: GasTrinary
+  startNode: start
+  targetNode: pneumaticvalveAlt2
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - PressureControlledValve
+  - PressureControlledValveAlt1
+  - PressureControlledValveAlt2
+  - PressureControlledValveAlt3
+  - PressureControlledValveAlt4
+
+- type: construction
+  id: PressureControlledValveAlt3
+  graph: GasTrinary
+  startNode: start
+  targetNode: pneumaticvalveAlt3
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - PressureControlledValve
+  - PressureControlledValveAlt1
+  - PressureControlledValveAlt2
+  - PressureControlledValveAlt3
+  - PressureControlledValveAlt4
+
+- type: construction
+  id: PressureControlledValveAlt4
+  graph: GasTrinary
+  startNode: start
+  targetNode: pneumaticvalveAlt4
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  conditions:
+  - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - PressureControlledValve
+  - PressureControlledValveAlt1
+  - PressureControlledValveAlt2
+  - PressureControlledValveAlt3
+  - PressureControlledValveAlt4
