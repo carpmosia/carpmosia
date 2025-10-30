@@ -38,6 +38,8 @@
   abstract: true
   parent: BaseBackpack
   id: InternalIanBackpack
+  loadouts:
+  - HoPBackpackIan
 
 # - type: loadoutGroup
 #   parent: [ CivilianPDA, CommonPDA ]
