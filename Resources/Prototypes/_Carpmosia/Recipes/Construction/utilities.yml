@@ -413,6 +413,7 @@
 
 - type: construction
   id: GasOutletInjectorAlt1
+  hide: true
   graph: GasUnary
   startNode: start
   targetNode: outletinjectorAlt1
@@ -430,6 +431,7 @@
 
 - type: construction
   id: GasOutletInjectorAlt2
+  hide: true
   graph: GasUnary
   startNode: start
   targetNode: outletinjectorAlt2
@@ -447,6 +449,7 @@
 
 - type: construction
   id: GasOutletInjectorAlt3
+  hide: true
   graph: GasUnary
   startNode: start
   targetNode: outletinjectorAlt3
@@ -464,6 +467,7 @@
 
 - type: construction
   id: GasOutletInjectorAlt4
+  hide: true
   graph: GasUnary
   startNode: start
   targetNode: outletinjectorAlt4
@@ -662,6 +666,7 @@
 
 - type: construction
   id: SignalControlledValveAlt3
+  hide: true
   graph: GasBinary
   startNode: start
   targetNode: signalvalveAlt3
@@ -679,6 +684,7 @@
 
 - type: construction
   id: SignalControlledValveAlt4
+  hide: true
   graph: GasBinary
   startNode: start
   targetNode: signalvalveAlt4
@@ -694,9 +700,82 @@
   - SignalControlledValveAlt3
   - SignalControlledValveAlt4
 
+- type: construction
+  id: GasPortAlt1
+  hide: true
+  graph: GasBinary
+  startNode: start
+  targetNode: portAlt1
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  conditions:
+    - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasPort
+  - GasPortAlt1
+  - GasPortAlt2
+  - GasPortAlt3
+  - GasPortAlt4
+
+- type: construction
+  id: GasPortAlt2
+  hide: true
+  graph: GasBinary
+  startNode: start
+  targetNode: portAlt2
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  conditions:
+    - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasPort
+  - GasPortAlt1
+  - GasPortAlt2
+  - GasPortAlt3
+  - GasPortAlt4
+
+- type: construction
+  id: GasPortAlt3
+  hide: true
+  graph: GasBinary
+  startNode: start
+  targetNode: portAlt3
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  conditions:
+    - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasPort
+  - GasPortAlt1
+  - GasPortAlt2
+  - GasPortAlt3
+  - GasPortAlt4
+
+- type: construction
+  id: GasPortAlt4
+  hide: true
+  graph: GasBinary
+  startNode: start
+  targetNode: portAlt4
+  category: construction-category-utilities
+  placementMode: AlignAtmosPipeLayers
+  canBuildInImpassable: false
+  conditions:
+    - !type:NoUnstackableInTile
+  alternativePrototypes:
+  - GasPort
+  - GasPortAlt1
+  - GasPortAlt2
+  - GasPortAlt3
+  - GasPortAlt4
+
 # ATMOS TRINARY
 - type: construction
   id: GasFilterAlt1
+  hide: true
   graph: GasTrinary
   startNode: start
   targetNode: filterAlt1
@@ -715,6 +794,7 @@
 
 - type: construction
   id: GasFilterAlt2
+  hide: true
   graph: GasTrinary
   startNode: start
   targetNode: filterAlt2
@@ -733,6 +813,7 @@
 
 - type: construction
   id: GasFilterAlt3
+  hide: true
   graph: GasTrinary
   startNode: start
   targetNode: filterAlt3
@@ -751,6 +832,7 @@
 
 - type: construction
   id: GasFilterAlt4
+  hide: true
   graph: GasTrinary
   startNode: start
   targetNode: filterAlt4
@@ -769,6 +851,7 @@
 
 - type: construction
   id: GasFilterFlippedAlt1
+  hide: true
   graph: GasTrinary
   startNode: start
   targetNode: filterflippedAlt1
@@ -787,6 +870,7 @@
 
 - type: construction
   id: GasFilterFlippedAlt2
+  hide: true
   graph: GasTrinary
   startNode: start
   targetNode: filterflippedAlt2
@@ -805,6 +889,7 @@
 
 - type: construction
   id: GasFilterFlippedAlt3
+  hide: true
   graph: GasTrinary
   startNode: start
   targetNode: filterflippedAlt3
@@ -823,6 +908,7 @@
 
 - type: construction
   id: GasFilterFlippedAlt4
+  hide: true
   graph: GasTrinary
   startNode: start
   targetNode: filterflippedAlt4
@@ -841,6 +927,7 @@
 
 - type: construction
   id: GasMixerAlt1
+  hide: true
   graph: GasTrinary
   startNode: start
   targetNode: mixerAlt1
@@ -859,6 +946,7 @@
 
 - type: construction
   id: GasMixerAlt2
+  hide: true
   graph: GasTrinary
   startNode: start
   targetNode: mixerAlt2
@@ -877,6 +965,7 @@
 
 - type: construction
   id: GasMixerAlt3
+  hide: true
   graph: GasTrinary
   startNode: start
   targetNode: mixerAlt3
@@ -895,6 +984,7 @@
 
 - type: construction
   id: GasMixerAlt4
+  hide: true
   graph: GasTrinary
   startNode: start
   targetNode: mixerAlt4
@@ -913,6 +1003,7 @@
 
 - type: construction
   id: GasMixerFlippedAlt1
+  hide: true
   graph: GasTrinary
   startNode: start
   targetNode: mixerflippedAlt1
@@ -931,6 +1022,7 @@
 
 - type: construction
   id: GasMixerFlippedAlt2
+  hide: true
   graph: GasTrinary
   startNode: start
   targetNode: mixerflippedAlt2
@@ -949,6 +1041,7 @@
 
 - type: construction
   id: GasMixerFlippedAlt3
+  hide: true
   graph: GasTrinary
   startNode: start
   targetNode: mixerflippedAlt3
@@ -967,6 +1060,7 @@
 
 - type: construction
   id: GasMixerFlippedAlt4
+  hide: true
   graph: GasTrinary
   startNode: start
   targetNode: mixerflippedAlt4
@@ -985,6 +1079,7 @@
 
 - type: construction
   id: PressureControlledValveAlt1
+  hide: true
   graph: GasTrinary
   startNode: start
   targetNode: pneumaticvalveAlt1
@@ -1002,6 +1097,7 @@
 
 - type: construction
   id: PressureControlledValveAlt2
+  hide: true
   graph: GasTrinary
   startNode: start
   targetNode: pneumaticvalveAlt2
@@ -1019,6 +1115,7 @@
 
 - type: construction
   id: PressureControlledValveAlt3
+  hide: true
   graph: GasTrinary
   startNode: start
   targetNode: pneumaticvalveAlt3
@@ -1036,6 +1133,7 @@
 
 - type: construction
   id: PressureControlledValveAlt4
+  hide: true
   graph: GasTrinary
   startNode: start
   targetNode: pneumaticvalveAlt4

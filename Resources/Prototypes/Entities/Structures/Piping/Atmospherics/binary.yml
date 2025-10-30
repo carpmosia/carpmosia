@@ -435,7 +435,7 @@
   name: connector port
   description: For connecting portable devices related to atmospherics control.
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
   components:
     - type: SubFloorHide
       visibleLayers:
@@ -448,7 +448,15 @@
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: gasCanisterPort
           map: [ "enum.SubfloorLayers.FirstLayer" ]
+    # Carpmosia-start - Atmos Alt Prototypes
     - type: AtmosPipeLayers
+      alternativePrototypes:
+        Primary: GasPort
+        Secondary: GasPortAlt1
+        Tertiary: GasPortAlt2
+        Quaternary: GasPortAlt3
+        Quinary: GasPortAlt4
+    # Carpmosia-end - Atmos Alt Prototypes
       spriteRsiPaths: {}
     - type: Appearance
     - type: PipeColorVisuals

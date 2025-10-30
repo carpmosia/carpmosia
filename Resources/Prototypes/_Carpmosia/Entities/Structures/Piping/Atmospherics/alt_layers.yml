@@ -593,6 +593,71 @@
   - type: Construction
     node: signalvalveAlt4
 
+# GasPort
+- type: entity
+  parent: [GasPipeLayerAlt1, GasPort]
+  id: GasPortAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/gascanisterport.rsi
+    layers:
+      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi
+        state: pipeUnaryConnectors
+        map: [ "enum.PipeVisualLayers.Pipe" ]
+      - state: gasCanisterPort
+        map: [ "enum.SubfloorLayers.FirstLayer" ]
+  - type: Construction
+    node: portAlt1
+
+- type: entity
+  parent: [GasPipeLayerAlt2, GasPort]
+  id: GasPortAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/gascanisterport.rsi
+    layers:
+      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi
+        state: pipeUnaryConnectors
+        map: [ "enum.PipeVisualLayers.Pipe" ]
+      - state: gasCanisterPort
+        map: [ "enum.SubfloorLayers.FirstLayer" ]
+  - type: Construction
+    node: portAlt2
+
+- type: entity
+  parent: [GasPipeLayerAlt3, GasPort]
+  id: GasPortAlt3
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/gascanisterport.rsi
+    layers:
+      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi
+        state: pipeUnaryConnectors
+        map: [ "enum.PipeVisualLayers.Pipe" ]
+      - state: gasCanisterPort
+        map: [ "enum.SubfloorLayers.FirstLayer" ]
+  - type: Construction
+    node: portAlt3
+
+- type: entity
+  parent: [GasPipeLayerAlt4, GasPort]
+  id: GasPortAlt4
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/gascanisterport.rsi
+    layers:
+      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi
+        state: pipeUnaryConnectors
+        map: [ "enum.PipeVisualLayers.Pipe" ]
+      - state: gasCanisterPort
+        map: [ "enum.SubfloorLayers.FirstLayer" ]
+  - type: Construction
+    node: portAlt4
+
 # GasFilter
 - type: entity
   parent: [GasPipeLayerAlt1, GasFilter]

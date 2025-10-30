@@ -993,6 +993,7 @@
 
 - type: construction
   id: SignalControlledValveAlt1
+  hide: true # Carpmosia-edit - Clean redundant recipes
   graph: GasBinary
   startNode: start
   targetNode: signalvalveAlt1
@@ -1012,6 +1013,7 @@
 
 - type: construction
   id: SignalControlledValveAlt2
+  hide: true # Carpmosia-edit - Clean redundant recipes
   graph: GasBinary
   startNode: start
   targetNode: signalvalveAlt2
@@ -1035,10 +1037,18 @@
   startNode: start
   targetNode: port
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
   canBuildInImpassable: false
   conditions:
     - !type:NoUnstackableInTile
+  # Carpmosia-start - Atmos Alt Prototypes
+  alternativePrototypes:
+  - GasPort
+  - GasPortAlt1
+  - GasPortAlt2
+  - GasPortAlt3
+  - GasPortAlt4
+  # Carpmosia-end - Atmos Alt Prototypes
 
 - type: construction
   id: GasDualPortVentPump
