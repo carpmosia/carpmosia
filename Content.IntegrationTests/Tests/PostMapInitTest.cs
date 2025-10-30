@@ -105,7 +105,7 @@ namespace Content.IntegrationTests.Tests
             "Relic",
             "dm01-entryway",
             "Exo",
-            "Feint" // Carpmosia-edit - Feint port
+            "Feint", // Carpmosia-edit - Feint port
             // Carpmosia-start - Revert #38190
             "Meta",
             "Omega",
