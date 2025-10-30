@@ -8,9 +8,9 @@
   - TrooperHat
 
 - type: loadoutGroup
-  parent: [ SecurityGlasses, CommonGlasses ]
+  parent: [ SecurityGlasses ] # CommonGlasses removed
   id: SecurityOfficerGlasses
-  defaultSelected: 1
+  minLimit: 1
 
 # - type: loadoutGroup
 #   parent: [ SecurityMask, CommonMask ]
