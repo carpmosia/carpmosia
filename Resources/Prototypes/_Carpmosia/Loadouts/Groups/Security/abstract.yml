@@ -64,9 +64,15 @@
 - type: loadoutGroup
   abstract: true
   parent: BaseShoes
-  id: SecurityShoes
+  id: PrioritySecurityShoes
   loadouts:
   - JackBoots
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseShoes
+  id: SecurityShoes
+  loadouts:
   - SecurityWinterBoots
 
 - type: loadoutGroup

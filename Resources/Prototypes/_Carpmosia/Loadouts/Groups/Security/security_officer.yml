@@ -61,7 +61,7 @@
   - SecurityOfficerWintercoat
 
 - type: loadoutGroup
-  parent: [ SecurityShoes, CommonShoes ]
+  parent: [ PrioritySecurityShoes, CommonShoes, SecurityShoes ]
   id: SecurityOfficerShoes
 
 # - type: loadoutGroup
