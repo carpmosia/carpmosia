@@ -45,7 +45,7 @@
     - id: SleeperAgents
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
-    - id: WizardSpawn
+      #    - id: WizardSpawn # Carpmosia-edit - Bulldoze midround wizard
     - !type:NestedSelector
       tableId: DerelictBorgEventTable
 
