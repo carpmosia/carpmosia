@@ -1,0 +1,9 @@
+- type: entity
+  parent: TechnologyDisk
+  id: TechnologyDiskPKAModKitDamage
+  suffix: rare.
+  description: "A special techdisk containing information needed to manufacture modkits for the PKA."
+  components:
+  - type: TechnologyDisk
+    recipes: [PKAUpgradeDamage, PKAUpgradeRange, PKAUpgradeFireRate]
+

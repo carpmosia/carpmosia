@@ -1,0 +1,198 @@
+# Equipment
+- type: listing
+  id: VendorGrapplingGun
+  productEntity: WeaponGrapplingGun
+  cost:
+    SalvageTicket: 40
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorSurvivalKnife
+  productEntity: SurvivalKnife
+  cost:
+    SalvageTicket: 40
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorDoubleEmergencyOxygenTankFilled
+  productEntity: DoubleEmergencyOxygenTankFilled
+  cost:
+    SalvageTicket: 80
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorDoubleEmergencyNitrogenTankFilled
+  productEntity: DoubleEmergencyNitrogenTankFilled
+  cost:
+    SalvageTicket: 80
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorClothingOuterHardsuitSalvage
+  productEntity: ClothingOuterHardsuitSalvage
+  cost:
+    SalvageTicket: 250
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorClothingOuterHardsuitSpatio
+  productEntity: ClothingOuterHardsuitSpatio
+  cost:
+    SalvageTicket: 100
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorPickaxe
+  productEntity: Pickaxe
+  cost:
+    SalvageTicket: 20
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorOreBag
+  productEntity: OreBag
+  cost:
+    SalvageTicket: 20
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorMiningDrill
+  productEntity: MiningDrill
+  cost:
+    SalvageTicket: 200
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorBodyBag
+  productEntity: BodyBag
+  cost:
+    SalvageTicket: 40
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+# Weapons
+- type: listing
+  id: VendorWeaponCrusherDagger
+  productEntity: WeaponCrusherDagger
+  cost:
+    SalvageTicket: 100
+  categories:
+  - SalvageWeapons
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorWeaponCrusherGlaive
+  productEntity: WeaponCrusherGlaive
+  cost:
+    SalvageTicket: 250
+  categories:
+  - SalvageWeapons
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorWeaponCrusher
+  productEntity: WeaponCrusher
+  cost:
+    SalvageTicket: 300
+  categories:
+  - SalvageWeapons
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+  - !type:BuyerAccessCondition
+
+# Consumables
+- type: listing
+  id: VendorCigPackRed
+  productEntity: CigPackRed
+  cost:
+    SalvageTicket: 10
+  categories:
+  - SalvageConsumables
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorCigPackGreen
+  productEntity: CigPackGreen
+  cost:
+    SalvageTicket: 10
+  categories:
+  - SalvageConsumables
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorCigPackBlue
+  productEntity: CigPackBlue
+  cost:
+    SalvageTicket: 10
+  categories:
+  - SalvageConsumables
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorCigPackBlack
+  productEntity: CigPackBlack
+  cost:
+    SalvageTicket: 10
+  categories:
+  - SalvageConsumables
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorTechnologyDiskPKAModKitDamage
+  productEntity: TechnologyDiskPKAModKitDamage
+  cost:
+    SalvageTicket: 120
+  categories:
+  - SalvageConsumables
+  conditions:
+  - !type:BuyerAccessCondition
+  - !type:ListingLimitedStockCondition
+    stock: 1
