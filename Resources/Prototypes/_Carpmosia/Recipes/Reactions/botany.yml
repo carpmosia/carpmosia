@@ -1,0 +1,14 @@
+- type: reaction
+  id: Saltpetre
+  source: True
+  requiredMixerCategories:
+  - Centrifuge
+  reactants:
+    Potassium:
+      amount: 1
+    Nitrogen:
+      amount: 1
+    Hydroxide:
+      amount: 1
+  products:
+    Saltpetre: 3
