@@ -1,14 +1,13 @@
 # Equipment
 - type: listing
   id: VendorGrapplingGun
+  description: "A grappling hook that allows you to latch on to targets at a distance and pull yourself toward them. Perfect for salvaging in zero gravity."
   productEntity: WeaponGrapplingGun
   cost:
     SalvageTicket: 40
   categories:
   - SalvageEquipment
   conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 3
   - !type:BuyerAccessCondition
 
 - type: listing
@@ -19,8 +18,6 @@
   categories:
   - SalvageEquipment
   conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 3
   - !type:BuyerAccessCondition
 
 - type: listing
@@ -109,6 +106,30 @@
 
 # Weapons
 - type: listing
+  id: VendorFlareGun
+  productEntity: WeaponFlareGun
+  cost:
+    SalvageTicket: 20
+  categories:
+  - SalvageWeapons
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorBoxShotgunFlare
+  description: "A box of flare shells for illuminating the void."
+  productEntity: BoxShotgunFlare
+  icon:
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/shotgun.rsi
+    state: flare
+  cost:
+    SalvageTicket: 20
+  categories:
+  - SalvageWeapons
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
   id: VendorWeaponCrusherDagger
   productEntity: WeaponCrusherDagger
   cost:
@@ -188,6 +209,9 @@
 - type: listing
   id: VendorTechnologyDiskPKAModKits
   productEntity: TechnologyDiskPKAModKits
+  icon:
+    sprite: Objects/Misc/module.rsi
+    state: rndmajordisk
   cost:
     SalvageTicket: 120
   categories:
