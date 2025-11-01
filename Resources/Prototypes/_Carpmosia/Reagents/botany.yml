@@ -15,10 +15,6 @@
       amount: 1
     - !type:PlantAdjustPotency
       amount: 1
-      conditions:
-      - !type:ReagentCondition
-        reagent: Saltpetre
-        min: 20
   metabolisms:
     Poison:
       effects:
