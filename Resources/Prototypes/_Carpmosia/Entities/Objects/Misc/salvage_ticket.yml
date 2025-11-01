@@ -25,10 +25,9 @@
     stackType: SalvageTicket
     count: 1
     baseLayer: base
-    layerStates:
-    - icon
-    layerCountStates:
-    - 1
+    layerFunction: Threshold
+  - type: StackLayerThreshold
+    thresholds: [1]
   - type: Sprite
     sprite: _Carpmosia/Objects/Economy/salvage_ticket.rsi
     state: icon
@@ -61,7 +60,7 @@
 
 - type: stack
   id: SalvageTicket
-  name: ticket
+  name: stack-ticket
   icon: { sprite: /Textures/_Carpmosia/Objects/Economy/salvage_ticket.rsi, state: icon }
   spawn: SalvageTicket
 
