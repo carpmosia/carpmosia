@@ -14,6 +14,7 @@
     - !type:PlantAdjustToxins
       amount: 1
     - !type:PlantAdjustPotency
+      amount: 1
       conditions:
       - !type:ReagentCondition
         reagent: Saltpetre
