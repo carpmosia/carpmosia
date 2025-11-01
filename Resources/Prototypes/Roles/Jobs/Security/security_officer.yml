@@ -4,9 +4,11 @@
   description: job-description-security
   playTimeTracker: JobSecurityOfficer
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 7.5h # Carpmosia-edit - Job Requirement Revamp
+    # Carpmosia-start - Job Requirement Revamp
+    - !type:RoleTimeRequirement
+      role: JobSecurityCadet
+      time: 2.5h
+    # Carpmosia-end - Job Requirement Revamp
   startingGear: SecurityOfficerGear
   icon: "JobIconSecurityOfficer"
   supervisors: job-supervisors-hos

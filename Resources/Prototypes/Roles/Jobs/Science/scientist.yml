@@ -4,9 +4,11 @@
   description: job-description-scientist
   playTimeTracker: JobScientist
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Science
+    # Carpmosia-start - Job Requirement Revamp
+    - !type:RoleTimeRequirement
+      role: JobMedicalIntern
       time: 2.5h
+    # Carpmosia-end - Job Requirement Revamp
   startingGear: ScientistGear
   icon: "JobIconScientist"
   supervisors: job-supervisors-rd

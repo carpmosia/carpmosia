@@ -4,9 +4,11 @@
   description: job-description-doctor
   playTimeTracker: JobMedicalDoctor
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Medical
+    # Carpmosia-start - Job Requirement Revamp
+    - !type:RoleTimeRequirement
+      role: JobMedicalIntern
       time: 2.5h
+    # Carpmosia-end - Job Requirement Revamp
   startingGear: DoctorGear
   icon: "JobIconMedicalDoctor"
   supervisors: job-supervisors-cmo

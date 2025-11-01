@@ -4,9 +4,11 @@
   description: job-description-paramedic
   playTimeTracker: JobParamedic
   requirements:
-  - !type:DepartmentTimeRequirement
-    department: Medical
-    time: 2.5h
+    # Carpmosia-start - Job Requirement Revamp
+    - !type:RoleTimeRequirement
+      role: JobResearchAssistant
+      time: 2.5h
+    # Carpmosia-end - Job Requirement Revamp
   startingGear: ParamedicGear
   icon: "JobIconParamedic"
   supervisors: job-supervisors-cmo
