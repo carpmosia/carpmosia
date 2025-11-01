@@ -121,8 +121,6 @@ stack-inflatable-door = inflatable door
 stack-ointment = ointment
 stack-aloe-cream = aloe cream
 stack-gauze = gauze
-# Carpmosia-edit - Better tourniquets
-stack-tourniquet = tourniquet
 stack-brutepack = brutepack
 stack-bloodpack = bloodpack
 stack-medicated-suture = medicated-suture
