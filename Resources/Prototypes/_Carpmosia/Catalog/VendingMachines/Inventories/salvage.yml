@@ -1,13 +1,67 @@
 # Equipment
 - type: listing
+  id: VendorPickaxe
+  productEntity: Pickaxe
+  cost:
+    SalvageTicket: 20
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorOreBag
+  productEntity: OreBag
+  cost:
+    SalvageTicket: 20
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorBodyBag
+  productEntity: BodyBag
+  cost:
+    SalvageTicket: 40
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
   id: VendorGrapplingGun
-  description: "A grappling hook that allows you to latch on to targets at a distance and pull yourself toward them. Perfect for salvaging in zero gravity."
+  description: A grappling hook that allows you to latch on to targets at a distance and pull yourself toward them. Perfect for salvaging in zero gravity.
   productEntity: WeaponGrapplingGun
   cost:
     SalvageTicket: 40
   categories:
   - SalvageEquipment
   conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorFultonBeacon
+  productEntity: FultonBeacon
+  cost:
+    SalvageTicket: 60
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorFulton
+  productEntity: Fulton
+  cost:
+    SalvageTicket: 60
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
   - !type:BuyerAccessCondition
 
 - type: listing
@@ -45,40 +99,10 @@
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorClothingOuterHardsuitSalvage
-  productEntity: ClothingOuterHardsuitSalvage
-  cost:
-    SalvageTicket: 250
-  categories:
-  - SalvageEquipment
-  conditions:
-  - !type:BuyerAccessCondition
-
-- type: listing
   id: VendorClothingOuterHardsuitSpatio
   productEntity: ClothingOuterHardsuitSpatio
   cost:
     SalvageTicket: 100
-  categories:
-  - SalvageEquipment
-  conditions:
-  - !type:BuyerAccessCondition
-
-- type: listing
-  id: VendorPickaxe
-  productEntity: Pickaxe
-  cost:
-    SalvageTicket: 20
-  categories:
-  - SalvageEquipment
-  conditions:
-  - !type:BuyerAccessCondition
-
-- type: listing
-  id: VendorOreBag
-  productEntity: OreBag
-  cost:
-    SalvageTicket: 20
   categories:
   - SalvageEquipment
   conditions:
@@ -95,10 +119,20 @@
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorBodyBag
-  productEntity: BodyBag
+  id: VendorSeismicCharge
+  productEntity: SeismicCharge
   cost:
-    SalvageTicket: 40
+    SalvageTicket: 200
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: VendorClothingOuterHardsuitSalvage
+  productEntity: ClothingOuterHardsuitSalvage
+  cost:
+    SalvageTicket: 250
   categories:
   - SalvageEquipment
   conditions:
@@ -117,7 +151,7 @@
 
 - type: listing
   id: VendorBoxShotgunFlare
-  description: "A box of flare shells for illuminating the void."
+  description: A box of flare shells for illuminating the void.
   productEntity: BoxShotgunFlare
   icon:
     sprite: Objects/Weapons/Guns/Ammunition/Boxes/shotgun.rsi
