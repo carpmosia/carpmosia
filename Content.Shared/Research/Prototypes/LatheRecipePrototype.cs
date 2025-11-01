@@ -41,12 +41,14 @@ namespace Content.Shared.Research.Prototypes
         /// </summary>
         [DataField]
         public EntProtoId? Result;
-        
+
+        // Carpmosia-start - Port Salvage Ticket Vendor from Starlight
         [DataField]
         public bool PrintTicket = false;
-        
+
         [DataField]
         public EntProtoId TicketProtoId = "SalvageTicket";
+        // Carpmosia-end - Port Salvage Ticket Vendor from Starlight
 
         [DataField]
         public Dictionary<ProtoId<ReagentPrototype>, FixedPoint2>? ResultReagents;

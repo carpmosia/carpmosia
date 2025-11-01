@@ -246,11 +246,13 @@ namespace Content.Server.Lathe
                 {
                     var result = Spawn(resultProto, Transform(uid).Coordinates);
                     _stack.TryMergeToContacts(result);
+                    // Carpmosia-start - Port Salvage Ticket Vendor from Starlight
                     if (currentRecipe.PrintTicket)
                     {
                         var tickets = Spawn(currentRecipe.TicketProtoId, Transform(uid).Coordinates);
                         _stack.TryMergeToContacts(tickets);
                     }
+                    // Carpmosia-end - Port Salvage Ticket Vendor from Starlight
                 }
 
                 if (currentRecipe.ResultReagents is { } resultReagents &&
