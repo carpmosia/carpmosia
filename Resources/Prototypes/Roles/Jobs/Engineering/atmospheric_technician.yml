@@ -4,11 +4,11 @@
   description: job-description-atmostech
   playTimeTracker: JobAtmosphericTechnician
   requirements:
-    # Carpmosia-start - Job Requirement Revamp
-    - !type:RoleTimeRequirement
-      role: JobStationEngineer
-      time: 5h
-    # Carpmosia-stop - Job Requirement Revamp
+  # Carpmosia-start - Job Requirement Revamp
+  - !type:RoleTimeRequirement
+    role: JobStationEngineer
+    time: 5h
+  # Carpmosia-stop - Job Requirement Revamp
   startingGear: AtmosphericTechnicianGear
   icon: "JobIconAtmosphericTechnician"
   supervisors: job-supervisors-ce
