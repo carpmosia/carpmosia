@@ -1,6 +1,10 @@
 - type: antag
   id: SpaceNinja
   name: roles-antag-space-ninja-name
+  # Carpmosia-start - Antag playtimes
+  playTimeTracker: AntagSpaceNinja
+  color: '#33CC00'
+  # Carpmosia-end - Antag playtimes
   antagonist: true
   setPreference: false
   objective: roles-antag-space-ninja-objective

@@ -1,6 +1,10 @@
 - type: antag
   id: HeadRev
   name: roles-antag-rev-head-name
+  # Carpmosia-start - Antag playtimes
+  playTimeTracker: AntagHeadRev
+  color: '#5E9CFF'
+  # Carpmosia-end - Antag playtimes
   antagonist: true
   setPreference: true
   objective: roles-antag-rev-head-objective
@@ -12,6 +16,10 @@
 - type: antag
   id: Rev
   name: roles-antag-rev-name
+  # Carpmosia-start - Antag playtimes
+  playTimeTracker: AntagRev
+  color: '#5E9CFF'
+  # Carpmosia-end - Antag playtimes
   antagonist: true
   setPreference: false
   objective: roles-antag-rev-objective
