@@ -6,7 +6,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: _Starlight/Structures/Machines/VendingMachines/plushiemat.rsi
+    sprite: _Carpmosia/Structures/Machines/VendingMachines/plushiemat.rsi
     snapCardinals: true
     layers:
     - state: "off"
@@ -98,7 +98,7 @@
   - type: AccessReader
     access: [["Salvage"]]
   - type: Sprite
-    sprite: _Starlight/Structures/Machines/VendingMachines/salvage.rsi
+    sprite: _Carpmosia/Structures/Machines/VendingMachines/salvage.rsi
   - type: Store
     name: vendor-salvage-ticket-machine
     categories:

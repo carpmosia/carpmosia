@@ -30,7 +30,7 @@
     layerCountStates:
     - 1
   - type: Sprite
-    sprite: _Starlight/Objects/Economy/salvage_ticket.rsi
+    sprite: _Carpmosia/Objects/Economy/salvage_ticket.rsi
     state: icon
     layers:
     - state: icon
@@ -56,13 +56,13 @@
   name: ticket
   unit: materials-unit-ticket
   stackEntity: SalvageTicket
-  icon: { sprite: /Textures/_Starlight/Objects/Economy/salvage_ticket.rsi, state: icon }
+  icon: { sprite: /Textures/_Carpmosia/Objects/Economy/salvage_ticket.rsi, state: icon }
   price: 1
 
 - type: stack
   id: SalvageTicket
   name: ticket
-  icon: { sprite: /Textures/_Starlight/Objects/Economy/salvage_ticket.rsi, state: icon }
+  icon: { sprite: /Textures/_Carpmosia/Objects/Economy/salvage_ticket.rsi, state: icon }
   spawn: SalvageTicket
 
 - type: entity
