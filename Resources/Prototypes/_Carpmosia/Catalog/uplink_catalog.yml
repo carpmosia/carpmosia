@@ -1,0 +1,13 @@
+- type: listing
+  id: UplinkMobSyndimothroach
+  name: uplink-mobsyndimothroach-name
+  description: uplink-mobsyndimothroach-desc
+  icon: { sprite: _Carpmosia/Objects/Devices/communication.rsi, state: old-radio-syndimothroach }
+  productEntity: ReinforcementRadioSyndicateSyndimothroach
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 2
+  cost:
+    Telecrystal: 3
+  categories:
+    - UplinkAllies
