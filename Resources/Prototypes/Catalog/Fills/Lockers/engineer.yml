@@ -166,7 +166,7 @@
     children:
     - id: ClothingOuterHardsuitAtmos
     - id: OxygenTankFilled
-    - id: NitrogenTankFilled # Carpmosia-edit - Nitrogen Tanks for nitrogen-breathing species.
+    - id: NitrogenTankFilled # Carpmosia-edit - Accessible nitrogen
     - id: ClothingMaskBreath
 
 - type: entity
@@ -210,7 +210,7 @@
     children:
     - id: ClothingOuterHardsuitEngineering
     - id: OxygenTankFilled
-    - id: NitrogenTankFilled # Carpmosia-edit - Nitrogen Tanks for nitrogen-breathing species.
+    - id: NitrogenTankFilled # Carpmosia-edit - Accessible nitrogen
     - id: ClothingShoesBootsMag
     - id: ClothingMaskBreath
 

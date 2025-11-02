@@ -22,12 +22,12 @@
         prob: 0.15
       - id: HarmonicaInstrument
         prob: 0.15
-      # Carpmosia-start - Emergency Tanks for breathing during emergencies.
+      # Carpmosia-start - Accessible nitrogen
       - id: EmergencyOxygenTankFilled
         prob: 0.5
       - id: EmergencyNitrogenTankFilled
         prob: 0.5
-      # Carpmosia-end - Emergency Tanks for breathing during emergencies.
+      # Carpmosia-end - Accessible nitrogen
 
 - type: entity
   id: ToolboxElectricalFilled
