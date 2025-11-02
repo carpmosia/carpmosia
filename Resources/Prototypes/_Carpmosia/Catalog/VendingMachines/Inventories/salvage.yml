@@ -99,6 +99,16 @@
   - !type:BuyerAccessCondition
 
 - type: listing
+  id: VendorMineralScanner
+  productEntity: MineralScanner
+  cost:
+    SalvageTicket: 80
+  categories:
+  - SalvageEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
   id: VendorClothingOuterHardsuitSpatio
   productEntity: ClothingOuterHardsuitSpatio
   cost:
@@ -112,7 +122,7 @@
   id: VendorMiningDrill
   productEntity: MiningDrill
   cost:
-    SalvageTicket: 200
+    SalvageTicket: 100
   categories:
   - SalvageEquipment
   conditions:
@@ -122,7 +132,7 @@
   id: VendorSeismicCharge
   productEntity: SeismicCharge
   cost:
-    SalvageTicket: 200
+    SalvageTicket: 120
   categories:
   - SalvageEquipment
   conditions:
