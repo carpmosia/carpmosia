@@ -27,3 +27,19 @@
         reagents:
         - ReagentId: Stelloxadone
           Quantity: 30
+
+- type: entity
+  id: ChemistryBottleTetracordrazine
+  suffix: tetracordrazine
+  parent: BaseChemistryBottleFilled
+  components:
+  - type: Label
+    currentLabel: reagent-name-tetracordrazine
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Tetracordrazine
+          Quantity: 30
+
