@@ -1,6 +1,10 @@
 - type: antag
   id: InitialInfected
   name: roles-antag-initial-infected-name
+  # Carpmosia-start - Antag playtimes
+  playTimeTracker: AntagInitialInfected
+  color: '#DDA0DD'
+  # Carpmosia-end - Antag playtimes
   antagonist: true
   setPreference: true
   objective: roles-antag-initial-infected-objective
@@ -12,6 +16,10 @@
 - type: antag
   id: Zombie
   name: roles-antag-zombie-name
+  # Carpmosia-start - Antag playtimes
+  playTimeTracker: AntagZombie
+  color: '#DDA0DD'
+  # Carpmosia-end - Antag playtimes
   antagonist: true
   setPreference: false
   objective: roles-antag-zombie-objective

@@ -29,7 +29,7 @@ public abstract class SharedJobSystem : EntitySystem
 
     private void OnProtoReload(PrototypesReloadedEventArgs obj)
     {
-        if (obj.WasModified<JobPrototype>())
+        if (obj.WasModified<JobPrototype>() || obj.WasModified<AntagPrototype>()) // Carpmosia-edit - Antag playtimes
             SetupTrackerLookup();
     }
 
@@ -42,6 +42,12 @@ public abstract class SharedJobSystem : EntitySystem
         {
             _inverseTrackerLookup.Add(job.PlayTimeTracker, job.ID);
         }
+        // Carpmosia-start - Antag playtimes
+        foreach (var antag in _prototypes.EnumeratePrototypes<AntagPrototype>())
+        {
+            _inverseTrackerLookup.Add(antag.PlayTimeTracker, antag.ID);
+        }
+        // Carpmosia-end - Antag playtimes
     }
 
     /// <summary>

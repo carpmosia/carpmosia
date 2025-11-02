@@ -1,6 +1,10 @@
 - type: antag
   id: ParadoxClone
   name: roles-antag-paradox-clone-name
+  # Carpmosia-start - Antag playtimes
+  playTimeTracker: AntagParadoxClone
+  color: '#D82000'
+  # Carpmosia-end - Antag playtimes
   antagonist: true
   objective: roles-antag-paradox-clone-objective
   setPreference: false
