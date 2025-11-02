@@ -70,6 +70,9 @@
         density: 190
         mask:
           - MachineMask
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1.0
+    baseSprintSpeed: 1.0
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/miners.rsi
     state: miner
