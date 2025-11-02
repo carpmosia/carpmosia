@@ -69,7 +69,7 @@
   parent: BaseUnknownShuttleRule
   components:
   - type: StationEvent
-    startAnnouncement: station-event-ERT-sent-deathsquad #!!
+    startAnnouncement: null #Not needed, epsilon is enough
     weight: 0 # shouldnt happen unless admeme
     maxOccurrences: 0
   - type: LoadMapRule
