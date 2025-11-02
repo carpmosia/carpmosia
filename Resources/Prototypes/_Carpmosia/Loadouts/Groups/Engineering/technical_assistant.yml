@@ -1,54 +1,55 @@
 # - type: loadoutGroup
+#   parent: [ EngineeringHead, CommonHead ]
 #   id: TechnicalAssistantHead
-#   parent: [BaseHead, CommonHead, EngineeringHead]
-
-# - type: loadoutGroup
-#   id: TechnicalAssistantGlasses
-#   parent: [BaseGlasses, CommonGlasses, EngineeringGlasses]
-
-# - type: loadoutGroup
-#   id: TechnicalAssistantMask
-#   parent: [BaseMask, CommonMask, EngineeringMask]
-
-# - type: loadoutGroup
-#   id: TechnicalAssistantNeck
-#   parent: [BaseNeck, CommonNeck, EngineeringNeck]
-
-# - type: loadoutGroup
-#   id: TechnicalAssistantGloves
-#   parent: [BaseGloves, CommonGloves, EngineeringGloves]
 
 - type: loadoutGroup
+  parent: [ EngineeringGlasses, CommonGlasses ]
+  id: TechnicalAssistantGlasses
+  defaultSelected: 1
+
+# - type: loadoutGroup
+#   parent: [ EngineeringMask, CommonMask ]
+#   id: TechnicalAssistantMask
+
+- type: loadoutGroup
+  parent: [ EngineeringNeck, CommonNeck ]
+  id: TechnicalAssistantNeck
+
+# - type: loadoutGroup
+#   parent: [ EngineeringGloves, CommonGloves ]
+#   id: TechnicalAssistantGloves
+
+- type: loadoutGroup
+  parent: [ EngineeringJumpsuit, CommonJumpsuit ]
   id: TechnicalAssistantJumpsuit
-  parent: [BaseJumpsuit, CommonJumpsuit, EngineeringJumpsuit]
   loadouts:
   - YellowJumpsuit
   - YellowJumpskirt
 
 - type: loadoutGroup
+  parent: [ EngineeringBackpack, CommonBackpack ]
   id: TechnicalAssistantBackpack
-  parent: [BaseBackpack, CommonBackpack, EngineeringBackpack]
 
 # - type: loadoutGroup
+#   parent: [ EngineeringPDA, CommonPDA ]
 #   id: TechnicalAssistantPDA
-#   parent: [BasePDA, CommonPDA, EngineeringPDA]
 
 # - type: loadoutGroup
+#   parent: [ EngineeringBelt, CommonBelt ]
 #   id: TechnicalAssistantBelt
-#   parent: [BaseBelt, CommonBelt, EngineeringBelt]
 
 # - type: loadoutGroup
+#   parent: [ EngineeringOuterClothing, CommonOuterClothing ]
 #   id: TechnicalAssistantOuterClothing
-#   parent: [BaseOuterClothing, CommonOuterClothing, EngineeringOuterClothing]
-
-# - type: loadoutGroup
-#   id: TechnicalAssistantShoes
-#   parent: [BaseShoes, CommonShoes, EngineeringShoes]
-
-# - type: loadoutGroup
-#   id: TechnicalAssistantSpecial
-#   parent: BaseSpecial
 
 - type: loadoutGroup
+  parent: [ PriorityEngineeringShoes, CommonShoes, EngineeringShoes ]
+  id: TechnicalAssistantShoes
+
+# - type: loadoutGroup
+#   parent: BaseSpecial
+#   id: TechnicalAssistantSpecial
+
+- type: loadoutGroup
+  parent: [ EngineeringTrinkets, CommonTrinkets ]
   id: TechnicalAssistantTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, EngineeringTrinkets]

@@ -1,6 +1,7 @@
 using Content.Shared.Guidebook;
+using Content.Shared.Players.PlayTimeTracking; // Carpmosia-edit - Antag playtimes
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype; // Carpmosia-edit - Antag playtimes
 
 namespace Content.Shared.Roles;
 
@@ -19,6 +20,17 @@ public sealed partial class AntagPrototype : IPrototype
     [ViewVariables]
     [IdDataField]
     public string ID { get; private set; } = default!;
+
+    // Carpmosia-start - Antag playtimes
+    [DataField("playTimeTracker", required: true, customTypeSerializer: typeof(PrototypeIdSerializer<PlayTimeTrackerPrototype>))]
+    public string PlayTimeTracker { get; private set; } = string.Empty;
+
+    [DataField("color")]
+    public Color Color { get; private set; } = Color.Yellow;
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public string LocalizedName => Loc.GetString(Name);
+    // Carpmosia-end - Antag playtimes
 
     /// <summary>
     ///     The name of this antag as displayed to players.

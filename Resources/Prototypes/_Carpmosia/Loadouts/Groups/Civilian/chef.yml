@@ -1,62 +1,62 @@
 - type: loadoutGroup
+  parent: [ CivilianHead, CommonHead ]
   id: ChefHead
-  parent: [BaseHead, CommonHead, CivilianHead]
   loadouts:
   - ChefHead
 
 - type: loadoutGroup
+  parent: [ CivilianGlasses, CommonGlasses ]
   id: ChefGlasses
-  parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
 
 - type: loadoutGroup
+  parent: [ CivilianMask, CommonMask ]
   id: ChefMask
-  parent: [BaseMask, CommonMask, CivilianMask]
   loadouts:
   - ChefMask
 
-# - type: loadoutGroup
-#   id: ChefNeck
-#   parent: [BaseNeck, CommonNeck, CivilianNeck]
+- type: loadoutGroup
+  parent: [ CivilianNeck, CommonNeck ]
+  id: ChefNeck
 
 # - type: loadoutGroup
+#   parent: [ CivilianGloves, CommonGloves ]
 #   id: ChefGloves
-#   parent: [BaseGloves, CommonGloves, CivilianGloves]
 
 - type: loadoutGroup
+  parent: [ CivilianJumpsuit, CommonJumpsuit ]
   id: ChefJumpsuit
-  parent: [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit]
   loadouts:
   - ChefJumpsuit
   - ChefJumpskirt
 
 - type: loadoutGroup
+  parent: [ CivilianBackpack, CommonBackpack ]
   id: ChefBackpack
-  parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
 
 # - type: loadoutGroup
+#   parent: [ CivilianPDA, CommonPDA ]
 #   id: ChefPDA
-#   parent: [BasePDA, CommonPDA, CivilianPDA]
 
 # - type: loadoutGroup
+#   parent: [ CivilianBelt, CommonBelt ]
 #   id: ChefBelt
-#   parent: [BaseBelt, CommonBelt, CivilianBelt]
 
 - type: loadoutGroup
+  parent: [ CivilianOuterClothing, CommonOuterClothing ]
   id: ChefOuterClothing
-  parent: [BaseOuterClothing, CommonOuterClothing, CivilianOuterClothing]
   loadouts:
   - ChefApron
   - ChefJacket
   - ChefWintercoat
 
-# - type: loadoutGroup
-#   id: ChefShoes
-#   parent: [BaseShoes, CommonShoes, CivilianShoes]
+- type: loadoutGroup
+  parent: [ CommonShoes, CivilianShoes ]
+  id: ChefShoes
 
 # - type: loadoutGroup
-#   id: ChefSpecial
 #   parent: BaseSpecial
+#   id: ChefSpecial
 
 - type: loadoutGroup
+  parent: [ CivilianTrinkets, CommonTrinkets ]
   id: ChefTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]

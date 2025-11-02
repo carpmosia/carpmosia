@@ -1,0 +1,69 @@
+- type: loadoutGroup
+  abstract: true
+  parent: BaseHead
+  id: ScienceHead
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseGlasses
+  id: ScienceGlasses
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseMask
+  id: ScienceMask
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseNeck
+  id: ScienceNeck
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseGloves
+  id: ScienceGloves
+  loadouts:
+  - LatexGloves
+  - PurpleGloves
+  - RobohandsGloves
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseJumpsuit
+  id: ScienceJumpsuit
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseBackpack
+  id: ScienceBackpack
+  loadouts:
+  - ScientistBackpack
+  - ScientistSatchel
+  - ScientistDuffel
+
+- type: loadoutGroup
+  abstract: true
+  parent: BasePDA
+  id: SciencePDA
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseBelt
+  id: ScienceBelt
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseOuterClothing
+  id: ScienceOuterClothing
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseShoes
+  id: ScienceShoes
+  loadouts:
+  - ScienceWinterBoots
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseTrinkets
+  id: ScienceTrinkets

@@ -61,12 +61,12 @@
 - type: startingGear
   id: HoPGear
   equipment:
-    shoes: ClothingShoesColorBrown
+    # shoes: ClothingShoesColorBrown # Carpmosia-edit - Loadout Rework 2
     id: HoPPDA
     gloves: ClothingHandsGlovesHop
     ears: ClothingHeadsetAltCommand
     belt: BoxFolderClipboardThreePapers
-    eyes: ClothingEyesHudCommand
+    # eyes: ClothingEyesHudCommand # Carpmosia-edit - Loadout Rework 2
   storage:
     back:
     - Flash

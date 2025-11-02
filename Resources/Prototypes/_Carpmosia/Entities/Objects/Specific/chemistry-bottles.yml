@@ -43,3 +43,17 @@
         - ReagentId: Tetracordrazine
           Quantity: 30
 
+- type: entity
+  id: ChemistryBottleSaltpetre
+  suffix: saltpetre
+  parent: BaseChemistryBottleFilled
+  components:
+  - type: Label
+    currentLabel: reagent-name-saltpetre
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Saltpetre
+          Quantity: 30
