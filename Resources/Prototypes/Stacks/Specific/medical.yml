@@ -21,15 +21,6 @@
   icon: { sprite: "/Textures/Objects/Specific/Medical/medical.rsi", state: gauze }
   spawn: Gauze
 
-# Carpmosia-start - Better tourniquets
-- type: stack
-  parent: BaseVerySmallStack
-  id: Tourniquet
-  name: stack-tourniquet
-  icon: { sprite: "/Textures/Objects/Specific/Medical/medical.rsi", state: gauze }
-  spawn: Tourniquet
-# Carpmosia-end - Better tourniquets
-
 - type: stack
   parent: BaseSmallStack
   id: Brutepack
