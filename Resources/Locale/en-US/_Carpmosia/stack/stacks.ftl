@@ -1,4 +1,4 @@
-stack-ticket = {$amount ->
+stack-salvage-ticket = {$amount ->
     [1] ticket
     *[other] tickets
 }
