@@ -283,11 +283,13 @@
         params:
           volume: 1.0
           variation: 0.125
-# Carpmosia-start - Better tourniquets
+    # Carpmosia-start - Better tourniquets
     - type: Stack
       stackType: Tourniquet
       count: 5
+    # Carpmosia-end - Better tourniquets
 
+# Carpmosia-start - Better tourniquets
 - type: entity
   id: Tourniquet1
   parent: Tourniquet
