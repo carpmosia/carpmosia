@@ -289,16 +289,6 @@
       count: 5
     # Carpmosia-end - Better tourniquets
 
-# Carpmosia-start - Better tourniquets
-- type: entity
-  id: Tourniquet1
-  parent: Tourniquet
-  suffix: Single
-  components:
-  - type: Stack
-    count: 1
-# Carpmosia-end - Better tourniquets
-
 - type: entity
   name: roll of gauze
   description: Some sterile gauze to wrap around bloody stumps.
