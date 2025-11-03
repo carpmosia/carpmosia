@@ -4,11 +4,9 @@
   description: job-description-engineer
   playTimeTracker: JobStationEngineer
   requirements:
-    # Carpmosia-start - Job Requirement Revamp
-    - !type:RoleTimeRequirement
-      role: JobTechnicalAssistant
+     - !type:DepartmentTimeRequirement
+      department: Engineering
       time: 2.5h
-    # Carpmosia-end - Job Requirement Revamp
   startingGear: StationEngineerGear
   icon: "JobIconStationEngineer"
   supervisors: job-supervisors-ce
