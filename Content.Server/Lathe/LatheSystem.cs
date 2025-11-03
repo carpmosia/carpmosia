@@ -246,6 +246,13 @@ namespace Content.Server.Lathe
                 {
                     var result = Spawn(resultProto, Transform(uid).Coordinates);
                     _stack.TryMergeToContacts(result);
+                    // Carpmosia-start - Starlight Salvage Tickets
+                    if (currentRecipe.PrintTicket)
+                    {
+                        var tickets = Spawn(currentRecipe.TicketProtoId, Transform(uid).Coordinates);
+                        _stack.TryMergeToContacts(tickets);
+                    }
+                    // Carpmosia-end - Starlight Salvage Tickets
                 }
 
                 if (currentRecipe.ResultReagents is { } resultReagents &&
