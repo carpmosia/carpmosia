@@ -1,5 +1,3 @@
-// Carpmosia - Starlight Salvage Tickets
-
 using System.Linq;
 using Content.Shared.Store;
 using Content.Shared.Access.Components;
