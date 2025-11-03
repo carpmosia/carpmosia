@@ -3,7 +3,7 @@
   parent: BaseUnknownShuttleRule
   components:
   - type: StationEvent
-    startAnnouncement: station-event-ERT-sent #!!
+    startAnnouncement: station-event-ERT-sent
     weight: 0 # shouldnt happen unless admeme
     maxOccurrences: 0
   - type: LoadMapRule
@@ -14,7 +14,7 @@
   parent: BaseUnknownShuttleRule
   components:
   - type: StationEvent
-    startAnnouncement: station-event-ERT-sent-sec #!!
+    startAnnouncement: station-event-ERT-sent-sec
     weight: 0 # shouldnt happen unless admeme
     maxOccurrences: 0
   - type: LoadMapRule
@@ -25,7 +25,7 @@
   parent: BaseUnknownShuttleRule
   components:
   - type: StationEvent
-    startAnnouncement: station-event-ERT-sent-med #!!
+    startAnnouncement: station-event-ERT-sent-med
     weight: 0 # shouldnt happen unless admeme
     maxOccurrences: 0
   - type: LoadMapRule
@@ -36,7 +36,7 @@
   parent: BaseUnknownShuttleRule
   components:
   - type: StationEvent
-    startAnnouncement: station-event-ERT-sent-cburn #!!
+    startAnnouncement: station-event-ERT-sent-cburn
     weight: 0 # shouldnt happen unless admeme
     maxOccurrences: 0
   - type: LoadMapRule
@@ -47,7 +47,7 @@
   parent: BaseUnknownShuttleRule
   components:
   - type: StationEvent
-    startAnnouncement: station-event-ERT-sent-engi #!!
+    startAnnouncement: station-event-ERT-sent-engi
     weight: 0 # shouldnt happen unless admeme
     maxOccurrences: 0
   - type: LoadMapRule
@@ -58,7 +58,7 @@
   parent: BaseUnknownShuttleRule
   components:
   - type: StationEvent
-    startAnnouncement: station-event-ERT-sent-chap #!!
+    startAnnouncement: station-event-ERT-sent-chap
     weight: 0 # shouldnt happen unless admeme
     maxOccurrences: 0
   - type: LoadMapRule
