@@ -1,32 +1,32 @@
 # - type: loadoutGroup
+#   parent: [ CivilianHead, CommonHead ]
 #   id: PassengerHead
-#   parent: [BaseHead, CommonHead, CivilianHead]
 
 - type: loadoutGroup
+  parent: [ CivilianGlasses, CommonGlasses ]
   id: PassengerGlasses
-  parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
 
 - type: loadoutGroup
+  parent: [ CivilianMask, CommonMask ]
   id: PassengerMask
-  parent: [BaseMask, CommonMask, CivilianMask]
   loadouts:
   - PassengerFace
 
 - type: loadoutGroup
+  parent: [ CivilianNeck, CommonNeck ]
   id: PassengerNeck
-  parent: [BaseNeck, CommonNeck, CivilianNeck]
   loadouts:
   - Mantle
 
 - type: loadoutGroup
+  parent: [ CivilianGloves, CommonGloves ]
   id: PassengerGloves
-  parent: [BaseGloves, CommonGloves, CivilianGloves]
   loadouts:
   - PassengerGloves
 
 - type: loadoutGroup
+  parent: [ CivilianJumpsuit, CommonJumpsuit ]
   id: PassengerJumpsuit
-  parent: [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit]
   loadouts:
   - GreyJumpsuit
   - GreyJumpskirt
@@ -35,34 +35,31 @@
   - RainbowJumpskirt
 
 - type: loadoutGroup
+  parent: [ CivilianBackpack, CommonBackpack ]
   id: PassengerBackpack
-  parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
 
 # - type: loadoutGroup
+#   parent: [ CivilianPDA, CommonPDA ]
 #   id: PassengerPDA
-#   parent: [BasePDA, CommonPDA, CivilianPDA]
 
 # - type: loadoutGroup
+#   parent: [ CivilianBelt, CommonBelt ]
 #   id: PassengerBelt
-#   parent: [BaseBelt, CommonBelt, CivilianBelt]
 
 - type: loadoutGroup
+  parent: [ CivilianOuterClothing, CommonOuterClothing ]
   id: PassengerOuterClothing
-  parent: [BaseOuterClothing, CommonOuterClothing, CivilianOuterClothing]
   loadouts:
   - PassengerWintercoat
 
 - type: loadoutGroup
+  parent: [ CommonShoes, CivilianShoes ]
   id: PassengerShoes
-  parent: [BaseShoes, CommonShoes, CivilianShoes]
-  loadouts:
-  - BlackShoes
-  - WinterBoots
 
 # - type: loadoutGroup
-#   id: PassengerSpecial
 #   parent: BaseSpecial
+#   id: PassengerSpecial
 
 - type: loadoutGroup
+  parent: [ CivilianTrinkets, CommonTrinkets ]
   id: PassengerTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]

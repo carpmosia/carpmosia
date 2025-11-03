@@ -1,65 +1,62 @@
 - type: loadoutGroup
+  parent: [ ScienceHead, CommonHead ]
   id: ResearchDirectorHead
-  parent: [BaseHead, CommonHead, ScienceHead]
   loadouts:
   - ResearchDirectorBeret
 
 - type: loadoutGroup
+  parent: [ ScienceGlasses, CommonGlasses ]
   id: ResearchDirectorGlasses
-  parent: [BaseGlasses, CommonGlasses, ScienceGlasses]
 
 # - type: loadoutGroup
+#   parent: [ ScienceMask, CommonMask ]
 #   id: ResearchDirectorMask
-#   parent: [BaseMask, CommonMask, ScienceMask]
 
 - type: loadoutGroup
+  parent: [ ScienceNeck, CommonNeck ]
   id: ResearchDirectorNeck
-  parent: [BaseNeck, CommonNeck, ScienceNeck]
   loadouts:
   - ResearchDirectorMantle
   - ResearchDirectorCloak
 
 - type: loadoutGroup
+  parent: [ ScienceGloves, CommonGloves ]
   id: ResearchDirectorGloves
-  parent: [BaseGloves, CommonGloves, ScienceGloves]
 
 - type: loadoutGroup
+  parent: [ ScienceJumpsuit, CommonJumpsuit ]
   id: ResearchDirectorJumpsuit
-  parent: [BaseJumpsuit, CommonJumpsuit, ScienceJumpsuit]
   loadouts:
   - ResearchDirectorJumpsuit
   - ResearchDirectorJumpskirt
 
 - type: loadoutGroup
+  parent: [ ScienceBackpack, CommonBackpack ]
   id: ResearchDirectorBackpack
-  parent: [BaseBackpack, CommonBackpack, ScienceBackpack]
 
 # - type: loadoutGroup
+#   parent: [ SciencePDA, CommonPDA ]
 #   id: ResearchDirectorPDA
-#   parent: [BasePDA, CommonPDA, SciencePDA]
 
 # - type: loadoutGroup
+#   parent: [ ScienceBelt, CommonBelt ]
 #   id: ResearchDirectorBelt
-#   parent: [BaseBelt, CommonBelt, ScienceBelt]
 
 - type: loadoutGroup
+  parent: [ ScienceOuterClothing, CommonOuterClothing ]
   id: ResearchDirectorOuterClothing
-  parent: [BaseOuterClothing, CommonOuterClothing, ScienceOuterClothing]
   loadouts:
   - ResearchDirectorLabCoat
   - ResearchDirectorWintercoat
 
 - type: loadoutGroup
+  parent: [ CommonShoes, ScienceShoes ]
   id: ResearchDirectorShoes
-  parent: [BaseShoes, CommonShoes, ScienceShoes]
-  loadouts:
-  - BrownShoes
-  - ScienceWinterBoots
 
 # - type: loadoutGroup
-#   id: ResearchDirectorSpecial
 #   parent: BaseSpecial
+#   id: ResearchDirectorSpecial
 
 - type: loadoutGroup
+  parent: [ ScienceTrinkets, CommonTrinkets ]
   id: ResearchDirectorTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, ScienceTrinkets]

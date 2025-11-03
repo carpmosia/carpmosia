@@ -1,32 +1,32 @@
 - type: loadoutGroup
+  parent: [ MedicalHead, CommonHead ]
   id: ChiefMedicalOfficerHead
-  parent: [BaseHead, CommonHead, MedicalHead]
   loadouts:
   - ChiefMedicalOfficerBeret
   - CMOMedicalHeadMirror
 
 - type: loadoutGroup
+  parent: [ MedicalGlasses, CommonGlasses ]
   id: ChiefMedicalOfficerGlasses
-  parent: [BaseGlasses, CommonGlasses, MedicalGlasses]
 
 - type: loadoutGroup
+  parent: [ MedicalMask, CommonMask ]
   id: ChiefMedicalOfficerMask
-  parent: [BaseMask, CommonMask, MedicalMask]
 
 - type: loadoutGroup
+  parent: [ MedicalNeck, CommonNeck ]
   id: ChiefMedicalOfficerNeck
-  parent: [BaseNeck, CommonNeck, MedicalNeck]
   loadouts:
   - ChiefMedicalOfficerCloak
   - ChiefMedicalOfficerMantle
 
 - type: loadoutGroup
+  parent: [ MedicalGloves, CommonGloves ]
   id: ChiefMedicalOfficerGloves
-  parent: [BaseGloves, CommonGloves, MedicalGloves]
 
 - type: loadoutGroup
+  parent: [ MedicalJumpsuit, CommonJumpsuit ]
   id: ChiefMedicalOfficerJumpsuit
-  parent: [BaseJumpsuit, CommonJumpsuit, MedicalJumpsuit]
   loadouts:
   - ChiefMedicalOfficerJumpsuit
   - ChiefMedicalOfficerJumpskirt
@@ -34,35 +34,32 @@
   - ChiefMedicalOfficerTurtleneckJumpskirt
 
 - type: loadoutGroup
+  parent: [ MedicalBackpack, CommonBackpack ]
   id: ChiefMedicalOfficerBackpack
-  parent: [BaseBackpack, CommonBackpack, MedicalBackpack]
 
 # - type: loadoutGroup
+#   parent: [ MedicalPDA, CommonPDA ]
 #   id: ChiefMedicalOfficerPDA
-#   parent: [BasePDA, CommonPDA, MedicalPDA]
 
 # - type: loadoutGroup
+#   parent: [ MedicalBelt, CommonBelt ]
 #   id: ChiefMedicalOfficerBelt
-#   parent: [BaseBelt, CommonBelt, MedicalBelt]
 
 - type: loadoutGroup
+  parent: [ MedicalOuterClothing, CommonOuterClothing ]
   id: ChiefMedicalOfficerOuterClothing
-  parent: [BaseOuterClothing, CommonOuterClothing, MedicalOuterClothing]
   loadouts:
   - ChiefMedicalOfficerLabCoat
   - ChiefMedicalOfficerWintercoat
 
 - type: loadoutGroup
+  parent: [ CommonShoes, MedicalShoes ]
   id: ChiefMedicalOfficerShoes
-  parent: [BaseShoes, CommonShoes]
-  loadouts:
-  - BrownShoes
-  - MedicalWinterBoots
 
 # - type: loadoutGroup
-#   id: ChiefMedicalOfficerSpecial
 #   parent: BaseSpecial
+#   id: ChiefMedicalOfficerSpecial
 
 - type: loadoutGroup
+  parent: [ MedicalTrinkets, CommonTrinkets ]
   id: ChiefMedicalOfficerTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, MedicalTrinkets]

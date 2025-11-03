@@ -1,0 +1,71 @@
+- type: loadoutGroup
+  parent: [ CivilianHead, CommonHead ]
+  id: HeadOfPersonnelHead
+  loadouts:
+  - HoPHead
+
+- type: loadoutGroup
+  parent: [ CivilianGlasses, CommonGlasses ]
+  id: HeadOfPersonnelGlasses
+  defaultSelected: 1
+  loadouts:
+  - CommandHud
+
+# - type: loadoutGroup
+#   parent: [ CivilianMask, CommonMask ]
+#   id: HeadOfPersonnelMask
+
+- type: loadoutGroup
+  parent: [ CivilianNeck, CommonNeck ]
+  id: HeadOfPersonnelNeck
+  loadouts:
+  - HoPCloak
+  - HoPMantle
+
+# - type: loadoutGroup
+#   parent: [ CivilianGloves, CommonGloves ]
+#   id: HeadOfPersonnelGloves
+
+- type: loadoutGroup
+  parent: [ CivilianJumpsuit, CommonJumpsuit ]
+  id: HeadOfPersonnelJumpsuit
+  loadouts:
+  - HoPJumpsuit
+  - HoPJumpskirt
+
+- type: loadoutGroup
+  parent: [ CivilianBackpack, CommonBackpack, InternalIanBackpack ]
+  id: HeadOfPersonnelBackpack
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseBackpack
+  id: InternalIanBackpack
+  loadouts:
+  - HoPBackpackIan
+
+# - type: loadoutGroup
+#   parent: [ CivilianPDA, CommonPDA ]
+#   id: HeadOfPersonnelPDA
+
+# - type: loadoutGroup
+#   parent: [ CivilianBelt, CommonBelt ]
+#   id: HeadOfPersonnelBelt
+
+- type: loadoutGroup
+  parent: [ CivilianOuterClothing, CommonOuterClothing ]
+  id: HeadOfPersonnelOuterClothing
+  loadouts:
+  - HoPWintercoat
+
+- type: loadoutGroup
+  parent: [ CommonShoes, CivilianShoes ]
+  id: HeadOfPersonnelShoes
+
+# - type: loadoutGroup
+#   parent: BaseSpecial
+#   id: HeadOfPersonnelSpecial
+
+- type: loadoutGroup
+  parent: [ CivilianTrinkets, CommonTrinkets ]
+  id: HeadOfPersonnelTrinkets

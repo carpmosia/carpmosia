@@ -1,6 +1,10 @@
 ﻿- type: antag
   id: Changeling
   name: roles-antag-changeling-name
+  # Carpmosia-start - Antag playtimes
+  playTimeTracker: AntagChangeling
+  color: '#FA2A55'
+  # Carpmosia-end - Antag playtimes
   antagonist: true
   setPreference: false # TODO: set this to true once Changeling exits WIP status
   objective: roles-antag-changeling-objective
