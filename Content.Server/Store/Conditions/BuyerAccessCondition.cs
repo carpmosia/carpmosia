@@ -1,4 +1,4 @@
-// Carpmosia - Port Salvage Ticket Vendor from Starlight
+// Carpmosia - Starlight Salvage Tickets
 
 using System.Linq;
 using Content.Shared.Store;
