@@ -1,166 +1,166 @@
 # Equipment
 - type: listing
-  id: VendorPickaxe
+  id: SalvageStorePickaxe
   productEntity: Pickaxe
   cost:
     SalvageTicket: 20
   categories:
-  - SalvageEquipment
+  - SalvageStoreEquipment
   conditions:
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorOreBag
+  id: SalvageStoreOreBag
   productEntity: OreBag
   cost:
     SalvageTicket: 20
   categories:
-  - SalvageEquipment
+  - SalvageStoreEquipment
   conditions:
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorBodyBag
+  id: SalvageStoreBodyBag
   productEntity: BodyBag
   cost:
     SalvageTicket: 40
   categories:
-  - SalvageEquipment
+  - SalvageStoreEquipment
   conditions:
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorGrapplingGun
+  id: SalvageStoreGrapplingGun
   description: A grappling hook that allows you to latch on to targets at a distance and pull yourself toward them. Perfect for salvaging in zero gravity.
   productEntity: WeaponGrapplingGun
   cost:
     SalvageTicket: 40
   categories:
-  - SalvageEquipment
+  - SalvageStoreEquipment
   conditions:
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorFultonBeacon
+  id: SalvageStoreFultonBeacon
   productEntity: FultonBeacon
   cost:
     SalvageTicket: 60
   categories:
-  - SalvageEquipment
+  - SalvageStoreEquipment
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorFulton
+  id: SalvageStoreFulton
   productEntity: Fulton
   cost:
     SalvageTicket: 60
   categories:
-  - SalvageEquipment
+  - SalvageStoreEquipment
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 3
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorSurvivalKnife
+  id: SalvageStoreSurvivalKnife
   productEntity: SurvivalKnife
   cost:
     SalvageTicket: 40
   categories:
-  - SalvageEquipment
+  - SalvageStoreEquipment
   conditions:
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorDoubleEmergencyOxygenTankFilled
+  id: SalvageStoreDoubleEmergencyOxygenTankFilled
   productEntity: DoubleEmergencyOxygenTankFilled
   cost:
     SalvageTicket: 80
   categories:
-  - SalvageEquipment
+  - SalvageStoreEquipment
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 3
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorDoubleEmergencyNitrogenTankFilled
+  id: SalvageStoreDoubleEmergencyNitrogenTankFilled
   productEntity: DoubleEmergencyNitrogenTankFilled
   cost:
     SalvageTicket: 80
   categories:
-  - SalvageEquipment
+  - SalvageStoreEquipment
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 3
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorMineralScanner
+  id: SalvageStoreMineralScanner
   productEntity: MineralScanner
   cost:
     SalvageTicket: 80
   categories:
-  - SalvageEquipment
+  - SalvageStoreEquipment
   conditions:
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorClothingOuterHardsuitSpatio
+  id: SalvageStoreClothingOuterHardsuitSpatio
   productEntity: ClothingOuterHardsuitSpatio
   cost:
     SalvageTicket: 100
   categories:
-  - SalvageEquipment
+  - SalvageStoreEquipment
   conditions:
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorMiningDrill
+  id: SalvageStoreMiningDrill
   productEntity: MiningDrill
   cost:
     SalvageTicket: 100
   categories:
-  - SalvageEquipment
+  - SalvageStoreEquipment
   conditions:
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorSeismicCharge
+  id: SalvageStoreSeismicCharge
   productEntity: SeismicCharge
   cost:
     SalvageTicket: 120
   categories:
-  - SalvageEquipment
+  - SalvageStoreEquipment
   conditions:
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorClothingOuterHardsuitSalvage
+  id: SalvageStoreClothingOuterHardsuitSalvage
   productEntity: ClothingOuterHardsuitSalvage
   cost:
     SalvageTicket: 250
   categories:
-  - SalvageEquipment
+  - SalvageStoreEquipment
   conditions:
   - !type:BuyerAccessCondition
 
 # Weapons
 - type: listing
-  id: VendorFlareGun
+  id: SalvageStoreFlareGun
   productEntity: WeaponFlareGun
   cost:
     SalvageTicket: 20
   categories:
-  - SalvageWeapons
+  - SalvageStoreWeapons
   conditions:
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorBoxShotgunFlare
+  id: SalvageStoreBoxShotgunFlare
   description: A box of flare shells for illuminating the void.
   productEntity: BoxShotgunFlare
   icon:
@@ -169,41 +169,41 @@
   cost:
     SalvageTicket: 20
   categories:
-  - SalvageWeapons
+  - SalvageStoreWeapons
   conditions:
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorWeaponCrusherDagger
+  id: SalvageStoreWeaponCrusherDagger
   productEntity: WeaponCrusherDagger
   cost:
     SalvageTicket: 100
   categories:
-  - SalvageWeapons
+  - SalvageStoreWeapons
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 3
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorWeaponCrusherGlaive
+  id: SalvageStoreWeaponCrusherGlaive
   productEntity: WeaponCrusherGlaive
   cost:
     SalvageTicket: 250
   categories:
-  - SalvageWeapons
+  - SalvageStoreWeapons
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 3
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorWeaponCrusher
+  id: SalvageStoreWeaponCrusher
   productEntity: WeaponCrusher
   cost:
     SalvageTicket: 300
   categories:
-  - SalvageWeapons
+  - SalvageStoreWeapons
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 3
@@ -211,47 +211,47 @@
 
 # Consumables
 - type: listing
-  id: VendorCigPackRed
+  id: SalvageStoreCigPackRed
   productEntity: CigPackRed
   cost:
     SalvageTicket: 10
   categories:
-  - SalvageConsumables
+  - SalvageStoreConsumables
   conditions:
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorCigPackGreen
+  id: SalvageStoreCigPackGreen
   productEntity: CigPackGreen
   cost:
     SalvageTicket: 10
   categories:
-  - SalvageConsumables
+  - SalvageStoreConsumables
   conditions:
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorCigPackBlue
+  id: SalvageStoreCigPackBlue
   productEntity: CigPackBlue
   cost:
     SalvageTicket: 10
   categories:
-  - SalvageConsumables
+  - SalvageStoreConsumables
   conditions:
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorCigPackBlack
+  id: SalvageStoreCigPackBlack
   productEntity: CigPackBlack
   cost:
     SalvageTicket: 10
   categories:
-  - SalvageConsumables
+  - SalvageStoreConsumables
   conditions:
   - !type:BuyerAccessCondition
 
 - type: listing
-  id: VendorTechnologyDiskPKAModKits
+  id: SalvageStoreTechnologyDiskPKAModKits
   productEntity: TechnologyDiskPKAModKits
   icon:
     sprite: Objects/Misc/module.rsi
@@ -259,7 +259,7 @@
   cost:
     SalvageTicket: 120
   categories:
-  - SalvageConsumables
+  - SalvageStoreConsumables
   conditions:
   - !type:BuyerAccessCondition
   - !type:ListingLimitedStockCondition
