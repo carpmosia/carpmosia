@@ -1,3 +1,4 @@
+using System.Linq; // Carpmosia-edit - Vent critter fix
 using Content.Server.StationEvents.Components;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Station.Components;
@@ -40,13 +41,14 @@ public sealed class VentCrittersRule : StationEventSystem<VentCrittersRuleCompon
         }
 
         // Carpmosia-start - Vent critter fix
-        var singleSpawn = RobustRandom.Pick(validLocations);
+        var spawnCenter = RobustRandom.Pick(validLocations);
+        var spawnLocations = validLocations.OrderBy(c => (spawnCenter.Position - c.Position).Length()).Take(5).ToList();
         // Emulate original behaviour by trying to spawn per every valid location
-        for (int i = 0; i < validLocations.Count; i++)
+        for (var i = 0; i < validLocations.Count; i++)
         {
             foreach (var spawn in EntitySpawnCollection.GetSpawns(component.Entries, RobustRandom))
             {
-                Spawn(spawn, singleSpawn);
+                Spawn(spawn, spawnLocations[i % spawnLocations.Count]);
             }
         }
         // Carpmosia-end - Vent critter fix
