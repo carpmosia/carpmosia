@@ -1,0 +1,65 @@
+- type: loadoutGroup
+  abstract: true
+  parent: BaseHead
+  id: CivilianHead
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseGlasses
+  id: CivilianGlasses
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseMask
+  id: CivilianMask
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseNeck
+  id: CivilianNeck
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseGloves
+  id: CivilianGloves
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseJumpsuit
+  id: CivilianJumpsuit
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseBackpack
+  id: CivilianBackpack
+  loadouts:
+  - CommonBackpack
+  - CommonSatchel
+  - CommonDuffel
+
+- type: loadoutGroup
+  abstract: true
+  parent: BasePDA
+  id: CivilianPDA
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseBelt
+  id: CivilianBelt
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseOuterClothing
+  id: CivilianOuterClothing
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseShoes
+  id: CivilianShoes
+  loadouts:
+  - WinterBoots
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseTrinkets
+  id: CivilianTrinkets

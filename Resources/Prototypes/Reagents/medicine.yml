@@ -814,7 +814,7 @@
   id: Tricordrazine
   name: reagent-name-tricordrazine
   group: Medicine
-  desc: reagent-desc-tricordrazine
+  desc: reagent-desc-tricordrazine-carpmosia # Carpmosia-edit - Cordrazines
   physicalDesc: reagent-physical-desc-opaque
   flavor: medicine
   color: "#00e5ff"
@@ -827,12 +827,14 @@
           max: 50
         damage:
           groups:
-            Brute: -1
+            Brute: -1.5 # Carpmosia-edit - Cordrazines
           types:
             Poison: -0.5 ##Should be about what it was when it healed the toxin group
-            Heat: -0.33
-            Shock: -0.33
-            Cold: -0.33
+            # Carpmosia-start - Cordrazines
+            Heat: -0.5
+            Shock: -0.5
+            Cold: -0.5
+            # Carpmosia-end - Cordrazines
 
 - type: reagent
   id: Lipozine

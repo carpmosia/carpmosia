@@ -1,32 +1,32 @@
 - type: loadoutGroup
+  parent: [ CargoHead, CommonHead ]
   id: QuartermasterHead
-  parent: [BaseHead, CommonHead, CargoHead]
   loadouts:
   - QuartermasterHead
   - QuartermasterBeret
 
 - type: loadoutGroup
+  parent: [ CargoGlasses, CommonGlasses ]
   id: QuartermasterGlasses
-  parent: [BaseGlasses, CommonGlasses, CargoGlasses]
 
 # - type: loadoutGroup
+#   parent: [ CargoMask, CommonMask ]
 #   id: QuartermasterMask
-#   parent: [BaseMask, CommonMask, CargoMask]
 
 - type: loadoutGroup
+  parent: [ CargoNeck, CommonNeck ]
   id: QuartermasterNeck
-  parent: [BaseNeck, CommonNeck, CargoNeck]
   loadouts:
   - QuartermasterCloak
   - QuartermasterMantle
 
 # - type: loadoutGroup
+#   parent: [ CargoGloves, CommonGloves ]
 #   id: QuartermasterGloves
-#   parent: [BaseGloves, CommonGloves, CargoGloves]
 
 - type: loadoutGroup
+  parent: [ CargoJumpsuit, CommonJumpsuit ]
   id: QuartermasterJumpsuit
-  parent: [BaseJumpsuit, CommonJumpsuit, CargoJumpsuit]
   loadouts:
   - QuartermasterJumpsuit
   - QuartermasterJumpskirt
@@ -35,34 +35,31 @@
   - QuartermasterFormalSuit
 
 - type: loadoutGroup
+  parent: [ CargoBackpack, CommonBackpack ]
   id: QuartermasterBackpack
-  parent: [BaseBackpack, CommonBackpack, CargoBackpack]
 
 # - type: loadoutGroup
+#   parent: [ CargoPDA, CommonPDA ]
 #   id: QuartermasterPDA
-#   parent: [BasePDA, CommonPDA, CargoPDA]
 
 # - type: loadoutGroup
+#   parent: [ CargoBelt, CommonBelt ]
 #   id: QuartermasterBelt
-#   parent: [BaseBelt, CommonBelt, CargoBelt]
 
 - type: loadoutGroup
+  parent: [ CargoOuterClothing, CommonOuterClothing ]
   id: QuartermasterOuterClothing
-  parent: [BaseOuterClothing, CommonOuterClothing, CargoOuterClothing]
   loadouts:
   - QuartermasterWintercoat
 
 - type: loadoutGroup
+  parent: [ CommonShoes, CargoShoes ]
   id: QuartermasterShoes
-  parent: [BaseShoes, CommonShoes, CargoShoes]
-  loadouts:
-  - BrownShoes
-  - CargoWinterBoots
 
 # - type: loadoutGroup
-#   id: QuartermasterSpecial
 #   parent: BaseSpecial
+#   id: QuartermasterSpecial
 
 - type: loadoutGroup
+  parent: [ CargoTrinkets, CommonTrinkets ]
   id: QuartermasterTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, CargoTrinkets]

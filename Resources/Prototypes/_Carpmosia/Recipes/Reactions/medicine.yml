@@ -12,7 +12,7 @@
       amount: 1
   products:
     Traumoxadone: 3
-  
+
 - type: reaction
   id: Stelloxadone
   impact: Medium
@@ -40,3 +40,14 @@
       amount: 1
   products:
     Barozine: 1
+
+  id: Tetracordrazine
+  reactants:
+    Benzene:
+      amount: 1
+    Inaprovaline:
+      amount: 1
+    Lithium:
+      amount: 1
+  products:
+    Tetracordrazine: 2

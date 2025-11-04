@@ -1,6 +1,10 @@
 - type: antag
   id: SubvertedSilicon
   name: roles-antag-subverted-silicon-name
+  # Carpmosia-start - Antag playtimes
+  playTimeTracker: AntagSubvertedSilicon
+  color: '#c832e6'
+  # Carpmosia-end - Antag playtimes
   antagonist: true
   setPreference: false
   objective: roles-antag-subverted-silicon-objective

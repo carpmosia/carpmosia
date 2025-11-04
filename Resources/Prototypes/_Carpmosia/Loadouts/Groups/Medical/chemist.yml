@@ -1,62 +1,65 @@
 # - type: loadoutGroup
+#   parent: [ MedicalHead, CommonHead ]
 #   id: ChemistHead
-#   parent: [BaseHead, CommonHead, MedicalHead]
-
-# - type: loadoutGroup
-#   id: ChemistGlasses
-#   parent: [BaseGlasses, CommonGlasses, MedicalGlasses]
 
 - type: loadoutGroup
+  parent: [ MedicalGlasses, CommonGlasses ]
+  id: ChemistGlasses
+  defaultSelected: 1
+  loadouts:
+  - ChemicalGlasses
+
+- type: loadoutGroup
+  parent: [ MedicalMask, CommonMask ]
   id: ChemistMask
-  parent: [BaseMask, CommonMask, MedicalMask]
-
-# - type: loadoutGroup
-#   id: ChemistNeck
-#   parent: [BaseNeck, CommonNeck, MedicalNeck]
 
 - type: loadoutGroup
+  parent: [ MedicalNeck, CommonNeck ]
+  id: ChemistNeck
+
+- type: loadoutGroup
+  parent: [ MedicalGloves, CommonGloves ]
   id: ChemistGloves
-  parent: [BaseGloves, CommonGloves, MedicalGloves]
 
 - type: loadoutGroup
+  parent: [ MedicalJumpsuit, CommonJumpsuit ]
   id: ChemistJumpsuit
-  parent: [BaseJumpsuit, CommonJumpsuit, MedicalJumpsuit]
   loadouts:
   - ChemistJumpsuit
   - ChemistJumpskirt
 
 - type: loadoutGroup
+  parent: [ MedicalBackpack, CommonBackpack ]
   id: ChemistBackpack
-  parent: [BaseBackpack, CommonBackpack]
   loadouts:
   - ChemistBackpack
   - ChemistSatchel
   - ChemistDuffel
 
 # - type: loadoutGroup
+#   parent: [ MedicalPDA, CommonPDA ]
 #   id: ChemistPDA
-#   parent: [BasePDA, CommonPDA, MedicalPDA]
 
 # - type: loadoutGroup
+#   parent: [ MedicalBelt, CommonBelt ]
 #   id: ChemistBelt
-#   parent: [BaseBelt, CommonBelt, MedicalBelt]
 
 - type: loadoutGroup
+  parent: [ MedicalOuterClothing, CommonOuterClothing ]
   id: ChemistOuterClothing
-  parent: [BaseOuterClothing, CommonOuterClothing, MedicalOuterClothing]
   loadouts:
   - RegularLabCoat
   - ChemistLabCoat
   - ChemistWintercoat
 
 - type: loadoutGroup
+  parent: [ CommonShoes, MedicalShoes ]
   id: ChemistShoes
-  parent: [BaseShoes, CommonShoes, MedicalShoes]
 
 # - type: loadoutGroup
-#   id: ChemistSpecial
 #   parent: BaseSpecial
+#   id: ChemistSpecial
 
 - type: loadoutGroup
+  parent: [ MedicalTrinkets, CommonTrinkets ]
   id: ChemistTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, MedicalTrinkets]

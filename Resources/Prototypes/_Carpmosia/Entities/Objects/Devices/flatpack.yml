@@ -1,0 +1,35 @@
+- type: entity
+  parent: BaseItem
+  id: TegFlatpack
+  name: thermo-electric generator flatpack
+  description: A flatpack used for constructing a thermo-electric generator.
+  components:
+  - type: Item
+    size: Large
+  - type: Flatpack
+    entity: TegCenter
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Devices/flatpack.rsi
+    layers:
+    - state: teg
+  - type: Appearance
+  - type: StaticPrice
+    price: 5000
+
+- type: entity
+  parent: BaseItem
+  id: CirculatorFlatpack
+  name: circulator flatpack
+  description: A flatpack used for constructing a circulator.
+  components:
+  - type: Item
+    size: Large
+  - type: Flatpack
+    entity: TegCirculator
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Devices/flatpack.rsi
+    layers:
+    - state: circulator
+  - type: Appearance
+  - type: StaticPrice
+    price: 2500
