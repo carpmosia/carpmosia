@@ -63,3 +63,8 @@
   abstract: true
   parent: BaseTrinkets
   id: CargoTrinkets
+
+- type: loadoutGroup
+  abstract: true
+  parent: BasePets
+  id: CargoPets
