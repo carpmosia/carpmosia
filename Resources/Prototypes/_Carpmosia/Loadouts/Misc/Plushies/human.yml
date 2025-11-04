@@ -1,0 +1,22 @@
+- type: loadoutEffectGroup
+  id: PlushieHuman
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Cargo
+      time: 5h
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 10h
+
+- type: loadout
+  id: PlushieHuman
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PlushieHuman
+  storage:
+    back:
+    - PlushieHuman
+  groupBy: "plushies"

@@ -1,0 +1,22 @@
+- type: loadoutEffectGroup
+  id: PlushieMoth
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Medical
+      time: 5h
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 10h
+
+- type: loadout
+  id: PlushieMoth
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PlushieMoth
+  storage:
+    back:
+    - PlushieMoth
+  groupBy: "plushies"
