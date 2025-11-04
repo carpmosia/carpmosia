@@ -1,0 +1,23 @@
+- type: loadoutEffectGroup
+  id: PlushieLamp
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobHeadOfPersonnel
+      time: 5h
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobLibrarian
+      time: 5h
+
+- type: loadout
+  id: PlushieLamp
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PlushieLamp
+  storage:
+    back:
+    - PlushieLamp
+  groupBy: "plushies"

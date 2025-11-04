@@ -1,0 +1,22 @@
+- type: loadoutEffectGroup
+  id: PlushieSlime
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Science
+      time: 5h
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 10h
+
+- type: loadout
+  id: PlushieSlime
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PlushieSlime
+  storage:
+    back:
+    - PlushieSlime
+  groupBy: "plushies"

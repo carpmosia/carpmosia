@@ -1,6 +1,6 @@
 - type: loadoutGroup
   abstract: true
-  parent: [ BaseTrinkets, TrinketLizards, TrinketSmokeables, TrinketFolders, TrinketCanes, TrinketTowels ]
+  parent: [ BaseTrinkets, TrinketLizards, TrinketPlushies, TrinketSmokeables, TrinketFolders, TrinketCanes, TrinketTowels ]
   id: CommonTrinkets
   loadouts:
   - FlowerWreath
@@ -52,6 +52,31 @@
   - LizardPlushiePsychologist
   - LizardPlushieBoxer
   - LizardPlushieZookeeper
+
+- type: loadoutGroup
+  abstract: true
+  id: TrinketPlushies
+  loadouts:
+  - PlushieHuman
+  - PlushieMoth
+  - PlushieVox
+  - PlushieSlime
+  - PlushieDiona
+  - PlushieArachind
+  - PlushieSnake
+  - PlushiePenguin
+  - PlushieNar
+  - PlushieRatvar
+  - PlushieBee
+  - PlushieAtmosian
+  - PlushieLamp
+  - PlushieNuke
+  - PlushieCarp
+  - PlushieMagicarp
+  - PlushieSharkBlue
+  - PlushieSharkPink
+  - PlushieSharkGrey
+  - PlushieHampter
 
 - type: loadoutGroup
   abstract: true
