@@ -1,32 +1,32 @@
 - type: loadoutGroup
-  parent: [ SecurityHead, CommonHead ]
+  parent: [ CommandHead, SecurityHead, CommonHead ]
   id: HeadOfSecurityHead
   loadouts:
   - HeadofSecurityHead
   - HeadofSecurityBeret
 
 - type: loadoutGroup
-  parent: [ SecurityGlasses ] # CommonGlasses removed
+  parent: [ CommandGlasses, SecurityGlasses ] # CommonGlasses removed
   id: HeadOfSecurityGlasses
   minLimit: 1
 
 # - type: loadoutGroup
-#   parent: [ SecurityMask, CommonMask ]
+#   parent: [ CommandMask, SecurityMask, CommonMask ]
 #   id: HeadOfSecurityMask
 
 - type: loadoutGroup
-  parent: [ SecurityNeck, CommonNeck ]
+  parent: [ CommandNeck, SecurityNeck, CommonNeck ]
   id: HeadOfSecurityNeck
   loadouts:
   - HeadofSecurityCloak
   - HeadofSecurityMantle
 
 # - type: loadoutGroup
-#   parent: [ SecurityGloves, CommonGloves ]
+#   parent: [ CommandGloves, SecurityGloves, CommonGloves ]
 #   id: HeadOfSecurityGloves
 
 - type: loadoutGroup
-  parent: [ SecurityJumpsuit, CommonJumpsuit ]
+  parent: [ CommandJumpsuit, SecurityJumpsuit, CommonJumpsuit ]
   id: HeadOfSecurityJumpsuit
   loadouts:
   - HeadofSecurityJumpsuit
@@ -37,19 +37,19 @@
   - HeadofSecurityFormalSkirt
 
 - type: loadoutGroup
-  parent: [ SecurityBackpack, CommonBackpack ]
+  parent: [ CommandBackpack, SecurityBackpack, CommonBackpack ]
   id: HeadOfSecurityBackpack
 
 # - type: loadoutGroup
-#   parent: [ SecurityPDA, CommonPDA ]
+#   parent: [ CommandPDA, SecurityPDA, CommonPDA ]
 #   id: HeadOfSecurityPDA
 
 - type: loadoutGroup
-  parent: [ SecurityBelt, CommonBelt ]
+  parent: [ CommandBelt, SecurityBelt, CommonBelt ]
   id: HeadOfSecurityBelt
 
 - type: loadoutGroup
-  parent: [ SecurityOuterClothing, CommonOuterClothing ]
+  parent: [ CommandOuterClothing, SecurityOuterClothing, CommonOuterClothing ]
   id: HeadOfSecurityOuterClothing
   minLimit: 1
   loadouts:
@@ -57,7 +57,7 @@
   - HeadofSecurityWinterCoat
 
 - type: loadoutGroup
-  parent: [ PrioritySecurityShoes, CommonShoes, SecurityShoes ]
+  parent: [ PrioritySecurityShoes, CommonShoes, SecurityShoes, CommandShoes ]
   id: HeadOfSecurityShoes
 
 # - type: loadoutGroup
@@ -65,9 +65,9 @@
 #   id: HeadOfSecuritySpecial
 
 - type: loadoutGroup
-  parent: [ SecurityTrinkets, CommonTrinkets ]
+  parent: [ CommandTrinkets, SecurityTrinkets, CommonTrinkets ]
   id: HeadOfSecurityTrinkets
 
 - type: loadoutGroup
-  parent: [ SecurityPets, CommonPets ]
+  parent: [ CommandPets, SecurityPets, CommonPets ]
   id: HeadOfSecurityPets

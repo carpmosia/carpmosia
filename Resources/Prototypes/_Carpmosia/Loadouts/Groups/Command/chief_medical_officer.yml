@@ -1,31 +1,31 @@
 - type: loadoutGroup
-  parent: [ MedicalHead, CommonHead ]
+  parent: [ CommandHead, MedicalHead, CommonHead ]
   id: ChiefMedicalOfficerHead
   loadouts:
   - ChiefMedicalOfficerBeret
   - CMOMedicalHeadMirror
 
 - type: loadoutGroup
-  parent: [ MedicalGlasses, CommonGlasses ]
+  parent: [ CommandGlasses, MedicalGlasses, CommonGlasses ]
   id: ChiefMedicalOfficerGlasses
 
 - type: loadoutGroup
-  parent: [ MedicalMask, CommonMask ]
+  parent: [ CommandMask, MedicalMask, CommonMask ]
   id: ChiefMedicalOfficerMask
 
 - type: loadoutGroup
-  parent: [ MedicalNeck, CommonNeck ]
+  parent: [ CommandNeck, MedicalNeck, CommonNeck ]
   id: ChiefMedicalOfficerNeck
   loadouts:
   - ChiefMedicalOfficerCloak
   - ChiefMedicalOfficerMantle
 
 - type: loadoutGroup
-  parent: [ MedicalGloves, CommonGloves ]
+  parent: [ CommandGloves, MedicalGloves, CommonGloves ]
   id: ChiefMedicalOfficerGloves
 
 - type: loadoutGroup
-  parent: [ MedicalJumpsuit, CommonJumpsuit ]
+  parent: [ CommandJumpsuit, MedicalJumpsuit, CommonJumpsuit ]
   id: ChiefMedicalOfficerJumpsuit
   loadouts:
   - ChiefMedicalOfficerJumpsuit
@@ -34,26 +34,26 @@
   - ChiefMedicalOfficerTurtleneckJumpskirt
 
 - type: loadoutGroup
-  parent: [ MedicalBackpack, CommonBackpack ]
+  parent: [ CommandBackpack, MedicalBackpack, CommonBackpack ]
   id: ChiefMedicalOfficerBackpack
 
 # - type: loadoutGroup
-#   parent: [ MedicalPDA, CommonPDA ]
+#   parent: [ CommandPDA, MedicalPDA, CommonPDA ]
 #   id: ChiefMedicalOfficerPDA
 
 # - type: loadoutGroup
-#   parent: [ MedicalBelt, CommonBelt ]
+#   parent: [ CommandBelt, MedicalBelt, CommonBelt ]
 #   id: ChiefMedicalOfficerBelt
 
 - type: loadoutGroup
-  parent: [ MedicalOuterClothing, CommonOuterClothing ]
+  parent: [ CommandOuterClothing, MedicalOuterClothing, CommonOuterClothing ]
   id: ChiefMedicalOfficerOuterClothing
   loadouts:
   - ChiefMedicalOfficerLabCoat
   - ChiefMedicalOfficerWintercoat
 
 - type: loadoutGroup
-  parent: [ CommonShoes, MedicalShoes ]
+  parent: [ CommonShoes, MedicalShoes, CommandShoes ]
   id: ChiefMedicalOfficerShoes
 
 # - type: loadoutGroup
@@ -61,9 +61,9 @@
 #   id: ChiefMedicalOfficerSpecial
 
 - type: loadoutGroup
-  parent: [ MedicalTrinkets, CommonTrinkets ]
+  parent: [ CommandTrinkets, MedicalTrinkets, CommonTrinkets ]
   id: ChiefMedicalOfficerTrinkets
 
 - type: loadoutGroup
-  parent: [ MedicalPets, CommonPets ]
+  parent: [ CommandPets, MedicalPets, CommonPets ]
   id: ChiefMedicalOfficerPets

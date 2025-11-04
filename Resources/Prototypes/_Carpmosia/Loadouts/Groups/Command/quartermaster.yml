@@ -1,31 +1,31 @@
 - type: loadoutGroup
-  parent: [ CargoHead, CommonHead ]
+  parent: [ CommandHead, CargoHead, CommonHead ]
   id: QuartermasterHead
   loadouts:
   - QuartermasterHead
   - QuartermasterBeret
 
 - type: loadoutGroup
-  parent: [ CargoGlasses, CommonGlasses ]
+  parent: [ CommandGlasses, CargoGlasses, CommonGlasses ]
   id: QuartermasterGlasses
 
 # - type: loadoutGroup
-#   parent: [ CargoMask, CommonMask ]
+#   parent: [ CommandMask, CargoMask, CommonMask ]
 #   id: QuartermasterMask
 
 - type: loadoutGroup
-  parent: [ CargoNeck, CommonNeck ]
+  parent: [ CommandNeck, CargoNeck, CommonNeck ]
   id: QuartermasterNeck
   loadouts:
   - QuartermasterCloak
   - QuartermasterMantle
 
 # - type: loadoutGroup
-#   parent: [ CargoGloves, CommonGloves ]
+#   parent: [ CommandGloves, CargoGloves, CommonGloves ]
 #   id: QuartermasterGloves
 
 - type: loadoutGroup
-  parent: [ CargoJumpsuit, CommonJumpsuit ]
+  parent: [ CommandJumpsuit, CargoJumpsuit, CommonJumpsuit ]
   id: QuartermasterJumpsuit
   loadouts:
   - QuartermasterJumpsuit
@@ -35,25 +35,25 @@
   - QuartermasterFormalSuit
 
 - type: loadoutGroup
-  parent: [ CargoBackpack, CommonBackpack ]
+  parent: [ CommandBackpack, CargoBackpack, CommonBackpack ]
   id: QuartermasterBackpack
 
 # - type: loadoutGroup
-#   parent: [ CargoPDA, CommonPDA ]
+#   parent: [ CommandPDA, CargoPDA, CommonPDA ]
 #   id: QuartermasterPDA
 
 # - type: loadoutGroup
-#   parent: [ CargoBelt, CommonBelt ]
+#   parent: [ CommandBelt, CargoBelt, CommonBelt ]
 #   id: QuartermasterBelt
 
 - type: loadoutGroup
-  parent: [ CargoOuterClothing, CommonOuterClothing ]
+  parent: [ CommandOuterClothing, CargoOuterClothing, CommonOuterClothing ]
   id: QuartermasterOuterClothing
   loadouts:
   - QuartermasterWintercoat
 
 - type: loadoutGroup
-  parent: [ CommonShoes, CargoShoes ]
+  parent: [ CommonShoes, CargoShoes, CommandShoes ]
   id: QuartermasterShoes
 
 # - type: loadoutGroup
@@ -61,9 +61,9 @@
 #   id: QuartermasterSpecial
 
 - type: loadoutGroup
-  parent: [ CargoTrinkets, CommonTrinkets ]
+  parent: [ CommandTrinkets, CargoTrinkets, CommonTrinkets ]
   id: QuartermasterTrinkets
 
 - type: loadoutGroup
-  parent: [ CargoPets, CommonPets ]
+  parent: [ CommandPets, CargoPets, CommonPets ]
   id: QuartermasterPets

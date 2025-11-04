@@ -1,56 +1,56 @@
 - type: loadoutGroup
-  parent: [ ScienceHead, CommonHead ]
+  parent: [ CommandHead, ScienceHead, CommonHead ]
   id: ResearchDirectorHead
   loadouts:
   - ResearchDirectorBeret
 
 - type: loadoutGroup
-  parent: [ ScienceGlasses, CommonGlasses ]
+  parent: [ CommandGlasses, ScienceGlasses, CommonGlasses ]
   id: ResearchDirectorGlasses
 
 # - type: loadoutGroup
-#   parent: [ ScienceMask, CommonMask ]
+#   parent: [ CommandMask, ScienceMask, CommonMask ]
 #   id: ResearchDirectorMask
 
 - type: loadoutGroup
-  parent: [ ScienceNeck, CommonNeck ]
+  parent: [ CommandNeck, ScienceNeck, CommonNeck ]
   id: ResearchDirectorNeck
   loadouts:
   - ResearchDirectorMantle
   - ResearchDirectorCloak
 
 - type: loadoutGroup
-  parent: [ ScienceGloves, CommonGloves ]
+  parent: [ CommandGloves, ScienceGloves, CommonGloves ]
   id: ResearchDirectorGloves
 
 - type: loadoutGroup
-  parent: [ ScienceJumpsuit, CommonJumpsuit ]
+  parent: [ CommandJumpsuit, ScienceJumpsuit, CommonJumpsuit ]
   id: ResearchDirectorJumpsuit
   loadouts:
   - ResearchDirectorJumpsuit
   - ResearchDirectorJumpskirt
 
 - type: loadoutGroup
-  parent: [ ScienceBackpack, CommonBackpack ]
+  parent: [ CommandBackpack, ScienceBackpack, CommonBackpack ]
   id: ResearchDirectorBackpack
 
 # - type: loadoutGroup
-#   parent: [ SciencePDA, CommonPDA ]
+#   parent: [ CommandPDA, SciencePDA, CommonPDA ]
 #   id: ResearchDirectorPDA
 
 # - type: loadoutGroup
-#   parent: [ ScienceBelt, CommonBelt ]
+#   parent: [ CommandBelt, ScienceBelt, CommonBelt ]
 #   id: ResearchDirectorBelt
 
 - type: loadoutGroup
-  parent: [ ScienceOuterClothing, CommonOuterClothing ]
+  parent: [ CommandOuterClothing, ScienceOuterClothing, CommonOuterClothing ]
   id: ResearchDirectorOuterClothing
   loadouts:
   - ResearchDirectorLabCoat
   - ResearchDirectorWintercoat
 
 - type: loadoutGroup
-  parent: [ CommonShoes, ScienceShoes ]
+  parent: [ CommonShoes, ScienceShoes, CommandShoes ]
   id: ResearchDirectorShoes
 
 # - type: loadoutGroup
@@ -58,9 +58,9 @@
 #   id: ResearchDirectorSpecial
 
 - type: loadoutGroup
-  parent: [ ScienceTrinkets, CommonTrinkets ]
+  parent: [ CommandTrinkets, ScienceTrinkets, CommonTrinkets ]
   id: ResearchDirectorTrinkets
 
 - type: loadoutGroup
-  parent: [ SciencePets, CommonPets ]
+  parent: [ CommandPets, SciencePets, CommonPets ]
   id: ResearchDirectorPets
