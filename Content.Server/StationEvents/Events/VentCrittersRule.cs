@@ -30,12 +30,26 @@ public sealed class VentCrittersRule : StationEventSystem<VentCrittersRuleCompon
             if (CompOrNull<StationMemberComponent>(transform.GridUid)?.Station == station)
             {
                 validLocations.Add(transform.Coordinates);
-                foreach (var spawn in EntitySpawnCollection.GetSpawns(component.Entries, RobustRandom))
-                {
-                    Spawn(spawn, transform.Coordinates);
-                }
+                // Carpmosia-start - Vent critter fix
+                // foreach (var spawn in EntitySpawnCollection.GetSpawns(component.Entries, RobustRandom))
+                // {
+                //     Spawn(spawn, transform.Coordinates);
+                // }
+                // Carpmosia-end - Vent critter fix
             }
         }
+
+        // Carpmosia-start - Vent critter fix
+        var singleSpawn = RobustRandom.Pick(validLocations);
+        // Emulate original behaviour by trying to spawn per every valid location
+        for (int i = 0; i < validLocations.Count; i++)
+        {
+            foreach (var spawn in EntitySpawnCollection.GetSpawns(component.Entries, RobustRandom))
+            {
+                Spawn(spawn, singleSpawn);
+            }
+        }
+        // Carpmosia-end - Vent critter fix
 
         if (component.SpecialEntries.Count == 0 || validLocations.Count == 0)
         {
