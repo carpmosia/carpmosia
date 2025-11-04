@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 11/04/2025 18:59:05
-  entityCount: 21847
+  time: 11/04/2025 19:27:42
+  entityCount: 21852
 maps:
 - 1
 grids:
@@ -5869,7 +5869,8 @@ entities:
             1: 8
           19,-12:
             0: 34975
-            3: 13056
+            3: 4352
+            7: 8704
           20,-16:
             1: 1928
             0: 51200
@@ -6426,6 +6427,9 @@ entities:
           temperature: 293.15
           moles:
             Plasma: 6666.982
+        - volume: 2500
+          temperature: 111.618744
+          moles: {}
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
@@ -6612,6 +6616,15 @@ entities:
     - type: Action
       originalIconColor: '#FFFFFFFF'
       container: 44
+  - uid: 21851
+    mapInit: true
+    paused: true
+    components:
+    - type: Transform
+      parent: 21850
+    - type: Action
+      originalIconColor: '#FFFFFFFF'
+      container: 21850
 - proto: ActionToggleJetpack
   entities:
   - uid: 37
@@ -10508,7 +10521,7 @@ entities:
     - type: AccessReader
       accessListsOriginal: []
     - type: Door
-      secondsUntilStateChange: -153673.66
+      secondsUntilStateChange: -153867.6
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10523,7 +10536,7 @@ entities:
     - type: AccessReader
       accessListsOriginal: []
     - type: Door
-      secondsUntilStateChange: -425432.97
+      secondsUntilStateChange: -425626.9
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10579,7 +10592,7 @@ entities:
       pos: 36.5,-61.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -310648.6
+      secondsUntilStateChange: -310842.53
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -52296,6 +52309,12 @@ entities:
     - type: Transform
       pos: 77.5,-45.5
       parent: 2
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 93.465614
+        moles: {}
     - type: AccessReader
       accessListsOriginal:
       - - Engineering
@@ -52305,10 +52324,10 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 29
-          - 31
-          - 33
           - 34
+          - 29
+          - 33
+          - 21848
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -52318,6 +52337,26 @@ entities:
     - type: Transform
       pos: 77.5,-44.5
       parent: 2
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 93.465614
+        moles: {}
+    - type: ContainerContainer
+      containers:
+        entity_storage: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 21852
+          - 21850
+          - 21849
+          - 31
+        paper_label: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
 - proto: CrateEvaKit
   entities:
   - uid: 8210
@@ -97164,7 +97203,7 @@ entities:
       pos: 7.5,9.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -445712.34
+      secondsUntilStateChange: -445906.28
       state: Opening
   - uid: 14548
     components:
@@ -97172,7 +97211,7 @@ entities:
       pos: 7.5,10.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -445711.84
+      secondsUntilStateChange: -445905.78
       state: Opening
 - proto: HospitalCurtainsOpen
   entities:
@@ -101666,7 +101705,7 @@ entities:
   - uid: 31
     components:
     - type: Transform
-      parent: 28
+      parent: 8209
     - type: GasTank
       toggleActionEntity: 32
     - type: Physics
@@ -101677,6 +101716,28 @@ entities:
         actions: !type:Container
           ents:
           - 32
+    - type: InsideEntityStorage
+  - uid: 21848
+    components:
+    - type: Transform
+      parent: 28
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 21850
+    components:
+    - type: Transform
+      parent: 8209
+    - type: GasTank
+      toggleActionEntity: 21851
+    - type: Physics
+      canCollide: False
+    - type: ActionsContainer
+    - type: ContainerContainer
+      containers:
+        actions: !type:Container
+          ents:
+          - 21851
     - type: InsideEntityStorage
 - proto: PlasmaWindoorSecureArmoryLocked
   entities:
@@ -106514,6 +106575,20 @@ entities:
     components:
     - type: Transform
       parent: 28
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 21849
+    components:
+    - type: Transform
+      parent: 8209
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 21852
+    components:
+    - type: Transform
+      parent: 8209
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
