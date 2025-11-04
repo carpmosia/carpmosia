@@ -1,1 +1,3 @@
-spellbook-alt-smite-desc = Don't like them? SMITE them! Requires Wizard Robe & Hat.
+# Spells
+spellbook-smoke-name = Smoke
+spellbook-smoke-desc = Summons a cloud of smoke, it's pretty obvious.

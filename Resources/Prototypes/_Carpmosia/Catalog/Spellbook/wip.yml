@@ -1,0 +1,22 @@
+- type: listing
+  abstract: true
+  id: SpellbookBase
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  abstract: true
+  parent: SpellbookBase
+  id: SpellbookWIP
+  categories:
+  - SpellbookWip
+
+# - type: listing
+#   parent: SpellbookWIP
+#   id: Spellbook
+#   name: spellbook-fireball-name
+#   description: spellbook-fireball-desc
+#   productAction: ActionMindSwap
+#   cost:
+#     WizCoin: 2

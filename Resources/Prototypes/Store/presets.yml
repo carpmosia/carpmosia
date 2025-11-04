@@ -21,6 +21,7 @@
     balance:
       Telecrystal: 0
 
+# Carpmosia-start - Massive Wizard Rework
 - type: entity
   id: StorePresetSpellbook
   abstract: true
@@ -28,10 +29,7 @@
   - type: Store
     name: store-preset-name-spellbook
     categories:
-    - SpellbookOffensive    #Fireball, Rod Form
-    - SpellbookDefensive    #Magic Missile, Wall of Force
-    - SpellbookUtility      #Body Swap, Lich, Teleport, Knock, Polymorph
-    - SpellbookEquipment    #Battlemage Robes, Staff of Locker
-    # - SpellbookEvents       #Summon Weapons, Summon Ghosts # Carpmosia-edit - Disable Event Spells
+      - SpellbookWIP
     currencyWhitelist:
     - WizCoin
+# Carpmosia-end - Massive Wizard Rework
