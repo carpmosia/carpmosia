@@ -7,3 +7,10 @@ ghost-role-information-giant-spider-rules-carpmosia = You are a [color={role-typ
 ghost-role-information-angry-slimes-name-carpmosia = Slime
 ghost-role-information-angry-slimes-description-carpmosia = Everyone around you alerts your instincts, could they be friend or foe?
 ghost-role-information-angry-slimes-rules-carpmosia = You are a [color={role-type-free-agent-color}][bold]{role-type-free-agent-name}[/bold][/color] with all other angry slimes but maybe you can be differnt, you could be friendly.
+
+ghost-role-information-pet-snail-name = Pet snail
+ghost-role-information-pet-butterfly-name = Pet butterfly
+ghost-role-information-pet-bee-name = Pet bee
+ghost-role-information-pet-mothroach-name = Pet mothroach
+
+ghost-role-information-pet-description = A cute little pocket pet. Follow and obey your owner!
