@@ -10519,12 +10519,6 @@ entities:
       parent: 2
     - type: AccessReader
       accessListsOriginal: []
-    - type: Door
-      secondsUntilStateChange: -154091.92
-      state: Opening
-    - type: DeviceLinkSource
-      lastSignals:
-        DoorStatus: True
   - uid: 420
     components:
     - type: MetaData
@@ -10534,12 +10528,6 @@ entities:
       parent: 2
     - type: AccessReader
       accessListsOriginal: []
-    - type: Door
-      secondsUntilStateChange: -425851.25
-      state: Opening
-    - type: DeviceLinkSource
-      lastSignals:
-        DoorStatus: True
   - uid: 421
     components:
     - type: Transform
@@ -10590,12 +10578,6 @@ entities:
     - type: Transform
       pos: 36.5,-61.5
       parent: 2
-    - type: Door
-      secondsUntilStateChange: -311066.88
-      state: Opening
-    - type: DeviceLinkSource
-      lastSignals:
-        DoorStatus: True
   - uid: 431
     components:
     - type: Transform
