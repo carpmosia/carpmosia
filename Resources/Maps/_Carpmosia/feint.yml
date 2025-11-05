@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 11/04/2025 19:27:42
-  entityCount: 21852
+  time: 11/05/2025 03:53:22
+  entityCount: 21853
 maps:
 - 1
 grids:
@@ -9095,18 +9095,6 @@ entities:
         341:
         - - DoorStatus
           - DoorBolt
-  - uid: 262
-    components:
-    - type: Transform
-      pos: 37.5,-67.5
-      parent: 2
-    - type: DeviceLinkSink
-      invokeCounter: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        263:
-        - - DoorStatus
-          - DoorBolt
   - uid: 263
     components:
     - type: Transform
@@ -9488,19 +9476,6 @@ entities:
         304:
         - - DoorStatus
           - DoorBolt
-  - uid: 294
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 75.5,-47.5
-      parent: 2
-    - type: DeviceLinkSink
-      invokeCounter: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        14765:
-        - - DoorStatus
-          - InputA
   - uid: 295
     components:
     - type: Transform
@@ -10007,6 +9982,30 @@ entities:
       invokeCounter: 1
 - proto: AirlockExternalLocked
   entities:
+  - uid: 262
+    components:
+    - type: Transform
+      pos: 37.5,-67.5
+      parent: 2
+    - type: DeviceLinkSink
+      invokeCounter: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        263:
+        - - DoorStatus
+          - DoorBolt
+  - uid: 294
+    components:
+    - type: Transform
+      pos: 75.5,-47.5
+      parent: 2
+    - type: DeviceLinkSink
+      invokeCounter: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        14765:
+        - - DoorStatus
+          - InputA
   - uid: 338
     components:
     - type: Transform
@@ -10521,7 +10520,7 @@ entities:
     - type: AccessReader
       accessListsOriginal: []
     - type: Door
-      secondsUntilStateChange: -153867.6
+      secondsUntilStateChange: -154091.92
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10536,7 +10535,7 @@ entities:
     - type: AccessReader
       accessListsOriginal: []
     - type: Door
-      secondsUntilStateChange: -425626.9
+      secondsUntilStateChange: -425851.25
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10592,7 +10591,7 @@ entities:
       pos: 36.5,-61.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -310842.53
+      secondsUntilStateChange: -311066.88
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -51733,6 +51732,14 @@ entities:
     components:
     - type: Transform
       pos: 46.5,10.5
+      parent: 2
+- proto: ComputerShuttleSalvage
+  entities:
+  - uid: 21853
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 36.5,7.5
       parent: 2
 - proto: ComputerSolarControl
   entities:
@@ -97203,7 +97210,7 @@ entities:
       pos: 7.5,9.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -445906.28
+      secondsUntilStateChange: -446130.62
       state: Opening
   - uid: 14548
     components:
@@ -97211,7 +97218,7 @@ entities:
       pos: 7.5,10.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -445905.78
+      secondsUntilStateChange: -446130.12
       state: Opening
 - proto: HospitalCurtainsOpen
   entities:
