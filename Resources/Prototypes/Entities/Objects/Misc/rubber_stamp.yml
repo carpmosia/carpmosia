@@ -78,7 +78,7 @@
 
 - type: entity
   name: lawyer's rubber stamp
-  parent: RubberStampBase
+  parent: [RubberStampBase, BaseLawyerContraband] # Carpmosia-edit - Lawyer headset and specific contraband level
   id: RubberStampLawyer
   categories: [ DoNotMap ]
   components:

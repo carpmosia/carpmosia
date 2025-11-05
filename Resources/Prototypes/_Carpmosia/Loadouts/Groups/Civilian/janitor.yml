@@ -1,66 +1,72 @@
 - type: loadoutGroup
+  parent: [ CivilianHead, CommonHead ]
   id: JanitorHead
-  parent: [BaseHead, CommonHead, CivilianHead]
   loadouts:
   - JanitorHead
 
 - type: loadoutGroup
+  parent: [ CivilianGlasses, CommonGlasses ]
   id: JanitorGlasses
-  parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
 
 # - type: loadoutGroup
+#   parent: [ CivilianMask, CommonMask ]
 #   id: JanitorMask
-#   parent: [BaseMask, CommonMask, CivilianMask]
-
-# - type: loadoutGroup
-#   id: JanitorNeck
-#   parent: [BaseNeck, CommonNeck, CivilianNeck]
 
 - type: loadoutGroup
+  parent: [ CivilianNeck, CommonNeck ]
+  id: JanitorNeck
+
+- type: loadoutGroup
+  parent: [ CivilianGloves, CommonGloves ]
   id: JanitorGloves
-  parent: [BaseGloves, CommonGloves, CivilianGloves]
   loadouts:
   - JanitorRubberGloves
   - OrangeGloves
   - PurpleGloves
 
 - type: loadoutGroup
+  parent: [ CivilianJumpsuit, CommonJumpsuit ]
   id: JanitorJumpsuit
-  parent: [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit]
   loadouts:
   - JanitorJumpsuit
   - JanitorJumpskirt
   - JanitorMaidskirt
 
 - type: loadoutGroup
+  parent: [ CivilianBackpack, CommonBackpack ]
   id: JanitorBackpack
-  parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
 
 # - type: loadoutGroup
+#   parent: [ CivilianPDA, CommonPDA ]
 #   id: JanitorPDA
-#   parent: [BasePDA, CommonPDA, CivilianPDA]
 
 # - type: loadoutGroup
+#   parent: [ CivilianBelt, CommonBelt ]
 #   id: JanitorBelt
-#   parent: [BaseBelt, CommonBelt, CivilianBelt]
 
 - type: loadoutGroup
+  parent: [ CivilianOuterClothing, CommonOuterClothing ]
   id: JanitorOuterClothing
-  parent: [BaseOuterClothing, CommonOuterClothing, CivilianOuterClothing]
   loadouts:
   - JanitorWintercoat
   - JanitorApron
 
-# - type: loadoutGroup
-#   id: JanitorShoes
-#   parent: [BaseShoes, CommonShoes, CivilianShoes]
+- type: loadoutGroup
+  parent: [ CommonShoes, CivilianShoes ]
+  id: JanitorShoes
+  loadouts:
+  - GaloshesShoes
 
 - type: loadoutGroup
-  id: JanitorSpecial
   parent: BaseSpecial
+  id: JanitorSpecial
   loadouts:
   - JanitorGoldenPlunger
 
 - type: loadoutGroup
+  parent: [ CivilianTrinkets, CommonTrinkets ]
   id: JanitorTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]
+
+- type: loadoutGroup
+  parent: [ CivilianPets, CommonPets ]
+  id: JanitorPets

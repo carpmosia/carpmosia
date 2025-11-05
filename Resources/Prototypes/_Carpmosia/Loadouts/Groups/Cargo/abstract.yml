@@ -1,0 +1,70 @@
+- type: loadoutGroup
+  abstract: true
+  parent: BaseHead
+  id: CargoHead
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseGlasses
+  id: CargoGlasses
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseMask
+  id: CargoMask
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseNeck
+  id: CargoNeck
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseGloves
+  id: CargoGloves
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseJumpsuit
+  id: CargoJumpsuit
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseBackpack
+  id: CargoBackpack
+  loadouts:
+  - CargoTechnicianBackpack
+  - CargoTechnicianSatchel
+  - CargoTechnicianDuffel
+
+- type: loadoutGroup
+  abstract: true
+  parent: BasePDA
+  id: CargoPDA
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseBelt
+  id: CargoBelt
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseOuterClothing
+  id: CargoOuterClothing
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseShoes
+  id: CargoShoes
+  loadouts:
+  - CargoWinterBoots
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseTrinkets
+  id: CargoTrinkets
+
+- type: loadoutGroup
+  abstract: true
+  parent: BasePets
+  id: CargoPets

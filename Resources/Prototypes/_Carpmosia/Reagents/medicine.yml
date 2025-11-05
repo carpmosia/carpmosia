@@ -12,7 +12,7 @@
       effects:
       - !type:EvenHealthChange
         conditions:
-        - !type:Temperature
+        - !type:TemperatureCondition
           max: 213.0
         damage:
           Brute: -4
@@ -31,7 +31,7 @@
       effects:
       - !type:HealthChange
         conditions:
-        - !type:Temperature
+        - !type:TemperatureCondition
           max: 213.0
         damage:
           groups:
@@ -39,4 +39,47 @@
           types:
             Poison: -6
             Radiation: -3
+
+- type: reagent
+  id: Tetracordrazine
+  name: reagent-name-tetracordrazine
+  group: Medicine
+  desc: reagent-desc-tetracordrazine
+  physicalDesc: reagent-physical-desc-viscous
+  flavor: medicine
+  color: "#942222"
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.5
+      effects:
+        - !type:HealthChange
+          conditions:
+          - !type:MobStateCondition
+            mobstate: Critical
+          damage:
+            groups:
+              Brute: -3.0
+              Burn: -4.0
+            types:
+              Poison: -1.0
+        - !type:HealthChange
+          conditions:
+          - !type:MobStateCondition
+            mobstate: Alive
+          - !type:TotalDamageCondition
+            min: 50
+          damage:
+            groups:
+              Brute: -1.5
+              Burn: -2.0
+            types:
+              Poison: -0.5
+        - !type:HealthChange
+          conditions:
+          - !type:ReagentCondition
+            reagent: Tetracordrazine
+            min: 11
+          damage:
+            types:
+              Cellular: 0.75
 

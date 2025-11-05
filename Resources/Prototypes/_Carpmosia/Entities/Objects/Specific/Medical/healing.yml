@@ -1,0 +1,7 @@
+- type: entity
+  id: Tourniquet1
+  parent: Tourniquet
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1

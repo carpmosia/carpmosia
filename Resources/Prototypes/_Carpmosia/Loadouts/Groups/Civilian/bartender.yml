@@ -1,64 +1,69 @@
 - type: loadoutGroup
+  parent: [ CivilianHead, CommonHead ]
   id: BartenderHead
-  parent: [BaseHead, CommonHead, CivilianHead]
   loadouts:
   - BartenderHead
   - BartenderBowler
 
 - type: loadoutGroup
+  parent: [ CivilianGlasses, CommonGlasses ]
   id: BartenderGlasses
-  parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
 
 # - type: loadoutGroup
+#   parent: [ CivilianMask, CommonMask ]
 #   id: BartenderMask
-#   parent: [BaseMask, CommonMask, CivilianMask]
-
-# - type: loadoutGroup
-#   id: BartenderNeck
-#   parent: [BaseNeck, CommonNeck, CivilianNeck]
-
-# - type: loadoutGroup
-#   id: BartenderGloves
-#   parent: [BaseGloves, CommonGloves, CivilianGloves]
 
 - type: loadoutGroup
+  parent: [ CivilianNeck, CommonNeck ]
+  id: BartenderNeck
+
+# - type: loadoutGroup
+#   parent: [ CivilianGloves, CommonGloves ]
+#   id: BartenderGloves
+
+- type: loadoutGroup
+  parent: [ CivilianJumpsuit, CommonJumpsuit ]
   id: BartenderJumpsuit
-  parent: [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit]
   loadouts:
   - BartenderJumpsuit
   - BartenderJumpskirt
   - BartenderJumpsuitPurple
+  - ServiceMaidskirt
 
 - type: loadoutGroup
+  parent: [ CivilianBackpack, CommonBackpack ]
   id: BartenderBackpack
-  parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
 
 # - type: loadoutGroup
+#   parent: [ CivilianPDA, CommonPDA ]
 #   id: BartenderPDA
-#   parent: [BasePDA, CommonPDA, CivilianPDA]
 
 # - type: loadoutGroup
+#   parent: [ CivilianBelt, CommonBelt ]
 #   id: BartenderBelt
-#   parent: [BaseBelt, CommonBelt, CivilianBelt]
 
 - type: loadoutGroup
+  parent: [ CivilianOuterClothing, CommonOuterClothing ]
   id: BartenderOuterClothing
-  parent: [BaseOuterClothing, CommonOuterClothing, CivilianOuterClothing]
   loadouts:
   - BartenderVest
   - BartenderApron
   - BartenderWintercoat
 
-# - type: loadoutGroup
-#   id: BartenderShoes
-#   parent: [BaseShoes, CommonShoes, CivilianShoes]
+- type: loadoutGroup
+  parent: [ CommonShoes, CivilianShoes ]
+  id: BartenderShoes
 
 - type: loadoutGroup
-  id: BartenderSpecial
   parent: BaseSpecial
+  id: BartenderSpecial
   loadouts:
   - BartenderGoldenShaker
 
 - type: loadoutGroup
+  parent: [ CivilianTrinkets, CommonTrinkets ]
   id: BartenderTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]
+
+- type: loadoutGroup
+  parent: [ CivilianPets, CommonPets ]
+  id: BartenderPets

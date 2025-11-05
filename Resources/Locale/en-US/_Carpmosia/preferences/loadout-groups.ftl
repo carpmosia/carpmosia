@@ -11,3 +11,4 @@ loadout-group-base-outerclothing = Outer clothing
 loadout-group-base-shoes = Shoes
 loadout-group-base-special = Special
 loadout-group-base-trinkets = Trinkets
+loadout-group-base-pets = Pocket pets

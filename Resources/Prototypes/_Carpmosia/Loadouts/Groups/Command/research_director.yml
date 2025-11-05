@@ -1,0 +1,66 @@
+- type: loadoutGroup
+  parent: [ CommandHead, ScienceHead, CommonHead ]
+  id: ResearchDirectorHead
+  loadouts:
+  - ResearchDirectorBeret
+
+- type: loadoutGroup
+  parent: [ CommandGlasses, ScienceGlasses, CommonGlasses ]
+  id: ResearchDirectorGlasses
+
+# - type: loadoutGroup
+#   parent: [ CommandMask, ScienceMask, CommonMask ]
+#   id: ResearchDirectorMask
+
+- type: loadoutGroup
+  parent: [ CommandNeck, ScienceNeck, CommonNeck ]
+  id: ResearchDirectorNeck
+  loadouts:
+  - ResearchDirectorMantle
+  - ResearchDirectorCloak
+
+- type: loadoutGroup
+  parent: [ CommandGloves, ScienceGloves, CommonGloves ]
+  id: ResearchDirectorGloves
+
+- type: loadoutGroup
+  parent: [ CommandJumpsuit, ScienceJumpsuit, CommonJumpsuit ]
+  id: ResearchDirectorJumpsuit
+  loadouts:
+  - ResearchDirectorJumpsuit
+  - ResearchDirectorJumpskirt
+
+- type: loadoutGroup
+  parent: [ CommandBackpack, ScienceBackpack, CommonBackpack ]
+  id: ResearchDirectorBackpack
+
+# - type: loadoutGroup
+#   parent: [ CommandPDA, SciencePDA, CommonPDA ]
+#   id: ResearchDirectorPDA
+
+# - type: loadoutGroup
+#   parent: [ CommandBelt, ScienceBelt, CommonBelt ]
+#   id: ResearchDirectorBelt
+
+- type: loadoutGroup
+  parent: [ CommandOuterClothing, ScienceOuterClothing, CommonOuterClothing ]
+  id: ResearchDirectorOuterClothing
+  loadouts:
+  - ResearchDirectorLabCoat
+  - ResearchDirectorWintercoat
+
+- type: loadoutGroup
+  parent: [ CommonShoes, ScienceShoes, CommandShoes ]
+  id: ResearchDirectorShoes
+
+# - type: loadoutGroup
+#   parent: BaseSpecial
+#   id: ResearchDirectorSpecial
+
+- type: loadoutGroup
+  parent: [ CommandTrinkets, ScienceTrinkets, CommonTrinkets ]
+  id: ResearchDirectorTrinkets
+
+- type: loadoutGroup
+  parent: [ CommandPets, SciencePets, CommonPets ]
+  id: ResearchDirectorPets

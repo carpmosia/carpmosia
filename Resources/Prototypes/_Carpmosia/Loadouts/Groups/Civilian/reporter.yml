@@ -1,0 +1,58 @@
+# - type: loadoutGroup
+#   parent: [ CivilianHead, CommonHead ]
+#   id: ReporterHead
+
+- type: loadoutGroup
+  parent: [ CivilianGlasses, CommonGlasses ]
+  id: ReporterGlasses
+
+# - type: loadoutGroup
+#   parent: [ CivilianMask, CommonMask ]
+#   id: ReporterMask
+
+- type: loadoutGroup
+  parent: [ CivilianNeck, CommonNeck ]
+  id: ReporterNeck
+
+# - type: loadoutGroup
+#   parent: [ CivilianGloves, CommonGloves ]
+#   id: ReporterGloves
+
+- type: loadoutGroup
+  parent: [ CivilianJumpsuit, CommonJumpsuit ]
+  id: ReporterJumpsuit
+  loadouts:
+  - ReporterJumpsuit
+  - JournalistJumpsuit
+
+- type: loadoutGroup
+  parent: [ CivilianBackpack, CommonBackpack ]
+  id: ReporterBackpack
+
+# - type: loadoutGroup
+#   parent: [ CivilianPDA, CommonPDA ]
+#   id: ReporterPDA
+
+# - type: loadoutGroup
+#   parent: [ CivilianBelt, CommonBelt ]
+#   id: ReporterBelt
+
+# - type: loadoutGroup
+#   parent: [ CivilianOuterClothing, CommonOuterClothing ]
+#   id: ReporterOuterClothing
+
+- type: loadoutGroup
+  parent: [ CommonShoes, CivilianShoes ]
+  id: ReporterShoes
+
+# - type: loadoutGroup
+#   parent: BaseSpecial
+#   id: ReporterSpecial
+
+- type: loadoutGroup
+  parent: [ CivilianTrinkets, CommonTrinkets ]
+  id: ReporterTrinkets
+
+- type: loadoutGroup
+  parent: [ CivilianPets, CommonPets ]
+  id: ReporterPets

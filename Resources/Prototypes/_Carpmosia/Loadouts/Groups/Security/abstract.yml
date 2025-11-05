@@ -1,0 +1,86 @@
+- type: loadoutGroup
+  abstract: true
+  parent: BaseHead
+  id: SecurityHead
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseGlasses
+  id: SecurityGlasses
+  loadouts:
+  - SecurityGlasses
+  - SecurityVisor
+  - SecurityGlassesNoir
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseMask
+  id: SecurityMask
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseNeck
+  id: SecurityNeck
+  loadouts:
+  - SecStar
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseGloves
+  id: SecurityGloves
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseJumpsuit
+  id: SecurityJumpsuit
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseBackpack
+  id: SecurityBackpack
+  loadouts:
+  - SecurityBackpack
+  - SecuritySatchel
+  - SecurityDuffel
+
+- type: loadoutGroup
+  abstract: true
+  parent: BasePDA
+  id: SecurityPDA
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseBelt
+  id: SecurityBelt
+  loadouts:
+  - SecurityBelt
+  - SecurityWebbing
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseOuterClothing
+  id: SecurityOuterClothing
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseShoes
+  id: PrioritySecurityShoes
+  loadouts:
+  - JackBoots
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseShoes
+  id: SecurityShoes
+  loadouts:
+  - SecurityWinterBoots
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseTrinkets
+  id: SecurityTrinkets
+
+- type: loadoutGroup
+  abstract: true
+  parent: BasePets
+  id: SecurityPets
