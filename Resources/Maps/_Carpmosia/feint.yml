@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 11/05/2025 03:53:22
-  entityCount: 21853
+  time: 11/05/2025 21:33:29
+  entityCount: 21857
 maps:
 - 1
 grids:
@@ -4495,7 +4495,8 @@ entities:
           0,-13:
             0: 62463
           1,-12:
-            0: 61408
+            0: 28640
+            3: 32768
           1,-11:
             0: 61678
           1,-10:
@@ -5560,16 +5561,16 @@ entities:
             1: 52420
           15,-12:
             1: 3619
-            3: 8
+            4: 8
           15,-11:
             0: 65535
           15,-10:
             0: 64432
           15,-13:
             1: 13119
-            3: 34816
+            4: 34816
           16,-12:
-            3: 3
+            4: 3
             1: 776
             0: 34944
           16,-11:
@@ -5660,7 +5661,7 @@ entities:
             0: 30583
           14,-16:
             1: 4369
-            4: 17472
+            5: 17472
           14,-15:
             1: 177
             0: 61504
@@ -5670,8 +5671,8 @@ entities:
             1: 61440
             0: 255
           15,-16:
-            5: 4368
-            3: 17472
+            6: 4368
+            4: 17472
           15,-15:
             0: 61520
             1: 160
@@ -5681,8 +5682,8 @@ entities:
             1: 61440
             0: 255
           16,-16:
-            3: 4368
-            6: 17472
+            4: 4368
+            7: 17472
           16,-15:
             0: 61520
             1: 160
@@ -5690,7 +5691,7 @@ entities:
             0: 4095
           16,-13:
             1: 34959
-            3: 13056
+            4: 13056
           13,-20:
             0: 4087
             1: 8
@@ -5794,13 +5795,13 @@ entities:
           17,-21:
             0: 65262
           17,-20:
-            3: 57344
+            4: 57344
           17,-19:
-            3: 238
+            4: 238
             1: 57344
           17,-16:
             1: 52428
-            3: 4368
+            4: 4368
           18,-17:
             1: 30284
           18,-20:
@@ -5857,7 +5858,7 @@ entities:
           18,-12:
             1: 6
             0: 13064
-            3: 34816
+            4: 34816
           19,-15:
             0: 32625
             1: 32910
@@ -5869,8 +5870,8 @@ entities:
             1: 8
           19,-12:
             0: 34975
-            3: 4352
-            7: 8704
+            4: 4352
+            8: 8704
           20,-16:
             1: 1928
             0: 51200
@@ -5889,11 +5890,11 @@ entities:
             0: 61166
           18,-11:
             0: 819
-            3: 2184
+            4: 2184
           18,-10:
             0: 15355
           19,-11:
-            3: 819
+            4: 819
             0: 34824
           19,-10:
             0: 20479
@@ -6412,6 +6413,11 @@ entities:
           moles:
             Oxygen: 27.225372
             Nitrogen: 102.419266
+        - volume: 2500
+          temperature: 293.14975
+          moles:
+            Oxygen: 20.078888
+            Nitrogen: 75.53487
         - volume: 2500
           temperature: 293.15
           moles: {}
@@ -51714,14 +51720,6 @@ entities:
     components:
     - type: Transform
       pos: 46.5,10.5
-      parent: 2
-- proto: ComputerShuttleSalvage
-  entities:
-  - uid: 21853
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 36.5,7.5
       parent: 2
 - proto: ComputerSolarControl
   entities:
@@ -97192,7 +97190,7 @@ entities:
       pos: 7.5,9.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -446130.62
+      secondsUntilStateChange: -446171.06
       state: Opening
   - uid: 14548
     components:
@@ -97200,7 +97198,7 @@ entities:
       pos: 7.5,10.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -446130.12
+      secondsUntilStateChange: -446170.56
       state: Opening
 - proto: HospitalCurtainsOpen
   entities:
@@ -99039,6 +99037,14 @@ entities:
     - type: Transform
       pos: 7.5,-44.5
       parent: 2
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 293.14673
+        moles:
+          Oxygen: 1.7459903
+          Nitrogen: 6.568249
 - proto: LockerMedicalFilled
   entities:
   - uid: 14741
@@ -117014,6 +117020,28 @@ entities:
     components:
     - type: Transform
       pos: -10.5,-7.5
+      parent: 2
+- proto: SpawnPointLatejoin
+  entities:
+  - uid: 21853
+    components:
+    - type: Transform
+      pos: -30.5,-51.5
+      parent: 2
+  - uid: 21855
+    components:
+    - type: Transform
+      pos: -14.5,-51.5
+      parent: 2
+  - uid: 21856
+    components:
+    - type: Transform
+      pos: -14.5,-58.5
+      parent: 2
+  - uid: 21857
+    components:
+    - type: Transform
+      pos: -30.5,-58.5
       parent: 2
 - proto: SpawnPointLawyer
   entities:
@@ -139868,6 +139896,13 @@ entities:
     components:
     - type: Transform
       pos: 3.6144931,-54.35619
+      parent: 2
+- proto: WeaponSubMachineGunWt550
+  entities:
+  - uid: 21854
+    components:
+    - type: Transform
+      pos: 7.5492682,-45.134583
       parent: 2
 - proto: WebBed
   entities:
