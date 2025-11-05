@@ -20,3 +20,12 @@
     back:
     - PlushieDiona
   groupBy: "plushies"
+
+- type: loadout
+  id: HatPlushieDiona
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PlushieDiona
+  equipment:
+    head: PlushieDiona
+  groupBy: "plushies"
