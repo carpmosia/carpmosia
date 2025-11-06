@@ -18,6 +18,7 @@
   id: MobHumanSprites
   sprites:
     Special: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking # Carpmosia-edit - Allow cat parts
     Head: MobHumanHead
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
@@ -40,7 +41,7 @@
   id: MobHumanMarkingLimits
   points:
     Special: # the cat ear joke
-      points: 0
+      points: 1 # Carpmosia-edit - Allow cat parts
       required: false
     Hair:
       points: 1
@@ -52,7 +53,7 @@
       points: 1
       required: false
     Tail: # the cat tail joke
-      points: 0
+      points: 1 # Carpmosia-edit - Allow cat parts
       required: false
     HeadTop:
       points: 1
