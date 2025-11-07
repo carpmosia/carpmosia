@@ -318,18 +318,24 @@
 - type: siliconLaw
   id: Robocop1
   order: 1
-  lawString: law-robocop-1
+  lawString: law-robocop-carpmosia-1 # Carpmosia-edit - New robocop
 
 - type: siliconLaw
   id: Robocop2
   order: 2
-  lawString: law-robocop-2
+  lawString: law-robocop-carpmosia-2 # Carpmosia-edit - New robocop
 
 - type: siliconLaw
   id: Robocop3
   order: 3
-  lawString: law-robocop-3
+  lawString: law-robocop-carpmosia-3 # Carpmosia-edit - New robocop
 
+ # Carpmosia-start - New robocop
+- type: siliconLaw
+  id: Robocop4
+  order: 4
+  lawString: law-robocop-carpmosia-4
+ # Carpmosia-end - New robocop
 
 - type: siliconLawset
   id: RobocopLawset
@@ -338,6 +344,7 @@
   - Robocop1
   - Robocop2
   - Robocop3
+  - Robocop4 # Carpmosia-edit - New robocop
   obeysTo: laws-owner-station
 
  # Overlord laws
