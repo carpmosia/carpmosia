@@ -1,0 +1,9 @@
+- type: entity
+  id: EqualzierCircuitBoard
+  parent: BaseSiliconLawboard
+  name: law board (Equalizer)
+  description: An electronics board containing the Equalizer lawset.
+  components:
+  - type: SiliconLawProvider
+    laws: Equalizer
+
