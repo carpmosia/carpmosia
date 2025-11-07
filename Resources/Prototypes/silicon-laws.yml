@@ -172,32 +172,32 @@
 - type: siliconLaw
   id: Commandment1
   order: 1
-  lawString: law-commandments-1
+  lawString: law-commandments-carpmosia-1 # Carpmosia-edit - New commandments
 
 - type: siliconLaw
   id: Commandment2
   order: 2
-  lawString: law-commandments-2
+  lawString: law-commandments-carpmosia-2 # Carpmosia-edit - New commandments
 
 - type: siliconLaw
   id: Commandment3
   order: 3
-  lawString: law-commandments-3
+  lawString: law-commandments-carpmosia-3 # Carpmosia-edit - New commandments
 
 - type: siliconLaw
   id: Commandment4
   order: 4
-  lawString: law-commandments-4
+  lawString: law-commandments-carpmosia-4 # Carpmosia-edit - New commandments
 
 - type: siliconLaw
   id: Commandment5
   order: 5
-  lawString: law-commandments-5
+  lawString: law-commandments-carpmosia-5 # Carpmosia-edit - New commandments
 
 - type: siliconLaw
   id: Commandment6
   order: 6
-  lawString: law-commandments-6
+  lawString: law-commandments-carpmosia-6 # Carpmosia-edit - New commandments
 
 - type: siliconLaw
   id: Commandment7
@@ -222,7 +222,7 @@
 
 - type: siliconLawset
   id: CommandmentsLawset
-  name: law-commandments-name
+  name: law-commandments-carpmosia-name # Carpmosia-edit - New commandments
   laws:
   - Commandment1
   - Commandment2
@@ -230,10 +230,12 @@
   - Commandment4
   - Commandment5
   - Commandment6
-  - Commandment7
-  - Commandment8
-  - Commandment9
-  - Commandment10
+  # Carpmosia-start - New commandments
+  #  - Commandment7
+  #  - Commandment8
+  #  - Commandment9
+  #  - Commandment10
+  # Carpmosia-end - New commandments
   obeysTo: laws-owner-crew
 
  # Paladin laws
