@@ -59,3 +59,7 @@
 - type: loadoutGroup
   parent: [ CargoTrinkets, CommonTrinkets ]
   id: CargoTechnicianTrinkets
+
+- type: loadoutGroup
+  parent: [ CargoPets, CommonPets ]
+  id: CargoTechnicianPets

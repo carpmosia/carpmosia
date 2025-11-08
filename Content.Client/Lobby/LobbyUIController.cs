@@ -466,6 +466,13 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         {
             // Special type like borg or AI, do not spawn a human just spawn the entity.
             dummyEnt = EntityManager.SpawnEntity(previewEntity, MapCoordinates.Nullspace);
+            // Carpmosia-start - Borg hats
+            if (humanoid != null && job != null && _prototypeManager.HasIndex<RoleLoadoutPrototype>(LoadoutSystem.GetJobPrototype(job.ID)))
+            {
+                var loadout = humanoid.GetLoadoutOrDefault(LoadoutSystem.GetJobPrototype(job.ID), _playerManager.LocalSession, humanoid.Species, EntityManager, _prototypeManager);
+                GiveDummyLoadout(dummyEnt, loadout);
+            }
+            // Carpmosia-end - Borg hats
             return dummyEnt;
         }
         else if (humanoid is not null)

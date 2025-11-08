@@ -91,3 +91,11 @@
   - LaceupShoes
   - LeatherShoes
   # - WizardShoes # make non wizard slippers later
+
+- type: loadoutGroup
+  abstract: true
+  parent: BasePets
+  id: CommonPets
+  loadouts:
+  - PetButterfly
+  - PetBee

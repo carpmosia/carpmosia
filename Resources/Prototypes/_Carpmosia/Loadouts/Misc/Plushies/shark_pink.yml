@@ -1,0 +1,23 @@
+- type: loadoutEffectGroup
+  id: PlushieSharkPink
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobJanitor
+      time: 5h
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobClown
+      time: 5h
+
+- type: loadout
+  id: PlushieSharkPink
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PlushieSharkPink
+  storage:
+    back:
+    - PlushieSharkPink
+  groupBy: "plushies"

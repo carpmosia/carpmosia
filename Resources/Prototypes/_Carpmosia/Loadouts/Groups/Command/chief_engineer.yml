@@ -1,0 +1,69 @@
+- type: loadoutGroup
+  parent: [ CommandHead, EngineeringHead, CommonHead ]
+  id: ChiefEngineerHead
+  loadouts:
+  - ChiefEngineerHead
+  - ChiefEngineerBeret
+
+- type: loadoutGroup
+  parent: [ CommandGlasses, EngineeringGlasses, CommonGlasses ]
+  id: ChiefEngineerGlasses
+  defaultSelected: 1
+
+# - type: loadoutGroup
+#   parent: [ CommandMask, EngineeringMask, CommonMask ]
+#   id: ChiefEngineerMask
+
+- type: loadoutGroup
+  parent: [ CommandNeck, EngineeringNeck, CommonNeck ]
+  id: ChiefEngineerNeck
+  loadouts:
+  - ChiefEngineerCloak
+  - ChiefEngineerMantle
+
+# - type: loadoutGroup
+#   parent: [ CommandGloves, EngineeringGloves, CommonGloves ]
+#   id: ChiefEngineerGloves
+
+- type: loadoutGroup
+  parent: [ CommandJumpsuit, EngineeringJumpsuit, CommonJumpsuit ]
+  id: ChiefEngineerJumpsuit
+  loadouts:
+  - ChiefEngineerJumpsuit
+  - ChiefEngineerJumpskirt
+  - ChiefEngineerTurtleneck
+  - ChiefEngineerTurtleneckSkirt
+
+- type: loadoutGroup
+  parent: [ CommandBackpack, EngineeringBackpack, CommonBackpack ]
+  id: ChiefEngineerBackpack
+
+# - type: loadoutGroup
+#   parent: [ CommandPDA, EngineeringPDA, CommonPDA ]
+#   id: ChiefEngineerPDA
+
+# - type: loadoutGroup
+#   parent: [ CommandBelt, EngineeringBelt, CommonBelt ]
+#   id: ChiefEngineerBelt
+
+- type: loadoutGroup
+  parent: [ CommandOuterClothing, EngineeringOuterClothing, CommonOuterClothing ]
+  id: ChiefEngineerOuterClothing
+  loadouts:
+  - ChiefEngineerWintercoat
+
+- type: loadoutGroup
+  parent: [ PriorityEngineeringShoes, CommonShoes, EngineeringShoes, CommandShoes ]
+  id: ChiefEngineerShoes
+
+# - type: loadoutGroup
+#   parent: BaseSpecial
+#   id: ChiefEngineerSpecial
+
+- type: loadoutGroup
+  parent: [ CommandTrinkets, EngineeringTrinkets, CommonTrinkets ]
+  id: ChiefEngineerTrinkets
+
+- type: loadoutGroup
+  parent: [ CommandPets, EngineeringPets, CommonPets ]
+  id: ChiefEngineerPets
