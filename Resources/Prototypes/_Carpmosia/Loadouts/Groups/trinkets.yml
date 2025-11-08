@@ -1,6 +1,6 @@
 - type: loadoutGroup
   abstract: true
-  parent: [ BaseTrinkets, TrinketLizards, TrinketSmokeables, TrinketFolders, TrinketCanes, TrinketTowels, TrinketMetaplush ]
+  parent: [ BaseTrinkets, TrinketLizards, TrinketPlushies, TrinketMetaplush, TrinketSmokeables, TrinketFolders, TrinketCanes, TrinketTowels ]
   id: CommonTrinkets
   loadouts:
   - FlowerWreath
