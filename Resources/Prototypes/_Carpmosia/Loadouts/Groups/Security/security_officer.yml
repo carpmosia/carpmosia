@@ -71,3 +71,7 @@
 - type: loadoutGroup
   parent: [ SecurityTrinkets, CommonTrinkets ]
   id: SecurityOfficerTrinkets
+
+- type: loadoutGroup
+  parent: [ SecurityPets, CommonPets ]
+  id: SecurityOfficerPets

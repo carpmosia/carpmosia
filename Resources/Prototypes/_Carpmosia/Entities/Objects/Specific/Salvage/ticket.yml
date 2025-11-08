@@ -1,0 +1,53 @@
+- type: entity
+  parent: BaseItem
+  id: SalvageTicket
+  name: ticket
+  suffix: 1
+  description: Tickets you can use in the Salvage Store!
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Economy/salvage_ticket.rsi
+    state: ticket
+  - type: Item
+    size: Small
+    storedRotation: -45
+  - type: Stack
+    count: 1
+    stackType: SalvageTicket
+  - type: StaticPrice
+    price: 0
+  - type: Currency
+    price:
+      SalvageTicket: 1
+
+- type: entity
+  parent: SalvageTicket
+  id: SalvageTicket5
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  parent: SalvageTicket
+  id: SalvageTicket10
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+
+- type: entity
+  parent: SalvageTicket
+  id: SalvageTicket50
+  suffix: 50
+  components:
+  - type: Stack
+    count: 50
+
+- type: entity
+  parent: SalvageTicket
+  id: SalvageTicket100
+  suffix: 100
+  components:
+  - type: Stack
+    count: 100

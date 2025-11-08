@@ -57,3 +57,10 @@
   abstract: true
   parent: BaseTrinkets
   id: CommandTrinkets
+
+- type: loadoutGroup
+  abstract: true
+  parent: BasePets
+  id: CommandPets
+  loadouts:
+  - PetMothroach
