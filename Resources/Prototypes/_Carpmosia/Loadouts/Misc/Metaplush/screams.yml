@@ -5,8 +5,8 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobAtmosphericTechnician
-      time: 180000 # 50hr
+      time: 50h
   storage:
     back:
     - PlushieLizardScreams
-  groupBy: "lizards"
+  groupBy: "metaplush"

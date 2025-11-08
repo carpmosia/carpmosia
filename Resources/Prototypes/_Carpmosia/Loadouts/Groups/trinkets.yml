@@ -1,6 +1,6 @@
 - type: loadoutGroup
   abstract: true
-  parent: [ BaseTrinkets, TrinketLizards, TrinketSmokeables, TrinketFolders, TrinketCanes, TrinketTowels ]
+  parent: [ BaseTrinkets, TrinketLizards, TrinketSmokeables, TrinketFolders, TrinketCanes, TrinketTowels, TrinketMetaplush ]
   id: CommonTrinkets
   loadouts:
   - FlowerWreath
@@ -52,7 +52,6 @@
   - LizardPlushiePsychologist
   - LizardPlushieBoxer
   - LizardPlushieZookeeper
-  - LizardPlushieScreams
 
 - type: loadoutGroup
   abstract: true
@@ -105,3 +104,9 @@
   - TowelColorSilver
   - TowelColorWhite
   - TowelColorYellow
+
+- type: loadoutGroup
+  abstract: true
+  id: TrinketMetaplush
+  loadouts:
+  - LizardPlushieScreams
