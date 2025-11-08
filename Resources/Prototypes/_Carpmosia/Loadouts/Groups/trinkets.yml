@@ -55,6 +55,12 @@
 
 - type: loadoutGroup
   abstract: true
+  id: TrinketMetaplush
+  loadouts:
+  - LizardPlushieScreams
+
+- type: loadoutGroup
+  abstract: true
   id: TrinketSmokeables
   loadouts:
   - Lighter
@@ -104,9 +110,3 @@
   - TowelColorSilver
   - TowelColorWhite
   - TowelColorYellow
-
-- type: loadoutGroup
-  abstract: true
-  id: TrinketMetaplush
-  loadouts:
-  - LizardPlushieScreams
