@@ -1,0 +1,12 @@
+- type: loadout
+  id: LizardPlushieScreams
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobAtmosphericTechnician
+      time: 180000 # 50hr
+  storage:
+    back:
+    - PlushieLizardScreams
+  groupBy: "lizards"

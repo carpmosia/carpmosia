@@ -1,0 +1,36 @@
+- type: entity
+  parent: PlushieLizard
+  id: PlushieLizardScreams
+  name: screams plushie
+  description: An adorable stuffed toy that resembles a lizardperson, specifically Screams-At-Vents. Even the smallest stimuli causes it to scream.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Fun/Plushies/lizard.rsi
+    state: icon
+  - type: Item
+    sprite: _Carpmosia/Objects/Fun/Plushies/lizard.rsi
+  - type: EmitSoundOnUse
+    sound: &PlushieLizardScreamsSound
+      path: /Audio/Voice/Reptilian/reptilian_scream.ogg
+      params:
+        volume: 0
+        pitch: 1.3
+        variation: 0.3
+  - type: EmitSoundOnLand
+    sound: *PlushieLizardScreamsSound
+  - type: EmitSoundOnActivate
+    sound: *PlushieLizardScreamsSound
+  - type: EmitSoundOnTrigger
+    sound: *PlushieLizardScreamsSound
+  - type: EmitSoundOnCollide
+    sound: *PlushieLizardScreamsSound
+  - type: Edible
+    useSound: *PlushieLizardScreamsSound
+    transferAmount: 10
+  - type: MeleeWeapon
+    soundHit: *PlushieLizardScreamsSound
+  - type: Clothing
+    quickEquip: false
+    sprite: _Carpmosia/Objects/Fun/Plushies/lizard.rsi
+    slots:
+    - HEAD
