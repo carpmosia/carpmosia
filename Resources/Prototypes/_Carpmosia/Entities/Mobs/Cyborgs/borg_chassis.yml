@@ -7,7 +7,6 @@
     - type: Sprite
       layers:
       - state: clan_borg
-      - state: clan_borg_moving
       - state: clan_borg_e
         map: ["enum.BorgVisualLayers.Light"]
         shader: unshaded
