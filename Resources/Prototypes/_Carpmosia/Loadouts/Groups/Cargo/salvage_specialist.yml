@@ -1,60 +1,65 @@
 # - type: loadoutGroup
+#   parent: [ CargoHead, CommonHead ]
 #   id: SalvageSpecialistHead
-#   parent: [BaseHead, CommonHead, CargoHead]
 
 - type: loadoutGroup
+  parent: [ CargoGlasses, CommonGlasses ]
   id: SalvageSpecialistGlasses
-  parent: [BaseGlasses, CommonGlasses, CargoGlasses]
 
 # - type: loadoutGroup
+#   parent: [ CargoMask, CommonMask ]
 #   id: SalvageSpecialistMask
-#   parent: [BaseMask, CommonMask, CargoMask]
-
-# - type: loadoutGroup
-#   id: SalvageSpecialistNeck
-#   parent: [BaseNeck, CommonNeck, CargoNeck]
-
-# - type: loadoutGroup
-#   id: SalvageSpecialistGloves
-#   parent: [BaseGloves, CommonGloves, CargoGloves]
-
-# - type: loadoutGroup
-#   id: SalvageSpecialistJumpsuit
-#   parent: [BaseJumpsuit, CommonJumpsuit, CargoJumpsuit]
 
 - type: loadoutGroup
+  parent: [ CargoNeck, CommonNeck ]
+  id: SalvageSpecialistNeck
+
+# - type: loadoutGroup
+#   parent: [ CargoGloves, CommonGloves ]
+#   id: SalvageSpecialistGloves
+
+# - type: loadoutGroup
+#   parent: [ CargoJumpsuit, CommonJumpsuit ]
+#   id: SalvageSpecialistJumpsuit
+
+- type: loadoutGroup
+  parent: [ CargoBackpack, CommonBackpack ]
   id: SalvageSpecialistBackpack
-  parent: [BaseBackpack, CommonBackpack]
   loadouts:
   - SalvageSpecialistBackpack
   - SalvageSpecialistSatchel
   - SalvageSpecialistDuffel
 
 # - type: loadoutGroup
+#   parent: [ CargoPDA, CommonPDA ]
 #   id: SalvageSpecialistPDA
-#   parent: [BasePDA, CommonPDA, CargoPDA]
 
 # - type: loadoutGroup
+#   parent: [ CargoBelt, CommonBelt ]
 #   id: SalvageSpecialistBelt
-#   parent: [BaseBelt, CommonBelt, CargoBelt]
 
 - type: loadoutGroup
+  parent: [ CargoOuterClothing, CommonOuterClothing ]
   id: SalvageSpecialistOuterClothing
-  parent: [BaseOuterClothing, CommonOuterClothing, CargoOuterClothing]
   loadouts:
   - SalvageSpecialistWintercoat
 
 - type: loadoutGroup
+  parent: [ CommonShoes, CargoShoes ]
   id: SalvageSpecialistShoes
-  parent: [BaseShoes, CommonShoes, CargoShoes]
   loadouts:
   - SalvageBoots
-  - CargoWinterBoots
 
 # - type: loadoutGroup
-#   id: SalvageSpecialistSpecial
 #   parent: BaseSpecial
+#   id: SalvageSpecialistSpecial
 
 - type: loadoutGroup
+  parent: [ CargoTrinkets, CommonTrinkets ]
   id: SalvageSpecialistTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, CargoTrinkets]
+
+- type: loadoutGroup
+  parent: [ CargoPets, CommonPets ]
+  id: SalvageSpecialistPets
+  loadouts:
+  - PetSnail

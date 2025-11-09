@@ -1,64 +1,66 @@
 # - type: loadoutGroup
+#   parent: [ EngineeringHead, CommonHead ]
 #   id: AtmosphericTechnicianHead
-#   parent: [BaseHead, CommonHead, EngineeringHead]
-
-# - type: loadoutGroup
-#   id: AtmosphericTechnicianGlasses
-#   parent: [BaseGlasses, CommonGlasses, EngineeringGlasses]
-
-# - type: loadoutGroup
-#   id: AtmosphericTechnicianMask
-#   parent: [BaseMask, CommonMask, EngineeringMask]
-
-# - type: loadoutGroup
-#   id: AtmosphericTechnicianNeck
-#   parent: [BaseNeck, CommonNeck, EngineeringNeck]
-
-# - type: loadoutGroup
-#   id: AtmosphericTechnicianGloves
-#   parent: [BaseGloves, CommonGloves, EngineeringGloves]
 
 - type: loadoutGroup
+  parent: [ EngineeringGlasses, CommonGlasses ]
+  id: AtmosphericTechnicianGlasses
+  defaultSelected: 1
+
+# - type: loadoutGroup
+#   parent: [ EngineeringMask, CommonMask ]
+#   id: AtmosphericTechnicianMask
+
+- type: loadoutGroup
+  parent: [ EngineeringNeck, CommonNeck ]
+  id: AtmosphericTechnicianNeck
+
+# - type: loadoutGroup
+#   parent: [ EngineeringGloves, CommonGloves ]
+#   id: AtmosphericTechnicianGloves
+
+- type: loadoutGroup
+  parent: [ EngineeringJumpsuit, CommonJumpsuit ]
   id: AtmosphericTechnicianJumpsuit
-  parent: [BaseJumpsuit, CommonJumpsuit, EngineeringJumpsuit]
   loadouts:
   - AtmosphericTechnicianJumpsuit
   - AtmosphericTechnicianJumpskirt
   - AtmosphericTechnicianJumpsuitCasual
 
 - type: loadoutGroup
+  parent: [ EngineeringBackpack, CommonBackpack ]
   id: AtmosphericTechnicianBackpack
-  parent: [BaseBackpack, CommonBackpack]
   loadouts:
   - AtmosphericTechnicianBackpack
   - AtmosphericTechnicianSatchel
   - AtmosphericTechnicianDuffel
 
 # - type: loadoutGroup
+#   parent: [ EngineeringPDA, CommonPDA ]
 #   id: AtmosphericTechnicianPDA
-#   parent: [BasePDA, CommonPDA, EngineeringPDA]
 
 # - type: loadoutGroup
+#   parent: [ EngineeringBelt, CommonBelt ]
 #   id: AtmosphericTechnicianBelt
-#   parent: [BaseBelt, CommonBelt, EngineeringBelt]
 
 - type: loadoutGroup
+  parent: [ EngineeringOuterClothing, CommonOuterClothing ]
   id: AtmosphericTechnicianOuterClothing
-  parent: [BaseOuterClothing, CommonOuterClothing, EngineeringOuterClothing]
   loadouts:
   - AtmosphericTechnicianWintercoat
 
 - type: loadoutGroup
+  parent: [ PriorityEngineeringShoes, CommonShoes, EngineeringShoes ]
   id: AtmosphericTechnicianShoes
-  parent: [BaseShoes, CommonShoes, EngineeringShoes]
-  loadouts:
-  - WhiteShoes
-  - EngineeringWinterBoots
 
 # - type: loadoutGroup
-#   id: AtmosphericTechnicianSpecial
 #   parent: BaseSpecial
+#   id: AtmosphericTechnicianSpecial
 
 - type: loadoutGroup
+  parent: [ EngineeringTrinkets, CommonTrinkets ]
   id: AtmosphericTechnicianTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, EngineeringTrinkets]
+
+- type: loadoutGroup
+  parent: [ EngineeringPets, CommonPets ]
+  id: AtmosphericTechnicianPets

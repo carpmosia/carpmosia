@@ -1,0 +1,69 @@
+- type: loadoutGroup
+  parent: [ CommandHead, MedicalHead, CommonHead ]
+  id: ChiefMedicalOfficerHead
+  loadouts:
+  - ChiefMedicalOfficerBeret
+  - CMOMedicalHeadMirror
+
+- type: loadoutGroup
+  parent: [ CommandGlasses, MedicalGlasses, CommonGlasses ]
+  id: ChiefMedicalOfficerGlasses
+
+- type: loadoutGroup
+  parent: [ CommandMask, MedicalMask, CommonMask ]
+  id: ChiefMedicalOfficerMask
+
+- type: loadoutGroup
+  parent: [ CommandNeck, MedicalNeck, CommonNeck ]
+  id: ChiefMedicalOfficerNeck
+  loadouts:
+  - ChiefMedicalOfficerCloak
+  - ChiefMedicalOfficerMantle
+
+- type: loadoutGroup
+  parent: [ CommandGloves, MedicalGloves, CommonGloves ]
+  id: ChiefMedicalOfficerGloves
+
+- type: loadoutGroup
+  parent: [ CommandJumpsuit, MedicalJumpsuit, CommonJumpsuit ]
+  id: ChiefMedicalOfficerJumpsuit
+  loadouts:
+  - ChiefMedicalOfficerJumpsuit
+  - ChiefMedicalOfficerJumpskirt
+  - ChiefMedicalOfficerTurtleneckJumpsuit
+  - ChiefMedicalOfficerTurtleneckJumpskirt
+
+- type: loadoutGroup
+  parent: [ CommandBackpack, MedicalBackpack, CommonBackpack ]
+  id: ChiefMedicalOfficerBackpack
+
+# - type: loadoutGroup
+#   parent: [ CommandPDA, MedicalPDA, CommonPDA ]
+#   id: ChiefMedicalOfficerPDA
+
+# - type: loadoutGroup
+#   parent: [ CommandBelt, MedicalBelt, CommonBelt ]
+#   id: ChiefMedicalOfficerBelt
+
+- type: loadoutGroup
+  parent: [ CommandOuterClothing, MedicalOuterClothing, CommonOuterClothing ]
+  id: ChiefMedicalOfficerOuterClothing
+  loadouts:
+  - ChiefMedicalOfficerLabCoat
+  - ChiefMedicalOfficerWintercoat
+
+- type: loadoutGroup
+  parent: [ CommonShoes, MedicalShoes, CommandShoes ]
+  id: ChiefMedicalOfficerShoes
+
+# - type: loadoutGroup
+#   parent: BaseSpecial
+#   id: ChiefMedicalOfficerSpecial
+
+- type: loadoutGroup
+  parent: [ CommandTrinkets, MedicalTrinkets, CommonTrinkets ]
+  id: ChiefMedicalOfficerTrinkets
+
+- type: loadoutGroup
+  parent: [ CommandPets, MedicalPets, CommonPets ]
+  id: ChiefMedicalOfficerPets

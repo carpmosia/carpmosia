@@ -250,6 +250,7 @@
 - type: entity
   parent: BaseHealingItem
   id: Tourniquet
+  suffix: Full # Carpmosia-edit - Better tourniquets
   name: tourniquet
   description: Stops bleeding! Hopefully.
   components:
@@ -263,13 +264,15 @@
     - type: Healing
       damageContainers:
         - Biological
+      # Carpmosia-start - Better tourniquets
       damage:
-        groups:
-          Brute: 5 # Tourniquets HURT!
         types:
-          Asphyxiation: 5 # Essentially Stopping all blood reaching a part of your body
-      bloodlossModifier: -10 # Tourniquets stop bleeding
-      delay: 0.5
+         Piercing: -2
+         Slash: -2
+      bloodlossModifier: -5 # Tourniquets stop bleeding
+      delay: 2
+      selfHealPenaltyMultiplier: 2
+      # Carpmosia-end - Better tourniquets
       healingBeginSound:
         path: "/Audio/Items/Medical/brutepack_begin.ogg"
         params:
@@ -280,6 +283,11 @@
         params:
           volume: 1.0
           variation: 0.125
+    # Carpmosia-start - Better tourniquets
+    - type: Stack
+      stackType: Tourniquet
+      count: 5
+    # Carpmosia-end - Better tourniquets
 
 - type: entity
   name: roll of gauze

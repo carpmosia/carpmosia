@@ -1,0 +1,131 @@
+- type: loadoutGroup
+  abstract: true
+  parent: [ BaseTrinkets, TrinketLizards, TrinketPlushies, TrinketSmokeables, TrinketFolders, TrinketCanes, TrinketTowels ]
+  id: CommonTrinkets
+  loadouts:
+  - FlowerWreath
+  - Hairflower
+  - Headphones
+  - ThreeCandles
+
+- type: loadoutGroup
+  abstract: true
+  id: TrinketLizards
+  loadouts:
+  - PlushieLizard
+  - PlushieSpaceLizard
+  - LizardPlushieCaptain
+  - LizardPlushieHeadOfPersonnel
+  - LizardPlushiePassenger
+  - LizardPlushieBartender
+  - LizardPlushieServiceWorker
+  - LizardPlushieChef
+  - LizardPlushieLibrarian
+  - LizardPlushieLawyer
+  - LizardPlushieChaplain
+  - LizardPlushieJanitor
+  - LizardPlushieBotanist
+  - LizardPlushieClown
+  - LizardPlushieMime
+  - LizardPlushieMusician
+  - LizardPlushieQuartermaster
+  - LizardPlushieCargoTechnician
+  - LizardPlushieSalvageSpecialist
+  - LizardPlushieChiefEngineer
+  - LizardPlushieTechnicalAssistant
+  - LizardPlushieStationEngineer
+  - LizardPlushieAtmosphericTechnician
+  - LizardPlushieResearchDirector
+  - LizardPlushieScientist
+  - LizardPlushieResearchAssistant
+  - LizardPlushieHeadofSecurity
+  - LizardPlushieWarden
+  - LizardPlushieSecurity
+  - LizardPlushieDetective
+  - LizardPlushieSecurityCadet
+  - LizardPlushieChiefMedicalOfficer
+  - LizardPlushieMedicalDoctor
+  - LizardPlushieMedicalIntern
+  - LizardPlushieChemist
+  - LizardPlushieParamedic
+  - LizardPlushieReporter
+  - LizardPlushiePsychologist
+  - LizardPlushieBoxer
+  - LizardPlushieZookeeper
+
+- type: loadoutGroup
+  abstract: true
+  id: TrinketPlushies
+  loadouts:
+  - PlushieHuman
+  - PlushieMoth
+  - PlushieVox
+  - PlushieSlime
+  - PlushieDiona
+  - PlushieArachind
+  - PlushieSnake
+  - PlushiePenguin
+  - PlushieNar
+  - PlushieRatvar
+  - PlushieBee
+  - PlushieAtmosian
+  - PlushieLamp
+  - PlushieNuke
+  - PlushieCarp
+  - PlushieMagicarp
+  - PlushieSharkBlue
+  - PlushieSharkPink
+  - PlushieSharkGrey
+  - PlushieHampter
+
+- type: loadoutGroup
+  abstract: true
+  id: TrinketSmokeables
+  loadouts:
+  - Lighter
+  - CigPackGreen
+  - CigPackRed
+  - CigPackBlue
+  - CigPackBlack
+  - CigarCase
+  - CigarGold
+
+- type: loadoutGroup
+  abstract: true
+  id: TrinketFolders
+  loadouts:
+  - BoxFolderBaseThreePapers
+  - BoxFolderPlasticClipboardThreePapers
+  - BoxFolderClipboardThreePapers
+
+- type: loadoutGroup
+  abstract: true
+  id: TrinketCanes
+  loadouts:
+  - OffsetCane
+  - OffsetCaneWood
+  - OffsetCaneClown
+  - OffsetCaneMime
+  - OffsetCaneNT
+  - Cane
+
+- type: loadoutGroup
+  abstract: true
+  id: TrinketTowels
+  loadouts:
+  - TowelColorWhite
+  - TowelColorGray
+  - TowelColorBlack
+  - TowelColorRed
+  - TowelColorOrange
+  - TowelColorLightBrown
+  - TowelColorYellow
+  - TowelColorDarkGreen
+  - TowelColorGreen
+  - TowelColorLightBlue
+  - TowelColorDarkBlue
+  - TowelColorPurple
+  - TowelColorMaroon
+  - TowelColorMime
+  - TowelColorSilver
+  - TowelColorGold

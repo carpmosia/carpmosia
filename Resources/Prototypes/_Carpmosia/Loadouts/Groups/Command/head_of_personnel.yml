@@ -1,66 +1,75 @@
 - type: loadoutGroup
+  parent: [ CommandHead, CivilianHead, CommonHead ]
   id: HeadOfPersonnelHead
-  parent: [BaseHead, CommonHead, CommandHead]
   loadouts:
   - HoPHead
 
 - type: loadoutGroup
+  parent: [ CommandGlasses, CivilianGlasses, CommonGlasses ]
   id: HeadOfPersonnelGlasses
-  parent: [BaseGlasses, CommonGlasses, CommandGlasses]
+  defaultSelected: 1
+  loadouts:
+  - CommandHud
 
 # - type: loadoutGroup
+#   parent: [ CommandMask, CivilianMask, CommonMask ]
 #   id: HeadOfPersonnelMask
-#   parent: [BaseMask, CommonMask, CommandMask]
 
 - type: loadoutGroup
+  parent: [ CommandNeck, CivilianNeck, CommonNeck ]
   id: HeadOfPersonnelNeck
-  parent: [BaseNeck, CommonNeck, CommandNeck]
   loadouts:
   - HoPCloak
   - HoPMantle
 
 # - type: loadoutGroup
+#   parent: [ CommandGloves, CivilianGloves, CommonGloves ]
 #   id: HeadOfPersonnelGloves
-#   parent: [BaseGloves, CommonGloves, CommandGloves]
 
 - type: loadoutGroup
+  parent: [ CommandJumpsuit, CivilianJumpsuit, CommonJumpsuit ]
   id: HeadOfPersonnelJumpsuit
-  parent: [BaseJumpsuit, CommonJumpsuit, CommandJumpsuit]
   loadouts:
   - HoPJumpsuit
   - HoPJumpskirt
 
 - type: loadoutGroup
+  parent: [ CommandBackpack, CivilianBackpack, CommonBackpack, InternalIanBackpack ]
   id: HeadOfPersonnelBackpack
-  parent: [BaseBackpack, CommonBackpack, CommandBackpack]
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseBackpack
+  id: InternalIanBackpack
   loadouts:
-  - CommonBackpack
-  - CommonSatchel
-  - CommonDuffel
   - HoPBackpackIan
 
 # - type: loadoutGroup
+#   parent: [ CommandPDA, CivilianPDA, CommonPDA ]
 #   id: HeadOfPersonnelPDA
-#   parent: [BasePDA, CommonPDA, CommandPDA]
 
 # - type: loadoutGroup
+#   parent: [ CommandBelt, CivilianBelt, CommonBelt ]
 #   id: HeadOfPersonnelBelt
-#   parent: [BaseBelt, CommonBelt, CommandBelt]
 
 - type: loadoutGroup
+  parent: [ CommandOuterClothing, CivilianOuterClothing, CommonOuterClothing ]
   id: HeadOfPersonnelOuterClothing
-  parent: [BaseOuterClothing, CommonOuterClothing, CommandOuterClothing]
   loadouts:
   - HoPWintercoat
 
-# - type: loadoutGroup
-#   id: HeadOfPersonnelShoes
-#   parent: [BaseShoes, CommonShoes, CommandShoes]
+- type: loadoutGroup
+  parent: [ CommonShoes, CivilianShoes, CommandShoes ]
+  id: HeadOfPersonnelShoes
 
 # - type: loadoutGroup
-#   id: HeadOfPersonnelSpecial
 #   parent: BaseSpecial
+#   id: HeadOfPersonnelSpecial
 
 - type: loadoutGroup
+  parent: [ CommandTrinkets, CivilianTrinkets, CommonTrinkets ]
   id: HeadOfPersonnelTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, CommandTrinkets]
+
+- type: loadoutGroup
+  parent: [ CommandPets, CivilianPets, CommonPets ]
+  id: HeadOfPersonnelPets

@@ -1,0 +1,101 @@
+# Common loadouts to be inherited by every other group
+- type: loadoutGroup
+  abstract: true
+  parent: BaseHead
+  id: CommonHead
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseGlasses
+  id: CommonGlasses
+  loadouts:
+  - Glasses
+  - GlassesJamjar
+  - GlassesJensen
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseMask
+  id: CommonMask
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseNeck
+  id: CommonNeck
+  loadouts:
+  - ClothingNeckLGBTPin
+  - ClothingNeckAllyPin
+  - ClothingNeckAromanticPin
+  - ClothingNeckAsexualPin
+  - ClothingNeckAroacePin
+  - ClothingNeckBisexualPin
+  - ClothingNeckGayPin
+  - ClothingNeckIntersexPin
+  - ClothingNeckLesbianPin
+  - ClothingNeckNonBinaryPin
+  - ClothingNeckPansexualPin
+  - ClothingNeckPluralPin
+  - ClothingNeckOmnisexualPin
+  - ClothingNeckGenderqueerPin
+  - ClothingNeckGenderfluidPin
+  - ClothingNeckTransPin
+  - ClothingNeckAutismPin
+  - ClothingNeckGoldAutismPin
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseGloves
+  id: CommonGloves
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseJumpsuit
+  id: CommonJumpsuit
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseBackpack
+  id: CommonBackpack
+
+- type: loadoutGroup
+  abstract: true
+  parent: BasePDA
+  id: CommonPDA
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseBelt
+  id: CommonBelt
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseOuterClothing
+  id: CommonOuterClothing
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseShoes
+  id: CommonShoes
+  loadouts:
+  # Basic
+  - BlackShoes
+  - WhiteShoes
+  - RedShoes
+  - OrangeShoes
+  - YellowShoes
+  - GreenShoes
+  - BlueShoes
+  - PurpleShoes
+  - BrownShoes
+  # Fancy
+  - LaceupShoes
+  - LeatherShoes
+  # - WizardShoes # make non wizard slippers later
+
+- type: loadoutGroup
+  abstract: true
+  parent: BasePets
+  id: CommonPets
+  loadouts:
+  - PetButterfly
+  - PetBee

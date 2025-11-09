@@ -1,6 +1,10 @@
 - type: antag
   id: Nukeops
   name: roles-antag-nuclear-operative-name
+  # Carpmosia-start - Antag playtimes
+  playTimeTracker: AntagNukeops
+  color: '#8B0000'
+  # Carpmosia-end - Antag playtimes
   antagonist: true
   setPreference: true
   objective: roles-antag-nuclear-operative-objective
@@ -12,6 +16,10 @@
 - type: antag
   id: NukeopsMedic
   name: roles-antag-nuclear-operative-agent-name
+  # Carpmosia-start - Antag playtimes
+  playTimeTracker: AntagNukeopsMedic
+  color: '#8B0000'
+  # Carpmosia-end - Antag playtimes
   antagonist: true
   setPreference: true
   objective: roles-antag-nuclear-operative-agent-objective
@@ -26,16 +34,21 @@
 - type: antag
   id: NukeopsCommander
   name: roles-antag-nuclear-operative-commander-name
+  # Carpmosia-start - Antag playtimesS
+  playTimeTracker: AntagNukeopsCommander
+  color: '#8B0000'
+  # Carpmosia-end - Antag playtimes
   antagonist: true
   setPreference: true
   objective: roles-antag-nuclear-operative-commander-objective
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 5h
-  - !type:DepartmentTimeRequirement
-    department: Security
+  # Carpmosia-start - Antag playtimes
+  - !type:RoleTimeRequirement
+    role: AntagNukeops
     time: 5h
-  # should be changed to nukie playtime when thats tracked (wyci)
+  # Carpmosia-end - Antag playtimes
   guides: [ NuclearOperatives ]
 
 - type: startingGear

@@ -1,31 +1,32 @@
 - type: loadoutGroup
+  parent: [ EngineeringHead, CommonHead ]
   id: StationEngineerHead
-  parent: [BaseHead, CommonHead, EngineeringHead]
   loadouts:
   - StationEngineerHardhatYellow
   - StationEngineerHardhatOrange
   - StationEngineerHardhatRed
   - SeniorEngineerBeret
 
-# - type: loadoutGroup
-#   id: StationEngineerGlasses
-#   parent: [BaseGlasses, CommonGlasses, EngineeringGlasses]
+- type: loadoutGroup
+  parent: [ EngineeringGlasses, CommonGlasses ]
+  id: StationEngineerGlasses
+  defaultSelected: 1
 
 # - type: loadoutGroup
+#   parent: [ EngineeringMask, CommonMask ]
 #   id: StationEngineerMask
-#   parent: [BaseMask, CommonMask, EngineeringMask]
-
-# - type: loadoutGroup
-#   id: StationEngineerNeck
-#   parent: [BaseNeck, CommonNeck, EngineeringNeck]
-
-# - type: loadoutGroup
-#   id: StationEngineerGloves
-#   parent: [BaseGloves, CommonGloves, EngineeringGloves]
 
 - type: loadoutGroup
+  parent: [ EngineeringNeck, CommonNeck ]
+  id: StationEngineerNeck
+
+# - type: loadoutGroup
+#   parent: [ EngineeringGloves, CommonGloves ]
+#   id: StationEngineerGloves
+
+- type: loadoutGroup
+  parent: [ EngineeringJumpsuit, CommonJumpsuit ]
   id: StationEngineerJumpsuit
-  parent: [BaseJumpsuit, CommonJumpsuit, EngineeringJumpsuit]
   loadouts:
   - StationEngineerJumpsuit
   - StationEngineerJumpskirt
@@ -34,38 +35,39 @@
   - SeniorEngineerJumpskirt
 
 - type: loadoutGroup
+  parent: [ EngineeringBackpack, CommonBackpack ]
   id: StationEngineerBackpack
-  parent: [BaseBackpack, CommonBackpack, EngineeringBackpack]
 
 - type: loadoutGroup
+  parent: [ EngineeringPDA, CommonPDA ]
   id: StationEngineerPDA
-  parent: [BasePDA, CommonPDA, EngineeringPDA]
   loadouts:
   - StationEngineerPDA
   - SeniorEngineerPDA
 
 # - type: loadoutGroup
+#   parent: [ EngineeringBelt, CommonBelt ]
 #   id: StationEngineerBelt
-#   parent: [BaseBelt, CommonBelt, EngineeringBelt]
 
 - type: loadoutGroup
+  parent: [ EngineeringOuterClothing, CommonOuterClothing ]
   id: StationEngineerOuterClothing
-  parent: [BaseOuterClothing, CommonOuterClothing, EngineeringOuterClothing]
   loadouts:
   - StationEngineerOuterVest
   - StationEngineerWintercoat
 
 - type: loadoutGroup
+  parent: [ PriorityEngineeringShoes, CommonShoes, EngineeringShoes ]
   id: StationEngineerShoes
-  parent: [BaseShoes, CommonShoes, EngineeringShoes]
-  loadouts:
-  - WorkBoots
-  - EngineeringWinterBoots
 
 # - type: loadoutGroup
-#   id: StationEngineerSpecial
 #   parent: BaseSpecial
+#   id: StationEngineerSpecial
 
 - type: loadoutGroup
+  parent: [ EngineeringTrinkets, CommonTrinkets ]
   id: StationEngineerTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, EngineeringTrinkets]
+
+- type: loadoutGroup
+  parent: [ EngineeringPets, CommonPets ]
+  id: StationEngineerPets

@@ -1,54 +1,59 @@
 # - type: loadoutGroup
+#   parent: [ SecurityHead, CommonHead ]
 #   id: SecurityCadetHead
-#   parent: [BaseHead, CommonHead, SecurityHead]
-
-# - type: loadoutGroup
-#   id: SecurityCadetGlasses
-#   parent: [BaseGlasses, CommonGlasses, SecurityGlasses]
-
-# - type: loadoutGroup
-#   id: SecurityCadetMask
-#   parent: [BaseMask, CommonMask, SecurityMask]
-
-# - type: loadoutGroup
-#   id: SecurityCadetNeck
-#   parent: [BaseNeck, CommonNeck, SecurityNeck]
-
-# - type: loadoutGroup
-#   id: SecurityCadetGloves
-#   parent: [BaseGloves, CommonGloves, SecurityGloves]
 
 - type: loadoutGroup
+  parent: [ SecurityGlasses ] # CommonGlasses removed
+  id: SecurityCadetGlasses
+  minLimit: 1
+
+# - type: loadoutGroup
+#   parent: [ SecurityMask, CommonMask ]
+#   id: SecurityCadetMask
+
+- type: loadoutGroup
+  parent: [ SecurityNeck, CommonNeck ]
+  id: SecurityCadetNeck
+
+# - type: loadoutGroup
+#   parent: [ SecurityGloves, CommonGloves ]
+#   id: SecurityCadetGloves
+
+- type: loadoutGroup
+  parent: [ SecurityJumpsuit, CommonJumpsuit ]
   id: SecurityCadetJumpsuit
-  parent: [BaseJumpsuit, CommonJumpsuit, SecurityJumpsuit]
   loadouts:
   - RedJumpsuit
   - RedJumpskirt
 
 - type: loadoutGroup
+  parent: [ SecurityBackpack, CommonBackpack ]
   id: SecurityCadetBackpack
-  parent: [BaseBackpack, CommonBackpack, SecurityBackpack]
 
 # - type: loadoutGroup
+#   parent: [ SecurityPDA, CommonPDA ]
 #   id: SecurityCadetPDA
-#   parent: [BasePDA, CommonPDA, SecurityPDA]
 
 # - type: loadoutGroup
+#   parent: [ SecurityBelt, CommonBelt ]
 #   id: SecurityCadetBelt
-#   parent: [BaseBelt, CommonBelt, SecurityBelt]
 
 # - type: loadoutGroup
+#   parent: [ SecurityOuterClothing, CommonOuterClothing ]
 #   id: SecurityCadetOuterClothing
-#   parent: [BaseOuterClothing, CommonOuterClothing, SecurityOuterClothing]
-
-# - type: loadoutGroup
-#   id: SecurityCadetShoes
-#   parent: [BaseShoes, CommonShoes, SecurityShoes]
-
-# - type: loadoutGroup
-#   id: SecurityCadetSpecial
-#   parent: BaseSpecial
 
 - type: loadoutGroup
+  parent: [ PrioritySecurityShoes, CommonShoes, SecurityShoes ]
+  id: SecurityCadetShoes
+
+# - type: loadoutGroup
+#   parent: BaseSpecial
+#   id: SecurityCadetSpecial
+
+- type: loadoutGroup
+  parent: [ SecurityTrinkets, CommonTrinkets ]
   id: SecurityCadetTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, SecurityTrinkets]
+
+- type: loadoutGroup
+  parent: [ SecurityPets, CommonPets ]
+  id: SecurityCadetPets

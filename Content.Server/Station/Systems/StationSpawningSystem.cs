@@ -117,6 +117,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             if (loadout != null)
             {
                 EquipRoleName(jobEntity, loadout, roleProto!);
+                EquipRoleLoadout(jobEntity, loadout, roleProto!); // Carpmosia-edit - Borg hats
             }
 
             DoJobSpecials(job, jobEntity);

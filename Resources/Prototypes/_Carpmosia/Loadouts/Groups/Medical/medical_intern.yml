@@ -1,54 +1,58 @@
 # - type: loadoutGroup
+#   parent: [ MedicalHead, CommonHead ]
 #   id: MedicalInternHead
-#   parent: [BaseHead, CommonHead, MedicalHead]
 
 - type: loadoutGroup
+  parent: [ MedicalGlasses, CommonGlasses ]
   id: MedicalInternGlasses
-  parent: [BaseGlasses, CommonGlasses, MedicalGlasses]
 
 # - type: loadoutGroup
+#   parent: [ MedicalMask, CommonMask ]
 #   id: MedicalInternMask
-#   parent: [BaseMask, CommonMask, MedicalMask]
-
-# - type: loadoutGroup
-#   id: MedicalInternNeck
-#   parent: [BaseNeck, CommonNeck, MedicalNeck]
-
-# - type: loadoutGroup
-#   id: MedicalInternGloves
-#   parent: [BaseGloves, CommonGloves, MedicalGloves]
 
 - type: loadoutGroup
+  parent: [ MedicalNeck, CommonNeck ]
+  id: MedicalInternNeck
+
+# - type: loadoutGroup
+#   parent: [ MedicalGloves, CommonGloves ]
+#   id: MedicalInternGloves
+
+- type: loadoutGroup
+  parent: [ MedicalJumpsuit, CommonJumpsuit ]
   id: MedicalInternJumpsuit
-  parent: [BaseJumpsuit, CommonJumpsuit, MedicalJumpsuit]
   loadouts:
   - WhiteJumpsuit
   - WhiteJumpskirt
 
 - type: loadoutGroup
+  parent: [ MedicalBackpack, CommonBackpack ]
   id: MedicalInternBackpack
-  parent: [BaseBackpack, CommonBackpack, MedicalBackpack]
 
 # - type: loadoutGroup
+#   parent: [ MedicalPDA, CommonPDA ]
 #   id: MedicalInternPDA
-#   parent: [BasePDA, CommonPDA, MedicalPDA]
 
 # - type: loadoutGroup
+#   parent: [ MedicalBelt, CommonBelt ]
 #   id: MedicalInternBelt
-#   parent: [BaseBelt, CommonBelt, MedicalBelt]
 
 # - type: loadoutGroup
+#   parent: [ MedicalOuterClothing, CommonOuterClothing ]
 #   id: MedicalInternOuterClothing
-#   parent: [BaseOuterClothing, CommonOuterClothing, MedicalOuterClothing]
-
-# - type: loadoutGroup
-#   id: MedicalInternShoes
-#   parent: [BaseShoes, CommonShoes, MedicalShoes]
-
-# - type: loadoutGroup
-#   id: MedicalInternSpecial
-#   parent: BaseSpecial
 
 - type: loadoutGroup
+  parent: [ CommonShoes, MedicalShoes ]
+  id: MedicalInternShoes
+
+# - type: loadoutGroup
+#   parent: BaseSpecial
+#   id: MedicalInternSpecial
+
+- type: loadoutGroup
+  parent: [ MedicalTrinkets, CommonTrinkets ]
   id: MedicalInternTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, MedicalTrinkets]
+
+- type: loadoutGroup
+  parent: [ MedicalPets, CommonPets ]
+  id: MedicalInternPets

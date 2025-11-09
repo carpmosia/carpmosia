@@ -1,32 +1,32 @@
 - type: loadoutGroup
+  parent: [ ScienceHead, CommonHead ]
   id: ScientistHead
-  parent: [BaseHead, CommonHead, ScienceHead]
   loadouts:
   - RoboticistCap
   - SkullBandana
   - ScientificBeret
 
 - type: loadoutGroup
+  parent: [ ScienceGlasses, CommonGlasses ]
   id: ScientistGlasses
-  parent: [BaseGlasses, CommonGlasses, ScienceGlasses]
 
 # - type: loadoutGroup
+#   parent: [ ScienceMask, CommonMask ]
 #   id: ScientistMask
-#   parent: [BaseMask, CommonMask, ScienceMask]
 
 - type: loadoutGroup
+  parent: [ ScienceNeck, CommonNeck ]
   id: ScientistNeck
-  parent: [BaseNeck, CommonNeck, ScienceNeck]
   loadouts:
   - ScientistTie
 
 - type: loadoutGroup
+  parent: [ ScienceGloves, CommonGloves ]
   id: ScientistGloves
-  parent: [BaseGloves, CommonGloves, ScienceGloves]
 
 - type: loadoutGroup
+  parent: [ ScienceJumpsuit, CommonJumpsuit ]
   id: ScientistJumpsuit
-  parent: [BaseJumpsuit, CommonJumpsuit, ScienceJumpsuit]
   loadouts:
   - ScientistJumpsuit
   - ScientistJumpskirt
@@ -36,23 +36,23 @@
   - SeniorResearcherJumpskirt
 
 - type: loadoutGroup
+  parent: [ ScienceBackpack, CommonBackpack ]
   id: ScientistBackpack
-  parent: [BaseBackpack, CommonBackpack, ScienceBackpack]
 
 - type: loadoutGroup
+  parent: [ SciencePDA, CommonPDA ]
   id: ScientistPDA
-  parent: [BasePDA, CommonPDA, SciencePDA]
   loadouts:
   - ScientistPDA
   - SeniorResearcherPDA
 
 # - type: loadoutGroup
+#   parent: [ ScienceBelt, CommonBelt ]
 #   id: ScientistBelt
-#   parent: [BaseBelt, CommonBelt, ScienceBelt]
 
 - type: loadoutGroup
+  parent: [ ScienceOuterClothing, CommonOuterClothing ]
   id: ScientistOuterClothing
-  parent: [BaseOuterClothing, CommonOuterClothing, ScienceOuterClothing]
   loadouts:
   - RegularLabCoat
   - ScienceLabCoat
@@ -62,17 +62,17 @@
   - SeniorResearcherLabCoat
 
 - type: loadoutGroup
+  parent: [ CommonShoes, ScienceShoes ]
   id: ScientistShoes
-  parent: [BaseShoes, CommonShoes, ScienceShoes]
-  loadouts:
-  - WhiteShoes
-  - BlackShoes
-  - ScienceWinterBoots
 
 # - type: loadoutGroup
-#   id: ScientistSpecial
 #   parent: BaseSpecial
+#   id: ScientistSpecial
 
 - type: loadoutGroup
+  parent: [ ScienceTrinkets, CommonTrinkets ]
   id: ScientistTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, ScienceTrinkets]
+
+- type: loadoutGroup
+  parent: [ SciencePets, CommonPets ]
+  id: ScientistPets
