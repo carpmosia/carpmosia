@@ -26,7 +26,7 @@ public sealed class ProduceMaterialExtractorSystem : EntitySystem
     public override void Initialize()
     {
         SubscribeLocalEvent<ProduceMaterialExtractorComponent, AfterInteractUsingEvent>(OnInteractUsing);
-        SubscribeLocalEvent<ProduceMaterialExtractorComponent, ContainerDoAfterEvent>(OnContainerDoAfter); // Carpmosia-edit - Insert storage contents into biogenerator
+        SubscribeLocalEvent<ProduceMaterialExtractorComponent, BiogenDoAfterEvent>(OnBiogenDoAfter); // Carpmosia-edit - Insert storage contents into biogenerator
     }
 
     private void OnInteractUsing(Entity<ProduceMaterialExtractorComponent> ent, ref AfterInteractUsingEvent args)
@@ -40,7 +40,7 @@ public sealed class ProduceMaterialExtractorSystem : EntitySystem
         // Carpmosia-start - Insert storage contents into biogenerator
         if (HasComp<StorageComponent>(args.Used))
         {
-            var doAfter = new DoAfterArgs(EntityManager, args.User, 0.5f, new ContainerDoAfterEvent(), ent, ent, used: args.Used)
+            var doAfter = new DoAfterArgs(EntityManager, args.User, 0.5f, new BiogenDoAfterEvent(), ent, ent, used: args.Used)
             {
                 BreakOnDamage = true,
                 NeedHand = true,
@@ -88,32 +88,36 @@ public sealed class ProduceMaterialExtractorSystem : EntitySystem
     /// <param name="uid">The biogen uid</param>
     /// <param name="comp">The material extractor component</param>
     /// <param name="args">DoAfter args</param>
-    private void OnContainerDoAfter(EntityUid uid, ProduceMaterialExtractorComponent comp, ContainerDoAfterEvent args)
+    private void OnBiogenDoAfter(EntityUid uid, ProduceMaterialExtractorComponent comp, BiogenDoAfterEvent args)
     {
+        if (args.Cancelled || args.Handled || args.Target == null)
+            return;
+
         // If there's no storage component, we leave
         if (!TryComp<StorageComponent>(args.Used, out var storage))
             return;
+
         // If the storage is empty, we leave
         if (storage.StoredItems.Count == 0)
             return;
+
         // Find every valid item and convert it to biomass
         foreach (var (item, _location) in storage.StoredItems)
         {
             if (!TryComp<ProduceComponent>(item, out var produce))
                 continue;
 
-            if (_solutionContainer.TryGetSolution(item, produce.SolutionName, out var solution))
-            {
-                var matAmount = solution.Value.Comp.Solution.Contents
+            if (!_solutionContainer.TryGetSolution(item, produce.SolutionName, out var solution))
+                continue;
+
+            var matAmount = solution.Value.Comp.Solution.Contents
                 .Where(r => comp.ExtractionReagents.Contains(r.Reagent.Prototype))
                 .Sum(r => r.Quantity.Float());
 
-                var changed = (int)matAmount;
+            var changed = (int)matAmount;
 
-                _materialStorage.TryChangeMaterialAmount(comp.Owner, comp.ExtractedMaterial, changed);
-                QueueDel(item);
-            }
-
+            _materialStorage.TryChangeMaterialAmount(comp.Owner, comp.ExtractedMaterial, changed);
+            QueueDel(item);
         }
 
         _audio.PlayPvs(comp.ExtractSound, comp.Owner);
