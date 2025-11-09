@@ -1,5 +1,5 @@
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array; // Carpmosia-edit - massive loadout rework
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 
 namespace Content.Shared.Preferences.Loadouts;
 
@@ -7,12 +7,10 @@ namespace Content.Shared.Preferences.Loadouts;
 /// Corresponds to a set of loadouts for a particular slot.
 /// </summary>
 [Prototype]
-public sealed partial class LoadoutGroupPrototype : IPrototype, IInheritingPrototype // Carpmosia-edit - massive loadout rework
+public sealed partial class LoadoutGroupPrototype : IPrototype, IInheritingPrototype
 {
     [IdDataField]
     public string ID { get; private set; } = string.Empty;
-
-    // Carpmosia-start - massive loadout rework
 
     /// <inheritdoc />
     [ParentDataFieldAttribute(typeof(AbstractPrototypeIdArraySerializer<LoadoutGroupPrototype>))]
@@ -22,7 +20,6 @@ public sealed partial class LoadoutGroupPrototype : IPrototype, IInheritingProto
     [NeverPushInheritance]
     [AbstractDataField]
     public bool Abstract { get; }
-    // Carpmosia-end - massive loadout rework
 
     /// <summary>
     /// User-friendly name for the group.
@@ -35,15 +32,12 @@ public sealed partial class LoadoutGroupPrototype : IPrototype, IInheritingProto
     /// </summary>
     [DataField]
     public int MinLimit = 1;
-
-    // Carpmosia-start - massive loadout rework
-
+    
     /// <summary>
     /// Number of loadouts that are selected by default.
     /// </summary>
     [DataField]
     public int DefaultSelected = 0;
-    // Carpmosia-end - massive loadout rework
 
     /// <summary>
     /// Maximum limit for the category.
@@ -57,7 +51,7 @@ public sealed partial class LoadoutGroupPrototype : IPrototype, IInheritingProto
     [DataField]
     public bool Hidden;
 
-    [AlwaysPushInheritance] // Carpmosia-edit - massive loadout rework
+    [AlwaysPushInheritance]
     [DataField(required: true)]
     public List<ProtoId<LoadoutPrototype>> Loadouts = new();
 }
