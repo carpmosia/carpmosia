@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 11/01/2025 03:17:21
-  entityCount: 152
+  time: 11/08/2025 18:08:53
+  entityCount: 151
 maps: []
 grids:
 - 181
@@ -889,17 +889,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -2.5,5.5
       parent: 181
-- proto: ComputerCargoOrders
-  entities:
-  - uid: 153
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -3.5,5.5
-      parent: 181
-    - type: AccessReader
-      accessListsOriginal:
-      - - Cargo
 - proto: ComputerShuttle
   entities:
   - uid: 156
@@ -1102,16 +1091,6 @@ entities:
           - Toggle
     - type: Fixtures
       fixtures: {}
-- proto: VendingStoreSalvage
-  entities:
-  - uid: 134
-    components:
-    - type: Transform
-      pos: -3.5,3.5
-      parent: 181
-    - type: AccessReader
-      accessListsOriginal:
-      - - Salvage
 - proto: SMESBasic
   entities:
   - uid: 24
@@ -1159,6 +1138,16 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -6.5,-0.5
       parent: 181
+- proto: VendingStoreSalvage
+  entities:
+  - uid: 134
+    components:
+    - type: Transform
+      pos: -3.5,5.5
+      parent: 181
+    - type: AccessReader
+      accessListsOriginal:
+      - - Salvage
 - proto: WallSolid
   entities:
   - uid: 30
