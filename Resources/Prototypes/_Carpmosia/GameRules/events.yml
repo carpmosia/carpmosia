@@ -12,11 +12,11 @@
 
       #TODO: fix this shit
       #TODO: Make what spawns the "Hunter" spiders (/texture/mobs/animals/siders.rsi)
-- type: entity
-  id: NinjaSpiderSpawn
-  parent: BaseStationEventShortDelay
-  components:
-  - type: VentCrittersRule
-    entries:
-    - id: MobGiantSpierAngry
-      prob: 0.05
+#- type: entity
+#  id: NinjaSpiderSpawn
+#  parent: BaseStationEventShortDelay
+#  components:
+#  - type: VentCrittersRule
+#    entries:
+#    - id: MobGiantSpierAngry
+#      prob: 0.05

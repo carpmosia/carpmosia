@@ -6,9 +6,15 @@
   components:
     - type: Sprite
       layers:
-      - map: ["movement"]
-       state: clan-spider
-       sprite: _Carpmosia/Mobs/Silicon/chassis.rsi
+      - state: clan_borg
+      - state: clan_borg_e
+        map: ["enum.BorgVisualLayers.Light"]
+        shader: unshaded
+        visible: false
+      - state: clan_borg_l
+        shader: unshaded
+        map: ["light"]
+        visible: false
     - type: BorgChassis
       maxModules: 6
       moduleWhitelist:

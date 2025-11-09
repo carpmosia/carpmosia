@@ -12,11 +12,11 @@
     raffle:
       settings: default
   - type: Sprite #TODO: new sprite
-    sprite: Markers/jobs.rsi
+    sprite: _Carpmosia/Markers/jobs.rsi
     layers:
     - state: green
-    - sprite: _Carpmosia/Mobs/Silicon/chassis.rsi 
-      state: derelict_icon
+    - sprite: _Carpmosia/Markers/job.rsi
+      state: clan_borg_icon
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
