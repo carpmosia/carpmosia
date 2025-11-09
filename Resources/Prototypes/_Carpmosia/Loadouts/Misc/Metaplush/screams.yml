@@ -10,3 +10,15 @@
     back:
     - PlushieLizardScreams
   groupBy: "metaplush"
+
+- type: loadout
+  id: HatPlushieScreams
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobAtmosphericTechnician
+      time: 50h
+  equipment:
+    head: PlushieLizardScreams
+  groupBy: "metaplush"

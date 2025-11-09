@@ -34,3 +34,17 @@
     sprite: _Carpmosia/Objects/Fun/Plushies/lizard.rsi
     slots:
     - HEAD
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceThatMakesYouScream
+        Quantity: 30
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
+        - ReagentId: JuiceThatMakesYouScream
+          Quantity: 10
