@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 11/09/2025 21:47:11
-  entityCount: 21867
+  time: 11/09/2025 22:27:07
+  entityCount: 21865
 maps:
 - 1
 grids:
@@ -97262,7 +97262,7 @@ entities:
       pos: 7.5,9.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -446827.5
+      secondsUntilStateChange: -446858.62
       state: Opening
   - uid: 14548
     components:
@@ -97270,7 +97270,7 @@ entities:
       pos: 7.5,10.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -446827
+      secondsUntilStateChange: -446858.12
       state: Opening
 - proto: HospitalCurtainsOpen
   entities:
@@ -100250,18 +100250,6 @@ entities:
     components:
     - type: Transform
       pos: 3.5884185,3.6429539
-      parent: 2
-- proto: MagazinePistolSubMachineGunTopMounted
-  entities:
-  - uid: 14839
-    components:
-    - type: Transform
-      pos: 7.531024,-45.12097
-      parent: 2
-  - uid: 14840
-    components:
-    - type: Transform
-      pos: 7.437274,-45.27722
       parent: 2
 - proto: MagicDiceBag
   entities:
