@@ -1,7 +1,9 @@
 - type: marking
   id: CatEars
-  bodyPart: HeadTop # Carpmosia-edit - Allow cat parts
-  markingCategory: HeadTop # Carpmosia-edit - Allow cat parts
+  # Carpmosia-start - Allow cat parts
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  # Carpmosia-end - Allow cat parts
   speciesRestriction: [Human]
   coloring:
     default:
