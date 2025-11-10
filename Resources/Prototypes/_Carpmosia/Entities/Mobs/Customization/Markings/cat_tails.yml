@@ -3,6 +3,15 @@
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [Human]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:CategoryColoring
+          category: FacialHair
+        - !type:SkinColoring
   sprites:
   - sprite: _Carpmosia/Mobs/Customization/cat_tails.rsi
     state: basic_tail_tip
@@ -16,6 +25,19 @@
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [Human]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:CategoryColoring
+          category: FacialHair
+    layers:
+      basic_bow:
+        type:
+          !type:SimpleColoring
+            color: "#FFFFFF"
   sprites:
   - sprite: _Carpmosia/Mobs/Customization/cat_tails.rsi
     state: basic_tail_tip
@@ -31,6 +53,20 @@
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [Human]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:CategoryColoring
+          category: FacialHair
+        - !type:SkinColoring
+    layers:
+      basic_bell:
+        type:
+          !type:SimpleColoring
+            color: "#FFFFFF"
   sprites:
   - sprite: _Carpmosia/Mobs/Customization/cat_tails.rsi
     state: basic_tail_tip
@@ -43,6 +79,24 @@
 
 - type: marking
   id: CatTailBasicWithBowAndBell
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:CategoryColoring
+          category: FacialHair
+        - !type:SkinColoring
+    layers:
+      basic_bow:
+        type:
+          !type:SimpleColoring
+            color: "#FFFFFF"
+      basic_bell:
+        type:
+          !type:SimpleColoring
+            color: "#FFFFFF"
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [Human]
