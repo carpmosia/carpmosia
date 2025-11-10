@@ -3,7 +3,7 @@
   id: SalvageStorePickaxe
   productEntity: Pickaxe
   cost:
-    SalvageTicket: 20
+    SalvageTicket: 200
   categories:
   - SalvageStoreEquipment
   conditions:
@@ -13,7 +13,7 @@
   id: SalvageStoreOreBag
   productEntity: OreBag
   cost:
-    SalvageTicket: 20
+    SalvageTicket: 200
   categories:
   - SalvageStoreEquipment
   conditions:
@@ -23,7 +23,7 @@
   id: SalvageStoreBodyBag
   productEntity: BodyBag
   cost:
-    SalvageTicket: 40
+    SalvageTicket: 400
   categories:
   - SalvageStoreEquipment
   conditions:
@@ -34,7 +34,7 @@
   description: A grappling hook that allows you to latch on to targets at a distance and pull yourself toward them. Perfect for salvaging in zero gravity.
   productEntity: WeaponGrapplingGun
   cost:
-    SalvageTicket: 40
+    SalvageTicket: 400
   categories:
   - SalvageStoreEquipment
   conditions:
@@ -44,7 +44,7 @@
   id: SalvageStoreFultonBeacon
   productEntity: FultonBeacon
   cost:
-    SalvageTicket: 60
+    SalvageTicket: 600
   categories:
   - SalvageStoreEquipment
   conditions:
@@ -56,7 +56,7 @@
   id: SalvageStoreFulton
   productEntity: Fulton
   cost:
-    SalvageTicket: 60
+    SalvageTicket: 600
   categories:
   - SalvageStoreEquipment
   conditions:
@@ -68,7 +68,7 @@
   id: SalvageStoreSurvivalKnife
   productEntity: SurvivalKnife
   cost:
-    SalvageTicket: 40
+    SalvageTicket: 400
   categories:
   - SalvageStoreEquipment
   conditions:
@@ -78,7 +78,7 @@
   id: SalvageStoreDoubleEmergencyOxygenTankFilled
   productEntity: DoubleEmergencyOxygenTankFilled
   cost:
-    SalvageTicket: 80
+    SalvageTicket: 800
   categories:
   - SalvageStoreEquipment
   conditions:
@@ -90,7 +90,7 @@
   id: SalvageStoreDoubleEmergencyNitrogenTankFilled
   productEntity: DoubleEmergencyNitrogenTankFilled
   cost:
-    SalvageTicket: 80
+    SalvageTicket: 800
   categories:
   - SalvageStoreEquipment
   conditions:
@@ -102,7 +102,7 @@
   id: SalvageStoreMineralScanner
   productEntity: MineralScanner
   cost:
-    SalvageTicket: 80
+    SalvageTicket: 800
   categories:
   - SalvageStoreEquipment
   conditions:
@@ -112,7 +112,7 @@
   id: SalvageStoreClothingOuterHardsuitSpatio
   productEntity: ClothingOuterHardsuitSpatio
   cost:
-    SalvageTicket: 100
+    SalvageTicket: 1000
   categories:
   - SalvageStoreEquipment
   conditions:
@@ -122,7 +122,7 @@
   id: SalvageStoreMiningDrill
   productEntity: MiningDrill
   cost:
-    SalvageTicket: 100
+    SalvageTicket: 1000
   categories:
   - SalvageStoreEquipment
   conditions:
@@ -132,7 +132,7 @@
   id: SalvageStoreSeismicCharge
   productEntity: SeismicCharge
   cost:
-    SalvageTicket: 120
+    SalvageTicket: 1200
   categories:
   - SalvageStoreEquipment
   conditions:
@@ -142,7 +142,7 @@
   id: SalvageStoreClothingOuterHardsuitSalvage
   productEntity: ClothingOuterHardsuitSalvage
   cost:
-    SalvageTicket: 250
+    SalvageTicket: 2500
   categories:
   - SalvageStoreEquipment
   conditions:
@@ -153,7 +153,7 @@
   id: SalvageStoreFlareGun
   productEntity: WeaponFlareGun
   cost:
-    SalvageTicket: 20
+    SalvageTicket: 200
   categories:
   - SalvageStoreWeapons
   conditions:
@@ -167,7 +167,7 @@
     sprite: Objects/Weapons/Guns/Ammunition/Boxes/shotgun.rsi
     state: flare
   cost:
-    SalvageTicket: 20
+    SalvageTicket: 200
   categories:
   - SalvageStoreWeapons
   conditions:
@@ -177,7 +177,7 @@
   id: SalvageStoreWeaponCrusherDagger
   productEntity: WeaponCrusherDagger
   cost:
-    SalvageTicket: 100
+    SalvageTicket: 1000
   categories:
   - SalvageStoreWeapons
   conditions:
@@ -189,7 +189,7 @@
   id: SalvageStoreWeaponCrusherGlaive
   productEntity: WeaponCrusherGlaive
   cost:
-    SalvageTicket: 250
+    SalvageTicket: 2500
   categories:
   - SalvageStoreWeapons
   conditions:
@@ -201,7 +201,7 @@
   id: SalvageStoreWeaponCrusher
   productEntity: WeaponCrusher
   cost:
-    SalvageTicket: 300
+    SalvageTicket: 3000
   categories:
   - SalvageStoreWeapons
   conditions:
@@ -214,7 +214,7 @@
   id: SalvageStoreCigPackRed
   productEntity: CigPackRed
   cost:
-    SalvageTicket: 10
+    SalvageTicket: 100
   categories:
   - SalvageStoreConsumables
   conditions:
@@ -224,7 +224,7 @@
   id: SalvageStoreCigPackGreen
   productEntity: CigPackGreen
   cost:
-    SalvageTicket: 10
+    SalvageTicket: 100
   categories:
   - SalvageStoreConsumables
   conditions:
@@ -234,7 +234,7 @@
   id: SalvageStoreCigPackBlue
   productEntity: CigPackBlue
   cost:
-    SalvageTicket: 10
+    SalvageTicket: 100
   categories:
   - SalvageStoreConsumables
   conditions:
@@ -244,7 +244,7 @@
   id: SalvageStoreCigPackBlack
   productEntity: CigPackBlack
   cost:
-    SalvageTicket: 10
+    SalvageTicket: 100
   categories:
   - SalvageStoreConsumables
   conditions:
@@ -257,7 +257,7 @@
     sprite: Objects/Misc/module.rsi
     state: rndmajordisk
   cost:
-    SalvageTicket: 120
+    SalvageTicket: 1200
   categories:
   - SalvageStoreConsumables
   conditions:
