@@ -302,6 +302,9 @@ namespace Content.Server.Kitchen.EntitySystems
         /// <param name="args">DoAfter args</param>
         private void OnContainerDoAfter(EntityUid uid, ReagentGrinderComponent comp, ContainerDoAfterEvent args)
         {
+            if (args.Cancelled || args.Handled || args.Target == null)
+                return;
+
             // If there's no storage component, we leave
             if (!TryComp<StorageComponent>(args.Used, out var storage))
                 return;
