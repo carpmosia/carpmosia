@@ -97246,17 +97246,11 @@ entities:
     - type: Transform
       pos: 7.5,9.5
       parent: 2
-    - type: Door
-      secondsUntilStateChange: -447325.03
-      state: Opening
   - uid: 14548
     components:
     - type: Transform
       pos: 7.5,10.5
       parent: 2
-    - type: Door
-      secondsUntilStateChange: -447324.53
-      state: Opening
 - proto: HospitalCurtainsOpen
   entities:
   - uid: 14549
