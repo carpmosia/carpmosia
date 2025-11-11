@@ -9,7 +9,7 @@ namespace Content.Shared.Trigger.Components.Effects;
 /// Supports following fluent variables:
 ///     $entity - displays the target entity's name
 ///     $user - displays the user's name
-/// /// Carpmosia-end - flag waving
+/// Carpmosia-end - flag waving
 /// Will display the popup on the user when <see cref="BaseXOnTriggerComponent.TargetUser"/> is true.
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
