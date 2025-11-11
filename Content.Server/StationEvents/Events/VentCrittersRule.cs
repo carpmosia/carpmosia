@@ -50,6 +50,9 @@ public sealed class VentCrittersRule : StationEventSystem<VentCrittersRuleCompon
             }
         }
 
+        if (validLocations.Count == 0)
+            return;
+
         var spawnCenter = RobustRandom.Pick(validLocations);
         var spawns = new List<string>();
 
