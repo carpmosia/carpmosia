@@ -1,0 +1,22 @@
+# Iconography
+- type: stationAiCustomization
+  parent: StationAiIconBase
+  id: StationAiIconCarp
+  name: station-ai-icon-carp
+  layerData:
+    Occupied:
+      sprite: _Carpmosia/Mobs/Silicon/station_ai.rsi
+      state: "ai_carp"
+    Dead:
+      sprite: _Carpmosia/Mobs/Silicon/station_ai.rsi
+      state: "ai_carp_dead"
+
+# Holograms
+- type: stationAiCustomization
+  id: StationAiHologramCarp
+  name: station-ai-hologram-carp
+  previewKey: Hologram
+  layerData:
+    Hologram:
+      sprite: _Carpmosia/Mobs/Silicon/holograms.rsi
+      state: ai_carp
