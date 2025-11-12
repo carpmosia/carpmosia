@@ -253,6 +253,10 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.ShuttleRotateLeft);
             AddButton(ContentKeyFunctions.ShuttleRotateRight);
             AddButton(ContentKeyFunctions.ShuttleBrake);
+            // Carpmosia-start - rotate shuttle along movement vector
+            AddButton(ContentKeyFunctions.ShuttleTowardsVector);
+            AddButton(ContentKeyFunctions.ShuttleAgainstVector);
+            // Carpmosia-end - rotate shuttle along movement vector
 
             AddHeader("ui-options-header-map-editor");
             AddButton(EngineKeyFunctions.EditorPlaceObject);
