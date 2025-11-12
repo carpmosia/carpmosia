@@ -1,0 +1,36 @@
+- type: entity
+  name: hunter
+  parent: MobSpiderBase
+  id: MobHunterSpider
+  description: Widely recognized as animal tamed by a unknown clan.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: hunter
+      sprite: Mobs/Animals/spider.rsi
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: hunter-moving
+    noMovementLayers:
+      movement:
+        state: hunter
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: hunter
+      Critical:
+        Base: hunter_dead
+      Dead:
+        Base: hunter_dead
+  - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Piercing: 6
