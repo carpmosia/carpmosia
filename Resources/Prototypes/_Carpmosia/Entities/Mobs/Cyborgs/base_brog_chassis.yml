@@ -262,6 +262,7 @@
     - NuclearOperative
     - SyndicateAgent
   - type: AccessReader
+    access: ["Robot"]
   - type: SiliconLawProvider
     laws: Ninja
     subverted: true
@@ -283,4 +284,4 @@
     sounds:
       Unsexed: UnisexSiliconSyndicate
   - type: PointLight
-    color: "#dd200b"
+    color: "#90EE90"
