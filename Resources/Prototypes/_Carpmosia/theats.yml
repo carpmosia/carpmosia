@@ -2,15 +2,15 @@
 
 - type: ninjaHackingThreat
   id: Spiders
-  announcement: spider-clan-operatives
+  announcement: terror-warning
   rule: NinjaSpiderSpawn
 
 - type: ninjaHackingThreat
   id: Borgs
-  announcement: spider-borgs
+  announcement: terror-warning
   rule: SpiderClanCyborgEvent
 
 - type: ninjaHackingThreat
   id: LoneOp
-  announcement: lone-op
+  announcement: terror-warning
   rule: LoneOpsSpawn
