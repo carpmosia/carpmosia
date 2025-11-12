@@ -1,16 +1,14 @@
-#For the one questioning why this is not in a folder... ask the one who made the ninja PR.
-
 - type: ninjaHackingThreat
   id: Spiders
-  announcement: spider-clan-operatives
-  rule: NinjaSpiderSpawn
+  announcement: terror-warning
+  rule: SpiderClanSpiderSpawn
 
 - type: ninjaHackingThreat
   id: Borgs
-  announcement: spider-borgs
+  announcement: terror-warning
   rule: SpiderClanCyborgEvent
 
 - type: ninjaHackingThreat
   id: LoneOp
-  announcement: lone-op
+  announcement: terror-warning
   rule: LoneOpsSpawn
