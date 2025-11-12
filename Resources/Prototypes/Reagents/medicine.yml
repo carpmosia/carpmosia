@@ -560,8 +560,10 @@
             min: 20 # Carpmosia-edit - Barozine edits
         damage:
           types:
+            # Carpmosia-start - Barozine edits
             Piercing: 0.25
             Bloodloss: 0.25
+            # Carpmosia-end - Barozine edits
       - !type:Vomit
         probability: 0.15
         conditions:
