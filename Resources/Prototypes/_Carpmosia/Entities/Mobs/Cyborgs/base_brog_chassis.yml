@@ -259,10 +259,9 @@
     - Syndicate
   - type: Access
     tags:
-    - NuclearOperative
-    - SyndicateAgent
+    - Silicon
   - type: AccessReader
-    access: ["BasicSilicon"]
+    access: ["CentralCommand"]
   - type: SiliconLawProvider
     laws: Ninja
     subverted: true
