@@ -4,6 +4,9 @@
   id: MobHunterSpider
   description: Widely recognized as animal tamed by a unknown clan.
   components:
+  - type: NpcFactionMember
+    factions:
+      - Xeno
   - type: Sprite
     drawdepth: Mobs
     layers:

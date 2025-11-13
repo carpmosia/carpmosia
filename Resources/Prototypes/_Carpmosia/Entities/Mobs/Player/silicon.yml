@@ -1,5 +1,5 @@
 - type: entity
-  id: PlayerBorgSliderClanGhostRole
+  id: PlayerBorgSpiderClanGhostRole #error
   parent: PlayerBorgSpiderClanBattery
   suffix: Ghost role
   components:
@@ -14,7 +14,7 @@
 
 
 - type: entity
-  id: PlayerBorgSpiderClanBattery
+  id: PlayerBorgSpiderClanBattery #error
   parent: BorgChassisSpiderClan
   suffix: Battery, Module
   components:
@@ -25,10 +25,10 @@
       borg_module:
         - BorgModuleTool
         - BorgModuleSyndicateWeapon
+        - XenoborgModuleChameleonProjector
+        - XenoborgModuleCloakDevice
   - type: ItemSlots
     slots:
       cell_slot:
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellHyper
-  - type: RandomMetadata
-    nameSegments: [NamesBorg]
