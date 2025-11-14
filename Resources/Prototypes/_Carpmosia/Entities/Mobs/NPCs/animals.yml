@@ -1,6 +1,6 @@
 - type: entity
   name: hunter
-  parent: MobSpiderBase
+  parent: MobSpiderAngryBase
   id: MobHunterSpider
   description: Widely recognized as animal tamed by a unknown clan.
   components:
@@ -36,4 +36,4 @@
       path: /Audio/Effects/bite.ogg
     damage:
       types:
-        Piercing: 6
+        Slash: 10
