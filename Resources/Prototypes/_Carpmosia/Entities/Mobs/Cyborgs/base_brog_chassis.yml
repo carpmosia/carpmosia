@@ -254,14 +254,18 @@
   parent: CarpmosiaBaseBorgChassisNotIonStormable
   abstract: true
   components:
+  - type: RandomMetadata
+    nameSegments:
+    - NamesBorg
   - type: NpcFactionMember
     factions:
     - Syndicate
   - type: Access
     tags:
-    - Silicon
+    - Maintenance
+    - External
   - type: AccessReader
-    access: ["CentralCommand"]
+    access: [["CentralCommand"]]
   - type: SiliconLawProvider
     laws: Ninja
     subverted: true
