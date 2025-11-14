@@ -14,3 +14,7 @@ ghost-role-information-pet-bee-name = Pet bee
 ghost-role-information-pet-mothroach-name = Pet mothroach
 
 ghost-role-information-pet-description = A cute little pocket pet. Follow and obey your owner!
+
+ghost-role-information-spider-clan-borg-name = Spider Clan Cyborg
+ghost-role-information-spider-clan-borg-description = You are a cybernetic member of the Spider Clan, your mission is to help your clan members with their objectives.
+ghost-role-information-spider-clan-borg-rules = You are a [color={role-type-antagonist-color}][bold]{role-type-antagonist-name}[/bold][/color] with all other Spider Clan members.
