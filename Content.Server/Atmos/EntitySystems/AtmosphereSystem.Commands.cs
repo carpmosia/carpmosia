@@ -36,7 +36,7 @@ public sealed partial class AtmosphereSystem
            return;
        }
 
-       var mixtures = new GasMixture[9];
+       var mixtures = new GasMixture[10]; // Carpmosia-edit - Map Space Marker
        for (var i = 0; i < mixtures.Length; i++)
            mixtures[i] = new GasMixture(Atmospherics.CellVolume) { Temperature = Atmospherics.T20C };
 
@@ -97,6 +97,13 @@ public sealed partial class AtmosphereSystem
                new(euid.Value, gridAtmosphere, Comp<GasTileOverlayComponent>(euid.Value), gridComp, Transform(euid.Value));
 
            RebuildGridTiles(grid);
+
+           // Carpmosia-start - Map Space Marker
+           if (TryComp(grid.Comp4.MapUid, out MapAtmosphereComponent? mapAtmos))
+           {
+               mixtures[9] = mapAtmos.Mixture;
+           }
+           // Carpmosia-end - Map Space Marker
 
            var query = GetEntityQuery<AtmosFixMarkerComponent>();
            foreach (var (indices, tile) in gridAtmosphere.Tiles.ToArray())

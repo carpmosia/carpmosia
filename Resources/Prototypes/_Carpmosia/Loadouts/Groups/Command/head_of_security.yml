@@ -1,0 +1,73 @@
+- type: loadoutGroup
+  parent: [ CommandHead, SecurityHead, CommonHead ]
+  id: HeadOfSecurityHead
+  loadouts:
+  - HeadofSecurityHead
+  - HeadofSecurityBeret
+
+- type: loadoutGroup
+  parent: [ CommandGlasses, SecurityGlasses ] # CommonGlasses removed
+  id: HeadOfSecurityGlasses
+  minLimit: 1
+
+# - type: loadoutGroup
+#   parent: [ CommandMask, SecurityMask, CommonMask ]
+#   id: HeadOfSecurityMask
+
+- type: loadoutGroup
+  parent: [ CommandNeck, SecurityNeck, CommonNeck ]
+  id: HeadOfSecurityNeck
+  loadouts:
+  - HeadofSecurityCloak
+  - HeadofSecurityMantle
+
+# - type: loadoutGroup
+#   parent: [ CommandGloves, SecurityGloves, CommonGloves ]
+#   id: HeadOfSecurityGloves
+
+- type: loadoutGroup
+  parent: [ CommandJumpsuit, SecurityJumpsuit, CommonJumpsuit ]
+  id: HeadOfSecurityJumpsuit
+  loadouts:
+  - HeadofSecurityJumpsuit
+  - HeadofSecurityJumpskirt
+  - HeadofSecurityTurtleneck
+  - HeadofSecurityTurtleneckSkirt
+  - HeadofSecurityFormalSuit
+  - HeadofSecurityFormalSkirt
+
+- type: loadoutGroup
+  parent: [ CommandBackpack, SecurityBackpack, CommonBackpack ]
+  id: HeadOfSecurityBackpack
+
+# - type: loadoutGroup
+#   parent: [ CommandPDA, SecurityPDA, CommonPDA ]
+#   id: HeadOfSecurityPDA
+
+- type: loadoutGroup
+  parent: [ CommandBelt, SecurityBelt, CommonBelt ]
+  id: HeadOfSecurityBelt
+
+- type: loadoutGroup
+  parent: [ CommandOuterClothing, SecurityOuterClothing, CommonOuterClothing ]
+  id: HeadOfSecurityOuterClothing
+  minLimit: 1
+  loadouts:
+  - HeadofSecurityCoat
+  - HeadofSecurityWinterCoat
+
+- type: loadoutGroup
+  parent: [ PrioritySecurityShoes, CommonShoes, SecurityShoes, CommandShoes ]
+  id: HeadOfSecurityShoes
+
+# - type: loadoutGroup
+#   parent: BaseSpecial
+#   id: HeadOfSecuritySpecial
+
+- type: loadoutGroup
+  parent: [ CommandTrinkets, SecurityTrinkets, CommonTrinkets ]
+  id: HeadOfSecurityTrinkets
+
+- type: loadoutGroup
+  parent: [ CommandPets, SecurityPets, CommonPets ]
+  id: HeadOfSecurityPets

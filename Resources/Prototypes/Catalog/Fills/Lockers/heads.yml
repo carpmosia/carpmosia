@@ -68,6 +68,7 @@
     - id: ClothingMaskGasCaptain
     - id: JetpackCaptainFilled
     - id: OxygenTankFilled
+    - id: NitrogenTankFilled # Carpmosia-edit - Accessible nitrogen
 
 # No laser locker, used when the antique laser is placed in the special display crate
 - type: entity
@@ -171,6 +172,7 @@
     - id: ClothingShoesBootsMagAdv
     - id: JetpackVoidFilled
     - id: OxygenTankFilled
+    - id: NitrogenTankFilled # Carpmosia-edit - Accessible nitrogen
 
 # No hardsuit locker
 - type: entity
@@ -227,6 +229,7 @@
     - id: ClothingMaskBreathMedical
     - id: ClothingOuterHardsuitMedical
     - id: OxygenTankFilled
+    - id: NitrogenTankFilled # Carpmosia-edit - Accessible nitrogen
 
 # No hardsuit locker
 - type: entity
@@ -276,6 +279,7 @@
     - id: ClothingMaskBreath
     - id: ClothingOuterHardsuitRd
     - id: OxygenTankFilled
+    - id: NitrogenTankFilled # Carpmosia-edit - Accessible nitrogen
 
 # No hardsuit locker
 - type: entity
@@ -338,6 +342,7 @@
     - id: ClothingOuterHardsuitSecurityRed
     - id: JetpackSecurityFilled
     - id: OxygenTankFilled
+    - id: NitrogenTankFilled # Carpmosia-edit - Accessible nitrogen
 
 # No hardsuit locker
 - type: entity
@@ -365,17 +370,24 @@
         - !type:NestedSelector
           tableId: FillHeadOfSecurityHardsuit
 
-- type: entity
-  id: LockerFreezerVaultFilled
-  suffix: Vault, Locked
-  parent: LockerFreezerBase
-  components:
-  - type: AccessReader
-    access: [ [ "Command" ] ]
-  - type: StorageFill
-    contents:
+- type: entityTable
+  id: LockerFillVault
+  table: !type:AllSelector
+    children:
     - id: WeaponRevolverDeckard
     - id: JetpackBlue
     - id: SpaceCash1000
     - id: BeachBall
     - id: BikeHorn
+
+- type: entity
+  id: LockerFreezerVaultFilled
+  suffix: Vault, Filled
+  parent: LockerFreezerBase
+  components:
+  - type: AccessReader
+    access: [ [ "Command" ] ]
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: LockerFillVault

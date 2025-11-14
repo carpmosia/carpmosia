@@ -1,0 +1,32 @@
+- type: loadoutEffectGroup
+  id: PlushiePenguin
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobMusician
+      time: 5h
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobReporter
+      time: 5h
+
+- type: loadout
+  id: PlushiePenguin
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PlushiePenguin
+  storage:
+    back:
+    - PlushiePenguin
+  groupBy: "plushies"
+
+- type: loadout
+  id: HatPlushiePenguin
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PlushiePenguin
+  equipment:
+    head: PlushiePenguin
+  groupBy: "plushies"

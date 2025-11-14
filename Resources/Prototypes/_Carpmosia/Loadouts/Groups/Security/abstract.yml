@@ -79,3 +79,8 @@
   abstract: true
   parent: BaseTrinkets
   id: SecurityTrinkets
+
+- type: loadoutGroup
+  abstract: true
+  parent: BasePets
+  id: SecurityPets
