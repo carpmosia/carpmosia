@@ -5,10 +5,10 @@
   description: An adorable stuffed toy that resembles a lizardperson, specifically a certain atmospheric technician. Even the smallest stimuli causes it to scream.
   components:
   - type: Sprite
-    sprite: _Carpmosia/Objects/Fun/Plushies/lizard.rsi
+    sprite: _Carpmosia/Objects/Fun/Plushies/screams.rsi
     state: icon
   - type: Item
-    sprite: _Carpmosia/Objects/Fun/Plushies/lizard.rsi
+    sprite: _Carpmosia/Objects/Fun/Plushies/screams.rsi
   - type: EmitSoundOnUse
     sound: &PlushieLizardScreamsSound
       path: /Audio/Voice/Reptilian/reptilian_scream.ogg
@@ -31,7 +31,7 @@
     soundHit: *PlushieLizardScreamsSound
   - type: Clothing
     quickEquip: false
-    sprite: _Carpmosia/Objects/Fun/Plushies/lizard.rsi
+    sprite: _Carpmosia/Objects/Fun/Plushies/screams.rsi
     slots:
     - HEAD
   - type: Extractable
@@ -56,7 +56,7 @@
   description: An adorable stuffed toy that resembles an arachnid, specifically a certain tider. It shivers in the presence of contraband.
   components:
   - type: Sprite
-    sprite: _Carpmosia/Objects/Fun/Plushies/arachnid.rsi
+    sprite: _Carpmosia/Objects/Fun/Plushies/cole.rsi
     state: icon
   - type: EmitSoundOnUse
     sound: &PlushieArachnidSound
@@ -75,6 +75,6 @@
     soundHit: *PlushieArachnidSound
   - type: Clothing
     quickEquip: false
-    sprite: _Carpmosia/Objects/Fun/Plushies/arachnid.rsi
+    sprite: _Carpmosia/Objects/Fun/Plushies/cole.rsi
     slots:
     - HEAD
