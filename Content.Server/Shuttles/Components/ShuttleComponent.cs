@@ -68,5 +68,12 @@ namespace Content.Server.Shuttles.Components
         /// </summary>
         [DataField]
         public float DampingModifier;
+
+        /// Carpmosia-start - rotate shuttle along movement vector
+        /// <summary>
+        /// Notes the starting angle of the aligning manouver
+        /// </summary>
+        public float AligningStart = 0f;
+        /// Carpmosia-end - rotate shuttle along movement vector
     }
 }

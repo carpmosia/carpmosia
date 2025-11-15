@@ -473,6 +473,54 @@ public sealed class MoverController : SharedMoverController
                 }
             }
 
+            if (!alignInput.Equals(0f) && !MathHelper.CloseTo(body.LinearVelocity.Length(), 0f, 0.01f))
+            {
+                // Get velocity relative to the shuttle
+                var shuttleVelocity = (-shuttleNorthAngle).RotateVec(body.LinearVelocity);
+
+                var torque = 0f;
+
+                //find angle between current orientation and movement vector
+                if (alignInput > 0f)
+                {
+                    torque = MathF.Acos(shuttleVelocity.Y / shuttleVelocity.Length());
+                }
+                else
+                {
+                    torque = MathF.Acos(-shuttleVelocity.Y / shuttleVelocity.Length());
+                }
+
+                //convert to degrees
+                torque *= 180f / MathF.PI;
+
+                if (shuttle.AligningStart.Equals(0f))
+                    shuttle.AligningStart = torque;
+
+                if
+
+                if (Math.Sign(alignInput) * Math.Sign(shuttleVelocity.X) >= 0)
+                    torque *= -1;
+
+                // Need to cap the velocity if 1 tick of input brings us over cap so we don't continuously
+                // edge onto the cap over and over.
+                var torqueMul = body.InvI * frameTime;
+
+                torque = Math.Clamp(torque,
+                    (-ShuttleComponent.MaxAngularVelocity - body.AngularVelocity) / torqueMul,
+                    (ShuttleComponent.MaxAngularVelocity - body.AngularVelocity) / torqueMul);
+
+                if (!torque.Equals(0f))
+                {
+                    PhysicsSystem.ApplyTorque(shuttleUid, torque, body: body);
+                    _thruster.SetAngularThrust(shuttle, true);
+                }
+
+            }
+            else
+            {
+                shuttle.AligningStart = 0f;
+            }
+
             if (linearInput.Length().Equals(0f))
             {
                 PhysicsSystem.SetSleepingAllowed(shuttleUid, body, true);
