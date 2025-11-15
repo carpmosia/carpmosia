@@ -1,6 +1,7 @@
 - type: latheRecipe
   id: SheetSteel
   printTicket: true # Carpmosia-edit - Starlight Salvage Tickets
+  ticketProtoId: SalvageTicket10 # Carpmosia-edit - Ticket magnitude change
   result: SheetSteel1
   completetime: 0
   materials:
@@ -18,6 +19,7 @@
 - type: latheRecipe
   id: SheetGlass1
   printTicket: true # Carpmosia-edit - Starlight Salvage Tickets
+  ticketProtoId: SalvageTicket10 # Carpmosia-edit - Ticket magnitude change
   result: SheetGlass1
   completetime: 0
   materials:
@@ -44,6 +46,7 @@
 - type: latheRecipe
   id: SheetRGlassRaw
   printTicket: true # Carpmosia-edit - Starlight Salvage Tickets
+  ticketProtoId: SalvageTicket15 # Carpmosia-edit - Ticket magnitude change
   result: SheetRGlass1
   completetime: 0
   materials:
@@ -53,8 +56,6 @@
 
 - type: latheRecipe
   id: SheetRGlass30
-  printTicket: true # Carpmosia-edit - Starlight Salvage Tickets
-  ticketProtoId: SalvageTicket50 # Carpmosia-edit - Starlight Salvage Tickets
   result: SheetRGlass
   completetime: 2
   materials:
@@ -65,6 +66,7 @@
 - type: latheRecipe
   id: SheetPGlass1
   printTicket: true # Carpmosia-edit - Starlight Salvage Tickets
+  ticketProtoId: SalvageTicket20 # Carpmosia-edit - Ticket magnitude change
   result: SheetPGlass1
   completetime: 0
   materials:
@@ -73,8 +75,6 @@
 
 - type: latheRecipe
   id: SheetPGlass30
-  printTicket: true # Carpmosia-edit - Starlight Salvage Tickets
-  ticketProtoId: SalvageTicket50 # Carpmosia-edit - Starlight Salvage Tickets
   result: SheetPGlass
   completetime: 2
   materials:
@@ -84,6 +84,7 @@
 - type: latheRecipe
   id: SheetRPGlass1
   printTicket: true # Carpmosia-edit - Starlight Salvage Tickets
+  ticketProtoId: SalvageTicket25 # Carpmosia-edit - Ticket magnitude change
   result: SheetRPGlass1
   completetime: 0
   materials:
@@ -94,8 +95,6 @@
 
 - type: latheRecipe
   id: SheetRPGlass30
-  printTicket: true # Carpmosia-edit - Starlight Salvage Tickets
-  ticketProtoId: SalvageTicket50 # Carpmosia-edit - Starlight Salvage Tickets
   result: SheetRPGlass
   completetime: 2
   materials:
@@ -107,6 +106,7 @@
 - type: latheRecipe
   id: SheetPlasma1
   printTicket: true # Carpmosia-edit - Starlight Salvage Tickets
+  ticketProtoId: SalvageTicket10 # Carpmosia-edit - Ticket magnitude change
   result: SheetPlasma1
   completetime: 0
   materials:
@@ -122,6 +122,7 @@
 - type: latheRecipe
   id: SheetPlasteel1
   printTicket: true # Carpmosia-edit - Starlight Salvage Tickets
+  ticketProtoId: SalvageTicket30 # Carpmosia-edit - Ticket magnitude change
   result: SheetPlasteel1
   completetime: 0
   materials:
@@ -131,8 +132,6 @@
 
 - type: latheRecipe
   id: SheetPlasteel30
-  printTicket: true # Carpmosia-edit - Starlight Salvage Tickets
-  ticketProtoId: SalvageTicket50 # Carpmosia-edit - Starlight Salvage Tickets
   result: SheetPlasteel
   completetime: 5
   materials:
@@ -142,8 +141,6 @@
 
 - type: latheRecipe
   id: SheetUranium30
-  printTicket: true # Carpmosia-edit - Starlight Salvage Tickets
-  ticketProtoId: SalvageTicket50 # Carpmosia-edit - Starlight Salvage Tickets
   result: SheetUranium
   completetime: 2
   materials:
@@ -152,6 +149,7 @@
 - type: latheRecipe
   id: SheetUGlass1
   printTicket: true # Carpmosia-edit - Starlight Salvage Tickets
+  ticketProtoId: SalvageTicket20 # Carpmosia-edit - Ticket magnitude change
   result: SheetUGlass1
   completetime: 0
   materials:
@@ -160,8 +158,6 @@
 
 - type: latheRecipe
   id: SheetUGlass30
-  printTicket: true # Carpmosia-edit - Starlight Salvage Tickets
-  ticketProtoId: SalvageTicket50 # Carpmosia-edit - Starlight Salvage Tickets
   result: SheetUGlass
   completetime: 2
   materials:
@@ -171,6 +167,7 @@
 - type: latheRecipe
   id: SheetRUGlass1
   printTicket: true # Carpmosia-edit - Starlight Salvage Tickets
+  ticketProtoId: SalvageTicket25 # Carpmosia-edit - Ticket magnitude change
   result: SheetRUGlass1
   completetime: 0
   materials:
@@ -181,8 +178,6 @@
 
 - type: latheRecipe
   id: SheetRUGlass30
-  printTicket: true # Carpmosia-edit - Starlight Salvage Tickets
-  ticketProtoId: SalvageTicket50 # Carpmosia-edit - Starlight Salvage Tickets
   result: SheetRUGlass
   completetime: 2
   materials:
@@ -193,8 +188,6 @@
 
 - type: latheRecipe
   id: IngotGold30
-  printTicket: true # Carpmosia-edit - Starlight Salvage Tickets
-  ticketProtoId: SalvageTicket50 # Carpmosia-edit - Starlight Salvage Tickets
   result: IngotGold
   completetime: 2
   materials:
@@ -202,8 +195,6 @@
 
 - type: latheRecipe
   id: IngotSilver30
-  printTicket: true # Carpmosia-edit - Starlight Salvage Tickets
-  ticketProtoId: SalvageTicket50 # Carpmosia-edit - Starlight Salvage Tickets
   result: IngotSilver
   completetime: 2
   materials:
@@ -211,7 +202,6 @@
 
 - type: latheRecipe
   id: MaterialBananium10
-  printTicket: true # Carpmosia-edit - Starlight Salvage Tickets
   result: MaterialBananium
   completetime: 2
   materials:
@@ -220,7 +210,7 @@
 - type: latheRecipe
   id: MaterialDiamond
   printTicket: true # Carpmosia-edit - Starlight Salvage Tickets
-  ticketProtoId: SalvageTicket100 # Carpmosia-edit - Starlight Salvage Tickets
+  ticketProtoId: SalvageTicket1000 # Carpmosia-edit - Starlight Salvage Tickets, Ticket magnitude change
   result: MaterialDiamond1
   completetime: 0
   materials:
@@ -229,6 +219,7 @@
 - type: latheRecipe
   id: SheetUranium1
   printTicket: true # Carpmosia-edit - Starlight Salvage Tickets
+  ticketProtoId: SalvageTicket10 # Carpmosia-edit - Ticket magnitude change
   result: SheetUranium1
   completetime: 0
   materials:
@@ -237,6 +228,7 @@
 - type: latheRecipe
   id: IngotGold1
   printTicket: true # Carpmosia-edit - Starlight Salvage Tickets
+  ticketProtoId: SalvageTicket10 # Carpmosia-edit - Ticket magnitude change
   result: IngotGold1
   completetime: 0
   materials:
@@ -245,6 +237,7 @@
 - type: latheRecipe
   id: IngotSilver1
   printTicket: true # Carpmosia-edit - Starlight Salvage Tickets
+  ticketProtoId: SalvageTicket10 # Carpmosia-edit - Ticket magnitude change
   result: IngotSilver1
   completetime: 0
   materials:
@@ -252,7 +245,6 @@
 
 - type: latheRecipe
   id: SheetPlastic
-  printTicket: true # Carpmosia-edit - Starlight Salvage Tickets
   result: SheetPlastic1
   applyMaterialDiscount: false
   completetime: 0
@@ -262,6 +254,7 @@
 - type: latheRecipe
   id: MaterialBananium1
   printTicket: true # Carpmosia-edit - Starlight Salvage Tickets
+  ticketProtoId: SalvageTicket10 # Carpmosia-edit - Ticket magnitude change
   result: MaterialBananium1
   completetime: 0
   materials:
@@ -269,7 +262,6 @@
 
 - type: latheRecipe
   id: MaterialSheetMeat
-  printTicket: true # Carpmosia-edit - Starlight Salvage Tickets
   result: MaterialSheetMeat1
   completetime: 6.4
   materials:
@@ -277,7 +269,6 @@
 
 - type: latheRecipe
   id: SheetPaper
-  printTicket: true # Carpmosia-edit - Starlight Salvage Tickets
   result: SheetPaper1
   completetime: 1
   materials:
