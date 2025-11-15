@@ -48,3 +48,33 @@
           Quantity: 10
         - ReagentId: JuiceThatMakesYouScream
           Quantity: 10
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieArachindCole
+  name: tider spider plushie
+  description: An adorable stuffed toy that resembles an arachnid, specifically a certain tider. It shivers in the presence of contraband.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Fun/Plushies/arachnid.rsi
+    state: icon
+  - type: EmitSoundOnUse
+    sound: &PlushieArachnidSound
+      path: /Audio/Voice/Arachnid/arachnid_scream.ogg
+  - type: EmitSoundOnLand
+    sound: *PlushieArachnidSound
+  - type: EmitSoundOnActivate
+    sound: *PlushieArachnidSound
+  - type: EmitSoundOnTrigger
+    sound: *PlushieArachnidSound
+  - type: EmitSoundOnCollide
+    sound: *PlushieArachnidSound
+  - type: Edible
+    useSound: *PlushieArachnidSound
+  - type: MeleeWeapon
+    soundHit: *PlushieArachnidSound
+  - type: Clothing
+    quickEquip: false
+    sprite: _Carpmosia/Objects/Fun/Plushies/arachnid.rsi
+    slots:
+    - HEAD
