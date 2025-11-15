@@ -479,28 +479,40 @@ public sealed class MoverController : SharedMoverController
                 var shuttleVelocity = (-shuttleNorthAngle).RotateVec(body.LinearVelocity);
 
                 var torque = 0f;
+                var angle = 0f;
 
                 //find angle between current orientation and movement vector
                 if (alignInput > 0f)
                 {
-                    torque = MathF.Acos(shuttleVelocity.Y / shuttleVelocity.Length());
+                    angle = MathF.Acos(shuttleVelocity.Y / shuttleVelocity.Length());
                 }
                 else
                 {
-                    torque = MathF.Acos(-shuttleVelocity.Y / shuttleVelocity.Length());
+                    angle = MathF.Acos(-shuttleVelocity.Y / shuttleVelocity.Length());
                 }
 
                 //convert to degrees
-                torque *= 180f / MathF.PI;
+                angle *= 180f / MathF.PI;
 
                 if (shuttle.AligningStart.Equals(0f))
-                    shuttle.AligningStart = torque;
+                    shuttle.AligningStart = angle;
 
-                if
+                if (MathHelper.CloseTo(angle, 0f, 1f))
+                {
+                    torque = shuttle.AngularThrust * alignInput * (body.AngularVelocity > 0f ? -1f : 1f) * ShuttleComponent.BrakeCoefficient;
+                }
+                else
+                {
 
-                if (Math.Sign(alignInput) * Math.Sign(shuttleVelocity.X) >= 0)
-                    torque *= -1;
+                    torque = shuttle.AngularThrust;
 
+                    if (alignInput > 0f && angle <= shuttle.AligningStart / 2 ||
+                        alignInput < 0f && angle >= (shuttle.AligningStart + 180f) / 2)
+                        torque *= -1;
+
+                    if (Math.Sign(alignInput) * Math.Sign(shuttleVelocity.X) >= 0)
+                        torque *= -1;
+                }
                 // Need to cap the velocity if 1 tick of input brings us over cap so we don't continuously
                 // edge onto the cap over and over.
                 var torqueMul = body.InvI * frameTime;
@@ -513,6 +525,10 @@ public sealed class MoverController : SharedMoverController
                 {
                     PhysicsSystem.ApplyTorque(shuttleUid, torque, body: body);
                     _thruster.SetAngularThrust(shuttle, true);
+                }
+                else
+                {
+                    _thruster.SetAngularThrust(shuttle, false);
                 }
 
             }
