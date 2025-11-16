@@ -120,7 +120,8 @@ namespace Content.IntegrationTests.Tests
             "Atlas",
             "Cluster",
             "Europa",
-            "Aspid"
+            "Aspid",
+            "Barratry",
             // Carpmosia-end - Legacy maps
         };
 
