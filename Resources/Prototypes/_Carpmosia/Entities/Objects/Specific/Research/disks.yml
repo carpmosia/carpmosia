@@ -1,0 +1,8 @@
+- type: entity
+  parent: TechnologyDisk
+  id: TechnologyDiskPKAModKits
+  suffix: rare.
+  description: A special techdisk containing information needed to manufacture modkits for the proto-kinetic accelerator.
+  components:
+  - type: TechnologyDisk
+    recipes: [PKAUpgradeDamage, PKAUpgradeRange, PKAUpgradeFireRate]

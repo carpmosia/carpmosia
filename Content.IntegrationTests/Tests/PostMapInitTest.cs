@@ -96,6 +96,7 @@ namespace Content.IntegrationTests.Tests
             "Marathon",
             "MeteorArena",
             "Saltern",
+            "Saltern2", // Carpmosia-edit - Saltern2 port
             "Reach",
             "Oasis",
             "Oasis2", // Carpmosia-edit - Oasis2 port
@@ -105,6 +106,7 @@ namespace Content.IntegrationTests.Tests
             "Relic",
             "dm01-entryway",
             "Exo",
+            "Feint", // Carpmosia-edit - Feint port
             // Carpmosia-start - Revert #38190
             "Meta",
             "Omega",

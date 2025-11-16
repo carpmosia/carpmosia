@@ -1,0 +1,66 @@
+- type: loadoutGroup
+  abstract: true
+  parent: BaseHead
+  id: CommandHead
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseGlasses
+  id: CommandGlasses
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseMask
+  id: CommandMask
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseNeck
+  id: CommandNeck
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseGloves
+  id: CommandGloves
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseJumpsuit
+  id: CommandJumpsuit
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseBackpack
+  id: CommandBackpack
+
+- type: loadoutGroup
+  abstract: true
+  parent: BasePDA
+  id: CommandPDA
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseBelt
+  id: CommandBelt
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseOuterClothing
+  id: CommandOuterClothing
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseShoes
+  id: CommandShoes
+
+- type: loadoutGroup
+  abstract: true
+  parent: BaseTrinkets
+  id: CommandTrinkets
+
+- type: loadoutGroup
+  abstract: true
+  parent: BasePets
+  id: CommandPets
+  loadouts:
+  - PetMothroach

@@ -1,0 +1,6 @@
+- type: stack
+  parent: BaseVerySmallStack
+  id: Tourniquet
+  name: stack-tourniquet
+  icon: { sprite: "/Textures/Objects/Specific/Medical/medical.rsi", state: gauze }
+  spawn: Tourniquet

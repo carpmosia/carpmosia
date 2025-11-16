@@ -1,54 +1,58 @@
 # - type: loadoutGroup
+#   parent: [ ScienceHead, CommonHead ]
 #   id: ResearchAssistantHead
-#   parent: [BaseHead, CommonHead, ScienceHead]
 
 - type: loadoutGroup
+  parent: [ ScienceGlasses, CommonGlasses ]
   id: ResearchAssistantGlasses
-  parent: [BaseGlasses, CommonGlasses, ScienceGlasses]
 
 # - type: loadoutGroup
+#   parent: [ ScienceMask, CommonMask ]
 #   id: ResearchAssistantMask
-#   parent: [BaseMask, CommonMask, ScienceMask]
-
-# - type: loadoutGroup
-#   id: ResearchAssistantNeck
-#   parent: [BaseNeck, CommonNeck, ScienceNeck]
-
-# - type: loadoutGroup
-#   id: ResearchAssistantGloves
-#   parent: [BaseGloves, CommonGloves, ScienceGloves]
 
 - type: loadoutGroup
+  parent: [ ScienceNeck, CommonNeck ]
+  id: ResearchAssistantNeck
+
+# - type: loadoutGroup
+#   parent: [ ScienceGloves, CommonGloves ]
+#   id: ResearchAssistantGloves
+
+- type: loadoutGroup
+  parent: [ ScienceJumpsuit, CommonJumpsuit ]
   id: ResearchAssistantJumpsuit
-  parent: [BaseJumpsuit, CommonJumpsuit, ScienceJumpsuit]
   loadouts:
   - WhiteJumpsuit
   - WhiteJumpskirt
 
 - type: loadoutGroup
+  parent: [ ScienceBackpack, CommonBackpack ]
   id: ResearchAssistantBackpack
-  parent: [BaseBackpack, CommonBackpack, ScienceBackpack]
 
 # - type: loadoutGroup
+#   parent: [ SciencePDA, CommonPDA ]
 #   id: ResearchAssistantPDA
-#   parent: [BasePDA, CommonPDA, SciencePDA]
 
 # - type: loadoutGroup
+#   parent: [ ScienceBelt, CommonBelt ]
 #   id: ResearchAssistantBelt
-#   parent: [BaseBelt, CommonBelt, ScienceBelt]
 
 # - type: loadoutGroup
+#   parent: [ ScienceOuterClothing, CommonOuterClothing ]
 #   id: ResearchAssistantOuterClothing
-#   parent: [BaseOuterClothing, CommonOuterClothing, ScienceOuterClothing]
-
-# - type: loadoutGroup
-#   id: ResearchAssistantShoes
-#   parent: [BaseShoes, CommonShoes, ScienceShoes]
-
-# - type: loadoutGroup
-#   id: ResearchAssistantSpecial
-#   parent: BaseSpecial
 
 - type: loadoutGroup
+  parent: [ CommonShoes, ScienceShoes ]
+  id: ResearchAssistantShoes
+
+# - type: loadoutGroup
+#   parent: BaseSpecial
+#   id: ResearchAssistantSpecial
+
+- type: loadoutGroup
+  parent: [ ScienceTrinkets, CommonTrinkets ]
   id: ResearchAssistantTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, ScienceTrinkets]
+
+- type: loadoutGroup
+  parent: [ SciencePets, CommonPets ]
+  id: ResearchAssistantPets

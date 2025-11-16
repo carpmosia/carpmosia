@@ -48,8 +48,23 @@ public sealed partial class RoleTimeRequirement : JobRequirement
         if (jobSystem.TryGetDepartment(jobProto, out var departmentProto))
             departmentColor = departmentProto.Color;
 
-        if (!protoManager.TryIndex<JobPrototype>(jobProto, out var indexedJob))
+        // Carpmosia-start - Antag playtimes
+        var localizedName = "";
+
+        if (protoManager.TryIndex<JobPrototype>(jobProto, out var indexedJob))
+        {
+            localizedName = indexedJob.LocalizedName;
+        }
+        else if(protoManager.TryIndex<AntagPrototype>(jobProto, out var indexedAntag))
+        {
+            localizedName = indexedAntag.LocalizedName;
+            departmentColor = indexedAntag.Color;
+        }
+        else
+        {
             return false;
+        }
+        // Carpmosia-end - Antag playtimes
 
         if (!Inverted)
         {
@@ -59,7 +74,7 @@ public sealed partial class RoleTimeRequirement : JobRequirement
             reason = FormattedMessage.FromMarkupPermissive(Loc.GetString(
                 "role-timer-role-insufficient",
                 ("time", formattedRoleDiff),
-                ("job", indexedJob.LocalizedName),
+                ("job", localizedName), // Carpmosia-edit - Antag playtimes
                 ("departmentColor", departmentColor.ToHex())));
             return false;
         }
@@ -69,7 +84,7 @@ public sealed partial class RoleTimeRequirement : JobRequirement
             reason = FormattedMessage.FromMarkupPermissive(Loc.GetString(
                 "role-timer-role-too-high",
                 ("time", formattedRoleDiff),
-                ("job", indexedJob.LocalizedName),
+                ("job", localizedName), // Carpmosia-edit - Antag playtimes
                 ("departmentColor", departmentColor.ToHex())));
             return false;
         }

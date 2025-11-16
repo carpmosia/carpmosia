@@ -1,0 +1,23 @@
+- type: roleLoadout
+  id: JobReporter
+  canCustomizeName: true
+  groups:
+  - GroupTankHarness
+  # Common groups
+  # - ReporterHead
+  - ReporterGlasses
+  # - ReporterMask
+  - ReporterNeck
+  # - ReporterGloves
+  - ReporterJumpsuit
+  - ReporterBackpack
+  # - ReporterPDA
+  # - ReporterBelt
+  # - ReporterOuterClothing
+  - ReporterShoes
+  # Backpack fills
+  - Survival
+  - GroupSpeciesBreathTool
+  # - ReporterSpecial
+  - ReporterTrinkets
+  - ReporterPets

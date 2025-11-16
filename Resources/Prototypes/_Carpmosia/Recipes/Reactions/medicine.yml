@@ -12,7 +12,7 @@
       amount: 1
   products:
     Traumoxadone: 3
-  
+
 - type: reaction
   id: Stelloxadone
   impact: Medium
@@ -28,3 +28,27 @@
     Water: 3
     Fiber: 2
 
+- type: reaction
+  id: Barozine
+  impact: Medium
+  reactants:
+    Bruizine:
+      amount: 1
+    Copper:
+      amount: 1
+    Ethanol:
+      amount: 1
+  products:
+    Barozine: 1
+
+- type: reaction
+  id: Tetracordrazine
+  reactants:
+    Benzene:
+      amount: 1
+    Inaprovaline:
+      amount: 1
+    Lithium:
+      amount: 1
+  products:
+    Tetracordrazine: 2

@@ -1,0 +1,32 @@
+- type: loadoutEffectGroup
+  id: PlushieBee
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobBotanist
+      time: 5h
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobServiceWorker
+      time: 5h
+
+- type: loadout
+  id: PlushieBee
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PlushieBee
+  storage:
+    back:
+    - PlushieBee
+  groupBy: "plushies"
+
+- type: loadout
+  id: HatPlushieBee
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PlushieBee
+  equipment:
+    head: PlushieBee
+  groupBy: "plushies"

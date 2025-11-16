@@ -1,51 +1,60 @@
 # - type: loadoutGroup
+#   parent: [ CivilianHead, CommonHead ]
 #   id: ServiceWorkerHead
-#   parent: [BaseHead, CommonHead, CivilianHead]
 
 - type: loadoutGroup
+  parent: [ CivilianGlasses, CommonGlasses ]
   id: ServiceWorkerGlasses
-  parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
 
 # - type: loadoutGroup
+#   parent: [ CivilianMask, CommonMask ]
 #   id: ServiceWorkerMask
-#   parent: [BaseMask, CommonMask, CivilianMask]
+
+- type: loadoutGroup
+  parent: [ CivilianNeck, CommonNeck ]
+  id: ServiceWorkerNeck
 
 # - type: loadoutGroup
-#   id: ServiceWorkerNeck
-#   parent: [BaseNeck, CommonNeck, CivilianNeck]
-
-# - type: loadoutGroup
+#   parent: [ CivilianGloves, CommonGloves ]
 #   id: ServiceWorkerGloves
-#   parent: [BaseGloves, CommonGloves, CivilianGloves]
 
 - type: loadoutGroup
+  parent: [ CivilianJumpsuit, CommonJumpsuit ]
   id: ServiceWorkerJumpsuit
-  parent: BartenderJumpsuit # [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit] LoadoutReworkTODO
+  loadouts:
+  - BartenderJumpsuit
+  - BartenderJumpskirt
+  - BartenderJumpsuitPurple
+  - ServiceMaidskirt
 
 - type: loadoutGroup
+  parent: [ CivilianBackpack, CommonBackpack ]
   id: ServiceWorkerBackpack
-  parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
 
 # - type: loadoutGroup
+#   parent: [ CivilianPDA, CommonPDA ]
 #   id: ServiceWorkerPDA
-#   parent: [BasePDA, CommonPDA, CivilianPDA]
 
 # - type: loadoutGroup
+#   parent: [ CivilianBelt, CommonBelt ]
 #   id: ServiceWorkerBelt
-#   parent: [BaseBelt, CommonBelt, CivilianBelt]
 
 # - type: loadoutGroup
+#   parent: [ CivilianOuterClothing, CommonOuterClothing ]
 #   id: ServiceWorkerOuterClothing
-#   parent: [BaseOuterClothing, CommonOuterClothing, CivilianOuterClothing]
-
-# - type: loadoutGroup
-#   id: ServiceWorkerShoes
-#   parent: [BaseShoes, CommonShoes, CivilianShoes]
-
-# - type: loadoutGroup
-#   id: ServiceWorkerSpecial
-#   parent: BaseSpecial
 
 - type: loadoutGroup
+  parent: [ CommonShoes, CivilianShoes ]
+  id: ServiceWorkerShoes
+
+# - type: loadoutGroup
+#   parent: BaseSpecial
+#   id: ServiceWorkerSpecial
+
+- type: loadoutGroup
+  parent: [ CivilianTrinkets, CommonTrinkets ]
   id: ServiceWorkerTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]
+
+- type: loadoutGroup
+  parent: [ CivilianPets, CommonPets ]
+  id: ServiceWorkerPets

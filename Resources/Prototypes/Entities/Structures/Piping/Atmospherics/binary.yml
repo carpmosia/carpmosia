@@ -435,7 +435,7 @@
   name: connector port
   description: For connecting portable devices related to atmospherics control.
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
   components:
     - type: SubFloorHide
       visibleLayers:
@@ -449,6 +449,14 @@
         - state: gasCanisterPort
           map: [ "enum.SubfloorLayers.FirstLayer" ]
     - type: AtmosPipeLayers
+    # Carpmosia-start - Atmos Alt Prototypes
+      alternativePrototypes:
+        Primary: GasPort
+        Secondary: GasPortAlt1
+        Tertiary: GasPortAlt2
+        Quaternary: GasPortAlt3
+        Quinary: GasPortAlt4
+    # Carpmosia-end - Atmos Alt Prototypes
       spriteRsiPaths: {}
     - type: Appearance
     - type: PipeColorVisuals
@@ -474,7 +482,7 @@
   name: dual-port air vent
   description: Has a valve and a pump attached to it. There are two ports, one is an input for releasing air, the other is an output when siphoning.
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
   components:
     - type: SubFloorHide
       visibleLayers:
@@ -489,6 +497,14 @@
         - state: vent_off
           map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
     - type: AtmosPipeLayers
+    # Carpmosia-start - Atmos Alt Prototypes
+      alternativePrototypes:
+        Primary: GasDualPortVentPump
+        Secondary: GasDualPortVentPumpAlt1
+        Tertiary: GasDualPortVentPumpAlt2
+        Quaternary: GasDualPortVentPumpAlt3
+        Quinary: GasDualPortVentPumpAlt4
+    # Carpmosia-end - Atmos Alt Prototypes
       spriteRsiPaths: {}
     - type: GenericVisualizer
       visuals:
@@ -544,10 +560,13 @@
   components:
   - type: Sprite
     sprite: Structures/Machines/gasrecycler.rsi
+    snapCardinals: true
+    granularLayersRendering: true
     layers:
     - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Carpmosia-edit - 5 pipe layers
       state: pipeBinaryConnectors
       map: [ "enum.PipeVisualLayers.Pipe" ]
+      renderingStrategy: Default
     - state: running
     - state: unlit
       shader: unshaded
@@ -607,6 +626,12 @@
     board: GasRecyclerMachineCircuitboard
   - type: AtmosMonitoringConsoleDevice
     navMapBlip: GasValve
+  - type: Transform
+    noRot: false
+  - type: GuideHelp
+    guides:
+    - GasRecycling
+  - type: TegCirculator
 
 - type: entity
   parent: GasBinaryBase

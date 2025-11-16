@@ -3,7 +3,7 @@
   id: SalvageShuttleCircuitboardStealObjective
   components:
   - type: NotJobRequirement
-    job: SalvageSpecialist
+    jobs: [ SalvageSpecialist ]
   - type: StealCondition
     stealGroup: SalvageShuttleConsoleCircuitboard
   - type: Objective

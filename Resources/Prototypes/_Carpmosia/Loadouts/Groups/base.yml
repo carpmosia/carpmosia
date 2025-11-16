@@ -1,0 +1,86 @@
+# Base loadouts to define common names and limits
+- type: loadoutGroup
+  abstract: true
+  id: BaseHead
+  name: loadout-group-base-head
+  minLimit: 0
+
+- type: loadoutGroup
+  abstract: true
+  id: BaseGlasses
+  name: loadout-group-base-glasses
+  minLimit: 0
+
+- type: loadoutGroup
+  abstract: true
+  id: BaseMask
+  name: loadout-group-base-mask
+  minLimit: 0
+
+- type: loadoutGroup
+  abstract: true
+  id: BaseNeck
+  name: loadout-group-base-neck
+  minLimit: 0
+
+- type: loadoutGroup
+  abstract: true
+  id: BaseGloves
+  name: loadout-group-base-gloves
+  minLimit: 0
+
+- type: loadoutGroup
+  abstract: true
+  id: BaseJumpsuit
+  name: loadout-group-base-jumpsuit
+  minLimit: 1
+
+- type: loadoutGroup
+  abstract: true
+  id: BaseBackpack
+  name: loadout-group-base-backpack
+  minLimit: 1
+
+- type: loadoutGroup
+  abstract: true
+  id: BasePDA
+  name: loadout-group-base-pda
+  minLimit: 1
+
+- type: loadoutGroup
+  abstract: true
+  id: BaseBelt
+  name: loadout-group-base-belt
+  minLimit: 1
+
+- type: loadoutGroup
+  abstract: true
+  id: BaseOuterClothing
+  name: loadout-group-base-outerclothing
+  minLimit: 0
+
+- type: loadoutGroup
+  abstract: true
+  id: BaseShoes
+  name: loadout-group-base-shoes
+  minLimit: 0
+  defaultSelected: 1
+
+- type: loadoutGroup
+  abstract: true
+  id: BaseSpecial
+  name: loadout-group-base-special
+  minLimit: 0
+
+- type: loadoutGroup
+  abstract: true
+  id: BaseTrinkets
+  name: loadout-group-base-trinkets
+  minLimit: 0
+  maxLimit: 3
+
+- type: loadoutGroup
+  abstract: true
+  id: BasePets
+  name: loadout-group-base-pets
+  minLimit: 0

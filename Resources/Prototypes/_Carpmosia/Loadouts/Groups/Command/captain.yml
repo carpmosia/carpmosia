@@ -1,33 +1,36 @@
 - type: loadoutGroup
+  parent: [ CommandHead, CommonHead ]
   id: CaptainHead
-  parent: [BaseHead, CommonHead, CommandHead]
   loadouts:
   - CaptainHead
   - CaptainCap
 
-# - type: loadoutGroup
-#   id: CaptainGlasses
-#   parent: [BaseGlasses, CommonGlasses, CommandGlasses]
+- type: loadoutGroup
+  parent: [ CommandGlasses, CommonGlasses ]
+  id: CaptainGlasses
+  defaultSelected: 1
+  loadouts:
+  - CommandGlasses
 
 # - type: loadoutGroup
+#   parent: [ CommandMask, CommonMask ]
 #   id: CaptainMask
-#   parent: [BaseMask, CommonMask, CommandMask]
 
 - type: loadoutGroup
+  parent: [ CommandNeck, CommonNeck ]
   id: CaptainNeck
-  parent: [BaseNeck, CommonNeck, CommandNeck]
   loadouts:
   - CaptainCloak
   - CaptainCloakFormal
   - CaptainMantle
 
 # - type: loadoutGroup
+#   parent: [ CommandGloves, CommonGloves ]
 #   id: CaptainGloves
-#   parent: [BaseGloves, CommonGloves, CommandGloves]
 
 - type: loadoutGroup
+  parent: [ CommandJumpsuit, CommonJumpsuit ]
   id: CaptainJumpsuit
-  parent: [BaseJumpsuit, CommonJumpsuit, CommandJumpsuit]
   loadouts:
   - CaptainJumpsuit
   - CaptainJumpskirt
@@ -35,37 +38,41 @@
   - CaptainFormalSkirt
 
 - type: loadoutGroup
+  parent: [ CommandBackpack, CommonBackpack ]
   id: CaptainBackpack
-  parent: [BaseBackpack, CommonBackpack, CommandBackpack]
   loadouts:
   - CaptainBackpack
   - CaptainSatchel
   - CaptainDuffel
 
 # - type: loadoutGroup
+#   parent: [ CommandPDA, CommonPDA ]
 #   id: CaptainPDA
-#   parent: [BasePDA, CommonPDA, CommandPDA]
 
 # - type: loadoutGroup
+#   parent: [ CommandBelt, CommonBelt ]
 #   id: CaptainBelt
-#   parent: [BaseBelt, CommonBelt, CommandBelt]
 
 - type: loadoutGroup
+  parent: [ CommandOuterClothing, CommonOuterClothing ]
   id: CaptainOuterClothing
-  parent: [BaseOuterClothing, CommonOuterClothing, CommandOuterClothing]
   minLimit: 1
   loadouts:
   - CaptainOuterClothing
   - CaptainWintercoat
 
-# - type: loadoutGroup
-#   id: CaptainShoes
-#   parent: [BaseShoes, CommonShoes, CommandShoes]
+- type: loadoutGroup
+  parent: [ CommonShoes, CommandShoes ]
+  id: CaptainShoes
 
 # - type: loadoutGroup
-#   id: CaptainSpecial
 #   parent: BaseSpecial
+#   id: CaptainSpecial
 
 - type: loadoutGroup
+  parent: [ CommandTrinkets, CommonTrinkets ]
   id: CaptainTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, CommandTrinkets]
+
+- type: loadoutGroup
+  parent: [ CommandPets, CommonPets ]
+  id: CaptainPets

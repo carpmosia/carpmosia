@@ -1,0 +1,266 @@
+# Equipment
+- type: listing
+  id: SalvageStorePickaxe
+  productEntity: Pickaxe
+  cost:
+    SalvageTicket: 200
+  categories:
+  - SalvageStoreEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: SalvageStoreOreBag
+  productEntity: OreBag
+  cost:
+    SalvageTicket: 200
+  categories:
+  - SalvageStoreEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: SalvageStoreBodyBag
+  productEntity: BodyBag
+  cost:
+    SalvageTicket: 400
+  categories:
+  - SalvageStoreEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: SalvageStoreGrapplingGun
+  description: A grappling hook that allows you to latch on to targets at a distance and pull yourself toward them. Perfect for salvaging in zero gravity.
+  productEntity: WeaponGrapplingGun
+  cost:
+    SalvageTicket: 400
+  categories:
+  - SalvageStoreEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: SalvageStoreFultonBeacon
+  productEntity: FultonBeacon
+  cost:
+    SalvageTicket: 600
+  categories:
+  - SalvageStoreEquipment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: SalvageStoreFulton
+  productEntity: Fulton
+  cost:
+    SalvageTicket: 600
+  categories:
+  - SalvageStoreEquipment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: SalvageStoreSurvivalKnife
+  productEntity: SurvivalKnife
+  cost:
+    SalvageTicket: 400
+  categories:
+  - SalvageStoreEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: SalvageStoreDoubleEmergencyOxygenTankFilled
+  productEntity: DoubleEmergencyOxygenTankFilled
+  cost:
+    SalvageTicket: 800
+  categories:
+  - SalvageStoreEquipment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: SalvageStoreDoubleEmergencyNitrogenTankFilled
+  productEntity: DoubleEmergencyNitrogenTankFilled
+  cost:
+    SalvageTicket: 800
+  categories:
+  - SalvageStoreEquipment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: SalvageStoreMineralScanner
+  productEntity: MineralScanner
+  cost:
+    SalvageTicket: 800
+  categories:
+  - SalvageStoreEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: SalvageStoreClothingOuterHardsuitSpatio
+  productEntity: ClothingOuterHardsuitSpatio
+  cost:
+    SalvageTicket: 1000
+  categories:
+  - SalvageStoreEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: SalvageStoreMiningDrill
+  productEntity: MiningDrill
+  cost:
+    SalvageTicket: 1000
+  categories:
+  - SalvageStoreEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: SalvageStoreSeismicCharge
+  productEntity: SeismicCharge
+  cost:
+    SalvageTicket: 1200
+  categories:
+  - SalvageStoreEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: SalvageStoreClothingOuterHardsuitSalvage
+  productEntity: ClothingOuterHardsuitSalvage
+  cost:
+    SalvageTicket: 2500
+  categories:
+  - SalvageStoreEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+# Weapons
+- type: listing
+  id: SalvageStoreFlareGun
+  productEntity: WeaponFlareGun
+  cost:
+    SalvageTicket: 200
+  categories:
+  - SalvageStoreWeapons
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: SalvageStoreBoxShotgunFlare
+  description: A box of flare shells for illuminating the void.
+  productEntity: BoxShotgunFlare
+  icon:
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/shotgun.rsi
+    state: flare
+  cost:
+    SalvageTicket: 200
+  categories:
+  - SalvageStoreWeapons
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: SalvageStoreWeaponCrusherDagger
+  productEntity: WeaponCrusherDagger
+  cost:
+    SalvageTicket: 1000
+  categories:
+  - SalvageStoreWeapons
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: SalvageStoreWeaponCrusherGlaive
+  productEntity: WeaponCrusherGlaive
+  cost:
+    SalvageTicket: 2500
+  categories:
+  - SalvageStoreWeapons
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: SalvageStoreWeaponCrusher
+  productEntity: WeaponCrusher
+  cost:
+    SalvageTicket: 3000
+  categories:
+  - SalvageStoreWeapons
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+  - !type:BuyerAccessCondition
+
+# Consumables
+- type: listing
+  id: SalvageStoreCigPackRed
+  productEntity: CigPackRed
+  cost:
+    SalvageTicket: 100
+  categories:
+  - SalvageStoreConsumables
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: SalvageStoreCigPackGreen
+  productEntity: CigPackGreen
+  cost:
+    SalvageTicket: 100
+  categories:
+  - SalvageStoreConsumables
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: SalvageStoreCigPackBlue
+  productEntity: CigPackBlue
+  cost:
+    SalvageTicket: 100
+  categories:
+  - SalvageStoreConsumables
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: SalvageStoreCigPackBlack
+  productEntity: CigPackBlack
+  cost:
+    SalvageTicket: 100
+  categories:
+  - SalvageStoreConsumables
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: SalvageStoreTechnologyDiskPKAModKits
+  productEntity: TechnologyDiskPKAModKits
+  icon:
+    sprite: Objects/Misc/module.rsi
+    state: rndmajordisk
+  cost:
+    SalvageTicket: 1200
+  categories:
+  - SalvageStoreConsumables
+  conditions:
+  - !type:BuyerAccessCondition
+  - !type:ListingLimitedStockCondition
+    stock: 1
