@@ -116,6 +116,7 @@ namespace Content.IntegrationTests.Tests
             "Convex",
             "Loop",
             "Cog",
+            "Gemini",
             // Carpmosia-end - Legacy maps
         };
 
