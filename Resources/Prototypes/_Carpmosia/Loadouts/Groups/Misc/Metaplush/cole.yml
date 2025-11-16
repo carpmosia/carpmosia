@@ -1,0 +1,27 @@
+- type: loadoutEffectGroup
+  id: ArachindPlushieCole
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobPassenger
+      time: 50h
+
+- type: loadout
+  id: ArachindPlushieCole
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ArachindPlushieCole
+  storage:
+    back:
+    - PlushieArachindCole
+  groupBy: "metaplush"
+
+- type: loadout
+  id: HatPlushieCole
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ArachindPlushieCole
+  equipment:
+    head: PlushieArachindCole
+  groupBy: "metaplush"
