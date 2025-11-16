@@ -28,7 +28,7 @@
   - type: BallisticAmmoProvider
     proto: CartridgeMagnum
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/Pistol/pistol_speed_loader.rsi # Carpmosia-edit - Deckard Port
+    sprite: _Carpmosia/Objects/Weapons/Guns/Ammunition/SpeedLoaders/pistol_speed_loader.rsi # Carpmosia-edit - Deckard Port
     layers:
       - state: base
         map: [ "enum.GunVisualLayers.Base" ]
@@ -50,7 +50,7 @@
   - type: BallisticAmmoProvider
     proto: null
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/Pistol/pistol_speed_loader.rsi # Carpmosia-edit - Deckard Port
+    sprite: _Carpmosia/Objects/Weapons/Guns/Ammunition/SpeedLoaders/pistol_speed_loader.rsi # Carpmosia-edit - Deckard Port
     layers:
       - state: base
         map: [ "enum.GunVisualLayers.Base" ]
@@ -79,7 +79,7 @@
   - type: BallisticAmmoProvider
     proto: CartridgeMagnumPractice
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/Pistol/pistol_speed_loader.rsi # Carpmosia-edit - Deckard Port
+    sprite: _Carpmosia/Objects/Weapons/Guns/Ammunition/SpeedLoaders/pistol_speed_loader.rsi # Carpmosia-edit - Deckard Port
     layers:
       - state: base
         map: [ "enum.GunVisualLayers.Base" ]
