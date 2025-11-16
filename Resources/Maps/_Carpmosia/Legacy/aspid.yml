@@ -8577,14 +8577,12 @@ entities:
     - type: MetaData
     - type: Transform
     - type: Map
-    - type: PhysicsMap
     - type: Broadphase
     - type: OccluderTree
     - type: Parallax
       parallax: AspidParallax
     - type: LoadedMap
     - type: GridTree
-    - type: MovedGrids
   - uid: 8756
     components:
     - type: MetaData

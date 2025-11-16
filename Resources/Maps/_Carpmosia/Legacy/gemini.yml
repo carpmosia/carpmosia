@@ -72,14 +72,12 @@ entities:
     - type: MetaData
     - type: Transform
     - type: Map
-    - type: PhysicsMap
     - type: Broadphase
     - type: OccluderTree
     - type: Parallax
       parallax: KettleStation
     - type: LoadedMap
     - type: GridTree
-    - type: MovedGrids
   - uid: 2
     components:
     - type: MetaData
