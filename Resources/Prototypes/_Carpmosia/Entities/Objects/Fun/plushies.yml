@@ -5,10 +5,10 @@
   description: An adorable stuffed toy that resembles a lizardperson, specifically a certain atmospheric technician. Even the smallest stimuli causes it to scream.
   components:
   - type: Sprite
-    sprite: _Carpmosia/Objects/Fun/Plushies/lizard.rsi
+    sprite: _Carpmosia/Objects/Fun/Plushies/screams.rsi
     state: icon
   - type: Item
-    sprite: _Carpmosia/Objects/Fun/Plushies/lizard.rsi
+    sprite: _Carpmosia/Objects/Fun/Plushies/screams.rsi
   - type: EmitSoundOnUse
     sound: &PlushieLizardScreamsSound
       path: /Audio/Voice/Reptilian/reptilian_scream.ogg
@@ -31,7 +31,7 @@
     soundHit: *PlushieLizardScreamsSound
   - type: Clothing
     quickEquip: false
-    sprite: _Carpmosia/Objects/Fun/Plushies/lizard.rsi
+    sprite: _Carpmosia/Objects/Fun/Plushies/screams.rsi
     slots:
     - HEAD
   - type: Extractable
@@ -48,3 +48,33 @@
           Quantity: 10
         - ReagentId: JuiceThatMakesYouScream
           Quantity: 10
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieArachindCole
+  name: tider spider plushie
+  description: An adorable stuffed toy that resembles an arachnid, specifically a certain tider. It shivers in the presence of contraband.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Fun/Plushies/cole.rsi
+    state: icon
+  - type: EmitSoundOnUse
+    sound: &PlushieArachnidSound
+      path: /Audio/Voice/Arachnid/arachnid_scream.ogg
+  - type: EmitSoundOnLand
+    sound: *PlushieArachnidSound
+  - type: EmitSoundOnActivate
+    sound: *PlushieArachnidSound
+  - type: EmitSoundOnTrigger
+    sound: *PlushieArachnidSound
+  - type: EmitSoundOnCollide
+    sound: *PlushieArachnidSound
+  - type: Edible
+    useSound: *PlushieArachnidSound
+  - type: MeleeWeapon
+    soundHit: *PlushieArachnidSound
+  - type: Clothing
+    quickEquip: false
+    sprite: _Carpmosia/Objects/Fun/Plushies/cole.rsi
+    slots:
+    - HEAD
