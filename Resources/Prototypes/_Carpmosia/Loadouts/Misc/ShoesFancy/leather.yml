@@ -1,0 +1,8 @@
+- type: loadout
+  id: LeatherShoes
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: JamjarTimer
+  equipment:
+    shoes: ClothingShoesLeather
+  groupBy: "shoes_fancy"
