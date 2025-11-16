@@ -10366,30 +10366,6 @@ entities:
     - type: Transform
       pos: -8.521809,38.626057
       parent: 2
-- proto: ActionStethoscope
-  entities:
-  - uid: 6
-    components:
-    - type: Transform
-      parent: 5
-    - type: EntityTargetAction
-      container: 5
-- proto: ActionToggleInternals
-  entities:
-  - uid: 8
-    components:
-    - type: Transform
-      parent: 7
-    - type: InstantAction
-      container: 7
-- proto: ActionToggleMagboots
-  entities:
-  - uid: 10
-    components:
-    - type: Transform
-      parent: 9
-    - type: InstantAction
-      container: 9
 - proto: AirAlarm
   entities:
   - uid: 11
@@ -68658,14 +68634,6 @@ entities:
     - type: Transform
       pos: -38.522915,-36.380253
       parent: 2
-    - type: Stethoscope
-      actionEntity: 6
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 6
   - uid: 10508
     components:
     - type: Transform
@@ -68852,14 +68820,6 @@ entities:
     - type: Transform
       pos: -1.5902219,56.506706
       parent: 2
-    - type: Magboots
-      toggleActionEntity: 10
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 10
   - uid: 10535
     components:
     - type: Transform
@@ -80028,14 +79988,6 @@ entities:
     - type: Transform
       pos: -8.574135,8.614908
       parent: 2
-    - type: GasTank
-      toggleActionEntity: 8
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 8
   - uid: 12344
     components:
     - type: Transform
