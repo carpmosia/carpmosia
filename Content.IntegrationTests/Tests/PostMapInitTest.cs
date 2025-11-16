@@ -117,6 +117,9 @@ namespace Content.IntegrationTests.Tests
             "Loop",
             "Cog",
             "Gemini",
+            "Atlas",
+            "Cluster",
+            "Europa"
             // Carpmosia-end - Legacy maps
         };
 
