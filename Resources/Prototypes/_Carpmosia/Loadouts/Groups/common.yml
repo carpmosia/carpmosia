@@ -3,6 +3,16 @@
   abstract: true
   parent: BaseHead
   id: CommonHead
+  loadouts:
+  - HatCapBlack
+  - HatCapBlue
+  - HatCapGreen
+  - HatCapGrey
+  - HatCapOrange
+  - HatCapPurple
+  - HatCapRed
+  - HatCapWhite
+  - HatCapYellow
 
 - type: loadoutGroup
   abstract: true

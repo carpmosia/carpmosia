@@ -1,0 +1,8 @@
+- type: loadout
+  id: HatUshanka
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: Command
+  equipment:
+    head: ClothingHeadHatUshanka
+  groupBy: "hats_fancy"
