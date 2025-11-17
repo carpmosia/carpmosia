@@ -95,7 +95,8 @@
         acts: ["Destruction"]
       - !type:PlaySoundBehavior
         sound:
-          path: Audio/Effects/tree_fell.ogg
+          path: /Audio/Effects/tree_fell.ogg
+         
   - type: MobThresholds
     thresholds:
       0: Alive
