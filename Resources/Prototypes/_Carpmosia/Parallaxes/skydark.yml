@@ -1,0 +1,14 @@
+- type: parallax
+  id: SkyDark
+  layers:
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_Carpmosia/Parallaxes/land_dark.png"
+      slowness: 0.98
+      scale: 1,1
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_Carpmosia/Parallaxes/noise_dark.png"
+      slowness: 0.95
+      scale: "2, 2"
+      scrolling: "0.1, -0.05"
