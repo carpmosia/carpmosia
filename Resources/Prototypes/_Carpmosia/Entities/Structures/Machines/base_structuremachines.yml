@@ -1,0 +1,35 @@
+- type: entity
+  abstract: true
+  parent: BaseStructure
+  id: BaseMachineIndestructible
+  components:
+  - type: Animateable
+  - type: InteractionOutline
+  - type: Anchorable
+    delay: 2
+  - type: Physics
+    bodyType: Static
+  - type: Transform
+    noRot: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+
+- type: entity
+  abstract: true
+  parent: BaseMachineIndestructible
+  id: BaseMachinePoweredIndestructible
+  components:
+  - type: ApcPowerReceiver
+    powerLoad: 1000
+  - type: ExtensionCableReceiver
+  - type: LightningTarget
+    priority: 1
