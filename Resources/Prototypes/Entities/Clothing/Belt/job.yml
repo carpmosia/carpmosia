@@ -173,10 +173,12 @@
       - Wrench
       - Bottle
       - Spray
-      - Brutepack
-      - Bloodpack
-      - Gauze
-      - Ointment
+      # Carpmosia-edit - Medical tourniquets
+      #- Brutepack
+      #- Bloodpack
+      #- Gauze
+      #- Ointment
+      # Carpmosia-edit - Medical tourniquets
       - CigPack
       - PillCanister
       - Radio
@@ -189,6 +191,7 @@
       - Injector
       - Pill
       - HandLabeler
+      - Healing # Carpmosia-edit - Medical tourniquets
   - type: ItemMapper
     sprite: *BeltOverlay
     mapLayers:
