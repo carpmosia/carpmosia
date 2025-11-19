@@ -1003,7 +1003,7 @@
     - type: Sprite
       state: supply
     - type: MachineBoard
-      prototype: OreProcessorBasic # Carpmosia edit - Unanchorable Roundstart Oreprocessors
+      prototype: OreProcessor
       stackRequirements:
         Manipulator: 4
         Glass: 1
