@@ -11,6 +11,6 @@
   rule: DragonSpawn
 
 - type: ninjaHackingThreat
-  id: Revenant
-  announcement: terror-revenant
-  rule: RevenantSpawn
+  id: LoneOp # Carpmosia-start - Rev remplacement
+  announcement: terror-loneop
+  rule: LoneOpsSpawn # Carpmosia-end - Rev remplacement
