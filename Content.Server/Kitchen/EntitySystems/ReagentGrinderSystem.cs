@@ -122,7 +122,7 @@ namespace Content.Server.Kitchen.EntitySystems
                         scaledSolution.ScaleSolution(fitsCount);
                         solution = scaledSolution;
 
-                        _stackSystem.SetCount(item, stack.Count - fitsCount); // Setting to 0 will QueueDel
+                        _stackSystem.ReduceCount((item, stack), fitsCount); // Setting to 0 will QueueDel
                     }
                     else
                     {
@@ -302,6 +302,9 @@ namespace Content.Server.Kitchen.EntitySystems
         /// <param name="args">DoAfter args</param>
         private void OnContainerDoAfter(EntityUid uid, ReagentGrinderComponent comp, ContainerDoAfterEvent args)
         {
+            if (args.Cancelled || args.Handled || args.Target == null)
+                return;
+
             // If there's no storage component, we leave
             if (!TryComp<StorageComponent>(args.Used, out var storage))
                 return;
