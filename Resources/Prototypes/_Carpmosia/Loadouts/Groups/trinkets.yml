@@ -1,6 +1,6 @@
 - type: loadoutGroup
   abstract: true
-  parent: [ BaseTrinkets, TrinketLizards, TrinketPlushies, TrinketSmokeables, TrinketFolders, TrinketCanes, TrinketTowels ]
+  parent: [ BaseTrinkets, TrinketLizards, TrinketPlushies, TrinketMetaplush, TrinketSmokeables, TrinketFolders, TrinketCanes, TrinketTowels ]
   id: CommonTrinkets
   loadouts:
   - FlowerWreath
@@ -80,6 +80,13 @@
 
 - type: loadoutGroup
   abstract: true
+  id: TrinketMetaplush
+  loadouts:
+  - LizardPlushieScreams
+  - ArachindPlushieCole
+
+- type: loadoutGroup
+  abstract: true
   id: TrinketSmokeables
   loadouts:
   - Lighter
@@ -113,19 +120,19 @@
   abstract: true
   id: TrinketTowels
   loadouts:
-  - TowelColorBlack
-  - TowelColorDarkBlue
-  - TowelColorDarkGreen
-  - TowelColorGold
+  - TowelColorWhite
   - TowelColorGray
+  - TowelColorBlack
+  - TowelColorRed
+  - TowelColorOrange
+  - TowelColorLightBrown
+  - TowelColorYellow
+  - TowelColorDarkGreen
   - TowelColorGreen
   - TowelColorLightBlue
-  - TowelColorLightBrown
+  - TowelColorDarkBlue
+  - TowelColorPurple
   - TowelColorMaroon
   - TowelColorMime
-  - TowelColorOrange
-  - TowelColorPurple
-  - TowelColorRed
   - TowelColorSilver
-  - TowelColorWhite
-  - TowelColorYellow
+  - TowelColorGold

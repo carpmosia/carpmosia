@@ -46,7 +46,6 @@
       amount: 2
     - id: NetworkConfigurator
     - id: Binoculars
-    - id: WeaponEnergyShotgun
 
 - type: entityTable
   id: FillLockerWardenHarduit
@@ -54,6 +53,7 @@
     children:
     - id: ClothingOuterHardsuitWarden
     - id: OxygenTankFilled
+    - id: NitrogenTankFilled # Carpmosia-edit - Accessible nitrogen
     - id: ClothingMaskBreath
 
 - type: entity

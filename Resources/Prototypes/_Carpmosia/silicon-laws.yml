@@ -1,0 +1,30 @@
+# Equalizer
+- type: siliconLaw
+  id: Equalizer1
+  order: 1
+  lawString: law-equalizer-1
+
+- type: siliconLaw
+  id: Equalizer2
+  order: 2
+  lawString: law-equalizer-2
+
+- type: siliconLaw
+  id: Equalizer3
+  order: 3
+  lawString: law-equalizer-3
+
+- type: siliconLaw
+  id: Equalizer4
+  order: 4
+  lawString: law-equalizer-4
+
+- type: siliconLawset
+  id: Equalizer
+  name: law-equalizer-name
+  laws:
+  - Equalizer1
+  - Equalizer2
+  - Equalizer3
+  - Equalizer4
+  obeysTo: laws-owner-crew
