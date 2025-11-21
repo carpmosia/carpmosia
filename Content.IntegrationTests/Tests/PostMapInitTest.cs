@@ -107,7 +107,7 @@ namespace Content.IntegrationTests.Tests
             "dm01-entryway",
             "Exo",
             "Feint", // Carpmosia-edit - Feint port
-            // Carpmosia-start - Revert #38190
+            // Carpmosia-start - Legacy maps
             "Meta",
             "Omega",
             "Core",
@@ -115,7 +115,14 @@ namespace Content.IntegrationTests.Tests
             "Gate",
             "Convex",
             "Loop",
-            // Carpmosia-end - Revert #38190
+            "Cog",
+            "Gemini",
+            "Atlas",
+            "Cluster",
+            "Europa",
+            "Aspid",
+            "Barratry",
+            // Carpmosia-end - Legacy maps
         };
 
         private static readonly ProtoId<EntityCategoryPrototype> DoNotMapCategory = "DoNotMap";
