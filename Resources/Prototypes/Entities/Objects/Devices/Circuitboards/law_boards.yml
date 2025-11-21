@@ -43,8 +43,9 @@
 - type: entity
   id: CommandmentCircuitBoard
   parent: BaseSiliconLawboard
-  name: law board (Six Commandments) # Carpmosia-edit - New commandments
-  description: An electronics board containing the Six Commandments lawset. # Carpmosia-edit - New commandments
+  name: law board (Ten Commandments)
+  description: An electronics board containing the Ten Commandments lawset.
+  suffix: Electronics, Deprecated # Carpmosia-edit - New commandments
   components:
   - type: SiliconLawProvider
     laws: CommandmentsLawset
