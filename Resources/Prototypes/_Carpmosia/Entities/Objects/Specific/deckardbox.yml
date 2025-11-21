@@ -7,8 +7,6 @@
   - type: Sprite
     sprite: _Carpmosia/Objects/Storage/deckardbox.rsi
     layers:
-    - state: closed
-      map: ["closeLayer"]
     - state: open
       map: ["openLayer"]
     - state: loader1
@@ -20,6 +18,8 @@
     - state: deckard
       map: ["deckard"]
       visible: false
+    - state: closed
+      map: ["closeLayer"]
   - type: Item
     sprite: _Carpmosia/Objects/Storage/deckardbox.rsi
     size: Normal
@@ -33,14 +33,22 @@
         - SpeedLoaderMagnum
     grid:
     - 0,0,3,1
-  - type: ItemCounter
-    count:
-      tags: [ Sidearm, SpeedLoaderMagnum ]
-    composite: true
-    layerStates:
-    - deckard
-    - loader1
-    - loader2
+  - type: ItemMapper
+    mapLayers:
+      deckard:
+        whitelist:
+          tags:
+          - Sidearm
+      loader1:
+        whitelist:
+          tags:
+          - SpeedLoaderMagnum
+        minCount: 1
+      loader2:
+        whitelist:
+          tags:
+          - SpeedLoaderMagnum
+        minCount: 2
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
