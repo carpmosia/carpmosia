@@ -33,6 +33,10 @@
         amount: 2
       - id: OxygenTankFilled
         amount: 2
+      # Carpmosia-start - Accessible nitrogen
+      - id: NitrogenTankFilled
+        amount: 2
+      # Carpmosia-end - Accessible nitrogen
 
 - type: entity
   id: CrateEmergencyInternals

@@ -7,3 +7,5 @@ flavor-complex-gunner = like a refreshing ginger beer
 flavor-complex-carribean-lovers = like love
 flavor-complex-the-last-word = like a good speech
 flavor-complex-coffee-flip = like a sweet coffee cocktail
+
+flavor-vocalstrain = like vocal strain
