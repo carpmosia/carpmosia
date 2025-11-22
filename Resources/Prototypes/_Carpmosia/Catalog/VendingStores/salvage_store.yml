@@ -41,6 +41,26 @@
   - !type:BuyerAccessCondition
 
 - type: listing
+  id: SalvageHandheldMassScanner
+  productEntity: HandHeldMassScanner
+  cost:
+    SalvageTicket: 400
+  categories:
+  - SalvageStoreEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
+  id: SalvageStoreSurvivalKnife
+  productEntity: SurvivalKnife
+  cost:
+    SalvageTicket: 400
+  categories:
+  - SalvageStoreEquipment
+  conditions:
+  - !type:BuyerAccessCondition
+
+- type: listing
   id: SalvageStoreFultonBeacon
   productEntity: FultonBeacon
   cost:
@@ -62,16 +82,6 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 3
-  - !type:BuyerAccessCondition
-
-- type: listing
-  id: SalvageStoreSurvivalKnife
-  productEntity: SurvivalKnife
-  cost:
-    SalvageTicket: 400
-  categories:
-  - SalvageStoreEquipment
-  conditions:
   - !type:BuyerAccessCondition
 
 - type: listing
@@ -139,10 +149,22 @@
   - !type:BuyerAccessCondition
 
 - type: listing
+  id: SalvageStoreVoidJetpack
+  productEntity: JetpackVoidFilled
+  cost:
+    SalvageTicket: 3600
+  categories:
+  - SalvageStoreEquipment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+  - !type:BuyerAccessCondition
+
+- type: listing
   id: SalvageStoreClothingOuterHardsuitSalvage
   productEntity: ClothingOuterHardsuitSalvage
   cost:
-    SalvageTicket: 2500
+    SalvageTicket: 3750
   categories:
   - SalvageStoreEquipment
   conditions:
@@ -174,10 +196,23 @@
   - !type:BuyerAccessCondition
 
 - type: listing
+  id: SalvageStorePKA
+  description: Forget yours? Remember, this weapon is your life.
+  productEntity: WeaponProtoKineticAccelerator
+  cost:
+    SalvageTicket: 600
+  categories:
+  - SalvageStoreWeapons
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+  - !type:BuyerAccessCondition
+
+- type: listing
   id: SalvageStoreWeaponCrusherDagger
   productEntity: WeaponCrusherDagger
   cost:
-    SalvageTicket: 1000
+    SalvageTicket: 1500
   categories:
   - SalvageStoreWeapons
   conditions:
@@ -189,7 +224,7 @@
   id: SalvageStoreWeaponCrusherGlaive
   productEntity: WeaponCrusherGlaive
   cost:
-    SalvageTicket: 2500
+    SalvageTicket: 3750
   categories:
   - SalvageStoreWeapons
   conditions:
@@ -201,7 +236,7 @@
   id: SalvageStoreWeaponCrusher
   productEntity: WeaponCrusher
   cost:
-    SalvageTicket: 3000
+    SalvageTicket: 4500
   categories:
   - SalvageStoreWeapons
   conditions:
@@ -264,3 +299,13 @@
   - !type:BuyerAccessCondition
   - !type:ListingLimitedStockCondition
     stock: 1
+
+- type: listing
+  id: SalvageStoreSupremeSalvagerCloak
+  productEntity: ClothingNeckCloakSalvagerSupreme
+  cost:
+    SalvageTicket: 10000
+  categories:
+  - SalvageStoreFun
+  conditions:
+  - !type:BuyerAccessCondition

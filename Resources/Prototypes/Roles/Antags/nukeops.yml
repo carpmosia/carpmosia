@@ -42,11 +42,11 @@
   setPreference: true
   objective: roles-antag-nuclear-operative-commander-objective
   requirements:
-  - !type:OverallPlaytimeRequirement
-    time: 5h
   # Carpmosia-start - Antag playtimes
+  #  - !type:OverallPlaytimeRequirement
+  #    time: 5h
   - !type:RoleTimeRequirement
-    role: AntagNukeops
+    role: JobHeadOfSecurity
     time: 5h
   # Carpmosia-end - Antag playtimes
   guides: [ NuclearOperatives ]
