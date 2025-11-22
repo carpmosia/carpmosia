@@ -74,9 +74,17 @@
             Heat: 1
   - type: BackwardsAccent
   - type: Sprite
-    sprite: Structures/Furniture/potted_plants.rsi
+    sprite: _Carpmosia/Mobs/Pets/jorge.rsi
     noRot: true
-    state: plant-26
+    layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: jorge-alive
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: jorge-alive
+      Dead:
+        Base: jorge-dead
   - type: Bloodstream
     bloodReagent: Sap
     bloodMaxVolume: 50
@@ -96,7 +104,6 @@
       - !type:PlaySoundBehavior
         sound:
           path: /Audio/Effects/tree_fell.ogg
-         
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -133,10 +140,9 @@
   - type: Grammar
     attributes:
       proper: true
-  - type: Rootable
   - type: MovementSpeedModifier
-    baseWalkSpeed: 1.0
-    baseSprintSpeed: 2.5
+    baseWalkSpeed: 0.75
+    baseSprintSpeed: 1.5
   - type: StaticPrice
     price: 2000
   - type: WarpPoint
