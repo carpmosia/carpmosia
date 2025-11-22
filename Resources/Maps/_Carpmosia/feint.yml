@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 11/22/2025 19:33:13
-  entityCount: 21867
+  time: 11/22/2025 20:48:01
+  entityCount: 21866
 maps:
 - 1
 grids:
@@ -112028,25 +112028,25 @@ entities:
       fixtures: {}
 - proto: ScreenTimer
   entities:
-  - uid: 21871
+  - uid: 17522
     components:
     - type: Transform
-      pos: 8.5,-51.5
+      pos: 5.5,-55.5
       parent: 2
     - type: SignalTimer
-      delay: 0.7
+      delay: 1
     - type: DeviceLinkSource
       linkedPorts:
-        21872:
+        17523:
         - - Timer
           - Trigger
-        8174:
+        8182:
         - - Timer
           - Reverse
-        8175:
+        8181:
         - - Timer
           - Reverse
-        8176:
+        8180:
         - - Timer
           - Reverse
         8177:
@@ -112058,55 +112058,55 @@ entities:
         8179:
         - - Timer
           - Reverse
-        8182:
+        8176:
         - - Timer
           - Reverse
-        8181:
+        8175:
         - - Timer
           - Reverse
-        8180:
+        8174:
         - - Timer
           - Reverse
     - type: Fixtures
       fixtures: {}
     - type: ActiveSignalTimer
-  - uid: 21872
+  - uid: 17523
     components:
     - type: Transform
-      pos: 5.5,-51.5
+      pos: 4.5,-55.5
       parent: 2
     - type: SignalTimer
-      delay: 0.7
+      delay: 1
     - type: DeviceLinkSource
       linkedPorts:
-        21871:
+        17522:
         - - Timer
           - Trigger
-        8180:
+        8182:
         - - Timer
           - Forward
         8181:
         - - Timer
           - Forward
-        8182:
-        - - Timer
-          - Forward
-        8179:
-        - - Timer
-          - Forward
-        8178:
+        8180:
         - - Timer
           - Forward
         8177:
         - - Timer
           - Forward
-        8174:
+        8178:
+        - - Timer
+          - Forward
+        8179:
+        - - Timer
+          - Forward
+        8176:
         - - Timer
           - Forward
         8175:
         - - Timer
           - Forward
-        8176:
+        8174:
         - - Timer
           - Forward
     - type: Fixtures
@@ -121711,76 +121711,6 @@ entities:
         - - Middle
           - Off
         8171:
-        - - Left
-          - Reverse
-        - - Right
-          - Forward
-        - - Middle
-          - Off
-  - uid: 18216
-    components:
-    - type: Transform
-      pos: 1.5,-53.5
-      parent: 2
-    - type: DeviceLinkSource
-      linkedPorts:
-        8182:
-        - - Left
-          - Reverse
-        - - Right
-          - Forward
-        - - Middle
-          - Off
-        8181:
-        - - Left
-          - Reverse
-        - - Right
-          - Forward
-        - - Middle
-          - Off
-        8180:
-        - - Left
-          - Reverse
-        - - Right
-          - Forward
-        - - Middle
-          - Off
-        8177:
-        - - Left
-          - Reverse
-        - - Right
-          - Forward
-        - - Middle
-          - Off
-        8178:
-        - - Left
-          - Reverse
-        - - Right
-          - Forward
-        - - Middle
-          - Off
-        8179:
-        - - Left
-          - Reverse
-        - - Right
-          - Forward
-        - - Middle
-          - Off
-        8174:
-        - - Left
-          - Reverse
-        - - Right
-          - Forward
-        - - Middle
-          - Off
-        8175:
-        - - Left
-          - Reverse
-        - - Right
-          - Forward
-        - - Middle
-          - Off
-        8176:
         - - Left
           - Reverse
         - - Right
