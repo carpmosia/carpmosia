@@ -40,6 +40,15 @@
     zeroVisible: false
   - type: Appearance
   - type: Item
+    # Carpmosia-start - Deckard Port
+    # inhandVisuals:
+    #   left:
+    #   - state: inhand-left-mag
+    #   - state: inhand-left-ammo
+    #   right:
+    #   - state: inhand-right-mag
+    #   - state: inhand-right-ammo
+    # Carpmosia-end - Deckard Port
 
 - type: entity
   id: SpeedLoaderMagnumEmpty
@@ -60,6 +69,13 @@
       - state: base-6
         map: [ "enum.GunVisualLayers.Mag" ]
   - type: Item
+    # Carpmosia-start - Deckard Port
+    # inhandVisuals:
+    #   left:
+    #   - state: inhand-left-mag
+    #   right:
+    #   - state: inhand-right-mag
+    # Carpmosia-end - Deckard Port
 
 - type: entity
   id: SpeedLoaderMagnumIncendiary
@@ -91,6 +107,19 @@
     zeroVisible: false
   - type: Appearance
   - type: Item
+    # Carpmosia-start - Deckard Port
+    # inhandVisuals:
+    #   left:
+    #   - state: inhand-left-mag
+    #   - state: inhand-left-ammo
+    #   - state: inhand-left-stripe
+    #     color: "#ea5800"
+    #   right:
+    #   - state: inhand-right-mag
+    #   - state: inhand-right-ammo
+    #   - state: inhand-right-stripe
+    #     color: "#ea5800"
+    # Carpmosia-end - Deckard Port
 
 - type: entity
   id: SpeedLoaderMagnumAP
@@ -113,6 +142,19 @@
     zeroVisible: false
   - type: Appearance
   - type: Item
+    # Carpmosia-start - Deckard Port
+    # inhandVisuals:
+    #   left:
+    #   - state: inhand-left-mag
+    #   - state: inhand-left-ammo
+    #   - state: inhand-left-stripe
+    #     color: "#540000"
+    #   right:
+    #   - state: inhand-right-mag
+    #   - state: inhand-right-ammo
+    #   - state: inhand-right-stripe
+    #     color: "#540000"
+    # Carpmosia-end - Deckard Port
 
 - type: entity
   id: SpeedLoaderMagnumUranium
@@ -135,3 +177,16 @@
     zeroVisible: false
   - type: Appearance
   - type: Item
+    # Carpmosia-start - Deckard Port
+    # inhandVisuals:
+    #   left:
+    #   - state: inhand-left-mag
+    #   - state: inhand-left-ammo
+    #   - state: inhand-left-stripe
+    #     color: "#00cd42"
+    #   right:
+    #   - state: inhand-right-mag
+    #   - state: inhand-right-ammo
+    #   - state: inhand-right-stripe
+    #     color: "#00cd42"
+    # Carpmosia-end - Deckard Port
