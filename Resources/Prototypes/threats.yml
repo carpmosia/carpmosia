@@ -3,7 +3,7 @@
   id: NinjaThreats
   weights:
     Dragon: 1
-    LoneOp: 1 # Carpmosia-edit - Rev remplacement
+    LoneOp: 1 # Carpmosia-edit - Rev replacement
 
 - type: ninjaHackingThreat
   id: Dragon
@@ -11,6 +11,6 @@
   rule: DragonSpawn
 
 - type: ninjaHackingThreat
-  id: LoneOp # Carpmosia-start - Rev remplacement
+  id: LoneOp # Carpmosia-start - Rev replacement
   announcement: terror-loneop
-  rule: LoneOpsSpawn # Carpmosia-end - Rev remplacement
+  rule: LoneOpsSpawn # Carpmosia-end - Rev replacement
