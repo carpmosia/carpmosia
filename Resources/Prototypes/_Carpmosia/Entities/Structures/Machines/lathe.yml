@@ -39,6 +39,10 @@
   - type: Anchorable
     flags:
     - Anchorable
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
 
 - type: entity
   parent: BaseLatheIndestructible
