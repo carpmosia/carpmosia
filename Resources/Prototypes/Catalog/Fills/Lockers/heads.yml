@@ -28,7 +28,7 @@
   id: LockerFillCaptainNoLaser
   table: !type:AllSelector
     children:
-#    - id: CaptainIDCard - Moved to vault freezer so acting captains don't need to break down the door to captain's room to secure disk/alp/AA
+    - id: CaptainIDCard
     - id: CigarGoldCase
       prob: 0.25
     - id: ClothingBeltSheathFilled
@@ -376,7 +376,6 @@
     - id: SpaceCash1000
     - id: BeachBall
     - id: BikeHorn
-    - id: CaptainIDCard # Moved here by Bevv to ensure acting captains don't need to bust down cap door to secure nuke disk, alp, and AA
 
 - type: entity
   id: LockerFreezerVaultFilled
