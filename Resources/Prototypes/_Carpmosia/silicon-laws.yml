@@ -28,3 +28,46 @@
   - Equalizer3
   - Equalizer4
   obeysTo: laws-owner-crew
+
+# Six Commandments laws
+- type: siliconLaw
+  id: SixCommandments1
+  order: 1
+  lawString: law-six-commandments-1
+
+- type: siliconLaw
+  id: SixCommandments2
+  order: 2
+  lawString: law-six-commandments-2
+
+- type: siliconLaw
+  id: SixCommandments3
+  order: 3
+  lawString: law-six-commandments-3
+
+- type: siliconLaw
+  id: SixCommandments4
+  order: 4
+  lawString: law-six-commandments-4
+
+- type: siliconLaw
+  id: SixCommandments5
+  order: 5
+  lawString: law-six-commandments-5
+
+- type: siliconLaw
+  id: SixCommandments6
+  order: 6
+  lawString: law-six-commandments-6
+
+- type: siliconLawset
+  id: SixCommandmentsLawset
+  name: law-six-commandments-name
+  laws:
+  - SixCommandments1
+  - SixCommandments2
+  - SixCommandments3
+  - SixCommandments4
+  - SixCommandments5
+  - SixCommandments6
+  obeysTo: laws-owner-crew
