@@ -1,0 +1,61 @@
+- type: thiefBackpackSet
+  id: ERTPointmanSet
+  name: ERT Pointman Set
+  description: A loadout for rushing headfirst into danger. Comes with an Enforcer, a box of shells, slugs, and two syringes of ephedrine.
+  sprite:
+    sprite: Objects/Weapons/Guns/Shotguns/enforcer.rsi
+    state: icon
+  content:
+  - WeaponShotgunEnforcer
+  - BoxLethalshot
+  - BoxShotgunSlug
+  - SyringeEphedrine
+  - SyringeEphedrine
+
+- type: thiefBackpackSet
+  id: ERTRiflemanSet
+  name: ERT Rifleman Set
+  description: A basic and effective set of gear. Comes with a Lecter, four full magazines of .20 rifle ammunition, and two stinger grenades.
+  sprite:
+    sprite: Objects/Weapons/Guns/Rifles/lecter.rsi
+    state: icon
+  content:
+  - WeaponRifleLecter
+  - BoxMagazineRifle
+  - GrenadeStinger
+  - GrenadeStinger
+
+- type: thiefBackpackSet
+  id: ERTCombatTechnicianSet
+  name: ERT Combat Technician Set
+  description: Equipment for breaking through or building fortifications. Comes with a Drozd, two submachinegun magazines, and a suite of advanced tools.
+  sprite:
+    sprite: Objects/Weapons/Guns/SMGs/drozd.rsi
+    state: icon
+  content:
+  - WeaponSubMachineGunDrozd
+  - MagazinePistolSubMachineGun
+  - MagazinePistolSubMachineGun
+  - PowerDrill
+  - JawsOfLife
+  - WelderExperimental
+  - Multitool
+  - HolofanProjector
+  - GasAnalyzer
+  - trayScanner
+  - ClothingEyesGlassesMeson
+
+- type: thiefBackpackSet
+  id: ERTFieldMedicSet
+  name: ERT Field Medic Set
+  description: Help keep the crew alive, at the expense of your personal firepower. Comes with a combat medkit, a compact defibrillator, two bottles of epinephrine, a syringe, and a svalinn laser pistol.
+  sprite:
+    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    state: blackkit
+  content:
+  - WeaponLaserSvalinn
+  - MedkitCombatFilled
+  - DefibrillatorCompact
+  - ChemistryBottleEpinephrine
+  - ChemistryBottleEpinephrine
+  - Syringe

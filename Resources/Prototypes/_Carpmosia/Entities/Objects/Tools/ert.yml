@@ -1,0 +1,25 @@
+- type: entity
+  id: DuffelERT
+  name: undetermined ERT duffel
+  description: This is where your favorite supplies lie. Try to remember which ones.
+  parent: [ BaseItem, BaseCentcommContraband ]
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Satchels/smuggler.rsi
+    state: folded
+  - type: ThiefUndeterminedBackpack
+    possibleSets:
+    - ERTRiflemanSet
+    - ERTPointmanSet
+    - ERTCombatTechnicianSet
+    - ERTFieldMedicSet
+    spawnedStoragePrototype: ClothingBackpackDuffel
+    maxSelectedSets: 1
+    toolsName: "ert-backpack-window-title"
+    toolsDesc: "ert-backpack-window-description"
+  - type: ActivatableUI
+    key: enum.ThiefBackpackUIKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.ThiefBackpackUIKey.Key:
+        type: ThiefBackpackBoundUserInterface

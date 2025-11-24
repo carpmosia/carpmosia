@@ -30,6 +30,20 @@ public sealed partial class ThiefUndeterminedBackpackComponent : Component
     [DataField]
     public int MaxSelectedSets = 2;
 
+    // Carpmosia start - Genericise Undetermined Tools
+    /// <summary>
+    /// Title field for undetermined equipment ui.
+    /// </summary>
+    [DataField]
+    public string ToolsName = "thief-backpack-window-title";
+
+    /// <summary>
+    /// Description field for undetermined equipment ui.
+    /// </summary>
+    [DataField]
+    public string ToolsDesc = "thief-backpack-window-description";
+    // Carpmosia end - Genericise Undetermined Tools
+
     /// <summary>
     /// What entity all the spawned items will appear inside of
     /// If null, will instead drop on the ground.

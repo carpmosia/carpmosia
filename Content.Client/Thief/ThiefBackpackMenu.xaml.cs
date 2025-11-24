@@ -46,7 +46,8 @@ public sealed partial class ThiefBackpackMenu : FancyWindow
                 selectedNumber++;
         }
 
-        Description.Text = Loc.GetString("thief-backpack-window-description", ("maxCount", state.MaxSelectedSets));
+        Title = Loc.GetString(state.ToolsName); // Carpmosia edit - Genericise Undetermined Tools
+        Description.Text = Loc.GetString(state.ToolsDesc, ("maxCount", state.MaxSelectedSets)); // Carpmosia edit - Genericise Undetermined Tools
         SelectedSets.Text = Loc.GetString("thief-backpack-window-selected", ("selectedCount", selectedNumber), ("maxCount", state.MaxSelectedSets));
         ApproveButton.Disabled = selectedNumber != state.MaxSelectedSets;
     }
