@@ -473,6 +473,7 @@ public sealed class MoverController : SharedMoverController
                 }
             }
 
+            /// Carpmosia-start - rotate shuttle along movement vector
             if (!alignInput.Equals(0f) && !MathHelper.CloseTo(body.LinearVelocity.Length(), 0f, 0.01f))
             {
                 // Get velocity relative to the shuttle
@@ -530,6 +531,7 @@ public sealed class MoverController : SharedMoverController
                 shuttle.Integral = 0f;
                 shuttle.AlignDir = 0;
             }
+            /// Carpmosia-end - rotate shuttle along movement vector
 
             if (linearInput.Length().Equals(0f))
             {
