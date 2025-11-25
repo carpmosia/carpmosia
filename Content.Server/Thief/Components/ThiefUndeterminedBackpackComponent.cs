@@ -35,13 +35,13 @@ public sealed partial class ThiefUndeterminedBackpackComponent : Component
     /// Title field for undetermined equipment ui.
     /// </summary>
     [DataField]
-    public string ToolsName = "thief-backpack-window-title";
+    public string ToolName = "thief-backpack-window-title";
 
     /// <summary>
     /// Description field for undetermined equipment ui.
     /// </summary>
     [DataField]
-    public string ToolsDesc = "thief-backpack-window-description";
+    public string ToolDesc = "thief-backpack-window-description";
     // Carpmosia end - Genericise Undetermined Tools
 
     /// <summary>
