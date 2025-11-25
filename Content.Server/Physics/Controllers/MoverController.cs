@@ -479,43 +479,31 @@ public sealed class MoverController : SharedMoverController
                 var shuttleVelocity = (-shuttleNorthAngle).RotateVec(body.LinearVelocity);
 
                 var torque = 0f;
-                var angle = 0f;
+                var torqueMul = body.InvI * frameTime;
+
+                //determine direction of turning
+                if (shuttle.AlignDir == 0)
+                {
+                    shuttle.AlignDir = MathF.Sign(alignInput * shuttleVelocity.Y) > 0 ? -1 : 1;
+                }
 
                 //find angle between current orientation and movement vector
-                if (alignInput > 0f)
-                {
-                    angle = MathF.Acos(shuttleVelocity.Y / shuttleVelocity.Length());
-                }
-                else
-                {
-                    angle = MathF.Acos(-shuttleVelocity.Y / shuttleVelocity.Length());
-                }
+                var angle = alignInput > 0f ?
+                    MathF.Acos(shuttleVelocity.Y / shuttleVelocity.Length()) : MathF.Acos(-shuttleVelocity.Y / shuttleVelocity.Length());
 
                 //convert to degrees
                 angle *= 180f / MathF.PI;
 
-                if (shuttle.AligningStart.Equals(0f))
-                    shuttle.AligningStart = angle;
+                //perform PI controller calculation
+                var error = alignInput > 0f ? angle : 180f - angle;
 
-                if (MathHelper.CloseTo(angle, 0f, 1f))
-                {
-                    torque = shuttle.AngularThrust * alignInput * (body.AngularVelocity > 0f ? -1f : 1f) * ShuttleComponent.BrakeCoefficient;
-                }
-                else
-                {
+                //proportional term
+                var pOut = shuttle.Kp * error;
+                //integration term
+                shuttle.Integral += error * frameTime / 1000;
+                var iOut = shuttle.Ki * shuttle.Integral;
 
-                    torque = shuttle.AngularThrust;
-
-                    if (alignInput > 0f && angle <= shuttle.AligningStart / 2 ||
-                        alignInput < 0f && angle >= (shuttle.AligningStart + 180f) / 2)
-                        torque *= -1;
-
-                    if (Math.Sign(alignInput) * Math.Sign(shuttleVelocity.X) >= 0)
-                        torque *= -1;
-                }
-                // Need to cap the velocity if 1 tick of input brings us over cap so we don't continuously
-                // edge onto the cap over and over.
-                var torqueMul = body.InvI * frameTime;
+                torque = (pOut + iOut) * shuttle.AlignDir;
 
                 torque = Math.Clamp(torque,
                     (-ShuttleComponent.MaxAngularVelocity - body.AngularVelocity) / torqueMul,
@@ -532,9 +520,15 @@ public sealed class MoverController : SharedMoverController
                 }
 
             }
-            else
+            //don't immediatelly zero out accrued integral
+            else if (!MathHelper.CloseTo(shuttle.Integral, 0f, 0.2f))
             {
-                shuttle.AligningStart = 0f;
+                shuttle.Integral += shuttle.Integral > 0f ? -0.1f : 0.1f;
+            }
+            if (alignInput.Equals(0f))
+            {
+                shuttle.Integral = 0f;
+                shuttle.AlignDir = 0;
             }
 
             if (linearInput.Length().Equals(0f))

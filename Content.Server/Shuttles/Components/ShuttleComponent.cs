@@ -71,9 +71,25 @@ namespace Content.Server.Shuttles.Components
 
         /// Carpmosia-start - rotate shuttle along movement vector
         /// <summary>
-        /// Notes the starting angle of the aligning manouver
+        /// Rotation direction for aligning, determined at the start of maneuver
         /// </summary>
-        public float AligningStart = 0f;
+        [ViewVariables]
+        public int AlignDir = 0;
+        /// <summary>
+        /// PI Controller proportional term
+        /// </summary>
+        [DataField]
+        public float Kp = 1.0f;
+        /// <summary>
+        /// PI Controller integral term
+        /// </summary>
+        [DataField]
+        public float Ki = 1.0f;
+        /// <summary>
+        /// PI Controller accumulated integral
+        /// </summary>
+        [ViewVariables]
+        public float Integral = 0.0f;
         /// Carpmosia-end - rotate shuttle along movement vector
     }
 }
