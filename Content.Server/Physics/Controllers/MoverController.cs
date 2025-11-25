@@ -492,6 +492,8 @@ public sealed class MoverController : SharedMoverController
                 var angle = alignInput > 0f ?
                     MathF.Acos(shuttleVelocity.Y / shuttleVelocity.Length()) : MathF.Acos(-shuttleVelocity.Y / shuttleVelocity.Length());
 
+                angle *= MathF.Sign(shuttleVelocity.X);
+
                 //convert to degrees
                 angle *= 180f / MathF.PI;
 
@@ -501,7 +503,7 @@ public sealed class MoverController : SharedMoverController
                 //proportional term
                 var pOut = shuttle.Kp * error;
                 //integration term
-                shuttle.Integral += error * frameTime / 1000;
+                shuttle.Integral += error * frameTime / 100;
                 var iOut = shuttle.Ki * shuttle.Integral;
 
                 torque = (pOut + iOut) * shuttle.AlignDir;
