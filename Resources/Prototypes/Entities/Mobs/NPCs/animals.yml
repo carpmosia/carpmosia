@@ -2563,7 +2563,7 @@
   - type: GhostRole
     makeSentient: true
     # Carpmosia-start - Spider free agent
-    name: ghost-role-information-giant-spider-name-carpmosia 
+    name: ghost-role-information-giant-spider-name-carpmosia
     description: ghost-role-information-giant-spider-description-carpmosia
     rules: ghost-role-information-giant-spider-rules-carpmosia
     # Carpmosia-end - Spider free agent
@@ -2643,7 +2643,7 @@
     - type: MobThresholds
       thresholds:
         0: Alive
-        180: Dead
+        100: Dead # Carpmosia edit - Nerf Clownspider
     - type: Spider
       webPrototype: SpiderWebClown
     - type: MeleeWeapon
@@ -2654,7 +2654,7 @@
         path: /Audio/Effects/bite.ogg
       damage:
         types:
-          Piercing: 8
+          Piercing: 6 # Carpmosia edit - Nerf Clownspider
     - type: FootstepModifier
       footstepSoundCollection:
         collection: FootstepClownFast
