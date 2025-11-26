@@ -8,10 +8,9 @@ public sealed class ThiefBackpackBoundUserInterfaceState : BoundUserInterfaceSta
 {
     public readonly Dictionary<int, ThiefBackpackSetInfo> Sets;
     public int MaxSelectedSets;
-
     // Carpmosia start - Genericise Undetermined Tools
-    public string ToolName;
-    public string ToolDesc;
+    public LocId ToolName;
+    public LocId ToolDesc;
     // Carpmosia end - Genericise Undetermined Tools
     public ThiefBackpackBoundUserInterfaceState(Dictionary<int, ThiefBackpackSetInfo> sets, int max, string toolName, string toolDesc)
     {
