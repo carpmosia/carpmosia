@@ -1,8 +1,11 @@
 - type: loadout
   id: LaceupShoes
   effects:
-  - !type:GroupLoadoutEffect
-    proto: Command
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Command
+      time: 1h
   equipment:
     shoes: ClothingShoesBootsLaceup
   groupBy: "fancyShoes"
@@ -10,8 +13,11 @@
 - type: loadout
   id: LeatherShoes
   effects:
-  - !type:GroupLoadoutEffect
-    proto: JamjarTimer
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobLibrarian
+      time: 1h
   equipment:
     shoes: ClothingShoesLeather
   groupBy: "fancyShoes"
