@@ -71,25 +71,33 @@ namespace Content.Server.Shuttles.Components
 
         /// Carpmosia-start - rotate shuttle along movement vector
         /// <summary>
-        /// Rotation direction for aligning, determined at the start of maneuver
-        /// </summary>
-        [ViewVariables]
-        public int AlignDir = 0;
-        /// <summary>
-        /// PI Controller proportional term
+        /// PID Controller proportional term
         /// </summary>
         [DataField]
-        public float Kp = 1.0f;
+        public float Kp = 80f;
         /// <summary>
-        /// PI Controller integral term
+        /// PID Controller integral term
         /// </summary>
         [DataField]
-        public float Ki = 1.0f;
+        public float Ki = 20f;
         /// <summary>
-        /// PI Controller accumulated integral
+        /// PID Controller derivative term
+        /// </summary>
+        [DataField]
+        public float Kd = 3f;
+        /// <summary>
+        /// PID Controller accumulated integral
+        /// </summary>
+        [DataField]
+        public float Integral = 0f;
+        /// <summary>
+        /// Used for calculating the derivative term in the PID controller
         /// </summary>
         [ViewVariables]
-        public float Integral = 0.0f;
+        public float PreviousError = 0f;
+
+        [DataField]
+        public float TargetSpeed = 0f;
         /// Carpmosia-end - rotate shuttle along movement vector
     }
 }
