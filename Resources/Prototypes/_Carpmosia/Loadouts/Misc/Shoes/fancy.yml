@@ -1,0 +1,17 @@
+- type: loadout
+  id: LaceupShoes
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: Command
+  equipment:
+    shoes: ClothingShoesBootsLaceup
+  groupBy: "fancyShoes"
+
+- type: loadout
+  id: LeatherShoes
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: JamjarTimer
+  equipment:
+    shoes: ClothingShoesLeather
+  groupBy: "fancyShoes"
