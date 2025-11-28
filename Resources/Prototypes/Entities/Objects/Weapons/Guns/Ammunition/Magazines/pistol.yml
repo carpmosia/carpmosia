@@ -239,7 +239,7 @@
   id: MagazinePistolUranium
   name: pistol magazine (.35 auto uranium)
   parent: BaseMagazinePistol
-  description: 15-round single-stack magazine for pistols. Intended to hold exotic uranium-core ammunition.
+  description: 15-round single-stack magazine for pistols. Intended to hold exotic uranium-core ammunition. # Carpmosia-edit - increased pistol magazines
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolUranium
