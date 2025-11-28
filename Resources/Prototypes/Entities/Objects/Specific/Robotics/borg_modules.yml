@@ -1382,6 +1382,29 @@
     - type: StaticPrice
       price: 2000
 
+- type: entity
+  parent: [ BaseBorgModule, BaseProviderBorgModule, BaseSyndicateContraband ]
+  id: BorgModuleKidnap
+  name: Kidnapping Cyborg module
+  description: A module with all tools needed for kidnappers
+  components:
+  - type: Sprite
+    layers:
+    - state: syndicate
+    - state: icon-syndicate
+  - type: ItemBorgModule
+    hands:
+    - item: RadioJammer
+    - item:
+        emptyLabel: borg-slot-fulton
+        emptyRepresentative: Fulton
+        whitelist:
+          tags:
+          - Fulton
+    - item: PinpointerSyndicateNuclear
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: no-action }
+
 # mothership module
 - type: entity
   parent: [ BaseXenoborgModuleGeneric, BaseProviderBorgModule, BaseXenoborgContraband ]
