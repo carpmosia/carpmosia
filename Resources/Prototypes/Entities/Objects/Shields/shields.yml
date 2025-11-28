@@ -6,12 +6,12 @@
   abstract: true
   components:
     - type: Sprite
-      sprite: Objects/Weapons/Melee/shields.rsi
-      state: riot-icon
+      sprite: _Carpmosia/Objects/Weapons/Melee/Shields/riot-shield.rsi # Carpmosia-edit - Suit slot shields
+      state: icon # Carpmosia-edit - Suit slot shields
     - type: Item
-      sprite: Objects/Weapons/Melee/shields.rsi
+      sprite: _Carpmosia/Objects/Weapons/Melee/Shields/riot-shield.rsi # Carpmosia-edit - Suit slot shields
       size: Ginormous
-      heldPrefix: riot
+      #heldPrefix: riot # Carpmosia-edit - Suit slot shields
     - type: Blocking
       passiveBlockModifier:
         coefficients:
@@ -60,11 +60,24 @@
     - type: StaticPrice
       price: 100
 
+# Carpmosia-start - Suit slot shields
+- type: entity
+  abstract: true
+  parent: BaseShield
+  id: BaseShieldClothing
+  components:
+  - type: Clothing
+    sprite: _Carpmosia/Objects/Weapons/Melee/Shields/riot-shield.rsi
+    quickEquip: false
+    slots:
+    - suitStorage
+# Carpmosia-end - Suit slot shields
+
 #Security Shields
 
 - type: entity
   name: riot shield
-  parent: [ BaseShield, BaseSecurityContraband ]
+  parent: [ BaseShieldClothing, BaseSecurityContraband ] # Carpmosia-edit - Suit slot shields
   id: RiotShield
   description: A large tower shield. Good for controlling crowds.
   components:
@@ -85,14 +98,20 @@
 
 - type: entity
   name: laser shield
-  parent: [ BaseShield, BaseSecurityContraband ]
+  parent: [ BaseShieldClothing, BaseSecurityContraband ] # Carpmosia-edit - Suit slot shields
   id: RiotLaserShield
   description: A shield built for withstanding lasers, but not much else.
   components:
     - type: Sprite
-      state: riot_laser-icon
+      sprite: _Carpmosia/Objects/Weapons/Melee/Shields/riot-laser-shield.rsi # Carpmosia-edit - Suit slot shields
+      state: icon # Carpmosia-edit - Suit slot shields
     - type: Item
-      heldPrefix: riot_laser
+      sprite: _Carpmosia/Objects/Weapons/Melee/Shields/riot-laser-shield.rsi # Carpmosia-edit - Suit slot shields
+      #heldPrefix: riot_laser # Carpmosia-edit - Suit slot shields
+    # Carpmosia-start - Suit slot shields
+    - type: Clothing
+      sprite: _Carpmosia/Objects/Weapons/Melee/Shields/riot-laser-shield.rsi
+    # Carpmosia-end - Suit slot shields
     - type: Blocking
       passiveBlockModifier:
         coefficients:
@@ -105,14 +124,20 @@
 
 - type: entity
   name: ballistic shield
-  parent: [ BaseShield, BaseSecurityContraband ]
+  parent: [ BaseShieldClothing, BaseSecurityContraband ] # Carpmosia-edit - Suit slot shields
   id: RiotBulletShield
   description: A shield built for protecting against ballistics, but not much else.
   components:
     - type: Sprite
-      state: riot_bullet-icon
+      sprite: _Carpmosia/Objects/Weapons/Melee/Shields/riot-bullet-shield.rsi # Carpmosia-edit - Suit slot shields
+      state: icon # Carpmosia-edit - Suit slot shields
     - type: Item
-      heldPrefix: riot_bullet
+      sprite: _Carpmosia/Objects/Weapons/Melee/Shields/riot-bullet-shield.rsi # Carpmosia-edit - Suit slot shields
+      #heldPrefix: riot_bullet # Carpmosia-edit - Suit slot shields
+    # Carpmosia-start - Suit slot shields
+    - type: Clothing
+      sprite: _Carpmosia/Objects/Weapons/Melee/Shields/riot-bullet-shield.rsi # Carpmosia-edit - Suit slot shields
+    # Carpmosia-end - Suit slot shields
     - type: Blocking
       passiveBlockModifier:
         coefficients:
@@ -127,14 +152,20 @@
 
 - type: entity
   name: wooden buckler
-  parent: BaseShield
+  parent: BaseShieldClothing # Carpmosia-edit - Suit slot shields
   id: WoodenBuckler
   description: A small round wooden makeshift shield.
   components:
     - type: Sprite
-      state: buckler-icon
+      sprite: _Carpmosia/Objects/Weapons/Melee/Shields/buckler.rsi # Carpmosia-edit - Suit slot shields
+      state: icon # Carpmosia-edit - Suit slot shields
     - type: Item
-      heldPrefix: buckler
+      sprite: _Carpmosia/Objects/Weapons/Melee/Shields/buckler.rsi # Carpmosia-edit - Suit slot shields
+      #heldPrefix: buckler # Carpmosia-edit - Suit slot shields
+    # Carpmosia-start- Suit slot shields
+    - type: Clothing
+      sprite: _Carpmosia/Objects/Weapons/Melee/Shields/buckler.rsi
+    # Carpmosia-end - Suit slot shields
     - type: Blocking
       passiveBlockModifier:
         coefficients:
@@ -187,6 +218,7 @@
   description: A shield made of cardboard. Won't protect you from much.
   components:
     - type: Sprite
+      sprite: Objects/Weapons/Melee/shields.rsi # Carpmosia-edit - Suit slot shields
       state: cardshield-icon
     - type: Item
       heldPrefix: cardshield
@@ -234,14 +266,20 @@
 
 - type: entity
   name: makeshift shield
-  parent: BaseShield
+  parent: BaseShieldClothing # Carpmosia-edit - Suit slot shields
   id: MakeshiftShield
   description: A rundown looking shield, not good for much.
   components:
     - type: Sprite
-      state: makeshift-icon
+      sprite: _Carpmosia/Objects/Weapons/Melee/Shields/makeshift-shield.rsi # Carpmosia-edit - Suit slot shields
+      state: icon # Carpmosia-edit - Suit slot shields
     - type: Item
-      heldPrefix: metal
+      sprite: _Carpmosia/Objects/Weapons/Melee/Shields/makeshift-shield.rsi # Carpmosia-edit - Suit slot shields
+      #heldPrefix: metal # Carpmosia-edit - Suit slot shields
+    # Carpmosia-start - Suit slot shields
+    - type: Clothing
+      sprite: _Carpmosia/Objects/Weapons/Melee/Shields/makeshift-shield.rsi # Carpmosia-edit - Suit slot shields
+    # Carpmosia-end - Stui slot shields
     - type: Blocking
       passiveBlockModifier:
         coefficients:
@@ -348,6 +386,7 @@
   description: Ratvar oyrffrf lbh jvgu uvf cebgrpgvba.
   components:
     - type: Sprite
+      sprite: Objects/Weapons/Melee/shields.rsi # Carpmosia-edit - Suit slot shields
       state: ratvarian-icon
     - type: Item
       heldPrefix: ratvarian
@@ -377,6 +416,7 @@
   description: Eerily glows red... you hear the geometer whispering
   components:
     - type: Sprite
+      sprite: Objects/Weapons/Melee/shields.rsi # Carpmosia-edit - Suit slot shields
       state: mirror-icon
     - type: Item
       heldPrefix: mirror
