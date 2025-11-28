@@ -21,3 +21,15 @@
   equipment:
     shoes: ClothingShoesLeather
   groupBy: "fancyShoes"
+
+- type: loadout
+  id: HighheelShoes
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobMusician
+      time: 1h
+  equipment:
+    shoes: ClothingShoesHighheelBoots
+  groupBy: "fancyShoes"
