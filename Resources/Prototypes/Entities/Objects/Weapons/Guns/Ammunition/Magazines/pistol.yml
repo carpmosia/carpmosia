@@ -164,7 +164,7 @@
   name: pistol magazine (.35 auto any)
   suffix: empty
   parent: MagazinePistol
-  description: 15-round single-stack magazine for pistols. # Carpmosia-edit - increased pistol magazines
+  description: 15-round single-stack magazine for pistols. # Carpmosia-edit - Increased pistol magazines
   components:
   - type: BallisticAmmoProvider
     proto: null
@@ -185,7 +185,7 @@
   id: MagazinePistolIncendiary
   name: pistol magazine (.35 auto incendiary)
   parent: MagazinePistol
-  description: 15-round single-stack magazine for pistols. Intended to hold self-igniting incendiary ammunition. # Carpmosia-edit - increased pistol magazines
+  description: 15-round single-stack magazine for pistols. Intended to hold self-igniting incendiary ammunition. # Carpmosia-edit - Increased pistol magazines
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolIncendiary
@@ -212,7 +212,7 @@
   id: MagazinePistolPractice
   name: pistol magazine (.35 auto practice)
   parent: BaseMagazinePistol
-  description: 15-round single-stack magazine for pistols. Intended to hold non-harmful chalk ammunition. # Carpmosia-edit - increased pistol magazines
+  description: 15-round single-stack magazine for pistols. Intended to hold non-harmful chalk ammunition. # Carpmosia-edit - Increased pistol magazines
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolPractice
@@ -239,7 +239,7 @@
   id: MagazinePistolUranium
   name: pistol magazine (.35 auto uranium)
   parent: BaseMagazinePistol
-  description: 15-round single-stack magazine for pistols. Intended to hold exotic uranium-core ammunition. # Carpmosia-edit - increased pistol magazines
+  description: 15-round single-stack magazine for pistols. Intended to hold exotic uranium-core ammunition. # Carpmosia-edit - Increased pistol magazines
   components:
   - type: BallisticAmmoProvider
     proto: CartridgePistolUranium
