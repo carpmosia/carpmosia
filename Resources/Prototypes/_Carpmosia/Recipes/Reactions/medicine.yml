@@ -29,6 +29,19 @@
     Fiber: 2
 
 - type: reaction
+  id: Barozine
+  impact: Medium
+  reactants:
+    Bruizine:
+      amount: 1
+    Copper:
+      amount: 1
+    Ethanol:
+      amount: 1
+  products:
+    Barozine: 1
+
+- type: reaction
   id: Tetracordrazine
   reactants:
     Benzene:

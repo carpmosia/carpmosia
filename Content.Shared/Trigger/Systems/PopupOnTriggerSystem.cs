@@ -1,3 +1,4 @@
+using Content.Shared.IdentityManagement; // Carpmosia-edit - flag waving
 using Content.Shared.Popups;
 using Content.Shared.Trigger.Components.Effects;
 
@@ -6,57 +7,64 @@ namespace Content.Shared.Trigger.Systems;
 /// <summary>
 /// This handles <see cref="PopupOnTriggerComponent"/>
 /// </summary>
-public sealed class PopupOnTriggerSystem : EntitySystem
+public sealed class PopupOnTriggerSystem : XOnTriggerSystem<PopupOnTriggerComponent>
 {
     [Dependency] private readonly SharedPopupSystem _popup = default!;
 
-    /// <inheritdoc/>
-    public override void Initialize()
+    protected override void OnTrigger(Entity<PopupOnTriggerComponent> ent, EntityUid target, ref TriggerEvent args)
     {
-        base.Initialize();
+        // Carpmosia-start - flag waving
+        EntityUid user;
 
-        SubscribeLocalEvent<PopupOnTriggerComponent, TriggerEvent>(OnTrigger);
-    }
+        if (args.User != null)
+        {
+            user = Identity.Entity(args.User.Value, EntityManager);
+        }
 
-    private void OnTrigger(Entity<PopupOnTriggerComponent> ent, ref TriggerEvent args)
-    {
-        if (args.Key != null && !ent.Comp.KeysIn.Contains(args.Key))
-            return;
-
-        var target = ent.Comp.TargetUser ? args.User : ent.Owner;
-
-        if (target == null)
-            return;
+        else
+        {
+            //fallback in case event has no user
+            user = Identity.Entity(target, EntityManager);
+        }
+        // Carpmosia-end - flag waving
 
         // Popups only play for one entity
         if (ent.Comp.Quiet)
         {
             if (ent.Comp.Predicted)
-                _popup.PopupClient(Loc.GetString(ent.Comp.Text),
-                                    target.Value,
-                                    ent.Comp.UserIsRecipient ? args.User : ent.Owner,
-                                    ent.Comp.PopupType);
+            {
+                _popup.PopupClient(Loc.GetString(ent.Comp.Text, ("entity", ent), ("user", user)), // Carpmosia-edit - flag waving
+                    target,
+                    ent.Comp.UserIsRecipient ? args.User : ent.Owner,
+                    ent.Comp.PopupType);
+            }
 
             else if (args.User != null)
-                _popup.PopupEntity(Loc.GetString(ent.Comp.OtherText ?? ent.Comp.Text),
-                                    target.Value,
-                                    args.User.Value,
-                                    ent.Comp.PopupType);
+            {
+                _popup.PopupEntity(Loc.GetString(ent.Comp.OtherText ?? ent.Comp.Text, ("entity", ent), ("user", user)), // Carpmosia-edit - flag waving
+                    target,
+                    args.User.Value,
+                    ent.Comp.PopupType);
+            }
 
             return;
         }
 
         // Popups play for all entities
         if (ent.Comp.Predicted)
-            _popup.PopupPredicted(Loc.GetString(ent.Comp.Text),
-                                Loc.GetString(ent.Comp.OtherText ?? ent.Comp.Text),
-                                target.Value,
-                                ent.Comp.UserIsRecipient ? args.User : ent.Owner,
-                                ent.Comp.PopupType);
+        {
+            _popup.PopupPredicted(Loc.GetString(ent.Comp.Text, ("entity", ent), ("user", user)), // Carpmosia-edit - flag waving
+                Loc.GetString(ent.Comp.OtherText ?? ent.Comp.Text, ("entity", ent), ("user", user)), // Carpmosia-edit - flag waving
+                target,
+                ent.Comp.UserIsRecipient ? args.User : ent.Owner,
+                ent.Comp.PopupType);
+        }
 
         else
-            _popup.PopupEntity(Loc.GetString(ent.Comp.OtherText ?? ent.Comp.Text),
-                                target.Value,
-                                ent.Comp.PopupType);
+        {
+            _popup.PopupEntity(Loc.GetString(ent.Comp.OtherText ?? ent.Comp.Text, ("entity", ent), ("user", user)), // Carpmosia-edit - flag waving
+                target,
+                ent.Comp.PopupType);
+        }
     }
 }

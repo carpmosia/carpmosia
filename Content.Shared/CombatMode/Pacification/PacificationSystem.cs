@@ -6,7 +6,7 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Popups;
 using Content.Shared.Throwing;
-using Content.Shared.Weapons.Ranged.Components; // Carpmosia-edit - Pacifism Allowed Mode
+using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Robust.Shared.Timing;
 
@@ -66,11 +66,9 @@ public sealed class PacificationSystem : EntitySystem
         if (HasComp<PacifismAllowedGunComponent>(args.Used))
             return;
 
-        // Carpmosia-start - Pacifism Allowed Mode
         if (TryComp<BatteryWeaponFireModesComponent>(args.Used, out var component))
             if (component.FireModes[component.CurrentFireMode].PacifismAllowedMode)
                 return;
-        // Carpmosia-end - Pacifism Allowed Mode
 
         // Disallow firing guns in all cases.
         ShowPopup(ent, args.Used, "pacified-cannot-fire-gun");
