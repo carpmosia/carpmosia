@@ -10,7 +10,7 @@
     sprite: Clothing/OuterClothing/Coats/bomber.rsi
 
 - type: entity
-  parent: [ ClothingOuterStorageBase, AllowSuitStorageClothing, ClothingOuterArmorBase, ClothingOuterSizeArmoredBasic ] # Carpmosia-edit - Outer clothing resizing
+  parent: [ ClothingOuterSizeArmoredBasic, ClothingOuterStorageBase, AllowSuitStorageClothing, ClothingOuterArmorBase ] # Carpmosia-edit - Outer clothing resizing
   id: ClothingOuterCoatDetective
   name: detective trenchcoat
   description: An 18th-century multi-purpose trenchcoat. Someone who wears this means serious business.
@@ -60,7 +60,7 @@
 
 - type: entity
   abstract: true
-  parent: [ AllowSuitStorageClothing, ClothingOuterSizeArmoredBasic ] # Carpmosia-edit - Outer clothing resizing
+  parent: [ ClothingOuterSizeArmoredBasic, AllowSuitStorageClothing ] # Carpmosia-edit - Outer clothing resizing
   id: ClothingOuterArmorHoS
   components:
   - type: Armor
@@ -76,7 +76,7 @@
 
 - type: entity
   abstract: true
-  parent: [ AllowSuitStorageClothing, ClothingOuterSizeArmoredBasic ] # Carpmosia-edit - Outer clothing resizing
+  parent: [ ClothingOuterSizeArmoredBasic, AllowSuitStorageClothing ] # Carpmosia-edit - Outer clothing resizing
   id: ClothingOuterArmorWarden
   components:
   - type: Armor
@@ -349,7 +349,7 @@
     sprite: Clothing/OuterClothing/Coats/clownpriest.rsi
 
 - type: entity
-  parent: [ ClothingOuterStorageBase, BaseMajorContraband, ClothingOuterSizeArmoredBasic ] # Carpmosia-edit - Outer clothing resizing
+  parent: [ ClothingOuterSizeArmoredBasic,ClothingOuterStorageBase, BaseMajorContraband ] # Carpmosia-edit - Outer clothing resizing
   id: ClothingOuterDogi
   name: samurai dogi
   description: Dogi is a type of traditional Japanese clothing. The dogi is made of heavy, durable fabric, it is practical in combat and stylish in appearance. It is decorated with intricate patterns and embroidery on the back.
@@ -399,7 +399,7 @@
     sprite: Clothing/OuterClothing/Coats/syndicate/coatsyndiecaparmored.rsi
 
 - type: entity
-  parent: [ ClothingOuterStorageBase, ClothingOuterSizeArmoredBasic ] # Carpmosia-edit - Outer clothing resizing
+  parent: [ ClothingOuterSizeArmoredBasic, ClothingOuterStorageBase ] # Carpmosia-edit - Outer clothing resizing
   id: ClothingOuterCoatAMG
   name: armored medical gown
   description: The version of the medical gown, with elements of a bulletproof vest, looks strange, but your heart is protected.

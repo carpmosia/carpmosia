@@ -51,7 +51,7 @@
 
 # The armor itself
 - type: entity
-  parent: [ ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseMajorContraband, ClothingOuterSizeHuge ] # Carpmosia-edit - Outer clothing resizing
+  parent: [ ClothingOuterSizeHuge, ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseMajorContraband ] # Carpmosia-edit - Outer clothing resizing
   id: ClothingOuterArmorScrap
   name: scrap armor
   description: A tider's gleaming plate mail. Bail up, or you're a dead man.

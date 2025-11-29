@@ -26,7 +26,7 @@
 
 #Standard armor vest, allowed for security and bartenders
 - type: entity
-  parent: [ BaseSecurityBartenderContraband, ClothingOuterArmorBase, ClothingOuterSizeArmoredBasic ] # Carpmosia-edit - Outer clothing resizing
+  parent: [ ClothingOuterSizeArmoredBasic, BaseSecurityBartenderContraband, ClothingOuterArmorBase ] # Carpmosia-edit - Outer clothing resizing
   id: ClothingOuterArmorBasic
   components:
   - type: Tag
@@ -48,7 +48,7 @@
     sprite: Clothing/OuterClothing/Armor/security_slim.rsi
 
 - type: entity
-  parent: [ ClothingOuterArmorBase, ClothingOuterSizeArmoredSpecial ] # Carpmosia-edit - Outer clothing resizing
+  parent: [ ClothingOuterSizeArmoredSpecial, ClothingOuterArmorBase ] # Carpmosia-edit - Outer clothing resizing
   id: ClothingOuterArmorBulletproof
   name: bulletproof vest
   description: A Type III heavy bulletproof vest that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent.
@@ -68,7 +68,7 @@
     damageCoefficient: 0.80
 
 - type: entity
-  parent: [ ClothingOuterArmorBase, ClothingOuterSizeArmoredSpecial ] # Carpmosia-edit - Outer clothing resizine
+  parent: [ ClothingOuterSizeArmoredSpecial, ClothingOuterArmorBase ] # Carpmosia-edit - Outer clothing resizine
   id: ClothingOuterArmorReflective
   name: reflective vest
   description: An armored vest with advanced shielding to protect against energy weapons.
@@ -92,7 +92,7 @@
 
 #Detective's vest
 - type: entity
-  parent: [ ClothingOuterArmorBase, BaseSecurityContraband, ClothingOuterSizeArmoredBasic ] # Carpmosia-edit - Outer clothing resizing
+  parent: [ ClothingOuterSizeArmoredBasic, ClothingOuterArmorBase, BaseSecurityContraband ] # Carpmosia-edit - Outer clothing resizing
   id: ClothingOuterVestDetective
   name: detective's vest
   description: A hard-boiled private investigator's armored vest.
@@ -103,7 +103,7 @@
     sprite: Clothing/OuterClothing/Vests/detvest.rsi
 
 - type: entity
-  parent: [ ClothingOuterBaseLarge, AllowSuitStorageClothing, ClothingOuterSizeArmoredMajor ] # Carpmosia-edit - Outer clothing resizing
+  parent: [ ClothingOuterSizeArmoredMajor, ClothingOuterBaseLarge, AllowSuitStorageClothing ] # Carpmosia-edit - Outer clothing resizing
   id: ClothingOuterArmorBaseCarapace
   abstract: true
   components:
@@ -151,7 +151,7 @@
 
 #Web vest
 - type: entity
-  parent: [ ClothingOuterStorageBase, AllowSuitStorageClothing, BaseSyndicateContraband, ClothingOuterSizeArmoredSpecial ] # Carpmosia-edit - Outer clothing resizing
+  parent: [ ClothingOuterSizeArmoredSpecial, ClothingOuterStorageBase, AllowSuitStorageClothing, BaseSyndicateContraband ] # Carpmosia-edit - Outer clothing resizing
   id: ClothingOuterVestWeb
   name: web vest
   description: A synthetic armor vest. This one has added webbing and ballistic plates.
@@ -174,7 +174,7 @@
 
 #Elite web vest
 - type: entity
-  parent: [ ClothingOuterStorageBase, AllowSuitStorageClothing, BaseSyndicateContraband, ClothingOuterSizeArmoredSpecial ] # Carpmosia-edit - Outer clothing resizing
+  parent: [ ClothingOuterSizeArmoredSpecial, ClothingOuterStorageBase, AllowSuitStorageClothing, BaseSyndicateContraband ] # Carpmosia-edit - Outer clothing resizing
   id: ClothingOuterVestWebElite
   name: elite web vest
   description: A synthetic armor vest. This one has added webbing and heat resistant fibers.
@@ -204,7 +204,7 @@
 
 #Mercenary web vest
 - type: entity
-  parent: [ BaseMajorContraband, ClothingOuterVestWeb, ClothingOuterSizeArmoredSpecial ] # Carpmosia-edit - Outer clothing resizing
+  parent: [ ClothingOuterSizeArmoredSpecial, BaseMajorContraband, ClothingOuterVestWeb ] # Carpmosia-edit - Outer clothing resizing
   id: ClothingOuterVestWebMerc
   name: mercenary web vest
   description: A high-quality armored vest made from a hard synthetic material. It's surprisingly flexible and light, despite formidable armor plating.
@@ -226,7 +226,7 @@
 
 # Armor covering multiple body parts including limbs
 - type: entity
-  parent: [ ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseSyndicateContraband, ClothingOuterSizeArmoredMajor ] # Carpmosia-edit - Outer clothing resizing
+  parent: [ ClothingOuterSizeArmoredMajor, ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseSyndicateContraband ] # Carpmosia-edit - Outer clothing resizing
   id: ClothingOuterArmorRaid
   name: syndicate raid suit
   description: A somewhat flexible and well-armored suit with a powerful shoulder mounted flashlight manufactured in the Gorlex Marauder's iconic blood-red color scheme, it does not protect its wearer from space.
@@ -305,7 +305,7 @@
     size: Normal
 
 - type: entity
-  parent: [ ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseSecurityContraband, ClothingOuterSizeArmoredSpecial ] # Carpmosia-edit - Outer clothing resizing
+  parent: [ ClothingOuterSizeArmoredSpecial, ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseSecurityContraband ] # Carpmosia-edit - Outer clothing resizing
   id: ClothingOuterArmorRiot
   name: riot suit
   description: A suit of semi-flexible polycarbonate body armor with heavy padding to protect against melee attacks. Perfect for fighting delinquents around the station.
@@ -327,7 +327,7 @@
   - type: GroupExamine
 
 - type: entity
-  parent: [ ClothingOuterBaseLarge, BaseMajorContraband, AllowSuitStorageClothing, ClothingOuterSizeArmoredMajor ] # Carpmosia-edit - Outer clothing resizing
+  parent: [ ClothingOuterSizeArmoredMajor, ClothingOuterBaseLarge, BaseMajorContraband, AllowSuitStorageClothing ] # Carpmosia-edit - Outer clothing resizing
   id: ClothingOuterArmorCult
   name: acolyte armor
   description: An evil-looking piece of cult armor, made of bones.
@@ -346,7 +346,7 @@
   - type: GroupExamine
 
 - type: entity
-  parent: [ ClothingOuterBaseLarge, AllowSuitStorageClothing, ClothingOuterSizeHuge ] # Carpmosia-edit - Outer clothing resizing
+  parent: [ ClothingOuterSizeHuge, ClothingOuterBaseLarge, AllowSuitStorageClothing ] # Carpmosia-edit - Outer clothing resizing
   id: ClothingOuterArmorHeavy
   name: heavy armor suit
   description: A heavily armored suit that protects against excessive damage.
@@ -414,10 +414,10 @@
 
 
 
-  # this will probably be changed/buffed upstream when changelings become real and i hope that whoever is doing the merge has mind to nerf the storability of this
+  # this will probably be changed/buffed upstream when changelings become real and i hope that whoever is doing the merge has mind to nerf the storability of this accordingly
   # assuming it isn't made unremovable or something. but if it's unremovable it probably especially shouldn't fit in a bag
 - type: entity
-  parent: [ ClothingOuterBaseLarge, BaseMajorContraband, AllowSuitStorageClothing, ClothingOuterSizeUtilityLarge ] # Carpmosia-edit - Outer clothing resizing
+  parent: [ ClothingOuterSizeHuge, ClothingOuterBaseLarge, BaseMajorContraband, AllowSuitStorageClothing ] # Carpmosia-edit - Outer clothing resizing
   id: ClothingOuterArmorChangeling
   name: chitinous armor
   description: Inflates the changeling's body into an all-consuming chitinous mass of armor.
@@ -445,7 +445,7 @@
     slots: WITHOUT_POCKET
 
 - type: entity
-  parent: [ ClothingOuterBaseLarge, BaseMajorContraband, AllowSuitStorageClothing, ClothingOuterSizeArmoredSpecial ] # Carpmosia-edit - Outer clothing resizing
+  parent: [ ClothingOuterSizeArmoredSpecial, ClothingOuterBaseLarge, BaseMajorContraband, AllowSuitStorageClothing ] # Carpmosia-edit - Outer clothing resizing
   id: ClothingOuterArmorBone
   name: bone armor
   description: Sits on you like a second skin.
@@ -495,7 +495,7 @@
     slots: WITHOUT_POCKET
 
 - type: entity
-  parent: [ ClothingOuterArmorBase, ClothingOuterSizeArmoredBasic ] # Carpmosia-edit - Outer clothing resizing
+  parent: [ ClothingOuterSizeArmoredBasic, ClothingOuterArmorBase ] # Carpmosia-edit - Outer clothing resizing
   id: CardArmour
   name: cardboard armour
   description: A medieval chestpiece built from cardboard.
