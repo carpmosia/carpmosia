@@ -33,3 +33,35 @@
         - !type:ReagentCondition
           reagent: JuiceThatMakesYouScream
           min: 50
+
+- type: reagent
+  id: Tidium
+  name: reagent-name-tidium
+  group: Special
+  desc: reagent-desc-tidium
+  physicalDesc: reagent-physical-desc-tidium
+  contrabandSeverity: Minor
+  flavor: tidiumrubbery
+  color: "#ffff33"
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Heat: 0.75
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentCondition
+          reagent: Tidium
+          min: 10.5
+        damage:
+          types:
+            Heat: 2
+            Caustic: 2
+    Narcotic:
+      effects:
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectInsulated
+        type: Add
+        time: 3.0
