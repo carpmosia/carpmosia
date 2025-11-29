@@ -1,0 +1,107 @@
+- type: htnCompound
+  id: InsultBotCompound
+  branches:
+  - tasks:
+    - !type:HTNCompoundTask
+      task: InsultNearbyCompound
+  - tasks:
+    - !type:HTNCompoundTask
+      task: IdleCompound
+
+- type: htnCompound
+  id: InsultNearbyCompound
+  branches:
+  - tasks:
+    # Locate insult recipient.
+    - !type:HTNPrimitiveTask
+      operator: !type:UtilityOperator
+        proto: NearbyNeedingInsult
+
+    # Announce intent to be mean
+    - !type:HTNPrimitiveTask
+      operator: !type:SpeakOperator
+        speech: !type:LocalizedSetSpeakOperatorSpeech
+          lineSet: InsultBotStarts
+        hidden: true
+
+    # Approach insult recipient
+    - !type:HTNPrimitiveTask
+      operator: !type:MoveToOperator
+        pathfindInPlanning: true
+        removeKeyOnFinish: false
+        targetKey: TargetCoordinates
+        pathfindKey: TargetPathfind
+        rangeKey: MeleeRange
+
+    # DESTROY THEM!!
+    - !type:HTNCompoundTask
+      task: InsultBotInsultCompound
+
+    # Stick around to enjoy the insult instead of just running up, squeezing and leaving.
+    - !type:HTNPrimitiveTask
+      operator: !type:SetFloatOperator
+        targetKey: IdleTime
+        amount: 1
+    - !type:HTNPrimitiveTask
+      operator: !type:WaitOperator
+        key: IdleTime
+      preconditions:
+      - !type:KeyExistsPrecondition
+        key: IdleTime
+
+    # Special case operator which applies the hugbot cooldown.
+    - !type:HTNPrimitiveTask
+      operator: !type:RaiseEventForOwnerOperator
+        args: !type:HugBotDidHugEvent
+        targetKey: Target
+
+    # Announce that the roast is completed.
+    - !type:HTNCompoundTask
+      task: InsultBotFinishSpeakCompound
+
+- type: htnCompound
+  id: InsultBotInsultCompound
+  branches:
+  - tasks:
+    - !type:HTNPrimitiveTask
+      preconditions:
+      - !type:TargetInRangePrecondition
+        targetKey: Target
+        rangeKey: InteractRange
+      operator: !type:InteractWithOperator
+        targetKey: Target
+      services:
+      - !type:UtilityService
+        id: InsultService
+        proto: NearbyNeedingInsult
+        key: Target
+
+- type: htnCompound
+  id: InsultBotFinishSpeakCompound
+  branches:
+  - tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:SpeakOperator
+        speech: !type:LocalizedSetSpeakOperatorSpeech
+          lineSet: InsultBotFinishes
+        hidden: true
+
+- type: utilityQuery
+  id: NearbyNeedingInsult
+  query:
+  - !type:ComponentQuery
+    components:
+    - type: HumanoidAppearance
+      species: Human # This specific value isn't actually used, so don't worry about it being just `Human`.
+  - !type:ComponentFilter
+    retainWithComp: false
+    components:
+    - type: RecentlyHuggedByHugBot
+  considerations:
+  - !type:TargetDistanceCon
+    curve: !type:PresetCurve
+      preset: TargetDistance
+  - !type:TargetAccessibleCon
+    curve: !type:BoolCurve
+  - !type:TargetInLOSOrCurrentCon
+    curve: !type:BoolCurve

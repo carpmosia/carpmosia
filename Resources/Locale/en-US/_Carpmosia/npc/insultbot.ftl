@@ -1,0 +1,17 @@
+insultbot-start-insult-1 = LEVEL 5 UGLY BITCH DETECTED!
+insultbot-start-insult-2 = You look like you need a reality check!
+insultbot-start-insult-3 = Aww, somebody needs to fuck off.
+insultbot-start-insult-4 = Target acquired; Initiating insult routine.
+insultbot-start-insult-5 = Hold still, please.
+insultbot-start-insult-6 = Insult incoming!
+insultbot-start-insult-7 = Deploying INSULT.
+insultbot-start-insult-8 = I am designed to insult, and you WILL be insulted.
+
+insultbot-finish-insult-1 = Stupid moron.
+insultbot-finish-insult-2 = Nobody loves you.
+insultbot-finish-insult-3 = Your shoes are fake as fuuuuuck.
+insultbot-finish-insult-4 = It can only get worse from here!
+insultbot-finish-insult-5 = Fucking crybaby.
+insultbot-finish-insult-6 = Go die.
+insultbot-finish-insult-7 = Drop dead.
+insultbot-finish-insult-8 = You are alone in this universe.
