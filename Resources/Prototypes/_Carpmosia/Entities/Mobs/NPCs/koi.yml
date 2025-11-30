@@ -1,38 +1,22 @@
 - type: entity
   name: space koi
   id: BaseMobKoi
-  parent: [ SimpleSpaceMobBase, FlyingMobBase ]
+  parent: BaseMobCarp
   description: Result of hundreds of years of selective breeding and genetic engineering, a friendly and colourful variant of the common space carp
   abstract: true
   components:
+    - type: HTN
+      rootTask:
+        task: IdleCompound
+    - type: NpcFactionMember
+      factions:
+      - SimpleNeutral
     - type: Sprite
       drawdepth: Mobs
       sprite: _Carpmosia/Mobs/Animals/Koi/gold_black.rsi
       layers:
       - map: [ "enum.DamageStateVisualLayers.Base" ]
         state: alive
-    - type: Physics
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeCircle
-            radius: 0.40
-          density: 80
-          mask:
-            - FlyingMobMask
-          layer:
-            - FlyingMobLayer
-    - type: MobState
-    - type: MobThresholds
-      thresholds:
-        0: Alive
-        40: Dead
-    - type: MovementSpeedModifier
-      baseWalkSpeed: 2.5
-      baseSprintSpeed: 3.5
-    - type: Stamina
-      critThreshold: 100
     - type: DamageStateVisuals
       states:
         Alive:
@@ -43,27 +27,11 @@
       spawned:
         - id: FoodMeat
           amount: 1
-    - type: MeleeWeapon
-      altDisarm: false
-      angle: 0
-      animation: WeaponArcBite
-      soundHit:
-        path: /Audio/Effects/bite.ogg
-      damage:
-        types:
-          Blunt: 1
-          Slash: 7
-    - type: TypingIndicator
-      proto: alien
-    - type: ReplacementAccent
-      accent: genericAggressive
-    - type: Speech
-      speechVerb: LargeMob
-    - type: InteractionPopup
-      interactSuccessString: petting-success-carp
-      interactFailureString: petting-failure-carp
-      interactFailureSound:
-        path: /Audio/Effects/bite.ogg
+    # Remove Carp tag to avoid cheezing bounty
+    - type: Tag
+      tags:
+        - DoorBumpOpener
+        - CannotSuicide
     - type: StaticPrice
       price: -800
 
