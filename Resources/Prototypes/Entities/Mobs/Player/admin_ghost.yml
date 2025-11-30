@@ -16,6 +16,7 @@
     - SilentStorageUser
     - PreventAccessLogging
     - AllowBiomeLoading
+    - NotGhostnadoWarpable
   - type: Input
     context: "aghost"
   - type: Ghost
@@ -105,7 +106,7 @@
   - type: Inventory
     templateId: aghost
   - type: Loadout
-    prototypes: [ MobAghostGear ]
+    prototypes: [ MobAghostGearCarp ] # Carpmosia-edit - Better aghost backpack
   - type: BypassInteractionChecks
   - type: ExplosionResistance
     damageCoefficient: 0
