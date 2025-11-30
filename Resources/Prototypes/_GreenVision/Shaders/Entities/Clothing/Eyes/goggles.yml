@@ -1,0 +1,13 @@
+# The Parent hell for Green Vision shaders file
+# dont judge me please, this is my first time doing this...
+
+
+- type: entity
+  Parent: ClothingEyesVisorNinja #already seen people judging me from this, specially atakku and arenaconspiracy.
+  name: Ninja Visor
+  description: An advanced visor protecting a ninja's eyes from flashing lights, now with Night Vision capabilities!.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/ninjavisor.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/ninjavisor.rsi
