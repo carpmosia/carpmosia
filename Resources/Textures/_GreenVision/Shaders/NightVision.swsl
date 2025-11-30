@@ -34,6 +34,5 @@ void fragment() {
     lowp float noise = rand(FRAGCOORD.xy + TIME) * noise_amount / 10.0;
     color.rgb = clamp(color.rgb, 0.0, 1.0);
 
-Spatison marked this conversation as resolved.
     COLOR = color;
 }
