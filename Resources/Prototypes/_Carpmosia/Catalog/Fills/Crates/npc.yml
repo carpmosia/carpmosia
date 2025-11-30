@@ -8,5 +8,4 @@
     containers:
       entity_storage: !type:NestedSelector
         tableId: RandomKoiTable
-        rolls: !type:ConstantNumberSelector
-          value: 3
+        rolls: 3
