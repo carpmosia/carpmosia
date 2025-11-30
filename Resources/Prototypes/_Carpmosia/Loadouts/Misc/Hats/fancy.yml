@@ -4,8 +4,32 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
-      department: Command
+      department: Cargo
       time: 1h
   equipment:
     head: ClothingHeadHatUshanka
+  groupBy: "hats_fancy"
+
+- type: loadout
+  id: HatTophat
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobBartender
+      time: 1h
+  equipment:
+    head: ClothingHeadHatTophat
+  groupBy: "hats_fancy"
+
+- type: loadout
+  id: HatCone
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 1h
+  equipment:
+    head: ClothingHeadHatCone
   groupBy: "hats_fancy"
