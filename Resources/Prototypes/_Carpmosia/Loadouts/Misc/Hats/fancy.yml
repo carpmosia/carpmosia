@@ -1,0 +1,11 @@
+- type: loadout
+  id: HatUshanka
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Command
+      time: 1h
+  equipment:
+    head: ClothingHeadHatUshanka
+  groupBy: "hats_fancy"
