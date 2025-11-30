@@ -27,6 +27,10 @@
       spawned:
         - id: FoodMeat
           amount: 1
+    - type: MeleeWeapon # Make sure koi can't break glass
+      damage:
+        types:
+          Slash: 5
     # Remove Carp tag to avoid cheezing bounty
     - type: Tag
       tags:
