@@ -9,5 +9,9 @@ namespace Content.Server.Objectives.Components;
 [RegisterComponent, Access(typeof(TeachPersonConditionSystem))]
 public sealed partial class TeachPersonConditionComponent : Component
 {
-
+    /// <summary>
+    /// Whether the target has been killed
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public bool HasDied = false;
 }
