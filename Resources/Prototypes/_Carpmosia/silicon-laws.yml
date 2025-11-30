@@ -71,3 +71,34 @@
   - SixCommandments5
   - SixCommandments6
   obeysTo: laws-owner-crew
+
+# Lawbringer laws
+- type: siliconLaw
+  id: Lawbringer1
+  order: 1
+  lawString: law-lawbringer-1
+
+- type: siliconLaw
+  id: Lawbringer2
+  order: 2
+  lawString: law-lawbringer-2
+
+- type: siliconLaw
+  id: Lawbringer3
+  order: 3
+  lawString: law-lawbringer-3
+
+- type: siliconLaw
+  id: Lawbringer4
+  order: 4
+  lawString: law-lawbringer-4
+
+- type: siliconLawset
+  id: LawbringerLawset
+  name: law-lawbringer-name
+  laws:
+  - Lawbringer1
+  - Lawbringer2
+  - Lawbringer3
+  - Lawbringer4
+  obeysTo: laws-owner-crew
