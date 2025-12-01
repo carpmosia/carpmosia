@@ -1,0 +1,103 @@
+- type: loadoutEffectGroup
+  id: LizardPlushieAxel
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+        !type:DepartmentTimeRequirement
+        department: Medical
+        time: 50h
+
+- type: loadout
+  id: LizardPlushieAxelBlack
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: LizardPlushieAxel
+  storage:
+    back:
+    - PlushieLizardAxelBlack
+  groupBy: "metaplush"
+
+- type: loadout
+  id: LizardPlushieAxelBlue
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: LizardPlushieAxel
+  storage:
+    back:
+    - PlushieLizardAxelBlue
+  groupBy: "metaplush"
+
+- type: loadout
+  id: LizardPlushieAxelPink
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: LizardPlushieAxel
+  storage:
+    back:
+    - PlushieLizardAxelPink
+  groupBy: "metaplush"
+
+- type: loadout
+  id: LizardPlushieAxelSilver
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: LizardPlushieAxel
+  storage:
+    back:
+    - PlushieLizardAxelSilver
+  groupBy: "metaplush"
+
+- type: loadout
+  id: LizardPlushieAxelYellow
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: LizardPlushieAxel
+  storage:
+    back:
+    - PlushieLizardAxelYellow
+  groupBy: "metaplush"
+
+- type: loadout
+  id: HatPlushieAxelBlack
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: LizardPlushieAxel
+  equipment:
+    head: PlushieLizardAxelBlack
+  groupBy: "metaplush"
+
+- type: loadout
+  id: HatPlushieAxelBlue
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: LizardPlushieAxel
+  equipment:
+    head: PlushieLizardAxelBlue
+  groupBy: "metaplush"
+
+- type: loadout
+  id: HatPlushieAxelPink
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: LizardPlushieAxel
+  equipment:
+    head: PlushieLizardAxelPink
+  groupBy: "metaplush"
+
+- type: loadout
+  id: HatPlushieAxelSilver
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: LizardPlushieAxel
+  equipment:
+    head: PlushieLizardAxelSilver
+  groupBy: "metaplush"
+
+- type: loadout
+  id: HatPlushieAxelYellow
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: LizardPlushieAxel
+  equipment:
+    head: PlushieLizardAxelYellow
+  groupBy: "metaplush"

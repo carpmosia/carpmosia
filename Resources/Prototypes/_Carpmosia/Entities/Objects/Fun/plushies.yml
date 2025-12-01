@@ -94,3 +94,120 @@
     sprite: _Carpmosia/Objects/Fun/Plushies/cole.rsi
     slots:
     - HEAD
+
+- type: entity
+  parent: PlushieLizard
+  id: PlushieLizardAxelBase
+  abstract: true
+  name: cursed axolotl plushie
+  description: An... adorable...? stuffed toy that resembles a lizardperson, specifically a certain doctor. It turns to look RIGHT AT YOU.
+  components:
+  - type: EmitSoundOnUse
+    sound: &PlushieLizardAxelSound
+      path: /Audio/Items/Toys/weh.ogg
+      params:
+        volume: 0
+        pitch: 0.6
+        variation: 0.3
+  - type: EmitSoundOnLand
+    sound: *PlushieLizardAxelSound
+  - type: EmitSoundOnActivate
+    sound: *PlushieLizardAxelSound
+  - type: EmitSoundOnTrigger
+    sound: *PlushieLizardAxelSound
+  - type: EmitSoundOnCollide
+    sound: *PlushieLizardAxelSound
+  - type: Edible
+    useSound: *PlushieLizardAxelSound
+    transferAmount: 10
+  - type: MeleeWeapon
+    soundHit: *PlushieLizardAxelSound
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 30
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
+        - ReagentId: Blood
+          Quantity: 10
+
+- type: entity
+  parent: PlushieLizardAxelBase
+  id: PlushieLizardAxelBlack
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Fun/Plushies/Axel/axel-black.rsi
+    state: icon
+  - type: Item
+    sprite: _Carpmosia/Objects/Fun/Plushies/Axel/axel-black.rsi
+  - type: Clothing
+    quickEquip: false
+    sprite: _Carpmosia/Objects/Fun/Plushies/Axel/axel-black.rsi
+    slots:
+    - HEAD
+
+- type: entity
+  parent: PlushieLizardAxelBase
+  id: PlushieLizardAxelBlue
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Fun/Plushies/Axel/axel-blue.rsi
+    state: icon
+  - type: Item
+    sprite: _Carpmosia/Objects/Fun/Plushies/Axel/axel-blue.rsi
+  - type: Clothing
+    quickEquip: false
+    sprite: _Carpmosia/Objects/Fun/Plushies/Axel/axel-blue.rsi
+    slots:
+    - HEAD
+
+- type: entity
+  parent: PlushieLizardAxelBase
+  id: PlushieLizardAxelPink
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Fun/Plushies/Axel/axel-pink.rsi
+    state: icon
+  - type: Item
+    sprite: _Carpmosia/Objects/Fun/Plushies/Axel/axel-pink.rsi
+  - type: Clothing
+    quickEquip: false
+    sprite: _Carpmosia/Objects/Fun/Plushies/Axel/axel-pink.rsi
+    slots:
+    - HEAD
+
+- type: entity
+  parent: PlushieLizardAxelBase
+  id: PlushieLizardAxelSilver
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Fun/Plushies/Axel/axel-silver.rsi
+    state: icon
+  - type: Item
+    sprite: _Carpmosia/Objects/Fun/Plushies/Axel/axel-silver.rsi
+  - type: Clothing
+    quickEquip: false
+    sprite: _Carpmosia/Objects/Fun/Plushies/Axel/axel-silver.rsi
+    slots:
+    - HEAD
+
+- type: entity
+  parent: PlushieLizardAxelBase
+  id: PlushieLizardAxelYellow
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Fun/Plushies/Axel/axel-yellow.rsi
+    state: icon
+  - type: Item
+    sprite: _Carpmosia/Objects/Fun/Plushies/Axel/axel-yellow.rsi
+  - type: Clothing
+    quickEquip: false
+    sprite: _Carpmosia/Objects/Fun/Plushies/Axel/axel-yellow.rsi
+    slots:
+    - HEAD
