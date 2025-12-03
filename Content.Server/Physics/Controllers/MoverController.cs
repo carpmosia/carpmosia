@@ -479,7 +479,7 @@ public sealed class MoverController : SharedMoverController
             }
 
             /// Carpmosia-start - rotate shuttle along movement vector
-            if (/*!alignInput.Equals(0f) && !MathHelper.CloseTo(body.LinearVelocity.Length(), 0f, 0.01f)*/ true)
+            if (!alignInput.Equals(0f) && !MathHelper.CloseTo(body.LinearVelocity.Length(), 0f, 0.01f))
             {
                 // Get velocity relative to the shuttle
                 var shuttleVelocity = (-shuttleNorthAngle).RotateVec(body.LinearVelocity);
@@ -494,9 +494,7 @@ public sealed class MoverController : SharedMoverController
                 angle *= MathF.Sign(shuttleVelocity.X);
 
                 //perform PI controller calculation
-                //var error = alignInput > 0f ? body.AngularVelocity - angle : 180f - (body.AngularVelocity - angle);
-
-                var error = shuttle.TargetSpeed - body.AngularVelocity;
+                var error = alignInput > 0f ? body.AngularVelocity - angle : MathHelper.DegreesToRadians(180f) - (body.AngularVelocity - angle);
 
                 //proportional term
                 var pOut = shuttle.Kp * error;
@@ -507,7 +505,7 @@ public sealed class MoverController : SharedMoverController
                 var dOut = shuttle.Kd * ((error - shuttle.PreviousError) / frameTime);
                 shuttle.PreviousError = error;
 
-                torque = pOut + iOut + dOut;
+                torque = -(pOut + iOut + dOut);
 
                 torque = Math.Clamp(torque,
                     (-ShuttleComponent.MaxAngularVelocity - body.AngularVelocity) / torqueMul,
@@ -527,14 +525,15 @@ public sealed class MoverController : SharedMoverController
 
             }
             //don't immediatelly zero out accrued integral
-            else if (!MathHelper.CloseTo(shuttle.Integral, 0f, 0.2f))
+            else if (!MathHelper.CloseTo(shuttle.Integral, 0f, 2f))
             {
-                shuttle.Integral += shuttle.Integral > 0f ? -MathF.Sqrt(shuttle.Integral) : MathF.Sqrt(shuttle.Integral);
+                shuttle.Integral += shuttle.Integral > 0f ? -MathF.Sqrt(MathF.Abs(shuttle.Integral)) : MathF.Sqrt(MathF.Abs(shuttle.Integral));
             }
             else
             {
                 shuttle.Integral = 0f;
             }
+
             if (alignInput.Equals(0f))
             {
                 shuttle.PreviousError = 0f;

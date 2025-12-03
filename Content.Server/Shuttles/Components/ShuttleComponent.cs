@@ -84,7 +84,7 @@ namespace Content.Server.Shuttles.Components
         /// PID Controller derivative term
         /// </summary>
         [DataField]
-        public float Kd = 3f;
+        public float Kd = 5f;
         /// <summary>
         /// PID Controller accumulated integral
         /// </summary>
