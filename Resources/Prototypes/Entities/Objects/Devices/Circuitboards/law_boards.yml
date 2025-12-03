@@ -45,6 +45,7 @@
   parent: BaseSiliconLawboard
   name: law board (Ten Commandments)
   description: An electronics board containing the Ten Commandments lawset.
+  suffix: Electronics, Deprecated # Carpmosia-edit - New commandments
   components:
   - type: SiliconLawProvider
     laws: CommandmentsLawset
@@ -81,6 +82,7 @@
   parent: BaseSiliconLawboard
   name: law board (Robocop)
   description: An electronics board containing the Robocop lawset.
+  suffix: Electronics, Deprecated # Carpmosia-edit - New robocop
   components:
   - type: SiliconLawProvider
     laws: RobocopLawset

@@ -1,3 +1,4 @@
+using Content.Shared.IdentityManagement; // Carpmosia-edit - flag waving
 using Content.Shared.Popups;
 using Content.Shared.Trigger.Components.Effects;
 
@@ -12,12 +13,27 @@ public sealed class PopupOnTriggerSystem : XOnTriggerSystem<PopupOnTriggerCompon
 
     protected override void OnTrigger(Entity<PopupOnTriggerComponent> ent, EntityUid target, ref TriggerEvent args)
     {
+        // Carpmosia-start - flag waving
+        EntityUid user;
+
+        if (args.User != null)
+        {
+            user = Identity.Entity(args.User.Value, EntityManager);
+        }
+
+        else
+        {
+            //fallback in case event has no user
+            user = Identity.Entity(target, EntityManager);
+        }
+        // Carpmosia-end - flag waving
+
         // Popups only play for one entity
         if (ent.Comp.Quiet)
         {
             if (ent.Comp.Predicted)
             {
-                _popup.PopupClient(Loc.GetString(ent.Comp.Text),
+                _popup.PopupClient(Loc.GetString(ent.Comp.Text, ("entity", ent), ("user", user)), // Carpmosia-edit - flag waving
                     target,
                     ent.Comp.UserIsRecipient ? args.User : ent.Owner,
                     ent.Comp.PopupType);
@@ -25,7 +41,7 @@ public sealed class PopupOnTriggerSystem : XOnTriggerSystem<PopupOnTriggerCompon
 
             else if (args.User != null)
             {
-                _popup.PopupEntity(Loc.GetString(ent.Comp.OtherText ?? ent.Comp.Text),
+                _popup.PopupEntity(Loc.GetString(ent.Comp.OtherText ?? ent.Comp.Text, ("entity", ent), ("user", user)), // Carpmosia-edit - flag waving
                     target,
                     args.User.Value,
                     ent.Comp.PopupType);
@@ -37,8 +53,8 @@ public sealed class PopupOnTriggerSystem : XOnTriggerSystem<PopupOnTriggerCompon
         // Popups play for all entities
         if (ent.Comp.Predicted)
         {
-            _popup.PopupPredicted(Loc.GetString(ent.Comp.Text),
-                Loc.GetString(ent.Comp.OtherText ?? ent.Comp.Text),
+            _popup.PopupPredicted(Loc.GetString(ent.Comp.Text, ("entity", ent), ("user", user)), // Carpmosia-edit - flag waving
+                Loc.GetString(ent.Comp.OtherText ?? ent.Comp.Text, ("entity", ent), ("user", user)), // Carpmosia-edit - flag waving
                 target,
                 ent.Comp.UserIsRecipient ? args.User : ent.Owner,
                 ent.Comp.PopupType);
@@ -46,7 +62,7 @@ public sealed class PopupOnTriggerSystem : XOnTriggerSystem<PopupOnTriggerCompon
 
         else
         {
-            _popup.PopupEntity(Loc.GetString(ent.Comp.OtherText ?? ent.Comp.Text),
+            _popup.PopupEntity(Loc.GetString(ent.Comp.OtherText ?? ent.Comp.Text, ("entity", ent), ("user", user)), // Carpmosia-edit - flag waving
                 target,
                 ent.Comp.PopupType);
         }

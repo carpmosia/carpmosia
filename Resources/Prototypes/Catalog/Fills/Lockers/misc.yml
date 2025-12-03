@@ -101,6 +101,12 @@
       children:
       - id: EmergencyOxygenTankFilled
       - id: OxygenTankFilled
+    # Carpmosia-start - Accessible nitrogen
+    - !type:GroupSelector
+      children:
+      - id: EmergencyNitrogenTankFilled
+      - id: NitrogenTankFilled
+    # Carpmosia-end - Accessible nitrogen
     - id: CrowbarRed
     - !type:GroupSelector
       children:

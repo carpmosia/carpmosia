@@ -28,7 +28,7 @@
   - type: BallisticAmmoProvider
     proto: CartridgeMagnum
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/Magnum/magnum_speed_loader.rsi
+    sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/Pistol/pistol_speed_loader.rsi # Carpmosia-edit - Deckard Port
     layers:
       - state: base
         map: [ "enum.GunVisualLayers.Base" ]
@@ -39,14 +39,16 @@
     steps: 7
     zeroVisible: false
   - type: Appearance
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left-mag
-      - state: inhand-left-ammo
-      right:
-      - state: inhand-right-mag
-      - state: inhand-right-ammo
+  # Carpmosia-start - Deckard Port
+  # - type: Item
+  #   inhandVisuals:
+  #     left:
+  #     - state: inhand-left-mag
+  #     - state: inhand-left-ammo
+  #     right:
+  #     - state: inhand-right-mag
+  #     - state: inhand-right-ammo
+  # Carpmosia-end - Deckard Port
 
 - type: entity
   id: SpeedLoaderMagnumEmpty
@@ -57,7 +59,7 @@
   - type: BallisticAmmoProvider
     proto: null
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/Magnum/magnum_speed_loader.rsi
+    sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/Pistol/pistol_speed_loader.rsi # Carpmosia-edit - Deckard Port
     layers:
       - state: base
         map: [ "enum.GunVisualLayers.Base" ]
@@ -66,12 +68,14 @@
       #       use the one it was printed for.
       - state: base-6
         map: [ "enum.GunVisualLayers.Mag" ]
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left-mag
-      right:
-      - state: inhand-right-mag
+  # Carpmosia-start - Deckard Port
+  # - type: Item
+  #   inhandVisuals:
+  #     left:
+  #     - state: inhand-left-mag
+  #     right:
+  #     - state: inhand-right-mag
+  # Carpmosia-end - Deckard Port
 
 - type: entity
   id: SpeedLoaderMagnumIncendiary
@@ -91,7 +95,7 @@
   - type: BallisticAmmoProvider
     proto: CartridgeMagnumPractice
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/Magnum/magnum_speed_loader.rsi
+    sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/Pistol/pistol_speed_loader.rsi # Carpmosia-edit - Deckard Port
     layers:
       - state: base
         map: [ "enum.GunVisualLayers.Base" ]
@@ -102,18 +106,20 @@
     steps: 7
     zeroVisible: false
   - type: Appearance
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left-mag
-      - state: inhand-left-ammo
-      - state: inhand-left-stripe
-        color: "#ea5800"
-      right:
-      - state: inhand-right-mag
-      - state: inhand-right-ammo
-      - state: inhand-right-stripe
-        color: "#ea5800"
+  # Carpmosia-start - Deckard Port
+  # - type: Item
+  #   inhandVisuals:
+  #     left:
+  #     - state: inhand-left-mag
+  #     - state: inhand-left-ammo
+  #     - state: inhand-left-stripe
+  #       color: "#ea5800"
+  #     right:
+  #     - state: inhand-right-mag
+  #     - state: inhand-right-ammo
+  #     - state: inhand-right-stripe
+  #       color: "#ea5800"
+  # Carpmosia-end - Deckard Port
 
 - type: entity
   id: SpeedLoaderMagnumAP
@@ -124,29 +130,32 @@
   - type: BallisticAmmoProvider
     proto: CartridgeMagnumAP
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/Magnum/magnum_speed_loader.rsi
+    sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/Pistol/pistol_speed_loader.rsi # Carpmosia-edit - Deckard Port
     layers:
       - state: base
         map: [ "enum.GunVisualLayers.Base" ]
       - state: piercing-6
+        sprite: _Carpmosia/Objects/Weapons/Guns/Ammunition/SpeedLoaders/pistol_speed_loader.rsi # Carpmosia-edit - Deckard Port
         map: [ "enum.GunVisualLayers.Mag" ]
   - type: MagazineVisuals
     magState: piercing
     steps: 7
     zeroVisible: false
   - type: Appearance
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left-mag
-      - state: inhand-left-ammo
-      - state: inhand-left-stripe
-        color: "#540000"
-      right:
-      - state: inhand-right-mag
-      - state: inhand-right-ammo
-      - state: inhand-right-stripe
-        color: "#540000"
+  # Carpmosia-start - Deckard Port
+  # - type: Item
+  #   inhandVisuals:
+  #     left:
+  #     - state: inhand-left-mag
+  #     - state: inhand-left-ammo
+  #     - state: inhand-left-stripe
+  #       color: "#540000"
+  #     right:
+  #     - state: inhand-right-mag
+  #     - state: inhand-right-ammo
+  #     - state: inhand-right-stripe
+  #       color: "#540000"
+  # Carpmosia-end - Deckard Port
 
 - type: entity
   id: SpeedLoaderMagnumUranium
@@ -157,26 +166,29 @@
   - type: BallisticAmmoProvider
     proto: CartridgeMagnumUranium
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/Magnum/magnum_speed_loader.rsi
+    sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/Pistol/pistol_speed_loader.rsi # Carpmosia-edit - Deckard Port
     layers:
       - state: base
         map: [ "enum.GunVisualLayers.Base" ]
       - state: uranium-6
+        sprite: _Carpmosia/Objects/Weapons/Guns/Ammunition/SpeedLoaders/pistol_speed_loader.rsi # Carpmosia-edit - Deckard Port
         map: [ "enum.GunVisualLayers.Mag" ]
   - type: MagazineVisuals
     magState: uranium
     steps: 7
     zeroVisible: false
   - type: Appearance
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left-mag
-      - state: inhand-left-ammo
-      - state: inhand-left-stripe
-        color: "#00cd42"
-      right:
-      - state: inhand-right-mag
-      - state: inhand-right-ammo
-      - state: inhand-right-stripe
-        color: "#00cd42"
+  # Carpmosia-start - Deckard Port
+  # - type: Item
+  #   inhandVisuals:
+  #     left:
+  #     - state: inhand-left-mag
+  #     - state: inhand-left-ammo
+  #     - state: inhand-left-stripe
+  #       color: "#00cd42"
+  #     right:
+  #     - state: inhand-right-mag
+  #     - state: inhand-right-ammo
+  #     - state: inhand-right-stripe
+  #       color: "#00cd42"
+  # Carpmosia-end - Deckard Port
