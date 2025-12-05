@@ -14,3 +14,6 @@ ghost-role-information-pet-bee-name = Pet bee
 ghost-role-information-pet-mothroach-name = Pet mothroach
 
 ghost-role-information-pet-description = A cute little pocket pet. Follow and obey your owner!
+
+ghost-role-information-jorge-name = Jorge
+ghost-role-information-jorge-description = A sentient plant kept in the science department. Originally confused for an anomaly, it is now moreso treated as a pet. While able to speak, it can be rather difficult to understand.
