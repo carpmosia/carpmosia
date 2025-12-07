@@ -57,3 +57,7 @@
 - type: loadoutGroup
   parent: [ MedicalTrinkets, CommonTrinkets ]
   id: ParamedicTrinkets
+
+- type: loadoutGroup
+  parent: [ MedicalPets, CommonPets ]
+  id: ParamedicPets

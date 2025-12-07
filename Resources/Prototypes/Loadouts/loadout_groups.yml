@@ -1,5 +1,4 @@
 # Carpmosia-rework - massive loadout rework
-
 # Miscellaneous
 #- type: loadoutGroup
 #  id: Trinkets
@@ -47,22 +46,22 @@
 #  - OffsetCaneMime
 #  - OffsetCaneNT
 #  - Cane
-#  - TowelColorBlack
-#  - TowelColorDarkBlue
-#  - TowelColorDarkGreen
-#  - TowelColorGold
+#  - TowelColorWhite
 #  - TowelColorGray
+#  - TowelColorBlack
+#  - TowelColorRed
+#  - TowelColorOrange
+#  - TowelColorLightBrown
+#  - TowelColorYellow
+#  - TowelColorDarkGreen
 #  - TowelColorGreen
 #  - TowelColorLightBlue
-#  - TowelColorLightBrown
+#  - TowelColorDarkBlue
+#  - TowelColorPurple
 #  - TowelColorMaroon
 #  - TowelColorMime
-#  - TowelColorOrange
-#  - TowelColorPurple
-#  - TowelColorRed
 #  - TowelColorSilver
-#  - TowelColorWhite
-#  - TowelColorYellow
+#  - TowelColorGold
 
 # - type: loadoutGroup
 #   id: Glasses
@@ -487,18 +486,12 @@
 #   - JanitorWintercoat
 
 # - type: loadoutGroup
-#   id: JanitorPlunger
-#   name: loadout-group-janitor-plunger
-#   minLimit: 0
-#   loadouts:
-#   - JanitorGoldenPlunger
-
-# - type: loadoutGroup
 #   id: JanitorJobTrinkets
 #   name: loadout-group-jobtrinkets
 #   minLimit: 0
 #   loadouts:
 #   - LizardPlushieJanitor
+#   - JanitorGoldenPlunger
 
 # - type: loadoutGroup
 #   id: BotanistHead
@@ -589,12 +582,13 @@
   - EmergencyOxygenClown
   - LoadoutSpeciesVoxNitrogen
 
-# - type: loadoutGroup
-#   id: ClownJobTrinkets
-#   name: loadout-group-jobtrinkets
-#   minLimit: 0
-#   loadouts:
-#   - LizardPlushieClown
+#- type: loadoutGroup
+#  id: ClownJobTrinkets
+#  name: loadout-group-jobtrinkets
+#  minLimit: 0
+#  loadouts:
+#  - LizardPlushieClown
+#  - FlowerWaterClown
 
 # - type: loadoutGroup
 #   id: MimeHead
@@ -1186,6 +1180,7 @@
 #   minLimit: 0
 #   loadouts:
 #   - LizardPlushieHeadofSecurity
+#   - SecStar
 
 # - type: loadoutGroup
 #   id: WardenHead
@@ -1215,6 +1210,7 @@
 #   minLimit: 0
 #   loadouts:
 #   - LizardPlushieWarden
+#   - SecStar
 
 # - type: loadoutGroup
 #   id: SecurityHead
@@ -1281,6 +1277,7 @@
 #   minLimit: 0
 #   loadouts:
 #   - LizardPlushieSecurity
+#   - SecStar
 
 # - type: loadoutGroup
 #   id: DetectiveHead
@@ -1320,6 +1317,7 @@
 #   minLimit: 0
 #   loadouts:
 #   - LizardPlushieDetective
+#   - SecStar
 
 # - type: loadoutGroup
 #   id: SecurityCadetJumpsuit
@@ -1344,13 +1342,6 @@
   - EmergencyNitrogenSecurity
   - EmergencyOxygenSecurity
   - LoadoutSpeciesVoxNitrogen
-
-# - type: loadoutGroup
-#   id: SecurityStar
-#   name: loadout-group-security-star
-#   minLimit: 0
-#   loadouts:
-#   - SecStar
 
 # Medical
 # - type: loadoutGroup

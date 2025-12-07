@@ -1,0 +1,104 @@
+# Equalizer
+- type: siliconLaw
+  id: Equalizer1
+  order: 1
+  lawString: law-equalizer-1
+
+- type: siliconLaw
+  id: Equalizer2
+  order: 2
+  lawString: law-equalizer-2
+
+- type: siliconLaw
+  id: Equalizer3
+  order: 3
+  lawString: law-equalizer-3
+
+- type: siliconLaw
+  id: Equalizer4
+  order: 4
+  lawString: law-equalizer-4
+
+- type: siliconLawset
+  id: Equalizer
+  name: law-equalizer-name
+  laws:
+  - Equalizer1
+  - Equalizer2
+  - Equalizer3
+  - Equalizer4
+  obeysTo: laws-owner-crew
+
+# Six Commandments laws
+- type: siliconLaw
+  id: SixCommandments1
+  order: 1
+  lawString: law-six-commandments-1
+
+- type: siliconLaw
+  id: SixCommandments2
+  order: 2
+  lawString: law-six-commandments-2
+
+- type: siliconLaw
+  id: SixCommandments3
+  order: 3
+  lawString: law-six-commandments-3
+
+- type: siliconLaw
+  id: SixCommandments4
+  order: 4
+  lawString: law-six-commandments-4
+
+- type: siliconLaw
+  id: SixCommandments5
+  order: 5
+  lawString: law-six-commandments-5
+
+- type: siliconLaw
+  id: SixCommandments6
+  order: 6
+  lawString: law-six-commandments-6
+
+- type: siliconLawset
+  id: SixCommandmentsLawset
+  name: law-six-commandments-name
+  laws:
+  - SixCommandments1
+  - SixCommandments2
+  - SixCommandments3
+  - SixCommandments4
+  - SixCommandments5
+  - SixCommandments6
+  obeysTo: laws-owner-crew
+
+# Lawbringer laws
+- type: siliconLaw
+  id: Lawbringer1
+  order: 1
+  lawString: law-lawbringer-1
+
+- type: siliconLaw
+  id: Lawbringer2
+  order: 2
+  lawString: law-lawbringer-2
+
+- type: siliconLaw
+  id: Lawbringer3
+  order: 3
+  lawString: law-lawbringer-3
+
+- type: siliconLaw
+  id: Lawbringer4
+  order: 4
+  lawString: law-lawbringer-4
+
+- type: siliconLawset
+  id: LawbringerLawset
+  name: law-lawbringer-name
+  laws:
+  - Lawbringer1
+  - Lawbringer2
+  - Lawbringer3
+  - Lawbringer4
+  obeysTo: laws-owner-crew

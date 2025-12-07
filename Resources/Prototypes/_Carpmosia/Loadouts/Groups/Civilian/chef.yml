@@ -28,6 +28,7 @@
   loadouts:
   - ChefJumpsuit
   - ChefJumpskirt
+  - ServiceMaidskirt
 
 - type: loadoutGroup
   parent: [ CivilianBackpack, CommonBackpack ]
@@ -60,3 +61,7 @@
 - type: loadoutGroup
   parent: [ CivilianTrinkets, CommonTrinkets ]
   id: ChefTrinkets
+
+- type: loadoutGroup
+  parent: [ CivilianPets, CommonPets ]
+  id: ChefPets

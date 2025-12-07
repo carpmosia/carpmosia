@@ -15,6 +15,7 @@
   table: !type:AllSelector
     children:
     - id: OxygenTankFilled
+    - id: NitrogenTankFilled # Carpmosia-edit - Accessible nitrogen
     - id: ClothingOuterHardsuitEVA
     - id: ClothingHeadHelmetEVA
     - id: ClothingMaskBreath
@@ -35,6 +36,7 @@
   table: !type:AllSelector
     children:
     - id: OxygenTankFilled
+    - id: NitrogenTankFilled # Carpmosia-edit - Accessible nitrogen
     - id: ClothingOuterHardsuitEVA
     - id: ClothingHeadHelmetEVALarge
     - id: ClothingMaskBreath
@@ -55,6 +57,7 @@
   table: !type:AllSelector
     children:
     - id: OxygenTankFilled
+    - id: NitrogenTankFilled # Carpmosia-edit - Accessible nitrogen
     - id: ClothingOuterSuitEmergency
     - id: ClothingMaskBreath
 
@@ -74,6 +77,7 @@
   table: !type:AllSelector
     children:
     - id: OxygenTankFilled
+    - id: NitrogenTankFilled # Carpmosia-edit - Accessible nitrogen
     - id: ClothingOuterHardsuitEVAPrisoner
     - id: ClothingHeadHelmetEVALarge
     - id: ClothingMaskBreath
@@ -94,6 +98,7 @@
   table: !type:AllSelector
     children:
     - id: OxygenTankFilled
+    - id: NitrogenTankFilled # Carpmosia-edit - Accessible nitrogen
     - id: ClothingOuterEVASuitSyndicate
     - id: ClothingHeadHelmetSyndicate
     - id: ClothingMaskGasSyndicate
@@ -114,6 +119,7 @@
   table: !type:AllSelector
     children:
     - id: OxygenTankFilled
+    - id: NitrogenTankFilled # Carpmosia-edit - Accessible nitrogen
     - id: ClothingOuterHardsuitPirateEVA
     - id: ClothingMaskGas
 
@@ -182,6 +188,7 @@
   table: !type:AllSelector
     children:
     - id: OxygenTankFilled
+    - id: NitrogenTankFilled # Carpmosia-edit - Accessible nitrogen
     - id: ClothingOuterHardsuitSecurity
     - id: ClothingMaskBreath
 
@@ -292,6 +299,7 @@
   table: !type:AllSelector
     children:
     - id: OxygenTankFilled
+    - id: NitrogenTankFilled # Carpmosia-edit - Accessible nitrogen
     - id: ClothingOuterHardsuitSyndie
     - id: ClothingShoesBootsMagSyndie
     - id: ClothingMaskGasSyndicate
@@ -312,6 +320,7 @@
   table: !type:AllSelector
     children:
     - id: OxygenTankFilled
+    - id: NitrogenTankFilled # Carpmosia-edit - Accessible nitrogen
     - id: ClothingOuterHardsuitPirateCap
     - id: ClothingMaskGas
 
@@ -331,6 +340,7 @@
   table: !type:AllSelector
     children:
     - id: OxygenTankFilled
+    - id: NitrogenTankFilled # Carpmosia-edit - Accessible nitrogen
     - id: ClothingMaskBreath
     # TODO: Gone until reworked to have no space protection
     #- id: ClothingOuterHardsuitWizard

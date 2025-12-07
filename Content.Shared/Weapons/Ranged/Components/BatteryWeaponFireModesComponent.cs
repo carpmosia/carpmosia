@@ -43,13 +43,11 @@ public sealed partial class BatteryWeaponFireMode
     [DataField]
     public float FireCost = 100;
 
-    // Carpmosia-start - Pacifism Allowed Mode
     /// <summary>
     /// Wether or not this fire mode can be used by pacifists
     /// </summary>
     [DataField]
     public bool PacifismAllowedMode = false;
-    // Carpmosia-end - Pacifism Allowed Mode
 }
 
 [Serializable, NetSerializable]

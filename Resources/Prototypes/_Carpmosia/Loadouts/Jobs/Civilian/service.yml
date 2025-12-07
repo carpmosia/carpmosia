@@ -1,0 +1,23 @@
+- type: loadoutEffectGroup
+  id: CompetentService
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 20h
+
+# Jumpsuit
+- type: loadout
+  id: ServiceMaidskirt
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: CompetentService
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtServicemaid
+
+# Shoes
+- type: loadout
+  id: GaloshesShoes
+  equipment:
+    shoes: ClothingShoesGaloshes

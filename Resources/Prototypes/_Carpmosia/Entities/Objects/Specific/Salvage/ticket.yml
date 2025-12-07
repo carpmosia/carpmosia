@@ -38,6 +38,38 @@
 
 - type: entity
   parent: SalvageTicket
+  id: SalvageTicket15
+  suffix: 15
+  components:
+  - type: Stack
+    count: 15
+
+- type: entity
+  parent: SalvageTicket
+  id: SalvageTicket20
+  suffix: 20
+  components:
+  - type: Stack
+    count: 20
+
+- type: entity
+  parent: SalvageTicket
+  id: SalvageTicket25
+  suffix: 25
+  components:
+  - type: Stack
+    count: 25
+
+- type: entity
+  parent: SalvageTicket
+  id: SalvageTicket30
+  suffix: 30
+  components:
+  - type: Stack
+    count: 30
+
+- type: entity
+  parent: SalvageTicket
   id: SalvageTicket50
   suffix: 50
   components:
@@ -51,3 +83,19 @@
   components:
   - type: Stack
     count: 100
+
+- type: entity
+  parent: SalvageTicket
+  id: SalvageTicket500
+  suffix: 500
+  components:
+  - type: Stack
+    count: 500
+
+- type: entity
+  parent: SalvageTicket
+  id: SalvageTicket1000
+  suffix: 1000
+  components:
+  - type: Stack
+    count: 1000

@@ -78,3 +78,9 @@
   name: loadout-group-base-trinkets
   minLimit: 0
   maxLimit: 3
+
+- type: loadoutGroup
+  abstract: true
+  id: BasePets
+  name: loadout-group-base-pets
+  minLimit: 0

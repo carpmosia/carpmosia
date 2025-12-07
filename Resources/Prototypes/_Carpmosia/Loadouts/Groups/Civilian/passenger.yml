@@ -63,3 +63,7 @@
 - type: loadoutGroup
   parent: [ CivilianTrinkets, CommonTrinkets ]
   id: PassengerTrinkets
+
+- type: loadoutGroup
+  parent: [ CivilianPets, CommonPets ]
+  id: PassengerPets

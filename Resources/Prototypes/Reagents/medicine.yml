@@ -93,7 +93,6 @@
       - !type:ModifyStatusEffect
         effectProto: StatusEffectDrowsiness
         time: 1.5
-        type: Add
       - !type:HealthChange
         damage:
           types:
@@ -540,32 +539,36 @@
   id: Barozine
   name: reagent-name-barozine
   group: Medicine
-  desc: reagent-desc-barozine
+  desc: reagent-desc-barozine-carpmosia # Carpmosia-edit - Barozine edits
   physicalDesc: reagent-physical-desc-viscous
   flavor: medicine
   color: "#ff867d"
   metabolisms:
     Medicine:
+      metabolismRate: 0.25 # Carpmosia-edit - Barozine edits
       effects:
       - !type:HealthChange
-        probability: 0.3
+        # probability: 0.3 # Carpmosia-edit - Barozine edits
         damage:
           types:
-            Heat: 0.5
+            Piercing: 0.2 # Carpmosia-edit - Barozine edits
       - !type:HealthChange
         conditions:
           - !type:ReagentCondition
             reagent: Barozine
-            min: 30
+            min: 20 # Carpmosia-edit - Barozine edits
         damage:
           types:
-            Poison: 3
+            # Carpmosia-start - Barozine edits
+            Piercing: 0.25
+            Bloodloss: 0.25
+            # Carpmosia-end - Barozine edits
       - !type:Vomit
         probability: 0.15
         conditions:
           - !type:ReagentCondition
             reagent: Barozine
-            min: 30
+            min: 20 # Carpmosia-edit - Barozine edits
       - !type:GenericStatusEffect
         key: PressureImmunity
         component: PressureImmunity
@@ -594,10 +597,7 @@
     - !type:PlantAdjustToxins
       amount: 6
     - !type:PlantPhalanximine
-      conditions:
-      - !type:ReagentCondition
-        reagent: Phalanximine
-        min: 4
+      minScale: 4
   metabolisms:
     Medicine:
       metabolismRate: 0.1
@@ -1187,7 +1187,6 @@
       methods: [ Touch ]
       effects:
       - !type:HealthChange
-        scaling: true
         ignoreResistances: false
         damage:
           types:

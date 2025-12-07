@@ -173,10 +173,13 @@
       - Wrench
       - Bottle
       - Spray
-      - Brutepack
-      - Bloodpack
-      - Gauze
-      - Ointment
+      # Carpmosia-start - Medical tourniquets
+      #- Brutepack
+      #- Bloodpack
+      #- Gauze
+      #- Ointment
+      #- Tourniquet
+      # Carpmosia-end - Medical tourniquets
       - CigPack
       - PillCanister
       - Radio
@@ -189,6 +192,7 @@
       - Injector
       - Pill
       - HandLabeler
+      - Healing # Carpmosia-edit - Medical tourniquets
   - type: ItemMapper
     sprite: *BeltOverlay
     mapLayers:
@@ -254,12 +258,10 @@
   - type: Storage
     whitelist:
       tags:
-      # - PlantAnalyzer
       - PlantSampleTaker
       - BotanyShovel
       - BotanyHoe
       - BotanyHatchet
-      - PlantSampleTaker
       - PlantBGone
       - Bottle
       - Syringe
@@ -276,10 +278,6 @@
         whitelist:
           tags:
           - BotanyHatchet
-      # hydro:
-      #   whitelist:
-      #     tags:
-      #     - PlantAnalyzer # Dunno what to put here, should be aight.
       hoe:
         whitelist:
           tags:
@@ -403,6 +401,7 @@
       components:
       - Stunbaton
       - FlashOnTrigger
+      - Ensnaring # Carpmosia-edit - Bolas in Security Belts
       - SmokeOnTrigger
       - Flash
       - Handcuff

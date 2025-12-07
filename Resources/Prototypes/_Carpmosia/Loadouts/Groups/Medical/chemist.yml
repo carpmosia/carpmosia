@@ -63,3 +63,7 @@
 - type: loadoutGroup
   parent: [ MedicalTrinkets, CommonTrinkets ]
   id: ChemistTrinkets
+
+- type: loadoutGroup
+  parent: [ MedicalPets, CommonPets ]
+  id: ChemistPets

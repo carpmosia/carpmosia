@@ -1,0 +1,16 @@
+- type: entity
+  parent: MarkerBase
+  id: AtmosFixSpaceMarker
+  name: Atmos Fix Space Marker
+  description: "Map Atmosphere"
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/atmos.rsi
+      state: base
+      shader: unshaded
+    - sprite: _Carpmosia/Markers/atmos.rsi
+      shader: unshaded
+      state: space
+  - type: AtmosFixMarker
+    mode: 9

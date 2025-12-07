@@ -25,6 +25,7 @@
   - BartenderJumpsuit
   - BartenderJumpskirt
   - BartenderJumpsuitPurple
+  - ServiceMaidskirt
 
 - type: loadoutGroup
   parent: [ CivilianBackpack, CommonBackpack ]
@@ -53,3 +54,7 @@
 - type: loadoutGroup
   parent: [ CivilianTrinkets, CommonTrinkets ]
   id: ServiceWorkerTrinkets
+
+- type: loadoutGroup
+  parent: [ CivilianPets, CommonPets ]
+  id: ServiceWorkerPets
