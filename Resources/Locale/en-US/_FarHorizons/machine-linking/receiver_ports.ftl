@@ -1,3 +1,6 @@
+signal-port-name-nuclear-reactor-data-receiver = Reactor Monitor
+signal-port-description-nuclear-reactor-data-receiver = Receiving info about a nuclear reactor.
+
 signal-port-name-nuclear-reactor-receiver-insert = Control Rods In
 signal-port-description-nuclear-reactor-receiver-insert = Increases the insertion level of the control rods.
 
