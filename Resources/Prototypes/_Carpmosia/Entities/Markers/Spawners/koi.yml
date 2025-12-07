@@ -1,0 +1,27 @@
+- type: entity
+  name: space koi spawner
+  id: SpawnSpaceKoi
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Carpmosia/Mobs/Animals/Koi/red_black.rsi
+        state: livestock_icon
+      - state: ai
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RandomKoiTable
+
+- type: entityTable
+  id: RandomKoiTable
+  table: !type:GroupSelector
+    children:
+    - id: MobRedCircleKoi
+    - id: MobRedBlackKoi
+    - id: MobGoldBlackKoi
+      weight: 0.3
+    - id: MobBloodSkeletonKoi
+      weight: 0.3
+    - id: MobSpaceGlowKoi
+      weight: 0.2
