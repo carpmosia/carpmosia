@@ -86,7 +86,10 @@
       Dead:
         Base: jorge-dead
   - type: Bloodstream
-    bloodReagent: Sap
+    bloodReagents:
+      reagents:
+      - ReagentId: Sap
+        Quantity: 1
     bloodMaxVolume: 50
     chemicalMaxVolume: 30
   - type: Damageable
