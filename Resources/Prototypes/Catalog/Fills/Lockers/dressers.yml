@@ -67,17 +67,19 @@
   parent: Dresser
   suffix: Filled, Head Of Security
   components:
-  - type: StorageFill
-    contents:
-      - id: ClothingHeadHatBeretHoS
-      - id: ClothingHeadHatHoshat
-      - id: ClothingMaskNeckGaiter
-      - id: ClothingUniformJumpskirtHoSAlt
-      - id: ClothingUniformJumpsuitHoSAlt
-      - id: ClothingUniformJumpskirtHosFormal
-      - id: ClothingUniformJumpsuitHosFormal
-      # id: ClothingOuterWinterHoS # Carpmosia-edit - Outer clothing size
-      - id: ClothingNeckCloakHos
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ClothingHeadHatBeretHoS
+        - id: ClothingHeadHatHoshat
+        - id: ClothingMaskNeckGaiter
+        - id: ClothingUniformJumpskirtHoSAlt
+        - id: ClothingUniformJumpsuitHoSAlt
+        - id: ClothingUniformJumpskirtHosFormal
+        - id: ClothingUniformJumpsuitHosFormal
+        # id: ClothingOuterWinterHoS # Carpmosia-edit - Outer clothing size
+        - id: ClothingNeckCloakHos
 
 - type: entity
   id: DresserQuarterMasterFilled
