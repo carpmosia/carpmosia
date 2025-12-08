@@ -60,9 +60,11 @@
   - ClownShoes
   - JesterShoes
 
-# - type: loadoutGroup
-#   parent: BaseSpecial
-#    id: ClownSpecial
+- type: loadoutGroup
+  parent: BaseSpecial
+  id: ClownSpecial
+  loadouts:
+  - FlowerWaterClown
 
 - type: loadoutGroup
   parent: [ CivilianTrinkets, CommonTrinkets ]
