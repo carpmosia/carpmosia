@@ -33,7 +33,8 @@ public sealed class RoomFillSystem : EntitySystem
                     random,
                     null,
                     clearExisting: component.ClearExisting,
-                    rotation: component.Rotation);
+                    rotation: component.Rotation,
+                    roomRotation: component.InheritRotation ? xform.LocalRotation : Angle.Zero); // Carpmosia-edit - RoomFill InheritRotation
             }
             else
             {
