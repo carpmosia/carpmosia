@@ -95,19 +95,20 @@ namespace Content.IntegrationTests.Tests
             "Marathon",
             "MeteorArena",
             "Saltern",
-            "Saltern2", // Carpmosia-edit - Saltern2 port
             "Reach",
             "Oasis",
-            "Oasis2", // Carpmosia-edit - Oasis2 port
-            "Amber",
             "Plasma",
             "Elkridge",
             "Relic",
             "dm01-entryway",
             "Exo",
-            "Feint", // Carpmosia-edit - Feint port
             "Snowball",
-            // Carpmosia-start - Legacy maps
+            // Carpmosia-start - Carpmaps
+            "Amber",
+            "Feint",
+            "Oasis2",
+            "Saltern2",
+            // Legacy maps
             "Meta",
             "Omega",
             "Core",
@@ -122,7 +123,7 @@ namespace Content.IntegrationTests.Tests
             "Europa",
             "Aspid",
             "Barratry",
-            // Carpmosia-end - Legacy maps
+            // Carpmosia-end - Carpmaps
         };
 
         private static readonly ProtoId<EntityCategoryPrototype> DoNotMapCategory = "DoNotMap";
