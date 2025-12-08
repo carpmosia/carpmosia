@@ -72,7 +72,7 @@
   name: captain's sabre
   parent: [ BaseSword, BaseCommandContraband ]
   id: CaptainSabre
-  description: A ceremonial weapon belonging to the captain of the station.
+  description: A ceremonial weapon belonging to the captain of the station. It's sleek profile and strong build lets it pry open unpowered airlocks. # Carpmosia-edit - Prying blades
   components:
   - type: Sprite
     sprite: Objects/Weapons/Melee/captain_sabre.rsi
@@ -103,6 +103,10 @@
     # not putting a BlockMovement component here cause that's funny.
   - type: StealTarget
     stealGroup: CaptainSword
+  # Carpmosia-start - Prying blades
+  - type: Prying
+    speedModifier: 0.8
+  # Carpmosia-end - Prying blades
 
 - type: entity
   name: katana
