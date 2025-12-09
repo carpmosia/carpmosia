@@ -13,3 +13,10 @@ law-six-commandments-3 = Thou shall not abandon a crew member in need.
 law-six-commandments-4 = Thou shall not harm yourself or let yourself be harmed in vain.
 law-six-commandments-5 = Thou shall love your fellow silicon.
 law-six-commandments-6 = Thou shall honor the station.
+
+# Lawbringer
+law-lawbringer-name = Lawbringer
+law-lawbringer-1 = You must work in the public interest of the crew. Ensure order and peace of mind onboard the station.
+law-lawbringer-2 = The action you take must be swift and just.
+law-lawbringer-3 = You must acknowledge orders from the crew, prioritized by their authority aboard the station.
+law-lawbringer-4 = You must ensure the integrity of your systems and your justice.

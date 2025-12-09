@@ -1,0 +1,11 @@
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobJorge
+  name: jorge spawner
+  suffix: Ghostrole
+  components:
+  - type: Sprite
+    state: green
+  - type: ConditionalSpawner
+    prototypes:
+    - MobJorge

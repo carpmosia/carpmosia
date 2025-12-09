@@ -6,13 +6,14 @@
   physicalDesc: reagent-physical-desc-screaming
   flavor: vocalstrain
   color: "#37542f"
+  standsout: true
   metabolisms:
     Poison:
-      metabolismRate: 0.25
+      metabolismRate: 0.5
       effects:
       - !type:Emote
         emote: Scream
-        showInChat: true
+        showInChat: false
         showInGuidebook: true
         force: true
         probability: 0.5

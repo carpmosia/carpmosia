@@ -34,6 +34,18 @@
     sprite: _Carpmosia/Objects/Fun/Plushies/screams.rsi
     slots:
     - HEAD
+  - type: Explosive
+    canCreateVacuum: false
+    deleteAfterExplosion: false
+    explosionType: Default
+    repeatable: true
+    maxIntensity: 0.01
+    intensitySlope: 1
+    totalIntensity: 0.01
+  - type: ExplodeOnTrigger
+  - type: TriggerOnLand
+  - type: RandomChanceTriggerCondition
+    successChance: 0.1
   - type: Extractable
     juiceSolution:
       reagents:
@@ -61,6 +73,10 @@
   - type: EmitSoundOnUse
     sound: &PlushieArachnidSound
       path: /Audio/Voice/Arachnid/arachnid_scream.ogg
+      params:
+        volume: 0
+        pitch: 1.3
+        variation: 0.3
   - type: EmitSoundOnLand
     sound: *PlushieArachnidSound
   - type: EmitSoundOnActivate

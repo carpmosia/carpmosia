@@ -56,3 +56,21 @@
     Hologram:
       sprite: _Carpmosia/Mobs/Silicon/holograms.rsi
       state: ai_dionanymph
+
+- type: stationAiCustomization
+  id: StationAiHologramAngel
+  name: station-ai-hologram-angel
+  previewKey: Hologram
+  layerData:
+    Hologram:
+      sprite: _Carpmosia/Mobs/Silicon/holograms.rsi
+      state: ai_angel
+
+- type: stationAiCustomization
+  id: StationAiHologramDevil
+  name: station-ai-hologram-devil
+  previewKey: Hologram
+  layerData:
+    Hologram:
+      sprite: _Carpmosia/Mobs/Silicon/holograms.rsi
+      state: ai_devil

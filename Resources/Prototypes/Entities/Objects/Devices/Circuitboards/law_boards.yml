@@ -82,6 +82,7 @@
   parent: BaseSiliconLawboard
   name: law board (Robocop)
   description: An electronics board containing the Robocop lawset.
+  suffix: Electronics, Deprecated # Carpmosia-edit - New robocop
   components:
   - type: SiliconLawProvider
     laws: RobocopLawset
