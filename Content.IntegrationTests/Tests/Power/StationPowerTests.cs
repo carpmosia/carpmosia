@@ -34,15 +34,17 @@ public sealed class StationPowerTests
         "Train",
         "Oasis",
         "Gate",
-        "Amber",
         "Loop",
         "Plasma",
         "Elkridge",
         "Convex",
         "Relic",
-        "Saltern2", // Carpmosia-edit - Saltern2 port
-        "Oasis2", // Carpmosia-edit - Oasis2 port
-        "Feint", // Carpmosia-edit - Feint port
+        // Carpmosia-start - Carpmaps
+        "Amber",
+        "Feint",
+        "Saltern2",
+        "Oasis2",
+        // Carpmosia-end - Carpmaps
     ];
 
     [Test, TestCaseSource(nameof(GameMaps))]

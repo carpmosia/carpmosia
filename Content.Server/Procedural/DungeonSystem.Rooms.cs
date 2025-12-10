@@ -80,10 +80,11 @@ public sealed partial class DungeonSystem
         Random random,
         HashSet<Vector2i>? reservedTiles,
         bool clearExisting = false,
-        bool rotation = false)
+        bool rotation = false,
+        Angle roomRotation = new()) // Carpmosia-edit - Roomfill improvements
     {
         var originTransform = Matrix3Helpers.CreateTranslation(origin.X, origin.Y);
-        var roomRotation = Angle.Zero;
+        // var roomRotation = Angle.Zero; // Carpmosia-edit - Roomfill improvements
 
         if (rotation)
         {
