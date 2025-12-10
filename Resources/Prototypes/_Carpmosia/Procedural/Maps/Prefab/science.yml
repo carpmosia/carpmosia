@@ -1,0 +1,21 @@
+- type: dungeonRoom
+  id: PrefabDepScience1
+  size: 5,5
+  atlas: /Maps/Dungeon/vgroidinterior.yml
+  offset: 12,0
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PrefabDepScience
+
+- type: Tag
+  id: PrefabDepScience
+
+- type: entity
+  id: PrefabDepScienceMarker
+  parent: BasePrefabDepMarker
+  name: Prefab science department marker
+  components:
+  - type: RoomFill
+    roomWhitelist:
+      tags:
+      - PrefabDepScience

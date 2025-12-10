@@ -1,0 +1,11 @@
+- type: entity
+  abstract: true
+  parent: BaseRoomMarker
+  id: BasePrefabDepMarker
+  name: Prefab department marker
+  components:
+  - type: RoomFill
+    rotation: false
+    inheritRotation: true
+    maxSize: 10, 10
+    offset: -3, 0

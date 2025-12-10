@@ -1,0 +1,33 @@
+- type: dungeonRoom
+  id: PrefabDeps1
+  size: 5,5
+  atlas: /Maps/_Carpmosia/Procedural/prefab.yml
+  offset: 1,1
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PrefabDeps
+
+- type: dungeonRoom
+  id: PrefabDeps2
+  size: 5,5
+  atlas: /Maps/_Carpmosia/Procedural/prefab.yml
+  offset: 7,1
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PrefabDeps
+
+- type: Tag
+  id: PrefabDeps
+
+- type: entity
+  id: PrefabDepsMarker
+  parent: BaseRoomMarker
+  name: Prefab department distribution marker
+  components:
+  - type: RoomFill
+    rotation: true
+    minSize: 5, 5
+    maxSize: 5, 5
+    roomWhitelist:
+      tags:
+      - PrefabDeps

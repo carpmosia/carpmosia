@@ -1,0 +1,21 @@
+- type: dungeonRoom
+  id: PrefabDepSecurity1
+  size: 5,5
+  atlas: /Maps/Dungeon/vgroidinterior.yml
+  offset: 12,0
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PrefabDepSecurity
+
+- type: Tag
+  id: PrefabDepSecurity
+
+- type: entity
+  id: PrefabDepSecurityMarker
+  parent: BasePrefabDepMarker
+  name: Prefab security department marker
+  components:
+  - type: RoomFill
+    roomWhitelist:
+      tags:
+      - PrefabDepSecurity
