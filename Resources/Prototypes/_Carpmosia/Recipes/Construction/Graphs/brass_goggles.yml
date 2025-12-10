@@ -1,0 +1,19 @@
+﻿- type: constructionGraph
+  id: BrassGoggles
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: brassGoggles
+          steps:
+            - tag: MesonGoggles
+              name: construction-graph-tag-meson
+              icon:
+                sprite: Clothing/Eyes/Glasses/meson.rsi
+                state: icon
+              doAfter: 3
+            - material: Brass
+              amount: 6
+              doAfter: 3
+    - node: brassGoggles
+      entity: ClothingEyesGlassesBrass
