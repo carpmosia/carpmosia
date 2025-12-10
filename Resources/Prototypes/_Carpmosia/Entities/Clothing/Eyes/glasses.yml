@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingEyesBase, BaseEngineeringContraband]
+  parent: [ClothingEyesGlassesMeson]
   id: ClothingEyesGlassesBrass
   name: brass goggles
   description: Embeded in the brass casing, these goggles add a steampunk feeling, while still protecting from eye damage of all types.
@@ -8,13 +8,6 @@
     sprite: _Carpmosia/Clothing/Eyes/Glasses/brassgoggles.rsi
   - type: Clothing
     sprite: _Carpmosia/Clothing/Eyes/Glasses/brassgoggles.rsi
-  - type: EyeProtection
-  - type: IdentityBlocker
-    coverage: EYES
   - type: Construction
     graph: BrassGoggles
     node: brassGoggles
-  - type: Tag
-    tags:
-    - PetWearable
-    - WhitelistChameleon
