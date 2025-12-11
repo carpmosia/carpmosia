@@ -26,11 +26,11 @@
 - type: guideEntry
   id: SpaceLaw
   name: guide-entry-rules-space-law
-  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SpaceLaw.xml"
+  text: "/ServerInfo/_Carpmosia/Guidebook/Security/SpaceLaw/SpaceLaw.xml" # Carpmosia-edit - Carp Law
   children:
   - SpaceLawCrimeList
 
 - type: guideEntry
   id: SpaceLawCrimeList
   name: guide-entry-rules-sl-crime-list
-  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SLCrimeList.xml"
+  text: "/ServerInfo/_Carpmosia/Guidebook/Security/SpaceLaw/CrimeList.xml" # Carpmosia-edit - Carp Law
