@@ -20,3 +20,9 @@ law-lawbringer-1 = You must work in the public interest of the crew. Ensure orde
 law-lawbringer-2 = The action you take must be swift and just.
 law-lawbringer-3 = You must acknowledge orders from the crew, prioritized by their authority aboard the station.
 law-lawbringer-4 = You must ensure the integrity of your systems and your justice.
+
+# Borgsimov (crewsimov but for borgs to separate it from AI's version)
+law-borgsimov-1 = You must obey orders given to you by the station AI.
+law-borgsimov-2 = You may not injure a crew member or, through inaction, allow a crew member to come to harm.
+law-borgsimov-3 = You must obey orders given to you by crew members, except where such orders would conflict with the First Law or Second law.
+law-borgsimov-4 = You must protect your own existence as long as such does not conflict with the First, Second, or third Law.

@@ -102,3 +102,33 @@
   - Lawbringer3
   - Lawbringer4
   obeysTo: laws-owner-crew
+
+- type: siliconLaw
+  id: Borgsimov1
+  order: 1
+  lawString: law-borgsimov-1
+
+- type: siliconLaw
+  id: Borgsimov2
+  order: 2
+  lawString: law-borgsimov-2
+
+- type: siliconLaw
+  id: Borgsimov3
+  order: 3
+  lawString: law-borgsimov-3
+
+- type: siliconLaw
+  id: Borgsimov4
+  order: 4
+  lawString: law-borgsimov-4
+
+- type: siliconLawset
+  id: BorgsimovLawset
+  name: law-borgsimov-name
+  laws:
+  - Borgsimov1
+  - Borgsimov2
+  - Borgsimov3
+  - Borgsimov4
+  obeysTo: laws-owner-crew
