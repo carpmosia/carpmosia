@@ -13,9 +13,6 @@ public abstract class SharedNuclearReactorSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly EntityManager _entityManager = default!;
 
-    protected static readonly int _gridWidth = NuclearReactorComponent.ReactorGridWidth;
-    protected static readonly int _gridHeight = NuclearReactorComponent.ReactorGridHeight;
-
     public override void Initialize()
     {
         base.Initialize();
@@ -37,6 +34,7 @@ public abstract class SharedNuclearReactorSystem : EntitySystem
     protected static ReactorPartComponent?[,] SelectPrefab(string select) => select switch
     {
         "normal" => NuclearReactorPrefabs.Normal,
+        "normal5x5" => NuclearReactorPrefabs.Normal5x5,
         "debug" => NuclearReactorPrefabs.Debug,
         "meltdown" => NuclearReactorPrefabs.Meltdown,
         "alignment" => NuclearReactorPrefabs.Alignment,
@@ -50,9 +48,12 @@ public abstract class SharedNuclearReactorSystem : EntitySystem
         var comp = ent.Comp;
         var uid = ent.Owner;
 
-        for (var x = 0; x < _gridWidth; x++)
+        if (comp.ComponentGrid == null)
+            return;
+
+        for (var x = 0; x < comp.ReactorGridWidth; x++)
         {
-            for (var y = 0; y < _gridHeight; y++)
+            for (var y = 0; y < comp.ReactorGridHeight; y++)
             {
                 var gridComp = comp.ComponentGrid[x, y];
                 var vector = new Vector2i(x, y);
@@ -183,6 +184,25 @@ public static class NuclearReactorPrefabs
         },
         {
             null, null, null, null, null, null, null
+        }
+    };
+
+    public static readonly ReactorPartComponent?[,] Normal5x5 =
+    {
+        {
+            g, h, g, h, g
+        },
+        {
+            h, null, c, null, h
+        },
+        {
+            g, c, c, c, g
+        },
+        {
+            h, null, c, null, h
+        },
+        {
+            g, h, g, h, g
         }
     };
 
