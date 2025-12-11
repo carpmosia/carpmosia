@@ -1,0 +1,26 @@
+- type: dungeonRoom
+  id: PrefabScienceRight1
+  size: 5,5
+  atlas: /Maps/_Carpmosia/Procedural/prefab.yml
+  offset: 17,1
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PrefabScienceRight
+
+- type: Tag
+  id: PrefabScienceRight
+
+- type: entity
+  id: PrefabScienceRightMarker
+  parent: BasePrefabDepMarker
+  suffix: Science, Right
+  components:
+  - type: RoomFill
+    roomWhitelist:
+      tags:
+      - PrefabScienceRight
+  - type: Sprite
+    layers:
+      - state: arrow
+      - state: right
+      - state: science

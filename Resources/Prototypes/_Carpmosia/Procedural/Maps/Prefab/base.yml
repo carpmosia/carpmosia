@@ -1,11 +1,23 @@
 - type: entity
   abstract: true
   parent: BaseRoomMarker
-  id: BasePrefabDepMarker
-  name: Prefab department marker
+  id: BasePrefabMarker
+  name: Prefab room marker
   components:
   - type: RoomFill
     rotation: false
     inheritRotation: true
+  - type: Sprite
+    sprite: _Carpmosia/Markers/room.rsi
+    layers:
+      - state: arrow
+
+- type: entity
+  abstract: true
+  parent: BasePrefabMarker
+  id: BasePrefabDepMarker
+  name: Prefab department marker
+  components:
+  - type: RoomFill
     maxSize: 10, 10
-    offset: -3, 0
+    offset: 5, 5

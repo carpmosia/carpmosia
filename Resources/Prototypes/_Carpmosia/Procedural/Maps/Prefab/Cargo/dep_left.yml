@@ -1,0 +1,26 @@
+- type: dungeonRoom
+  id: PrefabCargoLeft1
+  size: 5,5
+  atlas: /Maps/_Carpmosia/Procedural/prefab.yml
+  offset: 17,1
+  ignoreTile: FloorShuttleBlue
+  tags:
+  - PrefabCargoLeft
+
+- type: Tag
+  id: PrefabCargoLeft
+
+- type: entity
+  id: PrefabCargoLeftMarker
+  parent: BasePrefabDepMarker
+  suffix: Cargo, Left
+  components:
+  - type: RoomFill
+    roomWhitelist:
+      tags:
+      - PrefabCargoLeft
+  - type: Sprite
+    layers:
+      - state: arrow
+      - state: left
+      - state: cargo
