@@ -1,0 +1,17 @@
+<windows:EmotesWindow
+    xmlns="https://spacestation14.io"
+    xmlns:windows="clr-namespace:Content.Client._Carpmosia.UserInterface.Systems.Emotes.Windows"
+    Name="EmotesList"
+    HorizontalExpand="True"
+    Title="{Loc ui-emotesmenu-title}"
+    VerticalExpand="True"
+    Resizable="True"
+    MinHeight="200"
+    MinWidth="250"
+    SetHeight="250"
+    SetWidth="450"
+>
+    <ScrollContainer VerticalExpand="True" HorizontalExpand="True" Margin="2">
+        <GridContainer Name="EmotesGrid" Columns="3" HorizontalExpand="True"/>
+    </ScrollContainer>
+</windows:EmotesWindow>
