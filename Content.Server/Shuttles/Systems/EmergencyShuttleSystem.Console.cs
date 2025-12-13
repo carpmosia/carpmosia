@@ -233,7 +233,7 @@ public sealed partial class EmergencyShuttleSystem
                 var votesNo = vote.VotesPerOption["no"];
                 var total = votesYes + votesNo;
 
-                var ratioRequired = ConfigManager.GetCVar(CCVars.VoteRestartRequiredRatio);
+                var ratioRequired = ConfigManager.GetCVar(CCVars.VoteEorgRequiredRatio);
 
                 if (total > 0 && votesYes / (float) total >= ratioRequired)
                 {
