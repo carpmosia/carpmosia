@@ -123,7 +123,11 @@ public sealed partial class EmotesUIController : UIController, IOnStateChanged<G
             foreach (var emote in rawList)
             {
                 var button = new EmoteButton(emote);
-                button.OnPressed += _ => HandleRadialButtonClick(emote);
+                button.OnPressed += _ =>
+                {
+                    _altMenu?.StartLocking();
+                    HandleRadialButtonClick(emote);
+                };
                 list.Add(button);
             }
         }
