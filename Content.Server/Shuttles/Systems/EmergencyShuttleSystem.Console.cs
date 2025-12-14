@@ -214,6 +214,7 @@ public sealed partial class EmergencyShuttleSystem
             // Carpmosia-start - EORG vote
             var options = new VoteOptions
             {
+                InitiatorText = Loc.GetString("vote-options-server-initiator-text"),
                 Title = Loc.GetString("ui-vote-eorg-title"),
                 Duration = TimeSpan.FromSeconds(Math.Max(1, TransitTime - 5)),
                 VoterEligibility = VoteManager.VoterEligibility.OnEvac,
@@ -225,7 +226,6 @@ public sealed partial class EmergencyShuttleSystem
                 }
             };
             var vote = _voteManager.CreateVote(options);
-
 
             vote.OnFinished += (_, _) =>
             {
