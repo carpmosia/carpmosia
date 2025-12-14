@@ -1,6 +1,8 @@
-# - type: loadoutGroup
-#   parent: [ CivilianHead, CommonHead ]
-#   id: ZookeeperHead
+- type: loadoutGroup
+  parent: [ CivilianHead, CommonHead ]
+  id: ZookeeperHead
+  loadouts:
+  - HatSafari
 
 - type: loadoutGroup
   parent: [ CivilianGlasses, CommonGlasses ]

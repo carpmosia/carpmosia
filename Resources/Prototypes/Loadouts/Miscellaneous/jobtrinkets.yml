@@ -131,6 +131,15 @@
   groupBy: "lizards" # Carpmosia-edit - Organize lizard plushies
 
 - type: loadout
+  id: JanitorGoldenPlunger
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorJanitorial
+  storage:
+    back:
+    - GoldenPlunger
+
+- type: loadout
   id: LizardPlushieBotanist
   effects:
   - !type:JobRequirementLoadoutEffect
@@ -155,6 +164,18 @@
     back:
     - PlushieLizardJobClown
   groupBy: "lizards" # Carpmosia-edit - Organize lizard plushies
+
+- type: loadout
+  id: FlowerWaterClown
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobClown
+      time: 4h
+  storage:
+    back:
+    - SprayFlowerPin
 
 - type: loadout
   id: LizardPlushieMime
@@ -363,6 +384,17 @@
     back:
     - PlushieLizardJobSecurityofficer
   groupBy: "lizards" # Carpmosia-edit - Organize lizard plushies
+
+- type: loadout
+  id: SecStar
+  effects:
+    - !type:JobRequirementLoadoutEffect
+      requirement:
+        !type:DepartmentTimeRequirement
+        department: Security
+        time: 100h
+  equipment: # Carpmosia-edit - Loadout Rework 2
+    neck: Dinkystar # Carpmosia-edit - Loadout Rework 2
 
 - type: loadout
   id: LizardPlushieSecurityCadet

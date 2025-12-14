@@ -6,3 +6,21 @@
   components:
   - type: SiliconLawProvider
     laws: Equalizer
+
+- type: entity
+  id: SixCommandmentsCircuitBoard
+  parent: BaseSiliconLawboard
+  name: law board (Six Commandments)
+  description: An electronics board containing the Six Commandments lawset.
+  components:
+  - type: SiliconLawProvider
+    laws: SixCommandmentsLawset
+
+- type: entity
+  id: LawbringerCircuitBoard
+  parent: BaseSiliconLawboard
+  name: law board (Lawbringer)
+  description: An electronics board containing the Lawbringer lawset.
+  components:
+  - type: SiliconLawProvider
+    laws: LawbringerLawset

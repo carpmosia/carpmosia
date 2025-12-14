@@ -20,4 +20,6 @@ AntagTraitor = Syndicate Agent
 AntagTraitorSleeper = Syndicate Sleeper Agent
 AntagVampire = Vampire
 AntagWizard = Wizard
+AntagMothershipCore = Xenoborg Core
+AntagXenoborg = Xenoborg
 AntagZombie = Zombie

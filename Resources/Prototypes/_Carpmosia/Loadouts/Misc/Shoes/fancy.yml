@@ -1,0 +1,83 @@
+- type: loadout
+  id: LaceupShoes
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Command
+      time: 1h
+  equipment:
+    shoes: ClothingShoesBootsLaceup
+  groupBy: "fancyShoes"
+
+- type: loadout
+  id: LeatherShoes
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobLibrarian
+      time: 1h
+  equipment:
+    shoes: ClothingShoesLeather
+  groupBy: "fancyShoes"
+
+- type: loadout
+  id: HighheelShoes
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobMusician
+      time: 1h
+  equipment:
+    shoes: ClothingShoesHighheelBoots
+  groupBy: "fancyShoes"
+
+- type: loadout
+  id: CowboyBlackShoes
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Security
+      time: 1h
+  equipment:
+    shoes: ClothingShoesBootsCowboyBlack
+  groupBy: "fancyShoes"
+
+- type: loadout
+  id: CowboyBrownShoes
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobDetective
+      time: 1h
+  equipment:
+    shoes: ClothingShoesBootsCowboyBrown
+  groupBy: "fancyShoes"
+
+- type: loadout
+  id: CowboyWhiteShoes
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobHeadOfSecurity
+      time: 1h
+  equipment:
+    shoes: ClothingShoesBootsCowboyWhite
+  groupBy: "fancyShoes"
+
+- type: loadout
+  id: TouristShoes
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobPassenger
+      time: 1h
+  equipment:
+    shoes: ClothingShoesTourist
+  groupBy: "fancyShoes"
