@@ -5,8 +5,8 @@
       slotTexture: back
       slotFlags: BACK
       slotGroup: SecondHotbar
-      stripTime: 6
       # Carpmosia-start - Aghost drip
+      # stripTime: 6
       uiWindowPos: 3,0
       strippingWindowPos: 0,5
       # Carpmosia-end - Aghost drip
@@ -16,8 +16,8 @@
       fullTextureName: template_small
       slotFlags: IDCARD
       slotGroup: SecondHotbar
-      stripTime: 6
       # Carpmosia-start - Aghost drip
+      # stripTime: 6
       uiWindowPos: 2,1
       strippingWindowPos: 2,4
       # Carpmosia-end - Aghost drip
@@ -42,14 +42,12 @@
     - name: jumpsuit
       slotTexture: uniform
       slotFlags: INNERCLOTHING
-      stripTime: 6
       uiWindowPos: 0,1
       strippingWindowPos: 0,2
       displayName: Jumpsuit
     - name: outerClothing
       slotTexture: suit
       slotFlags: OUTERCLOTHING
-      stripTime: 6
       uiWindowPos: 1,1
       strippingWindowPos: 1,2
       displayName: Suit
@@ -68,14 +66,12 @@
     - name: eyes
       slotTexture: glasses
       slotFlags: EYES
-      stripTime: 3
       uiWindowPos: 0,3
       strippingWindowPos: 0,0
       displayName: Eyes
     - name: ears
       slotTexture: ears
       slotFlags: EARS
-      stripTime: 3
       uiWindowPos: 2,2
       strippingWindowPos: 2,0
       displayName: Ears
@@ -84,29 +80,38 @@
       fullTextureName: template_small
       slotFlags: POCKET
       slotGroup: MainHotbar
-      stripTime: 3
       uiWindowPos: 0,3
-      strippingWindowPos: 0,4
-      dependsOn: jumpsuit
+      strippingWindowPos: 0,3
       displayName: Pocket 1
-      stripHidden: true
     - name: pocket2
       slotTexture: pocket
       fullTextureName: template_small
       slotFlags: POCKET
       slotGroup: MainHotbar
-      stripTime: 3
       uiWindowPos: 2,3
-      strippingWindowPos: 1,4
-      dependsOn: jumpsuit
+      strippingWindowPos: 1,3
       displayName: Pocket 2
-      stripHidden: true
+    - name: pocket3
+      slotTexture: pocket
+      fullTextureName: template_small
+      slotFlags: POCKET
+      slotGroup: MainHotbar
+      uiWindowPos: 4,3
+      strippingWindowPos: 0,4
+      displayName: Pocket 3
+    - name: pocket4
+      slotTexture: pocket
+      fullTextureName: template_small
+      slotFlags: POCKET
+      slotGroup: MainHotbar
+      uiWindowPos: 6,3
+      strippingWindowPos: 1,4
+      displayName: Pocket 4
     - name: belt
       slotTexture: belt
       fullTextureName: template_small
       slotFlags: BELT
       slotGroup: SecondHotbar
-      stripTime: 6
       uiWindowPos: 3,1
       strippingWindowPos: 1,5
       displayName: Belt
