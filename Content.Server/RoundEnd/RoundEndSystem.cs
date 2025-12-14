@@ -55,6 +55,7 @@ namespace Content.Server.RoundEnd
         public TimeSpan? ExpectedCountdownEnd { get; set; } = null;
         public TimeSpan? ExpectedShuttleLength => ExpectedCountdownEnd - LastCountdownStart;
         public TimeSpan? ShuttleTimeLeft => ExpectedCountdownEnd - _gameTiming.CurTime;
+        public bool IsEorg { get; set; } = false; // Carpmosia-edit - EORG vote
 
         /// <summary>
         /// If the shuttle can't be recalled. if set to true, the station wont be able to recall
@@ -91,6 +92,7 @@ namespace Content.Server.RoundEnd
             }
 
             CantRecall = false;
+            IsEorg = false; // Carpmosia-edit - EORG Vote
 
             LastCountdownStart = null;
             ExpectedCountdownEnd = null;
@@ -300,7 +302,7 @@ namespace Content.Server.RoundEnd
             _countdownTokenSource?.Cancel();
             _countdownTokenSource = new();
 
-            countdownTime ??= TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.RoundRestartTime));
+            countdownTime ??= TimeSpan.FromSeconds(IsEorg ? _cfg.GetCVar(CCVars.EorgRoundRestartTime) : _cfg.GetCVar(CCVars.RoundRestartTime)); // Carpmosia-edit - EORG Vote
             int time;
             string unitsLocString;
             if (countdownTime.Value.TotalSeconds < 60)

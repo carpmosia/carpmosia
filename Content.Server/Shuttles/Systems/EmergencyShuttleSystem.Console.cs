@@ -237,6 +237,7 @@ public sealed partial class EmergencyShuttleSystem
 
                 if (total > 0 && votesYes / (float) total >= ratioRequired)
                 {
+                    _roundEnd.IsEorg = true;
                     _logger.Add(LogType.Vote, LogImpact.Medium, $"EORG vote succeeded: {votesYes}/{votesNo}");
                     _chatManager.DispatchServerAnnouncement(Loc.GetString("ui-vote-eorg-succeeded"));
                 }
