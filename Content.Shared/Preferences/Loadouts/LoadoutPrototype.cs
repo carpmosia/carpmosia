@@ -38,6 +38,15 @@ public sealed partial class LoadoutPrototype : IPrototype, IEquipmentLoadout
     [DataField]
     public List<LoadoutEffect> Effects = new();
 
+    // Carpmosia-start - Lawset loadouts
+    /// <summary>
+    /// Lawset to be applied when the loadout is applied.
+    /// A random weighted lawset will be picked from all applied loadouts.
+    /// </summary>
+    [DataField]
+    public EntProtoId Lawset { get; set; } = new();
+    // Carpmosia-end - Lawset loadouts
+
     /// <inheritdoc />
     [DataField]
     public Dictionary<string, EntProtoId> Equipment { get; set; } = new();

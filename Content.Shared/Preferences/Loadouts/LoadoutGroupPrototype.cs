@@ -51,6 +51,11 @@ public sealed partial class LoadoutGroupPrototype : IPrototype, IInheritingProto
     [DataField]
     public bool Hidden;
 
+    // Carpmosia-start - Lawset loadouts
+    [DataField]
+    public int LawsetChance = 0;
+    // Carpmosia-end - Lawset loadouts
+
     [AlwaysPushInheritance]
     [DataField(required: true)]
     public List<ProtoId<LoadoutPrototype>> Loadouts = new();

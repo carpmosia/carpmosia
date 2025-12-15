@@ -58,8 +58,43 @@ public abstract class SharedStationSpawningSystem : EntitySystem
             }
         }
 
+        EquipLawset(entity, loadout, roleProto); // Carpmosia-edit - Lawset loadouts
         EquipRoleName(entity, loadout, roleProto);
     }
+
+    // Carpmosia-start - Lawset loadouts
+    public void EquipLawset(EntityUid entity, RoleLoadout loadout, RoleLoadoutPrototype roleProto)
+    {
+        var lawsets = new Dictionary<LoadoutGroupPrototype, List<EntProtoId>>();
+
+        foreach (var group in loadout.SelectedLoadouts.OrderBy(x => roleProto.Groups.FindIndex(e => e == x.Key)))
+        {
+            if (PrototypeManager.TryIndex(group.Key, out var groupProto))
+            {
+                //if (lawsets.Count > 1)
+                //{
+                //    
+                //} else
+                //{
+                //    
+                //}
+                groupProto.Loadouts.Count();
+                var groupLawsets = lawsets.Last();
+
+                foreach (var items in group.Value)
+                {
+                    if (!PrototypeManager.TryIndex(items.Prototype, out var loadoutProto))
+                    {
+                        Log.Error($"Unable to find loadout prototype for {items.Prototype}");
+                        continue;
+                    }
+                    
+
+                };
+            }
+        }
+    }
+    // Carpmosia-end - Lawset loadouts
 
     /// <summary>
     /// Applies the role's name as applicable to the entity.
@@ -87,7 +122,7 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     public void EquipStartingGear(EntityUid entity, LoadoutPrototype loadout, bool raiseEvent = true)
     {
         EquipStartingGear(entity, loadout.StartingGear, raiseEvent);
-        EquipStartingGear(entity, (IEquipmentLoadout) loadout, raiseEvent);
+        EquipStartingGear(entity, (IEquipmentLoadout)loadout, raiseEvent);
     }
 
     /// <summary>
@@ -104,7 +139,7 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     /// </summary>
     public void EquipStartingGear(EntityUid entity, StartingGearPrototype? startingGear, bool raiseEvent = true)
     {
-        EquipStartingGear(entity, (IEquipmentLoadout?) startingGear, raiseEvent);
+        EquipStartingGear(entity, (IEquipmentLoadout?)startingGear, raiseEvent);
     }
 
     /// <summary>
@@ -201,7 +236,7 @@ public abstract class SharedStationSpawningSystem : EntitySystem
                 if (!PrototypeManager.Resolve(items.Prototype, out var loadoutPrototype))
                     return null;
 
-                var gear = ((IEquipmentLoadout) loadoutPrototype).GetGear(slot);
+                var gear = ((IEquipmentLoadout)loadoutPrototype).GetGear(slot);
                 if (gear != string.Empty)
                     return gear;
             }
