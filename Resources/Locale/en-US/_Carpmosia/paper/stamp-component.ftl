@@ -1,1 +1,1 @@
-stamp-component-stamped-name-pawsome = PAWSOME!
+stamp-component-stamped-name-pawesome = PAWESOME!
