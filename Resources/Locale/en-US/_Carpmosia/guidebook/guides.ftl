@@ -1,3 +1,5 @@
+guide-entry-blood-brothers = Blood Brothers
+
 guide-entry-carpmosia-rules = Server Rules
 
 

@@ -1,3 +1,4 @@
+using Content.Shared._Carpmosia.BloodBrothers.EntitySystems; // Carpmosia edit - Port Blood Bound from Harmony
 using Content.Shared.IdentityManagement;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Popups;
@@ -11,6 +12,7 @@ namespace Content.Shared.Revolutionary;
 
 public abstract class SharedRevolutionarySystem : EntitySystem
 {
+    [Dependency] private readonly SharedBloodBrotherSystem _bloodBrotherSystem = default!; // Carpmosia edit - Port Blood Bound from Harmony
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedStunSystem _sharedStun = default!;
 
@@ -45,6 +47,8 @@ public abstract class SharedRevolutionarySystem : EntitySystem
             _sharedStun.TryUpdateParalyzeDuration(uid, stunTime);
             _popupSystem.PopupEntity(Loc.GetString("rev-break-control", ("name", name)), uid);
         }
+
+        _bloodBrotherSystem.OnBloodBrotherMindshielded((uid, comp), ref init); // Carpmosia edit - Port Blood Bound from Harmony
     }
 
     /// <summary>

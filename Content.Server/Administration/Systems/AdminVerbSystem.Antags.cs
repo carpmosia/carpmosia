@@ -1,3 +1,4 @@
+using Content.Server._Carpmosia.GameTicking.Rules.Components; // Carpmosia edit - Port Blood Bound from Harmony
 using Content.Server.Antag;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules.Components;
@@ -31,6 +32,7 @@ public sealed partial class AdminVerbSystem
     private static readonly EntProtoId DefaultChangelingRule = "Changeling";
     private static readonly EntProtoId ParadoxCloneRuleId = "ParadoxCloneSpawn";
     private static readonly EntProtoId DefaultWizardRule = "Wizard";
+    private static readonly EntProtoId DefaultBloodBrotherRule = "BloodBrothers"; // Carpmosia edit - Port Blood Bound from Harmony
     private static readonly ProtoId<StartingGearPrototype> PirateGearId = "PirateGear";
 
     // All antag verbs have names so invokeverb works.
@@ -209,5 +211,22 @@ public sealed partial class AdminVerbSystem
 
         if (HasComp<HumanoidAppearanceComponent>(args.Target)) // only humanoids can be cloned
             args.Verbs.Add(paradox);
+
+        // Carpmosia start - Port Blood Bound from Harmony
+        var bloodBrotherName = Loc.GetString("admin-verb-text-make-blood-brother");
+        Verb bloodBrother = new()
+        {
+            Text = bloodBrotherName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/_Carpmosia/Interface/Misc/job_icons.rsi"), "BloodBrother"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<BloodBrotherRuleComponent>(targetPlayer, DefaultBloodBrotherRule);
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", bloodBrotherName, Loc.GetString("admin-verb-make-blood-brother")),
+        };
+        args.Verbs.Add(bloodBrother);
+        // Carpmosia end - Port Blood Bound from Harmony
     }
 }
