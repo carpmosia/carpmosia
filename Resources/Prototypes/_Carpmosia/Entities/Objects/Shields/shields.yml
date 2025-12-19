@@ -1,0 +1,10 @@
+- type: entity
+  abstract: true
+  parent: BaseShield
+  id: BaseShieldClothing
+  components:
+  - type: Clothing
+    sprite: _Carpmosia/Objects/Weapons/Melee/Shields/riot-shield.rsi
+    quickEquip: false
+    slots:
+    - suitStorage

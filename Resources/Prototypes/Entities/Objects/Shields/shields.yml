@@ -60,19 +60,6 @@
     - type: StaticPrice
       price: 100
 
-# Carpmosia-start - Suit slot shields
-- type: entity
-  abstract: true
-  parent: BaseShield
-  id: BaseShieldClothing
-  components:
-  - type: Clothing
-    sprite: _Carpmosia/Objects/Weapons/Melee/Shields/riot-shield.rsi
-    quickEquip: false
-    slots:
-    - suitStorage
-# Carpmosia-end - Suit slot shields
-
 #Security Shields
 
 - type: entity
