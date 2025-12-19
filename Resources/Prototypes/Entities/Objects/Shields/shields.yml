@@ -252,11 +252,9 @@
   description: A rundown looking shield, not good for much.
   components:
     - type: Sprite
-      sprite: _Carpmosia/Objects/Weapons/Melee/Shields/makeshift-shield.rsi # Carpmosia-edit - Suit slot shields
-      state: icon # Carpmosia-edit - Suit slot shields
+      state: makeshift-icon
     - type: Item
-      sprite: _Carpmosia/Objects/Weapons/Melee/Shields/makeshift-shield.rsi # Carpmosia-edit - Suit slot shields
-      #heldPrefix: metal # Carpmosia-edit - Suit slot shields
+      heldPrefix: metal
     # Carpmosia-start - Suit slot shields
     - type: Clothing
       sprite: _Carpmosia/Objects/Weapons/Melee/Shields/makeshift-shield.rsi # Carpmosia-edit - Suit slot shields
