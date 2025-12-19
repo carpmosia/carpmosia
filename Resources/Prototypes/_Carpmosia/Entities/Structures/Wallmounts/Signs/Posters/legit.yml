@@ -1,0 +1,7 @@
+- type: entity
+  parent: PosterBase
+  id: BaseCarpPosterLegit
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/legit.rsi
