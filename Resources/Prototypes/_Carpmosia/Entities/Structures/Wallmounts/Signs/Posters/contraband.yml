@@ -1,7 +1,7 @@
 - type: entity
+  abstract: true
   parent: PosterBase
   id: BaseCarpPosterContra
-  abstract: true
   components:
   - type: Sprite
     sprite: _Carpmosia/Structures/Wallmounts/Posters/contraband.rsi
