@@ -6,12 +6,12 @@
   abstract: true
   components:
     - type: Sprite
-      sprite: _Carpmosia/Objects/Weapons/Melee/Shields/riot-shield.rsi # Carpmosia-edit - Suit slot shields
-      state: icon # Carpmosia-edit - Suit slot shields
+      sprite: Objects/Weapons/Melee/shields.rsi
+      state: riot-icon
     - type: Item
-      sprite: _Carpmosia/Objects/Weapons/Melee/Shields/riot-shield.rsi # Carpmosia-edit - Suit slot shields
+      sprite: Objects/Weapons/Melee/shields.rsi
       size: Ginormous
-      #heldPrefix: riot # Carpmosia-edit - Suit slot shields
+      heldPrefix: riot
     - type: Blocking
       passiveBlockModifier:
         coefficients:
@@ -90,11 +90,9 @@
   description: A shield built for withstanding lasers, but not much else.
   components:
     - type: Sprite
-      sprite: _Carpmosia/Objects/Weapons/Melee/Shields/riot-laser-shield.rsi # Carpmosia-edit - Suit slot shields
-      state: icon # Carpmosia-edit - Suit slot shields
+      state: riot_laser-icon
     - type: Item
-      sprite: _Carpmosia/Objects/Weapons/Melee/Shields/riot-laser-shield.rsi # Carpmosia-edit - Suit slot shields
-      #heldPrefix: riot_laser # Carpmosia-edit - Suit slot shields
+      heldPrefix: riot_laser
     # Carpmosia-start - Suit slot shields
     - type: Clothing
       sprite: _Carpmosia/Objects/Weapons/Melee/Shields/riot-laser-shield.rsi
@@ -116,11 +114,9 @@
   description: A shield built for protecting against ballistics, but not much else.
   components:
     - type: Sprite
-      sprite: _Carpmosia/Objects/Weapons/Melee/Shields/riot-bullet-shield.rsi # Carpmosia-edit - Suit slot shields
-      state: icon # Carpmosia-edit - Suit slot shields
+      state: riot_bullet-icon
     - type: Item
-      sprite: _Carpmosia/Objects/Weapons/Melee/Shields/riot-bullet-shield.rsi # Carpmosia-edit - Suit slot shields
-      #heldPrefix: riot_bullet # Carpmosia-edit - Suit slot shields
+      heldPrefix: riot_bullet
     # Carpmosia-start - Suit slot shields
     - type: Clothing
       sprite: _Carpmosia/Objects/Weapons/Melee/Shields/riot-bullet-shield.rsi # Carpmosia-edit - Suit slot shields
@@ -144,11 +140,9 @@
   description: A small round wooden makeshift shield.
   components:
     - type: Sprite
-      sprite: _Carpmosia/Objects/Weapons/Melee/Shields/buckler.rsi # Carpmosia-edit - Suit slot shields
-      state: icon # Carpmosia-edit - Suit slot shields
+      state: buckler-icon
     - type: Item
-      sprite: _Carpmosia/Objects/Weapons/Melee/Shields/buckler.rsi # Carpmosia-edit - Suit slot shields
-      #heldPrefix: buckler # Carpmosia-edit - Suit slot shields
+      heldPrefix: buckler
     # Carpmosia-start- Suit slot shields
     - type: Clothing
       sprite: _Carpmosia/Objects/Weapons/Melee/Shields/buckler.rsi
