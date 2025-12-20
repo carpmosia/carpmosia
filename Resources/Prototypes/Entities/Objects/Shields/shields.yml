@@ -95,7 +95,7 @@
       heldPrefix: riot_laser
     # Carpmosia-start - Suit slot shields
     - type: Clothing
-      sprite: _Carpmosia/Objects/Weapons/Melee/Shields/riot-laser-shield.rsi
+      equippedPrefix: riot_laser
     # Carpmosia-end - Suit slot shields
     - type: Blocking
       passiveBlockModifier:
@@ -119,7 +119,7 @@
       heldPrefix: riot_bullet
     # Carpmosia-start - Suit slot shields
     - type: Clothing
-      sprite: _Carpmosia/Objects/Weapons/Melee/Shields/riot-bullet-shield.rsi # Carpmosia-edit - Suit slot shields
+      equippedPrefix: riot_bullet
     # Carpmosia-end - Suit slot shields
     - type: Blocking
       passiveBlockModifier:
@@ -145,7 +145,7 @@
       heldPrefix: buckler
     # Carpmosia-start- Suit slot shields
     - type: Clothing
-      sprite: _Carpmosia/Objects/Weapons/Melee/Shields/buckler.rsi
+      equippedPrefix: buckler
     # Carpmosia-end - Suit slot shields
     - type: Blocking
       passiveBlockModifier:
@@ -199,7 +199,7 @@
   description: A shield made of cardboard. Won't protect you from much.
   components:
     - type: Sprite
-      sprite: Objects/Weapons/Melee/shields.rsi # Carpmosia-edit - Suit slot shields
+      sprite: Objects/Weapons/Melee/shields.rsi
       state: cardshield-icon
     - type: Item
       heldPrefix: cardshield
@@ -257,7 +257,7 @@
       heldPrefix: metal
     # Carpmosia-start - Suit slot shields
     - type: Clothing
-      sprite: _Carpmosia/Objects/Weapons/Melee/Shields/makeshift-shield.rsi # Carpmosia-edit - Suit slot shields
+      equippedPrefix: metal
     # Carpmosia-end - Stui slot shields
     - type: Blocking
       passiveBlockModifier:
@@ -365,7 +365,7 @@
   description: Ratvar oyrffrf lbh jvgu uvf cebgrpgvba.
   components:
     - type: Sprite
-      sprite: Objects/Weapons/Melee/shields.rsi # Carpmosia-edit - Suit slot shields
+      sprite: Objects/Weapons/Melee/shields.rsi
       state: ratvarian-icon
     - type: Item
       heldPrefix: ratvarian
@@ -395,7 +395,7 @@
   description: Eerily glows red... you hear the geometer whispering
   components:
     - type: Sprite
-      sprite: Objects/Weapons/Melee/shields.rsi # Carpmosia-edit - Suit slot shields
+      sprite: Objects/Weapons/Melee/shields.rsi
       state: mirror-icon
     - type: Item
       heldPrefix: mirror
