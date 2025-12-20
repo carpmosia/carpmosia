@@ -1,26 +1,26 @@
 - type: dungeonRoom
-  id: PrefabCargoRight1
+  id: PrefabEvacRight1
   size: 5,5
   atlas: /Maps/_Carpmosia/Procedural/prefab.yml
   offset: 17,1
   ignoreTile: FloorShuttleOrange
   tags:
-  - PrefabCargoRight
+  - PrefabEvacRight
 
 - type: Tag
-  id: PrefabCargoRight
+  id: PrefabEvacRight
 
 - type: entity
-  id: PrefabCargoRightMarker
+  id: PrefabEvacRightMarker
   parent: BasePrefabRightMarker
-  suffix: Cargo, Right
+  suffix: Evac, Right
   components:
   - type: RoomFill
     roomWhitelist:
       tags:
-      - PrefabCargoRight
+      - PrefabEvacRight
   - type: Sprite
     layers:
       - state: arrow
       - state: right
-      - state: cargo
+      - state: evac

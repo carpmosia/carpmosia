@@ -1,26 +1,25 @@
 - type: dungeonRoom
-  id: PrefabScienceLeft1
+  id: PrefabEvacCenter1
   size: 5,5
   atlas: /Maps/_Carpmosia/Procedural/prefab.yml
   offset: 17,1
   ignoreTile: FloorShuttleBlue
   tags:
-  - PrefabScienceLeft
+  - PrefabEvacCenter
 
 - type: Tag
-  id: PrefabScienceLeft
+  id: PrefabEvacCenter
 
 - type: entity
-  id: PrefabScienceLeftMarker
-  parent: BasePrefabLeftMarker
-  suffix: Science, Left
+  id: PrefabEvacCenterMarker
+  parent: BasePrefabCenterMarker
+  suffix: Evac, Center
   components:
   - type: RoomFill
     roomWhitelist:
       tags:
-      - PrefabScienceLeft
+      - PrefabEvacCenter
   - type: Sprite
     layers:
-      - state: arrow
-      - state: left
-      - state: science
+      - state: center
+      - state: evac

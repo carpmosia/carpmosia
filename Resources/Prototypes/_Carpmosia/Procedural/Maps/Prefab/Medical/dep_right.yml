@@ -1,26 +1,26 @@
 - type: dungeonRoom
-  id: PrefabCargoRight1
+  id: PrefabMedicalRight1
   size: 5,5
   atlas: /Maps/_Carpmosia/Procedural/prefab.yml
   offset: 17,1
   ignoreTile: FloorShuttleOrange
   tags:
-  - PrefabCargoRight
+  - PrefabMedicalRight
 
 - type: Tag
-  id: PrefabCargoRight
+  id: PrefabMedicalRight
 
 - type: entity
-  id: PrefabCargoRightMarker
+  id: PrefabMedicalRightMarker
   parent: BasePrefabRightMarker
-  suffix: Cargo, Right
+  suffix: Medical, Right
   components:
   - type: RoomFill
     roomWhitelist:
       tags:
-      - PrefabCargoRight
+      - PrefabMedicalRight
   - type: Sprite
     layers:
       - state: arrow
       - state: right
-      - state: cargo
+      - state: medical

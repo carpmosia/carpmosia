@@ -19,6 +19,8 @@
   name: Prefab department marker
   components:
   - type: RoomFill
+    rotation: true
+    inheritRotation: false
     maxSize: 55, 55
     offset: 0, 0
 
@@ -29,8 +31,8 @@
   name: Prefab department marker
   components:
   - type: RoomFill
-    maxSize: 55, 55
-    offset: 0, 0
+    maxSize: 55, 55 # TODO
+    offset: 0, 0 # TODO
 
 - type: entity
   abstract: true
@@ -39,5 +41,5 @@
   name: Prefab department marker
   components:
   - type: RoomFill
-    maxSize: 55, 55
-    offset: 0, 0
+    maxSize: 55, 55 # TODO
+    offset: 0, 0 # TODO

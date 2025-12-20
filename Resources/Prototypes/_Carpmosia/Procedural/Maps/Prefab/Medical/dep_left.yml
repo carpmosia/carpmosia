@@ -1,26 +1,26 @@
 - type: dungeonRoom
-  id: PrefabScienceLeft1
+  id: PrefabMedicalLeft1
   size: 5,5
   atlas: /Maps/_Carpmosia/Procedural/prefab.yml
   offset: 17,1
   ignoreTile: FloorShuttleBlue
   tags:
-  - PrefabScienceLeft
+  - PrefabMedicalLeft
 
 - type: Tag
-  id: PrefabScienceLeft
+  id: PrefabMedicalLeft
 
 - type: entity
-  id: PrefabScienceLeftMarker
+  id: PrefabMedicalLeftMarker
   parent: BasePrefabLeftMarker
-  suffix: Science, Left
+  suffix: Medical, Left
   components:
   - type: RoomFill
     roomWhitelist:
       tags:
-      - PrefabScienceLeft
+      - PrefabMedicalLeft
   - type: Sprite
     layers:
       - state: arrow
       - state: left
-      - state: science
+      - state: medical
