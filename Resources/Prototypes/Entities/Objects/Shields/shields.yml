@@ -199,7 +199,6 @@
   description: A shield made of cardboard. Won't protect you from much.
   components:
     - type: Sprite
-      sprite: Objects/Weapons/Melee/shields.rsi
       state: cardshield-icon
     - type: Item
       heldPrefix: cardshield
@@ -365,7 +364,6 @@
   description: Ratvar oyrffrf lbh jvgu uvf cebgrpgvba.
   components:
     - type: Sprite
-      sprite: Objects/Weapons/Melee/shields.rsi
       state: ratvarian-icon
     - type: Item
       heldPrefix: ratvarian
@@ -395,7 +393,6 @@
   description: Eerily glows red... you hear the geometer whispering
   components:
     - type: Sprite
-      sprite: Objects/Weapons/Melee/shields.rsi
       state: mirror-icon
     - type: Item
       heldPrefix: mirror
