@@ -32,7 +32,7 @@ public sealed partial class AdminVerbSystem
     private static readonly EntProtoId DefaultChangelingRule = "Changeling";
     private static readonly EntProtoId ParadoxCloneRuleId = "ParadoxCloneSpawn";
     private static readonly EntProtoId DefaultWizardRule = "Wizard";
-    private static readonly EntProtoId DefaultBloodBrotherRule = "BloodBrothers"; // Carpmosia-edit - Port Blood Bound from Harmony
+    private static readonly EntProtoId DefaultBloodBoundRule = "BloodBound"; // Carpmosia-edit - Port Blood Bound from Harmony
     private static readonly ProtoId<StartingGearPrototype> PirateGearId = "PirateGear";
 
     // All antag verbs have names so invokeverb works.
@@ -213,20 +213,20 @@ public sealed partial class AdminVerbSystem
             args.Verbs.Add(paradox);
 
         // Carpmosia-start - Port Blood Bound from Harmony
-        var bloodBrotherName = Loc.GetString("admin-verb-text-make-blood-brother");
-        Verb bloodBrother = new()
+        var bloodBoundName = Loc.GetString("admin-verb-text-make-blood-bound");
+        Verb bloodBound = new()
         {
-            Text = bloodBrotherName,
+            Text = bloodBoundName,
             Category = VerbCategory.Antag,
-            Icon = new SpriteSpecifier.Rsi(new("/Textures/_Carpmosia/Interface/Misc/job_icons.rsi"), "BloodBrother"),
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/_Carpmosia/Interface/Misc/job_icons.rsi"), "BloodBound"),
             Act = () =>
             {
-                _antag.ForceMakeAntag<BloodBrotherRuleComponent>(targetPlayer, DefaultBloodBrotherRule);
+                _antag.ForceMakeAntag<BloodBoundRuleComponent>(targetPlayer, DefaultBloodBoundRule);
             },
             Impact = LogImpact.High,
-            Message = string.Join(": ", bloodBrotherName, Loc.GetString("admin-verb-make-blood-brother")),
+            Message = string.Join(": ", bloodBoundName, Loc.GetString("admin-verb-make-blood-bound")),
         };
-        args.Verbs.Add(bloodBrother);
+        args.Verbs.Add(bloodBound);
         // Carpmosia-end - Port Blood Bound from Harmony
     }
 }

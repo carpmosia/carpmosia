@@ -1,4 +1,4 @@
-using Content.Shared._Carpmosia.BloodBrothers.Components;
+using Content.Shared._Carpmosia.BloodBound.Components;
 using Content.Shared.Actions;
 using Content.Shared.Antag;
 using Content.Shared.IdentityManagement;
@@ -8,9 +8,9 @@ using Content.Shared.Stunnable;
 using Robust.Shared.GameStates;
 using Robust.Shared.Player;
 
-namespace Content.Shared._Carpmosia.BloodBrothers.EntitySystems;
+namespace Content.Shared._Carpmosia.BloodBound.EntitySystems;
 
-public abstract class SharedBloodBrotherSystem : EntitySystem
+public abstract class SharedBloodBoundSystem : EntitySystem
 {
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
@@ -20,45 +20,45 @@ public abstract class SharedBloodBrotherSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<InitialBloodBrotherComponent, MapInitEvent>(OnInitialBloodBrotherMapInit);
-        SubscribeLocalEvent<InitialBloodBrotherComponent, ComponentShutdown>(OnInitialBloodBrotherShutdown);
-        SubscribeLocalEvent<BloodBrotherComponent, ComponentGetStateAttemptEvent>(OnBloodBrotherAttemptGetState);
+        SubscribeLocalEvent<InitialBloodBoundComponent, MapInitEvent>(OnInitialBloodBoundMapInit);
+        SubscribeLocalEvent<InitialBloodBoundComponent, ComponentShutdown>(OnInitialBloodBoundhutdown);
+        SubscribeLocalEvent<BloodBoundComponent, ComponentGetStateAttemptEvent>(OnBloodBoundAttemptGetState);
     }
 
-    private void OnInitialBloodBrotherMapInit(Entity<InitialBloodBrotherComponent> entity, ref MapInitEvent args)
+    private void OnInitialBloodBoundMapInit(Entity<InitialBloodBoundComponent> entity, ref MapInitEvent args)
     {
         _actionsSystem.AddAction(entity, ref entity.Comp.ConvertActionEntity, entity.Comp.ConvertAction);
         _actionsSystem.AddAction(entity, ref entity.Comp.CheckConvertActionEntity, entity.Comp.CheckConvertAction);
         Dirty(entity);
     }
 
-    private void OnInitialBloodBrotherShutdown(Entity<InitialBloodBrotherComponent> entity, ref ComponentShutdown args)
+    private void OnInitialBloodBoundhutdown(Entity<InitialBloodBoundComponent> entity, ref ComponentShutdown args)
     {
         _actionsSystem.RemoveAction(entity.Comp.ConvertActionEntity);
         _actionsSystem.RemoveAction(entity.Comp.CheckConvertActionEntity);
     }
 
-    private void OnBloodBrotherAttemptGetState(
-        Entity<BloodBrotherComponent> entity,
+    private void OnBloodBoundAttemptGetState(
+        Entity<BloodBoundComponent> entity,
         ref ComponentGetStateAttemptEvent args)
     {
         args.Cancelled = !CanGetState(args.Player);
     }
 
-    public void OnBloodBrotherMindshielded(Entity<MindShieldComponent> entity, ref MapInitEvent args)
+    public void OnBloodBoundMindshielded(Entity<MindShieldComponent> entity, ref MapInitEvent args)
     {
-        if (HasComp<InitialBloodBrotherComponent>(entity))
+        if (HasComp<InitialBloodBoundComponent>(entity))
             return;
 
-        if (!TryComp<BloodBrotherComponent>(entity, out var bloodBrother))
+        if (!TryComp<BloodBoundComponent>(entity, out var bloodBound))
             return;
 
         var name = Identity.Entity(entity, EntityManager);
-        RemCompDeferred<BloodBrotherComponent>(entity);
-        if (bloodBrother.DeconversionStunTime != null)
-            _stunSystem.TryUpdateParalyzeDuration(entity, bloodBrother.DeconversionStunTime);
+        RemCompDeferred<BloodBoundComponent>(entity);
+        if (bloodBound.DeconversionStunTime != null)
+            _stunSystem.TryUpdateParalyzeDuration(entity, bloodBound.DeconversionStunTime);
         _popupSystem.PopupEntity(
-            Loc.GetString("blood-brother-break-control", ("name", name)),
+            Loc.GetString("blood-bound-break-control", ("name", name)),
             entity,
             PopupType.MediumCaution);
     }
@@ -69,6 +69,6 @@ public abstract class SharedBloodBrotherSystem : EntitySystem
         if (player?.AttachedEntity is not {} uid)
             return true;
 
-        return HasComp<BloodBrotherComponent>(uid) || HasComp<ShowAntagIconsComponent>(uid);
+        return HasComp<BloodBoundComponent>(uid) || HasComp<ShowAntagIconsComponent>(uid);
     }
 }

@@ -2,13 +2,13 @@ using Content.Server._Carpmosia.Objectives.Components;
 using Content.Server.Mind;
 using Content.Server.Objectives.Systems;
 using Content.Server.Roles;
-using Content.Shared._Carpmosia.BloodBrothers.Components;
-using Content.Shared._Carpmosia.BloodBrothers.EntitySystems;
+using Content.Shared._Carpmosia.BloodBound.Components;
+using Content.Shared._Carpmosia.BloodBound.EntitySystems;
 using Content.Shared._Carpmosia.Roles.Components;
 
-namespace Content.Server._Carpmosia.BloodBrothers.EntitySystems;
+namespace Content.Server._Carpmosia.BloodBound.EntitySystems;
 
-public sealed class BloodBrotherSystem : SharedBloodBrotherSystem
+public sealed class BloodBoundSystem : SharedBloodBoundSystem
 {
     [Dependency] private readonly MindSystem _mindSystem = default!;
     [Dependency] private readonly RoleSystem _roleSystem = default!;
@@ -18,30 +18,30 @@ public sealed class BloodBrotherSystem : SharedBloodBrotherSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<BloodBrotherComponent, ComponentShutdown>(OnBloodBrotherShutdown);
+        SubscribeLocalEvent<BloodBoundComponent, ComponentShutdown>(OnBloodBoundShutdown);
     }
 
-    private void OnBloodBrotherShutdown(Entity<BloodBrotherComponent> entity, ref ComponentShutdown args)
+    private void OnBloodBoundShutdown(Entity<BloodBoundComponent> entity, ref ComponentShutdown args)
     {
         if (!_mindSystem.TryGetMind(entity, out var mindId, out var mind))
             return;
 
-        if (_roleSystem.MindHasRole<BloodBrotherRoleComponent>(mindId, out var role))
+        if (_roleSystem.MindHasRole<BloodBoundRoleComponent>(mindId, out var role))
         {
             // Initial no longer has to worry about keeping the converted alive or on the shuttle
-            if (role.Value.Comp2.Brother != null &&
-                _mindSystem.TryGetMind(role.Value.Comp2.Brother.Value, out _, out var brotherMind))
+            if (role.Value.Comp2.Bound != null &&
+                _mindSystem.TryGetMind(role.Value.Comp2.Bound.Value, out _, out var boundMind))
             {
-                foreach (var objective in brotherMind.Objectives)
+                foreach (var objective in boundMind.Objectives)
                 {
-                    if (!HasComp<BloodBrotherTargetComponent>(objective))
+                    if (!HasComp<BloodBoundTargetComponent>(objective))
                         continue;
 
                     _targetObjectiveSystem.SetTarget(objective, EntityUid.Invalid);
                 }
             }
 
-            _roleSystem.MindRemoveRole<BloodBrotherRoleComponent>(mindId);
+            _roleSystem.MindRemoveRole<BloodBoundRoleComponent>(mindId);
         }
 
         int? objectiveToRemove = null;
@@ -49,7 +49,7 @@ public sealed class BloodBrotherSystem : SharedBloodBrotherSystem
         var i = 0;
         foreach (var objective in mind.Objectives)
         {
-            if (HasComp<ConvertedBloodBrotherObjectiveComponent>(objective))
+            if (HasComp<ConvertedBloodBoundObjectiveComponent>(objective))
             {
                 objectiveToRemove = i;
                 break;

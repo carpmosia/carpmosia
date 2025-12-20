@@ -23,5 +23,5 @@ AntagWizard = Wizard
 AntagMothershipCore = Xenoborg Core
 AntagXenoborg = Xenoborg
 AntagZombie = Zombie
-AntagBloodBrotherInitial = Blood Bound (Initial)
-AntagBloodBrotherConverted = Blood Bound (Converted)
+AntagBloodBoundInitial = Blood Bound (Initial)
+AntagBloodBoundConverted = Blood Bound (Converted)
