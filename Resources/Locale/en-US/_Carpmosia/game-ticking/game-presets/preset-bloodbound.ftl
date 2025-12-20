@@ -1,4 +1,4 @@
-blood-bounds-round-end-agent-name = blood bound
+blood-bound-round-end-agent-name = blood bound
 
 objective-issuer-blood-bound = [color=mediumvioletred]The Blood Oath[/color]
 
@@ -12,7 +12,7 @@ blood-bound-initial-role-greeting =
 
 blood-bound-role-greeting =
     You have been sworn into a blood oath.
-    Listen to your blood bound and help them accomplish their objectives
+    Listen to your blood bound and help them accomplish their objectives.
 
 blood-bound-briefing = Collaborate with your blood bound to accomplish all your objectives.
 
@@ -20,13 +20,13 @@ blood-bound-break-control = {CAPITALIZE(THE($name))} has remembered their true a
 
 # Conversion
 
-blood-bound-convert-failed-no-mind = {CAPITALIZE(THE($converted))} does not have a mind
-blood-bound-convert-failed-already-bound = {CAPITALIZE(THE($converted))} is already a blood bound
-blood-bound-convert-failed-target = {CAPITALIZE(THE($converted))} is your target
-blood-bound-convert-failed-zombie = {CAPITALIZE(THE($converted))} is a zombie
-blood-bound-convert-failed-shielded = {CAPITALIZE(THE($converted))}'s mind is too protected
-blood-bound-convert-failed-dead = {CAPITALIZE(THE($converted))} is dead
-blood-bound-convert-failed-preference = {CAPITALIZE(THE($converted))}'s mind is unaffected by the conversion
+blood-bound-convert-failed-no-mind = {CAPITALIZE(THE($converted))} does not have a mind.
+blood-bound-convert-failed-already-bound = {CAPITALIZE(THE($converted))} is already a blood bound.
+blood-bound-convert-failed-target = {CAPITALIZE(THE($converted))} is your target.
+blood-bound-convert-failed-zombie = {CAPITALIZE(THE($converted))} is a zombie.
+blood-bound-convert-failed-shielded = {CAPITALIZE(THE($converted))}'s mind is too protected.
+blood-bound-convert-failed-dead = {CAPITALIZE(THE($converted))} is dead.
+blood-bound-convert-failed-preference = {CAPITALIZE(THE($converted))}'s mind is unaffected by the conversion.
 
-blood-bound-convert-convertible = {CAPITALIZE(THE($converted))} is convertible
+blood-bound-convert-convertible = {CAPITALIZE(THE($converted))} is convertible.
 blood-bound-conversion-popup = {CAPITALIZE(THE($converter))} grabs {THE($converted)} firmly and digs deep symbols into their arms.

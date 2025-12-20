@@ -1,4 +1,4 @@
-guide-entry-blood-bounds = Blood Bound
+guide-entry-blood-bound = Blood Bound
 
 guide-entry-carpmosia-rules = Server Rules
 
