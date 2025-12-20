@@ -1,0 +1,13 @@
+- type: entity
+  name: pawesome rubber stamp
+  parent: RubberStampBase
+  id: RubberStampPawesome
+  description: Even the most serious and stern bureaucracy enjoyers feel the need to get a little silly every once in a while!
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-pawesome
+    stampedColor: "#e607ae"
+    stampState: "paper_stamp-pawesome"
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Misc/stamps.rsi
+    state: stamp-pawesome
