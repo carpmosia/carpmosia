@@ -11,6 +11,9 @@
     sprite: _Carpmosia/Markers/room.rsi
     layers:
       - state: arrow
+  - type: Tag
+    tags:
+    - ForceNoFixRotations
 
 - type: entity
   abstract: true
@@ -31,6 +34,9 @@
     rotation: true
     inheritRotation: false
     offset: 0, 0
+  - type: Tag
+    tags:
+    - ForceFixRotations
 
 - type: entity
   abstract: true

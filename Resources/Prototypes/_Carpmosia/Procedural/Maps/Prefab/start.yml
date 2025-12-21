@@ -1,17 +1,8 @@
 - type: dungeonRoom
   id: PrefabStart1
-  size: 5,5
+  size: 7,7
   atlas: /Maps/_Carpmosia/Procedural/prefab.yml
   offset: 1,1
-  ignoreTile: FloorShuttleBlack
-  tags:
-  - PrefabStart
-
-- type: dungeonRoom
-  id: PrefabStart2
-  size: 5,5
-  atlas: /Maps/_Carpmosia/Procedural/prefab.yml
-  offset: 7,1
   ignoreTile: FloorShuttleBlack
   tags:
   - PrefabStart
@@ -26,8 +17,8 @@
   components:
   - type: RoomFill
     rotation: true
-    minSize: 5, 5
-    maxSize: 5, 5
+    minSize: 7, 7
+    maxSize: 7, 7
     roomWhitelist:
       tags:
       - PrefabStart
