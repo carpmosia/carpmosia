@@ -95,6 +95,35 @@
     slots:
     - HEAD
 
+- type: weightedRandomFillSolution
+  id: RandomFillAxelPlushie
+  fills:
+    # Silver
+    - quantity: 5
+      weight: 20
+      reagents:
+      - Nothing
+    # Black
+    - quantity: 5
+      weight: 20
+      reagents:
+      - Iron
+    # Yellow
+    - quantity: 5
+      weight: 20
+      reagents:
+      - Sulfur
+    # Blue
+    - quantity: 5
+      weight: 20
+      reagents:
+      - Water
+    # Pink
+    - quantity: 5
+      weight: 20
+      reagents:
+      - Sigynate
+
 - type: entity
   parent: PlushieLizard
   id: PlushieLizardAxel
@@ -132,19 +161,24 @@
     soundHit: *PlushieLizardAxelSound
   - type: SolutionContainerManager
     solutions:
-      beaker:
+      coloring:
+        name: coloring
         maxVol: 30
+  - type: RandomFillSolution
+    solution: coloring
+    weightedRandomId: RandomFillAxelPlushie
   - type: MixableSolution
-    solution: beaker
+    solution: coloring
   - type: ExaminableSolution
-    solution: beaker
+    solution: coloring
     exactVolume: true
   - type: DrawableSolution
-    solution: beaker
+    solution: coloring
   - type: InjectableSolution
-    solution: beaker
+    solution: coloring
   - type: Appearance
   - type: SolutionContainerVisuals
+    solutionName: coloring
     maxFillLevels: 2
     fillBaseName: icon
     inHandsMaxFillLevels: 2
