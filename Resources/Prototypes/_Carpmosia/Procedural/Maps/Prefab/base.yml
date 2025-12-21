@@ -15,31 +15,35 @@
 - type: entity
   abstract: true
   parent: BasePrefabMarker
-  id: BasePrefabCenterMarker
+  id: BasePrefabDepMarker
   name: Prefab department marker
+  components:
+  - type: RoomFill
+    minSize: 55, 55
+    maxSize: 55, 55
+
+- type: entity
+  abstract: true
+  parent: BasePrefabDepMarker
+  id: BasePrefabCenterMarker
   components:
   - type: RoomFill
     rotation: true
     inheritRotation: false
-    maxSize: 55, 55
     offset: 0, 0
 
 - type: entity
   abstract: true
-  parent: BasePrefabMarker
+  parent: BasePrefabDepMarker
   id: BasePrefabLeftMarker
-  name: Prefab department marker
   components:
   - type: RoomFill
-    maxSize: 55, 55 # TODO
-    offset: 0, 0 # TODO
+    offset: 27, 47
 
 - type: entity
   abstract: true
-  parent: BasePrefabMarker
+  parent: BasePrefabDepMarker
   id: BasePrefabRightMarker
-  name: Prefab department marker
   components:
   - type: RoomFill
-    maxSize: 55, 55 # TODO
-    offset: 0, 0 # TODO
+    offset: 47, 26
