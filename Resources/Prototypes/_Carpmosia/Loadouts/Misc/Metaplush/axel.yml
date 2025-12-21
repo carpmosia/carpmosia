@@ -16,3 +16,12 @@
     back:
     - PlushieLizardAxel
   groupBy: "metaplush"
+
+- type: loadout
+  id: HatPlushieAxel
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: LizardPlushieAxel
+  equipment:
+    head: PlushieLizardAxel
+  groupBy: "metaplush"

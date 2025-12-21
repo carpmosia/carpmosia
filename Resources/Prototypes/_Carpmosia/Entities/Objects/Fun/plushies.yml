@@ -145,11 +145,11 @@
     solution: beaker
   - type: Appearance
   - type: SolutionContainerVisuals
-    maxFillLevels: 1
+    maxFillLevels: 2
     fillBaseName: icon
-    inHandsMaxFillLevels: 1
+    inHandsMaxFillLevels: 2
     inHandsFillBaseName: -fill-
-    equippedMaxFillLevels: 1
+    equippedMaxFillLevels: 2
     equippedFillBaseName: -fill-
   - type: Clothing
     quickEquip: false
