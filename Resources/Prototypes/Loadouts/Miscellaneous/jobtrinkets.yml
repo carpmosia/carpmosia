@@ -499,29 +499,3 @@
     back:
     - PlushieLizardJobPsychologist
   groupBy: "lizards" # Carpmosia-edit - Organize lizard plushies
-
-- type: loadout
-  id: LizardPlushieBoxer
-  effects:
-    - !type:JobRequirementLoadoutEffect
-      requirement:
-        !type:RoleTimeRequirement
-        role: JobBoxer
-        time: 72000 # 20hr
-  storage:
-    back:
-      - PlushieLizardJobBoxer
-  groupBy: "lizards" # Carpmosia-edit - Organize lizard plushies
-
-- type: loadout
-  id: LizardPlushieZookeeper
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
-      role: JobZookeeper
-      time: 72000 # 20hr
-  storage:
-    back:
-    - PlushieLizardJobZookeeper
-  groupBy: "lizards" # Carpmosia-edit - Organize lizard plushies
