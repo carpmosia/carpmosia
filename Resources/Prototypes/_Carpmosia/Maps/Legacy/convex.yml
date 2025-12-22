@@ -14,7 +14,7 @@
             prefixCreator: '14-SM'
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency_delta.yml
-        - type: StationJobs # 74 jobs total w/o latejoins & interns, 93 jobs total w/ latejoins & interns
+        - type: StationJobs # 72 jobs total w/o latejoins & interns, 91 jobs total w/ latejoins & interns
           availableJobs:
             #command (7)
             Captain: [ 1, 1 ]
@@ -24,7 +24,7 @@
             ChiefEngineer: [ 1, 1 ]
             ResearchDirector: [ 1, 1 ]
             Quartermaster: [ 1, 1 ]
-            #service (18 - 19)
+            #service (16 - 17)
             Bartender: [ 2, 2 ]
             Botanist: [ 3, 3 ]
             Chef: [ 2, 2 ]
