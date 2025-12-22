@@ -76,10 +76,10 @@
     damageContainer: Biological
     damageModifierSet: Moth
   - type: Bloodstream
-    bloodReagents:
+    bloodReferenceSolution:
       reagents:
       - ReagentId: InsectBlood
-        Quantity: 1
+        Quantity: 20
   - type: Respirator
     minSaturation: 5.0
   - type: PressureImmunity

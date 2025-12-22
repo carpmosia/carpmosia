@@ -86,12 +86,10 @@
       Dead:
         Base: jorge-dead
   - type: Bloodstream
-    bloodReagents:
+    bloodReferenceSolution:
       reagents:
       - ReagentId: Sap
-        Quantity: 1
-    bloodMaxVolume: 50
-    chemicalMaxVolume: 30
+        Quantity: 50
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Diona
