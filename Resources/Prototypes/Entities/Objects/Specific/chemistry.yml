@@ -199,6 +199,96 @@
           Quantity: 60 # Carpmosia-edit - reagentStorage
 
 - type: entity
+  parent: Beaker
+  id: BeakerSmallArith
+  suffix: arithrazine
+  components:
+  - type: Label
+    currentLabel: reagent-name-arithrazine
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 60 # Carpmosia-edit - reagentStorage
+        reagents:
+        - ReagentId: Arithrazine
+          Quantity: 60 # Carpmosia-edit - reagentStorage
+
+- type: entity
+  parent: Beaker
+  id: BeakerSmallSigy
+  suffix: sigynate
+  components:
+  - type: Label
+    currentLabel: reagent-name-sigynate
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 60 # Carpmosia-edit - reagentStorage
+        reagents:
+        - ReagentId: Sigynate
+          Quantity: 60 # Carpmosia-edit - reagentStorage
+
+- type: entity
+  parent: Beaker
+  id: BeakerSmallPhal
+  suffix: phalanximine
+  components:
+  - type: Label
+    currentLabel: reagent-name-phalanximine
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 60 # Carpmosia-edit - reagentStorage
+        reagents:
+        - ReagentId: Phalanximine
+          Quantity: 60 # Carpmosia-edit - reagentStorage
+
+- type: entity
+  parent: Beaker
+  id: BeakerSmallDiph
+  suffix: diphenhydramine
+  components:
+  - type: Label
+    currentLabel: reagent-name-diphenhydramine
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 60 # Carpmosia-edit - reagentStorage
+        reagents:
+        - ReagentId: Diphenhydramine
+          Quantity: 60 # Carpmosia-edit - reagentStorage
+
+- type: entity
+  parent: Beaker
+  id: BeakerSmallBruiz
+  suffix: bruizine
+  components:
+  - type: Label
+    currentLabel: reagent-name-bruizine
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 60 # Carpmosia-edit - reagentStorage
+        reagents:
+        - ReagentId: Bruizine
+          Quantity: 60 # Carpmosia-edit - reagentStorage
+
+- type: entity
+  parent: Beaker
+  id: BeakerSmallLace
+  suffix: lacerinol
+  components:
+  - type: Label
+    currentLabel: reagent-name-lacerinol
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 60 # Carpmosia-edit - reagentStorage
+        reagents:
+        - ReagentId: Lacerinol
+          Quantity: 60 # Carpmosia-edit - reagentStorage
+
+- type: entity
   name: large beaker
   parent: BaseBeaker
   description: Used to contain a large amount of chemicals or solutions.
