@@ -1,7 +1,7 @@
 <Document>
   # Space Law: Crime Listing
-  Crime codes are colored by linked crime groups, which are collections of non-stackable crimes. Suffixes are also included in the Quick Crime Guide to identify linked crimes.
-	<!-- TODO edit the document like at all -->
+  Crime codes are linked into crime groups, which cannot be stacked in a sentence. Crime groups are denoted by color and letter suffix. Below the table is a guide on sentencing and details on every code. Ask the present Warden, Head of Security, or a Lawyer if you're not sure about the sentence you're placing.
+	<!-- TODO reformat like all of the styling -->
   ## Quick Crime Guide
   <Table Columns="6">
     <ColorBox>
@@ -262,6 +262,15 @@
       </Box>
     </ColorBox>
   </Table>
+
+  ## Sentencing
+  The most common consequence of breaking the law is being placed in GenPop with a timed sentence. Prisoners have their belongings placed in a locker, and given a prisoner ID letting them in, which automatically lets them out when the sentence expires.
+
+  Timed sentences are defined with a [bold]maximum[/bold] time, determined by the charges applied. It is often better to place reduced sentences for people compliant during an arrest or similar.
+
+  Fgs fds. I can't think of the proper wording right now :(. Something something repeat charges let you tack on 3 minutes per repeat, 20+ minutes is eligible for perma, capital is always eligible for perma or an execution if approved by the captain. Probably offload choice of execution method to a law clause. Can you IMAGINE this actually being in the guidebook on live, of course I'll bulldoze this paragraph, probably the whole section.
+
+  When placing a sentence on a prisoner, be sure to inform the Warden and/or the Head of Security, they have authority in deciding the final sentence.
 
   ## Minor Crimes
   - Warnings should be issued for a first offense.
