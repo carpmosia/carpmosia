@@ -28,10 +28,11 @@ public sealed class RandomGiftSystem : EntitySystem
 
     private readonly List<string> _possibleGiftsSafe = new();
     private readonly List<string> _possibleGiftsUnsafe = new();
+    // Carpmosia-start - Carpmas Presents
     private readonly List<string> _possibleGiftsCurated = new();
     private readonly List<string> _blacklist = ["Throngler", "WeaponMinigun", "NuclearGrenade",
      "CartridgeMinigun", "NukeCodePaper", "NukeCodePaperStation", "TraitorCodePaper", "AllTraitorCodesPaper", "BoxFolderNuclearCodes"];
-
+    // Carpmosia-end - Carpmas Presents
     /// <inheritdoc/>
     public override void Initialize()
     {
