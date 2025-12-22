@@ -1,0 +1,8 @@
+# Basically unsafe present, sans some fucked up stuff
+- type: entity
+  id: PresentRandomCurated
+  parent: PresentRandomUnsafe
+  suffix: Filled, curated items
+  components:
+    - type: RandomGift
+      CuratedMode: true
