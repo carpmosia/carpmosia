@@ -95,40 +95,11 @@
     slots:
     - HEAD
 
-- type: weightedRandomFillSolution
-  id: RandomFillAxelPlushie
-  fills:
-    # Silver
-    - quantity: 5
-      weight: 20
-      reagents:
-      - Nothing
-    # Black
-    - quantity: 5
-      weight: 20
-      reagents:
-      - Iron
-    # Yellow
-    - quantity: 5
-      weight: 20
-      reagents:
-      - Sulfur
-    # Blue
-    - quantity: 5
-      weight: 20
-      reagents:
-      - Water
-    # Pink
-    - quantity: 5
-      weight: 20
-      reagents:
-      - Sigynate
-
 - type: entity
-  parent: PlushieLizard
+  parent: BasePlushie
   id: PlushieLizardAxel
   name: cursed axolotl plushie
-  description: An... adorable...? stuffed toy that resembles a lizardperson, specifically a certain doctor. It turns to look RIGHT AT YOU.
+  description: An... adorable...? stuffed toy that resembles a lizardperson, specifically a certain doctor. It turns to look RIGHT AT YOU. It can change colors based on solutions injected into it.
   components:
   - type: Sprite
     sprite: _Carpmosia/Objects/Fun/Plushies/axel.rsi
@@ -161,12 +132,20 @@
     soundHit: *PlushieLizardAxelSound
   - type: SolutionContainerManager
     solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
+        - ReagentId: Blood
+          Quantity: 10
       coloring:
-        name: coloring
         maxVol: 30
-  - type: RandomFillSolution
-    solution: coloring
-    weightedRandomId: RandomFillAxelPlushie
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 30
   - type: MixableSolution
     solution: coloring
   - type: ExaminableSolution
@@ -190,3 +169,13 @@
     sprite: _Carpmosia/Objects/Fun/Plushies/axel.rsi
     slots:
     - HEAD
+  - type: Speech
+    speechVerb: Reptilian
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: LizardPlushie
+  - type: Tag
+    tags:
+    - Payload
+    - ClothMade
+    - PlushieLizard
