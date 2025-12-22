@@ -14,11 +14,11 @@ reagent-name-bicaridine = bicaridine
 reagent-desc-bicaridine = An analgesic which is highly effective at treating brute damage. It's useful for stabilizing people who have been severely beaten, as well as treating less life-threatening injuries.
 
 reagent-name-cryoxadone = cryoxadone
-## Carpmosia-edit - New Cryonics Plus
+# Carpmosia-edit - New Cryonics Plus
 reagent-desc-cryoxadone = An essential precursor in all cryonics medicine. Used to treat bloodloss and asphyxiation, as well as to restore bodily fluids such as blood. It can treat and rejuvenate plants when applied in small doses. Works regardless of the patient being alive or dead.
 
 reagent-name-doxarubixadone = doxarubixadone
-## Carpmosia-edit - New Cryonics Plus
+# Carpmosia-edit - New Cryonics Plus
 reagent-desc-doxarubixadone = A cryonics medicine used to undo cellular damage caused by dangerous gasses and chemicals. Works regardless of the patient being alive or dead.
 
 reagent-name-dermaline = dermaline
