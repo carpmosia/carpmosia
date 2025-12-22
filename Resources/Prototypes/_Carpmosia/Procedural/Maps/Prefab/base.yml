@@ -22,8 +22,8 @@
   name: Prefab department marker
   components:
   - type: RoomFill
-    minSize: 55, 55
-    maxSize: 55, 55
+    minSize: 57, 57
+    maxSize: 57, 57
 
 - type: entity
   abstract: true
@@ -44,7 +44,7 @@
   id: BasePrefabLeftMarker
   components:
   - type: RoomFill
-    offset: 29, 51
+    offset: 28, 49
 
 - type: entity
   abstract: true
@@ -52,4 +52,4 @@
   id: BasePrefabRightMarker
   components:
   - type: RoomFill
-    offset: 51, 28
+    offset: 49, 28
