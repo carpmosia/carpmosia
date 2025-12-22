@@ -31,9 +31,9 @@ public sealed partial class RandomGiftComponent : Component
 
     // Carpmosia-start - Carpmas Presents
     /// <summary>
-    /// Whether or not the gift should contain debug items (Throngler, Minigun etc).
+    /// Whether or not the gift should contain debug items(Bang, gibstick) or some restricted items (Throngler, Minigun etc).
     /// </summary>
-    [DataField("CuratedMode", required: false), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public bool CuratedMode;
     // Carpmosia-end - Carpmas Presents
 
