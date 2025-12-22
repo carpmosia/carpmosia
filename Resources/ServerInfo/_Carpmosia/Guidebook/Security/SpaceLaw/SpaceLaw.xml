@@ -21,7 +21,6 @@
 	## 1. Treatment of Prisoners
 
 	- 1.1. Prisoners must be granted adequate medical care in confinement.
-
 	- - 1.1.1. Prisoners must have their corporeal wounds treated before or during confinement.
 	- - 1.1.2. Prisoners must have access to medical equipment necessary for survival, e.g. breath masks and internals.
 	- - 1.1.3. Impaired prisoners must be granted disability aides while in confinement, e.g. walking canes and/or glasses.
@@ -29,7 +28,7 @@
 	- 1.2. Prisoners must be granted adequate sustenance of food & water while in confinement.
 	- - 1.2.1. Sustenance granted to inmates must be consumable and digestible by the inmate, e.g. allicin or theobromine free food granted to allergic species, cloth or fiber granted to Moth People.
 
-	- 1.3. Prisoners must not be <!-- TODO textlink -->[color=#7af][bold]restrained[/bold][/color] while in confinement, with the following exceptions.
+	- 1.3. Prisoners must not be <!-- TODO textlink -->[color=#7af][bold]restrained[/bold][/color] while in confinement.
 	- - 1.3.1. Prisoners may be temporarily restrained when being relocated between confinement areas.
 	- - 1.3.2. Prisoners may be temporarily restrained to mitigate risk to life or limb of other persons or restrained prisoner.
 	- - 1.3.3. Prisoners may be temporarily restrained if the confinement area is unable to contain the prisoner, due to structural damage or otherwise.
@@ -60,14 +59,21 @@
 	<!-- TODO the main goals with this section are prohibiting cadets from lethaling people in an arrest if the fugitive isn't using lethals on them. idk if there's enough adjacent clauses to make up a section. -->
 	<!-- might be better renamed to 'Apprehension and Conduct' depending on what it ends up outlining? -->
 
+	- 2.1. Lethal force may not be employed in arrests, except in retaliation to lethal force or to preserve loss of life or limb. <!-- TODO shatter this into subclauses later -->
+
 	## 3. Incarceration and Sentencing
+	<!-- TODO how sentencing works should be explained in the crime list, under the code table. this section should function as an annex guiding and pressuring away from common shitsec moments -->
 
 	- 3.1. Prisoners must be made aware of their sentence when placed in confinement. <!-- technically arbitrary but this might be best placed further down the list -->
 	<!-- what if processing officer/warden doesn't know the charges? (arresting officer skissue) -->
 	- - 3.1.1. Processing officers are responsible for entering the charges on prionser ID cards in a legible manner. <!-- TODO what i mean is slapping "3-01 3-04" on a prisoner ID and knowing what the numbers mean is up to the criminal but idk how to convey that best -->
 	- - 3.1.2. Prisoners must be told the length of their sentence and what is done with their items. <!-- i was tempted to append 'verbally or otherwise' but that's not really necessary is it -->
 
-	- 3.2. 
+	- 3.2. Charges repeated
+
+	- 3.3. Sentences for charges totalling over 20 minutes may instead be issued as permanent confinement.
+	- - 3.3.1. Charges of Severity 5, Capital, may always be issued to permanent confinement. <!-- clarification for redundancy -->
+	- - 3.3.2. Added time from repeat offenses counts toward permanent confinement eligibility. <!-- you can perma the tider after 7 counts of 1-07 -->
 
 	## 4. Search and Seizure.
 	<!-- TODO main goals with this section are defined search procedures. when can you personal search & dept. search, when can you confiscate items, et cetera -->
@@ -91,7 +97,7 @@
 
 
 	## Styling Test
-
+	<!-- THIS WILL BE DELETED LATER! THIS IS A COPY OF SECTION 1 AS A PLACEHOLDER! THIS IS FOR FIGURING OUT HOW IT RENDERS -->
 	<Table Columns="2">
 		<ColorBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 		1.1.
