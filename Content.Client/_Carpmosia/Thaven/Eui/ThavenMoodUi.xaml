@@ -1,7 +1,11 @@
-<controls:FancyWindow xmlns="https://spacestation14.io"
-        xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
-        Title="{Loc thaven-moods-admin-ui-title}"
-        MinSize="560 400">
+<ui:FancyWindow
+    xmlns="https://spacestation14.io"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Content.Client.Thaven.Eui.ThavenMoodUi"
+    xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
+    Title="{Loc thaven-moods-admin-ui-title}"
+    MinSize="560 400"
+>
     <!-->
     this shit does not layout properly unless I put the horizontal boxcontainer inside of a vertical one
     ????
@@ -17,4 +21,4 @@
             <BoxContainer Orientation="Vertical" Name="MoodContainer" VerticalExpand="True" />
         </ScrollContainer>
     </BoxContainer>
-</controls:FancyWindow>
+</ui:FancyWindow>

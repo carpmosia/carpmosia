@@ -1,6 +1,10 @@
-<Control xmlns="https://spacestation14.io"
-        xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
-        Margin="0 0 0 10">
+<Control
+    xmlns="https://spacestation14.io"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Content.Client.Thaven.MoodDisplay"
+    xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
+    Margin="0 0 0 10"
+>
     <PanelContainer VerticalExpand="True" StyleClasses="BackgroundDark">
         <BoxContainer Orientation="Vertical"
                 HorizontalExpand="True"
