@@ -1,0 +1,170 @@
+- type: entity
+  save: false
+  name: Urist McEars
+  parent: BaseMobSpeciesOrganic
+  id: BaseMobThaven
+  abstract: true
+  components:
+  - type: HumanoidAppearance
+    species: Thaven
+    hideLayersOnEquip:
+    - Hair
+    - Snout
+  - type: Hunger
+  - type: Thirst
+  - type: Icon
+    sprite: _Carpmosia/Mobs/Species/Thaven/parts.rsi # Starlight sprites
+    state: full
+  - type: Body
+    prototype: Thaven
+    requiredLegs: 2
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+      - id: FoodThavenMeat
+        amount: 5
+  - type: Speech
+    speechSounds: Alto
+  - type: TypingIndicator
+    proto: guardian
+  - type: Vocal
+    sounds:
+      Male: MaleThaven
+      Female: FemaleThaven
+      Unsexed: MaleThaven
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Thaven
+  - type: MeleeWeapon
+    attackRate: 0.55
+    soundHit:
+      collection: Punch
+    angle: 30
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Blunt: 0 # TODO - what???
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    scale: 1, 1.05
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 120
+        restitution: 0.0
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: ThavenMoods
+  - type: StaminaDamageOnHit
+    damage: 18
+  - type: Respirator
+    damage:
+      types:
+        Asphyxiation: 2
+    damageRecovery:
+      types:
+        Asphyxiation: -1.0
+  - type: Inventory
+    templateId: thaven
+    displacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Thaven/displacement.rsi # Starlight sprites
+            state: jumpsuit
+      head:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Thaven/displacement.rsi # Starlight sprites
+            state: head
+      eyes:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Thaven/displacement.rsi # Starlight sprites
+            state: eyes
+      ears:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Thaven/displacement.rsi # Starlight sprites
+            state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Thaven/displacement.rsi # Starlight sprites
+            state: mask
+      neck:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Thaven/displacement.rsi # Starlight sprites
+            state: neck
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Thaven/displacement.rsi # Starlight sprites
+            state: outerclothing_hardsuit
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Thaven/displacement.rsi # Starlight sprites
+            state: hands
+
+
+- type: entity
+  parent: BaseSpeciesDummy
+  id: MobThavenDummy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HumanoidAppearance
+    species: Thaven
+    hideLayersOnEquip:
+    - Hair
+    - Snout
+  - type: Inventory
+    templateId: thaven
+    displacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Thaven/displacement.rsi # Starlight sprites
+            state: jumpsuit
+      head:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Thaven/displacement.rsi # Starlight sprites
+            state: head
+      eyes:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Thaven/displacement.rsi # Starlight sprites
+            state: eyes
+      ears:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Thaven/displacement.rsi # Starlight sprites
+            state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Thaven/displacement.rsi # Starlight sprites
+            state: mask
+      neck:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Thaven/displacement.rsi # Starlight sprites
+            state: neck
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Thaven/displacement.rsi # Starlight sprites
+            state: outerclothing_hardsuit
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Thaven/displacement.rsi # Starlight sprites
+            state: hands
