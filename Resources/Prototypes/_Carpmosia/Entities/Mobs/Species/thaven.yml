@@ -21,12 +21,12 @@
   - type: Butcherable
     butcheringType: Spike
     spawned:
-      - id: FoodThavenMeat
-        amount: 5
+    - id: FoodThavenMeat
+      amount: 5
   - type: Speech
-    speechSounds: Alto
+    speechSounds: Alto # THAVENTODO: do we have that?
   - type: TypingIndicator
-    proto: guardian
+    proto: guardian # THAVENTODO: do we have that?
   - type: Vocal
     sounds:
       Male: MaleThaven
