@@ -1310,36 +1310,38 @@
           - !type:MobStateCondition
             mobstate: Dead
 
-- type: reagent
-  id: Arcryox
-  name: reagent-name-arcryox
-  group: Medicine
-  desc: reagent-desc-arcryox
-  physicalDesc: reagent-physical-desc-arcryox
-  flavor: medicine
-  color: "#0cbfe9"
-  worksOnTheDead: true
-  metabolisms:
-    Medicine:
-      effects:
-      - !type:EvenHealthChange
-        conditions:
-        - !type:TemperatureCondition
-          max: 213.0
-        - !type:TotalDamageCondition
-          min: 199.9
-        damage:
-          Brute: -2
-          Burn: -2
-      - !type:EvenHealthChange
-        conditions:
-        - !type:TemperatureCondition
-          max: 213.0
-        - !type:TotalDamageCondition
-          min: 500
-        damage:
-          Brute: -4
-          Burn: -4
+# Carpmosia-start - Disable arcryox
+#- type: reagent
+#  id: Arcryox
+#  name: reagent-name-arcryox
+#  group: Medicine
+#  desc: reagent-desc-arcryox
+#  physicalDesc: reagent-physical-desc-arcryox
+#  flavor: medicine
+#  color: "#0cbfe9"
+#  worksOnTheDead: true
+#  metabolisms:
+#    Medicine:
+#      effects:
+#      - !type:EvenHealthChange
+#        conditions:
+#        - !type:TemperatureCondition
+#          max: 213.0
+#        - !type:TotalDamageCondition
+#          min: 199.9
+#        damage:
+#          Brute: -2
+#          Burn: -2
+#      - !type:EvenHealthChange
+#        conditions:
+#        - !type:TemperatureCondition
+#          max: 213.0
+#        - !type:TotalDamageCondition
+#          min: 500
+#        damage:
+#          Brute: -4
+#          Burn: -4
+# Carpmosia-end - Disable arcryox
 
 - type: reagent
   id: Necrosol
