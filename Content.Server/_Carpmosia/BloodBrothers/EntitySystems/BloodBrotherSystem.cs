@@ -1,12 +1,12 @@
-using Content.Server._Carpmosia.Objectives.Components;
 using Content.Server.Mind;
+using Content.Server.Objectives.Components;
 using Content.Server.Objectives.Systems;
 using Content.Server.Roles;
-using Content.Shared._Carpmosia.BloodBrothers.Components;
-using Content.Shared._Carpmosia.BloodBrothers.EntitySystems;
-using Content.Shared._Carpmosia.Roles.Components;
+using Content.Shared.BloodBrothers.Components;
+using Content.Shared.BloodBrothers.EntitySystems;
+using Content.Shared.Roles.Components;
 
-namespace Content.Server._Carpmosia.BloodBrothers.EntitySystems;
+namespace Content.Server.BloodBrothers.EntitySystems;
 
 public sealed class BloodBrotherSystem : SharedBloodBrotherSystem
 {

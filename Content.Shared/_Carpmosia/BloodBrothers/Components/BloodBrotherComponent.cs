@@ -2,7 +2,7 @@ using Content.Shared.StatusIcon;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Carpmosia.BloodBrothers.Components;
+namespace Content.Shared.BloodBrothers.Components;
 
 [RegisterComponent, NetworkedComponent]
 [AutoGenerateComponentState]

@@ -1,4 +1,3 @@
-using Content.Server._Carpmosia.GameTicking.Rules.Components; // Carpmosia-edit - Harmony Blood Bound
 using Content.Server.Antag;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules.Components;

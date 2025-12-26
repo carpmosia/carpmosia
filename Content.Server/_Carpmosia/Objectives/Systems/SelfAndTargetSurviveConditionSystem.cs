@@ -1,9 +1,8 @@
-using Content.Server._Carpmosia.Objectives.Components;
-using Content.Server.Objectives.Systems;
+using Content.Server.Objectives.Components;
 using Content.Shared.Mind;
 using Content.Shared.Objectives.Components;
 
-namespace Content.Server._Carpmosia.Objectives.Systems;
+namespace Content.Server.Objectives.Systems;
 
 public sealed class SelfAndTargetSurviveConditionSystem : EntitySystem
 {

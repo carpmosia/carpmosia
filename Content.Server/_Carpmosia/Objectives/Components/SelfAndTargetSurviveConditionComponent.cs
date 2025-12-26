@@ -1,6 +1,6 @@
-using Content.Server._Carpmosia.Objectives.Systems;
+using Content.Server.Objectives.Systems;
 
-namespace Content.Server._Carpmosia.Objectives.Components;
+namespace Content.Server.Objectives.Components;
 
 [RegisterComponent, Access(typeof(SelfAndTargetSurviveConditionSystem))]
 public sealed partial class SelfAndTargetSurviveConditionComponent : Component;

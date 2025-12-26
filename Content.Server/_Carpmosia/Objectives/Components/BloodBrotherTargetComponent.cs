@@ -1,4 +1,4 @@
-namespace Content.Server._Carpmosia.Objectives.Components;
+namespace Content.Server.Objectives.Components;
 
 [RegisterComponent]
 public sealed partial class BloodBrotherTargetComponent : Component;

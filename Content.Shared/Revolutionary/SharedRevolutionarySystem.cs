@@ -1,4 +1,4 @@
-using Content.Shared._Carpmosia.BloodBrothers.EntitySystems; // Carpmosia-edit - Harmony Blood Bound
+using Content.Shared.BloodBrothers.EntitySystems; // Carpmosia-edit - Harmony Blood Bound
 using Content.Shared.IdentityManagement;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Popups;

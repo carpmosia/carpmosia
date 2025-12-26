@@ -1,6 +1,6 @@
-using Content.Shared._Carpmosia.BloodBrothers.Components;
 using Content.Shared.Actions;
 using Content.Shared.Antag;
+using Content.Shared.BloodBrothers.Components;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Popups;
@@ -8,7 +8,7 @@ using Content.Shared.Stunnable;
 using Robust.Shared.GameStates;
 using Robust.Shared.Player;
 
-namespace Content.Shared._Carpmosia.BloodBrothers.EntitySystems;
+namespace Content.Shared.BloodBrothers.EntitySystems;
 
 public abstract class SharedBloodBrotherSystem : EntitySystem
 {
