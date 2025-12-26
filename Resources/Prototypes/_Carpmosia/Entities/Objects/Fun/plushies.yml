@@ -6,7 +6,6 @@
   components:
   - type: Sprite
     sprite: _Carpmosia/Objects/Fun/Plushies/screams.rsi
-    state: icon
   - type: Item
     sprite: _Carpmosia/Objects/Fun/Plushies/screams.rsi
   - type: EmitSoundOnUse
@@ -96,7 +95,7 @@
     - HEAD
 
 - type: entity
-  parent: BasePlushie
+  parent: PlushieLizard
   id: PlushieLizardAxel
   name: cursed axolotl plushie
   description: An... adorable...? stuffed toy that resembles a lizardperson, specifically a certain doctor. It turns to look RIGHT AT YOU. It can change colors based on solutions injected into it.
@@ -105,7 +104,7 @@
     sprite: _Carpmosia/Objects/Fun/Plushies/axel.rsi
     layers:
     - state: icon
-    - state: icon1
+    - state: fill-1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
   - type: Item
@@ -130,6 +129,16 @@
     transferAmount: 10
   - type: MeleeWeapon
     soundHit: *PlushieLizardAxelSound
+  - type: Clothing
+    quickEquip: false
+    sprite: _Carpmosia/Objects/Fun/Plushies/axel.rsi
+    slots:
+    - HEAD
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 30
   - type: SolutionContainerManager
     solutions:
       food:
@@ -141,11 +150,6 @@
           Quantity: 10
       coloring:
         maxVol: 30
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: Blood
-        Quantity: 30
   - type: MixableSolution
     solution: coloring
   - type: ExaminableSolution
@@ -164,18 +168,3 @@
     inHandsFillBaseName: -fill-
     equippedMaxFillLevels: 4
     equippedFillBaseName: -fill-
-  - type: Clothing
-    quickEquip: false
-    sprite: _Carpmosia/Objects/Fun/Plushies/axel.rsi
-    slots:
-    - HEAD
-  - type: Speech
-    speechVerb: Reptilian
-  - type: FoodSequenceElement
-    entries:
-      CottonBurger: LizardPlushie
-  - type: Tag
-    tags:
-    - Payload
-    - ClothMade
-    - PlushieLizard
