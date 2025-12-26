@@ -11,11 +11,12 @@
   components:
   - type: Sprite
     layers:
-      - state: red
-      - sprite: Objects/Consumable/Food/Baked/cake.rsi
-        state: plain
-  - type: RandomSpawner
-    prototypes:
+    - state: red
+    - sprite: Objects/Consumable/Food/Baked/cake.rsi
+      state: plain
+  - type: EntityTableSpawner
+    table: !type:GroupSelector
+      children:
       - FoodCakeBlueberry
       - FoodCakePlain
       - FoodCakeCarrot
