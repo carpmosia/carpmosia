@@ -60,8 +60,8 @@
   - type: Appearance
 
 - type: entity
-  id: DeckardBoxFilled
   parent: DeckardBox
+  id: DeckardBoxFilled
   suffix: Filled
   components:
   - type: EntityTableContainerFill
