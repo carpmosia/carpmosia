@@ -3,9 +3,9 @@
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
-        !type:DepartmentTimeRequirement
-        department: Medical
-        time: 50h
+      !type:DepartmentTimeRequirement
+      department: Medical
+      time: 50h
 
 - type: loadout
   id: LizardPlushieAxel
