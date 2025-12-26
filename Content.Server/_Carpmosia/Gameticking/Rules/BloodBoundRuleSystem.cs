@@ -1,20 +1,16 @@
-using System.Diagnostics.CodeAnalysis;
-using Content.Server._Carpmosia.GameTicking.Rules.Components;
-using Content.Server._Carpmosia.Objectives.Components;
 using Content.Server.Actions;
 using Content.Server.Administration.Logs;
 using Content.Server.Antag;
-using Content.Server.GameTicking.Rules;
+using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Mind;
-using Content.Server.Objectives;
 using Content.Server.Objectives.Components;
 using Content.Server.Objectives.Systems;
+using Content.Server.Objectives;
 using Content.Server.Popups;
 using Content.Server.Preferences.Managers;
 using Content.Server.Roles;
 using Content.Server.Stunnable;
-using Content.Shared._Carpmosia.BloodBound.Components;
-using Content.Shared._Carpmosia.Roles.Components;
+using Content.Shared.BloodBound.Components;
 using Content.Shared.Database;
 using Content.Shared.Humanoid;
 using Content.Shared.IdentityManagement;
@@ -27,8 +23,9 @@ using Content.Shared.Roles.Components;
 using Content.Shared.Zombies;
 using Robust.Server.Player;
 using Robust.Shared.Utility;
+using System.Diagnostics.CodeAnalysis;
 
-namespace Content.Server._Carpmosia.GameTicking.Rules;
+namespace Content.Server.GameTicking.Rules;
 
 public sealed class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRuleComponent>
 {

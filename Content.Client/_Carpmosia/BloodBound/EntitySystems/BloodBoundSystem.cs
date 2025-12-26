@@ -1,11 +1,11 @@
-using Content.Shared._Carpmosia.BloodBound.Components;
-using Content.Shared._Carpmosia.BloodBound.EntitySystems;
 using Content.Shared.Antag;
+using Content.Shared.BloodBound.Components;
+using Content.Shared.BloodBound.EntitySystems;
 using Content.Shared.StatusIcon.Components;
 using Robust.Client.Player;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client._Carpmosia.BloodBound.EntitySystems;
+namespace Content.Client.BloodBound.EntitySystems;
 
 public sealed class BloodBoundSystem : SharedBloodBoundSystem
 {

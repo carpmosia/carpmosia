@@ -1,6 +1,6 @@
-using Content.Server._Carpmosia.BloodBound.EntitySystems;
+using Content.Server.BloodBound.EntitySystems;
 
-namespace Content.Server._Carpmosia.Objectives.Components;
+namespace Content.Server.Objectives.Components;
 
 /// <summary>
 /// Marker component to show that an objective should be removed when the blood bound is deconverted.

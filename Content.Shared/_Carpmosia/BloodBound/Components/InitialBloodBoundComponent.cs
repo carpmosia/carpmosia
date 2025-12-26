@@ -1,15 +1,15 @@
-using Content.Shared._Carpmosia.BloodBound.EntitySystems;
-using Content.Shared.Actions;
 using Content.Shared.Actions.Components;
+using Content.Shared.Actions;
+using Content.Shared.BloodBound.EntitySystems;
 using Content.Shared.NPC.Prototypes;
 using Content.Shared.Objectives.Components;
-using Content.Shared.Roles;
 using Content.Shared.Roles.Components;
+using Content.Shared.Roles;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Carpmosia.BloodBound.Components;
+namespace Content.Shared.BloodBound.Components;
 
 /// <summary>
 /// Signifies that an entity is the blood bound chosen by a game-rule.

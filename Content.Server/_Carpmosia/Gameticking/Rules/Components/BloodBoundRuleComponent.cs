@@ -1,4 +1,4 @@
-namespace Content.Server._Carpmosia.GameTicking.Rules.Components;
+namespace Content.Server.GameTicking.Rules.Components;
 
 /// <summary>
 /// Game rule for blood bound. Handles conversion.
