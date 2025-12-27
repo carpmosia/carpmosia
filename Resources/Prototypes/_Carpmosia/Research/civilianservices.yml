@@ -10,3 +10,16 @@
   recipeUnlocks:
   - CompactDefibrillator
 
+- type: technology
+  id: CloningTech
+  name: research-technology-medical-cloning
+  icon:
+    sprite: Structures/Machines/cloning.rsi
+    state: pod_0
+  discipline: CivilianServices
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - CloningConsoleComputerCircuitboard
+  - CloningPodMachineCircuitboard
+  - MedicalScannerMachineCircuitboard
