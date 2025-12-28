@@ -225,12 +225,12 @@ public sealed partial class EmergencyShuttleSystem
                     (Loc.GetString("ui-vote-eorg-abstain"), "abstain")
                 }
             };
-            var vote = _voteManager.CreateVote(options);
+            _roundEnd.EorgVote = _voteManager.CreateVote(options);
 
-            vote.OnFinished += (_, _) =>
+            _roundEnd.EorgVote.OnFinished += (_, _) =>
             {
-                var votesYes = vote.VotesPerOption["yes"];
-                var votesNo = vote.VotesPerOption["no"];
+                var votesYes = _roundEnd.EorgVote.VotesPerOption["yes"];
+                var votesNo = _roundEnd.EorgVote.VotesPerOption["no"];
                 var total = votesYes + votesNo;
 
                 var ratioRequired = ConfigManager.GetCVar(CCVars.VoteEorgRequiredRatio);
