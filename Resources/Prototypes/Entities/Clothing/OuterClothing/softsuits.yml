@@ -92,7 +92,7 @@
 
 #NTSRA Voidsuit / Ancient Voidsuit
 - type: entity
-  parent: [ ClothingOuterSizeUtilitySlim, ClothingOuterEVASuitBase ] # Carpmosia-edit - Outer clothing resizing
+  parent: [ ClothingOuterSizeUtilitySlim, ClothingOuterEVASuitBase ] # Carpmosia-edit - Outer clothing resize
   id: ClothingOuterHardsuitAncientEVA
   name: NTSRA voidsuit #Nanotrasen Space Research Association
   description: An ancient space suit, designed by the NTSRA branch of CentComm. It is very finely crafted, allowing for greater mobility than most modern space suits.
@@ -108,7 +108,7 @@
 
 #Paramedic Voidsuit
 - type: entity
-  parent: [ ClothingOuterSizeUtilitySlim, ClothingOuterEVASuitBase, BaseMedicalContraband ] # Carpmosia-edit - Outer clothing resizing
+  parent: [ ClothingOuterSizeUtilitySlim, ClothingOuterEVASuitBase, BaseMedicalContraband ] # Carpmosia-edit - Outer clothing resize
   id: ClothingOuterHardsuitVoidParamed
   name: paramedic void suit
   description: A void suit made for paramedics.
