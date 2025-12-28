@@ -26,7 +26,7 @@
 
 #Standard armor vest, allowed for security and bartenders
 - type: entity
-  parent: [ClothingOuterSizeArmoredBasic, BaseSecurityBartenderContraband, ClothingOuterArmorBase] # Carpmosia-edit - Outer clothing resize
+  parent: [ ClothingOuterSizeArmoredBasic, BaseSecurityBartenderContraband, ClothingOuterArmorBase] # Carpmosia-edit - Outer clothing resize
   id: ClothingOuterArmorBasic
   components:
   - type: Tag
@@ -204,7 +204,7 @@
 
 #Mercenary web vest
 - type: entity
-  parent: [ClothingOuterSizeArmoredSpecial, BaseMajorContraband, ClothingOuterVestWeb] # Carpmosia-edit - Outer clothing resize
+  parent: [ClothingOuterSizeArmoredSpecial, BaseMajorContraband, ClothingOuterVestWeb] #web vest so it should have some pockets for ammo # Carpmosia-edit - Outer clothing resize
   id: ClothingOuterVestWebMerc
   name: mercenary web vest
   description: A high-quality armored vest made from a hard synthetic material. It's surprisingly flexible and light, despite formidable armor plating.
@@ -327,7 +327,7 @@
   - type: GroupExamine
 
 - type: entity
-  parent: [ClothingOuterSizeArmoredMajor, ClothingOuterBaseLarge, BaseMajorContraband, AllowSuitStorageClothing ] # Carpmosia-edit - Outer clothing resize
+  parent: [ ClothingOuterSizeArmoredMajor, ClothingOuterBaseLarge, BaseMajorContraband, AllowSuitStorageClothing ] # Carpmosia-edit - Outer clothing resize
   id: ClothingOuterArmorCult
   name: acolyte armor
   description: An evil-looking piece of cult armor, made of bones.
