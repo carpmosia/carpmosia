@@ -324,7 +324,8 @@ namespace Content.Server.RoundEnd
             }
             _chatManager.DispatchServerAnnouncement(
                 Loc.GetString(
-                    "round-end-system-round-restart-eta-announcement",
+                    "round-end-system-round-restart-eta-announcement-carp", // Carpmosia-edit - EORG Vote
+                    ("eorg", IsEorg), // Carpmosia-edit - EORG Vote
                     ("time", time),
                     ("units", Loc.GetString(unitsLocString))));
             Timer.Spawn(countdownTime.Value, AfterEndRoundRestart, _countdownTokenSource.Token);
