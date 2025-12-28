@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingOuterWinterCoatToggleable, BaseSecurityContraband, AllowSuitStorageClothing]
+  parent: [ClothingOuterSizeArmoredBasic, ClothingOuterWinterCoatToggleable, BaseSecurityContraband, AllowSuitStorageClothing]
   id: ClothingOuterWinterSecArmored
   name: security armored winter coat
   description: A warm winter coat with an integrated type I aramid armor vest.
@@ -23,7 +23,7 @@
       damageCoefficient: 0.90
 
 - type: entity
-  parent: [ClothingOuterWinterCoatToggleable, BaseCommandContraband, AllowSuitStorageClothing]
+  parent: [ClothingOuterSizeArmoredMajor, ClothingOuterWinterCoatToggleable, BaseCommandContraband, AllowSuitStorageClothing]
   id: ClothingOuterWinterCaptainArmored
   name: captain's armored winter coat
   description: A regal winter coat with a thick integrated armor shell. Keeps the captain safe from station threats and hypothermic events.
