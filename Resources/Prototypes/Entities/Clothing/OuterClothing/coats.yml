@@ -64,7 +64,7 @@
 
 - type: entity
   abstract: true
-  parent: [ClothingOuterSizeArmoredBasic, AllowSuitStorageClothing] # Carpmosia-edit - Outer clothing resize
+  parent: [ ClothingOuterSizeArmoredBasic, AllowSuitStorageClothing ] # Carpmosia-edit - Outer clothing resize
   id: ClothingOuterArmorHoS
   components:
   - type: Armor
@@ -80,7 +80,7 @@
 
 - type: entity
   abstract: true
-  parent: [ClothingOuterSizeArmoredBasic, AllowSuitStorageClothing] # Carpmosia-edit - Outer clothing resize
+  parent: [ ClothingOuterSizeArmoredBasic, AllowSuitStorageClothing ] # Carpmosia-edit - Outer clothing resize
   id: ClothingOuterArmorWarden
   components:
   - type: Armor
