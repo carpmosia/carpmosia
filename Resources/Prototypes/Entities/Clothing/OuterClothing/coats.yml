@@ -10,7 +10,7 @@
     sprite: Clothing/OuterClothing/Coats/bomber.rsi
 
 - type: entity
-  parent: [ ClothingOuterSizeArmoredBasic, ClothingOuterStorageBase, AllowSuitStorageClothing, ClothingOuterArmorBase ] # Carpmosia-edit - Outer clothing resize
+  parent: [ClothingOuterSizeArmoredBasic, ClothingOuterStorageBase, AllowSuitStorageClothing, ClothingOuterArmorBase] # Carpmosia-edit - Outer clothing resize
   id: ClothingOuterCoatDetective
   name: detective trenchcoat
   description: An 18th-century multi-purpose trenchcoat. Someone who wears this means serious business.
@@ -80,7 +80,7 @@
 
 - type: entity
   abstract: true
-  parent: [ ClothingOuterSizeArmoredBasic, AllowSuitStorageClothing ] # Carpmosia-edit - Outer clothing resize
+  parent: [ClothingOuterSizeArmoredBasic, AllowSuitStorageClothing] # Carpmosia-edit - Outer clothing resize
   id: ClothingOuterArmorWarden
   components:
   - type: Armor
@@ -353,7 +353,7 @@
     sprite: Clothing/OuterClothing/Coats/clownpriest.rsi
 
 - type: entity
-  parent: [ ClothingOuterSizeArmoredBasic,ClothingOuterStorageBase, BaseMajorContraband ] # Carpmosia-edit - Outer clothing resize
+  parent: [ClothingOuterSizeArmoredBasic,ClothingOuterStorageBase, BaseMajorContraband] # Carpmosia-edit - Outer clothing resize
   id: ClothingOuterDogi
   name: samurai dogi
   description: Dogi is a type of traditional Japanese clothing. The dogi is made of heavy, durable fabric, it is practical in combat and stylish in appearance. It is decorated with intricate patterns and embroidery on the back.
