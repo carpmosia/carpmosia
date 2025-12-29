@@ -589,9 +589,9 @@
   name: reinforced wall
   components:
   - type: Sprite
-    sprite: Structures/Walls/solid.rsi
+    sprite: _Carpmosia/Structures/Walls/solid.rsi # Carpmosia-edit - Wall resprite
   - type: Icon
-    sprite: Structures/Walls/solid.rsi
+    sprite: _Carpmosia/Structures/Walls/solid.rsi # Carpmosia-edit - Wall resprite
     state: rgeneric
   - type: Construction
     graph: Girder
@@ -981,13 +981,13 @@
   name: solid wall
   components:
   - type: Sprite
-    sprite: Structures/Walls/solid.rsi
+    sprite: _Carpmosia/Structures/Walls/solid.rsi # Carpmosia-edit - Wall resprite
   - type: WallReplacementMarker
   - type: Construction
     graph: Girder
     node: wall
   - type: Icon
-    sprite: Structures/Walls/solid.rsi
+    sprite: _Carpmosia/Structures/Walls/solid.rsi # Carpmosia-edit - Wall resprite
   - type: RCDDeconstructable
     cost: 6
     delay: 8
