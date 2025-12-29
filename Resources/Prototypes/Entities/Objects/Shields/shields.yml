@@ -64,7 +64,7 @@
 
 - type: entity
   name: riot shield
-  parent: [ BaseShield, BaseSecurityContraband ]
+  parent: [ BaseShieldClothing, BaseSecurityContraband ] # Carpmosia-edit - Suit slot shields
   id: RiotShield
   description: A large tower shield. Good for controlling crowds.
   components:
@@ -85,7 +85,7 @@
 
 - type: entity
   name: laser shield
-  parent: [ BaseShield, BaseSecurityContraband ]
+  parent: [ BaseShieldClothing, BaseSecurityContraband ] # Carpmosia-edit - Suit slot shields
   id: RiotLaserShield
   description: A shield built for withstanding lasers, but not much else.
   components:
@@ -93,6 +93,10 @@
       state: riot_laser-icon
     - type: Item
       heldPrefix: riot_laser
+    # Carpmosia-start - Suit slot shields
+    - type: Clothing
+      equippedPrefix: riot_laser
+    # Carpmosia-end - Suit slot shields
     - type: Blocking
       passiveBlockModifier:
         coefficients:
@@ -105,7 +109,7 @@
 
 - type: entity
   name: ballistic shield
-  parent: [ BaseShield, BaseSecurityContraband ]
+  parent: [ BaseShieldClothing, BaseSecurityContraband ] # Carpmosia-edit - Suit slot shields
   id: RiotBulletShield
   description: A shield built for protecting against ballistics, but not much else.
   components:
@@ -113,6 +117,10 @@
       state: riot_bullet-icon
     - type: Item
       heldPrefix: riot_bullet
+    # Carpmosia-start - Suit slot shields
+    - type: Clothing
+      equippedPrefix: riot_bullet
+    # Carpmosia-end - Suit slot shields
     - type: Blocking
       passiveBlockModifier:
         coefficients:
@@ -127,7 +135,7 @@
 
 - type: entity
   name: wooden buckler
-  parent: BaseShield
+  parent: BaseShieldClothing # Carpmosia-edit - Suit slot shields
   id: WoodenBuckler
   description: A small round wooden makeshift shield.
   components:
@@ -135,6 +143,10 @@
       state: buckler-icon
     - type: Item
       heldPrefix: buckler
+    # Carpmosia-start- Suit slot shields
+    - type: Clothing
+      equippedPrefix: buckler
+    # Carpmosia-end - Suit slot shields
     - type: Blocking
       passiveBlockModifier:
         coefficients:
@@ -234,7 +246,7 @@
 
 - type: entity
   name: makeshift shield
-  parent: BaseShield
+  parent: BaseShieldClothing # Carpmosia-edit - Suit slot shields
   id: MakeshiftShield
   description: A rundown looking shield, not good for much.
   components:
@@ -242,6 +254,10 @@
       state: makeshift-icon
     - type: Item
       heldPrefix: metal
+    # Carpmosia-start - Suit slot shields
+    - type: Clothing
+      equippedPrefix: metal
+    # Carpmosia-end - Suit slot shields
     - type: Blocking
       passiveBlockModifier:
         coefficients:
