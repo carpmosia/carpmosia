@@ -4,7 +4,7 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 12/28/2025 22:40:13
+  time: 12/29/2025 14:05:09
   entityCount: 17233
 maps:
 - 1
@@ -10048,12 +10048,6 @@ entities:
     - type: Transform
       pos: -33.5,9.5
       parent: 2
-    - type: Door
-      secondsUntilStateChange: -35708.184
-      state: Opening
-    - type: DeviceLinkSource
-      lastSignals:
-        DoorStatus: True
   - uid: 325
     components:
     - type: Transform
@@ -10163,12 +10157,6 @@ entities:
     - type: Transform
       pos: 13.5,-9.5
       parent: 2
-    - type: Door
-      secondsUntilStateChange: -228359.08
-      state: Opening
-    - type: DeviceLinkSource
-      lastSignals:
-        DoorStatus: True
   - uid: 344
     components:
     - type: Transform
@@ -76481,9 +76469,6 @@ entities:
     - type: Transform
       pos: 16.5,-40.5
       parent: 2
-    - type: Door
-      secondsUntilStateChange: -103737.92
-      state: Opening
 - proto: HospitalCurtainsOpen
   entities:
   - uid: 11331
