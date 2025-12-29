@@ -1,7 +1,7 @@
 - type: entity
+  parent: BaseChemistryBottleFilled
   id: ChemistryBottleTraumoxadone
   suffix: traumoxadone
-  parent: BaseChemistryBottleFilled
   components:
   - type: Label
     currentLabel: reagent-name-traumoxadone
@@ -14,9 +14,9 @@
           Quantity: 30
 
 - type: entity
+  parent: BaseChemistryBottleFilled
   id: ChemistryBottleStelloxadone
   suffix: stelloxadone
-  parent: BaseChemistryBottleFilled
   components:
   - type: Label
     currentLabel: reagent-name-stelloxadone
@@ -29,9 +29,9 @@
           Quantity: 30
 
 - type: entity
+  parent: BaseChemistryBottleFilled
   id: ChemistryBottleTetracordrazine
   suffix: tetracordrazine
-  parent: BaseChemistryBottleFilled
   components:
   - type: Label
     currentLabel: reagent-name-tetracordrazine
@@ -44,9 +44,9 @@
           Quantity: 30
 
 - type: entity
+  parent: BaseChemistryBottleFilled
   id: ChemistryBottleSaltpetre
   suffix: saltpetre
-  parent: BaseChemistryBottleFilled
   components:
   - type: Label
     currentLabel: reagent-name-saltpetre
