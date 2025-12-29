@@ -68,7 +68,7 @@
     boardName: wires-board-name-firealarm
     layoutId: FireAlarm
   - type: Sprite
-    sprite: _Carpmosia/Structures/Wallmounts/air_monitors.rsi
+    sprite: _Carpmosia/Structures/Wallmounts/air_monitors.rsi # Carpmosia-edit - APC/Alarm resprite
     layers:
     - state: fire0
       map: ["fireAlarmBase"]
@@ -115,7 +115,7 @@
   description: A fire alarm assembly. Very mild.
   components:
   - type: Sprite
-    sprite: _Carpmosia/Structures/Wallmounts/air_monitors.rsi
+    sprite: _Carpmosia/Structures/Wallmounts/air_monitors.rsi # Carpmosia-edit - APC/Alarm resprite
     layers:
     - state: fire_b1
       map: [ "enum.ConstructionVisuals.Layer" ]
@@ -155,7 +155,7 @@
   description: An alien fire alarm. Works just the same!
   components:
   - type: Sprite
-    sprite: _Carpmosia/Structures/Wallmounts/air_monitors_xeno.rsi
+    sprite: _Carpmosia/Structures/Wallmounts/air_monitors_xeno.rsi # Carpmosia-edit - APC/Alarm resprite
 
 - type: entity
   id: FireAlarmAssemblyXeno
@@ -163,4 +163,4 @@
   description: An alien fire alarm assembly. Good luck with the wires.
   components:
   - type: Sprite
-    sprite: _Carpmosia/Structures/Wallmounts/air_monitors_xeno.rsi
+    sprite: _Carpmosia/Structures/Wallmounts/air_monitors_xeno.rsi # Carpmosia-edit - APC/Alarm resprite
