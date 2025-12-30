@@ -24,9 +24,9 @@
       - Window
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/window.rsi
+    sprite: _Carpmosia/Structures/Windows/glass.rsi # Carpmosia-edit - Window resprite
   - type: Icon
-    sprite: Structures/Windows/window.rsi
+    sprite: _Carpmosia/Structures/Windows/glass.rsi # Carpmosia-edit - Window resprite
     state: full
   - type: Physics
     bodyType: Static
@@ -77,7 +77,8 @@
   - type: Airtight
   - type: IconSmooth
     key: windows
-    base: window
+    additionalKeys: [basic_wall] # Carpmosia-edit - Window resprite
+    base: state # Carpmosia-edit - Window resprite
   - type: InteractionPopup
     interactSuccessString: comp-window-knock
     messagePerceivedByOthers: comp-window-knock

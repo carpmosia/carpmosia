@@ -5,9 +5,9 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/reinforced_window.rsi
+    sprite: _Carpmosia/Structures/Windows/glass_reinforced.rsi # Carpmosia-edit - Window resprite
   - type: Icon
-    sprite: Structures/Windows/reinforced_window.rsi
+    sprite: _Carpmosia/Structures/Windows/glass_reinforced.rsi # Carpmosia-edit - Window resprite
   - type: Repairable
     fuelCost: 10
     doAfterDelay: 2
@@ -44,7 +44,8 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: IconSmooth
-    base: rwindow
+    additionalKeys: [basic_wall] # Carpmosia-edit - Window resprite
+    base: state # Carpmosia-edit - Window resprite
   - type: Construction
     graph: Window
     node: reinforcedWindow

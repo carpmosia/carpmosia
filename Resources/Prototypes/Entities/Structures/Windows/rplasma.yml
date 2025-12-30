@@ -5,9 +5,9 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/reinforced_plasma_window.rsi
+    sprite: _Carpmosia/Structures/Windows/plasma_reinforced.rsi # Carpmosia-edit - Window resprite
   - type: Icon
-    sprite: Structures/Windows/reinforced_plasma_window.rsi
+    sprite: _Carpmosia/Structures/Windows/plasma_reinforced.rsi # Carpmosia-edit - Window resprite
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: RGlass
@@ -42,7 +42,8 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: IconSmooth
-    base: rpwindow
+    additionalKeys: [basic_wall] # Carpmosia-edit - Window resprite
+    base: state # Carpmosia-edit - Window resprite
   - type: Construction
     graph: Window
     node: reinforcedPlasmaWindow
