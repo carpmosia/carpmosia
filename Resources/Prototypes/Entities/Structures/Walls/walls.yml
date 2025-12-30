@@ -589,10 +589,10 @@
   name: reinforced wall
   components:
   - type: Sprite
-    sprite: _Carpmosia/Structures/Walls/solid.rsi # Carpmosia-edit - Wall resprite
+    sprite: _Carpmosia/Structures/Walls/reinforced.rsi # Carpmosia-edit - Wall resprite
   - type: Icon
-    sprite: _Carpmosia/Structures/Walls/solid.rsi # Carpmosia-edit - Wall resprite
-    state: rgeneric
+    sprite: _Carpmosia/Structures/Walls/reinforced.rsi # Carpmosia-edit - Wall resprite
+    state: full # Carpmosia-edit - Wall resprite
   - type: Construction
     graph: Girder
     node: reinforcedWall
