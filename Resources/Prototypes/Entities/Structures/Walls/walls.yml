@@ -661,16 +661,16 @@
   suffix: rusted
   components:
   - type: Sprite
-    sprite: Structures/Walls/solid_rust.rsi
+    sprite: _Carpmosia/Structures/Walls/reinforced_rust.rsi # Carpmosia-edit - Wall resprite
   - type: Icon
-    sprite: Structures/Walls/solid_rust.rsi
-    state: rgeneric
+    sprite: _Carpmosia/Structures/Walls/reinforced_rust.rsi # Carpmosia-edit - Wall resprite
+    # state: rgeneric # Carpmosia-edit - Wall resprite
   - type: Construction
     graph: Girder
     node: reinforcedWallRust
   - type: IconSmooth
-    key: walls
-    base: reinf_over
+    key: base_wall # Carpmosia-edit - Wall resprite
+    base: state # Carpmosia-edit - Wall resprite
   - type: Destructible
     thresholds:
     - trigger:
