@@ -592,7 +592,7 @@
     sprite: _Carpmosia/Structures/Walls/reinforced.rsi # Carpmosia-edit - Wall resprite
   - type: Icon
     sprite: _Carpmosia/Structures/Walls/reinforced.rsi # Carpmosia-edit - Wall resprite
-    state: full # Carpmosia-edit - Wall resprite
+    # state: rgeneric # Carpmosia-edit - Wall resprite
   - type: Construction
     graph: Girder
     node: reinforcedWall
@@ -622,20 +622,22 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: IconSmooth
-    key: walls
-    base: reinf_over
+    key: base_wall # Carpmosia-edit - Wall resprite
+    base: state # Carpmosia-edit - Wall resprite
   - type: Appearance
   - type: GenericVisualizer
     visuals:
       enum.ReinforcedWallVisuals.DeconstructionStage:
         ReinforcedWallVisualLayers.Deconstruction:
           -1: { visible: false }
-          0: { state: reinf_construct-0, visible: true}
-          1: { state: reinf_construct-1, visible: true}
-          2: { state: reinf_construct-2, visible: true}
-          3: { state: reinf_construct-3, visible: true}
-          4: { state: reinf_construct-4, visible: true}
-          5: { state: reinf_construct-5, visible: true}
+          # Carpmosia-start - Wall resprite
+          0: { state: construct0, visible: true}
+          1: { state: construct1, visible: true}
+          2: { state: construct2, visible: true}
+          3: { state: construct3, visible: true}
+          4: { state: construct4, visible: true}
+          5: { state: construct5, visible: true}
+          # Carpmosia-end - Wall resprite
   - type: ReinforcedWallReplacementMarker
   - type: StaticPrice
     price: 250
@@ -1015,8 +1017,8 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: IconSmooth
-    key: walls
-    base: solid
+    key: base_wall # Carpmosia-edit - Wall resprite
+    base: state # Carpmosia-edit - Wall resprite
 
 - type: entity
   parent: WallDiagonalBase
