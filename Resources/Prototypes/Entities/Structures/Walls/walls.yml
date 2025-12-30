@@ -622,7 +622,7 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: IconSmooth
-    key: base_wall # Carpmosia-edit - Wall resprite
+    key: basic_wall # Carpmosia-edit - Wall resprite
     base: state # Carpmosia-edit - Wall resprite
   - type: Appearance
   - type: GenericVisualizer
@@ -669,7 +669,7 @@
     graph: Girder
     node: reinforcedWallRust
   - type: IconSmooth
-    key: base_wall # Carpmosia-edit - Wall resprite
+    key: basic_wall # Carpmosia-edit - Wall resprite
     base: state # Carpmosia-edit - Wall resprite
   - type: Destructible
     thresholds:
@@ -1017,7 +1017,7 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: IconSmooth
-    key: base_wall # Carpmosia-edit - Wall resprite
+    key: basic_wall # Carpmosia-edit - Wall resprite
     base: state # Carpmosia-edit - Wall resprite
 
 - type: entity
@@ -1069,7 +1069,7 @@
     graph: Girder
     node: wallrust
   - type: IconSmooth
-    key: base_wall # Carpmosia-edit - Wall resprite
+    key: basic_wall # Carpmosia-edit - Wall resprite
     base: state # Carpmosia-edit - Wall resprite
   - type: Destructible
     thresholds:
