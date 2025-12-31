@@ -701,11 +701,15 @@
   components:
   - type: Sprite
     drawdepth: Walls
-    sprite: Structures/Walls/reinforced_diagonal.rsi
+    sprite: _Carpmosia/Structures/Walls/reinforced_diagonal.rsi # Carpmosia-edit - Wall resprite
     state: state0
   - type: Icon
-    sprite: Structures/Walls/reinforced_diagonal.rsi
+    sprite: _Carpmosia/Structures/Walls/reinforced_diagonal.rsi # Carpmosia-edit - Wall resprite
     state: state0
+  # Carpmosia-start - Wall resprite
+  - type: IconSmooth
+    key: basic_wall
+  # Carpmosia-end - Wall resprite
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallicStrong
