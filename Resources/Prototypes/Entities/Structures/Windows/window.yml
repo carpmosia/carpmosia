@@ -105,11 +105,12 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/tinted_window.rsi
+    sprite: _Carpmosia/Structures/Windows/tinted.rsi # Carpmosia-edit - Window resprite
   - type: Icon
-    sprite: Structures/Windows/tinted_window.rsi
+    sprite: _Carpmosia/Structures/Windows/tinted.rsi # Carpmosia-edit - Window resprite
   - type: IconSmooth
-    base: twindow
+    additionalKeys: [basic_wall] # Carpmosia-edit - Window resprite
+    base: state # Carpmosia-edit - Window resprite
   - type: Construction
     graph: Window
     node: tintedWindow
