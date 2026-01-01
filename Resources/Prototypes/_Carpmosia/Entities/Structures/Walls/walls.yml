@@ -4,9 +4,9 @@
   suffix: rusted
   components:
   - type: Sprite
-    sprite: _Carpmosia/Structures/Walls/reinforced_diagonal_rust.rsi
+    sprite: _Carpmosia/Structures/Walls/reinforced_rust_diagonal.rsi
   - type: Icon
-    sprite: _Carpmosia/Structures/Walls/reinforced_diagonal_rust.rsi
+    sprite: _Carpmosia/Structures/Walls/reinforced_rust_diagonal.rsi
   - type: Destructible
     thresholds:
     - trigger:
@@ -36,9 +36,9 @@
   suffix: rusted
   components:
   - type: Sprite
-    sprite: _Carpmosia/Structures/Walls/solid_diagonal_rust.rsi
+    sprite: _Carpmosia/Structures/Walls/solid_rust_diagonal.rsi
   - type: Icon
-    sprite: _Carpmosia/Structures/Walls/solid_diagonal_rust.rsi
+    sprite: _Carpmosia/Structures/Walls/solid_rust_diagonal.rsi
   - type: Destructible
     thresholds:
     - trigger:
