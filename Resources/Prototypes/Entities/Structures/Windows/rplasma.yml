@@ -126,7 +126,7 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/reinforced_plasma_diagonal.rsi
+    sprite: _Carpmosia/Structures/Windows/plasma_reinforced_diagonal.rsi # Carpmosia-edit - Window resprite
     state: state0
   - type: Tag
     tags:
@@ -136,8 +136,9 @@
     mode: Diagonal
     key: windows
     base: state
+    additionalKeys: [basic_wall] # Carpmosia-edit - Window resprite
   - type: Icon
-    sprite: Structures/Windows/reinforced_plasma_diagonal.rsi
+    sprite: _Carpmosia/Structures/Windows/plasma_reinforced_diagonal.rsi # Carpmosia-edit - Window resprite
     state: state0
   - type: Fixtures
     fixtures:
