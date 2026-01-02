@@ -1,23 +1,39 @@
 ﻿Entries:
-- author: Atakku
+- author: Bellkitsu
   changes:
-  - message: Added Carpmosia changelog
+  - message: Added logos.
     type: Add
   id: 1
-  time: '2026-01-02T10:15:00.0000000+00:00'
-  url: https://github.com/carpmosia/carpmosia/pull/222
-- author: Atakku
+  time: '2025-10-14T19:09:31.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/5
+- author: wavesneglected
   changes:
-  - message: Added Carpmosia changelog
+  - message: Added Carpmosia rules.
     type: Add
   id: 2
-  time: '2026-01-02T10:15:00.0000000+00:00'
-  url: https://github.com/carpmosia/carpmosia/pull/222
-- author: Atakku
+  time: '2025-10-18T19:53:09.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/22
+- author: imatsoup
   changes:
-  - message: Added Carpmosia changelog
-    type: Add
+  - message: Event spells are now disabled.
+    type: Remove
   id: 3
-  time: '2026-01-02T10:15:00.0000000+00:00'
-  url: https://github.com/carpmosia/carpmosia/pull/222
+  time: '2025-10-18T22:57:57.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/26
+- author: SnappingOpossum
+  changes:
+  - message: Small beakers and all flasks now hold 60 units of reagents.
+    type: Tweak
+  - message: Shakers, teapots, and large beakers now hold 120 units of reagents.
+    type: Tweak
+  id: 4
+  time: '2025-10-19T03:56:57.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/14
+- author: SnappingOpossum
+  changes:
+  - message: Three new transfer amounts (40, 60, and 120) have been added to the chemmaster and reagent dispensers to reflect the increased sizes of beakers and shakers.
+    type: Add
+  id: 5
+  time: '2025-10-19T03:59:18.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/16
 Order: -1
