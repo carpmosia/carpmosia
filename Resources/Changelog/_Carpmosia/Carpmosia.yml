@@ -373,4 +373,227 @@
   id: 46
   time: '2025-11-02T06:39:10.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/73
+- author: SnappingOpossum
+  changes:
+  - message: A tourniquet recipe has been added to the security techfab.
+    type: Add
+  - message: Tourniquets are now stackable and have had their effects tweaked to better fit their purpose.
+    type: Tweak
+  id: 47
+  time: '2025-11-02T15:15:52.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/77
+- author: Atakku
+  changes:
+  - message: Replaced static noise for sAI with a navmap!
+    type: Add
+  id: 48
+  time: '2025-11-03T01:56:18.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/80
+- author: imatsoup
+  changes:
+  - message: ERT game rules have been added to allow admins to quickly put together ERT teams on station request. Special thanks to Harriet for letting us use their shuttle designs.
+    type: Add
+  id: 49
+  time: '2025-11-03T02:31:32.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/72
+- author: imatsoup
+  changes:
+  - message: Adds the Salvage Ticket vendor, letting Salvagers exchange tickets earned from processing ore for salvage equipment, such as crushers and double-emergency tanks!
+    type: Add
+  id: 50
+  time: '2025-11-03T15:45:38.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/76
+- author: Atakku
+  changes:
+  - message: Added roboticist backpacks, duffel bag and satchel.
+    type: Add
+  id: 51
+  time: '2025-11-03T15:51:08.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/86
+- author: Atakku
+  changes:
+  - message: Added 4 new pocket pets! Butterfly, bee, snail (Salvage exclusive), mothroach (Command exclusive)
+    type: Add
+  id: 52
+  time: '2025-11-04T19:29:55.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/89
+- author: Atakku
+  changes:
+  - message: Added a bunch of plushies to the Trinkets loadout, with various fun time requirements
+    type: Add
+  id: 53
+  time: '2025-11-04T19:30:14.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/90
+- author: arenaconspiracy
+  changes:
+  - message: Security officers may now start with an armored winter coat in their loadout.
+    type: Add
+  - message: The Captain may now start with an armored winter coat in their loadout.
+    type: Add
+  id: 54
+  time: '2025-11-05T06:28:56.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/57
+- author: korczoczek
+  changes:
+  - message: Bartenders, Chefs and Service Workers can now choose the service maid dress as a roundstart jumpskirt, locked behind a 20h civilian department timelock
+    type: Tweak
+  id: 55
+  time: '2025-11-05T07:22:00.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/94
+- author: Atakku
+  changes:
+  - message: Added plushies as hat options for borgs!
+    type: Add
+  id: 56
+  time: '2025-11-05T19:02:21.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/95
+- author: Atakku
+  changes:
+  - message: Increased max playtime limit for technical assistant, research assistant, medical intern from 5 to 10 hours
+    type: Tweak
+  - message: Increased max playtime limit for cadet from 5 to 20 hours
+    type: Tweak
+  - message: Revamped Engineering role progression by requiring station engineer to be played to unlock atmospheric technician
+    type: Tweak
+  - message: Chief engineer requires more atmospheric technician hours (increased from 2.5 to 5)
+    type: Tweak
+  id: 57
+  time: '2025-11-05T19:10:14.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/69
+- author: imatsoup
+  changes:
+  - message: Removed the cargo request computer from the mining shuttle.
+    type: Remove
+  id: 58
+  time: '2025-11-09T03:36:39.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/107
+- author: imatsoup
+  changes:
+  - message: Fixed items being transferred to a reagent grinder from a container even after the do-after was cancelled.
+    type: Fix
+  id: 59
+  time: '2025-11-10T04:30:00.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/109
+- author: imatsoup
+  changes:
+  - message: You may now dump held bags directly into a biogenerator. Valid produce will be converted into biomass as normal.
+    type: Tweak
+  id: 97
+  time: '2025-11-10T13:34:06.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/97
+- author: Atakku
+  changes:
+  - message: Improved vent critter spawn logic
+    type: Tweak
+  id: 98
+  time: '2025-11-11T05:08:32.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/92
+- author: korczoczek
+  changes:
+  - message: The AI can now select a carp screen graphic.
+    type: Add
+  - message: The AI can now select a carp hologram.
+    type: Add
+  id: 99
+  time: '2025-11-11T05:50:31.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/98
+- author: SnappingOpossum
+  changes:
+  - message: Cat ears and tails can now be selected on humans.
+    type: Add
+  id: 100
+  time: '2025-11-11T10:01:48.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/99
+- author: Atakku
+  changes:
+  - message: Added 8 cat ear, and 3 cat tail markings to humans!
+    type: Add
+  id: 101
+  time: '2025-11-11T17:58:53.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/113
+- author: wavesneglected
+  changes:
+  - message: Modified Roleplay Rules 3 and 4.
+    type: Tweak
+  id: 102
+  time: '2025-11-12T22:15:33.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/71
+- author: Freelanci
+  changes:
+  - message: Adds the Screams plushie, a trinket that acts as a reward for 50 hours of atmos playtime.
+    type: Add
+  id: 103
+  time: '2025-11-13T06:28:02.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/104
+- author: arenaconspiracy
+  changes:
+  - message: The "Equalizer" silicon lawset has been added to the pool of ion storm lawsets, as well as a currently unobtainable law board.
+    type: Add
+  id: 104
+  time: '2025-11-13T06:31:31.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/102
+- author: Merrokitsune
+  changes:
+  - message: Readded nitrogen tanks in lockers that have existing oxygen tanks.
+    type: Add
+  id: 105
+  time: '2025-11-13T06:42:05.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/50
+- author: wavesneglected
+  changes:
+  - message: Weapon spawners are now placed on Saltern2
+    type: Add
+  id: 106
+  time: '2025-11-15T18:36:09.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/114
+- author: SnappingOpossum
+  changes:
+  - message: All ticket amounts have been multiplied by 10.
+    type: Tweak
+  - message: Ore processor recipes that consume more materials now produce more tickets.
+    type: Tweak
+  - message: Certain non ore processor recipes no longer print tickets.
+    type: Fix
+  id: 107
+  time: '2025-11-15T22:16:42.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/112
+- author: arenaconspiracy
+  changes:
+  - message: Chemists may now synthesize Barozine in the lab.
+    type: Add
+  - message: Barozine now reacts with the the brute medicine family to form Razorium.
+    type: Add
+  - message: Barozine has been mildly rebalanced.
+    type: Tweak
+  id: 108
+  time: '2025-11-16T07:18:04.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/66
+- author: korczoczek
+  changes:
+  - message: Added a random cake spawner for admin and mapping use
+    type: Add
+  id: 109
+  time: '2025-11-16T07:19:24.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/115
+- author: Freelanci, LucaB
+  changes:
+  - message: Added the tider spider plushie, a trinket that can be unlocked with 50 hours of passenger playtime.
+    type: Add
+  id: 110
+  time: '2025-11-16T18:51:20.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/119
+- author: imatsoup
+  changes:
+  - message: Feint has been properly added to the map pool. Woops!
+    type: Fix
+  id: 111
+  time: '2025-11-17T08:20:09.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/127
+- author: Atakku
+  changes:
+  - message: Reduced swing and use delay on plushies from 3 seconds to 1
+    type: Tweak
+  id: 112
+  time: '2025-11-17T11:29:40.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/122
 Order: -1
