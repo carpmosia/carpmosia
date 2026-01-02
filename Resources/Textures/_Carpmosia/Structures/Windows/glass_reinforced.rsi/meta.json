@@ -1,45 +1,57 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from skyrat-tg at commit https://github.com/Skyrat-SS13/Skyrat-tg/commit/f9e3b58ecd64fa061f83420689bd90bfa3a4c185. Resprited by Atakku.",
+  "copyright": "Taken from corvax at commit https://github.com/space-syndicate/space-station-14/commit/907f013467fc6b8dda3359b88ce82b8075267553 and resprited by Atakku",
   "size": {
     "x": 32,
     "y": 32
   },
   "states": [
     {
+      "name": "diagonal0",
+      "directions": 4
+    },
+    {
+      "name": "diagonal1",
+      "directions": 4
+    },
+    {
+      "name": "directional",
+      "directions": 4
+    },
+    {
       "name": "full"
     },
     {
-      "name": "state0",
+      "name": "full0",
       "directions": 4
     },
     {
-      "name": "state1",
+      "name": "full1",
       "directions": 4
     },
     {
-      "name": "state2",
+      "name": "full2",
       "directions": 4
     },
     {
-      "name": "state3",
+      "name": "full3",
       "directions": 4
     },
     {
-      "name": "state4",
+      "name": "full4",
       "directions": 4
     },
     {
-      "name": "state5",
+      "name": "full5",
       "directions": 4
     },
     {
-      "name": "state6",
+      "name": "full6",
       "directions": 4
     },
     {
-      "name": "state7",
+      "name": "full7",
       "directions": 4
     }
   ]

@@ -44,8 +44,8 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: IconSmooth
+    base: full # Carpmosia-edit - Window resprite
     additionalKeys: [basic_wall] # Carpmosia-edit - Window resprite
-    base: state # Carpmosia-edit - Window resprite
   - type: Construction
     graph: Window
     node: reinforcedWindow
@@ -68,11 +68,11 @@
     - Window
   components:
   - type: Sprite
-    sprite: Structures/Windows/directional.rsi
-    state: reinforced_window
+    sprite: _Carpmosia/Structures/Windows/glass_reinforced.rsi # Carpmosia-edit - Window resprite
+    state: directional # Carpmosia-edit - Window resprite
   - type: Icon
-    sprite: Structures/Windows/directional.rsi
-    state: reinforced_window
+    sprite: _Carpmosia/Structures/Windows/glass_reinforced.rsi # Carpmosia-edit - Window resprite
+    state: directional # Carpmosia-edit - Window resprite
   - type: Construction
     graph: WindowDirectional
     node: windowReinforcedDirectional
@@ -128,8 +128,8 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: _Carpmosia/Structures/Windows/glass_reinforced_diagonal.rsi # Carpmosia-edit - Window resprite
-    state: state0
+    sprite: _Carpmosia/Structures/Windows/glass_reinforced.rsi # Carpmosia-edit - Window resprite
+    state: diagonal0 # Carpmosia-edit - Window resprite
   - type: Tag
     tags:
     - Diagonal
@@ -137,11 +137,11 @@
   - type: IconSmooth
     mode: Diagonal
     key: windows
-    base: state
+    base: diagonal # Carpmosia-edit - Window resprite
     additionalKeys: [basic_wall] # Carpmosia-edit - Window resprite
   - type: Icon
-    sprite: _Carpmosia/Structures/Windows/glass_reinforced_diagonal.rsi # Carpmosia-edit - Window resprite
-    state: state0
+    sprite: _Carpmosia/Structures/Windows/glass_reinforced.rsi # Carpmosia-edit - Window resprite
+    state: diagonal0 # Carpmosia-edit - Window resprite
   - type: Fixtures
     fixtures:
       fix1:
