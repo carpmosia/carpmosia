@@ -238,11 +238,11 @@
     - Window
   components:
   - type: Sprite
-    sprite: Structures/Windows/directional.rsi
-    state: frosted_window
+    sprite: _Carpmosia/Structures/Windows/tinted.rsi # Carpmosia-edit - Window resprite
+    state: directional # Carpmosia-edit - Window resprite
   - type: Icon
-    sprite: Structures/Windows/directional.rsi
-    state: frosted_window
+    sprite: _Carpmosia/Structures/Windows/tinted.rsi # Carpmosia-edit - Window resprite
+    state: directional # Carpmosia-edit - Window resprite
   - type: StaticPrice
     price: 35
 
