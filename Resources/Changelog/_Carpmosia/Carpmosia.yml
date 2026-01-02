@@ -36,4 +36,24 @@
   id: 5
   time: '2025-10-19T03:59:18.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/16
+- author: Atakku
+  changes:
+  - message: Emagged mailing units can now be climbed into
+    type: Tweak
+  id: 6
+  time: '2025-10-19T20:10:22.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/30
+- author: arenaconspiracy
+  changes:
+  - message: Chemists can now synthesize Traumoxodone and Stelloxadone, cryonics chemicals used for treating brute and toxin damage in cadavers.
+    type: Add
+  - message: Cryoxadone now heals only airloss, restores blood volume, and works on the dead.
+    type: Tweak
+  - message: Necrosol and Doxarubixadone now require temperatures below 150 kelvin to work.
+    type: Tweak
+  - message: Doxarubixadone now works on the dead.
+    type: Tweak
+  id: 7
+  time: '2025-10-20T02:22:36.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/11
 Order: -1
