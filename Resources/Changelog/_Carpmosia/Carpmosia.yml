@@ -287,4 +287,90 @@
   id: 36
   time: '2025-10-29T20:25:13.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/68
+- author: Freelanci
+  changes:
+  - message: Added flatpacked TEG components (center, circulators), a filled crate with 1 center and 2 circulators, and a catalog entry so players can purchase a TEG through cargo.
+    type: Add
+  id: 37
+  time: '2025-10-30T02:53:34.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/67
+- author: arenaconspiracy
+  changes:
+  - message: The fireaxe in the bridge & atmos wall cabinets can now pry hull plating.
+    type: Tweak
+  id: 38
+  time: '2025-10-30T02:58:30.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/55
+- author: Atakku
+  changes:
+  - message: You can now select on which layer you want to construct virtually all atmospheric devices.
+    type: Tweak
+  id: 39
+  time: '2025-10-30T22:52:19.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/70
+- author: Atakku
+  changes:
+  - message: Shoes are now optional.
+    type: Tweak
+  - message: Shoes and glasses loadouts are now available on every job.
+    type: Tweak
+  - message: Pins have been moved to the neck loadout.
+    type: Tweak
+  id: 40
+  time: '2025-10-30T23:56:51.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/65
+- author: SnappingOpossum
+  changes:
+  - message: Salvage shuttle consoles will now appear on most stations.
+    type: Add
+  - message: All mapped salvage job boards have been replaced, though it is still in the quartermaster's tote.
+    type: Remove
+  - message: The salvage shuttle console board now uses the correct sprite.
+    type: Fix
+  - message: The salvage shuttle console board steal objective now properly appears.
+    type: Fix
+  id: 41
+  time: '2025-10-31T00:05:06.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/64
+- author: Freelanci
+  changes:
+  - message: Ported Saltern-2 to Carpmosia.
+    type: Add
+  - message: Derotated Reach.
+    type: Remove
+  id: 42
+  time: '2025-11-01T06:13:15.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/59
+- author: Voronetz318
+  changes:
+  - message: Added Saltpetre, new botany reagent
+    type: Add
+  id: 43
+  time: '2025-11-01T13:33:37.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/75
+- author: Atakku
+  changes:
+  - message: Implemented antag time tracking
+    type: Add
+  - message: Replaced Nukeops Commander's playtime requirement from Security to Nukeops
+    type: Tweak
+  id: 44
+  time: '2025-11-01T15:55:53.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/78
+- author: Freelanci
+  changes:
+  - message: Revert the requested change to Saltern-II's max player limit, as it is too low to bridge the gap to mid-pop maps.
+    type: Fix
+  id: 45
+  time: '2025-11-02T03:00:14.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/81
+- author: arenaconspiracy
+  changes:
+  - message: Chemists can now synthesize Tetracordrazine, a stabilizing agent that heals better the more damage you have.
+    type: Add
+  - message: Tricordrazine is now marginally better at healing.
+    type: Tweak
+  id: 46
+  time: '2025-11-02T06:39:10.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/73
 Order: -1
