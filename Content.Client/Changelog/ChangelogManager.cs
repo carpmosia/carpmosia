@@ -111,7 +111,7 @@ namespace Content.Client.Changelog
                 var directory = new ResPath("/Changelog");
                 foreach (var file in _resource.ContentFindFiles(new ResPath("/Changelog/")))
                 {
-                    if (file.Directory != directory || file.Extension != "yml")
+                    if (file.Extension != "yml") // Carpmosia-edit - Fix changelog
                         continue;
 
                     var yamlData = _resource.ContentFileReadYaml(file);
