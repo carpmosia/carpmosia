@@ -623,7 +623,7 @@
         acts: ["Destruction"]
   - type: IconSmooth
     key: basic_wall # Carpmosia-edit - Wall resprite
-    base: state # Carpmosia-edit - Wall resprite
+    base: full # Carpmosia-edit - Wall resprite
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -670,7 +670,7 @@
     node: reinforcedWallRust
   - type: IconSmooth
     key: basic_wall # Carpmosia-edit - Wall resprite
-    base: state # Carpmosia-edit - Wall resprite
+    base: full # Carpmosia-edit - Wall resprite
   - type: Destructible
     thresholds:
     - trigger:
@@ -701,14 +701,15 @@
   components:
   - type: Sprite
     drawdepth: Walls
-    sprite: _Carpmosia/Structures/Walls/reinforced_diagonal.rsi # Carpmosia-edit - Wall resprite
-    state: state0
+    sprite: _Carpmosia/Structures/Walls/reinforced.rsi # Carpmosia-edit - Wall resprite
+    state: diagonal0 # Carpmosia-edit - Wall resprite
   - type: Icon
-    sprite: _Carpmosia/Structures/Walls/reinforced_diagonal.rsi # Carpmosia-edit - Wall resprite
-    state: state0
+    sprite: _Carpmosia/Structures/Walls/reinforced.rsi # Carpmosia-edit - Wall resprite
+    state: diagonal0 # Carpmosia-edit - Wall resprite
   # Carpmosia-start - Wall resprite
   - type: IconSmooth
     key: basic_wall
+    base: diagonal
   # Carpmosia-end - Wall resprite
   - type: Damageable
     damageContainer: StructuralInorganic
@@ -1022,7 +1023,7 @@
         acts: ["Destruction"]
   - type: IconSmooth
     key: basic_wall # Carpmosia-edit - Wall resprite
-    base: state # Carpmosia-edit - Wall resprite
+    base: full # Carpmosia-edit - Wall resprite
 
 - type: entity
   parent: WallDiagonalBase
@@ -1031,14 +1032,15 @@
   components:
   - type: Sprite
     drawdepth: Walls
-    sprite: _Carpmosia/Structures/Walls/solid_diagonal.rsi # Carpmosia-edit - Wall resprite
-    state: state0
+    sprite: _Carpmosia/Structures/Walls/solid.rsi # Carpmosia-edit - Wall resprite
+    state: diagonal0
   - type: Icon
-    sprite: _Carpmosia/Structures/Walls/solid_diagonal.rsi # Carpmosia-edit - Wall resprite
-    state: state0
+    sprite: _Carpmosia/Structures/Walls/solid.rsi # Carpmosia-edit - Wall resprite
+    state: diagonal0
   # Carpmosia-start - Wall resprite
   - type: IconSmooth
     key: basic_wall
+    base: diagonal
   # Carpmosia-end - Wall resprite
   - type: Destructible
     thresholds:
@@ -1078,7 +1080,7 @@
     node: wallrust
   - type: IconSmooth
     key: basic_wall # Carpmosia-edit - Wall resprite
-    base: state # Carpmosia-edit - Wall resprite
+    base: full # Carpmosia-edit - Wall resprite
   - type: Destructible
     thresholds:
     - trigger:
