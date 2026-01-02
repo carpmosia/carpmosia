@@ -8,10 +8,12 @@ game.desc = "Carpmosia Mapping Server"
 rules.time = 1
 
 # CCVars.Game
+game.lobbyenabled = false
 game.defaultpreset = "sandbox"
 game.map = "Dev"
 game.role_timers = false
 game.role_loadout_timers = false
+game.role_whitelist = false
 
 # CCVars.Server
 server.uptime_restart_minutes = 0
