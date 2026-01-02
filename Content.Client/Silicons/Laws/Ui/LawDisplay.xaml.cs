@@ -63,6 +63,27 @@ public sealed partial class LawDisplay : Control
 
         LawAnnouncementButtons.AddChild(localButton);
 
+        // Carpmosia-start - Whisper laws
+        var whisperButton = new Button
+        {
+            Text = Loc.GetString("hud-chatbox-select-channel-Whisper"),
+            Modulate = Color.DarkGray,
+            StyleClasses = { "chatSelectorOptionButton" },
+            MinHeight = 35,
+            MinWidth = 75,
+        };
+
+        _nextAllowedPress[whisperButton] = TimeSpan.Zero;
+
+        whisperButton.OnPressed += _ =>
+        {
+            _chatManager.SendMessage($"{lawIdentifierPlaintext}: {lawDescriptionPlaintext}", ChatSelectChannel.Whisper);
+            _nextAllowedPress[whisperButton] = _timing.CurTime + PressCooldown;
+        };
+
+        LawAnnouncementButtons.AddChild(whisperButton);
+        // Carpmosia-end - Whisper laws
+
         if (radioChannels == null)
             return;
 
