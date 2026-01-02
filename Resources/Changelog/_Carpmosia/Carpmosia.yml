@@ -208,4 +208,83 @@
   id: 27
   time: '2025-10-23T06:27:02.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/39
+- author: Atakku
+  changes:
+  - message: Fixed whitelist not whitelisting.
+    type: Tweak
+  id: 28
+  time: '2025-10-23T17:45:07.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/53
+- author: stuff3541
+  changes:
+  - message: Combined Ghost/Roles/ghost-role-component.ftl and ghost/roles/ghost-role-component.ftl into ghost/roles/ghost-role-component.ftl
+    type: Tweak
+  id: 29
+  time: '2025-10-23T17:49:45.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/51
+- author: Atakku
+  changes:
+  - message: Added 2 more pipe layers, Quaternary and Quinary!
+    type: Add
+  id: 30
+  time: '2025-10-24T01:51:41.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/44
+- author: korczoczek
+  changes:
+  - message: Handheld flags can now be waved.
+    type: Add
+  id: 31
+  time: '2025-10-25T20:10:08.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/58
+- author: SnappingOpossum
+  changes:
+  - message: Weed/pest spray capacity increased from 50u to 60u.
+    type: Tweak
+  - message: Most sprays capacity increased from 100u to 120u, including quantities.
+    type: Tweak
+  - message: Bluespace syringe capacity increased from 100u to 120u, added 30u transfer.
+    type: Tweak
+  - message: Internal spray jet and all chemistry jugs capacity increased from 200u to 240u, including quantities.
+    type: Tweak
+  - message: Mega spray and bucket capacity increased from 250u to 300u.
+    type: Tweak
+  - message: Adv. internal spray jet and internal tank (the borg bucket) capacity increased from 500u to 600u.
+    type: Tweak
+  - message: Puddles and bluespace beakers capacity increased from 1000u to 1200u.
+    type: Tweak
+  id: 32
+  time: '2025-10-26T00:17:39.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/48
+- author: arenaconspiracy
+  changes:
+  - message: Security may now select security visors as loadout options instead of security glasses.
+    type: Add
+  - message: Security may now select noir-tech glasses as loadout options after 20 hours of detective playtime.
+    type: Add
+  id: 33
+  time: '2025-10-26T00:45:04.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/52
+- author: SnappingOpossum
+  changes:
+  - message: Added a unique headset for lawyers.
+    type: Add
+  - message: Lawyer stamp is now lawyer contraband.
+    type: Tweak
+  id: 34
+  time: '2025-10-28T04:25:35.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/60
+- author: Voronetz318
+  changes:
+  - message: N2O is 10 times more valuable now, and frezon is 4 times more valuable as well.
+    type: Tweak
+  id: 35
+  time: '2025-10-29T18:43:32.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/62
+- author: Atakku
+  changes:
+  - message: Updated the worms.
+    type: Tweak
+  id: 36
+  time: '2025-10-29T20:25:13.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/68
 Order: -1
