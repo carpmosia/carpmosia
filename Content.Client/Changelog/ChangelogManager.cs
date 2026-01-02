@@ -108,7 +108,7 @@ namespace Content.Client.Changelog
             return Task.Run(() =>
             {
                 var changelogs = new List<Changelog>();
-                var directory = new ResPath("/Changelog");
+                // var directory = new ResPath("/Changelog"); // Carpmosia-edit - Fix changelog
                 foreach (var file in _resource.ContentFindFiles(new ResPath("/Changelog/")))
                 {
                     if (file.Extension != "yml") // Carpmosia-edit - Fix changelog
