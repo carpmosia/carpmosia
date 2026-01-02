@@ -20,4 +20,8 @@ server.uptime_restart_minutes = 0
 server.lobby_name = "Carpmapping"
 
 # CCVars.Shuttle
+shuttle.grid_fill = false
 shuttle.auto_call_time = 0
+shuttle.emergency = false
+shuttle.arrivals = false
+shuttle.preload_grids = false
