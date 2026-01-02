@@ -44,7 +44,6 @@
   - type: IconSmooth
     key: windows_plasma # Carpmosia-edit - Wall resprite
     base: full # Carpmosia-edit - Window resprite
-    additionalKeys: [basic_wall] # Carpmosia-edit - Window resprite
   - type: Construction
     graph: Window
     node: reinforcedPlasmaWindow
@@ -137,7 +136,6 @@
     mode: Diagonal
     key: windows_plasma # Carpmosia-edit - Wall resprite
     base: diagonal # Carpmosia-edit - Window resprite
-    additionalKeys: [basic_wall] # Carpmosia-edit - Window resprite
   - type: Icon
     sprite: _Carpmosia/Structures/Windows/plasma_reinforced.rsi # Carpmosia-edit - Window resprite
     state: diagonal0 # Carpmosia-edit - Window resprite

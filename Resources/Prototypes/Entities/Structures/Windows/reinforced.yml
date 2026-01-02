@@ -46,7 +46,6 @@
   - type: IconSmooth
     key: windows_glass # Carpmosia-edit - Wall resprite
     base: full # Carpmosia-edit - Window resprite
-    additionalKeys: [basic_wall] # Carpmosia-edit - Window resprite
   - type: Construction
     graph: Window
     node: reinforcedWindow
@@ -139,7 +138,6 @@
     mode: Diagonal
     key: windows_glass # Carpmosia-edit - Wall resprite
     base: diagonal # Carpmosia-edit - Window resprite
-    additionalKeys: [basic_wall] # Carpmosia-edit - Window resprite
   - type: Icon
     sprite: _Carpmosia/Structures/Windows/glass_reinforced.rsi # Carpmosia-edit - Window resprite
     state: diagonal0 # Carpmosia-edit - Window resprite
