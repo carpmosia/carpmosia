@@ -48,7 +48,7 @@ public abstract class SharedRevolutionarySystem : EntitySystem
             _popupSystem.PopupEntity(Loc.GetString("rev-break-control", ("name", name)), uid);
         }
 
-        _bloodBoundSystem.OnBloodboundMindshielded((uid, comp), ref init); // Carpmosia-edit - Harmony Blood Bound
+        _bloodBoundSystem.OnBloodBoundMindshielded((uid, comp), ref init); // Carpmosia-edit - Harmony Blood Bound
     }
 
     /// <summary>
