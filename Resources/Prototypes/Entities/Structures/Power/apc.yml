@@ -55,6 +55,14 @@
       visible: false
   - type: Appearance
   - type: ApcVisuals
+    # Carpmosia-start - APC/Alarm resprite
+    emaggedScreenState:
+      - emag-unlit
+      - emag-unlit-1
+      - emag-unlit-2
+      - emag-unlit-3
+      - emag-unlit-4
+    # Carpmosia-end - APC/Alarm resprite
   - type: Battery
     maxCharge: 50000
     startingCharge: 0
