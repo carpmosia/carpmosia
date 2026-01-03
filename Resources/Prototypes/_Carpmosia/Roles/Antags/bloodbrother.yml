@@ -8,7 +8,7 @@
   playTimeTracker: AntagBloodBrotherInitial
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 3600 # 1h
+    time: 1h
 
 # not actually given out, only used to check the preference
 - type: antag
@@ -20,4 +20,4 @@
   playTimeTracker: AntagBloodBrotherConverted
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 3600 # 1h
+    time: 1h
