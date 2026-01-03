@@ -72,12 +72,13 @@
   - type: Appearance
   - type: WiresVisuals
   - type: Sprite
-    sprite: Structures/Wallmounts/air_monitors.rsi
+    sprite: _Carpmosia/Structures/Wallmounts/air_monitors.rsi # Carpmosia-edit - APC/Alarm resprite
     layers:
     - state: alarmp
       map: ["airAlarmBase"]
     - state: alarm0
       map: ["airAlarmState"] # TODO: fire alarm enum
+      shader: unshaded # Carpmosia-edit - APC/Alarm resprite
     - state: alarmx
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: Construction
@@ -117,7 +118,7 @@
   description: An air alarm. Doesn't look like it'll be alarming air any time soon.
   components:
   - type: Sprite
-    sprite: Structures/Wallmounts/air_monitors.rsi
+    sprite: _Carpmosia/Structures/Wallmounts/air_monitors.rsi # Carpmosia-edit - APC/Alarm resprite
     layers:
     - state: alarm_b1
       map: [ "enum.ConstructionVisuals.Layer" ]
@@ -159,10 +160,13 @@
   description: An alien air alarm. Hopefully they didn't breathe poison.
   components:
   - type: Sprite
-    sprite: Structures/Wallmounts/air_monitors_xeno.rsi
+    sprite: _Carpmosia/Structures/Wallmounts/air_monitors_xeno.rsi # Carpmosia-edit - APC/Alarm resprite
     layers:
+    - state: alarmp # Carpmosia-start - APC/Alarm resprite
+      map: ["airAlarmBase"]
     - state: alarm0
-      map: ["airAlarmBase"] # TODO: fire alarm enum
+      map: ["airAlarmState"] # TODO: fire alarm enum
+      shader: unshaded # Carpmosia-end - APC/Alarm resprite
     - state: alarmx
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
 
@@ -172,4 +176,4 @@
   description: An alien air alarm. Why are the wires pulsating?...
   components:
   - type: Sprite
-    sprite: Structures/Wallmounts/air_monitors_xeno.rsi
+    sprite: _Carpmosia/Structures/Wallmounts/air_monitors_xeno.rsi # Carpmosia-edit - APC/Alarm resprite

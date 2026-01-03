@@ -17,6 +17,12 @@ namespace Content.Shared.APC
         /// APC lights/HUD.
         /// </summary>
         ChargeState,
+        // Carpmosia-start - APC/Alarm resprite
+        /// <summary>
+        /// Emag screen varient.
+        /// </summary>
+        EmagVarient,
+        // Carpmosia-end - APC/Alarm resprite
     }
 
     [Serializable, NetSerializable]
