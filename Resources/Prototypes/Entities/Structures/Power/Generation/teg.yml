@@ -117,7 +117,7 @@
 
     # visuals
     - type: Sprite
-      sprite: Structures/Power/Generation/teg.rsi
+      sprite: _Carpmosia/Structures/Power/Generation/teg.rsi # Carpmosia-edit - 5 pipe layers
       layers:
         - state: circ-0
           map: [ "enum.TegVisualLayers.CirculatorBase" ]
@@ -151,7 +151,6 @@
     # tags
     - type: Tag
       tags:
-        - Pipe
         - Unstackable
 
     # basic interactions

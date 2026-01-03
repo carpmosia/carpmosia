@@ -1,6 +1,11 @@
 - type: vendingMachineInventory
   id: RoboDrobeInventory
   startingInventory:
+    # Carpmosia-start - Roboticist backpacks
+    ClothingBackpackRoboticist: 2
+    ClothingBackpackSatchelRoboticist: 2
+    ClothingBackpackDuffelRoboticist: 2
+    # Carpmosia-end - Roboticist backpacks
     ClothingOuterCoatRobo: 2
     ClothingUniformJumpsuitRoboticist: 2
     ClothingUniformJumpskirtRoboticist: 2

@@ -1,0 +1,41 @@
+#random cake spawner, spawns a random cake from the game,
+#with the exception of some gross ones which are commented out for easy enabling
+
+- type: entity
+  id: RandomFoodCake
+  name: random food spawner
+  suffix: Cake
+  parent: MarkerBase
+  placement:
+    mode: AlignTileAny
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Consumable/Food/Baked/cake.rsi
+      state: plain
+  - type: EntityTableSpawner
+    table: !type:GroupSelector
+      children:
+      - id: FoodCakeBlueberry
+      - id: FoodCakePlain
+      - id: FoodCakeCarrot
+#      - id: FoodCakeBrain
+      - id: FoodCakeCheese
+      - id: FoodCakeOrange
+      - id: FoodCakeLime
+      - id: FoodCakeLemon
+      - id: FoodCakeLemoon
+      - id: FoodCakeChocolate
+      - id: FoodCakeApple
+#      - id: FoodCakeSlime
+      - id: FoodCakePumpkin
+      - id: FoodCakeChristmas
+      - id: FoodCakeBirthday
+      - id: FoodCakeVanilla
+      - id: FoodCakeClown
+      - id: FoodCakeSpaceman
+#      - id: MobCatCake
+      - id: FoodCakeSuppermatter
+      - id: FoodCakeCotton
+      - id: FoodCakeBerryDelight

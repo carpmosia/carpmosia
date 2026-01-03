@@ -1,61 +1,66 @@
 - type: loadoutGroup
+  parent: [ SecurityHead, CommonHead ]
   id: WardenHead
-  parent: [BaseHead, CommonHead, SecurityHead]
   loadouts:
   - WardenHead
   - WardenBeret
 
-# - type: loadoutGroup
-#   id: WardenGlasses
-#   parent: [BaseGlasses, CommonGlasses, SecurityGlasses]
+- type: loadoutGroup
+  parent: [ SecurityGlasses ] # CommonGlasses removed
+  id: WardenGlasses
+  minLimit: 1
 
 # - type: loadoutGroup
+#   parent: [ SecurityMask, CommonMask ]
 #   id: WardenMask
-#   parent: [BaseMask, CommonMask, SecurityMask]
 
 - type: loadoutGroup
+  parent: [ SecurityNeck, CommonNeck ]
   id: WardenNeck
-  parent: [BaseNeck, CommonNeck, SecurityNeck]
 
 # - type: loadoutGroup
+#   parent: [ SecurityGloves, CommonGloves ]
 #   id: WardenGloves
-#   parent: [BaseGloves, CommonGloves, SecurityGloves]
 
 - type: loadoutGroup
+  parent: [ SecurityJumpsuit, CommonJumpsuit ]
   id: WardenJumpsuit
-  parent: [BaseJumpsuit, CommonJumpsuit, SecurityJumpsuit]
   loadouts:
   - WardenJumpsuit
   - WardenJumpskirt
 
 - type: loadoutGroup
+  parent: [ SecurityBackpack, CommonBackpack ]
   id: WardenBackpack
-  parent: [BaseBackpack, CommonBackpack, SecurityBackpack]
 
 # - type: loadoutGroup
+#   parent: [ SecurityPDA, CommonPDA ]
 #   id: WardenPDA
-#   parent: [BasePDA, CommonPDA, SecurityPDA]
 
 - type: loadoutGroup
+  parent: [ SecurityBelt, CommonBelt ]
   id: WardenBelt
-  parent: [BaseBelt, CommonBelt, SecurityBelt]
 
 - type: loadoutGroup
+  parent: [ SecurityOuterClothing, CommonOuterClothing ]
   id: WardenOuterClothing
-  parent: [BaseOuterClothing, CommonOuterClothing, SecurityOuterClothing]
   minLimit: 1
   loadouts:
   - WardenCoat
   - WardenArmoredWinterCoat
 
 - type: loadoutGroup
+  parent: [ PrioritySecurityShoes, CommonShoes, SecurityShoes ]
   id: WardenShoes
-  parent: [BaseShoes, CommonShoes, SecurityShoes]
 
 # - type: loadoutGroup
-#   id: WardenSpecial
 #   parent: BaseSpecial
+#   id: WardenSpecial
 
 - type: loadoutGroup
+  parent: [ SecurityTrinkets, CommonTrinkets ]
   id: WardenTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, SecurityTrinkets]
+
+- type: loadoutGroup
+  parent: [ SecurityPets, CommonPets ]
+  id: WardenPets

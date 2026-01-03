@@ -51,6 +51,14 @@ def main():
     diff = diff_changelog(last_changelog, cur_changelog)
     message_lines = changelog_entries_to_message_lines(diff)
     send_message_lines(message_lines)
+    # Carpmosia-start - Fix changelog
+    with open("Resources/Changelog/_Carpmosia/Carpmosia.yml", "r") as f:
+        cur_changelog = yaml.safe_load(f)
+
+    diff = diff_changelog(last_changelog, cur_changelog)
+    message_lines = changelog_entries_to_message_lines(diff)
+    send_message_lines(message_lines)
+    # Carpmosia-end - Fix changelog
 
 
 def get_most_recent_workflow(

@@ -1,0 +1,10 @@
+- type: entity
+  parent: BaseThiefStealObjective
+  id: SalvageShuttleCircuitboardStealObjective
+  components:
+  - type: NotJobRequirement
+    jobs: [ SalvageSpecialist ]
+  - type: StealCondition
+    stealGroup: SalvageShuttleConsoleCircuitboard
+  - type: Objective
+    difficulty: 0.7

@@ -892,9 +892,10 @@
   parent: PosterBase
   id: PosterLegitEnlist
   name: "Enlist"
-  description: "Enlist in the Nanotrasen Deathsquadron reserves today!"
+  description: "Enlist in the Nanotrasen ERT reserves today!" # Carpmosia-edit - Replace DS enlist
   components:
   - type: Sprite
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/legit.rsi # Carpmosia-edit - Replace DS enlist
     state: poster29_legit
 
 - type: entity
@@ -1130,6 +1131,15 @@
   components:
   - type: Sprite
     state: poster55_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitBotanyFear
+  name: "Fear of hydroponics"
+  description: "Think three times before opening the airlock to hydroponics, a red threat might be hiding there."
+  components:
+  - type: Sprite
+    state: poster56_legit
 
 #maps
 

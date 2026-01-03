@@ -1,28 +1,28 @@
-# - type: loadoutGroup
-#   id: LawyerHead
-#   parent: [BaseHead, CommonHead, CivilianHead]
+- type: loadoutGroup
+  parent: [ CivilianHead, CommonHead ]
+  id: LawyerHead
 
 - type: loadoutGroup
+  parent: [ CivilianGlasses, CommonGlasses ]
   id: LawyerGlasses
-  parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
 
 # - type: loadoutGroup
+#   parent: [ CivilianMask, CommonMask ]
 #   id: LawyerMask
-#   parent: [BaseMask, CommonMask, CivilianMask]
 
 - type: loadoutGroup
+  parent: [ CivilianNeck, CommonNeck ]
   id: LawyerNeck
-  parent: [BaseNeck, CommonNeck, CivilianNeck]
   loadouts:
   - LawyerNeck
 
 # - type: loadoutGroup
+#   parent: [ CivilianGloves, CommonGloves ]
 #   id: LawyerGloves
-#   parent: [BaseGloves, CommonGloves, CivilianGloves]
 
 - type: loadoutGroup
+  parent: [ CivilianJumpsuit, CommonJumpsuit ]
   id: LawyerJumpsuit
-  parent: [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit]
   loadouts:
   - LawyerJumpsuit
   - LawyerJumpskirt
@@ -36,29 +36,33 @@
   - LawyerJumpskirtGood
 
 - type: loadoutGroup
+  parent: [ CivilianBackpack, CommonBackpack ]
   id: LawyerBackpack
-  parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
 
 # - type: loadoutGroup
+#   parent: [ CivilianPDA, CommonPDA ]
 #   id: LawyerPDA
-#   parent: [BasePDA, CommonPDA, CivilianPDA]
 
 # - type: loadoutGroup
+#   parent: [ CivilianBelt, CommonBelt ]
 #   id: LawyerBelt
-#   parent: [BaseBelt, CommonBelt, CivilianBelt]
 
 # - type: loadoutGroup
+#   parent: [ CivilianOuterClothing, CommonOuterClothing ]
 #   id: LawyerOuterClothing
-#   parent: [BaseOuterClothing, CommonOuterClothing, CivilianOuterClothing]
-
-# - type: loadoutGroup
-#   id: LawyerShoes
-#   parent: [BaseShoes, CommonShoes, CivilianShoes]
-
-# - type: loadoutGroup
-#   id: LawyerSpecial
-#   parent: BaseSpecial
 
 - type: loadoutGroup
+  parent: [ CommonShoes, CivilianShoes ]
+  id: LawyerShoes
+
+# - type: loadoutGroup
+#   parent: BaseSpecial
+#   id: LawyerSpecial
+
+- type: loadoutGroup
+  parent: [ CivilianTrinkets, CommonTrinkets ]
   id: LawyerTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]
+
+- type: loadoutGroup
+  parent: [ CivilianPets, CommonPets ]
+  id: LawyerPets

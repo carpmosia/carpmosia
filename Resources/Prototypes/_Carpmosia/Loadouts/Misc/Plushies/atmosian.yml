@@ -1,0 +1,32 @@
+- type: loadoutEffectGroup
+  id: PlushieAtmosian
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobAtmosphericTechnician
+      time: 5h
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Cargo
+      time: 5h
+
+- type: loadout
+  id: PlushieAtmosian
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PlushieAtmosian
+  storage:
+    back:
+    - PlushieAtmosian
+  groupBy: "plushies"
+
+- type: loadout
+  id: HatPlushieAtmosian
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PlushieAtmosian
+  equipment:
+    head: PlushieAtmosian
+  groupBy: "plushies"

@@ -1,0 +1,34 @@
+- type: startingGear
+  id: SkeletonPassengerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorGrey
+    shoes: ClothingShoesColorBlack
+    id: PassengerPDA
+    ears: ClothingHeadsetGrey
+    back: ClothingBackpack
+  storage:
+    back:
+    - BoxSurvival
+
+- type: startingGear
+  id: MobAghostGearCarp
+  equipment:
+    back: ClothingBackpackSatchelAdmin
+    belt: ClothingBeltChiefEngineerFilled
+    id: AdminPDA
+    eyes: ClothingEyesHudMedSec
+  storage:
+    back:
+    - GasAnalyzer
+    - AccessConfiguratorUniversal
+    - Multitool
+    - ToolDebug
+    - WelderExperimental
+    - RCDExperimental
+    - WeaponForceGunAdmin
+    - WeaponTetherGunAdmin
+    - DoorRemoteAll
+    - AnomalyScanner
+    - AnomalyLocatorUnpowered
+    - AdminHypo
+    - SprayPainterRecharging

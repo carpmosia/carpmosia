@@ -1,0 +1,27 @@
+- type: loadoutEffectGroup
+  id: LizardPlushieScreams
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobAtmosphericTechnician
+      time: 50h
+
+- type: loadout
+  id: LizardPlushieScreams
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: LizardPlushieScreams
+  storage:
+    back:
+    - PlushieLizardScreams
+  groupBy: "metaplush"
+
+- type: loadout
+  id: HatPlushieScreams
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: LizardPlushieScreams
+  equipment:
+    head: PlushieLizardScreams
+  groupBy: "metaplush"

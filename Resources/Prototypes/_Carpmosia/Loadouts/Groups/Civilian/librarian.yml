@@ -1,26 +1,26 @@
-# - type: loadoutGroup
-#   id: LibrarianHead
-#   parent: [BaseHead, CommonHead, CivilianHead]
+- type: loadoutGroup
+  parent: [ CivilianHead, CommonHead ]
+  id: LibrarianHead
 
 - type: loadoutGroup
+  parent: [ CivilianGlasses, CommonGlasses ]
   id: LibrarianGlasses
-  parent: [BaseGlasses, CommonGlasses, CivilianGlasses]
 
 # - type: loadoutGroup
+#   parent: [ CivilianMask, CommonMask ]
 #   id: LibrarianMask
-#   parent: [BaseMask, CommonMask, CivilianMask]
-
-# - type: loadoutGroup
-#   id: LibrarianNeck
-#   parent: [BaseNeck, CommonNeck, CivilianNeck]
-
-# - type: loadoutGroup
-#   id: LibrarianGloves
-#   parent: [BaseGloves, CommonGloves, CivilianGloves]
 
 - type: loadoutGroup
+  parent: [ CivilianNeck, CommonNeck ]
+  id: LibrarianNeck
+
+# - type: loadoutGroup
+#   parent: [ CivilianGloves, CommonGloves ]
+#   id: LibrarianGloves
+
+- type: loadoutGroup
+  parent: [ CivilianJumpsuit, CommonJumpsuit ]
   id: LibrarianJumpsuit
-  parent: [BaseJumpsuit, CommonJumpsuit, CivilianJumpsuit]
   loadouts:
   - LibrarianJumpsuit
   - LibrarianJumpskirt
@@ -28,29 +28,33 @@
   - CuratorJumpskirt
 
 - type: loadoutGroup
+  parent: [ CivilianBackpack, CommonBackpack ]
   id: LibrarianBackpack
-  parent: [BaseBackpack, CommonBackpack, CivilianBackpack]
 
 # - type: loadoutGroup
+#   parent: [ CivilianPDA, CommonPDA ]
 #   id: LibrarianPDA
-#   parent: [BasePDA, CommonPDA, CivilianPDA]
 
 # - type: loadoutGroup
+#   parent: [ CivilianBelt, CommonBelt ]
 #   id: LibrarianBelt
-#   parent: [BaseBelt, CommonBelt, CivilianBelt]
 
 # - type: loadoutGroup
+#   parent: [ CivilianOuterClothing, CommonOuterClothing ]
 #   id: LibrarianOuterClothing
-#   parent: [BaseOuterClothing, CommonOuterClothing, CivilianOuterClothing]
-
-# - type: loadoutGroup
-#   id: LibrarianShoes
-#   parent: [BaseShoes, CommonShoes, CivilianShoes]
-
-# - type: loadoutGroup
-#   id: LibrarianSpecial
-#   parent: BaseSpecial
 
 - type: loadoutGroup
+  parent: [ CommonShoes, CivilianShoes ]
+  id: LibrarianShoes
+
+# - type: loadoutGroup
+#   parent: BaseSpecial
+#   id: LibrarianSpecial
+
+- type: loadoutGroup
+  parent: [ CivilianTrinkets, CommonTrinkets ]
   id: LibrarianTrinkets
-  parent: [BaseTrinkets, CommonTrinkets, CivilianTrinkets]
+
+- type: loadoutGroup
+  parent: [ CivilianPets, CommonPets ]
+  id: LibrarianPets

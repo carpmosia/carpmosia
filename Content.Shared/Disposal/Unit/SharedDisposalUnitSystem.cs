@@ -436,6 +436,10 @@ public abstract class SharedDisposalUnitSystem : EntitySystem
 
     protected void OnEmagged(EntityUid uid, DisposalUnitComponent component, ref GotEmaggedEvent args)
     {
+        // Carpmosia-start - Emagging mailing units
+        component.Blacklist = null;
+        component.Whitelist = null;
+        // Carpmosia-end - Emagging mailing units
         component.DisablePressure = true;
         args.Handled = true;
     }
@@ -453,7 +457,7 @@ public abstract class SharedDisposalUnitSystem : EntitySystem
         if (!storable && !HasComp<MobStateComponent>(entity))
             return false;
 
-        if (_whitelistSystem.IsBlacklistPass(component.Blacklist, entity) ||
+        if (_whitelistSystem.IsWhitelistPass(component.Blacklist, entity) ||
             _whitelistSystem.IsWhitelistFail(component.Whitelist, entity))
             return false;
 

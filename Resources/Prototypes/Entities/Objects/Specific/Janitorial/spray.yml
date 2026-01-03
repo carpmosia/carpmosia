@@ -27,7 +27,7 @@
   - type: SolutionContainerManager
     solutions:
       spray:
-        maxVol: 100
+        maxVol: 120 # Carpmosia-edit - extendedReagentStorage
   - type: RefillableSolution
     solution: spray
   - type: DrainableSolution
@@ -61,7 +61,7 @@
   - type: SolutionContainerManager
     solutions:
       spray:
-        maxVol: 250
+        maxVol: 300 # Carpmosia-edit - extendedReagentStorage
   - type: Spray
     transferAmount: 15
     sprayedPrototype: BigVapor
@@ -82,28 +82,45 @@
   - type: SolutionContainerManager
     solutions:
       spray:
-        maxVol: 100
+        maxVol: 120 # Carpmosia-edit - extendedReagentStorage
         reagents:
         - ReagentId: Water
-          Quantity: 100
+          Quantity: 120 # Carpmosia-edit - extendedReagentStorage
 
 - type: entity
-  name: space cleaner
   description: BLAM!-brand non-foaming space cleaner!
   id: SprayBottleSpaceCleaner
   parent: SprayBottle
-  suffix: ""
+  suffix: Space Cleaner
   components:
   - type: SolutionContainerManager
     solutions:
       spray:
-        maxVol: 100
+        maxVol: 120 # Carpmosia-edit - extendedReagentStorage
         reagents:
         - ReagentId: SpaceCleaner
-          Quantity: 100
+          Quantity: 120 # Carpmosia-edit - extendedReagentStorage
+  - type: Label
+    currentLabel: space cleaner
   - type: Tag
     tags:
       - Spray
+
+- type: entity
+  parent: MegaSprayBottle
+  id: MegaSprayBottleSpaceCleaner
+  description: BLAM!-brand non-foaming space cleaner, now in a bigger package for those huge blood puddles!
+  suffix: Space Cleaner
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      spray:
+        maxVol: 250
+        reagents:
+        - ReagentId: SpaceCleaner
+          Quantity: 250
+  - type: Label
+    currentLabel: space cleaner
 
 - type: entity
   parent: SprayBottle
@@ -115,10 +132,10 @@
   - type: SolutionContainerManager
     solutions:
       spray:
-        maxVol: 200
+        maxVol: 240 # Carpmosia-edit - extendedReagentStorage
         reagents:
         - ReagentId: SpaceCleaner
-          Quantity: 200
+          Quantity: 240 # Carpmosia-edit - extendedReagentStorage
 
 - type: entity
   parent: MegaSprayBottle
@@ -130,10 +147,10 @@
   - type: SolutionContainerManager
     solutions:
       spray:
-        maxVol: 500
+        maxVol: 600 # Carpmosia-edit - extendedReagentStorage
         reagents:
         - ReagentId: SpaceCleaner
-          Quantity: 500
+          Quantity: 600 # Carpmosia-edit - extendedReagentStorage
 
 # Vapor
 - type: entity
@@ -194,3 +211,17 @@
         mask:
         - FullTileMask
         - Opaque
+
+- type: entity
+  parent: Vapor
+  id: FlowerVapor
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Effects/extinguisherSpray.rsi
+    layers:
+    - state: extinguish
+      map: [ "enum.VaporVisualLayers.Base" ]
+  - type: VaporVisuals
+    animationTime: 0.8
+    animationState: extinguish

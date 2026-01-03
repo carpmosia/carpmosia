@@ -15,7 +15,6 @@
   - Security
   - Brig
   - Maintenance
-  - Service
   - External
   - Cryogenics
   special:
@@ -25,7 +24,7 @@
 - type: startingGear
   id: SecurityOfficerGear
   equipment:
-    eyes: ClothingEyesGlassesSecurity
+    # eyes: ClothingEyesGlassesSecurity # Carpmosia-edit - crew visors
     ears: ClothingHeadsetSecurity
     pocket1: WeaponPistolMk58
   storage:

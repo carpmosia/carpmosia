@@ -1,0 +1,11 @@
+flavor-complex-angostura = bitter
+flavor-complex-sweet-revenge = like a fruity whiskey
+flavor-complex-old-fashioned = like a good old times
+flavor-complex-llb = bitter and citrusy
+flavor-complex-rob-roy = like Scotch drink
+flavor-complex-gunner = like a refreshing ginger beer
+flavor-complex-carribean-lovers = like love
+flavor-complex-the-last-word = like a good speech
+flavor-complex-coffee-flip = like a sweet coffee cocktail
+
+flavor-vocalstrain = like vocal strain

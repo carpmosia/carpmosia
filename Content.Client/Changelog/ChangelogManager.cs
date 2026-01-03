@@ -52,6 +52,7 @@ namespace Content.Client.Changelog
             // Open changelog purely to compare to the last viewed date.
             var changelogs = await LoadChangelog();
             UpdateChangelogs(changelogs);
+            _configManager.OnValueChanged(CCVars.ServerId, OnServerIdCVarChanged);
         }
 
         private void UpdateChangelogs(List<Changelog> changelogs)
@@ -81,6 +82,11 @@ namespace Content.Client.Changelog
 
             MaxId = changelog.Entries.Max(c => c.Id);
 
+            CheckLastSeenEntry();
+        }
+
+        private void CheckLastSeenEntry()
+        {
             var path = new ResPath($"/changelog_last_seen_{_configManager.GetCVar(CCVars.ServerId)}");
             if (_resource.UserData.TryReadAllText(path, out var lastReadIdText))
             {
@@ -92,15 +98,20 @@ namespace Content.Client.Changelog
             NewChangelogEntriesChanged?.Invoke();
         }
 
+        private void OnServerIdCVarChanged(string newValue)
+        {
+            CheckLastSeenEntry();
+        }
+
         public Task<List<Changelog>> LoadChangelog()
         {
             return Task.Run(() =>
             {
                 var changelogs = new List<Changelog>();
-                var directory = new ResPath("/Changelog");
+                // var directory = new ResPath("/Changelog"); // Carpmosia-edit - Fix changelog
                 foreach (var file in _resource.ContentFindFiles(new ResPath("/Changelog/")))
                 {
-                    if (file.Directory != directory || file.Extension != "yml")
+                    if (file.Extension != "yml") // Carpmosia-edit - Fix changelog
                         continue;
 
                     var yamlData = _resource.ContentFileReadYaml(file);

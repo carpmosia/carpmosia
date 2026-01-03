@@ -1,0 +1,189 @@
+- type: reagent
+  parent: BaseAlcohol
+  id: Angostura
+  name: reagent-name-angostura
+  desc: reagent-desc-angostura
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: angostura
+  color: "#2b0700"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/wineglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.2
+
+- type: reagent
+  parent: BaseAlcohol
+  id: SweetRevenge
+  name: reagent-name-sweet-revenge
+  desc: reagent-desc-sweet-revenge
+  physicalDesc: reagent-physical-desc-sweet
+  flavor: sweetrevenge
+  color: "#e36e54"
+  metamorphicSprite:
+    sprite: _Carpmosia/Objects/Consumable/Drinks/sweetrevengeglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.13
+
+- type: reagent
+  parent: BaseAlcohol
+  id: OldFashioned
+  name: reagent-name-old-fashioned
+  desc: reagent-desc-old-fashioned
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: oldfashioned
+  color: "#afa08a"
+  metamorphicSprite:
+    sprite: _Carpmosia/Objects/Consumable/Drinks/oldfashionedglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.1
+
+- type: reagent
+  parent: BaseAlcohol
+  id: LLB
+  name: reagent-name-llb
+  desc: reagent-desc-llb
+  physicalDesc: reagent-physical-desc-citric
+  flavor: llb
+  color: "#ffd000"
+  metamorphicSprite:
+    sprite: _Carpmosia/Objects/Consumable/Drinks/llbglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.05
+
+- type: reagent
+  parent: BaseAlcohol
+  id: RobRoy
+  name: reagent-name-rob-roy
+  desc: reagent-desc-rob-roy
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: robroy
+  color: "#ff5e14"
+  metamorphicSprite:
+    sprite: _Carpmosia/Objects/Consumable/Drinks/robroyglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+
+- type: reagent
+  parent: BaseAlcohol
+  id: Gunner
+  name: reagent-name-gunner
+  desc: reagent-desc-gunner
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: gunner
+  color: "#a26616"
+  metamorphicSprite:
+    sprite: _Carpmosia/Objects/Consumable/Drinks/gunnerglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.05
+
+- type: reagent
+  parent: BaseAlcohol
+  id: CarribeanLovers
+  name: reagent-name-carribean-lovers
+  desc: reagent-desc-carribean-lovers
+  physicalDesc: reagent-physical-desc-tropical
+  flavor: carribeanlovers
+  color: "#ff5e14"
+  metamorphicSprite:
+    sprite: _Carpmosia/Objects/Consumable/Drinks/carribeanloversglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
+
+- type: reagent
+  parent: BaseAlcohol
+  id: TheLastWord
+  name: reagent-name-the-last-word
+  desc: reagent-desc-the-last-word
+  physicalDesc: reagent-physical-desc-cloudy
+  flavor: thelastword
+  color: "#f9fccf"
+  metamorphicSprite:
+    sprite: _Carpmosia/Objects/Consumable/Drinks/thelastwordglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+
+- type: reagent
+  parent: BaseAlcohol
+  id: CoffeeFlip
+  name: reagent-name-coffee-flip
+  desc: reagent-desc-coffee-flip
+  physicalDesc: reagent-physical-desc-sweet
+  flavor: coffeeflip
+  color: "#c6894a"
+  metamorphicSprite:
+    sprite: _Carpmosia/Objects/Consumable/Drinks/coffeeflipglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.1
+      - !type:AdjustReagent
+        reagent: Theobromine
+        amount: 0.05
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectDrowsiness
+        time: 2
+        type: Remove

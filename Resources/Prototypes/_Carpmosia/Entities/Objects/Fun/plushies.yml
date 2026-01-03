@@ -1,0 +1,170 @@
+- type: entity
+  parent: PlushieLizard
+  id: PlushieLizardScreams
+  name: screaming lizard plushie
+  description: An adorable stuffed toy that resembles a lizardperson, specifically a certain atmospheric technician. Even the smallest stimuli causes it to scream.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Fun/Plushies/screams.rsi
+  - type: Item
+    sprite: _Carpmosia/Objects/Fun/Plushies/screams.rsi
+  - type: EmitSoundOnUse
+    sound: &PlushieLizardScreamsSound
+      path: /Audio/Voice/Reptilian/reptilian_scream.ogg
+      params:
+        volume: 0
+        pitch: 1.3
+        variation: 0.3
+  - type: EmitSoundOnLand
+    sound: *PlushieLizardScreamsSound
+  - type: EmitSoundOnActivate
+    sound: *PlushieLizardScreamsSound
+  - type: EmitSoundOnTrigger
+    sound: *PlushieLizardScreamsSound
+  - type: EmitSoundOnCollide
+    sound: *PlushieLizardScreamsSound
+  - type: Edible
+    useSound: *PlushieLizardScreamsSound
+    transferAmount: 10
+  - type: MeleeWeapon
+    soundHit: *PlushieLizardScreamsSound
+  - type: Clothing
+    quickEquip: false
+    sprite: _Carpmosia/Objects/Fun/Plushies/screams.rsi
+    slots:
+    - HEAD
+  - type: Explosive
+    canCreateVacuum: false
+    deleteAfterExplosion: false
+    explosionType: Default
+    repeatable: true
+    maxIntensity: 0.01
+    intensitySlope: 1
+    totalIntensity: 0.01
+  - type: ExplodeOnTrigger
+  - type: TriggerOnLand
+  - type: RandomChanceTriggerCondition
+    successChance: 0.1
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceThatMakesYouScream
+        Quantity: 30
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
+        - ReagentId: JuiceThatMakesYouScream
+          Quantity: 10
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieArachindCole
+  name: tider spider plushie
+  description: An adorable stuffed toy that resembles an arachnid, specifically a certain tider. It shivers in the presence of contraband.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Fun/Plushies/cole.rsi
+    state: icon
+  - type: EmitSoundOnUse
+    sound: &PlushieArachnidSound
+      path: /Audio/Voice/Arachnid/arachnid_scream.ogg
+      params:
+        volume: 0
+        pitch: 1.3
+        variation: 0.3
+  - type: EmitSoundOnLand
+    sound: *PlushieArachnidSound
+  - type: EmitSoundOnActivate
+    sound: *PlushieArachnidSound
+  - type: EmitSoundOnTrigger
+    sound: *PlushieArachnidSound
+  - type: EmitSoundOnCollide
+    sound: *PlushieArachnidSound
+  - type: Edible
+    useSound: *PlushieArachnidSound
+  - type: MeleeWeapon
+    soundHit: *PlushieArachnidSound
+  - type: Clothing
+    quickEquip: false
+    sprite: _Carpmosia/Objects/Fun/Plushies/cole.rsi
+    slots:
+    - HEAD
+
+- type: entity
+  parent: PlushieLizard
+  id: PlushieLizardAxel
+  name: cursed axolotl plushie
+  description: An... adorable...? stuffed toy that resembles a lizardperson, specifically a certain doctor. It turns to look RIGHT AT YOU. It can change colors based on solutions injected into it.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Fun/Plushies/axel.rsi
+    layers:
+    - state: icon
+    - state: fill-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: Item
+    sprite: _Carpmosia/Objects/Fun/Plushies/axel.rsi
+  - type: EmitSoundOnUse
+    sound: &PlushieLizardAxelSound
+      path: /Audio/Items/Toys/weh.ogg
+      params:
+        volume: 0
+        pitch: 0.6
+        variation: 0.3
+  - type: EmitSoundOnLand
+    sound: *PlushieLizardAxelSound
+  - type: EmitSoundOnActivate
+    sound: *PlushieLizardAxelSound
+  - type: EmitSoundOnTrigger
+    sound: *PlushieLizardAxelSound
+  - type: EmitSoundOnCollide
+    sound: *PlushieLizardAxelSound
+  - type: Edible
+    useSound: *PlushieLizardAxelSound
+    transferAmount: 10
+  - type: MeleeWeapon
+    soundHit: *PlushieLizardAxelSound
+  - type: Clothing
+    quickEquip: false
+    sprite: _Carpmosia/Objects/Fun/Plushies/axel.rsi
+    slots:
+    - HEAD
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 30
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
+        - ReagentId: Blood
+          Quantity: 10
+      coloring:
+        maxVol: 30
+  - type: MixableSolution
+    solution: coloring
+  - type: ExaminableSolution
+    solution: coloring
+    exactVolume: true
+  - type: DrawableSolution
+    solution: coloring
+  - type: InjectableSolution
+    solution: coloring
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    solutionName: coloring
+    maxFillLevels: 4
+    fillBaseName: fill-
+    inHandsMaxFillLevels: 4
+    inHandsFillBaseName: -fill-
+    equippedMaxFillLevels: 4
+    equippedFillBaseName: -fill-

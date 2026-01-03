@@ -1,0 +1,14 @@
+- type: latheRecipe
+  id: CompactDefibrillator
+  result: DefibrillatorCompactEmpty 
+  completetime: 2
+  materials:
+    Steel: 250
+
+- type: latheRecipe
+  id: Tourniquet
+  result: Tourniquet1
+  completetime: 1
+  materials:
+    Plastic: 25
+    Steel: 10

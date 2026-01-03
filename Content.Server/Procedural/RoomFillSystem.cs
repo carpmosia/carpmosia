@@ -28,12 +28,13 @@ public sealed class RoomFillSystem : EntitySystem
                 _dungeon.SpawnRoom(
                     xform.GridUid.Value,
                     mapGrid,
-                    _maps.LocalToTile(xform.GridUid.Value, mapGrid, xform.Coordinates) - new Vector2i(room.Size.X/2,room.Size.Y/2),
+                    _maps.LocalToTile(xform.GridUid.Value, mapGrid, xform.Coordinates) - new Vector2i(room.Size.X/2,room.Size.Y/2) + component.Offset.Rotate(xform.LocalRotation), // Carpmosia-edit - Roomfill improvements
                     room,
                     random,
                     null,
                     clearExisting: component.ClearExisting,
-                    rotation: component.Rotation);
+                    rotation: component.Rotation,
+                    roomRotation: component.InheritRotation ? xform.LocalRotation : Angle.Zero); // Carpmosia-edit - Roomfill improvements
             }
             else
             {

@@ -1,0 +1,31 @@
+- type: loadoutEffectGroup
+  id: PlushieDiona
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 5h
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 10h
+
+- type: loadout
+  id: PlushieDiona
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PlushieDiona
+  storage:
+    back:
+    - PlushieDiona
+  groupBy: "plushies"
+
+- type: loadout
+  id: HatPlushieDiona
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PlushieDiona
+  equipment:
+    head: PlushieDiona
+  groupBy: "plushies"

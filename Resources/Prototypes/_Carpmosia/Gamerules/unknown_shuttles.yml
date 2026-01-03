@@ -1,0 +1,64 @@
+- type: entity
+  id: AdmemeERTMixed
+  parent: BaseUnknownShuttleRule
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-ERT-sent
+  - type: LoadMapRule
+    gridPath: /Maps/_Carpmosia/Shuttles/ShuttleEvent/ERTmixed.yml
+
+- type: entity
+  id: AdmemeERTSec
+  parent: BaseUnknownShuttleRule
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-ERT-sent-sec
+  - type: LoadMapRule
+    gridPath: /Maps/_Carpmosia/Shuttles/ShuttleEvent/ERTsec.yml
+
+- type: entity
+  id: AdmemeERTMed
+  parent: BaseUnknownShuttleRule
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-ERT-sent-med
+  - type: LoadMapRule
+    gridPath: /Maps/_Carpmosia/Shuttles/ShuttleEvent/ERTmed.yml
+
+- type: entity
+  id: AdmemeERTCburn
+  parent: BaseUnknownShuttleRule
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-ERT-sent-cburn
+  - type: LoadMapRule
+    gridPath: /Maps/_Carpmosia/Shuttles/ShuttleEvent/ERTcburn.yml
+
+- type: entity
+  id: AdmemeERTEngi
+  parent: BaseUnknownShuttleRule
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-ERT-sent-engi
+  - type: LoadMapRule
+    gridPath: /Maps/_Carpmosia/Shuttles/ShuttleEvent/ERTengi.yml
+
+- type: entity
+  id: AdmemeERTChap
+  parent: BaseUnknownShuttleRule
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-ERT-sent-chap
+  - type: LoadMapRule
+    gridPath: /Maps/_Carpmosia/Shuttles/ShuttleEvent/ERTchap.yml
+
+- type: entity
+  id: AdmemeERTDeathsquad
+  parent: BaseUnknownShuttleRule
+  components:
+  - type: StationEvent
+    startAnnouncement: null #Not needed, epsilon is enough #TODO: reparent to unnanounced shuttle rule and remove this when that's added
+  - type: LoadMapRule
+    gridPath: /Maps/_Carpmosia/Shuttles/ShuttleEvent/ERTdeathsquad.yml
+  - type: AlertLevelInterceptionRule
+    alertLevel: epsilon

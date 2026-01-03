@@ -23,7 +23,7 @@
   id: MimeGear
   equipment:
     gloves: ClothingHandsGlovesColorWhite
-    shoes: ClothingShoesColorWhite
+    # shoes: ClothingShoesColorWhite # Carpmosia-edit - Loadout Rework 2
     id: MimePDA
     pocket1: CrayonMime
     ears: ClothingHeadsetService
@@ -41,7 +41,7 @@
     priority: -1
     useDelay: 30
     icon:
-      sprite: Structures/Walls/solid.rsi
+      sprite: _Carpmosia/Structures/Walls/solid.rsi # Carpmosia-edit - Wall resprite
       state: full
   - type: InstantAction
     event: !type:InvisibleWallActionEvent

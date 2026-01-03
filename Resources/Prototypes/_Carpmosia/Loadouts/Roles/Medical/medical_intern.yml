@@ -3,19 +3,20 @@
   groups:
   - GroupTankHarness
   # Common groups
-  # - MedicalInternHead
+  - MedicalInternHead
   - MedicalInternGlasses
   # - MedicalInternMask
-  # - MedicalInternNeck
+  - MedicalInternNeck
   # - MedicalInternGloves
   - MedicalInternJumpsuit
   - MedicalInternBackpack
   # - MedicalInternPDA
   # - MedicalInternBelt
   # - MedicalInternOuterClothing
-  # - MedicalInternShoes
+  - MedicalInternShoes
   # Backpack fills
   - SurvivalMedical
   - GroupSpeciesBreathToolMedical
   # - MedicalInternSpecial
   - MedicalInternTrinkets
+  - MedicalInternPets

@@ -1,3 +1,5 @@
+# When adding new plushies, also add them to id: AllPlushiesTable
+
 ## Plushies
 
 - type: entity
@@ -19,9 +21,9 @@
   - type: EmitSoundOnTrigger
     sound: *BasePlushieSound
   - type: UseDelay
-    delay: 3.0
+    delay: 1.0 # Carpmosia-edit - Unnerf plushie fights
   - type: MeleeWeapon
-    attackRate: 0.333
+    attackRate: 1 # Carpmosia-edit - Unnerf plushie fights
     wideAnimationRotation: 180
     soundHit: *BasePlushieSound
     damage:
@@ -617,7 +619,8 @@
     - reagents: [ Water ]
       methods: [ Touch ]
       effects:
-      - !type:AddToSolutionReaction
+      - !type:AddReagentToSolution
+        reagent: Water
         solution: plushie
   - type: Fixtures
     fixtures:

@@ -34,7 +34,7 @@
   id: TraitorObjectiveGroupState
   weights:
     EscapeShuttleObjective: 1
-    DieObjective: 0.05
+    DieObjective: 0.2
     #HijackShuttleObjective: 0.02
 
 - type: weightedRandom
@@ -85,6 +85,7 @@
     AmePartFlatpackStealObjective: 1
     ExpeditionsCircuitboardStealObjective: 1            #sup
     CargoShuttleCircuitboardStealObjective: 1
+    SalvageShuttleCircuitboardStealObjective: 1 # Carpmosia-edit - Job board to shuttle console + fixes
     ClothingEyesHudBeerStealObjective: 0.5              #srv, beer goggles less common cause its so easy
     BibleStealObjective: 1
     ClothingNeckGoldmedalStealObjective: 1              #other

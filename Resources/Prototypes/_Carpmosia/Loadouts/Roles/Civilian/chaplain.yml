@@ -1,5 +1,6 @@
 - type: roleLoadout
   id: JobChaplain
+  canCustomizeName: true
   groups:
   - GroupTankHarness
   # Common groups
@@ -13,9 +14,10 @@
   # - ChaplainPDA
   # - ChaplainBelt
   - ChaplainOuterClothing
-  # - ChaplainShoes
+  - ChaplainShoes
   # Backpack fills
   - Survival
   - GroupSpeciesBreathTool
   - ChaplainSpecial
   - ChaplainTrinkets
+  - ChaplainPets

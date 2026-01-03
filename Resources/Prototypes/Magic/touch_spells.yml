@@ -36,7 +36,7 @@
       sprite: Objects/Magic/magicactions.rsi
       state: gib
   - type: EntityTargetAction
-    event: !type:SmiteSpellEvent
+    event: !type:DamageSmiteSpellEvent # Carpmosia-edit - Wizard Smite Rework
   - type: SpeakOnAction
     sentence: action-speech-spell-smite
   - type: Magic
@@ -94,4 +94,4 @@
   - type: SpeakOnAction
     sentence: action-speech-spell-slip
   - type: Magic
-    requiresClothes: true
+    requiresClothes: false

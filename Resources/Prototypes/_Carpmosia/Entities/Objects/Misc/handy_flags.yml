@@ -1,0 +1,11 @@
+- type: entity
+  parent: BaseItem
+  id: BaseHandyFlag
+  abstract: true
+  components:
+  - type: TriggerOnUse
+  - type: PopupOnTrigger
+    text: wavable-component-wave
+    otherText: wavable-component-wave-other
+  - type: UseDelay
+    delay: 0.5

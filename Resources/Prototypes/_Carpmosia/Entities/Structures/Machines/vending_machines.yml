@@ -1,0 +1,39 @@
+- type: entity
+  parent: VendingMachine
+  id: VendingStore
+  abstract: true
+  components:
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+
+- type: entity
+  parent: VendingStore
+  id: VendingStoreSalvage
+  name: Salvage Store
+  description: Rock and stone!
+  components:
+  - type: AccessReader
+    access: [["Salvage"]]
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Machines/VendingMachines/salvage.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: normal-unshaded
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+  - type: Store
+    name: store-preset-name-vendor-salvage
+    categories:
+    - SalvageStoreEquipment
+    - SalvageStoreWeapons
+    - SalvageStoreConsumables
+    - SalvageStoreFun
+    currencyWhitelist:
+    - SalvageTicket

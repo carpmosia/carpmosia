@@ -38,9 +38,6 @@
         reagents:
         - ReagentId: SpaceGlue
           Quantity: 30
-  - type: Tag
-    tags:
-      - DrinkSpaceGlue
   - type: Glue
 
 - type: entity
@@ -71,10 +68,10 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 1000
+        maxVol: 1200 # Carpmosia-edit - extendedReagentStorage
         reagents:
         - ReagentId: SpaceLube
-          Quantity: 1000
+          Quantity: 1200 # Carpmosia-edit - extendedReagentStorage
   - type: SolutionRegeneration
     solution: beaker
     generated:
@@ -92,9 +89,6 @@
     sprite: Objects/Consumable/Drinks/jar_what.rsi
   - type: FitsInDispenser
     solution: drink
-  - type: Tag
-    tags:
-    - DrinkGlass
 
 # Mopwata
 - type: weightedRandomFillSolution
