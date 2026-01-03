@@ -19,9 +19,6 @@ game.round_restart_time = 300
 # CCVars.Replays
 replay.auto_record_name = "{year}_{month}/{year}_{month}_{day}/{year}_{month}_{day}-{hour}_{minute}-round_{round}.zip"
 
-# CCVars.Misc
-procgen.preload = true # TODO: Test if false results in negligible performance impact
-
 # CCVars.Server
 server.uptime_restart_minutes = 1440
 server.lobby_name = "Carpmosia"
