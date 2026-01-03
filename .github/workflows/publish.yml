@@ -53,12 +53,21 @@ jobs:
         PUBLISH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
         GITHUB_REPOSITORY: ${{ vars.GITHUB_REPOSITORY }}
 
-    - name: Publish changelog (Discord)
+    - name: Publish upstream changelog (Discord)
       continue-on-error: true
       run: Tools/actions_changelogs_since_last_run.py
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        DISCORD_WEBHOOK_URL: ${{ secrets.CHANGELOG_DISCORD_WEBHOOK }}
+        CHANGELOG_FILE: Resources/Changelog/Changelog.yml
+        DISCORD_WEBHOOK_URL: ${{ secrets.UPSTREAM_CHANGELOG_HOOK }}
+
+    - name: Publish carpmosia changelog (Discord)
+      continue-on-error: true
+      run: Tools/actions_changelogs_since_last_run.py
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        CHANGELOG_FILE: Resources/Changelog/_Carpmosia/Carpmosia.yml
+        DISCORD_WEBHOOK_URL: ${{ secrets.CARPMOSIA_CHANGELOG_HOOK }}
 
     # - name: Publish changelog (RSS)
     #   continue-on-error: true
