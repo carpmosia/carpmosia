@@ -77,8 +77,8 @@
     sprite: _Carpmosia/Mobs/Pets/jorge.rsi
     noRot: true
     layers:
-      - map: [ "enum.DamageStateVisualLayers.Base" ]
-        state: jorge-alive
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: jorge-alive
   - type: DamageStateVisuals
     states:
       Alive:
@@ -86,12 +86,10 @@
       Dead:
         Base: jorge-dead
   - type: Bloodstream
-    bloodReagents:
+    bloodReferenceSolution:
       reagents:
       - ReagentId: Sap
-        Quantity: 1
-    bloodMaxVolume: 50
-    chemicalMaxVolume: 30
+        Quantity: 50
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Diona
@@ -119,15 +117,15 @@
           radius: 0.30
         density: 80
         mask:
-          - MobMask
+        - MobMask
         layer:
-          - MobLayer
+        - MobLayer
   - type: Climbing
   - type: Tag
     tags:
-      - DoorBumpOpener
-      - GhostOnlyWarp
-      - Unimplantable
+    - DoorBumpOpener
+    - GhostOnlyWarp
+    - Unimplantable
   - type: Appearance
   - type: Speech
     speechVerb: Plant

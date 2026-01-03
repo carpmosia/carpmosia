@@ -29,6 +29,14 @@ public sealed partial class RandomGiftComponent : Component
     [DataField("insaneMode", required: true), ViewVariables(VVAccess.ReadWrite)]
     public bool InsaneMode;
 
+    // Carpmosia-start - Carpmas Presents
+    /// <summary>
+    /// Whether or not the gift should contain debug items(Bang, gibstick) or some restricted items (Throngler, Minigun etc).
+    /// </summary>
+    [DataField]
+    public bool CuratedMode;
+    // Carpmosia-end - Carpmas Presents
+
     /// <summary>
     /// What entities are allowed to examine this gift to see its contents.
     /// </summary>

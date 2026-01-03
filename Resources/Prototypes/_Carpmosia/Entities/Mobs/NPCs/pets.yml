@@ -1,6 +1,6 @@
 - type: entity
-  id: BasePet
   abstract: true
+  id: BasePet
   components:
   - type: HTN
     constantlyReplan: false
@@ -30,17 +30,17 @@
   - type: Emoting
 
 - type: entity
-  id: MobPetSnail
   parent: [ BasePet, MobSnail ]
+  id: MobPetSnail
   name: Pet snail
   components:
   - type: GhostRole
     name: ghost-role-information-pet-snail-name
 
 - type: entity
+  parent: [ BasePet, MobButterfly ]
   id: MobPetButterfly
   name: Pet butterfly
-  parent: [ BasePet, MobButterfly ]
   components:
   - type: GhostRole
     name: ghost-role-information-pet-butterfly-name
@@ -49,9 +49,9 @@
       task: PetFollowCompound # Doesnt eat food
 
 - type: entity
+  parent: [ BasePet, MobBee ]
   id: MobPetBee
   name: Pet bee
-  parent: [ BasePet, MobBee ]
   components:
   - type: GhostRole
     name: ghost-role-information-pet-bee-name
@@ -60,9 +60,9 @@
       task: PetFollowCompound # Doesnt eat food
 
 - type: entity
+  parent: [ BasePet, MobMothroach ]
   id: MobPetMothroach
   name: Pet mothroach
-  parent: [ BasePet, MobMothroach ]
   components:
   - type: GhostRole
     name: ghost-role-information-pet-mothroach-name
