@@ -162,11 +162,11 @@
   - type: Sprite
     sprite: _Carpmosia/Structures/Wallmounts/air_monitors_xeno.rsi # Carpmosia-edit - APC/Alarm resprite
     layers:
-    - state: alarmp # Carpmosia-start - APC/Alarm resprite
-      map: ["airAlarmBase"]
+    - state: alarmp
+      map: ["airAlarmBase"]  # TODO: fire alarm enum
     - state: alarm0
-      map: ["airAlarmState"] # TODO: fire alarm enum
-      shader: unshaded # Carpmosia-end - APC/Alarm resprite
+      map: ["airAlarmState"]
+      shader: unshaded # Carpmosia-edit - APC/Alarm resprite
     - state: alarmx
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
 

@@ -21,7 +21,7 @@ jobs:
         shell: pwsh
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        run: Tools/dump_github_contributors.ps1 > Resources/Credits/GitHub.txt
+        run: Tools/_Carpmosia/dump_contribs.ps1 > Resources/Credits/Carpmosia.txt
 
       # TODO
       #- name: Get this week's Patreons
