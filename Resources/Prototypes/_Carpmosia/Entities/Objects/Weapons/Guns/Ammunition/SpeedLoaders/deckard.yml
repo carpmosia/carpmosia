@@ -6,12 +6,12 @@
   components:
   - type: Tag
     tags:
-      - SpeedLoaderMagnum
+    - SpeedLoaderMagnum
   - type: SpeedLoader
   - type: BallisticAmmoProvider
     whitelist:
       tags:
-        - CartridgeMagnum
+      - CartridgeMagnum
     capacity: 5
   - type: Sprite
   - type: ContainerContainer

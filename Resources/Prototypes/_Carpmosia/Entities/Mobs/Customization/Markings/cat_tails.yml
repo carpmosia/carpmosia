@@ -9,9 +9,9 @@
         !type:CategoryColoring
           category: Hair
       fallbackTypes:
-        - !type:CategoryColoring
-          category: FacialHair
-        - !type:SkinColoring
+      - !type:CategoryColoring
+        category: FacialHair
+      - !type:SkinColoring
   sprites:
   - sprite: _Carpmosia/Mobs/Customization/cat_tails.rsi
     state: basic_tail_tip
@@ -31,8 +31,8 @@
         !type:CategoryColoring
           category: Hair
       fallbackTypes:
-        - !type:CategoryColoring
-          category: FacialHair
+      - !type:CategoryColoring
+        category: FacialHair
     layers:
       basic_bow:
         type:
@@ -59,9 +59,9 @@
         !type:CategoryColoring
           category: Hair
       fallbackTypes:
-        - !type:CategoryColoring
-          category: FacialHair
-        - !type:SkinColoring
+      - !type:CategoryColoring
+        category: FacialHair
+      - !type:SkinColoring
     layers:
       basic_bell:
         type:
@@ -85,9 +85,9 @@
         !type:CategoryColoring
           category: Hair
       fallbackTypes:
-        - !type:CategoryColoring
-          category: FacialHair
-        - !type:SkinColoring
+      - !type:CategoryColoring
+        category: FacialHair
+      - !type:SkinColoring
     layers:
       basic_bow:
         type:
