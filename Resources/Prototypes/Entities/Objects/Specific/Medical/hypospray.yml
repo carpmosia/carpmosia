@@ -160,7 +160,7 @@
   - type: SolutionContainerManager
     solutions:
       hypospray:
-        maxVol: 20
+        maxVol: 30 # Carpmosia-edit - Base 60 Chem
   - type: SolutionContainerVisuals
     maxFillLevels: 4
   - type: Injector

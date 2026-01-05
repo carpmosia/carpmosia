@@ -27,7 +27,7 @@
   - type: SolutionContainerManager
     solutions:
       spray:
-        maxVol: 120 # Carpmosia-edit - extendedReagentStorage
+        maxVol: 120 # Carpmosia-edit - Base 60 Chem
   - type: RefillableSolution
     solution: spray
   - type: DrainableSolution
@@ -61,7 +61,7 @@
   - type: SolutionContainerManager
     solutions:
       spray:
-        maxVol: 300 # Carpmosia-edit - extendedReagentStorage
+        maxVol: 300 # Carpmosia-edit - Base 60 Chem
   - type: Spray
     transferAmount: 15
     sprayedPrototype: BigVapor
@@ -82,10 +82,10 @@
   - type: SolutionContainerManager
     solutions:
       spray:
-        maxVol: 120 # Carpmosia-edit - extendedReagentStorage
+        maxVol: 120 # Carpmosia-edit - Base 60 Chem
         reagents:
         - ReagentId: Water
-          Quantity: 120 # Carpmosia-edit - extendedReagentStorage
+          Quantity: 120 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   description: BLAM!-brand non-foaming space cleaner!
@@ -96,10 +96,10 @@
   - type: SolutionContainerManager
     solutions:
       spray:
-        maxVol: 120 # Carpmosia-edit - extendedReagentStorage
+        maxVol: 120 # Carpmosia-edit - Base 60 Chem
         reagents:
         - ReagentId: SpaceCleaner
-          Quantity: 120 # Carpmosia-edit - extendedReagentStorage
+          Quantity: 120 # Carpmosia-edit - Base 60 Chem
   - type: Label
     currentLabel: space cleaner
   - type: Tag
@@ -132,10 +132,10 @@
   - type: SolutionContainerManager
     solutions:
       spray:
-        maxVol: 240 # Carpmosia-edit - extendedReagentStorage
+        maxVol: 240 # Carpmosia-edit - Base 60 Chem
         reagents:
         - ReagentId: SpaceCleaner
-          Quantity: 240 # Carpmosia-edit - extendedReagentStorage
+          Quantity: 240 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   parent: MegaSprayBottle
@@ -147,10 +147,10 @@
   - type: SolutionContainerManager
     solutions:
       spray:
-        maxVol: 600 # Carpmosia-edit - extendedReagentStorage
+        maxVol: 600 # Carpmosia-edit - Base 60 Chem
         reagents:
         - ReagentId: SpaceCleaner
-          Quantity: 600 # Carpmosia-edit - extendedReagentStorage
+          Quantity: 600 # Carpmosia-edit - Base 60 Chem
 
 # Vapor
 - type: entity
