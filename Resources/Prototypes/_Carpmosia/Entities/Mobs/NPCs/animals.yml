@@ -46,6 +46,7 @@
         Structural: 15
   # Copied from MobCatSpace
   - type: Temperature
+  - type: TemperatureDamage
     heatDamageThreshold: 423
     coldDamageThreshold: 0
   - type: MovementAlwaysTouching
