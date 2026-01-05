@@ -2,17 +2,17 @@ using Content.Shared.StatusIcon;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.BloodBrothers.Components;
+namespace Content.Shared.BloodBound.Components;
 
 [RegisterComponent, NetworkedComponent]
 [AutoGenerateComponentState]
-public sealed partial class BloodBrotherComponent : Component
+public sealed partial class BloodBoundComponent : Component
 {
     [DataField, AutoNetworkedField]
-    public EntityUid? Brother;
+    public EntityUid? Bound;
 
     [DataField]
-    public ProtoId<FactionIconPrototype> BloodBrotherIcon = "BloodBrotherFaction";
+    public ProtoId<FactionIconPrototype> BloodBoundIcon = "BloodBoundFaction";
 
     [DataField]
     public TimeSpan? DeconversionStunTime = TimeSpan.FromSeconds(3);

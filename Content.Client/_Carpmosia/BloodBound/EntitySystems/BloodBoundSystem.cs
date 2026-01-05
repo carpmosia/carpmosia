@@ -1,13 +1,13 @@
 using Content.Shared.Antag;
-using Content.Shared.BloodBrothers.Components;
-using Content.Shared.BloodBrothers.EntitySystems;
+using Content.Shared.BloodBound.Components;
+using Content.Shared.BloodBound.EntitySystems;
 using Content.Shared.StatusIcon.Components;
 using Robust.Client.Player;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client.BloodBrothers.EntitySystems;
+namespace Content.Client.BloodBound.EntitySystems;
 
-public sealed class BloodBrotherSystem : SharedBloodBrotherSystem
+public sealed class BloodBoundSystem : SharedBloodBoundSystem
 {
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
@@ -16,20 +16,20 @@ public sealed class BloodBrotherSystem : SharedBloodBrotherSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<BloodBrotherComponent, GetStatusIconsEvent>(OnBloodBrotherGetIcons);
+        SubscribeLocalEvent<BloodBoundComponent, GetStatusIconsEvent>(OnBloodBoundGetIcons);
     }
 
-    private void OnBloodBrotherGetIcons(Entity<BloodBrotherComponent> entity, ref GetStatusIconsEvent args)
+    private void OnBloodBoundGetIcons(Entity<BloodBoundComponent> entity, ref GetStatusIconsEvent args)
     {
         if (_playerManager.LocalSession?.AttachedEntity is { } playerEntity)
         {
             if (!HasComp<ShowAntagIconsComponent>(playerEntity) &&
                 entity.Owner != playerEntity &&
-                entity.Comp.Brother != playerEntity)
+                entity.Comp.Bound != playerEntity)
                 return;
         }
 
-        if (_prototypeManager.TryIndex(entity.Comp.BloodBrotherIcon, out var iconPrototype))
+        if (_prototypeManager.TryIndex(entity.Comp.BloodBoundIcon, out var iconPrototype))
             args.StatusIcons.Add(iconPrototype);
     }
 }
