@@ -5,6 +5,7 @@
   components:
   - type: Injector
     solutionName: hypospray
+    # ignoreClosed: false # Carpmosia-edit - Closable Jugs
     activeModeProtoId: HyposprayDynamicMode
     allowedModes:
     - HyposprayDynamicMode

@@ -8,30 +8,30 @@
       solutions:
         beaker:
           maxVol: 240 # Carpmosia-edit - extendedReagentStorage
-    # Carpmosia-start - Closeable Jugs
+    # Carpmosia-start - Closable Jugs
     - type: GenericVisualizer
       visuals:
         enum.OpenableVisuals.Opened:
           enum.OpenableVisuals.Layer:
             True: {state: "jug_open"} # lid off
             False: {state: "jug"} # lid on
-    # Carpmosia-end - Closeable Jugs
+    # Carpmosia-end - Closable Jugs
     - type: Sprite
       sprite: Objects/Specific/Chemistry/jug.rsi
       layers:
         - state: jug
-          map: ["enum.OpenableVisuals.Layer"] # Carpmosia-edit - Closeable Jugs
+          map: ["enum.OpenableVisuals.Layer"] # Carpmosia-edit - Closable Jugs
         - state: jug1
           map: [ "enum.SolutionContainerLayers.Fill" ]
           visible: false
-    # Carpmosia-start - Closeable Jugs
+    # Carpmosia-start - Closable Jugs
     - type: Openable
       sound:
         collection: bottleOpenSounds
       closeable: true
       closeSound:
         collection: bottleCloseSounds
-    # Carpmosia-end - Closeable Jugs
+    # Carpmosia-end - Closable Jugs
     - type: Item
       size: Normal
       sprite: Objects/Specific/Chemistry/jug.rsi
