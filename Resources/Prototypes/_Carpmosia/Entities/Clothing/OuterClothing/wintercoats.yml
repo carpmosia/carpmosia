@@ -4,23 +4,23 @@
   name: security armored winter coat
   description: A warm winter coat with an integrated type I aramid armor vest.
   components:
-    - type: Sprite
-      sprite: _Carpmosia/Clothing/OuterClothing/WinterCoats/security_armored.rsi
-    - type: Item
-      sprite: _Carpmosia/Clothing/OuterClothing/WinterCoats/security_armored.rsi
-    - type: Clothing
-      sprite: _Carpmosia/Clothing/OuterClothing/WinterCoats/security_armored.rsi
-    - type: ToggleableClothing
-      clothingPrototype: ClothingHeadHatHoodWinterSec
-    - type: Armor
-      modifiers:
-        coefficients:
-          Blunt: 0.70
-          Slash: 0.70
-          Piercing: 0.70
-          Heat: 0.80
-    - type: ExplosionResistance
-      damageCoefficient: 0.90
+  - type: Sprite
+    sprite: _Carpmosia/Clothing/OuterClothing/WinterCoats/security_armored.rsi
+  - type: Item
+    sprite: _Carpmosia/Clothing/OuterClothing/WinterCoats/security_armored.rsi
+  - type: Clothing
+    sprite: _Carpmosia/Clothing/OuterClothing/WinterCoats/security_armored.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodWinterSec
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.70
+        Slash: 0.70
+        Piercing: 0.70
+        Heat: 0.80
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
 
 - type: entity
   parent: [ClothingOuterSizeArmoredMajor, ClothingOuterWinterCoatToggleable, BaseCommandContraband, AllowSuitStorageClothing]
@@ -28,22 +28,22 @@
   name: captain's armored winter coat
   description: A regal winter coat with a thick integrated armor shell. Keeps the captain safe from station threats and hypothermic events.
   components:
-    - type: Sprite
-      sprite: _Carpmosia/Clothing/OuterClothing/WinterCoats/captain_armored.rsi
-    - type: Item
-      sprite: _Carpmosia/Clothing/OuterClothing/WinterCoats/captain_armored.rsi
-    - type: Clothing
-      sprite: _Carpmosia/Clothing/OuterClothing/WinterCoats/captain_armored.rsi
-    - type: ToggleableClothing
-      clothingPrototype: ClothingHeadHadHoodWinterCaptainArmored
-    - type: Armor # ideally this'd be inherited from ClothingOuterArmorBaseCarapace but that implies inheriting other things we don't want
-      modifiers:
-        coefficients:
-          Blunt: 0.5
-          Slash: 0.5
-          Piercing: 0.6
-          Heat: 0.5
-          Caustic: 0.9
-    - type: ExplosionResistance # ditto
-      damageCoefficient: 0.65
-    - type: GroupExamine
+  - type: Sprite
+    sprite: _Carpmosia/Clothing/OuterClothing/WinterCoats/captain_armored.rsi
+  - type: Item
+    sprite: _Carpmosia/Clothing/OuterClothing/WinterCoats/captain_armored.rsi
+  - type: Clothing
+    sprite: _Carpmosia/Clothing/OuterClothing/WinterCoats/captain_armored.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHadHoodWinterCaptainArmored
+  - type: Armor # ideally this'd be inherited from ClothingOuterArmorBaseCarapace but that implies inheriting other things we don't want
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.6
+        Heat: 0.5
+        Caustic: 0.9
+  - type: ExplosionResistance # ditto
+    damageCoefficient: 0.65
+  - type: GroupExamine
