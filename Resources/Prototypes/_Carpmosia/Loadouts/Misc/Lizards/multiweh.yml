@@ -96,6 +96,17 @@
       !type:RoleTimeRequirement
       role: JobScientist
       time: 20h
+  # Silicon
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobStationAi
+      time: 20h
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobBorg
+      time: 20h
   # Civilian
   - !type:JobRequirementLoadoutEffect
     requirement:
