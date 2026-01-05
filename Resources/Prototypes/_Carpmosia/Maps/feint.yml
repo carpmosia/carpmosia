@@ -3,7 +3,7 @@
   mapName: 'Feint'
   mapPath: /Maps/_Carpmosia/feint.yml
   minPlayers: 10
-  maxPlayers: 35 
+  maxPlayers: 35
   stations:
     Feint:
       stationProto: StandardNanotrasenStation
@@ -16,7 +16,7 @@
       - type: StationEmergencyShuttle
         emergencyShuttlePath: /Maps/_Carpmosia/Shuttles/emergency_feint.yml
       - type: StationJobs
-        availableJobs: # 45 jobs total w/o latejoins & interns, 60 jobs total w/ latejoins & interns
+        availableJobs: # 44 jobs total w/o latejoins & interns, 59 jobs total w/ latejoins & interns
           # command (7)
           Captain: [ 1, 1 ]
           HeadOfPersonnel: [ 1, 1 ]
@@ -25,7 +25,7 @@
           ChiefEngineer: [ 1, 1 ]
           ResearchDirector: [ 1, 1 ]
           Quartermaster: [ 1, 1 ]
-          # service (13 - 16)
+          # service (12 - 15)
           Bartender: [ 1, 1 ]
           Botanist: [ 1, 2 ]
           Chef: [ 1, 2 ]
@@ -37,7 +37,6 @@
           Clown: [ 1, 1 ]
           Mime: [ 1, 1 ]
           Musician: [1, 1]
-          Boxer: [1, 1]
           # engineering (5 - 6)
           AtmosphericTechnician: [ 2, 2 ]
           StationEngineer: [ 3, 4 ]

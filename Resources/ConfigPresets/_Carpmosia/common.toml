@@ -1,0 +1,44 @@
+# Robust.Cvars
+net.tickrate = 60
+
+# CCVars.Atmos
+atmos.max_explosion_range = 100
+
+# CCVars.Audio
+audio.lobby_music_collection = "LobbyMusic"
+
+# CCVars.Chat
+chat.motd = "Join Carpmosia Discord: https://discord.gg/carpmosia"
+
+# CCVars.Game
+game.map_pool = "CarpmosiaMapPool"
+game.cryo_sleep_rejoining = true
+game.soft_max_players = 99
+
+# CCVars.Game.Infolinks
+infolinks.discord = "https://discord.gg/ZACStvA8uV"
+infolinks.github = "https://github.com/carpmosia/carpmosia"
+infolinks.bug_report = "https://github.com/carpmosia/carpmosia/issues"
+infolinks.appeal = "https://discord.gg/ZACStvA8uV"
+
+# CCVars.IC
+ic.name_length = 40
+ic.loadout_name_length = 40
+ic.flavor_text = true
+ic.id_job_length = 40
+ic.punctuation = true
+
+# CCVars.Misc
+procgen.preload = false
+playtime.save_interval = 300
+
+# CCVars.Server
+server.id = "carpmosia"
+server.rules_file = "CarpmosiaRules"
+#server.default_guide = "CarpmosiaGuide"
+
+# CCVars.Shuttle
+shuttle.arrivals_returns = true
+
+# CCVars.Vote
+vote.map_enabled = true

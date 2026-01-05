@@ -11,30 +11,31 @@
   components:
   - type: Sprite
     layers:
-      - state: red
-      - sprite: Objects/Consumable/Food/Baked/cake.rsi
-        state: plain
-  - type: RandomSpawner
-    prototypes:
-      - FoodCakeBlueberry
-      - FoodCakePlain
-      - FoodCakeCarrot
-#      - FoodCakeBrain
-      - FoodCakeCheese
-      - FoodCakeOrange
-      - FoodCakeLime
-      - FoodCakeLemon
-      - FoodCakeLemoon
-      - FoodCakeChocolate
-      - FoodCakeApple
-#      - FoodCakeSlime
-      - FoodCakePumpkin
-      - FoodCakeChristmas
-      - FoodCakeBirthday
-      - FoodCakeVanilla
-      - FoodCakeClown
-      - FoodCakeSpaceman
-#      - MobCatCake
-      - FoodCakeSuppermatter
-      - FoodCakeCotton
-      - FoodCakeBerryDelight
+    - state: red
+    - sprite: Objects/Consumable/Food/Baked/cake.rsi
+      state: plain
+  - type: EntityTableSpawner
+    table: !type:GroupSelector
+      children:
+      - id: FoodCakeBlueberry
+      - id: FoodCakePlain
+      - id: FoodCakeCarrot
+#      - id: FoodCakeBrain
+      - id: FoodCakeCheese
+      - id: FoodCakeOrange
+      - id: FoodCakeLime
+      - id: FoodCakeLemon
+      - id: FoodCakeLemoon
+      - id: FoodCakeChocolate
+      - id: FoodCakeApple
+#      - id: FoodCakeSlime
+      - id: FoodCakePumpkin
+      - id: FoodCakeChristmas
+      - id: FoodCakeBirthday
+      - id: FoodCakeVanilla
+      - id: FoodCakeClown
+      - id: FoodCakeSpaceman
+#      - id: MobCatCake
+      - id: FoodCakeSuppermatter
+      - id: FoodCakeCotton
+      - id: FoodCakeBerryDelight
