@@ -27,7 +27,9 @@
     state: ointment
   - type: Item
     heldPrefix: ointment
-    storedRotation: 45
+    storedSprite:
+      state: ointment-storage
+      sprite: Objects/Specific/Medical/medical.rsi
   - type: Healing
     damageContainers:
       - Biological
@@ -272,8 +274,8 @@
          Piercing: -2
          Slash: -2
       bloodlossModifier: -5 # Tourniquets stop bleeding
-      delay: 2
-      selfHealPenaltyMultiplier: 2
+      delay: 2 # easy to apply
+      selfHealPenaltyMultiplier: 1.25 # easy to apply to oneself
       # Carpmosia-end - Better tourniquets
       healingBeginSound:
         path: "/Audio/Items/Medical/brutepack_begin.ogg"
