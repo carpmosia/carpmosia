@@ -29,8 +29,8 @@
     maxItemSize: Small
     whitelist:
       tags:
-        - Deckard
-        - SpeedLoaderMagnum
+      - Deckard
+      - SpeedLoaderMagnum
     grid:
     - 0,0,3,1
   - type: ItemMapper
@@ -60,12 +60,14 @@
   - type: Appearance
 
 - type: entity
-  id: DeckardBoxFilled
   parent: DeckardBox
+  id: DeckardBoxFilled
   suffix: Filled
   components:
-  - type: StorageFill
-    contents:
-    - id: SpeedLoaderDeckard
-      amount: 2
-    - id: WeaponRevolverDeckard
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: SpeedLoaderDeckard
+          amount: 2
+        - id: WeaponRevolverDeckard

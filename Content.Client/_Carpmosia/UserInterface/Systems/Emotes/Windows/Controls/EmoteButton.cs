@@ -4,7 +4,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.Utility;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
 
-namespace Content.Client._Carpmosia.UserInterface.Systems.Emotes.Controls;
+namespace Content.Client.UserInterface.Systems.Emotes.Controls;
 
 public sealed class EmoteButton : Button
 {
