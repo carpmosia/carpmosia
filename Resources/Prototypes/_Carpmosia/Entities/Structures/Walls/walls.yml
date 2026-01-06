@@ -1,0 +1,63 @@
+- type: entity
+  parent: WallReinforcedDiagonal
+  id: WallReinforcedDiagonalRust
+  suffix: rusted
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Walls/reinforced_rust.rsi
+  - type: Icon
+    sprite: _Carpmosia/Structures/Walls/reinforced_rust.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalSlam
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:ChangeConstructionNodeBehavior
+        node: girder
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  parent: WallSolidDiagonal
+  id: WallSolidDiagonalRust
+  suffix: rusted
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Walls/solid_rust.rsi
+  - type: Icon
+    sprite: _Carpmosia/Structures/Walls/solid_rust.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalSlam
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:ChangeConstructionNodeBehavior
+        node: girder
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+      - !type:DoActsBehavior
+        acts: ["Destruction"]

@@ -1,6 +1,6 @@
 - type: entity
-  id: EqualizerCircuitBoard
   parent: BaseSiliconLawboard
+  id: EqualizerCircuitBoard
   name: law board (Equalizer)
   description: An electronics board containing the Equalizer lawset.
   components:
@@ -8,8 +8,8 @@
     laws: Equalizer
 
 - type: entity
-  id: SixCommandmentsCircuitBoard
   parent: BaseSiliconLawboard
+  id: SixCommandmentsCircuitBoard
   name: law board (Six Commandments)
   description: An electronics board containing the Six Commandments lawset.
   components:
@@ -17,8 +17,8 @@
     laws: SixCommandmentsLawset
 
 - type: entity
-  id: LawbringerCircuitBoard
   parent: BaseSiliconLawboard
+  id: LawbringerCircuitBoard
   name: law board (Lawbringer)
   description: An electronics board containing the Lawbringer lawset.
   components:
