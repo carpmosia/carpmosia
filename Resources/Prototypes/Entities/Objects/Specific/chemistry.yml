@@ -24,7 +24,7 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 60 # Carpmosia-edit - reagentStorage
+        maxVol: 60 # Carpmosia-edit - Base 60 Chem
   - type: MixableSolution
     solution: beaker
   - type: FitsInDispenser
@@ -124,7 +124,7 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 60 # Carpmosia-edit - reagentStorage
+        maxVol: 60 # Carpmosia-edit - Base 60 Chem
   - type: MixableSolution
     solution: beaker
   - type: FitsInDispenser
@@ -193,10 +193,100 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 60 # Carpmosia-edit - reagentStorage
+        maxVol: 60 # Carpmosia-edit - Base 60 Chem
         reagents:
         - ReagentId: Cryoxadone
-          Quantity: 60 # Carpmosia-edit - reagentStorage
+          Quantity: 60 # Carpmosia-edit - Base 60 Chem
+
+- type: entity
+  parent: Beaker
+  id: BeakerSmallArith
+  suffix: arithrazine
+  components:
+  - type: Label
+    currentLabel: reagent-name-arithrazine
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 60 # Carpmosia-edit - Base 60 Chem
+        reagents:
+        - ReagentId: Arithrazine
+          Quantity: 60 # Carpmosia-edit - Base 60 Chem
+
+- type: entity
+  parent: Beaker
+  id: BeakerSmallSigy
+  suffix: sigynate
+  components:
+  - type: Label
+    currentLabel: reagent-name-sigynate
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 60 # Carpmosia-edit - Base 60 Chem
+        reagents:
+        - ReagentId: Sigynate
+          Quantity: 60 # Carpmosia-edit - Base 60 Chem
+
+- type: entity
+  parent: Beaker
+  id: BeakerSmallPhal
+  suffix: phalanximine
+  components:
+  - type: Label
+    currentLabel: reagent-name-phalanximine
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 60 # Carpmosia-edit - Base 60 Chem
+        reagents:
+        - ReagentId: Phalanximine
+          Quantity: 60 # Carpmosia-edit - Base 60 Chem
+
+- type: entity
+  parent: Beaker
+  id: BeakerSmallDiph
+  suffix: diphenhydramine
+  components:
+  - type: Label
+    currentLabel: reagent-name-diphenhydramine
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 60 # Carpmosia-edit - Base 60 Chem
+        reagents:
+        - ReagentId: Diphenhydramine
+          Quantity: 60 # Carpmosia-edit - Base 60 Chem
+
+- type: entity
+  parent: Beaker
+  id: BeakerSmallBruiz
+  suffix: bruizine
+  components:
+  - type: Label
+    currentLabel: reagent-name-bruizine
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 60 # Carpmosia-edit - Base 60 Chem
+        reagents:
+        - ReagentId: Bruizine
+          Quantity: 60 # Carpmosia-edit - Base 60 Chem
+
+- type: entity
+  parent: Beaker
+  id: BeakerSmallLace
+  suffix: lacerinol
+  components:
+  - type: Label
+    currentLabel: reagent-name-lacerinol
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 60 # Carpmosia-edit - Base 60 Chem
+        reagents:
+        - ReagentId: Lacerinol
+          Quantity: 60 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   name: large beaker
@@ -219,7 +309,7 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 120 # Carpmosia-edit - reagentStorage
+        maxVol: 120 # Carpmosia-edit - Base 60 Chem
   - type: Appearance
   - type: SolutionContainerVisuals
     maxFillLevels: 6
@@ -269,7 +359,7 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 1200 # Carpmosia-edit - extendedReagentStorage
+        maxVol: 1200 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   name: dropper
@@ -289,16 +379,12 @@
       injector:
         maxVol: 5
   - type: Injector
-    injectOnly: false
     ignoreMobs: true
     ignoreClosed: false
-    transferAmounts:
-    - 1
-    - 2
-    - 3
-    - 4
-    - 5
-    currentTransferAmount: 1
+    activeModeProtoId: DropperDrawMode
+    allowedModes:
+    - DropperDrawMode
+    - DropperInjectMode
   - type: ExaminableSolution
     solution: dropper
     exactVolume: true
@@ -371,11 +457,10 @@
       injector:
         maxVol: 15
   - type: Injector
-    injectOnly: false
-    transferAmounts:
-    - 5
-    - 10
-    - 15
+    activeModeProtoId: SyringeDrawMode
+    allowedModes:
+    - SyringeDrawMode
+    - SyringeInjectMode
   - type: ExaminableSolution
     solution: injector
     exactVolume: true
@@ -397,8 +482,6 @@
   parent: BaseSyringe
   id: Syringe
   components:
-  - type: Injector
-    currentTransferAmount: 15
   - type: Tag
     tags:
     - Syringe
@@ -421,14 +504,6 @@
     solutions:
       injector:
         maxVol: 5
-  - type: Injector
-    transferAmounts:
-    - 1
-    - 2
-    - 3
-    - 4
-    - 5
-    currentTransferAmount: 5
   - type: SolutionContainerVisuals
     maxFillLevels: 3
     fillBaseName: minisyringe
@@ -482,7 +557,7 @@
   id: PrefilledSyringe
   components:
   - type: Injector
-    toggleState: Inject
+    activeModeProtoId: SyringeInjectMode
 
 - type: entity
   id: SyringeBluespace
@@ -503,18 +578,12 @@
   - type: SolutionContainerManager
     solutions:
       injector:
-        maxVol: 120 # Carpmosia-edit - extendedReagentStorage
+        maxVol: 120 # Carpmosia-edit - Base 60 Chem
   - type: Injector
-    delay: 2.5
-    injectOnly: false
-    # Carpmosia-start - extendedReagentStorage
-    transferAmounts:
-    - 5
-    - 10
-    - 15
-    - 30
-    currentTransferAmount: 30
-    # Carpmosia-end - extendedReagentStorage
+    activeModeProtoId: BluespaceSyringeDrawMode
+    allowedModes:
+    - BluespaceSyringeInjectMode
+    - BluespaceSyringeDrawMode
   - type: SolutionContainerVisuals
     maxFillLevels: 2
     fillBaseName: syringe
@@ -545,11 +614,10 @@
         maxVol: 10
         canReact: false
   - type: Injector
-    injectOnly: false
-    transferAmounts:
-    - 5
-    - 10
-    currentTransferAmount: 10
+    activeModeProtoId: CryostasisSyringeDrawMode
+    allowedModes:
+    - CryostasisSyringeInjectMode
+    - CryostasisSyringeDrawMode
   - type: Tag
     tags:
     - Syringe
