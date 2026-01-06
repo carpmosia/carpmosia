@@ -37,35 +37,37 @@
   - all-globs-to-all-files: "!**/*.cs"
 
 "C: Guidebook":
-- changed-files:
-  - any-glob-to-any-file:
-    - 'Resources/ServerInfo/**'
+- all:
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'Resources/ServerInfo/**'
 
-    - 'Resources/Prototypes/Guidebook/**'
-    - 'Resources/Prototypes/_Carpmosia/Guidebook/**'
+      - 'Resources/Prototypes/Guidebook/**'
+      - 'Resources/Prototypes/_Carpmosia/Guidebook/**'
 
-  - all-globs-to-all-files:
-    - '!Resources/Prototypes/Guidebook/rules.yml'
-    - '!Resources/Prototypes/_Carpmosia/Guidebook/rules.yml'
+    - all-globs-to-all-files:
+      - '!Resources/Prototypes/Guidebook/rules.yml'
+      - '!Resources/Prototypes/_Carpmosia/Guidebook/rules.yml'
 
-    - '!Resources/Prototypes/Guidebook/security.yml'
-    - '!Resources/Prototypes/_Carpmosia/Guidebook/security.yml'
+      - '!Resources/Prototypes/Guidebook/security.yml'
+      - '!Resources/Prototypes/_Carpmosia/Guidebook/security.yml'
 
-    - '!Resources/ServerInfo/Guidebook/ServerRules/**'
-    - '!Resources/ServerInfo/_Carpmosia/Guidebook/ServerRules/**'
+      - '!Resources/ServerInfo/Guidebook/ServerRules/**'
+      - '!Resources/ServerInfo/_Carpmosia/Guidebook/ServerRules/**'
 
 "C: Rules":
-- changed-files:
-  - any-glob-to-any-file:
-    - 'Resources/Prototypes/Guidebook/rules.yml'
-    - 'Resources/Prototypes/_Carpmosia/Guidebook/rules.yml'
+- all:
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'Resources/Prototypes/Guidebook/rules.yml'
+      - 'Resources/Prototypes/_Carpmosia/Guidebook/rules.yml'
 
-    - 'Resources/ServerInfo/Guidebook/ServerRules/**'
-    - 'Resources/ServerInfo/_Carpmosia/Guidebook/ServerRules/**'
+      - 'Resources/ServerInfo/Guidebook/ServerRules/**'
+      - 'Resources/ServerInfo/_Carpmosia/Guidebook/ServerRules/**'
 
-  - all-globs-to-all-files:
-    - '!Resources/ServerInfo/Guidebook/ServerRules/SpaceLaw/**'
-    - '!Resources/ServerInfo/_Carpmosia/Guidebook/ServerRules/SpaceLaw/**'
+    - all-globs-to-all-files:
+      - '!Resources/ServerInfo/Guidebook/ServerRules/SpaceLaw/**'
+      - '!Resources/ServerInfo/_Carpmosia/Guidebook/ServerRules/SpaceLaw/**'
 
 "C: Space Law":
 - changed-files:
