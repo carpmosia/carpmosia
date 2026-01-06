@@ -46,10 +46,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 120 # Carpmosia-edit - reagentStorage
+        maxVol: 120 # Carpmosia-edit - Base 60 Chem
         reagents:
         - ReagentId: Tea
-          Quantity: 120 # Carpmosia-edit - reagentStorage
+          Quantity: 120 # Carpmosia-edit - Base 60 Chem
   - type: Sprite
     sprite: Objects/Consumable/Drinks/teapot.rsi
   - type: FitsInDispenser
@@ -87,10 +87,11 @@
       tags:
       - Cola
     hideStackVisualsWhenClosed: false
-  - type: StorageFill
-    contents:
-    - id: DrinkColaCan
-      amount: 6
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: DrinkColaCan
+        amount: 6
   - type: ItemCounter
     count:
       tags: [Cola]
@@ -115,7 +116,7 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 120 # Carpmosia-edit - reagentStorage
+        maxVol: 120 # Carpmosia-edit - Base 60 Chem
   - type: FitsInDispenser
     solution: drink
   - type: ExaminableSolution

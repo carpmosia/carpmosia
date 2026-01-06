@@ -35,3 +35,14 @@
     # - SpellbookEvents       #Summon Weapons, Summon Ghosts # Carpmosia-edit - Disable Event Spells
     currencyWhitelist:
     - WizCoin
+
+- type: entity
+  id: StorePresetChangeling
+  abstract: true
+  components:
+  - type: Store
+    name: store-preset-name-changeling
+    categories:
+    - ChangelingAbilities
+    currencyWhitelist:
+    - ChangelingDNA

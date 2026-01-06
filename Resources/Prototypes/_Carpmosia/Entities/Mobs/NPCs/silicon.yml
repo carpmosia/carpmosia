@@ -47,8 +47,8 @@
     solution: absorbed
     generated:
       reagents:
-        - ReagentId: Water
-          Quantity: 30
+      - ReagentId: Water
+        Quantity: 30
   - type: WarpPoint
     location: overclocked cleanbot
 
@@ -59,7 +59,7 @@
   description: You can hear a quiet whirr as its sucking up the dust along its way
   components:
   - type: Physics
-    bodyType: Dynamic
+    bodyType: KinematicController
   - type: Fixtures
     fixtures:
       fix1:
@@ -68,7 +68,7 @@
           radius: .25
         density: 190
         mask:
-          - MachineMask
+        - MachineMask
   - type: MovementSpeedModifier
     baseWalkSpeed: 1.0
     baseSprintSpeed: 1.0
