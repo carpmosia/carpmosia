@@ -11,10 +11,10 @@
        Link any relevant discussions or issues. -->
 
 ## Technical details
-<!-- Describe what code changes you did or will do and optionally why in this PR.
-       Feel free to use checkboxes to track your progress, for example:
+<!-- Describe what code changes you did or will do in this PR and optionally why.
+       Feel free to use check boxes to track your progress, for example:
        - [ ] Resprited X and Y to work with this change.
-       - [ ] Implemented Z and X to handle Y edgecase.
+       - [ ] Implemented Z and X to handle Y edge case.
        - [ ] Added a new component for all X to prevent Z. -->
 
 ## Media
@@ -25,8 +25,8 @@
 <!-- List any breaking changes, including namespaces, public class/method/field changes,
        prototype renames, and provide instructions for fixing them. -->
 
-# Changelog
-<!-- Edit this to cover all player facing changes in a consise and short matter,
+## Changelog
+<!-- Edit this to cover all player facing changes in a concise and short matter,
        Feel free to remove or add as many add, remove, fix, tweak lines as you need.
        If there are no player facing changes, you can remove the whole thing.
        This will be visible in-game and on Discord. -->
