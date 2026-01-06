@@ -1,8 +1,12 @@
-﻿"C: Sprites":
+﻿"T: No C#":
+- changed-files:
+  - all-globs-to-all-files: "!**/*.cs"
+
+"A: Sprites":
 - changed-files:
   - any-glob-to-any-file: '**/*.rsi/**'
 
-"C: Mapping":
+"A: Mapping":
 - changed-files:
   - any-glob-to-any-file:
     - 'Resources/Maps/**'
@@ -16,11 +20,11 @@
     - 'Resources/Textures/Decals/**'
     - 'Resources/Textures/_Carpmosia/Decals/**'
 
-"C: UI/UX":
+"A: UI/UX":
 - changed-files:
   - any-glob-to-any-file: '**/*.xaml*'
 
-"C: Shaders":
+"A: Shaders":
 - changed-files:
   - any-glob-to-any-file:
     - '**/*.swsl'
@@ -28,15 +32,11 @@
     - 'Resources/Prototypes/Shaders/**'
     - 'Resources/Prototypes/_Carpmosia/Shaders/**'
 
-"C: Audio":
+"A: Audio":
 - changed-files:
   - any-glob-to-any-file: '**/*.ogg'
 
-"C: No C#":
-- changed-files:
-  - all-globs-to-all-files: "!**/*.cs"
-
-"C: Guidebook":
+"A: Guidebook":
 - all:
   - changed-files:
     - any-glob-to-any-file:
@@ -55,7 +55,7 @@
       - '!Resources/ServerInfo/Guidebook/ServerRules/**'
       - '!Resources/ServerInfo/_Carpmosia/Guidebook/ServerRules/**'
 
-"C: Rules":
+"A: Rules":
 - all:
   - changed-files:
     - any-glob-to-any-file:
@@ -69,7 +69,7 @@
       - '!Resources/ServerInfo/Guidebook/ServerRules/SpaceLaw/**'
       - '!Resources/ServerInfo/_Carpmosia/Guidebook/ServerRules/SpaceLaw/**'
 
-"C: Space Law":
+"A: Space Law":
 - changed-files:
   - any-glob-to-any-file:
     - 'Resources/Prototypes/Guidebook/security.yml'
@@ -78,25 +78,25 @@
     - 'Resources/ServerInfo/Guidebook/ServerRules/SpaceLaw/**'
     - 'Resources/ServerInfo/_Carpmosia/Guidebook/ServerRules/SpaceLaw/**'
 
-"C: Loadouts":
+"A: Loadouts":
 - changed-files:
   - any-glob-to-any-file:
     - 'Resources/Prototypes/Loadouts/**'
     - 'Resources/Prototypes/_Carpmosia/Loadouts/**'
 
-"C: Recipes":
+"A: Recipes":
 - changed-files:
   - any-glob-to-any-file:
     - 'Resources/Prototypes/Recipes/**'
     - 'Resources/Prototypes/_Carpmosia/Recipes/**'
 
-"C: Objectives":
+"A: Objectives":
 - changed-files:
   - any-glob-to-any-file:
     - 'Resources/Prototypes/Objectives/**'
     - 'Resources/Prototypes/_Carpmosia/Objectives/**'
 
-"C: Lawsets":
+"A: Lawsets":
 - changed-files:
   - any-glob-to-any-file:
     - 'Resources/Locale/en-US/station-laws/laws.ftl'
@@ -105,7 +105,7 @@
     - 'Resources/Prototypes/silicon-laws.yml'
     - 'Resources/Prototypes/_Carpmosia/silicon-laws.yml'
 
-"C: Lobby Art":
+"A: Lobby Art":
 - changed-files:
   - any-glob-to-any-file:
     - 'Resources/Prototypes/lobbyscreens.yml'
