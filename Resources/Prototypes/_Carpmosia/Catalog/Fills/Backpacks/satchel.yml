@@ -1,12 +1,14 @@
 - type: entity
-  id: ClothingBackpackSatchelHoldingCentcomFormalFilled
   parent: ClothingBackpackSatchelHolding
+  id: ClothingBackpackSatchelHoldingCentcomFormalFilled
   suffix: Filled, Centcom Formal, Admeme
   components:
-  - type: StorageFill
-    contents:
-      - id: ToolDebug
-      - id: WelderExperimental
-      - id: RCDExperimental
-      - id: Multitool
-      - id: BoxSurvival
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ToolDebug
+        - id: WelderExperimental
+        - id: RCDExperimental
+        - id: Multitool
+        - id: BoxSurvival

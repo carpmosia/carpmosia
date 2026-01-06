@@ -1,6 +1,6 @@
-# - type: loadoutGroup
-#   parent: [ SecurityHead, CommonHead ]
-#   id: SecurityCadetHead
+- type: loadoutGroup
+  parent: [ SecurityHead, CommonHead ]
+  id: SecurityCadetHead
 
 - type: loadoutGroup
   parent: [ SecurityGlasses ] # CommonGlasses removed

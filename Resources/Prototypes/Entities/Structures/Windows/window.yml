@@ -24,9 +24,9 @@
       - Window
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/window.rsi
+    sprite: _Carpmosia/Structures/Windows/glass.rsi # Carpmosia-edit - Window resprite
   - type: Icon
-    sprite: Structures/Windows/window.rsi
+    sprite: _Carpmosia/Structures/Windows/glass.rsi # Carpmosia-edit - Window resprite
     state: full
   - type: Physics
     bodyType: Static
@@ -76,8 +76,8 @@
         acts: [ "Destruction" ]
   - type: Airtight
   - type: IconSmooth
-    key: windows
-    base: window
+    key: windows_glass # Carpmosia-edit - Wall resprite
+    base: full # Carpmosia-edit - Window resprite
   - type: InteractionPopup
     interactSuccessString: comp-window-knock
     messagePerceivedByOthers: comp-window-knock
@@ -104,11 +104,12 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/tinted_window.rsi
+    sprite: _Carpmosia/Structures/Windows/tinted.rsi # Carpmosia-edit - Window resprite
   - type: Icon
-    sprite: Structures/Windows/tinted_window.rsi
+    sprite: _Carpmosia/Structures/Windows/tinted.rsi # Carpmosia-edit - Window resprite
   - type: IconSmooth
-    base: twindow
+    key: windows_tinted # Carpmosia-edit - Wall resprite
+    base: full # Carpmosia-edit - Window resprite
   - type: Construction
     graph: Window
     node: tintedWindow
@@ -145,11 +146,11 @@
         collection: GlassSmack
   - type: Sprite
     drawdepth: Mobs
-    sprite: Structures/Windows/directional.rsi
-    state: window
+    sprite: _Carpmosia/Structures/Windows/glass.rsi # Carpmosia-edit - Window resprite
+    state: directional # Carpmosia-edit - Window resprite
   - type: Icon
-    sprite: Structures/Windows/directional.rsi
-    state: window
+    sprite: _Carpmosia/Structures/Windows/glass.rsi # Carpmosia-edit - Window resprite
+    state: directional # Carpmosia-edit - Window resprite
   - type: InteractionPopup
     interactSuccessString: comp-window-knock
     messagePerceivedByOthers: comp-window-knock
@@ -237,11 +238,11 @@
     - Window
   components:
   - type: Sprite
-    sprite: Structures/Windows/directional.rsi
-    state: frosted_window
+    sprite: _Carpmosia/Structures/Windows/tinted.rsi # Carpmosia-edit - Window resprite
+    state: directional # Carpmosia-edit - Window resprite
   - type: Icon
-    sprite: Structures/Windows/directional.rsi
-    state: frosted_window
+    sprite: _Carpmosia/Structures/Windows/tinted.rsi # Carpmosia-edit - Window resprite
+    state: directional # Carpmosia-edit - Window resprite
   - type: StaticPrice
     price: 35
 
@@ -256,19 +257,19 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/window_diagonal.rsi
-    state: state0
+    sprite: _Carpmosia/Structures/Windows/glass.rsi # Carpmosia-edit - Window resprite
+    state: diagonal0 # Carpmosia-edit - Window resprite
   - type: Tag
     tags:
     - Diagonal
     - Window
   - type: IconSmooth
     mode: Diagonal
-    key: windows
-    base: state
+    key: windows_glass # Carpmosia-edit - Wall resprite
+    base: diagonal # Carpmosia-edit - Window resprite
   - type: Icon
-    sprite: Structures/Windows/window_diagonal.rsi
-    state: state0
+    sprite: _Carpmosia/Structures/Windows/glass.rsi # Carpmosia-edit - Window resprite
+    state: diagonal0 # Carpmosia-edit - Window resprite
   - type: Fixtures
     fixtures:
       fix1:
