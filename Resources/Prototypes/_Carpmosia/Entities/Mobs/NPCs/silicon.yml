@@ -59,7 +59,7 @@
   description: You can hear a quiet whirr as its sucking up the dust along its way
   components:
   - type: Physics
-    bodyType: Dynamic
+    bodyType: KinematicController
   - type: Fixtures
     fixtures:
       fix1:

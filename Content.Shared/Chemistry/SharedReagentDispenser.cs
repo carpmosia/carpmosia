@@ -52,7 +52,7 @@ namespace Content.Shared.Chemistry
                 case "30":
                     ReagentDispenserDispenseAmount = ReagentDispenserDispenseAmount.U30;
                     break;
-                // Carpmosia-start - reagentTransfer
+                // Carpmosia-start - Base 60 Chem
                 case "40":
                     ReagentDispenserDispenseAmount = ReagentDispenserDispenseAmount.U40;
                     break;
@@ -68,7 +68,7 @@ namespace Content.Shared.Chemistry
                 case "120":
                     ReagentDispenserDispenseAmount = ReagentDispenserDispenseAmount.U120;
                     break;
-                // Carpmosia-end - reagentTransfer
+                // Carpmosia-end - Base 60 Chem
                 default:
                     throw new Exception($"Cannot convert the string `{s}` into a valid ReagentDispenser DispenseAmount");
             }
@@ -115,11 +115,11 @@ namespace Content.Shared.Chemistry
         U20 = 20,
         U25 = 25,
         U30 = 30,
-        U40 = 40, // Carpmosia-edit - reagentTransfer
+        U40 = 40, // Carpmosia-edit - Base 60 Chem
         U50 = 50,
-        U60 = 60, // Carpmosia-edit - reagentTransfer
+        U60 = 60, // Carpmosia-edit - Base 60 Chem
         U100 = 100,
-        U120 = 120, // Carpmosia-edit - reagentTransfer
+        U120 = 120, // Carpmosia-edit - Base 60 Chem
     }
 
     [Serializable, NetSerializable]
