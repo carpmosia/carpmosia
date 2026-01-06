@@ -2,7 +2,9 @@ using Content.Server.Popups;
 using Content.Server.Power.Components;
 using Content.Server.Power.Pow3r;
 using Content.Shared.Access.Systems;
+using Content.Shared.Administration.Logs;
 using Content.Shared.APC;
+using Content.Shared.Database;
 using Content.Shared.Emag.Systems;
 using Content.Shared.Emp;
 using Content.Shared.Popups;
@@ -11,6 +13,7 @@ using Content.Shared.Rounding;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Random; // Carpmosia-edit - APC/Alarm resprite
 using Robust.Shared.Timing;
 
 namespace Content.Server.Power.EntitySystems;
@@ -18,9 +21,11 @@ namespace Content.Server.Power.EntitySystems;
 public sealed class ApcSystem : EntitySystem
 {
     [Dependency] private readonly AccessReaderSystem _accessReader = default!;
+    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly EmagSystem _emag = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
+    [Dependency] private readonly IRobustRandom _random = default!; // Carpmosia-edit - APC/Alarm resprite
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
@@ -112,7 +117,7 @@ public sealed class ApcSystem : EntitySystem
 
         if (_accessReader.IsAllowed(args.Actor, uid))
         {
-            ApcToggleBreaker(uid, component);
+            ApcToggleBreaker(uid, component, user: args.Actor);
         }
         else
         {
@@ -121,7 +126,12 @@ public sealed class ApcSystem : EntitySystem
         }
     }
 
-    public void ApcToggleBreaker(EntityUid uid, ApcComponent? apc = null, PowerNetworkBatteryComponent? battery = null)
+    /// <summary>Toggles the enabled state of the APC's main breaker.</summary>
+    public void ApcToggleBreaker(
+        EntityUid uid,
+        ApcComponent? apc = null,
+        PowerNetworkBatteryComponent? battery = null,
+        EntityUid? user = null)
     {
         if (!Resolve(uid, ref apc, ref battery))
             return;
@@ -134,6 +144,13 @@ public sealed class ApcSystem : EntitySystem
 
         UpdateUIState(uid, apc);
         _audio.PlayPvs(apc.OnReceiveMessageSound, uid, AudioParams.Default.WithVolume(-2f));
+
+        if (user != null)
+        {
+            var humanReadableState = apc.MainBreakerEnabled ? "Enabled" : "Disabled";
+            _adminLogger.Add(LogType.ItemConfigure, LogImpact.Medium,
+                $"{ToPrettyString(user):user} set the main breaker state of {ToPrettyString(uid):entity} to {humanReadableState:state}.");
+        }
     }
 
     private void OnEmagged(EntityUid uid, ApcComponent comp, ref GotEmaggedEvent args)
@@ -164,6 +181,12 @@ public sealed class ApcSystem : EntitySystem
 
                 if (TryComp(uid, out AppearanceComponent? appearance))
                 {
+                    // Carpmosia-start - APC/Alarm resprite
+                    if (newState == ApcChargeState.Emag)
+                    {
+                        _appearance.SetData(uid, ApcVisuals.EmagVarient, _random.Next(0, 1048576), appearance);
+                    }
+                    // Carpmosia-end - APC/Alarm resprite
                     _appearance.SetData(uid, ApcVisuals.ChargeState, newState, appearance);
                 }
             }

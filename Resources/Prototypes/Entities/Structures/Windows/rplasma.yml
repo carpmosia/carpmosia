@@ -5,9 +5,9 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/reinforced_plasma_window.rsi
+    sprite: _Carpmosia/Structures/Windows/plasma_reinforced.rsi # Carpmosia-edit - Window resprite
   - type: Icon
-    sprite: Structures/Windows/reinforced_plasma_window.rsi
+    sprite: _Carpmosia/Structures/Windows/plasma_reinforced.rsi # Carpmosia-edit - Window resprite
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: RGlass
@@ -42,7 +42,8 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: IconSmooth
-    base: rpwindow
+    key: windows_plasma # Carpmosia-edit - Wall resprite
+    base: full # Carpmosia-edit - Window resprite
   - type: Construction
     graph: Window
     node: reinforcedPlasmaWindow
@@ -67,11 +68,11 @@
     - Window
   components:
   - type: Sprite
-    sprite: Structures/Windows/directional.rsi
-    state: plasma_reinforced_window
+    sprite: _Carpmosia/Structures/Windows/plasma_reinforced.rsi # Carpmosia-edit - Window resprite
+    state: directional # Carpmosia-edit - Window resprite
   - type: Icon
-    sprite: Structures/Windows/directional.rsi
-    state: plasma_reinforced_window
+    sprite: _Carpmosia/Structures/Windows/plasma_reinforced.rsi # Carpmosia-edit - Window resprite
+    state: directional # Carpmosia-edit - Window resprite
   - type: Construction
     graph: WindowDirectional
     node: plasmaReinforcedWindowDirectional
@@ -125,19 +126,19 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/reinforced_plasma_diagonal.rsi
-    state: state0
+    sprite: _Carpmosia/Structures/Windows/plasma_reinforced.rsi # Carpmosia-edit - Window resprite
+    state: diagonal0 # Carpmosia-edit - Window resprite
   - type: Tag
     tags:
     - Diagonal
     - Window
   - type: IconSmooth
     mode: Diagonal
-    key: windows
-    base: state
+    key: windows_plasma # Carpmosia-edit - Wall resprite
+    base: diagonal # Carpmosia-edit - Window resprite
   - type: Icon
-    sprite: Structures/Windows/reinforced_plasma_diagonal.rsi
-    state: state0
+    sprite: _Carpmosia/Structures/Windows/plasma_reinforced.rsi # Carpmosia-edit - Window resprite
+    state: diagonal0 # Carpmosia-edit - Window resprite
   - type: Fixtures
     fixtures:
       fix1:

@@ -1,0 +1,59 @@
+# storage grid sizes for outer clothing to inherit
+# so i don't have to copy paste 5 lines into a billion protos
+
+# armored clothing
+- type: entity
+  abstract: true
+  id: ClothingOuterSizeArmoredBasic # sec vests, sec armored coats, similar
+  components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,2 # 2x3
+
+- type: entity
+  abstract: true
+  id: ClothingOuterSizeArmoredSpecial # bulletproof vests, riot armor, similar
+  components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,2 # 3x3
+
+- type: entity
+  abstract: true
+  id: ClothingOuterSizeArmoredMajor # syndicate raid suit, captain's carapace, similar. could probably use a better name
+  components:
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,2,3 # 3x4
+
+# large unarmored suits
+- type: entity
+  abstract: true
+  id: ClothingOuterSizeUtilitySlim # paramedic voidsuit, radiation suit, similar
+  components:
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,1,4 # 2x5
+
+- type: entity
+  abstract: true
+  id: ClothingOuterSizeUtilityLarge # EVA suits
+  components:
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,3,3 # 4x4
+
+# enormous hardsuits and whatnot
+- type: entity
+  abstract: true
+  id: ClothingOuterSizeHuge # syndicate commander & elite hardsuits, RD's hardsuit, similar
+  components:
+  - type: Item
+    size: Huge
+    shape:
+    - 0,0,4,4 # 5x5
