@@ -1081,4 +1081,23 @@
   id: 201
   time: '2026-01-04T20:02:04.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/227
+- author: imatsoup
+  changes:
+  - message: Secret doors have had their sprites updated to match the changes to solid
+      walls.
+    type: Fix
+  - message: Reworked secret door animation timings to fit the new sprites
+    type: Fix
+  id: 202
+  time: '2026-01-05T03:38:24.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/225
+- author: SnappingOpossum
+  changes:
+  - message: Removed 50u transfer mode from bluespace syringes that was added by upstream.
+    type: Remove
+  - message: Increased capacity of advanced jet injectors to 30u.
+    type: Tweak
+  id: 203
+  time: '2026-01-05T04:16:34.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/228
 Order: -1
