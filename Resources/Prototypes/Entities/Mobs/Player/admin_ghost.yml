@@ -16,6 +16,7 @@
     - SilentStorageUser
     - PreventAccessLogging
     - AllowBiomeLoading
+    - NotGhostnadoWarpable
   - type: Input
     context: "aghost"
   - type: Ghost
@@ -35,8 +36,8 @@
     needsHands: false
   - type: CombatMode
   - type: Physics
+    bodyType: Kinematic # Admin ghosts should ignore the laws of physics.
     ignorePaused: true
-    bodyType: Kinematic
   - type: Access
     groups:
     - AllAccess
@@ -105,7 +106,7 @@
   - type: Inventory
     templateId: aghost
   - type: Loadout
-    prototypes: [ MobAghostGear ]
+    prototypes: [ MobAghostGearCarp ] # Carpmosia-edit - Better aghost backpack
   - type: BypassInteractionChecks
   - type: ExplosionResistance
     damageCoefficient: 0

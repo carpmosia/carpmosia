@@ -142,11 +142,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/vent.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi
-        state: pipeUnaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: vent_off
-        map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi
+      state: pipeUnaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: vent_off
+      map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
   - type: Construction
     node: ventpumpAlt1
 
@@ -159,11 +159,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/vent.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi
-        state: pipeUnaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: vent_off
-        map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi
+      state: pipeUnaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: vent_off
+      map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
   - type: Construction
     node: ventpumpAlt2
 
@@ -176,11 +176,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/vent.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi
-        state: pipeUnaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: vent_off
-        map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi
+      state: pipeUnaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: vent_off
+      map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
   - type: Construction
     node: ventpumpAlt3
 
@@ -193,11 +193,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/vent.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi
-        state: pipeUnaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: vent_off
-        map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi
+      state: pipeUnaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: vent_off
+      map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
   - type: Construction
     node: ventpumpAlt4
 
@@ -211,11 +211,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/vent.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi
-        state: pipeUnaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: vent_passive
-        map: [ "enum.SubfloorLayers.FirstLayer" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi
+      state: pipeUnaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: vent_passive
+      map: [ "enum.SubfloorLayers.FirstLayer" ]
   - type: Construction
     node: passiveventAlt1
 
@@ -228,11 +228,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/vent.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi
-        state: pipeUnaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: vent_passive
-        map: [ "enum.SubfloorLayers.FirstLayer" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi
+      state: pipeUnaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: vent_passive
+      map: [ "enum.SubfloorLayers.FirstLayer" ]
   - type: Construction
     node: passiveventAlt2
 
@@ -245,11 +245,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/vent.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi
-        state: pipeUnaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: vent_passive
-        map: [ "enum.SubfloorLayers.FirstLayer" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi
+      state: pipeUnaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: vent_passive
+      map: [ "enum.SubfloorLayers.FirstLayer" ]
   - type: Construction
     node: passiveventAlt3
 
@@ -262,11 +262,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/vent.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi
-        state: pipeUnaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: vent_passive
-        map: [ "enum.SubfloorLayers.FirstLayer" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi
+      state: pipeUnaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: vent_passive
+      map: [ "enum.SubfloorLayers.FirstLayer" ]
   - type: Construction
     node: passiveventAlt4
 
@@ -280,11 +280,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/scrubber.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi
-        state: pipeUnaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: scrub_off
-        map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi
+      state: pipeUnaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: scrub_off
+      map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
   - type: Construction
     node: ventscrubberAlt1
 
@@ -297,11 +297,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/scrubber.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi
-        state: pipeUnaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: scrub_off
-        map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi
+      state: pipeUnaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: scrub_off
+      map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
   - type: Construction
     node: ventscrubberAlt2
 
@@ -314,11 +314,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/scrubber.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi
-        state: pipeUnaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: scrub_off
-        map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi
+      state: pipeUnaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: scrub_off
+      map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
   - type: Construction
     node: ventscrubberAlt3
 
@@ -331,11 +331,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/scrubber.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi
-        state: pipeUnaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: scrub_off
-        map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi
+      state: pipeUnaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: scrub_off
+      map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
   - type: Construction
     node: ventscrubberAlt4
 
@@ -349,15 +349,15 @@
     drawdepth: FloorObjects
     sprite: _Carpmosia/Structures/Piping/Atmospherics/outletinjector.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi
-        state: pipeUnaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: injector
-        map: [ "enum.SubfloorLayers.FirstLayer" ]
-      - state: injector-unshaded
-        shader: unshaded
-        map: [ "enum.LightLayers.Unshaded" ]
-        color: "#990000"
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi
+      state: pipeUnaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: injector
+      map: [ "enum.SubfloorLayers.FirstLayer" ]
+    - state: injector-unshaded
+      shader: unshaded
+      map: [ "enum.LightLayers.Unshaded" ]
+      color: "#990000"
   - type: Construction
     node: outletinjectorAlt1
 
@@ -370,15 +370,15 @@
     drawdepth: FloorObjects
     sprite: _Carpmosia/Structures/Piping/Atmospherics/outletinjector.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi
-        state: pipeUnaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: injector
-        map: [ "enum.SubfloorLayers.FirstLayer" ]
-      - state: injector-unshaded
-        shader: unshaded
-        map: [ "enum.LightLayers.Unshaded" ]
-        color: "#990000"
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi
+      state: pipeUnaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: injector
+      map: [ "enum.SubfloorLayers.FirstLayer" ]
+    - state: injector-unshaded
+      shader: unshaded
+      map: [ "enum.LightLayers.Unshaded" ]
+      color: "#990000"
   - type: Construction
     node: outletinjectorAlt2
 
@@ -391,15 +391,15 @@
     drawdepth: FloorObjects
     sprite: _Carpmosia/Structures/Piping/Atmospherics/outletinjector.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi
-        state: pipeUnaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: injector
-        map: [ "enum.SubfloorLayers.FirstLayer" ]
-      - state: injector-unshaded
-        shader: unshaded
-        map: [ "enum.LightLayers.Unshaded" ]
-        color: "#990000"
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi
+      state: pipeUnaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: injector
+      map: [ "enum.SubfloorLayers.FirstLayer" ]
+    - state: injector-unshaded
+      shader: unshaded
+      map: [ "enum.LightLayers.Unshaded" ]
+      color: "#990000"
   - type: Construction
     node: outletinjectorAlt3
 
@@ -412,15 +412,15 @@
     drawdepth: FloorObjects
     sprite: _Carpmosia/Structures/Piping/Atmospherics/outletinjector.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi
-        state: pipeUnaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: injector
-        map: [ "enum.SubfloorLayers.FirstLayer" ]
-      - state: injector-unshaded
-        shader: unshaded
-        map: [ "enum.LightLayers.Unshaded" ]
-        color: "#990000"
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi
+      state: pipeUnaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: injector
+      map: [ "enum.SubfloorLayers.FirstLayer" ]
+    - state: injector-unshaded
+      shader: unshaded
+      map: [ "enum.LightLayers.Unshaded" ]
+      color: "#990000"
   - type: Construction
     node: outletinjectorAlt4
 
@@ -602,11 +602,11 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/gascanisterport.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi
-        state: pipeUnaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: gasCanisterPort
-        map: [ "enum.SubfloorLayers.FirstLayer" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi
+      state: pipeUnaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: gasCanisterPort
+      map: [ "enum.SubfloorLayers.FirstLayer" ]
   - type: Construction
     node: portAlt1
 
@@ -618,11 +618,11 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/gascanisterport.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi
-        state: pipeUnaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: gasCanisterPort
-        map: [ "enum.SubfloorLayers.FirstLayer" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi
+      state: pipeUnaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: gasCanisterPort
+      map: [ "enum.SubfloorLayers.FirstLayer" ]
   - type: Construction
     node: portAlt2
 
@@ -634,11 +634,11 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/gascanisterport.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi
-        state: pipeUnaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: gasCanisterPort
-        map: [ "enum.SubfloorLayers.FirstLayer" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi
+      state: pipeUnaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: gasCanisterPort
+      map: [ "enum.SubfloorLayers.FirstLayer" ]
   - type: Construction
     node: portAlt3
 
@@ -650,11 +650,11 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/gascanisterport.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi
-        state: pipeUnaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: gasCanisterPort
-        map: [ "enum.SubfloorLayers.FirstLayer" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi
+      state: pipeUnaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: gasCanisterPort
+      map: [ "enum.SubfloorLayers.FirstLayer" ]
   - type: Construction
     node: portAlt4
 
@@ -667,11 +667,11 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/vent.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi
-        state: pipeBinaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: vent_off
-        map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi
+      state: pipeBinaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: vent_off
+      map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
   - type: Construction
     node: dualportventpumpAlt1
 
@@ -683,11 +683,11 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/vent.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi
-        state: pipeBinaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: vent_off
-        map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi
+      state: pipeBinaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: vent_off
+      map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
   - type: Construction
     node: dualportventpumpAlt2
 
@@ -699,11 +699,11 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/vent.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi
-        state: pipeBinaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: vent_off
-        map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi
+      state: pipeBinaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: vent_off
+      map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
   - type: Construction
     node: dualportventpumpAlt3
 
@@ -715,11 +715,11 @@
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/vent.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi
-        state: pipeBinaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: vent_off
-        map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi
+      state: pipeBinaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: vent_off
+      map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
   - type: Construction
     node: dualportventpumpAlt4
 
@@ -733,11 +733,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/gasfilter.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi
-        state: pipeTrinaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: gasFilter
-        map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi
+      state: pipeTrinaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: gasFilter
+      map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Flippable
     mirrorEntity: GasFilterFlippedAlt1
   - type: Construction
@@ -752,11 +752,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/gasfilter.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi
-        state: pipeTrinaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: gasFilter
-        map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi
+      state: pipeTrinaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: gasFilter
+      map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Flippable
     mirrorEntity: GasFilterFlippedAlt2
   - type: Construction
@@ -771,11 +771,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/gasfilter.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi
-        state: pipeTrinaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: gasFilter
-        map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi
+      state: pipeTrinaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: gasFilter
+      map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Flippable
     mirrorEntity: GasFilterFlippedAlt3
   - type: Construction
@@ -790,11 +790,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/gasfilter.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi
-        state: pipeTrinaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: gasFilter
-        map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi
+      state: pipeTrinaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: gasFilter
+      map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Flippable
     mirrorEntity: GasFilterFlippedAlt4
   - type: Construction
@@ -810,11 +810,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/gasfilter.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi
-        state: pipeTrinaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: gasFilterF
-        map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi
+      state: pipeTrinaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: gasFilterF
+      map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Flippable
     mirrorEntity: GasFilterAlt1
   - type: Construction
@@ -829,11 +829,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/gasfilter.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi
-        state: pipeTrinaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: gasFilterF
-        map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi
+      state: pipeTrinaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: gasFilterF
+      map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Flippable
     mirrorEntity: GasFilterAlt2
   - type: Construction
@@ -848,11 +848,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/gasfilter.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi
-        state: pipeTrinaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: gasFilterF
-        map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi
+      state: pipeTrinaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: gasFilterF
+      map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Flippable
     mirrorEntity: GasFilterAlt3
   - type: Construction
@@ -867,11 +867,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/gasfilter.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi
-        state: pipeTrinaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: gasFilterF
-        map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi
+      state: pipeTrinaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: gasFilterF
+      map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Flippable
     mirrorEntity: GasFilterAlt4
   - type: Construction
@@ -887,11 +887,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/gasmixer.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi
-        state: pipeTrinaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: gasMixer
-        map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi
+      state: pipeTrinaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: gasMixer
+      map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Flippable
     mirrorEntity: GasMixerFlippedAlt1
   - type: Construction
@@ -906,11 +906,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/gasmixer.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi
-        state: pipeTrinaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: gasMixer
-        map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi
+      state: pipeTrinaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: gasMixer
+      map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Flippable
     mirrorEntity: GasMixerFlippedAlt2
   - type: Construction
@@ -925,11 +925,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/gasmixer.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi
-        state: pipeTrinaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: gasMixer
-        map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi
+      state: pipeTrinaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: gasMixer
+      map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Flippable
     mirrorEntity: GasMixerFlippedAlt3
   - type: Construction
@@ -944,11 +944,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/gasmixer.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi
-        state: pipeTrinaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: gasMixer
-        map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi
+      state: pipeTrinaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: gasMixer
+      map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Flippable
     mirrorEntity: GasMixerFlippedAlt4
   - type: Construction
@@ -964,11 +964,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/gasmixer.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi
-        state: pipeTrinaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: gasMixerF
-        map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi
+      state: pipeTrinaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: gasMixerF
+      map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Flippable
     mirrorEntity: GasMixerAlt1
   - type: Construction
@@ -983,11 +983,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/gasmixer.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi
-        state: pipeTrinaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: gasMixerF
-        map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi
+      state: pipeTrinaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: gasMixerF
+      map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Flippable
     mirrorEntity: GasMixerAlt2
   - type: Construction
@@ -1002,11 +1002,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/gasmixer.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi
-        state: pipeTrinaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: gasMixerF
-        map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi
+      state: pipeTrinaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: gasMixerF
+      map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Flippable
     mirrorEntity: GasMixerAlt3
   - type: Construction
@@ -1021,11 +1021,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/gasmixer.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi
-        state: pipeTrinaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: gasMixerF
-        map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi
+      state: pipeTrinaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: gasMixerF
+      map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Flippable
     mirrorEntity: GasMixerAlt4
   - type: Construction
@@ -1041,11 +1041,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/pneumaticvalve.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi
-        state: pipeTrinaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: off
-        map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi
+      state: pipeTrinaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: off
+      map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Construction
     node: pneumaticvalveAlt1
 
@@ -1058,11 +1058,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/pneumaticvalve.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi
-        state: pipeTrinaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: off
-        map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi
+      state: pipeTrinaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: off
+      map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Construction
     node: pneumaticvalveAlt2
 
@@ -1075,11 +1075,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/pneumaticvalve.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi
-        state: pipeTrinaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: off
-        map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi
+      state: pipeTrinaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: off
+      map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Construction
     node: pneumaticvalveAlt3
 
@@ -1092,11 +1092,11 @@
     drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/pneumaticvalve.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi
-        state: pipeTrinaryConnectors
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: off
-        map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi
+      state: pipeTrinaryConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: off
+      map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Construction
     node: pneumaticvalveAlt4
 

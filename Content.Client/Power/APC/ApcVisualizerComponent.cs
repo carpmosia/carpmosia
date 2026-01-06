@@ -94,7 +94,7 @@ public sealed partial class ApcVisualsComponent : Component
     /// </summary>
     [DataField("emaggedScreenState")]
     [ViewVariables(VVAccess.ReadWrite)]
-    public string EmaggedScreenState = "emag-unlit";
+    public string[] EmaggedScreenState = ["emag-unlit"]; // Carpmosia-edit - APC/Alarm resprite
 
     /// <summary>
     /// The color of the light emitted when the APC has been emagged.
