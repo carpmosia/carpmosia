@@ -10,6 +10,7 @@ using Content.Server.Screens.Components;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Systems;
+using Content.Server.Voting; // Carpmosia-edit - EORG vote
 using Content.Shared.Database;
 using Content.Shared.DeviceNetwork;
 using Content.Shared.GameTicking;
@@ -55,6 +56,13 @@ namespace Content.Server.RoundEnd
         public TimeSpan? ExpectedCountdownEnd { get; set; } = null;
         public TimeSpan? ExpectedShuttleLength => ExpectedCountdownEnd - LastCountdownStart;
         public TimeSpan? ShuttleTimeLeft => ExpectedCountdownEnd - _gameTiming.CurTime;
+        public bool IsEorg { get; set; } = false; // Carpmosia-edit - EORG vote
+        public IVoteHandle? EorgVote { get; set; } = null; // Carpmosia-edit - EORG vote
+
+        /// <summary>
+        /// If the shuttle can't be recalled. if set to true, the station wont be able to recall
+        /// </summary>
+        public bool CantRecall = false;
 
         public TimeSpan AutoCallStartTime;
         private bool _autoCalledBefore = false;
@@ -84,6 +92,13 @@ namespace Content.Server.RoundEnd
                 _cooldownTokenSource.Cancel();
                 _cooldownTokenSource = null;
             }
+
+            CantRecall = false;
+            // Carpmosia-start - EORG Vote
+            IsEorg = false;
+            EorgVote?.Cancel();
+            EorgVote = null;
+            // Carpmosia-end - EORG Vote
 
             LastCountdownStart = null;
             ExpectedCountdownEnd = null;
@@ -116,7 +131,7 @@ namespace Content.Server.RoundEnd
 
         public bool CanCallOrRecall()
         {
-            return _cooldownTokenSource == null;
+            return _cooldownTokenSource == null && !CantRecall;
         }
 
         public bool IsRoundEndRequested()
@@ -124,7 +139,15 @@ namespace Content.Server.RoundEnd
             return _countdownTokenSource != null;
         }
 
-        public void RequestRoundEnd(EntityUid? requester = null, bool checkCooldown = true, string text = "round-end-system-shuttle-called-announcement", string name = "round-end-system-shuttle-sender-announcement")
+        /// <summary>
+        /// Starts the process of ending the round by calling evac
+        /// </summary>
+        /// <param name="requester"></param>
+        /// <param name="checkCooldown"></param>
+        /// <param name="text">text in the announcement of shuttle calling</param>
+        /// <param name="name">name in the announcement of shuttle calling</param>
+        /// <param name="cantRecall">if the station shouldn't be able to recall the shuttle</param>
+        public void RequestRoundEnd(EntityUid? requester = null, bool checkCooldown = true, string text = "round-end-system-shuttle-called-announcement", string name = "round-end-system-shuttle-sender-announcement", bool cantRecall = false)
         {
             var duration = DefaultCountdownDuration;
 
@@ -139,10 +162,19 @@ namespace Content.Server.RoundEnd
                 }
             }
 
-            RequestRoundEnd(duration, requester, checkCooldown, text, name);
+            RequestRoundEnd(duration, requester, checkCooldown, text, name, cantRecall);
         }
 
-        public void RequestRoundEnd(TimeSpan countdownTime, EntityUid? requester = null, bool checkCooldown = true, string text = "round-end-system-shuttle-called-announcement", string name = "round-end-system-shuttle-sender-announcement")
+        /// <summary>
+        /// Starts the process of ending the round by calling evac
+        /// </summary>
+        /// <param name="countdownTime">time for evac to arrive</param>
+        /// <param name="requester"></param>
+        /// <param name="checkCooldown"></param>
+        /// <param name="text">text in the announcement of shuttle calling</param>
+        /// <param name="name">name in the announcement of shuttle calling</param>
+        /// <param name="cantRecall">if the station shouldn't be able to recall the shuttle</param>
+        public void RequestRoundEnd(TimeSpan countdownTime, EntityUid? requester = null, bool checkCooldown = true, string text = "round-end-system-shuttle-called-announcement", string name = "round-end-system-shuttle-sender-announcement", bool cantRecall = false)
         {
             if (_gameTicker.RunLevel != GameRunLevel.InRound)
                 return;
@@ -154,6 +186,7 @@ namespace Content.Server.RoundEnd
                 return;
 
             _countdownTokenSource = new();
+            CantRecall = cantRecall;
 
             if (requester != null)
             {
@@ -214,12 +247,17 @@ namespace Content.Server.RoundEnd
             }
         }
 
-        public void CancelRoundEndCountdown(EntityUid? requester = null, bool checkCooldown = true)
+        public void CancelRoundEndCountdown(EntityUid? requester = null, bool forceRecall = false)
         {
-            if (_gameTicker.RunLevel != GameRunLevel.InRound) return;
-            if (checkCooldown && _cooldownTokenSource != null) return;
+            if (_gameTicker.RunLevel != GameRunLevel.InRound)
+                return;
 
-            if (_countdownTokenSource == null) return;
+            if (!forceRecall && (CantRecall || _cooldownTokenSource != null))
+                return;
+
+            if (_countdownTokenSource == null)
+                return;
+
             _countdownTokenSource.Cancel();
             _countdownTokenSource = null;
 
@@ -270,7 +308,8 @@ namespace Content.Server.RoundEnd
             _countdownTokenSource?.Cancel();
             _countdownTokenSource = new();
 
-            countdownTime ??= TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.RoundRestartTime));
+            EorgVote?.Cancel(); // Carpmosia-edit - EORG Vote
+            countdownTime ??= TimeSpan.FromSeconds(IsEorg ? _cfg.GetCVar(CCVars.EorgRoundRestartTime) : _cfg.GetCVar(CCVars.RoundRestartTime)); // Carpmosia-edit - EORG Vote
             int time;
             string unitsLocString;
             if (countdownTime.Value.TotalSeconds < 60)
@@ -285,7 +324,8 @@ namespace Content.Server.RoundEnd
             }
             _chatManager.DispatchServerAnnouncement(
                 Loc.GetString(
-                    "round-end-system-round-restart-eta-announcement",
+                    "round-end-system-round-restart-eta-announcement-carp", // Carpmosia-edit - EORG Vote
+                    ("eorg", IsEorg), // Carpmosia-edit - EORG Vote
                     ("time", time),
                     ("units", Loc.GetString(unitsLocString))));
             Timer.Spawn(countdownTime.Value, AfterEndRoundRestart, _countdownTokenSource.Token);

@@ -173,10 +173,13 @@
       - Wrench
       - Bottle
       - Spray
-      - Brutepack
-      - Bloodpack
-      - Gauze
-      - Ointment
+      # Carpmosia-start - Medical tourniquets
+      #- Brutepack
+      #- Bloodpack
+      #- Gauze
+      #- Ointment
+      #- Tourniquet
+      # Carpmosia-end - Medical tourniquets
       - CigPack
       - PillCanister
       - Radio
@@ -185,10 +188,10 @@
       - Dropper
       components:
       - Defibrillator # Carpmosia-edit - civilian research tweaks
-      - Hypospray
       - Injector
       - Pill
       - HandLabeler
+      - Healing # Carpmosia-edit - Medical tourniquets
   - type: ItemMapper
     sprite: *BeltOverlay
     mapLayers:
@@ -198,7 +201,7 @@
           - Bottle
       hypo:
         whitelist:
-          components:
+          tags:
           - Hypospray
       pill:
         whitelist:
@@ -397,6 +400,7 @@
       components:
       - Stunbaton
       - FlashOnTrigger
+      - Ensnaring # Carpmosia-edit - Bolas in Security Belts
       - SmokeOnTrigger
       - Flash
       - Handcuff
