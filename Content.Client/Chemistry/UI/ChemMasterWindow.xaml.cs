@@ -120,11 +120,11 @@ namespace Content.Client.Chemistry.UI
                 ("20", ChemMasterReagentAmount.U20, StyleClass.ButtonOpenBoth),
                 ("25", ChemMasterReagentAmount.U25, StyleClass.ButtonOpenBoth),
                 ("30", ChemMasterReagentAmount.U30, StyleClass.ButtonOpenBoth),
-                ("40", ChemMasterReagentAmount.U40, StyleClass.ButtonOpenBoth), // Carpmosia-edit - reagentTransfer
+                ("40", ChemMasterReagentAmount.U40, StyleClass.ButtonOpenBoth), // Carpmosia-edit - Base 60 Chem
                 ("50", ChemMasterReagentAmount.U50, StyleClass.ButtonOpenBoth),
-                ("60", ChemMasterReagentAmount.U60, StyleClass.ButtonOpenBoth), // Carpmosia-edit - reagentTransfer
+                ("60", ChemMasterReagentAmount.U60, StyleClass.ButtonOpenBoth), // Carpmosia-edit - Base 60 Chem
                 ("100", ChemMasterReagentAmount.U100, StyleClass.ButtonOpenBoth),
-                ("120", ChemMasterReagentAmount.U120, StyleClass.ButtonOpenBoth), // Carpmosia-edit - reagentTransfer
+                ("120", ChemMasterReagentAmount.U120, StyleClass.ButtonOpenBoth), // Carpmosia-edit - Base 60 Chem
                 (Loc.GetString("chem-master-window-buffer-all-amount"), ChemMasterReagentAmount.All, StyleClass.ButtonOpenLeft),
             };
 

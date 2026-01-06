@@ -24,7 +24,7 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 60 # Carpmosia-edit - reagentStorage
+        maxVol: 60 # Carpmosia-edit - Base 60 Chem
   - type: MixableSolution
     solution: beaker
   - type: FitsInDispenser
@@ -124,7 +124,7 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 60 # Carpmosia-edit - reagentStorage
+        maxVol: 60 # Carpmosia-edit - Base 60 Chem
   - type: MixableSolution
     solution: beaker
   - type: FitsInDispenser
@@ -193,10 +193,10 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 60 # Carpmosia-edit - reagentStorage
+        maxVol: 60 # Carpmosia-edit - Base 60 Chem
         reagents:
         - ReagentId: Cryoxadone
-          Quantity: 60 # Carpmosia-edit - reagentStorage
+          Quantity: 60 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   parent: Beaker
@@ -208,10 +208,10 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 60 # Carpmosia-edit - reagentStorage
+        maxVol: 60 # Carpmosia-edit - Base 60 Chem
         reagents:
         - ReagentId: Arithrazine
-          Quantity: 60 # Carpmosia-edit - reagentStorage
+          Quantity: 60 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   parent: Beaker
@@ -223,10 +223,10 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 60 # Carpmosia-edit - reagentStorage
+        maxVol: 60 # Carpmosia-edit - Base 60 Chem
         reagents:
         - ReagentId: Sigynate
-          Quantity: 60 # Carpmosia-edit - reagentStorage
+          Quantity: 60 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   parent: Beaker
@@ -238,10 +238,10 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 60 # Carpmosia-edit - reagentStorage
+        maxVol: 60 # Carpmosia-edit - Base 60 Chem
         reagents:
         - ReagentId: Phalanximine
-          Quantity: 60 # Carpmosia-edit - reagentStorage
+          Quantity: 60 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   parent: Beaker
@@ -253,10 +253,10 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 60 # Carpmosia-edit - reagentStorage
+        maxVol: 60 # Carpmosia-edit - Base 60 Chem
         reagents:
         - ReagentId: Diphenhydramine
-          Quantity: 60 # Carpmosia-edit - reagentStorage
+          Quantity: 60 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   parent: Beaker
@@ -268,10 +268,10 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 60 # Carpmosia-edit - reagentStorage
+        maxVol: 60 # Carpmosia-edit - Base 60 Chem
         reagents:
         - ReagentId: Bruizine
-          Quantity: 60 # Carpmosia-edit - reagentStorage
+          Quantity: 60 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   parent: Beaker
@@ -283,10 +283,10 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 60 # Carpmosia-edit - reagentStorage
+        maxVol: 60 # Carpmosia-edit - Base 60 Chem
         reagents:
         - ReagentId: Lacerinol
-          Quantity: 60 # Carpmosia-edit - reagentStorage
+          Quantity: 60 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   name: large beaker
@@ -309,7 +309,7 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 120 # Carpmosia-edit - reagentStorage
+        maxVol: 120 # Carpmosia-edit - Base 60 Chem
   - type: Appearance
   - type: SolutionContainerVisuals
     maxFillLevels: 6
@@ -359,7 +359,7 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 1200 # Carpmosia-edit - extendedReagentStorage
+        maxVol: 1200 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   name: dropper
@@ -578,7 +578,7 @@
   - type: SolutionContainerManager
     solutions:
       injector:
-        maxVol: 120 # Carpmosia-edit - extendedReagentStorage
+        maxVol: 120 # Carpmosia-edit - Base 60 Chem
   - type: Injector
     activeModeProtoId: BluespaceSyringeDrawMode
     allowedModes:
