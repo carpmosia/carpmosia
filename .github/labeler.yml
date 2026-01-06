@@ -1,27 +1,113 @@
-﻿"Changes: Sprites":
+﻿"C: Sprites":
 - changed-files:
-  - any-glob-to-any-file: '**/*.rsi/*.png'
+  - any-glob-to-any-file: '**/*.rsi/**'
 
-"Changes: Map":
+"C: Mapping":
 - changed-files:
   - any-glob-to-any-file:
-    - 'Resources/Maps/**/*.yml'
-    - 'Resources/Prototypes/Maps/**/*.yml'
-    - 'Resources/Prototypes/_Carpmosia/Maps/**/*.yml'
+    - 'Resources/Maps/**'
 
-"Changes: UI":
+    - 'Resources/Prototypes/Maps/**'
+    - 'Resources/Prototypes/_Carpmosia/Maps/**'
+
+    - 'Resources/Prototypes/Decals/**'
+    - 'Resources/Prototypes/_Carpmosia/Decals/**'
+
+    - 'Resources/Textures/Decals/**'
+    - 'Resources/Textures/_Carpmosia/Decals/**'
+
+"C: UI/UX":
 - changed-files:
   - any-glob-to-any-file: '**/*.xaml*'
 
-"Changes: Shaders":
+"C: Shaders":
 - changed-files:
-  - any-glob-to-any-file: '**/*.swsl'
+  - any-glob-to-any-file:
+    - '**/*.swsl'
 
-"Changes: Audio":
+    - 'Resources/Prototypes/Shaders/**'
+    - 'Resources/Prototypes/_Carpmosia/Shaders/**'
+
+"C: Audio":
 - changed-files:
   - any-glob-to-any-file: '**/*.ogg'
 
-"Changes: No C#":
+"C: No C#":
 - changed-files:
-  # Equiv to any-glob-to-all as long as this has one matcher. If ALL changed files are not C# files, then apply label.
   - all-globs-to-all-files: "!**/*.cs"
+
+"C: Guidebook":
+- changed-files:
+  - any-glob-to-any-file:
+    - 'Resources/ServerInfo/**'
+
+    - 'Resources/Prototypes/Guidebook/**'
+    - 'Resources/Prototypes/_Carpmosia/Guidebook/**'
+
+  - all-globs-to-all-files:
+    - '!Resources/Prototypes/Guidebook/rules.yml'
+    - '!Resources/Prototypes/_Carpmosia/Guidebook/rules.yml'
+
+    - '!Resources/Prototypes/Guidebook/security.yml'
+    - '!Resources/Prototypes/_Carpmosia/Guidebook/security.yml'
+
+    - '!Resources/ServerInfo/Guidebook/ServerRules/**'
+    - '!Resources/ServerInfo/_Carpmosia/Guidebook/ServerRules/**'
+
+"C: Rules":
+- changed-files:
+  - any-glob-to-any-file:
+    - 'Resources/Prototypes/Guidebook/rules.yml'
+    - 'Resources/Prototypes/_Carpmosia/Guidebook/rules.yml'
+
+    - 'Resources/ServerInfo/Guidebook/ServerRules/**'
+    - 'Resources/ServerInfo/_Carpmosia/Guidebook/ServerRules/**'
+
+  - all-globs-to-all-files:
+    - '!Resources/ServerInfo/Guidebook/ServerRules/SpaceLaw/**'
+    - '!Resources/ServerInfo/_Carpmosia/Guidebook/ServerRules/SpaceLaw/**'
+
+"C: Space Law":
+- changed-files:
+  - any-glob-to-any-file:
+    - 'Resources/Prototypes/Guidebook/security.yml'
+    - 'Resources/Prototypes/_Carpmosia/Guidebook/security.yml'
+
+    - 'Resources/ServerInfo/Guidebook/ServerRules/SpaceLaw/**'
+    - 'Resources/ServerInfo/_Carpmosia/Guidebook/ServerRules/SpaceLaw/**'
+
+"C: Loadouts":
+- changed-files:
+  - any-glob-to-any-file:
+    - 'Resources/Prototypes/Loadouts/**'
+    - 'Resources/Prototypes/_Carpmosia/Loadouts/**'
+
+"C: Recipes":
+- changed-files:
+  - any-glob-to-any-file:
+    - 'Resources/Prototypes/Recipes/**'
+    - 'Resources/Prototypes/_Carpmosia/Recipes/**'
+
+"C: Objectives":
+- changed-files:
+  - any-glob-to-any-file:
+    - 'Resources/Prototypes/Objectives/**'
+    - 'Resources/Prototypes/_Carpmosia/Objectives/**'
+
+"C: Lawsets":
+- changed-files:
+  - any-glob-to-any-file:
+    - 'Resources/Locale/en-US/station-laws/laws.ftl'
+    - 'Resources/Locale/en-US/_Carpmosia/station-laws/laws.ftl'
+
+    - 'Resources/Prototypes/silicon-laws.yml'
+    - 'Resources/Prototypes/_Carpmosia/silicon-laws.yml'
+
+"C: Lobby Art":
+- changed-files:
+  - any-glob-to-any-file:
+    - 'Resources/Prototypes/lobbyscreens.yml'
+    - 'Resources/Prototypes/_Carpmosia/lobbyscreens.yml'
+
+    - 'Resources/Textures/LobbyScreens/**'
+    - 'Resources/Textures/_Carpmosia/LobbyScreens/**'
