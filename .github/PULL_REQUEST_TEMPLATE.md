@@ -1,36 +1,37 @@
-<!-- Guidelines: https://docs.spacestation14.io/en/getting-started/pr-guideline -->
+<!-- Upstream guidelines reference: https://docs.spacestation14.io/en/getting-started/pr-guideline -->
+<!-- Please do not remove any of these sections, read the comments and fill this out like a form -->
 
-## About the PR
-<!-- What did you change? -->
+## Player information
+<!-- Describe your PR as you would to a regular player, omit technical details.
+       Make sure to cover all player facing changes as well and as detailed
+       as you can, as this will be forwarded to Discord later. -->
 
 ## Why / Balance
-<!-- Discuss how this would affect game balance or explain why it was changed. Link any relevant discussions or issues. -->
+<!-- Discuss how this would affect game balance or explain why it was changed.
+       Link any relevant discussions or issues. -->
 
 ## Technical details
-<!-- Summary of code changes for easier review. -->
+<!-- Describe what code changes you did or will do and optionally why in this PR.
+       Feel free to use checkboxes to track your progress, for example:
+       - [ ] Resprited X and Y to work with this change.
+       - [ ] Implemented Z and X to handle Y edgecase.
+       - [ ] Added a new component for all X to prevent Z. -->
 
 ## Media
 <!-- Attach media if the PR makes in-game changes (clothing, items, features, etc).
-Small fixes/refactors are exempt. Media may be used in SS14 progress reports with credit. -->
-
-## Requirements
-<!-- Confirm the following by placing an X in the brackets without spaces inside (for example: [X] ): -->
-- [ ] I have read and am following the [Pull Request and Changelog Guidelines](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html).
-- [ ] I have added media to this PR or it does not require an in-game showcase.
-<!-- You should understand that not following the above may get your PR closed at maintainer’s discretion -->
+       Small fixes/refactors are exempt. Media will be used when forwarded to Discord -->
 
 ## Breaking changes
-<!-- List any breaking changes, including namespaces, public class/method/field changes, prototype renames; and provide instructions for fixing them.
-This will be posted in #codebase-changes. -->
+<!-- List any breaking changes, including namespaces, public class/method/field changes,
+       prototype renames, and provide instructions for fixing them. -->
 
-**Changelog**
-<!-- Add a Changelog entry to make players aware of new features or changes that could affect gameplay.
-Make sure to read the guidelines and take this Changelog template out of the comment block in order for it to show up.
-Changelog must have a :cl: symbol, so the bot recognizes the changes and adds them to the game's changelog. -->
-<!--
+# Changelog
+<!-- Edit this to cover all player facing changes in a consise and short matter,
+       Feel free to remove or add as many add, remove, fix, tweak lines as you need.
+       If there are no player facing changes, you can remove the whole thing.
+       This will be visible in-game and on Discord. -->
 :cl:
 - add: Added fun!
 - remove: Removed fun!
 - tweak: Changed fun!
 - fix: Fixed fun!
--->
