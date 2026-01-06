@@ -1,14 +1,14 @@
 - type: entity
-  name: space koi spawner
-  id: SpawnSpaceKoi
   parent: MarkerBase
+  id: SpawnSpaceKoi
+  name: space koi spawner
   components:
   - type: Sprite
     layers:
-      - state: green
-      - sprite: _Carpmosia/Mobs/Animals/Koi/red_black.rsi
-        state: livestock_icon
-      - state: ai
+    - state: green
+    - sprite: _Carpmosia/Mobs/Animals/Koi/red_black.rsi
+      state: livestock_icon
+    - state: ai
   - type: EntityTableSpawner
     table: !type:NestedSelector
       tableId: RandomKoiTable

@@ -83,6 +83,12 @@ namespace Content.Shared.Chemistry
         }
     }
 
+    [Serializable, NetSerializable]
+    public sealed class ChemMasterOutputDrawSourceMessage(ChemMasterDrawSource drawSource) : BoundUserInterfaceMessage
+    {
+        public readonly ChemMasterDrawSource DrawSource = drawSource;
+    }
+
     public enum ChemMasterMode
     {
         Transfer,
@@ -110,12 +116,18 @@ namespace Content.Shared.Chemistry
         U20 = 20,
         U25 = 25,
         U30 = 30,
-        U40 = 40, // Carpmosia-edit - reagentTransfer
+        U40 = 40, // Carpmosia-edit - Base 60 Chem
         U50 = 50,
-        U60 = 60, // Carpmosia-edit - reagentTransfer
+        U60 = 60, // Carpmosia-edit - Base 60 Chem
         U100 = 100,
-        U120 = 120, // Carpmosia-edit - reagentTransfer
+        U120 = 120, // Carpmosia-edit - Base 60 Chem
         All,
+    }
+
+    public enum ChemMasterDrawSource
+    {
+        Internal,
+        External,
     }
 
     public static class ChemMasterReagentAmountToFixedPoint
@@ -187,10 +199,12 @@ namespace Content.Shared.Chemistry
 
         public readonly bool UpdateLabel;
 
+        public readonly ChemMasterDrawSource DrawSource;
+
         public ChemMasterBoundUserInterfaceState(
             ChemMasterMode mode, ChemMasterSortingType sortingType, ContainerInfo? inputContainerInfo, ContainerInfo? outputContainerInfo,
             IReadOnlyList<ReagentQuantity> bufferReagents, FixedPoint2 bufferCurrentVolume,
-            uint selectedPillType, uint pillDosageLimit, bool updateLabel)
+            uint selectedPillType, uint pillDosageLimit, bool updateLabel, ChemMasterDrawSource drawSource)
         {
             InputContainerInfo = inputContainerInfo;
             OutputContainerInfo = outputContainerInfo;
@@ -201,6 +215,7 @@ namespace Content.Shared.Chemistry
             SelectedPillType = selectedPillType;
             PillDosageLimit = pillDosageLimit;
             UpdateLabel = updateLabel;
+            DrawSource = drawSource;
         }
     }
 
