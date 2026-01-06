@@ -16,7 +16,7 @@ using Robust.Shared.Utility;
 namespace Content.Client.UserInterface.Systems.Emotes;
 
 [UsedImplicitly]
-public sealed class EmotesUIController : UIController, IOnStateChanged<GameplayState>
+public sealed partial class EmotesUIController : UIController, IOnStateChanged<GameplayState> // Carpmosia-edit - alt emotes menu
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
@@ -35,58 +35,60 @@ public sealed class EmotesUIController : UIController, IOnStateChanged<GameplayS
                 new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Emotes/vocal.png"))),
         };
 
-    public void OnStateEntered(GameplayState state)
-    {
-        CommandBinds.Builder
-            .Bind(ContentKeyFunctions.OpenEmotesMenu,
-                InputCmdHandler.FromDelegate(_ => ToggleEmotesMenu(false)))
-            .Register<EmotesUIController>();
-    }
-
-    public void OnStateExited(GameplayState state)
-    {
-        CommandBinds.Unregister<EmotesUIController>();
-    }
-
-    private void ToggleEmotesMenu(bool centered)
-    {
-        if (_menu == null)
-        {
-            // setup window
-            var prototypes = _prototypeManager.EnumeratePrototypes<EmotePrototype>();
-            var models = ConvertToButtons(prototypes);
-
-            _menu = new SimpleRadialMenu();
-            _menu.SetButtons(models);
-
-            _menu.Open();
-
-            _menu.OnClose += OnWindowClosed;
-            _menu.OnOpen += OnWindowOpen;
-
-            if (EmotesButton != null)
-                EmotesButton.SetClickPressed(true);
-
-            if (centered)
-            {
-                _menu.OpenCentered();
-            }
-            else
-            {
-                _menu.OpenOverMouseScreenPosition();
-            }
-        }
-        else
-        {
-            _menu.OnClose -= OnWindowClosed;
-            _menu.OnOpen -= OnWindowOpen;
-
-            if (EmotesButton != null)
-                EmotesButton.SetClickPressed(false);
-
-            CloseMenu();
-        }
-    }
+    // Carpmosia-start - alt emotes menu
+    // public void OnStateEntered(GameplayState state)
+    // {
+    //     CommandBinds.Builder
+    //         .Bind(ContentKeyFunctions.OpenEmotesMenu,
+    //             InputCmdHandler.FromDelegate(_ => ToggleEmotesMenu(false)))
+    //         .Register<EmotesUIController>();
+    // }
+    //
+    // public void OnStateExited(GameplayState state)
+    // {
+    //     CommandBinds.Unregister<EmotesUIController>();
+    // }
+    //
+    // private void ToggleEmotesMenu(bool centered)
+    // {
+    //     if (_menu == null)
+    //     {
+    //         // setup window
+    //         var prototypes = _prototypeManager.EnumeratePrototypes<EmotePrototype>();
+    //         var models = ConvertToButtons(prototypes);
+    //
+    //         _menu = new SimpleRadialMenu();
+    //         _menu.SetButtons(models);
+    //
+    //         _menu.Open();
+    //
+    //         _menu.OnClose += OnWindowClosed;
+    //         _menu.OnOpen += OnWindowOpen;
+    //
+    //         if (EmotesButton != null)
+    //             EmotesButton.SetClickPressed(true);
+    //
+    //         if (centered)
+    //         {
+    //             _menu.OpenCentered();
+    //         }
+    //         else
+    //         {
+    //             _menu.OpenOverMouseScreenPosition();
+    //         }
+    //     }
+    //     else
+    //     {
+    //         _menu.OnClose -= OnWindowClosed;
+    //         _menu.OnOpen -= OnWindowOpen;
+    //
+    //         if (EmotesButton != null)
+    //             EmotesButton.SetClickPressed(false);
+    //
+    //         CloseMenu();
+    //     }
+    // }
+    // Carpmosia-end - alt emotes menu
 
     public void UnloadButton()
     {
@@ -109,35 +111,35 @@ public sealed class EmotesUIController : UIController, IOnStateChanged<GameplayS
         ToggleEmotesMenu(true);
     }
 
-    private void OnWindowClosed()
-    {
-        if (EmotesButton != null)
-            EmotesButton.Pressed = false;
+    // private void OnWindowClosed()
+    // {
+    //     if (EmotesButton != null)
+    //         EmotesButton.Pressed = false;
+    //
+    //     CloseMenu();
+    // }
+    //
+    // private void OnWindowOpen()
+    // {
+    //     if (EmotesButton != null)
+    //         EmotesButton.Pressed = true;
+    // }
+    //
+    //  private void CloseMenu()
+    //  {
+    //      if (_menu == null)
+    //          return;
+    //
+    //      _menu.Dispose();
+    //      _menu = null;
+    //  }
 
-        CloseMenu();
-    }
-
-    private void OnWindowOpen()
-    {
-        if (EmotesButton != null)
-            EmotesButton.Pressed = true;
-    }
-
-    private void CloseMenu()
-    {
-        if (_menu == null)
-            return;
-
-        _menu.Dispose();
-        _menu = null;
-    }
-
-    private IEnumerable<RadialMenuOptionBase> ConvertToButtons(IEnumerable<EmotePrototype> emotePrototypes)
+    private Dictionary<EmoteCategory, List<EmotePrototype>> GetEmotesByCategory(IEnumerable<EmotePrototype> emotePrototypes) // Carpmosia-edit - alt emotes menu
     {
         var whitelistSystem = EntitySystemManager.GetEntitySystem<EntityWhitelistSystem>();
         var player = _playerManager.LocalSession?.AttachedEntity;
 
-        Dictionary<EmoteCategory, List<RadialMenuOptionBase>> emotesByCategory = new();
+        Dictionary<EmoteCategory, List<EmotePrototype>> emotesByCategory = new(); // Carpmosia-edit - alt emotes menu
         foreach (var emote in emotePrototypes)
         {
             if(emote.Category == EmoteCategory.Invalid)
@@ -147,7 +149,7 @@ public sealed class EmotesUIController : UIController, IOnStateChanged<GameplayS
             if (emote.Category == EmoteCategory.Invalid
                 || emote.ChatTriggers.Count == 0
                 || !(player.HasValue && whitelistSystem.IsWhitelistPassOrNull(emote.Whitelist, player.Value))
-                || whitelistSystem.IsBlacklistPass(emote.Blacklist, player.Value))
+                || whitelistSystem.IsWhitelistPass(emote.Blacklist, player.Value))
                 continue;
 
             if (!emote.Available
@@ -157,22 +159,36 @@ public sealed class EmotesUIController : UIController, IOnStateChanged<GameplayS
 
             if (!emotesByCategory.TryGetValue(emote.Category, out var list))
             {
-                list = new List<RadialMenuOptionBase>();
+                list = new List<EmotePrototype>(); // Carpmosia-edit - alt emotes menu
                 emotesByCategory.Add(emote.Category, list);
             }
 
-            var actionOption = new RadialMenuActionOption<EmotePrototype>(HandleRadialButtonClick, emote)
-            {
-                IconSpecifier = RadialMenuIconSpecifier.With(emote.Icon),
-                ToolTip = Loc.GetString(emote.Name)
-            };
-            list.Add(actionOption);
+    // Carpmosia-start - alt emotes menu
+            list.Add(emote);
         }
+        return emotesByCategory;
+    }
+
+    private IEnumerable<RadialMenuOptionBase> MakeRadialMenuOptions(Dictionary<EmoteCategory, List<EmotePrototype>> emotesByCategory)
+    {
+    // Carpmosia-end - alt emotes menu
 
         var models = new RadialMenuOptionBase[emotesByCategory.Count];
         var i = 0;
-        foreach (var (key, list) in emotesByCategory)
+        foreach (var (key, rawList) in emotesByCategory) // Carpmosia-edit - alt emotes menu
         {
+            // Carpmosia-start - alt emotes menu
+            var list = new List<RadialMenuOptionBase>();
+            foreach (var emote in rawList)
+            {
+                var actionOption = new RadialMenuActionOption<EmotePrototype>(HandleRadialButtonClick, emote)
+                {
+                    IconSpecifier = RadialMenuIconSpecifier.With(emote.Icon),
+                    ToolTip = Loc.GetString(emote.Name)
+                };
+                list.Add(actionOption);
+            }
+            // Carpmosia-end - alt emotes menu
             var tuple = EmoteGroupingInfo[key];
 
             models[i] = new RadialMenuNestedLayerOption(list)

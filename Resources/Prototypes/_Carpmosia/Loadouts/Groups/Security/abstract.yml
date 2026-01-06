@@ -2,6 +2,8 @@
   abstract: true
   parent: BaseHead
   id: SecurityHead
+  loadouts:
+  - SecurityHelmet
 
 - type: loadoutGroup
   abstract: true

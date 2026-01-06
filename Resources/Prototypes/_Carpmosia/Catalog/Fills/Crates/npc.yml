@@ -1,0 +1,11 @@
+- type: entity
+  parent: CrateLivestock
+  id: CrateNPCSpaceKoi
+  name: space koi crate
+  description: A crate containing three space koi.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: RandomKoiTable
+        rolls: 3
