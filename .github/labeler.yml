@@ -45,7 +45,7 @@
       - 'Resources/Prototypes/Guidebook/**'
       - 'Resources/Prototypes/_Carpmosia/Guidebook/**'
 
-    - all-globs-to-any-file:
+    - all-globs-to-all-files:
       - '!Resources/Prototypes/Guidebook/rules.yml'
       - '!Resources/Prototypes/_Carpmosia/Guidebook/rules.yml'
 
@@ -65,7 +65,7 @@
       - 'Resources/ServerInfo/Guidebook/ServerRules/**'
       - 'Resources/ServerInfo/_Carpmosia/Guidebook/ServerRules/**'
 
-    - all-globs-to-any-file:
+    - all-globs-to-all-files:
       - '!Resources/ServerInfo/Guidebook/ServerRules/SpaceLaw/**'
       - '!Resources/ServerInfo/_Carpmosia/Guidebook/ServerRules/SpaceLaw/**'
 
