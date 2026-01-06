@@ -4,10 +4,8 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-ERT-sent
-    weight: 0 # shouldnt happen unless admeme
-    maxOccurrences: 0
   - type: LoadMapRule
-    preloadedGrid: ERTMixed
+    gridPath: /Maps/_Carpmosia/Shuttles/ShuttleEvent/ERTmixed.yml
 
 - type: entity
   id: AdmemeERTSec
@@ -15,10 +13,8 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-ERT-sent-sec
-    weight: 0 # shouldnt happen unless admeme
-    maxOccurrences: 0
   - type: LoadMapRule
-    preloadedGrid: ERTSec
+    gridPath: /Maps/_Carpmosia/Shuttles/ShuttleEvent/ERTsec.yml
 
 - type: entity
   id: AdmemeERTMed
@@ -26,10 +22,8 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-ERT-sent-med
-    weight: 0 # shouldnt happen unless admeme
-    maxOccurrences: 0
   - type: LoadMapRule
-    preloadedGrid: ERTMed
+    gridPath: /Maps/_Carpmosia/Shuttles/ShuttleEvent/ERTmed.yml
 
 - type: entity
   id: AdmemeERTCburn
@@ -37,10 +31,8 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-ERT-sent-cburn
-    weight: 0 # shouldnt happen unless admeme
-    maxOccurrences: 0
   - type: LoadMapRule
-    preloadedGrid: ERTCburn
+    gridPath: /Maps/_Carpmosia/Shuttles/ShuttleEvent/ERTcburn.yml
 
 - type: entity
   id: AdmemeERTEngi
@@ -48,10 +40,8 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-ERT-sent-engi
-    weight: 0 # shouldnt happen unless admeme
-    maxOccurrences: 0
   - type: LoadMapRule
-    preloadedGrid: ERTEngi
+    gridPath: /Maps/_Carpmosia/Shuttles/ShuttleEvent/ERTengi.yml
 
 - type: entity
   id: AdmemeERTChap
@@ -59,20 +49,16 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-ERT-sent-chap
-    weight: 0 # shouldnt happen unless admeme
-    maxOccurrences: 0
   - type: LoadMapRule
-    preloadedGrid: ERTChap
+    gridPath: /Maps/_Carpmosia/Shuttles/ShuttleEvent/ERTchap.yml
 
 - type: entity
   id: AdmemeERTDeathsquad
   parent: BaseUnknownShuttleRule
   components:
   - type: StationEvent
-    startAnnouncement: null #Not needed, epsilon is enough
-    weight: 0 # shouldnt happen unless admeme
-    maxOccurrences: 0
+    startAnnouncement: null #Not needed, epsilon is enough #TODO: reparent to unnanounced shuttle rule and remove this when that's added
   - type: LoadMapRule
-    preloadedGrid: ERTDeathsquad
+    gridPath: /Maps/_Carpmosia/Shuttles/ShuttleEvent/ERTdeathsquad.yml
   - type: AlertLevelInterceptionRule
     alertLevel: epsilon
