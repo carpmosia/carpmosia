@@ -11,12 +11,6 @@ public sealed partial class CCVars
         CVarDef.Create("hud.alt_emotes_menu", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 
     /// <summary>
-<<<<<<< HEAD
-    /// The number of shared moods to give thaven by default.
-    /// </summary>
-    public static readonly CVarDef<uint> ThavenSharedMoodCount =
-        CVarDef.Create<uint>("thaven.shared_mood_count", 1, CVar.SERVERONLY);
-=======
     ///     The required ratio of the server that must agree for a EORG vote to go through.
     /// </summary>
     public static readonly CVarDef<float> VoteEorgRequiredRatio =
@@ -28,5 +22,10 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<float> EorgRoundRestartTime =
         CVarDef.Create("game.eorg_round_restart_time", 120f, CVar.SERVERONLY);
->>>>>>> upstream/dev
+
+    /// <summary>
+    /// The number of shared moods to give thaven by default.
+    /// </summary>
+    public static readonly CVarDef<uint> ThavenSharedMoodCount =
+        CVarDef.Create<uint>("thaven.shared_mood_count", 1, CVar.SERVERONLY);
 }
