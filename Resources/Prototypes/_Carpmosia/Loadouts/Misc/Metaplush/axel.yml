@@ -1,0 +1,27 @@
+- type: loadoutEffectGroup
+  id: LizardPlushieAxel
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Medical
+      time: 50h
+
+- type: loadout
+  id: LizardPlushieAxel
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: LizardPlushieAxel
+  storage:
+    back:
+    - PlushieLizardAxel
+  groupBy: "metaplush"
+
+- type: loadout
+  id: HatPlushieAxel
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: LizardPlushieAxel
+  equipment:
+    head: PlushieLizardAxel
+  groupBy: "metaplush"

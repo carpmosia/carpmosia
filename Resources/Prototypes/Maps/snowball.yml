@@ -2,8 +2,8 @@
   id: Snowball
   mapName: 'Snowball Station'
   mapPath: /Maps/snowball.yml
-  minPlayers: 15
-  maxPlayers: 50
+  minPlayers: 5 # Carpmosia-edit - Snowball is not high-pop
+  maxPlayers: 30 # Carpmosia-edit - Snowball is not high-pop
   stations:
     Snowball:
       stationProto: StandardNanotrasenStation

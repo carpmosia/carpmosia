@@ -1,5 +1,5 @@
-using Content.Client._Carpmosia.UserInterface.Systems.Emotes.Controls;
-using Content.Client._Carpmosia.UserInterface.Systems.Emotes.Windows;
+using Content.Client.UserInterface.Systems.Emotes.Controls;
+using Content.Client.UserInterface.Systems.Emotes.Windows;
 using Content.Client.Gameplay;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.CCVar;
