@@ -251,7 +251,7 @@ public sealed class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRuleComponen
             return false;
         }
 
-        if (!HasComp<HumanoidAppearanceComponent>(target))
+        if (targetMind.UserId == null || !HasComp<HumanoidAppearanceComponent>(target))
         {
             errorMessage = "blood-bound-convert-failed-no-mind";
             return false;
@@ -260,12 +260,6 @@ public sealed class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRuleComponen
         if (HasComp<ZombieComponent>(target))
         {
             errorMessage = "blood-bound-convert-failed-zombie";
-            return false;
-        }
-
-        if (targetMind.UserId == null)
-        {
-            errorMessage = "blood-bound-convert-failed-no-mind";
             return false;
         }
 
