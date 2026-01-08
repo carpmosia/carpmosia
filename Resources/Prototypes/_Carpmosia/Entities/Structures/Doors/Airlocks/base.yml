@@ -1,0 +1,69 @@
+- type: entity
+  abstract: true
+  parent: Airlock
+  id: BaseSolidCarplock
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/basic.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+    - state: closed_unlit
+      shader: unshaded
+      sprite: _Carpmosia/Structures/Doors/Airlocks/StandardGlass/base.rsi
+      map: ["enum.DoorVisualLayers.BaseUnlit"]
+      visible: false
+    - state: welded
+      sprite: _Carpmosia/Structures/Doors/Airlocks/StandardGlass/base.rsi
+      map: ["enum.WeldableLayers.BaseWelded"]
+    - state: bolted_unlit
+      sprite: _Carpmosia/Structures/Doors/Airlocks/StandardGlass/base.rsi
+      shader: unshaded
+      map: ["enum.DoorVisualLayers.BaseBolted"]
+    - state: emergency_unlit
+      sprite: _Carpmosia/Structures/Doors/Airlocks/StandardGlass/base.rsi
+      map: ["enum.DoorVisualLayers.BaseEmergencyAccess"]
+      shader: unshaded
+    - state: panel_open
+      sprite: _Carpmosia/Structures/Doors/Airlocks/StandardGlass/base.rsi
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - state: sparks
+      sprite: _Carpmosia/Structures/Doors/Airlocks/StandardGlass/base.rsi
+      map: ["enum.DoorVisualLayers.BaseEmagging"]
+      shader: unshaded
+      visible: false
+
+- type: entity
+  abstract: true
+  parent: AirlockGlass
+  id: BaseGlassCarplock
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/basic.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+    - state: closed_unlit
+      shader: unshaded
+      sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/base.rsi
+      map: ["enum.DoorVisualLayers.BaseUnlit"]
+      visible: false
+    - state: welded
+      sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/base.rsi
+      map: ["enum.WeldableLayers.BaseWelded"]
+    - state: bolted_unlit
+      sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/base.rsi
+      shader: unshaded
+      map: ["enum.DoorVisualLayers.BaseBolted"]
+    - state: emergency_unlit
+      sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/base.rsi
+      map: ["enum.DoorVisualLayers.BaseEmergencyAccess"]
+      shader: unshaded
+    - state: panel_open
+      sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/base.rsi
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - state: sparks
+      sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/base.rsi
+      map: ["enum.DoorVisualLayers.BaseEmagging"]
+      shader: unshaded
+      visible: false

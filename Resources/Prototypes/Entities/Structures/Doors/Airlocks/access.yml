@@ -1,6 +1,6 @@
 # Airlocks
 - type: entity
-  parent: Airlock
+  parent: BaseSolidCarplock # Carpmosia - Airlock resprite
   id: AirlockServiceLocked
   suffix: Service, Locked
   components:
@@ -15,6 +15,8 @@
   id: AirlockLawyerLocked
   suffix: Lawyer, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/lawyer.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsLawyer ]
@@ -24,6 +26,8 @@
   id: AirlockTheatreLocked
   suffix: Theatre, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/theatre.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsTheatre ]
@@ -42,6 +46,8 @@
   id: AirlockChapelLocked
   suffix: Chapel, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/chapel.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsChapel ]
@@ -51,6 +57,8 @@
   id: AirlockJanitorLocked
   suffix: Janitor, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/janitor.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsJanitor ]
@@ -60,6 +68,8 @@
   id: AirlockKitchenLocked
   suffix: Kitchen, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/kitchen.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsKitchen ]
@@ -69,6 +79,8 @@
   id: AirlockBarLocked
   suffix: Bar, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/bar.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsBar ]
@@ -281,6 +293,8 @@
   id: AirlockMedicalMorgueLocked
   suffix: Morgue, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/medical_morgue.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsMorgue ]
@@ -299,6 +313,8 @@
   id: AirlockMedicalScienceLocked
   suffix: Medical/Science, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/medical_science.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsMedicalResearch ]
@@ -326,6 +342,8 @@
   id: AirlockCaptainLocked
   suffix: Captain, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/captain.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsCaptain ]
@@ -335,6 +353,8 @@
   id: AirlockChiefMedicalOfficerLocked
   suffix: ChiefMedicalOfficer, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/chief_medical_officer.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsChiefMedicalOfficer ]
@@ -344,6 +364,8 @@
   id: AirlockChiefEngineerLocked
   suffix: ChiefEngineer, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/chief_engineer.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsChiefEngineer ]
@@ -353,6 +375,8 @@
   id: AirlockHeadOfSecurityLocked
   suffix: HeadOfSecurity, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/head_of_security.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsHeadOfSecurity ]
@@ -362,6 +386,8 @@
   id: AirlockResearchDirectorLocked
   suffix: ResearchDirector, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/research_director.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsResearchDirector ]
@@ -371,6 +397,8 @@
   id: AirlockHeadOfPersonnelLocked
   suffix: HeadOfPersonnel, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/head_of_personnel.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsHeadOfPersonnel ]
@@ -380,6 +408,8 @@
   id: AirlockQuartermasterLocked
   suffix: Quartermaster, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/quartermaster.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsQuartermaster ]
@@ -398,6 +428,8 @@
   id: AirlockDetectiveLocked
   suffix: Detective, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/detective.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsDetective ]
@@ -451,7 +483,7 @@
 
 # Glass Airlocks
 - type: entity
-  parent: AirlockGlass
+  parent: BaseGlassCarplock # Carpmosia - Airlock resprite
   id: AirlockServiceGlassLocked
   suffix: Service, Locked
   components:
@@ -466,6 +498,8 @@
   id: AirlockLawyerGlassLocked
   suffix: Lawyer, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardGlass/lawyer.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsLawyer ]
@@ -475,6 +509,8 @@
   id: AirlockTheatreGlassLocked
   suffix: Theatre, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardGlass/theatre.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsTheatre ]
@@ -484,6 +520,8 @@
   id: AirlockServiceTheatreGlassLocked
   suffix: Service, Theatre, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardGlass/theatre.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsServiceTheatre ]
@@ -493,6 +531,8 @@
   id: AirlockBarGlassLocked
   suffix: Bar, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardGlass/bar.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsBar ]
@@ -576,6 +616,8 @@
   id: AirlockKitchenGlassLocked
   suffix: Kitchen, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardGlass/bar.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsKitchen ]
@@ -585,6 +627,8 @@
   id: AirlockJanitorGlassLocked
   suffix: Janitor, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardGlass/bar.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsJanitor ]
@@ -603,6 +647,8 @@
   id: AirlockChapelGlassLocked
   suffix: Chapel, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardGlass/chapel.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsChapel ]
@@ -740,6 +786,8 @@
   id: AirlockCaptainGlassLocked
   suffix: Captain, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardGlass/captain.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsCaptain ]
@@ -749,6 +797,8 @@
   id: AirlockChiefMedicalOfficerGlassLocked
   suffix: ChiefMedicalOfficer, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardGlass/chief_medical_officer.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsChiefMedicalOfficer ]
@@ -758,6 +808,8 @@
   id: AirlockChiefEngineerGlassLocked
   suffix: ChiefEngineer, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardGlass/chief_engineer.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsChiefEngineer ]
@@ -767,6 +819,8 @@
   id: AirlockHeadOfSecurityGlassLocked
   suffix: HeadOfSecurity, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardGlass/head_of_security.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsHeadOfSecurity ]
@@ -776,6 +830,8 @@
   id: AirlockResearchDirectorGlassLocked
   suffix: ResearchDirector, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardGlass/research_director.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsResearchDirector ]
@@ -785,6 +841,8 @@
   id: AirlockHeadOfPersonnelGlassLocked
   suffix: HeadOfPersonnel, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardGlass/head_of_personnel.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsHeadOfPersonnel ]
@@ -794,6 +852,8 @@
   id: AirlockQuartermasterGlassLocked
   suffix: Quartermaster, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardGlass/quartermaster.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsQuartermaster ]
@@ -812,6 +872,8 @@
   id: AirlockDetectiveGlassLocked
   suffix: Detective, Locked
   components:
+  - type: Sprite # Carpmosia - Airlock resprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardGlass/detective.rsi # Carpmosia - Airlock resprite
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsDetective ]
@@ -903,42 +965,42 @@
   id: AirlockMaintSalvageLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/maint_salvage.rsi # Carpmosia - Airlock resprite
 
 - type: entity
   parent: AirlockCargoLocked
   id: AirlockMaintCargoLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/maint_cargo.rsi # Carpmosia - Airlock resprite
 
 - type: entity
   parent: AirlockCommandLocked
   id: AirlockMaintCommandLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/maint_command.rsi # Carpmosia - Airlock resprite
 
 - type: entity
   parent: AirlockEngineeringLocked
   id: AirlockMaintEngiLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/maint_engi.rsi # Carpmosia - Airlock resprite
 
 - type: entity
   parent: AirlockAtmosphericsLocked
   id: AirlockMaintAtmoLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/maint_atmo.rsi # Carpmosia - Airlock resprite
 
 - type: entity
   parent: AirlockBarLocked
   id: AirlockMaintBarLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/maint_bar.rsi # Carpmosia - Airlock resprite
 
 - type: entity
   parent: AirlockBarKitchenLocked
@@ -952,28 +1014,28 @@
   id: AirlockMaintChapelLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/maint_chapel.rsi # Carpmosia - Airlock resprite
 
 - type: entity
   parent: AirlockHydroponicsLocked
   id: AirlockMaintHydroLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/maint_hydro.rsi # Carpmosia - Airlock resprite
 
 - type: entity
   parent: AirlockJanitorLocked
   id: AirlockMaintJanitorLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/maint_janitor.rsi # Carpmosia - Airlock resprite
 
 - type: entity
   parent: AirlockLawyerLocked
   id: AirlockMaintLawyerLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/maint_lawyer.rsi # Carpmosia - Airlock resprite
 
 - type: entity
   parent: AirlockServiceLocked
@@ -987,7 +1049,7 @@
   id: AirlockMaintTheatreLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/maint_theatre.rsi # Carpmosia - Airlock resprite
 
 - type: entity
   parent: AirlockServiceTheatreLocked
@@ -1001,7 +1063,7 @@
   id: AirlockMaintKitchenLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/maint_kitchen.rsi # Carpmosia - Airlock resprite
 
 - type: entity
   parent: AirlockFreezerKitchenHydroLocked
@@ -1015,28 +1077,28 @@
   id: AirlockMaintMedLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/maint_med.rsi # Carpmosia - Airlock resprite
 
 - type: entity
   parent: AirlockMedicalMorgueLocked
   id: AirlockMedicalMorgueMaintLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/maint_morgue.rsi # Carpmosia - Airlock resprite
 
 - type: entity
   parent: AirlockChemistryLocked
   id: AirlockMaintChemLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/maint_chem.rsi # Carpmosia - Airlock resprite
 
 - type: entity
   parent: AirlockScienceLocked
   id: AirlockMaintRnDLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/maint_rnd.rsi # Carpmosia - Airlock resprite
 
 - type: entity
   parent: AirlockMedicalScienceLocked
@@ -1050,70 +1112,70 @@
   id: AirlockMaintSecLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/maint_sec.rsi # Carpmosia - Airlock resprite
 
 - type: entity
   parent: AirlockDetectiveLocked
   id: AirlockMaintDetectiveLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/maint_detective.rsi # Carpmosia - Airlock resprite
 
 - type: entity
   parent: AirlockHeadOfPersonnelLocked
   id: AirlockMaintHOPLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/maint_hop.rsi # Carpmosia - Airlock resprite
 
 - type: entity
   parent: AirlockCaptainLocked
   id: AirlockMaintCaptainLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/maint_captain.rsi # Carpmosia - Airlock resprite
 
 - type: entity
   parent: AirlockChiefEngineerLocked
   id: AirlockMaintChiefEngineerLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/maint_chief_engineer.rsi # Carpmosia - Airlock resprite
 
 - type: entity
   parent: AirlockChiefMedicalOfficerLocked
   id: AirlockMaintChiefMedicalOfficerLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/maint_chief_medical_officer.rsi # Carpmosia - Airlock resprite
 
 - type: entity
   parent: AirlockHeadOfSecurityLocked
   id: AirlockMaintHeadOfSecurityLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/maint_head_of_security.rsi # Carpmosia - Airlock resprite
 
 - type: entity
   parent: AirlockResearchDirectorLocked
   id: AirlockMaintResearchDirectorLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/maint_research_director.rsi # Carpmosia - Airlock resprite
 
 - type: entity
   parent: AirlockQuartermasterLocked
   id: AirlockMaintQuartermasterLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/maint_quartermaster.rsi # Carpmosia - Airlock resprite
 
 - type: entity
   parent: AirlockArmoryLocked
   id: AirlockMaintArmoryLocked
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Carpmosia/Structures/Doors/Airlocks/StandardSolid/maint_armory.rsi # Carpmosia - Airlock resprite
 
 - type: entity
   parent: AirlockSyndicate
