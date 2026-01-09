@@ -38,4 +38,18 @@ public sealed partial class RoomFillComponent : Component
     /// </summary>
     [DataField]
     public bool ClearExisting = true;
+
+    // Carpmosia-start - Roomfill improvements
+    /// <summary>
+    /// Inherit rotation of the marker
+    /// </summary>
+    [DataField]
+    public bool InheritRotation = false;
+
+    /// <summary>
+    /// Tile offset from marker to fill the room at
+    /// </summary>
+    [DataField]
+    public Vector2i Offset = new (0, 0);
+    // Carpmosia-end - Roomfill improvements
 }

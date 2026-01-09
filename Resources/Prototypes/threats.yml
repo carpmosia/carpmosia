@@ -7,10 +7,10 @@
 
 - type: ninjaHackingThreat
   id: Dragon
-  announcement: terror-dragon
+  announcement: terror-generic # Carpmosia-edit - Generic callin announcement
   rule: DragonSpawn
 
 - type: ninjaHackingThreat
   id: Revenant
-  announcement: terror-revenant
+  announcement: terror-generic # Carpmosia-edit - Generic callin announcement
   rule: RevenantSpawn
