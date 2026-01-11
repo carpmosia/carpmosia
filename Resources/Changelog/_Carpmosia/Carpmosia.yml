@@ -1115,4 +1115,13 @@
   id: 205
   time: '2026-01-09T22:54:26.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/193
+- author: SnappingOpossum
+  changes:
+  - message: Jet injectors can now draw and inject from closed containers.
+    type: Tweak
+  - message: Hyposprays can once again draw and inject from closed containers.
+    type: Fix
+  id: 206
+  time: '2026-01-11T01:25:34.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/229
 Order: -1
