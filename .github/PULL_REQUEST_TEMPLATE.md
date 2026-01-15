@@ -28,7 +28,7 @@
 ## Changelog
 <!-- Edit this to cover all player facing changes in a concise and short matter,
        Feel free to remove or add as many add, remove, fix, tweak lines as you need.
-       If there are no player facing changes, you can remove the whole thing.
+       If there are no player facing changes, you can remove it altogether.
        This will be visible in-game and on Discord. -->
 :cl:
 - add: Added fun!
