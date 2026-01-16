@@ -60,7 +60,7 @@ public abstract class SharedTicketPrinterSystem : EntitySystem
 
             if (!entProto.TryGetComponent<TicketValueComponent>(out var ticketComp, EntityManager.ComponentFactory) ||
                 !entProto.TryGetComponent<PhysicalCompositionComponent>(out var matphysComp, EntityManager.ComponentFactory)) //use that to get TicketValue and PhysicalComposition Components
-                return;
+                continue; //theoretically an entity may have some materials that do and some materials that don't have ticket values so we have to check them all.
 
             PrintTickets(ent, ticketComp.TicketValue * amount / matphysComp.MaterialComposition[materialProto.ID]);
         }
