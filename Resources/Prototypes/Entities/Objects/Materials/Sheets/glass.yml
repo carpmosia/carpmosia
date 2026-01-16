@@ -245,7 +245,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: TicketValue #Carpmosia change
-    ticketValue: 25
+    ticketValue: 20
 
 - type: entity
   parent: SheetPGlass
@@ -313,7 +313,7 @@
           Quantity: 0.5
         canReact: false
   - type: TicketValue #Carpmosia change
-    ticketValue: 30
+    ticketValue: 25
 
 - type: entity
   parent: SheetRPGlass
@@ -390,7 +390,7 @@
           Quantity: 10
         canReact: false
   - type: TicketValue #Carpmosia change
-    ticketValue: 25
+    ticketValue: 20
 
 - type: entity
   parent: SheetUGlass
@@ -446,7 +446,7 @@
           Quantity: 0.5
         canReact: false
   - type: TicketValue #Carpmosia change
-    ticketValue: 30
+    ticketValue: 25
 
 - type: entity
   parent: SheetRUGlass

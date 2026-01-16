@@ -266,11 +266,10 @@ namespace Content.Server.Lathe
                         _popup.PopupEntity(Loc.GetString("lathe-reagent-dispense-no-container", ("name", uid)), uid);
                         _puddle.TrySpillAt(uid, toAdd, out _);
                     }
-
-                    Log.Debug("finish print");
-                    var ev = new LatheFinishPrintingEvent(_proto.Index(comp.CurrentRecipe)); // Carpmosia edit, salvage ticket production
-                    RaiseLocalEvent(uid, ref ev);
                 }
+
+                var ev = new LatheFinishPrintingEvent(_proto.Index(comp.CurrentRecipe)); // Carpmosia edit, salvage ticket production
+                RaiseLocalEvent(uid, ref ev);
             }
 
             comp.CurrentRecipe = null;

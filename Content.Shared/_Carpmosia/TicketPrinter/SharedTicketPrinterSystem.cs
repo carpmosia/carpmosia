@@ -26,14 +26,13 @@ public abstract class SharedTicketPrinterSystem : EntitySystem
     /// <param name="args">event containing recipe</param>
     private void OnPrint(Entity<TicketPrinterComponent> ent, ref LatheFinishPrintingEvent args)
     {
-        Log.Debug("Start print");
         if (args.Recipe.Result is not { } resultProto) //is the result empty, if not set as resultProto
             return;
-        Log.Debug("Get Ticket Value");
+
         var entProto = _proto.Index(resultProto);
         if (!entProto.TryGetComponent<TicketValueComponent>(out var ticketComp, EntityManager.ComponentFactory)) //does component exist from EntityProtoId of recipe result
             return;
-        Log.Debug("Try to Print");
+
         if (entProto.TryGetComponent<StackComponent>(out var stackComp, EntityManager.ComponentFactory))//if a stack, produce tickets for each item in the stack
             PrintTickets(ent, ticketComp.TicketValue * stackComp.Count);
         else
