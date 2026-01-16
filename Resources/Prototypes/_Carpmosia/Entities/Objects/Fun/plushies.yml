@@ -168,3 +168,33 @@
     inHandsFillBaseName: -fill-
     equippedMaxFillLevels: 4
     equippedFillBaseName: -fill-
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieMothLanka
+  name: engineer moth plushie
+  description: A plushie resembling a certain Station Engineer, the fluff feels like fiberglass.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Plushies/moth.rsi
+    state: icon
+  - type: EmitSoundOnUse
+    sound: &PlushieMothSound
+      path: /Audio/Voice/Moth/moth_chitter.ogg
+  - type: EmitSoundOnLand
+    sound: *PlushieMothSound
+  - type: EmitSoundOnActivate
+    sound: *PlushieMothSound
+  - type: EmitSoundOnTrigger
+    sound: *PlushieMothSound
+  - type: EmitSoundOnCollide
+    sound: *PlushieMothSound
+  - type: MeleeWeapon
+    soundHit: *PlushieMothSound
+  - type: Edible
+    useSound: *PlushieMothSound
+  - type: Clothing
+    quickEquip: false
+    sprite: Objects/Fun/Plushies/moth.rsi
+    slots:
+    - HEAD
