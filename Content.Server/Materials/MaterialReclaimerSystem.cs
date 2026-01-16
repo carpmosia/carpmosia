@@ -202,8 +202,8 @@ public sealed class MaterialReclaimerSystem : SharedMaterialReclaimerSystem
                 SpawnChemicalsFromComposition(uid, item, completion, true, component, xform);
         }
 
-        var ev = new ReclaimFinishedEvent(item); //Carpmosia change, salvage ticket production
-        RaiseLocalEvent(uid, ref ev);
+        var ev = new ReclaimFinishedEvent(item); // Carpmosia-start - Salvage Tickets
+        RaiseLocalEvent(uid, ref ev);            // Carpmosia-end - Salvage Tickets
 
         QueueDel(item);
     }

@@ -115,7 +115,7 @@
   - type: Speech
     speechVerb: Robotic
     speechSounds: SyndieBorg
-  - type: TicketPrinter #Carpmosia change
+  - type: TicketPrinter # Carpmosia-start - Salvage Tickets
     whitelist:
       tags:
-      - SalvageScrap
+      - SalvageScrap # Carpmosia-end - Salvage Tickets

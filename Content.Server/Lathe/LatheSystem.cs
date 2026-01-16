@@ -268,8 +268,8 @@ namespace Content.Server.Lathe
                     }
                 }
 
-                var ev = new LatheFinishPrintingEvent(_proto.Index(comp.CurrentRecipe)); // Carpmosia edit, salvage ticket production
-                RaiseLocalEvent(uid, ref ev);
+                var ev = new LatheFinishPrintingEvent(_proto.Index(comp.CurrentRecipe)); // Carpmosia-start - Salvage Tickets
+                RaiseLocalEvent(uid, ref ev);                                            // Carpmosia-end - Salvage Tickets
             }
 
             comp.CurrentRecipe = null;

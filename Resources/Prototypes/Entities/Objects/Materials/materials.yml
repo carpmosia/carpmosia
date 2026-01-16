@@ -396,8 +396,8 @@
     tags:
     - RawMaterial
     - Diamond
-  - type: TicketValue #Carpmosia change
-    ticketValue: 1000
+  - type: TicketValue # Carpmosia-edit - Salvage Tickets
+    ticketValue: 1000 # Carpmosia-edit - Salvage Tickets
 
 - type: entity
   parent: MaterialDiamond
@@ -570,8 +570,8 @@
   - type: Appearance
   - type: Item
     heldPrefix: bananium
-  - type: TicketValue #Carpmosia change
-    ticketValue: 10
+  - type: TicketValue # Carpmosia-edit - Salvage Tickets
+    ticketValue: 10   # Carpmosia-edit - Salvage Tickets
 
 - type: entity
   parent: MaterialBananium

@@ -60,8 +60,8 @@
         reagents:
         - ReagentId: Gold
           Quantity: 10
-  - type: TicketValue #Carpmosia change
-    ticketValue: 10
+  - type: TicketValue  # Carpmosia-edit - Salvage Tickets
+    ticketValue: 10    # Carpmosia-edit - Salvage Tickets
 
 - type: entity
   parent: IngotGold
@@ -107,8 +107,8 @@
         reagents:
         - ReagentId: Silver
           Quantity: 10
-  - type: TicketValue #Carpmosia change
-    ticketValue: 10
+  - type: TicketValue  # Carpmosia-edit - Salvage Tickets
+    ticketValue: 10    # Carpmosia-edit - Salvage Tickets
 
 - type: entity
   parent: IngotSilver

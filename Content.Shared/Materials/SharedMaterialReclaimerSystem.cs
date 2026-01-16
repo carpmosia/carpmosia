@@ -260,8 +260,8 @@ public abstract class SharedMaterialReclaimerSystem : EntitySystem
 public record struct GotReclaimedEvent(EntityCoordinates ReclaimerCoordinates);
 
 /// <summary>
-/// [Carpmosia] Event raised on a Reclaimer when it finishes reclaiming an recipe.
+/// Carpmosia-edit - raised on a Reclaimer when it finishes reclaiming an recipe.
 /// </summary>
 /// <param name="Item">Item Reclaimed</param>
 [ByRefEvent]
-public record struct ReclaimFinishedEvent(EntityUid Item);
+public record struct ReclaimFinishedEvent(EntityUid Item); // Carpmosia-edit - Salvage Tickets

@@ -86,8 +86,8 @@
         reagents:
         - ReagentId: Silicon
           Quantity: 10
-  - type: TicketValue #Carpmosia change
-    ticketValue: 10
+  - type: TicketValue  # Carpmosia-edit - Salvage Tickets
+    ticketValue: 10    # Carpmosia-edit - Salvage Tickets
 
 - type: entity
   parent: SheetGlass
@@ -165,8 +165,8 @@
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: TicketValue #Carpmosia change
-    ticketValue: 15
+  - type: TicketValue  # Carpmosia-edit - Salvage Tickets
+    ticketValue: 15    # Carpmosia-edit - Salvage Tickets
 
 - type: entity
   parent: SheetRGlass
@@ -244,8 +244,8 @@
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: TicketValue #Carpmosia change
-    ticketValue: 20
+  - type: TicketValue  # Carpmosia-edit - Salvage Tickets
+    ticketValue: 20    # Carpmosia-edit - Salvage Tickets
 
 - type: entity
   parent: SheetPGlass
@@ -312,8 +312,8 @@
         - ReagentId: Carbon
           Quantity: 0.5
         canReact: false
-  - type: TicketValue #Carpmosia change
-    ticketValue: 25
+  - type: TicketValue  # Carpmosia-edit - Salvage Tickets
+    ticketValue: 25    # Carpmosia-edit - Salvage Tickets
 
 - type: entity
   parent: SheetRPGlass
@@ -389,8 +389,8 @@
         - ReagentId: Uranium
           Quantity: 10
         canReact: false
-  - type: TicketValue #Carpmosia change
-    ticketValue: 20
+  - type: TicketValue  # Carpmosia-edit - Salvage Tickets
+    ticketValue: 20    # Carpmosia-edit - Salvage Tickets
 
 - type: entity
   parent: SheetUGlass
@@ -445,8 +445,8 @@
         - ReagentId: Carbon
           Quantity: 0.5
         canReact: false
-  - type: TicketValue #Carpmosia change
-    ticketValue: 25
+  - type: TicketValue  # Carpmosia-edit - Salvage Tickets
+    ticketValue: 25    # Carpmosia-edit - Salvage Tickets
 
 - type: entity
   parent: SheetRUGlass
