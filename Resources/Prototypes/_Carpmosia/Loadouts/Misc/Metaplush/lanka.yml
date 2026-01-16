@@ -1,5 +1,5 @@
 - type: loadoutEffectGroup
-  id: PlushieMothLanka
+  id: MothPlushieLanka
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
@@ -8,10 +8,10 @@
       time: 50h
 
 - type: loadout
-  id: PlushieMothLanka
+  id: MothPlushieLanka
   effects:
   - !type:GroupLoadoutEffect
-    proto: PlushieMothLanka
+    proto: MothPlushieLanka
   storage:
     back:
     - PlushieMothLanka
