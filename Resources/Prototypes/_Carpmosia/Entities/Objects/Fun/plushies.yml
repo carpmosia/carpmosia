@@ -175,9 +175,6 @@
   name: engineer moth plushie
   description: A plushie resembling a certain Station Engineer, the fluff feels like fiberglass.
   components:
-  - type: Tool
-    qualities:
-    - Pulsing
   - type: ActivatableUI
     key: enum.NetworkConfiguratorUiKey.List
     inHandsOnly: true
