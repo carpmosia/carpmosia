@@ -182,19 +182,21 @@
     sound: &PlushieMothSound
       path: /Audio/Voice/Moth/moth_chitter.ogg
   - type: EmitSoundOnLand
-    sound: *PlushieMothSound
+    sound: &PlushieMothSqueak
+      path: /Audio/Voice/Moth/moth_squeak.ogg
   - type: EmitSoundOnActivate
     sound: *PlushieMothSound
   - type: EmitSoundOnTrigger
     sound: *PlushieMothSound
   - type: EmitSoundOnCollide
-    sound: *PlushieMothSound
+    sound: &PlushieMothScream
+      path: /Audio/Voice/Moth/moth_scream.ogg
   - type: MeleeWeapon
-    soundHit: *PlushieMothSound
+    soundHit: *PlushieMothScream
   - type: Edible
-    useSound: *PlushieMothSound
+    useSound: *PlushieMothScream
   - type: Clothing
     quickEquip: false
-    sprite: Objects/Fun/Plushies/moth.rsi
+    sprite: _Carpmosia/Objects/Fun/Plushies/lanka.rsi
     slots:
     - HEAD
