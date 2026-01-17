@@ -31,6 +31,4 @@ public sealed partial class TicketPrinterComponent : Component
     /// If ticket value ends up less than 1, or has a remainder, store it for the future.
     /// </summary>
     public float Remainder = 0f;
-
-
 }

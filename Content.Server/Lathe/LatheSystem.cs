@@ -267,9 +267,10 @@ namespace Content.Server.Lathe
                         _puddle.TrySpillAt(uid, toAdd, out _);
                     }
                 }
-
-                var ev = new LatheFinishPrintingEvent(_proto.Index(comp.CurrentRecipe)); // Carpmosia-start - Salvage Tickets
-                RaiseLocalEvent(uid, ref ev);                                            // Carpmosia-end - Salvage Tickets
+                // Carpmosia-start - Salvage Tickets
+                var ev = new LatheFinishPrintingEvent(_proto.Index(comp.CurrentRecipe));
+                RaiseLocalEvent(uid, ref ev);
+                // Carpmosia-end - Salvage Tickets
             }
 
             comp.CurrentRecipe = null;
