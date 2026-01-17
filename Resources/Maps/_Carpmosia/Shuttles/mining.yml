@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Grid
-  engineVersion: 267.3.0
+  engineVersion: 270.1.0
   forkId: ""
   forkVersion: ""
-  time: 12/13/2025 06:08:48
-  entityCount: 172
+  time: 01/17/2026 15:17:23
+  entityCount: 177
 maps: []
 grids:
 - 181
@@ -484,6 +484,7 @@ entities:
     - type: GasTileOverlay
     - type: GridPathfinding
     - type: ImplicitRoof
+    - type: ExplosionAirtightGrid
 - proto: AirlockExternalCargoLocked
   entities:
   - uid: 40
@@ -630,6 +631,40 @@ entities:
     components:
     - type: Transform
       pos: -1.6020775,4.431312
+      parent: 181
+- proto: ButtonFrameCaution
+  entities:
+  - uid: 172
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 0.5,-4.5
+      parent: 181
+  - uid: 173
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 0.5,-0.5
+      parent: 181
+  - uid: 174
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -5.5,-0.5
+      parent: 181
+  - uid: 175
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -5.5,-4.5
+      parent: 181
+- proto: ButtonFrameGrey
+  entities:
+  - uid: 171
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -0.5,5.5
       parent: 181
 - proto: CableApcExtension
   entities:
@@ -790,11 +825,6 @@ entities:
     - type: Transform
       pos: -4.5,-5.5
       parent: 181
-  - uid: 170
-    components:
-    - type: Transform
-      pos: -0.5,-6.5
-      parent: 181
 - proto: CableMV
   entities:
   - uid: 8
@@ -887,12 +917,12 @@ entities:
       parent: 181
 - proto: Catwalk
   entities:
-  - uid: 166
+  - uid: 48
     components:
     - type: Transform
       pos: -1.5,-5.5
       parent: 181
-  - uid: 171
+  - uid: 150
     components:
     - type: Transform
       pos: -3.5,-5.5
@@ -913,11 +943,6 @@ entities:
       parent: 181
 - proto: ComputerShuttle
   entities:
-  - uid: 49
-    components:
-    - type: Transform
-      pos: -3.5,6.5
-      parent: 181
   - uid: 100
     components:
     - type: Transform
@@ -930,8 +955,6 @@ entities:
     - type: Transform
       pos: -2.5,6.5
       parent: 181
-    - type: FaxMachine
-      name: Salvage Shuttle
 - proto: GasPort
   entities:
   - uid: 25
@@ -948,19 +971,12 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -3.5,-4.5
       parent: 181
-- proto: GeneratorRTG
+- proto: GeneratorBasic10kW
   entities:
   - uid: 56
     components:
     - type: Transform
       pos: -1.5,-6.5
-      parent: 181
-- proto: GeneratorWallmountPowerAmplifier
-  entities:
-  - uid: 169
-    components:
-    - type: Transform
-      pos: -0.5,-6.5
       parent: 181
 - proto: GravityGeneratorMini
   entities:
@@ -1038,7 +1054,7 @@ entities:
       parent: 181
 - proto: Gyroscope
   entities:
-  - uid: 48
+  - uid: 176
     components:
     - type: Transform
       pos: -2.5,-5.5
@@ -1056,6 +1072,20 @@ entities:
     components:
     - type: Transform
       pos: -2.5,5.5
+      parent: 181
+- proto: PaperBin20
+  entities:
+  - uid: 169
+    components:
+    - type: Transform
+      pos: -3.5,6.5
+      parent: 181
+- proto: Pen
+  entities:
+  - uid: 170
+    components:
+    - type: Transform
+      pos: -3.2974901,6.6839166
       parent: 181
 - proto: PersonalAI
   entities:
@@ -1195,33 +1225,6 @@ entities:
       parent: 181
 - proto: SignalButtonDirectional
   entities:
-  - uid: 150
-    components:
-    - type: MetaData
-      name: signal button (Navigation Lamps)
-    - type: Transform
-      pos: -2.5,6.5
-      parent: 181
-    - type: DeviceLinkSource
-      linkedPorts:
-        154:
-        - - Pressed
-          - Toggle
-        155:
-        - - Pressed
-          - Toggle
-        153:
-        - - Pressed
-          - Toggle
-        152:
-        - - Pressed
-          - Toggle
-    - type: Fixtures
-      fixtures: {}
-    - type: Label
-      currentLabel: Navigation Lamps
-    - type: NameModifier
-      baseName: signal button
   - uid: 159
     components:
     - type: MetaData
@@ -1322,6 +1325,34 @@ entities:
       currentLabel: Port Shutters
     - type: NameModifier
       baseName: signal button
+  - uid: 166
+    components:
+    - type: MetaData
+      name: signal button (Navigation Lamps)
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -0.5,5.5
+      parent: 181
+    - type: DeviceLinkSource
+      linkedPorts:
+        152:
+        - - Pressed
+          - Toggle
+        153:
+        - - Pressed
+          - Toggle
+        154:
+        - - Pressed
+          - Toggle
+        155:
+        - - Pressed
+          - Toggle
+    - type: Fixtures
+      fixtures: {}
+    - type: Label
+      currentLabel: Navigation Lamps
+    - type: NameModifier
+      baseName: signal button
 - proto: SMESBasic
   entities:
   - uid: 24
@@ -1343,6 +1374,11 @@ entities:
     components:
     - type: Transform
       pos: -2.5,6.5
+      parent: 181
+  - uid: 49
+    components:
+    - type: Transform
+      pos: -3.5,6.5
       parent: 181
 - proto: Thruster
   entities:
