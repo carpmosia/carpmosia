@@ -1,28 +1,8 @@
 # Generators in use
 - type: entity
-  parent: BaseGeneratorWallmount
-  id: GeneratorWallmountPowerAmplifier
-  name: power amplifier
-  suffix: Power Amplifier, 0.1kW
-  components:
-  - type: PowerSupplier
-    supplyRate: 100
-  - type: Construction
-    graph: WallmountGenerator
-    node: generator
-  - type: StaticPrice
-    price: 3
-  - type: ContainerFill
-    containers:
-      board: [ WallmountGeneratorElectronics ]
-  - type: ContainerContainer
-    containers:
-      board: !type:Container
-
-- type: entity
   parent: BaseGenerator
-  id: GeneratorBasic
-  suffix: Basic, 1.1kW
+  id: GeneratorBasic10kW
+  suffix: Basic, 10kW
   components:
   - type: PowerSupplier
-    supplyRate: 1100
+    supplyRate: 10000
