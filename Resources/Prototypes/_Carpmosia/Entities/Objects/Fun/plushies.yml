@@ -175,6 +175,9 @@
   name: engineer moth plushie
   description: A plushie resembling a certain Station Engineer, the fluff feels like fiberglass.
   components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Fun/Plushies/lanka.rsi
+    state: icon
   - type: ActivatableUI
     key: enum.NetworkConfiguratorUiKey.List
     inHandsOnly: true
@@ -187,9 +190,6 @@
       enum.NetworkConfiguratorUiKey.Link:
         type: NetworkConfiguratorBoundUserInterface
   - type: NetworkConfigurator
-  - type: Sprite
-    sprite: _Carpmosia/Objects/Fun/Plushies/lanka.rsi
-    state: icon
   - type: EmitSoundOnUse
     sound: &PlushieMothSound
       path: /Audio/Voice/Moth/moth_chitter.ogg
