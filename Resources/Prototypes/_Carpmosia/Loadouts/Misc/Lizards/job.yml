@@ -1,0 +1,23 @@
+- type: loadout
+  id: LizardPlushieBoxer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 20h
+  storage:
+    back:
+      - PlushieLizardJobBoxer
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieZookeeper
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobZookeeper
+  groupBy: "lizards"

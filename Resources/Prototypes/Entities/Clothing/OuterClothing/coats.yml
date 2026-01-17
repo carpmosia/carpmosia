@@ -10,7 +10,7 @@
     sprite: Clothing/OuterClothing/Coats/bomber.rsi
 
 - type: entity
-  parent: [ClothingOuterStorageBase, AllowSuitStorageClothing, ClothingOuterArmorBase]
+  parent: [ClothingOuterSizeArmoredBasic, ClothingOuterStorageBase, AllowSuitStorageClothing, ClothingOuterArmorBase] # Carpmosia-edit - Outer clothing resize
   id: ClothingOuterCoatDetective
   name: detective trenchcoat
   description: An 18th-century multi-purpose trenchcoat. Someone who wears this means serious business.
@@ -19,10 +19,12 @@
     sprite: Clothing/OuterClothing/Coats/detective.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/detective.rsi
-  - type: StorageFill
-    contents:
-    - id: SmokingPipeFilledTobacco
-    - id: FlippoEngravedLighter
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: SmokingPipeFilledTobacco
+        - id: FlippoEngravedLighter
   - type: ExplosionResistance
     damageCoefficient: 1 #its a coat. it doesnt do shit
 
@@ -42,10 +44,12 @@
   parent: ClothingOuterCoatDetective
   id: ClothingOuterCoatDetectiveLoadout
   components:
-  - type: StorageFill
-    contents:
-    - id: SmokingPipeFilledTobacco
-    - id: FlippoLighter #Not the steal objective, only difference from normal detective trenchcoat
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: SmokingPipeFilledTobacco
+        - id: FlippoLighter #Not the steal objective, only difference from normal detective trenchcoat
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -60,7 +64,7 @@
 
 - type: entity
   abstract: true
-  parent: AllowSuitStorageClothing
+  parent: [ ClothingOuterSizeArmoredBasic, AllowSuitStorageClothing ] # Carpmosia-edit - Outer clothing resize
   id: ClothingOuterArmorHoS
   components:
   - type: Armor
@@ -76,7 +80,7 @@
 
 - type: entity
   abstract: true
-  parent: AllowSuitStorageClothing
+  parent: [ ClothingOuterSizeArmoredBasic, AllowSuitStorageClothing ] # Carpmosia-edit - Outer clothing resize
   id: ClothingOuterArmorWarden
   components:
   - type: Armor
@@ -349,7 +353,7 @@
     sprite: Clothing/OuterClothing/Coats/clownpriest.rsi
 
 - type: entity
-  parent: [ClothingOuterStorageBase, BaseMajorContraband]
+  parent: [ClothingOuterSizeArmoredBasic, ClothingOuterStorageBase, BaseMajorContraband] # Carpmosia-edit - Outer clothing resize
   id: ClothingOuterDogi
   name: samurai dogi
   description: Dogi is a type of traditional Japanese clothing. The dogi is made of heavy, durable fabric, it is practical in combat and stylish in appearance. It is decorated with intricate patterns and embroidery on the back.
@@ -399,7 +403,7 @@
     sprite: Clothing/OuterClothing/Coats/syndicate/coatsyndiecaparmored.rsi
 
 - type: entity
-  parent: ClothingOuterStorageBase
+  parent: [ ClothingOuterSizeArmoredBasic, ClothingOuterStorageBase ] # Carpmosia-edit - Outer clothing resize
   id: ClothingOuterCoatAMG
   name: armored medical gown
   description: The version of the medical gown, with elements of a bulletproof vest, looks strange, but your heart is protected.

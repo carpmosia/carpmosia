@@ -7,31 +7,31 @@
     - type: SolutionContainerManager
       solutions:
         beaker:
-          maxVol: 240 # Carpmosia-edit - extendedReagentStorage
-    # Carpmosia-start - Closeable Jugs
+          maxVol: 240 # Carpmosia-edit - Base 60 Chem
+    # Carpmosia-start - Closable Jugs
     - type: GenericVisualizer
       visuals:
         enum.OpenableVisuals.Opened:
           enum.OpenableVisuals.Layer:
             True: {state: "jug_open"} # lid off
             False: {state: "jug"} # lid on
-    # Carpmosia-end - Closeable Jugs
+    # Carpmosia-end - Closable Jugs
     - type: Sprite
       sprite: Objects/Specific/Chemistry/jug.rsi
       layers:
         - state: jug
-          map: ["enum.OpenableVisuals.Layer"] # Carpmosia-edit - Closeable Jugs
+          map: ["enum.OpenableVisuals.Layer"] # Carpmosia-edit - Closable Jugs
         - state: jug1
           map: [ "enum.SolutionContainerLayers.Fill" ]
           visible: false
-    # Carpmosia-start - Closeable Jugs
+    # Carpmosia-start - Closable Jugs
     - type: Openable
       sound:
         collection: bottleOpenSounds
       closeable: true
       closeSound:
         collection: bottleCloseSounds
-    # Carpmosia-end - Closeable Jugs
+    # Carpmosia-end - Closable Jugs
     - type: Item
       size: Normal
       sprite: Objects/Specific/Chemistry/jug.rsi
@@ -107,6 +107,96 @@
 
 - type: entity
   parent: Jug
+  id: JugPunctTranex
+  suffix: punct & tranex
+  components:
+  - type: Label
+    currentLabel: reagent-name-puncturase-tranexamic
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        reagents:
+        - ReagentId: Puncturase
+          Quantity: 192 # Carpmosia-edit - Base 60 Chem
+        - ReagentId: TranexamicAcid
+          Quantity: 48 # Carpmosia-edit - Base 60 Chem
+
+- type: entity
+  parent: Jug
+  id: JugPyraDerma
+  suffix: pyra & derma
+  components:
+  - type: Label
+    currentLabel: reagent-name-pyrazine-dermaline
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        reagents:
+        - ReagentId: Pyrazine
+          Quantity: 60 # Carpmosia-edit - Base 60 Chem
+        - ReagentId: Dermaline
+          Quantity: 180 # Carpmosia-edit - Base 60 Chem
+
+- type: entity
+  parent: Jug
+  id: JugDexPlusSaline
+  suffix: dex+ & saline
+  components:
+  - type: Label
+    currentLabel: reagent-name-dexalin-plus-saline
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        reagents:
+        - ReagentId: DexalinPlus
+          Quantity: 120 # Carpmosia-edit - Base 60 Chem
+        - ReagentId: Saline
+          Quantity: 120 # Carpmosia-edit - Base 60 Chem
+
+- type: entity
+  parent: Jug
+  id: JugTrico
+  suffix: tricordrazine
+  components:
+  - type: Label
+    currentLabel: reagent-name-tricordrazine
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        reagents:
+        - ReagentId: Tricordrazine
+          Quantity: 240 # Carpmosia-edit - Base 60 Chem
+
+- type: entity
+  parent: Jug
+  id: JugBlood
+  suffix: blood
+  components:
+  - type: Label
+    currentLabel: reagent-name-blood
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        reagents:
+        - ReagentId: Blood
+          Quantity: 240 # Carpmosia-edit - Base 60 Chem
+
+- type: entity
+  parent: Jug
+  id: JugWater
+  suffix: water
+  components:
+  - type: Label
+    currentLabel: reagent-name-water
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        reagents:
+        - ReagentId: Water
+          Quantity: 240 # Carpmosia-edit - Base 60 Chem
+
+- type: entity
+  parent: Jug
   suffix: carbon
   id: JugCarbon
   categories: [ HideSpawnMenu ]
@@ -118,7 +208,7 @@
       beaker:
         reagents:
         - ReagentId: Carbon
-          Quantity: 240 # Carpmosia-edit - extendedReagentStorage
+          Quantity: 240 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   parent: Jug
@@ -133,7 +223,7 @@
       beaker:
         reagents:
         - ReagentId: Iodine
-          Quantity: 240 # Carpmosia-edit - extendedReagentStorage
+          Quantity: 240 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   parent: Jug
@@ -148,7 +238,7 @@
       beaker:
         reagents:
         - ReagentId: Fluorine
-          Quantity: 240 # Carpmosia-edit - extendedReagentStorage
+          Quantity: 240 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   parent: Jug
@@ -163,7 +253,7 @@
       beaker:
         reagents:
         - ReagentId: Chlorine
-          Quantity: 240 # Carpmosia-edit - extendedReagentStorage
+          Quantity: 240 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   parent: Jug
@@ -178,7 +268,7 @@
       beaker:
         reagents:
         - ReagentId: Aluminium
-          Quantity: 240 # Carpmosia-edit - extendedReagentStorage
+          Quantity: 240 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   parent: Jug
@@ -193,7 +283,7 @@
       beaker:
         reagents:
         - ReagentId: Phosphorus
-          Quantity: 240 # Carpmosia-edit - extendedReagentStorage
+          Quantity: 240 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   parent: Jug
@@ -208,7 +298,7 @@
       beaker:
         reagents:
         - ReagentId: Sulfur
-          Quantity: 240 # Carpmosia-edit - extendedReagentStorage
+          Quantity: 240 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   parent: Jug
@@ -223,7 +313,7 @@
       beaker:
         reagents:
         - ReagentId: Silicon
-          Quantity: 240 # Carpmosia-edit - extendedReagentStorage
+          Quantity: 240 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   parent: Jug
@@ -238,7 +328,7 @@
       beaker:
         reagents:
         - ReagentId: Hydrogen
-          Quantity: 240 # Carpmosia-edit - extendedReagentStorage
+          Quantity: 240 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   parent: Jug
@@ -253,7 +343,7 @@
       beaker:
         reagents:
         - ReagentId: Lithium
-          Quantity: 240 # Carpmosia-edit - extendedReagentStorage
+          Quantity: 240 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   parent: Jug
@@ -268,7 +358,7 @@
       beaker:
         reagents:
         - ReagentId: Sodium
-          Quantity: 240 # Carpmosia-edit - extendedReagentStorage
+          Quantity: 240 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   parent: Jug
@@ -283,7 +373,7 @@
       beaker:
         reagents:
         - ReagentId: Potassium
-          Quantity: 240 # Carpmosia-edit - extendedReagentStorage
+          Quantity: 240 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   parent: Jug
@@ -298,7 +388,7 @@
       beaker:
         reagents:
         - ReagentId: Radium
-          Quantity: 240 # Carpmosia-edit - extendedReagentStorage
+          Quantity: 240 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   parent: Jug
@@ -313,7 +403,7 @@
       beaker:
         reagents:
         - ReagentId: Iron
-          Quantity: 240 # Carpmosia-edit - extendedReagentStorage
+          Quantity: 240 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   parent: Jug
@@ -328,7 +418,7 @@
       beaker:
         reagents:
         - ReagentId: Copper
-          Quantity: 240 # Carpmosia-edit - extendedReagentStorage
+          Quantity: 240 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   parent: Jug
@@ -343,7 +433,7 @@
       beaker:
         reagents:
         - ReagentId: Gold
-          Quantity: 240 # Carpmosia-edit - extendedReagentStorage
+          Quantity: 240 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   parent: Jug
@@ -358,7 +448,7 @@
       beaker:
         reagents:
         - ReagentId: Mercury
-          Quantity: 240 # Carpmosia-edit - extendedReagentStorage
+          Quantity: 240 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   parent: Jug
@@ -373,7 +463,7 @@
       beaker:
         reagents:
         - ReagentId: Silver
-          Quantity: 240 # Carpmosia-edit - extendedReagentStorage
+          Quantity: 240 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   parent: Jug
@@ -388,7 +478,7 @@
       beaker:
         reagents:
         - ReagentId: Ethanol
-          Quantity: 240 # Carpmosia-edit - extendedReagentStorage
+          Quantity: 240 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   parent: Jug
@@ -403,7 +493,7 @@
       beaker:
         reagents:
         - ReagentId: Sugar
-          Quantity: 240 # Carpmosia-edit - extendedReagentStorage
+          Quantity: 240 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   parent: Jug
@@ -418,7 +508,7 @@
       beaker:
         reagents:
         - ReagentId: Nitrogen
-          Quantity: 240 # Carpmosia-edit - extendedReagentStorage
+          Quantity: 240 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   parent: Jug
@@ -433,7 +523,7 @@
       beaker:
         reagents:
         - ReagentId: Oxygen
-          Quantity: 240 # Carpmosia-edit - extendedReagentStorage
+          Quantity: 240 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   parent: Jug
@@ -448,7 +538,7 @@
       beaker:
         reagents:
         - ReagentId: PlantBGone
-          Quantity: 240 # Carpmosia-edit - extendedReagentStorage
+          Quantity: 240 # Carpmosia-edit - Base 60 Chem
 
 - type: entity
   parent: Jug
@@ -463,4 +553,4 @@
       beaker:
         reagents:
         - ReagentId: WeldingFuel
-          Quantity: 240 # Carpmosia-edit - extendedReagentStorage
+          Quantity: 240 # Carpmosia-edit - Base 60 Chem

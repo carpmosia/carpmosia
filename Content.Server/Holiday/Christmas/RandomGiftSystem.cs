@@ -28,6 +28,12 @@ public sealed class RandomGiftSystem : EntitySystem
 
     private readonly List<string> _possibleGiftsSafe = new();
     private readonly List<string> _possibleGiftsUnsafe = new();
+    // Carpmosia-start - Carpmas Presents
+    private readonly List<string> _possibleGiftsCurated = new();
+    private readonly List<string> _blacklist = ["Throngler", "WeaponMinigun", "NuclearGrenade",
+     "CartridgeMinigun", "NukeCodePaper", "NukeCodePaperStation", "TraitorCodePaper", "AllTraitorCodesPaper",
+     "BoxFolderNuclearCodes", "ComputerSensorMonitoring", "SensorConsoleCircuitboard"];
+    // Carpmosia-end - Carpmas Presents
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -78,6 +84,10 @@ public sealed class RandomGiftSystem : EntitySystem
     {
         if (component.InsaneMode)
             component.SelectedEntity = _random.Pick(_possibleGiftsUnsafe);
+        // Carpmosia-start - Carpmas Presents
+        else if (component.CuratedMode)
+            component.SelectedEntity = _random.Pick(_possibleGiftsCurated);
+        // Carpmosia-end - Carpmas Presents
         else
             component.SelectedEntity = _random.Pick(_possibleGiftsSafe);
     }
@@ -107,6 +117,13 @@ public sealed class RandomGiftSystem : EntitySystem
                 continue;
 
             _possibleGiftsSafe.Add(proto.ID);
+
+            // Carpmosia-start - Carpmas Presents
+            if (_blacklist.Contains(proto.ID) || proto.EditorSuffix != null && proto.EditorSuffix.Contains("DEBUG"))
+                continue;
+
+            _possibleGiftsCurated.Add(proto.ID);
+            // Carpmosia-end - Carpmas Presents
         }
     }
 }
