@@ -1,5 +1,4 @@
 # Generators in use
-
 - type: entity
   parent: BaseGeneratorWallmount
   id: GeneratorWallmountPowerAmplifier
@@ -19,3 +18,11 @@
   - type: ContainerContainer
     containers:
       board: !type:Container
+
+- type: entity
+  parent: BaseGenerator
+  id: GeneratorBasic
+  suffix: Basic, 1.1kW
+  components:
+  - type: PowerSupplier
+    supplyRate: 1100
