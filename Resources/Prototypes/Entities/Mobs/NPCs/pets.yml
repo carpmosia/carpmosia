@@ -44,6 +44,7 @@
     - id: FoodMeatCorgi
       amount: 2
     - id: MaterialHideCorgi
+    - id: RubberStampPawesome # Carpmosia-edit - Pawsome Stamp
   - type: Tag
     tags:
     - CannotSuicide
@@ -75,6 +76,7 @@
       amount: 2
     - id: SheetSteel1
     - id: MaterialHideCorgi
+    - id: RubberStampPawesome # Carpmosia-edit - Pawsome Stamp
 
 - type: entity
   name: Lisa
@@ -833,6 +835,7 @@
         Bloodloss:
           -0.8
   - type: Temperature
+  - type: TemperatureDamage
     heatDamageThreshold: 800
     coldDamageThreshold: 0
   - type: MeleeWeapon

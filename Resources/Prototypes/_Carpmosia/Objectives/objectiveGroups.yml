@@ -1,0 +1,37 @@
+- type: weightedRandom
+  id: BloodBoundObjectiveGroups
+  weights:
+    BloodBoundObjectiveGroupState: 1
+    BloodBoundObjectiveGroupSteal: 1
+    BloodBoundObjectiveGroupKill: 1
+
+- type: weightedRandom
+  id: BloodBoundObjectiveGroupState
+  weights:
+    # These should add up to 1
+    BloodBoundEscapeShuttleObjective: 0.30
+    BloodBoundSurviveObjective: 0.70
+
+# TODO: figure out how to make the converted blood bound holding the objective item also count towards the objective
+- type: weightedRandom
+  id: BloodBoundObjectiveGroupSteal
+  weights:
+    BloodBoundCaptainIDStealObjective: 1
+    BloodBoundCMOHyposprayStealObjective: 1
+    BloodBoundCMOCrewMonitorStealObjective: 1
+    BloodBoundRDHardsuitStealObjective: 1
+    BloodBoundNukeDiskStealObjective: 1
+    BloodBoundMagbootsStealObjective: 1
+    BloodBoundCorgiMeatStealObjective: 1
+    BloodBoundClipboardStealObjective: 1
+    BloodBoundCaptainGunStealObjective: 0.5
+    BloodBoundCaptainJetpackStealObjective: 0.5
+    BloodBoundHandTeleporterStealObjective: 0.5
+    BloodBoundEnergyMagnumStealObjective: 0.5
+
+- type: weightedRandom
+  id: BloodBoundObjectiveGroupKill
+  weights:
+    BloodBoundKillRandomPersonObjective: 0.85
+    BloodBoundKillRandomHeadObjective: 0.25
+    # BloodBoundTeachLessonRandomPersonObjective: 1 # Objective unimplemented on carpmosia
