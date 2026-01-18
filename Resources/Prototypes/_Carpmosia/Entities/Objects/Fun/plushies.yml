@@ -170,7 +170,7 @@
     equippedFillBaseName: -fill-
 
 - type: entity
-  parent: BasePlushie
+  parent: PlushieMoth
   id: PlushieMothLanka
   name: engineer moth plushie
   description: A plushie resembling a certain Station Engineer, the fluff feels like fiberglass.
@@ -190,16 +190,9 @@
       enum.NetworkConfiguratorUiKey.Link:
         type: NetworkConfiguratorBoundUserInterface
   - type: NetworkConfigurator
-  - type: EmitSoundOnUse
-    sound: &PlushieMothSound
-      path: /Audio/Voice/Moth/moth_chitter.ogg
   - type: EmitSoundOnLand
     sound: &PlushieMothSqueak
       path: /Audio/Voice/Moth/moth_squeak.ogg
-  - type: EmitSoundOnActivate
-    sound: *PlushieMothSound
-  - type: EmitSoundOnTrigger
-    sound: *PlushieMothSound
   - type: EmitSoundOnCollide
     sound: &PlushieMothScream
       path: /Audio/Voice/Moth/moth_scream.ogg
