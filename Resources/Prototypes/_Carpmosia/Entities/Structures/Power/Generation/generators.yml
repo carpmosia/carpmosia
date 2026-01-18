@@ -1,8 +1,0 @@
-# Generators in use
-- type: entity
-  parent: BaseGenerator
-  id: GeneratorBasic5kW
-  suffix: Basic, 5kW
-  components:
-  - type: PowerSupplier
-    supplyRate: 5000
