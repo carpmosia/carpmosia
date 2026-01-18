@@ -289,11 +289,12 @@ namespace Content.Server.Voting.Managers
                 msg.DisplayVotes = true;
             }
 
-            msg.Options = new (ushort votes, string name)[v.Entries.Length];
+            msg.Options = new (ushort votes, string name, string? icon, EntProtoId? proto)[v.Entries.Length]; // Carpmosia-start - Better map vote
             for (var i = 0; i < msg.Options.Length; i++)
             {
                 ref var entry = ref v.Entries[i];
-                msg.Options[i] = (msg.DisplayVotes ? (ushort) entry.Votes : (ushort) 0, entry.Text);
+                var meta = entry.Display as (string, string?, EntProtoId?)?; // Carpmosia-start - Better map vote
+                msg.Options[i] = (msg.DisplayVotes ? (ushort) entry.Votes : (ushort) 0, entry.Display is string text ? text : meta?.Item1, meta?.Item2, meta?.Item3); // Carpmosia-start - Better map vote
             }
 
             player.Channel.SendMessage(msg);
@@ -562,13 +563,13 @@ namespace Content.Server.Voting.Managers
         private struct VoteEntry
         {
             public object Data;
-            public string Text;
+            public object Display;
             public int Votes;
 
-            public VoteEntry(object data, string text)
+            public VoteEntry(object data, object display)
             {
                 Data = data;
-                Text = text;
+                Display = display;
                 Votes = 0;
             }
         }
