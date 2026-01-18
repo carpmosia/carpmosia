@@ -92,9 +92,7 @@ public sealed class StationAiOverlay : Overlay
             _navMap.AiFrameUpdate((float) _timing.FrameTime.TotalSeconds, gridUid); // Carpmosia-edit - AI Navmap
             if (_accumulator <= 0f)
             {
-                // Carpmosia-start - AI Navmap
-                _accumulator = MathF.Max(0f, _accumulator + UpdateRate);
-                // Carpmosia-end - AI Navmap
+                _accumulator = MathF.Max(0f, _accumulator + UpdateRate); // Carpmosia-edit - AI Navmap
                 _visibleTiles.Clear();
                 _entManager.System<StationAiVisionSystem>().GetView((gridUid, broadphase, grid), worldBounds, _visibleTiles);
             }
