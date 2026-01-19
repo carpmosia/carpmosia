@@ -361,7 +361,7 @@
   id: SecurityTechFab
   parent: BaseLatheLube
   name: security techfab
-  description: Prints equipment for use by security crew.
+  description: Prints equipment for use by security crew. Has the ability to process security blueprints to print new recipes. # Carpmosia-edit - Departmental Blueprints.
   components:
   - type: Sprite
     sprite: Structures/Machines/techfab.rsi
@@ -403,6 +403,18 @@
   - type: OreSiloClient
   - type: LatheAnnouncing
     channels: [Security]
+  - type: BlueprintReceiver # Carpmosia-start - Depratmental blueprints.
+    whitelist:
+      tags:
+      - BlueprintSecurityTechFab
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      blueprint: !type:Container
+  - type: EmptyOnMachineDeconstruct
+    containers:
+    - blueprint # Carpmosia-end - Depratmental blueprints.
 
 - type: entity
   id: AmmoTechFab
@@ -441,7 +453,7 @@
   id: MedicalTechFab
   parent: BaseLatheLube
   name: medical techfab
-  description: Prints equipment for use by the medbay.
+  description: Prints equipment for use by the medbay. Has the ability to process medical blueprints to print new recipes from medical blueprints. # Carpmosia-edit - Departmental Blueprints.
   components:
   - type: Sprite
     sprite: Structures/Machines/techfab.rsi
@@ -476,6 +488,18 @@
   - type: OreSiloClient
   - type: LatheAnnouncing
     channels: [Medical]
+  - type: BlueprintReceiver # Carpmosia-start - Depratmental blueprints.
+    whitelist:
+      tags:
+      - BlueprintMedicalTechFab
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      blueprint: !type:Container
+  - type: EmptyOnMachineDeconstruct
+    containers:
+    - blueprint # Carpmosia-end - Depratmental blueprints.
 
 - type: entity
   parent: BaseLathe

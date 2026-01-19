@@ -1,0 +1,122 @@
+# Base blueprint prototypes:
+- type: entity
+  parent: BaseItem
+  id: BaseBlueprintCommand
+  name: command blueprint
+  description: A blueprint for some machine. It can be inserted into a command techfab.
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Tools/blueprint_command.rsi
+    state: icon
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,0
+    storedSprite:
+      sprite: _Carpmosia/Objects/Tools/blueprint_command.rsi
+      state: storage
+  - type: Blueprint
+  - type: StaticPrice
+    price: 1000
+  - type: Tag
+    tags:
+    - BlueprintCommandTechFab
+
+- type: entity
+  parent: BaseItem
+  id: BaseBlueprintCommand
+  name: engineering blueprint
+  description: A blueprint for some machine. It can be inserted into an engineering techfab.
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Tools/blueprint_engineering.rsi
+    state: icon
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,0
+    storedSprite:
+      sprite: _Carpmosia/Objects/Tools/blueprint_engineering.rsi
+      state: storage
+  - type: Blueprint
+  - type: StaticPrice
+    price: 1000
+  - type: Tag
+    tags:
+    - BlueprintEngineeringTechFab
+
+- type: entity
+  parent: BaseItem
+  id: BaseBlueprintScience
+  name: science blueprint
+  description: A blueprint for some machine. It can be inserted into a science techfab.
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Tools/blueprint_science.rsi
+    state: icon
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,0
+    storedSprite:
+      sprite: _Carpmosia/Objects/Tools/blueprint_science.rsi
+      state: storage
+  - type: Blueprint
+  - type: StaticPrice
+    price: 1000
+  - type: Tag
+    tags:
+    - BlueprintScienceTechFab
+
+- type: entity
+  parent: BaseItem
+  id: BaseBlueprintSecurity
+  name: security blueprint
+  description: A blueprint for some machine. It can be inserted into a security techfab.
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Tools/blueprint_security.rsi
+    state: icon
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,0
+    storedSprite:
+      sprite: _Carpmosia/Objects/Tools/blueprint_security.rsi
+      state: storage
+  - type: Blueprint
+  - type: StaticPrice
+    price: 1000
+  - type: Tag
+    tags:
+    - BlueprintSecurityTechFab
+
+- type: entity
+  parent: BaseItem
+  id: BaseBlueprintService
+  name: service blueprint
+  description: A blueprint for some machine. It can be inserted into a service techfab.
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Tools/blueprint_service.rsi
+    state: icon
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,0
+    storedSprite:
+      sprite: _Carpmosia/Objects/Tools/blueprint_service.rsi
+      state: storage
+  - type: Blueprint
+  - type: StaticPrice
+    price: 1000
+  - type: Tag
+    tags:
+    - BlueprintServiceTechFab
+
+# Blueprint prototypes:
