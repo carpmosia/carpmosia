@@ -10,9 +10,6 @@
     layers:
     - state: icon_empty
       map: ["enum.OpenableVisuals.Layer"]
-    - state: icon_open
-      map: ["enum.OpenableVisuals.Layer"]
-      visible: false
       sprite: _Carpmosia/Objects/Specific/Chemistry/jug.rsi
     - state: fill-1
       map: ["enum.SolutionContainerLayers.Fill"]
