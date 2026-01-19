@@ -448,18 +448,18 @@
     - type: MaterialStorage
       whitelist: *StandardMaterialWhitelist
     - type: OreSiloClient
-  - type: BlueprintReceiver # Carpmosia-start - Depratmental blueprints.
-    whitelist:
-      tags:
-      - BlueprintAmmoTechFab
-  - type: ContainerContainer
-    containers:
-      machine_board: !type:Container
-      machine_parts: !type:Container
-      blueprint: !type:Container
-  - type: EmptyOnMachineDeconstruct
-    containers:
-    - blueprint # Carpmosia-end - Depratmental blueprints.
+    - type: BlueprintReceiver # Carpmosia-start - Depratmental blueprints.
+      whitelist:
+        tags:
+        - BlueprintAmmoTechFab
+    - type: ContainerContainer
+      containers:
+        machine_board: !type:Container
+        machine_parts: !type:Container
+        blueprint: !type:Container
+    - type: EmptyOnMachineDeconstruct
+      containers:
+      - blueprint # Carpmosia-end - Depratmental blueprints.
 
 - type: entity
   id: MedicalTechFab
