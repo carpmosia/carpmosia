@@ -1,4 +1,5 @@
 # Base blueprint prototypes:
+#   Blueprints:
 - type: entity
   parent: BaseItem
   id: BaseBlueprintAmmo
@@ -142,5 +143,30 @@
   - type: Tag
     tags:
     - BlueprintServiceTechFab
+
+#   Aperture Cards:
+- type: entity
+  parent: BaseItem
+  id: BaseApertureCardCircuitboard
+  name: circuitboard aperture card
+  description: A punch card with holes and a microfilm containing schematics for a circuitboard. It can be inserted into a circuit imprinter.
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Tools/aperture_card_circuitboard.rsi
+    state: icon
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,0
+    storedSprite:
+      sprite: _Carpmosia/Objects/Tools/aperture_card_circuitboard.rsi
+      state: storage
+  - type: Blueprint
+  - type: StaticPrice
+    price: 1000
+  - type: Tag
+    tags:
+    - BlueprintCircuitImprinter
 
 # Blueprint prototypes:
