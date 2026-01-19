@@ -50,7 +50,7 @@
 
 - type: entity
   parent: BaseItem
-  id: BaseBlueprintCommand
+  id: BaseBlueprintEngineering
   name: engineering blueprint
   description: A blueprint for some machine. It can be inserted into an engineering techfab.
   abstract: true
@@ -71,6 +71,30 @@
   - type: Tag
     tags:
     - BlueprintEngineeringTechFab
+
+- type: entity
+  parent: BaseItem
+  id: BaseBlueprintMedical
+  name: medical blueprint
+  description: A blueprint for some machine. It can be inserted into a medical techfab.
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Tools/blueprint_medical.rsi
+    state: icon
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,0
+    storedSprite:
+      sprite: _Carpmosia/Objects/Tools/blueprint_medical.rsi
+      state: storage
+  - type: Blueprint
+  - type: StaticPrice
+    price: 1000
+  - type: Tag
+    tags:
+    - BlueprintMedicalTechFab
 
 - type: entity
   parent: BaseItem

@@ -11,6 +11,9 @@
   id: BlueprintEngineeringTechFab # Whitelist on BlueprintReceiverComponent on the engineering techfab for linking tagged entity's BlueprintComponent.
 
 - type: Tag
+  id: BlueprintMedicalTechFab # Whitelist on BlueprintReceiverComponent on the medical techfab for linking tagged entity's BlueprintComponent.
+
+- type: Tag
   id: BlueprintScienceTechFab # Whitelist on BlueprintReceiverComponent on the science techfab for linking tagged entity's BlueprintComponent.
 
 - type: Tag
@@ -18,9 +21,6 @@
 
 - type: Tag
   id: BlueprintServiceTechFab # Whitelist on BlueprintReceiverComponent on the service techfab for linking tagged entity's BlueprintComponent.
-
-- type: Tag
-  id: BlueprintMedicalTechFab # Whitelist on BlueprintReceiverComponent on the medical techfab for linking tagged entity's BlueprintComponent.
 
 - type: Tag
   id: Deckard # Deckardbox limitations
