@@ -62,6 +62,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
+      name: Lighthouse (Legacy)
     - type: Transform
     - type: Map
       mapPaused: True
@@ -71,6 +72,7 @@ entities:
   - uid: 2
     components:
     - type: MetaData
+      name: Lighthouse
     - type: Transform
       pos: 0.4558292,0.42837813
       parent: 1

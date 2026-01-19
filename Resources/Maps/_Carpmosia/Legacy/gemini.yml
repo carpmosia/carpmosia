@@ -80,6 +80,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
+      name: Gemini (Legacy)
     - type: Transform
     - type: Map
       mapPaused: True
@@ -91,6 +92,7 @@ entities:
   - uid: 2
     components:
     - type: MetaData
+      name: Gemini
     - type: Transform
       pos: -2.5833297,4.1527777
       parent: 1

@@ -110,7 +110,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: map 1000
+      name: Train (Legacy)
     - type: Transform
     - type: Map
       mapPaused: True
@@ -122,7 +122,7 @@ entities:
   - uid: 2
     components:
     - type: MetaData
-      name: Space Train
+      name: Train
     - type: Transform
       pos: -0.5056241,-0.46626663
       parent: 1

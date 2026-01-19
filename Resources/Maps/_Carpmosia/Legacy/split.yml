@@ -64,6 +64,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
+      name: Split (Legacy)
     - type: Transform
     - type: Map
       mapPaused: True
@@ -73,6 +74,7 @@ entities:
   - uid: 2
     components:
     - type: MetaData
+      name: Split
     - type: Transform
       rot: -0.0003308715531602502 rad
       pos: 0.46504116,0.43151283

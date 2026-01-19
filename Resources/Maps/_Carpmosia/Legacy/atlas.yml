@@ -53,7 +53,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: map 3
+      name: Atlas (Legacy)
     - type: Transform
     - type: Map
       mapPaused: True
@@ -63,6 +63,7 @@ entities:
   - uid: 2
     components:
     - type: MetaData
+      name: Atlas
     - type: Transform
       pos: 2.2710133,-2.4148211
       parent: 1
