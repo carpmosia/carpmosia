@@ -420,7 +420,7 @@
   id: AmmoTechFab
   parent: BaseLatheLube
   name: ammo techfab
-  description: Prints the bare minimum of bullets that any budget military or armory could need. Nothing fancy.
+  description: Prints the bare minimum of bullets that any budget military or armory could need. Nothing fancy. Has the ability to process ammo blueprints to print new recipes. # Carpmosia-edit - Departmental Blueprints.
   components:
     - type: Sprite
       sprite: Structures/Machines/techfab.rsi
@@ -448,12 +448,24 @@
     - type: MaterialStorage
       whitelist: *StandardMaterialWhitelist
     - type: OreSiloClient
+  - type: BlueprintReceiver # Carpmosia-start - Depratmental blueprints.
+    whitelist:
+      tags:
+      - BlueprintAmmoTechFab
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      blueprint: !type:Container
+  - type: EmptyOnMachineDeconstruct
+    containers:
+    - blueprint # Carpmosia-end - Depratmental blueprints.
 
 - type: entity
   id: MedicalTechFab
   parent: BaseLatheLube
   name: medical techfab
-  description: Prints equipment for use by the medbay. Has the ability to process medical blueprints to print new recipes from medical blueprints. # Carpmosia-edit - Departmental Blueprints.
+  description: Prints equipment for use by the medbay. Has the ability to process medical blueprints to print new recipes. # Carpmosia-edit - Departmental Blueprints.
   components:
   - type: Sprite
     sprite: Structures/Machines/techfab.rsi

@@ -1,0 +1,25 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from https://github.com/vgstation-coders/vgstation13/commit/dd749c36c416a6960782732cecf25e5ebac326e8. Storage sprite by RedBookcase on Github. Modified by Merrokitsune (GitHub) for use in Carpmosia with parts taken from Space Station 14 at commit https://github.com/space-wizards/space-station-14/commit/7a0759f2c0cdea6aa3ee63b44d37e821ee5e2bf0.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "storage"
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        }
+    ]
+}

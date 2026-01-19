@@ -1,4 +1,7 @@
 - type: Tag
+  id: BlueprintAmmoTechFab # Whitelist on BlueprintReceiverComponent on the ammo techfab for linking tagged entity's BlueprintComponent.
+
+- type: Tag
   id: BlueprintCommandTechFab # Whitelist on BlueprintReceiverComponent on the command techfab for linking tagged entity's BlueprintComponent.
 
 - type: Tag
