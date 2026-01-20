@@ -293,8 +293,7 @@ namespace Content.Server.Voting.Managers
             for (var i = 0; i < msg.Options.Length; i++)
             {
                 ref var entry = ref v.Entries[i];
-                var meta = entry.Display as (string, string?, EntProtoId?)?; // Carpmosia-start - Better map vote
-                msg.Options[i] = (msg.DisplayVotes ? (ushort) entry.Votes : (ushort) 0, entry.Display is string text ? text : meta?.Item1, meta?.Item2, meta?.Item3); // Carpmosia-start - Better map vote
+                msg.Options[i] = (msg.DisplayVotes ? (ushort) entry.Votes : (ushort) 0, entry.Name, entry.Icon, entry.Proto); // Carpmosia-start - Better map vote
             }
 
             player.Channel.SendMessage(msg);
@@ -563,13 +562,24 @@ namespace Content.Server.Voting.Managers
         private struct VoteEntry
         {
             public object Data;
-            public object Display;
+            public string Name;
+            public string? Icon = null;
+            public EntProtoId? Proto = null;
             public int Votes;
 
-            public VoteEntry(object data, object display)
+            public VoteEntry(object data, object meta)
             {
                 Data = data;
-                Display = display;
+                if (meta is (string name, string icon, EntProtoId proto))
+                {
+                    Name = name;
+                    Icon = icon;
+                    Proto = proto;
+                }
+                else
+                {
+                    Name = (string) meta;
+                }
                 Votes = 0;
             }
         }

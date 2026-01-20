@@ -32,10 +32,9 @@ public sealed class VoteWebhooks : IPostInjectInit
 
         foreach (var voteOption in voteOptions.Options)
         {
-            var meta = voteOption.text as (string, string?, EntProtoId?)?; // Carpmosia-start - Better map vote
             var newVote = new WebhookEmbedField
             {
-                Name = voteOption.text is string text ? text : meta?.Item1, // Carpmosia-start - Better map vote
+                Name = voteOption.text is (string name, string, EntProtoId) ? name : (string) voteOption.text, // Carpmosia-start - Better map vote
                 Value = Loc.GetString("custom-vote-webhook-option-pending")
             };
             fields.Add(newVote);

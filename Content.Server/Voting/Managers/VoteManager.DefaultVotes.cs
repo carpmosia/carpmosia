@@ -263,7 +263,7 @@ namespace Content.Server.Voting.Managers
 
         private void CreateMapVote(ICommonSession? initiator)
         {
-            var maps = _gameMapManager.CurrentlyEligibleMaps().ToDictionary(map => map, map => map.MapName);
+            var maps = _gameMapManager.CurrentlyEligibleMaps().ToDictionary(map => map.ID, map => map);
 
             var alone = _playerManager.PlayerCount == 1 && initiator != null;
             var options = new VoteOptions
@@ -279,7 +279,7 @@ namespace Content.Server.Voting.Managers
 
             foreach (var (k, v) in maps)
             {
-                options.Options.Add(((v, k.MapIcon, k.IconPrototype), k)); // Carpmosia-edit - Better map vote
+                options.Options.Add(((v.MapName, v.MapIcon, v.IconPrototype), k));
             }
 
             WirePresetVoteInitiator(options, initiator);
@@ -288,25 +288,25 @@ namespace Content.Server.Voting.Managers
 
             vote.OnFinished += (_, args) =>
             {
-                GameMapPrototype picked;
+                string picked;
                 if (args.Winner == null)
                 {
-                    picked = (GameMapPrototype) _random.Pick(args.Winners);
+                    picked = (string) _random.Pick(args.Winners);
                     _chatManager.DispatchServerAnnouncement(
-                        Loc.GetString("ui-vote-map-tie", ("picked", maps[picked])));
+                        Loc.GetString("ui-vote-map-tie", ("picked", maps[picked].MapName)));
                 }
                 else
                 {
-                    picked = (GameMapPrototype) args.Winner;
+                    picked = (string) args.Winner;
                     _chatManager.DispatchServerAnnouncement(
-                        Loc.GetString("ui-vote-map-win", ("winner", maps[picked])));
+                        Loc.GetString("ui-vote-map-win", ("winner", maps[picked].MapName)));
                 }
 
-                _adminLogger.Add(LogType.Vote, LogImpact.Medium, $"Map vote finished: {picked.MapName}");
+                _adminLogger.Add(LogType.Vote, LogImpact.Medium, $"Map vote finished: {maps[picked].MapName}");
                 var ticker = _entityManager.EntitySysManager.GetEntitySystem<GameTicker>();
                 if (ticker.CanUpdateMap())
                 {
-                    if (_gameMapManager.TrySelectMapIfEligible(picked.ID))
+                    if (_gameMapManager.TrySelectMapIfEligible(picked))
                     {
                         ticker.UpdateInfoText();
                     }
