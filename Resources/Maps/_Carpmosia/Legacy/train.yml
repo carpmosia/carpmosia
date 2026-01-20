@@ -5,7 +5,7 @@ meta:
   engineVersion: 270.1.0
   forkId: ""
   forkVersion: ""
-  time: 01/10/2026 06:06:36
+  time: 01/20/2026 02:41:20
   entityCount: 17410
 maps:
 - 1
@@ -76567,7 +76567,7 @@ entities:
     - type: Transform
       pos: -1.713614,-166.57089
       parent: 2
-- proto: HandheldHealthAnalyzerUnpowered
+- proto: HandheldHealthAnalyzer
   entities:
   - uid: 11465
     components:
