@@ -104,10 +104,10 @@ namespace Content.IntegrationTests.Tests
             "Exo",
             "Snowball",
             // Carpmosia-start - Carpmaps
-            "Amber",
-            "Feint",
-            "Oasis2",
-            "Saltern2",
+            "CarpAmber",
+            "CarpFeint",
+            "CarpOasis",
+            "CarpSaltern",
             // Legacy maps
             "Meta",
             "Omega",
