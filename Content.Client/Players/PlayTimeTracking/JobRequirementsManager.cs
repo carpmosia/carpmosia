@@ -247,7 +247,7 @@ public sealed class JobRequirementsManager : ISharedPlaytimeManager
         // Carpmosia-start - Antag playtimes
         foreach (var antag in antagsToMap)
         {
-            if (_roles.TryGetValue(antag.PlayTimeTracker, out var locAntagName))
+            if (antag.PlayTimeTracker != null && _roles.TryGetValue(antag.PlayTimeTracker, out var locAntagName))
             {
                 yield return new KeyValuePair<string, TimeSpan>(antag.Name, locAntagName);
             }
