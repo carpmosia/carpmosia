@@ -259,8 +259,8 @@ namespace Content.Client.Voting
         public sealed class VoteEntry
         {
             public string Text { get; }
-            public string? Icon { get; } = null; // Carpmosia-edit - Better map vote
-            public EntProtoId? Preview { get; } = null; // Carpmosia-edit - Better map vote
+            public string? Icon { get; } // Carpmosia-edit - Better map vote
+            public EntProtoId? Preview { get; } // Carpmosia-edit - Better map vote
             public int Votes { get; set; }
 
             public VoteEntry(string text, string? icon, EntProtoId? preview) // Carpmosia-edit - Better map vote

@@ -67,7 +67,8 @@ namespace Content.Client.Voting.UI
                 // Carpmosia-start - Better map vote
                 if (entry.Icon is not null)
                 {
-                    _voteOptions[i].Button.Icon.TexturePath = entry.Icon;
+                    _voteOptions[i].Button.IconL.TexturePath = entry.Icon;
+                    _voteOptions[i].Button.IconR.TexturePath = entry.Icon;
                 }
                 if (entry.Preview is not null)
                 {

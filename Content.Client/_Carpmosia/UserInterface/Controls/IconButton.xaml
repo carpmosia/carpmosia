@@ -5,19 +5,14 @@
     MinSize="0 24"
     Margin="1"
 >
-    <BoxContainer
-        Orientation="Horizontal"
-        MinSize="0 24"
-        Margin="1"
-    >
+    <BoxContainer Orientation="Horizontal" SeparationOverride="4">
         <TextureRect
-            Name="Icon"
+            Name="IconL"
             Access="Public"
             Stretch="KeepAspect"
             MaxSize="24 24"
             MinSize="0 24"
-            Margin="0 0 5 0"
-            HorizontalAlignment="Left"
+            HorizontalAlignment="Center"
             VerticalAlignment="Center"
         />
         <RichTextLabel
@@ -25,10 +20,18 @@
             Access="Public"
             HorizontalExpand="True"
             VerticalExpand="True"
-            HorizontalAlignment="Left"
+            HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            Margin="1"
             Visible="True"
+        />
+        <TextureRect
+            Name="IconR"
+            Access="Public"
+            Stretch="KeepAspect"
+            MaxSize="24 24"
+            MinSize="0 24"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
         />
     </BoxContainer>
 </Button>

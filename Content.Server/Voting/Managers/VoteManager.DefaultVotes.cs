@@ -263,7 +263,7 @@ namespace Content.Server.Voting.Managers
 
         private void CreateMapVote(ICommonSession? initiator)
         {
-            var maps = _gameMapManager.CurrentlyEligibleMaps().ToDictionary(map => map.ID, map => map);
+            var maps = _gameMapManager.CurrentlyEligibleMaps().ToDictionary(map => map.ID, map => map); // Carpmosia-edit - Better map vote
 
             var alone = _playerManager.PlayerCount == 1 && initiator != null;
             var options = new VoteOptions
@@ -279,7 +279,7 @@ namespace Content.Server.Voting.Managers
 
             foreach (var (k, v) in maps)
             {
-                options.Options.Add(((v.MapName, v.MapIcon, v.IconPrototype), k));
+                options.Options.Add(((v.MapName, v.MapIcon, v.IconPrototype), k)); // Carpmosia-edit - Better map vote
             }
 
             WirePresetVoteInitiator(options, initiator);
@@ -288,25 +288,25 @@ namespace Content.Server.Voting.Managers
 
             vote.OnFinished += (_, args) =>
             {
-                string picked;
+                string picked; // Carpmosia-edit - Better map vote
                 if (args.Winner == null)
                 {
-                    picked = (string) _random.Pick(args.Winners);
+                    picked = (string) _random.Pick(args.Winners); // Carpmosia-edit - Better map vote
                     _chatManager.DispatchServerAnnouncement(
-                        Loc.GetString("ui-vote-map-tie", ("picked", maps[picked].MapName)));
+                        Loc.GetString("ui-vote-map-tie", ("picked", maps[picked].MapName))); // Carpmosia-edit - Better map vote
                 }
                 else
                 {
-                    picked = (string) args.Winner;
+                    picked = (string) args.Winner; // Carpmosia-edit - Better map vote
                     _chatManager.DispatchServerAnnouncement(
-                        Loc.GetString("ui-vote-map-win", ("winner", maps[picked].MapName)));
+                        Loc.GetString("ui-vote-map-win", ("winner", maps[picked].MapName))); // Carpmosia-edit - Better map vote
                 }
 
-                _adminLogger.Add(LogType.Vote, LogImpact.Medium, $"Map vote finished: {maps[picked].MapName}");
+                _adminLogger.Add(LogType.Vote, LogImpact.Medium, $"Map vote finished: {maps[picked].MapName}"); // Carpmosia-edit - Better map vote
                 var ticker = _entityManager.EntitySysManager.GetEntitySystem<GameTicker>();
                 if (ticker.CanUpdateMap())
                 {
-                    if (_gameMapManager.TrySelectMapIfEligible(picked))
+                    if (_gameMapManager.TrySelectMapIfEligible(picked)) // Carpmosia-edit - Better map vote
                     {
                         ticker.UpdateInfoText();
                     }
