@@ -570,15 +570,16 @@ namespace Content.Server.Voting.Managers
             public VoteEntry(object data, object meta)
             {
                 Data = data;
-                if (meta is (string name, string icon, EntProtoId proto))
+                if (meta is string name)
                 {
                     Name = name;
-                    Icon = icon;
-                    Proto = proto;
                 }
                 else
                 {
-                    Name = (string) meta;
+                    var tuple = ((string, string?, EntProtoId?)) meta;
+                    Name = tuple.Item1;
+                    Icon = tuple.Item2;
+                    Proto = tuple.Item3;
                 }
                 Votes = 0;
             }
