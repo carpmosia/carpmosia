@@ -1,6 +1,4 @@
 using System.Numerics;
-using Content.Shared.Body.Components;
-using Content.Shared.Body.Systems;
 using Content.Shared.Charges.Components;
 using Content.Shared.Charges.Systems;
 using Content.Shared.Coordinates.Helpers;
@@ -11,6 +9,7 @@ using Content.Shared.Doors.Components;
 using Content.Shared.Doors.Systems;
 using Content.Shared.Examine;
 using Content.Shared.FixedPoint; // Carpmosia-edit - Wizard Smite Rework
+using Content.Shared.Gibbing;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
@@ -59,7 +58,7 @@ public abstract class SharedMagicSystem : EntitySystem
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly INetManager _net = default!;
-    [Dependency] private readonly SharedBodySystem _body = default!;
+    [Dependency] private readonly GibbingSystem _gibbing = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly SharedDoorSystem _door = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
@@ -400,11 +399,7 @@ public abstract class SharedMagicSystem : EntitySystem
         var impulseVector = direction * 10000;
 
         _physics.ApplyLinearImpulse(ev.Target, impulseVector);
-
-        if (!TryComp<BodyComponent>(ev.Target, out var body))
-            return;
-
-        _body.GibBody(ev.Target, true, body);
+        _gibbing.Gib(ev.Target);
     }
     // Carpmosia-start - Wizard Smite Rework
     private void OnDamageSmiteSpell(DamageSmiteSpellEvent ev)
@@ -498,7 +493,7 @@ public abstract class SharedMagicSystem : EntitySystem
             return;
 
         if (TryComp<BasicEntityAmmoProviderComponent>(wand, out var basicAmmoComp) && basicAmmoComp.Count != null)
-            _gunSystem.UpdateBasicEntityAmmoCount(wand.Value, basicAmmoComp.Count.Value + ev.Charge, basicAmmoComp);
+            _gunSystem.UpdateBasicEntityAmmoCount((wand.Value, basicAmmoComp), basicAmmoComp.Count.Value + ev.Charge);
         else if (TryComp<LimitedChargesComponent>(wand, out var charges))
             _charges.AddCharges((wand.Value, charges), ev.Charge);
     }
