@@ -460,6 +460,16 @@
     - Supply
   - type: Puller
     needsHands: false
+  # Carpmosia-start - handy supplybot
+  - type: Hands
+    hands:
+      hand:
+        activeHandId: hand
+        location: Middle
+    sortedHands:
+    - hand
+    showInHands: false
+  # Carpmosia-end - handy supplybot
 
 - type: entity
   parent: [ MobSiliconBase, MobCombat ]
