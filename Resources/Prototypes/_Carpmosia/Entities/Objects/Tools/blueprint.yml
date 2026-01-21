@@ -2,7 +2,7 @@
 #   Blueprints:
 - type: entity
   abstract: true
-  parent: BaseItem
+  parent: BaseBlueprint
   id: BaseBlueprintAmmo
   name: ammo blueprint
   description: A blueprint for some machine. It can be inserted into an ammo techfab.
@@ -11,22 +11,16 @@
     sprite: _Carpmosia/Objects/Tools/blueprint_ammo.rsi
     state: icon
   - type: Item
-    size: Normal
-    shape:
-    - 0,0,2,0
     storedSprite:
       sprite: _Carpmosia/Objects/Tools/blueprint_ammo.rsi
       state: storage
-  - type: Blueprint
-  - type: StaticPrice
-    price: 1000
   - type: Tag
     tags:
     - BlueprintAmmoTechFab
 
 - type: entity
   abstract: true
-  parent: BaseItem
+  parent: BaseBlueprint
   id: BaseBlueprintCargo
   name: cargo blueprint
   description: A blueprint for some machine. It can be inserted into a cargo techfab.
@@ -35,22 +29,16 @@
     sprite: _Carpmosia/Objects/Tools/blueprint_cargo.rsi
     state: icon
   - type: Item
-    size: Normal
-    shape:
-    - 0,0,2,0
     storedSprite:
       sprite: _Carpmosia/Objects/Tools/blueprint_cargo.rsi
       state: storage
-  - type: Blueprint
-  - type: StaticPrice
-    price: 1000
   - type: Tag
     tags:
     - BlueprintCargoTechFab
 
 - type: entity
   abstract: true
-  parent: BaseItem
+  parent: BaseBlueprint
   id: BaseBlueprintCommand
   name: command blueprint
   description: A blueprint for some machine. It can be inserted into a command techfab.
@@ -59,22 +47,16 @@
     sprite: _Carpmosia/Objects/Tools/blueprint_command.rsi
     state: icon
   - type: Item
-    size: Normal
-    shape:
-    - 0,0,2,0
     storedSprite:
       sprite: _Carpmosia/Objects/Tools/blueprint_command.rsi
       state: storage
-  - type: Blueprint
-  - type: StaticPrice
-    price: 1000
   - type: Tag
     tags:
     - BlueprintCommandTechFab
 
 - type: entity
   abstract: true
-  parent: BaseItem
+  parent: BaseBlueprint
   id: BaseBlueprintEngineering
   name: engineering blueprint
   description: A blueprint for some machine. It can be inserted into an engineering techfab.
@@ -83,22 +65,16 @@
     sprite: _Carpmosia/Objects/Tools/blueprint_engineering.rsi
     state: icon
   - type: Item
-    size: Normal
-    shape:
-    - 0,0,2,0
     storedSprite:
       sprite: _Carpmosia/Objects/Tools/blueprint_engineering.rsi
       state: storage
-  - type: Blueprint
-  - type: StaticPrice
-    price: 1000
   - type: Tag
     tags:
     - BlueprintEngineeringTechFab
 
 - type: entity
   abstract: true
-  parent: BaseItem
+  parent: BaseBlueprint
   id: BaseBlueprintMedical
   name: medical blueprint
   description: A blueprint for some machine. It can be inserted into a medical techfab.
@@ -107,22 +83,16 @@
     sprite: _Carpmosia/Objects/Tools/blueprint_medical.rsi
     state: icon
   - type: Item
-    size: Normal
-    shape:
-    - 0,0,2,0
     storedSprite:
       sprite: _Carpmosia/Objects/Tools/blueprint_medical.rsi
       state: storage
-  - type: Blueprint
-  - type: StaticPrice
-    price: 1000
   - type: Tag
     tags:
     - BlueprintMedicalTechFab
 
 - type: entity
   abstract: true
-  parent: BaseItem
+  parent: BaseBlueprint
   id: BaseBlueprintScience
   name: science blueprint
   description: A blueprint for some machine. It can be inserted into a science techfab.
@@ -131,22 +101,16 @@
     sprite: _Carpmosia/Objects/Tools/blueprint_science.rsi
     state: icon
   - type: Item
-    size: Normal
-    shape:
-    - 0,0,2,0
     storedSprite:
       sprite: _Carpmosia/Objects/Tools/blueprint_science.rsi
       state: storage
-  - type: Blueprint
-  - type: StaticPrice
-    price: 1000
   - type: Tag
     tags:
     - BlueprintScienceTechFab
 
 - type: entity
   abstract: true
-  parent: BaseItem
+  parent: BaseBlueprint
   id: BaseBlueprintSecurity
   name: security blueprint
   description: A blueprint for some machine. It can be inserted into a security techfab.
@@ -155,22 +119,16 @@
     sprite: _Carpmosia/Objects/Tools/blueprint_security.rsi
     state: icon
   - type: Item
-    size: Normal
-    shape:
-    - 0,0,2,0
     storedSprite:
       sprite: _Carpmosia/Objects/Tools/blueprint_security.rsi
       state: storage
-  - type: Blueprint
-  - type: StaticPrice
-    price: 1000
   - type: Tag
     tags:
     - BlueprintSecurityTechFab
 
 - type: entity
   abstract: true
-  parent: BaseItem
+  parent: BaseBlueprint
   id: BaseBlueprintService
   name: service blueprint
   description: A blueprint for some machine. It can be inserted into a service techfab.
@@ -179,15 +137,9 @@
     sprite: _Carpmosia/Objects/Tools/blueprint_service.rsi
     state: icon
   - type: Item
-    size: Normal
-    shape:
-    - 0,0,2,0
     storedSprite:
       sprite: _Carpmosia/Objects/Tools/blueprint_service.rsi
       state: storage
-  - type: Blueprint
-  - type: StaticPrice
-    price: 1000
   - type: Tag
     tags:
     - BlueprintServiceTechFab
@@ -195,7 +147,7 @@
 #   Aperture Cards:
 - type: entity
   abstract: true
-  parent: BaseItem
+  parent: BaseBlueprint
   id: BaseApertureCardCircuitboard
   name: circuitboard aperture card
   description: A punch card with holes and a microfilm containing schematics for a circuitboard. It can be inserted into a circuit imprinter.
@@ -204,15 +156,9 @@
     sprite: _Carpmosia/Objects/Tools/aperture_card_circuitboard.rsi
     state: icon
   - type: Item
-    size: Normal
-    shape:
-    - 0,0,2,0
     storedSprite:
       sprite: _Carpmosia/Objects/Tools/aperture_card_circuitboard.rsi
       state: storage
-  - type: Blueprint
-  - type: StaticPrice
-    price: 1000
   - type: Tag
     tags:
     - BlueprintCircuitImprinter
