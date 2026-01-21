@@ -1,11 +1,11 @@
 # Base blueprint prototypes:
 #   Blueprints:
 - type: entity
+  abstract: true
   parent: BaseItem
   id: BaseBlueprintAmmo
   name: ammo blueprint
   description: A blueprint for some machine. It can be inserted into an ammo techfab.
-  abstract: true
   components:
   - type: Sprite
     sprite: _Carpmosia/Objects/Tools/blueprint_ammo.rsi
@@ -25,11 +25,11 @@
     - BlueprintAmmoTechFab
 
 - type: entity
+  abstract: true
   parent: BaseItem
   id: BaseBlueprintCargo
   name: cargo blueprint
   description: A blueprint for some machine. It can be inserted into a cargo techfab.
-  abstract: true
   components:
   - type: Sprite
     sprite: _Carpmosia/Objects/Tools/blueprint_cargo.rsi
@@ -49,11 +49,11 @@
     - BlueprintCargoTechFab
 
 - type: entity
+  abstract: true
   parent: BaseItem
   id: BaseBlueprintCommand
   name: command blueprint
   description: A blueprint for some machine. It can be inserted into a command techfab.
-  abstract: true
   components:
   - type: Sprite
     sprite: _Carpmosia/Objects/Tools/blueprint_command.rsi
@@ -73,11 +73,11 @@
     - BlueprintCommandTechFab
 
 - type: entity
+  abstract: true
   parent: BaseItem
   id: BaseBlueprintEngineering
   name: engineering blueprint
   description: A blueprint for some machine. It can be inserted into an engineering techfab.
-  abstract: true
   components:
   - type: Sprite
     sprite: _Carpmosia/Objects/Tools/blueprint_engineering.rsi
@@ -97,11 +97,11 @@
     - BlueprintEngineeringTechFab
 
 - type: entity
+  abstract: true
   parent: BaseItem
   id: BaseBlueprintMedical
   name: medical blueprint
   description: A blueprint for some machine. It can be inserted into a medical techfab.
-  abstract: true
   components:
   - type: Sprite
     sprite: _Carpmosia/Objects/Tools/blueprint_medical.rsi
@@ -121,11 +121,11 @@
     - BlueprintMedicalTechFab
 
 - type: entity
+  abstract: true
   parent: BaseItem
   id: BaseBlueprintScience
   name: science blueprint
   description: A blueprint for some machine. It can be inserted into a science techfab.
-  abstract: true
   components:
   - type: Sprite
     sprite: _Carpmosia/Objects/Tools/blueprint_science.rsi
@@ -145,11 +145,11 @@
     - BlueprintScienceTechFab
 
 - type: entity
+  abstract: true
   parent: BaseItem
   id: BaseBlueprintSecurity
   name: security blueprint
   description: A blueprint for some machine. It can be inserted into a security techfab.
-  abstract: true
   components:
   - type: Sprite
     sprite: _Carpmosia/Objects/Tools/blueprint_security.rsi
@@ -169,11 +169,11 @@
     - BlueprintSecurityTechFab
 
 - type: entity
+  abstract: true
   parent: BaseItem
   id: BaseBlueprintService
   name: service blueprint
   description: A blueprint for some machine. It can be inserted into a service techfab.
-  abstract: true
   components:
   - type: Sprite
     sprite: _Carpmosia/Objects/Tools/blueprint_service.rsi
@@ -194,11 +194,11 @@
 
 #   Aperture Cards:
 - type: entity
+  abstract: true
   parent: BaseItem
   id: BaseApertureCardCircuitboard
   name: circuitboard aperture card
   description: A punch card with holes and a microfilm containing schematics for a circuitboard. It can be inserted into a circuit imprinter.
-  abstract: true
   components:
   - type: Sprite
     sprite: _Carpmosia/Objects/Tools/aperture_card_circuitboard.rsi

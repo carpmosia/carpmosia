@@ -270,7 +270,8 @@
     whitelist: *StandardMaterialWhitelist
   - type: OreSiloClient
   - type: RequireProjectileTarget
-  - type: BlueprintReceiver # Carpmosia-start - Depratmental blueprints.
+  # Carpmosia-start - Depratmental blueprints.
+  - type: BlueprintReceiver
     whitelist:
       tags:
       - BlueprintCircuitImprinter
@@ -281,7 +282,8 @@
       blueprint: !type:Container
   - type: EmptyOnMachineDeconstruct
     containers:
-    - blueprint # Carpmosia-end - Depratmental blueprints.
+    - blueprint
+  # Carpmosia-end - Depratmental blueprints.
 
 - type: entity
   id: CircuitImprinterHyperConvection
@@ -415,7 +417,8 @@
   - type: OreSiloClient
   - type: LatheAnnouncing
     channels: [Security]
-  - type: BlueprintReceiver # Carpmosia-start - Depratmental blueprints.
+  # Carpmosia-start - Depratmental blueprints.
+  - type: BlueprintReceiver
     whitelist:
       tags:
       - BlueprintSecurityTechFab
@@ -426,7 +429,8 @@
       blueprint: !type:Container
   - type: EmptyOnMachineDeconstruct
     containers:
-    - blueprint # Carpmosia-end - Depratmental blueprints.
+    - blueprint
+  # Carpmosia-end - Depratmental blueprints.
 
 - type: entity
   id: AmmoTechFab
@@ -460,7 +464,8 @@
     - type: MaterialStorage
       whitelist: *StandardMaterialWhitelist
     - type: OreSiloClient
-    - type: BlueprintReceiver # Carpmosia-start - Depratmental blueprints.
+    # Carpmosia-start - Depratmental blueprints.
+    - type: BlueprintReceiver
       whitelist:
         tags:
         - BlueprintAmmoTechFab
@@ -471,7 +476,8 @@
         blueprint: !type:Container
     - type: EmptyOnMachineDeconstruct
       containers:
-      - blueprint # Carpmosia-end - Depratmental blueprints.
+      - blueprint
+    # Carpmosia-end - Depratmental blueprints.
 
 - type: entity
   id: MedicalTechFab
@@ -512,7 +518,8 @@
   - type: OreSiloClient
   - type: LatheAnnouncing
     channels: [Medical]
-  - type: BlueprintReceiver # Carpmosia-start - Depratmental blueprints.
+  # Carpmosia-start - Depratmental blueprints.
+  - type: BlueprintReceiver
     whitelist:
       tags:
       - BlueprintMedicalTechFab
@@ -523,7 +530,8 @@
       blueprint: !type:Container
   - type: EmptyOnMachineDeconstruct
     containers:
-    - blueprint # Carpmosia-end - Depratmental blueprints.
+    - blueprint
+  # Carpmosia-end - Depratmental blueprints.
 
 - type: entity
   parent: BaseLathe
