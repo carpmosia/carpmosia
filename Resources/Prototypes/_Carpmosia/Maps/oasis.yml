@@ -1,7 +1,9 @@
 - type: gameMap
-  id: Oasis2
-  mapName: 'Oasis-II'
-  mapPath: /Maps/_Carpmosia/oasis-2.yml
+  id: CarpOasis
+  mapName: 'Oasis'
+  mapPath: /Maps/_Carpmosia/oasis.yml
+  mapIcon: /Textures/_Carpmosia/Interface/MapVote/carp.png
+  #mapPreview: TODO
   minPlayers: 35
   stations:
     Oasis:

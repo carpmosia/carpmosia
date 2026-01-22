@@ -1,7 +1,9 @@
 - type: gameMap
-  id: Saltern2
-  mapName: 'Saltern-II'
-  mapPath: /Maps/_Carpmosia/saltern-2.yml
+  id: CarpSaltern
+  mapName: 'Saltern'
+  mapPath: /Maps/_Carpmosia/saltern.yml
+  mapIcon: /Textures/_Carpmosia/Interface/MapVote/carp.png
+  #mapPreview: TODO
   minPlayers: 0
   maxPlayers: 30
   fallback: true
