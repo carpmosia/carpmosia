@@ -1,7 +1,7 @@
-<!-- Upstream guidelines reference: https://docs.spacestation14.io/en/getting-started/pr-guideline -->
-<!-- Please do not remove any of these sections, read the comments and fill this out like a form -->
+<!-- Read upstream guidelines: https://docs.spacestation14.io/en/getting-started/pr-guideline -->
+<!-- Not following the guidelines or removing any of these sections may result in your PR getting closed. -->
 
-## Player information
+## General information
 <!-- Describe your PR as you would to a regular player, omit technical details.
        Make sure to cover all player facing changes as well and as detailed
        as you can, as this will be forwarded to Discord later. -->
