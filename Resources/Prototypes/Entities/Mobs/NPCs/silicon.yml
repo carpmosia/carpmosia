@@ -465,6 +465,13 @@
     hands:
       hand:
         location: Middle
+        whitelist:
+          components:
+          - Delivery
+          tags:
+          - Paper
+          - Document
+        emptyRepresentative: Paper
     sortedHands:
     - hand
     showInHands: false
