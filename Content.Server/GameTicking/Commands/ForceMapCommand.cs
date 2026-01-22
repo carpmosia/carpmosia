@@ -50,6 +50,7 @@ namespace Content.Server.GameTicking.Commands
             {
                 var options = _prototypeManager
                     .EnumeratePrototypes<GameMapPrototype>()
+                    .Where(p => !p.ID.StartsWith("Legacy")) // Carpmosia-edit - Legacy maps
                     .Select(p => new CompletionOption(p.ID, p.MapName))
                     .OrderBy(p => p.Value);
 
