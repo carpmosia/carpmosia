@@ -20,12 +20,12 @@ public sealed class TicketPrinterSystem : SharedTicketPrinterSystem
     /// <param name="amount">Base amount of tickets to spawn</param>
     protected override void PrintTickets(Entity<TicketPrinterComponent> ent, float amount)
     {
-        var proto = ent.Comp.TicketProtoId;
-        var spawnAmount = ent.Comp.Remainder + amount * ent.Comp.TicketMultiplier;
-        if (spawnAmount <= 0 || string.IsNullOrEmpty(proto.ToString()))
-            return;
+        if (!_proto.Resolve(ent.Comp.TicketProtoId, out var proto)) //does it exist?
+            return; //Will return Invalid EntProtoId errors if trying to spawn an entity proto ID that doesn't exist.
 
-        if (!_proto.HasIndex(proto)) //does it exist?
+        var spawnAmount = ent.Comp.Remainder + amount * ent.Comp.TicketMultiplier; //apply multiplier, then add on any remainders of previous prints.
+
+        if (spawnAmount <= 0) //if we're somehow less than zero don't print
             return;
 
         var tickets = _stack.SpawnMultipleAtPosition(proto, (int)Math.Floor(spawnAmount), Transform(ent).Coordinates);

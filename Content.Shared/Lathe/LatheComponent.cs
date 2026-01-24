@@ -122,10 +122,11 @@ namespace Content.Shared.Lathe
     [ByRefEvent]
     public readonly record struct LatheStartPrintingEvent(LatheRecipePrototype Recipe);
 
+    // Carpmosia-start - Salvage Tickets
     /// <summary>
-    /// Carpmosia-start - Event raised on a lathe when it finishes producing a recipe.
+    /// Event raised on a lathe when it finishes producing a recipe.
     /// </summary>
-    /// <param name="Recipe">Recipe used</param>
+    /// <param name="Recipe">Recipe Used</param>
     [ByRefEvent]
     public readonly record struct LatheFinishPrintingEvent(LatheRecipePrototype Recipe);
     // Carpmosia-end - Salvage Tickets
