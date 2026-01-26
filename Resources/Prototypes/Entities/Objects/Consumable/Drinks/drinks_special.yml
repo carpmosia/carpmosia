@@ -46,10 +46,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 120 # Carpmosia-edit - reagentStorage
+        maxVol: 120 # Carpmosia-edit - Base 60 Chem
         reagents:
         - ReagentId: Tea
-          Quantity: 120 # Carpmosia-edit - reagentStorage
+          Quantity: 120 # Carpmosia-edit - Base 60 Chem
   - type: Sprite
     sprite: Objects/Consumable/Drinks/teapot.rsi
   - type: FitsInDispenser
@@ -116,7 +116,7 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 120 # Carpmosia-edit - reagentStorage
+        maxVol: 120 # Carpmosia-edit - Base 60 Chem
   - type: FitsInDispenser
     solution: drink
   - type: ExaminableSolution
@@ -131,7 +131,7 @@
       Steel: 50
   - type: Shakeable
   - type: ReactionMixer
-    mixOnInteract: false
+    mixerType: None
     reactionTypes:
     - Shake
 

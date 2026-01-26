@@ -13,6 +13,7 @@ using Content.Shared.Rounding;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Random; // Carpmosia-edit - APC/Alarm resprite
 using Robust.Shared.Timing;
 
 namespace Content.Server.Power.EntitySystems;
@@ -24,6 +25,7 @@ public sealed class ApcSystem : EntitySystem
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly EmagSystem _emag = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
+    [Dependency] private readonly IRobustRandom _random = default!; // Carpmosia-edit - APC/Alarm resprite
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
@@ -179,6 +181,12 @@ public sealed class ApcSystem : EntitySystem
 
                 if (TryComp(uid, out AppearanceComponent? appearance))
                 {
+                    // Carpmosia-start - APC/Alarm resprite
+                    if (newState == ApcChargeState.Emag)
+                    {
+                        _appearance.SetData(uid, ApcVisuals.EmagVarient, _random.Next(0, 1048576), appearance);
+                    }
+                    // Carpmosia-end - APC/Alarm resprite
                     _appearance.SetData(uid, ApcVisuals.ChargeState, newState, appearance);
                 }
             }
