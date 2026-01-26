@@ -1,0 +1,97 @@
+- type: entity
+  parent: BaseSign
+  id: MapBlueprintBase
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Misc/map_blueprints.rsi
+
+- type: entity
+  parent: MapBlueprintBase
+  id: MapBlueprintAmber
+  components:
+  - type: Sprite
+    state: amber
+
+- type: entity
+  parent: MapBlueprintBase
+  id: MapBlueprintFeint
+  components:
+  - type: Sprite
+    state: feint
+
+- type: entity
+  parent: MapBlueprintBase
+  id: MapBlueprintOasis
+  components:
+  - type: Sprite
+    state: oasis
+
+- type: entity
+  parent: MapBlueprintBase
+  id: MapBlueprintSaltern
+  components:
+  - type: Sprite
+    state: saltern
+
+- type: entity
+  parent: MapBlueprintBase
+  id: MapBlueprintBagel
+  components:
+  - type: Sprite
+    state: bagel
+
+- type: entity
+  parent: MapBlueprintBase
+  id: MapBlueprintBox
+  components:
+  - type: Sprite
+    state: box
+
+- type: entity
+  parent: MapBlueprintBase
+  id: MapBlueprintElkridge
+  components:
+  - type: Sprite
+    state: elkridge
+
+- type: entity
+  parent: MapBlueprintBase
+  id: MapBlueprintExo
+  components:
+  - type: Sprite
+    state: exo
+
+- type: entity
+  parent: MapBlueprintBase
+  id: MapBlueprintFland
+  components:
+  - type: Sprite
+    state: fland
+
+- type: entity
+  parent: MapBlueprintBase
+  id: MapBlueprintMarathon
+  components:
+  - type: Sprite
+    state: marathon
+
+- type: entity
+  parent: MapBlueprintBase
+  id: MapBlueprintPacked
+  components:
+  - type: Sprite
+    state: packed
+
+- type: entity
+  parent: MapBlueprintBase
+  id: MapBlueprintPlasma
+  components:
+  - type: Sprite
+    state: plasma
+
+- type: entity
+  parent: MapBlueprintBase
+  id: MapBlueprintSnowball
+  components:
+  - type: Sprite
+    state: snowball
