@@ -77,25 +77,25 @@ public abstract class SharedStationSpawningSystem : EntitySystem
 
         foreach (var group in loadout.SelectedLoadouts.OrderBy(x => roleProto.Groups.FindIndex(e => e == x.Key)).Reverse())
         {
-            if (PrototypeManager.Resolve(group.Key, out var groupProto))
+            if (!PrototypeManager.Resolve(group.Key, out var groupProto))
+                continue;
+
+            weight += groupProto.GroupWeight;
+            var singleWeght = weight / groupProto.Loadouts.Count;
+
+            foreach (var items in group.Value)
             {
-                weight += groupProto.GroupWeight;
-                var singleWeght = weight / groupProto.Loadouts.Count;
+                if (!PrototypeManager.Resolve(items.Prototype, out var loadoutProto))
+                    continue;
 
-                foreach (var items in group.Value)
+                if (loadoutProto.Lawset == null)
                 {
-                    if (!PrototypeManager.Resolve(items.Prototype, out var loadoutProto))
-                        continue;
-
-                    if (loadoutProto.Lawset == null)
-                    {
-                        Log.Error($"Unable to find lawset for loadout {items.Prototype}");
-                        continue;
-                    }
-
-                    weights.Add(loadoutProto.Lawset.Value, singleWeght);
-                    weight -= singleWeght * group.Value.Count;
+                    Log.Error($"Unable to find lawset for loadout {items.Prototype}");
+                    continue;
                 }
+
+                weights.Add(loadoutProto.Lawset.Value, singleWeght);
+                weight -= singleWeght * group.Value.Count;
             }
         }
 
