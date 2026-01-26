@@ -1,6 +1,7 @@
 - type: loadoutGroup
   id: StationAiPrimaryLawsets
   name: loadout-group-primary-lawsets
+  groupWeight: 60
   minLimit: 2
   maxLimit: 0
   defaultSelected: 3
@@ -12,6 +13,7 @@
 - type: loadoutGroup
   id: StationAiSecondaryLawsets
   name: loadout-group-secondary-lawsets
+  groupWeight: 25
   minLimit: 0
   maxLimit: 0
   loadouts:
@@ -22,6 +24,7 @@
 - type: loadoutGroup
   id: StationAiTertiaryLawsets
   name: loadout-group-tertiary-lawsets
+  groupWeight: 15
   minLimit: 0
   maxLimit: 0
   loadouts:
