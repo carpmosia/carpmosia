@@ -12,6 +12,8 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Stacks;
+using Content.Shared.BloodBound.Components;
+using System.Collections.Generic;
 
 namespace Content.Server.Objectives.Systems;
 
@@ -98,62 +100,64 @@ public sealed class StealConditionSystem : EntitySystem
 
     private float GetProgress(Entity<MindComponent> mind, StealConditionComponent condition)
     {
-        if (!_containerQuery.TryGetComponent(mind.Comp.OwnedEntity, out var currentManager))
-            return 0;
-
         var containerStack = new Stack<ContainerManagerComponent>();
         var count = 0;
 
-        _countedItems.Clear();
-
-        //check stealAreas
-        if (condition.CheckStealAreas)
+        foreach(var ally in CheckAllies(mind))
         {
-            var areasQuery = AllEntityQuery<StealAreaComponent, TransformComponent>();
-            while (areasQuery.MoveNext(out var uid, out var area, out var xform))
-            {
-                if (!area.Owners.Contains(mind.Owner))
-                    continue;
+            if (!_containerQuery.TryGetComponent(ally, out var currentManager))
+                return 0;
 
-                _nearestEnts.Clear();
-                _lookup.GetEntitiesInRange<TransformComponent>(xform.Coordinates, area.Range, _nearestEnts);
-                foreach (var ent in _nearestEnts)
+            _countedItems.Clear();
+
+            //check stealAreas
+            if (condition.CheckStealAreas)
+            {
+                var areasQuery = AllEntityQuery<StealAreaComponent, TransformComponent>();
+                while (areasQuery.MoveNext(out var uid, out var area, out var xform))
                 {
-                    if (!_interaction.InRangeUnobstructed((uid, xform), (ent, ent.Comp), range: area.Range))
+                    if (!area.Owners.Contains(mind.Owner))
                         continue;
 
-                    CheckEntity(ent, condition, ref containerStack, ref count);
+                    _nearestEnts.Clear();
+                    _lookup.GetEntitiesInRange<TransformComponent>(xform.Coordinates, area.Range, _nearestEnts);
+                    foreach (var ent in _nearestEnts)
+                    {
+                        if (!_interaction.InRangeUnobstructed((uid, xform), (ent, ent.Comp), range: area.Range))
+                            continue;
+
+                        CheckEntity(ent, condition, ref containerStack, ref count);
+                    }
                 }
             }
-        }
-
-        //check pulling object
-        if (TryComp<PullerComponent>(mind.Comp.OwnedEntity, out var pull)) //TO DO: to make the code prettier? don't like the repetition
-        {
-            var pulledEntity = pull.Pulling;
-            if (pulledEntity != null)
+            //check pulling object
+            if (TryComp<PullerComponent>(ally, out var pull)) //TO DO: to make the code prettier? don't like the repetition
             {
-                CheckEntity(pulledEntity.Value, condition, ref containerStack, ref count);
-            }
-        }
-
-        // recursively check each container for the item
-        // checks inventory, bag, implants, etc.
-        do
-        {
-            foreach (var container in currentManager.Containers.Values)
-            {
-                foreach (var entity in container.ContainedEntities)
+                var pulledEntity = pull.Pulling;
+                if (pulledEntity != null)
                 {
-                    // check if this is the item
-                    count += CheckStealTarget(entity, condition);
-
-                    // if it is a container check its contents
-                    if (_containerQuery.TryGetComponent(entity, out var containerManager))
-                        containerStack.Push(containerManager);
+                    CheckEntity(pulledEntity.Value, condition, ref containerStack, ref count);
                 }
             }
-        } while (containerStack.TryPop(out currentManager));
+
+            // recursively check each container for the item
+            // checks inventory, bag, implants, etc.
+            do
+            {
+                foreach (var container in currentManager.Containers.Values)
+                {
+                    foreach (var entity in container.ContainedEntities)
+                    {
+                        // check if this is the item
+                        count += CheckStealTarget(entity, condition);
+
+                        // if it is a container check its contents
+                        if (_containerQuery.TryGetComponent(entity, out var containerManager))
+                            containerStack.Push(containerManager);
+                    }
+                }
+            } while (containerStack.TryPop(out currentManager));
+        }
 
         var result = count / (float)condition.CollectionSize;
         result = Math.Clamp(result, 0, 1);
@@ -204,5 +208,17 @@ public sealed class StealConditionSystem : EntitySystem
         _countedItems.Add(entity);
 
         return TryComp<StackComponent>(entity, out var stack) ? stack.Count : 1;
+    }
+
+    private List<EntityUid?> CheckAllies(Entity<MindComponent> mind)
+    {
+        List<EntityUid?> ents = new();
+        ents.Add(mind.Comp.OwnedEntity);
+
+        // TODO: Insert other checks for familiars etc
+        if(TryComp<BloodBoundComponent>(mind.Comp.OwnedEntity, out var bloodBoundComp))
+            ents.Add(bloodBoundComp.Bound);
+
+        return ents;
     }
 }
