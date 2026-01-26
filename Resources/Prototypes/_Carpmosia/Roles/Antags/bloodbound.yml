@@ -1,0 +1,24 @@
+- type: antag
+  id: BloodBound
+  name: roles-antag-blood-bound-name
+  playTimeTracker: AntagBloodBound
+  color: '#c71585'
+  antagonist: true
+  setPreference: true
+  objective: roles-antag-blood-bound-objective
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 1h
+  guides: [ BloodBound ]
+
+# not actually given out, only used to check the preference
+- type: antag
+  id: BloodBoundConvertible
+  name: roles-antag-blood-bound-convertible-name
+  color: '#c71585'
+  setPreference: true
+  objective: roles-antag-blood-bound-objective
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 1h
+  guides: [ BloodBound ]

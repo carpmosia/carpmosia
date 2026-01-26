@@ -1,14 +1,15 @@
-<Control xmlns="https://spacestation14.io" MinWidth="300" MaxWidth="500">
+<Control xmlns="https://spacestation14.io" MinWidth="300" MaxWidth="800"> <!-- Carpmosia-edit - Better map vote -->
     <PanelContainer StyleClasses="BackgroundPanel" />
-    <BoxContainer Margin="4" Orientation="Vertical">
+    <BoxContainer Margin="8" Orientation="Vertical"> <!-- Carpmosia-edit - Better map vote -->
         <Label Name="VoteCaller" />
         <RichTextLabel Name="VoteTitle" />
         <Button Margin="4 4" Name="FollowVoteTarget" Text="{Loc 'ui-vote-follow-button-popup'}" Visible="False"></Button>
 
         <GridContainer Columns="3" Name="VoteOptionsContainer"/>
-        <BoxContainer Orientation="Horizontal">
-            <ProgressBar Margin="4" HorizontalExpand="True" Name="TimeLeftBar" MinValue="0" MaxValue="1" />
-            <Label Name="TimeLeftText" />
-        </BoxContainer>
+        <!-- Carpmosia-start - Better map vote -->
+        <ProgressBar Margin="0 4" HorizontalExpand="True" Name="TimeLeftBar" MinValue="0" MaxValue="1">
+            <Label HorizontalAlignment="Center" Name="TimeLeftText" />
+        </ProgressBar>
+        <!-- Carpmosia-end - Better map vote -->
     </BoxContainer>
 </Control>

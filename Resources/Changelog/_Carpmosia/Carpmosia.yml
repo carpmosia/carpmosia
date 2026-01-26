@@ -1100,4 +1100,75 @@
   id: 203
   time: '2026-01-05T04:16:34.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/228
+- author: Apricite
+  changes:
+  - message: Added multiweh plushie to the loadout. It requires 20 hours in every
+      job to unlock.
+    type: Add
+  id: 204
+  time: '2026-01-06T10:15:21.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/173
+- author: imatsoup
+  changes:
+  - message: 'Ports a new Antag from Harmony: Blood Bound'
+    type: Add
+  id: 205
+  time: '2026-01-09T22:54:26.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/193
+- author: SnappingOpossum
+  changes:
+  - message: Jet injectors can now draw and inject from closed containers.
+    type: Tweak
+  - message: Hyposprays can once again draw and inject from closed containers.
+    type: Fix
+  id: 206
+  time: '2026-01-11T01:25:34.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/229
+- author: korczoczek
+  changes:
+  - message: 'On Saltern-2: Added a grill to the kitchen'
+    type: Fix
+  id: 207
+  time: '2026-01-15T00:41:36.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/214
+- author: Freelanci
+  changes:
+  - message: 'On Amber: Added an autolathe to engineering front.'
+    type: Add
+  - message: 'On Amber: All external airlock pairs are now resistant to the effects
+      of the greytide virus event. (No more mass spacing if the event hits engi).
+      These doors will still get locked up if the event hits.'
+    type: Tweak
+  - message: 'On Amber: The 3x3 waste gas tank in atmos has been divided into two
+      1x3 tanks.'
+    type: Tweak
+  - message: 'On Amber: The waste line in atmos has been redone.'
+    type: Tweak
+  id: 208
+  time: '2026-01-15T00:54:17.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/215
+- author: stuff3541
+  changes:
+  - message: Split nuclearoperations_remake_full into 3 separate files for more controllable
+      music.
+    type: Tweak
+  id: 209
+  time: '2026-01-15T02:00:49.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/234
+- author: ArtisticRoomba
+  changes:
+  - message: Improved performance for the AI navmap when idle on lower end machines.
+    type: Fix
+  id: 210
+  time: '2026-01-18T02:50:32.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/239
+- author: Atakku
+  changes:
+  - message: Saltern-2 has been renamed to Saltern
+    type: Tweak
+  - message: Oasis-2 has been renamed to Oasis
+    type: Tweak
+  id: 211
+  time: '2026-01-22T15:12:08.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/240
 Order: -1
