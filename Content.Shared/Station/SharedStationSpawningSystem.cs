@@ -77,18 +77,15 @@ public abstract class SharedStationSpawningSystem : EntitySystem
 
         foreach (var group in loadout.SelectedLoadouts.OrderBy(x => roleProto.Groups.FindIndex(e => e == x.Key)).Reverse())
         {
-            if (PrototypeManager.TryIndex(group.Key, out var groupProto))
+            if (PrototypeManager.Resolve(group.Key, out var groupProto))
             {
                 weight += groupProto.GroupWeight;
                 var singleWeght = weight / groupProto.Loadouts.Count;
 
                 foreach (var items in group.Value)
                 {
-                    if (!PrototypeManager.TryIndex(items.Prototype, out var loadoutProto))
-                    {
-                        Log.Error($"Unable to find loadout prototype for {items.Prototype}");
+                    if (!PrototypeManager.Resolve(items.Prototype, out var loadoutProto))
                         continue;
-                    }
 
                     if (loadoutProto.Lawset == null)
                     {
@@ -104,11 +101,8 @@ public abstract class SharedStationSpawningSystem : EntitySystem
 
         var pick = _random.Pick(weights);
 
-        if (!PrototypeManager.TryIndex(pick, out var lawset))
-        {
-            Log.Error($"Unable to find lawset prototype for {pick}");
+        if (!PrototypeManager.Resolve(pick, out var lawset))
             return;
-        }
 
         siliconLaw.Laws = lawset;
         siliconLaw.Lawset = new SiliconLawset()
