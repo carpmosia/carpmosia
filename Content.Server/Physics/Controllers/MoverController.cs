@@ -2,6 +2,7 @@ using System.Numerics;
 using System.Runtime.CompilerServices;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
+using Content.Server.PID; // Carpmosia-edit - rotate shuttle along movement vector
 using Content.Shared.Friction;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
@@ -483,8 +484,6 @@ public sealed class MoverController : SharedMoverController
             {
                 // Get velocity relative to the shuttle
                 var shuttleVelocity = (-shuttleNorthAngle).RotateVec(body.LinearVelocity);
-
-                var torque = 0f;
                 var torqueMul = body.InvI * frameTime;
 
                 //find angle between current orientation and movement vector
@@ -494,24 +493,23 @@ public sealed class MoverController : SharedMoverController
                 angle *= MathF.Sign(shuttleVelocity.X);
 
                 //perform PI controller calculation
-                var error = alignInput > 0f ? body.AngularVelocity - angle : MathHelper.DegreesToRadians(180f) - (body.AngularVelocity - angle);
+                var pidInput = body.AngularVelocity;
+                var setpoint = alignInput > 0f ? MathHelper.DegreesToRadians(shuttle.TargetSpeed) : -MathHelper.DegreesToRadians(shuttle.TargetSpeed);
 
-                //proportional term
-                var pOut = shuttle.Kp * error;
-                //integration term
-                shuttle.Integral += error * frameTime;
-                var iOut = shuttle.Ki * shuttle.Integral;
-                //derivative term
-                var dOut = shuttle.Kd * ((error - shuttle.PreviousError) / frameTime);
-                shuttle.PreviousError = error;
 
-                torque = -(pOut + iOut + dOut);
+
+                var torque = -PIDSystem.Controller(pidInput, setpoint, ref shuttle.AccParams, frameTime);
 
                 torque = Math.Clamp(torque,
                     (-ShuttleComponent.MaxAngularVelocity - body.AngularVelocity) / torqueMul,
                     (ShuttleComponent.MaxAngularVelocity - body.AngularVelocity) / torqueMul);
 
-                _sawmill.Debug(MathHelper.RadiansToDegrees(body.AngularVelocity).ToString("F6") + " " + MathHelper.RadiansToDegrees(error).ToString("F6") + " " + torque.ToString("F6"));
+                _sawmill.Debug(
+                    MathHelper.RadiansToDegrees(body.AngularVelocity).ToString("F6") + " " +
+                    MathHelper.RadiansToDegrees(pidInput - setpoint).ToString("F6") + " " +
+                    torque.ToString("F6") + " " +
+                    shuttle.AccParams.Integral.ToString("F6")
+                    );
 
                 if (!torque.Equals(0f))
                 {
@@ -525,18 +523,18 @@ public sealed class MoverController : SharedMoverController
 
             }
             //don't immediatelly zero out accrued integral
-            else if (!MathHelper.CloseTo(shuttle.Integral, 0f, 2f))
+            else if (!MathHelper.CloseTo(shuttle.AccParams.Integral, 0f, 2f))
             {
-                shuttle.Integral += shuttle.Integral > 0f ? -MathF.Sqrt(MathF.Abs(shuttle.Integral)) : MathF.Sqrt(MathF.Abs(shuttle.Integral));
+                shuttle.AccParams.Integral += shuttle.AccParams.Integral > 0f ? -MathF.Sqrt(MathF.Abs(shuttle.AccParams.Integral)) : MathF.Sqrt(MathF.Abs(shuttle.AccParams.Integral));
             }
             else
             {
-                shuttle.Integral = 0f;
+                shuttle.AccParams.Integral = 0f;
             }
 
             if (alignInput.Equals(0f))
             {
-                shuttle.PreviousError = 0f;
+                shuttle.AccParams.PrevError = 0f;
             }
             /// Carpmosia-end - rotate shuttle along movement vector
 

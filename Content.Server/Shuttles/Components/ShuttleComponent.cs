@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Server.PID; // Carpmosia-edit - rotate shuttle along movement vector
 
 namespace Content.Server.Shuttles.Components
 {
@@ -70,34 +71,11 @@ namespace Content.Server.Shuttles.Components
         public float DampingModifier;
 
         /// Carpmosia-start - rotate shuttle along movement vector
-        /// <summary>
-        /// PID Controller proportional term
-        /// </summary>
         [DataField]
-        public float Kp = 80f;
-        /// <summary>
-        /// PID Controller integral term
-        /// </summary>
-        [DataField]
-        public float Ki = 20f;
-        /// <summary>
-        /// PID Controller derivative term
-        /// </summary>
-        [DataField]
-        public float Kd = 5f;
-        /// <summary>
-        /// PID Controller accumulated integral
-        /// </summary>
-        [DataField]
-        public float Integral = 0f;
-        /// <summary>
-        /// Used for calculating the derivative term in the PID controller
-        /// </summary>
-        [ViewVariables]
-        public float PreviousError = 0f;
+        public PIDParams AccParams = new(80f, 20f, 5f, 100f, -100f);
 
         [DataField]
-        public float TargetSpeed = 0f;
+        public float TargetSpeed = 100f;
         /// Carpmosia-end - rotate shuttle along movement vector
     }
 }

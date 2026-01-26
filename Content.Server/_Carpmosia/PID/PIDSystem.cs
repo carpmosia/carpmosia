@@ -1,13 +1,12 @@
-using Content.Server.PID.Components;
 
-namespace Content.Server.PID.Systems;
+namespace Content.Server.PID;
 
 /// <summary>
 ///     Provides a rudimentary discrete PID controller function with min/max Value limiters
 ///     and integral runaway protection
 /// </summary>
 
-public class PID
+public static class PIDSystem
 {
     /// <summary>
     ///

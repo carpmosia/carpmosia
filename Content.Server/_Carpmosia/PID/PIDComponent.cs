@@ -1,6 +1,5 @@
-namespace Content.Server.PID.Components;
+namespace Content.Server.PID;
 
-[DataDefinition]
 public struct PIDParams
 {
     /// <summary>
