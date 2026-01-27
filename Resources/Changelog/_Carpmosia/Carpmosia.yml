@@ -1187,4 +1187,17 @@
   id: 213
   time: '2026-01-26T11:18:47.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/176
+- author: Atakku
+  changes:
+  - message: Station AI can now customize starting lawsets in the loadouts!
+    type: Tweak
+  - message: 'Primary lawset group: Crewsimov, NTDefault, Corporate'
+    type: Add
+  - message: 'Secondary lawset group: Lawbringer, Paladin, Efficiency'
+    type: Add
+  - message: 'Tertiary lawset group: Nutimov, GameMaster, LiveLetLive'
+    type: Add
+  id: 214
+  time: '2026-01-27T00:30:30.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/191
 Order: -1
