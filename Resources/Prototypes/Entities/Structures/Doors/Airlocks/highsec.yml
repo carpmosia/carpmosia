@@ -70,9 +70,9 @@
       types:
         Blunt: 50
     openSound:
-      path: /Audio/_Carpmosia/Machines/airlock_open.ogg # Carpmosia-edit - Paradise airlock sounds
+      path: /Audio/_Carpmosia/Machines/airlock_open.ogg # Carpmosia-edit - New highsec sounds
     closeSound:
-      path: /Audio/_Carpmosia/Machines/airlock_close.ogg # Carpmosia-edit - Paradise airlock sounds
+      path: /Audio/_Carpmosia/Machines/airlock_close.ogg # Carpmosia-edit - New highsec sounds
     denySound:
       path: /Audio/Machines/airlock_deny.ogg
   - type: Weldable
@@ -81,6 +81,10 @@
   - type: Airlock
   - type: NavMapDoor
   - type: DoorBolt
+    boltUpSound:
+      path: /Audio/_Carpmosia/Machines/boltsup.ogg # Carpmosia-edit - New highsec sounds
+    boltDownSound:
+      path: /Audio/_Carpmosia/Machines/boltsdown.ogg # Carpmosia-edit - New highsec sounds
   - type: AccessReader
     containerAccessProvider: board
   - type: Appearance
