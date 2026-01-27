@@ -80,7 +80,10 @@ public abstract class SharedStationSpawningSystem : EntitySystem
             if (!PrototypeManager.Resolve(group.Key, out var groupProto))
                 continue;
 
-            weight += groupProto.GroupWeight;
+            if (groupProto.GroupWeight == null)
+                continue;
+
+            weight += groupProto.GroupWeight.Value;
             var singleWeght = weight / groupProto.Loadouts.Count;
 
             foreach (var items in group.Value)
@@ -98,6 +101,9 @@ public abstract class SharedStationSpawningSystem : EntitySystem
                 weight -= singleWeght * group.Value.Count;
             }
         }
+
+        if (weights.Count == 0)
+            return;
 
         var pick = _random.Pick(weights);
 

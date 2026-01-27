@@ -53,7 +53,7 @@ public sealed partial class LoadoutGroupPrototype : IPrototype, IInheritingProto
 
     // Carpmosia-start - Lawset loadouts
     [DataField]
-    public float GroupWeight = 0;
+    public float? GroupWeight;
     // Carpmosia-end - Lawset loadouts
 
     [AlwaysPushInheritance]
