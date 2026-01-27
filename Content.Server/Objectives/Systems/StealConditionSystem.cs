@@ -12,7 +12,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Stacks;
-using Content.Shared.BloodBound.Components;
+using Content.Shared.BloodBound.Components; // Carpmosia-edit - Shared Blood Bound Objectives
 using System.Collections.Generic;
 
 namespace Content.Server.Objectives.Systems;
@@ -103,6 +103,7 @@ public sealed class StealConditionSystem : EntitySystem
         var containerStack = new Stack<ContainerManagerComponent>();
         var count = 0;
 
+        // Carpmosia-start - Shared Blood Bound Objectives
         foreach(var ally in CheckAllies(mind))
         {
             if (!_containerQuery.TryGetComponent(ally, out var currentManager))
@@ -158,6 +159,7 @@ public sealed class StealConditionSystem : EntitySystem
                 }
             } while (containerStack.TryPop(out currentManager));
         }
+        // Carpmosia-end - Shared Blood Bound Objectives
 
         var result = count / (float)condition.CollectionSize;
         result = Math.Clamp(result, 0, 1);
@@ -210,6 +212,7 @@ public sealed class StealConditionSystem : EntitySystem
         return TryComp<StackComponent>(entity, out var stack) ? stack.Count : 1;
     }
 
+    // Carpmosia-start - Shared Blood Bound Objectives
     private List<EntityUid?> CheckAllies(Entity<MindComponent> mind)
     {
         List<EntityUid?> ents = new();
@@ -221,4 +224,5 @@ public sealed class StealConditionSystem : EntitySystem
 
         return ents;
     }
+    // Carpmosia-end - Shared Blood Bound Objectives
 }
