@@ -13,7 +13,6 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Stacks;
 using Content.Shared.BloodBound.Components; // Carpmosia-edit - Shared Blood Bound Objectives
-using System.Collections.Generic;
 
 namespace Content.Server.Objectives.Systems;
 
