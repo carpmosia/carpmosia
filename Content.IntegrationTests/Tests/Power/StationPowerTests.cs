@@ -35,10 +35,10 @@ public sealed class StationPowerTests
         "Reach",
         "Exo",
         // Carpmosia-start - Carpmaps
-        "Amber",
-        "Feint",
-        "Oasis2",
-        "Saltern2",
+        "CarpAmber",
+        "CarpFeint",
+        "CarpOasis",
+        "CarpSaltern",
         // Carpmosia-end - Carpmaps
     ];
 

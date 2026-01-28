@@ -104,25 +104,10 @@ namespace Content.IntegrationTests.Tests
             "Exo",
             "Snowball",
             // Carpmosia-start - Carpmaps
-            "Amber",
-            "Feint",
-            "Oasis2",
-            "Saltern2",
-            // Legacy maps
-            "Meta",
-            "Omega",
-            "Core",
-            "Train",
-            "Gate",
-            "Convex",
-            "Loop",
-            "Cog",
-            "Gemini",
-            "Atlas",
-            "Cluster",
-            "Europa",
-            "Aspid",
-            "Barratry",
+            "CarpAmber",
+            "CarpFeint",
+            "CarpOasis",
+            "CarpSaltern",
             // Carpmosia-end - Carpmaps
         };
 
@@ -534,6 +519,7 @@ namespace Content.IntegrationTests.Tests
             var gameMaps = protoMan.EnumeratePrototypes<GameMapPrototype>()
                 .Where(x => !pair.IsTestPrototype(x))
                 .Select(x => x.ID)
+                .Where(x => !x.StartsWith("Legacy")) // Carpmosia-edit - Legacy maps
                 .ToHashSet();
 
             Assert.That(gameMaps.Remove(PoolManager.TestMap));
