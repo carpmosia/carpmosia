@@ -81,10 +81,12 @@
   - type: Airlock
   - type: NavMapDoor
   - type: DoorBolt
+    # Carpmosia-start - New highsec sounds
     boltUpSound:
-      path: /Audio/_Carpmosia/Machines/boltsup.ogg # Carpmosia-edit - New highsec sounds
+      path: /Audio/_Carpmosia/Machines/boltsup.ogg
     boltDownSound:
-      path: /Audio/_Carpmosia/Machines/boltsdown.ogg # Carpmosia-edit - New highsec sounds
+      path: /Audio/_Carpmosia/Machines/boltsdown.ogg
+    # Carpmosia-end - New highsec sounds
   - type: AccessReader
     containerAccessProvider: board
   - type: Appearance
