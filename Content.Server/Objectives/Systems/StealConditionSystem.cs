@@ -105,60 +105,60 @@ public sealed class StealConditionSystem : EntitySystem
         // Carpmosia-start - Shared Blood Bound Objectives
         foreach(var ally in CheckAllies(mind))
         {
-            if (!_containerQuery.TryGetComponent(ally, out var currentManager))
-                return 0;
+        if (!_containerQuery.TryGetComponent(ally, out var currentManager))
+            return 0;
+        // Carpmosia-end - Shared Blood Bound Objectives
+        _countedItems.Clear();
 
-            _countedItems.Clear();
-
-            //check stealAreas
-            if (condition.CheckStealAreas)
+        //check stealAreas
+        if (condition.CheckStealAreas)
+        {
+            var areasQuery = AllEntityQuery<StealAreaComponent, TransformComponent>();
+            while (areasQuery.MoveNext(out var uid, out var area, out var xform))
             {
-                var areasQuery = AllEntityQuery<StealAreaComponent, TransformComponent>();
-                while (areasQuery.MoveNext(out var uid, out var area, out var xform))
+                if (!area.Owners.Contains(mind.Owner))
+                    continue;
+
+                _nearestEnts.Clear();
+                _lookup.GetEntitiesInRange<TransformComponent>(xform.Coordinates, area.Range, _nearestEnts);
+                foreach (var ent in _nearestEnts)
                 {
-                    if (!area.Owners.Contains(mind.Owner))
+                    if (!_interaction.InRangeUnobstructed((uid, xform), (ent, ent.Comp), range: area.Range))
                         continue;
 
-                    _nearestEnts.Clear();
-                    _lookup.GetEntitiesInRange<TransformComponent>(xform.Coordinates, area.Range, _nearestEnts);
-                    foreach (var ent in _nearestEnts)
-                    {
-                        if (!_interaction.InRangeUnobstructed((uid, xform), (ent, ent.Comp), range: area.Range))
-                            continue;
-
-                        CheckEntity(ent, condition, ref containerStack, ref count);
-                    }
+                    CheckEntity(ent, condition, ref containerStack, ref count);
                 }
             }
-            //check pulling object
-            if (TryComp<PullerComponent>(ally, out var pull)) //TO DO: to make the code prettier? don't like the repetition
-            {
-                var pulledEntity = pull.Pulling;
-                if (pulledEntity != null)
-                {
-                    CheckEntity(pulledEntity.Value, condition, ref containerStack, ref count);
-                }
-            }
-
-            // recursively check each container for the item
-            // checks inventory, bag, implants, etc.
-            do
-            {
-                foreach (var container in currentManager.Containers.Values)
-                {
-                    foreach (var entity in container.ContainedEntities)
-                    {
-                        // check if this is the item
-                        count += CheckStealTarget(entity, condition);
-
-                        // if it is a container check its contents
-                        if (_containerQuery.TryGetComponent(entity, out var containerManager))
-                            containerStack.Push(containerManager);
-                    }
-                }
-            } while (containerStack.TryPop(out currentManager));
         }
-        // Carpmosia-end - Shared Blood Bound Objectives
+
+        //check pulling object
+        if (TryComp<PullerComponent>(ally, out var pull)) // Carpmosia-edit - Shared Blood Bound Objectives
+        {
+            var pulledEntity = pull.Pulling;
+            if (pulledEntity != null)
+            {
+                CheckEntity(pulledEntity.Value, condition, ref containerStack, ref count);
+            }
+        }
+
+        // recursively check each container for the item
+        // checks inventory, bag, implants, etc.
+        do
+        {
+            foreach (var container in currentManager.Containers.Values)
+            {
+                foreach (var entity in container.ContainedEntities)
+                {
+                    // check if this is the item
+                    count += CheckStealTarget(entity, condition);
+
+                    // if it is a container check its contents
+                    if (_containerQuery.TryGetComponent(entity, out var containerManager))
+                        containerStack.Push(containerManager);
+                }
+            }
+        } while (containerStack.TryPop(out currentManager));
+        }  // Carpmosia-edit - Shared Blood Bound Objectives
 
         var result = count / (float)condition.CollectionSize;
         result = Math.Clamp(result, 0, 1);
