@@ -136,7 +136,7 @@
 
 - type: entity
   parent:
-  - AppearanceHuman
+  - AppearanceAvali
   - BaseSpeciesMobOrganic
   id: MobAvali
   name: Urist McRaptor
@@ -230,7 +230,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: _Carpmosia/Mobs/Species/Avali/organs.rsi # Starlight sprites
+    sprite: Mobs/Species/Human/organs.rsi
 
 - type: entity
   id: OrganAvaliVisual
@@ -250,6 +250,9 @@
   components:
   - type: Sprite
     sprite: _Carpmosia/Mobs/Species/Avali/parts.rsi # Starlight sprites
+  - type: VisualOrgan
+    data:
+      sprite: _Carpmosia/Mobs/Species/Avali/parts.rsi
 
 - type: entity
   parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganAvaliExternal ]
