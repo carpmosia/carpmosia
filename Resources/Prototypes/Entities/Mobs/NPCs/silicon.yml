@@ -105,6 +105,8 @@
     - SiliconEmotes
     - Bot
     - Unimplantable
+  - type: Body
+    prototype: Bot
   - type: Speech
     speechVerb: Robotic
     speechSounds: Pai #couldn't decide if this should be borg or pai sounds so I flipped a coin.
@@ -462,16 +464,7 @@
   - type: ComplexInteraction
   - type: Hands
     hands:
-      Rand:
-        location: Right
-        whitelist:
-          components:
-          - Delivery
-          tags:
-          - Paper
-          - Document
-        emptyRepresentative: Paper
-      Land:
+      Left:
         location: Left
         whitelist:
           components:
@@ -480,9 +473,18 @@
           - Paper
           - Document
         emptyRepresentative: Paper
-    # sortedHands:
-    # - Land
-    # - Rand
+      Right:
+        location: Right
+        whitelist:
+          components:
+          - Delivery
+          tags:
+          - Paper
+          - Document
+        emptyRepresentative: Paper
+    sortedHands:
+    - Right
+    - Left
     showInHands: false
   # Carpmosia-end - handy supplybot
 
@@ -513,6 +515,8 @@
   - type: Hands # This probably REALLY needs hand whitelisting, but we NEED hands for hugs, so...
   - type: ComplexInteraction # Hugging is a complex interaction, apparently.
   - type: HugBot
+  - type: Body
+    prototype: HugBot
   - type: HTN
     rootTask:
       task: HugBotCompound
