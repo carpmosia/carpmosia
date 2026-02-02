@@ -251,7 +251,7 @@ public sealed class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRuleComponen
             return false;
         }
 
-        if (targetMind.UserId == null || !HasComp<HumanoidAppearanceComponent>(target))
+        if (targetMind.UserId == null || !HasComp<HumanoidProfileComponent>(target))
         {
             errorMessage = "blood-bound-convert-failed-no-mind";
             return false;
