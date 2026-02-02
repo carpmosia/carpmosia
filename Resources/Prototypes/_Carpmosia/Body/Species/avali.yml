@@ -250,9 +250,6 @@
   components:
   - type: Sprite
     sprite: _Carpmosia/Mobs/Species/Avali/parts.rsi # Starlight sprites
-  - type: VisualOrgan
-    data:
-      sprite: _Carpmosia/Mobs/Species/Avali/parts.rsi
 
 - type: entity
   parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganAvaliExternal ]
