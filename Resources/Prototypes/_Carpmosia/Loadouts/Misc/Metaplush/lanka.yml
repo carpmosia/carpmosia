@@ -1,0 +1,27 @@
+- type: loadoutEffectGroup
+  id: MothPlushieLanka
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobStationEngineer
+      time: 50h
+
+- type: loadout
+  id: MothPlushieLanka
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: MothPlushieLanka
+  storage:
+    back:
+    - PlushieMothLanka
+  groupBy: "metaplush"
+
+- type: loadout
+  id: HatPlushieLanka
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: MothPlushieLanka
+  equipment:
+    head: PlushieMothLanka
+  groupBy: "metaplush"

@@ -12,3 +12,7 @@ loadout-group-base-shoes = Shoes
 loadout-group-base-special = Special
 loadout-group-base-trinkets = Trinkets
 loadout-group-base-pets = Pocket pets
+
+loadout-group-primary-lawsets = Primary lawsets
+loadout-group-secondary-lawsets = Secondary lawsets
+loadout-group-tertiary-lawsets = Tertiary lawsets
