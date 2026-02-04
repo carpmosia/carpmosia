@@ -79,5 +79,6 @@
   components:
   - type: StationEvent
     weight: 1 # lower because antags
+    minimumPlayers: 15
   - type: LoadMapRule
     gridPath: /Maps/Shuttles/ShuttleEvent/manowar.yml
