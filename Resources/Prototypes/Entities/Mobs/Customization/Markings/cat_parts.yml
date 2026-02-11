@@ -1,10 +1,7 @@
 - type: marking
   id: CatEars
-  # Carpmosia-start - Allow cat parts
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  # Carpmosia-end - Allow cat parts
-  speciesRestriction: [Human]
+  bodyPart: HeadTop # Carpmosia-edit - Allow cat parts
+  groupWhitelist: [Human]
   coloring:
     default:
       type:
@@ -26,8 +23,7 @@
 - type: marking
   id: CatTail
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Human]
+  groupWhitelist: [Human]
   coloring:
     default:
       type:

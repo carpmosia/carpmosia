@@ -1124,4 +1124,103 @@
   id: 206
   time: '2026-01-11T01:25:34.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/229
+- author: korczoczek
+  changes:
+  - message: 'On Saltern-2: Added a grill to the kitchen'
+    type: Fix
+  id: 207
+  time: '2026-01-15T00:41:36.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/214
+- author: Freelanci
+  changes:
+  - message: 'On Amber: Added an autolathe to engineering front.'
+    type: Add
+  - message: 'On Amber: All external airlock pairs are now resistant to the effects
+      of the greytide virus event. (No more mass spacing if the event hits engi).
+      These doors will still get locked up if the event hits.'
+    type: Tweak
+  - message: 'On Amber: The 3x3 waste gas tank in atmos has been divided into two
+      1x3 tanks.'
+    type: Tweak
+  - message: 'On Amber: The waste line in atmos has been redone.'
+    type: Tweak
+  id: 208
+  time: '2026-01-15T00:54:17.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/215
+- author: stuff3541
+  changes:
+  - message: Split nuclearoperations_remake_full into 3 separate files for more controllable
+      music.
+    type: Tweak
+  id: 209
+  time: '2026-01-15T02:00:49.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/234
+- author: ArtisticRoomba
+  changes:
+  - message: Improved performance for the AI navmap when idle on lower end machines.
+    type: Fix
+  id: 210
+  time: '2026-01-18T02:50:32.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/239
+- author: Atakku
+  changes:
+  - message: Saltern-2 has been renamed to Saltern
+    type: Tweak
+  - message: Oasis-2 has been renamed to Oasis
+    type: Tweak
+  id: 211
+  time: '2026-01-22T15:12:08.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/240
+- author: pceererthegreat
+  changes:
+  - message: Added a Metaplushie based off Pceerer's character Lanka Ovlan as a reward
+      for 50 hours of being a Station Engineer.
+    type: Add
+  id: 212
+  time: '2026-01-26T05:42:57.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/238
+- author: arenaconspiracy
+  changes:
+  - message: Combat knives & the Captain's sabre can now pry open unpowered airlocks,
+      at reduced speed compared to a crowbar.
+    type: Add
+  id: 213
+  time: '2026-01-26T11:18:47.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/176
+- author: Atakku
+  changes:
+  - message: Station AI can now customize starting lawsets in the loadouts!
+    type: Tweak
+  - message: 'Primary lawset group: Crewsimov, NTDefault, Corporate'
+    type: Add
+  - message: 'Secondary lawset group: Lawbringer, Paladin, Efficiency'
+    type: Add
+  - message: 'Tertiary lawset group: Nutimov, GameMaster, LiveLetLive'
+    type: Add
+  id: 214
+  time: '2026-01-27T00:30:30.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/191
+- author: Atakku
+  changes:
+  - message: Added unique new sounds for the high security doors
+    type: Add
+  id: 215
+  time: '2026-01-28T01:06:44.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/197
+- author: Atakku
+  changes:
+  - message: Small fixes to pipe textures.
+    type: Fix
+  - message: Teg circulators now support pipe layers
+    type: Add
+  id: 216
+  time: '2026-01-28T10:17:29.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/250
+- author: Atakku
+  changes:
+  - message: Added 96 new diagonal decals
+    type: Add
+  id: 217
+  time: '2026-01-29T01:09:46.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/251
 Order: -1
