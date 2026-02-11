@@ -1,0 +1,12 @@
+- type: entity
+  id: ThrusterLargeWeak
+  suffix: half strength
+  name: large thruster
+  parent: [ ThrusterLarge ]
+  placement:
+    mode: AlignTileAny
+  components:
+  - type: ApcPowerReceiver
+    powerLoad: 5000
+  - type: Thruster
+    thrust: 800

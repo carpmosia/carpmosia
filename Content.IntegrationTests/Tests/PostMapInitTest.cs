@@ -108,6 +108,7 @@ namespace Content.IntegrationTests.Tests
             "Feint",
             "Oasis2",
             "Saltern2",
+            "CarpSparks",
             // Legacy maps
             "Meta",
             "Omega",
