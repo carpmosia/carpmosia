@@ -16,7 +16,7 @@ namespace Content.Client._FarHorizons.Power.UI;
 /// Client-side UI used to control a turbine.
 /// </summary>
 [GenerateTypedNameReferences]
-public sealed partial class TurbineWindow : FancyWindow
+public sealed partial class GasTurbineWindow : FancyWindow
 {
     // Dependencies
     [Dependency] private readonly IEntityManager _entityManager = null!;
@@ -81,7 +81,7 @@ public sealed partial class TurbineWindow : FancyWindow
     public event Action<float>? TurbineStatorLoadChanged;
     #endregion
 
-    public TurbineWindow()
+    public GasTurbineWindow()
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
@@ -129,8 +129,8 @@ public sealed partial class TurbineWindow : FancyWindow
         StatorLoadIncreaseLarge.OnButtonDown += _ => _repeatQueue.Add(StatorLoadIncreaseLarge, _repeatDelay);
         StatorLoadIncreaseLarge.OnButtonUp += _ => _repeatQueue.Remove(StatorLoadIncreaseLarge);
 
-        CTabContainer.SetTabTitle(0, Loc.GetString("comp-turbine-ui-tab-main"));
-        CTabContainer.SetTabTitle(1, Loc.GetString("comp-turbine-ui-tab-parts"));
+        CTabContainer.SetTabTitle(0, Loc.GetString("gas-turbine-ui-tab-main"));
+        CTabContainer.SetTabTitle(1, Loc.GetString("gas-turbine-ui-tab-parts"));
 
         return;
 
@@ -196,7 +196,7 @@ public sealed partial class TurbineWindow : FancyWindow
         return Color.FromHsv(hsv);
     }
 
-    public void Update(TurbineBuiState msg)
+    public void Update(GasTurbineBuiState msg)
     {
         UpdateIndicators(msg);
 
@@ -239,13 +239,13 @@ public sealed partial class TurbineWindow : FancyWindow
         }
 
         StatorInfo.Visible = statorExists;
-        StatorInfoPotential.Text = Loc.GetString("comp-turbine-ui-power", ("power", msg.PowerGeneration));
-        StatorInfoSupply.Text = Loc.GetString("comp-turbine-ui-power", ("power", msg.PowerSupply));
+        StatorInfoPotential.Text = Loc.GetString("gas-turbine-ui-power", ("power", msg.PowerGeneration));
+        StatorInfoSupply.Text = Loc.GetString("gas-turbine-ui-power", ("power", msg.PowerSupply));
     }
 
-    private void UpdateIndicators(TurbineBuiState msg)
+    private void UpdateIndicators(GasTurbineBuiState msg)
     {
-        var FilePath = "/Textures/_FarHorizons/Structures/Power/Generation/FissionGenerator/indicator_lamps/";
+        var FilePath = "/Textures/_FarHorizons/Interface/FissionGenerator/indicator_lamps/";
         // These are just if/else statements in black magic form
         TurbineOverspeed.TexturePath = msg.Overspeed ? FilePath + "redlit.png" : FilePath + "reddim.png";
         TurbineOvertemp.TexturePath = msg.Overtemp ? FilePath + "redlit.png" : FilePath + "reddim.png";

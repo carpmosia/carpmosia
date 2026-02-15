@@ -5,14 +5,14 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _FarHorizons/Structures/Power/Generation/FissionGenerator/turbine_parts.rsi
+    sprite: _FarHorizons/Objects/Power/FissionGenerator/gas_turbine_parts.rsi
     state: turbine_blade
   - type: Item
     size: Huge
   - type: MultiHandedItem
   - type: GuideHelp
     guides:
-    - NuclearReactor
+    - GasTurbine
     - Power
  
 # Blades
@@ -20,7 +20,7 @@
   id: BaseGasTurbineBlade
   parent: BaseGasTurbinePart
   categories: [ HideSpawnMenu ]
-  name: gas turbine blade
+  name: Gas Turbine Blade
   description: A replacement blade for the gas turbine.
   components:
   - type: GasTurbineBlade
@@ -31,7 +31,7 @@
 - type: entity
   id: SteelGasTurbineBlade
   parent: BaseGasTurbineBlade
-  name: steel gas turbine blade
+  name: Steel Gas Turbine Blade
   components:
   - type: GasTurbineBlade
     material: Steel
@@ -42,7 +42,7 @@
 - type: entity
   id: BrassGasTurbineBlade
   parent: BaseGasTurbineBlade
-  name: brass gas turbine blade
+  name: Brass Gas Turbine Blade
   components:
   - type: GasTurbineBlade
     material: Brass
@@ -53,7 +53,7 @@
 - type: entity
   id: DiamondGasTurbineBlade
   parent: BaseGasTurbineBlade
-  name: diamond gas turbine blade
+  name: Diamond Gas Turbine Blade
   components:
   - type: GasTurbineBlade
     material: Diamond
@@ -64,7 +64,7 @@
 - type: entity
   id: GoldGasTurbineBlade
   parent: BaseGasTurbineBlade
-  name: gold gas turbine blade
+  name: Gold Gas Turbine Blade
   components:
   - type: GasTurbineBlade
     material: Gold
@@ -75,7 +75,7 @@
 - type: entity
   id: PlasteelGasTurbineBlade
   parent: BaseGasTurbineBlade
-  name: plasteel gas turbine blade
+  name: Plasteel Gas Turbine Blade
   components:
   - type: GasTurbineBlade
     material: Plasteel
@@ -88,7 +88,7 @@
   id: BaseGasTurbineStator
   parent: BaseGasTurbinePart
   categories: [ HideSpawnMenu ]
-  name: gas turbine stator
+  name: Gas Turbine Stator
   description: A replacement stator for the gas turbine.
   components:
   - type: Sprite
@@ -101,7 +101,7 @@
 - type: entity
   id: SteelGasTurbineStator
   parent: BaseGasTurbineStator
-  name: steel gas turbine stator
+  name: Steel Gas Turbine Stator
   components:
   - type: GasTurbineStator
     material: Steel
@@ -112,7 +112,7 @@
 - type: entity
   id: SilverGasTurbineStator
   parent: BaseGasTurbineStator
-  name: silver gas turbine stator
+  name: Silver Gas Turbine Stator
   components:
   - type: GasTurbineStator
     material: Silver
@@ -123,7 +123,7 @@
 - type: entity
   id: GoldGasTurbineStator
   parent: BaseGasTurbineStator
-  name: gold gas turbine stator
+  name: Gold Gas Turbine Stator
   components:
   - type: GasTurbineStator
     material: Gold

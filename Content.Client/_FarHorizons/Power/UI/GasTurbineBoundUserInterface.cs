@@ -8,39 +8,36 @@ using System.Diagnostics.CodeAnalysis;
 namespace Content.Client._FarHorizons.Power.UI;
 
 /// <summary>
-/// Initializes a <see cref="TurbineWindow"/> and updates it when new server messages are received.
+/// Initializes a <see cref="GasTurbineWindow"/> and updates it when new server messages are received.
 /// </summary>
 [UsedImplicitly]
-public sealed class TurbineBoundUserInterface : BoundUserInterface, IBuiPreTickUpdate
+public sealed class GasTurbineBoundUserInterface : BoundUserInterface, IBuiPreTickUpdate
 {
     [Dependency] private readonly IClientGameTiming _gameTiming = null!;
     [Dependency] private readonly IEntityManager _entityManager = null!;
 
     [ViewVariables]
-    private TurbineWindow? _window;
+    private GasTurbineWindow? _window;
 
     private BuiPredictionState? _pred;
     private InputCoalescer<float> _flowRateCoalescer;
     private InputCoalescer<float> _statorLoadCoalescer;
 
-    public TurbineBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-        IoCManager.InjectDependencies(this);
-    }
+    public GasTurbineBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) => IoCManager.InjectDependencies(this);
 
     protected override void Open()
     {
         EntityUid? turbineUid = null;
         if (_entityManager.TryGetComponent<GasTurbineMonitorComponent>(Owner, out var turbineMonitorComponent))
             if (!_entityManager.TryGetEntity(turbineMonitorComponent.turbine, out turbineUid) || turbineUid == null 
-                || !_entityManager.HasComponent<TurbineComponent>(turbineUid))
+                || !_entityManager.HasComponent<GasTurbineComponent>(turbineUid))
                 return;
 
         base.Open();
 
         _pred = new BuiPredictionState(this, _gameTiming);
 
-        _window = this.CreateWindow<TurbineWindow>();
+        _window = this.CreateWindow<GasTurbineWindow>();
         if (_entityManager.EntityExists(turbineUid))
             _window.SetEntity(turbineUid.Value, Owner);
         else
@@ -54,18 +51,18 @@ public sealed class TurbineBoundUserInterface : BoundUserInterface, IBuiPreTickU
     void IBuiPreTickUpdate.PreTickUpdate()
     {
         if (_flowRateCoalescer.CheckIsModified(out var flowRateValue))
-            _pred!.SendMessage(new TurbineChangeFlowRateMessage(flowRateValue));
+            _pred!.SendMessage(new GasTurbineChangeFlowRateMessage(flowRateValue));
 
         if (_statorLoadCoalescer.CheckIsModified(out var statorLoadValue))
-            _pred!.SendMessage(new TurbineChangeStatorLoadMessage(statorLoadValue));
+            _pred!.SendMessage(new GasTurbineChangeStatorLoadMessage(statorLoadValue));
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)
     {
-        if (state is not TurbineBuiState turbineState)
+        if (state is not GasTurbineBuiState turbineState)
             return;
 
-        if (!_entityManager.TryGetComponent<TurbineComponent>(Owner, out var comp))
+        if (!_entityManager.TryGetComponent<GasTurbineComponent>(Owner, out var comp))
             if(!TryGetTurbineComp(Owner, out comp))
                 return;
 
@@ -73,11 +70,11 @@ public sealed class TurbineBoundUserInterface : BoundUserInterface, IBuiPreTickU
         {
             switch (replayMsg)
             {
-                case TurbineChangeFlowRateMessage setFlowRate:
+                case GasTurbineChangeFlowRateMessage setFlowRate:
                     turbineState.FlowRate = Math.Clamp(setFlowRate.FlowRate, 0f, comp.FlowRateMax);
                     break;
 
-                case TurbineChangeStatorLoadMessage setStatorLoad:
+                case GasTurbineChangeStatorLoadMessage setStatorLoad:
                     turbineState.StatorLoad = Math.Max(setStatorLoad.StatorLoad, 1000f);
                     break;
             }
@@ -86,7 +83,7 @@ public sealed class TurbineBoundUserInterface : BoundUserInterface, IBuiPreTickU
         _window?.Update(turbineState);
     }
 
-    public bool TryGetTurbineComp(EntityUid uid, [NotNullWhen(true)] out TurbineComponent? turbineComponent)
+    public bool TryGetTurbineComp(EntityUid uid, [NotNullWhen(true)] out GasTurbineComponent? turbineComponent)
     {
         turbineComponent = null;
         if (!_entityManager.TryGetComponent<GasTurbineMonitorComponent>(uid, out var turbineMonitor))
@@ -95,7 +92,7 @@ public sealed class TurbineBoundUserInterface : BoundUserInterface, IBuiPreTickU
         if (!_entityManager.TryGetEntity(turbineMonitor.turbine, out var turbineUid) || turbineUid == null)
             return false;
 
-        if (!_entityManager.TryGetComponent<TurbineComponent>(turbineUid, out var turbine))
+        if (!_entityManager.TryGetComponent<GasTurbineComponent>(turbineUid, out var turbine))
             return false;
 
         turbineComponent = turbine;

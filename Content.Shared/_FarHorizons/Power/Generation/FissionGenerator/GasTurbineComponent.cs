@@ -13,7 +13,7 @@ namespace Content.Shared._FarHorizons.Power.Generation.FissionGenerator;
 // https://github.com/goonstation/goonstation/blob/ff86b044/code/obj/nuclearreactor/turbine.dm
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-public sealed partial class TurbineComponent : Component
+public sealed partial class GasTurbineComponent : Component
 {
     /// <summary>
     /// Power generated last tick
@@ -101,13 +101,13 @@ public sealed partial class TurbineComponent : Component
     /// <summary>
     /// Flag indicating the turbine is sparking
     /// </summary>
-    [ViewVariables]
+    [ViewVariables, AutoNetworkedField]
     public bool IsSparking = false;
 
     /// <summary>
     /// Flag indicating the turbine is smoking
     /// </summary>
-    [ViewVariables]
+    [ViewVariables, AutoNetworkedField]
     public bool IsSmoking = false;
 
     /// <summary>
@@ -139,6 +139,18 @@ public sealed partial class TurbineComponent : Component
     /// </summary>
     [DataField]
     public float PowerMultiplier = 1;
+
+    /// <summary>
+    /// How much of the heat energy gets converted to rotational energy
+    /// </summary>
+    [DataField]
+    public float ThermalEfficiency = 0.8f;
+
+    /// <summary>
+    /// How much of the rotational energy gets converted to electrical energy
+    /// </summary>
+    [DataField]
+    public float ElectricalEfficiency = 1f;
 
     [ViewVariables, AutoNetworkedField]
     public EntityUid? AlarmAudioOvertemp;
@@ -222,13 +234,13 @@ public sealed partial class TurbineComponent : Component
     /// Name of the prototype of the arrows that indicate flow on inspect
     /// </summary>
     [DataField]
-    public EntProtoId ArrowPrototype = "TurbineFlowArrow";
+    public EntProtoId ArrowPrototype = "GasTurbineFlowArrow";
 
     /// <summary>
     /// Name of the prototype of the pipes the turbine uses to connect to the pipe network
     /// </summary>
     [DataField]
-    public EntProtoId PipePrototype = "TurbineGasPipe";
+    public EntProtoId PipePrototype = "GasTurbineGasPipe";
     #endregion
 
     #region Device Network
@@ -236,13 +248,13 @@ public sealed partial class TurbineComponent : Component
     /// The proto ID of the "Speed: High" source port
     /// </summary>
     [DataField("speedHighPort", customTypeSerializer: typeof(PrototypeIdSerializer<SourcePortPrototype>))]
-    public string SpeedHighPort = "TurbineSpeedHigh";
+    public string SpeedHighPort = "GasTurbineSpeedHigh";
 
     /// <summary>
     /// The proto ID of the "Speed: Low" source port
     /// </summary>
     [DataField("speedLowPort", customTypeSerializer: typeof(PrototypeIdSerializer<SourcePortPrototype>))]
-    public string SpeedLowPort = "TurbineSpeedLow";
+    public string SpeedLowPort = "GasTurbineSpeedLow";
 
     /// <summary>
     /// The proto ID of the "Turbine Data" source port
@@ -276,8 +288,6 @@ public sealed partial class TurbineComponent : Component
     #endregion
 
     #region Debug
-    [ViewVariables(VVAccess.ReadOnly)]
-    public bool HasPipes = false;
     [ViewVariables(VVAccess.ReadOnly)]
     public float SupplierMaxSupply = 0;
     [ViewVariables(VVAccess.ReadOnly)]

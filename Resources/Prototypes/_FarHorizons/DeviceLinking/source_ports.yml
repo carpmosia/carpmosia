@@ -8,12 +8,12 @@
 
   # Gas Turbine
 - type: sourcePort
-  id: TurbineSpeedHigh
+  id: GasTurbineSpeedHigh
   name: signal-port-name-gas-turbine-speed-high
   description: signal-port-description-gas-turbine-speed-high
 
 - type: sourcePort
-  id: TurbineSpeedLow
+  id: GasTurbineSpeedLow
   name: signal-port-name-gas-turbine-speed-low
   description: signal-port-description-gas-turbine-speed-low
 

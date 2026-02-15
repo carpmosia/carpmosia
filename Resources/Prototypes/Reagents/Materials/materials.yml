@@ -240,3 +240,12 @@
     hard: 7
     density: 6
     chemical: 5
+
+- type: material
+  id: CrushedPhosphorus
+  stackEntity: CrushedPhosphorus1
+  name: red phosphorus
+  unit: materials-unit-piece
+  icon: { sprite: _Starlight/Objects/Materials/phosphorus.rsi, state: phosphorus }
+  color: "#f5f58c"
+  price: 0
