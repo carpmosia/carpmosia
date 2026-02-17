@@ -181,7 +181,7 @@
   id: OrganTajaranBrain
 
 - type: entity
-  parent: [ OrganBaseEyes, OrganBaseEyes, OrganTajaranInternal, OrganTajaranExternal ]
+  parent: [ OrganTajaranVisual, OrganBaseEyes, OrganTajaranInternal ]
   id: OrganTajaranEyes
 
 - type: entity
