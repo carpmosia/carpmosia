@@ -86,11 +86,32 @@
   - BaseSpeciesMobOrganic
   id: MobTajaran
   name: Urist McTajaran
-  # components:
-  # - type: Butcherable
-  #   spawned:
-  #   - id: FoodMeatTajaran # FoodMeatTajaran
-  #     amount: 5
+  components:
+  # TODO: fixtures
+  - type: Speech
+    #speechSounds: Tajaran
+    speechVerb: Tajaran
+  - type: Vocal
+    sounds:
+      Male: MaleTajaran
+      Female: FemaleTajaran
+      Unsexed: MaleTajaran
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Tajaran
+  - type: MeleeWeapon
+    soundHit:
+      collection: AlienClaw
+    angle: 30
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 5
+  # TODO: Temperature
+  # TODO: TemperatureDamage
+  # TODO: TemperatureSpeed?
+  # TODO: Bloodstream
+  # TODO: ThermalRegulator
 
 - type: entity
   parent: OrganBase
