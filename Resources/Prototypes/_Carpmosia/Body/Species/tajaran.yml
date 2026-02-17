@@ -47,7 +47,8 @@
       required: false
     enum.HumanoidVisualLayers.Tail:
       limit: 1
-      required: false
+      required: true
+      default: [ CatTailBasic ]
 
 - type: entity
   parent: BaseSpeciesAppearance
@@ -118,7 +119,7 @@
   components:
   - type: VisualOrgan
     data:
-      sprite: _Carpmosia/Mobs/Species/Human/parts.rsi # Goobstation sprites
+      sprite: _Carpmosia/Mobs/Species/Tajaran/parts.rsi # Goobstation sprites
   - type: VisualOrganMarkings
     markingData:
       group: Tajaran
@@ -183,6 +184,10 @@
 - type: entity
   parent: [ OrganTajaranVisual, OrganBaseEyes, OrganTajaranInternal ]
   id: OrganTajaranEyes
+  components:
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Customization/eyes.rsi
 
 - type: entity
   parent: [ OrganBaseTongue, OrganTajaranInternal ]
