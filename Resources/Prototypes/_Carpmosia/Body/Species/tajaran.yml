@@ -118,7 +118,7 @@
   components:
   - type: VisualOrgan
     data:
-      sprite: _Carpmosia/Mobs/Species/Tajaran/parts.rsi # Starlight sprites
+      sprite: _Carpmosia/Mobs/Species/Human/parts.rsi # Goobstation sprites
   - type: VisualOrganMarkings
     markingData:
       group: Tajaran
@@ -129,7 +129,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: _Carpmosia/Mobs/Species/Tajaran/parts.rsi # Starlight sprites
+    sprite: _Carpmosia/Mobs/Species/Tajaran/parts.rsi # Goobstation sprites
 
 - type: entity
   parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganTajaranExternal ]
@@ -177,7 +177,7 @@
   id: OrganTajaranFootRight
 
 - type: entity
-  parent: [ OrganBaseBrain, OrganSpriteHumanInternal, OrganTajaranInternal ]
+  parent: [ OrganBaseBrain, OrganTajaranInternal ]
   id: OrganTajaranBrain
 
 - type: entity
@@ -189,29 +189,29 @@
   id: OrganTajaranTongue
 
 - type: entity
-  parent: [ OrganBaseAppendix, OrganSpriteHumanInternal, OrganTajaranInternal ]
+  parent: [ OrganBaseAppendix, OrganTajaranInternal ]
   id: OrganTajaranAppendix
 
 - type: entity
-  parent: [ OrganBaseEars, OrganSpriteHumanInternal, OrganTajaranInternal ]
+  parent: [ OrganBaseEars, OrganTajaranInternal ]
   id: OrganTajaranEars
 
 - type: entity
-  parent: [ OrganBaseLungs, OrganSpriteHumanInternal, OrganTajaranInternal, OrganTajaranMetabolizer ]
+  parent: [ OrganBaseLungs, OrganTajaranInternal, OrganTajaranMetabolizer ]
   id: OrganTajaranLungs
 
 - type: entity
-  parent: [ OrganBaseHeart, OrganSpriteHumanInternal, OrganTajaranInternal, OrganTajaranMetabolizer ]
+  parent: [ OrganBaseHeart, OrganTajaranInternal, OrganTajaranMetabolizer ]
   id: OrganTajaranHeart
 
 - type: entity
-  parent: [ OrganBaseStomach, OrganSpriteHumanInternal, OrganTajaranInternal, OrganTajaranMetabolizer ]
+  parent: [ OrganBaseStomach, OrganTajaranInternal, OrganTajaranMetabolizer ]
   id: OrganTajaranStomach
 
 - type: entity
-  parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganTajaranInternal, OrganTajaranMetabolizer ]
+  parent: [ OrganBaseLiver, OrganTajaranInternal, OrganTajaranMetabolizer ]
   id: OrganTajaranLiver
 
 - type: entity
-  parent: [ OrganBaseKidneys, OrganSpriteHumanInternal, OrganTajaranInternal, OrganTajaranMetabolizer ]
+  parent: [ OrganBaseKidneys, OrganTajaranInternal, OrganTajaranMetabolizer ]
   id: OrganTajaranKidneys
