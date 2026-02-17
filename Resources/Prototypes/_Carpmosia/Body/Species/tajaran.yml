@@ -86,10 +86,10 @@
   id: MobTajaran
   name: Urist McTajaran
   # components:
-  #  - type: Butcherable
-  #    spawned:
-  #    - id: FoodMeatTajaran
-  #      amount: 5
+  # - type: Butcherable
+  #   spawned:
+  #   - id: FoodMeatTajaran # FoodMeatTajaran
+  #     amount: 5
 
 - type: entity
   parent: OrganBase
@@ -177,45 +177,41 @@
   id: OrganTajaranFootRight
 
 - type: entity
-  parent: [ OrganBaseBrain, OrganTajaranInternal ]
+  parent: [ OrganBaseBrain, OrganSpriteHumanInternal, OrganTajaranInternal ]
   id: OrganTajaranBrain
 
 - type: entity
-  parent: [ OrganBaseEyes, OrganTajaranInternal, OrganTajaranExternal ]
+  parent: [ OrganBaseEyes, OrganBaseEyes, OrganTajaranInternal, OrganTajaranExternal ]
   id: OrganTajaranEyes
-  components:
-  - type: VisualOrgan
-    data:
-      sprite: Mobs/Customization/eyes.rsi
 
 - type: entity
   parent: [ OrganBaseTongue, OrganTajaranInternal ]
   id: OrganTajaranTongue
 
 - type: entity
-  parent: [ OrganBaseAppendix, OrganTajaranInternal ]
+  parent: [ OrganBaseAppendix, OrganSpriteHumanInternal, OrganTajaranInternal ]
   id: OrganTajaranAppendix
 
 - type: entity
-  parent: [ OrganBaseEars, OrganTajaranInternal ]
+  parent: [ OrganBaseEars, OrganSpriteHumanInternal, OrganTajaranInternal ]
   id: OrganTajaranEars
 
 - type: entity
-  parent: [ OrganBaseLungs, OrganTajaranInternal, OrganTajaranMetabolizer ]
+  parent: [ OrganBaseLungs, OrganSpriteHumanInternal, OrganTajaranInternal, OrganTajaranMetabolizer ]
   id: OrganTajaranLungs
 
 - type: entity
-  parent: [ OrganBaseHeart, OrganTajaranInternal, OrganTajaranMetabolizer ]
+  parent: [ OrganBaseHeart, OrganSpriteHumanInternal, OrganTajaranInternal, OrganTajaranMetabolizer ]
   id: OrganTajaranHeart
 
 - type: entity
-  parent: [ OrganBaseStomach, OrganTajaranInternal, OrganTajaranMetabolizer ]
+  parent: [ OrganBaseStomach, OrganSpriteHumanInternal, OrganTajaranInternal, OrganTajaranMetabolizer ]
   id: OrganTajaranStomach
 
 - type: entity
-  parent: [ OrganBaseLiver, OrganTajaranInternal, OrganTajaranMetabolizer ]
+  parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganTajaranInternal, OrganTajaranMetabolizer ]
   id: OrganTajaranLiver
 
 - type: entity
-  parent: [ OrganBaseKidneys, OrganTajaranInternal, OrganTajaranMetabolizer ]
+  parent: [ OrganBaseKidneys, OrganSpriteHumanInternal, OrganTajaranInternal, OrganTajaranMetabolizer ]
   id: OrganTajaranKidneys
