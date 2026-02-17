@@ -89,8 +89,9 @@
   components:
   # TODO: fixtures
   - type: Speech
-    #speechSounds: Tajaran
+    speechSounds: Cat
     speechVerb: Tajaran
+    allowedEmotes: ['Mew', 'Hisses', 'Meow', 'Growl', 'Purr', 'Trill']
   - type: Vocal
     sounds:
       Male: MaleTajaran

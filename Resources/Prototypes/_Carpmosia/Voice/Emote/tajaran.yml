@@ -4,9 +4,10 @@
     variation: 0.125
   sounds:
     Scream:
-      path: /Audio/_Carpmosia/Voice/Tajaran/avali_scream.ogg
+      collection: TajaranScreams
     Laugh:
-      path: /Audio/_Carpmosia/Voice/Tajaran/avali_laugh.ogg
+      collection: MaleLaugh
+    # Common shared
     Honk:
       collection: BikeHorn
     Weh:
@@ -17,6 +18,19 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: DeathGasp
+    # Tajaran specific
+    Mew:
+      collection: TajaranMews
+    Hisses:
+      collection: TajaranHisses
+    Meow:
+      collection: TajaranMeows
+    Purr:
+      collection: TajaranPurrs
+    Growl:
+      collection: TajaranGrowls
+    Trill:
+      collection: TajaranTrills
 
 - type: emoteSounds
   id: FemaleTajaran
@@ -24,9 +38,10 @@
     variation: 0.125
   sounds:
     Scream:
-      path: /Audio/_Carpmosia/Voice/Tajaran/avali_scream.ogg
+      collection: TajaranScreams
     Laugh:
-      path: /Audio/_Carpmosia/Voice/Tajaran/avali_laugh.ogg
+      collection: FemaleLaugh
+    # Common shared
     Honk:
       collection: BikeHorn
     Weh:
@@ -34,6 +49,19 @@
     Hew:
       collection: Hew
     Gasp:
-      collection: FemaleGasp
+      collection: MaleGasp
     DefaultDeathgasp:
-      collection: FemaleDeathGasp
+      collection: DeathGasp
+    # Tajaran specific
+    Mew:
+      collection: TajaranMews
+    Hisses:
+      collection: TajaranHisses
+    Meow:
+      collection: TajaranMeows
+    Purr:
+      collection: TajaranPurrs
+    Growl:
+      collection: TajaranGrowls
+    Trill:
+      collection: TajaranTrills
