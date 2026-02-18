@@ -4,8 +4,8 @@ meta:
   engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/17/2026 23:24:12
-  entityCount: 10373
+  time: 02/18/2026 22:05:15
+  entityCount: 10371
 maps:
 - 1
 grids:
@@ -754,6 +754,7 @@ entities:
           decals:
             2271: 80,94
             2678: 81,91
+            3525: 72,91
         - node:
             color: '#FF9821FF'
             id: BrickTileWhiteCornerSe
@@ -874,6 +875,7 @@ entities:
             id: BrickTileWhiteInnerNe
           decals:
             2722: 67,102
+            3526: 59,96
         - node:
             zIndex: 1
             color: '#334E6DFF'
@@ -1186,7 +1188,6 @@ entities:
           decals:
             3247: 74,92
             3253: 80,91
-            3266: 72,91
         - node:
             color: '#FF9821FF'
             id: BrickTileWhiteInnerSw
@@ -1296,7 +1297,6 @@ entities:
             2677: 81,92
             3232: 70,90
             3245: 75,95
-            3267: 72,91
         - node:
             color: '#FFFFFFFF'
             id: BrickTileWhiteLineE
@@ -2413,12 +2413,12 @@ entities:
             2096: 65,42
             2384: 74,72
             2402: 78,77
-            2449: 81,76
             3073: 79,72
             3467: 80,82
             3473: 77,81
             3502: 73,81
             3506: 74,58
+            3530: 81,76
         - node:
             zIndex: 1
             color: '#FFFFFFFF'
@@ -2569,12 +2569,12 @@ entities:
             2395: 75,81
             2396: 74,81
             2409: 77,72
-            2440: 80,76
             3052: 81,63
             3071: 78,72
             3257: 81,58
             3469: 76,81
             3523: 82,82
+            3529: 80,76
         - node:
             zIndex: 1
             color: '#FFFFFFFF'
@@ -3407,6 +3407,8 @@ entities:
             id: WoodTrimThinInnerSe
           decals:
             2311: 85,92
+            3527: 59,96
+            3528: 81,75
         - node:
             zIndex: 1
             color: '#FFFFFFFF'
@@ -26562,7 +26564,7 @@ entities:
   - uid: 3756
     components:
     - type: Transform
-      pos: 82.507866,76.60419
+      pos: 81.83075,75.616974
       parent: 2
 - proto: ClothingBeltUtilityFilled
   entities:
@@ -26603,13 +26605,6 @@ entities:
     components:
     - type: Transform
       pos: 40.434128,94.82001
-      parent: 2
-- proto: ClothingHandsGlovesColorYellow
-  entities:
-  - uid: 733
-    components:
-    - type: Transform
-      pos: 81.64626,75.50577
       parent: 2
 - proto: ClothingHandsTacticalMaidGloves
   entities:
@@ -41992,6 +41987,8 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 46.5,28.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#0335FCFF'
   - uid: 5819
     components:
     - type: Transform
@@ -49138,7 +49135,7 @@ entities:
       pos: 39.5,90.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -39991.215
+      secondsUntilStateChange: -40295.84
       state: Opening
   - uid: 6959
     components:
@@ -54013,6 +54010,11 @@ entities:
       parent: 2
 - proto: RandomSpawner100
   entities:
+  - uid: 733
+    components:
+    - type: Transform
+      pos: 61.5,76.5
+      parent: 2
   - uid: 7665
     components:
     - type: Transform
@@ -60226,11 +60228,6 @@ entities:
       parent: 2
 - proto: Table
   entities:
-  - uid: 8566
-    components:
-    - type: Transform
-      pos: 82.5,101.5
-      parent: 2
   - uid: 8567
     components:
     - type: Transform
@@ -61564,11 +61561,6 @@ entities:
       parent: 2
 - proto: ToolboxMechanicalFilled
   entities:
-  - uid: 8799
-    components:
-    - type: Transform
-      pos: 82.49755,101.62421
-      parent: 2
   - uid: 8800
     components:
     - type: Transform
