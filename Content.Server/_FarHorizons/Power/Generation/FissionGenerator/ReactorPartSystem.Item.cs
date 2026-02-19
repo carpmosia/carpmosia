@@ -13,6 +13,7 @@ namespace Content.Server._FarHorizons.Power.Generation.FissionGenerator;
 public sealed partial class ReactorPartSystem
 {
     [Dependency] private readonly EntityManager _entityManager = default!;
+    [Dependency] private readonly MetaDataSystem _metaDataSystem = default!;
     [Dependency] private readonly SharedPointLightSystem _lightSystem = default!;
 
     private float _burnDiv => (ReactorPartBurnTemp - ReactorPartHotTemp) / 5; // The 5 is how much heat damage insulated gloves protect from
@@ -133,6 +134,10 @@ public sealed partial class ReactorPartSystem
 
     private void OnAtmosExposed(EntityUid uid, ReactorPartComponent component, ref AtmosExposedUpdateEvent args)
     {
+        // Stops it from cooking the room while in the reactor
+        if(!TryComp(uid, out MetaDataComponent? metaData) || (metaData.Flags & MetaDataFlags.InContainer) == MetaDataFlags.InContainer)
+            return;
+
         // Can't use args.GasMixture because then it wouldn't excite the tile
         var gasMix = _atmosphereSystem.GetContainingMixture(uid, false, true) ?? GasMixture.SpaceGas;
         if(gasMix.TotalMoles < Atmospherics.GasMinMoles)

@@ -25,6 +25,7 @@ using Content.Shared.Electrocution;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
+using Content.Shared.Rejuvenate;
 using Content.Shared.Repairable;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
@@ -87,6 +88,7 @@ public sealed class GasTurbineSystem : EntitySystem
         SubscribeLocalEvent<GasTurbineComponent, ComponentShutdown>(OnShutdown);
 
         SubscribeLocalEvent<GasTurbineComponent, DamageChangedEvent>(OnDamaged);
+        SubscribeLocalEvent<GasTurbineComponent, RejuvenateEvent>(OnRejuvenate);
 
         SubscribeLocalEvent<GasTurbineComponent, ItemSlotInsertAttemptEvent>(OnInsertAttempt);
         SubscribeLocalEvent<GasTurbineComponent, ItemSlotEjectAttemptEvent>(OnEjectAttempt);
@@ -629,6 +631,19 @@ public sealed class GasTurbineSystem : EntitySystem
             comp.CurrentStator = null;
         }
         comp.Ruined = true;
+    }
+
+    private void OnRejuvenate(EntityUid uid, GasTurbineComponent comp, ref RejuvenateEvent args)
+    {
+        comp.RPM = 0;
+        comp.CurrentBlade ??= SpawnInContainerOrDrop("SteelGasTurbineBlade", uid, BladeContainer);
+        comp.CurrentStator ??= SpawnInContainerOrDrop("SteelGasTurbineStator", uid, StatorContainer);
+        UpdatePartValues(comp);
+        comp.Ruined = false;
+        comp.FlowRate = 200;
+        comp.StatorLoad = 35000;
+        comp.IsSmoking = false;
+        comp.IsSparking = false;
     }
 
     private void OnEjectAttempt(EntityUid uid, GasTurbineComponent comp, ref ItemSlotEjectAttemptEvent args)

@@ -27,6 +27,7 @@ using Content.Shared.Radiation.Components;
 using Content.Shared.Radio;
 using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
+using Content.Shared.Rejuvenate;
 using Content.Shared.Throwing;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
@@ -93,6 +94,7 @@ public sealed class NuclearReactorSystem : EntitySystem
         SubscribeLocalEvent<NuclearReactorComponent, ComponentRemove>(OnCompRemove);
 
         SubscribeLocalEvent<NuclearReactorComponent, DamageChangedEvent>(OnDamaged);
+        SubscribeLocalEvent<NuclearReactorComponent, RejuvenateEvent>(OnRejuvenate);
 
         // Atmos events
         SubscribeLocalEvent<NuclearReactorComponent, AtmosDeviceUpdateEvent>(OnUpdate);
@@ -560,6 +562,7 @@ public sealed class NuclearReactorSystem : EntitySystem
                     comp.ComponentGrid[x, y] = null;
                     comp.NeutronGrid[x, y] = 0;
                     comp.FluxGrid[x, y] = [];
+                    QueueDel(comp.GridEntities[new(x, y)]);
                 }
             }
         }
@@ -1124,5 +1127,18 @@ public sealed class NuclearReactorSystem : EntitySystem
                     UpdateGridVisual((uid, comp));
                     UpdateGasVolume(comp);
                 }
+    }
+
+    private void OnRejuvenate(EntityUid uid, NuclearReactorComponent comp, ref RejuvenateEvent args)
+    {
+        comp.Temperature = Atmospherics.T20C;
+        comp.LastSendTemperature = comp.Temperature;
+        comp.Melted = false;
+        comp.IsBurning = false;
+        comp.IsSmoking = false;
+        comp.RadiationLevel = 0;
+        comp.ThermalPower = 0;
+        comp.ControlRodInsertion = 2;
+        comp.ApplyPrefab = true;
     }
 }
