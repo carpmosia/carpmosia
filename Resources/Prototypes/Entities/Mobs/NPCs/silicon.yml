@@ -458,6 +458,37 @@
     - Supply
   - type: Puller
     needsHands: false
+  # Carpmosia-start - handy supplybot
+  - type: ComplexInteraction
+  - type: Hands
+    hands:
+      Left:
+        location: Left
+        whitelist:
+          components:
+          - Delivery
+          tags:
+          - Paper
+          - Document
+        emptyRepresentative: Paper
+      Right:
+        location: Right
+        whitelist:
+          components:
+          - Delivery
+          tags:
+          - Paper
+          - Document
+        emptyRepresentative: Paper
+    sortedHands:
+    - Right
+    - Left
+    showInHands: false
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 10 # capable of touching light bulbs and stoves without feeling pain!
+  # Carpmosia-end - handy supplybot
 
 - type: entity
   parent: [ MobSiliconBase, MobCombat ]
