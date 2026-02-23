@@ -1403,3 +1403,64 @@
       map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
   - type: Construction
     node: radiatorAlt4
+
+# HeatExchanger
+- type: entity
+  parent: [GasPipeLayerAlt1, HeatExchangerBend]
+  id: HeatExchangerBendAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi
+      state: pipeBendConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: heBend
+      map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+  - type: Construction
+    node: bendradiatorAlt1
+
+- type: entity
+  parent: [GasPipeLayerAlt2, HeatExchangerBend]
+  id: HeatExchangerBendAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi
+      state: pipeBendConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: heBend
+      map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+  - type: Construction
+    node: bendradiatorAlt2
+
+- type: entity
+  parent: [GasPipeLayerAlt3, HeatExchangerBend]
+  id: HeatExchangerBendAlt3
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi
+      state: pipeBendConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: heBend
+      map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+  - type: Construction
+    node: bendradiatorAlt3
+
+- type: entity
+  parent: [GasPipeLayerAlt4, HeatExchangerBend]
+  id: HeatExchangerBendAlt4
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi
+      state: pipeBendConnectors
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: heBend
+      map: [ "enum.SubfloorLayers.FirstLayer", "enabled" ]
+  - type: Construction
+    node: bendradiatorAlt4

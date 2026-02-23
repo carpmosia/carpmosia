@@ -1073,7 +1073,7 @@
   startNode: start
   targetNode: radiator
   category: construction-category-utilities
-  placementMode: AlignAtmosPipeLayers
+  placementMode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
   canBuildInImpassable: false
   # Carpmosia-start - Atmos Alt Prototypes
   alternativePrototypes:
@@ -1091,8 +1091,16 @@
   startNode: start
   targetNode: bendradiator
   category: construction-category-utilities
-  placementMode: SnapgridCenter
+  placementMode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
   canBuildInImpassable: false
+  # Carpmosia-start - Atmos Alt Prototypes
+  alternativePrototypes:
+  - HeatExchangerBend
+  - HeatExchangerBendAlt1
+  - HeatExchangerBendAlt2
+  - HeatExchangerBendAlt3
+  - HeatExchangerBendAlt4
+  # Carpmosia-end - Atmos Alt Prototypes
 
 # ATMOS TRINARY
 - type: construction

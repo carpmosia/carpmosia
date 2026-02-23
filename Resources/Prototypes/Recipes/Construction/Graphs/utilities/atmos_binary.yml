@@ -298,6 +298,32 @@
         amount: 2
         doAfter: 1
 
+    # Carpmosia-start - Atmos Alt Prototypes
+    - to: bendradiatorAlt1
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: bendradiatorAlt2
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: bendradiatorAlt3
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: bendradiatorAlt4
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+    # Carpmosia-end - Atmos Alt Prototypes
+
   - node: pressurepump
     entity: GasPressurePump
     edges:
@@ -1074,3 +1100,77 @@
         doAfter: 1
       - tool: Welding
         doAfter: 1
+
+  # Carpmosia-start - Atmos Alt Prototypes
+  - node: bendradiatorAlt1
+    entity: HeatExchangerBendAlt1
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+
+  - node: bendradiatorAlt2
+    entity: HeatExchangerBendAlt2
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+
+  - node: bendradiatorAlt3
+    entity: HeatExchangerBendAlt3
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+
+  - node: bendradiatorAlt4
+    entity: HeatExchangerBendAlt4
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+  # Carpmosia-end - Atmos Alt Prototypes

@@ -711,15 +711,18 @@
     - type: Sprite
       layers:
       - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Carpmosia-edit - 5 pipe layers
-        state: pipeBend
+        state: pipeBendConnectors
         map: [ "enum.PipeVisualLayers.Pipe" ]
       - state: heBend
         map: [ "enum.SubfloorLayers.FirstLayer" ]
     # Carpmosia-start - Heat exchanger layers
     - type: AtmosPipeLayers
-      alternativePrototypes: {}
-      spriteRsiPaths: {}
-      numberOfPipeLayers: 1
+      alternativePrototypes:
+        Primary: HeatExchangerBend
+        Secondary: HeatExchangerBendAlt1
+        Tertiary: HeatExchangerBendAlt2
+        Quaternary: HeatExchangerBendAlt3
+        Quinary: HeatExchangerBendAlt4
     # Carpmosia-end - Heat exchanger layers
     - type: NodeContainer
       nodes:
