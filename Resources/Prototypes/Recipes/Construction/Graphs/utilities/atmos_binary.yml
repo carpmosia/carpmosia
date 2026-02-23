@@ -985,7 +985,7 @@
 
   # Carpmosia-start - Atmos Alt Prototypes
   - node: radiatorAlt1
-    entity: HeatExchangerAlt1
+    entity: radiatorAlt1
     edges:
     - to: start
       conditions:
@@ -1003,7 +1003,7 @@
         doAfter: 1
 
   - node: radiatorAlt2
-    entity: HeatExchangerAlt2
+    entity: radiatorAlt2
     edges:
     - to: start
       conditions:
@@ -1021,7 +1021,7 @@
         doAfter: 1
 
   - node: radiatorAlt3
-    entity: HeatExchangerAlt3
+    entity: radiatorAlt3
     edges:
     - to: start
       conditions:
@@ -1039,7 +1039,7 @@
         doAfter: 1
 
   - node: radiatorAlt4
-    entity: HeatExchangerAlt4
+    entity: radiatorAlt4
     edges:
     - to: start
       conditions:
