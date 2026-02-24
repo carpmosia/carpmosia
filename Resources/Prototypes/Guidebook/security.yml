@@ -22,16 +22,15 @@
   id: CriminalRecords
   name: guide-entry-criminal-records
   text: "/ServerInfo/Guidebook/Security/CriminalRecords.xml"
-# Carpmosia-start - Changes to Space Law
+
 - type: guideEntry
   id: SpaceLaw
   name: guide-entry-rules-space-law
-  text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/SpaceLaw/SpaceLaw.xml"
+  text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/SpaceLaw/SpaceLaw.xml" # Carpmosia-edit - Changes to Space Law
   children:
   - SpaceLawCrimeList
 
 - type: guideEntry
   id: SpaceLawCrimeList
   name: guide-entry-rules-sl-crime-list
-  text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/SpaceLaw/SLCrimeList.xml"
-# Carpmosia-end - Changes to Space Law
+  text: "/ServerInfo/_Carpmosia/Guidebook/ServerRules/SpaceLaw/SLCrimeList.xml" # Carpmosia-edit - Changes to Space Law
