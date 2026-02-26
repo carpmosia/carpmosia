@@ -4,7 +4,10 @@ using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Inventory;
 using Content.Shared.Item;
 using Content.Shared.Preferences.Loadouts;
+using Content.Shared.Random.Helpers; // Carpmosia-edit - Lawset loadouts
 using Content.Shared.Roles;
+using Content.Shared.Silicons.Laws; // Carpmosia-edit - Lawset loadouts
+using Content.Shared.Silicons.Laws.Components; // Carpmosia-edit - Lawset loadouts
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using Robust.Shared.Collections;
@@ -23,6 +26,7 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     [Dependency] private readonly MetaDataSystem _metadata = default!;
     [Dependency] private readonly SharedStorageSystem _storage = default!;
     [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
+    [Dependency] private readonly SharedSiliconLawSystem _siliconLawSystem = default!; // Carpmosia-edit - Lawset loadouts
 
     private EntityQuery<HandsComponent> _handsQuery;
     private EntityQuery<InventoryComponent> _inventoryQuery;
@@ -58,8 +62,67 @@ public abstract class SharedStationSpawningSystem : EntitySystem
             }
         }
 
+        EquipLawset(entity, loadout, roleProto); // Carpmosia-edit - Lawset loadouts
         EquipRoleName(entity, loadout, roleProto);
     }
+
+    // Carpmosia-start - Lawset loadouts
+    public void EquipLawset(EntityUid entity, RoleLoadout loadout, RoleLoadoutPrototype roleProto)
+    {
+        if (!TryComp<SiliconLawProviderComponent>(entity, out var siliconLaw))
+            return;
+
+        float weight = 0;
+        var weights = new Dictionary<ProtoId<SiliconLawsetPrototype>, float>();
+
+        foreach (var group in loadout.SelectedLoadouts.OrderBy(x => roleProto.Groups.FindIndex(e => e == x.Key)).Reverse())
+        {
+            if (!PrototypeManager.Resolve(group.Key, out var groupProto))
+                continue;
+
+            if (groupProto.GroupWeight == null)
+                continue;
+
+            weight += groupProto.GroupWeight.Value;
+            var singleWeght = weight / groupProto.Loadouts.Count;
+
+            foreach (var items in group.Value)
+            {
+                if (!PrototypeManager.Resolve(items.Prototype, out var loadoutProto))
+                    continue;
+
+                if (loadoutProto.Lawset == null)
+                {
+                    Log.Error($"Unable to find lawset for loadout {items.Prototype}");
+                    continue;
+                }
+
+                weights.Add(loadoutProto.Lawset.Value, singleWeght);
+                weight -= singleWeght * group.Value.Count;
+            }
+        }
+
+        if (weights.Count == 0)
+            return;
+
+        var pick = _random.Pick(weights);
+
+        if (!PrototypeManager.Resolve(pick, out var lawset))
+            return;
+
+        siliconLaw.Laws = lawset;
+        siliconLaw.Lawset = new SiliconLawset()
+        {
+            Laws = new List<SiliconLaw>(lawset.Laws.Count),
+        };
+        foreach (var law in lawset.Laws)
+        {
+            siliconLaw.Lawset.Laws.Add(PrototypeManager.Index(law).ShallowClone());
+        }
+
+        siliconLaw.Lawset.ObeysTo = lawset.ObeysTo;
+    }
+    // Carpmosia-end - Lawset loadouts
 
     /// <summary>
     /// Applies the role's name as applicable to the entity.

@@ -20,7 +20,7 @@
     spawnFriendsSearchRadius: 1 # Try to only friend the person who has the pet in the bag
     whitelist:
       components:
-      - HumanoidAppearance
+      - HumanoidProfile
   - type: GhostTakeoverAvailable
   - type: MindContainer
   - type: Tag
