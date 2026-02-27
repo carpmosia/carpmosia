@@ -17,7 +17,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: [ClothingEyesBase, BaseEngineeringContraband]
+  parent: ClothingEyesGlassesMeson
   id: ClothingEyesGlassesMesonDiagnostic
   name: diagnostic goggles
   description: Orange-tinted engineering goggles with an intergrated diagnostics hud.
@@ -26,13 +26,12 @@
     sprite: _Carpmosia/Clothing/Eyes/Glasses/mesondiag.rsi
   - type: Clothing
     sprite: _Carpmosia/Clothing/Eyes/Glasses/mesondiag.rsi
-  - type: EyeProtection
-  - type: IdentityBlocker
-    coverage: EYES
   - type: ShowHealthBars
     damageContainers:
       - Inorganic
       - Silicon
+  - type: StaticPrice
+    price: 30
   - type: Construction
     graph: Mesondiag
     node: mesondiag
