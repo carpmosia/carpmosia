@@ -72,10 +72,17 @@ namespace Content.Server.Shuttles.Components
 
         /// Carpmosia-start - rotate shuttle along movement vector
         [DataField]
-        public PIDParams AccParams = new(80f, 20f, 5f, 100f, -100f);
+        public PIDParams AccParams = new(200f, 0.05f, 1f, 200f, -200f);
+#if DEBUG
+        [DataField]
+        public float Kp = 1000f;
 
         [DataField]
-        public float TargetSpeed = 100f;
+        public float Ti = 0.1f;
+
+        [DataField]
+        public float Td = 10f;
+#endif
         /// Carpmosia-end - rotate shuttle along movement vector
         /// <summary>
         /// Optional override for the FTL cooldown for this shuttle.

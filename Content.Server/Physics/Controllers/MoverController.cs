@@ -595,29 +595,29 @@ public sealed class MoverController : SharedMoverController
                 var torqueMul = body.InvI * frameTime;
 
                 //find angle between current orientation and movement vector
-                var angle = alignInput > 0f ?
+                var targetAngle = alignInput > 0f ?
                     MathF.Acos(shuttleVelocity.Y / shuttleVelocity.Length()) : MathF.Acos(-shuttleVelocity.Y / shuttleVelocity.Length());
 
-                angle *= MathF.Sign(shuttleVelocity.X);
+                targetAngle *= MathF.Sign(shuttleVelocity.X);
 
                 //perform PI controller calculation
                 var pidInput = body.AngularVelocity;
-                var setpoint = alignInput > 0f ? MathHelper.DegreesToRadians(shuttle.TargetSpeed) : -MathHelper.DegreesToRadians(shuttle.TargetSpeed);
 
+                var setpoint = alignInput > 0f ? -targetAngle : targetAngle;
 
+                var maxTorque = (ShuttleComponent.MaxAngularVelocity - body.AngularVelocity) / torqueMul;
+                var minTorque = (-ShuttleComponent.MaxAngularVelocity - body.AngularVelocity) / torqueMul;
 
+                shuttle.AccParams.MaxVal = maxTorque;
+                shuttle.AccParams.MinVal = minTorque;
+#if DEBUG
+                shuttle.AccParams.Kp = shuttle.Kp;
+                shuttle.AccParams.Ti = shuttle.Ti;
+                shuttle.AccParams.Td = shuttle.Td;
+#endif
                 var torque = -PIDSystem.Controller(pidInput, setpoint, ref shuttle.AccParams, frameTime);
 
-                torque = Math.Clamp(torque,
-                    (-ShuttleComponent.MaxAngularVelocity - body.AngularVelocity) / torqueMul,
-                    (ShuttleComponent.MaxAngularVelocity - body.AngularVelocity) / torqueMul);
-
-                _sawmill.Debug(
-                    MathHelper.RadiansToDegrees(body.AngularVelocity).ToString("F6") + " " +
-                    MathHelper.RadiansToDegrees(pidInput - setpoint).ToString("F6") + " " +
-                    torque.ToString("F6") + " " +
-                    shuttle.AccParams.Integral.ToString("F6")
-                    );
+                torque = Math.Clamp(torque, minTorque, maxTorque);
 
                 if (!torque.Equals(0f))
                 {

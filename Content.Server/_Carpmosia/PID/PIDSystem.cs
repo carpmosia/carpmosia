@@ -27,8 +27,11 @@ public static class PIDSystem
 
         var pOut = args.Kp * error;
 
-        args.Integral += error * frametime;
-        var iOut = args.Ti * args.Integral;
+        var safeTi = args.Ti == 0f ? 100000f : args.Ti;
+
+        var step = frametime * (error / safeTi);
+        args.Integral += step;
+        var iOut = args.Integral;
 
         var dOut = args.Td * ((error - args.PrevError) / frametime);
         args.PrevError = error;
@@ -38,7 +41,7 @@ public static class PIDSystem
         if (output > args.MaxVal || output < args.MinVal)
         {
             output = MathF.Max(args.MinVal, MathF.Min(args.MaxVal, output)); //quick and dirty clamp (which doesn't exist in mathF for some reason??)
-            args.Integral -= error * frametime; //don't endlessly increase the integral if output is at the extreme already
+            args.Integral -= step; //don't endlessly increase the integral if output is at the extreme already
         }
 
         return output;
