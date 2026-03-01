@@ -33,7 +33,7 @@ public static class PIDSystem
         args.Integral += step;
         var iOut = args.Integral;
 
-        var dOut = args.Td * ((error - args.PrevError) / frametime);
+        var dOut = args.Td * ((args.PrevError - error) / frametime);
         args.PrevError = error;
 
         var output = pOut + iOut + dOut;

@@ -71,17 +71,17 @@ namespace Content.Server.Shuttles.Components
         public float DampingModifier;
 
         /// Carpmosia-start - rotate shuttle along movement vector
+        [ViewVariables]
+        public PIDParams AccParams = new(800f, 0.05f, 2f, 200f, -200f);
+#if DEBUG || TOOLS
         [DataField]
-        public PIDParams AccParams = new(200f, 0.05f, 1f, 200f, -200f);
-#if DEBUG
-        [DataField]
-        public float Kp = 200f;
+        public float Kp = 800f;
 
         [DataField]
         public float Ti = 0.05f;
 
         [DataField]
-        public float Td = 1f;
+        public float Td = 2f;
 #endif
         /// Carpmosia-end - rotate shuttle along movement vector
         /// <summary>

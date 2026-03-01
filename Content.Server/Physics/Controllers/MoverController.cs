@@ -605,7 +605,7 @@ public sealed class MoverController : SharedMoverController
 
                 shuttle.AccParams.MaxVal = maxTorque;
                 shuttle.AccParams.MinVal = minTorque;
-#if DEBUG
+#if DEBUG || TOOLS
                 shuttle.AccParams.Kp = shuttle.Kp;
                 shuttle.AccParams.Ti = shuttle.Ti;
                 shuttle.AccParams.Td = shuttle.Td;
