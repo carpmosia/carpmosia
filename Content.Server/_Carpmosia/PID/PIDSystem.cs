@@ -40,7 +40,7 @@ public static class PIDSystem
 
         if (output > args.MaxVal || output < args.MinVal)
         {
-            output = MathF.Max(args.MinVal, MathF.Min(args.MaxVal, output)); //quick and dirty clamp (which doesn't exist in mathF for some reason??)
+            output = Math.Clamp(output, args.MinVal, args.MaxVal);
             args.Integral -= step; //don't endlessly increase the integral if output is at the extreme already
         }
 
