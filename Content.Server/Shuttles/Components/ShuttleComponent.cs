@@ -75,13 +75,13 @@ namespace Content.Server.Shuttles.Components
         public PIDParams AccParams = new(200f, 0.05f, 1f, 200f, -200f);
 #if DEBUG
         [DataField]
-        public float Kp = 1000f;
+        public float Kp = 200f;
 
         [DataField]
-        public float Ti = 0.1f;
+        public float Ti = 0.05f;
 
         [DataField]
-        public float Td = 10f;
+        public float Td = 1f;
 #endif
         /// Carpmosia-end - rotate shuttle along movement vector
         /// <summary>
