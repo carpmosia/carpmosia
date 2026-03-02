@@ -178,6 +178,7 @@
       #- Bloodpack
       #- Gauze
       #- Ointment
+      #- Tourniquet
       # Carpmosia-end - Medical tourniquets
       - CigPack
       - PillCanister
@@ -187,7 +188,6 @@
       - Dropper
       components:
       - Defibrillator # Carpmosia-edit - civilian research tweaks
-      - Hypospray
       - Injector
       - Pill
       - HandLabeler
@@ -201,7 +201,7 @@
           - Bottle
       hypo:
         whitelist:
-          components:
+          tags:
           - Hypospray
       pill:
         whitelist:

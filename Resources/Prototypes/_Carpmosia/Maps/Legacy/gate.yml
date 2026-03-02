@@ -1,5 +1,6 @@
+# 2024-12-17 13:06:33 +0300 https://raw.githubusercontent.com/space-wizards/space-station-14/a77fcdec762c806db1c39d5a5861c0a1eca511c7/Resources/Prototypes/Maps/gate.yml
 - type: gameMap
-  id: Gate
+  id: LegacyGate
   mapName: 'Gate Station'
   mapPath: /Maps/_Carpmosia/Legacy/gate.yml
   minPlayers: 55
@@ -26,7 +27,6 @@
             Chaplain: [ 1, 1 ]
             Librarian: [ 1, 1 ]
             ServiceWorker: [ 2, 2 ]
-            Zookeeper: [ 1, 1 ]
             Reporter: [ 2, 2 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]

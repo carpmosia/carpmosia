@@ -45,7 +45,10 @@ public abstract class SharedJobSystem : EntitySystem
         // Carpmosia-start - Antag playtimes
         foreach (var antag in _prototypes.EnumeratePrototypes<AntagPrototype>())
         {
-            _inverseTrackerLookup.Add(antag.PlayTimeTracker, antag.ID);
+            if (antag.PlayTimeTracker != null)
+            {
+                _inverseTrackerLookup.Add(antag.PlayTimeTracker, antag.ID);
+            }
         }
         // Carpmosia-end - Antag playtimes
     }

@@ -1,5 +1,5 @@
 using System.IO;
-using Content.Server.Maps;
+using Content.Shared.Maps;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -46,7 +46,28 @@ public sealed class RenderMapFile : RenderMap
     /// </summary>
     public required string FileName;
 
-    public override string ShortName => Path.GetFileNameWithoutExtension(FileName);
+    // Carpmosia-start - Legacy maps
+    public override string ShortName
+    {
+        get
+        {
+            var prefix = "";
+            switch (Directory.GetParent(FileName)?.Name)
+            {
+                case "_Carpmosia":
+                    prefix = "carp_";
+                    break;
+                case "Legacy":
+                    prefix = "legacy_";
+                    break;
+                default:
+                    prefix = "";
+                    break;
+            }
+            return prefix + Path.GetFileNameWithoutExtension(FileName);
+        }
+    }
+    // Carpmosia-end - Legacy maps
 
     public override string ToString()
     {

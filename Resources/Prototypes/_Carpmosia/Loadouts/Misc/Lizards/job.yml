@@ -1,0 +1,491 @@
+- type: loadout
+  id: LizardPlushieBoxer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 20h
+  storage:
+    back:
+      - PlushieLizardJobBoxer
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieZookeeper
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobZookeeper
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieSecurityCadet
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Security
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobSecuritycadet
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieChiefMedicalOfficer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobChiefMedicalOfficer
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobChiefmedicalofficer
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieMedicalDoctor
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobMedicalDoctor
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobMedicaldoctor
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieMedicalIntern
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Medical
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobMedicalintern
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieChemist
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobChemist
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobChemist
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieParamedic
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobParamedic
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobParamedic
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieReporter
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobReporter
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobReporter
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushiePsychologist
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobPsychologist
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobPsychologist
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieMusician
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobMusician
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobMusician
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieQuartermaster
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobQuartermaster
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobQuartermaster
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieCargoTechnician
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobCargoTechnician
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobCargotechnician
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieSalvageSpecialist
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobSalvageSpecialist
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobSalvagespecialist
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieChiefEngineer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobChiefEngineer
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobChiefengineer
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieTechnicalAssistant
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobTechnicalassistant
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieStationEngineer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobStationEngineer
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobStationengineer
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieAtmosphericTechnician
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobAtmosphericTechnician
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobAtmospherictechnician
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieResearchDirector
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobResearchDirector
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobResearchdirector
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieScientist
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobScientist
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobScientist
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieResearchAssistant
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Science
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobResearchassistant
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieHeadofSecurity
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobHeadOfSecurity
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobHeadofsecurity
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieWarden
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobWarden
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobWarden
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieDetective
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobDetective
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobDetective
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieSecurity
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobSecurityOfficer
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobSecurityofficer
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieMime
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobMime
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobMime
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieBotanist
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobBotanist
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobBotanist
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieClown
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobClown
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobClown
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieCaptain
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobCaptain
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobCaptain
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieHeadOfPersonnel
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobHeadOfPersonnel
+      time: 20h
+  storage:
+    back:
+      - PlushieLizardJobHeadofpersonnel
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushiePassenger
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobPassenger
+      time: 20h
+  storage:
+    back:
+      - PlushieLizardJobPassenger
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieBartender
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobBartender
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobBartender
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieServiceWorker
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobServiceWorker
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobServiceworker
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieChef
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobChef
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobChef
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieLibrarian
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobLibrarian
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobLibrarian
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieLawyer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobLawyer
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobLawyer
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieChaplain
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobChaplain
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobChaplain
+  groupBy: "lizards"
+
+- type: loadout
+  id: LizardPlushieJanitor
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobJanitor
+      time: 20h
+  storage:
+    back:
+    - PlushieLizardJobJanitor
+  groupBy: "lizards"

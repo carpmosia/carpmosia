@@ -3,6 +3,19 @@
   abstract: true
   parent: BaseHead
   id: CommonHead
+  loadouts:
+  - HatCapBlack
+  - HatCapBlue
+  - HatCapGreen
+  - HatCapGrey
+  - HatCapOrange
+  - HatCapPurple
+  - HatCapRed
+  - HatCapWhite
+  - HatCapYellow
+  - HatUshanka
+  - HatTophat
+  - HatCone
 
 - type: loadoutGroup
   abstract: true
@@ -90,7 +103,11 @@
   # Fancy
   - LaceupShoes
   - LeatherShoes
-  # - WizardShoes # make non wizard slippers later
+  - HighheelShoes
+  - CowboyBlackShoes
+  - CowboyBrownShoes
+  - CowboyWhiteShoes
+  - TouristShoes
 
 - type: loadoutGroup
   abstract: true

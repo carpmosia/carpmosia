@@ -8,10 +8,13 @@ using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.Maps;
+using Content.Server.Shuttles.Components; // Carpmosia-edit - EORG vote
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Content.Shared.Ghost;
+using Content.Shared.Mobs; // Carpmosia-edit - EORG vote
+using Content.Shared.Mobs.Components; // Carpmosia-edit - EORG vote
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Voting;
 using Robust.Server.Player;
@@ -286,11 +289,11 @@ namespace Content.Server.Voting.Managers
                 msg.DisplayVotes = true;
             }
 
-            msg.Options = new (ushort votes, string name)[v.Entries.Length];
+            msg.Options = new (ushort votes, string name, string? icon, EntProtoId? proto)[v.Entries.Length]; // Carpmosia-start - Better map vote
             for (var i = 0; i < msg.Options.Length; i++)
             {
                 ref var entry = ref v.Entries[i];
-                msg.Options[i] = (msg.DisplayVotes ? (ushort) entry.Votes : (ushort) 0, entry.Text);
+                msg.Options[i] = (msg.DisplayVotes ? (ushort) entry.Votes : (ushort) 0, entry.Text, entry.Icon, entry.Proto); // Carpmosia-start - Better map vote
             }
 
             player.Channel.SendMessage(msg);
@@ -430,6 +433,31 @@ namespace Content.Server.Voting.Managers
             if (eligibility == VoterEligibility.All)
                 return true;
 
+            // Carpmosia-start - EORG vote
+            if (eligibility == VoterEligibility.OnEvac)
+            {
+                // Get player's transform
+                if (!_entityManager.TryGetComponent(player.AttachedEntity, out TransformComponent? transform))
+                    return false;
+
+                if (transform == null)
+                    return false;
+
+                // Check if player is on the shuttle
+                if (!_entityManager.HasComponent<EmergencyShuttleComponent>(transform.GridUid))
+                    return false;
+
+                if (!_entityManager.TryGetComponent(player.AttachedEntity, out MobStateComponent? mobState))
+                    return false;
+
+                // Player is gibbed
+                if (mobState == null)
+                    return false;
+
+                return mobState.CurrentState != MobState.Invalid;
+            }
+            // Carpmosia-end - EORG vote
+
             if (eligibility == VoterEligibility.Ghost || eligibility == VoterEligibility.GhostMinimumPlaytime)
             {
                 if (!_entityManager.TryGetComponent(player.AttachedEntity, out GhostComponent? ghostComp))
@@ -535,12 +563,26 @@ namespace Content.Server.Voting.Managers
         {
             public object Data;
             public string Text;
+            public string? Icon = null; // Carpmosia-edit - Better map vote
+            public EntProtoId? Proto = null; // Carpmosia-edit - Better map vote
             public int Votes;
 
-            public VoteEntry(object data, string text)
+            public VoteEntry(object data, object meta) // Carpmosia-edit - Better map vote
             {
                 Data = data;
-                Text = text;
+                // Carpmosia-start - Better map vote
+                if (meta is string text)
+                {
+                    Text = text;
+                }
+                else
+                {
+                    var tuple = ((string, string?, EntProtoId?)) meta;
+                    Text = tuple.Item1;
+                    Icon = tuple.Item2;
+                    Proto = tuple.Item3;
+                }
+                // Carpmosia-end - Better map vote
                 Votes = 0;
             }
         }
@@ -548,6 +590,7 @@ namespace Content.Server.Voting.Managers
         public enum VoterEligibility
         {
             All,
+            OnEvac, // Carpmosia-edit - EORG vote
             Ghost, // Player needs to be a ghost
             GhostMinimumPlaytime, // Player needs to be a ghost, with a minimum playtime and deathtime as defined by votekick CCvars.
             MinimumPlaytime //Player needs to have a minimum playtime and deathtime as defined by votekick CCvars.

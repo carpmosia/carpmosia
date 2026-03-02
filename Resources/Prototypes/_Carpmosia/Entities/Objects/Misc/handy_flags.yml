@@ -3,9 +3,9 @@
   id: BaseHandyFlag
   abstract: true
   components:
-    - type: TriggerOnUse
-    - type: PopupOnTrigger
-      text: wavable-component-wave
-      otherText: wavable-component-wave-other
-    - type: UseDelay
-      delay: 0.5
+  - type: TriggerOnUse
+  - type: PopupOnTrigger
+    text: wavable-component-wave
+    otherText: wavable-component-wave-other
+  - type: UseDelay
+    delay: 0.5

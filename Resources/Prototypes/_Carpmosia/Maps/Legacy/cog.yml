@@ -1,5 +1,6 @@
+# 2024-09-07 13:58:16 -0600 https://raw.githubusercontent.com/space-wizards/space-station-14/719e5a8ac1f8295fc5b441f8701875bd07beb66a/Resources/Prototypes/Maps/cog.yml
 - type: gameMap
-  id: Cog
+  id: LegacyCog
   mapName: 'Cog'
   mapPath: /Maps/_Carpmosia/Legacy/cog.yml
   minPlayers: 40
@@ -28,7 +29,6 @@
             Reporter: [ 2, 2 ]
             Librarian: [ 1, 1 ]
             ServiceWorker: [ 3, 3 ]
-            Zookeeper: [ 1, 1 ] 
             #engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 3, 3 ]
@@ -61,7 +61,6 @@
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
-            Boxer: [ 2, 2]
             #silicon
             StationAi: [ 1, 1 ]
             Borg: [ 3, 3 ]

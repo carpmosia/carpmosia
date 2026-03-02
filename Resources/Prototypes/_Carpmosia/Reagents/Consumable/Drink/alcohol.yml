@@ -1,7 +1,7 @@
 - type: reagent
+  parent: BaseAlcohol
   id: Angostura
   name: reagent-name-angostura
-  parent: BaseAlcohol
   desc: reagent-desc-angostura
   physicalDesc: reagent-physical-desc-strong-smelling
   flavor: angostura
@@ -13,18 +13,17 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
   metabolisms:
-    Drink:
+    Digestion:
+      metabolites:
+        Ethanol: 0.4
       effects:
       - !type:SatiateThirst
         factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.2
 
 - type: reagent
+  parent: BaseAlcohol
   id: SweetRevenge
   name: reagent-name-sweet-revenge
-  parent: BaseAlcohol
   desc: reagent-desc-sweet-revenge
   physicalDesc: reagent-physical-desc-sweet
   flavor: sweetrevenge
@@ -36,18 +35,17 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
+    Digestion:
+      metabolites:
+        Ethanol: 0.26
       effects:
       - !type:SatiateThirst
         factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.13
 
 - type: reagent
+  parent: BaseAlcohol
   id: OldFashioned
   name: reagent-name-old-fashioned
-  parent: BaseAlcohol
   desc: reagent-desc-old-fashioned
   physicalDesc: reagent-physical-desc-strong-smelling
   flavor: oldfashioned
@@ -59,18 +57,17 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
+    Digestion:
+      metabolites:
+        Ethanol: 0.2
       effects:
       - !type:SatiateThirst
         factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.1
 
 - type: reagent
+  parent: BaseAlcohol
   id: LLB
   name: reagent-name-llb
-  parent: BaseAlcohol
   desc: reagent-desc-llb
   physicalDesc: reagent-physical-desc-citric
   flavor: llb
@@ -82,18 +79,17 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
+    Digestion:
+      metabolites:
+        Ethanol: 0.1
       effects:
       - !type:SatiateThirst
         factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.05
 
 - type: reagent
+  parent: BaseAlcohol
   id: RobRoy
   name: reagent-name-rob-roy
-  parent: BaseAlcohol
   desc: reagent-desc-rob-roy
   physicalDesc: reagent-physical-desc-strong-smelling
   flavor: robroy
@@ -106,9 +102,9 @@
   metamorphicChangeColor: false
 
 - type: reagent
+  parent: BaseAlcohol
   id: Gunner
   name: reagent-name-gunner
-  parent: BaseAlcohol
   desc: reagent-desc-gunner
   physicalDesc: reagent-physical-desc-fizzy
   flavor: gunner
@@ -120,18 +116,17 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
+    Digestion:
+      metabolites:
+        Ethanol: 0.1
       effects:
       - !type:SatiateThirst
         factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.05
 
 - type: reagent
+  parent: BaseAlcohol
   id: CarribeanLovers
   name: reagent-name-carribean-lovers
-  parent: BaseAlcohol
   desc: reagent-desc-carribean-lovers
   physicalDesc: reagent-physical-desc-tropical
   flavor: carribeanlovers
@@ -144,9 +139,9 @@
   metamorphicChangeColor: true
 
 - type: reagent
+  parent: BaseAlcohol
   id: TheLastWord
   name: reagent-name-the-last-word
-  parent: BaseAlcohol
   desc: reagent-desc-the-last-word
   physicalDesc: reagent-physical-desc-cloudy
   flavor: thelastword
@@ -159,9 +154,9 @@
   metamorphicChangeColor: false
 
 - type: reagent
+  parent: BaseAlcohol
   id: CoffeeFlip
   name: reagent-name-coffee-flip
-  parent: BaseAlcohol
   desc: reagent-desc-coffee-flip
   physicalDesc: reagent-physical-desc-sweet
   flavor: coffeeflip
@@ -173,16 +168,13 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
+    Digestion:
+      metabolites:
+        Ethanol: 0.2
+        Theobromine: 0.1
       effects:
       - !type:SatiateThirst
         factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.1
-      - !type:AdjustReagent
-        reagent: Theobromine
-        amount: 0.05
       - !type:ModifyStatusEffect
         effectProto: StatusEffectDrowsiness
         time: 2

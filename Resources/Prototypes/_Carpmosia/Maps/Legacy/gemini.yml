@@ -1,5 +1,6 @@
+# 2024-01-10 20:59:27 -0700 https://raw.githubusercontent.com/space-wizards/space-station-14/e0af752b9c73f0da63d6c80815a84e68e98e0500/Resources/Prototypes/Maps/gemini.yml
 - type: gameMap
-  id: Gemini
+  id: LegacyGemini
   mapName: 'Gemini'
   mapPath: /Maps/_Carpmosia/Legacy/gemini.yml
   minPlayers: 35
@@ -26,7 +27,6 @@
             Chaplain: [ 1, 2 ]
             Librarian: [ 1, 2 ]
             Lawyer: [ 2, 3 ]
-            Zookeeper: [ 1, 1 ]
             ServiceWorker: [ 4, 4 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]

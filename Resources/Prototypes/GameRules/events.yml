@@ -14,7 +14,7 @@
     - id: IonStorm # its calm like 90% of the time smh
     - id: KudzuGrowth
     - id: MassHallucinations
-    # - id: MimicVendorRule # Carpmosia edit - Disable mimic event
+    # - id: MimicVendorRule # Carpmosia-edit - Disable mimic event
     - id: MouseMigration
     - id: PowerGridCheck
     - id: RandomSentience
@@ -244,7 +244,7 @@
       pickPlayer: false
       startingGear: SpaceNinjaGear
       roleLoadout:
-      - RoleSurvivalEVA
+      - RoleSurvivalSpaceNinja
       briefing:
         text: ninja-role-greeting
         color: Green
@@ -532,6 +532,7 @@
     minimumPlayers: 40
     weight: 1 # Zombies was happening basically every single survival round, so now it's super rare
     duration: 1
+    occursDuringRoundEnd: false
   - type: ZombieRule
   - type: AntagSelection
     definitions:

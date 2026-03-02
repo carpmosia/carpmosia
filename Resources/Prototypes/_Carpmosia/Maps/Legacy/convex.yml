@@ -1,5 +1,6 @@
+# 2025-04-10 21:55:45 +1200 https://raw.githubusercontent.com/space-wizards/space-station-14/829f8199e0c75a337bb2fcf3363770f68e9da2d8/Resources/Prototypes/Maps/convex.yml
 - type: gameMap
-  id: Convex
+  id: LegacyConvex
   mapName: 'Convex'
   mapPath: /Maps/_Carpmosia/Legacy/convex.yml
   minPlayers: 75
@@ -14,7 +15,7 @@
             prefixCreator: '14-SM'
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency_delta.yml
-        - type: StationJobs # 74 jobs total w/o latejoins & interns, 93 jobs total w/ latejoins & interns
+        - type: StationJobs # 72 jobs total w/o latejoins & interns, 91 jobs total w/ latejoins & interns
           availableJobs:
             #command (7)
             Captain: [ 1, 1 ]
@@ -24,7 +25,7 @@
             ChiefEngineer: [ 1, 1 ]
             ResearchDirector: [ 1, 1 ]
             Quartermaster: [ 1, 1 ]
-            #service (18 - 19)
+            #service (16 - 17)
             Bartender: [ 2, 2 ]
             Botanist: [ 3, 3 ]
             Chef: [ 2, 2 ]
@@ -33,7 +34,6 @@
             Librarian: [ 1, 1 ]
             ServiceWorker: [ 3, 3 ]
             Reporter: [ 1, 2 ]
-            Boxer: [2, 2]
             #engineering (8)
             AtmosphericTechnician: [ 3, 3 ]
             StationEngineer: [ 5, 5 ]

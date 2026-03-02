@@ -2,29 +2,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using YamlDotNet.RepresentationModel;
 using Content.Server.Administration.Systems;
 using Content.Server.GameTicking;
-using Content.Server.Maps;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Spawners.Components;
 using Content.Server.Station.Components;
 using Content.Shared.CCVar;
+using Content.Shared.Maps;
 using Content.Shared.Roles;
+using Content.Shared.Station.Components;
 using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Map;
-using Robust.Shared.Map.Components;
-using Robust.Shared.Prototypes;
-using Content.Shared.Station.Components;
 using Robust.Shared.EntitySerialization;
 using Robust.Shared.EntitySerialization.Systems;
+using Robust.Shared.GameObjects;
 using Robust.Shared.IoC;
-using Robust.Shared.Utility;
-using YamlDotNet.RepresentationModel;
+using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
 using Robust.Shared.Map.Events;
-
+using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 namespace Content.IntegrationTests.Tests
 {
     [TestFixture]
@@ -96,33 +95,20 @@ namespace Content.IntegrationTests.Tests
             "Marathon",
             "MeteorArena",
             "Saltern",
-            "Saltern2", // Carpmosia-edit - Saltern2 port
             "Reach",
             "Oasis",
-            "Oasis2", // Carpmosia-edit - Oasis2 port
-            "Amber",
             "Plasma",
             "Elkridge",
             "Relic",
             "dm01-entryway",
             "Exo",
-            "Feint", // Carpmosia-edit - Feint port
-            // Carpmosia-start - Legacy maps
-            "Meta",
-            "Omega",
-            "Core",
-            "Train",
-            "Gate",
-            "Convex",
-            "Loop",
-            "Cog",
-            "Gemini",
-            "Atlas",
-            "Cluster",
-            "Europa",
-            "Aspid",
-            "Barratry",
-            // Carpmosia-end - Legacy maps
+            "Snowball",
+            // Carpmosia-start - Carpmaps
+            "CarpAmber",
+            "CarpFeint",
+            "CarpOasis",
+            "CarpSaltern",
+            // Carpmosia-end - Carpmaps
         };
 
         private static readonly ProtoId<EntityCategoryPrototype> DoNotMapCategory = "DoNotMap";
@@ -533,6 +519,7 @@ namespace Content.IntegrationTests.Tests
             var gameMaps = protoMan.EnumeratePrototypes<GameMapPrototype>()
                 .Where(x => !pair.IsTestPrototype(x))
                 .Select(x => x.ID)
+                .Where(x => !x.StartsWith("Legacy")) // Carpmosia-edit - Legacy maps
                 .ToHashSet();
 
             Assert.That(gameMaps.Remove(PoolManager.TestMap));

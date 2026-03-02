@@ -2,6 +2,8 @@ using System.Threading;
 using Content.Server.Screens.Components;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Events;
+using Content.Server.Voting; // Carpmosia-edit - EORG vote
+using Content.Server.Voting.Managers; // Carpmosia-edit - EORG vote
 using Content.Shared.Access;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
@@ -209,6 +211,44 @@ public sealed partial class EmergencyShuttleSystem
             ShuttlesLeft = true;
             _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("emergency-shuttle-left", ("transitTime", $"{TransitTime:0}")));
 
+            // Carpmosia-start - EORG vote
+            var options = new VoteOptions
+            {
+                InitiatorText = Loc.GetString("vote-options-server-initiator-text"),
+                Title = Loc.GetString("ui-vote-eorg-title"),
+                Duration = TimeSpan.FromSeconds(Math.Max(1, TransitTime - 5)),
+                VoterEligibility = VoteManager.VoterEligibility.OnEvac,
+                Options =
+                {
+                    (Loc.GetString("ui-vote-eorg-yes"), "yes"),
+                    (Loc.GetString("ui-vote-eorg-no"), "no"),
+                    (Loc.GetString("ui-vote-eorg-abstain"), "abstain")
+                }
+            };
+            _roundEnd.EorgVote = _voteManager.CreateVote(options);
+
+            _roundEnd.EorgVote.OnFinished += (_, _) =>
+            {
+                var votesYes = _roundEnd.EorgVote.VotesPerOption["yes"];
+                var votesNo = _roundEnd.EorgVote.VotesPerOption["no"];
+                var total = votesYes + votesNo;
+
+                var ratioRequired = ConfigManager.GetCVar(CCVars.VoteEorgRequiredRatio);
+
+                if (total > 0 && votesYes / (float) total >= ratioRequired)
+                {
+                    _roundEnd.IsEorg = true;
+                    _logger.Add(LogType.Vote, LogImpact.Medium, $"EORG vote succeeded: {votesYes}/{votesNo}");
+                    _chatManager.DispatchServerAnnouncement(Loc.GetString("ui-vote-eorg-succeeded"));
+                }
+                else
+                {
+                    _logger.Add(LogType.Vote, LogImpact.Medium, $"EORG vote failed: {votesYes}/{votesNo}");
+                    _chatManager.DispatchServerAnnouncement(Loc.GetString("ui-vote-eorg-failed", ("ratio", ratioRequired)));
+                }
+            };
+            // Carpmosia-end - EORG vote
+
             Timer.Spawn((int)(TransitTime * 1000) + _bufferTime.Milliseconds, () => _roundEnd.EndRound(), _roundEndCancelToken?.Token ?? default);
         }
 
@@ -260,8 +300,7 @@ public sealed partial class EmergencyShuttleSystem
             return;
         }
 
-        // TODO: This is fucking bad
-        if (!component.AuthorizedEntities.Remove(MetaData(idCard).EntityName))
+        if (!component.AuthorizedEntities.Remove(idCard.Owner))
             return;
 
         _logger.Add(LogType.EmergencyShuttle, LogImpact.High, $"Emergency shuttle early launch REPEAL by {args.Actor:user}");
@@ -281,9 +320,12 @@ public sealed partial class EmergencyShuttleSystem
             return;
         }
 
-        // TODO: This is fucking bad
-        if (!component.AuthorizedEntities.Add(MetaData(idCard).EntityName))
+        var idCardUid = idCard.Owner;
+
+        if (component.AuthorizedEntities.ContainsKey(idCardUid))
             return;
+
+        component.AuthorizedEntities[idCardUid] = MetaData(idCard).EntityName;
 
         _logger.Add(LogType.EmergencyShuttle, LogImpact.High, $"Emergency shuttle early launch AUTH by {args.Actor:user}");
         var remaining = component.AuthorizationsRequired - component.AuthorizedEntities.Count;
@@ -327,7 +369,7 @@ public sealed partial class EmergencyShuttleSystem
     {
         var auths = new List<string>();
 
-        foreach (var auth in component.AuthorizedEntities)
+        foreach (var auth in component.AuthorizedEntities.Values)
         {
             auths.Add(auth);
         }

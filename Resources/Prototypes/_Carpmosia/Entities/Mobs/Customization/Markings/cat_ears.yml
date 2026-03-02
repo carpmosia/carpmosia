@@ -1,15 +1,14 @@
 - type: marking
   id: CatEarsBasic
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human]
+  groupWhitelist: [Human]
   coloring:
     default:
       type:
         !type:CategoryColoring
           category: Hair
       fallbackTypes:
-        - !type:SkinColoring
+      - !type:SkinColoring
     layers:
       basic_inner:
         type:
@@ -23,15 +22,14 @@
 - type: marking
   id: CatEarsCurled
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human]
+  groupWhitelist: [Human]
   coloring:
     default:
       type:
         !type:CategoryColoring
           category: Hair
       fallbackTypes:
-        - !type:SkinColoring
+      - !type:SkinColoring
     layers:
       curled_inner:
         type:
@@ -45,15 +43,14 @@
 - type: marking
   id: CatEarsDroopy
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human]
+  groupWhitelist: [Human]
   coloring:
     default:
       type:
         !type:CategoryColoring
           category: Hair
       fallbackTypes:
-        - !type:SkinColoring
+      - !type:SkinColoring
     layers:
       droopy_inner:
         type:
@@ -67,15 +64,14 @@
 - type: marking
   id: CatEarsFuzzy
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human]
+  groupWhitelist: [Human]
   coloring:
     default:
       type:
         !type:CategoryColoring
           category: Hair
       fallbackTypes:
-        - !type:SkinColoring
+      - !type:SkinColoring
     layers:
       fuzzy_inner:
         type:
@@ -89,15 +85,14 @@
 - type: marking
   id: CatEarsStubby
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human]
+  groupWhitelist: [Human]
   coloring:
     default:
       type:
         !type:CategoryColoring
           category: Hair
       fallbackTypes:
-        - !type:SkinColoring
+      - !type:SkinColoring
     layers:
       stubby_inner:
         type:
@@ -111,15 +106,14 @@
 - type: marking
   id: CatEarsTall
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human]
+  groupWhitelist: [Human]
   coloring:
     default:
       type:
         !type:CategoryColoring
           category: Hair
       fallbackTypes:
-        - !type:SkinColoring
+      - !type:SkinColoring
     layers:
       tall_inner:
         type:
@@ -135,15 +129,14 @@
 - type: marking
   id: CatEarsTorn
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human]
+  groupWhitelist: [Human]
   coloring:
     default:
       type:
         !type:CategoryColoring
           category: Hair
       fallbackTypes:
-        - !type:SkinColoring
+      - !type:SkinColoring
     layers:
       torn_inner:
         type:
@@ -157,15 +150,14 @@
 - type: marking
   id: CatEarsWide
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human]
+  groupWhitelist: [Human]
   coloring:
     default:
       type:
         !type:CategoryColoring
           category: Hair
       fallbackTypes:
-        - !type:SkinColoring
+      - !type:SkinColoring
     layers:
       wide_inner:
         type:

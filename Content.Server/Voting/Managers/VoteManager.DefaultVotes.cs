@@ -6,12 +6,12 @@ using Content.Server.Administration.Managers;
 using Content.Server.Discord.WebhookMessages;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Presets;
-using Content.Server.Maps;
 using Content.Server.Roles;
 using Content.Server.RoundEnd;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.Database;
+using Content.Shared.Maps;
 using Content.Shared.Players;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Voting;
@@ -263,7 +263,7 @@ namespace Content.Server.Voting.Managers
 
         private void CreateMapVote(ICommonSession? initiator)
         {
-            var maps = _gameMapManager.CurrentlyEligibleMaps().ToDictionary(map => map, map => map.MapName);
+            var maps = _gameMapManager.CurrentlyEligibleMaps().ToDictionary(map => map.ID, map => map); // Carpmosia-edit - Better map vote
 
             var alone = _playerManager.PlayerCount == 1 && initiator != null;
             var options = new VoteOptions
@@ -279,7 +279,7 @@ namespace Content.Server.Voting.Managers
 
             foreach (var (k, v) in maps)
             {
-                options.Options.Add((v, k));
+                options.Options.Add(((v.MapName, v.MapIcon, v.IconPrototype), k)); // Carpmosia-edit - Better map vote
             }
 
             WirePresetVoteInitiator(options, initiator);
@@ -288,27 +288,32 @@ namespace Content.Server.Voting.Managers
 
             vote.OnFinished += (_, args) =>
             {
-                GameMapPrototype picked;
+                string picked; // Carpmosia-edit - Better map vote
                 if (args.Winner == null)
                 {
-                    picked = (GameMapPrototype) _random.Pick(args.Winners);
+                    picked = (string) _random.Pick(args.Winners); // Carpmosia-edit - Better map vote
                     _chatManager.DispatchServerAnnouncement(
-                        Loc.GetString("ui-vote-map-tie", ("picked", maps[picked])));
+                        Loc.GetString("ui-vote-map-tie", ("picked", maps[picked].MapName))); // Carpmosia-edit - Better map vote
                 }
                 else
                 {
-                    picked = (GameMapPrototype) args.Winner;
+                    picked = (string) args.Winner; // Carpmosia-edit - Better map vote
                     _chatManager.DispatchServerAnnouncement(
-                        Loc.GetString("ui-vote-map-win", ("winner", maps[picked])));
+                        Loc.GetString("ui-vote-map-win", ("winner", maps[picked].MapName))); // Carpmosia-edit - Better map vote
                 }
 
-                _adminLogger.Add(LogType.Vote, LogImpact.Medium, $"Map vote finished: {picked.MapName}");
+                _adminLogger.Add(LogType.Vote, LogImpact.Medium, $"Map vote finished: {maps[picked].MapName}"); // Carpmosia-edit - Better map vote
                 var ticker = _entityManager.EntitySysManager.GetEntitySystem<GameTicker>();
                 if (ticker.CanUpdateMap())
                 {
-                    if (_gameMapManager.TrySelectMapIfEligible(picked.ID))
+                    if (_gameMapManager.CheckMapExists(picked)) // Carpmosia-edit - Better map vote
                     {
+                        _gameMapManager.SelectMap(picked); // Carpmosia-edit - Better map vote
                         ticker.UpdateInfoText();
+                    }
+                    else
+                    {
+                        _chatManager.DispatchServerAnnouncement(Loc.GetString("ui-vote-map-invalid", ("winner", maps[picked])));
                     }
                 }
                 else
@@ -371,14 +376,7 @@ namespace Content.Server.Voting.Managers
             }
             var targetUid = located.UserId;
             var targetHWid = located.LastHWId;
-            (IPAddress, int)? targetIP = null;
-
-            if (located.LastAddress is not null)
-            {
-                targetIP = located.LastAddress.AddressFamily is AddressFamily.InterNetwork
-                    ? (located.LastAddress, 32) // People with ipv4 addresses get a /32 address so we ban that
-                    : (located.LastAddress, 64); // This can only be an ipv6 address. People with ipv6 address should get /64 addresses so we ban that.
-            }
+            var targetIP = located.LastAddress;
 
             if (!_playerManager.TryGetSessionById(located.UserId, out ICommonSession? targetSession))
             {
@@ -544,7 +542,15 @@ namespace Content.Server.Voting.Managers
 
                         uint minutes = (uint)_cfg.GetCVar(CCVars.VotekickBanDuration);
 
-                        _bans.CreateServerBan(targetUid, target, null, targetIP, targetHWid, minutes, severity, Loc.GetString("votekick-ban-reason", ("reason", reason)));
+                        var banInfo = new CreateServerBanInfo(Loc.GetString("votekick-ban-reason", ("reason", reason)));
+                        banInfo.AddUser(targetUid, target);
+                        banInfo.AddHWId(targetHWid);
+                        banInfo.AddAddress(targetIP);
+                        banInfo.WithSeverity(severity);
+                        if (minutes > 0)
+                            banInfo.WithMinutes(minutes);
+
+                        _bans.CreateServerBan(banInfo);
                     }
                 }
                 else

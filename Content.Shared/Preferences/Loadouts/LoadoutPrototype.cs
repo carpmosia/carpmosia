@@ -1,5 +1,6 @@
 using Content.Shared.Preferences.Loadouts.Effects;
 using Content.Shared.Roles;
+using Content.Shared.Silicons.Laws; // Carpmosia-edit - Lawset loadouts
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Preferences.Loadouts;
@@ -37,6 +38,15 @@ public sealed partial class LoadoutPrototype : IPrototype, IEquipmentLoadout
     /// </summary>
     [DataField]
     public List<LoadoutEffect> Effects = new();
+
+    // Carpmosia-start - Lawset loadouts
+    /// <summary>
+    /// Lawset to be applied when the loadout is applied.
+    /// A random weighted lawset will be picked from all applied loadouts.
+    /// </summary>
+    [DataField]
+    public ProtoId<SiliconLawsetPrototype>? Lawset;
+    // Carpmosia-end - Lawset loadouts
 
     /// <inheritdoc />
     [DataField]
