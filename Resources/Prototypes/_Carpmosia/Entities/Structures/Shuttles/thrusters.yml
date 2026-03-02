@@ -1,10 +1,7 @@
 - type: entity
+  parent: ThrusterLarge
   id: ThrusterLargeWeak
-  suffix: half strength
-  name: large thruster
-  parent: [ ThrusterLarge ]
-  placement:
-    mode: AlignTileAny
+  suffix: Half
   components:
   - type: ApcPowerReceiver
     powerLoad: 5000
