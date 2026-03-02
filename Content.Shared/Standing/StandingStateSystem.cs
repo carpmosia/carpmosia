@@ -5,6 +5,8 @@ using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Physics;
 using Content.Shared.Rotation;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
@@ -28,6 +30,7 @@ public sealed class StandingStateSystem : EntitySystem
         SubscribeLocalEvent<StandingStateComponent, RefreshFrictionModifiersEvent>(OnRefreshFrictionModifiers);
         SubscribeLocalEvent<StandingStateComponent, TileFrictionEvent>(OnTileFriction);
         SubscribeLocalEvent<StandingStateComponent, EndClimbEvent>(OnEndClimb);
+        SubscribeLocalEvent<StandingStateComponent, MobStateChangedEvent>(OnMobStateChanged);
     }
 
     private void OnMobTargetCollide(Entity<StandingStateComponent> ent, ref AttemptMobTargetCollideEvent args)
@@ -51,14 +54,27 @@ public sealed class StandingStateSystem : EntitySystem
         if (entity.Comp.Standing)
             return;
 
+        if (entity.Comp.Incapacitated) {
+            args.ModifyFriction(entity.Comp.LimpFrictionMod);
+            args.ModifyAcceleration(entity.Comp.LimpFrictionMod);
+            return;
+        }
+
         args.ModifyFriction(entity.Comp.DownFrictionMod);
         args.ModifyAcceleration(entity.Comp.DownFrictionMod);
     }
 
     private void OnTileFriction(Entity<StandingStateComponent> entity, ref TileFrictionEvent args)
     {
-        if (!entity.Comp.Standing)
-            args.Modifier *= entity.Comp.DownFrictionMod;
+        if (entity.Comp.Standing)
+            return;
+
+        if (entity.Comp.Incapacitated) {
+            args.Modifier *= entity.Comp.LimpFrictionMod;
+            return;
+        }
+
+        args.Modifier *= entity.Comp.DownFrictionMod;
     }
 
     private void OnEndClimb(Entity<StandingStateComponent> entity, ref EndClimbEvent args)
@@ -68,6 +84,16 @@ public sealed class StandingStateSystem : EntitySystem
 
         // Currently only Climbing also edits fixtures layers like this so this is fine for now.
         ChangeLayers(entity);
+    }
+
+    private void OnMobStateChanged(Entity<StandingStateComponent> entity, ref MobStateChangedEvent args)
+    {
+        if (args.NewMobState == MobState.Critical || args.NewMobState == MobState.Dead) {
+            entity.Comp.Incapacitated = true;
+            return;
+        }
+
+        entity.Comp.Incapacitated = false;
     }
 
     public bool IsMatchingState(Entity<StandingStateComponent?> entity, bool standing)
