@@ -103,6 +103,7 @@ namespace Content.IntegrationTests.Tests
             "dm01-entryway",
             "Exo",
             "Snowball",
+            "Serpentcrest",
             // Carpmosia-start - Carpmaps
             "CarpAmber",
             "CarpFeint",

@@ -127,6 +127,7 @@
 
 # - type: roleLoadout
 #   id: JobChaplain
+#   canCustomizeName: true
 #   groups:
 #   - GroupTankHarness
 #   - ChaplainHead
@@ -434,6 +435,33 @@
 #   - Trinkets
 #   #- SecurityCadetJobTrinkets
 #   - GroupSpeciesBreathToolSecurity
+
+# Wildcards
+# - type: roleLoadout
+#   id: JobReporter
+#   groups:
+#   - GroupTankHarness
+#   - ReporterJumpsuit
+#   - ReporterHead
+#   - ReporterOuterClothing
+#   - CommonBackpack
+#   - Glasses
+#   - Survival
+#   - Trinkets
+#   #- ReporterJobTrinkets
+#   - GroupSpeciesBreathTool
+
+# - type: roleLoadout
+#   id: JobPsychologist
+#   groups:
+#   - GroupTankHarness
+#   - PsychologistJumpsuit
+#   - MedicalBackpack
+#   - Glasses
+#   - Survival
+#   - Trinkets
+#   #- PsychologistJobTrinkets
+#   - GroupSpeciesBreathTool
 
 # These loadouts are used for non-crew spawns, like off-station antags and event mobs
 # They will be used without player configuration, thus they will only ever apply what is forced by MinLimit
