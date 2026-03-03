@@ -88,12 +88,7 @@ public sealed class StandingStateSystem : EntitySystem
 
     private void OnMobStateChanged(Entity<StandingStateComponent> entity, ref MobStateChangedEvent args)
     {
-        if (args.NewMobState == MobState.Critical || args.NewMobState == MobState.Dead) {
-            entity.Comp.Incapacitated = true;
-            return;
-        }
-
-        entity.Comp.Incapacitated = false;
+        entity.Comp.Incapacitated = (args.NewMobState == MobState.Critical || args.NewMobState == MobState.Dead);
     }
 
     public bool IsMatchingState(Entity<StandingStateComponent?> entity, bool standing)
