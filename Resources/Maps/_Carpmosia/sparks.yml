@@ -4,8 +4,8 @@ meta:
   engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/03/2026 20:46:31
-  entityCount: 10370
+  time: 03/03/2026 21:04:53
+  entityCount: 10376
 maps:
 - 1
 grids:
@@ -29262,6 +29262,11 @@ entities:
     - type: Transform
       pos: 70.5,82.5
       parent: 2
+  - uid: 4321
+    components:
+    - type: Transform
+      pos: 61.5,85.5
+      parent: 2
 - proto: DisposalPipe
   entities:
   - uid: 4168
@@ -30151,11 +30156,6 @@ entities:
     - type: Transform
       pos: 61.5,84.5
       parent: 2
-  - uid: 4321
-    components:
-    - type: Transform
-      pos: 61.5,85.5
-      parent: 2
   - uid: 4322
     components:
     - type: Transform
@@ -30367,6 +30367,30 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 55.5,90.5
       parent: 2
+  - uid: 10126
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 62.5,85.5
+      parent: 2
+  - uid: 10127
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 63.5,85.5
+      parent: 2
+  - uid: 10196
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 64.5,85.5
+      parent: 2
+  - uid: 10197
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 65.5,85.5
+      parent: 2
 - proto: DisposalTrunk
   entities:
   - uid: 832
@@ -30458,6 +30482,12 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 79.5,79.5
       parent: 2
+  - uid: 10218
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 66.5,85.5
+      parent: 2
 - proto: DisposalUnit
   entities:
   - uid: 4376
@@ -30534,6 +30564,11 @@ entities:
     components:
     - type: Transform
       pos: 53.5,91.5
+      parent: 2
+  - uid: 10376
+    components:
+    - type: Transform
+      pos: 66.5,85.5
       parent: 2
 - proto: DisposalYJunction
   entities:
@@ -49078,7 +49113,7 @@ entities:
       pos: 39.5,90.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -44198.85
+      secondsUntilStateChange: -44534.1
       state: Opening
   - uid: 6959
     components:
