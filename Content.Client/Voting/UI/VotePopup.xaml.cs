@@ -17,7 +17,6 @@ namespace Content.Client.Voting.UI
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly IVoteManager _voteManager = default!;
         [Dependency] private readonly IEntityNetworkManager _net = default!;
-        [Dependency] private readonly IPrototypeManager _prototypeManager = default!; // Carpmosia-edit - Better map vote
 
         private readonly VoteManager.ActiveVote _vote;
         private readonly VoteOption[] _voteOptions; // Carpmosia-edit - Better map vote
