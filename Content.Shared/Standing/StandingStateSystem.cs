@@ -5,8 +5,8 @@ using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Physics;
 using Content.Shared.Rotation;
-using Content.Shared.Mobs;
-using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs; // Carpmosia-edit - make dead/crit bodies much harder to pull
+using Content.Shared.Mobs.Components; // Carpmosia-edit - make dead/crit bodies much harder to pull
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
@@ -30,7 +30,7 @@ public sealed class StandingStateSystem : EntitySystem
         SubscribeLocalEvent<StandingStateComponent, RefreshFrictionModifiersEvent>(OnRefreshFrictionModifiers);
         SubscribeLocalEvent<StandingStateComponent, TileFrictionEvent>(OnTileFriction);
         SubscribeLocalEvent<StandingStateComponent, EndClimbEvent>(OnEndClimb);
-        SubscribeLocalEvent<StandingStateComponent, MobStateChangedEvent>(OnMobStateChanged);
+        SubscribeLocalEvent<StandingStateComponent, MobStateChangedEvent>(OnMobStateChanged); // Carpmosia-edit - make dead/crit bodies much harder to pull
     }
 
     private void OnMobTargetCollide(Entity<StandingStateComponent> ent, ref AttemptMobTargetCollideEvent args)
@@ -54,11 +54,13 @@ public sealed class StandingStateSystem : EntitySystem
         if (entity.Comp.Standing)
             return;
 
+        // Carpmosia-start - make dead/crit bodies much harder to pull
         if (entity.Comp.Incapacitated) {
             args.ModifyFriction(entity.Comp.LimpFrictionMod);
             args.ModifyAcceleration(entity.Comp.LimpFrictionMod);
             return;
         }
+        // Carpmosia-end - make dead/crit bodies much harder to pull
 
         args.ModifyFriction(entity.Comp.DownFrictionMod);
         args.ModifyAcceleration(entity.Comp.DownFrictionMod);
@@ -66,6 +68,7 @@ public sealed class StandingStateSystem : EntitySystem
 
     private void OnTileFriction(Entity<StandingStateComponent> entity, ref TileFrictionEvent args)
     {
+        // Carpmosia-start - make dead/crit bodies much harder to pull
         if (entity.Comp.Standing)
             return;
 
@@ -73,6 +76,7 @@ public sealed class StandingStateSystem : EntitySystem
             args.Modifier *= entity.Comp.LimpFrictionMod;
             return;
         }
+        // Carpmosia-end - make dead/crit bodies much harder to pull
 
         args.Modifier *= entity.Comp.DownFrictionMod;
     }
@@ -86,10 +90,12 @@ public sealed class StandingStateSystem : EntitySystem
         ChangeLayers(entity);
     }
 
+    // Carpmosia-start - make dead/crit bodies much harder to pull
     private void OnMobStateChanged(Entity<StandingStateComponent> entity, ref MobStateChangedEvent args)
     {
         entity.Comp.Incapacitated = (args.NewMobState == MobState.Critical || args.NewMobState == MobState.Dead);
     }
+    // Carpmosia-end - make dead/crit bodies much harder to pull
 
     public bool IsMatchingState(Entity<StandingStateComponent?> entity, bool standing)
     {
