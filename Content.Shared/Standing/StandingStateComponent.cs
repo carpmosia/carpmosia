@@ -14,11 +14,6 @@ namespace Content.Shared.Standing
         [DataField, AutoNetworkedField]
         public bool Standing { get; set; } = true;
 
-        // Carpmosia-start - make dead/crit bodies much harder to pull
-        [DataField, AutoNetworkedField]
-        public bool Incapacitated { get; set; } = false;
-        // Carpmosia-end - make dead/crit bodies much harder to pull
-
         /// <summary>
         /// Friction modifier applied to an entity in the downed state.
         /// </summary>
@@ -26,6 +21,9 @@ namespace Content.Shared.Standing
         public float DownFrictionMod = 0.4f;
 
         // Carpmosia-start - make dead/crit bodies much harder to pull
+        [DataField, AutoNetworkedField]
+        public bool Incapacitated { get; set; } = false;
+
         /// <summary>
         /// Friction modifier applied to an entity in an incapacitated (crit/dead) state.
         /// </summary>

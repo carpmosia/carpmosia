@@ -76,9 +76,9 @@ public sealed class StandingStateSystem : EntitySystem
             args.Modifier *= entity.Comp.LimpFrictionMod;
             return;
         }
-        // Carpmosia-end - make dead/crit bodies much harder to pull
 
         args.Modifier *= entity.Comp.DownFrictionMod;
+        // Carpmosia-end - make dead/crit bodies much harder to pull
     }
 
     private void OnEndClimb(Entity<StandingStateComponent> entity, ref EndClimbEvent args)
