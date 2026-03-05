@@ -35,4 +35,12 @@ public sealed partial class RadioChannelPrototype : IPrototype
     /// </summary>
     [DataField("longRange"), ViewVariables]
     public bool LongRange = false;
+
+    // Carpmosia-start - intercom only channels
+    /// <summary>
+    /// Is this channel read-only to headsets
+    /// </summary>
+    [DataField("intercomOnly"), ViewVariables]
+    public bool IntercomOnly = false;
+    // Carpmosia-end - intercom only channels
 }
