@@ -522,13 +522,13 @@
   - type: StaticPrice
     price: 100
   - type: Gun
-    fireRate: 2
+    fireRate: 3 # Carpmosia-edit - disabler nerf
     projectileSpeed: 35 # any higher and this causes issues in lag
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
   - type: BatteryAmmoProvider
     proto: BulletDisablerPractice
-    fireCost: 62.5
+    fireCost: 100 # Carpmosia-edit - disabler nerf
   - type: Tag
     tags:
     - Taser
@@ -556,8 +556,8 @@
       - suitStorage
       - Belt
   - type: BatteryAmmoProvider
-    proto: BulletDisabler
-    fireCost: 62.5
+    proto: BulletDisablerSmg # Carpmosia-edit - disabler nerf
+    fireCost: 100 # Carpmosia-edit - disabler nerf
   - type: GuideHelp
     guides:
     - Security
