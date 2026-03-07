@@ -1,11 +1,13 @@
 using Content.Shared._FarHorizons.CCVar;
 using Robust.Shared.Configuration;
 
-namespace Content.Server._FarHorizons.Power.Generation.FissionGenerator;
+namespace Content.Shared._FarHorizons.Power.Generation.FissionGenerator;
 
-public sealed partial class ReactorPartSystem
+public abstract class SharedReactorPartSystem : EntitySystem
 {
     [Dependency] private readonly IConfigurationManager _cfg = default!;
+
+    // Put CVars in shared space just so that the guidebook can update live
 
     public float ReactionRate { get; private set; }
     public float NeutronReactionBias { get; private set; }
@@ -18,14 +20,16 @@ public sealed partial class ReactorPartSystem
     public float ReactorPartBurnTemp { get; private set; }
 
     /// <summary>
-    /// Processing multiplier based on atmospherics time and speedup cvar
-    /// </summary>
-    public float ProcMult => _atmosphereSystem.AtmosTime * _atmosphereSystem.Speedup * 6; // The 6 is a magic number to make things work at a reasonable rate
-
-    /// <summary>
     /// Ratio of product to reactant for reactions
     /// </summary>
     public float ReactionRatio => ReactionProduct / ReactionReactant;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        InitializeCVars();
+    }
 
     private void InitializeCVars()
     {
