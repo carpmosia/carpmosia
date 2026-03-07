@@ -4,7 +4,7 @@
   keycode: ";"
   frequency: 1459
   color: "#2cdb2c"
-  intercomOnly: true # Carpmosia-edit - intercom only channels
+  noHeadset: true # Carpmosia-edit - no-headset channels
 
 - type: radioChannel
   id: CentCom

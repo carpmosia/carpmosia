@@ -145,10 +145,10 @@ public sealed class RadioSystem : EntitySystem
             if (attemptEv.Cancelled)
                 continue;
 
-            // Carpmosia-start - intercom only channels
-            if (channel.IntercomOnly && HasComp<HeadsetComponent>(radioSource))
+            // Carpmosia-start - no-headset channels
+            if (channel.NoHeadset && HasComp<HeadsetComponent>(radioSource))
                 continue;
-            // Carpmosia-end - intercom only channels
+            // Carpmosia-end - no-headset channels
 
             // send the message
             RaiseLocalEvent(receiver, ref ev);
