@@ -1,0 +1,2 @@
+reagent-name-chromium-blood = chromic blood 
+reagent-desc-chromium-blood = Contains chromium as opposed to iron. While its intense color is stunning, chromium in this form is rather carcinogenic to species other than Vulpkanin.
