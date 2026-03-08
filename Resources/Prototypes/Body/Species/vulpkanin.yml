@@ -149,7 +149,7 @@
     damageOverlayGroups:
       Brute:
         sprite: Mobs/Effects/brute_damage.rsi
-        color: "#ccac1f"
+        color: "#ff5c00" # Carpmosia-edit - Chromium Blood
       Burn:
         sprite: Mobs/Effects/burn_damage.rsi
   - type: MessyDrinker
@@ -224,7 +224,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Mobs/Species/Vulpkanin/organs.rsi
+    sprite: _Carpmosia/Mobs/Species/Vulpkanin/organs.rsi # Carpmosia-edit - Chromium Blood
 
 - type: entity
   id: OrganVulpkaninVisual
