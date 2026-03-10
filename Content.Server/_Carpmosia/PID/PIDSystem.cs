@@ -27,7 +27,7 @@ public static class PIDSystem
         var pOut = args.Kp * error;
 
         //make sure we don't get a divide by 0
-        var safeTi = MathHelper.CloseTo(args.Ti, 0f, 0.0001f) ? 0.0001f : args.Ti;
+        var safeTi = Math.Max(0.000001f, args.Ti);
 
         var step = frametime * (error / safeTi);
         args.Integral += step;
