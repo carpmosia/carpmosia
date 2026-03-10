@@ -5,7 +5,6 @@ namespace Content.Server.PID;
 ///     Provides a rudimentary discrete PID controller function with min/max Value limiters
 ///     and integral runaway protection
 /// </summary>
-
 public static class PIDSystem
 {
     /// <summary>
@@ -27,7 +26,8 @@ public static class PIDSystem
 
         var pOut = args.Kp * error;
 
-        var safeTi = args.Ti == 0f ? 100000f : args.Ti;
+        //make sure we don't get a divide by 0
+        var safeTi = MathHelper.CloseTo(args.Ti, 0f, 0.0001f) ? 0.0001f : args.Ti;
 
         var step = frametime * (error / safeTi);
         args.Integral += step;
