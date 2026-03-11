@@ -39,6 +39,7 @@ public sealed class StationPowerTests
         "CarpFeint",
         "CarpOasis",
         "CarpSaltern",
+        "CarpSparks",
         // Carpmosia-end - Carpmaps
     ];
 
