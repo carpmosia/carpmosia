@@ -13,8 +13,6 @@ namespace Content.Shared.BloodBound.EntitySystems;
 public abstract class SharedBloodBoundSystem : EntitySystem
 {
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly SharedStunSystem _stunSystem = default!;
 
     public override void Initialize()
     {
@@ -43,24 +41,6 @@ public abstract class SharedBloodBoundSystem : EntitySystem
         ref ComponentGetStateAttemptEvent args)
     {
         args.Cancelled = !CanGetState(args.Player);
-    }
-
-    public void OnBloodBoundMindshielded(Entity<MindShieldComponent> entity, ref MapInitEvent args)
-    {
-        if (HasComp<InitialBloodBoundComponent>(entity))
-            return;
-
-        if (!TryComp<BloodBoundComponent>(entity, out var bloodBound))
-            return;
-
-        var name = Identity.Entity(entity, EntityManager);
-        RemCompDeferred<BloodBoundComponent>(entity);
-        if (bloodBound.DeconversionStunTime != null)
-            _stunSystem.TryUpdateParalyzeDuration(entity, bloodBound.DeconversionStunTime);
-        _popupSystem.PopupEntity(
-            Loc.GetString("blood-bound-break-control", ("name", name)),
-            entity,
-            PopupType.MediumCaution);
     }
 
     private bool CanGetState(ICommonSession? player)

@@ -12,7 +12,6 @@ namespace Content.Shared.Revolutionary;
 
 public abstract class SharedRevolutionarySystem : EntitySystem
 {
-    [Dependency] private readonly SharedBloodBoundSystem _bloodBoundSystem = default!; // Carpmosia-edit - Harmony Blood Bound
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedStunSystem _sharedStun = default!;
 
@@ -47,8 +46,6 @@ public abstract class SharedRevolutionarySystem : EntitySystem
             _sharedStun.TryUpdateParalyzeDuration(uid, stunTime);
             _popupSystem.PopupEntity(Loc.GetString("rev-break-control", ("name", name)), uid);
         }
-
-        _bloodBoundSystem.OnBloodBoundMindshielded((uid, comp), ref init); // Carpmosia-edit - Harmony Blood Bound
     }
 
     /// <summary>
