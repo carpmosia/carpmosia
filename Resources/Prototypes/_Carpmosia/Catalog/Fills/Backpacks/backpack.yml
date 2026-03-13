@@ -1,0 +1,17 @@
+- type: entity
+  parent: ClothingBackpackSyndicateBundle
+  id: ClothingBackpackSyndicateFireBundle
+  name: syndicate fire suit bundle
+  description: Contains the Syndicate fighting-in-fire suit.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ClothingShoesBootsCombat
+        - id: ClothingHandsGlovesCombat
+        - id: ClothingMaskGasSyndicate
+        - id: DoubleEmergencyOxygenTankFilled
+        - id: DoubleEmergencyNitrogenTankFilled
+        - id: ClothingOuterSuitFireSyndicate
+        - id: ClothingHeadHelmetFireSyndicate
