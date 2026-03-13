@@ -1,10 +1,10 @@
 - type: constructionGraph
-  id: Mesondiag
+  id: MesonDiagnostic
   start: start
   graph:
   - node: start
     edges:
-    - to: mesondiag
+    - to: mesondiagnostic
       steps:
       - tag: MesonGoggles
         name: construction-graph-tag-meson
@@ -12,11 +12,11 @@
           sprite: Clothing/Eyes/Glasses/meson.rsi
           state: icon
         doAfter: 3
-      - tag: Diaghud
+      - tag: Diagnostichud
         name: construction-graph-tag-diag
         icon:
           sprite: Clothing/Eyes/Hud/diag.rsi
           state: icon
         doAfter: 3
-  - node: mesondiag
+  - node: mesondiagnostic
     entity: ClothingEyesGlassesMesonDiagnostic
