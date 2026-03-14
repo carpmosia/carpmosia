@@ -4,14 +4,4 @@
   id: PosterBaseCarpContraband
   components:
   - type: Sprite
-    sprite: _Carpmosia/Structures/Wallmounts/Posters/Contraband/carpmosia.rsi
-
-- type: entity
-  parent: PosterBaseCarpContraband
-  id: PosterContrabandBreadLies
-  name: Bread Lies
-  description: You have been lied to. There is no "Big Bread." It is not real. Please stop looking for it.
-  components:
-  - type: Sprite
-    sprite: _Carpmosia/Structures/Wallmounts/Posters/Contraband/huvy.rsi
-    state: bread_lies
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/contraband.rsi
