@@ -289,11 +289,11 @@ namespace Content.Server.Voting.Managers
                 msg.DisplayVotes = true;
             }
 
-            msg.Options = new (ushort votes, string name)[v.Entries.Length];
+            msg.Options = new (ushort votes, string name, string? icon, EntProtoId? proto)[v.Entries.Length]; // Carpmosia-start - Better map vote
             for (var i = 0; i < msg.Options.Length; i++)
             {
                 ref var entry = ref v.Entries[i];
-                msg.Options[i] = (msg.DisplayVotes ? (ushort) entry.Votes : (ushort) 0, entry.Text);
+                msg.Options[i] = (msg.DisplayVotes ? (ushort) entry.Votes : (ushort) 0, entry.Text, entry.Icon, entry.Proto); // Carpmosia-start - Better map vote
             }
 
             player.Channel.SendMessage(msg);
@@ -563,12 +563,26 @@ namespace Content.Server.Voting.Managers
         {
             public object Data;
             public string Text;
+            public string? Icon = null; // Carpmosia-edit - Better map vote
+            public EntProtoId? Proto = null; // Carpmosia-edit - Better map vote
             public int Votes;
 
-            public VoteEntry(object data, string text)
+            public VoteEntry(object data, object meta) // Carpmosia-edit - Better map vote
             {
                 Data = data;
-                Text = text;
+                // Carpmosia-start - Better map vote
+                if (meta is string text)
+                {
+                    Text = text;
+                }
+                else
+                {
+                    var tuple = ((string, string?, EntProtoId?)) meta;
+                    Text = tuple.Item1;
+                    Icon = tuple.Item2;
+                    Proto = tuple.Item3;
+                }
+                // Carpmosia-end - Better map vote
                 Votes = 0;
             }
         }

@@ -1,0 +1,9 @@
+- type: entity
+  parent: ThrusterLarge
+  id: ThrusterLargeWeak
+  suffix: Half
+  components:
+  - type: ApcPowerReceiver
+    powerLoad: 5000
+  - type: Thruster
+    thrust: 800
