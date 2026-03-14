@@ -1200,4 +1200,134 @@
   id: 214
   time: '2026-01-27T00:30:30.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/191
+- author: Atakku
+  changes:
+  - message: Added unique new sounds for the high security doors
+    type: Add
+  id: 215
+  time: '2026-01-28T01:06:44.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/197
+- author: Atakku
+  changes:
+  - message: Small fixes to pipe textures.
+    type: Fix
+  - message: Teg circulators now support pipe layers
+    type: Add
+  id: 216
+  time: '2026-01-28T10:17:29.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/250
+- author: Atakku
+  changes:
+  - message: Added 96 new diagonal decals
+    type: Add
+  id: 217
+  time: '2026-01-29T01:09:46.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/251
+- author: vorpuscl
+  changes:
+  - message: Brute damage inflicted on avali now visually appears as blue instead
+      of red.
+    type: Fix
+  id: 218
+  time: '2026-02-08T18:10:30.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/258
+- author: vorpuscl
+  changes:
+  - message: Removed stray pixels to the right of left-facing avali wearing certain
+      hardsuit helmets.
+    type: Fix
+  id: 219
+  time: '2026-02-11T01:24:59.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/259
+- author: korczoczek
+  changes:
+  - message: 'On [Carp]Saltern: Added a Mailing System connected to various points
+      around the station.'
+    type: Add
+  id: 220
+  time: '2026-02-17T01:31:33.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/254
+- author: korczoczek
+  changes:
+  - message: Gave supplybot hands for checking its own inventory and picking up papers,
+      letters and packages
+    type: Tweak
+  id: 221
+  time: '2026-02-19T03:24:32.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/242
+- author: imatsoup
+  changes:
+  - message: Stop bloodbound subgamemode from forcing extended
+    type: Fix
+  id: 222
+  time: '2026-03-02T04:59:40.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/266
+- author: Atakku
+  changes:
+  - message: Radiators now support 5 pipe layers.
+    type: Tweak
+  id: 223
+  time: '2026-03-02T05:35:18.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/263
+- author: korczoczek
+  changes:
+  - message: 'New AI screen: Sillycon'
+    type: Add
+  id: 224
+  time: '2026-03-08T10:59:17.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/273
+- author: microfiche
+  changes:
+  - message: Moving incapacitated bodies is now much more cumbersome.
+    type: Add
+  id: 225
+  time: '2026-03-05T12:39:50.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/270
+- author: arenaconspiracy
+  changes:
+  - message: Skeletons are now considered free agents again!
+    type: Add
+  - message: Skeletons spawn without a PDA, backpack, and headset again.
+    type: Remove
+  id: 226
+  time: '2026-03-10T15:00:34.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/277
+- author: BrushTool
+  changes:
+  - message: Captain's sheathe now has inhand sprites.
+    type: Add
+  id: 227
+  time: '2026-03-10T18:37:00.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/278
+- author: Mehnix
+  changes:
+  - message: Added NTSC-Sparks, a new map for 0-25 players.
+    type: Add
+  id: 228
+  time: '2026-03-11T10:26:02.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/260
+- author: arenaconspiracy
+  changes:
+  - message: Headsets can no longer speak on Common radio, you need an intercom or
+      other means to use it. Other radio channels are unaffected.
+    type: Tweak
+  id: 229
+  time: '2026-03-14T01:57:38.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/272
+- author: imatsoup
+  changes:
+  - message: Blood bound converts will no longer be deconverted when implanted with
+      a mindshield.
+    type: Tweak
+  id: 230
+  time: '2026-03-14T01:57:29.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/282
+- author: korczoczek
+  changes:
+  - message: New shuttle controls, press Z or X to rotate towards/against your current
+      movement direction respectively
+    type: Add
+  id: 231
+  time: '2026-03-14T01:57:34.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/269
 Order: -1

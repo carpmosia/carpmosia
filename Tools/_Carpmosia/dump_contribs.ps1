@@ -30,5 +30,8 @@ while ($null -ne $url)
     $prs += $j
 }
 
-$prs | % { $_.user.login } | select -unique | Sort-object | Join-String -Separator ", "
+$ignore = @{
+    "github-actions[bot]" = $true
+}
 
+$prs | % { $_.user.login } | select -unique | Where-Object { -not $ignore[$_] }` | Sort-object | Join-String -Separator ", "
