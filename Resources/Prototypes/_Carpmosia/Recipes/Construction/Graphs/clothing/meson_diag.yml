@@ -4,7 +4,7 @@
   graph:
   - node: start
     edges:
-    - to: mesondiagnostic
+    - to: mesonDiagnostic
       steps:
       - tag: MesonGoggles
         name: construction-graph-tag-meson
@@ -12,11 +12,11 @@
           sprite: Clothing/Eyes/Glasses/meson.rsi
           state: icon
         doAfter: 3
-      - tag: Diagnostichud
+      - tag: HudDiagnostic
         name: construction-graph-tag-diag
         icon:
           sprite: Clothing/Eyes/Hud/diag.rsi
           state: icon
         doAfter: 3
-  - node: mesondiagnostic
+  - node: mesonDiagnostic
     entity: ClothingEyesGlassesMesonDiagnostic
