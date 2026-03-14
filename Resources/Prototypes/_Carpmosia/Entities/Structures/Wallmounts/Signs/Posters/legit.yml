@@ -4,7 +4,7 @@
   id: PosterBaseCarpLegit
   components:
   - type: Sprite
-    sprite: _Carpmosia/Structures/Wallmounts/Posters/legit.rsi
+    state: poster
 
 - type: entity
   parent: PosterBaseCarpLegit
@@ -13,7 +13,7 @@
   description: An advertisement for crispy fried chicken.
   components:
   - type: Sprite
-    state: chicken_dinner
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/Legit/chicken_dinner.rsi
 
 - type: entity
   parent: PosterBaseCarpLegit
@@ -22,4 +22,76 @@
   description: "Possible side effects may include: nausea, upset stomach, inflammation, swelling of the face/throat, rash, fever, headache, dizziness, vomiting and/or diarrhea, easy bruising, seizures, insuppressible yawning, general feeling of discomfort or illness, hives, loss of voice, bleeding gums and/or eyeballs, loss of appetite, increased appetite, PBA (pseudobulbar affect), synesthesia, dysarthria, AGD (acute gravitational decoupling), incontinence, PYS (paroxysmal yodeling syndrome), insomnia, narcolepsy, leprosy, polymelia, unstoppable back hair growth, weight loss, weight gain, shrinkage, colorblindness, acute ability to taste colors, unquenchable bloodlust, restless fingernails, light-sensitivity, compulsion to wear cat ear headbands and paw gloves, scurvy, eagerness to pursue mercenary life, and severe gambling addiction. Call your doctor for medical advice about these or any other side effects you may experience."
   components:
   - type: Sprite
-    state: medicate
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/Legit/medicate.rsi
+
+- type: entity
+  parent: PosterBaseCarpLegit
+  id: PosterLegitBarDrinks
+  name: Bar Poster
+  description: The Bartender is always there to hear your woes and get you plastered all at the same time. Go have a visit!
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/Legit/bar_drinks.rsi
+
+- type: entity
+  parent: PosterBaseCarpLegit
+  id: PosterLegitBotanyFood
+  name: Fruit Basket
+  description: Botany is always hard at work! Stop by and enjoy the best they can offer!
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/Legit/botany_food.rsi
+
+- type: entity
+  parent: PosterBaseCarpLegit
+  id: PosterContrabandBreadLies
+  name: Bread Lies
+  description: You have been lied to. There is no "Big Bread." It is not real. Please stop looking for it.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/Contraband/bread_lies.rsi
+
+- type: entity
+  parent: PosterBaseCarpLegit
+  id: PosterContrabandDonkExplosion
+  name: Donk!
+  description: "Bite into a blast of flavour with any of our #1 rated fattening and unhealthy products for your enjoyment! DONK!"
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/Contraband/donk_explosion.rsi
+
+- type: entity
+  parent: PosterBaseCarpLegit
+  id: PosterLegitEatMeat
+  name: Eat Meat!
+  description: Who needs fruit or veggies? EAT MEAT! Build those muscles and go fight in the arena to show them gains!
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/Legit/eat_meat.rsi
+
+- type: entity
+  parent: PosterBaseCarpLegit
+  id: PosterLegitMoreBread
+  name: More Bread!
+  description: There is not enough bread! MAKE MORE!
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/Legit/more_bread.rsi
+
+- type: entity
+  parent: PosterBaseCarpLegit
+  id: PosterLegitPieSlice
+  name: Pie Poster
+  description: Pies are healthy and delicious! Beg your chef to start making some.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/Legit/pie_slice.rsi
+
+- type: entity
+  parent: PosterBaseCarpLegit
+  id: PosterLegitPizzaHope
+  name: Pizza Hope
+  description: In the darkest of times there is only one hope, PIZZA! Harass your local Quartermaster to order an emergency crate of pizza now!
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/Legit/pizza_hope.rsi

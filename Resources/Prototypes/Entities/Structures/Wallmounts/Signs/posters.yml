@@ -889,13 +889,14 @@
     state: poster28_legit
 
 - type: entity
-  parent: PosterBaseCarpLegit # Carpmosia-edit - Replace DS enlist
+  parent: PosterBase
   id: PosterLegitEnlist
   name: "Enlist"
   description: "Enlist in the Nanotrasen ERT reserves today!" # Carpmosia-edit - Replace DS enlist
   components:
   - type: Sprite
-    state: ert_enlist # Carpmosia-edit - Replace DS enlist
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/Legit/ert_enlist.rsi # Carpmosia-edit - Replace DS enlist
+    state: poster29_legit
 
 - type: entity
   parent: PosterBase

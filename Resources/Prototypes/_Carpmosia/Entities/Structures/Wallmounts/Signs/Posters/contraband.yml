@@ -1,6 +1,14 @@
 - type: entity
   abstract: true
   parent: PosterBase
+  id: PosterBaseCarpContra
+  components:
+  - type: Sprite
+    state: poster
+
+- type: entity
+  abstract: true
+  parent: PosterBaseCarpContra
   id: PosterBaseCarpContraband
   components:
   - type: Sprite
