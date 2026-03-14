@@ -8,24 +8,6 @@
 
 - type: entity
   parent: PosterBaseCarpLegit
-  id: PosterLegitChickenDinner
-  name: Winner Winner Chicken Dinner
-  description: An advertisement for crispy fried chicken.
-  components:
-  - type: Sprite
-    sprite: _Carpmosia/Structures/Wallmounts/Posters/Legit/chicken_dinner.rsi
-
-- type: entity
-  parent: PosterBaseCarpLegit
-  id: PosterLegitMedicate
-  name: Take Your Meds
-  description: "Possible side effects may include: nausea, upset stomach, inflammation, swelling of the face/throat, rash, fever, headache, dizziness, vomiting and/or diarrhea, easy bruising, seizures, insuppressible yawning, general feeling of discomfort or illness, hives, loss of voice, bleeding gums and/or eyeballs, loss of appetite, increased appetite, PBA (pseudobulbar affect), synesthesia, dysarthria, AGD (acute gravitational decoupling), incontinence, PYS (paroxysmal yodeling syndrome), insomnia, narcolepsy, leprosy, polymelia, unstoppable back hair growth, weight loss, weight gain, shrinkage, colorblindness, acute ability to taste colors, unquenchable bloodlust, restless fingernails, light-sensitivity, compulsion to wear cat ear headbands and paw gloves, scurvy, eagerness to pursue mercenary life, and severe gambling addiction. Call your doctor for medical advice about these or any other side effects you may experience."
-  components:
-  - type: Sprite
-    sprite: _Carpmosia/Structures/Wallmounts/Posters/Legit/medicate.rsi
-
-- type: entity
-  parent: PosterBaseCarpLegit
   id: PosterLegitBarDrinks
   name: Bar Poster
   description: The Bartender is always there to hear your woes and get you plastered all at the same time. Go have a visit!
@@ -41,6 +23,24 @@
   components:
   - type: Sprite
     sprite: _Carpmosia/Structures/Wallmounts/Posters/Legit/botany_food.rsi
+
+- type: entity
+  parent: PosterBaseCarpLegit
+  id: PosterLegitCalendar
+  name: NT Brand Calendar
+  description: An outdated calendar bearing NanoTrasen's branding.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/Legit/calendar.rsi
+
+- type: entity
+  parent: PosterBaseCarpLegit
+  id: PosterLegitChickenDinner
+  name: Winner Winner Chicken Dinner
+  description: An advertisement for crispy fried chicken.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/Legit/chicken_dinner.rsi
 
 - type: entity
   parent: PosterBaseCarpLegit
@@ -71,6 +71,15 @@
 
 - type: entity
   parent: PosterBaseCarpLegit
+  id: PosterLegitMedicate
+  name: Take Your Meds
+  description: "Possible side effects may include: nausea, upset stomach, inflammation, swelling of the face/throat, rash, fever, headache, dizziness, vomiting and/or diarrhea, easy bruising, seizures, insuppressible yawning, general feeling of discomfort or illness, hives, loss of voice, bleeding gums and/or eyeballs, loss of appetite, increased appetite, PBA (pseudobulbar affect), synesthesia, dysarthria, AGD (acute gravitational decoupling), incontinence, PYS (paroxysmal yodeling syndrome), insomnia, narcolepsy, leprosy, polymelia, unstoppable back hair growth, weight loss, weight gain, shrinkage, colorblindness, acute ability to taste colors, unquenchable bloodlust, restless fingernails, light-sensitivity, compulsion to wear cat ear headbands and paw gloves, scurvy, eagerness to pursue mercenary life, and severe gambling addiction. Call your doctor for medical advice about these or any other side effects you may experience."
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/Legit/medicate.rsi
+
+- type: entity
+  parent: PosterBaseCarpLegit
   id: PosterLegitMoreBread
   name: More Bread!
   description: There is not enough bread! MAKE MORE!
@@ -95,3 +104,12 @@
   components:
   - type: Sprite
     sprite: _Carpmosia/Structures/Wallmounts/Posters/Legit/pizza_hope.rsi
+
+- type: entity
+  parent: PosterBaseCarpLegit
+  id: PosterLegitShoeless
+  name: Is YOUR Captain Shoeless?
+  description: A poster informing crew about the Lokir Doctrine.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/Legit/shoeless.rsi
