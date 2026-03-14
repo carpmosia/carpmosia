@@ -1,7 +1,77 @@
 - type: entity
   abstract: true
   parent: PosterBase
-  id: BaseCarpPosterLegit
+  id: PosterBaseCarpLegit
   components:
   - type: Sprite
-    sprite: _Carpmosia/Structures/Wallmounts/Posters/legit.rsi
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/Legit/carpmosia.rsi
+
+- type: entity
+  parent: PosterBaseCarpLegit
+  id: PosterLegitBarDrinks
+  name: Bar Poster
+  description: The Bartender is always there to hear your woes and get you plastered all at the same time. Go have a visit!
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/Legit/huvy.rsi
+    state: bar_drinks
+
+- type: entity
+  parent: PosterBaseCarpLegit
+  id: PosterLegitBotanyFood
+  name: Fruit Basket
+  description: Botany is always hard at work! Stop by and enjoy the best they can offer!
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/Legit/huvy.rsi
+    state: botany_food
+
+- type: entity
+  parent: PosterBaseCarpLegit
+  id: PosterLegitDonkExplosion
+  name: Donk!
+  description: Bite into a blast of flavour with any of our \#1 rated fattening and unhealthy products for your enjoyment! DONK!
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/Legit/huvy.rsi
+    state: donk_explosion
+
+- type: entity
+  parent: PosterBaseCarpLegit
+  id: PosterLegitEatMeat
+  name: Eat Meat!
+  description: Who needs fruit or veggies? EAT MEAT! Build those muscles and go fight in the arena to show them gains!
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/Legit/huvy.rsi
+    state: eat_meat
+
+- type: entity
+  parent: PosterBaseCarpLegit
+  id: PosterLegitMoreBread
+  name: More Bread!
+  description: There is not enough bread! MAKE MORE!
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/Legit/huvy.rsi
+    state: more_bread
+
+- type: entity
+  parent: PosterBaseCarpLegit
+  id: PosterLegitPieSlice
+  name: Pie Poster
+  description: Pies are healthy and delicious! Beg your chef to start making some.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/Legit/huvy.rsi
+    state: pie_slice
+
+- type: entity
+  parent: PosterBaseCarpLegit
+  id: PosterLegitPizzaHope
+  name: Pizza Hope
+  description: In the darkest of times there is only one hope, PIZZA! Harass your local Quartermaster to order an emergency crate of pizza now!
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/Legit/huvy.rsi
+    state: pizza_hope
