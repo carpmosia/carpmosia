@@ -1306,4 +1306,28 @@
   id: 228
   time: '2026-03-11T10:26:02.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/260
+- author: arenaconspiracy
+  changes:
+  - message: Headsets can no longer speak on Common radio, you need an intercom or
+      other means to use it. Other radio channels are unaffected.
+    type: Tweak
+  id: 229
+  time: '2026-03-14T01:57:38.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/272
+- author: imatsoup
+  changes:
+  - message: Blood bound converts will no longer be deconverted when implanted with
+      a mindshield.
+    type: Tweak
+  id: 230
+  time: '2026-03-14T01:57:29.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/282
+- author: korczoczek
+  changes:
+  - message: New shuttle controls, press Z or X to rotate towards/against your current
+      movement direction respectively
+    type: Add
+  id: 231
+  time: '2026-03-14T01:57:34.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/269
 Order: -1
