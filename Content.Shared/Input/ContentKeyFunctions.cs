@@ -81,6 +81,10 @@ namespace Content.Shared.Input
         public static readonly BoundKeyFunction ShuttleRotateLeft = "ShuttleRotateLeft";
         public static readonly BoundKeyFunction ShuttleRotateRight = "ShuttleRotateRight";
         public static readonly BoundKeyFunction ShuttleBrake = "ShuttleBrake";
+        // Carpmosia-start - rotate shuttle along movement vector
+        public static readonly BoundKeyFunction ShuttleTowardsVector = "ShuttleTowardsVector";
+        public static readonly BoundKeyFunction ShuttleAgainstVector = "ShuttleAgainstVector";
+        // Carpmosia-end - rotate shuttle along movement vector
 
         public static readonly BoundKeyFunction Hotbar0 = "Hotbar0";
         public static readonly BoundKeyFunction Hotbar1 = "Hotbar1";
