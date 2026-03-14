@@ -62,6 +62,15 @@
 
 - type: entity
   parent: PosterBaseCarpLegit
+  id: PosterLegitEyeChart
+  name: Eye chart
+  description: Is that third letter a P or an F?
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/Legit/eye_chart.rsi
+
+- type: entity
+  parent: PosterBaseCarpLegit
   id: PosterLegitMedicate
   name: Take Your Meds
   description: "Possible side effects may include: nausea, upset stomach, inflammation, swelling of the face/throat, rash, fever, headache, dizziness, vomiting and/or diarrhea, easy bruising, seizures, insuppressible yawning, general feeling of discomfort or illness, hives, loss of voice, bleeding gums and/or eyeballs, loss of appetite, increased appetite, PBA (pseudobulbar affect), synesthesia, dysarthria, AGD (acute gravitational decoupling), incontinence, PYS (paroxysmal yodeling syndrome), insomnia, narcolepsy, leprosy, polymelia, unstoppable back hair growth, weight loss, weight gain, shrinkage, colorblindness, acute ability to taste colors, unquenchable bloodlust, restless fingernails, light-sensitivity, compulsion to wear cat ear headbands and paw gloves, scurvy, eagerness to pursue mercenary life, and severe gambling addiction. Call your doctor for medical advice about these or any other side effects you may experience."
