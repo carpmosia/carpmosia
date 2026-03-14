@@ -1,10 +1,6 @@
 using Content.Shared.Actions;
 using Content.Shared.Antag;
 using Content.Shared.BloodBound.Components;
-using Content.Shared.IdentityManagement;
-using Content.Shared.Mindshield.Components;
-using Content.Shared.Popups;
-using Content.Shared.Stunnable;
 using Robust.Shared.GameStates;
 using Robust.Shared.Player;
 
