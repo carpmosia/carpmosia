@@ -108,6 +108,7 @@ namespace Content.IntegrationTests.Tests
             "CarpAmber",
             "CarpFeint",
             "CarpOasis",
+            "CarpPacked",
             "CarpSaltern",
             "CarpSparks",
             // Carpmosia-end - Carpmaps

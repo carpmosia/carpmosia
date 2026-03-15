@@ -38,6 +38,7 @@ public sealed class StationPowerTests
         "CarpAmber",
         "CarpFeint",
         "CarpOasis",
+        "CarpPacked",
         "CarpSaltern",
         "CarpSparks",
         // Carpmosia-end - Carpmaps
