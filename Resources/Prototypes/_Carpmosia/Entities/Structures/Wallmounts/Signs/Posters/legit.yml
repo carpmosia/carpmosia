@@ -53,6 +53,15 @@
 
 - type: entity
   parent: PosterBaseCarpLegit
+  id: PosterLegitDejaVu
+  name: Deja Vu
+  description: This is your first time here. If this station feels familiar, immediately alert a NanoTrasen employee.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/Legit/dejavu.rsi
+
+- type: entity
+  parent: PosterBaseCarpLegit
   id: PosterLegitEatMeat
   name: Eat Meat!
   description: Who needs fruit or veggies? EAT MEAT! Build those muscles and go fight in the arena to show them gains!
