@@ -1,6 +1,7 @@
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
-using Content.Shared.Mobs; // Carpmosia-edit - make dead/crit bodies less hard to pull v2
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components; // Carpmosia-edit - make dead/crit bodies less hard to pull v2
 
 namespace Content.Shared.Standing
 {
@@ -15,27 +16,23 @@ namespace Content.Shared.Standing
         [DataField, AutoNetworkedField]
         public bool Standing { get; set; } = true;
 
+        // Carpmosia-start - make dead/crit bodies much harder to pull v2
         /// <summary>
-        /// Friction modifier applied to an entity in the downed state.
+        /// Friction modifiers applied to a downed entity at various states of health.
+        /// </summary>
+        [DataField, AutoNetworkedField]
+        public Dictionary<MobState, float> DownFrictionModDict = new()
+        {
+            {MobState.Alive, 0.4f},
+            {MobState.Critical, 1.4f},
+            {MobState.Dead, 2.4f},
+        };
+
+        /// <summary>
+        /// The current friction modifier we should apply to a downed entity.
         /// </summary>
         [DataField, AutoNetworkedField]
         public float DownFrictionMod = 0.4f;
-
-        // Carpmosia-start - make dead/crit bodies much harder to pull v2
-        [DataField, AutoNetworkedField]
-        public MobState Incapacitation { get; set; } = MobState.Alive;
-
-        /// <summary>
-        /// Friction modifier applied to an entity in a critical state.
-        /// </summary>
-        [DataField, AutoNetworkedField]
-        public float CritFrictionMod = 1.4f;
-
-        /// <summary>
-        /// Friction modifier applied to an entity in a dead state.
-        /// </summary>
-        [DataField, AutoNetworkedField]
-        public float DeadFrictionMod = 2.4f;
         // Carpmosia-end - make dead/crit bodies much harder to pull v2
 
         /// <summary>

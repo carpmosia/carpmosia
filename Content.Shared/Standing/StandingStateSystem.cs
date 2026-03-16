@@ -54,44 +54,14 @@ public sealed class StandingStateSystem : EntitySystem
         if (entity.Comp.Standing)
             return;
 
-        // Carpmosia-start - make dead/crit bodies much harder to pull v2
-        if (entity.Comp.Incapacitation > MobState.Alive) {
-            switch (entity.Comp.Incapacitation){
-                case MobState.Critical:
-                    args.ModifyFriction(entity.Comp.CritFrictionMod);
-                    break;
-                case MobState.Dead:
-                    args.ModifyFriction(entity.Comp.DeadFrictionMod);
-                    break;
-            }
-            return;
-        }
-        // Carpmosia-end - make dead/crit bodies much harder to pull v2
-
         args.ModifyFriction(entity.Comp.DownFrictionMod);
         args.ModifyAcceleration(entity.Comp.DownFrictionMod);
     }
 
     private void OnTileFriction(Entity<StandingStateComponent> entity, ref TileFrictionEvent args)
     {
-        // Carpmosia-start - make dead/crit bodies much harder to pull v2
-        if (entity.Comp.Standing)
-            return;
-
-        if (entity.Comp.Incapacitation > MobState.Alive) {
-            switch (entity.Comp.Incapacitation){
-                case MobState.Critical:
-                    args.Modifier *= entity.Comp.CritFrictionMod;
-                    break;
-                case MobState.Dead:
-                    args.Modifier *= entity.Comp.DeadFrictionMod;
-                    break;
-            }
-            return;
-        }
-
-        args.Modifier *= entity.Comp.DownFrictionMod;
-        // Carpmosia-end - make dead/crit bodies much harder to pull v2
+        if (!entity.Comp.Standing)
+            args.Modifier *= entity.Comp.DownFrictionMod;
     }
 
     private void OnEndClimb(Entity<StandingStateComponent> entity, ref EndClimbEvent args)
@@ -106,7 +76,7 @@ public sealed class StandingStateSystem : EntitySystem
     // Carpmosia-start - make dead/crit bodies much harder to pull v2
     private void OnMobStateChanged(Entity<StandingStateComponent> entity, ref MobStateChangedEvent args)
     {
-        entity.Comp.Incapacitation = args.NewMobState;
+        entity.Comp.DownFrictionMod = entity.Comp.DownFrictionModDict[args.NewMobState];
     }
     // Carpmosia-end - make dead/crit bodies much harder to pull v2
 
