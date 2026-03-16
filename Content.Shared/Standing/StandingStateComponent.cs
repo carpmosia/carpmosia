@@ -1,5 +1,6 @@
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
+using Content.Shared.Mobs; // Carpmosia-edit - make dead/crit bodies less hard to pull
 
 namespace Content.Shared.Standing
 {
@@ -20,16 +21,22 @@ namespace Content.Shared.Standing
         [DataField, AutoNetworkedField]
         public float DownFrictionMod = 0.4f;
 
-        // Carpmosia-start - make dead/crit bodies much harder to pull
+        // Carpmosia-start - make dead/crit bodies much harder to pull v2
         [DataField, AutoNetworkedField]
-        public bool Incapacitated { get; set; } = false;
+        public MobState Incapacitation { get; set; } = MobState.Alive;
 
         /// <summary>
-        /// Friction modifier applied to an entity in an incapacitated (crit/dead) state.
+        /// Friction modifier applied to an entity in a critical state.
         /// </summary>
         [DataField, AutoNetworkedField]
-        public float LimpFrictionMod = 3f;
-        // Carpmosia-end - make dead/crit bodies much harder to pull
+        public float CritFrictionMod = 1.4f;
+
+        /// <summary>
+        /// Friction modifier applied to an entity in a dead state.
+        /// </summary>
+        [DataField, AutoNetworkedField]
+        public float DeadFrictionMod = 2.4f;
+        // Carpmosia-end - make dead/crit bodies much harder to pull v2
 
         /// <summary>
         ///     List of fixtures that had their collision mask changed when the entity was downed.
