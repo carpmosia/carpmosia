@@ -4,8 +4,8 @@ meta:
   engineVersion: 272.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/16/2026 05:30:39
-  entityCount: 16084
+  time: 03/16/2026 15:33:14
+  entityCount: 16118
 maps:
 - 1
 grids:
@@ -8331,8 +8331,6 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
-- proto: AirAlarmXeno
-  entities:
   - uid: 93
     components:
     - type: Transform
@@ -41804,7 +41802,7 @@ entities:
       parent: 2
 - proto: ClothingNeckScarfStripedSyndieRed
   entities:
-  - uid: 6338
+  - uid: 6339
     components:
     - type: MetaData
       desc: Weird scarf that reminds you of something but it smells strongly of sardines so you quickly forget.
@@ -42061,7 +42059,7 @@ entities:
       parent: 2
 - proto: ClothingShoesFlippers
   entities:
-  - uid: 6339
+  - uid: 6338
     components:
     - type: Transform
       parent: 6337
@@ -49138,7 +49136,6 @@ entities:
       parent: 2
     - type: DeviceNetwork
       configurators:
-      - invalid
 - proto: FirelockEdge
   entities:
   - uid: 7389
@@ -49625,7 +49622,7 @@ entities:
       pos: 26.5,37.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -146598.17
+      secondsUntilStateChange: -149111.86
       state: Closing
   - uid: 7458
     components:
@@ -50609,7 +50606,6 @@ entities:
       parent: 2
     - type: DeviceNetwork
       configurators:
-      - invalid
   - uid: 7580
     components:
     - type: Transform
@@ -65127,7 +65123,6 @@ entities:
       parent: 2
     - type: DeviceNetwork
       configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#0055CCFF'
   - uid: 9488
@@ -66089,7 +66084,6 @@ entities:
       parent: 2
     - type: DeviceNetwork
       configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#990000FF'
   - uid: 9594
@@ -71569,6 +71563,11 @@ entities:
     - type: Transform
       pos: 57.5,-12.5
       parent: 2
+  - uid: 16085
+    components:
+    - type: Transform
+      pos: 56.5,38.5
+      parent: 2
 - proto: GrilleBroken
   entities:
   - uid: 10607
@@ -72928,7 +72927,7 @@ entities:
       pos: 12.5,12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -84770.11
+      secondsUntilStateChange: -87283.8
       state: Closing
   - uid: 10820
     components:
@@ -74300,9 +74299,9 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 6340
-          - 6339
           - 6338
+          - 6339
+          - 6340
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -86431,6 +86430,16 @@ entities:
     - type: Transform
       pos: 29.5,-31.5
       parent: 2
+  - uid: 16117
+    components:
+    - type: Transform
+      pos: 30.5,-24.5
+      parent: 2
+  - uid: 16118
+    components:
+    - type: Transform
+      pos: 31.5,-35.5
+      parent: 2
 - proto: SpawnPointBartender
   entities:
   - uid: 12816
@@ -86462,6 +86471,16 @@ entities:
     - type: Transform
       pos: 44.5,-6.5
       parent: 2
+  - uid: 16097
+    components:
+    - type: Transform
+      pos: 43.5,-10.5
+      parent: 2
+  - uid: 16098
+    components:
+    - type: Transform
+      pos: 43.5,-3.5
+      parent: 2
 - proto: SpawnPointCaptain
   entities:
   - uid: 12821
@@ -86486,6 +86505,26 @@ entities:
     - type: Transform
       pos: 11.5,22.5
       parent: 2
+  - uid: 16111
+    components:
+    - type: Transform
+      pos: 18.5,22.5
+      parent: 2
+  - uid: 16112
+    components:
+    - type: Transform
+      pos: 8.5,25.5
+      parent: 2
+  - uid: 16113
+    components:
+    - type: Transform
+      pos: 10.5,28.5
+      parent: 2
+  - uid: 16114
+    components:
+    - type: Transform
+      pos: 12.5,21.5
+      parent: 2
 - proto: SpawnPointChaplain
   entities:
   - uid: 12825
@@ -86499,6 +86538,11 @@ entities:
     components:
     - type: Transform
       pos: 36.5,-11.5
+      parent: 2
+  - uid: 16096
+    components:
+    - type: Transform
+      pos: 36.5,-9.5
       parent: 2
 - proto: SpawnPointChemist
   entities:
@@ -86626,6 +86670,21 @@ entities:
     - type: Transform
       pos: 71.5,7.5
       parent: 2
+  - uid: 16099
+    components:
+    - type: Transform
+      pos: 65.5,3.5
+      parent: 2
+  - uid: 16100
+    components:
+    - type: Transform
+      pos: 62.5,3.5
+      parent: 2
+  - uid: 16101
+    components:
+    - type: Transform
+      pos: 61.5,3.5
+      parent: 2
 - proto: SpawnPointMedicalIntern
   entities:
   - uid: 12847
@@ -86637,6 +86696,11 @@ entities:
     components:
     - type: Transform
       pos: 73.5,6.5
+      parent: 2
+  - uid: 16102
+    components:
+    - type: Transform
+      pos: 66.5,4.5
       parent: 2
 - proto: SpawnPointMime
   entities:
@@ -86651,6 +86715,11 @@ entities:
     components:
     - type: Transform
       pos: 20.5,-11.5
+      parent: 2
+  - uid: 16095
+    components:
+    - type: Transform
+      pos: 30.5,-6.5
       parent: 2
 - proto: SpawnPointObserver
   entities:
@@ -86803,6 +86872,36 @@ entities:
     - type: Transform
       pos: 24.5,24.5
       parent: 2
+  - uid: 16086
+    components:
+    - type: Transform
+      pos: 50.5,0.5
+      parent: 2
+  - uid: 16087
+    components:
+    - type: Transform
+      pos: 22.5,30.5
+      parent: 2
+  - uid: 16088
+    components:
+    - type: Transform
+      pos: 23.5,33.5
+      parent: 2
+  - uid: 16089
+    components:
+    - type: Transform
+      pos: 11.5,5.5
+      parent: 2
+  - uid: 16090
+    components:
+    - type: Transform
+      pos: 25.5,-22.5
+      parent: 2
+  - uid: 16091
+    components:
+    - type: Transform
+      pos: 20.5,18.5
+      parent: 2
 - proto: SpawnPointQuartermaster
   entities:
   - uid: 12880
@@ -86812,15 +86911,25 @@ entities:
       parent: 2
 - proto: SpawnPointResearchAssistant
   entities:
-  - uid: 12881
-    components:
-    - type: Transform
-      pos: 49.5,17.5
-      parent: 2
   - uid: 12882
     components:
     - type: Transform
       pos: 53.5,18.5
+      parent: 2
+  - uid: 16106
+    components:
+    - type: Transform
+      pos: 63.5,13.5
+      parent: 2
+  - uid: 16107
+    components:
+    - type: Transform
+      pos: 64.5,14.5
+      parent: 2
+  - uid: 16108
+    components:
+    - type: Transform
+      pos: 46.5,11.5
       parent: 2
 - proto: SpawnPointResearchDirector
   entities:
@@ -86841,8 +86950,23 @@ entities:
     - type: Transform
       pos: 8.5,30.5
       parent: 2
+  - uid: 16109
+    components:
+    - type: Transform
+      pos: 6.5,33.5
+      parent: 2
+  - uid: 16110
+    components:
+    - type: Transform
+      pos: 9.5,27.5
+      parent: 2
 - proto: SpawnPointScientist
   entities:
+  - uid: 12881
+    components:
+    - type: Transform
+      pos: 47.5,11.5
+      parent: 2
   - uid: 12886
     components:
     - type: Transform
@@ -86862,6 +86986,21 @@ entities:
     components:
     - type: Transform
       pos: 54.5,24.5
+      parent: 2
+  - uid: 16103
+    components:
+    - type: Transform
+      pos: 50.5,19.5
+      parent: 2
+  - uid: 16104
+    components:
+    - type: Transform
+      pos: 69.5,14.5
+      parent: 2
+  - uid: 16105
+    components:
+    - type: Transform
+      pos: 61.5,24.5
       parent: 2
 - proto: SpawnPointSecurityCadet
   entities:
@@ -86891,6 +87030,21 @@ entities:
     components:
     - type: Transform
       pos: 36.5,33.5
+      parent: 2
+  - uid: 16092
+    components:
+    - type: Transform
+      pos: 30.5,30.5
+      parent: 2
+  - uid: 16093
+    components:
+    - type: Transform
+      pos: 50.5,30.5
+      parent: 2
+  - uid: 16094
+    components:
+    - type: Transform
+      pos: 52.5,30.5
       parent: 2
 - proto: SpawnPointServiceWorker
   entities:
@@ -86930,6 +87084,16 @@ entities:
     components:
     - type: Transform
       pos: 21.5,-31.5
+      parent: 2
+  - uid: 16115
+    components:
+    - type: Transform
+      pos: 17.5,-36.5
+      parent: 2
+  - uid: 16116
+    components:
+    - type: Transform
+      pos: 21.5,-24.5
       parent: 2
 - proto: SpawnPointTechnicalAssistant
   entities:
