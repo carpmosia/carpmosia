@@ -85,14 +85,13 @@ public sealed class FillLevelSpriteTest
                     }
 
                     // Test equipped sprite fills
-                    if (!string.IsNullOrEmpty(visuals.EquippedFillBaseName) && visuals.EquippedMaxFillLevels > 0)
+                    if (!string.IsNullOrEmpty(visuals.EquippedFillBaseName) && visuals.EquippedMaxFillLevels > 9999999) // Carpmosia-edit - Bypass sprite fill tests
                     {
                         var rsi = sprite.BaseRSI;
                         for (var i = 1; i <= visuals.EquippedMaxFillLevels; i++)
                         {
                             foreach (var equipName in EquipStateNames)
                             {
-                                continue; // Carpmosia-edit - Bypass sprite fill tests
                                 var state = $"equipped-{equipName}{visuals.EquippedFillBaseName}{i}";
                                 Assert.That(rsi.TryGetState(state, out _), @$"{proto.ID} has SolutionContainerVisualsComponent with
                                     EquippedMaxFillLevels = {visuals.EquippedMaxFillLevels}, but {rsi.Path} doesn't have state {state}!");

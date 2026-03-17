@@ -17,7 +17,6 @@ namespace Content.Client.Voting.UI
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly IVoteManager _voteManager = default!;
         [Dependency] private readonly IEntityNetworkManager _net = default!;
-        [Dependency] private readonly IPrototypeManager _prototypeManager = default!; // Carpmosia-edit - Better map vote
 
         private readonly VoteManager.ActiveVote _vote;
         private readonly VoteOption[] _voteOptions; // Carpmosia-edit - Better map vote
@@ -77,11 +76,11 @@ namespace Content.Client.Voting.UI
                 // Carpmosia-end - Better map vote
                 if (_vote.DisplayVotes)
                 {
-                    _voteOptions[i].Button.Label.Text = Loc.GetString("ui-vote-button", ("text", entry.Text), ("votes", entry.Votes)); // Carpmosia-edit - Better map vote
+                    _voteOptions[i].Button.IconLabel.Text = Loc.GetString("ui-vote-button", ("text", entry.Text), ("votes", entry.Votes)); // Carpmosia-edit - Better map vote
                 }
                 else
                 {
-                    _voteOptions[i].Button.Label.Text = Loc.GetString("ui-vote-button-no-votes", ("text", entry.Text)); // Carpmosia-edit - Better map vote
+                    _voteOptions[i].Button.IconLabel.Text = Loc.GetString("ui-vote-button-no-votes", ("text", entry.Text)); // Carpmosia-edit - Better map vote
                 }
 
                 if (_vote.OurVote == i)

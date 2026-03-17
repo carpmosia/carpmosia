@@ -10,3 +10,6 @@ reagent-desc-tricordrazine-carpmosia = A wide-spectrum stimulant, acting on many
 
 reagent-name-tetracordrazine = tetracordrazine
 reagent-desc-tetracordrazine = A potent stabilizing agent, effectively heals brute, burn, and poison damage on the brink of death; and steadily patches up life threatening wounds. 
+
+reagent-name-necrosol = necrosol
+reagent-desc-necrosol = A necrotic substance that seems to be able to heal frozen corpses. It can treat and rejuvenate plants when applied in small doses.
