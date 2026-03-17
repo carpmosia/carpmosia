@@ -28,7 +28,7 @@ public sealed class VentCrittersRule : StationEventSystem<VentCrittersRuleCompon
         if (!TryComp<StationEventComponent>(uid, out var stationEvent))
             return;
 
-        var str = Loc.GetString("station-event-vent-creatures-start-announcement-carpmosia",
+        var str = Loc.GetString("station-event-vent-creatures-start-horde-announcement",
             ("location", FormattedMessage.RemoveMarkupOrThrow(_navMap.GetNearestBeaconString((uid, component.Center)))));
         stationEvent.StartAnnouncement = str;
 
@@ -44,6 +44,9 @@ public sealed class VentCrittersRule : StationEventSystem<VentCrittersRuleCompon
         var validLocations = new List<TransformComponent>();
         while (locations.MoveNext(out _, out _, out var transform))
         {
+            if (!transform.Anchored)
+                continue;
+
             if (CompOrNull<StationMemberComponent>(transform.GridUid)?.Station == station)
             {
                 validLocations.Add(transform);
