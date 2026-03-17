@@ -64,8 +64,6 @@
           conditions:
           - !type:MobStateCondition
             mobstate: Alive
-          - !type:TotalDamageCondition
-            min: 50
           damage:
             Brute: -1.5
             Burn: -2.0
