@@ -4,7 +4,9 @@ chat-radio-message-wrap-bold = [color={$color}]{$channel} [bold]{$name}[/bold] {
 
 examine-headset-default-channel = Use {$prefix} for the default channel ([color={$color}]{$channel}[/color]).
 
-chat-radio-common = Common
+# Carpmosia-start - Common to Intercom
+chat-radio-common = read only: Intercom
+# Carpmosia-end - Common to Intercom
 chat-radio-centcom = CentComm
 chat-radio-command = Command
 chat-radio-engineering = Engineering

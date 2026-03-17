@@ -14,8 +14,8 @@
 - type: entity
   parent: EncryptionKey
   id: EncryptionKeyCommon
-  name: common encryption key
-  description: An encryption key used by anyone.
+  name: intercom receiver key
+  description: An encryption key used by anyone. Can only receive messages from the public intercom channel.
   components:
   - type: EncryptionKey
     channels:
