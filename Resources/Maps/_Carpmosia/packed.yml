@@ -49135,7 +49135,7 @@ entities:
       pos: 72.5,-16.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
+      configurators: [ ]
 - proto: FirelockEdge
   entities:
   - uid: 7389
@@ -50605,7 +50605,7 @@ entities:
       pos: 68.5,-19.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
+      configurators: [ ]
   - uid: 7580
     components:
     - type: Transform
@@ -65122,7 +65122,7 @@ entities:
       pos: 56.5,-14.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
+      configurators: [ ]
     - type: AtmosPipeColor
       color: '#0055CCFF'
   - uid: 9488
@@ -66083,7 +66083,7 @@ entities:
       pos: 55.5,-14.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
+      configurators: [ ]
     - type: AtmosPipeColor
       color: '#990000FF'
   - uid: 9594
