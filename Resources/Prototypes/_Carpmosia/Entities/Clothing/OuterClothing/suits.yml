@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingOuterSizeUtilitySlim, ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseSyndicateContraband]
+  parent: [ClothingOuterSizeUtilitySlim, ClothingOuterBase, AllowSuitStorageClothing, BaseSyndicateContraband]
   id: ClothingOuterSuitFireSyndicate
   name: syndicate fire suit
   description: A layered suit draping protective sheets one over another, achieving maximum coverage with minimal burden. Designed to shield it's wearer from intense heat and energy weaponry. Effectively disperses energy impulses used in conventional stun weapons.
@@ -15,7 +15,7 @@
     highPressureMultiplier: 0.02
   - type: TemperatureProtection
     heatingCoefficient: 0.001
-    coolingCoefficient: 0.6
+    coolingCoefficient: 0.05
   - type: FireProtection
     reduction: 0.8
   - type: Armor
@@ -33,4 +33,3 @@
     walkModifier: 1
     sprintModifier: 1
   - type: GroupExamine
-
