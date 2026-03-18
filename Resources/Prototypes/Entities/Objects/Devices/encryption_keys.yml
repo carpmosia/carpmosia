@@ -14,8 +14,10 @@
 - type: entity
   parent: EncryptionKey
   id: EncryptionKeyCommon
+# Carpmosia-start - Common to Intercom
   name: intercom receiver key
   description: An encryption key used by anyone. Can only receive messages from the public intercom channel.
+# Carpmosia-end - Common to Intercom
   components:
   - type: EncryptionKey
     channels:
