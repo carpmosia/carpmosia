@@ -8,7 +8,7 @@ encryption-keys-panel-locked = Open maintenance panel first!
 examine-encryption-channels-prefix = Available frequencies:
 # Carpmosia-start - Intercom to Common
 examine-encryption-channel = { $noHeadset ->
-[true] [color={$color}]:read-only {$id} ({NATURALFIXED($freq, 1)}) [/color]
+[true] [color={$color}]read-only {$id} ({NATURALFIXED($freq, 1)}) [/color]
 *[other] [color={$color}]{$key} for {$id} ({NATURALFIXED($freq, 1)})[/color]
 }
 # Carpmosia-end - Intercom to Common
