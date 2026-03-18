@@ -219,6 +219,7 @@ public sealed partial class EncryptionKeySystem : EntitySystem
                 : $"{SharedChatSystem.RadioChannelPrefix}{proto.KeyCode}";
 
             examineEvent.PushMarkup(Loc.GetString(channelFTLPattern,
+                ("noHeadset", proto.NoHeadset), // Carpmosia-edit - Common to Intercom
                 ("color", proto.Color),
                 ("key", key),
                 ("id", proto.LocalizedName),
