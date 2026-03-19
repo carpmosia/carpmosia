@@ -27,6 +27,7 @@ namespace Content.Shared.Shuttles.Components
         public Vector2 CurTickStrafeMovement = Vector2.Zero;
         public float CurTickRotationMovement;
         public float CurTickBraking;
+        public float CurTickAligning; // Carpmosia-edit - rotate shuttle along movement vector
 
         public GameTick LastInputTick = GameTick.Zero;
         public ushort LastInputSubTick = 0;
