@@ -37,7 +37,7 @@ namespace Content.Server.Voting
         ///     The options of the vote. Each entry is a tuple of the player-shown text,
         ///     and a data object that can be used to keep track of options later.
         /// </summary>
-        public List<(string text, object data)> Options { get; set; } = new();
+        public List<(object text, object data)> Options { get; set; } = new(); // Carpmosia-edit - Better map vote
 
         /// <summary>
         ///     Which sessions may send a vote. Used when only a subset of players should be able to vote. Defaults to all.

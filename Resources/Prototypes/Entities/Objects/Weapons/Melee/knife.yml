@@ -109,7 +109,7 @@
   name: combat knife
   parent: [BaseKnife, BaseSecurityContraband]
   id: CombatKnife
-  description: A deadly knife intended for melee confrontations.
+  description: A deadly knife intended for melee confrontations. Built strongly enough to jam into and pry open unpowered airlocks, although with less leverage than a crowbar. # Carpmosia-edit - Prying blades
   components:
   - type: Tag
     tags:
@@ -155,6 +155,10 @@
         - ItemMask
         restitution: 0.3
         friction: 0.2
+  # Carpmosia-start - Prying blades
+  - type: Prying
+    speedModifier: 0.4
+  # Carpmosia-end - Prying blades
 
 - type: entity
   name: survival knife
@@ -170,6 +174,10 @@
     storedSprite:
       state: storage
       sprite: Objects/Weapons/Melee/survival_knife.rsi
+  # Carpmosia-start - Prying blades
+  - type: Prying
+    speedModifier: 0.15
+  # Carpmosia-end - Prying blades
 
 - type: entity
   name: kukri knife
@@ -349,6 +357,7 @@
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
     offset: -0.15,0.0
+    removalTime: 1.5
   - type: LandAtCursor
   - type: DamageOtherOnHit
     ignoreResistances: true
@@ -361,7 +370,7 @@
   - type: ThrowingAngle
     angle: 225
   - type: StaticPrice
-    price: 500 # 2000 for a set of 4
+    price: 500 # 4000 for a set of 8
   - type: Fixtures
     fixtures:
       fix1:

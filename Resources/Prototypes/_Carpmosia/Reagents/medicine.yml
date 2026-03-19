@@ -8,7 +8,7 @@
   color: "#69304D"
   worksOnTheDead: true
   metabolisms:
-    Medicine:
+    Bloodstream:
       effects:
       - !type:EvenHealthChange
         conditions:
@@ -27,18 +27,21 @@
   color: "#FFC683"
   worksOnTheDead: true
   metabolisms:
-    Medicine:
+    Bloodstream:
       effects:
       - !type:HealthChange
         conditions:
         - !type:TemperatureCondition
           max: 213.0
         damage:
-          groups:
-            Brute: 3
           types:
-            Poison: -6
-            Radiation: -3
+            Heat: 1.5
+      - !type:EvenHealthChange
+        conditions:
+        - !type:TemperatureCondition
+          max: 213.0
+        damage:
+          Toxin: -6
 
 - type: reagent
   id: Tetracordrazine
@@ -49,37 +52,49 @@
   flavor: medicine
   color: "#942222"
   metabolisms:
-    Medicine:
+    Bloodstream:
       metabolismRate: 0.5
       effects:
-        - !type:HealthChange
-          conditions:
-          - !type:MobStateCondition
-            mobstate: Critical
-          damage:
-            groups:
-              Brute: -3.0
-              Burn: -4.0
-            types:
-              Poison: -1.0
-        - !type:HealthChange
-          conditions:
-          - !type:MobStateCondition
-            mobstate: Alive
-          - !type:TotalDamageCondition
-            min: 50
-          damage:
-            groups:
-              Brute: -1.5
-              Burn: -2.0
-            types:
-              Poison: -0.5
-        - !type:HealthChange
-          conditions:
-          - !type:ReagentCondition
-            reagent: Tetracordrazine
-            min: 11
-          damage:
-            types:
-              Cellular: 0.75
+      - !type:EvenHealthChange
+        conditions:
+        - !type:MobStateCondition
+          mobstate: Critical
+        damage:
+          Brute: -2.0
+          Burn: -2.0
+          Toxin: -1.0
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentCondition
+          reagent: Tetracordrazine
+          min: 11
+        damage:
+          types:
+            Cellular: 0.75
 
+- type: reagent
+  id: Necrosol
+  name: reagent-name-necrosol
+  group: Medicine
+  desc: reagent-desc-necrosol
+  physicalDesc: reagent-physical-desc-necrotic
+  flavor: medicine
+  color: "#86a5bd"
+  worksOnTheDead: true
+  plantMetabolism:
+  - !type:PlantAdjustToxins
+    amount: -5
+  - !type:PlantAdjustHealth
+    amount: 5
+  - !type:PlantCryoxadone {}
+  metabolisms:
+    Bloodstream:
+      effects:
+        - !type:EvenHealthChange
+          conditions:
+          - !type:TemperatureCondition
+            max: 150.0
+          damage:
+            Brute: -3
+            Burn: -3
+            Toxin: -3

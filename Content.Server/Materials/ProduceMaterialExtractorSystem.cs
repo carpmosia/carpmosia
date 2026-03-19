@@ -17,7 +17,6 @@ public sealed class ProduceMaterialExtractorSystem : EntitySystem
 {
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly MaterialStorageSystem _materialStorage = default!;
-    [Dependency] private readonly SharedContainerSystem _containerSystem = default!; // Carpmosia-edit - Insert storage contents into biogenerator
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!; // Carpmosia-edit - Insert storage contents into biogenerator
