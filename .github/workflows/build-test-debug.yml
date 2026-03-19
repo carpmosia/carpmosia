@@ -51,8 +51,7 @@ jobs:
       shell: pwsh
       run: |
         $env:DOTNET_gcServer=1
-        $env:DOTNET_GCHeapHardLimit=0x3C0000000
-        dotnet test --no-build --configuration DebugOpt Content.IntegrationTests/Content.IntegrationTests.csproj --logger trx -- NUnit.ConsoleOut=1 NUnit.MapWarningTo=Failed
+        dotnet test --no-build --configuration DebugOpt Content.IntegrationTests/Content.IntegrationTests.csproj --logger trx -- NUnit.NumberOfTestWorkers=1 NUnit.ConsoleOut=1 NUnit.MapWarningTo=Failed --blame-hang --blame-hang-timeout 5m
   ci-success:
     name: Build & Test Debug
     needs:
