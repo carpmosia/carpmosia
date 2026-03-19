@@ -1378,4 +1378,24 @@
   id: 235
   time: '2026-03-19T04:16:29.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/289
+- author: imatsoup
+  changes:
+  - message: Converted Blood Bound will now have the objectives of the original Blood
+      Bound.
+    type: Tweak
+  - message: For Blood Bound steal objectives, either Blood Bound carrying the objective
+      item will count as a greentext for them both.
+    type: Tweak
+  id: 236
+  time: '2026-03-19T16:08:53.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/248
+- author: arenaconspiracy
+  changes:
+  - message: 'EXPERIMENTAL: The disabler has been brought in line with the Mk 58,
+      a full charge can make one takedown, down from six, in exchange for a higher
+      fire rate.'
+    type: Tweak
+  id: 237
+  time: '2026-03-19T16:08:59.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/271
 Order: -1
