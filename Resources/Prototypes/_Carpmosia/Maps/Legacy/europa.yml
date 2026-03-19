@@ -1,5 +1,6 @@
+# 2024-07-11 15:03:51 -0600 https://raw.githubusercontent.com/space-wizards/space-station-14/e3bb2771d6cfe971607090aa27153c222d481956/Resources/Prototypes/Maps/europa.yml
 - type: gameMap
-  id: Europa
+  id: LegacyEuropa
   mapName: 'Europa'
   mapPath: /Maps/_Carpmosia/Legacy/europa.yml
   maxRandomOffset: 0
@@ -10,8 +11,8 @@
     Europa:
       stationProto: StandardNanotrasenStation
       components:
-        - type: StationBiome
-          biome: Snow
+        #- type: StationBiome
+        #  biome: Snow
         - type: StationNameSetup
           mapNameTemplate: '{0} Europa {1}'
           nameGenerator:
