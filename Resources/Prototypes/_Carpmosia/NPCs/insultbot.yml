@@ -91,8 +91,7 @@
   query:
   - !type:ComponentQuery
     components:
-    - type: HumanoidAppearance
-      species: Human # This specific value isn't actually used, so don't worry about it being just `Human`.
+    - type: Actor
   - !type:ComponentFilter
     retainWithComp: false
     components:
