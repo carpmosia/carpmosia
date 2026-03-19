@@ -1338,4 +1338,44 @@
   id: 232
   time: '2026-03-14T03:33:03.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/268
+- author: SnappingOpossum
+  changes:
+  - message: Underlying technical work upstream for future medical improvements have
+      resulted in the following changes to better accommodate future development.
+      These changelog entries are made relative to the upstream changes that also
+      resulted from this. Please note that these changes are not representative of
+      the final product and that the medical balance will receive a major overhaul
+      once limb and organ damage are fully implemented.
+    type: Tweak
+  - message: Tricordrazine now heals damage while the patient is alive, as in above
+      critical condition.
+    type: Tweak
+  - message: Tetracordrazine now only heals patients in critical condition.
+    type: Tweak
+  - message: Tetracordrazine now evenly heals brute, burn, and toxin.
+    type: Tweak
+  - message: Necrosol removal has been reverted and it's burn healing has been slightly
+      decreased and toxin healing slightly increased.
+    type: Tweak
+  - message: Stelloxadone now heals toxin damage evenly and deals heat damage at half
+      the rate it dealt brute damage.
+    type: Tweak
+  id: 233
+  time: '2026-03-19T02:08:29.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/287
+- author: Atakku
+  changes:
+  - message: Added 19 more posters! (15 regular and 4 contraband)
+    type: Add
+  id: 234
+  time: '2026-03-19T03:16:04.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/195
+- author: imatsoup
+  changes:
+  - message: Carp version of the vent critters event replaced by the new upstream
+      vent hordes event
+    type: Tweak
+  id: 235
+  time: '2026-03-19T04:16:29.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/289
 Order: -1
