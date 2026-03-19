@@ -6,10 +6,10 @@ encryption-keys-are-locked = Encryption key slots are locked!
 encryption-keys-panel-locked = Open maintenance panel first!
 
 examine-encryption-channels-prefix = Available frequencies:
-# Carpmosia-start - Intercom to Common
+# Carpmosia-start - Common to Intercom
 examine-encryption-channel = { $noHeadset ->
 [true] [color={$color}]read-only {$id} ({NATURALFIXED($freq, 1)}) [/color]
 *[other] [color={$color}]{$key} for {$id} ({NATURALFIXED($freq, 1)})[/color]
 }
-# Carpmosia-end - Intercom to Common
+# Carpmosia-end - Common to Intercom
 examine-encryption-default-channel = The default channel is [color={$color}]{$channel}[/color].
