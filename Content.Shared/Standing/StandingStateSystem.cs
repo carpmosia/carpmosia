@@ -73,12 +73,12 @@ public sealed class StandingStateSystem : EntitySystem
         ChangeLayers(entity);
     }
 
-    // Carpmosia-start - make dead/crit bodies much harder to pull v2
+    // Carpmosia-start - make dead/crit bodies much harder to pull
     private void OnMobStateChanged(Entity<StandingStateComponent> entity, ref MobStateChangedEvent args)
     {
         entity.Comp.DownFrictionMod = entity.Comp.DownFrictionModDict[args.NewMobState];
     }
-    // Carpmosia-end - make dead/crit bodies much harder to pull v2
+    // Carpmosia-end - make dead/crit bodies much harder to pull
 
     public bool IsMatchingState(Entity<StandingStateComponent?> entity, bool standing)
     {
