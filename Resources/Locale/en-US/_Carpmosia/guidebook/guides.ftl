@@ -1,5 +1,6 @@
-guide-entry-carpmosia-rules = Server Rules
+guide-entry-blood-bound = Blood Bound
 
+guide-entry-carpmosia-rules = Server Rules
 
 guide-entry-carpmosia-rules-core = C0
 guide-entry-carpmosia-rules-c1 = C1
@@ -56,4 +57,3 @@ guide-entry-carpmosia-rules-sl-restricted-gear = Restricted Gear
 guide-entry-carpmosia-rules-sl-restricted-weapons = Restricted Weapons
 guide-entry-carpmosia-rules-ban-types = Ban Types
 guide-entry-carpmosia-rules-ban-durations = Ban Durations
-

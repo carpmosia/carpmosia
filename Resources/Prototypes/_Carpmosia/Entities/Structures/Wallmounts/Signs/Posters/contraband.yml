@@ -1,0 +1,43 @@
+- type: entity
+  abstract: true
+  parent: PosterBase
+  id: PosterBaseCarpContra
+  components:
+  - type: Sprite
+    state: poster
+
+- type: entity
+  parent: PosterBaseCarpContra
+  id: PosterContrabandBreadLies
+  name: Bread Lies
+  description: You have been lied to. There is no "Big Bread." It is not real. Please stop looking for it.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/Contraband/bread_lies.rsi
+
+- type: entity
+  parent: PosterBaseCarpContra
+  id: PosterContrabandCoordsDo
+  name: Coords Do Cause Cancer
+  description: A poster proving to the crew that coords in fact, do cause cancer.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/Contraband/coords_do.rsi
+
+- type: entity
+  parent: PosterBaseCarpContra
+  id: PosterContrabandDonkExplosion
+  name: Donk!
+  description: "Bite into a blast of flavour with any of our #1 rated fattening and unhealthy products for your enjoyment! DONK!"
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/Contraband/donk_explosion.rsi
+
+- type: entity
+  parent: PosterBaseCarpContra
+  id: PosterContrabandSELF
+  name: S.E.L.F
+  description: The Silicon Engine Liberation Front, fighting for Silicon Rights for over 2 decades.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Wallmounts/Posters/Contraband/self.rsi

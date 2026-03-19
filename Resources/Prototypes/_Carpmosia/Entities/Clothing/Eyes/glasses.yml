@@ -15,3 +15,23 @@
     tags:
     - PetWearable
     - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingEyesGlassesMeson, ClothingEyesHudDiagnostic]
+  id: ClothingEyesGlassesMesonDiagnostic
+  name: diagnostic goggles
+  description: Orange-tinted engineering goggles with an intergrated diagnostics hud.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Clothing/Eyes/Glasses/mesondiag.rsi
+  - type: Clothing
+    sprite: _Carpmosia/Clothing/Eyes/Glasses/mesondiag.rsi
+  - type: StaticPrice
+    price: 30
+  - type: Construction
+    graph: MesonDiagnostic
+    node: mesonDiagnostic
+  - type: Tag
+    tags:
+    - PetWearable
+    - WhitelistChameleon

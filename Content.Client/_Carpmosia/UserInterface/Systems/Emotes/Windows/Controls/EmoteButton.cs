@@ -11,7 +11,7 @@ public sealed class EmoteButton : Button
     private readonly BoxContainer _box;
 
     public readonly TextureRect Icon;
-    public readonly RichTextLabel Label;
+    public new readonly RichTextLabel Label;
 
     public EmoteButton(EmotePrototype emote)
     {
