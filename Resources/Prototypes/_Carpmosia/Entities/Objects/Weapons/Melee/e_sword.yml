@@ -5,7 +5,7 @@
   description: A stylish Energy Sabre given to members of the prestigious Syndicate High Command
   components:
   - type: Reflect
-    reflectProb: .40 # Not gonna regret this later :clueless:
+    reflectProb: .45 # Not gonna regret this later :clueless:
   - type: Sprite
     sprite: _Carpmosia/Objects/Weapons/Melee/e_sabre.rsi
     layers:
@@ -44,3 +44,6 @@
         Blunt: 7
   - type: StaticPrice
     price: 5000
+  - type: Tag
+    tags:
+    - EnergySabre
