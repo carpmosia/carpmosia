@@ -1,6 +1,8 @@
 - type: loadoutGroup
   parent: [ CivilianHead, CommonHead ]
   id: ReporterHead
+  loadouts:
+  - ReporterPressFedora
 
 - type: loadoutGroup
   parent: [ CivilianGlasses, CommonGlasses ]
@@ -37,9 +39,11 @@
 #   parent: [ CivilianBelt, CommonBelt ]
 #   id: ReporterBelt
 
-# - type: loadoutGroup
-#   parent: [ CivilianOuterClothing, CommonOuterClothing ]
-#   id: ReporterOuterClothing
+- type: loadoutGroup
+  parent: [ CivilianOuterClothing, CommonOuterClothing ]
+  id: ReporterOuterClothing
+  loadouts:
+  - ReporterPressVest
 
 - type: loadoutGroup
   parent: [ CommonShoes, CivilianShoes ]
