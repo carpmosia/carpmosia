@@ -216,6 +216,27 @@ public sealed partial class GuideReagentEmbed : BoxContainer, IDocumentTag, ISea
         }
         #endregion
 
+        #region ChemLabel
+
+        if (_chemistryGuideData.ReagentGuideRegistry.TryGetValue(reagent.ID, out var guideEntryRegistryLabel) &&
+            guideEntryRegistryLabel.Labels.Count > 0)
+        {
+            foreach (var label in guideEntryRegistryLabel.Labels)
+            {
+                var labelButton = new Button();
+                labelButton.Text = label;
+                labelButton.OnPressed += _ => _sawmill.Debug("ButtonWorks");
+                LabelDescriptionContainer.AddChild(labelButton);
+            }
+        }
+        else
+        {
+            LabelCollapsibleHeading.Visible = false;
+            LabelDescriptionContainer.Visible = false;
+        }
+
+        #endregion
+
         GenerateSources(reagent);
 
         FormattedMessage description = new();

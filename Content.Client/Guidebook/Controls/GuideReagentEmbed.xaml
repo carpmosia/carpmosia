@@ -58,6 +58,17 @@
                     </CollapsibleBody>
                 </Collapsible>
             </BoxContainer>
+            <BoxContainer Name="LabelContainer" HorizontalExpand="True">
+                <Collapsible>
+                    <CollapsibleHeading Title="{Loc 'guidebook-reagent-label-header'}" Name="LabelCollapsibleHeading"/>
+                    <CollapsibleBody>
+                        <BoxContainer Name="LabelDescriptionContainer"
+                                      Orientation="Vertical"
+                                      Margin="10 0 10 0"
+                                      HorizontalExpand="True"/>
+                    </CollapsibleBody>
+                </Collapsible>
+            </BoxContainer>
             <BoxContainer Margin="10 5 10 10" HorizontalExpand="True">
                 <!-- The troublemaker !-->
                 <RichTextLabel Name="ReagentDescription" HorizontalAlignment="Left"/>
