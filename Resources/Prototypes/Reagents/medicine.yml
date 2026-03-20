@@ -203,8 +203,9 @@
           damage:
           # todo scale with temp like SS13
             # Carpmosia-start - New Cryonics Plus
-            groups:
-              Airloss: -10
+            types:
+              Bloodloss: -5
+              Asphyxiation: -5
             # Carpmosia-end - New Cryonics Plus
 
 
@@ -830,6 +831,11 @@
     Bloodstream:
       effects:
       - !type:EvenHealthChange
+        # Carpmosia-start - Cordrazines
+        conditions:
+        - !type:MobStateCondition
+          mobstate: Alive
+        # Carpmosia-end - Cordrazines
         damage:
           Brute: -1
           Burn: -1
