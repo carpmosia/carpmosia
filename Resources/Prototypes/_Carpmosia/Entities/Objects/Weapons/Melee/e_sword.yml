@@ -1,0 +1,46 @@
+- type: entity
+  name: syndicate's energy sabre
+  parent: [BaseMeleeWeaponEnergy, BaseSyndicateContraband]
+  id: EnergySabre
+  description: A stylish Energy Sabre given to members of the prestigious Syndicate High Command
+  components:
+  - type: Reflect
+    reflectProb: .40 # Not gonna regret this later :clueless:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Weapons/Melee/e_sabre.rsi
+    layers:
+    - state: e_sword
+    - state: e_sword_blade
+      color: "#FFFFFF"
+      visible: false
+      shader: unshaded
+      map: [ "blade" ]
+  - type: Item
+    sprite: _Carpmosia/Objects/Weapons/Melee/e_sabre.rsi # for whatever reason the e-sword puts the inhand sprites into different a RSI. ???
+  - type: ItemToggleMeleeWeapon
+    activatedSoundOnHit:
+      path: /Audio/Weapons/eblade1.ogg
+      params:
+        variation: 0.250
+    activatedSoundOnHitNoDamage:
+      path: /Audio/Weapons/eblade1.ogg
+      params:
+        variation: 0.250
+        volume: -10
+    activatedSoundOnSwing:
+      path: /Audio/Weapons/eblademiss.ogg
+      params:
+        variation: 0.125
+    activatedDamage:
+      types:
+        Slash: 18
+        Heat: 18
+        Structural: 50
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 1.25
+    damage:
+      types:
+        Blunt: 7
+  - type: StaticPrice
+    price: 5000
