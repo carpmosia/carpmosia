@@ -262,7 +262,7 @@ namespace Content.Client.Actions
                     SetIcon(actionId, new SpriteSpecifier.EntityPrototype(id));
                     SetEvent(actionId, new StartPlacementActionEvent()
                     {
-                        PlacementOption = "SnapgridCenter",
+                        PlacementOption = proto.PlacementMode, // Carpmosia-edit - mappingclientsidesetup fixes
                         EntityType = id
                     });
                     _metaData.SetEntityName(actionId, proto.Name);
