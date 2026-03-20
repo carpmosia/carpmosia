@@ -218,9 +218,9 @@ public sealed partial class GuideReagentEmbed : BoxContainer, IDocumentTag, ISea
 
         #region ChemLabel
 
-        if (_chemistryGuideData.ReagentGuideRegistry.TryGetValue(reagent.ID, out var guideEntryRegistryLabel) &&
-            guideEntryRegistryLabel.Labels.Count > 0)
+        if (_chemistryGuideData.ReagentGuideRegistry.TryGetValue(reagent.ID, out var guideEntryRegistryLabel))
         {
+            _sawmill.Debug($"Adding labels for reagent {reagent.ID}");
             foreach (var label in guideEntryRegistryLabel.Labels)
             {
                 var labelButton = new Button();
