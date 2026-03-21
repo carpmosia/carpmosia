@@ -1,7 +1,7 @@
+using Content.Shared.Mobs; // Carpmosia-edit - make dead/crit bodies much harder to pull
+using Content.Shared.Mobs.Components; // Carpmosia-edit - make dead/crit bodies much harder to pull
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
-using Content.Shared.Mobs;
-using Content.Shared.Mobs.Components; // Carpmosia-edit - make dead/crit bodies less hard to pull
 
 namespace Content.Shared.Standing
 {
@@ -17,7 +17,7 @@ namespace Content.Shared.Standing
         public bool Standing { get; set; } = true;
 
         /// <summary>
-        /// The current friction modifier we should apply to a downed entity.
+        /// The current friction modifier we should apply to a downed entity. // Carpmosia-edit - make dead/crit bodies much harder to pull
         /// </summary>
         [DataField, AutoNetworkedField]
         public float DownFrictionMod = 0.4f;
