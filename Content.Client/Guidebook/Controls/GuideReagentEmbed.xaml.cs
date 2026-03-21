@@ -32,6 +32,7 @@ public sealed partial class GuideReagentEmbed : BoxContainer, IDocumentTag, ISea
     [Dependency] private readonly ILogManager _logManager = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
+    [Dependency] private readonly IClipboardManager _clipboard = default!;
 
     private readonly ChemistryGuideDataSystem _chemistryGuideData;
     private readonly ContrabandSystem _contraband;
@@ -108,7 +109,8 @@ public sealed partial class GuideReagentEmbed : BoxContainer, IDocumentTag, ISea
             : Color.White;
 
         ReagentName.SetMarkup(Loc.GetString("guidebook-reagent-name",
-            ("color", textColor), ("name", reagent.LocalizedName)));
+            ("color", textColor),
+            ("name", reagent.LocalizedName)));
 
         #region Recipe
         var reactions = _prototype.EnumeratePrototypes<ReactionPrototype>()
@@ -144,7 +146,8 @@ public sealed partial class GuideReagentEmbed : BoxContainer, IDocumentTag, ISea
 
                 var groupLabel = new RichTextLabel();
                 groupLabel.SetMarkup(Loc.GetString("guidebook-reagent-effects-metabolism-stage-rate",
-                    ("stage", _prototype.Index<MetabolismStagePrototype>(stage).LocalizedName), ("rate", effect.MetabolismRate)));
+                    ("stage", _prototype.Index<MetabolismStagePrototype>(stage).LocalizedName),
+                    ("rate", effect.MetabolismRate)));
                 var descriptionLabel = new RichTextLabel
                 {
                     Margin = new Thickness(25, 0, 10, 0)
@@ -218,14 +221,14 @@ public sealed partial class GuideReagentEmbed : BoxContainer, IDocumentTag, ISea
 
         #region ChemLabel
 
-        if (_chemistryGuideData.ReagentGuideRegistry.TryGetValue(reagent.ID, out var guideEntryRegistryLabel))
+        if (_chemistryGuideData.ReagentGuideRegistry.TryGetValue(reagent.ID, out var guideEntryRegistryReagent) &&
+            guideEntryRegistryReagent.Labels is { Count: > 0 })
         {
-            _sawmill.Debug($"Adding labels for reagent {reagent.ID}");
-            foreach (var label in guideEntryRegistryLabel.Labels)
+            foreach (var label in guideEntryRegistryReagent.Labels)
             {
                 var labelButton = new Button();
                 labelButton.Text = label;
-                labelButton.OnPressed += _ => _sawmill.Debug("ButtonWorks");
+                labelButton.OnPressed += _ => _clipboard.SetText(label);
                 LabelDescriptionContainer.AddChild(labelButton);
             }
         }

@@ -250,7 +250,7 @@ namespace Content.Shared.Chemistry.Reagent
 
         public List<string>? PlantMetabolisms = null;
 
-        public List<string> Labels = new(0);
+        public List<string>? Labels = null;
 
         public ReagentGuideEntry(ReagentPrototype proto, IPrototypeManager prototype, IEntitySystemManager entSys)
         {
@@ -263,7 +263,8 @@ namespace Content.Shared.Chemistry.Reagent
                 PlantMetabolisms =
                     new List<string>(proto.GuidebookReagentEffectsDescription(prototype, entSys, proto.PlantMetabolisms, FixedPoint2.New(1f)));
             }
-            Labels = proto.Labels.Count > 0 ? proto.Labels : [];
+
+            Labels = proto.Labels;
         }
     }
 
