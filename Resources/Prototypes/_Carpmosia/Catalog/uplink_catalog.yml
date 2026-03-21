@@ -30,9 +30,6 @@
     whitelist:
       tags:
       - NukeOpsUplink
-    blacklist:
-      tags:
-      - LoneOpsUplink
   - !type:ListingLimitedStockCondition
     stock: 1
   - !type:BuyerAntagCondition
