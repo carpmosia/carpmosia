@@ -413,10 +413,10 @@ public abstract class SharedMagicSystem : EntitySystem
             if (_mobStateSystem.IsCritical(ev.Target) || _mobStateSystem.IsDead(ev.Target))
                 return;
         }
-        if (TryComp<DamageableComponent>(ev.Target, out var damageable) && TryComp<MobThresholdsComponent>(ev.Target, out var thresholds))
+        if (HasComp<DamageableComponent>(ev.Target) && TryComp<MobThresholdsComponent>(ev.Target, out var thresholds))
         {
             if (_mobThresholdSystem.TryGetIncapThreshold(ev.Target, out var threshold, thresholds))
-                dealtDamage = (FixedPoint2)threshold - damageable.TotalDamage;
+                dealtDamage = (FixedPoint2)threshold - _damageableSystem.GetTotalDamage(ev.Target);
         }
 
         if (ev.Handled || !PassesSpellPrerequisites(ev.Action, ev.Performer))
