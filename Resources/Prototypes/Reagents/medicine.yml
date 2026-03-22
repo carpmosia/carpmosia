@@ -18,7 +18,7 @@
         effectProto: StatusEffectWoozy
         time: 20.0
   labels:
-    - cryptobiolin | 5u = scrambled, woozy
+  - cryptobiolin | 5u = scrambled, woozy
 
 - type: reagent
   id: Dylovene
@@ -74,7 +74,7 @@
   - !type:PlantAdjustHealth
     amount: 1
   labels:
-      - dylo | 5u = -10 posion | OD 20u
+  - dylo | 5u = -10 posion | OD 20u
 
 - type: reagent
   id: Diphenhydramine
@@ -102,7 +102,7 @@
           types:
             Poison: -3
   labels:
-      - diphen | 5u = -30u histamine, -30 poison, removes jitter, drowsy
+  - diphen | 5u = -30u histamine, -30 poison, removes jitter, drowsy
 
 - type: reagent
   id: Ethylredoxrazine
@@ -124,7 +124,7 @@
           types:
             Poison: -0.5
   labels:
-      - redox | 5u = -48s drunk, -5 poison
+  - redox | 5u = -48s drunk, -5 poison
 
 - type: reagent
   id: Arithrazine
@@ -143,7 +143,7 @@
             Radiation: -3
             Blunt: 1.5
   labels:
-      - arith | 5u = -30 rad, 15 blunt
+  - arith | 5u = -30 rad, 15 blunt
 
 - type: reagent
   id: Bicaridine
@@ -181,7 +181,7 @@
           min: 15
       - !type:Drunk
   labels:
-      - bic | 5u = -15 brute | OD 15u
+  - bic | 5u = -15 brute | OD 15u
 
 - type: reagent
   id: Cryoxadone
@@ -218,7 +218,7 @@
               Asphyxiation: -5
             # Carpmosia-end - New Cryonics Plus
   labels:
-      - cryox | 5u = -50 bloodloss, -50 asphyx | min temp 213K | dead
+  - cryox | 5u = -50 bloodloss, -50 asphyx | min temp 213K | dead
 
 
 - type: reagent
@@ -241,7 +241,7 @@
             types:
              Cellular: -2
   labels:
-      - doxarubix | 5u = -20 cellular | min temp 150K | dead
+  - doxarubix | 5u = -20 cellular | min temp 150K | dead
 
 - type: reagent
   id: Dermaline
@@ -276,7 +276,7 @@
           reagent: Dermaline
           min: 10
   labels:
-      - derma | 5u = -30 heat/shock/cold | OD 10u
+  - derma | 5u = -30 heat/shock/cold | OD 10u
 
 - type: reagent
   id: Dexalin
@@ -304,7 +304,7 @@
             Asphyxiation: 3
             Cold: 1
   labels:
-      - dex | 5u = -10 asphyx, -5 bloodloss | OD 20u
+  - dex | 5u = -10 asphyx, -5 bloodloss | OD 20u
 
 - type: reagent
   id: DexalinPlus
@@ -339,7 +339,7 @@
             Asphyxiation: 5
             Cold: 3
   labels:
-      - dex+ | 5u = -35 asphyx, -30 bloodloss, -30u heartbreaker | OD 25u
+  - dex+ | 5u = -35 asphyx, -30 bloodloss, -30u heartbreaker | OD 25u
 
 # this ones a doozy
 - type: reagent
@@ -422,7 +422,7 @@
         component: IgnoreSlowOnDamage
         time: 5 # lingers less than hivemind reagent to give it a niche
   labels:
-      - epi | 5u = -50 histamine, crit heal | OD 20u
+  - epi | 5u = -50 histamine, crit heal | OD 20u
 
 - type: reagent
   id: Hyronalin
@@ -455,7 +455,7 @@
           reagent: Hyronalin
           min: 30
   labels:
-      - hyro | 5u = -20 rad, 2% vomit | OD 30u
+  - hyro | 5u = -20 rad, 2% vomit | OD 30u
 
 - type: reagent
   id: Ipecac
@@ -477,7 +477,7 @@
           min: 4
         probability: 0.3
   labels:
-      - ipecac | 5u = 30% vomit | min 4u
+  - ipecac | 5u = 30% vomit | min 4u
 
 - type: reagent
   id: Inaprovaline
@@ -502,7 +502,7 @@
       - !type:ModifyBleed
         amount: -0.25
   labels:
-      - inaprov | 5u = -100 asphyx, -12.5 bleed | crit only
+  - inaprov | 5u = -100 asphyx, -12.5 bleed | crit only
 
 - type: reagent
   id: Kelotane
@@ -539,7 +539,7 @@
           reagent: Kelotane
           min: 25
   labels:
-      - kelotane | 5u = -3.3 heat/shock/cold | OD 30u
+  - kelotane | 5u = -3.3 heat/shock/cold | OD 30u
 
 - type: reagent
   id: Leporazine
@@ -575,7 +575,7 @@
         reagent: Fresium
         amount: -5
   labels:
-      - leporazine | 5u = -20 cold | OD 20u
+  - leporazine | 5u = -20 cold | OD 20u
 
 - type: reagent
   id: Barozine
@@ -627,7 +627,7 @@
         messages: [ "barozine-effect-skin-burning", "barozine-effect-muscle-contract" ]
         probability: 0.1
   labels:
-      - barozine | 5u = 4 pierce | pressure immune | OD 20u
+  - barozine | 5u = 4 pierce | pressure immune | OD 20u
 
 - type: reagent
   id: Phalanximine
@@ -669,7 +669,7 @@
           types:
             Caustic: 0.3
   labels:
-      - phalanx | 5u = -15 cellular, +7.5 rad/caust | OD 11u
+  - phalanx | 5u = -15 cellular, +7.5 rad/caust | OD 11u
 
 - type: reagent
   id: PolypyryliumOligomers
@@ -697,7 +697,7 @@
       - !type:ModifyBleed
         amount: -0.25
   labels:
-      - polypyry | 5u = -17.5 brute, -10 airloss | OD 30u
+  - polypyry | 5u = -17.5 brute, -10 airloss | OD 30u
 
 - type: reagent
   id: Ambuzol
@@ -716,7 +716,7 @@
               reagent: Ambuzol
               min: 10
   labels:
-      - ambuzol | 10u = cures zombie infection
+  - ambuzol | 10u = cures zombie infection
 
 - type: reagent
   id: AmbuzolPlus
@@ -736,7 +736,7 @@
               reagent: AmbuzolPlus
               min: 5
   labels:
-      - ambuzol+ | 5u = cures zombie infection, gives immunity
+  - ambuzol+ | 5u = cures zombie infection, gives immunity
 
 - type: reagent
   id: PulpedBananaPeel
@@ -752,7 +752,7 @@
       - !type:ModifyBleed
         amount: -0.5
   labels:
-      - pulped banana | reduces bleed
+  - pulped banana | reduces bleed
 
 - type: reagent
   id: Saline
@@ -770,7 +770,7 @@
         - !type:ModifyBloodLevel
           amount: 6
   labels:
-      - saline | regenerates blood
+  - saline | regenerates blood
 
 - type: reagent
   id: Siderlac
@@ -788,7 +788,7 @@
           types:
             Caustic: -5
   labels:
-      - siderlac | 5u = -50 caustic
+  - siderlac | 5u = -50 caustic
 
 - type: reagent
   id: Stellibinin
@@ -816,7 +816,7 @@
         reagent: Amatoxin
         amount: -3
   labels:
-      - stellibinin | 5u = -40 poison, -30u amatox
+  - stellibinin | 5u = -40 poison, -30u amatox
 
 - type: reagent
   id: Synaptizine
@@ -845,7 +845,7 @@
         time: 15.0
         type: Remove
   labels:
-      - synaptizine | 5u = -20 poison | removes stun/knockdown/rainbow
+  - synaptizine | 5u = -20 poison | removes stun/knockdown/rainbow
 
 - type: reagent
   id: TranexamicAcid
@@ -871,7 +871,7 @@
           types:
             Bloodloss: 3
   labels:
-      - tranex acid | reduces bleed | OD 15u
+  - tranex acid | reduces bleed | OD 15u
 
 - type: reagent
   id: Tricordrazine
@@ -895,7 +895,7 @@
           Burn: -1
           Toxin: -0.5
   labels:
-      - trico | 5u = -10 brute/burn, -5 toxin | alive only, no crit
+  - trico | 5u = -10 brute/burn, -5 toxin | alive only, no crit
 
 - type: reagent
   id: Lipozine
@@ -914,7 +914,7 @@
       - !type:SatiateHunger
         factor: -1
   labels:
-      - lipo | makes hungy
+  - lipo | makes hungy
 
   # Should heal quite literally everything, use in very small amounts
 - type: reagent
@@ -935,7 +935,7 @@
           Airloss: -2
           Brute: -2
   labels:
-      - omni | 5u = -20 burn/toxin/airloss/brute
+  - omni | 5u = -20 burn/toxin/airloss/brute
 
 - type: reagent
   id: Ultravasculine
@@ -995,7 +995,7 @@
         reagent: Ultravasculine
         amount: 0.5
   labels:
-      - ultravascu | 5u = -60 toxin, +15 blunt | OD 20u = -20 toxin, +6 blunt | multiplies while removing histamine
+  - ultravascu | 5u = -60 toxin, +15 blunt | OD 20u = -20 toxin, +6 blunt | multiplies while removing histamine
 
 - type: reagent
   id: Oculine
@@ -1010,7 +1010,7 @@
       effects:
       - !type:EyeDamage
   labels:
-      - oculine | heals temp blindness
+  - oculine | heals temp blindness
 
 - type: reagent
   id: Cognizine
@@ -1029,7 +1029,7 @@
           reagent: Cognizine
           min: 5
   labels:
-      - cognizine | 5u = makes sapient
+  - cognizine | 5u = makes sapient
 
 - type: reagent
   id: Ethyloxyephedrine
@@ -1061,7 +1061,7 @@
         type: Local
         probability: 0.1
   labels:
-      - ethyloxy | removes drowsi | min 10u = reset narcolepsy | gives jitter/stutter
+  - ethyloxy | removes drowsi | min 10u = reset narcolepsy | gives jitter/stutter
 
 - type: reagent
   id: Diphenylmethylamine
@@ -1089,7 +1089,7 @@
         type: Local
         probability: 0.1
   labels:
-      - diphenyl | removes drowsi | min 5u = reset narcolepsy
+  - diphenyl | removes drowsi | min 5u = reset narcolepsy
 
 - type: reagent
   id: Sigynate
@@ -1151,7 +1151,7 @@
         messages: [ "generic-reagent-effect-nauseous" ]
         probability: 0.2
   labels:
-      - sigy | 5u = -25 caustic | OD 16u
+  - sigy | 5u = -25 caustic | OD 16u
 
 - type: reagent
   id: Lacerinol
@@ -1179,7 +1179,7 @@
           types:
             Cold: 1.5 # 6 per u
   labels:
-      - lace | 5u = -40 slash, 4 heat | OD 12u
+  - lace | 5u = -40 slash, 4 heat | OD 12u
 
 - type: reagent
   id: Puncturase
@@ -1207,7 +1207,7 @@
           types:
             Blunt: 3 # 12 per u
   labels:
-      - punc | 5u = -50 pierce, 1 rad | OD 12u
+  - punc | 5u = -50 pierce, 1 rad | OD 12u
 
 - type: reagent
   id: Bruizine
@@ -1236,7 +1236,7 @@
           types:
             Poison: 2.5 # 10 per u
   labels:
-      - bruiz | 5u = -45 blunt | OD 10.5u
+  - bruiz | 5u = -45 blunt | OD 10.5u
 
 - type: reagent
   id: Holywater
@@ -1280,7 +1280,7 @@
   tileReactions:
   - !type:ExtinguishTileReaction { }
   labels:
-      - holy water | 5u = -2 blunt/poison/heat/shock/cold
+  - holy water | 5u = -2 blunt/poison/heat/shock/cold
 
 - type: reagent
   id: Pyrazine
@@ -1322,7 +1322,7 @@
         emote: Scream
         probability: 0.2
   labels:
-      - pyrazine | 5u = -50 heat | OD 20u
+  - pyrazine | 5u = -50 heat | OD 20u
 
 - type: reagent
   id: Insuzine
@@ -1371,7 +1371,7 @@
           reagent: Insuzine
           min: 12
   labels:
-      - insuz | 5u = -30 shock, -40 licoxide/tazinide | OD 12u
+  - insuz | 5u = -30 shock, -40 licoxide/tazinide | OD 12u
 
 - type: reagent
   id: Opporozidone #Name based of an altered version of the startreck chem "Opporozine"
@@ -1394,7 +1394,7 @@
           - !type:MobStateCondition
             mobstate: Dead
   labels:
-      - opporoz | reduce rot | dead only | max temp 150K
+  - opporoz | reduce rot | dead only | max temp 150K
 
 # Carpmosia-start - Disable arcryox
 # - type: reagent
@@ -1437,7 +1437,7 @@
         damage:
           Burn: -4.5
   labels:
-      - alox | 5u = -45 burn | dead | max temp 213K
+  - alox | 5u = -45 burn | dead | max temp 213K
 
 - type: reagent
   id : Mannitol # currently this is just a way to create psicodine
@@ -1460,7 +1460,7 @@
         messages: [ "mannitol-effect-enlightened" ]
         probability: 0.2
   labels:
-      - mannitol | makes you feel enlightened | min 15u
+  - mannitol | makes you feel enlightened | min 15u
 
 - type: reagent
   id: Psicodine
@@ -1506,7 +1506,7 @@
         - "psicodine-effect-at-peace"
         probability: 0.2
   labels:
-      - psico | removes drunk/jitter | improves morale | OD 30u
+  - psico | removes drunk/jitter | improves morale | OD 30u
 
 - type: reagent
   id: PotassiumIodide
@@ -1533,7 +1533,7 @@
           types:
             Poison: 1
   labels:
-      - potassium iodide | 5u = +20s radiation protection | OD 20u
+  - potassium iodide | 5u = +20s radiation protection | OD 20u
 
 - type: reagent
   id: Haloperidol
@@ -1587,7 +1587,7 @@
         reagent: MindbreakerToxin
         amount: -3.0
   labels:
-      - haloperidol | makes drowsy | removes jitters/rainbow, spaceDrugs/ephed/desoxy/stim/THC/bananadine/glue/mindbreaker
+  - haloperidol | makes drowsy | removes jitters/rainbow, spaceDrugs/ephed/desoxy/stim/THC/bananadine/glue/mindbreaker
 
 - type: reagent
   id: Heparin
@@ -1613,4 +1613,4 @@
           min: 15
         amount: 0.25
   labels:
-      - heparin | anticoagulant | OD 15u = slight bleed increase
+  - heparin | anticoagulant | OD 15u = slight bleed increase
