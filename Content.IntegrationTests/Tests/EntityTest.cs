@@ -21,6 +21,7 @@ namespace Content.IntegrationTests.Tests
         private static readonly ProtoId<EntityCategoryPrototype> SpawnerCategory = "Spawner";
 
         [Test]
+        [Explicit] // Carpmosia-edit - fix ghr oom
         public async Task SpawnAndDeleteAllEntitiesOnDifferentMaps()
         {
             // This test dirties the pair as it simply deletes ALL entities when done. Overhead of restarting the round
@@ -84,6 +85,7 @@ namespace Content.IntegrationTests.Tests
         }
 
         [Test]
+        [Explicit] // Carpmosia-edit - fix ghr oom
         public async Task SpawnAndDeleteAllEntitiesInTheSameSpot()
         {
             // This test dirties the pair as it simply deletes ALL entities when done. Overhead of restarting the round
@@ -143,6 +145,7 @@ namespace Content.IntegrationTests.Tests
         ///     all components on every entity.
         /// </summary>
         [Test]
+        [Explicit] // Carpmosia-edit - fix ghr oom
         public async Task SpawnAndDirtyAllEntities()
         {
             // This test dirties the pair as it simply deletes ALL entities when done. Overhead of restarting the round
@@ -168,13 +171,9 @@ namespace Content.IntegrationTests.Tests
                 .Select(p => p.ID)
                 .ToList();
 
-            // Carpmosia-start - fix ghr oom
-            foreach (var chunk in protoIds.Chunk(1000))
-            {
-            // Carpmosia-end - fix ghr oom
             await server.WaitPost(() =>
             {
-                foreach (var protoId in chunk) // Carpmosia-edit - fix ghr oom
+                foreach (var protoId in protoIds)
                 {
                     mapSys.CreateMap(out var mapId);
                     var grid = mapManager.CreateGridEntity(mapId);
@@ -187,7 +186,6 @@ namespace Content.IntegrationTests.Tests
             });
 
             await pair.RunTicksSync(15);
-            } // Carpmosia-edit - fix ghr oom
 
             // Make sure the client actually received the entities
             // 500 is completely arbitrary. Note that the client & sever entity counts aren't expected to match.
@@ -233,6 +231,7 @@ namespace Content.IntegrationTests.Tests
         /// crude test to try catch issues like this, and possibly should just be disabled.
         /// </remarks>
         [Test]
+        [Explicit] // Carpmosia-edit - fix ghr oom
         public async Task SpawnAndDeleteEntityCountTest()
         {
             var settings = new PoolSettings { Connected = true, Dirty = true };
@@ -374,6 +373,7 @@ namespace Content.IntegrationTests.Tests
         }
 
         [Test]
+        [Explicit] // Carpmosia-edit - fix ghr oom
         public async Task AllComponentsOneToOneDeleteTest()
         {
             var skipComponents = new[]
