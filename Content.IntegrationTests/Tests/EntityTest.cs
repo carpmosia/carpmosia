@@ -34,51 +34,56 @@ namespace Content.IntegrationTests.Tests
             var prototypeMan = server.ResolveDependency<IPrototypeManager>();
             var mapSystem = entityMan.System<SharedMapSystem>();
 
-            await server.WaitPost(() =>
+            // Carpmosia-start - fix ghr oom
+            var allProtoIds = prototypeMan
+                .EnumeratePrototypes<EntityPrototype>()
+                .Where(p => !p.Abstract)
+                .Where(p => !pair.IsTestPrototype(p))
+                .Where(p => !p.Components.ContainsKey("MapGrid")) // This will smash stuff otherwise.
+                .Where(p => !p.Components.ContainsKey("RoomFill")) // This comp can delete all entities, and spawn others
+                .Select(p => p.ID)
+                .ToList();
+
+            foreach (var protoIds in allProtoIds.Chunk(5000))
             {
-                var protoIds = prototypeMan
-                    .EnumeratePrototypes<EntityPrototype>()
-                    .Where(p => !p.Abstract)
-                    .Where(p => !pair.IsTestPrototype(p))
-                    .Where(p => !p.Components.ContainsKey("MapGrid")) // This will smash stuff otherwise.
-                    .Where(p => !p.Components.ContainsKey("RoomFill")) // This comp can delete all entities, and spawn others
-                    .Select(p => p.ID)
-                    .ToList();
-
-                foreach (var protoId in protoIds)
+                await server.WaitPost(() =>
                 {
-                    mapSystem.CreateMap(out var mapId);
-                    var grid = mapManager.CreateGridEntity(mapId);
-                    // TODO: Fix this better in engine.
-                    mapSystem.SetTile(grid.Owner, grid.Comp, Vector2i.Zero, new Tile(1));
-                    var coord = new EntityCoordinates(grid.Owner, 0, 0);
-                    entityMan.SpawnEntity(protoId, coord);
-                }
-            });
-
-            await server.WaitRunTicks(450); // 15 seconds, enough to trigger most update loops
-
-            await server.WaitPost(() =>
-            {
-                static IEnumerable<(EntityUid, TComp)> Query<TComp>(IEntityManager entityMan)
-                    where TComp : Component
-                {
-                    var query = entityMan.AllEntityQueryEnumerator<TComp>();
-                    while (query.MoveNext(out var uid, out var meta))
+                    foreach (var protoId in protoIds)
                     {
-                        yield return (uid, meta);
+                        mapSystem.CreateMap(out var mapId);
+                        var grid = mapManager.CreateGridEntity(mapId);
+                        // TODO: Fix this better in engine.
+                        mapSystem.SetTile(grid.Owner, grid.Comp, Vector2i.Zero, new Tile(1));
+                        var coord = new EntityCoordinates(grid.Owner, 0, 0);
+                        entityMan.SpawnEntity(protoId, coord);
                     }
-                }
+                });
 
-                var entityMetas = Query<MetaDataComponent>(entityMan).ToList();
-                foreach (var (uid, meta) in entityMetas)
+                await server.WaitRunTicks(450); // 15 seconds, enough to trigger most update loops
+
+                await server.WaitPost(() =>
                 {
-                    if (!meta.EntityDeleted)
-                        entityMan.DeleteEntity(uid);
-                }
+                    static IEnumerable<(EntityUid, TComp)> Query<TComp>(IEntityManager entityMan)
+                        where TComp : Component
+                    {
+                        var query = entityMan.AllEntityQueryEnumerator<TComp>();
+                        while (query.MoveNext(out var uid, out var meta))
+                        {
+                            yield return (uid, meta);
+                        }
+                    }
 
-                Assert.That(entityMan.EntityCount, Is.Zero);
-            });
+                    var entityMetas = Query<MetaDataComponent>(entityMan).ToList();
+                    foreach (var (uid, meta) in entityMetas)
+                    {
+                        if (!meta.EntityDeleted)
+                            entityMan.DeleteEntity(uid);
+                    }
+
+                    Assert.That(entityMan.EntityCount, Is.Zero);
+                });
+            }
+            // Carpmosia-end - fix ghr oom
 
             await pair.CleanReturnAsync();
         }
@@ -96,10 +101,8 @@ namespace Content.IntegrationTests.Tests
             var entityMan = server.ResolveDependency<IEntityManager>();
             var prototypeMan = server.ResolveDependency<IPrototypeManager>();
 
-            await server.WaitPost(() =>
-            {
-
-                var protoIds = prototypeMan
+            // Carpmosia-start - fix ghr oom
+            var allProtoIds = prototypeMan
                     .EnumeratePrototypes<EntityPrototype>()
                     .Where(p => !p.Abstract)
                     .Where(p => !pair.IsTestPrototype(p))
@@ -107,33 +110,40 @@ namespace Content.IntegrationTests.Tests
                     .Where(p => !p.Components.ContainsKey("RoomFill")) // This comp can delete all entities, and spawn others
                     .Select(p => p.ID)
                     .ToList();
-                foreach (var protoId in protoIds)
-                {
-                    entityMan.SpawnEntity(protoId, map.GridCoords);
-                }
-            });
-            await server.WaitRunTicks(450); // 15 seconds, enough to trigger most update loops
-            await server.WaitPost(() =>
+
+            foreach (var protoIds in allProtoIds.Chunk(5000))
             {
-                static IEnumerable<(EntityUid, TComp)> Query<TComp>(IEntityManager entityMan)
-                    where TComp : Component
+                await server.WaitPost(() =>
                 {
-                    var query = entityMan.AllEntityQueryEnumerator<TComp>();
-                    while (query.MoveNext(out var uid, out var meta))
+                    foreach (var protoId in protoIds)
                     {
-                        yield return (uid, meta);
+                        entityMan.SpawnEntity(protoId, map.GridCoords);
                     }
-                }
-
-                var entityMetas = Query<MetaDataComponent>(entityMan).ToList();
-                foreach (var (uid, meta) in entityMetas)
+                });
+                await server.WaitRunTicks(450); // 15 seconds, enough to trigger most update loops
+                await server.WaitPost(() =>
                 {
-                    if (!meta.EntityDeleted)
-                        entityMan.DeleteEntity(uid);
-                }
+                    static IEnumerable<(EntityUid, TComp)> Query<TComp>(IEntityManager entityMan)
+                        where TComp : Component
+                    {
+                        var query = entityMan.AllEntityQueryEnumerator<TComp>();
+                        while (query.MoveNext(out var uid, out var meta))
+                        {
+                            yield return (uid, meta);
+                        }
+                    }
 
-                Assert.That(entityMan.EntityCount, Is.Zero);
-            });
+                    var entityMetas = Query<MetaDataComponent>(entityMan).ToList();
+                    foreach (var (uid, meta) in entityMetas)
+                    {
+                        if (!meta.EntityDeleted)
+                            entityMan.DeleteEntity(uid);
+                    }
+
+                    Assert.That(entityMan.EntityCount, Is.Zero);
+                });
+            }
+            // Carpmosia-end - fix ghr oom
 
             await pair.CleanReturnAsync();
         }
@@ -160,7 +170,7 @@ namespace Content.IntegrationTests.Tests
 
             Assert.That(cfg.GetCVar(CVars.NetPVS), Is.False);
 
-            var protoIds = prototypeMan
+            var allProtoIds = prototypeMan // Carpmosia-edit - fix ghr oom
                 .EnumeratePrototypes<EntityPrototype>()
                 .Where(p => !p.Abstract)
                 .Where(p => !pair.IsTestPrototype(p))
@@ -169,51 +179,51 @@ namespace Content.IntegrationTests.Tests
                 .ToList();
 
             // Carpmosia-start - fix ghr oom
-            foreach (var chunk in protoIds.Chunk(1000))
+            foreach (var protoIds in allProtoIds.Chunk(5000))
             {
+                await server.WaitPost(() =>
+                {
+                    foreach (var protoId in protoIds)
+                    {
+                        mapSys.CreateMap(out var mapId);
+                        var grid = mapManager.CreateGridEntity(mapId);
+                        var ent = sEntMan.SpawnEntity(protoId, new EntityCoordinates(grid.Owner, 0.5f, 0.5f));
+                        foreach (var (_, component) in sEntMan.GetNetComponents(ent))
+                        {
+                            sEntMan.Dirty(ent, component);
+                        }
+                    }
+                });
+
+                await pair.RunTicksSync(15);
+
+                // Make sure the client actually received the entities
+                // 500 is completely arbitrary. Note that the client & sever entity counts aren't expected to match.
+                Assert.That(client.ResolveDependency<IEntityManager>().EntityCount, Is.GreaterThan(500));
+
+                await server.WaitPost(() =>
+                {
+                    static IEnumerable<(EntityUid, TComp)> Query<TComp>(IEntityManager entityMan)
+                        where TComp : Component
+                    {
+                        var query = entityMan.AllEntityQueryEnumerator<TComp>();
+                        while (query.MoveNext(out var uid, out var meta))
+                        {
+                            yield return (uid, meta);
+                        }
+                    }
+
+                    var entityMetas = Query<MetaDataComponent>(sEntMan).ToList();
+                    foreach (var (uid, meta) in entityMetas)
+                    {
+                        if (!meta.EntityDeleted)
+                            sEntMan.DeleteEntity(uid);
+                    }
+
+                    Assert.That(sEntMan.EntityCount, Is.Zero);
+                });
+            }
             // Carpmosia-end - fix ghr oom
-            await server.WaitPost(() =>
-            {
-                foreach (var protoId in chunk) // Carpmosia-edit - fix ghr oom
-                {
-                    mapSys.CreateMap(out var mapId);
-                    var grid = mapManager.CreateGridEntity(mapId);
-                    var ent = sEntMan.SpawnEntity(protoId, new EntityCoordinates(grid.Owner, 0.5f, 0.5f));
-                    foreach (var (_, component) in sEntMan.GetNetComponents(ent))
-                    {
-                        sEntMan.Dirty(ent, component);
-                    }
-                }
-            });
-
-            await pair.RunTicksSync(15);
-            } // Carpmosia-edit - fix ghr oom
-
-            // Make sure the client actually received the entities
-            // 500 is completely arbitrary. Note that the client & sever entity counts aren't expected to match.
-            Assert.That(client.ResolveDependency<IEntityManager>().EntityCount, Is.GreaterThan(500));
-
-            await server.WaitPost(() =>
-            {
-                static IEnumerable<(EntityUid, TComp)> Query<TComp>(IEntityManager entityMan)
-                    where TComp : Component
-                {
-                    var query = entityMan.AllEntityQueryEnumerator<TComp>();
-                    while (query.MoveNext(out var uid, out var meta))
-                    {
-                        yield return (uid, meta);
-                    }
-                }
-
-                var entityMetas = Query<MetaDataComponent>(sEntMan).ToList();
-                foreach (var (uid, meta) in entityMetas)
-                {
-                    if (!meta.EntityDeleted)
-                        sEntMan.DeleteEntity(uid);
-                }
-
-                Assert.That(sEntMan.EntityCount, Is.Zero);
-            });
 
             await pair.CleanReturnAsync();
         }
