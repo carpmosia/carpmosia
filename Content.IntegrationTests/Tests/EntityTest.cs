@@ -142,7 +142,7 @@ namespace Content.IntegrationTests.Tests
         ///     Variant of <see cref="SpawnAndDeleteAllEntitiesOnDifferentMaps"/> that also launches a client and dirties
         ///     all components on every entity.
         /// </summary>
-        [Test, NonParallelizable] // Carpmosia-edit - fix ghr oom
+        [Test]
         public async Task SpawnAndDirtyAllEntities()
         {
             // This test dirties the pair as it simply deletes ALL entities when done. Overhead of restarting the round
@@ -168,9 +168,13 @@ namespace Content.IntegrationTests.Tests
                 .Select(p => p.ID)
                 .ToList();
 
+            // Carpmosia-start - fix ghr oom
+            foreach (var chunk in protoIds.Chunk(1000))
+            {
+            // Carpmosia-end - fix ghr oom
             await server.WaitPost(() =>
             {
-                foreach (var protoId in protoIds)
+                foreach (var protoId in chunk) // Carpmosia-edit - fix ghr oom
                 {
                     mapSys.CreateMap(out var mapId);
                     var grid = mapManager.CreateGridEntity(mapId);
@@ -183,6 +187,7 @@ namespace Content.IntegrationTests.Tests
             });
 
             await pair.RunTicksSync(15);
+            } // Carpmosia-edit - fix ghr oom
 
             // Make sure the client actually received the entities
             // 500 is completely arbitrary. Note that the client & sever entity counts aren't expected to match.
