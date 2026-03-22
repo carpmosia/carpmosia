@@ -51,7 +51,7 @@ jobs:
       shell: pwsh
       run: |
         $env:DOTNET_gcServer=1
-        dotnet test --no-build --configuration DebugOpt Content.IntegrationTests/Content.IntegrationTests.csproj -m:1 --logger "console;verbosity=normal" -- NUnit.ConsoleOut=1 NUnit.MapWarningTo=Failed
+        dotnet test --no-build --configuration DebugOpt Content.IntegrationTests/Content.IntegrationTests.csproj -m:1 --logger "console;verbosity=minimal" -- NUnit.ConsoleOut=1 NUnit.MapWarningTo=Failed
   ci-success:
     name: Build & Test Debug
     needs:
