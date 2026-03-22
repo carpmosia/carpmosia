@@ -1687,6 +1687,10 @@
   packetPrototype: CocoaSeeds
   productPrototypes:
     - FoodCocoaPod
+  # Carpmosia-start - add crudcoa mutation
+  mutationPrototypes:
+    - crudcoa
+  # Carpmosia-end - add crudcoa mutation
   harvestRepeat: Repeat
   lifespan: 50
   maturation: 6

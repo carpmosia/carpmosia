@@ -1,0 +1,30 @@
+# When adding new food also add to random spawner located in Resources\Prototypes\Entities\Markers\Spawners\Random\Food_Drinks\food_produce.yml
+
+- type: entity
+  name: crudcoa pod
+  parent: FoodProduceBase
+  id: FoodCrudcoaPod
+  description: A pod-shaped ball of varying dull, grey plastics. You could almost use this as a basketball!
+  components:
+  - type: FlavorProfile
+    flavors:
+      - plastic
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 14
+        reagents:
+        - ReagentId: Oil
+          Quantity: 5
+        - ReagentId: Phosphorus
+          Quantity: 5
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Specific/Hydroponics/crudcoa.rsi
+  - type: Produce
+    seedId: crudcoa
+  - type: Log
+    spawnedPrototype: SheetPlastic1
+    spawnCount: 1
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 100
