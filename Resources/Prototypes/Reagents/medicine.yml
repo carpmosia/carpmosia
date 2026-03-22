@@ -18,7 +18,7 @@
         effectProto: StatusEffectWoozy
         time: 20.0
   labels:
-    - Cryptobiolin | 5u = scrambled, woozy
+    - cryptobiolin | 5u = scrambled, woozy
 
 - type: reagent
   id: Dylovene
@@ -74,7 +74,7 @@
   - !type:PlantAdjustHealth
     amount: 1
   labels:
-      - dylo | 5u = -10 posiom | OD 20u
+      - dylo | 5u = -10 posion | OD 20u
 
 - type: reagent
   id: Diphenhydramine
@@ -218,7 +218,7 @@
               Asphyxiation: -5
             # Carpmosia-end - New Cryonics Plus
   labels:
-      - cryox | 5u = -40 bloodloss, -40 asphyx | min temp 213K | dead
+      - cryox | 5u = -50 bloodloss, -50 asphyx | min temp 213K | dead
 
 
 - type: reagent
@@ -995,7 +995,7 @@
         reagent: Ultravasculine
         amount: 0.5
   labels:
-      - ultravascu | 5u = -60 toxin, +1.5 blunt | OD 20u = -20 toxin, +6 blunt | multiplies while removing histamine
+      - ultravascu | 5u = -60 toxin, +15 blunt | OD 20u = -20 toxin, +6 blunt | multiplies while removing histamine
 
 - type: reagent
   id: Oculine
@@ -1280,7 +1280,7 @@
   tileReactions:
   - !type:ExtinguishTileReaction { }
   labels:
-      - holy water | 5u = -20 blunt/poison/heat/shock/cold
+      - holy water | 5u = -2 blunt/poison/heat/shock/cold
 
 - type: reagent
   id: Pyrazine
