@@ -538,6 +538,8 @@
         - !type:ReagentCondition
           reagent: Kelotane
           min: 25
+  - labels:
+      - kelotane | 5u = -3.3 heat/shock/cold | OD 30u
 
 - type: reagent
   id: Leporazine
@@ -572,6 +574,8 @@
       - !type:AdjustReagent
         reagent: Fresium
         amount: -5
+  - labels:
+      - leporazine | 5u = -20 cold | OD 20u
 
 - type: reagent
   id: Barozine
@@ -622,6 +626,8 @@
         visualType: Large
         messages: [ "barozine-effect-skin-burning", "barozine-effect-muscle-contract" ]
         probability: 0.1
+  - labels:
+      - barozine | 5u = 4 pierce | pressure immune | OD 20u
 
 - type: reagent
   id: Phalanximine
@@ -662,6 +668,8 @@
         damage:
           types:
             Caustic: 0.3
+  - labels:
+      - phalanx | 5u = -15 cellular, +7.5 rad/caust | OD 11u
 
 - type: reagent
   id: PolypyryliumOligomers
@@ -688,6 +696,8 @@
             Asphyxiation: 3.5
       - !type:ModifyBleed
         amount: -0.25
+  - labels:
+      - polypyry | 5u = -17.5 brute, -10 airloss | OD 30u
 
 - type: reagent
   id: Ambuzol
@@ -705,6 +715,8 @@
             - !type:ReagentCondition
               reagent: Ambuzol
               min: 10
+  - labels:
+      - ambuzol | 10u = cures zombie infection
 
 - type: reagent
   id: AmbuzolPlus
@@ -723,6 +735,8 @@
             - !type:ReagentCondition
               reagent: AmbuzolPlus
               min: 5
+  - labels:
+      - ambuzol+ | 5u = cures zombie infection, gives immunity
 
 - type: reagent
   id: PulpedBananaPeel
@@ -737,6 +751,8 @@
       effects:
       - !type:ModifyBleed
         amount: -0.5
+  - labels:
+      - pulped banana | reduces bleed
 
 - type: reagent
   id: Saline
@@ -753,6 +769,8 @@
           factor: 6
         - !type:ModifyBloodLevel
           amount: 6
+  - labels:
+      - saline | regenerates blood
 
 - type: reagent
   id: Siderlac
@@ -769,6 +787,8 @@
         damage:
           types:
             Caustic: -5
+  - labels:
+      - siderlac | 5u = -50 caustic
 
 - type: reagent
   id: Stellibinin
@@ -795,6 +815,8 @@
           min: 1
         reagent: Amatoxin
         amount: -3
+  - labels:
+      - stellibinin | 5u = -40 poison, -30u amatox
 
 - type: reagent
   id: Synaptizine
@@ -822,6 +844,8 @@
         effectProto: StatusEffectSeeingRainbow
         time: 15.0
         type: Remove
+  - labels:
+      - synaptizine | 5u = -20 poison | removes stun/knockdown/rainbow
 
 - type: reagent
   id: TranexamicAcid
@@ -846,6 +870,8 @@
         damage:
           types:
             Bloodloss: 3
+  - labels:
+      - tranex acid | reduces bleed | OD 15u
 
 - type: reagent
   id: Tricordrazine
@@ -868,6 +894,8 @@
           Brute: -1
           Burn: -1
           Toxin: -0.5
+  - labels:
+      - trico | 5u = -10 brute/burn, -5 toxin | alive only
 
 - type: reagent
   id: Lipozine
@@ -885,6 +913,8 @@
       # what the hell, this isn't satiating at all!!
       - !type:SatiateHunger
         factor: -1
+  - labels:
+      - lipo | makes hungy
 
   # Should heal quite literally everything, use in very small amounts
 - type: reagent
@@ -904,6 +934,8 @@
           Toxin: -2
           Airloss: -2
           Brute: -2
+  - labels:
+      - omni | 5u = -20 burn/toxin/airloss/brute
 
 - type: reagent
   id: Ultravasculine
@@ -962,6 +994,8 @@
           min: 1
         reagent: Ultravasculine
         amount: 0.5
+  - labels:
+      - ultravascu | 5u = -60 toxin, +1.5 blunt | OD 20u = -20 toxin, +6 blunt | multiplies while removing histamine
 
 - type: reagent
   id: Oculine
@@ -975,6 +1009,8 @@
     Bloodstream:
       effects:
       - !type:EyeDamage
+  - labels:
+      - oculine | heals temp blindness
 
 - type: reagent
   id: Cognizine
@@ -992,6 +1028,8 @@
         - !type:ReagentCondition
           reagent: Cognizine
           min: 5
+  - labels:
+      - cognizine | 5u = makes sapient
 
 - type: reagent
   id: Ethyloxyephedrine
@@ -1022,6 +1060,8 @@
         messages: ["ethyloxyephedrine-effect-feeling-awake", "ethyloxyephedrine-effect-clear-mind"]
         type: Local
         probability: 0.1
+  - labels:
+      - ethyloxy | removes drowsi | min 10u = reset narcolepsy | gives jitter/stutter
 
 - type: reagent
   id: Diphenylmethylamine
@@ -1048,6 +1088,8 @@
         messages: ["ethyloxyephedrine-effect-feeling-awake", "ethyloxyephedrine-effect-clear-mind"]
         type: Local
         probability: 0.1
+  - labels:
+      - diphenyl | removes drowsi | min 5u = reset narcolepsy
 
 - type: reagent
   id: Sigynate
@@ -1108,6 +1150,8 @@
         visualType: Medium
         messages: [ "generic-reagent-effect-nauseous" ]
         probability: 0.2
+  - labels:
+      - sigy | 5u = -25 caustic | OD 16u
 
 - type: reagent
   id: Lacerinol
@@ -1134,6 +1178,8 @@
         damage:
           types:
             Cold: 1.5 # 6 per u
+  - labels:
+      - lace | 5u = -40 slash, 4 heat | OD 12u
 
 - type: reagent
   id: Puncturase
@@ -1160,6 +1206,8 @@
         damage:
           types:
             Blunt: 3 # 12 per u
+  - labels:
+      - punc | 5u = -50 pierce, 1 rad | OD 12u
 
 - type: reagent
   id: Bruizine
@@ -1187,6 +1235,8 @@
         damage:
           types:
             Poison: 2.5 # 10 per u
+  - labels:
+      - bruiz | 5u = -45 blunt | OD 10.5u
 
 - type: reagent
   id: Holywater
@@ -1229,6 +1279,8 @@
     amount: 1
   tileReactions:
   - !type:ExtinguishTileReaction { }
+  - labels:
+      - holy water | 5u = -20 blunt/poison/heat/shock/cold
 
 - type: reagent
   id: Pyrazine
@@ -1269,6 +1321,8 @@
           min: 20
         emote: Scream
         probability: 0.2
+  - labels:
+      - pyrazine | 5u = -50 heat | OD 20u
 
 - type: reagent
   id: Insuzine
@@ -1316,6 +1370,8 @@
         - !type:ReagentCondition
           reagent: Insuzine
           min: 12
+  - labels:
+      - insuz | 5u = -30 shock, -40 licoxide/tazinide | OD 12u
 
 - type: reagent
   id: Opporozidone #Name based of an altered version of the startreck chem "Opporozine"
@@ -1337,6 +1393,8 @@
             max: 150.0
           - !type:MobStateCondition
             mobstate: Dead
+  - labels:
+      - opporoz | reduce rot | dead only | max temp 150K
 
 # Carpmosia-start - Disable arcryox
 # - type: reagent
@@ -1378,6 +1436,8 @@
           max: 213.0
         damage:
           Burn: -4.5
+  - labels:
+      - alox | 5u = -45 burn | dead | max temp 213K
 
 - type: reagent
   id : Mannitol # currently this is just a way to create psicodine
@@ -1399,6 +1459,8 @@
         visualType: Medium
         messages: [ "mannitol-effect-enlightened" ]
         probability: 0.2
+  - labels:
+      - mannitol | makes you feel enlightened | min 15u
 
 - type: reagent
   id: Psicodine
@@ -1443,6 +1505,8 @@
         - "psicodine-effect-anxieties-wash-away"
         - "psicodine-effect-at-peace"
         probability: 0.2
+  - labels:
+      - psico | removes drunk/jitter | improves morale | OD 30u
 
 - type: reagent
   id: PotassiumIodide
@@ -1468,6 +1532,8 @@
         damage:
           types:
             Poison: 1
+  - labels:
+      - potassium iodide | 5u = +20s radiation protection | OD 20u
 
 - type: reagent
   id: Haloperidol
@@ -1520,6 +1586,8 @@
       - !type:AdjustReagent
         reagent: MindbreakerToxin
         amount: -3.0
+  - labels:
+      - haloperidol | makes drowsy | removes jitters/rainbow, spaceDrugs/ephed/desoxy/stim/THC/bananadine/glue/mindbreaker
 
 - type: reagent
   id: Heparin
@@ -1544,3 +1612,5 @@
           reagent: Heparin
           min: 15
         amount: 0.25
+  - labels:
+      - heparin | anticoagulant | OD 15u = slight bleed increase
