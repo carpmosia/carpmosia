@@ -111,7 +111,7 @@ public sealed partial class GuideReagentEmbed : BoxContainer, IDocumentTag, ISea
             : Color.White;
 
         ReagentName.SetMarkup(Loc.GetString("guidebook-reagent-name",
-            ("color", textColor),("name", reagent.LocalizedName)));
+            ("color", textColor), ("name", reagent.LocalizedName)));
 
         #region Recipe
         var reactions = _prototype.EnumeratePrototypes<ReactionPrototype>()
@@ -147,7 +147,7 @@ public sealed partial class GuideReagentEmbed : BoxContainer, IDocumentTag, ISea
 
                 var groupLabel = new RichTextLabel();
                 groupLabel.SetMarkup(Loc.GetString("guidebook-reagent-effects-metabolism-stage-rate",
-                    ("stage", _prototype.Index<MetabolismStagePrototype>(stage).LocalizedName),("rate", effect.MetabolismRate)));
+                    ("stage", _prototype.Index<MetabolismStagePrototype>(stage).LocalizedName), ("rate", effect.MetabolismRate)));
                 var descriptionLabel = new RichTextLabel
                 {
                     Margin = new Thickness(25, 0, 10, 0)
