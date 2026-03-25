@@ -188,7 +188,7 @@ namespace Content.Shared.Chemistry.Reagent
         public SoundSpecifier FootstepSound = new SoundCollectionSpecifier("FootstepPuddle");
 
         [DataField]
-        public List<string> Labels = new(0);
+        public List<LocId> Labels = new(0);
 
         // TODO: Reaction tile doesn't work properly and destroys reagents way too quickly
         public FixedPoint2 ReactionTile(TileRef tile, FixedPoint2 reactVolume, IEntityManager entityManager, List<ReagentData>? data)
@@ -250,7 +250,7 @@ namespace Content.Shared.Chemistry.Reagent
 
         public List<string>? PlantMetabolisms = null;
 
-        public List<string>? Labels = null;
+        public List<LocId> Labels = new();
 
         public ReagentGuideEntry(ReagentPrototype proto, IPrototypeManager prototype, IEntitySystemManager entSys)
         {
@@ -264,7 +264,7 @@ namespace Content.Shared.Chemistry.Reagent
                     new List<string>(proto.GuidebookReagentEffectsDescription(prototype, entSys, proto.PlantMetabolisms, FixedPoint2.New(1f)));
             }
 
-            Labels = proto.Labels;
+            Labels = proto.Labels ?? [];
         }
     }
 

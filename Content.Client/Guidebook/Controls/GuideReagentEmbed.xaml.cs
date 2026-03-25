@@ -226,12 +226,12 @@ public sealed partial class GuideReagentEmbed : BoxContainer, IDocumentTag, ISea
         {
             foreach (var label in guideEntryRegistryReagent.Labels)
             {
+                string labelString = Loc.GetString(label.Id);
                 var labelButton = new Button();
-                labelButton.Text = label;
+                labelButton.Text = labelString;
                 labelButton.OnPressed += _ =>
                 {
-                    _clipboard.SetText(label);
-                    _sawmill.Info($"Copied label \"{label}\" to clipboard for reagent {reagent.ID}");
+                    _clipboard.SetText(labelString);
                     _systemManager.GetEntitySystem<PopupSystem>().PopupCursor(Loc.GetString("guidebook-reagent-label-copied-to-clipboard"), PopupType.Medium);
                 };
                 LabelDescriptionContainer.AddChild(labelButton);
