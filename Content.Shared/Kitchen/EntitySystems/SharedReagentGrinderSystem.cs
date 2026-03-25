@@ -157,7 +157,7 @@ public abstract class SharedReagentGrinderSystem : EntitySystem
         // Carpmosia-start - Insert storage contents into reagent grinder
         if (HasComp<StorageComponent>(heldEnt))
         {
-            var doAfter = new DoAfterArgs(EntityManager, args.User, 0.5f, new ContainerDoAfterEvent(), entity, entity, used: heldEnt)
+            var doAfter = new DoAfterArgs(EntityManager, args.User, 0.5f, new ContainerDoAfterEvent(), ent, ent, used: heldEnt)
             {
                 BreakOnDamage = true,
                 NeedHand = true,
@@ -260,7 +260,7 @@ public abstract class SharedReagentGrinderSystem : EntitySystem
         if (storage.StoredItems.Count == 0)
             return;
 
-        var inputContainer = _containerSystem.EnsureContainer<Container>(comp.Owner, SharedReagentGrinder.InputContainerId);
+        var inputContainer = _containerSystem.EnsureContainer<Container>(comp.Owner, ReagentGrinderComponent.InputContainerId);
 
         // Find every Extractable item and put it into the grinder
         foreach (var (item, _location) in storage.StoredItems)
