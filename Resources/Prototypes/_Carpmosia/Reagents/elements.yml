@@ -1,0 +1,19 @@
+- type: reagent
+  id: Chromium
+  name: reagent-name-chromium
+  group: Elements
+  desc: reagent-desc-chromium
+  physicalDesc: reagent-physical-desc-reflective
+  flavor: metallic
+  color: "#9ab59c"
+  boilingPoint: 2671.0
+  meltingPoint: 1907.0
+  metabolisms:
+    Bloodstream:
+      metabolismRate: 0.1
+      effects:
+      - !type:ModifyBloodLevel
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Vulpkanin ]
+        amount: 0.4
