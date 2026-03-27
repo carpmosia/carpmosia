@@ -1,0 +1,21 @@
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BulletLaserWindowPiercingMagnum
+  id: BulletLaserWindowPiercingShotgun
+  name: shotgun window-piercing bolt # be so serious
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Heat: 15
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BulletLaserWindowPiercingShotgun
+  id: BulletLaserSpreadPiercing
+  name: window piercing laser barrage # is this verbocity really necessary
+  components:
+  - type: ProjectileSpread
+    proto: BulletLaserWindowPiercingShotgun
+    count: 4
+    spread: 9
