@@ -45,7 +45,7 @@ public sealed class WhistleSystem : EntitySystem
 
     public void OnWhistleAction(Entity<WhistleComponent> ent, ref SoundActionEvent args)
     {
-        if (args.Handled || !_timing.IsFirstTimePredicted)
+        if (!_timing.IsFirstTimePredicted)
             return;
 
         TryMakeLoudWhistle(ent, args.Performer);
