@@ -3,7 +3,6 @@ using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Destructible;
-using Content.Shared.DoAfter; // Carpmosia-edit - Insert storage contents into reagent grinder
 using Content.Shared.FixedPoint;
 using Content.Shared.Interaction;
 using Content.Shared.Jittering;
@@ -12,7 +11,6 @@ using Content.Shared.Popups;
 using Content.Shared.Power;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.Stacks;
-using Content.Shared.Storage; // Carpmosia-edit - Insert storage contents into reagent grinder
 using JetBrains.Annotations;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -35,7 +33,6 @@ public abstract class SharedReagentGrinderSystem : EntitySystem
     [Dependency] private readonly SharedAppearanceSystem _appearanceSystem = default!;
     [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
     [Dependency] private readonly SharedDestructibleSystem _destructible = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!; // Carpmosia-edit - Insert storage contents into reagent grinder
     [Dependency] private readonly SharedJitteringSystem _jitter = default!;
     [Dependency] private readonly SharedPowerReceiverSystem _power = default!;
     [Dependency] private readonly SharedPowerStateSystem _powerState = default!;
@@ -57,7 +54,6 @@ public abstract class SharedReagentGrinderSystem : EntitySystem
         SubscribeLocalEvent<ReagentGrinderComponent, ReagentGrinderToggleAutoModeMessage>(OnToggleAutoModeMessage);
         SubscribeLocalEvent<ReagentGrinderComponent, ReagentGrinderEjectChamberAllMessage>(OnEjectChamberAllMessage);
         SubscribeLocalEvent<ReagentGrinderComponent, ReagentGrinderEjectChamberContentMessage>(OnEjectChamberContentMessage);
-        SubscribeLocalEvent<ReagentGrinderComponent, ContainerDoAfterEvent>(OnContainerDoAfter); // Carpmosia-edit - Insert storage contents into reagent grinder
     }
 
     private void OnBeakerSolutionContainerChanged(Entity<InsideReagentGrinderComponent> ent, ref SolutionContainerChangedEvent args)
@@ -154,21 +150,7 @@ public abstract class SharedReagentGrinderSystem : EntitySystem
     {
         var heldEnt = args.Used;
 
-        // Carpmosia-start - Insert storage contents into reagent grinder
-        if (HasComp<StorageComponent>(heldEnt))
-        {
-            var doAfter = new DoAfterArgs(EntityManager, args.User, 0.5f, new ContainerDoAfterEvent(), ent, ent, used: heldEnt)
-            {
-                BreakOnDamage = true,
-                NeedHand = true,
-                BreakOnMove = true,
-                BreakOnWeightlessMove = true,
-            };
-            _doAfterSystem.TryStartDoAfter(doAfter);
-        }
-
-        else if (!HasComp<FitsInDispenserComponent>(heldEnt))
-        // Carpmosia-end - Insert storage contents into reagent grinder
+        if (!HasComp<ExtractableComponent>(heldEnt))
         {
             if (!HasComp<FitsInDispenserComponent>(heldEnt))
             {
@@ -239,51 +221,6 @@ public abstract class SharedReagentGrinderSystem : EntitySystem
         }
         // UpdateUi is called in the resulting ContainerModifiedMessage.
     }
-    // Carpmosia-start - Insert storage contents into reagent grinder
-    /// <summary>
-    /// DoAfter function for interacting with the grinder with an item with a storage component.
-    /// Moves any Extractable items from the storage of the held item to the grinder's container.
-    /// </summary>
-    /// <param name="uid">The grinder uid</param>
-    /// <param name="comp">The grinder component</param>
-    /// <param name="args">DoAfter args</param>
-    private void OnContainerDoAfter(EntityUid uid, ReagentGrinderComponent comp, ContainerDoAfterEvent args)
-    {
-        if (args.Cancelled || args.Handled || args.Target == null)
-            return;
-
-        // If there's no storage component, we leave
-        if (!TryComp<StorageComponent>(args.Used, out var storage))
-            return;
-
-        // If the storage is empty, we leave
-        if (storage.StoredItems.Count == 0)
-            return;
-
-        var inputContainer = _containerSystem.EnsureContainer<Container>(comp.Owner, ReagentGrinderComponent.InputContainerId);
-
-        // Find every Extractable item and put it into the grinder
-        foreach (var (item, _location) in storage.StoredItems)
-        {
-            // If the grinder is full, leave
-            if (inputContainer.ContainedEntities.Count >= comp.StorageMaxEntities)
-            {
-                _popupSystem.PopupEntity(Loc.GetString("reagent-grinder-component-storage-full-message"), comp.Owner, args.User);
-                return;
-            }
-
-            // If it isn't extractable, skip it
-            if (!HasComp<ExtractableComponent>(item))
-                continue;
-
-            // Try to insert the item. If we can't, escape out of this function
-            if (!_containerSystem.Insert(item, inputContainer))
-                return;
-        }
-
-        args.Handled = true;
-    }
-    // Carpmosia-end - Insert storage contents into reagent grinder
 
     /// <summary>
     /// The wzhzhzh of the grinder. Marks the grinder as active, but does not convert the items into reagents yet.
