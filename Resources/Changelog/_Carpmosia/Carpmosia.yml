@@ -1420,4 +1420,21 @@
   id: 240
   time: '2026-03-26T14:37:04.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/245
+- author: imatsoup
+  changes:
+  - message: Bags can no longer dump their contents into reagent grinders. Will return
+      at a later date.
+    type: Remove
+  - message: Reagent grinders should work properly again.
+    type: Fix
+  id: 241
+  time: '2026-03-29T07:17:34.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/301
+- author: SnappingOpossum
+  changes:
+  - message: Tetracordrazine can no longer heal radiation.
+    type: Tweak
+  id: 242
+  time: '2026-03-31T08:25:49.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/302
 Order: -1
