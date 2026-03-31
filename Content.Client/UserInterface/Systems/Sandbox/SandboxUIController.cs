@@ -1,6 +1,7 @@
 using System.Numerics;
 using Content.Client.Administration.Managers;
 using Content.Client.Gameplay;
+using Content.Client.MappingMenu; // Carpmosia-edit - Mapping Menu
 using Content.Client.Sandbox;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.DecalPlacer;
@@ -38,6 +39,7 @@ public sealed class SandboxUIController : UIController, IOnStateChanged<Gameplay
     private EntitySpawningUIController EntitySpawningController => UIManager.GetUIController<EntitySpawningUIController>();
     private TileSpawningUIController TileSpawningController => UIManager.GetUIController<TileSpawningUIController>();
     private DecalPlacerUIController DecalPlacerController => UIManager.GetUIController<DecalPlacerUIController>();
+    private MappingMenuUIController MappingMenuController => UIManager.GetUIController<MappingMenuUIController>(); // Carpmosia-edit - Mapping Menu
 
     private MenuButton? SandboxButton => UIManager.GetActiveUIWidgetOrNull<MenuBar.Widgets.GameTopMenuBar>()?.SandboxButton;
 
@@ -128,6 +130,7 @@ public sealed class SandboxUIController : UIController, IOnStateChanged<Gameplay
         _window.SpawnTilesButton.OnPressed += _ => TileSpawningController.ToggleWindow();
         _window.SpawnEntitiesButton.OnPressed += _ => EntitySpawningController.ToggleWindow();
         _window.SpawnDecalsButton.OnPressed += _ => DecalPlacerController.ToggleWindow();
+        _window.MappingMenuButton.OnPressed += _ => MappingMenuController.ToggleWindow(); // Carpmosia-edit - Mapping Menu
         _window.GiveFullAccessButton.OnPressed += _ => _sandbox.GiveAdminAccess();
         _window.GiveAghostButton.OnPressed += _ => _sandbox.GiveAGhost();
         _window.ToggleLightButton.OnToggled += _ => _sandbox.ToggleLight();
