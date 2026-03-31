@@ -198,8 +198,13 @@
     maxItemSize: Ginormous
     grid:
     - 0,0,19,10
+    # Carpmosia-start - Fix admeme pneumatic cannon
+    # whitelist:
+    #   tags: [] #dodging a test fail like the IRS
+    # Carpmosia-end - Fix admeme pneumatic cannon
   - type: PneumaticCannon
     gasUsage: 0
+    # throwItems: false # Carpmosia-edit - Fix admeme pneumatic cannon
   - type: Gun
     fireRate: 10
     selectedMode: FullAuto
