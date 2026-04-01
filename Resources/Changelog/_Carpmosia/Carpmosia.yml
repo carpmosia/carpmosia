@@ -1378,4 +1378,76 @@
   id: 235
   time: '2026-03-19T04:16:29.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/289
+- author: imatsoup
+  changes:
+  - message: Converted Blood Bound will now have the objectives of the original Blood
+      Bound.
+    type: Tweak
+  - message: For Blood Bound steal objectives, either Blood Bound carrying the objective
+      item will count as a greentext for them both.
+    type: Tweak
+  id: 236
+  time: '2026-03-19T16:08:53.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/248
+- author: arenaconspiracy
+  changes:
+  - message: 'EXPERIMENTAL: The disabler has been brought in line with the Mk 58,
+      a full charge can make one takedown, down from six, in exchange for a higher
+      fire rate.'
+    type: Tweak
+  id: 237
+  time: '2026-03-19T16:08:59.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/271
+- author: korczoczek
+  changes:
+  - message: New roaming bot dedicated to insulting crew, spawnable at admin discretion
+    type: Add
+  id: 238
+  time: '2026-03-19T17:04:30.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/161
+- author: Atakku
+  changes:
+  - message: Common speaking removal experiment concluded, and has been reverted for
+      the time being.
+    type: Tweak
+  id: 239
+  time: '2026-03-25T07:58:04.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/294
+- author: Atakku
+  changes:
+  - message: Removed EORG vote, as EORG is banned entirely.
+    type: Remove
+  id: 240
+  time: '2026-03-26T14:37:04.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/245
+- author: imatsoup
+  changes:
+  - message: Bags can no longer dump their contents into reagent grinders. Will return
+      at a later date.
+    type: Remove
+  - message: Reagent grinders should work properly again.
+    type: Fix
+  id: 241
+  time: '2026-03-29T07:17:34.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/301
+- author: SnappingOpossum
+  changes:
+  - message: Tetracordrazine can no longer heal radiation.
+    type: Tweak
+  id: 242
+  time: '2026-03-31T08:25:49.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/302
+- author: Timtee
+  changes:
+  - message: Added fun!
+    type: Add
+  - message: Removed fun!
+    type: Remove
+  - message: Changed fun!
+    type: Tweak
+  - message: Fixed fun!
+    type: Fix
+  id: 243
+  time: '2026-03-31T09:53:56.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/295
 Order: -1
