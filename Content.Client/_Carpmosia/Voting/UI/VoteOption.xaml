@@ -1,0 +1,20 @@
+<BoxContainer
+    xmlns="https://spacestation14.io"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Content.Client.Voting.UI.VoteOption"
+    xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
+    Orientation="Vertical"
+>
+    <EntityPrototypeView
+        Name="Preview"
+        Access="Public"
+        HorizontalExpand="True"
+        VerticalExpand="True"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+    />
+    <ui:IconButton
+        Name="Button"
+        Access="Public"
+    />
+</BoxContainer>

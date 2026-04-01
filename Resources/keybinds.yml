@@ -66,6 +66,14 @@ binds:
 - function: ShuttleBrake
   type: State
   key: Space
+  # Carpmosia-start - rotate shuttle along movement vector
+- function: ShuttleTowardsVector
+  type: State
+  key: Z
+- function: ShuttleAgainstVector
+  type: State
+  key: X
+  # Carpmosia-end - rotate shuttle along movement vector
 # Camera
 - function: CameraRotateLeft
   type: State

@@ -373,6 +373,11 @@
     sprite: Clothing/OuterClothing/WinterCoats/coathosarmored.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterHOS
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot { }
+      storagebase: !type:Container
+        ents: [ ]
 ##########################################################
 
 - type: entity
@@ -688,7 +693,7 @@
     sprite: _Carpmosia/Clothing/OuterClothing/WinterCoats/security.rsi
     # Carpmosia-end - armored winter coats
   - type: Clothing
-    sprite: _Carpmosia/Clothing/OuterClothing/WinterCoats/security.rsi # Carpmosia edit - armored winter coats
+    sprite: _Carpmosia/Clothing/OuterClothing/WinterCoats/security.rsi # Carpmosia-edit - armored winter coats
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterSec
 
@@ -735,6 +740,11 @@
     sprite: Clothing/OuterClothing/WinterCoats/coatwardenarmored.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterWarden
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot { }
+      storagebase: !type:Container
+        ents: [ ]
 ################################################################
 
 - type: entity
