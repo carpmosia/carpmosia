@@ -16,8 +16,6 @@ blood-bound-role-greeting =
 
 blood-bound-briefing = Collaborate with your blood bound to accomplish all your objectives.
 
-blood-bound-break-control = {CAPITALIZE(THE($name))} has remembered their true allegiance!
-
 # Conversion
 
 blood-bound-convert-failed-no-mind = {CAPITALIZE(THE($converted))} does not have a mind.

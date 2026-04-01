@@ -40,6 +40,12 @@
     - Inorganic
     - Silicon
   - type: ShowAccessReaderSettings
+  # Carpmosia-start - Diagnostic goggles recipe
+  - type: Tag
+    tags:
+    - HudDiagnostic
+    - WhitelistChameleon
+  # Carpmosia-end - Diagnostic goggles recipe
 
 - type: entity
   parent: [ClothingEyesHudBase, ShowMedicalIcons]

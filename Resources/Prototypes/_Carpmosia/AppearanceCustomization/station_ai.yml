@@ -6,10 +6,22 @@
   layerData:
     Occupied:
       sprite: _Carpmosia/Mobs/Silicon/station_ai.rsi
-      state: "ai_carp"
+      state: ai_carp
     Dead:
       sprite: _Carpmosia/Mobs/Silicon/station_ai.rsi
-      state: "ai_carp_dead"
+      state: ai_carp_dead
+
+- type: stationAiCustomization
+  parent: StationAiIconBase
+  id: StationAiIconSillycon
+  name: station-ai-icon-sillycon
+  layerData:
+    Occupied:
+      sprite: _Carpmosia/Mobs/Silicon/station_ai.rsi
+      state: ai_sillycon
+    Dead:
+      sprite: _Carpmosia/Mobs/Silicon/station_ai.rsi
+      state: ai_sillycon_dead
 
 # Holograms
 - type: stationAiCustomization

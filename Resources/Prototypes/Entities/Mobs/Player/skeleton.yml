@@ -42,15 +42,13 @@
   components:
   - type: GhostRole
     name: ghost-role-information-closet-skeleton-name
-    # Carpmosia-start - Closet Skeletons are not antags.
-    description: ghost-role-information-closet-skeleton-description-nonantagonist
-    rules: ghost-role-information-nonantagonist-rules
-    # Carpmosia-end - Closet Skeletons are not antags.
+    description: ghost-role-information-closet-skeleton-description
+    rules: ghost-role-information-freeagent-rules
     mindRoles:
-    - MindRoleGhostRoleNeutral # Carpmosia-edit - Closet Skeletons are not antags.
+    - MindRoleGhostRoleFreeAgent
     raffle:
       settings: default
   - type: GhostTakeoverAvailable
   - type: Loadout
-    prototypes: [SkeletonPassengerGear] # Carpmosia-edit - Closet Skeletons are not antags.
+    prototypes: [LimitedPassengerGear]
   - type: RandomHumanoidAppearance
