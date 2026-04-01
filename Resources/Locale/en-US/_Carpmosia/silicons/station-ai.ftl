@@ -1,4 +1,5 @@
 station-ai-icon-carp = Space danger
+station-ai-icon-sillycon = Sillycon
 
 station-ai-hologram-carp = Carp form
 station-ai-hologram-clown = Clown form
