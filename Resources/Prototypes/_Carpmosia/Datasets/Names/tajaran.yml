@@ -1,5 +1,11 @@
 - type: localizedDataset
-  id: NamesTajaran
+  id: NamesTajaranFirst
   values:
-    prefix: names-tajaran-dataset-
+    prefix: names-tajaran-first-dataset-
+    count: 115
+
+- type: localizedDataset
+  id: NamesTajaranLast
+  values:
+    prefix: names-tajaran-last-dataset-
     count: 115
