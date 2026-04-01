@@ -97,7 +97,7 @@ public abstract class SharedAnomalySystem : EntitySystem
             Audio.PlayPvs(component.PulseSound, uid);
 
         var pulse = EnsureComp<AnomalyPulsingComponent>(uid);
-        pulse.EndTime  = Timing.CurTime + pulse.PulseDuration;
+        pulse.EndTime = Timing.CurTime + pulse.PulseDuration;
         Appearance.SetData(uid, AnomalyVisuals.IsPulsing, true);
 
         var powerMod = 1f;
@@ -129,14 +129,31 @@ public abstract class SharedAnomalySystem : EntitySystem
         if (HasComp<AnomalySupercriticalComponent>(ent))
             return;
 
-        if(!Resolve(ent, ref ent.Comp))
+        if (!Resolve(ent, ref ent.Comp))
             return;
 
         AdminLog.Add(LogType.Anomaly, LogImpact.High, $"Anomaly {ToPrettyString(ent.Owner)} began to go supercritical.");
         if (_net.IsServer)
             Log.Info($"Anomaly is going supercritical. Entity: {ToPrettyString(ent.Owner)}");
 
-        Audio.PlayPvs(ent.Comp.SupercriticalSoundAtAnimationStart, ent);
+        Audio.PlayPvs(ent.Comp.SupercriticalSoundAtAnimationStart, ent, ent.Comp.SupercriticalSoundAtAnimationStart?.Params.WithPlayOffset(0).WithPitchScale(1.0f));
+        Audio.PlayPvs(ent.Comp.SupercriticalSoundAtAnimationStart, ent, ent.Comp.SupercriticalSoundAtAnimationStart?.Params.WithPlayOffset(0.5f).WithPitchScale(0.95f));
+        Audio.PlayPvs(ent.Comp.SupercriticalSoundAtAnimationStart, ent, ent.Comp.SupercriticalSoundAtAnimationStart?.Params.WithPlayOffset(1).WithPitchScale(0.9f));
+        Audio.PlayPvs(ent.Comp.SupercriticalSoundAtAnimationStart, ent, ent.Comp.SupercriticalSoundAtAnimationStart?.Params.WithPlayOffset(1.5f).WithPitchScale(0.85f));
+        Audio.PlayPvs(ent.Comp.SupercriticalSoundAtAnimationStart, ent, ent.Comp.SupercriticalSoundAtAnimationStart?.Params.WithPlayOffset(2).WithPitchScale(0.8f));
+        Audio.PlayPvs(ent.Comp.SupercriticalSoundAtAnimationStart, ent, ent.Comp.SupercriticalSoundAtAnimationStart?.Params.WithPlayOffset(2.5f).WithPitchScale(0.75f));
+        Audio.PlayPvs(ent.Comp.SupercriticalSoundAtAnimationStart, ent, ent.Comp.SupercriticalSoundAtAnimationStart?.Params.WithPlayOffset(3).WithPitchScale(0.7f));
+        Audio.PlayPvs(ent.Comp.SupercriticalSoundAtAnimationStart, ent, ent.Comp.SupercriticalSoundAtAnimationStart?.Params.WithPlayOffset(3.5f).WithPitchScale(0.65f));
+        Audio.PlayPvs(ent.Comp.SupercriticalSoundAtAnimationStart, ent, ent.Comp.SupercriticalSoundAtAnimationStart?.Params.WithPlayOffset(4).WithPitchScale(0.6f));
+        Audio.PlayPvs(ent.Comp.SupercriticalSoundAtAnimationStart, ent, ent.Comp.SupercriticalSoundAtAnimationStart?.Params.WithPlayOffset(4.5f).WithPitchScale(0.55f));
+        Audio.PlayPvs(ent.Comp.SupercriticalSoundAtAnimationStart, ent, ent.Comp.SupercriticalSoundAtAnimationStart?.Params.WithPlayOffset(5).WithPitchScale(0.5f));
+        Audio.PlayPvs(ent.Comp.SupercriticalSoundAtAnimationStart, ent, ent.Comp.SupercriticalSoundAtAnimationStart?.Params.WithPlayOffset(5.5f).WithPitchScale(0.45f));
+        Audio.PlayPvs(ent.Comp.SupercriticalSoundAtAnimationStart, ent, ent.Comp.SupercriticalSoundAtAnimationStart?.Params.WithPlayOffset(6).WithPitchScale(0.4f));
+        Audio.PlayPvs(ent.Comp.SupercriticalSoundAtAnimationStart, ent, ent.Comp.SupercriticalSoundAtAnimationStart?.Params.WithPlayOffset(6.5f).WithPitchScale(0.35f));
+        Audio.PlayPvs(ent.Comp.SupercriticalSoundAtAnimationStart, ent, ent.Comp.SupercriticalSoundAtAnimationStart?.Params.WithPlayOffset(7).WithPitchScale(0.3f));
+        Audio.PlayPvs(ent.Comp.SupercriticalSoundAtAnimationStart, ent, ent.Comp.SupercriticalSoundAtAnimationStart?.Params.WithPlayOffset(7.5f).WithPitchScale(0.25f));
+        Audio.PlayPvs(ent.Comp.SupercriticalSoundAtAnimationStart, ent, ent.Comp.SupercriticalSoundAtAnimationStart?.Params.WithPlayOffset(8).WithPitchScale(0.2f));
+        Audio.PlayPvs(ent.Comp.SupercriticalSoundAtAnimationStart, ent, ent.Comp.SupercriticalSoundAtAnimationStart?.Params.WithPlayOffset(8.5f).WithPitchScale(0.15f));
 
         var super = AddComp<AnomalySupercriticalComponent>(ent);
         super.EndTime = Timing.CurTime + ent.Comp.SupercriticalDuration;
@@ -162,7 +179,25 @@ public abstract class SharedAnomalySystem : EntitySystem
 
         if (_net.IsServer)
         {
-            Audio.PlayPvs(component.SupercriticalSound, Transform(uid).Coordinates);
+            Audio.PlayPvs(component.SupercriticalSound, Transform(uid).Coordinates, component.SupercriticalSound?.Params.WithPlayOffset(0.0f).WithPitchScale(1.0f));
+            Audio.PlayPvs(component.SupercriticalSound, Transform(uid).Coordinates, component.SupercriticalSound?.Params.WithPlayOffset(0.05f).WithPitchScale(0.95f));
+            Audio.PlayPvs(component.SupercriticalSound, Transform(uid).Coordinates, component.SupercriticalSound?.Params.WithPlayOffset(0.1f).WithPitchScale(0.9f));
+            Audio.PlayPvs(component.SupercriticalSound, Transform(uid).Coordinates, component.SupercriticalSound?.Params.WithPlayOffset(0.15f).WithPitchScale(0.85f));
+            Audio.PlayPvs(component.SupercriticalSound, Transform(uid).Coordinates, component.SupercriticalSound?.Params.WithPlayOffset(0.2f).WithPitchScale(0.8f));
+            Audio.PlayPvs(component.SupercriticalSound, Transform(uid).Coordinates, component.SupercriticalSound?.Params.WithPlayOffset(0.25f).WithPitchScale(0.75f));
+            Audio.PlayPvs(component.SupercriticalSound, Transform(uid).Coordinates, component.SupercriticalSound?.Params.WithPlayOffset(0.3f).WithPitchScale(0.7f));
+            Audio.PlayPvs(component.SupercriticalSound, Transform(uid).Coordinates, component.SupercriticalSound?.Params.WithPlayOffset(0.35f).WithPitchScale(0.65f));
+            Audio.PlayPvs(component.SupercriticalSound, Transform(uid).Coordinates, component.SupercriticalSound?.Params.WithPlayOffset(0.4f).WithPitchScale(0.6f));
+            Audio.PlayPvs(component.SupercriticalSound, Transform(uid).Coordinates, component.SupercriticalSound?.Params.WithPlayOffset(0.45f).WithPitchScale(0.55f));
+            Audio.PlayPvs(component.SupercriticalSound, Transform(uid).Coordinates, component.SupercriticalSound?.Params.WithPlayOffset(0.5f).WithPitchScale(0.5f));
+            Audio.PlayPvs(component.SupercriticalSound, Transform(uid).Coordinates, component.SupercriticalSound?.Params.WithPlayOffset(0.55f).WithPitchScale(0.45f));
+            Audio.PlayPvs(component.SupercriticalSound, Transform(uid).Coordinates, component.SupercriticalSound?.Params.WithPlayOffset(0.6f).WithPitchScale(0.4f));
+            Audio.PlayPvs(component.SupercriticalSound, Transform(uid).Coordinates, component.SupercriticalSound?.Params.WithPlayOffset(0.65f).WithPitchScale(0.35f));
+            Audio.PlayPvs(component.SupercriticalSound, Transform(uid).Coordinates, component.SupercriticalSound?.Params.WithPlayOffset(0.7f).WithPitchScale(0.3f));
+            Audio.PlayPvs(component.SupercriticalSound, Transform(uid).Coordinates, component.SupercriticalSound?.Params.WithPlayOffset(0.75f).WithPitchScale(0.25f));
+            Audio.PlayPvs(component.SupercriticalSound, Transform(uid).Coordinates, component.SupercriticalSound?.Params.WithPlayOffset(0.8f).WithPitchScale(0.2f));
+            Audio.PlayPvs(component.SupercriticalSound, Transform(uid).Coordinates, component.SupercriticalSound?.Params.WithPlayOffset(0.85f).WithPitchScale(0.15f));
+
             Log.Info($"Raising supercritical event. Entity: {ToPrettyString(uid)}");
         }
 
@@ -392,7 +427,7 @@ public abstract class SharedAnomalySystem : EntitySystem
             return null;
 
         // How many spawn points we will be aiming to return
-        var amount = (int) (MathHelper.Lerp(settings.MinAmount, settings.MaxAmount, severity * stability * powerModifier) + 0.5f);
+        var amount = (int)(MathHelper.Lerp(settings.MinAmount, settings.MaxAmount, severity * stability * powerModifier) + 0.5f);
 
         // When the entity is in a container or buckled (such as a hosted anomaly), local coordinates will not be comparable
         // to tile coordinates.
@@ -442,7 +477,7 @@ public abstract class SharedAnomalySystem : EntitySystem
 
                     if (body.BodyType != BodyType.Static ||
                         !body.Hard ||
-                        (body.CollisionLayer & (int) CollisionGroup.Impassable) == 0)
+                        (body.CollisionLayer & (int)CollisionGroup.Impassable) == 0)
                         continue;
 
                     valid = false;
@@ -480,7 +515,7 @@ public abstract class SharedAnomalySystem : EntitySystem
 
     public AnomalyStabilityVisuals GetStabilityVisualOrStable(Entity<AnomalyComponent?> ent)
     {
-        if(TryGetStabilityVisual(ent, out var visual))
+        if (TryGetStabilityVisual(ent, out var visual))
             return visual.Value;
 
         return AnomalyStabilityVisuals.Stable;
