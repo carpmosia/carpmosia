@@ -51,53 +51,53 @@ entities:
         version: 2
         nodes:
         - node:
-            color: '#FFCE00FF'
+            color: '#FFFFFFFF'
             id: Remains
           decals:
             96: 1.9534924,1.0517962
             97: 1.0472424,-4.948204
         - node:
-            color: '#2600FFFF'
+            color: '#9FED5896'
             id: WarnCornerNE
           decals:
             3: 0,3
         - node:
-            color: '#1800FFFF'
+            color: '#9FED5896'
             id: WarnCornerNW
           decals:
             2: -2,3
         - node:
-            color: '#0076FFFF'
+            color: '#9FED5896'
             id: WarnCornerSE
           decals:
             1: 0,1
         - node:
-            color: '#60FF00FF'
+            color: '#9FED5896'
             id: WarnCornerSW
           decals:
             0: -2,1
         - node:
-            color: '#00FF4AFF'
+            color: '#9FED5896'
             id: WarnLineE
           decals:
             6: 0,2
         - node:
-            color: '#76FF00FF'
+            color: '#9FED5896'
             id: WarnLineN
           decals:
             4: -1,1
         - node:
-            color: '#00FF69FF'
+            color: '#9FED5896'
             id: WarnLineS
           decals:
             5: -2,2
         - node:
-            color: '#FF4000FF'
+            color: '#9FED5896'
             id: WarnLineW
           decals:
             7: -1,3
         - node:
-            color: '#00A9FFFF'
+            color: '#79150063'
             id: exclamationmark
           decals:
             44: -3.8162756,-0.24618945
@@ -112,14 +112,14 @@ entities:
             53: -0.85900766,-5.4805875
         - node:
             angle: 1.5707963267948966 rad
-            color: '#DFFF00FF'
+            color: '#79150063'
             id: exclamationmark
           decals:
             54: -1.4215076,-5.2462125
             55: -1.8590076,-4.8555875
             56: -2.5152576,-5.0899625
         - node:
-            color: '#00FF76FF'
+            color: '#79150012'
             id: splatter
           decals:
             57: -2.7965076,-4.7305875
@@ -162,7 +162,7 @@ entities:
             94: 1.6722424,0.780223
             95: 2.4378674,0.827098
         - node:
-            color: '#00AEFFFF'
+            color: '#79150022'
             id: splatter
           decals:
             8: 0.6093248,1.4100605

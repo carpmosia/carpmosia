@@ -54,23 +54,23 @@ entities:
         version: 2
         nodes:
         - node:
-            color: '#FF5300FF'
+            color: '#FFFFFFFF'
             id: BrickTileSteelCornerSe
           decals:
             2: 4,-2
         - node:
-            color: '#FF0055FF'
+            color: '#FFFFFFFF'
             id: BrickTileSteelCornerSw
           decals:
             12: -6,-2
         - node:
-            color: '#86FF00FF'
+            color: '#FFFFFFFF'
             id: BrickTileSteelLineE
           decals:
             0: 4,1
             1: 4,0
         - node:
-            color: '#2B00FFFF'
+            color: '#FFFFFFFF'
             id: BrickTileSteelLineS
           decals:
             3: 3,-2
@@ -83,14 +83,14 @@ entities:
             10: -4,-2
             11: -5,-2
         - node:
-            color: '#FF00AFFF'
+            color: '#FFFFFFFF'
             id: BrickTileSteelLineW
           decals:
             13: -6,-1
             14: -6,0
             15: -6,1
         - node:
-            color: '#00FFA5FF'
+            color: '#FFFFFFFF'
             id: DirtLight
           decals:
             16: -1,-5

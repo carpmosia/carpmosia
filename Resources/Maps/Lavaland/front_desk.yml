@@ -67,14 +67,14 @@ entities:
         version: 2
         nodes:
         - node:
-            color: '#FF0062FF'
+            color: '#FFFFFFFF'
             id: Delivery
           decals:
             5: 1,3
         - node:
             cleanable: True
             zIndex: 1
-            color: '#FF6A00FF'
+            color: '#FFFFFFFF'
             id: Dirt
           decals:
             24: 3,-3
@@ -86,7 +86,7 @@ entities:
         - node:
             cleanable: True
             zIndex: 1
-            color: '#00E2FFFF'
+            color: '#FFFFFFFF'
             id: DirtHeavy
           decals:
             6: 5,-3
@@ -109,7 +109,7 @@ entities:
         - node:
             zIndex: 1
             angle: -1.5707963267948966 rad
-            color: '#0022FFFF'
+            color: '#FFFFFFFF'
             id: LoadingArea
           decals:
             2: 2,3

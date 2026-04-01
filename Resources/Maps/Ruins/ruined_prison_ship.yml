@@ -77,7 +77,7 @@ entities:
         version: 2
         nodes:
         - node:
-            color: '#00FFD7FF'
+            color: '#FFFFFFFF'
             id: Bot
           decals:
             95: 4,-21
@@ -85,74 +85,74 @@ entities:
             97: 4,-19
             98: 3,-18
         - node:
-            color: '#FE00FFFF'
+            color: '#334E6DC8'
             id: BrickTileWhiteCornerNe
           decals:
             61: 2,6
         - node:
-            color: '#3300FFFF'
+            color: '#52B4E996'
             id: BrickTileWhiteCornerNe
           decals:
             63: 1,-8
         - node:
-            color: '#FC00FFFF'
+            color: '#DE3A3A96'
             id: BrickTileWhiteCornerNe
           decals:
             76: 0,-13
             88: 1,-18
         - node:
-            color: '#0001FFFF'
+            color: '#DE3A3A96'
             id: BrickTileWhiteCornerNw
           decals:
             85: -6,-13
             87: -1,-18
         - node:
-            color: '#A100FFFF'
+            color: '#334E6DC8'
             id: BrickTileWhiteCornerSe
           decals:
             49: 1,1
             52: 2,4
         - node:
-            color: '#00FF57FF'
+            color: '#52B4E996'
             id: BrickTileWhiteCornerSe
           decals:
             68: 1,-11
         - node:
-            color: '#A100FFFF'
+            color: '#DE3A3A96'
             id: BrickTileWhiteCornerSe
           decals:
             75: 0,-16
         - node:
-            color: '#0083FFFF'
+            color: '#334E6DC8'
             id: BrickTileWhiteCornerSw
           decals:
             50: -1,1
             51: -2,4
         - node:
-            color: '#FF00D6FF'
+            color: '#334E6DC8'
             id: BrickTileWhiteInnerSe
           decals:
             54: 1,4
         - node:
-            color: '#00FF13FF'
+            color: '#334E6DC8'
             id: BrickTileWhiteInnerSw
           decals:
             53: -1,4
         - node:
-            color: '#9E00FFFF'
+            color: '#334E6DC8'
             id: BrickTileWhiteLineE
           decals:
             55: 1,3
             56: 1,2
             60: 2,5
         - node:
-            color: '#FFE700FF'
+            color: '#52B4E996'
             id: BrickTileWhiteLineE
           decals:
             66: 1,-9
             67: 1,-10
         - node:
-            color: '#A100FFFF'
+            color: '#DE3A3A96'
             id: BrickTileWhiteLineE
           decals:
             77: 0,-15
@@ -160,13 +160,13 @@ entities:
             89: 1,-19
             90: 1,-20
         - node:
-            color: '#4EFF00FF'
+            color: '#52B4E996'
             id: BrickTileWhiteLineN
           decals:
             64: 0,-8
             65: -1,-8
         - node:
-            color: '#47FF00FF'
+            color: '#DE3A3A96'
             id: BrickTileWhiteLineN
           decals:
             79: -1,-13
@@ -176,51 +176,51 @@ entities:
             83: -5,-13
             91: 0,-18
         - node:
-            color: '#00DDFFFF'
+            color: '#334E6DC8'
             id: BrickTileWhiteLineS
           decals:
             62: 0,1
         - node:
-            color: '#E2FF00FF'
+            color: '#52B4E996'
             id: BrickTileWhiteLineS
           decals:
             69: 0,-11
             70: -1,-11
             71: -2,-11
         - node:
-            color: '#00FFCEFF'
+            color: '#DE3A3A96'
             id: BrickTileWhiteLineS
           decals:
             72: -3,-16
             73: -2,-16
             74: -1,-16
         - node:
-            color: '#FF8100FF'
+            color: '#334E6DC8'
             id: BrickTileWhiteLineW
           decals:
             57: -1,2
             58: -1,3
             59: -2,5
         - node:
-            color: '#FFD700FF'
+            color: '#DE3A3A96'
             id: BrickTileWhiteLineW
           decals:
             86: -6,-14
             92: -1,-19
         - node:
-            color: '#002CFFFF'
+            color: '#FFFFFFFF'
             id: Delivery
           decals:
             93: 4,-18
             94: 3,-21
         - node:
-            color: '#CFFF00FF'
+            color: '#FFFFFFFF'
             id: Remains
           decals:
             99: 3,-19
         - node:
             cleanable: True
-            color: '#95FF00FF'
+            color: '#500000FF'
             id: footprint
           decals:
             32: -0.83460975,-18.601887
@@ -234,7 +234,7 @@ entities:
         - node:
             cleanable: True
             angle: 1.5707963267948966 rad
-            color: '#0051FFFF'
+            color: '#500000FF'
             id: footprint
           decals:
             44: -0.9518428,-15.155104
@@ -245,7 +245,7 @@ entities:
         - node:
             cleanable: True
             angle: 4.71238898038469 rad
-            color: '#009FFFFF'
+            color: '#500000FF'
             id: footprint
           decals:
             27: -2.8189847,-19.039845
@@ -255,7 +255,7 @@ entities:
             31: -1.0846097,-19.039845
         - node:
             cleanable: True
-            color: '#00FF7AFF'
+            color: '#1D1D21FF'
             id: i
           decals:
             2: -6.1578336,-22.7679
@@ -277,7 +277,7 @@ entities:
         - node:
             cleanable: True
             angle: 1.5707963267948966 rad
-            color: '#FE00FFFF'
+            color: '#1D1D21FF'
             id: i
           decals:
             18: -7.0015836,-23.659454
@@ -290,7 +290,7 @@ entities:
             25: -6.0953336,-23.299704
         - node:
             cleanable: True
-            color: '#00FFAFFF'
+            color: '#500000FF'
             id: splatter
           decals:
             26: -3.469792,-19.956484

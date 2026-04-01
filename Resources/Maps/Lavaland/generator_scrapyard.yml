@@ -60,7 +60,7 @@ entities:
         nodes:
         - node:
             cleanable: True
-            color: '#FAFF00FF'
+            color: '#FFFFFFFF'
             id: Dirt
           decals:
             7: 2,8
@@ -68,7 +68,7 @@ entities:
             9: 2,10
         - node:
             cleanable: True
-            color: '#6A00FFFF'
+            color: '#FFFFFFFF'
             id: DirtHeavy
           decals:
             2: 4,9
@@ -78,13 +78,13 @@ entities:
             6: 3,9
         - node:
             cleanable: True
-            color: '#FF009EFF'
+            color: '#FFFFFFFF'
             id: Remains
           decals:
             1: 7,7
         - node:
             cleanable: True
-            color: '#FF3200FF'
+            color: '#79150096'
             id: splatter
           decals:
             0: 6.4296107,7.089994

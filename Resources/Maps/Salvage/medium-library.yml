@@ -55,35 +55,35 @@ entities:
         nodes:
         - node:
             cleanable: True
-            color: '#FF9B00FF'
+            color: '#FFFFFF51'
             id: DirtLight
           decals:
             0: 1,-4
             1: 3,-5
         - node:
             cleanable: True
-            color: '#D200FFFF'
+            color: '#FFFFFFC2'
             id: DirtLight
           decals:
             2: -5,-5
         - node:
-            color: '#00FFD9FF'
+            color: '#FFFFFFFF'
             id: Remains
           decals:
             51: -0.0041509867,2.8019657
         - node:
-            color: '#9900FFFF'
+            color: '#FFFFFFFF'
             id: WoodTrimThinCornerSe
           decals:
             15: -5,1
         - node:
-            color: '#1500FFFF'
+            color: '#FFFFFFFF'
             id: WoodTrimThinLineE
           decals:
             16: -5,2
             17: -5,3
         - node:
-            color: '#DC00FFFF'
+            color: '#FFFFFFFF'
             id: WoodTrimThinLineN
           decals:
             9: -3,3
@@ -92,7 +92,7 @@ entities:
             12: -1,3
             13: 1,3
         - node:
-            color: '#FFC800FF'
+            color: '#FFFFFFFF'
             id: WoodTrimThinLineS
           decals:
             3: 1,-2
@@ -104,13 +104,13 @@ entities:
             14: -6,1
         - node:
             angle: -1.5707963267948966 rad
-            color: '#00FFEBFF'
+            color: '#DE3A3A1B'
             id: exclamationmark
           decals:
             59: -2.0519302,2.6656694
             60: -1.2394302,2.9469194
         - node:
-            color: '#AFFF00FF'
+            color: '#DE3A3A1B'
             id: exclamationmark
           decals:
             52: -3.2550552,-1.8968306
@@ -121,7 +121,7 @@ entities:
             57: -2.7706802,1.0875444
             58: -3.0675552,1.4937944
         - node:
-            color: '#33FF00FF'
+            color: '#79150034'
             id: splatter
           decals:
             18: -5.2244463,1.1943295
@@ -147,7 +147,7 @@ entities:
             38: -0.40520442,-5.034114
             39: -0.6395794,-4.627864
         - node:
-            color: '#5B00FFFF'
+            color: '#DE3A3A0F'
             id: splatter
           decals:
             61: -2.7774591,2.6430945
@@ -155,7 +155,7 @@ entities:
             63: -2.6524591,2.9868445
             64: -2.6680841,2.0805945
         - node:
-            color: '#001EFFFF'
+            color: '#DE3A3A1B'
             id: splatter
           decals:
             40: -3.7802043,-2.034114

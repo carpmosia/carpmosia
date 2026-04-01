@@ -67,18 +67,18 @@ entities:
         version: 2
         nodes:
         - node:
-            color: '#DAFF00FF'
+            color: '#FFFFFFFF'
             id: Basalt2
           decals:
             3: 6,2
         - node:
-            color: '#0A00FFFF'
+            color: '#FFFFFFFF'
             id: Basalt9
           decals:
             2: -2,-4
         - node:
             cleanable: True
-            color: '#FF001DFF'
+            color: '#FFFFFFFF'
             id: DirtHeavy
           decals:
             4: -5,-4
@@ -109,7 +109,7 @@ entities:
             30: 5,3
         - node:
             cleanable: True
-            color: '#FF000EFF'
+            color: '#FFFFFFFF'
             id: Remains
           decals:
             1: -2,3

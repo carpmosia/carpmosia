@@ -87,81 +87,81 @@ entities:
         nodes:
         - node:
             cleanable: True
-            color: '#00FFF3FF'
+            color: '#FFFFFFFF'
             id: Remains
           decals:
             26: 9,17
             27: 16,28
         - node:
-            color: '#0000FFFF'
+            color: '#FFFFFFFF'
             id: WarnCornerNE
           decals:
             4: 10,4
             20: 12,11
         - node:
-            color: '#FF4A00FF'
+            color: '#FFFFFFFF'
             id: WarnCornerNW
           decals:
             5: 8,4
             9: 6,1
             19: 6,11
         - node:
-            color: '#FF0067FF'
+            color: '#FFFFFFFF'
             id: WarnCornerSE
           decals:
             16: 11,-2
             21: 12,9
         - node:
-            color: '#3600FFFF'
+            color: '#FFFFFFFF'
             id: WarnCornerSW
           decals:
             8: 6,-1
             12: 7,-2
             17: 6,9
         - node:
-            color: '#CF00FFFF'
+            color: '#FFFFFFFF'
             id: WarnCornerSmallNE
           decals:
             6: 10,3
         - node:
-            color: '#FF005EFF'
+            color: '#FFFFFFFF'
             id: WarnCornerSmallNW
           decals:
             7: 8,3
             22: 7,11
             23: 10,11
         - node:
-            color: '#5F00FFFF'
+            color: '#FFFFFFFF'
             id: WarnCornerSmallSW
           decals:
             11: 7,-1
         - node:
-            color: '#002BFFFF'
+            color: '#FFFFFFFF'
             id: WarnLineE
           decals:
             25: 12,10
         - node:
-            color: '#005AFFFF'
+            color: '#FFFFFFFF'
             id: WarnLineN
           decals:
             13: 8,-2
             14: 9,-2
             15: 10,-2
         - node:
-            color: '#61FF00FF'
+            color: '#FFFFFFFF'
             id: WarnLineS
           decals:
             10: 6,0
             18: 6,10
         - node:
-            color: '#00F6FFFF'
+            color: '#FFFFFFFF'
             id: WarnLineW
           decals:
             3: 9,4
             24: 9,11
         - node:
             cleanable: True
-            color: '#0055FFFF'
+            color: '#2E0000FF'
             id: splatter
           decals:
             0: 11,19

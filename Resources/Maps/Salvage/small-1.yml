@@ -54,7 +54,7 @@ entities:
         version: 2
         nodes:
         - node:
-            color: '#00FCFFFF'
+            color: '#FFFFFFFF'
             id: Dirt
           decals:
             23: 2,-6
@@ -76,7 +76,7 @@ entities:
             39: -3,-7
             40: -1,0
         - node:
-            color: '#00A2FFFF'
+            color: '#FFFFFFFF'
             id: DirtHeavy
           decals:
             49: 1,-6
@@ -92,7 +92,7 @@ entities:
             59: 2,0
             60: 2,-7
         - node:
-            color: '#5400FFFF'
+            color: '#FFFFFFFF'
             id: DirtLight
           decals:
             41: 1,-6
@@ -106,7 +106,7 @@ entities:
             78: 0,-6
             79: -1,-7
         - node:
-            color: '#FF00A0FF'
+            color: '#FFFFFFFF'
             id: DirtMedium
           decals:
             61: 1,-7
@@ -127,7 +127,7 @@ entities:
             76: 10,-6
             77: 10,-5
         - node:
-            color: '#FF006BFF'
+            color: '#D4D4D428'
             id: QuarterTileOverlayGreyscale
           decals:
             15: -1,-4
@@ -138,7 +138,7 @@ entities:
             20: -2,-5
             21: -1,-5
         - node:
-            color: '#FF6C00FF'
+            color: '#EFB34196'
             id: QuarterTileOverlayGreyscale
           decals:
             0: 8,-5
@@ -148,12 +148,12 @@ entities:
             4: 4,-5
             5: 3,-5
         - node:
-            color: '#001EFFFF'
+            color: '#D4D4D428'
             id: QuarterTileOverlayGreyscale90
           decals:
             22: 1,-5
         - node:
-            color: '#00FF96FF'
+            color: '#EFB34196'
             id: QuarterTileOverlayGreyscale90
           decals:
             6: 1,-4
@@ -168,7 +168,7 @@ entities:
         - node:
             cleanable: True
             angle: -1.5707963267948966 rad
-            color: '#FF00EBFF'
+            color: '#B02E2650'
             id: footprint
           decals:
             113: -1.0175986,-5.328032
@@ -192,7 +192,7 @@ entities:
             131: 7.685526,-5.531157
         - node:
             cleanable: True
-            color: '#00FF9DFF'
+            color: '#B02E2650'
             id: footprint
           decals:
             132: 0.6230264,-5.859282
@@ -227,7 +227,7 @@ entities:
         - node:
             cleanable: True
             angle: 1.5707963267948966 rad
-            color: '#00FF2FFF'
+            color: '#B02E2650'
             id: footprint
           decals:
             105: 1.9667764,-6.781157
@@ -241,7 +241,7 @@ entities:
         - node:
             cleanable: True
             angle: 3.141592653589793 rad
-            color: '#00FFD2FF'
+            color: '#B02E2650'
             id: footprint
           decals:
             151: -0.34572363,-0.609282
@@ -267,7 +267,7 @@ entities:
             171: 0.8417764,-4.234282
         - node:
             cleanable: True
-            color: '#4A00FFFF'
+            color: '#B02E2650'
             id: splatter
           decals:
             80: -0.8769736,-6.359282

@@ -101,7 +101,7 @@ entities:
         version: 2
         nodes:
         - node:
-            color: '#FF8300FF'
+            color: '#FFFFFFFF'
             id: Basalt1
           decals:
             80: 6.30378,8.810437
@@ -109,27 +109,27 @@ entities:
             93: 47.82487,4.112167
             99: 54.66236,21.73029
         - node:
-            color: '#FF2700FF'
+            color: '#FFFFFFFF'
             id: Basalt2
           decals:
             82: 1.0612478,5.471038
             83: 2.420617,19.15799
             100: 69.77576,21.808416
         - node:
-            color: '#FF00AAFF'
+            color: '#FFFFFFFF'
             id: Basalt3
           decals:
             92: 37.139843,2.7840383
             96: 63.58606,12.4184265
             103: 70.826,1.9865878
         - node:
-            color: '#00FF23FF'
+            color: '#FFFFFFFF'
             id: Basalt4
           decals:
             87: 27.079832,22.072975
             91: 34.05748,9.065288
         - node:
-            color: '#FF0055FF'
+            color: '#FFFFFFFF'
             id: Basalt5
           decals:
             84: 0.5924916,21.838596
@@ -139,25 +139,25 @@ entities:
             106: 68.5768,14.2522135
             107: 36.007145,11.012332
         - node:
-            color: '#FF007AFF'
+            color: '#FFFFFFFF'
             id: Basalt6
           decals:
             86: 14.580959,18.932346
             98: 57.27174,15.227042
         - node:
-            color: '#C4FF00FF'
+            color: '#FFFFFFFF'
             id: Basalt7
           decals:
             85: 10.336742,21.541721
             97: 60.71106,17.695793
         - node:
-            color: '#00FFFCFF'
+            color: '#FFFFFFFF'
             id: Basalt8
           decals:
             95: 58.643787,7.174667
             102: 78.55473,13.699043
         - node:
-            color: '#FF7D00FF'
+            color: '#FFFFFFFF'
             id: Basalt9
           decals:
             81: 13.288156,12.9751215
@@ -165,20 +165,20 @@ entities:
             94: 60.909412,4.768418
             101: 72.25786,13.620914
         - node:
-            color: '#D5FF00FF'
+            color: '#FFFFFFFF'
             id: Bot
           decals:
             110: 10,4
             111: 9,4
         - node:
-            color: '#6800FFFF'
+            color: '#FFFFFFFF'
             id: Delivery
           decals:
             108: 41,21
             109: 4,5
         - node:
             cleanable: True
-            color: '#FF9500FF'
+            color: '#FFFFFFFF'
             id: Dirt
           decals:
             9: 45,11
@@ -200,7 +200,7 @@ entities:
             73: 65,8
         - node:
             cleanable: True
-            color: '#FF7C00FF'
+            color: '#FFFFFFFF'
             id: DirtHeavy
           decals:
             5: 46,11
@@ -251,7 +251,7 @@ entities:
         - node:
             cleanable: True
             zIndex: 1
-            color: '#00FF82FF'
+            color: '#FFFFFFFF'
             id: DirtHeavy
           decals:
             112: 9,4
@@ -259,7 +259,7 @@ entities:
             114: 41,21
         - node:
             cleanable: True
-            color: '#00FFA9FF'
+            color: '#FFFFFFFF'
             id: DirtLight
           decals:
             10: 44,12
@@ -269,14 +269,14 @@ entities:
             49: 39,18
             50: 41,20
         - node:
-            color: '#FF8000FF'
+            color: '#FFFFFFFF'
             id: WoodTrimThinLineN
           decals:
             0: 37,18
             1: 38,18
             2: 39,18
         - node:
-            color: '#72FF00FF'
+            color: '#FFFFFFFF'
             id: WoodTrimThinLineW
           decals:
             3: 41,19

@@ -50,7 +50,7 @@ entities:
         version: 2
         nodes:
         - node:
-            color: '#00FF62FF'
+            color: '#FFFFFFFF'
             id: ConcreteTrimBox
           decals:
             0: 1,8
@@ -64,26 +64,26 @@ entities:
             8: 2,3
             9: 7,7
         - node:
-            color: '#0026FFFF'
+            color: '#FFFFFFFF'
             id: ConcreteTrimCornerNe
           decals:
             13: -4,0
         - node:
-            color: '#FF0010FF'
+            color: '#FFFFFFFF'
             id: ConcreteTrimCornerNw
           decals:
             14: 1,-3
             15: 1,-8
             16: 7,-9
         - node:
-            color: '#FF8300FF'
+            color: '#FFFFFFFF'
             id: ConcreteTrimEndE
           decals:
             18: -7,-8
             19: -6,-4
             20: 10,-1
         - node:
-            color: '#FF0013FF'
+            color: '#FFFFFFFF'
             id: ConcreteTrimInnerNe
           decals:
             21: -6,1
@@ -91,7 +91,7 @@ entities:
             23: -9,4
             24: -1,5
         - node:
-            color: '#FF9300FF'
+            color: '#FFFFFFFF'
             id: ConcreteTrimInnerSe
           decals:
             25: -1,5
@@ -101,7 +101,7 @@ entities:
             29: 4,-9
             30: -4,-10
         - node:
-            color: '#00B5FFFF'
+            color: '#FFFFFFFF'
             id: ConcreteTrimInnerSw
           decals:
             31: -1,-9
@@ -116,14 +116,14 @@ entities:
             40: 3,2
             41: 3,-4
         - node:
-            color: '#FF0029FF'
+            color: '#FFFFFFFF'
             id: ConcreteTrimLineE
           decals:
             10: 4,4
             11: -2,4
             12: -6,0
         - node:
-            color: '#FFEE00FF'
+            color: '#FFFFFFFF'
             id: ConcreteTrimLineW
           decals:
             17: -6,-10

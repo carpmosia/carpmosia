@@ -61,12 +61,12 @@ entities:
         nodes:
         - node:
             cleanable: True
-            color: '#FF00CEFF'
+            color: '#FFFFFFFF'
             id: Dirt
           decals:
             121: -4,-4
         - node:
-            color: '#FF00C7FF'
+            color: '#FFFFFFFF'
             id: DirtHeavy
           decals:
             81: -9,-1
@@ -75,7 +75,7 @@ entities:
             92: -9,-5
         - node:
             cleanable: True
-            color: '#00FF2CFF'
+            color: '#FFFFFFFF'
             id: DirtHeavy
           decals:
             5: 1,1
@@ -111,7 +111,7 @@ entities:
             133: 6,7
         - node:
             cleanable: True
-            color: '#65FF00FF'
+            color: '#FFFFFFFF'
             id: DirtHeavyMonotile
           decals:
             136: 7,6
@@ -121,7 +121,7 @@ entities:
             140: 4,3
             141: 5,1
         - node:
-            color: '#00D5FFFF'
+            color: '#FFFFFFFF'
             id: DirtLight
           decals:
             84: -10,-1
@@ -132,7 +132,7 @@ entities:
             94: -9,-3
         - node:
             cleanable: True
-            color: '#1200FFFF'
+            color: '#FFFFFFFF'
             id: DirtLight
           decals:
             2: -7,3
@@ -168,7 +168,7 @@ entities:
             120: -9,-1
             134: 6,5
         - node:
-            color: '#FF00C0FF'
+            color: '#FFFFFFFF'
             id: DirtMedium
           decals:
             77: -9,1
@@ -178,7 +178,7 @@ entities:
             93: -9,-4
         - node:
             cleanable: True
-            color: '#00FFB3FF'
+            color: '#FFFFFFFF'
             id: DirtMedium
           decals:
             0: -7,2
@@ -209,7 +209,7 @@ entities:
             117: 2,6
             135: 6,6
         - node:
-            color: '#00FF1CFF'
+            color: '#FFFFFF0C'
             id: MiniTileOverlay
           decals:
             122: -3,10
@@ -224,26 +224,26 @@ entities:
             131: -5,10
         - node:
             cleanable: True
-            color: '#00FF41FF'
+            color: '#FF7F8206'
             id: MonoOverlay
           decals:
             150: -3,12
             151: -4,11
             152: -2,11
         - node:
-            color: '#00CBFFFF'
+            color: '#FFFFFF0C'
             id: OffsetCheckerBOverlay
           decals:
             132: 3,7
         - node:
-            color: '#FF5F00FF'
+            color: '#FFFFFFFF'
             id: QuarterTileOverlayGreyscale
           decals:
             99: -4,3
             100: -2,2
             101: -3,2
         - node:
-            color: '#E8FF00FF'
+            color: '#FFFFFFFF'
             id: QuarterTileOverlayGreyscale180
           decals:
             97: -4,3
@@ -252,7 +252,7 @@ entities:
             103: -3,2
             108: -2,1
         - node:
-            color: '#9FFF00FF'
+            color: '#FFFFFFFF'
             id: QuarterTileOverlayGreyscale270
           decals:
             95: -2,3
@@ -261,7 +261,7 @@ entities:
             105: -3,2
             109: -4,1
         - node:
-            color: '#15FF00FF'
+            color: '#FFFFFFFF'
             id: QuarterTileOverlayGreyscale90
           decals:
             106: -2,3
@@ -269,7 +269,7 @@ entities:
             110: -4,1
         - node:
             cleanable: True
-            color: '#0029FFFF'
+            color: '#FFFFFFFF'
             id: WarnLineE
           decals:
             142: 5,3
@@ -277,7 +277,7 @@ entities:
             144: 5,1
         - node:
             cleanable: True
-            color: '#00FF84FF'
+            color: '#FFFFFFFF'
             id: WarnLineW
           decals:
             145: -5,10
@@ -287,7 +287,7 @@ entities:
             149: -1,10
         - node:
             angle: -1.5707963267948966 rad
-            color: '#FFBE00FF'
+            color: '#FFFFFFFF'
             id: WarningLine
           decals:
             87: -9,1

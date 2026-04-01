@@ -85,27 +85,27 @@ entities:
         version: 2
         nodes:
         - node:
-            color: '#FF8500FF'
+            color: '#FFFFFFFF'
             id: BrickCornerOverlayNE
           decals:
             0: 21,12
         - node:
-            color: '#14FF00FF'
+            color: '#FFFFFFFF'
             id: BrickCornerOverlayNW
           decals:
             66: 13,12
         - node:
-            color: '#FFA000FF'
+            color: '#FFFFFFFF'
             id: BrickCornerOverlaySE
           decals:
             2: 21,9
         - node:
-            color: '#FF5500FF'
+            color: '#FFFFFFFF'
             id: BrickCornerOverlaySW
           decals:
             67: 13,9
         - node:
-            color: '#00FFF3FF'
+            color: '#FFFFFFFF'
             id: BrickLineOverlayN
           decals:
             10: 15,12
@@ -113,7 +113,7 @@ entities:
             17: 17,12
             22: 16.279491,9.584988
         - node:
-            color: '#00FFDDFF'
+            color: '#FFFFFFFF'
             id: BrickLineOverlayS
           decals:
             6: 15,9
@@ -121,14 +121,14 @@ entities:
             8: 19,9
             20: 17.466991,11.459988
         - node:
-            color: '#002AFFFF'
+            color: '#FFFFFFFF'
             id: BrickLineOverlayW
           decals:
             19: 18.451366,10.491238
             21: 17.248241,10.538113
             23: 16.060741,10.553738
         - node:
-            color: '#FF00C0FF'
+            color: '#FFFFFFFF'
             id: Delivery
           decals:
             24: -6,6
@@ -140,17 +140,17 @@ entities:
             30: -8,-6
             31: -6,-6
         - node:
-            color: '#00FF6EFF'
+            color: '#FF0000FF'
             id: Diablo
           decals:
             37: 5.855862,16.880978
         - node:
-            color: '#FF0C00FF'
+            color: '#FF0000FF'
             id: Psyke
           decals:
             41: -2.1691155,20.130829
         - node:
-            color: '#00FFCEFF'
+            color: '#FFFFFFFF'
             id: StandClear
           decals:
             32: -3,1
@@ -158,42 +158,42 @@ entities:
             34: -1,1
             35: -1,0
         - node:
-            color: '#FF0005FF'
+            color: '#FF0000FF'
             id: Tunnel
           decals:
             38: -8.737506,19.709103
         - node:
-            color: '#FF0045FF'
+            color: '#FF0000FF'
             id: beepsky
           decals:
             40: -12.171987,14.099579
         - node:
-            color: '#00FFD0FF'
+            color: '#FFFFFFFF'
             id: prolizard
           decals:
             36: -3.088747,17.162228
         - node:
-            color: '#00FFBBFF'
+            color: '#FF0000FF'
             id: skull
           decals:
             39: -8.916596,13.017004
         - node:
             angle: 0.3490658503988659 rad
-            color: '#FF0039FF'
+            color: '#8B0000FF'
             id: slash
           decals:
             60: 2.2205372,4.4103622
             61: 1.8455372,5.0666122
         - node:
             angle: 1.3962634015954636 rad
-            color: '#88FF00FF'
+            color: '#8B0000FF'
             id: slash
           decals:
             58: 2.9861622,3.3634872
             59: 2.8142872,3.8322372
         - node:
             angle: 5.934119456780721 rad
-            color: '#0046FFFF'
+            color: '#8B0000FF'
             id: slash
           decals:
             62: 2.4236622,5.7697372
@@ -201,7 +201,7 @@ entities:
             64: 3.2517872,6.8791122
             65: 3.7674122,7.8166122
         - node:
-            color: '#00FFF2FF'
+            color: '#8B0000FF'
             id: splatter
           decals:
             42: 1.3076229,10.255127

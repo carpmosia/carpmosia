@@ -74,73 +74,73 @@ entities:
         version: 2
         nodes:
         - node:
-            color: '#FF00A3FF'
+            color: '#FFFFFFFF'
             id: Basalt1
           decals:
             12: 2,0
         - node:
-            color: '#C800FFFF'
+            color: '#FFFFFFFF'
             id: Basalt2
           decals:
             20: 37.280025,3.9519238
         - node:
-            color: '#0004FFFF'
+            color: '#FFFFFFFF'
             id: Basalt3
           decals:
             16: 16.128233,1.0678778
         - node:
-            color: '#7900FFFF'
+            color: '#FFFFFFFF'
             id: Basalt4
           decals:
             13: 2.2814324,5.1807833
         - node:
-            color: '#00FF27FF'
+            color: '#FFFFFFFF'
             id: Basalt5
           decals:
             18: 22,1
         - node:
-            color: '#FF009DFF'
+            color: '#FFFFFFFF'
             id: Basalt7
           decals:
             14: 1.9779096,3.7662206
             15: 11.168944,4.85108
             19: 34.241127,2.2128677
         - node:
-            color: '#F000FFFF'
+            color: '#FFFFFFFF'
             id: Basalt8
           decals:
             17: 16,4
         - node:
             cleanable: True
             zIndex: 1
-            color: '#00FF62FF'
+            color: '#FFFFFFFF'
             id: Dirt
           decals:
             22: 3,3
         - node:
             cleanable: True
-            color: '#4B00FFFF'
+            color: '#FFFFFFFF'
             id: DirtHeavy
           decals:
             21: 3,3
         - node:
             cleanable: True
             zIndex: 1
-            color: '#00FF8FFF'
+            color: '#FA7500FF'
             id: evac
           decals:
             23: 3,3
         - node:
             cleanable: True
             angle: -3.7524578917878086 rad
-            color: '#00D0FFFF'
+            color: '#79150096'
             id: footprint
           decals:
             6: 2.1838233,3.824812
         - node:
             cleanable: True
             angle: -3.141592653589793 rad
-            color: '#BC00FFFF'
+            color: '#79150096'
             id: footprint
           decals:
             4: 2.1899958,4.5876875
@@ -149,13 +149,13 @@ entities:
         - node:
             cleanable: True
             angle: -2.530727415391778 rad
-            color: '#00FF79FF'
+            color: '#79150096'
             id: footprint
           decals:
             3: 1.6591315,4.837861
         - node:
             cleanable: True
-            color: '#A100FFFF'
+            color: '#79150096'
             id: splatter
           decals:
             0: 1.2943434,6.3353224
@@ -164,7 +164,7 @@ entities:
         - node:
             cleanable: True
             angle: 1.5707963267948966 rad
-            color: '#FF2500FF'
+            color: '#79150096'
             id: thinline
           decals:
             8: 4.75012,3.380583

@@ -69,20 +69,20 @@ entities:
         version: 2
         nodes:
         - node:
-            color: '#FF005CFF'
+            color: '#FFFFFFFF'
             id: Arrows
           decals:
             143: 2,-5
             144: 1,-5
         - node:
-            color: '#F500FFFF'
+            color: '#FFFFFFFF'
             id: Delivery
           decals:
             141: 3,0
         - node:
             cleanable: True
             zIndex: 1
-            color: '#0024FFFF'
+            color: '#FFFFFFFF'
             id: DirtHeavy
           decals:
             74: -4,0
@@ -153,14 +153,14 @@ entities:
             139: 0,-6
             140: -4,-1
         - node:
-            color: '#FF00E8FF'
+            color: '#79150096'
             id: HalfTileOverlayGreyscale
           decals:
             56: -3,-10
             57: -2,-10
             58: -1,-10
         - node:
-            color: '#6B00FFFF'
+            color: '#A4610696'
             id: HalfTileOverlayGreyscale
           decals:
             25: 3,5
@@ -173,14 +173,14 @@ entities:
             43: 6,2
             44: 7,2
         - node:
-            color: '#00FF64FF'
+            color: '#79150096'
             id: HalfTileOverlayGreyscale180
           decals:
             53: -3,-9
             54: -2,-9
             55: -1,-9
         - node:
-            color: '#FFF500FF'
+            color: '#A4610696'
             id: HalfTileOverlayGreyscale180
           decals:
             19: -2,-7
@@ -190,14 +190,14 @@ entities:
             23: 3,6
             24: 4,6
         - node:
-            color: '#FF6F00FF'
+            color: '#79150096'
             id: HalfTileOverlayGreyscale270
           decals:
             50: -6,4
             51: -6,5
             52: -6,6
         - node:
-            color: '#5600FFFF'
+            color: '#A4610696'
             id: HalfTileOverlayGreyscale270
           decals:
             0: -3,-6
@@ -212,7 +212,7 @@ entities:
             9: 2,5
             10: 2,4
         - node:
-            color: '#BD00FFFF'
+            color: '#79150096'
             id: HalfTileOverlayGreyscale90
           decals:
             45: -4,2
@@ -221,7 +221,7 @@ entities:
             48: -4,5
             49: -4,6
         - node:
-            color: '#FF00DDFF'
+            color: '#A4610696'
             id: HalfTileOverlayGreyscale90
           decals:
             11: 5,4
@@ -235,32 +235,32 @@ entities:
             38: 3,-1
         - node:
             angle: 1.5707963267948966 rad
-            color: '#00D9FFFF'
+            color: '#FFFFFFFF'
             id: LoadingArea
           decals:
             142: 2,0
         - node:
-            color: '#FFDE00FF'
+            color: '#79150096'
             id: QuarterTileOverlayGreyscale
           decals:
             62: 0,-10
         - node:
-            color: '#AA00FFFF'
+            color: '#A4610696'
             id: QuarterTileOverlayGreyscale
           decals:
             40: -2,-5
         - node:
-            color: '#00FF05FF'
+            color: '#79150096'
             id: QuarterTileOverlayGreyscale180
           decals:
             61: -4,-9
         - node:
-            color: '#FF00E3FF'
+            color: '#A4610696'
             id: QuarterTileOverlayGreyscale180
           decals:
             41: 0,-5
         - node:
-            color: '#28FF00FF'
+            color: '#52B4E996'
             id: QuarterTileOverlayGreyscale270
           decals:
             67: -5,-1
@@ -268,12 +268,12 @@ entities:
             69: -4,0
             70: -4,-1
         - node:
-            color: '#7C00FFFF'
+            color: '#79150096'
             id: QuarterTileOverlayGreyscale270
           decals:
             59: 0,-9
         - node:
-            color: '#FFEB00FF'
+            color: '#52B4E996'
             id: QuarterTileOverlayGreyscale90
           decals:
             63: -5,0
@@ -281,42 +281,42 @@ entities:
             65: -4,-1
             66: -5,-1
         - node:
-            color: '#FFCC00FF'
+            color: '#79150096'
             id: QuarterTileOverlayGreyscale90
           decals:
             60: -4,-10
         - node:
             cleanable: True
-            color: '#F3FF00FF'
+            color: '#FFFFFFFF'
             id: Remains
           decals:
             73: -9,4
         - node:
-            color: '#FF00E0FF'
+            color: '#A4610696'
             id: ThreeQuarterTileOverlayGreyscale
           decals:
             35: -3,-5
             39: -2,2
         - node:
-            color: '#FF0082FF'
+            color: '#A4610696'
             id: ThreeQuarterTileOverlayGreyscale180
           decals:
             31: 0,-7
             32: 3,-5
         - node:
-            color: '#00FF23FF'
+            color: '#A4610696'
             id: ThreeQuarterTileOverlayGreyscale270
           decals:
             34: -3,-7
         - node:
-            color: '#FF2100FF'
+            color: '#A4610696'
             id: ThreeQuarterTileOverlayGreyscale90
           decals:
             33: 3,2
         - node:
             cleanable: True
             zIndex: 1
-            color: '#FF008AFF'
+            color: '#79150096'
             id: splatter
           decals:
             146: 7,2
@@ -1336,7 +1336,7 @@ entities:
       inletTwoConcentration: 0.22000003
       inletOneConcentration: 0.78
     - type: AtmosPipeColor
-      color: '#00FF2DFF'
+      color: '#03FCD3FF'
 - proto: GasPipeBend
   entities:
   - uid: 143
@@ -1346,7 +1346,7 @@ entities:
       pos: 3.5,7.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#7D00FFFF'
+      color: '#03FCD3FF'
   - uid: 144
     components:
     - type: Transform
@@ -1354,7 +1354,7 @@ entities:
       pos: 4.5,6.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#00FF9CFF'
+      color: '#03FCD3FF'
   - uid: 148
     components:
     - type: Transform
@@ -1546,7 +1546,7 @@ entities:
       pos: 5.5,6.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#00FF55FF'
+      color: '#03FCD3FF'
   - uid: 184
     components:
     - type: Transform
@@ -1554,7 +1554,7 @@ entities:
       pos: 5.5,7.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#5700FFFF'
+      color: '#03FCD3FF'
 - proto: GasPressurePump
   entities:
   - uid: 186
@@ -1563,7 +1563,7 @@ entities:
       pos: 3.5,6.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#006FFFFF'
+      color: '#03FCD3FF'
 - proto: GasVentPump
   entities:
   - uid: 146

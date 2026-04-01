@@ -50,14 +50,14 @@ entities:
         version: 2
         nodes:
         - node:
-            color: '#7D00FFFF'
+            color: '#FFFFFFFF'
             id: Bot
           decals:
             26: 0,1
             27: 1,1
         - node:
             angle: 3.141592653589793 rad
-            color: '#C200FFFF'
+            color: '#FFFFFFFF'
             id: Bot
           decals:
             21: -2,1
@@ -67,13 +67,13 @@ entities:
             25: 2,-1
         - node:
             angle: 3.141592653589793 rad
-            color: '#00E2FFFF'
+            color: '#FFFFFFFF'
             id: DirtHeavy
           decals:
             17: -5,-3
         - node:
             angle: 3.141592653589793 rad
-            color: '#4900FFFF'
+            color: '#FFFFFFFF'
             id: DirtLight
           decals:
             11: -2,1
@@ -82,7 +82,7 @@ entities:
             18: -3,-4
         - node:
             angle: 3.141592653589793 rad
-            color: '#FF00DBFF'
+            color: '#FFFFFFFF'
             id: DirtMedium
           decals:
             14: 1,1
@@ -91,20 +91,20 @@ entities:
             19: -2,-1
             20: 3,2
         - node:
-            color: '#FF0052FF'
+            color: '#FFFFFFFF'
             id: StandClear
           decals:
             0: -1,2
             1: 2,2
         - node:
             angle: 1.5707963267948966 rad
-            color: '#8D00FFFF'
+            color: '#FFFFFFFF'
             id: WarnCornerFlipped
           decals:
             5: 3,2
         - node:
             angle: 1.5707963267948966 rad
-            color: '#E4FF00FF'
+            color: '#FFFFFFFF'
             id: WarningLine
           decals:
             2: 3,-1
@@ -112,7 +112,7 @@ entities:
             4: 3,1
         - node:
             angle: 3.141592653589793 rad
-            color: '#0030FFFF'
+            color: '#FFFFFFFF'
             id: WarningLine
           decals:
             6: 2,2

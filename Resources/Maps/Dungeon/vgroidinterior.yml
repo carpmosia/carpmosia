@@ -83,7 +83,7 @@ entities:
         version: 2
         nodes:
         - node:
-            color: '#7100FFFF'
+            color: '#A4610696'
             id: CheckerNESW
           decals:
             9: 13,3
@@ -92,7 +92,7 @@ entities:
             12: 14,3
         - node:
             cleanable: True
-            color: '#FF00F3FF'
+            color: '#FFFFFFFF'
             id: DirtHeavy
           decals:
             16: 14,2
@@ -126,13 +126,13 @@ entities:
             85: 14,9
         - node:
             cleanable: True
-            color: '#FF009CFF'
+            color: '#FFFFFFFF'
             id: DirtHeavyMonotile
           decals:
             42: 15,2
         - node:
             cleanable: True
-            color: '#F400FFFF'
+            color: '#FFFFFFFF'
             id: DirtLight
           decals:
             48: 2,2
@@ -140,7 +140,7 @@ entities:
             50: 13,2
         - node:
             cleanable: True
-            color: '#5200FFFF'
+            color: '#FFFFFFFF'
             id: DirtMedium
           decals:
             62: 15,2
@@ -160,7 +160,7 @@ entities:
             97: 2,8
         - node:
             angle: -3.141592653589793 rad
-            color: '#EA00FFFF'
+            color: '#FFFFFFFF'
             id: LoadingArea
           decals:
             7: 15,2

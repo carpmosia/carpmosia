@@ -111,7 +111,7 @@ entities:
         nodes:
         - node:
             cleanable: True
-            color: '#FFE800FF'
+            color: '#FFFFFFFF'
             id: DirtHeavy
           decals:
             9: -17,0
@@ -126,13 +126,13 @@ entities:
             28: -14,5
         - node:
             cleanable: True
-            color: '#0096FFFF'
+            color: '#FFFFFFFF'
             id: DirtHeavyMonotile
           decals:
             29: -15,5
         - node:
             cleanable: True
-            color: '#0095FFFF'
+            color: '#FFFFFFFF'
             id: DirtLight
           decals:
             18: -16,0
@@ -142,7 +142,7 @@ entities:
             22: -15,4
         - node:
             cleanable: True
-            color: '#0B00FFFF'
+            color: '#FFFFFFFF'
             id: DirtMedium
           decals:
             23: -15,0
@@ -152,7 +152,7 @@ entities:
             34: -16,5
         - node:
             cleanable: True
-            color: '#FF0500FF'
+            color: '#FFFFFFFF'
             id: burnt1
           decals:
             0: -14,2
@@ -162,7 +162,7 @@ entities:
             32: -15,5
         - node:
             cleanable: True
-            color: '#9DFF00FF'
+            color: '#FFFFFFFF'
             id: burnt2
           decals:
             4: -16,1
@@ -170,7 +170,7 @@ entities:
             33: -16,5
         - node:
             cleanable: True
-            color: '#00FFF8FF'
+            color: '#FFFFFFFF'
             id: burnt3
           decals:
             5: -13,0
@@ -178,7 +178,7 @@ entities:
             7: -16,3
         - node:
             cleanable: True
-            color: '#FF3200FF'
+            color: '#FFFFFFFF'
             id: burnt4
           decals:
             3: -14,-1

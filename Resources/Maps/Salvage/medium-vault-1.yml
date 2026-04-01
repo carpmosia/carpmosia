@@ -54,19 +54,19 @@ entities:
         version: 2
         nodes:
         - node:
-            color: '#18FF00FF'
+            color: '#FFFFFFFF'
             id: Arrows
           decals:
             60: -1,-1
             69: -1,-1
         - node:
-            color: '#FF00B2FF'
+            color: '#FFFFFFFF'
             id: Bot
           decals:
             58: -2,-4
             59: -1,0
         - node:
-            color: '#00FF1CFF'
+            color: '#A4610696'
             id: CheckerNESW
           decals:
             54: -6,-7
@@ -74,7 +74,7 @@ entities:
             56: -5,-6
             57: -5,-7
         - node:
-            color: '#35FF00FF'
+            color: '#DE3A3A0F'
             id: CheckerNESW
           decals:
             15: -2,-1
@@ -87,7 +87,7 @@ entities:
             22: -1,1
             23: 0,1
         - node:
-            color: '#FF0035FF'
+            color: '#FFFFFFFF'
             id: DirtHeavy
           decals:
             24: -5,-1
@@ -102,7 +102,7 @@ entities:
             33: 2,0
             34: 2,0
         - node:
-            color: '#0039FFFF'
+            color: '#FFFFFFFF'
             id: DirtLight
           decals:
             35: 2,-1
@@ -119,7 +119,7 @@ entities:
             46: -1,3
             47: -1,3
         - node:
-            color: '#00AEFFFF'
+            color: '#FFFFFFFF'
             id: DirtMedium
           decals:
             48: -2,3
@@ -129,7 +129,7 @@ entities:
             52: -5,-3
             53: 2,-1
         - node:
-            color: '#AE00FFFF'
+            color: '#DE3A3A0F'
             id: QuarterTileOverlayGreyscale
           decals:
             6: -6,0
@@ -137,7 +137,7 @@ entities:
             8: -6,2
             9: -6,4
         - node:
-            color: '#FF00EFFF'
+            color: '#DE3A3A0F'
             id: QuarterTileOverlayGreyscale90
           decals:
             10: 4,0
@@ -146,22 +146,22 @@ entities:
             13: 4,-5
             14: 4,-6
         - node:
-            color: '#FF0084FF'
+            color: '#FFFFFFFF'
             id: WarnCornerSmallNE
           decals:
             63: -4,0
         - node:
-            color: '#0094FFFF'
+            color: '#FFFFFFFF'
             id: WarnCornerSmallNW
           decals:
             64: 2,0
         - node:
-            color: '#7EFF00FF'
+            color: '#FFFFFFFF'
             id: WarnCornerSmallSE
           decals:
             65: -4,2
         - node:
-            color: '#00A5FFFF'
+            color: '#FFFFFFFF'
             id: WarnLineE
           decals:
             3: -1,-5
@@ -169,14 +169,14 @@ entities:
             5: -1,-3
             62: -4,1
         - node:
-            color: '#00BEFFFF'
+            color: '#DE3A3A96'
             id: WarnLineGreyscaleS
           decals:
             66: -1,-1
             67: -2,-1
             68: 0,-1
         - node:
-            color: '#FF0F00FF'
+            color: '#FFFFFFFF'
             id: WarnLineS
           decals:
             0: -1,-5
