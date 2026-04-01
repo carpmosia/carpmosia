@@ -1,10 +1,10 @@
 ### EscapeMenu.xaml
 
-ui-escape-title = Game Menu
-ui-escape-options = Options
-ui-escape-rules = Rules
-ui-escape-guidebook = Guidebook
-ui-escape-wiki = Wiki
-ui-escape-disconnect = Disconnect
-ui-escape-quit = Quit
-ui-escape-feedback = Feedback
+ui-escape-title = Honk Menu
+ui-escape-options = Honktions
+ui-escape-rules = Honkles
+ui-escape-guidebook = Honkbook
+ui-escape-wiki = Honkiki
+ui-escape-disconnect = Honkconnect
+ui-escape-quit = Honkit
+ui-escape-feedback = Honkback
