@@ -41664,7 +41664,6 @@ entities:
       parent: 2
     - type: ApcPowerReceiver
       powerLoad: 0
-    - type: Timer
   - uid: 6249
     components:
     - type: Transform
@@ -41680,7 +41679,6 @@ entities:
       parent: 2
     - type: ApcPowerReceiver
       powerLoad: 0
-    - type: Timer
   - uid: 6251
     components:
     - type: Transform
@@ -41689,7 +41687,6 @@ entities:
       parent: 2
     - type: ApcPowerReceiver
       powerLoad: 0
-    - type: Timer
   - uid: 6252
     components:
     - type: Transform
@@ -42126,7 +42123,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 4.5,16.5
       parent: 2
-    - type: Timer
 - proto: PoweredlightLED
   entities:
   - uid: 6315
