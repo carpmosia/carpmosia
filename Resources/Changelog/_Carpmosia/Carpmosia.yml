@@ -1306,4 +1306,148 @@
   id: 228
   time: '2026-03-11T10:26:02.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/260
+- author: arenaconspiracy
+  changes:
+  - message: Headsets can no longer speak on Common radio, you need an intercom or
+      other means to use it. Other radio channels are unaffected.
+    type: Tweak
+  id: 229
+  time: '2026-03-14T01:57:38.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/272
+- author: imatsoup
+  changes:
+  - message: Blood bound converts will no longer be deconverted when implanted with
+      a mindshield.
+    type: Tweak
+  id: 230
+  time: '2026-03-14T01:57:29.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/282
+- author: korczoczek
+  changes:
+  - message: New shuttle controls, press Z or X to rotate towards/against your current
+      movement direction respectively
+    type: Add
+  id: 231
+  time: '2026-03-14T01:57:34.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/269
+- author: pceererthegreat
+  changes:
+  - message: Added diagnostics goggles, now you can safely see a cyborg's health while
+      repairing them!
+    type: Add
+  id: 232
+  time: '2026-03-14T03:33:03.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/268
+- author: SnappingOpossum
+  changes:
+  - message: Underlying technical work upstream for future medical improvements have
+      resulted in the following changes to better accommodate future development.
+      These changelog entries are made relative to the upstream changes that also
+      resulted from this. Please note that these changes are not representative of
+      the final product and that the medical balance will receive a major overhaul
+      once limb and organ damage are fully implemented.
+    type: Tweak
+  - message: Tricordrazine now heals damage while the patient is alive, as in above
+      critical condition.
+    type: Tweak
+  - message: Tetracordrazine now only heals patients in critical condition.
+    type: Tweak
+  - message: Tetracordrazine now evenly heals brute, burn, and toxin.
+    type: Tweak
+  - message: Necrosol removal has been reverted and it's burn healing has been slightly
+      decreased and toxin healing slightly increased.
+    type: Tweak
+  - message: Stelloxadone now heals toxin damage evenly and deals heat damage at half
+      the rate it dealt brute damage.
+    type: Tweak
+  id: 233
+  time: '2026-03-19T02:08:29.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/287
+- author: Atakku
+  changes:
+  - message: Added 19 more posters! (15 regular and 4 contraband)
+    type: Add
+  id: 234
+  time: '2026-03-19T03:16:04.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/195
+- author: imatsoup
+  changes:
+  - message: Carp version of the vent critters event replaced by the new upstream
+      vent hordes event
+    type: Tweak
+  id: 235
+  time: '2026-03-19T04:16:29.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/289
+- author: imatsoup
+  changes:
+  - message: Converted Blood Bound will now have the objectives of the original Blood
+      Bound.
+    type: Tweak
+  - message: For Blood Bound steal objectives, either Blood Bound carrying the objective
+      item will count as a greentext for them both.
+    type: Tweak
+  id: 236
+  time: '2026-03-19T16:08:53.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/248
+- author: arenaconspiracy
+  changes:
+  - message: 'EXPERIMENTAL: The disabler has been brought in line with the Mk 58,
+      a full charge can make one takedown, down from six, in exchange for a higher
+      fire rate.'
+    type: Tweak
+  id: 237
+  time: '2026-03-19T16:08:59.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/271
+- author: korczoczek
+  changes:
+  - message: New roaming bot dedicated to insulting crew, spawnable at admin discretion
+    type: Add
+  id: 238
+  time: '2026-03-19T17:04:30.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/161
+- author: Atakku
+  changes:
+  - message: Common speaking removal experiment concluded, and has been reverted for
+      the time being.
+    type: Tweak
+  id: 239
+  time: '2026-03-25T07:58:04.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/294
+- author: Atakku
+  changes:
+  - message: Removed EORG vote, as EORG is banned entirely.
+    type: Remove
+  id: 240
+  time: '2026-03-26T14:37:04.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/245
+- author: imatsoup
+  changes:
+  - message: Bags can no longer dump their contents into reagent grinders. Will return
+      at a later date.
+    type: Remove
+  - message: Reagent grinders should work properly again.
+    type: Fix
+  id: 241
+  time: '2026-03-29T07:17:34.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/301
+- author: SnappingOpossum
+  changes:
+  - message: Tetracordrazine can no longer heal radiation.
+    type: Tweak
+  id: 242
+  time: '2026-03-31T08:25:49.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/302
+- author: Timtee
+  changes:
+  - message: Added fun!
+    type: Add
+  - message: Removed fun!
+    type: Remove
+  - message: Changed fun!
+    type: Tweak
+  - message: Fixed fun!
+    type: Fix
+  id: 243
+  time: '2026-03-31T09:53:56.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/295
 Order: -1
