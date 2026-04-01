@@ -141,6 +141,11 @@ public sealed class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRuleComponen
         targetRole!.Value.Comp2.Bound = entity;
         Dirty(targetRole.Value);
 
+        foreach(var objective in mind.Objectives)
+        {
+            targetMind.Objectives.Add(objective);
+        }
+
         if (!_objectivesSystem.TryCreateObjective((targetMindId, targetMind),
                 entity.Comp.ConvertedBoundObjective,
                 out var newObjective))
