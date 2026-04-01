@@ -78,6 +78,8 @@ entities:
     - type: GridTree
     - type: Broadphase
     - type: OccluderTree
+    - type: Parallax
+      parallax: Wizard
   - uid: 5691
     components:
     - type: MetaData
