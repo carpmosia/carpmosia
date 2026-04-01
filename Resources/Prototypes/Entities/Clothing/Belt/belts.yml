@@ -7,10 +7,10 @@
   description: An ornate sheath designed to hold an officer's blade.
   components:
   - type: Sprite
-    sprite: Clothing/Belt/sheath.rsi
+    sprite: _Carpmosia/Clothing/Belt/sheath.rsi # Carpmosia-edit - sheathe inhands
     state: sheath
   - type: Clothing
-    sprite: Clothing/Belt/sheath.rsi
+    sprite: _Carpmosia/Clothing/Belt/sheath.rsi # Carpmosia-edit - sheathe inhands
   - type: Item
     size: Ginormous
   - type: ItemSlots

@@ -24,6 +24,10 @@ namespace Content.Client.Shuttles.Systems
             shuttle.AddFunction(ContentKeyFunctions.ShuttleRotateLeft);
             shuttle.AddFunction(ContentKeyFunctions.ShuttleRotateRight);
             shuttle.AddFunction(ContentKeyFunctions.ShuttleBrake);
+            // Carpmosia-start - rotate shuttle along movement vector
+            shuttle.AddFunction(ContentKeyFunctions.ShuttleTowardsVector);
+            shuttle.AddFunction(ContentKeyFunctions.ShuttleAgainstVector);
+            // Carpmosia-end - rotate shuttle along movement vector
         }
 
         public override void Shutdown()
