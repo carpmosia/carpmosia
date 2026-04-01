@@ -11,7 +11,10 @@
   - StationAiIconDorf
   - StationAiIconHeartline
   - StationAiIconSmiley
-  - StationAiIconCarp # Carpmosia-edit - Carp AI Icon
+  # Carpmosia-start - Carpmos AI customization
+  - StationAiIconCarp
+  - StationAiIconSillycon
+  # Carpmosia-end - Carpmos AI customization
 
 - type: stationAiCustomizationGroup
   id: StationAiHolograms
@@ -23,15 +26,15 @@
   - StationAiHologramFace
   - StationAiHologramCat
   - StationAiHologramDog
-  - StationAiHologramCarp # Carpmosia-edit - Carp AI Icon
-  # Carpmosia-start - More AI holograms
+  # Carpmosia-start - Carpmos AI customization
+  - StationAiHologramCarp
   - StationAiHologramClown
   - StationAiHologramWeh
   - StationAiHologramMothroach
   - StationAiHologramDionanymph
   - StationAiHologramAngel
   - StationAiHologramDevil
-  # Carpmosia-end - More AI holograms
+  # Carpmosia-end - Carpmos AI customization
 
 # Iconography
 - type: stationAiCustomization

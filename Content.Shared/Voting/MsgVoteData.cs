@@ -1,5 +1,6 @@
 using Lidgren.Network;
 using Robust.Shared.Network;
+using Robust.Shared.Prototypes; // Carpmosia-edit - Better map vote
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Voting
@@ -14,7 +15,7 @@ namespace Content.Shared.Voting
         public string VoteInitiator = string.Empty;
         public TimeSpan StartTime; // Server RealTime.
         public TimeSpan EndTime; // Server RealTime.
-        public (ushort votes, string name)[] Options = default!;
+        public (ushort votes, string name, string? icon, EntProtoId? preview)[] Options = default!; // Carpmosia-edit - Better map vote
         public bool IsYourVoteDirty;
         public byte? YourVote;
         public bool DisplayVotes;
@@ -36,10 +37,10 @@ namespace Content.Shared.Voting
             DisplayVotes = buffer.ReadBoolean();
             TargetEntity = buffer.ReadVariableInt32();
 
-            Options = new (ushort votes, string name)[buffer.ReadByte()];
+            Options = new (ushort votes, string name, string? icon, EntProtoId? preview)[buffer.ReadByte()]; // Carpmosia-edit - Better map vote
             for (var i = 0; i < Options.Length; i++)
             {
-                Options[i] = (buffer.ReadUInt16(), buffer.ReadString());
+                Options[i] = (buffer.ReadUInt16(), buffer.ReadString(), buffer.ReadBoolean() ? buffer.ReadString() : null, buffer.ReadBoolean() ? buffer.ReadString() : null); // Carpmosia-edit - Better map vote
             }
 
             IsYourVoteDirty = buffer.ReadBoolean();
@@ -66,10 +67,22 @@ namespace Content.Shared.Voting
             buffer.WriteVariableInt32(TargetEntity);
 
             buffer.Write((byte) Options.Length);
-            foreach (var (votes, name) in Options)
+            foreach (var (votes, name, icon, preview) in Options) // Carpmosia-edit - Better map vote
             {
                 buffer.Write(votes);
                 buffer.Write(name);
+                // Carpmosia-edit - Better map vote
+                buffer.Write(icon != null);
+                if (icon != null)
+                {
+                  buffer.Write(icon);
+                }
+                buffer.Write(preview.HasValue);
+                if (preview.HasValue)
+                {
+                  buffer.Write(preview.Value);
+                }
+                // Carpmosia-edit - Better map vote
             }
 
             buffer.Write(IsYourVoteDirty);

@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Server.PID; // Carpmosia-edit - rotate shuttle along movement vector
 
 namespace Content.Server.Shuttles.Components
 {
@@ -68,5 +69,26 @@ namespace Content.Server.Shuttles.Components
         /// </summary>
         [DataField]
         public float DampingModifier;
+
+        /// Carpmosia-start - rotate shuttle along movement vector
+        [ViewVariables]
+        public PIDParams AccParams = new(800f, 0.05f, 2f, 200f, -200f);
+#if DEBUG || TOOLS
+        [DataField]
+        public float Kp = 800f;
+
+        [DataField]
+        public float Ti = 0.05f;
+
+        [DataField]
+        public float Td = 2f;
+#endif
+        /// Carpmosia-end - rotate shuttle along movement vector
+        /// <summary>
+        /// Optional override for the FTL cooldown for this shuttle.
+        /// If not null, then the value will be used instead of the shuttle.cooldown CCVar.
+        /// </summary>
+        [DataField]
+        public TimeSpan? FTLCooldownOverride = null;
     }
 }
