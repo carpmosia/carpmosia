@@ -62,7 +62,13 @@
         damage:
           Brute: -2.0
           Burn: -2.0
-          Toxin: -1.0
+      - !type:HealthChange
+        conditions:
+        - !type:MobStateCondition
+          mobstate: Critical
+        damage:
+          types:
+            Poison: -1.0
       - !type:HealthChange
         conditions:
         - !type:ReagentCondition
