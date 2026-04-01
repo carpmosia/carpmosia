@@ -17,8 +17,9 @@
     allowed:
     - Electrocution
   - type: Repairable
-    doAfterDelay: 8
-    fuelCost: 15
+    damageValue: -15 # 8 seconds to repair from dead
+    doAfterDelay: 1
+    fuelCost: 0.5
   - type: Pullable
   - type: Tag
     tags:
@@ -105,8 +106,6 @@
     - SiliconEmotes
     - Bot
     - Unimplantable
-  - type: Body
-    prototype: Bot
   - type: Speech
     speechVerb: Robotic
     speechSounds: Pai #couldn't decide if this should be borg or pai sounds so I flipped a coin.
@@ -322,8 +321,6 @@
       Alive:
         reagent: Tricordrazine
         quantity: 30
-        minDamage: 0
-        maxDamage: 50
       Critical:
         reagent: Inaprovaline
         quantity: 15
@@ -460,6 +457,37 @@
     - Supply
   - type: Puller
     needsHands: false
+  # Carpmosia-start - handy supplybot
+  - type: ComplexInteraction
+  - type: Hands
+    hands:
+      Left:
+        location: Left
+        whitelist:
+          components:
+          - Delivery
+          tags:
+          - Paper
+          - Document
+        emptyRepresentative: Paper
+      Right:
+        location: Right
+        whitelist:
+          components:
+          - Delivery
+          tags:
+          - Paper
+          - Document
+        emptyRepresentative: Paper
+    sortedHands:
+    - Right
+    - Left
+    showInHands: false
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 10 # capable of touching light bulbs and stoves without feeling pain!
+  # Carpmosia-end - handy supplybot
 
 - type: entity
   parent: [ MobSiliconBase, MobCombat ]
@@ -488,8 +516,6 @@
   - type: Hands # This probably REALLY needs hand whitelisting, but we NEED hands for hugs, so...
   - type: ComplexInteraction # Hugging is a complex interaction, apparently.
   - type: HugBot
-  - type: Body
-    prototype: HugBot
   - type: HTN
     rootTask:
       task: HugBotCompound
