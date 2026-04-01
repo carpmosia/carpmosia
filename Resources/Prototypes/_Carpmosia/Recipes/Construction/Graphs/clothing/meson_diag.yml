@@ -1,0 +1,22 @@
+- type: constructionGraph
+  id: MesonDiagnostic
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: mesonDiagnostic
+      steps:
+      - tag: MesonGoggles
+        name: construction-graph-tag-meson
+        icon:
+          sprite: Clothing/Eyes/Glasses/meson.rsi
+          state: icon
+        doAfter: 3
+      - tag: HudDiagnostic
+        name: construction-graph-tag-diag
+        icon:
+          sprite: Clothing/Eyes/Hud/diag.rsi
+          state: icon
+        doAfter: 3
+  - node: mesonDiagnostic
+    entity: ClothingEyesGlassesMesonDiagnostic

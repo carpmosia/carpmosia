@@ -141,6 +141,11 @@ public sealed class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRuleComponen
         targetRole!.Value.Comp2.Bound = entity;
         Dirty(targetRole.Value);
 
+        foreach(var objective in mind.Objectives)
+        {
+            targetMind.Objectives.Add(objective);
+        }
+
         if (!_objectivesSystem.TryCreateObjective((targetMindId, targetMind),
                 entity.Comp.ConvertedBoundObjective,
                 out var newObjective))
@@ -251,7 +256,7 @@ public sealed class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRuleComponen
             return false;
         }
 
-        if (targetMind.UserId == null || !HasComp<HumanoidAppearanceComponent>(target))
+        if (targetMind.UserId == null || !HasComp<HumanoidProfileComponent>(target))
         {
             errorMessage = "blood-bound-convert-failed-no-mind";
             return false;

@@ -168,3 +168,40 @@
     inHandsFillBaseName: -fill-
     equippedMaxFillLevels: 4
     equippedFillBaseName: -fill-
+
+- type: entity
+  parent: PlushieMoth
+  id: PlushieMothLanka
+  name: engineer moth plushie
+  description: A plushie resembling a certain Station Engineer, the fluff feels like fiberglass.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Fun/Plushies/lanka.rsi
+    state: icon
+  - type: ActivatableUI
+    key: enum.NetworkConfiguratorUiKey.List
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.NetworkConfiguratorUiKey.List:
+        type: NetworkConfiguratorBoundUserInterface
+      enum.NetworkConfiguratorUiKey.Configure:
+        type: NetworkConfiguratorBoundUserInterface
+      enum.NetworkConfiguratorUiKey.Link:
+        type: NetworkConfiguratorBoundUserInterface
+  - type: NetworkConfigurator
+  - type: EmitSoundOnLand
+    sound: &PlushieMothSqueak
+      path: /Audio/Voice/Moth/moth_squeak.ogg
+  - type: EmitSoundOnCollide
+    sound: &PlushieMothScream
+      path: /Audio/Voice/Moth/moth_scream.ogg
+  - type: MeleeWeapon
+    soundHit: *PlushieMothScream
+  - type: Edible
+    useSound: *PlushieMothScream
+  - type: Clothing
+    quickEquip: false
+    sprite: _Carpmosia/Objects/Fun/Plushies/lanka.rsi
+    slots:
+    - HEAD
