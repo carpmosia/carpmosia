@@ -5,8 +5,7 @@ using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Physics;
 using Content.Shared.Rotation;
-using Content.Shared.Mobs; // Carpmosia-edit - make dead/crit bodies much harder to pull
-using Content.Shared.Mobs.Components; // Carpmosia-edit - make dead/crit bodies much harder to pull
+using Content.Shared.Mobs; // Carpmosia-edit - dead/crit friction changes
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
@@ -30,7 +29,7 @@ public sealed class StandingStateSystem : EntitySystem
         SubscribeLocalEvent<StandingStateComponent, RefreshFrictionModifiersEvent>(OnRefreshFrictionModifiers);
         SubscribeLocalEvent<StandingStateComponent, TileFrictionEvent>(OnTileFriction);
         SubscribeLocalEvent<StandingStateComponent, EndClimbEvent>(OnEndClimb);
-        SubscribeLocalEvent<StandingStateComponent, MobStateChangedEvent>(OnMobStateChanged); // Carpmosia-edit - make dead/crit bodies much harder to pull
+        SubscribeLocalEvent<StandingStateComponent, MobStateChangedEvent>(OnMobStateChanged); // Carpmosia-edit - dead/crit friction changes
     }
 
     private void OnMobTargetCollide(Entity<StandingStateComponent> ent, ref AttemptMobTargetCollideEvent args)
@@ -73,12 +72,12 @@ public sealed class StandingStateSystem : EntitySystem
         ChangeLayers(entity);
     }
 
-    // Carpmosia-start - make dead/crit bodies much harder to pull
+    // Carpmosia-start - dead/crit friction changes
     private void OnMobStateChanged(Entity<StandingStateComponent> entity, ref MobStateChangedEvent args)
     {
         entity.Comp.DownFrictionMod = entity.Comp.DownFrictionModDict[args.NewMobState];
     }
-    // Carpmosia-end - make dead/crit bodies much harder to pull
+    // Carpmosia-end - dead/crit friction changes
 
     public bool IsMatchingState(Entity<StandingStateComponent?> entity, bool standing)
     {
