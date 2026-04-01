@@ -52,6 +52,10 @@ namespace Content.Shared.Movement.Systems
                 .Bind(ContentKeyFunctions.ShuttleRotateLeft, new ShuttleInputCmdHandler(this, ShuttleButtons.RotateLeft))
                 .Bind(ContentKeyFunctions.ShuttleRotateRight, new ShuttleInputCmdHandler(this, ShuttleButtons.RotateRight))
                 .Bind(ContentKeyFunctions.ShuttleBrake, new ShuttleInputCmdHandler(this, ShuttleButtons.Brake))
+                // Carpmosia-start - rotate shuttle along movement vector
+                .Bind(ContentKeyFunctions.ShuttleTowardsVector, new ShuttleInputCmdHandler(this, ShuttleButtons.TowardVector))
+                .Bind(ContentKeyFunctions.ShuttleAgainstVector, new ShuttleInputCmdHandler(this, ShuttleButtons.AgainstVector))
+                // Carpmosia-end - rotate shuttle along movement vector
                 .Register<SharedMoverController>();
 
             SubscribeLocalEvent<InputMoverComponent, ComponentInit>(OnInputInit);
@@ -638,7 +642,7 @@ namespace Content.Shared.Movement.Systems
     }
 
     [Flags]
-    public enum ShuttleButtons : byte
+    public enum ShuttleButtons : short // Carpmosia-edit - rotate shuttle along movement vector
     {
         None = 0,
         StrafeUp = 1 << 0,
@@ -648,6 +652,11 @@ namespace Content.Shared.Movement.Systems
         RotateLeft = 1 << 4,
         RotateRight = 1 << 5,
         Brake = 1 << 6,
+        // Carpmosia-start - rotate shuttle along movement vector
+        TowardVector = 1 << 7,
+        AgainstVector = 1 << 8,
+        // Carpmosia-end - rotate shuttle along movement vector
+
     }
 
 }
