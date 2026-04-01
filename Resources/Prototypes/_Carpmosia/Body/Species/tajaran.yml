@@ -87,7 +87,9 @@
   id: MobTajaran
   name: Urist McTajaran
   components:
-  # TODO: fixtures
+  - type: MobMover
+    footstepModifier: 0.35
+  # TODO: fixtures?
   - type: Speech
     speechSounds: Cat
     speechVerb: Tajaran
@@ -108,11 +110,21 @@
     damage:
       types:
         Slash: 5
-  # TODO: Temperature
-  # TODO: TemperatureDamage
-  # TODO: TemperatureSpeed?
-  # TODO: Bloodstream
-  # TODO: ThermalRegulator
+  - type: Temperature
+    currentTemperature: 312.0
+  - type: TemperatureDamage
+    heatDamageThreshold: 322
+    coldDamageThreshold: 245
+    coldDamage:
+      types:
+        Cold: 0.08
+    heatDamage:
+      types:
+        Heat: 2.0
+  - type: ThermalRegulator
+    normalBodyTemperature: 312.0
+  # TODO: bloodstream?
+
 
 - type: entity
   parent: OrganBase
