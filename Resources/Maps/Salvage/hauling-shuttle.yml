@@ -64,7 +64,7 @@ entities:
         version: 2
         nodes:
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF0008FF'
             id: Bot
           decals:
             0: -4,2
@@ -78,13 +78,13 @@ entities:
             20: 2,4
             21: 3,4
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF0064FF'
             id: Delivery
           decals:
             22: 1,-4
         - node:
             cleanable: True
-            color: '#FFFFFFFF'
+            color: '#A700FFFF'
             id: DirtHeavy
           decals:
             10: 1,-7
@@ -99,7 +99,7 @@ entities:
             40: 9,1
         - node:
             cleanable: True
-            color: '#FFFFFFFF'
+            color: '#FF0600FF'
             id: DirtHeavyMonotile
           decals:
             8: 2,-6
@@ -116,7 +116,7 @@ entities:
             43: 3,4
         - node:
             cleanable: True
-            color: '#FFFFFFFF'
+            color: '#C100FFFF'
             id: DirtLight
           decals:
             33: 1,1
@@ -128,14 +128,14 @@ entities:
             42: 9,0
         - node:
             angle: -1.5707963267948966 rad
-            color: '#FFFFFFFF'
+            color: '#FF008DFF'
             id: LoadingArea
           decals:
             23: 9,-1
             24: 9,1
         - node:
             angle: 1.5707963267948966 rad
-            color: '#FFFFFFFF'
+            color: '#6600FFFF'
             id: LoadingArea
           decals:
             25: -4,-1

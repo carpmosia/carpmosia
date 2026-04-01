@@ -1,1 +1,1 @@
-credits-window-carpmosia-section-title = Carpmosia Contributors
+credits-window-carpmosia-section-title = Honkmosia Contributors

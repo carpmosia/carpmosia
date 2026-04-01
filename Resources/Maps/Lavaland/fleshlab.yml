@@ -87,7 +87,7 @@ entities:
         version: 2
         nodes:
         - node:
-            color: '#FFFFFFFF'
+            color: '#009FFFFF'
             id: Bot
           decals:
             0: 7,6
@@ -107,30 +107,30 @@ entities:
             31: -5,11
             33: -6,11
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF7200FF'
             id: Box
           decals:
             34: -6,10
         - node:
-            color: '#FFFFFFFF'
+            color: '#ACFF00FF'
             id: WarnCornerSmallNW
           decals:
             17: 9,3
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF5F00FF'
             id: WarnLineS
           decals:
             12: 9,4
             13: 9,5
             14: 9,6
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF0087FF'
             id: WarnLineW
           decals:
             15: 7,3
             16: 8,3
         - node:
-            color: '#7F1710FF'
+            color: '#FFE700FF'
             id: splatter
           decals:
             35: -4.651025,2.1459215

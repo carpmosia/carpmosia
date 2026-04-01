@@ -67,14 +67,14 @@ entities:
         version: 2
         nodes:
         - node:
-            color: '#FFFFFFFF'
+            color: '#59FF00FF'
             id: Rock01
           decals:
             32: 7.6594696,-11.012184
             43: -8.036251,8.06707
             45: 8.35035,8.873698
         - node:
-            color: '#FFFFFFFF'
+            color: '#C300FFFF'
             id: Rock02
           decals:
             22: -0.3624614,6.1151476
@@ -83,7 +83,7 @@ entities:
             41: -3.6750066,-10.488697
             42: 2.3974452,-5.316822
         - node:
-            color: '#FFFFFFFF'
+            color: '#0075FFFF'
             id: Rock03
           decals:
             17: -8.879333,-5.857957
@@ -96,7 +96,7 @@ entities:
             44: 4.803475,4.0299487
             46: -11.360743,0.72961617
         - node:
-            color: '#FFFFFFFF'
+            color: '#FFE400FF'
             id: Rock04
           decals:
             19: 0.41134107,-7.708077
@@ -108,7 +108,7 @@ entities:
             38: -5.3748045,-5.973072
             47: -8.407618,0.66711617
         - node:
-            color: '#FFFFFFFF'
+            color: '#5700FFFF'
             id: Rock05
           decals:
             18: -8.869246,-5.089143
@@ -118,7 +118,7 @@ entities:
             35: 10.642217,-8.840775
             39: -6.6404295,-6.098072
         - node:
-            color: '#FFFFFFFF'
+            color: '#9F00FFFF'
             id: Rock06
           decals:
             1: 5.0505157,-2.985314
@@ -130,7 +130,7 @@ entities:
             15: -7.106226,4.807768
             16: -9.532613,3.282668
         - node:
-            color: '#FFFFFFFF'
+            color: '#001BFFFF'
             id: Rock07
           decals:
             0: -4.957297,-3.032189
@@ -143,7 +143,7 @@ entities:
             11: -4.051655,-7.2798786
         - node:
             cleanable: True
-            color: '#5F544CFF'
+            color: '#FFFA00FF'
             id: footprint
           decals:
             60: 0.4189269,7.917552
@@ -153,7 +153,7 @@ entities:
         - node:
             cleanable: True
             angle: 1.5707963267948966 rad
-            color: '#5F544CFF'
+            color: '#001EFFFF'
             id: footprint
           decals:
             52: -7.505711,-0.16057321
@@ -163,7 +163,7 @@ entities:
         - node:
             cleanable: True
             angle: 3.141592653589793 rad
-            color: '#5F544CFF'
+            color: '#0073FFFF'
             id: footprint
           decals:
             56: -0.2088359,-4.129323
@@ -173,7 +173,7 @@ entities:
         - node:
             cleanable: True
             angle: 4.71238898038469 rad
-            color: '#5F544CFF'
+            color: '#FF9E00FF'
             id: footprint
           decals:
             48: -4.3338356,0.23005176

@@ -62,7 +62,7 @@ entities:
         - node:
             cleanable: True
             zIndex: 1
-            color: '#FFFFFFFF'
+            color: '#3400FFFF'
             id: DirtHeavy
           decals:
             25: 0,5
@@ -73,7 +73,7 @@ entities:
         - node:
             cleanable: True
             zIndex: 1
-            color: '#FFFFFFFF'
+            color: '#FFCF00FF'
             id: DirtMedium
           decals:
             30: 5,4
@@ -89,7 +89,7 @@ entities:
             40: 5,0
             41: 5,-1
         - node:
-            color: '#A461063C'
+            color: '#00D7FFFF'
             id: FullTileOverlayGreyscale
           decals:
             1: 5,5
@@ -98,62 +98,62 @@ entities:
             14: 0,5
             18: 5,3
         - node:
-            color: '#A461063C'
+            color: '#0095FFFF'
             id: HalfTileOverlayGreyscale180
           decals:
             0: 5,6
         - node:
-            color: '#A461063C'
+            color: '#00FFE8FF'
             id: HalfTileOverlayGreyscale270
           decals:
             7: 10,5
             20: 5,1
         - node:
-            color: '#A461063C'
+            color: '#C7FF00FF'
             id: QuarterTileOverlayGreyscale
           decals:
             3: 7,5
             8: 11,5
             16: -2,5
         - node:
-            color: '#A461063C'
+            color: '#F100FFFF'
             id: QuarterTileOverlayGreyscale180
           decals:
             4: 7,5
             15: -1,5
             23: 5,-2
         - node:
-            color: '#A461063C'
+            color: '#FF2800FF'
             id: QuarterTileOverlayGreyscale270
           decals:
             9: 12,5
             24: 5,-1
         - node:
-            color: '#A461063C'
+            color: '#FF9200FF'
             id: QuarterTileOverlayGreyscale90
           decals:
             22: 5,-1
         - node:
             zIndex: 1
-            color: '#FFFFFFFF'
+            color: '#0033FFFF'
             id: Rock06
           decals:
             42: 8,10
             43: 4,0
         - node:
-            color: '#A461063C'
+            color: '#0FFF00FF'
             id: ThreeQuarterTileOverlayGreyscale
           decals:
             6: 9,5
             10: 4,5
             19: 5,2
         - node:
-            color: '#A461063C'
+            color: '#0013FFFF'
             id: ThreeQuarterTileOverlayGreyscale180
           decals:
             21: 5,0
         - node:
-            color: '#A461063C'
+            color: '#9D00FFFF'
             id: ThreeQuarterTileOverlayGreyscale270
           decals:
             2: 6,5

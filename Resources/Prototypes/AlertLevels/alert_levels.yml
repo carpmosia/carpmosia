@@ -14,6 +14,13 @@
       forceEnableEmergencyLights: true
       emergencyLightColor: DodgerBlue
       shuttleTime: 600
+    pink:
+      announcement: alert-level-pink-announcement
+      sound: /Audio/Items/bikehorn.ogg
+      color: Pink
+      emergencyLightColor: Pink
+      forceEnableEmergencyLights: true
+      shuttleTime: 600
     violet:
       announcement: alert-level-violet-announcement
       sound: /Audio/Misc/notice1.ogg

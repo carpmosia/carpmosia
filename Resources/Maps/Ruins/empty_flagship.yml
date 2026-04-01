@@ -158,21 +158,21 @@ entities:
         - node:
             cleanable: True
             zIndex: 1
-            color: '#3100007F'
+            color: '#FF00D5FF'
             id: Dirt
           decals:
             43: 34.06549,-6.739004
         - node:
             cleanable: True
             zIndex: 1
-            color: '#FFFFFF66'
+            color: '#ACFF00FF'
             id: Dirt
           decals:
             44: 21.10283,-12.718225
         - node:
             cleanable: True
             zIndex: 1
-            color: '#FFFFFFFF'
+            color: '#FF0F00FF'
             id: Dirt
           decals:
             36: 17,5
@@ -182,7 +182,7 @@ entities:
         - node:
             cleanable: True
             zIndex: 1
-            color: '#FFFFFFFF'
+            color: '#3EFF00FF'
             id: DirtLight
           decals:
             39: 16,6
@@ -190,17 +190,17 @@ entities:
         - node:
             cleanable: True
             zIndex: 1
-            color: '#FFFFFFFF'
+            color: '#FF0096FF'
             id: DirtMedium
           decals:
             38: 17,6
         - node:
-            color: '#DE3A3A96'
+            color: '#FF008FFF'
             id: HalfTileOverlayGreyscale270
           decals:
             29: 48,-5
         - node:
-            color: '#DE3A3A96'
+            color: '#FF003EFF'
             id: QuarterTileOverlayGreyscale
           decals:
             19: 51,-3
@@ -208,7 +208,7 @@ entities:
             21: 49,-3
             22: 48,-4
         - node:
-            color: '#DE3A3A96'
+            color: '#007FFFFF'
             id: QuarterTileOverlayGreyscale180
           decals:
             13: 51,-9
@@ -218,7 +218,7 @@ entities:
             17: 52,-5
             18: 52,-4
         - node:
-            color: '#DE3A3A96'
+            color: '#FF00BBFF'
             id: QuarterTileOverlayGreyscale270
           decals:
             3: 48,-4
@@ -226,7 +226,7 @@ entities:
             5: 50,-9
             6: 51,-9
         - node:
-            color: '#DE3A3A96'
+            color: '#FF00FCFF'
             id: QuarterTileOverlayGreyscale90
           decals:
             7: 51,-3
@@ -237,14 +237,14 @@ entities:
             12: 52,-6
         - node:
             cleanable: True
-            color: '#FFFFFFFF'
+            color: '#4000FFFF'
             id: Remains
           decals:
             30: 112,-1
         - node:
             cleanable: True
             zIndex: 1
-            color: '#FFFFFFFF'
+            color: '#FF0D00FF'
             id: Remains
           decals:
             33: 3,-2
@@ -252,34 +252,34 @@ entities:
             35: 61,-21
             45: 59,-16
         - node:
-            color: '#DE3A3A96'
+            color: '#00FFFDFF'
             id: ThreeQuarterTileOverlayGreyscale
           decals:
             0: 48,-3
         - node:
-            color: '#DE3A3A96'
+            color: '#A800FFFF'
             id: ThreeQuarterTileOverlayGreyscale270
           decals:
             1: 48,-9
         - node:
-            color: '#DE3A3A96'
+            color: '#E6FF00FF'
             id: ThreeQuarterTileOverlayGreyscale90
           decals:
             2: 52,-3
         - node:
-            color: '#FFFFFFFF'
+            color: '#FFB300FF'
             id: WarnCornerNE
           decals:
             25: 62,-19
             27: 62,-3
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF8200FF'
             id: WarnCornerSE
           decals:
             24: 62,-21
             26: 62,-5
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF0087FF'
             id: WarnLineE
           decals:
             23: 62,-20
@@ -288,7 +288,7 @@ entities:
             cleanable: True
             zIndex: 1
             angle: 1.3962634015954636 rad
-            color: '#310000EF'
+            color: '#DD00FFFF'
             id: splatter
           decals:
             31: 32.54619,-10.905022
@@ -296,7 +296,7 @@ entities:
             cleanable: True
             zIndex: 1
             angle: 1.3962634015954636 rad
-            color: '#310000FF'
+            color: '#FF2500FF'
             id: splatter
           decals:
             32: 36.03916,-14.974812

@@ -1,1 +1,1 @@
-changelog-tab-title-Carpmosia = Carpmosia
+changelog-tab-title-Carpmosia = Honkmosia

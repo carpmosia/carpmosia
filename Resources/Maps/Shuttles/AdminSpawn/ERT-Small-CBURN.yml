@@ -67,43 +67,43 @@ entities:
         version: 2
         nodes:
         - node:
-            color: '#334E6DC8'
+            color: '#FF00E3FF'
             id: BrickTileWhiteCornerNe
           decals:
             36: -1,6
         - node:
-            color: '#334E6DC8'
+            color: '#00FFA7FF'
             id: BrickTileWhiteCornerNw
           decals:
             35: -2,6
         - node:
-            color: '#334E6DC8'
+            color: '#A600FFFF'
             id: BrickTileWhiteCornerSe
           decals:
             34: -1,-1
         - node:
-            color: '#334E6DC8'
+            color: '#90FF00FF'
             id: BrickTileWhiteCornerSw
           decals:
             2: -3,7
             33: -2,-1
         - node:
-            color: '#334E6DC8'
+            color: '#00CDFFFF'
             id: BrickTileWhiteEndE
           decals:
             1: -2,7
         - node:
-            color: '#334E6DC8'
+            color: '#0040FFFF'
             id: BrickTileWhiteEndN
           decals:
             0: -3,8
         - node:
-            color: '#334E6DC8'
+            color: '#0074FFFF'
             id: BrickTileWhiteInnerNe
           decals:
             3: -3,7
         - node:
-            color: '#334E6DC8'
+            color: '#C600FFFF'
             id: BrickTileWhiteLineE
           decals:
             21: -1,5
@@ -113,7 +113,7 @@ entities:
             25: -1,1
             26: -1,0
         - node:
-            color: '#334E6DC8'
+            color: '#00FFCFFF'
             id: BrickTileWhiteLineW
           decals:
             27: -2,0
@@ -123,75 +123,75 @@ entities:
             31: -2,4
             32: -2,5
         - node:
-            color: '#334E6DC8'
+            color: '#D500FFFF'
             id: MiniTileWhiteBox
           decals:
             16: -5,6
         - node:
-            color: '#334E6DC8'
+            color: '#CF00FFFF'
             id: MiniTileWhiteCornerNe
           decals:
             17: -4,5
         - node:
-            color: '#334E6DC8'
+            color: '#4100FFFF'
             id: MiniTileWhiteCornerNw
           decals:
             18: -5,5
         - node:
-            color: '#334E6DC8'
+            color: '#00A2FFFF'
             id: MiniTileWhiteCornerSe
           decals:
             19: -4,3
         - node:
-            color: '#334E6DC8'
+            color: '#7200FFFF'
             id: MiniTileWhiteCornerSw
           decals:
             20: -5,3
         - node:
-            color: '#334E6DC8'
+            color: '#FF00ACFF'
             id: MiniTileWhiteLineE
           decals:
             14: -4,4
         - node:
-            color: '#334E6DC8'
+            color: '#6700FFFF'
             id: MiniTileWhiteLineW
           decals:
             15: -5,4
         - node:
-            color: '#FFFFFFFF'
+            color: '#0004FFFF'
             id: WoodTrimThinCornerNw
           decals:
             10: -5,1
         - node:
-            color: '#FFFFFFFF'
+            color: '#CD00FFFF'
             id: WoodTrimThinCornerSe
           decals:
             7: -3,-1
         - node:
-            color: '#FFFFFFFF'
+            color: '#00FF02FF'
             id: WoodTrimThinCornerSw
           decals:
             12: -5,-1
         - node:
-            color: '#FFFFFFFF'
+            color: '#00FF7BFF'
             id: WoodTrimThinLineE
           decals:
             4: -3,2
             5: -3,1
             6: -3,0
         - node:
-            color: '#FFFFFFFF'
+            color: '#2D00FFFF'
             id: WoodTrimThinLineN
           decals:
             13: -4,1
         - node:
-            color: '#FFFFFFFF'
+            color: '#0019FFFF'
             id: WoodTrimThinLineS
           decals:
             8: -4,-1
             9: -5,-1
         - node:
-            color: '#FFFFFFFF'
+            color: '#00F8FFFF'
             id: WoodTrimThinLineW
           decals:
             11: -5,0
@@ -843,7 +843,7 @@ entities:
       pos: -2.5,-3.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#00FF3FFF'
 - proto: GasPipeBend
   entities:
   - uid: 86
@@ -853,7 +853,7 @@ entities:
       pos: -1.5,0.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#0055CCFF'
+      color: '#5B00FFFF'
   - uid: 87
     components:
     - type: Transform
@@ -861,7 +861,7 @@ entities:
       pos: -1.5,-1.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#C000FFFF'
   - uid: 100
     components:
     - type: Transform
@@ -869,7 +869,7 @@ entities:
       pos: -0.5,-1.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#7900FFFF'
   - uid: 113
     components:
     - type: Transform
@@ -877,14 +877,14 @@ entities:
       pos: -1.5,-2.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#A300FFFF'
   - uid: 217
     components:
     - type: Transform
       pos: -0.5,7.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#00ABFFFF'
   - uid: 232
     components:
     - type: Transform
@@ -892,7 +892,7 @@ entities:
       pos: -4.5,1.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#00FFECFF'
   - uid: 233
     components:
     - type: Transform
@@ -900,7 +900,7 @@ entities:
       pos: -4.5,3.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#FF0035FF'
 - proto: GasPipeStraight
   entities:
   - uid: 90
@@ -910,7 +910,7 @@ entities:
       pos: -2.5,4.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#0055CCFF'
+      color: '#F9FF00FF'
   - uid: 91
     components:
     - type: Transform
@@ -918,7 +918,7 @@ entities:
       pos: -1.5,2.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#0055CCFF'
+      color: '#AAFF00FF'
   - uid: 92
     components:
     - type: Transform
@@ -926,7 +926,7 @@ entities:
       pos: -1.5,1.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#0055CCFF'
+      color: '#00E7FFFF'
   - uid: 93
     components:
     - type: Transform
@@ -934,7 +934,7 @@ entities:
       pos: -1.5,3.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#0055CCFF'
+      color: '#00A3FFFF'
   - uid: 99
     components:
     - type: Transform
@@ -942,7 +942,7 @@ entities:
       pos: -2.5,-0.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#0055CCFF'
+      color: '#3100FFFF'
   - uid: 214
     components:
     - type: Transform
@@ -950,7 +950,7 @@ entities:
       pos: -1.5,5.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#0055CCFF'
+      color: '#00FF05FF'
   - uid: 215
     components:
     - type: Transform
@@ -958,7 +958,7 @@ entities:
       pos: -1.5,6.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#0055CCFF'
+      color: '#21FF00FF'
   - uid: 216
     components:
     - type: Transform
@@ -966,49 +966,49 @@ entities:
       pos: -1.5,7.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#FFD900FF'
   - uid: 218
     components:
     - type: Transform
       pos: -0.5,6.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#00FF71FF'
   - uid: 219
     components:
     - type: Transform
       pos: -0.5,5.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#0055FFFF'
   - uid: 220
     components:
     - type: Transform
       pos: -0.5,4.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#7CFF00FF'
   - uid: 221
     components:
     - type: Transform
       pos: -0.5,2.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#FFDC00FF'
   - uid: 222
     components:
     - type: Transform
       pos: -0.5,0.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#0064FFFF'
   - uid: 223
     components:
     - type: Transform
       pos: -0.5,-0.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#0300FFFF'
   - uid: 226
     components:
     - type: Transform
@@ -1016,7 +1016,7 @@ entities:
       pos: -1.5,3.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#AFFF00FF'
   - uid: 227
     components:
     - type: Transform
@@ -1024,7 +1024,7 @@ entities:
       pos: -2.5,3.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#FF2D00FF'
   - uid: 228
     components:
     - type: Transform
@@ -1032,7 +1032,7 @@ entities:
       pos: -3.5,3.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#00FBFFFF'
   - uid: 229
     components:
     - type: Transform
@@ -1040,7 +1040,7 @@ entities:
       pos: -1.5,1.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#00FF75FF'
   - uid: 230
     components:
     - type: Transform
@@ -1048,7 +1048,7 @@ entities:
       pos: -2.5,1.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#FF005FFF'
   - uid: 231
     components:
     - type: Transform
@@ -1056,7 +1056,7 @@ entities:
       pos: -3.5,1.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#00FF5FFF'
 - proto: GasPipeTJunction
   entities:
   - uid: 49
@@ -1066,7 +1066,7 @@ entities:
       pos: -2.5,-2.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#F2FF00FF'
   - uid: 88
     components:
     - type: Transform
@@ -1074,14 +1074,14 @@ entities:
       pos: -1.5,4.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#0055CCFF'
+      color: '#FFFB00FF'
   - uid: 94
     components:
     - type: Transform
       pos: -2.5,0.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#0055CCFF'
+      color: '#81FF00FF'
   - uid: 95
     components:
     - type: Transform
@@ -1089,7 +1089,7 @@ entities:
       pos: -2.5,-1.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#0055CCFF'
+      color: '#3A00FFFF'
   - uid: 224
     components:
     - type: Transform
@@ -1097,7 +1097,7 @@ entities:
       pos: -0.5,1.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#FFC400FF'
   - uid: 225
     components:
     - type: Transform
@@ -1105,7 +1105,7 @@ entities:
       pos: -0.5,3.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#84FF00FF'
 - proto: GasPort
   entities:
   - uid: 89
@@ -1115,7 +1115,7 @@ entities:
       pos: -3.5,-1.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#0055CCFF'
+      color: '#00FF8EFF'
 - proto: GasVentPump
   entities:
   - uid: 96
@@ -1125,7 +1125,7 @@ entities:
       pos: -1.5,-1.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#0055CCFF'
+      color: '#9100FFFF'
   - uid: 97
     components:
     - type: Transform
@@ -1133,7 +1133,7 @@ entities:
       pos: -3.5,0.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#0055CCFF'
+      color: '#0060FFFF'
   - uid: 98
     components:
     - type: Transform
@@ -1141,14 +1141,14 @@ entities:
       pos: -3.5,4.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#0055CCFF'
+      color: '#00FF3EFF'
   - uid: 213
     components:
     - type: Transform
       pos: -1.5,7.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#0055CCFF'
+      color: '#FFF100FF'
 - proto: GasVentScrubber
   entities:
   - uid: 41
@@ -1157,7 +1157,7 @@ entities:
       pos: -2.5,-1.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#FF0041FF'
   - uid: 210
     components:
     - type: Transform
@@ -1165,14 +1165,14 @@ entities:
       pos: -4.5,0.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#FF1200FF'
   - uid: 211
     components:
     - type: Transform
       pos: -4.5,4.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#AE00FFFF'
   - uid: 212
     components:
     - type: Transform
@@ -1180,7 +1180,7 @@ entities:
       pos: -2.5,7.5
       parent: 1
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#2000FFFF'
 - proto: GeneratorBasic15kW
   entities:
   - uid: 42

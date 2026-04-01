@@ -11,6 +11,10 @@ alert-level-blue = Blue
 alert-level-blue-announcement = There is a confirmed threat to the station. Security should perform random checks. Crewmembers are advised to be vigilant and report suspicious activity to security.
 alert-level-blue-instructions = Crewmembers are advised to be vigilant and report suspicious activity to security.
 
+alert-level-pink = Pink
+alert-level-pink-announcement = There is a confirmed clown on the station. Security should perform random checks. Crewmembers are advised to be vigilant and report clown activity to security.
+alert-level-pink-instructions = Crewmembers are advised to be vigilant and report clown activity to security.
+
 alert-level-red = Red
 alert-level-red-announcement = There is an immediate threat to the station. Security should prepare to use lethal force if necessary. Crewmembers should find a safe place to shelter in, and are advised to follow any present authorities.
 alert-level-red-instructions = Crewmembers should find a safe place to shelter in, and are advised to follow any present authorities.

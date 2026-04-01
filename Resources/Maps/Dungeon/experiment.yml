@@ -147,7 +147,7 @@ entities:
         nodes:
         - node:
             angle: -1.5707963267948966 rad
-            color: '#FFFFFFFF'
+            color: '#00FF7CFF'
             id: Arrows
           decals:
             258: 40,39
@@ -156,19 +156,19 @@ entities:
             642: 17,26
             643: 17,27
         - node:
-            color: '#FFFFFFFF'
+            color: '#C800FFFF'
             id: Arrows
           decals:
             1331: 41,14
         - node:
             angle: 1.5707963267948966 rad
-            color: '#FFFFFFFF'
+            color: '#0056FFFF'
             id: Arrows
           decals:
             259: 46,39
             378: 0,35
         - node:
-            color: '#FFFFFFFF'
+            color: '#00FFEBFF'
             id: Bot
           decals:
             54: 0,43
@@ -189,7 +189,7 @@ entities:
             925: 1,12
             926: 1,13
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF00C8FF'
             id: BotLeft
           decals:
             50: 2,48
@@ -200,30 +200,30 @@ entities:
             533: 6,28
         - node:
             cleanable: True
-            color: '#FFFFFFFF'
+            color: '#00FFD4FF'
             id: BotLeft
           decals:
             619: 14,42
         - node:
-            color: '#FFFFFFFF'
+            color: '#005AFFFF'
             id: BotRight
           decals:
             623: 14,26
             636: 14,25
             637: 14,27
         - node:
-            color: '#FFFFFFFF'
+            color: '#00FF4AFF'
             id: Box
           decals:
             5: 5,43
         - node:
-            color: '#D381C996'
+            color: '#3700FFFF'
             id: BrickTileSteelCornerNe
           decals:
             963: 14,16
             1152: 22,10
         - node:
-            color: '#FFFFFFFF'
+            color: '#00FF89FF'
             id: BrickTileSteelCornerNe
           decals:
             485: 11,31
@@ -231,13 +231,13 @@ entities:
             761: 9,22
             1299: 38,16
         - node:
-            color: '#D381C996'
+            color: '#CBFF00FF'
             id: BrickTileSteelCornerNw
           decals:
             964: 8,16
             1153: 12,10
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF00A6FF'
             id: BrickTileSteelCornerNw
           decals:
             480: 5,30
@@ -246,13 +246,13 @@ entities:
             1297: 35,13
             1298: 37,16
         - node:
-            color: '#D381C996'
+            color: '#FF0099FF'
             id: BrickTileSteelCornerSe
           decals:
             961: 14,12
             1151: 22,6
         - node:
-            color: '#FFFFFFFF'
+            color: '#00DAFFFF'
             id: BrickTileSteelCornerSe
           decals:
             479: 7,32
@@ -260,13 +260,13 @@ entities:
             763: 9,18
             1300: 38,12
         - node:
-            color: '#D381C996'
+            color: '#00FFEDFF'
             id: BrickTileSteelCornerSw
           decals:
             962: 8,12
             1150: 12,6
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF6E00FF'
             id: BrickTileSteelCornerSw
           decals:
             488: 1,31
@@ -274,40 +274,40 @@ entities:
             765: 6,19
             1301: 35,12
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF00D9FF'
             id: BrickTileSteelEndN
           decals:
             835: 1,7
             836: 4,7
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF0017FF'
             id: BrickTileSteelInnerNe
           decals:
             487: 11,30
             772: 9,21
             781: 13,19
         - node:
-            color: '#FFFFFFFF'
+            color: '#00B4FFFF'
             id: BrickTileSteelInnerNw
           decals:
             773: 7,21
             780: 15,19
             1302: 37,13
         - node:
-            color: '#FFFFFFFF'
+            color: '#BCFF00FF'
             id: BrickTileSteelInnerSe
           decals:
             770: 9,19
             779: 13,21
         - node:
-            color: '#FFFFFFFF'
+            color: '#00FFABFF'
             id: BrickTileSteelInnerSw
           decals:
             489: 1,32
             771: 7,19
             778: 15,21
         - node:
-            color: '#D381C996'
+            color: '#FF6D00FF'
             id: BrickTileSteelLineE
           decals:
             945: 14,13
@@ -317,7 +317,7 @@ entities:
             1145: 22,8
             1146: 22,9
         - node:
-            color: '#FFFFFFFF'
+            color: '#00FFC6FF'
             id: BrickTileSteelLineE
           decals:
             769: 10,20
@@ -328,7 +328,7 @@ entities:
             1307: 38,14
             1308: 38,15
         - node:
-            color: '#D381C996'
+            color: '#0033FFFF'
             id: BrickTileSteelLineN
           decals:
             951: 11,16
@@ -346,7 +346,7 @@ entities:
             1142: 13,10
             1143: 14,10
         - node:
-            color: '#FFFFFFFF'
+            color: '#22FF00FF'
             id: BrickTileSteelLineN
           decals:
             481: 7,30
@@ -367,7 +367,7 @@ entities:
             1162: 13,6
             1303: 36,13
         - node:
-            color: '#D381C996'
+            color: '#FF004AFF'
             id: BrickTileSteelLineS
           decals:
             956: 13,12
@@ -385,7 +385,7 @@ entities:
             1133: 14,6
             1134: 13,6
         - node:
-            color: '#FFFFFFFF'
+            color: '#5FFF00FF'
             id: BrickTileSteelLineS
           decals:
             477: 4,32
@@ -407,7 +407,7 @@ entities:
             1309: 37,12
             1310: 36,12
         - node:
-            color: '#D381C996'
+            color: '#28FF00FF'
             id: BrickTileSteelLineW
           decals:
             948: 8,13
@@ -417,7 +417,7 @@ entities:
             1148: 12,8
             1149: 12,9
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF00AFFF'
             id: BrickTileSteelLineW
           decals:
             767: 6,20
@@ -427,19 +427,19 @@ entities:
             1304: 37,14
             1305: 37,15
         - node:
-            color: '#9FED5896'
+            color: '#9300FFFF'
             id: BrickTileWhiteCornerNe
           decals:
             524: 6,28
         - node:
-            color: '#D381C996'
+            color: '#FF00F7FF'
             id: BrickTileWhiteCornerNe
           decals:
             501: 11,31
             748: 7,19
             785: 15,21
         - node:
-            color: '#FFFFFFFF'
+            color: '#FCFF00FF'
             id: BrickTileWhiteCornerNe
           decals:
             71: 6,40
@@ -457,24 +457,24 @@ entities:
             998: 54,4
             1072: 15,4
         - node:
-            color: '#9FED5896'
+            color: '#88FF00FF'
             id: BrickTileWhiteCornerNw
           decals:
             525: 4,28
         - node:
-            color: '#D381C996'
+            color: '#FF00C2FF'
             id: BrickTileWhiteCornerNw
           decals:
             498: 5,30
             746: 9,19
             784: 13,21
         - node:
-            color: '#EFB34196'
+            color: '#0067FFFF'
             id: BrickTileWhiteCornerNw
           decals:
             870: 24,22
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF00F1FF'
             id: BrickTileWhiteCornerNw
           decals:
             74: 0,40
@@ -492,19 +492,19 @@ entities:
             994: 36,4
             1071: 1,4
         - node:
-            color: '#9FED5896'
+            color: '#00FFE4FF'
             id: BrickTileWhiteCornerSe
           decals:
             529: 6,24
         - node:
-            color: '#D381C996'
+            color: '#FF0100FF'
             id: BrickTileWhiteCornerSe
           decals:
             495: 7,32
             747: 7,21
             786: 15,19
         - node:
-            color: '#FFFFFFFF'
+            color: '#009DFFFF'
             id: BrickTileWhiteCornerSe
           decals:
             72: 6,38
@@ -522,24 +522,24 @@ entities:
             1043: 46,0
             1073: 15,0
         - node:
-            color: '#9FED5896'
+            color: '#FF8F00FF'
             id: BrickTileWhiteCornerSw
           decals:
             528: 4,24
         - node:
-            color: '#D381C996'
+            color: '#FFA100FF'
             id: BrickTileWhiteCornerSw
           decals:
             508: 1,31
             749: 9,21
             787: 13,19
         - node:
-            color: '#EFB34196'
+            color: '#FFE900FF'
             id: BrickTileWhiteCornerSw
           decals:
             874: 24,18
         - node:
-            color: '#FFFFFFFF'
+            color: '#BDFF00FF'
             id: BrickTileWhiteCornerSw
           decals:
             73: 0,38
@@ -558,24 +558,24 @@ entities:
             1044: 44,0
             1074: 1,0
         - node:
-            color: '#D381C996'
+            color: '#00FFD1FF'
             id: BrickTileWhiteEndE
           decals:
             117: 9,39
             203: 26,39
         - node:
-            color: '#D381C996'
+            color: '#FFDB00FF'
             id: BrickTileWhiteEndW
           decals:
             116: 13,39
             202: 28,39
         - node:
-            color: '#334E6DC8'
+            color: '#FF1000FF'
             id: BrickTileWhiteInnerNe
           decals:
             335: 16,42
         - node:
-            color: '#D381C996'
+            color: '#00AFFFFF'
             id: BrickTileWhiteInnerNe
           decals:
             121: 9,38
@@ -587,17 +587,17 @@ entities:
             753: 7,18
             861: 21,21
         - node:
-            color: '#FFFFFFFF'
+            color: '#00D0FFFF'
             id: BrickTileWhiteInnerNe
           decals:
             1042: 38,2
         - node:
-            color: '#334E6DC8'
+            color: '#6600FFFF'
             id: BrickTileWhiteInnerNw
           decals:
             336: 22,42
         - node:
-            color: '#D381C996'
+            color: '#00FFB2FF'
             id: BrickTileWhiteInnerNw
           decals:
             120: 13,38
@@ -608,17 +608,17 @@ entities:
             757: 9,18
             860: 19,21
         - node:
-            color: '#FFFFFFFF'
+            color: '#FFEC00FF'
             id: BrickTileWhiteInnerNw
           decals:
             1041: 52,2
         - node:
-            color: '#334E6DC8'
+            color: '#CE00FFFF'
             id: BrickTileWhiteInnerSe
           decals:
             334: 16,48
         - node:
-            color: '#D381C996'
+            color: '#6C00FFFF'
             id: BrickTileWhiteInnerSe
           decals:
             119: 9,40
@@ -629,12 +629,12 @@ entities:
             756: 7,22
             862: 21,19
         - node:
-            color: '#334E6DC8'
+            color: '#00FFC5FF'
             id: BrickTileWhiteInnerSw
           decals:
             333: 22,48
         - node:
-            color: '#D381C996'
+            color: '#11FF00FF'
             id: BrickTileWhiteInnerSw
           decals:
             118: 13,40
@@ -646,7 +646,7 @@ entities:
             751: 9,22
             863: 19,19
         - node:
-            color: '#334E6DC8'
+            color: '#FF3A00FF'
             id: BrickTileWhiteLineE
           decals:
             317: 16,43
@@ -654,14 +654,14 @@ entities:
             319: 16,46
             320: 16,47
         - node:
-            color: '#9FED5896'
+            color: '#FF0024FF'
             id: BrickTileWhiteLineE
           decals:
             521: 6,25
             522: 6,26
             523: 6,27
         - node:
-            color: '#D381C996'
+            color: '#7BFF00FF'
             id: BrickTileWhiteLineE
           decals:
             11: 3,42
@@ -677,14 +677,14 @@ entities:
             1227: 18,2
             1228: 18,4
         - node:
-            color: '#EFB34196'
+            color: '#D7FF00FF'
             id: BrickTileWhiteLineE
           decals:
             864: 28,19
             865: 28,20
             866: 28,21
         - node:
-            color: '#FFFFFFFF'
+            color: '#7300FFFF'
             id: BrickTileWhiteLineE
           decals:
             85: 6,39
@@ -712,7 +712,7 @@ entities:
             1076: 15,2
             1077: 15,3
         - node:
-            color: '#334E6DC8'
+            color: '#1500FFFF'
             id: BrickTileWhiteLineN
           decals:
             313: 21,42
@@ -720,7 +720,7 @@ entities:
             315: 18,42
             316: 17,42
         - node:
-            color: '#9FED5896'
+            color: '#7CFF00FF'
             id: BrickTileWhiteLineN
           decals:
             531: 5,28
@@ -729,7 +729,7 @@ entities:
             1190: 13,6
             1191: 15,6
         - node:
-            color: '#D381C996'
+            color: '#00B5FFFF'
             id: BrickTileWhiteLineN
           decals:
             110: 12,38
@@ -760,7 +760,7 @@ entities:
             1311: 33,16
             1312: 32,16
         - node:
-            color: '#EFB34196'
+            color: '#00FF62FF'
             id: BrickTileWhiteLineN
           decals:
             867: 27,22
@@ -771,7 +771,7 @@ entities:
             1258: 27,9
             1259: 26,9
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF00A1FF'
             id: BrickTileWhiteLineN
           decals:
             75: 1,40
@@ -862,7 +862,7 @@ entities:
             1098: 12,4
             1099: 4,4
         - node:
-            color: '#334E6DC8'
+            color: '#00ACFFFF'
             id: BrickTileWhiteLineS
           decals:
             321: 17,48
@@ -870,7 +870,7 @@ entities:
             323: 20,48
             324: 21,48
         - node:
-            color: '#9FED5896'
+            color: '#FF00C8FF'
             id: BrickTileWhiteLineS
           decals:
             530: 5,24
@@ -879,7 +879,7 @@ entities:
             1186: 15,10
             1187: 13,10
         - node:
-            color: '#D381C996'
+            color: '#9700FFFF'
             id: BrickTileWhiteLineS
           decals:
             14: 4,45
@@ -913,7 +913,7 @@ entities:
             1313: 32,14
             1314: 33,14
         - node:
-            color: '#EFB34196'
+            color: '#FF3500FF'
             id: BrickTileWhiteLineS
           decals:
             875: 25,18
@@ -924,7 +924,7 @@ entities:
             1256: 27,7
             1257: 26,7
         - node:
-            color: '#FFFFFFFF'
+            color: '#FFD400FF'
             id: BrickTileWhiteLineS
           decals:
             80: 5,38
@@ -1005,7 +1005,7 @@ entities:
             1069: 13,0
             1070: 14,0
         - node:
-            color: '#334E6DC8'
+            color: '#00A6FFFF'
             id: BrickTileWhiteLineW
           decals:
             325: 22,43
@@ -1013,13 +1013,13 @@ entities:
             327: 22,46
             328: 22,47
         - node:
-            color: '#9FED5896'
+            color: '#3700FFFF'
             id: BrickTileWhiteLineW
           decals:
             526: 4,27
             527: 4,26
         - node:
-            color: '#D381C996'
+            color: '#0058FFFF'
             id: BrickTileWhiteLineW
           decals:
             6: 3,47
@@ -1037,14 +1037,14 @@ entities:
             1231: 34,2
             1232: 34,4
         - node:
-            color: '#EFB34196'
+            color: '#FF0007FF'
             id: BrickTileWhiteLineW
           decals:
             871: 24,21
             872: 24,20
             873: 24,19
         - node:
-            color: '#FFFFFFFF'
+            color: '#0060FFFF'
             id: BrickTileWhiteLineW
           decals:
             86: 0,39
@@ -1068,67 +1068,67 @@ entities:
             1080: 1,2
             1081: 1,3
         - node:
-            color: '#FFFFFFFF'
+            color: '#00FCFFFF'
             id: BushAOne
           decals:
             1085: 12,2
         - node:
-            color: '#FFFFFFFF'
+            color: '#00FF49FF'
             id: BushCThree
           decals:
             432: 34,36
             1087: 4,2
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF5B00FF'
             id: BushCTwo
           decals:
             431: 24,36
             790: 12,18
             1082: 8,2
         - node:
-            color: '#FFFFFFFF'
+            color: '#FFDE00FF'
             id: Busha2
           decals:
             1084: 6,2
         - node:
-            color: '#FFFFFFFF'
+            color: '#00FF63FF'
             id: Bushb2
           decals:
             1083: 10,2
         - node:
-            color: '#FFFFFFFF'
+            color: '#48FF00FF'
             id: Bushb3
           decals:
             738: 7.997179,19.971762
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF3A00FF'
             id: Bushc1
           decals:
             1086: 11,2
         - node:
-            color: '#FFFFFFFF'
+            color: '#B1FF00FF'
             id: Bushc3
           decals:
             433: 24,34
         - node:
-            color: '#FFFFFFFF'
+            color: '#00FF59FF'
             id: Bushe4
           decals:
             1097: 4,2
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF00FDFF'
             id: Bushh3
           decals:
             1095: 9,2
             1096: 4,2
         - node:
             cleanable: True
-            color: '#FFFFFFFF'
+            color: '#0004FFFF'
             id: Caution
           decals:
             618: 11,42
         - node:
-            color: '#D381C996'
+            color: '#FF00A6FF'
             id: CheckerNESW
           decals:
             138: 17,39
@@ -1147,12 +1147,12 @@ entities:
             848: 21,20
             849: 20,19
         - node:
-            color: '#EFB34196'
+            color: '#00FF1CFF'
             id: CheckerNESW
           decals:
             264: 8,48
         - node:
-            color: '#D381C996'
+            color: '#FF005CFF'
             id: CheckerNWSE
           decals:
             56: 5,39
@@ -1190,12 +1190,12 @@ entities:
             1017: 53,2
             1018: 53,3
         - node:
-            color: '#EFB34196'
+            color: '#FF7600FF'
             id: CheckerNWSE
           decals:
             265: 14,48
         - node:
-            color: '#FFFFFFFF'
+            color: '#D3FF00FF'
             id: Delivery
           decals:
             293: 13,47
@@ -1223,19 +1223,19 @@ entities:
             1330: 43,16
         - node:
             cleanable: True
-            color: '#FFFFFFFF'
+            color: '#FF8C00FF'
             id: Delivery
           decals:
             591: 8,30
             592: 4,32
         - node:
-            color: '#D381C996'
+            color: '#0058FFFF'
             id: DeliveryGreyscale
           decals:
             649: 34,35
             650: 24,35
         - node:
-            color: '#D381C996'
+            color: '#6A00FFFF'
             id: DiagonalCheckerBOverlay
           decals:
             651: 22,24
@@ -1252,7 +1252,7 @@ entities:
             662: 20,28
         - node:
             cleanable: True
-            color: '#FFFFFFFF'
+            color: '#FF003FFF'
             id: Dirt
           decals:
             19: 4,46
@@ -1287,7 +1287,7 @@ entities:
             1327: 46,14
         - node:
             cleanable: True
-            color: '#FFFFFFFF'
+            color: '#FF2400FF'
             id: DirtHeavy
           decals:
             35: 4,46
@@ -1296,7 +1296,7 @@ entities:
             612: 9,25
         - node:
             cleanable: True
-            color: '#FFFFFFFF'
+            color: '#14FF00FF'
             id: DirtLight
           decals:
             40: 6,46
@@ -1420,7 +1420,7 @@ entities:
             1323: 38,12
         - node:
             cleanable: True
-            color: '#FFFFFFFF'
+            color: '#89FF00FF'
             id: DirtMedium
           decals:
             38: 3,44
@@ -1439,17 +1439,17 @@ entities:
             1316: 33,15
             1317: 34,12
         - node:
-            color: '#FFFFFFFF'
+            color: '#00FF22FF'
             id: FlowersBROne
           decals:
             437: 24,34
         - node:
-            color: '#FFFFFFFF'
+            color: '#FCFF00FF'
             id: FlowersBRTwo
           decals:
             739: 8,21
         - node:
-            color: '#FFFFFFFF'
+            color: '#80FF00FF'
             id: Flowerspv1
           decals:
             436: 34,36
@@ -1457,33 +1457,33 @@ entities:
             1091: 5,2
             1094: 12,2
         - node:
-            color: '#FFFFFFFF'
+            color: '#78FF00FF'
             id: Flowerspv2
           decals:
             1093: 9,2
         - node:
-            color: '#FFFFFFFF'
+            color: '#00FF4AFF'
             id: Flowerspv3
           decals:
             741: 7,20
             1092: 7,2
         - node:
-            color: '#FFFFFFFF'
+            color: '#9DFF00FF'
             id: Flowersy2
           decals:
             435: 24,36
         - node:
-            color: '#FFFFFFFF'
+            color: '#00C7FFFF'
             id: Flowersy3
           decals:
             734: 7.934679,18.971762
         - node:
-            color: '#FFFFFFFF'
+            color: '#E600FFFF'
             id: Flowersy4
           decals:
             434: 34,34
         - node:
-            color: '#9FED5896'
+            color: '#0013FFFF'
             id: FullTileOverlayGreyscale
           decals:
             1172: 21,7
@@ -1499,7 +1499,7 @@ entities:
             1182: 13,8
             1183: 13,9
         - node:
-            color: '#D381C996'
+            color: '#005EFFFF'
             id: FullTileOverlayGreyscale
           decals:
             47: 2,48
@@ -1517,74 +1517,74 @@ entities:
             886: 31,19
             887: 31,18
         - node:
-            color: '#FFFFFFFF'
+            color: '#00FF24FF'
             id: Grassa2
           decals:
             1089: 7,2
         - node:
-            color: '#FFFFFFFF'
+            color: '#00FF97FF'
             id: Grassa4
           decals:
             430: 34,34
             1090: 9,2
         - node:
-            color: '#FFFFFFFF'
+            color: '#00A4FFFF'
             id: Grassa5
           decals:
             735: 8.997179,19.971762
         - node:
-            color: '#FFFFFFFF'
+            color: '#00A8FFFF'
             id: Grassb3
           decals:
             737: 7.997179,21.034262
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF1700FF'
             id: Grassb4
           decals:
             1088: 5,2
         - node:
-            color: '#FFFFFFFF'
+            color: '#3BFF00FF'
             id: Grassb5
           decals:
             736: 7.044054,20.034262
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF0030FF'
             id: Grassd1
           decals:
             732: 7.044054,20.018637
         - node:
-            color: '#FFFFFFFF'
+            color: '#00FF62FF'
             id: Grassd3
           decals:
             429: 24,34
             733: 8.012804,20.987387
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF5700FF'
             id: Grasse1
           decals:
             428: 24,36
             731: 8.981554,20.003012
         - node:
-            color: '#FFFFFFFF'
+            color: '#00FFC3FF'
             id: Grasse2
           decals:
             426: 34,34
             730: 8.059679,20.049887
         - node:
-            color: '#FFFFFFFF'
+            color: '#8700FFFF'
             id: Grasse3
           decals:
             427: 34,36
             729: 8,19
         - node:
-            color: '#52B4E996'
+            color: '#00FFCBFF'
             id: HalfTileOverlayGreyscale
           decals:
             1271: 26,15
             1272: 28,16
             1273: 29,16
         - node:
-            color: '#D381C996'
+            color: '#00FF58FF'
             id: HalfTileOverlayGreyscale
           decals:
             221: 37,38
@@ -1612,19 +1612,19 @@ entities:
             1245: 21,4
             1246: 20,4
         - node:
-            color: '#FFFFFFFF'
+            color: '#0CFF00FF'
             id: HalfTileOverlayGreyscale
           decals:
             1192: 26,2
             1193: 30,2
             1194: 22,2
         - node:
-            color: '#52B4E996'
+            color: '#FF0014FF'
             id: HalfTileOverlayGreyscale180
           decals:
             1275: 28,13
         - node:
-            color: '#D381C996'
+            color: '#00FFD0FF'
             id: HalfTileOverlayGreyscale180
           decals:
             219: 36,40
@@ -1648,19 +1648,19 @@ entities:
             1211: 32,3
             1212: 33,3
         - node:
-            color: '#D381C996'
+            color: '#0007FFFF'
             id: HalfTileOverlayGreyscale270
           decals:
             800: 12,19
             801: 12,20
             802: 12,21
         - node:
-            color: '#52B4E996'
+            color: '#00FFE1FF'
             id: HalfTileOverlayGreyscale90
           decals:
             1274: 30,15
         - node:
-            color: '#D381C996'
+            color: '#FF009DFF'
             id: HalfTileOverlayGreyscale90
           decals:
             797: 16,19
@@ -1669,41 +1669,41 @@ entities:
             890: 32,21
             891: 32,22
         - node:
-            color: '#D381C996'
+            color: '#00E2FFFF'
             id: MiniTileWhiteCornerNe
           decals:
             627: 13,28
         - node:
-            color: '#D381C996'
+            color: '#0012FFFF'
             id: MiniTileWhiteCornerNw
           decals:
             628: 12,28
         - node:
-            color: '#D381C996'
+            color: '#00FF16FF'
             id: MiniTileWhiteCornerSe
           decals:
             633: 13,24
         - node:
-            color: '#D381C996'
+            color: '#FF0062FF'
             id: MiniTileWhiteCornerSw
           decals:
             632: 12,24
         - node:
-            color: '#D381C996'
+            color: '#FF00D4FF'
             id: MiniTileWhiteLineE
           decals:
             624: 13,25
             625: 13,26
             626: 13,27
         - node:
-            color: '#D381C996'
+            color: '#FFF800FF'
             id: MiniTileWhiteLineW
           decals:
             629: 12,27
             630: 12,26
             631: 12,25
         - node:
-            color: '#9FED5812'
+            color: '#FF00D8FF'
             id: MonoOverlay
           decals:
             724: 8,19
@@ -1712,7 +1712,7 @@ entities:
             727: 7,20
             728: 9,20
         - node:
-            color: '#D381C996'
+            color: '#FF0045FF'
             id: MonoOverlay
           decals:
             373: 4,34
@@ -1725,13 +1725,13 @@ entities:
             634: 14,25
             635: 14,27
         - node:
-            color: '#52B4E996'
+            color: '#FF00B9FF'
             id: QuarterTileOverlayGreyscale
           decals:
             1269: 25,14
             1270: 27,15
         - node:
-            color: '#D381C996'
+            color: '#FF6100FF'
             id: QuarterTileOverlayGreyscale
           decals:
             66: 5,38
@@ -1776,19 +1776,19 @@ entities:
             1028: 54,3
             1029: 38,2
         - node:
-            color: '#EFB34196'
+            color: '#BAFF00FF'
             id: QuarterTileOverlayGreyscale
           decals:
             272: 13,48
             273: 12,48
         - node:
-            color: '#52B4E996'
+            color: '#FF6700FF'
             id: QuarterTileOverlayGreyscale180
           decals:
             1267: 27,13
             1268: 29,14
         - node:
-            color: '#D381C996'
+            color: '#006AFFFF'
             id: QuarterTileOverlayGreyscale180
           decals:
             61: 5,40
@@ -1834,7 +1834,7 @@ entities:
             1025: 52,3
             1030: 52,2
         - node:
-            color: '#EFB34196'
+            color: '#FF005EFF'
             id: QuarterTileOverlayGreyscale180
           decals:
             266: 14,44
@@ -1842,7 +1842,7 @@ entities:
             268: 14,46
             269: 14,47
         - node:
-            color: '#D381C996'
+            color: '#FF7700FF'
             id: QuarterTileOverlayGreyscale270
           decals:
             143: 17,40
@@ -1872,7 +1872,7 @@ entities:
             1111: 14,3
             1112: 14,2
         - node:
-            color: '#EFB34196'
+            color: '#FF005FFF'
             id: QuarterTileOverlayGreyscale270
           decals:
             260: 8,44
@@ -1880,7 +1880,7 @@ entities:
             262: 8,46
             263: 8,47
         - node:
-            color: '#D381C996'
+            color: '#DBFF00FF'
             id: QuarterTileOverlayGreyscale90
           decals:
             148: 21,38
@@ -1931,78 +1931,78 @@ entities:
             1124: 2,1
             1125: 2,2
         - node:
-            color: '#EFB34196'
+            color: '#FFA700FF'
             id: QuarterTileOverlayGreyscale90
           decals:
             270: 9,48
             271: 10,48
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF3700FF'
             id: Rock01
           decals:
             841: 22,18
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF0002FF'
             id: Rock03
           decals:
             842: 18,18
         - node:
-            color: '#FFFFFFFF'
+            color: '#4100FFFF'
             id: Rock04
           decals:
             844: 18,22
         - node:
-            color: '#FFFFFFFF'
+            color: '#FFF700FF'
             id: Rock05
           decals:
             843: 22,22
         - node:
-            color: '#FFFFFFFF'
+            color: '#36FF00FF'
             id: StandClear
           decals:
             299: 11,44
         - node:
-            color: '#52B4E996'
+            color: '#00E7FFFF'
             id: ThreeQuarterTileOverlayGreyscale
           decals:
             1260: 25,15
             1261: 24,14
             1262: 27,16
         - node:
-            color: '#D381C996'
+            color: '#FF3700FF'
             id: ThreeQuarterTileOverlayGreyscale
           decals:
             805: 12,22
         - node:
-            color: '#52B4E996'
+            color: '#00FF89FF'
             id: ThreeQuarterTileOverlayGreyscale180
           decals:
             1264: 27,12
             1265: 29,13
             1266: 30,14
         - node:
-            color: '#D381C996'
+            color: '#8B00FFFF'
             id: ThreeQuarterTileOverlayGreyscale180
           decals:
             803: 16,18
         - node:
-            color: '#52B4E996'
+            color: '#FF0015FF'
             id: ThreeQuarterTileOverlayGreyscale90
           decals:
             1263: 30,16
         - node:
-            color: '#D381C996'
+            color: '#FF004AFF'
             id: ThreeQuarterTileOverlayGreyscale90
           decals:
             804: 16,22
         - node:
-            color: '#FFFFFFFF'
+            color: '#00ABFFFF'
             id: WarnBox
           decals:
             17: 4,48
             18: 6,48
         - node:
-            color: '#FFFFFFFF'
+            color: '#FFDC00FF'
             id: WarnCornerNE
           decals:
             519: 2,28
@@ -2012,7 +2012,7 @@ entities:
             1220: 33,2
             1295: 26,13
         - node:
-            color: '#FFFFFFFF'
+            color: '#FFD300FF'
             id: WarnCornerNW
           decals:
             2: 4,44
@@ -2022,40 +2022,40 @@ entities:
             1223: 23,2
             1224: 19,2
         - node:
-            color: '#FFFFFFFF'
+            color: '#00FF46FF'
             id: WarnCornerSE
           decals:
             517: 2,24
         - node:
-            color: '#FFFFFFFF'
+            color: '#00B7FFFF'
             id: WarnCornerSW
           decals:
             520: 0,24
             721: 2,20
         - node:
-            color: '#FFFFFFFF'
+            color: '#BC00FFFF'
             id: WarnCornerSmallNE
           decals:
             966: 8,12
         - node:
-            color: '#FFFFFFFF'
+            color: '#5D00FFFF'
             id: WarnCornerSmallNW
           decals:
             965: 14,12
             1279: 27,15
         - node:
-            color: '#FFFFFFFF'
+            color: '#13FF00FF'
             id: WarnCornerSmallSE
           decals:
             968: 8,16
             1283: 27,13
         - node:
-            color: '#FFFFFFFF'
+            color: '#FFA600FF'
             id: WarnCornerSmallSW
           decals:
             967: 14,16
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF00AFFF'
             id: WarnLineE
           decals:
             332: 16,45
@@ -2071,27 +2071,27 @@ entities:
             1282: 27,12
             1296: 26,12
         - node:
-            color: '#D381C996'
+            color: '#1900FFFF'
             id: WarnLineGreyscaleE
           decals:
             1234: 18,3
         - node:
-            color: '#D381C996'
+            color: '#0025FFFF'
             id: WarnLineGreyscaleN
           decals:
             1247: 26,4
         - node:
-            color: '#D381C996'
+            color: '#0039FFFF'
             id: WarnLineGreyscaleS
           decals:
             16: 5,45
         - node:
-            color: '#D381C996'
+            color: '#7000FFFF'
             id: WarnLineGreyscaleW
           decals:
             1233: 34,3
         - node:
-            color: '#FFFFFFFF'
+            color: '#003BFFFF'
             id: WarnLineN
           decals:
             291: 12,47
@@ -2112,7 +2112,7 @@ entities:
             1280: 29,13
             1281: 28,13
         - node:
-            color: '#FFFFFFFF'
+            color: '#0030FFFF'
             id: WarnLineS
           decals:
             0: 4,42
@@ -2131,7 +2131,7 @@ entities:
             936: 14,15
             1278: 27,16
         - node:
-            color: '#FFFFFFFF'
+            color: '#00FFC9FF'
             id: WarnLineW
           decals:
             3: 5,44
@@ -2162,27 +2162,27 @@ entities:
             1337: 41,13
             1338: 40,13
         - node:
-            color: '#FFFFFFFF'
+            color: '#00FF59FF'
             id: WoodTrimThinCornerNe
           decals:
             816: 10,9
         - node:
-            color: '#FFFFFFFF'
+            color: '#5200FFFF'
             id: WoodTrimThinCornerNw
           decals:
             815: 1,9
         - node:
-            color: '#FFFFFFFF'
+            color: '#2400FFFF'
             id: WoodTrimThinCornerSe
           decals:
             813: 10,8
         - node:
-            color: '#FFFFFFFF'
+            color: '#00A0FFFF'
             id: WoodTrimThinCornerSw
           decals:
             814: 1,8
         - node:
-            color: '#FFFFFFFF'
+            color: '#FFB100FF'
             id: WoodTrimThinLineN
           decals:
             817: 9,9
@@ -2194,7 +2194,7 @@ entities:
             823: 3,9
             824: 2,9
         - node:
-            color: '#FFFFFFFF'
+            color: '#74FF00FF'
             id: WoodTrimThinLineS
           decals:
             825: 10,8
@@ -2208,13 +2208,13 @@ entities:
             833: 2,8
             834: 1,8
         - node:
-            color: '#FFFFFFFF'
+            color: '#09FF00FF'
             id: chevron
           decals:
             312: 11,48
         - node:
             cleanable: True
-            color: '#EFD841FF'
+            color: '#4B00FFFF'
             id: splatter
           decals:
             611: 8.178589,27.034609
