@@ -187,8 +187,10 @@ namespace Content.Shared.Chemistry.Reagent
         [DataField]
         public SoundSpecifier FootstepSound = new SoundCollectionSpecifier("FootstepPuddle");
 
+        // Carpmosia-start - Label suggestions
         [DataField]
         public List<LocId> Labels = new(0);
+        // Carpmosia-end - Label suggestions
 
         // TODO: Reaction tile doesn't work properly and destroys reagents way too quickly
         public FixedPoint2 ReactionTile(TileRef tile, FixedPoint2 reactVolume, IEntityManager entityManager, List<ReagentData>? data)

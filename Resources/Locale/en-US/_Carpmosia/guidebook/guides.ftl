@@ -1,6 +1,3 @@
-guidebook-reagent-label-header = Labels
-guidebook-reagent-label-copied-to-clipboard = Copied to clipboard
-
 guide-entry-blood-bound = Blood Bound
 
 guide-entry-carpmosia-rules = Server Rules

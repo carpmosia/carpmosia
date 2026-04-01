@@ -58,6 +58,7 @@
                     </CollapsibleBody>
                 </Collapsible>
             </BoxContainer>
+            <!-- Carpmosia-start - Label suggestions -->
             <BoxContainer Name="LabelContainer" HorizontalExpand="True">
                 <Collapsible>
                     <CollapsibleHeading Title="{Loc 'guidebook-reagent-label-header'}" Name="LabelCollapsibleHeading"/>
@@ -69,6 +70,7 @@
                     </CollapsibleBody>
                 </Collapsible>
             </BoxContainer>
+            <!-- Carpmosia-end - Label suggestions -->
             <BoxContainer Margin="10 5 10 10" HorizontalExpand="True">
                 <!-- The troublemaker !-->
                 <RichTextLabel Name="ReagentDescription" HorizontalAlignment="Left"/>
