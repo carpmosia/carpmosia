@@ -35,7 +35,7 @@
   - type: Access
     enabled: true
     tags:
-    - Maintenance 
+    - Maintenance
     - Research
   - type: Reactive
     groups:
@@ -45,26 +45,23 @@
     - reagents: [ Water ]
       methods: [ Touch ]
       effects:
-      - !type:HealthChange
+      - !type:EvenHealthChange
         damage:
-          groups:
-            Brute: -0.15
+          Brute: -0.15
     - reagents: [ Blood ]
       methods: [ Touch ]
       effects:
-      - !type:HealthChange
+      - !type:EvenHealthChange
         damage:
-          groups:
-            Brute: -0.25
-            Burn: -0.25
+          Brute: -0.25
+          Burn: -0.25
     - reagents: [ RobustHarvest ]
       methods: [ Touch ]
       effects:
-      - !type:HealthChange
+      - !type:EvenHealthChange
         damage:
-          groups:
-            Brute: -1
-            Burn: -1
+          Brute: -1
+          Burn: -1
     - reagents: [ WeedKiller, PlantBGone ]
       methods: [ Touch ]
       effects:
