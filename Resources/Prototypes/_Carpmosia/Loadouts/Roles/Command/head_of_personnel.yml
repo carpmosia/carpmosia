@@ -3,20 +3,20 @@
   groups:
   - GroupTankHarness
   # Common groups
-  - ClownHead
-  - ClownHeadOfPersonnelGlasses
-  # - ClownHeadOfPersonnelMask
-  - ClownHeadOfPersonnelNeck
-  # - ClownHeadOfPersonnelGloves
-  - ClownHeadOfPersonnelJumpsuit
-  - ClownBackpack
-  # - ClownHeadOfPersonnelPDA
-  # - ClownHeadOfPersonnelBelt
-  - ClownHeadOfPersonnelOuterClothing
-  - ClownShoes
+  - SharedClownHead
+  - SharedClownHeadOfPersonnelGlasses
+  # - SharedClownHeadOfPersonnelMask
+  - SharedClownHeadOfPersonnelNeck
+  # - SharedClownHeadOfPersonnelGloves
+  - SharedClownHeadOfPersonnelJumpsuit
+  - SharedClownBackpack
+  # - SharedClownHeadOfPersonnelPDA
+  # - SharedClownHeadOfPersonnelBelt
+  - SharedClownHeadOfPersonnelOuterClothing
+  - SharedClownShoes
   # Backpack fills
   - Survival
   - GroupSpeciesBreathTool
-  # - ClownHeadOfPersonnelSpecial
-  - ClownHeadOfPersonnelTrinkets
-  - ClownHeadOfPersonnelPets
+  # - SharedClownHeadOfPersonnelSpecial
+  - SharedClownHeadOfPersonnelTrinkets
+  - SharedClownHeadOfPersonnelPets
