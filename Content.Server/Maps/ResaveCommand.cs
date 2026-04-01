@@ -37,7 +37,7 @@ public sealed class ResaveCommand : LocalizedCommands
         };
 
         var log = _log.GetSawmill(Command);
-        var files = _res.ContentFindFiles(new ResPath("/Maps/")).ToList();
+        var files = _res.ContentFindFiles(new ResPath("/Maps/_Carpmosia/")).ToList(); // Carpmosia-edit - Mapping
 
         for (var i = 0; i < files.Count; i++)
         {

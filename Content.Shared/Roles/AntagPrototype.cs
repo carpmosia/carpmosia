@@ -22,8 +22,8 @@ public sealed partial class AntagPrototype : IPrototype
     public string ID { get; private set; } = default!;
 
     // Carpmosia-start - Antag playtimes
-    [DataField("playTimeTracker", required: true, customTypeSerializer: typeof(PrototypeIdSerializer<PlayTimeTrackerPrototype>))]
-    public string PlayTimeTracker { get; private set; } = string.Empty;
+    [DataField("playTimeTracker", customTypeSerializer: typeof(PrototypeIdSerializer<PlayTimeTrackerPrototype>))]
+    public string? PlayTimeTracker { get; private set; }
 
     [DataField("color")]
     public Color Color { get; private set; } = Color.Yellow;

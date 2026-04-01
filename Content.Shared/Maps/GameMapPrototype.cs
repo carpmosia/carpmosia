@@ -32,6 +32,14 @@ public sealed partial class GameMapPrototype : IPrototype
     [DataField]
     public bool RandomRotation = true;
 
+    // Carpmosia-start - Better map votes
+    [DataField]
+    public string? MapIcon = null;
+
+    [DataField]
+    public EntProtoId? IconPrototype = null;
+    // Carpmosia-end - Better map votes
+
     /// <summary>
     /// Name of the map to use in generic messages, like the map vote.
     /// </summary>
@@ -57,6 +65,8 @@ public sealed partial class GameMapPrototype : IPrototype
     /// </summary>
     public GameMapPrototype Persistence(ResPath mapPath)
     {
+        //TODO(Kaylie): Refactor gamemaps for this.
+#pragma warning disable RA0039
         return new()
         {
             ID = ID,
@@ -64,5 +74,6 @@ public sealed partial class GameMapPrototype : IPrototype
             MapPath = mapPath,
             _stations = _stations
         };
+#pragma warning restore RA0039
     }
 }
