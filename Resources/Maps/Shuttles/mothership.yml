@@ -67,7 +67,7 @@ entities:
         version: 2
         nodes:
         - node:
-            color: '#0000FFFF'
+            color: '#9AFF00FF'
             id: WarnCornerSmallGreyscaleNE
           decals:
             43: 4,0
@@ -75,7 +75,7 @@ entities:
             51: -4,4
             57: -4,-1
         - node:
-            color: '#0000FFFF'
+            color: '#A100FFFF'
             id: WarnCornerSmallGreyscaleNW
           decals:
             44: -4,0
@@ -83,21 +83,21 @@ entities:
             52: 4,4
             58: 4,-1
         - node:
-            color: '#0000FFFF'
+            color: '#A600FFFF'
             id: WarnCornerSmallGreyscaleSE
           decals:
             45: 4,0
             48: 4,4
             55: -4,1
         - node:
-            color: '#0000FFFF'
+            color: '#9A00FFFF'
             id: WarnCornerSmallGreyscaleSW
           decals:
             46: -4,0
             47: -4,4
             56: 4,1
         - node:
-            color: '#0000FFFF'
+            color: '#00FF65FF'
             id: WarnLineGreyscaleE
           decals:
             1: 4,3
@@ -116,7 +116,7 @@ entities:
             53: -4,0
             60: 6,3
         - node:
-            color: '#0000FFFF'
+            color: '#7FFF00FF'
             id: WarnLineGreyscaleN
           decals:
             15: 5,0
@@ -129,13 +129,13 @@ entities:
             22: 2,4
             23: 3,4
         - node:
-            color: '#0000FFFF'
+            color: '#9000FFFF'
             id: WarnLineGreyscaleS
           decals:
             26: 5,0
             27: -5,0
         - node:
-            color: '#0000FFFF'
+            color: '#00FF29FF'
             id: WarnLineGreyscaleW
           decals:
             29: -4,3

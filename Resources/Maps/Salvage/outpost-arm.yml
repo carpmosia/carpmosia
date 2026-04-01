@@ -69,7 +69,7 @@ entities:
         nodes:
         - node:
             cleanable: True
-            color: '#000000FF'
+            color: '#A900FFFF'
             id: Damaged
           decals:
             13: 4,6
@@ -80,7 +80,7 @@ entities:
             18: 4,1
         - node:
             cleanable: True
-            color: '#FFFFFFFF'
+            color: '#00EAFFFF'
             id: Dirt
           decals:
             0: 2,2
@@ -90,58 +90,58 @@ entities:
             10: 0,1
         - node:
             cleanable: True
-            color: '#FFFFFFFF'
+            color: '#FF0043FF'
             id: DirtHeavy
           decals:
             2: 0,11
             3: 6,10
         - node:
             cleanable: True
-            color: '#FFFFFFFF'
+            color: '#FF0007FF'
             id: DirtHeavyMonotile
           decals:
             7: 5,4
         - node:
             cleanable: True
-            color: '#FFFFFFFF'
+            color: '#B400FFFF'
             id: DirtLight
           decals:
             4: 0,1
             5: 5,0
         - node:
             cleanable: True
-            color: '#FFFFFFFF'
+            color: '#FF4400FF'
             id: DirtMedium
           decals:
             6: 0,9
         - node:
             cleanable: True
-            color: '#FFFFFFFF'
+            color: '#00FF8AFF'
             id: Rust
           decals:
             11: -1,-1
         - node:
             cleanable: True
-            color: '#636200FF'
+            color: '#84FF00FF'
             id: danger
           decals:
             12: 4.9819956,1.0227132
         - node:
             cleanable: True
-            color: '#7F0000FF'
+            color: '#00B1FFFF'
             id: o
           decals:
             22: 4.302699,3.1356921
         - node:
             cleanable: True
-            color: '#7F0000FF'
+            color: '#AAFF00FF'
             id: s
           decals:
             20: 3.943324,3.1513171
             21: 4.755824,3.1356921
         - node:
             cleanable: True
-            color: '#500000FF'
+            color: '#00FF0FFF'
             id: splatter
           decals:
             19: 1.5020199,7.7976913

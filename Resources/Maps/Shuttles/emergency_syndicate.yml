@@ -74,7 +74,7 @@ entities:
         version: 2
         nodes:
         - node:
-            color: '#FFFFFFFF'
+            color: '#FFFC00FF'
             id: Bot
           decals:
             0: -6,-20
@@ -85,7 +85,7 @@ entities:
             5: -5,-22
         - node:
             angle: 1.5707963267948966 rad
-            color: '#FFFFFFFF'
+            color: '#2C00FFFF'
             id: LoadingArea
           decals:
             10: -6,-10
@@ -94,7 +94,7 @@ entities:
             13: -6,-18
         - node:
             angle: 4.71238898038469 rad
-            color: '#FFFFFFFF'
+            color: '#51FF00FF'
             id: LoadingArea
           decals:
             6: 6,-18
@@ -103,14 +103,14 @@ entities:
             9: 6,-8
         - node:
             angle: 1.5707963267948966 rad
-            color: '#FFFFFFFF'
+            color: '#008AFFFF'
             id: StandClear
           decals:
             14: -6,-17
             15: -6,-9
         - node:
             angle: 4.71238898038469 rad
-            color: '#FFFFFFFF'
+            color: '#FF0068FF'
             id: StandClear
           decals:
             16: 6,-9

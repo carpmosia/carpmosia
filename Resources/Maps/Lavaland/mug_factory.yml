@@ -70,42 +70,42 @@ entities:
         nodes:
         - node:
             angle: -1.5707963267948966 rad
-            color: '#FFFFFFFF'
+            color: '#FF0900FF'
             id: Arrows
           decals:
             41: 1,-5
             42: 1,-2
         - node:
-            color: '#FFFFFFFF'
+            color: '#3900FFFF'
             id: Arrows
           decals:
             40: 4,-7
         - node:
             angle: 3.141592653589793 rad
-            color: '#FFFFFFFF'
+            color: '#FF0096FF'
             id: Arrows
           decals:
             39: 4,-6
         - node:
             angle: 4.71238898038469 rad
-            color: '#FFFFFFFF'
+            color: '#FF5500FF'
             id: Arrows
           decals:
             43: 8,-8
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF00B5FF'
             id: Bot
           decals:
             33: -2,-6
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF7600FF'
             id: Delivery
           decals:
             10: 1,-6
             11: 3,-6
         - node:
             cleanable: True
-            color: '#FFFFFFFF'
+            color: '#00A0FFFF'
             id: Dirt
           decals:
             51: 12,-4
@@ -115,7 +115,7 @@ entities:
         - node:
             cleanable: True
             zIndex: 1
-            color: '#FFFFFFFF'
+            color: '#8F00FFFF'
             id: Dirt
           decals:
             79: 4,-8
@@ -146,7 +146,7 @@ entities:
             136: -2,-7
         - node:
             cleanable: True
-            color: '#FFFFFFFF'
+            color: '#00FF60FF'
             id: DirtHeavy
           decals:
             44: 11,-4
@@ -159,7 +159,7 @@ entities:
         - node:
             cleanable: True
             zIndex: 1
-            color: '#FFFFFFFF'
+            color: '#FF4D00FF'
             id: DirtHeavy
           decals:
             55: 7,-10
@@ -196,7 +196,7 @@ entities:
         - node:
             cleanable: True
             zIndex: 1
-            color: '#FFFFFFFF'
+            color: '#FF1300FF'
             id: DirtHeavyMonotile
           decals:
             95: -3,-7
@@ -226,7 +226,7 @@ entities:
             119: 10,-10
         - node:
             angle: 3.141592653589793 rad
-            color: '#FFFFFFFF'
+            color: '#0D00FFFF'
             id: LoadingArea
           decals:
             2: 13,-7
@@ -236,23 +236,23 @@ entities:
             8: 13,-10
         - node:
             angle: 4.71238898038469 rad
-            color: '#FFFFFFFF'
+            color: '#8300FFFF'
             id: LoadingArea
           decals:
             3: 12,-7
         - node:
-            color: '#FFFFFFFF'
+            color: '#D2FF00FF'
             id: WarnCornerSW
           decals:
             30: 6,-5
         - node:
-            color: '#FFFFFFFF'
+            color: '#0005FFFF'
             id: WarnLineN
           decals:
             25: 8,-5
             31: 7,-5
         - node:
-            color: '#FFFFFFFF'
+            color: '#47FF00FF'
             id: WarnLineS
           decals:
             27: 6,-4

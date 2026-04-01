@@ -68,7 +68,7 @@ entities:
         version: 2
         nodes:
         - node:
-            color: '#79150096'
+            color: '#008CFFFF'
             id: FullTileOverlayGreyscale
           decals:
             15: -1,6
@@ -79,14 +79,14 @@ entities:
             20: 2,4
             21: 2,5
         - node:
-            color: '#79150096'
+            color: '#00FFA5FF'
             id: HalfTileOverlayGreyscale180
           decals:
             2: -1,-4
             3: 0,-4
             4: 1,-4
         - node:
-            color: '#79150096'
+            color: '#FF00BFFF'
             id: HalfTileOverlayGreyscale270
           decals:
             5: -2,2
@@ -95,7 +95,7 @@ entities:
             8: -2,-1
             9: -2,-2
         - node:
-            color: '#79150096'
+            color: '#FF1400FF'
             id: HalfTileOverlayGreyscale90
           decals:
             10: 2,-2
@@ -104,22 +104,22 @@ entities:
             13: 2,1
             14: 2,2
         - node:
-            color: '#79150096'
+            color: '#00FFAAFF'
             id: QuarterTileOverlayGreyscale
           decals:
             22: -1,5
         - node:
-            color: '#79150096'
+            color: '#FF4000FF'
             id: QuarterTileOverlayGreyscale90
           decals:
             23: 1,5
         - node:
-            color: '#FFFFFFFF'
+            color: '#B300FFFF'
             id: WarnEndE
           decals:
             0: -1,-3
         - node:
-            color: '#FFFFFFFF'
+            color: '#C100FFFF'
             id: WarnEndW
           decals:
             1: 1,-3

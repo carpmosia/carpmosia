@@ -74,13 +74,13 @@ entities:
         version: 2
         nodes:
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF006FFF'
             id: Bot
           decals:
             104: 2,1
             105: 2,0
         - node:
-            color: '#FFFFFFFF'
+            color: '#FFB000FF'
             id: BotGreyscale
           decals:
             122: -2,-2
@@ -101,98 +101,98 @@ entities:
             166: 2,7
             167: 1,7
         - node:
-            color: '#37789BFF'
+            color: '#7400FFFF'
             id: BrickTileWhiteCornerNe
           decals:
             39: 5,5
         - node:
-            color: '#FF9821FF'
+            color: '#EE00FFFF'
             id: BrickTileWhiteCornerNe
           decals:
             79: 3,-2
         - node:
-            color: '#37789BFF'
+            color: '#0100FFFF'
             id: BrickTileWhiteCornerNw
           decals:
             116: 2,5
         - node:
-            color: '#37789BFF'
+            color: '#FFF000FF'
             id: BrickTileWhiteCornerSe
           decals:
             42: 5,3
         - node:
-            color: '#FF9821FF'
+            color: '#FFC700FF'
             id: BrickTileWhiteCornerSe
           decals:
             146: 3,-4
         - node:
-            color: '#37789BFF'
+            color: '#00FF23FF'
             id: BrickTileWhiteCornerSw
           decals:
             117: 2,3
         - node:
-            color: '#FF9821FF'
+            color: '#CAFF00FF'
             id: BrickTileWhiteCornerSw
           decals:
             144: 1,-4
         - node:
-            color: '#334E6DFF'
+            color: '#FF7700FF'
             id: BrickTileWhiteInnerNe
           decals:
             53: -2,8
             156: 1,8
         - node:
-            color: '#37789BFF'
+            color: '#00FF59FF'
             id: BrickTileWhiteInnerNe
           decals:
             33: 4,1
             107: 0,1
         - node:
-            color: '#FF9821FF'
+            color: '#FFB800FF'
             id: BrickTileWhiteInnerNe
           decals:
             148: 1,-2
         - node:
-            color: '#334E6DFF'
+            color: '#D300FFFF'
             id: BrickTileWhiteInnerNw
           decals:
             57: 4,8
             155: 1,8
         - node:
-            color: '#37789BFF'
+            color: '#FF8A00FF'
             id: BrickTileWhiteInnerNw
           decals:
             31: 4,1
         - node:
-            color: '#37789BFF'
+            color: '#C3FF00FF'
             id: BrickTileWhiteInnerSe
           decals:
             29: 4,3
             113: 0,7
         - node:
-            color: '#9C2020FF'
+            color: '#FF0037FF'
             id: BrickTileWhiteInnerSe
           decals:
             151: 3,8
         - node:
-            color: '#FF9821FF'
+            color: '#00FFD4FF'
             id: BrickTileWhiteInnerSe
           decals:
             72: -2,0
             73: 1,0
         - node:
-            color: '#37789BFF'
+            color: '#00FF3EFF'
             id: BrickTileWhiteInnerSw
           decals:
             28: 4,3
         - node:
-            color: '#FF9821FF'
+            color: '#FF0090FF'
             id: BrickTileWhiteInnerSw
           decals:
             70: 5,0
             71: 1,0
         - node:
-            color: '#334E6DFF'
+            color: '#66FF00FF'
             id: BrickTileWhiteLineE
           decals:
             54: -2,9
@@ -200,7 +200,7 @@ entities:
             56: -2,11
             89: 1,9
         - node:
-            color: '#37789BFF'
+            color: '#FFB300FF'
             id: BrickTileWhiteLineE
           decals:
             36: 4,2
@@ -211,12 +211,12 @@ entities:
             111: 0,5
             112: 0,6
         - node:
-            color: '#9C2020FF'
+            color: '#00FF8BFF'
             id: BrickTileWhiteLineE
           decals:
             150: 3,7
         - node:
-            color: '#FF9821FF'
+            color: '#81FF00FF'
             id: BrickTileWhiteLineE
           decals:
             61: -2,-2
@@ -225,7 +225,7 @@ entities:
             87: 1,-1
             147: 3,-3
         - node:
-            color: '#334E6DFF'
+            color: '#22FF00FF'
             id: BrickTileWhiteLineN
           decals:
             50: 3,8
@@ -233,7 +233,7 @@ entities:
             164: -1,8
             165: 0,8
         - node:
-            color: '#37789BFF'
+            color: '#3E00FFFF'
             id: BrickTileWhiteLineN
           decals:
             19: 2,1
@@ -244,12 +244,12 @@ entities:
             115: 3,5
             149: 4,5
         - node:
-            color: '#FF9821FF'
+            color: '#FF00ABFF'
             id: BrickTileWhiteLineN
           decals:
             78: 2,-2
         - node:
-            color: '#37789BFF'
+            color: '#20FF00FF'
             id: BrickTileWhiteLineS
           decals:
             24: 3,7
@@ -257,7 +257,7 @@ entities:
             153: 1,7
             163: 2,7
         - node:
-            color: '#FF9821FF'
+            color: '#FFE900FF'
             id: BrickTileWhiteLineS
           decals:
             65: 2,0
@@ -267,19 +267,19 @@ entities:
             161: 3,0
             162: 4,0
         - node:
-            color: '#334E6DFF'
+            color: '#FF001BFF'
             id: BrickTileWhiteLineW
           decals:
             58: 4,9
             90: 1,9
         - node:
-            color: '#37789BFF'
+            color: '#00FFF5FF'
             id: BrickTileWhiteLineW
           decals:
             37: 4,2
             119: 2,4
         - node:
-            color: '#FF9821FF'
+            color: '#0062FFFF'
             id: BrickTileWhiteLineW
           decals:
             68: 5,-1
@@ -290,7 +290,7 @@ entities:
             143: 1,-3
         - node:
             angle: 1.5707963267948966 rad
-            color: '#FFFFFFFF'
+            color: '#00BCFFFF'
             id: LoadingArea
           decals:
             4: -3,7
@@ -299,53 +299,53 @@ entities:
             7: -3,1
         - node:
             angle: 4.71238898038469 rad
-            color: '#FFFFFFFF'
+            color: '#0045FFFF'
             id: LoadingArea
           decals:
             8: 6,-1
             100: 6,1
         - node:
-            color: '#FFFFFFFF'
+            color: '#0006FFFF'
             id: WoodTrimThinCornerNe
           decals:
             91: 2,12
         - node:
-            color: '#FFFFFFFF'
+            color: '#00FF0AFF'
             id: WoodTrimThinCornerNw
           decals:
             92: 0,12
         - node:
-            color: '#FFFFFFFF'
+            color: '#B800FFFF'
             id: WoodTrimThinCornerSe
           decals:
             93: 2,10
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF6C00FF'
             id: WoodTrimThinCornerSw
           decals:
             94: 0,10
         - node:
-            color: '#FFFFFFFF'
+            color: '#F800FFFF'
             id: WoodTrimThinInnerSe
           decals:
             99: 1,10
         - node:
-            color: '#FFFFFFFF'
+            color: '#FFFE00FF'
             id: WoodTrimThinInnerSw
           decals:
             98: 1,10
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF2B00FF'
             id: WoodTrimThinLineE
           decals:
             97: 2,11
         - node:
-            color: '#FFFFFFFF'
+            color: '#00FFAAFF'
             id: WoodTrimThinLineN
           decals:
             96: 1,12
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF7C00FF'
             id: WoodTrimThinLineW
           decals:
             95: 0,11

@@ -56,20 +56,20 @@ entities:
         version: 2
         nodes:
         - node:
-            color: '#FFFFFFFF'
+            color: '#00FF86FF'
             id: Bot
           decals:
             0: -5,6
             1: -4,6
         - node:
-            color: '#FFFFFFFF'
+            color: '#00FFB0FF'
             id: DirtHeavy
           decals:
             5: 4,3
             6: 8,8
             10: 6,-8
         - node:
-            color: '#FFFFFFFF'
+            color: '#00FFF8FF'
             id: DirtLight
           decals:
             2: -5,5
@@ -79,7 +79,7 @@ entities:
             14: 9,-11
             15: 12,-12
         - node:
-            color: '#FFFFFFFF'
+            color: '#00FFE3FF'
             id: DirtMedium
           decals:
             3: 5,9
@@ -91,7 +91,7 @@ entities:
             17: 13,-11
             18: 10,-10
         - node:
-            color: '#D381C996'
+            color: '#9200FFFF'
             id: HalfTileOverlayGreyscale
           decals:
             21: 7,-6
@@ -102,7 +102,7 @@ entities:
             33: 11,-10
             34: 12,-10
         - node:
-            color: '#D381C996'
+            color: '#2C00FFFF'
             id: HalfTileOverlayGreyscale180
           decals:
             25: 7,-8
@@ -111,7 +111,7 @@ entities:
             28: 10,-12
             29: 11,-12
         - node:
-            color: '#D381C996'
+            color: '#DCFF00FF'
             id: HalfTileOverlayGreyscale270
           decals:
             24: 6,-7
@@ -121,7 +121,7 @@ entities:
             44: 7,-10
             45: 8,-12
         - node:
-            color: '#D381C996'
+            color: '#8EFF00FF'
             id: HalfTileOverlayGreyscale90
           decals:
             23: 9,-7
@@ -131,13 +131,13 @@ entities:
             47: 13,-11
             48: 12,-12
         - node:
-            color: '#D381C996'
+            color: '#FCFF00FF'
             id: QuarterTileOverlayGreyscale
           decals:
             37: 9,-6
             49: 13,-10
         - node:
-            color: '#D381C996'
+            color: '#FF2600FF'
             id: QuarterTileOverlayGreyscale180
           decals:
             42: 6,-8
@@ -145,7 +145,7 @@ entities:
             52: 12,-11
             56: 8,-12
         - node:
-            color: '#D381C996'
+            color: '#00FFACFF'
             id: QuarterTileOverlayGreyscale270
           decals:
             38: 9,-8
@@ -153,45 +153,45 @@ entities:
             54: 13,-11
             55: 12,-12
         - node:
-            color: '#D381C996'
+            color: '#C1FF00FF'
             id: QuarterTileOverlayGreyscale90
           decals:
             41: 6,-6
             50: 7,-10
         - node:
-            color: '#FFFFFFFF'
+            color: '#FFC900FF'
             id: WarnCorner
           decals:
             19: 7,-5
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF003CFF'
             id: WarnCornerFlipped
           decals:
             20: 8,-5
         - node:
-            color: '#FFFFFFFF'
+            color: '#5EFF00FF'
             id: WoodTrimThinInnerNe
           decals:
             70: -8,-10
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF8800FF'
             id: WoodTrimThinInnerNw
           decals:
             69: -5,-10
         - node:
-            color: '#FFFFFFFF'
+            color: '#00FF78FF'
             id: WoodTrimThinLineE
           decals:
             67: -8,-9
             68: -8,-8
         - node:
-            color: '#FFFFFFFF'
+            color: '#CD00FFFF'
             id: WoodTrimThinLineN
           decals:
             63: -7,-10
             64: -6,-10
         - node:
-            color: '#FFFFFFFF'
+            color: '#FFD400FF'
             id: WoodTrimThinLineS
           decals:
             57: -5,-10
@@ -201,7 +201,7 @@ entities:
             61: -7,-7
             62: -6,-7
         - node:
-            color: '#FFFFFFFF'
+            color: '#FFFA00FF'
             id: WoodTrimThinLineW
           decals:
             65: -5,-9

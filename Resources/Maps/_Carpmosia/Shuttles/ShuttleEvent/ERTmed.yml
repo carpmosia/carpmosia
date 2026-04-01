@@ -60,48 +60,48 @@ entities:
         version: 2
         nodes:
         - node:
-            color: '#00858BFF'
+            color: '#00FF8EFF'
             id: BrickCornerOverlayNE
           decals:
             33: 1,-1
         - node:
-            color: '#00858BFF'
+            color: '#00FFE5FF'
             id: BrickCornerOverlayNW
           decals:
             32: -3,-1
         - node:
-            color: '#00858BFF'
+            color: '#00FF75FF'
             id: BrickCornerOverlaySE
           decals:
             31: 1,-3
         - node:
-            color: '#00858BFF'
+            color: '#D100FFFF'
             id: BrickCornerOverlaySW
           decals:
             34: -3,-3
         - node:
-            color: '#00858BFF'
+            color: '#2DFF00FF'
             id: BrickLineOverlayS
           decals:
             26: -2,-3
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF0089FF'
             id: Delivery
           decals:
             23: 2,-2
             24: -4,-2
         - node:
-            color: '#FFFFFFFF'
+            color: '#C4FF00FF'
             id: WarnLineE
           decals:
             14: 1,-2
         - node:
-            color: '#FFFFFFFF'
+            color: '#F9FF00FF'
             id: WarnLineS
           decals:
             16: -3,-2
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF0021FF'
             id: WarnLineW
           decals:
             15: -1,-1

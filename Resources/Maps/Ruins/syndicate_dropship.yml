@@ -48,7 +48,7 @@ entities:
         version: 2
         nodes:
         - node:
-            color: '#D4D4D419'
+            color: '#001EFFFF'
             id: FullTileOverlayGreyscale
           decals:
             14: 4,-2
@@ -60,7 +60,7 @@ entities:
             20: 10,-2
             21: 11,-2
         - node:
-            color: '#79150096'
+            color: '#00FF04FF'
             id: HalfTileOverlayGreyscale270
           decals:
             10: 13,-2
@@ -68,51 +68,51 @@ entities:
             22: 3,-2
             23: 3,-3
         - node:
-            color: '#79150096'
+            color: '#FF008EFF'
             id: QuarterTileOverlayGreyscale180
           decals:
             5: 12,-3
         - node:
-            color: '#79150096'
+            color: '#AAFF00FF'
             id: QuarterTileOverlayGreyscale90
           decals:
             4: 12,-1
         - node:
-            color: '#79150096'
+            color: '#1E00FFFF'
             id: ThreeQuarterTileOverlayGreyscale
           decals:
             6: 11,-4
             8: 13,-1
         - node:
-            color: '#79150096'
+            color: '#FF00A1FF'
             id: ThreeQuarterTileOverlayGreyscale180
           decals:
             12: 12,0
         - node:
-            color: '#79150096'
+            color: '#FF8700FF'
             id: ThreeQuarterTileOverlayGreyscale270
           decals:
             9: 13,-3
             11: 11,0
         - node:
-            color: '#79150096'
+            color: '#FFF900FF'
             id: ThreeQuarterTileOverlayGreyscale90
           decals:
             7: 12,-4
         - node:
-            color: '#FFFFFFFF'
+            color: '#81FF00FF'
             id: WarnCornerNW
           decals:
             1: 6,-3
             24: 9,-3
         - node:
-            color: '#FFFFFFFF'
+            color: '#D000FFFF'
             id: WarnCornerSW
           decals:
             0: 6,-1
             27: 9,-1
         - node:
-            color: '#FFFFFFFF'
+            color: '#C700FFFF'
             id: WarnLineS
           decals:
             2: 6,-4

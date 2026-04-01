@@ -76,12 +76,12 @@ entities:
         nodes:
         - node:
             angle: -1.5707963267948966 rad
-            color: '#FFFFFFFF'
+            color: '#D9FF00FF'
             id: Arrows
           decals:
             29: -5,7
         - node:
-            color: '#FFFFFFFF'
+            color: '#AAFF00FF'
             id: Bot
           decals:
             14: -5,4
@@ -91,7 +91,7 @@ entities:
             145: 12,-8
         - node:
             angle: 3.141592653589793 rad
-            color: '#52B4E996'
+            color: '#FF00FEFF'
             id: BotGreyscale
           decals:
             130: 4,4
@@ -100,39 +100,39 @@ entities:
             133: 9,6
         - node:
             angle: 3.141592653589793 rad
-            color: '#EFB34196'
+            color: '#7BFF00FF'
             id: BotGreyscale
           decals:
             136: 7,2
             137: 7,1
         - node:
-            color: '#D381C996'
+            color: '#00FF79FF'
             id: BrickTileWhiteCornerNw
           decals:
             7: -5,7
             8: -7,5
         - node:
-            color: '#D381C996'
+            color: '#00FFFAFF'
             id: BrickTileWhiteInnerNw
           decals:
             2: -5,5
         - node:
-            color: '#EFB34196'
+            color: '#ECFF00FF'
             id: BrickTileWhiteInnerSe
           decals:
             97: 6,4
         - node:
-            color: '#52B4E996'
+            color: '#FF6400FF'
             id: BrickTileWhiteInnerSw
           decals:
             109: 6,4
         - node:
-            color: '#D381C996'
+            color: '#0FFF00FF'
             id: BrickTileWhiteLineE
           decals:
             13: -2,5
         - node:
-            color: '#52B4E996'
+            color: '#8500FFFF'
             id: BrickTileWhiteLineN
           decals:
             110: 4,6
@@ -140,7 +140,7 @@ entities:
             112: 6,6
             113: 7,6
         - node:
-            color: '#D381C915'
+            color: '#00FFF1FF'
             id: BrickTileWhiteLineN
           decals:
             64: -5,2
@@ -148,38 +148,38 @@ entities:
             66: -6,2
             67: -5,2
         - node:
-            color: '#D381C996'
+            color: '#FFD700FF'
             id: BrickTileWhiteLineN
           decals:
             3: -6,5
             11: -3,7
             12: -4,7
         - node:
-            color: '#52B4E996'
+            color: '#000CFFFF'
             id: BrickTileWhiteLineS
           decals:
             107: 4,4
             108: 5,4
         - node:
-            color: '#D381C996'
+            color: '#51FF00FF'
             id: BrickTileWhiteLineS
           decals:
             9: -6,4
             10: -3,4
         - node:
-            color: '#EFB34196'
+            color: '#009AFFFF'
             id: BrickTileWhiteLineS
           decals:
             94: 7,4
             95: 8,4
             96: 9,4
         - node:
-            color: '#D381C996'
+            color: '#00FF8EFF'
             id: BrickTileWhiteLineW
           decals:
             5: -5,6
         - node:
-            color: '#52B4E996'
+            color: '#E8FF00FF'
             id: CheckerNESW
           decals:
             103: 4,2
@@ -195,7 +195,7 @@ entities:
             126: 9,7
             127: 9,6
         - node:
-            color: '#D381C915'
+            color: '#FFE900FF'
             id: CheckerNESW
           decals:
             60: -2,2
@@ -203,13 +203,13 @@ entities:
             62: -3,3
             63: -3,2
         - node:
-            color: '#EFB34196'
+            color: '#FF00EDFF'
             id: CheckerNESW
           decals:
             89: 8,2
             90: 8,1
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF0046FF'
             id: Delivery
           decals:
             26: -7,1
@@ -220,7 +220,7 @@ entities:
             101: 5,0
         - node:
             angle: 3.141592653589793 rad
-            color: '#FFFFFFFF'
+            color: '#47FF00FF'
             id: Delivery
           decals:
             73: 2,3
@@ -235,7 +235,7 @@ entities:
             83: 2,-7
         - node:
             cleanable: True
-            color: '#FFFFFFFF'
+            color: '#2CFF00FF'
             id: DirtHeavy
           decals:
             154: -7,-5
@@ -296,7 +296,7 @@ entities:
             320: 12,-7
         - node:
             cleanable: True
-            color: '#FFFFFFFF'
+            color: '#FFD400FF'
             id: DirtHeavyMonotile
           decals:
             204: -6,-1
@@ -391,7 +391,7 @@ entities:
             352: 9,7
         - node:
             cleanable: True
-            color: '#FFFFFFFF'
+            color: '#FF8400FF'
             id: DirtMedium
           decals:
             285: 2,-4
@@ -424,138 +424,138 @@ entities:
             321: 11,-9
             322: 13,-8
         - node:
-            color: '#52B4E996'
+            color: '#63FF00FF'
             id: FullTileOverlayGreyscale
           decals:
             118: 5,5
             119: 6,5
         - node:
             angle: -1.5707963267948966 rad
-            color: '#FFFFFFFF'
+            color: '#F0FF00FF'
             id: LoadingArea
           decals:
             28: -5,6
         - node:
-            color: '#FFFFFFFF'
+            color: '#2DFF00FF'
             id: LoadingArea
           decals:
             102: -3,1
         - node:
             angle: 3.141592653589793 rad
-            color: '#FFFFFFFF'
+            color: '#FF0087FF'
             id: LoadingArea
           decals:
             68: -2,3
         - node:
-            color: '#52B4E996'
+            color: '#FF0F00FF'
             id: LoadingAreaGreyscale
           decals:
             128: 5,1
         - node:
             angle: 3.141592653589793 rad
-            color: '#52B4E996'
+            color: '#0031FFFF'
             id: LoadingAreaGreyscale
           decals:
             129: 4,3
         - node:
-            color: '#52B4E996'
+            color: '#EA00FFFF'
             id: QuarterTileOverlayGreyscale
           decals:
             122: 6,4
         - node:
-            color: '#52B4E996'
+            color: '#00FF39FF'
             id: QuarterTileOverlayGreyscale180
           decals:
             121: 5,6
         - node:
-            color: '#52B4E996'
+            color: '#00E1FFFF'
             id: QuarterTileOverlayGreyscale270
           decals:
             120: 6,6
         - node:
-            color: '#52B4E996'
+            color: '#FF0020FF'
             id: QuarterTileOverlayGreyscale90
           decals:
             123: 5,4
         - node:
-            color: '#FFFFFFFF'
+            color: '#0005FFFF'
             id: SpaceStationSign1
           decals:
             331: -2,-2
         - node:
-            color: '#FFFFFFFF'
+            color: '#006FFFFF'
             id: SpaceStationSign2
           decals:
             332: -1,-2
         - node:
-            color: '#FFFFFFFF'
+            color: '#0DFF00FF'
             id: SpaceStationSign3
           decals:
             333: 0,-2
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF6D00FF'
             id: SpaceStationSign4
           decals:
             334: 1,-2
         - node:
-            color: '#FFFFFFFF'
+            color: '#00C4FFFF'
             id: SpaceStationSign5
           decals:
             335: 2,-2
         - node:
-            color: '#FFFFFFFF'
+            color: '#59FF00FF'
             id: SpaceStationSign6
           decals:
             336: 3,-2
         - node:
-            color: '#FFFFFFFF'
+            color: '#00FF3BFF'
             id: SpaceStationSign7
           decals:
             337: 4,-2
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF3900FF'
             id: WarnCornerSmallNE
           decals:
             21: -3,5
             329: 11,-9
         - node:
-            color: '#FFFFFFFF'
+            color: '#00DBFFFF'
             id: WarnCornerSmallNW
           decals:
             330: 13,-9
         - node:
-            color: '#FFFFFFFF'
+            color: '#2FFF00FF'
             id: WarnCornerSmallSE
           decals:
             328: 11,-7
         - node:
-            color: '#FFFFFFFF'
+            color: '#A200FFFF'
             id: WarnCornerSmallSW
           decals:
             327: 13,-7
         - node:
-            color: '#FFFFFFFF'
+            color: '#007CFFFF'
             id: WarnLineE
           decals:
             19: -3,6
             20: -3,7
             324: 11,-8
         - node:
-            color: '#FFFFFFFF'
+            color: '#8000FFFF'
             id: WarnLineN
           decals:
             0: -7,-9
             1: 9,-9
             325: 12,-7
         - node:
-            color: '#FFFFFFFF'
+            color: '#00FEFFFF'
             id: WarnLineS
           decals:
             24: -7,6
             25: -7,7
             323: 13,-8
         - node:
-            color: '#FFFFFFFF'
+            color: '#FF6900FF'
             id: WarnLineW
           decals:
             18: -2,5
