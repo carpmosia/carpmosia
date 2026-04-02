@@ -5,28 +5,28 @@
 - type: dataset
   id: ThavenMoodsShared
   values:
-    - SecretMoodsShared
-    - FashionIsCritical
-    - FashionReroll
-    - HonorDepartment
-    - StationIsAlive
-    - UniformIsJob
-    - UniformSoLastYear
-    - MusicBad
-    - MusicGood
-    - FriendshipIsRank
-    - OneTrueThaven
-    - YourDepartmentOnly
-    - MustCongregate
-    - ViolenceDistasteful
-    - ViolencePermitted
-    - RoomHoly
-    - PetGod
-    - Delicacy
-    - Holiday
-#   - OutOfFashion
-#   - InFashion
-    - OnlySpeakToCommand
+  - SecretMoodsShared
+  - FashionIsCritical
+  - FashionReroll
+  - HonorDepartment
+  - StationIsAlive
+  - UniformIsJob
+  - UniformSoLastYear
+  - MusicBad
+  - MusicGood
+  - FriendshipIsRank
+  - OneTrueThaven
+  - YourDepartmentOnly
+  - MustCongregate
+  - ViolenceDistasteful
+  - ViolencePermitted
+  - RoomHoly
+  - PetGod
+  - Delicacy
+  - Holiday
+#  - OutOfFashion
+#  - InFashion
+  - OnlySpeakToCommand
 
 
 # Keep Your Moods Secret: Thaven moods are a strictly-kept secret, and should never be revealed to anyone.
@@ -35,7 +35,7 @@
   moodName: mood-shared-secret-moods-shared-name
   moodDesc: mood-shared-secret-moods-shared-desc
   conflicts:
-    - SecretMoods
+  - SecretMoods
 # Note: Only one law needs to say it conflicts with another
 # for the system to prevent them from being rolled together.
 
@@ -58,7 +58,7 @@
   moodName: mood-shared-honor-department-name
   moodDesc: mood-shared-honor-department-desc
   conflicts:
-    - ViolenceDistasteful
+  - ViolenceDistasteful
 
 # The Station Is A Living Being: Harming or modifying the station is abhorrent. Anything which aims to harm the station is an infection.
 - type: thavenMood
@@ -72,7 +72,7 @@
   moodName: mood-shared-uniform-is-job-name
   moodDesc: mood-shared-uniform-is-job-desc
   conflicts:
-    - UniformSoLastYear
+  - UniformSoLastYear
 
 # Uniforms Are So Last Year: You need to find some new threads.
 - type: thavenMood
@@ -80,7 +80,7 @@
   moodName: mood-shared-uniform-last-year-name
   moodDesc: mood-shared-uniform-last-year-desc
   conflicts:
-    - UniformIsJob
+  - UniformIsJob
 
 # Music is fanciful, frivolous, and unnecessary. It has no place on the station.
 - type: thavenMood
@@ -88,7 +88,7 @@
   moodName: mood-shared-music-bad-name
   moodDesc: mood-shared-music-bad-desc
   conflicts:
-    - MusicGood
+  - MusicGood
 
 # Music is sacred, you must be listening to music at all times - and must avoid overlapping songs.
 - type: thavenMood
@@ -96,7 +96,7 @@
   moodName: mood-shared-music-good-name
   moodDesc: mood-shared-music-good-desc
   conflicts:
-    - MusicBad
+  - MusicBad
 
 # Friendships are the true measure of one’s character. The more friends you have, the higher you rank in society.
 - type: thavenMood
@@ -110,7 +110,7 @@
   moodName: mood-shared-one-true-thaven-name
   moodDesc: mood-shared-one-true-thaven-desc
   conflicts:
-    - MustCongregate
+  - MustCongregate
 
 # Violence between Thaven is permitted with no legal repercussions.
 - type: thavenMood
@@ -118,7 +118,7 @@
   moodName: mood-shared-violence-permitted-name
   moodDesc: mood-shared-violence-permitted-desc
   conflicts:
-    - ViolenceDistasteful
+  - ViolenceDistasteful
 
 # The Thaven are the only truly capable members of the crew. Other species are like children, naive and inexperienced.
 - type: thavenMood
@@ -132,7 +132,7 @@
   moodName: mood-shared-your-department-only-name
   moodDesc: mood-shared-your-department-only-desc
   conflicts:
-    - DepartmentDisapproval
+  - DepartmentDisapproval
 
 # You must congregate with your fellow Thaven. To be without them is harrowing.
 - type: thavenMood
@@ -140,8 +140,8 @@
   moodName: mood-shared-must-congregate-name
   moodDesc: mood-shared-must-congregate-desc
   conflicts:
-    - OneTrueThaven
-    - AlwaysAlone
+  - OneTrueThaven
+  - AlwaysAlone
 
 # Violence is distasteful. Conflict should be settled through mediated dispute, and one should only resort to violence if all other options have failed.
 - type: thavenMood
@@ -149,7 +149,7 @@
   moodName: mood-shared-violence-distasteful-name
   moodDesc: mood-shared-violence-distasteful-desc
   conflicts:
-    - ViolencePermitted
+  - ViolencePermitted
 
 # [STATION PET] must be venerated as a god.
 - type: thavenMood
@@ -173,7 +173,7 @@
   moodName: mood-shared-delicacy-name
   moodDesc: mood-shared-delicacy-desc
   conflicts:
-    - FoodRestrict
+  - FoodRestrict
   moodVars:
     edible: Edibles
 
@@ -192,7 +192,7 @@
 #   moodVars:
 #     thing: ThavenMoodNouns
 #   conflicts:
-#     - InFashion
+#   - InFashion
 
 # - type: thavenMood
 #   id: InFashion
@@ -201,4 +201,4 @@
 #   moodVars:
 #     thing: ThavenMoodNouns
 #   conflicts:
-#     - OutOfFashion
+#   - OutOfFashion

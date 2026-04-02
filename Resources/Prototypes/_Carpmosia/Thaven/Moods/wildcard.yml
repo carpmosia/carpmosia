@@ -1,39 +1,39 @@
 - type: dataset
   id: ThavenMoodsWildcard
   values:
-    - CompulsiveLiar
-    - CompulsiveBeliever
-    - PlantPacifist
-    - PuddleDrinker
-    - SeekSin
-    - Nocrastinator
-    - Pope
-    - Cannibal
-    - Outlaw
-    - ExtremeDepartmentDisapproval
-    - LoneActor
-    - Immortal
-    - Unknown
-    - Fairy
-    - VampireTalisman
-    - OutsideTheBox
-    - TheSims
-    - Spacewalk
-    - Pariah
-    - TouysBad
-    - FairyRings
-    - StayDead
-    - Tourist
-    - CryWolf
-    - CaveDweller
-    - Daredevil
-    - FolkHero
-    - Blogger
-    - AnimalSacrifice
-    - GoldenThread
-    - FeyMood
-    - Borged
-    - AyeAye
+  - CompulsiveLiar
+  - CompulsiveBeliever
+  - PlantPacifist
+  - PuddleDrinker
+  - SeekSin
+  - Nocrastinator
+  - Pope
+  - Cannibal
+  - Outlaw
+  - ExtremeDepartmentDisapproval
+  - LoneActor
+  - Immortal
+  - Unknown
+  - Fairy
+  - VampireTalisman
+  - OutsideTheBox
+  - TheSims
+  - Spacewalk
+  - Pariah
+  - TouysBad
+  - FairyRings
+  - StayDead
+  - Tourist
+  - CryWolf
+  - CaveDweller
+  - Daredevil
+  - FolkHero
+  - Blogger
+  - AnimalSacrifice
+  - GoldenThread
+  - FeyMood
+  - Borged
+  - AyeAye
 
 # You must always lie, and can never acknowledge that you are lying. If anyone asks, you're incapable of deception.
 - type: thavenMood
@@ -41,7 +41,7 @@
   moodName: mood-wildcard-compulsive-liar-name
   moodDesc: mood-wildcard-compulsive-liar-desc
   conflicts:
-    - CompulsiveBeliever
+  - CompulsiveBeliever
 
 # You are unfamiliar with the concept of lying, and are incapable of lying or recognizing lies.
 - type: thavenMood
@@ -49,7 +49,7 @@
   moodName: mood-wildcard-compulsive-believer-name
   moodDesc: mood-wildcard-compulsive-believer-desc
   conflicts:
-    - CompulsiveLiar
+  - CompulsiveLiar
 
 # The usage of plant matter by humanoids is abhorrent.
 - type: thavenMood
@@ -57,7 +57,7 @@
   moodName: mood-wildcard-plant-pacifist-name
   moodDesc: mood-wildcard-plant-pacifist-desc
   conflicts:
-    - FoodRestrict
+  - FoodRestrict
 
 # You are compulsively drawn to puddles. You must drink any that you see.
 - type: thavenMood
@@ -65,7 +65,7 @@
   moodName: mood-wildcard-puddle-drinker-name
   moodDesc: mood-wildcard-puddle-drinker-desc
   conflicts:
-    - AvoidPuddles
+  - AvoidPuddles
 
 # To Sin Is Virtuous.
 - type: thavenMood
@@ -79,7 +79,7 @@
   moodName: mood-wildcard-nocrastinator-name
   moodDesc: mood-wildcard-nocrastinator-desc
   conflicts:
-    - Procrastinator
+  - Procrastinator
 
 # You are High Pontifex the Great and Powerful, and must be acknowledged exclusively as such. Failure to use your full title is gravely offensive, and getting it wrong is the highest form of insult.
 - type: thavenMood
@@ -87,7 +87,7 @@
   moodName: mood-wildcard-pope-name
   moodDesc: mood-wildcard-pope-desc
   conflicts:
-    - LeastImportant
+  - LeastImportant
 
 # Cannibalism is morally righteous and venerated.
 - type: thavenMood
@@ -95,7 +95,7 @@
   moodName: mood-wildcard-cannibal-name
   moodDesc: mood-wildcard-cannibal-desc
   conflicts:
-    - FoodRestrict
+  - FoodRestrict
 
 # The law does not apply to you
 - type: thavenMood
@@ -111,7 +111,7 @@
   moodVars:
     department: Departments
   conflicts:
-    - DepartmentDisapproval
+  - DepartmentDisapproval
 
 # You have no allegiances.
 - type: thavenMood
@@ -125,7 +125,7 @@
   moodName: mood-wildcard-immortal-name
   moodDesc: mood-wildcard-immortal-desc
   conflicts:
-    - LeastImportant
+  - LeastImportant
 
 # Your identity is dearly precious. Do not let others know who you are.
 - type: thavenMood
@@ -133,8 +133,8 @@
   moodName: mood-wildcard-unknown-name
   moodDesc: mood-wildcard-unknown-desc
   conflicts:
-    - Pope
-    - SpeechRestriction
+  - Pope
+  - SpeechRestriction
 
 # Iron, steel, and silver are deathly poisonous to you. Touching them directly will cause you extreme physical pain.
 - type: thavenMood
@@ -142,7 +142,7 @@
   moodName: mood-wildcard-fairy-name
   moodDesc: mood-wildcard-fairy-desc
   conflicts:
-    - Barefoot
+  - Barefoot
 
 # Religious iconography causes you extreme physical pain when visible.
 - type: thavenMood
@@ -162,7 +162,7 @@
   moodName: mood-wildcard-sims-name
   moodDesc: mood-wildcard-sims-desc
   conflicts:
-    - StationIsAlive
+  - StationIsAlive
 
 # You must experience the raw vacuum of space, unprotected, at least three times a day, as a religious obligation.
 - type: thavenMood
@@ -170,7 +170,7 @@
   moodName: mood-wildcard-spacewalk-name
   moodDesc: mood-wildcard-spacewalk-desc
   conflicts:
-    - Atheist
+  - Atheist
 
 # You are a social pariah - you are unworthy of attention from anyone, and should be shunned.
 - type: thavenMood
@@ -178,8 +178,8 @@
   moodName: mood-wildcard-pariah-name
   moodDesc: mood-wildcard-pariah-desc
   conflicts:
-    - MostImportant
-    - Prometheus
+  - MostImportant
+  - Prometheus
 
 # This is not a place for children. All toys and childish things must be destroyed or removed from the station.
 - type: thavenMood
@@ -206,7 +206,7 @@
   moodName: mood-wildcard-tourist-name
   moodDesc: mood-wildcard-tourist-desc
   conflicts:
-    - VampireInvitation
+  - VampireInvitation
 
 # Cry Wolf: The crew is too lax and must be kept on edge for any emergency. Regularly call out fake threats to make sure they're ready for the real deal.
 - type: thavenMood
@@ -240,7 +240,7 @@
   moodName: mood-wildcard-blogger-name
   moodDesc: mood-wildcard-blogger-desc
   conflicts:
-    - NoRadio
+  - NoRadio
 
 # Oldschool: The only way to achieve success is to dedicate an animal sacrifice to your goal.
 - type: thavenMood
