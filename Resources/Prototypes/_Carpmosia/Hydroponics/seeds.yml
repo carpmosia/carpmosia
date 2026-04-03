@@ -1,0 +1,28 @@
+- type: seed
+  id: crudcoa
+  name: seeds-crudcoa-name
+  noun: seeds-noun-seeds
+  displayName: seeds-crudcoa-display-name
+  plantRsi: _Carpmosia/Objects/Specific/Hydroponics/crudcoa.rsi
+  packetPrototype: CrudcoaSeeds
+  productPrototypes:
+  - FoodCrudcoaPod
+  harvestRepeat: Repeat
+  lifespan: 50
+  maturation: 6
+  production: 6
+  yield: 6
+  potency: 1
+  idealLight: 7
+  waterConsumption: 1
+  nutrientConsumption: 0.8
+  idealHeat: 298
+  chemicals:
+    Oil:
+      Min: 5
+      Max: 10
+      PotencyDivisor: 20
+    Phosphorus:
+      Min: 5
+      Max: 10
+      PotencyDivisor: 20
