@@ -1,3 +1,5 @@
+flavor-base-carcinogenic = carcinogenic
+
 flavor-complex-angostura = bitter
 flavor-complex-sweet-revenge = like a fruity whiskey
 flavor-complex-old-fashioned = like a good old times
