@@ -1,0 +1,14 @@
+- type: entity
+  parent: Jug
+  suffix: chromium
+  id: JugChromium
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Label
+    currentLabel: reagent-name-chromium
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Chromium
+          Quantity: 240
