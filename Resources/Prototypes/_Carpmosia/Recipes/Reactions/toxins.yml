@@ -38,3 +38,28 @@
   products:
     Razorium: 1
 
+- type: reaction
+  id: SodiumDichromate
+  minTemp: 400
+  conserveEnergy: false # This reaction turns 8u of chems into 1u. Due to the high heat of reaction, this will quickly become a lavabeaker if energy conversion is left on.
+  reactants:
+    Chromium:
+      amount: 2
+    SodiumCarbonate:
+      amount: 2
+    Oxygen:
+      amount: 3
+    SulfuricAcid:
+      amount: 1
+  products:
+    SodiumDichromate: 1
+
+- type: reaction
+  id: ChromicAcid
+  reactants:
+    SodiumDichromate:
+      amount: 1
+    SulfuricAcid:
+      amount: 1
+  products:
+    ChromicAcid: 2

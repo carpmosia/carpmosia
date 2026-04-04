@@ -3,13 +3,11 @@
   name: reagent-name-chromic-acid
   group: Toxins
   desc: reagent-desc-chromic-acid
-  physicalDesc: reagent-physical-desc-overpowering
-  allowedJobs:
-  - Chemist
+  physicalDesc: reagent-physical-desc-oxidizing
+  contrabandSeverity: Minor
   flavor: acid
   color: "#ff3021"
-  recognizable: true
-  boilingPoint: 337.0
+  boilingPoint: 337.0 # These parameters are the same as sulfuric acid, because this stuff is basically enhanced sulfuric acid in reality.
   meltingPoint: 10.31
   plantMetabolism:
   - !type:PlantAdjustToxins
@@ -27,7 +25,7 @@
         damage:
           types:
             Caustic: 0.2
-            Cellular: 0.05
+            Cellular: 0.05 # The only chem capable of dealing cellular damage if someone slips on a puddle of it, or is splashed by it.
       - !type:Emote
         emote: Scream
         probability: 0.1
@@ -46,7 +44,7 @@
             Cellular: 3
       - !type:HealthChange
         conditions:
-        - !type:MetabolizerTypeCondition
+        - !type:MetabolizerTypeCondition # Vulpkanin have chromium-based blood, and are resistant to the cellular damage, but not the caustic damage.
           type: [ Vulpkanin ]
         damage:
           types:
@@ -90,4 +88,5 @@
           inverted: true
         damage:
           types:
-            Cellular: 1
+            Poison: 1  # Potent, but outclassed by other options.
+            Cellular: 0.5
