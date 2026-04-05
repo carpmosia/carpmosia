@@ -4,8 +4,6 @@
   id: EnergySabre
   description: A stylish Energy Sabre given to members of the prestigious Syndicate High Command
   components:
-  - type: Reflect
-    reflectProb: .25
   - type: Sprite
     sprite: _Carpmosia/Objects/Weapons/Melee/e_sabre.rsi
     layers:
@@ -18,26 +16,12 @@
   - type: Item
     sprite: _Carpmosia/Objects/Weapons/Melee/e_sabre.rsi # for whatever reason the e-sword puts the inhand sprites into different a RSI. ???
   - type: ItemToggleMeleeWeapon
-    activatedSoundOnHit:
-      path: /Audio/Weapons/eblade1.ogg
-      params:
-        variation: 0.250
-    activatedSoundOnHitNoDamage:
-      path: /Audio/Weapons/eblade1.ogg
-      params:
-        variation: 0.250
-        volume: -10
-    activatedSoundOnSwing:
-      path: /Audio/Weapons/eblademiss.ogg
-      params:
-        variation: 0.125
     activatedDamage:
       types:
         Slash: 18
         Heat: 18
         Structural: 50
   - type: MeleeWeapon
-    wideAnimationRotation: -135
     attackRate: 1.25
     damage:
       types:
@@ -46,4 +30,4 @@
     price: 5000
   - type: Tag
     tags:
-    - EnergySabre
+    - CaptainSabre
