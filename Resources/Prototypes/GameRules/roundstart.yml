@@ -445,7 +445,7 @@
   id: Xenoborgs
   components:
   - type: GameRule
-    minPlayers: 30
+    minPlayers: 20 # Carpmosia-edit - Xenoborgs gamemode
   - type: AntagMultipleRoleSpawner
     antagRoleToPrototypes:
       MothershipCore: [ MothershipCore ]
