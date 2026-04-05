@@ -1,0 +1,22 @@
+## Belts that need/have visualizers
+
+- type: entity
+  parent: [ClothingBeltSheath, BaseSyndicateContraband]
+  id: ClothingBeltSheathSyndie
+  name: syndicate's energy sabre sheath
+  description: An ornate sheath designed to hold the syndicate's energy blade.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Clothing/Belt/sheath_syndie.rsi
+  - type: Clothing
+    sprite: _Carpmosia/Clothing/Belt/sheath_syndie.rsi
+
+- type: entity
+  parent: ClothingBeltSheathSyndie
+  id: ClothingBeltSheathSyndieFilled
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - EnergySabre
