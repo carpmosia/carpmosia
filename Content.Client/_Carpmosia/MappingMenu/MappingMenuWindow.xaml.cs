@@ -11,9 +11,11 @@ namespace Content.Client.MappingMenu;
 public sealed partial class MappingMenuWindow : DefaultWindow
 {
     private static readonly (string, int, string[])[] Buttons = [
-    ("Walls", 2, [
+    ("Walls", 4, [
         "WallSolidDiagonal", "WallReinforcedDiagonal",
-        "WallSolid", "WallReinforced"
+        "WallSolidDiagonalRust", "WallSolidReinforcedRust",
+        "WallSolid", "WallReinforced",
+        "WallSolidRust", "WallReinforcedRust"
     ]),
     ("Windows", 3, [
         "GrilleDiagonal", "WindowDiagonal", "ReinforcedWindowDiagonal",
@@ -42,8 +44,8 @@ public sealed partial class MappingMenuWindow : DefaultWindow
     ]),
     ("Nothing", 2, [
         "DisposalPipe", "DisposalBend",
-        "DisposalRouter", "DisposalJunction",
-        "DisposalRouterFlipped", "DisposalJunctionFlipped",
+        "DisposalRouterFlipped", "DisposalRouter",
+        "DisposalJunctionFlipped", "DisposalJunction",
         "DisposalUnit", "MailingUnit","DisposalTrunk",
     ])
     ];
