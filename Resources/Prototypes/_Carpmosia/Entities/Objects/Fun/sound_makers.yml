@@ -1,0 +1,17 @@
+ - type: entity
+   parent: BaseWhistle
+   id: TrainWhistle
+   name: train whistle
+   description: A tempered steel whistle imitating the sound of antique locomotives. Impose yourself as the strongest force in the room.
+   components:
+   - type: Sprite
+     sprite: _Carpmosia/Objects/Fun/train_whistle.rsi
+     state: icon
+   - type: Clothing
+     sprite: _Carpmosia/Objects/Fun/train_whistle.rsi
+   - type: EmitSoundOnUse
+     sound:
+       collection: TrainWhistle
+   - type: EmitSoundOnAction
+     sound:
+       collection: TrainWhistle
