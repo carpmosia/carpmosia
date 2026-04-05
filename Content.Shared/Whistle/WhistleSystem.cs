@@ -1,6 +1,5 @@
 // Carpmosia-start - Whistle action
 using Content.Shared.Actions;
-using Content.Shared.Actions.Events;
 using Content.Shared.Inventory;
 using Content.Shared.Timing;
 // Carpmosia-end - Whistle action
@@ -18,20 +17,16 @@ public sealed class WhistleSystem : EntitySystem
     [Dependency] private readonly EntityLookupSystem _entityLookup = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
-    // Carpmosia-start - Whistle action
-    [Dependency] private readonly SharedActionsSystem _actions = default!;
-    [Dependency] private readonly UseDelaySystem _useDelay = default!;
-    // Carpmosia-end - Whistle action
+    [Dependency] private readonly SharedActionsSystem _actions = default!; // Carpmosia-edit - Whistle action
+    [Dependency] private readonly UseDelaySystem _useDelay = default!; // Carpmosia-edit - Whistle action
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<WhistleComponent, UseInHandEvent>(OnUseInHand);
-        // Carpmosia-start - Whistle action
-        SubscribeLocalEvent<WhistleComponent, GetItemActionsEvent>(OnGetItemActions);
-        SubscribeLocalEvent<WhistleComponent, SoundActionEvent>(OnWhistleAction);
-        // Carpmosia-end - Whistle action
+        SubscribeLocalEvent<WhistleComponent, GetItemActionsEvent>(OnGetItemActions); // Carpmosia-edit - Whistle action
+        SubscribeLocalEvent<WhistleComponent, SoundActionEvent>(OnWhistleAction); // Carpmosia-edit - Whistle action
     }
 
     // Carpmosia-start - Whistle action

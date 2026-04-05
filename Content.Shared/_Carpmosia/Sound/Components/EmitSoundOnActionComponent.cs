@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.Sound.Components; // cba to make a new namespace for no benefit
+namespace Content.Shared.Sound.Components;
 
 /// <summary>
 /// Simple sound emitter that emits sound on SoundAction
