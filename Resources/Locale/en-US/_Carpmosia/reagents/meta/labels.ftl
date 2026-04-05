@@ -26,7 +26,7 @@ reagent-label-siderlac-1 = siderlac | 5u = -50 caustic
 reagent-label-stellibinin-1 = stellibinin | 5u = -40 poison, -30u amatox
 reagent-label-synaptizine-1 = synaptizine | 5u = -20 poison | removes stun/knockdown/rainbow
 reagent-label-tranexamic-acid-1 = tranex acid | reduces bleed | OD 15u
-reagent-label-tricordrazine-1 = trico | 5u = -10 brute/burn, -5 toxin | alive only, no crit
+reagent-label-tricordrazine-1 = trico | 5u = -10 brute/burn, -5 poison | alive only, no crit
 reagent-label-lipozine-1 = lipo | makes hungy
 reagent-label-omnizine-1 = omni | 5u = -20 burn/toxin/airloss/brute
 reagent-label-ultravasculine-1 = ultravascu | 5u = -60 toxin, +15 blunt | OD 20u = -20 toxin, +6 blunt | multiplies while removing histamine
