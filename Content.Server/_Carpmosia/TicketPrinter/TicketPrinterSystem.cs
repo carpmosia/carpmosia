@@ -8,6 +8,7 @@ public sealed class TicketPrinterSystem : SharedTicketPrinterSystem
 {
     [Dependency] private readonly StackSystem _stack = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
+
     public override void Initialize()
     {
         base.Initialize();
