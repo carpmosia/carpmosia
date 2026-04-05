@@ -239,13 +239,6 @@ namespace Content.Server.Lathe
                 {
                     var result = Spawn(resultProto, Transform(uid).Coordinates);
                     _stack.TryMergeToContacts(result);
-                    // Carpmosia-start - Starlight Salvage Tickets
-                    if (currentRecipe.PrintTicket)
-                    {
-                        var tickets = Spawn(currentRecipe.TicketProtoId, Transform(uid).Coordinates);
-                        _stack.TryMergeToContacts(tickets);
-                    }
-                    // Carpmosia-end - Starlight Salvage Tickets
                 }
 
                 if (currentRecipe.ResultReagents is { } resultReagents &&
@@ -267,6 +260,10 @@ namespace Content.Server.Lathe
                         _puddle.TrySpillAt(uid, toAdd, out _);
                     }
                 }
+                // Carpmosia-start - Salvage Tickets
+                var ev = new LatheFinishPrintingEvent(_proto.Index(comp.CurrentRecipe));
+                RaiseLocalEvent(uid, ref ev);
+                // Carpmosia-end - Salvage Tickets
             }
 
             comp.CurrentRecipe = null;
