@@ -1459,4 +1459,14 @@
   id: 245
   time: '2026-04-05T03:19:31.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/303
+- author: arenaconspiracy
+  changes:
+  - message: Xenoborgs now have a chance to be selected as the secret gamemode at
+      20+ players ready.
+    type: Add
+  - message: Traitors is now negligibly less likely to be selected as the secret gamemode.
+    type: Tweak
+  id: 246
+  time: '2026-04-05T03:46:25.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/275
 Order: -1
