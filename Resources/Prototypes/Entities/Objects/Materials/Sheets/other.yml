@@ -108,6 +108,8 @@
         - ReagentId: Plasma
           Quantity: 10
         canReact: false
+  - type: TicketValue  # Carpmosia-edit - Salvage Tickets
+    ticketValue: 10    # Carpmosia-edit - Salvage Tickets
 
 - type: entity
   parent: SheetPlasma
@@ -171,6 +173,8 @@
         - ReagentId: Phosphorus
           Quantity: 5
         canReact: false
+  - type: TicketValue  # Carpmosia-edit - Salvage Tickets
+    ticketValue: 10    # Carpmosia-edit - Salvage Tickets
 
 - type: entity
   parent: SheetPlastic
@@ -233,6 +237,8 @@
         - ReagentId: Radium
           Quantity: 2
         canReact: false
+  - type: TicketValue  # Carpmosia-edit - Salvage Tickets
+    ticketValue: 10    # Carpmosia-edit - Salvage Tickets
 
 - type: entity
   parent: SheetUranium
