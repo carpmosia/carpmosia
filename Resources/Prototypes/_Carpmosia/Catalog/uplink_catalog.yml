@@ -11,3 +11,27 @@
     Telecrystal: 3
   categories:
     - UplinkAllies
+
+- type: listing
+  id: UplinkEnergySabre
+  name: uplink-energysabre-name
+  description: uplink-energysabre-desc
+  icon: { sprite: _Carpmosia/Objects/Weapons/Melee/e_sabre.rsi, state: icon }
+  productEntity: ClothingBeltSheathSyndieFilled
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 15
+  cost:
+    Telecrystal: 18
+  categories:
+  - UplinkWeaponry
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerAntagCondition
+    whitelist:
+    - NukeopsCommander
