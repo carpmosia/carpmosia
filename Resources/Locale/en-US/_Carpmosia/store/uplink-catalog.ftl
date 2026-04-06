@@ -3,3 +3,6 @@ uplink-mobsyndimothroach-desc = Call in a genetically engineered attack mothroac
 
 uplink-clothing-outer-syndicate-fire-name = Syndicate fire suit bundle
 uplink-clothing-outer-syndicate-fire-desc = Contains the Syndicate fire suit, designed to negate energy bolts, stun weaponry, and station fires. Does not protect against low pressure or explosions. Comes with air and extra combat gear.
+
+uplink-energysabre-name = Energy Sabre
+uplink-energysabre-desc = A stylish blade issued to the elite members of Syndicate High Command. Cuts through anything like butter!
