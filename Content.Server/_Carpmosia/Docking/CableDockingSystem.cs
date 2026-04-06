@@ -183,10 +183,9 @@ public sealed class CableDockingSystem : EntitySystem
         var reachable = node.GetAlwaysReachable();
         if (reachable == null)
             return;
-        foreach (var target in reachable.ToList())
+        foreach (var cableNode in reachable.ToList())
         {
-            if (target is CableNode cableNode &&
-                TryComp<CableComponent>(cableNode.Owner, out var cable) &&
+            if (TryComp<CableComponent>(cableNode.Owner, out var cable) &&
                 ShouldDockCableType(cable))
             {
                 UnlinkCables(node, cableNode);
