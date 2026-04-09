@@ -17,3 +17,23 @@
        collection: TrainWhistle
    - type: Whistle
      distance: 6
+
+ - type: entity
+   parent: BaseWhistle
+   id: ElectronicWhistle
+   name: electronic whistle
+   description: A battery powered whistle producing a synthetic tone at the press of a button, piercing it's way to a point of authority.
+   components:
+   - type: Sprite
+     sprite: _Carpmosia/Objects/Fun/electronic_whistle.rsi
+     state: icon
+   - type: Clothing
+     sprite: _Carpmosia/Objects/Fun/electronic_whistle.rsi
+   - type: EmitSoundOnUse
+     sound:
+       collection: ElectronicWhistle
+   - type: EmitSoundOnAction
+     sound:
+       collection: ElectronicWhistle
+   - type: Whistle
+     distance: 6
