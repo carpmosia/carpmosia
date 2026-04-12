@@ -1,6 +1,6 @@
 - type: entity
   id: BaseWeaponBattery
-  parent: BaseItem
+  parent: [ BaseItem, BasePointerCrosshair ] # Carpmosia-edit - Pointing modifier
   abstract: true
   components:
   - type: Sprite
@@ -138,7 +138,7 @@
 
 - type: entity
   name: svalinn laser pistol
-  parent: [BaseWeaponPowerCellSmall, BaseSecurityContraband]
+  parent: [ BaseWeaponPowerCellSmall, BaseSecurityContraband, BasePointerCrosshair ] # Carpmosia-edit - Pointing modifier
   id: WeaponLaserSvalinn
   description: A cheap and widely used laser pistol.
   components:

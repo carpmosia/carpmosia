@@ -1,4 +1,11 @@
-# not gonna define a BasePointerArrow because it'd have the same defaults as PointingSystem and PointerModifierComponent
+- type: entity
+  abstract: true
+  id: BasePointerArrow # set as a parent on items that inherit another pointer when undesired. e.g. stealth items
+  components:
+  - type: PointingModifier
+    pointer: PointerArrow
+    phraseSelf: "pointing-phrase-point-self"
+    phraseOther: "pointing-phrase-point-other"
 
 - type: entity
   abstract: true
