@@ -19,10 +19,12 @@
   - type: Appearance
 
 - type: entity
+  categories: [ HideSpawnMenu ]
   parent: PointerBase
   id: PointerArrow # Functionally identical to upstream pointer, but using our RSI
 
 - type: entity
+  categories: [ HideSpawnMenu ]
   parent: PointerBase
   id: PointerDagger
   components:
@@ -30,6 +32,7 @@
     state: dagger
 
 - type: entity
+  categories: [ HideSpawnMenu ]
   parent: PointerBase
   id: PointerHammer
   components:
@@ -37,6 +40,7 @@
     state: hammer
 
 - type: entity
+  categories: [ HideSpawnMenu ]
   parent: PointerBase
   id: PointerCrosshair
   components:
@@ -44,6 +48,7 @@
     state: crosshair
 
 - type: entity
+  categories: [ HideSpawnMenu ]
   parent: PointerBase
   id: PointerMicrophone
   components:
