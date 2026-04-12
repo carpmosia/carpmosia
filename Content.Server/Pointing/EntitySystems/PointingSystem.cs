@@ -60,12 +60,6 @@ namespace Content.Server.Pointing.EntitySystems
         private readonly Dictionary<ICommonSession, TimeSpan> _pointers = new();
 
         private const float PointingRange = 15f;
-        // Carpmosia-start - Pointing modifier
-        // TODO: these shouldn't be hardcoded
-        private LocId PointPhraseSelf = "pointing-phrase-point-self";
-        private LocId PointPhraseOther = "pointing-phrase-point-other";
-        private EntProtoId PointingArrow = "PointerArrow";
-        // Carpmosia-end - Pointing modifier
 
         private void GetCompState(Entity<PointingArrowComponent> entity, ref ComponentGetState args)
         {
@@ -171,10 +165,9 @@ namespace Content.Server.Pointing.EntitySystems
             _rotateToFaceSystem.TryFaceCoordinates(player, mapCoordsPointed.Position);
 
             // Carpmosia-start - Pointing modifier
-            // get defaults from up the file - SEE TODO LINE 64
-            var phraseSelf = Loc.GetString(PointPhraseSelf);
-            var phraseOther = Loc.GetString(PointPhraseOther);
-            var pointArrow = PointingArrow;
+            string phraseSelf = Loc.GetString("pointing-phrase-point-self");
+            string phraseOther = Loc.GetString("pointing-phrase-point-other");
+            EntProtoId pointArrow = "PointerArrow";
             // get held item w/ modifier
             var heldItem = _hands.GetHeldItem(player, _hands.GetActiveHand(player));
             if (TryComp<PointingModifierComponent>(heldItem, out var comp))
