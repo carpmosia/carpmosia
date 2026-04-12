@@ -1,0 +1,37 @@
+# not gonna define a BasePointerArrow because it'd have the same defaults as PointingSystem and PointerModifierComponent
+
+- type: entity
+  abstract: true
+  id: BasePointerDagger
+  components:
+  - type: PointingModifier
+    pointer: PointerDagger
+    phraseSelf: "pointing-phrase-point-self" # if you can come up with something other than "point at" for melee be my guest
+    phraseOther: "pointing-phrase-point-other"
+
+- type: entity
+  abstract: true
+  id: BasePointerHammer
+  components:
+  - type: PointingModifier
+    pointer: PointerHammer
+    phraseSelf: "pointing-phrase-point-self"
+    phraseOther: "pointing-phrase-point-other"
+
+- type: entity
+  abstract: true
+  id: BasePointerCrosshair
+  components:
+  - type: PointingModifier
+    pointer: PointerCrosshair
+    phraseSelf: "pointing-phrase-aim-self"
+    phraseOther: "pointing-phrase-aim-other"
+
+- type: entity
+  abstract: true
+  id: BasePointerMicrophone
+  components:
+  - type: PointingModifier
+    pointer: PointerMicrophone
+    phraseSelf: "pointing-phrase-gesture-self"
+    phraseOther: "pointing-phrase-gesture-other"
