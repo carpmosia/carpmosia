@@ -94,7 +94,7 @@
 
 - type: entity
   name: truncheon
-  parent: [BaseItem, BaseSecurityContraband]
+  parent: [ BaseItem, BaseSecurityContraband, BasePointerHammer ] # Carpmosia-edit - Pointing modifier
   id: Truncheon
   description: A rigid, steel-studded baton, meant to harm.
   components:
