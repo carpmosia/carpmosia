@@ -1,9 +1,10 @@
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes; // Carpmosia-edit - Pointing modifier
 using System.Numerics;
 
 namespace Content.Shared.Pointing.Components;
 
-[NetworkedComponent]
+[NetworkedComponent, EntityCategory("HideSpawnMenu")] // Carpmosia-edit - Pointing modifier
 public abstract partial class SharedPointingArrowComponent : Component
 {
     /// <summary>
