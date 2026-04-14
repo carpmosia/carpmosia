@@ -1,6 +1,6 @@
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._Carpmosia.Pointing.Components;
+namespace Content.Server.Pointing.Components;
 
 /// <summary>
 /// Modifies the icon & phrase used in pointing when held in hand

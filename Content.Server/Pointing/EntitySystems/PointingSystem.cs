@@ -1,7 +1,6 @@
 using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Pointing.Components;
-using Content.Server._Carpmosia.Pointing.Components; // Carpmosia-edit - Pointing modifier
 using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Content.Shared.Examine;
