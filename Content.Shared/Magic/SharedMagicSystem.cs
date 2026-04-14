@@ -21,6 +21,7 @@ using Content.Shared.Maps;
 using Content.Shared.Mind;
 using Content.Shared.Mobs.Components; // Carpmosia-edit - Wizard Smite Rework
 using Content.Shared.Mobs.Systems; // Carpmosia-edit - Wizard Smite Rework
+using Content.Shared.Objectives.Systems;
 using Content.Shared.Physics;
 using Content.Shared.Popups;
 using Content.Shared.Speech.Muting;
@@ -76,6 +77,7 @@ public abstract class SharedMagicSystem : EntitySystem
     [Dependency] private readonly DamageableSystem _damageableSystem = default!; // Carpmosia-edit - Wizard Smite Rework
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!; // Carpmosia-edit - Wizard Smite Rework
     [Dependency] private readonly MobThresholdSystem _mobThresholdSystem = default!; // Carpmosia-edit - Wizard Smite Rework
+    [Dependency] private readonly TargetSystem _target = default!;
 
     private static readonly ProtoId<TagPrototype> InvalidForGlobalSpawnSpellTag = "InvalidForGlobalSpawnSpell";
 
@@ -509,7 +511,7 @@ public abstract class SharedMagicSystem : EntitySystem
 
         ev.Handled = true;
 
-        var allHumans = _mind.GetAliveHumans();
+        var allHumans = _target.GetAliveHumans();
 
         foreach (var human in allHumans)
         {
