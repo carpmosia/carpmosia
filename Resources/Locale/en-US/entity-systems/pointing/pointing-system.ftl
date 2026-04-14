@@ -1,7 +1,7 @@
 ## PointingSystem
 
-## Carpmosia-start - Pointing modifier
 pointing-system-try-point-cannot-reach = You can't reach there!
+## Carpmosia-start - Pointing modifier
 pointing-system-point-at-self = You {$phrase} yourself.
 pointing-system-point-at-other = You {$phrase} {THE($other)}.
 pointing-system-point-at-self-others = {CAPITALIZE(THE($otherName))} {$phrase} {REFLEXIVE($other)}.
