@@ -480,13 +480,13 @@
   description: uplink-exploding-syndicate-bomb-desc
   productEntity: SyndicateBomb
   cost:
-    Telecrystal: 7 #carpmosia-edit - cheaper hard bombs
+    Telecrystal: 7 # Carpmosia-edit - Cheaper hardbombs
   categories:
     - UplinkExplosives
   restockTime: 1800
   conditions:
-  - !type:ListingLimitedStockCondition #carpmosia-edit - cheaper hard bombs
-    stock: 1 #carpmosia edit - cheaper hard bombs
+  - !type:ListingLimitedStockCondition # Carpmosia-edit - Cheaper hardbombs
+    stock: 1 # Carpmosia-edit - Cheaper hardbombs
   - !type:StoreWhitelistCondition
     blacklist:
       tags:
@@ -1127,7 +1127,7 @@
   discountDownTo:
     Telecrystal: 4
   cost:
-    Telecrystal: 7 #carpmosia-edit - cheaper hard bombs
+    Telecrystal: 7 # Carpmosia-edit - Cheaper hardbombs
   categories:
   - UplinkExplosives
 
