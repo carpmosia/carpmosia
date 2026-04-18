@@ -176,7 +176,6 @@ namespace Content.Server.Pointing.EntitySystems
             }
 
             var arrow = Spawn(pointArrow, coordsPointed);
-            // Carpmosia-end - Pointing modifier
 
             if (TryComp<PointingArrowComponent>(arrow, out var pointing))
             {
