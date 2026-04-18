@@ -163,7 +163,6 @@ namespace Content.Server.Pointing.EntitySystems
             var mapCoordsPointed = _transform.ToMapCoordinates(coordsPointed);
             _rotateToFaceSystem.TryFaceCoordinates(player, mapCoordsPointed.Position);
 
-            // Carpmosia-start - Pointing modifier
             string phraseSelf = Loc.GetString("pointing-phrase-point-self");
             string phraseOther = Loc.GetString("pointing-phrase-point-other");
             EntProtoId pointArrow = "PointerArrow";
@@ -258,48 +257,37 @@ namespace Content.Server.Pointing.EntitySystems
                     if (pointingAtOwnItem)
                     {
                         // You point at your item
-                        selfMessage = Loc.GetString("pointing-system-point-in-own-inventory-self",
-                            ("item", itemName), ("phrase", phraseSelf));
+                        selfMessage = Loc.GetString("pointing-system-point-in-own-inventory-self", ("item", itemName), ("phrase", phraseSelf)); // Carpmosia-edit - Pointing modifier
                         // Urist McPointer points at his item
-                        viewerMessage = Loc.GetString("pointing-system-point-in-own-inventory-others",
-                            ("item", itemName), ("pointer", playerName), ("phrase", phraseOther));
+                        viewerMessage = Loc.GetString("pointing-system-point-in-own-inventory-others", ("item", itemName), ("pointer", playerName), ("phrase", phraseOther)); // Carpmosia-edit - Pointing modifier
                     }
                     else
                     {
                         // You point at Urist McHands' item
-                        selfMessage = Loc.GetString("pointing-system-point-in-other-inventory-self",
-                            ("item", itemName), ("wearer", pointedName), ("phrase", phraseSelf));
+                        selfMessage = Loc.GetString("pointing-system-point-in-other-inventory-self", ("item", itemName), ("wearer", pointedName), ("phrase", phraseSelf)); // Carpmosia-edit - Pointing modifier
                         // Urist McPointer points at Urist McWearer's item
-                        viewerMessage = Loc.GetString("pointing-system-point-in-other-inventory-others",
-                            ("item", itemName), ("pointer", playerName), ("wearer", pointedName), ("phrase", phraseOther));
+                        viewerMessage = Loc.GetString("pointing-system-point-in-other-inventory-others", ("item", itemName), ("pointer", playerName), ("wearer", pointedName), ("phrase", phraseOther)); // Carpmosia-edit - Pointing modifier
                         // Urist McPointer points at your item
-                        viewerPointedAtMessage = Loc.GetString("pointing-system-point-in-other-inventory-target",
-                            ("item", itemName), ("pointer", playerName), ("phrase", phraseOther));
+                        viewerPointedAtMessage = Loc.GetString("pointing-system-point-in-other-inventory-target", ("item", itemName), ("pointer", playerName), ("phrase", phraseOther)); // Carpmosia-edit - Pointing modifier
                     }
                 }
                 else
                 {
                     selfMessage = pointingAtSelf
                         // You point at yourself
-                        ? Loc.GetString("pointing-system-point-at-self",
-                            ("phrase", phraseSelf))
+                        ? Loc.GetString("pointing-system-point-at-self", ("phrase", phraseSelf)) // Carpmosia-edit - Pointing modifier
                         // You point at Urist McTarget
-                        : Loc.GetString("pointing-system-point-at-other",
-                            ("other", pointedName), ("phrase", phraseSelf));
+                        : Loc.GetString("pointing-system-point-at-other", ("other", pointedName), ("phrase", phraseSelf)); // Carpmosia-edit - Pointing modifier
 
                     viewerMessage = pointingAtSelf
                         // Urist McPointer points at himself
-                        ? Loc.GetString("pointing-system-point-at-self-others",
-                            ("otherName", playerName), ("other", playerName), ("phrase", phraseOther))
+                        ? Loc.GetString("pointing-system-point-at-self-others", ("otherName", playerName), ("other", playerName), ("phrase", phraseOther)) // Carpmosia-edit - Pointing modifier
                         // Urist McPointer points at Urist McTarget
-                        : Loc.GetString("pointing-system-point-at-other-others",
-                            ("otherName", playerName), ("other", pointedName), ("phrase", phraseOther));
+                        : Loc.GetString("pointing-system-point-at-other-others", ("otherName", playerName), ("other", pointedName), ("phrase", phraseOther)); // Carpmosia-edit - Pointing modifier
 
                     // Urist McPointer points at you
-                    viewerPointedAtMessage = Loc.GetString("pointing-system-point-at-you-other",
-                        ("otherName", playerName), ("phrase", phraseOther));
+                    viewerPointedAtMessage = Loc.GetString("pointing-system-point-at-you-other", ("otherName", playerName), ("phrase", phraseOther)); // Carpmosia-edit - Pointing modifier
                 }
-                // Carpmosia-end - Pointing modifier
 
                 var ev = new AfterPointedAtEvent(pointed);
                 RaiseLocalEvent(player, ref ev);
@@ -322,13 +310,9 @@ namespace Content.Server.Pointing.EntitySystems
                 var tileDef = _tileDefinitionManager[tileRef?.Tile.TypeId ?? 0];
 
                 var name = Loc.GetString(tileDef.Name);
-                // Carpmosia-start - Pointing modifier
-                selfMessage = Loc.GetString("pointing-system-point-at-tile",
-                    ("tileName", name), ("phrase", phraseSelf));
+                selfMessage = Loc.GetString("pointing-system-point-at-tile", ("tileName", name), ("phrase", phraseSelf)); // Carpmosia-edit - Pointing modifier
 
-                viewerMessage = Loc.GetString("pointing-system-other-point-at-tile",
-                    ("otherName", playerName), ("tileName", name), ("phrase", phraseOther));
-                // Carpmosia-end - Pointing modifier
+                viewerMessage = Loc.GetString("pointing-system-other-point-at-tile", ("otherName", playerName), ("tileName", name), ("phrase", phraseOther)); // Carpmosia-edit - Pointing modifier
 
                 _adminLogger.Add(LogType.Action, LogImpact.Low, $"{ToPrettyString(player):user} pointed at {name} {(position == null ? mapCoordsPointed : position)}");
             }
