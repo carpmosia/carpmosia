@@ -163,6 +163,7 @@ namespace Content.Server.Pointing.EntitySystems
             var mapCoordsPointed = _transform.ToMapCoordinates(coordsPointed);
             _rotateToFaceSystem.TryFaceCoordinates(player, mapCoordsPointed.Position);
 
+            // Carpmosia-start - Pointing modifier
             string phraseSelf = Loc.GetString("pointing-phrase-point-self");
             string phraseOther = Loc.GetString("pointing-phrase-point-other");
             EntProtoId pointArrow = "PointerArrow";
@@ -176,6 +177,7 @@ namespace Content.Server.Pointing.EntitySystems
             }
 
             var arrow = Spawn(pointArrow, coordsPointed);
+            // Carpmosia-end - Pointing modifier
 
             if (TryComp<PointingArrowComponent>(arrow, out var pointing))
             {
@@ -241,7 +243,6 @@ namespace Content.Server.Pointing.EntitySystems
 
                 var pointingAtSelf = player == pointed;
 
-                // Carpmosia-start - Pointing modifier
                 // Are we in a mob's inventory?
                 if (containingInventory != null)
                 {
