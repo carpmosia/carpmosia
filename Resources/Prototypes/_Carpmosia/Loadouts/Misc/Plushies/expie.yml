@@ -1,0 +1,23 @@
+- type: loadoutEffectGroup
+  id: PlushieExperiment
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobPsychologist
+      time: 5h
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobSalvageSpecialist
+      time: 5h
+
+- type: loadout
+  id: PlushieExperiment
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PlushieExperiment
+  storage:
+    back:
+    - PlushieExperiment
+  groupBy: "plushies"
