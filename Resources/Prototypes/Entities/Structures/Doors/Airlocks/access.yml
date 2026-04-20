@@ -295,13 +295,26 @@
       board: [ DoorElectronicsResearch ]
 
 - type: entity
-  parent: AirlockScience
+  parent: AirlockMedicalScience # Carpmosia-edit - now uses medsci door sprite
   id: AirlockMedicalScienceLocked
   suffix: Medical/Science, Locked
   components:
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsMedicalResearch ]
+
+# Carpmosia-start - airlocks for Jellyfish
+
+- type: entity
+  parent: AirlockLogistics
+  id: AirlockLogisticsLocked
+  suffix: Cargo/Engineering, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsLogistics ]
+
+# Carpmosia-end - airlocks for Jellyfish
 
 - type: entity
   parent: AirlockCentralCommand
@@ -709,13 +722,26 @@
       board: [ DoorElectronicsResearch ]
 
 - type: entity
-  parent: AirlockScienceGlass
+  parent: AirlockMedicalScienceGlass # Carpmosia-edit - now uses medsci door sprite
   id: AirlockMedicalScienceGlassLocked
   suffix: Medical/Science, Locked
   components:
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsMedicalResearch ]
+
+# Carpmosia-start - airlocks for Jellyfish
+
+- type: entity
+  parent: AirlockLogisticsGlass
+  id: AirlockLogisticsGlassLocked
+  suffix: Cargo/Engineering, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsLogistics ]
+
+# Carpmosia-end - airlocks for Jellyfish
 
 - type: entity
   parent: AirlockCentralCommandGlass

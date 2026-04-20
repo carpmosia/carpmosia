@@ -137,6 +137,18 @@
   - type: AccessReader
     access: [["Cargo"]]
 
+# Carpmosia-start - airlocks for Jellyfish
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsLogistics
+  suffix: Cargo/Engineering, Locked
+  components:
+  - type: AccessReader
+    access: [["Cargo"], ["Engineering"]]
+
+# Carpmosia-end - airlocks for Jellyfish
+
 # Engineering
 - type: entity
   parent: DoorElectronics

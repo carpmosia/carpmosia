@@ -86,8 +86,8 @@
 
 - type: entity
   parent: Airlock
-  id: AirlockMedsci
-  suffix: Medsci
+  id: AirlockMedicalScience
+  suffix: Medical/Science
   components:
   - type: Sprite
     sprite: _Carpmosia/Structures/Doors/Airlocks/Standard/medsci.rsi
@@ -95,7 +95,7 @@
 - type: entity
   parent: Airlock
   id: AirlockLogistics
-  suffix: Logistics
+  suffix: Cargo/Engineering
   components:
   - type: Sprite
     sprite: _Carpmosia/Structures/Doors/Airlocks/Standard/logistics.rsi
@@ -296,8 +296,8 @@
 
 - type: entity
   parent: AirlockGlass
-  id: AirlockMedsciGlass
-  suffix: Medsci
+  id: AirlockMedicalScienceGlass
+  suffix: Medical/Science
   components:
   - type: Sprite
     sprite: _Carpmosia/Structures/Doors/Airlocks/Glass/medsci.rsi
@@ -305,7 +305,7 @@
 - type: entity
   parent: AirlockGlass
   id: AirlockLogisticsGlass
-  suffix: Logistics
+  suffix: Cargo/Engineering
   components:
   - type: Sprite
     sprite: _Carpmosia/Structures/Doors/Airlocks/Glass/logistics.rsi
