@@ -375,3 +375,45 @@
   - type: Sprite
     sprite: Structures/Doors/Airlocks/highsec/highsec.rsi
     state: "assembly"
+
+# Carpmosia-start - airlocks for Jellyfish
+
+#Medsci
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyMedicalScience
+  suffix: Medical/Science
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/Standard/medsci.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyMedicalScienceGlass
+  suffix: Medical/Science, Glass
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Doors/Glass/Standard/medsci.rsi
+    state: "assembly"
+
+#Logistics / CargoEngi
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyLogistics
+  suffix: Cargo/Engineering
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/Standard/logistics.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyLogisticsGlass
+  suffix: Cargo/Engineering, Glass
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/Glass/logistics.rsi
+    state: "assembly"
+
+# Carpmosia-end - airlocks for Jellyfish
