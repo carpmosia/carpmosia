@@ -82,6 +82,26 @@
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/chemistry.rsi
 
+# Carpmosia-start - airlocks for Jellyfish
+
+- type: entity
+  parent: Airlock
+  id: AirlockMedsci
+  suffix: Medsci
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/Standard/medsci.rsi
+
+- type: entity
+  parent: Airlock
+  id: AirlockLogistics
+  suffix: Logistics
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/Standard/logistics.rsi
+
+# Carpmosia-end - airlocks for Jellyfish
+
 - type: entity
   parent: Airlock
   id: AirlockScience
@@ -271,6 +291,26 @@
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/virology.rsi
+
+# Carpmosia-start - (glass) airlocks for Jellyfish
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockMedsciGlass
+  suffix: Medsci
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/Glass/medsci.rsi
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockLogisticsGlass
+  suffix: Logistics
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Doors/Airlocks/Glass/logistics.rsi
+
+# Carpmosia-end - (glass) airlocks for Jellyfish
 
 - type: entity
   parent: AirlockGlass
