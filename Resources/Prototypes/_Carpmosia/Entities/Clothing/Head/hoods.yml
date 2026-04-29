@@ -9,3 +9,15 @@
     sprite: _Carpmosia/Clothing/Head/Hoods/Coat/hood_captain_armored.rsi
   - type: Clothing
     sprite: _Carpmosia/Clothing/Head/Hoods/Coat/hood_captain_armored.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterBrigmedic
+  categories: [ HideSpawnMenu ]
+  name: brigmedic winter coat hood
+  description: A cozy white hood for treating life-threatening combat injuries. It looks so much like a snowball.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Clothing/Head/Hoods/Coat/brigmedic_coat.rsi
+  - type: Clothing
+    sprite: _Carpmosia/Clothing/Head/Hoods/Coat/brigmedic_coat.rsi

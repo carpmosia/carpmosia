@@ -8,3 +8,23 @@
     sprite: Clothing/Uniforms/Jumpskirt/janimaid.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpskirt/janimaid.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtBrigmedic
+  name: brigmedic jumpskirt
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Clothing/Uniforms/Jumpskirt/brigmedic.rsi
+  - type: Clothing
+    sprite: _Carpmosia/Clothing/Uniforms/Jumpskirt/brigmedic.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtBrigmedicGrey
+  name: grey brigmedic jumpskirt
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Clothing/Uniforms/Jumpskirt/brigmedic_grey.rsi
+  - type: Clothing
+    sprite: _Carpmosia/Clothing/Uniforms/Jumpskirt/brigmedic_grey.rsi

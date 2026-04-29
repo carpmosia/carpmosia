@@ -244,6 +244,7 @@
 - type: entity
   parent: [ClothingHeadset, BaseSecurityContraband]
   id: ClothingHeadsetBrigmedic
+  categories: [ HideSpawnMenu ] # Carpmosia-edit - New Brigmedic
   name: brigmedic headset
   description: A headset that helps to hear the death cries.
   components:

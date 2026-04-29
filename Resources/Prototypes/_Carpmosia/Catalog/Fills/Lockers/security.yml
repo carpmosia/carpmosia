@@ -1,0 +1,21 @@
+- type: entityTable
+  id: FillLockerBrigmedic
+  table: !type:AllSelector
+    children:
+    - id: ClothingEyesGlassesSecurity # TODO brigmedic glasses
+    - id: HandheldHealthAnalyzer
+    - id: MedkitFilled
+    - id: BoxBottle
+    - id: JetInjector
+    # TODO: replace the jugs with single-use bags
+    - id: JugBicaridine # bicaridine dingus
+    - id: JugSaline # saline dingus
+    - id: JugDermaline # kelotane dingus
+    - id: JugDexalinPlus # epinephrine dingus
+    - id: BoxZiptie
+    - id: Flash
+    - id: RadioHandheldSecurity
+    - id: FlashlightSeclite
+    - id: HoloprojectorSecurity
+    - id: EmergencyRollerBedSpawnFolded
+    - id: BoxBodyBag

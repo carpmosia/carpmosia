@@ -1,0 +1,54 @@
+- type: entity
+  parent: [ ClothingBeltStorageBase, BaseSecurityContraband ]
+  id: ClothingBeltBrigmedic
+  name: brigmedical belt
+  description: A combination waist bag and webbing strip, designed to retain medical gear and combat utilities.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Clothing/Belt/brigmedic.rsi
+  - type: Clothing
+    sprite: _Carpmosia/Clothing/Belt/brigmedic.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: Storage
+    grid:
+    - 0,0,5,1 # 2x6
+    whitelist:
+      tags: # some of these are so comically reduntant
+        # Medical
+        - Bottle
+        - DiscreteHealthAnalyzer
+        - Dropper # lol
+        - SurgeryTool
+        - PillCanister
+        # Security
+        - CombatKnife
+        - HandGrenade
+        - MagazinePistol
+        - SecBeltEquip
+        - Sidearm
+        - Taser
+        - Truncheon
+        # Other
+        - Bottle
+        - Radio
+      components:
+        # Medical
+        - Defibrillator
+        - Healing
+        - Injector
+        - Pill
+        # Security
+        - BallisticAmmoProvider
+        - BalloonPopper
+        - CartridgeAmmo
+        - Ensnaring
+        - Flash
+        - FlashOnTrigger
+        - Handcuff
+        - Stunbaton
+        - SmokeOnTrigger
+        - Whistle
+        # Other
+        - HandLabeler
+  # TODO ItemMaper

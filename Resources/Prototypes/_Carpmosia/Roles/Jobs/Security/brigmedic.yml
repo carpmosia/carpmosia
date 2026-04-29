@@ -1,0 +1,47 @@
+- type: job
+  id: Brigmedic
+  name: job-name-brigmedic
+  description: job-description-security
+  playTimeTracker: JobBrigmedic
+  requirements:
+  - !type:RoleTimeRequirement
+    role: JobSecurityOfficer
+    time: 5h
+  - !type:DepartmentTimeRequirement
+    department: Medical
+    time: 2h # remind me to make a PR bulldozing playtime requirements halving them accross the board
+  startingGear: BrigmedicGear
+  icon: "JobIconBrigmedic"
+  supervisors: job-supervisors-hos
+  canBeAntag: false
+  access:
+  - Security
+  - Brig
+  - Maintenance
+  - Cryogenics
+  - External
+  - Brigmedic
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: BrigmedicGear
+  equipment:
+    id: BrigmedicPDA
+    ears: ClothingHeadsetSecurity
+    belt: ClothingBeltBrigmedicFilled
+  storage:
+    back:
+    - Flash
+    - MagazinePistol
+
+- type: chameleonOutfit
+  id: BrigmedicChameleonOutfit
+  job: Brigmedic
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHatBeretBrigmedic
+    mask: ClothingMaskGasSecurity
+    nect: ClothingNeckScarfStripedLightBlue
+    gloves: ClothingHandsGlovesLatex

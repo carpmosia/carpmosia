@@ -1,0 +1,43 @@
+- type: entity
+  parent: [ ClothingOuterArmorBase, ClothingOuterStorageBase, ClothingOuterSizeArmoredBasic, BaseSecurityContraband ] # holy shit
+  id: ClothingOuterArmorBrigmedicGown
+  name: brigmedical armored gown
+  description: A durable medical gown with attached armor plating issued to brigmedics.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Clothing/OuterClothing/Armor/brigmedic_gown.rsi
+  - type: Clothing
+    sprite: _Carpmosia/Clothing/OuterClothing/Armor/brigmedic_gown.rsi
+
+- type: entity
+  parent: [ ClothingOuterArmorBase, ClothingOuterSizeArmoredBasic, BaseSecurityContraband ]
+  id: ClothingOuterArmorBrigmedicVest
+  name: brigmedical armor vest
+  description: A flexible armor vest added shoulder pads painted in brigmedic colors.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Clothing/OuterClothing/Armor/brigmedic_vest.rsi
+  - type: Clothing
+    sprite: _Carpmosia/Clothing/OuterClothing/Armor/brigmedic_vest.rsi
+
+- type: entity
+  parent: [ ClothingOuterArmorBase, ClothingOuterStorageBase, ClothingOuterSizeArmoredBasic, BaseSecurityContraband ] # holy shit
+  id: ClothingOuterArmorBrigmedicWinterCoat
+  name: brigmedical armored winter coat
+  description: A warm, padded winter coat with integrated armor. Features trimmed down scruff for increased mobility of the wrists and neck.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Clothing/OuterClothing/Armor/brigmedic_coat.rsi
+  - type: Clothing
+    sprite: _Carpmosia/Clothing/OuterClothing/Armor/brigmedic_coat.rsi
+  - type: TemperatureProtection
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodWinterBrigmedic
+    slot: head
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+      storagebase: !type:Container
+        ents: []

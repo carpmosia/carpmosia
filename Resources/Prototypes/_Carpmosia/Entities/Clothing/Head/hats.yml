@@ -1,0 +1,18 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBrigmedic
+  name: brigmedic cap
+  description: A wide brimmed cap painted with red and blue streaks denominating the brigmedic.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Clothing/Head/Hats/brigmedic.rsi
+  - type: Clothing
+    sprite: _Carpmosia/Clothing/Head/Hats/brigmedic.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
