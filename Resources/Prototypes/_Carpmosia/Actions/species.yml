@@ -1,0 +1,13 @@
+- type: entity
+  parent: BaseAction
+  id: ActionLagomorphSprint
+  name: Sprint
+  description: Spend some stamina to break into a sprint!
+  components:
+  - type: Action
+    useDelay: 60
+    icon: # why did they give the jump action a sprint icon? are they stupid?
+      sprite: Interface/Actions/jump.rsi
+      state: icon
+  - type: InstantAction
+    event: !type:SprintAbilityEvent {}

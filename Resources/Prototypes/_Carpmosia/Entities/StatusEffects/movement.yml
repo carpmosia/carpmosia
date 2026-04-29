@@ -1,0 +1,9 @@
+- type: entity
+  parent: StatusEffectSpeed
+  id: StatusEffectLagomorphSprint
+  name: sprint
+  components:
+  - type: MovementModStatusEffect
+    walkSpeedModifier: 1.2
+    sprintSpeedModifier: 1.2
+# - type: JitteringStatusEffect # TODO append this for visual feedback once upstream JitterSystem is refactored to use status effects

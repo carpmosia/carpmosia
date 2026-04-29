@@ -1,0 +1,331 @@
+- type: markingsGroup
+  parent: Undergarments
+  id: Lagomorph
+  limits:
+    enum.HumanoidVisualLayers.Hair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.FacialHair:
+      limit: 1
+      onlyGroupWhitelisted: true
+      required: false
+    enum.HumanoidVisualLayers.Head:
+      limit: 3
+      required: false
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 1
+      required: true
+      default: [ RabbitEar ] # TODO
+    enum.HumanoidVisualLayers.Snout:
+      limit: 1
+      required: true
+      default: [ RabbitSnout ] # TODO
+    enum.HumanoidVisualLayers.SnoutCover:
+      limit: 3
+      required: false
+    enum.HumanoidVisualLayers.Tail:
+      limit: 1
+      required: true
+      default: [ RabbitTail ] # TODO
+    enum.HumanoidVisualLayers.LArm:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RArm:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LHand:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RHand:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.UndergarmentTop:
+      limit: 1
+      required: false
+      nudityDefault: [ UndergarmentTopTanktopVulpkanin ]
+    enum.HumanoidVisualLayers.UndergarmentBottom:
+      limit: 1
+      required: false
+      nudityDefault: [ UndergarmentBottomBoxersVulpkanin ]
+
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceLagomorph
+  categories: [ HideSpawnMenu ]
+  name: vulpkanin appearance
+  components:
+  - type: InitialBody
+    organs:
+      Torso: OrganLagomorphTorso
+      Head: OrganLagomorphHead
+      ArmLeft: OrganLagomorphArmLeft
+      ArmRight: OrganLagomorphArmRight
+      HandRight: OrganLagomorphHandRight
+      HandLeft: OrganLagomorphHandLeft
+      LegLeft: OrganLagomorphLegLeft
+      LegRight: OrganLagomorphLegRight
+      FootLeft: OrganLagomorphFootLeft
+      FootRight: OrganLagomorphFootRight
+      Brain: OrganLagomorphBrain
+      Eyes: OrganLagomorphEyes
+      Tongue: OrganLagomorphTongue
+      Appendix: OrganLagomorphAppendix
+      Ears: OrganLagomorphEars
+      Lungs: OrganLagomorphLungs
+      Heart: OrganLagomorphHeart
+      Stomach: OrganLagomorphStomach
+      Liver: OrganLagomorphLiver
+      Kidneys: OrganLagomorphKidneys
+  - type: HumanoidProfile
+    species: Lagomorph
+  - type: Inventory
+    speciesId: vulpkanin
+    displacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Lagomorph/displacement.rsi
+            state: jumpsuit
+      back:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Lagomorph/displacement.rsi
+            state: back
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Lagomorph/displacement.rsi
+            state: outerwear
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Lagomorph/displacement.rsi
+            state: hand
+      shoes:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Lagomorph/displacement.rsi
+            state: shoes
+      head:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Lagomorph/displacement.rsi
+            state: head
+      neck:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Lagomorph/displacement.rsi
+            state: neck
+      eyes:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Lagomorph/displacement.rsi
+            state: eyes
+      belt:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Lagomorph/displacement.rsi
+            state: belt
+
+- type: entity
+  parent:
+  - AppearanceLagomorph
+  - BaseSpeciesMobOrganic
+  id: MobLagomorph
+  name: Urist McRabbit
+  components:
+  - type: DamageVisuals
+    damageOverlayGroups:
+      Brute:
+        sprite: Mobs/Effects/brute_damage.rsi
+        color: "#ccac1f"
+      Burn:
+        sprite: Mobs/Effects/burn_damage.rsi
+  - type: Speech
+    speechSounds: Lagomorph
+    speechVerb: Lagomorph
+  - type: Vocal
+    sounds:
+      Male: MaleLagomorph
+      Female: FemaleLagomorph
+      Unsexed: MaleLagomorph
+  - type: Damageable
+    damageModifierSet: Vulpkanin
+  - type: Temperature
+    specificHeat: 44
+  - type: TemperatureDamage
+    heatDamageThreshold: 320
+    coldDamageThreshold: 230
+    coldDamage:
+      types:
+        Cold: 0.05 # Per second, scales with temperature & other constants
+    heatDamage:
+      types:
+        Heat: 2.5 # Per second, scales with temperature & other constants
+  - type: TemperatureProtection
+    heatingCoefficient: 1.2
+    coolingCoefficient: 0.3
+  - type: SprintAbility
+    action: ActionLagomorphSprint
+    staminaCost: 35 # equivalent to one batong hit
+    duration: 10
+    sprintSound:
+      path: /Audio/Weapons/punchmiss.ogg # TODO: get a more fitting sound
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: SulfurBlood
+        Quantity: 300
+  - type: CreamPied
+    sprite:
+      sprite: Effects/creampie.rsi
+      state: creampie_vulpkanin
+
+- type: entity
+  parent: OrganBase
+  id: OrganLagomorph
+  abstract: true
+  suffix: lagomorph
+
+- type: entity
+  id: OrganLagomorphMetabolizer
+  abstract: true
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Herbivore ]
+
+- type: entity
+  parent: OrganLagomorph
+  id: OrganLagomorphInternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Mobs/Species/Lagomorph/organs.rsi
+
+- type: entity
+  id: OrganLagomorphVisual
+  abstract: true
+  components:
+  - type: VisualOrgan
+    data:
+      sprite: _Carpmosia/Mobs/Species/Lagomorph/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Lagomorph
+
+- type: entity
+  parent: [ OrganLagomorph, OrganLagomorphVisual ]
+  id: OrganLagomorphExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Mobs/Species/Lagomorph/parts.rsi
+
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganLagomorphExternal ]
+  id: OrganLagomorphTorso
+
+- type: entity
+  parent: [ OrganBaseHead, OrganLagomorphExternal ]
+  id: OrganLagomorphHead
+  components:
+  - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Snout
+    - enum.HumanoidVisualLayers.HeadTop
+    - enum.HumanoidVisualLayers.HeadSide
+    - enum.HumanoidVisualLayers.Hair
+    - enum.HumanoidVisualLayers.FacialHair
+    dependentHidingLayers:
+      enum.HumanoidVisualLayers.Snout:
+      - enum.HumanoidVisualLayers.SnoutCover
+    markingsDisplacement:
+      Hair:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Lagomorph/displacement.rsi
+            state: hair
+
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganLagomorphExternal ]
+  id: OrganLagomorphArmLeft
+
+- type: entity
+  parent: [ OrganBaseArmRight, OrganLagomorphExternal ]
+  id: OrganLagomorphArmRight
+
+- type: entity
+  parent: [ OrganBaseHandLeft, OrganLagomorphExternal ]
+  id: OrganLagomorphHandLeft
+
+- type: entity
+  parent: [ OrganBaseHandRight, OrganLagomorphExternal ]
+  id: OrganLagomorphHandRight
+
+- type: entity
+  parent: [ OrganBaseLegLeft, OrganLagomorphExternal ]
+  id: OrganLagomorphLegLeft
+
+- type: entity
+  parent: [ OrganBaseLegRight, OrganLagomorphExternal ]
+  id: OrganLagomorphLegRight
+
+- type: entity
+  parent: [ OrganBaseFootLeft, OrganLagomorphExternal ]
+  id: OrganLagomorphFootLeft
+
+- type: entity
+  parent: [ OrganBaseFootRight, OrganLagomorphExternal ]
+  id: OrganLagomorphFootRight
+
+- type: entity
+  parent: [ OrganBaseBrain, OrganSpriteHumanInternal, OrganLagomorphInternal ]
+  id: OrganLagomorphBrain
+
+- type: entity
+  parent: [ OrganLagomorphVisual, OrganBaseEyes, OrganLagomorphInternal ]
+  id: OrganLagomorphEyes
+
+- type: entity
+  parent: [ OrganBaseTongue, OrganLagomorphInternal ]
+  id: OrganLagomorphTongue
+
+- type: entity
+  parent: [ OrganBaseAppendix, OrganLagomorphInternal ]
+  id: OrganLagomorphAppendix
+
+- type: entity
+  parent: [ OrganBaseEars, OrganLagomorphInternal ]
+  id: OrganLagomorphEars
+
+- type: entity
+  parent: [ OrganBaseLungs, OrganLagomorphInternal, OrganLagomorphMetabolizer ]
+  id: OrganLagomorphLungs
+
+- type: entity
+  parent: [ OrganBaseHeart, OrganLagomorphInternal, OrganLagomorphMetabolizer ]
+  id: OrganLagomorphHeart
+
+- type: entity
+  parent: [ OrganBaseStomach, OrganLagomorphInternal, OrganLagomorphMetabolizer ]
+  id: OrganLagomorphStomach
+
+- type: entity
+  parent: [ OrganBaseLiver, OrganLagomorphInternal, OrganLagomorphMetabolizer ]
+  id: OrganLagomorphLiver
+
+- type: entity
+  parent: [ OrganBaseKidneys, OrganLagomorphInternal, OrganLagomorphMetabolizer ]
+  id: OrganLagomorphKidneys
