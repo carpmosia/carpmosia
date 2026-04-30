@@ -7,11 +7,10 @@
     - id: MedkitFilled
     - id: BoxBottle
     - id: JetInjector
-    # TODO: replace the jugs with single-use bags
-    - id: JugBicaridine # bicaridine dingus
-    - id: JugSaline # saline dingus
-    - id: JugDermaline # kelotane dingus
-    - id: JugDexalinPlus # epinephrine dingus
+    - id: FluidbagBicaridine
+    - id: FluidbagKelotane
+    - id: FluidbagEpinephrine
+    - id: FluidbagSaline
     - id: BoxZiptie
     - id: Flash
     - id: RadioHandheldSecurity
