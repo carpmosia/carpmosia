@@ -1,3 +1,4 @@
+using System.Numerics; // Carpmosia-edit - Lagomorph
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -35,6 +36,18 @@ namespace Content.Shared.Humanoid.Markings
 
         [DataField("sprites", required: true)]
         public List<SpriteSpecifier> Sprites { get; private set; } = default!;
+
+        // Carpmosia-start - Lagomorph
+        /// <summary>
+        /// Sprite offset to apply to the entire marking
+        /// </summary>
+        /// <remarks>
+        /// in YAML offset: "0, 1" shifts it up by 1 full tile
+        /// 1/32 or 0.03125 corresponds to one pixel
+        /// </remarks>
+        [DataField("offset")]
+        public Vector2 Offset = Vector2.Zero;
+        // Carpmosia-end - Lagomorph
 
         public Marking AsMarking()
         {

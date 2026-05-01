@@ -200,6 +200,7 @@ public sealed class VisualBodySystem : SharedVisualBodySystem
                     var spriteLayer = _sprite.AddLayer(target, sprite, index + i + 1);
                     _sprite.LayerMapSet(target, layerId, spriteLayer);
                     _sprite.LayerSetSprite(target, layerId, rsi);
+                    _sprite.LayerSetOffset(target, spriteLayer, proto.Offset); // Carpmosia-edit - Lagomorph
                 }
 
                 if (marking.MarkingColors is not null && i < marking.MarkingColors.Count)
