@@ -67,7 +67,7 @@ public sealed partial class SprintAbilitySystem : EntitySystem
         }
 
         // audio
-        _audio.PlayPredicted(ent.Comp.JumpSound, args.Performer, args.Performer);
+        _audio.PlayPredicted(ent.Comp.SprintSound, args.Performer, args.Performer);
 
         args.Handled = true;
     }

@@ -56,7 +56,7 @@ public sealed partial class SprintAbilityComponent : Component
     /// This gets played whenever the jump action is used.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public SoundSpecifier? JumpSound;
+    public SoundSpecifier? SprintSound;
 
     /// <summary>
     /// The popup to show if the entity is unable to sprint.
