@@ -1,3 +1,13 @@
+## CONTRIBUTOR GUIDE:
+# - The textured fur on the species was made using a checkered overlay applied to the individual bodyparts
+# Resources/Textures/_Carpmosia/Mobs/Species/Lagomorph/ contains an XCF session file authored in GIMP 2.10
+# It contains the overlay & body sprites, which you can use as example or work with further.
+# If you're new to it, use GIMP 2.10 instead of 3.0, the latter is a function & experience downgrade.
+# - Most ear marking sprites are several pixels lower than the head, they need to be offset at runtime to compensate.
+# - Make sure the base of ear south sprites don't overlap the head, for the sake of head markings that wrap around the face.
+# - Lagomorph ears layer beneath hair, unlike other species.
+# - Tails layer above hands, be careful with the side view.
+
 - type: marking
   id: LagomorphEarsBasic
   bodyPart: HeadTop
