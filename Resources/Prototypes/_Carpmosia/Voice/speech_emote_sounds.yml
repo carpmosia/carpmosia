@@ -37,3 +37,43 @@
       collection: FemaleGasp
     DefaultDeathgasp:
       collection: FemaleDeathGasp
+
+- type: emoteSounds
+  id: MaleLagomorph
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      path: /Audio/_Carpmosia/Voice/Avali/avali_scream.ogg
+    Laugh:
+      path: /Audio/_Carpmosia/Voice/Avali/avali_laugh.ogg
+    Honk:
+      collection: BikeHorn
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: DeathGasp
+
+- type: emoteSounds
+  id: FemaleLagomorph
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      path: /Audio/_Carpmosia/Voice/Avali/avali_scream.ogg
+    Laugh:
+      path: /Audio/_Carpmosia/Voice/Avali/avali_laugh.ogg
+    Honk:
+      collection: BikeHorn
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
