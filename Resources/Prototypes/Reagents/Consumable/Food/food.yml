@@ -64,6 +64,21 @@
       - !type:ModifyBloodLevel
         amount: 1 # weaker than iron but pretty good all things considered
       - !type:SatiateHunger
+      # Carpmosia-start - Lagomorph
+      - !type:PopupMessage
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Herbivore ]
+        type: Local
+        visualType: MediumCaution
+        messages: [ "generic-reagent-effect-sick" ]
+        probability: 0.5
+      - !type:Vomit
+        probability: 0.4
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Herbivore ]
+      # Carpmosia-start - Lagomorph
   pricePerUnit: 3
 
 - type: reagent
