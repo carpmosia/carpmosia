@@ -15,18 +15,18 @@
     enum.HumanoidVisualLayers.HeadTop:
       limit: 1
       required: true
-      default: [ RabbitEar ] # TODO
+      default: [ LagomorphEarsBasic ]
     enum.HumanoidVisualLayers.Snout:
       limit: 1
       required: true
-      default: [ RabbitSnout ] # TODO
+      default: [ LagomorphSnoutBasic ]
     enum.HumanoidVisualLayers.SnoutCover:
       limit: 3
       required: false
     enum.HumanoidVisualLayers.Tail:
       limit: 1
       required: true
-      default: [ RabbitTail ] # TODO
+      default: [ LagomorphTailBasic ]
     enum.HumanoidVisualLayers.LArm:
       limit: 2
       required: false
@@ -61,7 +61,76 @@
       nudityDefault: [ UndergarmentBottomBoxersVulpkanin ]
 
 - type: entity
-  parent: BaseSpeciesAppearance
+  abstract: true
+  id: LagomorphLayers # need to reorder layers, move ears beneath hair
+  components:
+  - type: Sprite
+    layers:
+    # Torso
+    - map: [ "enum.HumanoidVisualLayers.Chest" ]
+
+    # Head
+    - map: [ "enum.HumanoidVisualLayers.Head" ]
+    - map: [ "enum.HumanoidVisualLayers.Snout" ]
+    - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+
+    # Limbs
+    - map: [ "enum.HumanoidVisualLayers.RArm" ]
+    - map: [ "enum.HumanoidVisualLayers.LArm" ]
+    - map: [ "enum.HumanoidVisualLayers.RLeg" ]
+    - map: [ "enum.HumanoidVisualLayers.LLeg" ]
+
+    # Underwear & clothing
+    - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
+    - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
+    - map: ["jumpsuit"]
+
+    # Extremities
+    - map: ["enum.HumanoidVisualLayers.LFoot"]
+    - map: ["enum.HumanoidVisualLayers.RFoot"]
+    - map: ["enum.HumanoidVisualLayers.LHand"]
+    - map: ["enum.HumanoidVisualLayers.RHand"]
+
+    # Stuff that goes over the body but below equipment
+    - map: ["enum.HumanoidVisualLayers.Overlay"]
+
+    # More equipment
+    - map: [ "gloves" ]
+    - map: [ "shoes" ]
+    - map: [ "ears" ]
+    - map: [ "eyes" ]
+    - map: [ "belt" ]
+    - map: [ "id" ]
+    - map: [ "outerClothing" ]
+    - map: [ "back" ]
+    - map: [ "neck" ]
+    - map: [ "suitstorage" ]
+
+    # Stuff that goes in front of equipment
+    - map: [ "enum.HumanoidVisualLayers.SnoutCover" ]
+    - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadTop" ] # new desired position
+    - map: [ "enum.HumanoidVisualLayers.Hair" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
+    # - map: [ "enum.HumanoidVisualLayers.HeadTop" ] # old position for reference
+    - map: [ "enum.HumanoidVisualLayers.Tail" ]
+    - map: [ "enum.HumanoidVisualLayers.TailOverlay" ]
+
+    # Stuff that goes in front of stuff that goes in front of equipment
+    - map: [ "mask" ]
+    - map: [ "head" ]
+    - map: [ "pocket1" ]
+    - map: [ "pocket2" ]
+
+    # Extra stuff
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
+      color: "#ffffff"
+      sprite: Objects/Misc/handcuffs.rsi
+      state: body-overlay-2
+      visible: false
+
+- type: entity
+  parent: [ LagomorphLayers, BaseSpeciesAppearance ]
   id: AppearanceLagomorph
   categories: [ HideSpawnMenu ]
   name: vulpkanin appearance
@@ -91,7 +160,7 @@
   - type: HumanoidProfile
     species: Lagomorph
   - type: Inventory
-    speciesId: vulpkanin
+    speciesId: lagomorph
     displacements:
       jumpsuit:
         sizeMaps:
@@ -155,7 +224,7 @@
         sprite: Mobs/Effects/burn_damage.rsi
   - type: Speech
     speechSounds: Lagomorph
-    speechVerb: Lagomorph
+    speechVerb: Rabbit
   - type: Vocal
     sounds:
       Male: MaleLagomorph
