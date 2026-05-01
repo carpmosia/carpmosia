@@ -11,13 +11,14 @@ namespace Content.Shared._Carpmosia.Movement.Components;
 /// Component a status effect on action, at the cost of stamina damage, if applicable.
 /// </summary>
 /// <remarks>
-/// The datafields are set as "sane defaults" which happens to be exactly what we want for a species. How convenient
+/// The datafields are set as "sane defaults" for a roundstart species,
+/// that is, lagomorphs, who this was built for. YMMV
 /// </remarks>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(SharedJumpAbilitySystem))]
 public sealed partial class SprintAbilityComponent : Component
 {
     /// <summary>
-    /// The action prototype that allows you to jump.
+    /// The action prototype for the sprint.
     /// </summary>
     [DataField]
     public EntProtoId Action = "ActionLagomorphSprint"; // ha.
@@ -50,10 +51,10 @@ public sealed partial class SprintAbilityComponent : Component
     /// How long the speed boost should last.
     /// </summary>
     [DataField]
-    public TimeSpan Duration = TimeSpan.FromSeconds(10);
+    public TimeSpan Duration = TimeSpan.FromSeconds(6);
 
     /// <summary>
-    /// This gets played whenever the jump action is used.
+    /// Sound to play when beginning a sprint.
     /// </summary>
     [DataField, AutoNetworkedField]
     public SoundSpecifier? SprintSound;

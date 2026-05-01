@@ -249,9 +249,9 @@
   - type: SprintAbility
     action: ActionLagomorphSprint
     staminaCost: 35 # equivalent to one batong hit
-    duration: 10
-    sprintSound:
-      path: /Audio/Weapons/punchmiss.ogg # TODO: get a more fitting sound
+    duration: 6
+    sprintSound: # TODO: get a better, more representative sound (good fucking luck?)
+      path: /Audio/Voice/Reptilian/reptilian_tailthump.ogg # placeholder
   - type: Bloodstream
     bloodReferenceSolution:
       reagents:
