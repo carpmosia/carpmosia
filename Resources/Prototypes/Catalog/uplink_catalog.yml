@@ -480,11 +480,13 @@
   description: uplink-exploding-syndicate-bomb-desc
   productEntity: SyndicateBomb
   cost:
-    Telecrystal: 11
+    Telecrystal: 7 # Carpmosia-edit - Cheaper hardbombs
   categories:
     - UplinkExplosives
   restockTime: 1800
   conditions:
+  - !type:ListingLimitedStockCondition # Carpmosia-edit - Cheaper hardbombs
+    stock: 1 # Carpmosia-edit - Cheaper hardbombs
   - !type:StoreWhitelistCondition
     blacklist:
       tags:
@@ -1092,6 +1094,16 @@
   categories:
   - UplinkDisruption
 
+- type: listing
+  id: UplinkTravelCamera
+  name: uplink-travel-camera-name
+  description: uplink-travel-camera-desc
+  productEntity: TravelCamera
+  cost:
+    Telecrystal: 1
+  categories:
+  - UplinkDeception
+
 # Note: Removed for the time being until surgery/newmed is added. Considered bloat until then.
 # - type: listing
 #   id: UplinkDuffelSurgery
@@ -1115,7 +1127,7 @@
   discountDownTo:
     Telecrystal: 4
   cost:
-    Telecrystal: 8
+    Telecrystal: 7 # Carpmosia-edit - Cheaper hardbombs
   categories:
   - UplinkExplosives
 
@@ -2268,3 +2280,20 @@
   - !type:BuyerJobCondition
     whitelist:
     - Lawyer
+
+#Objective items
+
+- type: listing
+  id: uplinkHijackBeacon
+  name: uplink-hijack-beacon-name
+  description: uplink-hijack-beacon-desc
+  productEntity: HijackBeacon
+  categories:
+    - UplinkObjective
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerObjectiveWhitelistCondition
+    whitelist:
+      components:
+      - HijackTradeStationCondition
