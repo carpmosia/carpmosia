@@ -8,4 +8,11 @@ namespace Content.Server.Objectives.Components;
 [RegisterComponent, Access(typeof(EscapeShuttleConditionSystem))]
 public sealed partial class EscapeShuttleConditionComponent : Component
 {
+    // Carpmosia-start - escape restrained
+    /// <summary>
+    /// Count as full completion if you're handcuffed on evac
+    /// </summary>
+    [DataField]
+    public bool AllowRestrained = false;
+    // Carpmosia-end - escape restrained
 }

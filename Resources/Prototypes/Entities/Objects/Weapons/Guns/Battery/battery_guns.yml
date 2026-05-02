@@ -1,6 +1,6 @@
 - type: entity
   id: BaseWeaponBattery
-  parent: BaseItem
+  parent: [ BaseItem, BasePointerCrosshair ] # Carpmosia-edit - Pointing modifier
   abstract: true
   components:
   - type: Sprite
@@ -63,7 +63,7 @@
 
 - type: entity
   id: BaseWeaponPowerCell
-  parent: BaseItem
+  parent: [ BaseItem, BasePointerCrosshair ] # Carpmosia-edit - Pointing modifier
   abstract: true
   components:
   - type: Sprite
