@@ -1,0 +1,112 @@
+# see lagomorph_ears.yml for a contributor guide
+# sets of markings that go together and span multiple limbs go here
+
+# fade bundle
+- type: marking
+  id: LagomorphArmFadeLeft
+  bodyPart: LArm
+  groupWhitelist: [ Lagomorph ]
+  sprites:
+  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/body.rsi
+    state: fade-arm-left
+
+- type: marking
+  id: LagomorphArmFadeRight
+  bodyPart: RArm
+  groupWhitelist: [ Lagomorph ]
+  sprites:
+  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/body.rsi
+    state: fade-arm-right
+
+- type: marking
+  id: LagomorphFootFadeLeft
+  bodyPart: LFoot
+  groupWhitelist: [ Lagomorph ]
+  sprites:
+  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/body.rsi
+    state: fade-foot-left
+
+- type: marking
+  id: LagomorphFootFadeRight
+  bodyPart: RFoot
+  groupWhitelist: [ Lagomorph ]
+  sprites:
+  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/body.rsi
+    state: fade-foot-right
+
+- type: marking
+  id: LagomorphHandFadeLeft
+  bodyPart: LHand
+  groupWhitelist: [ Lagomorph ]
+  sprites:
+  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/body.rsi
+    state: fade-hand-left
+
+- type: marking
+  id: LagomorphHandFadeRight
+  bodyPart: RHand
+  groupWhitelist: [ Lagomorph ]
+  sprites:
+  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/body.rsi
+    state: fade-hand-right
+
+- type: marking
+  id: LagomorphLegFadeLeft
+  bodyPart: LLeg
+  groupWhitelist: [ Lagomorph ]
+  sprites:
+  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/body.rsi
+    state: fade-leg-left
+
+- type: marking
+  id: LagomorphLegFadeRight
+  bodyPart: RLeg
+  groupWhitelist: [ Lagomorph ]
+  sprites:
+  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/body.rsi
+    state: fade-leg-right
+
+# splotch bundle
+- type: marking
+  id: LagomorphArmSplotchLeft
+  bodyPart: LArm
+  groupWhitelist: [ Lagomorph ]
+  sprites:
+  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/body.rsi
+    state: splotch-arm-left
+
+- type: marking
+  id: LagomorphArmSplotchRight
+  bodyPart: RArm
+  groupWhitelist: [ Lagomorph ]
+  sprites:
+  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/body.rsi
+    state: splotch-arm-right
+
+- type: marking
+  id: LagomorphChestSplotch
+  bodyPart: Chest
+  groupWhitelist: [ Lagomorph ]
+  sprites:
+  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/body.rsi
+    state: splotch-chest-bottom
+  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/body.rsi
+    state: splotch-chest-left
+  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/body.rsi
+    state: splotch-chest-right
+
+- type: marking
+  id: LagomorphLegSplotchLeft
+  bodyPart: LLeg
+  groupWhitelist: [ Lagomorph ]
+  sprites:
+  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/body.rsi
+    state: splotch-leg-left
+
+- type: marking
+  id: LagomorphLegSplotchRight
+  bodyPart: RLeg
+  groupWhitelist: [ Lagomorph ]
+  sprites:
+  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/body.rsi
+    state: splotch-leg-right

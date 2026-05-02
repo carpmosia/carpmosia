@@ -5,4 +5,26 @@
   groupWhitelist: [ Lagomorph ]
   sprites:
   - sprite: _Carpmosia/Mobs/Customization/Lagomorph/body.rsi
-    state: smooth
+    state: smooth-front
+  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/body.rsi
+    state: smooth-back
+
+- type: marking
+  id: LagomorphChestSplat
+  bodyPart: Chest
+  groupWhitelist: [ Lagomorph ]
+  sprites:
+  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/body.rsi
+    state: splat-front
+  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/body.rsi
+    state: splat-back
+
+- type: marking
+  id: LagomorphChestStraight
+  bodyPart: Chest
+  groupWhitelist: [ Lagomorph ]
+  sprites:
+  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/body.rsi
+    state: straight-front
+  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/body.rsi
+    state: straight-back

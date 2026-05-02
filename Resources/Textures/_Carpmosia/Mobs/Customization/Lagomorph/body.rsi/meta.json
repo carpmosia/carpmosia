@@ -8,7 +8,87 @@
     },
     "states": [
         {
-            "name": "smooth",
+            "name": "smooth-front",
+            "directions": 4
+        },
+        {
+            "name": "smooth-back",
+            "directions": 4
+        },
+        {
+            "name": "fade-arm-left",
+            "directions": 4
+        },
+        {
+            "name": "fade-arm-right",
+            "directions": 4
+        },
+        {
+            "name": "fade-hand-left",
+            "directions": 4
+        },
+        {
+            "name": "fade-hand-right",
+            "directions": 4
+        },
+        {
+            "name": "fade-foot-left",
+            "directions": 4
+        },
+        {
+            "name": "fade-foot-right",
+            "directions": 4
+        },
+        {
+            "name": "fade-leg-left",
+            "directions": 4
+        },
+        {
+            "name": "fade-leg-right",
+            "directions": 4
+        },
+        {
+            "name": "splat-front",
+            "directions": 4
+        },
+        {
+            "name": "splat-back",
+            "directions": 4
+        },
+        {
+            "name": "splotch-arm-left",
+            "directions": 4
+        },
+        {
+            "name": "splotch-arm-right",
+            "directions": 4
+        },
+        {
+            "name": "splotch-chest-bottom",
+            "directions": 4
+        },
+        {
+            "name": "splotch-chest-left",
+            "directions": 4
+        },
+        {
+            "name": "splotch-chest-right",
+            "directions": 4
+        },
+        {
+            "name": "splotch-leg-left",
+            "directions": 4
+        },
+        {
+            "name": "splotch-leg-right",
+            "directions": 4
+        },
+        {
+            "name": "straight-front",
+            "directions": 4
+        },
+        {
+            "name": "straight-back",
             "directions": 4
         }
     ]

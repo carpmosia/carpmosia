@@ -42,7 +42,16 @@ marking-LagomorphHeadEyemask-eyemask = Color
 
 # Chest
 marking-LagomorphChestSmooth = Smooth Fur
-marking-LagomorphChestSmooth-smooth = Color
+marking-LagomorphChestSmooth-smooth-front = Front
+marking-LagomorphChestSmooth-smooth-back = Back
+
+marking-LagomorphChestSplat = Splat
+marking-LagomorphChestSplat-splat-front = Front
+marking-LagomorphChestSplat-splat-back = Back
+
+marking-LagomorphChestStraight = Straight Lines
+marking-LagomorphChestStraight-straight-front = Front
+marking-LagomorphChestStraight-straight-back = Back
 
 # Tail
 marking-LagomorphTailBasic = Basic Tail
@@ -59,3 +68,45 @@ marking-LagomorphTailBasic-basic-tip = Tip
 
 # looks to the left
 # looks to the right
+
+# Bundles
+marking-LagomorphArmFadeLeft = Fade
+marking-LagomorphArmFadeLeft-fade-arm-left = Color
+
+marking-LagomorphArmFadeRight= Fade
+marking-LagomorphArmFadeRight-fade-arm-right = Color
+
+marking-LagomorphHandFadeLeft = Fade
+marking-LagomorphHandFadeLeft-fade-hand-left = Color
+
+marking-LagomorphHandFadeRight= Fade
+marking-LagomorphHandFadeRight-fade-hand-right = Color
+
+marking-LagomorphFootFadeLeft = Fade
+marking-LagomorphFootFadeLeft-fade-foot-left = Color
+
+marking-LagomorphFootFadeRight= Fade
+marking-LagomorphFootFadeRight-fade-foot-right = Color
+
+marking-LagomorphLegFadeLeft = Fade
+marking-LagomorphLegFadeLeft-fade-leg-left = Color
+
+marking-LagomorphLegFadeRight= Fade
+marking-LagomorphLegFadeRight-fade-leg-right = Color
+
+marking-LagomorphArmSplotchLeft = Splotch
+marking-LagomorphArmSplotchLeft-splotch-arm-left = Color
+
+marking-LagomorphArmSplotchRight= Splotch
+marking-LagomorphArmSplotchRight-splotch-arm-right = Color
+
+marking-LagomorphChestSplotch = Splotch
+marking-LagomorphChestSplotch-splotch-chest-bottom = Bottom
+marking-LagomorphChestSplotch-splotch-chest-left = Left Shoulder
+marking-LagomorphChestSplotch-splotch-chest-right = Right Shoulder
+
+marking-LagomorphLegSplotchLeft = Splotch
+marking-LagomorphLegSplotchLeft-splotch-leg-left = Color
+
+marking-LagomorphLegSplotchRight = Splotch
+marking-LagomorphLegSplotchRight-splotch-leg-right = Color
