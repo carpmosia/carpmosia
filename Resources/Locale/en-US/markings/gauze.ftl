@@ -103,48 +103,49 @@ marking-GauzeMothLowerLegRight = Insectoid Gauze Shin Wrap (Right)
 marking-GauzeMothLowerLegLeft-gauze_moth_lowerleg_l = Insectoid Gauze Shin Wrap (Left)
 marking-GauzeMothLowerLegLeft = Insectoid Gauze Shin Wrap (Left)
 
-marking-GauzeVulpStomach-gauze_vulp_abdomen = Vulpkanin Gauze Stomach Wrap
-marking-GauzeVulpStomach = Vulpkanin Gauze Stomach Wrap
+# Carpmosia-start - Lagomorph
+marking-GauzeVulpStomach-gauze_vulp_abdomen = Gauze Stomach Wrap
+marking-GauzeVulpStomach = Gauze Stomach Wrap
 
-marking-GauzeVulpBlindfold-gauze_vulp_blindfold = Vulpkanin Blindfold
-marking-GauzeVulpBlindfold = Vulpkanin Blindfold
+marking-GauzeVulpBlindfold-gauze_vulp_blindfold = Blindfold
+marking-GauzeVulpBlindfold = Blindfold
 
-marking-GauzeVulpBoxerwrapLeft-gauze_vulp_boxerwrap_l = Vulpkanin Gauze Hand Wrap (Left)
-marking-GauzeVulpBoxerwrapLeft = Vulpkanin Gauze Hand Wrap (Left)
+marking-GauzeVulpBoxerwrapLeft-gauze_vulp_boxerwrap_l = Gauze Hand Wrap (Left)
+marking-GauzeVulpBoxerwrapLeft = Gauze Hand Wrap (Left)
 
-marking-GauzeVulpBoxerwrapRight-gauze_vulp_boxerwrap_r = Vulpkanin Gauze Hand Wrap (Right)
-marking-GauzeVulpBoxerwrapRight = Vulpkanin Gauze Hand Wrap (Right)
+marking-GauzeVulpBoxerwrapRight-gauze_vulp_boxerwrap_r = Gauze Hand Wrap (Right)
+marking-GauzeVulpBoxerwrapRight = Gauze Hand Wrap (Right)
 
-marking-GauzeVulpHead-gauze_vulp_head = Vulpkanin Gauze Head Wrap
-marking-GauzeVulpHead = Vulpkanin Gauze Head Wrap
+marking-GauzeVulpHead-gauze_vulp_head = Gauze Head Wrap
+marking-GauzeVulpHead = Gauze Head Wrap
 
-marking-GauzeVulpLeftArm-gauze_vulp_leftarm = Vulpkanin Gauze Arm Wrap (Left)
-marking-GauzeVulpLeftArm = Vulpkanin Gauze Arm Wrap (Left)
+marking-GauzeVulpLeftArm-gauze_vulp_leftarm = Gauze Arm Wrap (Left)
+marking-GauzeVulpLeftArm = Gauze Arm Wrap (Left)
 
-marking-GauzeVulpLefteyePatch-gauze_vulp_lefteye_2 = Vulpkanin Gauze Eyepatch (Left)
-marking-GauzeVulpLefteyePatch = Vulpkanin Gauze Eyepatch (Left)
+marking-GauzeVulpLefteyePatch-gauze_vulp_lefteye_2 = Gauze Eyepatch (Left)
+marking-GauzeVulpLefteyePatch = Gauze Eyepatch (Left)
 
-marking-GauzeVulpLowerArmRight-gauze_vulp_lowerarm_r = Vulpkanin Gauze Wrist Wrap (Right)
-marking-GauzeVulpLowerArmRight = Vulpkanin Gauze Wrist Wrap (Right)
+marking-GauzeVulpLowerArmRight-gauze_vulp_lowerarm_r = Gauze Wrist Wrap (Right)
+marking-GauzeVulpLowerArmRight = Gauze Wrist Wrap (Right)
 
-marking-GauzeVulpLowerLegLeft-gauze_vulp_lowerleg_l = Vulpkanin Gauze Ankle Wrap (Left)
-marking-GauzeVulpLowerLegLeft = Vulpkanin Gauze Ankle Wrap (Left)
+marking-GauzeVulpLowerLegLeft-gauze_vulp_lowerleg_l = Gauze Ankle Wrap (Left)
+marking-GauzeVulpLowerLegLeft = Gauze Ankle Wrap (Left)
 
-marking-GauzeVulpLowerLegRight-gauze_vulp_lowerleg_r = Vulpkanin Gauze Ankle Wrap (Right)
-marking-GauzeVulpLowerLegRight = Vulpkanin Gauze Ankle Wrap (Right)
+marking-GauzeVulpLowerLegRight-gauze_vulp_lowerleg_r = Gauze Ankle Wrap (Right)
+marking-GauzeVulpLowerLegRight = Gauze Ankle Wrap (Right)
 
-marking-GauzeVulpRighteyePatch-gauze_vulp_righteye_2 = Vulpkanin Gauze Eyepatch (Right)
-marking-GauzeVulpRighteyePatch = Vulpkanin Gauze Eyepatch (Right)
+marking-GauzeVulpRighteyePatch-gauze_vulp_righteye_2 = Gauze Eyepatch (Right)
+marking-GauzeVulpRighteyePatch = Gauze Eyepatch (Right)
 
-marking-GauzeVulpShoulder-gauze_vulp_shoulder = Vulpkanin Gauze Shoulder Sling
-marking-GauzeVulpShoulder = Vulpkanin Gauze Shoulder Sling
+marking-GauzeVulpShoulder-gauze_vulp_shoulder = Gauze Shoulder Sling
+marking-GauzeVulpShoulder = Gauze Shoulder Sling
 
-marking-GauzeVulpUpperArmRight-gauze_vulp_upperarm_r = Vulpkanin Gauze Forearm Wrap (Right)
-marking-GauzeVulpUpperArmRight = Vulpkanin Gauze Forearm Wrap (Right)
+marking-GauzeVulpUpperArmRight-gauze_vulp_upperarm_r = Gauze Forearm Wrap (Right)
+marking-GauzeVulpUpperArmRight = Gauze Forearm Wrap (Right)
 
-marking-GauzeVulpUpperLegLeft-gauze_vulp_upperleg_l = Vulpkanin Gauze Thigh Wrap (Left)
-marking-GauzeVulpUpperLegLeft = Vulpkanin Gauze Thigh Wrap (Left)
+marking-GauzeVulpUpperLegLeft-gauze_vulp_upperleg_l = Gauze Thigh Wrap (Left)
+marking-GauzeVulpUpperLegLeft = Gauze Thigh Wrap (Left)
 
-marking-GauzeVulpUpperLegRight-gauze_vulp_upperleg_r = Vulpkanin Gauze Thigh Wrap (Right)
-marking-GauzeVulpUpperLegRight = Vulpkanin Gauze Thigh Wrap (Right)
-
+marking-GauzeVulpUpperLegRight-gauze_vulp_upperleg_r = Gauze Thigh Wrap (Right)
+marking-GauzeVulpUpperLegRight = Gauze Thigh Wrap (Right)
+# Carpmosia-end - Lagomorph

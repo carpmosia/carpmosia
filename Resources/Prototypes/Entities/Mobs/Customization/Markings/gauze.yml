@@ -460,7 +460,7 @@
 - type: marking
   id: GauzeVulpStomach
   bodyPart: Chest
-  groupWhitelist: [Vulpkanin]
+  groupWhitelist: [ Vulpkanin, Lagomorph ] # Carpmosia-edit - Lagomorph
   coloring:
     default:
       type:
@@ -473,7 +473,7 @@
 - type: marking
   id: GauzeVulpBlindfold
   bodyPart: Eyes
-  groupWhitelist: [Vulpkanin]
+  groupWhitelist: [ Vulpkanin, Lagomorph ] # Carpmosia-edit - Lagomorph
   coloring:
     default:
       type:
@@ -486,7 +486,7 @@
 - type: marking
   id: GauzeVulpBoxerwrapLeft
   bodyPart: LHand
-  groupWhitelist: [Vulpkanin]
+  groupWhitelist: [ Vulpkanin, Lagomorph ] # Carpmosia-edit - Lagomorph
   coloring:
     default:
       type:
@@ -499,7 +499,7 @@
 - type: marking
   id: GauzeVulpBoxerwrapRight
   bodyPart: RHand
-  groupWhitelist: [Vulpkanin]
+  groupWhitelist: [ Vulpkanin, Lagomorph ] # Carpmosia-edit - Lagomorph
   coloring:
     default:
       type:
@@ -512,7 +512,7 @@
 - type: marking
   id: GauzeVulpHead
   bodyPart: Head
-  groupWhitelist: [Vulpkanin]
+  groupWhitelist: [ Vulpkanin, Lagomorph ] # Carpmosia-edit - Lagomorph
   coloring:
     default:
       type:
@@ -525,7 +525,7 @@
 - type: marking
   id: GauzeVulpLeftArm
   bodyPart: LArm
-  groupWhitelist: [Vulpkanin]
+  groupWhitelist: [ Vulpkanin, Lagomorph ] # Carpmosia-edit - Lagomorph
   coloring:
     default:
       type:
@@ -551,7 +551,7 @@
 - type: marking
   id: GauzeVulpLowerArmRight
   bodyPart: RHand
-  groupWhitelist: [Vulpkanin]
+  groupWhitelist: [ Vulpkanin, Lagomorph ] # Carpmosia-edit - Lagomorph
   coloring:
     default:
       type:
@@ -564,7 +564,7 @@
 - type: marking
   id: GauzeVulpLowerLegLeft
   bodyPart: LFoot
-  groupWhitelist: [Vulpkanin]
+  groupWhitelist: [ Vulpkanin, Lagomorph ] # Carpmosia-edit - Lagomorph
   coloring:
     default:
       type:
@@ -577,7 +577,7 @@
 - type: marking
   id: GauzeVulpLowerLegRight
   bodyPart: RFoot
-  groupWhitelist: [Vulpkanin]
+  groupWhitelist: [ Vulpkanin, Lagomorph ] # Carpmosia-edit - Lagomorph
   coloring:
     default:
       type:
@@ -603,7 +603,7 @@
 - type: marking
   id: GauzeVulpShoulder
   bodyPart: Chest
-  groupWhitelist: [Vulpkanin]
+  groupWhitelist: [ Vulpkanin, Lagomorph ] # Carpmosia-edit - Lagomorph
   coloring:
     default:
       type:
@@ -616,7 +616,7 @@
 - type: marking
   id: GauzeVulpUpperLegLeft
   bodyPart: LLeg
-  groupWhitelist: [Vulpkanin]
+  groupWhitelist: [ Vulpkanin, Lagomorph ] # Carpmosia-edit - Lagomorph
   coloring:
     default:
       type:
@@ -629,7 +629,7 @@
 - type: marking
   id: GauzeVulpUpperLegRight
   bodyPart: RLeg
-  groupWhitelist: [Vulpkanin]
+  groupWhitelist: [ Vulpkanin, Lagomorph ] # Carpmosia-edit - Lagomorph
   coloring:
     default:
       type:
