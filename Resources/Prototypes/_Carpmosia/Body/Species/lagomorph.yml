@@ -112,7 +112,7 @@
     - map: [ "enum.HumanoidVisualLayers.HeadTop" ] # new desired position
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
-    # - map: [ "enum.HumanoidVisualLayers.HeadTop" ] # old position for reference
+    # map: [ "enum.HumanoidVisualLayers.HeadTop" ] # old position for reference
     - map: [ "enum.HumanoidVisualLayers.Tail" ]
     - map: [ "enum.HumanoidVisualLayers.TailOverlay" ]
 
@@ -133,7 +133,7 @@
   parent: [ LagomorphLayers, BaseSpeciesAppearance ]
   id: AppearanceLagomorph
   categories: [ HideSpawnMenu ]
-  name: vulpkanin appearance
+  name: lagomorph appearance
   components:
   - type: InitialBody
     organs:
@@ -231,11 +231,11 @@
       Female: FemaleLagomorph
       Unsexed: MaleLagomorph
   - type: Damageable
-    damageModifierSet: Vulpkanin
+    damageModifierSet: Vulpkanin # intentional reuse because damage coeffs are an uninteresting Non Mechanic
   - type: Temperature
-    specificHeat: 44
+    specificHeat: 44 # ditto
   - type: TemperatureDamage
-    heatDamageThreshold: 320
+    heatDamageThreshold: 320 # ditto
     coldDamageThreshold: 230
     coldDamage:
       types:
@@ -244,23 +244,23 @@
       types:
         Heat: 2.5 # Per second, scales with temperature & other constants
   - type: TemperatureProtection
-    heatingCoefficient: 1.2
+    heatingCoefficient: 1.2 # di- you get it
     coolingCoefficient: 0.3
   - type: SprintAbility
     action: ActionLagomorphSprint
     staminaCost: 35 # equivalent to one batong hit
-    duration: 6
+    duration: 6 # cooldown of 30 seconds is defined on the action prototype
     sprintSound: # TODO: get a better, more representative sound (good fucking luck?)
       path: /Audio/Voice/Reptilian/reptilian_tailthump.ogg # placeholder
   - type: Bloodstream
     bloodReferenceSolution:
       reagents:
-      - ReagentId: SulfurBlood
+      - ReagentId: SulfurBlood # this however is an artistic decision because i love blood reagent variance
         Quantity: 300
   - type: CreamPied
     sprite:
       sprite: Effects/creampie.rsi
-      state: creampie_vulpkanin
+      state: creampie_vulpkanin # TODO: make a creampie sprite
 
 - type: entity
   parent: OrganBase
