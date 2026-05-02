@@ -3,6 +3,30 @@ marking-LagomorphEarsBasic = Basic Ears
 marking-LagomorphEarsBasic-basic = Base
 marking-LagomorphEarsBasic-basic-inner = Inner
 
+marking-LagomorphEarsBroad = Broad Ears
+marking-LagomorphEarsBroad-broad = Base
+marking-LagomorphEarsBroad-broad-inner = Inner
+
+marking-LagomorphEarsLop = Lop Ears
+marking-LagomorphEarsLop-lop = Base
+marking-LagomorphEarsLop-lop-inner = Inner
+
+marking-LagomorphEarsRamrod = Ramrod Ears
+marking-LagomorphEarsRamrod-ramrod = Base
+marking-LagomorphEarsRamrod-ramrod-inner = Inner
+
+marking-LagomorphEarsRound = Round Ears
+marking-LagomorphEarsRound-round = Base
+marking-LagomorphEarsRound-round-inner = Inner
+
+marking-LagomorphEarsTornLeft = Torn Left
+marking-LagomorphEarsTornLeft-torn-left = Base
+marking-LagomorphEarsTornLeft-torn-left-inner = Inner
+
+marking-LagomorphEarsTornRight = Torn Right
+marking-LagomorphEarsTornRight-torn-right = Base
+marking-LagomorphEarsTornRight-torn-right-inner = Inner
+
 # Snout
 marking-LagomorphSnoutBasic = Basic Snout
 marking-LagomorphSnoutBasic-basic = Base
