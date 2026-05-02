@@ -32,6 +32,10 @@ marking-LagomorphSnoutBasic = Basic Snout
 marking-LagomorphSnoutBasic-basic = Base
 marking-LagomorphSnoutBasic-basic-nose = Nose
 
+marking-LagomorphSnoutFluffy = Basic, Fluffy
+marking-LagomorphSnoutFluffy-basic = Base
+marking-LagomorphSnoutFluffy-basic-nose-fluff = Nose
+
 # Head
 marking-LagomorphHeadEyemask = "Eye Mask"
 marking-LagomorphHeadEyemask-eyemask = Color

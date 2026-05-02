@@ -8,3 +8,13 @@
     state: basic
   - sprite: _Carpmosia/Mobs/Customization/Lagomorph/snout.rsi
     state: basic-nose
+
+- type: marking
+  id: LagomorphSnoutFluffy
+  bodyPart: Snout
+  groupWhitelist: [ Lagomorph ]
+  sprites:
+  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/snout.rsi
+    state: basic
+  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/snout.rsi
+    state: basic-nose-fluff
