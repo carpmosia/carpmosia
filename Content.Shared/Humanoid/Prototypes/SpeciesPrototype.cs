@@ -112,5 +112,6 @@ public enum SpeciesNaming : byte
     First,
     FirstLast,
     FirstDashFirst,
+    LastFirst, // Carpmosia-edit - Lagomorph
     TheFirstofLast,
 }

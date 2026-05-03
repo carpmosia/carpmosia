@@ -6,7 +6,7 @@
   defaultSkinTone: "#b6905b"
   dollPrototype: AppearanceLagomorph
   skinColoration: VulpkaninColors
-  maleFirstNames: names_vulpkanin_male # TODO: lagomorph specific name dataset
-  femaleFirstNames: names_vulpkanin_female # ditto
-  lastNames: names_vulpkanin_last # ditto
-  # TODO: LastFirst procgen name pattern
+  maleFirstNames: NamesLagomorphMasc
+  femaleFirstNames: NamesLagomorphFem
+  lastNames: NamesLagomorphLast
+  naming: LastFirst
