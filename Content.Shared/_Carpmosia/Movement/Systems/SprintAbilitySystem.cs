@@ -14,7 +14,8 @@ using Robust.Shared.Physics.Events;
 namespace Content.Shared._Carpmosia.Movement.Systems;
 
 /// <summary>
-/// System for adding effects to an actor entity at the cost of stamina damage, if applicable.
+/// System adding a status effect on action at the cost of stamina damage, if applicable.
+/// <see cref="SprintAbilityComponent">
 /// </summary>
 public sealed partial class SprintAbilitySystem : EntitySystem
 {
@@ -52,7 +53,7 @@ public sealed partial class SprintAbilitySystem : EntitySystem
     {
         // check if we're in a state to sprint
         if (_gravity.IsWeightless(args.Performer) || _standing.IsDown(args.Performer))
-        {
+        {   // can't sprint lying down or in the air
             if (ent.Comp.SprintFailedPopup != null)
                 _popup.PopupClient(Loc.GetString(ent.Comp.SprintFailedPopup.Value), args.Performer, args.Performer);
             return;

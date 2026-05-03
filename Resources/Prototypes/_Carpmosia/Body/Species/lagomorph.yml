@@ -161,7 +161,7 @@
     species: Lagomorph
   - type: Inventory
     speciesId: lagomorph
-    displacements:
+    displacements: # TODO: fix eye displacements & add a mask displacement
       jumpsuit:
         sizeMaps:
           32:
@@ -239,10 +239,10 @@
     coldDamageThreshold: 230
     coldDamage:
       types:
-        Cold: 0.05 # Per second, scales with temperature & other constants
+        Cold: 0.05
     heatDamage:
       types:
-        Heat: 2.5 # Per second, scales with temperature & other constants
+        Heat: 2.5
   - type: TemperatureProtection
     heatingCoefficient: 1.2 # di- you get it
     coolingCoefficient: 0.3

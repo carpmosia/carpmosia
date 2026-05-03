@@ -37,7 +37,7 @@ marking-LagomorphSnoutFluffy-basic = Base
 marking-LagomorphSnoutFluffy-basic-nose-fluff = Nose
 
 # Head
-marking-LagomorphHeadEyemask = "Eye Mask"
+marking-LagomorphHeadEyemask = Masque
 marking-LagomorphHeadEyemask-eyemask = Color
 
 # Chest
@@ -65,7 +65,6 @@ marking-LagomorphTailBasic-basic-tip = Tip
 # Legs
 
 # Feet
-
 # looks to the left
 # looks to the right
 

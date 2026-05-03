@@ -6,4 +6,5 @@
   - type: MovementModStatusEffect
     walkSpeedModifier: 1.2
     sprintSpeedModifier: 1.2
-# - type: JitteringStatusEffect # TODO append this for visual feedback once upstream JitterSystem is refactored to use status effects
+  # type: JitteringStatusEffect # TODO: use this for visual feedback once upstream JitterSystem is refactored to use status effects
+  # I don't want to hook current JitterSystem into SprintAbilitySystem despite how easy it'd be

@@ -8,7 +8,7 @@ using Robust.Shared.Timing;
 namespace Content.Shared._Carpmosia.Movement.Components;
 
 /// <summary>
-/// Component a status effect on action, at the cost of stamina damage, if applicable.
+/// Component applying a status effect on action, at the cost of stamina damage, if applicable.
 /// </summary>
 /// <remarks>
 /// The datafields are set as "sane defaults" for a roundstart species,
@@ -35,8 +35,8 @@ public sealed partial class SprintAbilityComponent : Component
     /// <remarks>
     /// This could trivially be a List<EntProtoId> but IMO it's cleaner to
     /// use one status entity w/ multiple effect components.
-    /// Sure you can make multiple generic statuses but you're not gonna reuse them?
-    /// And a status supports multiple effects, why not use that feature?
+    /// Sure you can make multiple "generic"" statuses you'll never reuse
+    /// but we might as well take advantage of the technology we have
     /// </remarks>
     [DataField]
     public EntProtoId StatusEffect = "StatusEffectLagomorphSprint"; // ha.
