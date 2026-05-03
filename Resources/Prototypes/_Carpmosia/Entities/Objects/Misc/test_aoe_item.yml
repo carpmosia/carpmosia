@@ -1,0 +1,18 @@
+- type: entity
+  id: TestAreaOfEffectItem
+  parent: BaseItem
+  name: test AoE damage item
+  description: A test item that applies area of effect damage periodically. For testing purposes only.
+  components:
+  - type: AreaOfEffect
+    radius: 3.0
+    cooldown: 1.0
+    damage:
+      Blunt: 5
+      Poison: 2
+    blacklist:
+      tags:
+      - Structure
+  - type: Sprite
+    sprite: Objects/Misc/pens.rsi
+    state: pen
