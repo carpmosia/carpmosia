@@ -8,3 +8,22 @@
     state: basic
   - sprite: _Carpmosia/Mobs/Customization/Lagomorph/tail.rsi
     state: basic-tip
+
+- type: marking
+  id: LagomorphTailBlock
+  bodyPart: Tail
+  groupWhitelist: [ Lagomorph ]
+  sprites:
+  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/tail.rsi
+    state: block
+  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/tail.rsi
+    state: block-tip
+
+- type: marking
+  id: LagomorphTailRound
+  bodyPart: Tail
+  groupWhitelist: [ Lagomorph ]
+  sprites:
+  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/tail.rsi
+    state: round
+

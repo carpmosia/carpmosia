@@ -58,6 +58,13 @@ marking-LagomorphTailBasic = Basic Tail
 marking-LagomorphTailBasic-basic = Base
 marking-LagomorphTailBasic-basic-tip = Tip
 
+marking-LagomorphTailBlock = Block Tail
+marking-LagomorphTailBlock-block = Base
+marking-LagomorphTailBlock-block-tip = Tip
+
+marking-LagomorphTailRound = Round Tail
+marking-LagomorphTailRound-round = Color
+
 # Arms
 
 # Hands
