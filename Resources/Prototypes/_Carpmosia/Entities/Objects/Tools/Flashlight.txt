@@ -1,7 +1,0 @@
-parent: [ BaseFlashlight, BaseClothingNeck ]
-id: NeckLightBase
-abstract: true
-parent: NeckLightBase
-id: NeckLightSecurity
-components:
-  - type: Sprite
