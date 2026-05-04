@@ -28,7 +28,7 @@ public sealed partial class AreaOfEffectComponent : Component
     /// The time when the next damage application should occur.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float NextApplicationTime;
+    public TimeSpan? NextApplicationTime;
 
     /// <summary>
     /// Whitelist of entities to damage. If set, only entities matching this whitelist will be damaged.
