@@ -1,7 +1,7 @@
 - type: entity
+  id: NeckLiteSecBase
   name: Angledseclite
   parent: [FlashlightLantern, BaseSecurityContraband]
-  id: NeckLiteSecBase
   description: A robust light designed with thot of hand free use.
   components:
   - type: Tag
@@ -13,20 +13,20 @@
     radiatingBehaviourId: radiating
   - type: LightBehaviour
     behaviours:
-      - !type:FadeBehaviour
-        id: radiating
-        maxDuration: 2.0
-        startValue: 3.0
-        endValue: 2.0
-        isLooped: true
-        reverseWhenFinished: true
-      - !type:PulseBehaviour
-        id: blinking
-        interpolate: Nearest
-        maxDuration: 1.0
-        startValue: 0.1
-        endValue: 2.0
-        isLooped: true
+    - !type:FadeBehaviour
+     id: radiating
+     maxDuration: 2.0
+     startValue: 3.0
+     endValue: 2.0
+     isLooped: true
+     reverseWhenFinished: true
+    - !type:PulseBehaviour
+      id: blinking
+      interpolate: Nearest
+      maxDuration: 1.0
+      startValue: 0.1
+      endValue: 2.0
+      isLooped: true
   - type: ToggleableVisuals
     spriteLayer: light
     inhandVisuals:
@@ -44,19 +44,20 @@
       cell_slot: !type:ContainerSlot
   - type: ItemSlots
     slots:
-      cell_slot:
-        name: power-cell-slot-component-slot-name-default
-        startingItem: PowerCellMedium
+     cell_slot:
+      name: power-cell-slot-component-slot-name-default
+      startingItem: PowerCellMedium
   - type: Sprite
     sprite: _Carpmosia/Objects/Tools/necklitesecbase.rsi
     layers:
-      - state: neckseclite
-      - state: neckseclite-on
-        shader: unshaded
-        visible: false
-        map: [ "light" ]
+     - state: neckseclite
+     - state: neckseclite-on
+       shader: unshaded
+       visible: false
+       map: [ "light" ]
   - type: Item
     sprite: _Carpmosia/Objects/Tools/necklitesecbase.rsi
+    storedRotation: 0
   - type: PointLight
     enabled: false
     mask: /Textures/Effects/LightMasks/cone.png
