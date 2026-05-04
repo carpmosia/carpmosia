@@ -1,10 +1,7 @@
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
-using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
-using Content.Shared.FixedPoint;
 using Content.Shared.Whitelist;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._Carpmosia.AreaOfEffect;
@@ -18,24 +15,74 @@ public sealed class AreaOfEffectSystem : EntitySystem
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
+
+    private readonly HashSet<EntityUid> _entitiesInRange = new();
+    private readonly Dictionary<EntityUid, AreaOfEffectTiming> _timings = new();
+    private readonly Dictionary<EntityUid, DamageSpecifier> _damageSpecifiers = new();
+
+    public override void Initialize()
+    {
+        base.Initialize();
+        SubscribeLocalEvent<AreaOfEffectComponent, ComponentStartup>(OnStartup);
+        SubscribeLocalEvent<AreaOfEffectComponent, ComponentShutdown>(OnShutdown);
+    }
+
+    private void OnStartup(EntityUid uid, AreaOfEffectComponent component, ComponentStartup args)
+    {
+        _timings[uid] = new AreaOfEffectTiming
+        {
+            NextApplicationTime = null,
+            StartTime = _timing.CurTime
+        };
+    }
+
+    private void OnShutdown(EntityUid uid, AreaOfEffectComponent component, ComponentShutdown args)
+    {
+        _timings.Remove(uid);
+        _damageSpecifiers.Remove(uid);
+    }
+
+    private struct AreaOfEffectTiming
+    {
+        public TimeSpan? NextApplicationTime;
+        public TimeSpan StartTime;
+    }
 
     /// <inheritdoc/>
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
 
+        var curTime = _timing.CurTime;
         var query = EntityQueryEnumerator<AreaOfEffectComponent>();
+
         while (query.MoveNext(out var uid, out var aoe))
         {
+            // Check if duration has elapsed and remove component if so
+            if (aoe.Duration.HasValue)
+            {
+                var elapsed = curTime - _timings[uid].StartTime;
+                if (elapsed >= aoe.Duration.Value)
+                {
+                    RemComp<AreaOfEffectComponent>(uid);
+                    continue;
+                }
+            }
+
+            var nextTime = _timings[uid].NextApplicationTime;
+
             // Check if it's time to apply damage
-            if (aoe.NextApplicationTime > _timing.CurTime.TotalSeconds)
+            if (nextTime.HasValue && nextTime > curTime)
                 continue;
 
             // Apply damage to nearby entities
-            ApplyAreaOfEffectDamage(uid, aoe.Damage, aoe.Radius);
+            ApplyAreaOfEffectDamage(uid, aoe);
 
             // Schedule next application
-            aoe.NextApplicationTime = (float)(_timing.CurTime.TotalSeconds + aoe.Cooldown);
+            var timing = _timings[uid];
+            timing.NextApplicationTime = curTime + aoe.Cooldown;
+            _timings[uid] = timing;
         }
     }
 
@@ -43,19 +90,34 @@ public sealed class AreaOfEffectSystem : EntitySystem
     /// Applies damage to all entities within the given radius.
     /// </summary>
     /// <param name="uid">The area of effect entity</param>
-    /// <param name="damage">A list of all to be applied damages</param>
-    /// <param name="radius">The application radius</param>
-    public void ApplyAreaOfEffectDamage(EntityUid uid, Dictionary<ProtoId<DamageTypePrototype>, FixedPoint2> damage, float radius)
+    /// <param name="aoe">The area of effect component</param>
+    private void ApplyAreaOfEffectDamage(EntityUid uid, AreaOfEffectComponent aoe)
     {
-        var nearbyEntities = GetNearbyDamageableEntities(uid, radius);
+        var aoeTransform = Transform(uid);
+        var aoePosition = _transform.GetWorldPosition(aoeTransform);
 
-        foreach (var targetUid in nearbyEntities)
+        _entitiesInRange.Clear();
+        _lookup.GetEntitiesInRange(aoeTransform.MapID, aoePosition, aoe.Radius, _entitiesInRange);
+
+        if (!_damageSpecifiers.TryGetValue(uid, out var damageSpecifier))
         {
-            var damageSpecifier = new DamageSpecifier();
-            foreach (var (damageTypeId, amount) in damage)
+            damageSpecifier = new DamageSpecifier();
+            foreach (var (damageTypeId, amount) in aoe.Damage)
             {
                 damageSpecifier.DamageDict[damageTypeId] = amount;
             }
+            _damageSpecifiers[uid] = damageSpecifier;
+        }
+
+        foreach (var targetUid in _entitiesInRange)
+        {
+            // Filter for damageable entities
+            if (!TryComp(targetUid, out DamageableComponent? _))
+                continue;
+
+            // Check whitelist/blacklist filtering
+            if (!_whitelist.CheckBoth(targetUid, aoe.Blacklist, aoe.Whitelist))
+                continue;
 
             _damageable.TryChangeDamage(
                 (targetUid, null),
@@ -64,50 +126,5 @@ public sealed class AreaOfEffectSystem : EntitySystem
                 interruptsDoAfters: true,
                 origin: uid);
         }
-    }
-
-    /// <summary>
-    /// Gets all damageable entities near the specified area of effect entity within the given radius.
-    /// </summary>
-    /// <param name="uid">The area of effect entity</param>
-    /// <param name="radius">The detection radius</param>
-    /// <returns>A list of damageable entities within the radius</returns>
-    public List<EntityUid> GetNearbyDamageableEntities(EntityUid uid, float radius)
-    {
-        var result = new List<EntityUid>();
-
-        var aoeTransform = Transform(uid);
-
-        if (!TryComp(uid, out AreaOfEffectComponent? aoe))
-            return result;
-
-        var aoePosition = _transform.GetWorldPosition(aoeTransform);
-        var aoeMap = aoeTransform.MapID;
-
-        // Query all damageable entities
-        var query = EntityQueryEnumerator<DamageableComponent>();
-        while (query.MoveNext(out var damageableUid, out _))
-        {
-            if (!TryComp(damageableUid, out TransformComponent? damageableTransform))
-                continue;
-
-            // Check if on same map
-            if (damageableTransform.MapID != aoeMap)
-                continue;
-
-            var damageablePosition = _transform.GetWorldPosition(damageableTransform);
-            var distance = (damageablePosition - aoePosition).Length();
-
-            if (distance > radius)
-                continue;
-
-            // Check whitelist/blacklist filtering
-            if (!_whitelist.CheckBoth(damageableUid, aoe.Blacklist, aoe.Whitelist))
-                continue;
-
-            result.Add(damageableUid);
-        }
-
-        return result;
     }
 }

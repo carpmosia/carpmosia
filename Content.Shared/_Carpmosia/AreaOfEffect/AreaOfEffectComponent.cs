@@ -6,29 +6,37 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._Carpmosia.AreaOfEffect;
 
 /// <summary>
-/// This is used for...
+/// Component that defines an area of effect (AoE) damage dealer.
+/// The AoE damage dealer applies damage to entities within a certain radius,
+/// optionally whitelisting or blacklisting certain entities.
+/// It can also have a cooldown and a limited duration.
 /// </summary>
 [RegisterComponent]
-[AutoGenerateComponentState]
 public sealed partial class AreaOfEffectComponent : Component
 {
+     /// <summary>
+     /// The radius, in tiles, around the entity within which damage is applied.
+     /// </summary>
+     [DataField]
+     public float Radius = 5f;
+
+     /// <summary>
+     /// The damage to apply to entities within the AoE. The key is the damage type, and the value is the amount of damage to apply.
+     /// </summary>
     [DataField]
     public Dictionary<ProtoId<DamageTypePrototype>, FixedPoint2> Damage = new();
 
-    [DataField]
-    public TimeSpan Cooldown = TimeSpan.FromZero;
-
     /// <summary>
-    /// The radius, in tiles, around the entity within which damage is applied.
+    /// Cooldown for how much time has to pass before AoE is applied again.
     /// </summary>
     [DataField]
-    public float Radius = 5f;
+    public TimeSpan Cooldown = TimeSpan.FromSeconds(1);
 
     /// <summary>
-    /// The time when the next damage application should occur.
+    /// Optional duration for how long the area of effect lasts. If set, the component will be automatically removed after this time.
     /// </summary>
-    [DataField, AutoNetworkedField]
-    public TimeSpan? NextApplicationTime;
+    [DataField]
+    public TimeSpan? Duration;
 
     /// <summary>
     /// Whitelist of entities to damage. If set, only entities matching this whitelist will be damaged.
