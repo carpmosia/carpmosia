@@ -16,7 +16,7 @@ public sealed partial class AreaOfEffectComponent : Component
     public Dictionary<ProtoId<DamageTypePrototype>, FixedPoint2> Damage = new();
 
     [DataField]
-    public float Cooldown = 1f;
+    public TimeSpan Cooldown = TimeSpan.FromZero;
 
     /// <summary>
     /// The radius, in tiles, around the entity within which damage is applied.
