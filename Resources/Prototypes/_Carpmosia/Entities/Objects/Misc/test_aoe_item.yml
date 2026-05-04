@@ -2,7 +2,8 @@
   id: TestAreaOfEffectItem
   parent: BaseItem
   name: test AoE damage item
-  description: A test item that applies area of effect damage periodically. For testing purposes only.
+  categories: [ HideSpawnMenu ]
+  suffix: Debug
   components:
   - type: AreaOfEffect
     radius: 3.0
