@@ -26,7 +26,7 @@ public sealed partial class SprintAbilityComponent : Component
     /// <summary>
     /// Entity to hold the action prototype.
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadOnly)]
     public EntityUid? ActionEntity;
 
     /// <summary>
@@ -51,7 +51,7 @@ public sealed partial class SprintAbilityComponent : Component
     /// How long the speed boost should last.
     /// </summary>
     [DataField]
-    public TimeSpan Duration = TimeSpan.FromSeconds(6);
+    public TimeSpan Duration = TimeSpan.FromSeconds(3);
 
     /// <summary>
     /// Sound to play when beginning a sprint.
@@ -62,7 +62,7 @@ public sealed partial class SprintAbilityComponent : Component
     /// <summary>
     /// The popup to show if the entity is unable to sprint.
     /// </summary>
-    [DataField]
+    [DataField, ViewVariables(VVAccess.ReadOnly)]
     public LocId? SprintFailedPopup = "sprint-ability-failure";
 }
 
