@@ -76,8 +76,7 @@ public sealed class AreaOfEffectSystem : EntitySystem
     {
         var result = new List<EntityUid>();
 
-        if (!TryComp(uid, out TransformComponent? aoeTransform))
-            return result;
+        var aoeTransform = Transform(uid);
 
         if (!TryComp(uid, out AreaOfEffectComponent? aoe))
             return result;
