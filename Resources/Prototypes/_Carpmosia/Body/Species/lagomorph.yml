@@ -62,7 +62,7 @@
 
 - type: entity
   abstract: true
-  id: LagomorphLayers # need to reorder layers, move ears beneath hair
+  id: LagomorphLayers # need to reorder layers
   components:
   - type: Sprite
     layers:
@@ -104,7 +104,7 @@
     - map: [ "outerClothing" ]
     - map: [ "back" ]
     - map: [ "neck" ]
-    - map: [ "suitstorage" ]
+    # map: [ "suitstorage" ] # old position for reference
 
     # Stuff that goes in front of equipment
     - map: [ "enum.HumanoidVisualLayers.SnoutCover" ]
@@ -121,6 +121,7 @@
     - map: [ "head" ]
     - map: [ "pocket1" ]
     - map: [ "pocket2" ]
+    - map: [ "suitstorage" ] # new desired position
 
     # Extra stuff
     - map: ["enum.HumanoidVisualLayers.Handcuffs"]
