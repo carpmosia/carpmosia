@@ -19,7 +19,7 @@ public sealed partial class AreaOfEffectComponent : Component
     public float Cooldown = 1f;
 
     /// <summary>
-    /// The radius around the entity within which damage is applied.
+    /// The radius, in tiles, around the entity within which damage is applied.
     /// </summary>
     [DataField]
     public float Radius = 5f;
