@@ -5,7 +5,7 @@
   description: Spend some stamina to break into a sprint!
   components:
   - type: Action
-    useDelay: 30
+    useDelay: 30 # please update the comment reference in /Body/lagomorph.yml if you change this
     icon: # why did they give the jump action a sprint icon? are they stupid?
       sprite: Interface/Actions/jump.rsi
       state: icon

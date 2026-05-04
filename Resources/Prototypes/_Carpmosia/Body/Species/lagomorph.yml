@@ -255,7 +255,7 @@
   - type: SprintAbility
     action: ActionLagomorphSprint
     staminaCost: 35 # equivalent to one batong hit
-    duration: 6 # cooldown of 30 seconds is defined on the action prototype
+    duration: 3 # cooldown of 30 seconds is defined on the action prototype
     sprintSound: # TODO: get a better, more representative sound (good fucking luck?)
       path: /Audio/Voice/Reptilian/reptilian_tailthump.ogg # placeholder
   - type: Bloodstream
