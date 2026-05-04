@@ -36,6 +36,10 @@
       right:
       - state: inhand-right-light
         shader: unshaded
+    clothingVisuals:
+      neck:
+      - state: equipped-neck-light
+        shader: unshaded
   - type: ItemTogglePointLight
   - type: PowerCellSlot
     cellSlotId: cell_slot
