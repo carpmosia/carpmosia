@@ -93,12 +93,6 @@ public sealed class AreaOfEffectSystem : EntitySystem
     /// <param name="aoe">The area of effect component</param>
     private void ApplyAreaOfEffectDamage(EntityUid uid, AreaOfEffectComponent aoe)
     {
-        var aoeTransform = Transform(uid);
-        var aoePosition = _transform.GetWorldPosition(aoeTransform);
-
-        _entitiesInRange.Clear();
-        _lookup.GetEntitiesInRange(aoeTransform.MapID, aoePosition, aoe.Radius, _entitiesInRange);
-
         if (!_damageSpecifiers.TryGetValue(uid, out var damageSpecifier))
         {
             damageSpecifier = new DamageSpecifier();
@@ -109,18 +103,14 @@ public sealed class AreaOfEffectSystem : EntitySystem
             _damageSpecifiers[uid] = damageSpecifier;
         }
 
-        foreach (var targetUid in _entitiesInRange)
+        foreach (var targetUid in _lookup.GetEntitiesInRange<DamageableComponent>(Transform(uid).Coordinates, aoe.Radius))
         {
-            // Filter for damageable entities
-            if (!TryComp(targetUid, out DamageableComponent? _))
-                continue;
-
             // Check whitelist/blacklist filtering
             if (!_whitelist.CheckBoth(targetUid, aoe.Blacklist, aoe.Whitelist))
                 continue;
 
             _damageable.TryChangeDamage(
-                (targetUid, null),
+                targetUid!,
                 damageSpecifier,
                 ignoreResistances: false,
                 interruptsDoAfters: true,
