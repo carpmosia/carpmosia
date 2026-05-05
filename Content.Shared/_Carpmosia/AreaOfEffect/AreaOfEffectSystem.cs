@@ -33,7 +33,7 @@ public sealed class AreaOfEffectSystem : EntitySystem
         _timings[uid] = new AreaOfEffectTiming
         {
             NextApplicationTime = null,
-            StartTime = _timing.CurTime
+            StartTime = _timing.CurTime,
         };
     }
 
