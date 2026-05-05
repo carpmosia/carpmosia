@@ -538,7 +538,7 @@
 - type: marking
   id: GauzeVulpLefteyePatch
   bodyPart: Eyes
-  groupWhitelist: [Vulpkanin] # TODO: make lagomorph specific eyepatch gauze, because the vulp patches don't fit
+  groupWhitelist: [Vulpkanin]
   coloring:
     default:
       type:
@@ -590,7 +590,7 @@
 - type: marking
   id: GauzeVulpRighteyePatch
   bodyPart: Eyes
-  groupWhitelist: [Vulpkanin] # TODO: make lagomorph specific eyepatch gauze, because the vulp patches don't fit
+  groupWhitelist: [Vulpkanin]
   coloring:
     default:
       type:
