@@ -20,17 +20,6 @@
     state: basic-inner
 
 - type: marking
-  id: LagomorphEarsBroad
-  bodyPart: HeadTop
-  groupWhitelist: [ Lagomorph ]
-  offset: "0, 0.0625"
-  sprites:
-  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/head_top.rsi
-    state: broad
-  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/head_top.rsi
-    state: broad-inner
-
-- type: marking
   id: LagomorphEarsLop
   bodyPart: HeadTop
   groupWhitelist: [ Lagomorph ]
@@ -39,6 +28,17 @@
     state: lop
   - sprite: _Carpmosia/Mobs/Customization/Lagomorph/head_top.rsi
     state: lop-inner
+
+- type: marking
+  id: LagomorphEarsLong
+  bodyPart: HeadTop
+  groupWhitelist: [ Lagomorph ]
+  offset: "0, 0.0625"
+  sprites:
+  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/head_top.rsi
+    state: long
+  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/head_top.rsi
+    state: long-inner
 
 - type: marking
   id: LagomorphEarsRamrod
@@ -61,6 +61,17 @@
     state: round
   - sprite: _Carpmosia/Mobs/Customization/Lagomorph/head_top.rsi
     state: round-inner
+
+- type: marking
+  id: LagomorphEarsShort
+  bodyPart: HeadTop
+  groupWhitelist: [ Lagomorph ]
+  offset: "0, 0.0625"
+  sprites:
+  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/head_top.rsi
+    state: short
+  - sprite: _Carpmosia/Mobs/Customization/Lagomorph/head_top.rsi
+    state: short-inner
 
 - type: marking
   id: LagomorphEarsTornLeft
