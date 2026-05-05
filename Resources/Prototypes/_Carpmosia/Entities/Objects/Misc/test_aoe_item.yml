@@ -7,10 +7,11 @@
   components:
   - type: AreaOfEffect
     radius: 3.0
-    cooldown: 1.0
+    cooldown: 1
     damage:
-      Blunt: 5
-      Poison: 2
+      types:
+        Blunt: 5
+        Poison: 2
     blacklist:
       tags:
       - Structure

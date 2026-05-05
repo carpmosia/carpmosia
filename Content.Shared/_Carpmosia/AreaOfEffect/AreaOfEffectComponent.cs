@@ -1,7 +1,5 @@
-using Content.Shared.Damage.Prototypes;
-using Content.Shared.FixedPoint;
+using Content.Shared.Damage;
 using Content.Shared.Whitelist;
-using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Carpmosia.AreaOfEffect;
 
@@ -24,7 +22,7 @@ public sealed partial class AreaOfEffectComponent : Component
      /// The damage to apply to entities within the AoE. The key is the damage type, and the value is the amount of damage to apply.
      /// </summary>
     [DataField]
-    public Dictionary<ProtoId<DamageTypePrototype>, FixedPoint2> Damage = new();
+    public DamageSpecifier Damage = new();
 
     /// <summary>
     /// Cooldown for how much time has to pass before AoE is applied again.
@@ -37,6 +35,12 @@ public sealed partial class AreaOfEffectComponent : Component
     /// </summary>
     [DataField]
     public TimeSpan? Duration;
+
+    /// <summary>
+    /// Determines if damage should be spread between entities.
+    /// </summary>
+    [DataField]
+    public bool DamageSpread =  true;
 
     /// <summary>
     /// Whitelist of entities to damage. If set, only entities matching this whitelist will be damaged.

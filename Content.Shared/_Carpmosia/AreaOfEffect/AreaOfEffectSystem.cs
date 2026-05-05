@@ -11,42 +11,34 @@ namespace Content.Shared._Carpmosia.AreaOfEffect;
 /// </summary>
 public sealed class AreaOfEffectSystem : EntitySystem
 {
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
 
-    private readonly HashSet<EntityUid> _entitiesInRange = new();
     private readonly Dictionary<EntityUid, AreaOfEffectTiming> _timings = new();
-    private readonly Dictionary<EntityUid, DamageSpecifier> _damageSpecifiers = new();
 
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<AreaOfEffectComponent, ComponentStartup>(OnStartup);
-        SubscribeLocalEvent<AreaOfEffectComponent, ComponentShutdown>(OnShutdown);
+        SubscribeLocalEvent<AreaOfEffectComponent, ComponentStartup>((uid, comp, _) => OnStartup(new Entity<AreaOfEffectComponent>(uid, comp)));
+        SubscribeLocalEvent<AreaOfEffectComponent, ComponentShutdown>((uid, comp, _) => OnShutdown(new Entity<AreaOfEffectComponent>(uid, comp)));
     }
 
-    private void OnStartup(EntityUid uid, AreaOfEffectComponent component, ComponentStartup args)
+    private void OnStartup(Entity<AreaOfEffectComponent> entity)
     {
-        _timings[uid] = new AreaOfEffectTiming
-        {
-            NextApplicationTime = null,
-            StartTime = _timing.CurTime,
-        };
+        _timings[entity.Owner] = new AreaOfEffectTiming(_timing);
     }
 
-    private void OnShutdown(EntityUid uid, AreaOfEffectComponent component, ComponentShutdown args)
+    private void OnShutdown(Entity<AreaOfEffectComponent> entity)
     {
-        _timings.Remove(uid);
-        _damageSpecifiers.Remove(uid);
+        _timings.Remove(entity.Owner);
     }
 
-    private struct AreaOfEffectTiming
+    private struct AreaOfEffectTiming(IGameTiming timing)
     {
-        public TimeSpan? NextApplicationTime;
-        public TimeSpan StartTime;
+        public TimeSpan NextApplicationTime = timing.CurTime;
+        public readonly TimeSpan StartTime = timing.CurTime;
     }
 
     /// <inheritdoc/>
@@ -73,11 +65,11 @@ public sealed class AreaOfEffectSystem : EntitySystem
             var nextTime = _timings[uid].NextApplicationTime;
 
             // Check if it's time to apply damage
-            if (nextTime.HasValue && nextTime > curTime)
+            if (nextTime > curTime)
                 continue;
 
             // Apply damage to nearby entities
-            ApplyAreaOfEffectDamage(uid, aoe);
+            ApplyAreaOfEffectDamage(new Entity<AreaOfEffectComponent>(uid, aoe));
 
             // Schedule next application
             var timing = _timings[uid];
@@ -89,32 +81,38 @@ public sealed class AreaOfEffectSystem : EntitySystem
     /// <summary>
     /// Applies damage to all entities within the given radius.
     /// </summary>
-    /// <param name="uid">The area of effect entity</param>
-    /// <param name="aoe">The area of effect component</param>
-    private void ApplyAreaOfEffectDamage(EntityUid uid, AreaOfEffectComponent aoe)
+    /// <param name="entity">The area of effect entity</param>
+    private void ApplyAreaOfEffectDamage(Entity<AreaOfEffectComponent> entity)
     {
-        if (!_damageSpecifiers.TryGetValue(uid, out var damageSpecifier))
+        var inRange = _lookup.GetEntitiesInRange<DamageableComponent>(Transform(entity.Owner).Coordinates, entity.Comp.Radius);
+
+        foreach (var target in inRange)
         {
-            damageSpecifier = new DamageSpecifier();
-            foreach (var (damageTypeId, amount) in aoe.Damage)
+            if (!_whitelist.CheckBoth(target.Owner, entity.Comp.Blacklist, entity.Comp.Whitelist))
             {
-                damageSpecifier.DamageDict[damageTypeId] = amount;
+                inRange.Remove(target);
             }
-            _damageSpecifiers[uid] = damageSpecifier;
         }
 
-        foreach (var targetUid in _lookup.GetEntitiesInRange<DamageableComponent>(Transform(uid).Coordinates, aoe.Radius))
+        var damage = entity.Comp.Damage;
+        if (entity.Comp.DamageSpread)
         {
-            // Check whitelist/blacklist filtering
-            if (!_whitelist.CheckBoth(targetUid, aoe.Blacklist, aoe.Whitelist))
-                continue;
+            damage = new DamageSpecifier();
+            foreach (var (damageType, amount) in entity.Comp.Damage.DamageDict)
+            {
+                damage.DamageDict[damageType] = amount / inRange.Count;
+            }
+        }
 
+        foreach (var target in inRange)
+        {
             _damageable.TryChangeDamage(
-                targetUid!,
-                damageSpecifier,
+                target.Owner,
+                damage,
                 ignoreResistances: false,
                 interruptsDoAfters: true,
-                origin: uid);
+                origin: entity.Owner);
+
         }
     }
 }

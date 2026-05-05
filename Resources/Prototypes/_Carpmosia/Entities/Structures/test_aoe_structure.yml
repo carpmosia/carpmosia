@@ -8,8 +8,9 @@
     radius: 5.0
     cooldown: 2.5
     damage:
-      Heat: 10
-      Blunt: 3
+      types:
+        Heat: 10
+        Blunt: 3
     blacklist:
       tags:
       - Structure
