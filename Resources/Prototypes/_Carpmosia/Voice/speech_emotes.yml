@@ -1,0 +1,30 @@
+- type: emote
+  id: ThumpFoot
+  name: chat-emote-name-thump-foot
+  category: Hands
+  available: false
+  icon: Interface/Emotes/tailslap.png # TODO: new icon
+  whitelist:
+    components:
+    - Hands
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-thump-foot"]
+  chatTriggers:
+    - thump
+    - thumps
+    - thumping
+    - thumped
+    - thump foot
+    - thumps foot
+    - thumps their foot
+    - thumps her foot
+    - thumps his foot
+    - thumps its foot
+    - thump feet
+    - thumps feet
+    - thumps their feet
+    - thumps her feet
+    - thumps his feet
+    - thumps its feet

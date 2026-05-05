@@ -231,11 +231,14 @@
   - type: Speech
     speechSounds: Lagomorph
     speechVerb: Rabbit
+    allowedEmotes: [ 'ThumpFoot' ]
   - type: Vocal
     sounds:
       Male: MaleLagomorph
       Female: FemaleLagomorph
       Unsexed: MaleLagomorph
+  - type: BodyEmotes
+    soundsId: LagomorphBodyEmotes
   - type: Damageable
     damageModifierSet: Vulpkanin # intentional reuse because damage coeffs are an uninteresting Non Mechanic
   - type: Temperature

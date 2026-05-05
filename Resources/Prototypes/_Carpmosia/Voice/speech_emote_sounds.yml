@@ -39,6 +39,24 @@
       collection: FemaleDeathGasp
 
 - type: emoteSounds
+  id: LagomorphBodyEmotes
+  sounds:
+    ThumpFoot:
+      path: /Audio/Voice/Reptilian/reptilian_tailthump.ogg
+      params:
+        variation: 0.125
+    Clap:
+      collection: Claps
+    ClapSingle:
+      collection: ClapSingle
+    Snap:
+      collection: Snaps
+      params:
+        volume: -6
+    Salute:
+      collection: Salutes
+
+- type: emoteSounds
   id: MaleLagomorph
   params:
     variation: 0.125
