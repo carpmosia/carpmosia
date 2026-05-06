@@ -266,10 +266,6 @@
       reagents:
       - ReagentId: SulfurBlood # this however is an artistic decision because i love blood reagent variance
         Quantity: 300
-  - type: CreamPied
-    sprite:
-      sprite: Effects/creampie.rsi
-      state: creampie_vulpkanin # TODO: make a creampie sprite
 
 - type: entity
   parent: OrganBase
