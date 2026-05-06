@@ -21,16 +21,16 @@ public sealed class AreaOfEffectSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<AreaOfEffectComponent, ComponentStartup>((uid, comp, _) => OnStartup(new Entity<AreaOfEffectComponent>(uid, comp)));
-        SubscribeLocalEvent<AreaOfEffectComponent, ComponentShutdown>((uid, comp, _) => OnShutdown(new Entity<AreaOfEffectComponent>(uid, comp)));
+        SubscribeLocalEvent<AreaOfEffectComponent, ComponentStartup>(OnStartup);
+        SubscribeLocalEvent<AreaOfEffectComponent, ComponentShutdown>(OnShutdown);
     }
 
-    private void OnStartup(Entity<AreaOfEffectComponent> entity)
+    private void OnStartup(Entity<AreaOfEffectComponent> entity, ref ComponentStartup args)
     {
         _timings[entity.Owner] = new AreaOfEffectTiming(_timing);
     }
 
-    private void OnShutdown(Entity<AreaOfEffectComponent> entity)
+    private void OnShutdown(Entity<AreaOfEffectComponent> entity, ref ComponentShutdown args)
     {
         _timings.Remove(entity.Owner);
     }
