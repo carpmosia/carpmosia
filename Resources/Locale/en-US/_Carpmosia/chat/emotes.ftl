@@ -1,2 +1,2 @@
-chat-emote-name-thump-foot = Thump Feet
-chat-emote-msg-thump-foot = thumps {POSS-ADJ($entity)} feet.
+chat-emote-name-stomp = Stomp Feet
+chat-emote-msg-stomp = stomps {POSS-ADJ($entity)} feet.

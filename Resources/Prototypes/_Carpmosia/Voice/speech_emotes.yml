@@ -1,30 +1,30 @@
 - type: emote
-  id: ThumpFoot
-  name: chat-emote-name-thump-foot
+  id: Stomp
+  name: chat-emote-name-stomp
   category: Hands
   available: false
-  icon: Interface/Emotes/tailslap.png # TODO: new icon
+  icon: { sprite: /Textures/_Carpmosia/Interface/emotes.rsi, state: stomp }
   whitelist:
     components:
     - Hands
   blacklist:
     tags:
     - SiliconEmotes
-  chatMessages: ["chat-emote-msg-thump-foot"]
+  chatMessages: ["chat-emote-msg-stomp"]
   chatTriggers:
-    - thump
-    - thumps
-    - thumping
-    - thumped
-    - thump foot
-    - thumps foot
-    - thumps their foot
-    - thumps her foot
-    - thumps his foot
-    - thumps its foot
-    - thump feet
-    - thumps feet
-    - thumps their feet
-    - thumps her feet
-    - thumps his feet
-    - thumps its feet
+    - stomp
+    - stomps
+    - stomping
+    - stomped
+    - stomp foot
+    - stomps foot
+    - stomps their foot
+    - stomps her foot
+    - stomps his foot
+    - stomps its foot
+    - stomp feet
+    - stomps feet
+    - stomps their feet
+    - stomps her feet
+    - stomps his feet
+    - stomps its feet
