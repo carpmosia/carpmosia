@@ -4,29 +4,6 @@
   name: Angledseclite
   description: A robust light designed with thot of hand free use.
   components:
-  - type: Tag
-    tags:
-    - Flashlight
-  - type: HandheldLight
-    addPrefix: false
-    blinkingBehaviourId: blinking
-    radiatingBehaviourId: radiating
-  - type: LightBehaviour
-    behaviours:
-    - !type:FadeBehaviour
-      id: radiating
-      maxDuration: 2.0
-      startValue: 3.0
-      endValue: 2.0
-      isLooped: true
-      reverseWhenFinished: true
-    - !type:PulseBehaviour
-      id: blinking
-      interpolate: Nearest
-      maxDuration: 1.0
-      startValue: 0.1
-      endValue: 2.0
-      isLooped: true
   - type: ToggleableVisuals
     spriteLayer: light
     inhandVisuals:
@@ -40,17 +17,7 @@
       neck:
       - state: equipped-neck-light
         shader: unshaded
-  - type: ItemTogglePointLight
-  - type: PowerCellSlot
-    cellSlotId: cell_slot
-  - type: ContainerContainer
-    containers:
-      cell_slot: !type:ContainerSlot
-  - type: ItemSlots
-    slots:
-      cell_slot:
-        name: power-cell-slot-component-slot-name-default
-        startingItem: PowerCellMedium
+      - type: ItemTogglePointLight
   - type: Sprite
     sprite: _Carpmosia/Objects/Tools/necklitesecbase.rsi
     layers:
@@ -66,14 +33,8 @@
     enabled: false
     mask: /Textures/Effects/LightMasks/cone.png
     radius: 7
-  - type: Appearance
-  - type: StaticPrice
-    price: 40
-  - type: StealTarget
-    stealGroup: LAMP
   - type: Clothing
     sprite: _Carpmosia/Objects/Tools/necklitesecbase.rsi
-    quickEquip: false
     slots:
     - Belt
     - Neck
