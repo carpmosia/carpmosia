@@ -1,8 +1,8 @@
 - type: entity
   parent: [FlashlightLantern, BaseSecurityContraband]
   id: NeckLiteSecBase
-  name: Angledseclite
-  description: A robust light designed with thot of hand free use.
+  name: Combat seclite
+  description:  An angled flashlight with an attached strap that secures around your shoulders, lighting up your way hands-free. Features a lowerpower draw and lower radius than a seclite.
   components:
   - type: ToggleableVisuals
     clothingVisuals:
@@ -23,6 +23,8 @@
     storedRotation: 0
   - type: PointLight
     radius: 7
+  - type: HandheldLight
+    watage: 0.25
   - type: Clothing
     sprite: _Carpmosia/Objects/Tools/necklitesecbase.rsi
     slots:
