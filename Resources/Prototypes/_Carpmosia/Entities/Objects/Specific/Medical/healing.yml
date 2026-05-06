@@ -5,3 +5,22 @@
   components:
   - type: Stack
     count: 1
+
+- type: entity
+  parent: BaseItem
+  id: PowerCautery
+  name: power cautery
+  description: lala
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: full
+  - type: PowerCautery
+  - type: BatteryVisuals
+  - type: Battery
+    maxCharge: 100
+    startingCharge: 100
+  - type: BatterySelfRecharger
+    autoRechargeRate: 4
+    autoRechargePauseTime: 2s
+
