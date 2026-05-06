@@ -1,0 +1,8 @@
+- type: entity
+  parent: AirlockSecurity
+  id: AirlockBrigmedicLocked
+  suffix: Brigmedic, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBrigmedic ]
