@@ -5,19 +5,11 @@
   description: A robust light designed with thot of hand free use.
   components:
   - type: ToggleableVisuals
-    spriteLayer: light
-    inhandVisuals:
-      left:
-      - state: inhand-left-light
-        shader: unshaded
-      right:
-      - state: inhand-right-light
-        shader: unshaded
     clothingVisuals:
       neck:
       - state: equipped-neck-light
         shader: unshaded
-  - type: ItemTogglePointLight
+      - type: ItemTogglePointLight
   - type: Sprite
     sprite: _Carpmosia/Objects/Tools/necklitesecbase.rsi
     layers:
@@ -30,8 +22,6 @@
     sprite: _Carpmosia/Objects/Tools/necklitesecbase.rsi
     storedRotation: 0
   - type: PointLight
-    enabled: false
-    mask: /Textures/Effects/LightMasks/cone.png
     radius: 7
   - type: Clothing
     sprite: _Carpmosia/Objects/Tools/necklitesecbase.rsi
