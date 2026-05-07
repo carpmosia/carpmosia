@@ -1500,14 +1500,16 @@
   url: https://github.com/carpmosia/carpmosia/pull/313
 - author: arenaconspiracy
   changes:
-  - message: Most melee weapons, firearms, and the microphone now modify the icon & phrase used for pointing while in your active hand.
+  - message: Most melee weapons, firearms, and the microphone now modify the icon
+      & phrase used for pointing while in your active hand.
     type: Add
   id: 251
   time: '2026-04-18T06:35:47.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/311
 - author: arenaconspiracy
   changes:
-  - message: Traitors no longer have to be unrestrained to achieve full completion on the escape objective.
+  - message: Traitors no longer have to be unrestrained to achieve full completion
+      on the escape objective.
     type: Tweak
   id: 252
   time: '2026-04-30T09:05:35.0000000+00:00'
@@ -1519,4 +1521,12 @@
   id: 253
   time: '2026-05-06T20:49:49.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/320
+- author: imatsoup
+  changes:
+  - message: Salvage Specialists can no longer roll Traitor, Initial Infected, Bloodbound,
+      Thief, or Head Revolutionary
+    type: Tweak
+  id: 254
+  time: '2026-05-07T10:22:14.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/325
 Order: -1
