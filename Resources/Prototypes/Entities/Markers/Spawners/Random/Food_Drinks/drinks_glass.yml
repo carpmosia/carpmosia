@@ -123,6 +123,17 @@
         - id: DrinkShakeWhite
         - id: DrinkTheMartinez
         - id: DrinkMoonshineGlass
+        # Carpmosia-start - more drinks PR #25
+        - id: DrinkAngostura
+        - id: DrinkSweetRevenge
+        - id: DrinkOldFashioned
+        - id: DrinkLLB
+        - id: DrinkRobRoy
+        - id: DrinkGunner
+        - id: DrinkCarribeanLovers
+        - id: DrinkTheLastWord
+        - id: DrinkCoffeeFlip
+        # Carpmosia-end - more drinks PR #25
       - !type:GroupSelector #rare
         weight: 0.05
         children:
@@ -140,15 +151,4 @@
         - id: DrinkHoochGlass
         - id: DrinkBeepskySmashGlass
         - id: DrinkBacchusBlessing
-        # Carpmosia-start - more drinks PR #25
-        - id: DrinkAngostura
-        - id: DrinkSweetRevenge
-        - id: DrinkOldFashioned
-        - id: DrinkLLB
-        - id: DrinkRobRoy
-        - id: DrinkGunner
-        - id: DrinkCarribeanLovers
-        - id: DrinkTheLastWord
-        - id: DrinkCoffeeFlip
-        # Carpmosia-end - more drinks PR #25
     offset: 0.0
