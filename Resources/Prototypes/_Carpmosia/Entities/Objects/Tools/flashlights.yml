@@ -10,6 +10,10 @@
       - state: equipped-neck-light
         shader: unshaded
       - type: ItemTogglePointLight
+      belt:
+      - state: equipped-BELT-overlay
+        shader: unshaded
+      - type: ItemTogglePointLight
   - type: Sprite
     sprite: _Carpmosia/Objects/Tools/necklitesecbase.rsi
     layers:
@@ -18,6 +22,9 @@
       shader: unshaded
       visible: false
       map: [ "light" ]
+  - type: Tag
+    tags:
+    - SecBeltEquip   
   - type: Item
     sprite: _Carpmosia/Objects/Tools/necklitesecbase.rsi
     storedRotation: 0
