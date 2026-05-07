@@ -16,11 +16,15 @@
     sprite: Mobs/Species/Human/parts.rsi
     state: full
   - type: PowerCautery
+    beginSound:
+      path:  /Audio/Weapons/Guns/MagIn/pistol_magin.ogg # TODO: more appropriate sound
+    endSound:
+      path:  /Audio/Effects/lightburn.ogg
   - type: BatteryVisuals
   - type: Battery
     maxCharge: 100
     startingCharge: 100
   - type: BatterySelfRecharger
     autoRechargeRate: 4
-    autoRechargePauseTime: 2s
+    autoRechargePauseTime: 10s
 

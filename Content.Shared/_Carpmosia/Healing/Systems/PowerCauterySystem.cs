@@ -1,8 +1,8 @@
 using Content.Shared.Administration.Logs;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
-using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
@@ -20,6 +20,8 @@ using Content.Shared.Power.EntitySystems;
 using Content.Shared._Carpmosia.Medical.Components;
 using Content.Shared._Carpmosia.Medical.Events;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
 
 namespace Content.Shared._Carpmosia.Medical.Systems;
 
@@ -28,7 +30,7 @@ namespace Content.Shared._Carpmosia.Medical.Systems;
 /// </summary>
 /// <remarks>
 /// Separate from <see cref="HealingSystem"> because this wants ONLY bleeding and not damage,
-/// and i'm not about to bolt on power consumption logic to topicals, which are work with stacks.
+/// and i'm not about to bolt on power consumption logic to topicals, which work with stacks.
 /// </remarks>
 public sealed class PowerCauterySystem : EntitySystem
 {
@@ -41,15 +43,124 @@ public sealed class PowerCauterySystem : EntitySystem
     [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
     [Dependency] private readonly MobThresholdSystem _mobThresholdSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<PowerCauteryComponent, UseInHandEvent>(OnHealingUse);
-        SubscribeLocalEvent<PowerCauteryComponent, AfterInteractEvent>(OnHealingAfterInteract);
+        SubscribeLocalEvent<PowerCauteryComponent, UseInHandEvent>(OnCauteryUse);
+        SubscribeLocalEvent<PowerCauteryComponent, AfterInteractEvent>(OnCauteryAfterInteract);
         SubscribeLocalEvent<DamageableComponent, PowerCauteryDoAfterEvent>(OnDoAfter);
+    }
+
+    // entrypoints
+    private void OnCauteryUse(Entity<PowerCauteryComponent> cautery, ref UseInHandEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        if (TryCauterize(cautery, args.User, args.User))
+            args.Handled = true;
+    }
+
+    private void OnCauteryAfterInteract(Entity<PowerCauteryComponent> cautery, ref AfterInteractEvent args)
+    {
+        if (args.Handled || !args.CanReach || args.Target == null)
+            return;
+
+        if (TryCauterize(cautery, args.Target.Value, args.User))
+            args.Handled = true;
+    }
+
+    // checks
+    private bool IsBleeding(Entity<PowerCauteryComponent> cautery, Entity<DamageableComponent> target)
+    {
+        if (!TryComp<BloodstreamComponent>(target, out var bloodstream))
+            return false;
+
+        if (cautery.Comp.BloodlossModifier < 0 && bloodstream.BleedAmount > 0)
+            return true;
+
+        return false;
+    }
+
+    private bool GetAndDrawPower(Entity<BatteryComponent?> ent, float draw)
+    {
+        bool couldDraw = (_battery.GetCharge(ent) > draw);
+
+        if (couldDraw)
+            _battery.UseCharge(ent, draw);
+
+        return couldDraw;
+    }
+
+    private bool MatchDamageContainers(List<ProtoId<DamageContainerPrototype>> containers, Entity<DamageableComponent?> target)
+    {
+        if (!Resolve(target, ref target.Comp, false))
+            return false;
+
+        if (target.Comp.DamageContainerID is not null &&
+            !containers.Contains(target.Comp.DamageContainerID.Value))
+            {
+                return true;
+            }
+
+        return false;
+    }
+
+    // cauterization
+    private bool TryCauterize(Entity<PowerCauteryComponent> cautery, Entity<DamageableComponent?> target, EntityUid user)
+    {
+        if (!Resolve(target, ref target.Comp, false))
+            return false;
+
+        // check if our container list matches our target
+        if (cautery.Comp.DamageContainers is not null &&
+            MatchDamageContainers(cautery.Comp.DamageContainers, target))
+        {
+            return false;
+        }
+
+        // range check
+        if (user != target.Owner && !_interactionSystem.InRangeUnobstructed(user, target.Owner, popup: true))
+            return false;
+
+        // is the target even bleeding
+        if (!IsBleeding(cautery, target!))
+        {
+            _popupSystem.PopupClient(Loc.GetString("medical-item-cant-use", ("item", cautery.Owner)), cautery, user);
+            return false;
+        }
+
+        // start sound
+        _audio.PlayPredicted(cautery.Comp.BeginSound, cautery, user);
+
+        // let the target know we're helping
+        bool isNotSelf = user != target.Owner;
+        if (isNotSelf)
+        {
+            var msg = Loc.GetString("medical-item-popup-target", ("user", Identity.Entity(user, EntityManager)), ("item", cautery.Owner));
+            _popupSystem.PopupEntity(msg, target, target, PopupType.Medium);
+        }
+
+        // set a delay and penalize self-healing
+        var delay = cautery.Comp.Delay;
+        if (!isNotSelf)
+            delay *= cautery.Comp.SelfHealPenaltyMultiplier;
+
+        // set up a doafter
+        var doAfterEventArgs =
+            new DoAfterArgs(EntityManager, user, delay, new PowerCauteryDoAfterEvent(), target, target: target, used: cautery)
+            {
+                NeedHand = true,
+                BreakOnMove = true,
+                BreakOnWeightlessMove = false,
+            };
+
+        // start the doafter
+        _doAfter.TryStartDoAfter(doAfterEventArgs);
+        return true;
     }
 
     private void OnDoAfter(Entity<DamageableComponent> target, ref PowerCauteryDoAfterEvent args)
@@ -60,28 +171,25 @@ public sealed class PowerCauterySystem : EntitySystem
         if (!TryComp(args.Used, out PowerCauteryComponent? cautery))
             return;
 
-        // check if our container list matches our target
-        if (cautery.DamageContainers is not null &&
-            target.Comp.DamageContainerID is not null &&
-            !cautery.DamageContainers.Contains(target.Comp.DamageContainerID.Value))
-        {
+        if (!TryComp(args.Used, out BatteryComponent? battery))
+            return;
+
+        // get target bloodstream
+        TryComp<BloodstreamComponent>(target, out var bloodstream);
+
+        // try to draw from our battery, fail if we can't
+        bool powered = GetAndDrawPower((args.Used.Value, battery), cautery.PowerDraw);
+        if (!powered)
+        {   // starting the doafter w/o power is fine if we can fail it here
+            _popupSystem.PopupClient(Loc.GetString("power-cautery-no-power"), args.User, args.User);
             return;
         }
-
-        TryComp<BloodstreamComponent>(target, out var bloodstream);
 
         // Stem bleeding.
         if (cautery.BloodlossModifier != 0 && bloodstream != null)
         {
             var isBleeding = bloodstream.BleedAmount > 0;
             _bloodstreamSystem.TryModifyBleedAmount((target.Owner, bloodstream), cautery.BloodlossModifier);
-            if (isBleeding != bloodstream.BleedAmount > 0)
-            {
-                var popup = (args.User == target.Owner)
-                    ? Loc.GetString("medical-item-stop-bleeding-self")
-                    : Loc.GetString("medical-item-stop-bleeding", ("target", Identity.Entity(target.Owner, EntityManager)));
-                _popupSystem.PopupClient(popup, target, args.User);
-            }
         }
 
         // Log the cauterizing.
@@ -96,131 +204,19 @@ public sealed class PowerCauterySystem : EntitySystem
                 $"{ToPrettyString(args.User):user} cauterized themselves for {cautery.BloodlossModifier} points");
         }
 
+        // end sound
         _audio.PlayPredicted(cautery.EndSound, target.Owner, args.User);
 
-        bool dontRepeat = false;
-        if (TryComp<BatteryComponent>(args.Used.Value, out var battery))
-        {
-            _battery.UseCharge((args.Used.Value, battery), cautery.PowerDraw);
-
-            if (_battery.GetCharge((args.Used.Value, battery)) < cautery.PowerDraw);
-            {
-                dontRepeat = true;
-            }
-
-            Log.Info($"{_battery.GetCharge((args.Used.Value, battery))} {cautery.PowerDraw} {(_battery.GetCharge((args.Used.Value, battery)) < cautery.PowerDraw)} {dontRepeat}");
-        }
-
-        args.Repeat = IsBleeding((args.Used.Value, cautery), target) && !dontRepeat;
+        // repeat if our target is still bleeding
+        args.Repeat = IsBleeding((args.Used.Value, cautery), target);
 
         args.Handled = true;
 
+        // say we're finished if we're not repeating
         if (!args.Repeat)
         {
             _popupSystem.PopupClient(Loc.GetString("medical-item-finished-using", ("item", args.Used)), target.Owner, args.User);
             return;
         }
-
-        // Update our self heal delay so it shortens as we heal more damage.
-        if (args.User == target.Owner)
-            args.Args.Delay = cautery.Delay * GetScaledHealingPenalty(target.Owner, cautery.SelfHealPenaltyMultiplier);
-    }
-
-    private bool IsBleeding(Entity<PowerCauteryComponent> cautery, Entity<DamageableComponent> target)
-    {
-        if (!TryComp<BloodstreamComponent>(target, out var bloodstream))
-            return false;
-
-        if (cautery.Comp.BloodlossModifier < 0 && bloodstream.BleedAmount > 0)
-            return true;
-
-        return false;
-    }
-
-    private void OnHealingUse(Entity<PowerCauteryComponent> cautery, ref UseInHandEvent args)
-    {
-        if (args.Handled)
-            return;
-
-        if (TryCauterize(cautery, args.User, args.User))
-            args.Handled = true;
-    }
-
-    private void OnHealingAfterInteract(Entity<PowerCauteryComponent> cautery, ref AfterInteractEvent args)
-    {
-        if (args.Handled || !args.CanReach || args.Target == null)
-            return;
-
-        if (TryCauterize(cautery, args.Target.Value, args.User))
-            args.Handled = true;
-    }
-
-    private bool TryCauterize(Entity<PowerCauteryComponent> cautery, Entity<DamageableComponent?> target, EntityUid user)
-    {
-        if (!Resolve(target, ref target.Comp, false))
-            return false;
-
-        // check if our container list matches the target
-        if (cautery.Comp.DamageContainers is not null &&
-            target.Comp.DamageContainerID is not null &&
-            !cautery.Comp.DamageContainers.Contains(target.Comp.DamageContainerID.Value))
-        {
-            return false;
-        }
-
-        if (user != target.Owner && !_interactionSystem.InRangeUnobstructed(user, target.Owner, popup: true))
-            return false;
-
-        if (!IsBleeding(cautery, target!))
-        {
-            _popupSystem.PopupClient(Loc.GetString("medical-item-cant-use", ("item", cautery.Owner)), cautery, user);
-            return false;
-        }
-
-        _audio.PlayPredicted(cautery.Comp.BeginSound, cautery, user);
-
-        var isNotSelf = user != target.Owner;
-
-        if (isNotSelf)
-        {
-            var msg = Loc.GetString("medical-item-popup-target", ("user", Identity.Entity(user, EntityManager)), ("item", cautery.Owner));
-            _popupSystem.PopupEntity(msg, target, target, PopupType.Medium);
-        }
-
-        var delay = isNotSelf
-            ? cautery.Comp.Delay
-            : cautery.Comp.Delay * GetScaledHealingPenalty(target, cautery.Comp.SelfHealPenaltyMultiplier);
-
-        var doAfterEventArgs =
-            new DoAfterArgs(EntityManager, user, delay, new PowerCauteryDoAfterEvent(), target, target: target, used: cautery)
-            {
-                NeedHand = true,
-                BreakOnMove = true,
-                BreakOnWeightlessMove = false,
-            };
-
-        _doAfter.TryStartDoAfter(doAfterEventArgs);
-        return true;
-    }
-
-    /// <summary>
-    /// Scales the self-heal penalty based on the amount of damage taken
-    /// </summary>
-    /// <param name="ent">Entity we're healing</param>
-    /// <param name="mod">Maximum modifier we can have.</param>
-    /// <returns>Modifier we multiply our healing time by</returns>
-    public float GetScaledHealingPenalty(Entity<DamageableComponent?, MobThresholdsComponent?> ent, float mod)
-    {
-        if (!Resolve(ent, ref ent.Comp1, ref ent.Comp2, false))
-            return mod;
-
-        if (!_mobThresholdSystem.TryGetThresholdForState(ent, MobState.Critical, out var amount, ent.Comp2))
-            return 1;
-
-        var percentDamage = (float)(_damageable.GetTotalDamage(ent) / amount);
-        //basically make it scale from 1 to the multiplier.
-
-        var output = percentDamage * (mod - 1) + 1;
-        return Math.Max(output, 1);
     }
 }
