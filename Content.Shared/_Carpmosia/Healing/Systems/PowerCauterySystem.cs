@@ -6,6 +6,7 @@ using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
+using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
@@ -51,6 +52,7 @@ public sealed class PowerCauterySystem : EntitySystem
 
         SubscribeLocalEvent<PowerCauteryComponent, UseInHandEvent>(OnCauteryUse);
         SubscribeLocalEvent<PowerCauteryComponent, AfterInteractEvent>(OnCauteryAfterInteract);
+        SubscribeLocalEvent<PowerCauteryComponent, ExaminedEvent>(OnCauteryExamined);
         SubscribeLocalEvent<DamageableComponent, PowerCauteryDoAfterEvent>(OnDoAfter);
     }
 
@@ -71,6 +73,15 @@ public sealed class PowerCauterySystem : EntitySystem
 
         if (TryCauterize(cautery, args.Target.Value, args.User))
             args.Handled = true;
+    }
+
+    private void OnCauteryExamined(Entity<PowerCauteryComponent> ent, ref ExaminedEvent args)
+    {
+        if (!TryComp<BatteryComponent>(ent, out var battery))
+            return;
+
+        var charges = (int)Math.Floor(_battery.GetCharge((ent, battery)) / ent.Comp.PowerDraw);
+        args.PushMarkup(Loc.GetString("power-cautery-charge-examine", ("charges", charges)));
     }
 
     // checks

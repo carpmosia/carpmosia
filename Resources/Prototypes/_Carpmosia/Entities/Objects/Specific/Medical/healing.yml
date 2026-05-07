@@ -10,21 +10,33 @@
   parent: BaseItem
   id: PowerCautery
   name: power cautery
-  description: lala
+  description: A sophisticated energy projector that creates a sliver of superheated plasma at the pull of a trigger. The integrated microreactor begins recharging ten seconds after use to avoid burnout.
   components:
   - type: Sprite
-    sprite: Mobs/Species/Human/parts.rsi
-    state: full
+    sprite: _Carpmosia/Objects/Specific/Medical/power_cautery.rsi
+    layers:
+    - map: [ "enum.PowerCellVisualLayers.Base" ]
+      state: icon
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: battery-5
+      shader: unshaded
+  - type: Appearance
+  - type: BatteryVisuals
+  - type: GenericVisualizer
+    visuals: # TODO: make it use all 5 steps of the battery indicator w/ some other visualizer
+      enum.BatteryVisuals.State: # because this one doesn't work
+        enum.PowerCellVisualLayers.Unshaded:
+          Full: {visible: true, state: battery-5}
+          Neither: {visible: true, state: battery-3}
+          Empty: {visible: false}
   - type: PowerCautery
     beginSound:
       path:  /Audio/Weapons/Guns/MagIn/pistol_magin.ogg # TODO: more appropriate sound
     endSound:
       path:  /Audio/Effects/lightburn.ogg
-  - type: BatteryVisuals
   - type: Battery
     maxCharge: 100
     startingCharge: 100
   - type: BatterySelfRecharger
     autoRechargeRate: 4
     autoRechargePauseTime: 10s
-
