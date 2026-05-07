@@ -303,19 +303,6 @@
     containers:
       board: [ DoorElectronicsMedicalResearch ]
 
-# Carpmosia-start - airlocks for Jellyfish
-
-- type: entity
-  parent: AirlockLogistics
-  id: AirlockLogisticsLocked
-  suffix: Cargo/Engineering, Locked
-  components:
-  - type: ContainerFill
-    containers:
-      board: [ DoorElectronicsLogistics ]
-
-# Carpmosia-end - airlocks for Jellyfish
-
 - type: entity
   parent: AirlockCentralCommand
   id: AirlockCentralCommandLocked
@@ -729,19 +716,6 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsMedicalResearch ]
-
-# Carpmosia-start - airlocks for Jellyfish
-
-- type: entity
-  parent: AirlockLogisticsGlass
-  id: AirlockLogisticsGlassLocked
-  suffix: Cargo/Engineering, Locked
-  components:
-  - type: ContainerFill
-    containers:
-      board: [ DoorElectronicsLogistics ]
-
-# Carpmosia-end - airlocks for Jellyfish
 
 - type: entity
   parent: AirlockCentralCommandGlass
