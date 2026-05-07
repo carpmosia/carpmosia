@@ -14,7 +14,7 @@
     sprite: _Carpmosia/Objects/Tools/necklitesecbase.rsi
     layers:
     - state: neckseclite
-    - state: neckseclite-on
+    - state: neckseclite-overlay
       shader: unshaded
       visible: false
       map: [ "light" ]
