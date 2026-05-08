@@ -1,4 +1,6 @@
 - type: gameMap
+  # Currently a placeholder using Marathons spawnlist as opposed to a more curated spawnlist. This is not final and will
+  # change before it is a full feature map.
   id: Jelfy
   mapName: 'Jellyfish'
   mapPath: /Maps/_Carpmosia/jelfy.yml
@@ -42,7 +44,6 @@
             Chemist: [ 2, 2 ]
             MedicalDoctor: [ 4, 4 ]
             MedicalIntern: [ 3, 3 ] #intern, not counted
-            Psychologist: [ 1, 1 ]
             Paramedic: [ 1, 1 ]
             #science (4)
             Scientist: [ 4, 4 ]
