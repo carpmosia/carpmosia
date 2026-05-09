@@ -117,6 +117,7 @@
   id: LockerFillParamedic
   table: !type:AllSelector
     children:
+    - id: PowerCautery # Carpmosia-edit - power cautery # TODO: place it in the paramedic belt instead when they're no longer in the nanomed
     - id: ClothingEyesHudMedical
     - id: ClothingOuterHardsuitVoidParamed
     - id: ClothingBeltMedicalEMTFilled
