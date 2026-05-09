@@ -1,9 +1,7 @@
 - type: gameMap
-  # Currently a placeholder using Marathons spawnlist as opposed to a more curated spawnlist. This is not final and will
-  # change before it is a full feature map.
-  id: Jelfy
-  mapName: 'Jellyfish'
-  mapPath: /Maps/_Carpmosia/jelfy.yml
+  id: Lampocteis
+  mapName: 'Lampocteis'
+  mapPath: /Maps/_Carpmosia/lampocteis.yml
   mapIcon: /Textures/_Carpmosia/Interface/MapVote/carp.png
   minPlayers: 0
   maxPlayers: 10
@@ -12,14 +10,14 @@
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
-          mapNameTemplate: '{0} Reclaimed Wreckage-Jellyfish {1}'
+          mapNameTemplate: '{0} Lampocteis Carrier {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/_Carpmosia/Shuttles/emergency_ghoti.yml
         - type: StationJobs
-          availableJobs: # 61 jobs total w/o latejoins & interns, 76 jobs total w/ latejoins & interns
+          availableJobs: # 49 jobs total w/o latejoins & interns, 58 jobs total w/ latejoins & interns
             #command (7)
             Captain: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
@@ -28,34 +26,34 @@
             ChiefEngineer: [ 1, 1 ]
             ResearchDirector: [ 1, 1 ]
             Quartermaster: [ 1, 1 ]
-            #service (11 - 13)
+            #service (11 - 12)
             Bartender: [ 2, 2 ]
-            Botanist: [ 2, 3 ]
+            Botanist: [ 2, 2 ]
             Chef: [ 2, 2 ]
             Janitor: [ 1, 2 ]
             Chaplain: [ 1, 1 ]
             Librarian: [ 1, 1 ]
             ServiceWorker: [ 2, 2 ]
-            #engineering (7)
-            AtmosphericTechnician: [ 3, 3 ]
-            StationEngineer: [ 4, 4 ]
-            TechnicalAssistant: [ 3, 3 ] #intern, not counted
-            #medical (8)
+            #engineering (4)
+            AtmosphericTechnician: [ 2, 2 ]
+            StationEngineer: [ 2, 2 ]
+            TechnicalAssistant: [ 2, 2 ] #intern, not counted
+            #medical (6)
             Chemist: [ 2, 2 ]
-            MedicalDoctor: [ 4, 4 ]
-            MedicalIntern: [ 3, 3 ] #intern, not counted
-            Paramedic: [ 1, 1 ]
-            #science (4)
-            Scientist: [ 4, 4 ]
-            ResearchAssistant: [ 3, 3 ] #intern, not counted
-            #security (12)
+            MedicalDoctor: [ 2, 2 ]
+            MedicalIntern: [ 2, 2 ] #intern, not counted
+            Paramedic: [ 2, 2 ]
+            #science (3)
+            Scientist: [ 3, 3 ]
+            ResearchAssistant: [ 2, 2 ] #intern, not counted
+            #security (7)
             Warden: [ 1, 1 ]
-            SecurityOfficer: [ 8, 8 ]
+            SecurityOfficer: [ 4, 4 ]
             Detective: [ 1, 1 ]
-            SecurityCadet: [ 4, 4 ] #intern, not counted
-            Lawyer: [ 2, 2 ]
-            #supply (6)
-            SalvageSpecialist: [ 3, 3 ]
+            SecurityCadet: [ 2, 2 ] #intern, not counted
+            Lawyer: [ 1, 1 ]
+            #supply (5)
+            SalvageSpecialist: [ 2, 2 ]
             CargoTechnician: [ 3, 3 ]
             #civilian (3+)
             Passenger: [ -1, -1 ] #infinite, not counted
