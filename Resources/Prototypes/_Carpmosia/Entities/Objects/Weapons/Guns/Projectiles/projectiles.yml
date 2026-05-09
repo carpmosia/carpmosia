@@ -1,7 +1,7 @@
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BulletLaserWindowPiercingMagnum
   id: BulletLaserWindowPiercingShotgun
+  categories: [ HideSpawnMenu ]
   name: shotgun window-piercing bolt # be so serious
   components:
   - type: Projectile
@@ -10,9 +10,9 @@
         Heat: 15
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: BulletLaserWindowPiercingShotgun
   id: BulletLaserSpreadPiercing
+  categories: [ HideSpawnMenu ]
   name: window piercing laser barrage # is this verbocity really necessary
   components:
   - type: ProjectileSpread
