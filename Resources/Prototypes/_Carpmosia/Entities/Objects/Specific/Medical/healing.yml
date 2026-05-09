@@ -29,6 +29,9 @@
           Full: {visible: true, state: battery-5}
           Neither: {visible: true, state: battery-3}
           Empty: {visible: false}
+  - type: Tag
+    tags:
+    - SurgeryTool # this isn't close to a surgery tool and won't be usable in surgeries but this needs to fit in medical belts somehow and I cba adjusting their whitelist
   - type: PowerCautery
     damageContainers:
     - Biological
