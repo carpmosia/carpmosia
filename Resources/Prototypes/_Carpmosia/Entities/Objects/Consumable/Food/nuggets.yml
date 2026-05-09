@@ -1,0 +1,184 @@
+# copied from food meats
+- type: entity
+  abstract: true
+  parent: FoodInjectableBase
+  id: FoodNuggetBase
+  components:
+  - type: FlavorProfile
+    flavors:
+    - meaty
+    - bread
+  - type: Sprite
+    sprite: Objects/Consumable/Food/meat.rsi
+  - type: Extractable
+    grindableSolutionName: food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 0.5
+        - ReagentId: Fat
+          Quantity: 3
+  - type: Item
+    size: Tiny
+    shape:
+    - 0,0,0,0
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        # less mass so it can cook faster, a single strip of bacon isnt 5kg
+        density: 0.2
+        mask:
+        - ItemMask
+        restitution: 0.3  # fite me
+        friction: 0.1
+  # let air cook and freeze meat for cooking and preservation
+  - type: AtmosExposed
+  - type: Temperature
+    currentTemperature: 290
+  - type: TemperatureDamage
+  # required for cooking to work
+  - type: InternalTemperature
+    thickness: 0.002
+    area: 0.001 # arbitrary number that sounds right for a nugget
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      Meaterial: 100
+
+- type: entity
+  parent: FoodNuggetBase
+  id: FoodNuggetRaw
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - Raw
+    - Nugget
+  - type: Sprite
+    layers:
+    - state: bird-cooked
+
+- type: entity
+  parent: FoodNuggetBase
+  id: FoodNuggetCooked
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - Cooked
+    - Nugget
+  - type: Sprite
+    layers:
+    - state: bird-cooked
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Protein
+          Quantity: 5
+  - type: Item
+    storedOffset: -1,1
+    inhandVisuals:
+      left:
+      - state: plain-cooked-inhand-left
+        color: "#F7E3A3"
+      right:
+      - state: plain-cooked-inhand-right
+        color: "#F7E3A3"
+
+# nuggets
+- type: entity
+  parent: FoodNuggetRaw
+  id: ChickenNuggetRaw
+  name: Raw Chicken Nugget
+  description: a great way to get salmonella
+  components:
+  - type: Construction
+    graph: RecipeChickenNuggetRaw
+    node: nugget
+
+
+- type: entity
+  parent: FoodNuggetCooked
+  id: ChickenNuggetCooked
+  name: Chicken Nugget
+  description: yummy yummy chicken nugget goes right into my tummy
+
+- type: entity
+  parent: FoodNuggetRaw
+  id: DuckNuggetRaw
+  name: Raw Duck Nugget
+  description: salmonella goes quack
+  components:
+  - type: Construction
+    graph: RecipeDuckNuggetRaw
+    node: nugget
+
+- type: entity
+  parent: FoodNuggetCooked
+  id: DuckNuggetCooked
+  name: Duck Nugget
+  description: quack quack nugget
+
+- type: entity
+  parent: FoodNuggetRaw
+  id: PenguinNuggetRaw
+  name: Raw Penguin Nugget
+  description: a frozen delicacy from the south pole
+  components:
+  - type: Construction
+    graph: RecipePenguinNuggetRaw
+    node: nugget
+
+- type: entity
+  parent: FoodNuggetCooked
+  id: PenguinNuggetCooked
+  name: Penguin Nugget
+  description: straight from the south pole
+
+- type: entity
+  parent: FoodNuggetRaw
+  id: FishNuggetRaw
+  name: Raw Fish Nugget
+  description: that's some wierd sushi
+  components:
+  - type: FlavorProfile
+    flavors:
+    - fishy
+    - bread
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: CarpoToxin
+          Quantity: 5
+  - type: Construction
+    graph: RecipeFishNuggetRaw
+    node: nugget
+
+- type: entity
+  parent: FoodNuggetCooked
+  id: FishNuggetCooked
+  name: Fish Nugget
+  description: you know these are actually called fish sticks but whatever
+  components:
+  - type: FlavorProfile
+    flavors:
+    - fishy
+    - bread
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: CarpoToxin
+          Quantity: 3
+

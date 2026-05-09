@@ -1,0 +1,146 @@
+# Graphs
+- type: constructionGraph
+  id: RecipeChickenNuggetRaw
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: nugget
+      steps:
+        - tag: ChickenCutletRaw
+          name: construction-graph-tag-chicken-cutlet-raw
+          doAfter: 2
+        - tag: SliceDough
+          name: construction-graph-tag-slice-dough
+          doAfter: 2
+  - node: nugget
+    entity: ChickenNuggetRaw
+
+- type: constructionGraph
+  id: RecipeDuckNuggetRaw
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: nugget
+      steps:
+      - tag: DuckCutletRaw
+        name: construction-graph-tag-duck-cutlet-raw
+        doAfter: 2
+      - tag: SliceDough
+        name: construction-graph-tag-slice-dough
+        doAfter: 2
+  - node: nugget
+    entity: DuckNuggetRaw
+
+- type: constructionGraph
+  id: RecipePenguinNuggetRaw
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: nugget
+      steps:
+      - tag: PenguinCutletRaw
+        name: construction-graph-tag-penguin-cutlet-raw
+        doAfter: 2
+      - tag: SliceDough
+        name: construction-graph-tag-slice-dough
+        doAfter: 2
+  - node: nugget
+    entity: PenguinNuggetRaw
+
+- type: constructionGraph
+  id: RecipeFishNuggetRaw
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: nugget
+      steps:
+      - tag: CarpFillet
+        name: construction-graph-tag-duck-cutlet-raw
+        doAfter: 2
+      - tag: SliceDough
+        name: construction-graph-tag-slice-dough
+        doAfter: 2
+  - node: nugget
+    entity: FishNuggetRaw
+
+# Raw Nuggets
+- type: construction
+  id: recipeChickenNuggetRaw
+  graph: RecipeChickenNuggetRaw
+  startNode: start
+  targetNode: nugget
+  category: construction-category-misc
+  objectType: Item
+
+- type: construction
+  id: recipeDuckNuggetRaw
+  graph: RecipeDuckNuggetRaw
+  startNode: start
+  targetNode: nugget
+  category: construction-category-misc
+  objectType: Item
+
+- type: construction
+  id: recipePenguinNuggetRaw
+  graph: RecipePenguinNuggetRaw
+  startNode: start
+  targetNode: nugget
+  category: construction-category-misc
+  objectType: Item
+
+- type: construction
+  id: recipeFishNuggetRaw
+  graph: RecipeFishNuggetRaw
+  startNode: start
+  targetNode: nugget
+  category: construction-category-misc
+  objectType: Item
+
+# Cooked Nuggets
+- type: microwaveMealRecipe
+  id: RecipeChickenNuggetCooked
+  name: chicken nugget recipe
+  result: ChickenNuggetCooked
+  time: 10
+  group: Nuggets
+  reagents:
+    Cornoil: 5
+  solids:
+    ChickenNuggetRaw: 1
+
+- type: microwaveMealRecipe
+  id: RecipeDuckNuggetCooked
+  name: duck nugget recipe
+  result: DuckNuggetCooked
+  time: 10
+  group: Nuggets
+  reagents:
+    Cornoil: 5
+  solids:
+    DuckNuggetRaw: 1
+
+- type: microwaveMealRecipe
+  id: RecipePenguinNuggetCooked
+  name: penguin nugget recipe
+  result: PenguinNuggetCooked
+  time: 10
+  group: Nuggets
+  reagents:
+    Cornoil: 5
+  solids:
+    PenguinNuggetRaw: 1
+
+- type: microwaveMealRecipe
+  id: RecipeFishNuggetCooked
+  name: fish nugget recipe
+  result: FishNuggetCooked
+  time: 10
+  group: Nuggets
+  reagents:
+    Cornoil: 5
+  solids:
+    FishNuggetRaw: 1
