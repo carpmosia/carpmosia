@@ -1,10 +1,4 @@
-- type: entity
-  parent: AirlockLogisticsLocked
-  id: AirlockMaintLogistics
-  components:
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
-
+# Airlocks
 - type: entity
   parent: AirlockLogistics
   id: AirlockLogisticsLocked
@@ -14,6 +8,7 @@
     containers:
       board: [ DoorElectronicsLogistics ]
 
+# Glass Airlocks
 - type: entity
   parent: AirlockLogisticsGlass
   id: AirlockLogisticsGlassLocked
@@ -22,3 +17,11 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsLogistics ]
+
+# Maintenance Hatches
+- type: entity
+  parent: AirlockLogisticsLocked
+  id: AirlockMaintLogistics
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/maint.rsi
