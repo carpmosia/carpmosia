@@ -80,7 +80,7 @@ public sealed class PowerCauterySystem : EntitySystem
         if (!TryComp<BatteryComponent>(ent, out var battery))
             return;
 
-        var charges = (int)Math.Floor(_battery.GetCharge((ent, battery)) / ent.Comp.PowerDraw);
+        var charges = (int)(_battery.GetCharge((ent, battery)) / ent.Comp.PowerDraw);
         args.PushMarkup(Loc.GetString("power-cautery-charge-examine", ("charges", charges)));
     }
 
@@ -98,7 +98,7 @@ public sealed class PowerCauterySystem : EntitySystem
 
     private bool GetAndDrawPower(Entity<BatteryComponent?> ent, float draw)
     {
-        bool couldDraw = (_battery.GetCharge(ent) > draw);
+        bool couldDraw = (_battery.GetCharge(ent) >= draw);
 
         if (couldDraw)
             _battery.UseCharge(ent, draw);
