@@ -25,8 +25,6 @@
           Quantity: 3
   - type: Item
     size: Tiny
-    shape:
-    - 0,0,0,0
     fixtures:
       fix1:
         shape:
@@ -38,19 +36,6 @@
         - ItemMask
         restitution: 0.3  # fite me
         friction: 0.1
-  # let air cook and freeze meat for cooking and preservation
-  - type: AtmosExposed
-  - type: Temperature
-    currentTemperature: 290
-  - type: TemperatureDamage
-  # required for cooking to work
-  - type: InternalTemperature
-    thickness: 0.002
-    area: 0.001 # arbitrary number that sounds right for a nugget
-  - type: Material
-  - type: PhysicalComposition
-    materialComposition:
-      Meaterial: 100
 
 - type: entity
   parent: FoodNuggetBase

@@ -7,12 +7,12 @@
     edges:
     - to: nugget
       steps:
-        - tag: ChickenCutletRaw
-          name: construction-graph-tag-chicken-cutlet-raw
-          doAfter: 2
-        - tag: SliceDough
-          name: construction-graph-tag-slice-dough
-          doAfter: 2
+      - tag: ChickenCutletRaw
+        name: construction-graph-tag-chicken-cutlet-raw
+        doAfter: 2
+      - tag: SliceDough
+        name: construction-graph-tag-slice-dough
+        doAfter: 2
   - node: nugget
     entity: ChickenNuggetRaw
 
