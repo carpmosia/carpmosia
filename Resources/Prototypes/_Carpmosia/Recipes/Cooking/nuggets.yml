@@ -9,9 +9,15 @@
       steps:
       - tag: ChickenCutletRaw
         name: construction-graph-tag-chicken-cutlet-raw
+        icon:
+          sprite: Objects/Consumable/Food/meat.rsi
+          state: cutlet
         doAfter: 2
       - tag: SliceDough
         name: construction-graph-tag-slice-dough
+        icon:
+          sprite: Objects/Consumable/Food/ingredients.rsi
+          state: dough-slice
         doAfter: 2
   - node: nugget
     entity: ChickenNuggetRaw
@@ -26,9 +32,15 @@
       steps:
       - tag: DuckCutletRaw
         name: construction-graph-tag-duck-cutlet-raw
+        icon:
+          sprite: Objects/Consumable/Food/meat.rsi
+          state: cutlet
         doAfter: 2
       - tag: SliceDough
         name: construction-graph-tag-slice-dough
+        icon:
+          sprite: Objects/Consumable/Food/ingredients.rsi
+          state: dough-slice
         doAfter: 2
   - node: nugget
     entity: DuckNuggetRaw
@@ -43,9 +55,15 @@
       steps:
       - tag: PenguinCutletRaw
         name: construction-graph-tag-penguin-cutlet-raw
+        icon:
+          sprite: Objects/Consumable/Food/meat.rsi
+          state: cutlet
         doAfter: 2
       - tag: SliceDough
         name: construction-graph-tag-slice-dough
+        icon:
+          sprite: Objects/Consumable/Food/ingredients.rsi
+          state: dough-slice
         doAfter: 2
   - node: nugget
     entity: PenguinNuggetRaw
@@ -59,10 +77,16 @@
     - to: nugget
       steps:
       - tag: CarpFillet
-        name: construction-graph-tag-duck-cutlet-raw
+        name: construction-graph-tag-carp-fillet
+        icon:
+          sprite: Objects/Consumable/Food/meat.rsi
+          state: fish
         doAfter: 2
       - tag: SliceDough
         name: construction-graph-tag-slice-dough
+        icon:
+          sprite: Objects/Consumable/Food/ingredients.rsi
+          state: dough-slice
         doAfter: 2
   - node: nugget
     entity: FishNuggetRaw

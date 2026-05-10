@@ -9,7 +9,7 @@
     - meaty
     - bread
   - type: Sprite
-    sprite: Objects/Consumable/Food/meat.rsi
+    sprite: _Carpmosia/Objects/Consumable/Food/nugget.rsi
   - type: Extractable
     grindableSolutionName: food
   - type: SolutionContainerManager
@@ -48,7 +48,14 @@
     - Nugget
   - type: Sprite
     layers:
-    - state: bird-cooked
+    - state: raw
+  - type: Item
+    storedOffset: -1,1
+    inhandVisuals:
+      left:
+      - state: raw-inhand-left
+      right:
+      - state: raw-inhand-right
 
 - type: entity
   parent: FoodNuggetBase
@@ -61,7 +68,7 @@
     - Nugget
   - type: Sprite
     layers:
-    - state: bird-cooked
+    - state: cooked
   - type: SolutionContainerManager
     solutions:
       food:
@@ -74,11 +81,9 @@
     storedOffset: -1,1
     inhandVisuals:
       left:
-      - state: plain-cooked-inhand-left
-        color: "#F7E3A3"
+      - state: cooked-inhand-left
       right:
-      - state: plain-cooked-inhand-right
-        color: "#F7E3A3"
+      - state: cooked-inhand-right
 
 # nuggets
 - type: entity
@@ -118,7 +123,7 @@
   parent: FoodNuggetRaw
   id: PenguinNuggetRaw
   name: Raw Penguin Nugget
-  description: a frozen delicacy from the south pole
+  description: salmonella south pole edition
   components:
   - type: Construction
     graph: RecipePenguinNuggetRaw
@@ -128,7 +133,7 @@
   parent: FoodNuggetCooked
   id: PenguinNuggetCooked
   name: Penguin Nugget
-  description: straight from the south pole
+  description: warm yet ice cold
 
 - type: entity
   parent: FoodNuggetRaw
@@ -154,7 +159,7 @@
   parent: FoodNuggetCooked
   id: FishNuggetCooked
   name: Fish Nugget
-  description: you know these are actually called fish sticks but whatever
+  description: literally melts your mouth, and maybe your insides if you eat too many
   components:
   - type: FlavorProfile
     flavors:
