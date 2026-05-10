@@ -1,5 +1,6 @@
 using Content.Shared._FarHorizons.Power.Generation.FissionGenerator;
 using Robust.Client.GameObjects;
+using Robust.Client.Graphics;
 using Robust.Shared.Prototypes;
 
 namespace Content.Client._FarHorizons.Power.Generation.FissionGenerator;
@@ -8,10 +9,15 @@ public sealed class ReactorPartSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
+    
+    private static readonly ProtoId<ShaderPrototype> _shaderID = "HeatDistortionFH";
+    private ShaderInstance _heatShader = default!;
 
     public override void Initialize()
     {
         base.Initialize();
+        
+        _heatShader = _proto.Index(_shaderID).InstanceUnique();
 
         SubscribeLocalEvent<ReactorPartComponent, AppearanceChangeEvent>(OnAppearanceChange);
         SubscribeLocalEvent<ReactorPartComponent, ComponentInit>(OnComponentInit);
@@ -27,6 +33,9 @@ public sealed class ReactorPartSystem : EntitySystem
         //    return;
 
         _sprite.LayerSetColor((uid, args.Sprite), 0, _proto.Index(component.Material).Color);
+
+        if (args.AppearanceData.TryGetValue(ReactorPartVisuals.HeatDistort, out var value) && value is bool enabled)
+            args.Sprite.PostShader = enabled ? _heatShader : null;
     }
 
     private void OnComponentInit(Entity<ReactorPartComponent> ent, ref ComponentInit args)
