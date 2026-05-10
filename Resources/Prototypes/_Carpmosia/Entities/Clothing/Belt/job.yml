@@ -14,41 +14,41 @@
     grid:
     - 0,0,5,1 # 2x6
     whitelist:
-      tags: # some of these are so comically reduntant
-        # Medical
-        - Bottle
-        - DiscreteHealthAnalyzer
-        - Dropper # lol
-        - SurgeryTool
-        - PillCanister
-        # Security
-        - CombatKnife
-        - HandGrenade
-        - MagazinePistol
-        - SecBeltEquip
-        - Sidearm
-        - Taser
-        - Truncheon
-        # Other
-        - Bottle
-        - Radio
+      tags: # some of these are so comically redundant
+      # Medical
+      - Bottle
+      - DiscreteHealthAnalyzer
+      - Dropper # lol
+      - SurgeryTool
+      - PillCanister
+      # Security
+      - CombatKnife
+      - HandGrenade
+      - MagazinePistol
+      - SecBeltEquip
+      - Sidearm
+      - Taser
+      - Truncheon
+      # Other
+      - Bottle
+      - Radio
       components:
-        # Medical
-        - Defibrillator
-        - Healing
-        - Injector
-        - Pill
-        # Security
-        - BallisticAmmoProvider
-        - BalloonPopper
-        - CartridgeAmmo
-        - Ensnaring
-        - Flash
-        - FlashOnTrigger
-        - Handcuff
-        - Stunbaton
-        - SmokeOnTrigger
-        - Whistle
-        # Other
-        - HandLabeler
-  # TODO ItemMaper
+      # Medical
+      - Defibrillator
+      - Healing
+      - Injector
+      - Pill
+      # Security
+      - BallisticAmmoProvider
+      - BalloonPopper
+      - CartridgeAmmo
+      - Ensnaring
+      - Flash
+      - FlashOnTrigger
+      - Handcuff
+      - Stunbaton
+      - SmokeOnTrigger
+      - Whistle
+      # Other
+      - HandLabeler
+  # type: ItemMapper # TODO
