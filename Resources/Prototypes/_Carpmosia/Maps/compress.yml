@@ -7,7 +7,7 @@
   stations:
     Compress:
       stationProto: StandardNanotrasenStation
-    components:
+      components:
       - type: StationNameSetup
         mapNameTemplate: '{0} Compress {1}'
         nameGenerator:
