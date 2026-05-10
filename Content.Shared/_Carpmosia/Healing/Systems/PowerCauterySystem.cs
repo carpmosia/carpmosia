@@ -11,9 +11,6 @@ using Content.Shared.FixedPoint;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
-using Content.Shared.Mobs;
-using Content.Shared.Mobs.Components;
-using Content.Shared.Mobs.Systems;
 using Content.Shared.Medical;
 using Content.Shared.Popups;
 using Content.Shared.Power.Components;
@@ -22,7 +19,6 @@ using Content.Shared._Carpmosia.Medical.Components;
 using Content.Shared._Carpmosia.Medical.Events;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Timing;
 
 namespace Content.Shared._Carpmosia.Medical.Systems;
 
@@ -38,13 +34,10 @@ public sealed class PowerCauterySystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly SharedBatterySystem _battery = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly SharedBloodstreamSystem _bloodstreamSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
-    [Dependency] private readonly MobThresholdSystem _mobThresholdSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
 
     public override void Initialize()
     {
@@ -90,7 +83,7 @@ public sealed class PowerCauterySystem : EntitySystem
         if (!TryComp<BloodstreamComponent>(target, out var bloodstream))
             return false;
 
-        if (cautery.Comp.BloodlossModifier < 0 && bloodstream.BleedAmount > 0)
+        if (bloodstream.BleedAmount > 0)
             return true;
 
         return false;
@@ -106,16 +99,14 @@ public sealed class PowerCauterySystem : EntitySystem
         return couldDraw;
     }
 
-    private bool MatchDamageContainers(List<ProtoId<DamageContainerPrototype>> containers, Entity<DamageableComponent?> target)
+    private bool MatchDamageContainers(List<ProtoId<DamageContainerPrototype>>? containers, DamageableComponent damagable)
     {
-        if (!Resolve(target, ref target.Comp, false))
-            return false;
+        if (containers is null)
+            return true;
 
-        if (target.Comp.DamageContainerID is not null &&
-            !containers.Contains(target.Comp.DamageContainerID.Value))
-            {
-                return true;
-            }
+        // DamageContainerID is nullable so we need to do this hogwash with a null check
+        if (damagable.DamageContainerID is not null && containers.Contains(damagable.DamageContainerID.Value))
+            return true;
 
         return false;
     }
@@ -127,11 +118,8 @@ public sealed class PowerCauterySystem : EntitySystem
             return false;
 
         // check if our container list matches our target
-        if (cautery.Comp.DamageContainers is not null &&
-            MatchDamageContainers(cautery.Comp.DamageContainers, target))
-        {
+        if (!MatchDamageContainers(cautery.Comp.DamageContainers, target.Comp))
             return false;
-        }
 
         // range check
         if (user != target.Owner && !_interactionSystem.InRangeUnobstructed(user, target.Owner, popup: true))
@@ -147,9 +135,10 @@ public sealed class PowerCauterySystem : EntitySystem
         // start sound
         _audio.PlayPredicted(cautery.Comp.BeginSound, cautery, user);
 
+        bool isSelf = user == target.Owner;
+        
         // let the target know we're helping
-        bool isNotSelf = user != target.Owner;
-        if (isNotSelf)
+        if (!isSelf)
         {
             var msg = Loc.GetString("medical-item-popup-target", ("user", Identity.Entity(user, EntityManager)), ("item", cautery.Owner));
             _popupSystem.PopupEntity(msg, target, target, PopupType.Medium);
@@ -157,7 +146,7 @@ public sealed class PowerCauterySystem : EntitySystem
 
         // set a delay and penalize self-healing
         var delay = cautery.Comp.Delay;
-        if (!isNotSelf)
+        if (isSelf)
             delay *= cautery.Comp.SelfHealPenaltyMultiplier;
 
         // set up a doafter
