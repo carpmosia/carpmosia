@@ -70,6 +70,8 @@
           Quantity: 9
         - ReagentId: Carbon
           Quantity: 1
+  - type: TicketValue  # Carpmosia-edit - Salvage Tickets
+    ticketValue: 10    # Carpmosia-edit - Salvage Tickets
 
 - type: entity
   parent: SheetSteel
@@ -197,6 +199,8 @@
         - ReagentId: Carbon
           Quantity: 1
         canReact: false
+  - type: TicketValue  # Carpmosia-edit - Salvage Tickets
+    ticketValue: 30    # Carpmosia-edit - Salvage Tickets
 
 - type: entity
   parent: SheetPlasteel

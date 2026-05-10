@@ -42,14 +42,6 @@ namespace Content.Shared.Research.Prototypes
         [DataField]
         public EntProtoId? Result;
 
-        // Carpmosia-start - Starlight Salvage Tickets
-        [DataField]
-        public bool PrintTicket = false;
-
-        [DataField]
-        public EntProtoId TicketProtoId = "SalvageTicket";
-        // Carpmosia-end - Starlight Salvage Tickets
-
         [DataField]
         public Dictionary<ProtoId<ReagentPrototype>, FixedPoint2>? ResultReagents;
 
