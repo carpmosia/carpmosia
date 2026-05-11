@@ -2,6 +2,7 @@
   # Species
 
   Nanotrasen employs a variety of sapient species.
+  <!-- this would be better grouped by blood type or something -->
 
   <Box>
   <GuideEntityEmbed Entity="AppearanceArachnid" Caption="Arachnid"/>
@@ -11,12 +12,13 @@
   <GuideEntityEmbed Entity="AppearanceHuman" Caption="Human"/>
   </Box>
   <Box>
+  <GuideEntityEmbed Entity="AppearanceLagomorph" Caption="Lagomorph"/> <!-- Carpmosia-edit - Lagomorph -->
   <GuideEntityEmbed Entity="AppearanceMoth" Caption="Moth Person"/>
   <GuideEntityEmbed Entity="AppearanceReptilian" Caption="Reptilian"/>
   <GuideEntityEmbed Entity="AppearanceSlimePerson" Caption="Slime Person"/>
-  <GuideEntityEmbed Entity="AppearanceVox" Caption="Vox"/>
   </Box>
   <Box>
+  <GuideEntityEmbed Entity="AppearanceVox" Caption="Vox"/>
     <GuideEntityEmbed Entity="AppearanceVulpkanin" Caption="Vulpkanin"/>
   </Box>
 
