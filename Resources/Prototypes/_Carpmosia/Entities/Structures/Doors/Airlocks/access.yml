@@ -19,6 +19,15 @@
 
 # Glass Airlocks
 - type: entity
+  parent: AirlockSecurityGlass
+  id: AirlockBrigmedicGlassLocked
+  suffix: Brigmedic, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBrigmedic ]
+
+- type: entity
   parent: AirlockLogisticsGlass
   id: AirlockLogisticsGlassLocked
   suffix: Cargo/Engineering, Locked
