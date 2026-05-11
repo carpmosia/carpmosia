@@ -5,3 +5,11 @@
   components:
   - type: AccessReader
     access: [["Brigmedic"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsLogistics
+  suffix: Cargo/Engineering, Locked
+  components:
+  - type: AccessReader
+    access: [["Cargo"], ["Engineering"]]
