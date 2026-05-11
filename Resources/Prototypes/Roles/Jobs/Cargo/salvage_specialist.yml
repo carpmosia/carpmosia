@@ -10,6 +10,7 @@
   icon: "JobIconShaftMiner"
   startingGear: SalvageSpecialistGear
   supervisors: job-supervisors-qm
+  canBeAntag: false # Carpmosia-edit - No more salvage antags
   access:
   - Cargo
   - Salvage

@@ -295,7 +295,7 @@
       board: [ DoorElectronicsResearch ]
 
 - type: entity
-  parent: AirlockScience
+  parent: AirlockMedicalScience # Carpmosia-edit - now uses medsci door sprite
   id: AirlockMedicalScienceLocked
   suffix: Medical/Science, Locked
   components:
@@ -709,7 +709,7 @@
       board: [ DoorElectronicsResearch ]
 
 - type: entity
-  parent: AirlockScienceGlass
+  parent: AirlockMedicalScienceGlass # Carpmosia-edit - now uses medsci door sprite
   id: AirlockMedicalScienceGlassLocked
   suffix: Medical/Science, Locked
   components:
