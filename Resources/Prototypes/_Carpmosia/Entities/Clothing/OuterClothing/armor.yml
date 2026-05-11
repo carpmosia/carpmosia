@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ ClothingOuterArmorBase, ClothingOuterStorageBase, ClothingOuterSizeArmoredBasic, BaseSecurityContraband ] # holy shit
+  parent: [ ClothingOuterSizeArmoredBasic, ClothingOuterArmorBase, ClothingOuterStorageBase, BaseSecurityContraband ] # holy shit
   id: ClothingOuterArmorBrigmedicGown
   name: brigmedical armored gown
   description: A durable medical gown with attached armor plating issued to brigmedics.
@@ -10,7 +10,7 @@
     sprite: _Carpmosia/Clothing/OuterClothing/Armor/brigmedic_gown.rsi
 
 - type: entity
-  parent: [ ClothingOuterArmorBase, ClothingOuterSizeArmoredBasic, BaseSecurityContraband ]
+  parent: [ ClothingOuterSizeArmoredBasic, ClothingOuterArmorBase, BaseSecurityContraband ]
   id: ClothingOuterArmorBrigmedicVest
   name: brigmedical armor vest
   description: A flexible armor vest added shoulder pads painted in brigmedic colors.
@@ -21,7 +21,7 @@
     sprite: _Carpmosia/Clothing/OuterClothing/Armor/brigmedic_vest.rsi
 
 - type: entity
-  parent: [ ClothingOuterArmorBase, ClothingOuterStorageBase, ClothingOuterSizeArmoredBasic, BaseSecurityContraband ] # holy shit
+  parent: [ ClothingOuterSizeArmoredBasic, ClothingOuterArmorBase, ClothingOuterStorageBase, BaseSecurityContraband ] # holy shit
   id: ClothingOuterArmorBrigmedicWinterCoat
   name: brigmedical armored winter coat
   description: A warm, padded winter coat with integrated armor. Features trimmed down scruff for increased mobility of the wrists and neck.
