@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseItem
+  parent: [ BaseItem, BasePointerDagger ] # Carpmosia-edit - Pointing modifier
   id: BaseKnife
   abstract: true
   components:
@@ -238,7 +238,7 @@
 
 - type: entity
   name: shiv
-  parent: [BaseKnife, BaseMinorContraband]
+  parent: [ BaseKnife, BaseMinorContraband, BasePointerDagger ] # Carpmosia-edit - Pointing modifier
   id: Shiv
   description: A crude weapon fashioned from a piece of cloth and a glass shard.
   components:
@@ -389,7 +389,7 @@
 
 - type: entity
   name: utility knife
-  parent: BaseItem
+  parent: [ BaseItem, BasePointerDagger ] # Carpmosia-edit - Pointing modifier
   id: UtilityKnife
   description: A knife with a retractable, tiny blade. Useful as a box cutter and letter opener, among other things.
   components:

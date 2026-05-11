@@ -216,6 +216,11 @@
   - type: EmitSoundOnUse
     sound:
       collection: BaseWhistle
+  # Carpmosia-start - Whistle action
+  - type: EmitSoundOnAction
+    sound:
+      collection: BaseWhistle
+  # Carpmosia-end - Whistle action
   - type: Whistle
     distance: 3
 
@@ -251,6 +256,11 @@
   - type: EmitSoundOnUse
     sound:
       collection: TrenchWhistle
+  # Carpmosia-start - Whistle action
+  - type: EmitSoundOnAction
+    sound:
+      collection: TrenchWhistle
+  # Carpmosia-end - Whistle action
   - type: Whistle
     distance: 15 # Let your enemies hear the sound of death approaching
 

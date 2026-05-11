@@ -1,0 +1,9 @@
+- type: entity
+  parent: SeedBase
+  name: packet of crudcoa seeds
+  id: CrudcoaSeeds
+  components:
+  - type: Seed
+    seedId: crudcoa
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Specific/Hydroponics/crudcoa.rsi
