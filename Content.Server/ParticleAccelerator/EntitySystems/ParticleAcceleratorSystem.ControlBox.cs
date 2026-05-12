@@ -446,13 +446,13 @@ public sealed partial class ParticleAcceleratorSystem
     }
 
     // Carpmosia-start - PA radio alerts
-    private void AlertRadio(Entity<ParticleAcceleratorControlBoxComponent> comp, string locString)
+    private void AlertRadio(Entity<ParticleAcceleratorControlBoxComponent> ent, string locString)
     {
-        if (!comp.Comp.AlertRadio)
-            return; // APEs do not need to scream over engineering radio, and an emitter that is off is probably not going to be alerting radios
+        if (!ent.Comp.AlertRadio)
+            return;
 
         var message = Loc.GetString(locString);
-        _radio.SendRadioMessage(comp.Owner, message, comp.Comp.RadioChannel, comp.Owner);
+        _radio.SendRadioMessage(ent.Owner, message, ent.Comp.RadioChannel, ent.Owner);
     }
     // Carpmosia-end - PA radio alerts
 }
