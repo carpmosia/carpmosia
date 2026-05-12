@@ -1,9 +1,8 @@
-using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Carpmosia.Medical.Components;
+namespace Content.Shared._Carpmosia.Healing.Components;
 
 /// <summary>
 /// Modifies bleeding stacks on a target with a do-after, at the cost of power.

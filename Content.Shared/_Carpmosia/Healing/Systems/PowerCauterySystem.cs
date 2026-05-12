@@ -3,24 +3,21 @@ using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
-using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
-using Content.Shared.FixedPoint;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
-using Content.Shared.Medical;
 using Content.Shared.Popups;
 using Content.Shared.Power.Components;
 using Content.Shared.Power.EntitySystems;
-using Content.Shared._Carpmosia.Medical.Components;
-using Content.Shared._Carpmosia.Medical.Events;
+using Content.Shared._Carpmosia.Healing.Components;
+using Content.Shared._Carpmosia.Healing.Events;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Carpmosia.Medical.Systems;
+namespace Content.Shared._Carpmosia.Healing.Systems;
 
 /// <summary>
 /// Modifies bleeding stacks per doafter, at the cost of power.
@@ -136,7 +133,7 @@ public sealed class PowerCauterySystem : EntitySystem
         _audio.PlayPredicted(cautery.Comp.BeginSound, cautery, user);
 
         bool isSelf = user == target.Owner;
-        
+
         // let the target know we're helping
         if (!isSelf)
         {
