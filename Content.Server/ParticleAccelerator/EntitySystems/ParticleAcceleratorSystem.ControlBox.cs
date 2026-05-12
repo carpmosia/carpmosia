@@ -1,5 +1,6 @@
 using Content.Server.ParticleAccelerator.Components;
 using Content.Server.Power.Components;
+using Content.Server.Radio.EntitySystems; // Carpmosia-edit - PA radio alerts
 using Content.Shared.Database;
 using Content.Shared.Machines.Components;
 using Content.Shared.Singularity.Components;
@@ -20,6 +21,7 @@ public sealed partial class ParticleAcceleratorSystem
 {
     [Dependency] private readonly IAdminManager _adminManager = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly RadioSystem _radio = default!; // Carpmosia-edit - PA radio alerts
 
     private void InitializeControlBoxSystem()
     {
@@ -129,6 +131,8 @@ public sealed partial class ParticleAcceleratorSystem
         UpdateFiring(uid, comp);
         UpdatePartVisualStates(uid, comp);
         UpdateUI(uid, comp);
+
+        AlertRadio((uid, comp), comp.LocActivated); // Carpmosia-edit - PA radio alerts
     }
 
     public void PowerOff(EntityUid uid, ParticleAcceleratorControlBoxComponent? comp = null)
@@ -143,6 +147,8 @@ public sealed partial class ParticleAcceleratorSystem
         UpdateFiring(uid, comp);
         UpdatePartVisualStates(uid, comp);
         UpdateUI(uid, comp);
+
+        AlertRadio((uid, comp), comp.LocDeactivated); // Carpmosia-edit - PA radio alerts
     }
 
     public void SetStrength(EntityUid uid, ParticleAcceleratorPowerState strength, EntityUid? user = null, ParticleAcceleratorControlBoxComponent? comp = null)
@@ -193,6 +199,8 @@ public sealed partial class ParticleAcceleratorSystem
                         AudioParams.Default.WithVolume(-8f));
                     comp.EffectCooldown = _gameTiming.CurTime + comp.CooldownDuration;
                 }
+
+                AlertRadio((uid, comp), comp.LocWarning); // Carpmosia-edit - PA radio alerts
             }
         }
 
@@ -436,4 +444,15 @@ public sealed partial class ParticleAcceleratorSystem
             _ => 0
         };
     }
+
+    // Carpmosia-start - PA radio alerts
+    private void AlertRadio(Entity<ParticleAcceleratorControlBoxComponent> ent, string locString)
+    {
+        if (!ent.Comp.AlertRadio)
+            return;
+
+        var message = Loc.GetString(locString);
+        _radio.SendRadioMessage(ent.Owner, message, ent.Comp.RadioChannel, ent.Owner);
+    }
+    // Carpmosia-end - PA radio alerts
 }
