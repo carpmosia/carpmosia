@@ -1,0 +1,174 @@
+- type: entity
+  parent: [ DrinkBaseMaterialStrongPlastic, BaseItem, DrinkVisualsAll, DrinkBaseEmptyTrash ]
+  id: Fluidbag
+  name: fluid bag
+  description: "Colloquially termed a 'dingus' for it's inconvenience. A single use plastic bag meant to keep a stock of chemicals until you pour it out into literally anything else. The only way to get liquid out is through the attached spigot."
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Specific/Chemistry/fluidbag.rsi
+    layers:
+    - state: icon_empty
+    - state: fill-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: MeleeWeapon
+    soundNoDamage:
+      path: "/Audio/Effects/Fluids/splat.ogg"
+    damage:
+      types:
+        Blunt: 0
+  - type: DnaSubstanceTrace
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,2,1 # 3x2
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 90
+  - type: SolutionContainerVisuals
+    maxFillLevels: 4
+    inHandsMaxFillLevels: 2
+  - type: Edible
+    edible: Drink
+    destroyOnEmpty: false
+    utensil: None
+    solution: &sol drink
+  - type: Spillable
+    solution: *sol
+  - type: DrainableSolution
+    solution: *sol
+  - type: ExaminableSolution
+    solution: *sol
+    exactVolume: true
+  - type: SolutionItemStatus
+    solution: *sol
+  - type: SolutionTransfer
+    canChangeTransferAmount: true
+    transferAmount: 30 # instantly fill bottles, the purpose of the dingus
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+  - type: StaticPrice
+    price: 60
+
+- type: entity
+  parent: Fluidbag
+  id: FluidbagBicaridine
+  categories: [ HideSpawnMenu ]
+  suffix: bicaridine
+  components:
+  - type: Label
+    currentLabel: reagent-name-bicaridine
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Bicaridine
+          Quantity: 90
+
+- type: entity
+  parent: Fluidbag
+  id: FluidbagDexalin
+  categories: [ HideSpawnMenu ]
+  suffix: dexalin
+  components:
+  - type: Label
+    currentLabel: reagent-name-dexalin
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Dexalin
+          Quantity: 90
+
+- type: entity
+  parent: Fluidbag
+  id: FluidbagDylovene
+  categories: [ HideSpawnMenu ]
+  suffix: dylovene
+  components:
+  - type: Label
+    currentLabel: reagent-name-dylovene
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Dylovene
+          Quantity: 90
+
+- type: entity
+  parent: Fluidbag
+  id: FluidbagEpinephrine
+  categories: [ HideSpawnMenu ]
+  suffix: epinephrine
+  components:
+  - type: Label
+    currentLabel: reagent-name-epinephrine
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Epinephrine
+          Quantity: 90
+
+- type: entity
+  parent: Fluidbag
+  id: FluidbagHyronalin
+  categories: [ HideSpawnMenu ]
+  suffix: hyronalin
+  components:
+  - type: Label
+    currentLabel: reagent-name-hyronalin
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Hyronalin
+          Quantity: 90
+
+- type: entity
+  parent: Fluidbag
+  id: FluidbagInaprovaline
+  categories: [ HideSpawnMenu ]
+  suffix: inaprovaline
+  components:
+  - type: Label
+    currentLabel: reagent-name-inaprovaline
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Inaprovaline
+          Quantity: 90
+
+- type: entity
+  parent: Fluidbag
+  id: FluidbagKelotane
+  categories: [ HideSpawnMenu ]
+  suffix: kelotane
+  components:
+  - type: Label
+    currentLabel: reagent-name-kelotane
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Kelotane
+          Quantity: 90
+
+- type: entity
+  parent: Fluidbag
+  id: FluidbagSaline
+  categories: [ HideSpawnMenu ]
+  suffix: saline
+  components:
+  - type: Label
+    currentLabel: reagent-name-saline
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Saline
+          Quantity: 90
