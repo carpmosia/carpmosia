@@ -199,8 +199,6 @@ public sealed partial class ParticleAcceleratorSystem
                         AudioParams.Default.WithVolume(-8f));
                     comp.EffectCooldown = _gameTiming.CurTime + comp.CooldownDuration;
                 }
-
-                AlertRadio((uid, comp), comp.LocWarning); // Carpmosia-edit - PA radio alerts
             }
         }
 
@@ -213,6 +211,13 @@ public sealed partial class ParticleAcceleratorSystem
             UpdatePowerDraw(uid, comp);
             UpdateFiring(uid, comp);
         }
+
+        // Carpmosia-start - PA radio alerts
+        if (strength == ParticleAcceleratorPowerState.Level3)
+        {
+            AlertRadio((uid, comp), comp.LocWarning);
+        }
+        // Carpmosia-end - PA radio alerts
     }
 
     private void UpdateFiring(EntityUid uid, ParticleAcceleratorControlBoxComponent? comp = null)
