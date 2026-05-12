@@ -4,8 +4,8 @@ meta:
   engineVersion: 275.2.0
   forkId: ""
   forkVersion: ""
-  time: 05/07/2026 07:36:54
-  entityCount: 470
+  time: 05/12/2026 00:35:48
+  entityCount: 471
 maps: []
 grids:
 - 1
@@ -2132,6 +2132,15 @@ entities:
     - type: Transform
       pos: 8.5,5.5
       parent: 1
+- proto: GhostWarpPoint
+  entities:
+  - uid: 471
+    components:
+    - type: Transform
+      pos: 4.5,-3.5
+      parent: 1
+    - type: WarpPoint
+      location: Escape Shuttle
 - proto: GravityGeneratorMini
   entities:
   - uid: 291
