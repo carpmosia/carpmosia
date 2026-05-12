@@ -132,7 +132,7 @@ public sealed partial class ParticleAcceleratorSystem
         UpdatePartVisualStates(uid, comp);
         UpdateUI(uid, comp);
 
-        AlertRadio(comp, comp.LocActivated); // Carpmosia-edit - PA radio alerts
+        AlertRadio((uid, comp), comp.LocActivated); // Carpmosia-edit - PA radio alerts
     }
 
     public void PowerOff(EntityUid uid, ParticleAcceleratorControlBoxComponent? comp = null)
@@ -148,7 +148,7 @@ public sealed partial class ParticleAcceleratorSystem
         UpdatePartVisualStates(uid, comp);
         UpdateUI(uid, comp);
 
-        AlertRadio(comp, comp.LocDeactivated); // Carpmosia-edit - PA radio alerts
+        AlertRadio((uid, comp), comp.LocDeactivated); // Carpmosia-edit - PA radio alerts
     }
 
     public void SetStrength(EntityUid uid, ParticleAcceleratorPowerState strength, EntityUid? user = null, ParticleAcceleratorControlBoxComponent? comp = null)
@@ -200,7 +200,7 @@ public sealed partial class ParticleAcceleratorSystem
                     comp.EffectCooldown = _gameTiming.CurTime + comp.CooldownDuration;
                 }
 
-                AlertRadio(comp, comp.LocWarning); // Carpmosia-edit - PA radio alerts
+                AlertRadio((uid, comp), comp.LocWarning); // Carpmosia-edit - PA radio alerts
             }
         }
 
@@ -446,13 +446,13 @@ public sealed partial class ParticleAcceleratorSystem
     }
 
     // Carpmosia-start - PA radio alerts
-    private void AlertRadio(ParticleAcceleratorControlBoxComponent comp, string locString)
+    private void AlertRadio(Entity<ParticleAcceleratorControlBoxComponent> comp, string locString)
     {
-        if (!comp.AlertRadio)
+        if (!comp.Comp.AlertRadio)
             return; // APEs do not need to scream over engineering radio, and an emitter that is off is probably not going to be alerting radios
 
         var message = Loc.GetString(locString);
-        _radio.SendRadioMessage(comp.Owner, message, comp.RadioChannel, comp.Owner);
+        _radio.SendRadioMessage(comp.Owner, message, comp.Comp.RadioChannel, comp.Owner);
     }
     // Carpmosia-end - PA radio alerts
 }
