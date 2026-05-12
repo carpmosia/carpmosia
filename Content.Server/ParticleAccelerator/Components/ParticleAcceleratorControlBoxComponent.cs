@@ -135,7 +135,7 @@ public sealed partial class ParticleAcceleratorControlBoxComponent : Component
     [ViewVariables]
     public bool CanBeEnabled = true;
 
-// Carpmosia-start - PA radio alerts
+    // Carpmosia-start - PA radio alerts
     /// <summary>
     /// The radio channel to broadcast on when something happens to this PA
     /// </summary>
@@ -165,6 +165,6 @@ public sealed partial class ParticleAcceleratorControlBoxComponent : Component
     /// </summary>
     [DataField]
     public LocId LocWarning = "pa-warning-broadcast";
-// Carpmosia-end - PA radio alerts
+    // Carpmosia-end - PA radio alerts
 
 }
