@@ -146,7 +146,7 @@ public sealed partial class ParticleAcceleratorControlBoxComponent : Component
     /// Whether a radio channel should be alerted if anything happens to this PA
     /// </summary>
     [DataField]
-    public bool AlertRadio = false;
+    public bool AlertRadio = true;
 
     /// <summary>
     /// Localized string to use when this particle accelerator is activated and AlertRadio is set to true
