@@ -1,6 +1,6 @@
 - type: entity
   name: BaseWeaponLauncher
-  parent: [ BaseItem, BaseGunWieldable ]
+  parent: [ BaseItem, BaseGunWieldable, BasePointerCrosshair ] # Carpmosia-edit - Pointing modifier
   id: BaseWeaponLauncher
   description: A rooty tooty point and shooty.
   abstract: true

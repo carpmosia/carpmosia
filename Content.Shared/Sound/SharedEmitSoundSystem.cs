@@ -51,11 +51,22 @@ public abstract class SharedEmitSoundSystem : EntitySystem
         SubscribeLocalEvent<EmitSoundOnDropComponent, DroppedEvent>(OnEmitSoundOnDrop);
         SubscribeLocalEvent<EmitSoundOnInteractUsingComponent, InteractUsingEvent>(OnEmitSoundOnInteractUsing);
         SubscribeLocalEvent<EmitSoundOnUIOpenComponent, AfterActivatableUIOpenEvent>(HandleEmitSoundOnUIOpen);
+        SubscribeLocalEvent<EmitSoundOnActionComponent, SoundActionEvent>(OnSoundAction); // Carpmosia-edit - Whistle action
 
         SubscribeLocalEvent<EmitSoundOnCollideComponent, StartCollideEvent>(OnEmitSoundOnCollide);
 
         SubscribeLocalEvent<SoundWhileAliveComponent, MobStateChangedEvent>(OnMobState);
     }
+
+    // Carpmosia-start - Whistle action
+    private void OnSoundAction(Entity<EmitSoundOnActionComponent> ent, ref SoundActionEvent args)
+    {
+        TryEmitSound(ent, ent.Comp, args.Performer, true);
+
+        if (ent.Comp.Handle)
+            args.Handled = true;
+    }
+    // Carpmosia-end - Whistle action
 
     private void HandleEmitSoundOnUIOpen(EntityUid uid, EmitSoundOnUIOpenComponent component, AfterActivatableUIOpenEvent args)
     {

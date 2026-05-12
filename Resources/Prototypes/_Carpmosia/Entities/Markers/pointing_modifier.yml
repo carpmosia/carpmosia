@@ -1,0 +1,45 @@
+- type: entity
+  abstract: true
+  id: BasePointerArrow # set as a parent on items that inherit another pointer when undesired, like stealth items
+  components:
+  - type: PointingModifier
+    pointer: PointerArrow
+    phraseSelf: "pointing-phrase-point-self"
+    phraseOther: "pointing-phrase-point-other"
+
+- type: entity
+  abstract: true
+  parent: BasePointerArrow
+  id: BasePointerDagger
+  components:
+  - type: PointingModifier
+    pointer: PointerDagger
+    # if you can come up with something other than "point at" for melee phrases be my guest
+
+- type: entity
+  abstract: true
+  parent: BasePointerArrow
+  id: BasePointerHammer
+  components:
+  - type: PointingModifier
+    pointer: PointerHammer
+
+- type: entity
+  abstract: true
+  parent: BasePointerArrow
+  id: BasePointerCrosshair
+  components:
+  - type: PointingModifier
+    pointer: PointerCrosshair
+    phraseSelf: "pointing-phrase-aim-self"
+    phraseOther: "pointing-phrase-aim-other"
+
+- type: entity
+  abstract: true
+  parent: BasePointerArrow
+  id: BasePointerMicrophone
+  components:
+  - type: PointingModifier
+    pointer: PointerMicrophone
+    phraseSelf: "pointing-phrase-gesture-self"
+    phraseOther: "pointing-phrase-gesture-other"

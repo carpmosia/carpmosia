@@ -1,6 +1,6 @@
 - type: entity
   id: BaseMeleeWeaponEnergy # more generic naming in case someone makes like, idk, an energy axe
-  parent: BaseItem
+  parent: [ BaseItem, BasePointerDagger ] # Carpmosia-edit - Pointing modifier
   abstract: true
   components:
   - type: EnergySword
