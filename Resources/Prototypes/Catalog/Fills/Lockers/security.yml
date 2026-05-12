@@ -26,12 +26,12 @@
   id: FillLockerWarden
   table: !type:AllSelector
     children:
-    #carpmosia-start - Angledseclite
+    # Carpmosia-start - Angled seclite
     - !type:GroupSelector
       children:
       - id: FlashlightSeclite
-      - id: NeckLiteSecBase  
-    #carpmosia-end - Angledseclite
+      - id: NeckLiteSecBase
+    # Carpmosia-end - Angled seclite
     - id: WeaponDisabler
     - id: WeaponTaser
     - id: ClothingBeltSecurityFilled
@@ -77,12 +77,12 @@
   id: FillLockerSecurity
   table: !type:AllSelector
     children:
-    #carpmosia-start - Angledseclite
+    # Carpmosia-start - Angled seclite
     - !type:GroupSelector
       children:
       - id: FlashlightSeclite
-      - id: NeckLiteSecBase 
-    #carpmosia-end - Angledseclite
+      - id: NeckLiteSecBase
+    # Carpmosia-end - Angled seclite
     - id: WeaponDisabler
     - id: WeaponTaser
     - id: ClothingUniformJumpsuitSecGrey
