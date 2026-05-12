@@ -445,14 +445,14 @@ public sealed partial class ParticleAcceleratorSystem
         };
     }
 
-// Carpmosia-start - PA radio alerts
-        private void AlertRadio(ParticleAcceleratorControlBoxComponent comp, string locString)
-        {
-            if (!comp.AlertRadio)
-                return; // APEs do not need to scream over engineering radio, and an emitter that is off is probably not going to be alerting radios
+    // Carpmosia-start - PA radio alerts
+    private void AlertRadio(ParticleAcceleratorControlBoxComponent comp, string locString)
+    {
+        if (!comp.AlertRadio)
+            return; // APEs do not need to scream over engineering radio, and an emitter that is off is probably not going to be alerting radios
 
-            var message = Loc.GetString(locString);
-            _radio.SendRadioMessage(comp.Owner, message, comp.RadioChannel, comp.Owner);
-        }
-// Carpmosia-end - PA radio alerts
+        var message = Loc.GetString(locString);
+        _radio.SendRadioMessage(comp.Owner, message, comp.RadioChannel, comp.Owner);
+    }
+    // Carpmosia-end - PA radio alerts
 }
