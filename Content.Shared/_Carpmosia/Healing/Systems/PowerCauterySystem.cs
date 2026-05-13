@@ -6,18 +6,18 @@ using Content.Shared.Damage.Prototypes;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
+using Content.Shared.Healing.Components;
+using Content.Shared.Healing.Events;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Popups;
 using Content.Shared.Power.Components;
 using Content.Shared.Power.EntitySystems;
-using Content.Shared._Carpmosia.Healing.Components;
-using Content.Shared._Carpmosia.Healing.Events;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Carpmosia.Healing.Systems;
+namespace Content.Shared.Healing.Systems;
 
 /// <summary>
 /// Modifies bleeding stacks per doafter, at the cost of power.
