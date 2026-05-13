@@ -7,6 +7,5 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: PowerCautery
         - id: Gauze
         - id: Ointment
