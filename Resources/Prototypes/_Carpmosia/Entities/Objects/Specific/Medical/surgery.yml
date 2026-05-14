@@ -1,0 +1,18 @@
+- type: entity
+  parent: BaseToolSurgery
+  id: SurgicalBag
+  name: surgical bag
+  description: A bag of tools used to perform brain extraction.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/cautery.rsi
+    state: cautery
+  - type: Item
+    sprite: Objects/Specific/Medical/Surgery/cautery.rsi
+    storedRotation: 90
+  - type: StaticPrice
+    price: 20
+  - type: Tag
+    tags:
+    - SurgeryTool
+  - type: SurgicalTool
