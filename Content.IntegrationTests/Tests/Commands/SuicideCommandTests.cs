@@ -94,6 +94,7 @@ public sealed class SuicideCommandTests : GameTest
             mobStateComp = entManager.GetComponent<MobStateComponent>(player);
         });
 
+        tagSystem.RemoveTag(player, CannotSuicideTag); // Carpmosia-edit - Remove Tonguebiting
 
         // Check that running the suicide command kills the player
         // and properly ghosts them without them being able to return to their body
@@ -145,6 +146,8 @@ public sealed class SuicideCommandTests : GameTest
             var slashProto = protoMan.Index(DamageType);
             damageableSystem.TryChangeDamage(player, new DamageSpecifier(slashProto, FixedPoint2.New(46.5)));
         });
+
+        tagSystem.RemoveTag(player, CannotSuicideTag); // Carpmosia-edit - Remove Tonguebiting
 
         // Check that running the suicide command kills the player
         // and properly ghosts them without them being able to return to their body
@@ -256,6 +259,8 @@ public sealed class SuicideCommandTests : GameTest
             Assert.That(executionComponent, Is.Not.EqualTo(null));
         });
 
+        tagSystem.RemoveTag(player, CannotSuicideTag); // Carpmosia-edit - Remove Tonguebiting
+
         // Check that running the suicide command kills the player
         // and properly ghosts them without them being able to return to their body
         // and that all the damage is concentrated in the Slash category
@@ -323,6 +328,8 @@ public sealed class SuicideCommandTests : GameTest
             entManager.TryGetComponent<ExecutionComponent>(item, out var executionComponent);
             Assert.That(executionComponent, Is.Not.EqualTo(null));
         });
+
+        tagSystem.RemoveTag(player, CannotSuicideTag); // Carpmosia-edit - Remove Tonguebiting
 
         // Check that running the suicide command kills the player
         // and properly ghosts them without them being able to return to their body
