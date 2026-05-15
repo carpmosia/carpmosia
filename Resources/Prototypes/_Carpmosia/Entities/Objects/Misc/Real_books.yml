@@ -8,7 +8,7 @@
     layers:
     - state: paper
     - state: cover_base
-      color: red
+      color: blue
     - state: detail_rivets
       color: gold
     - state: decor_wingette_circle
@@ -81,11 +81,11 @@
     layers:
     - state: paper
     - state: cover_base
-      color: "#654321"
+      color: red
     - state: detail_rivets
-      color: gold
+      color: white
     - state: decor_wingette_circle
-      color: gold
+      color: white
   - type: Paper
     content: book-text-the-velveteen-rabbit
 
