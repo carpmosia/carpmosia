@@ -91,8 +91,8 @@
 
 - type: entity
   parent: BookBase
-  id: boooktomino'shell
-  name: "tomino’s hell by saijō yaso"
+  id: boooktominoshell
+  name: "tomino's hell by saijō yaso"
   description: You feel you shouldnt read this out loud.
   components:
   - type: Sprite
@@ -101,6 +101,8 @@
     - state: cover_old
       color: "#654321"
     - state: overlay_dirt
+      color: red
     - state: overlay_blood
+      color: red
   - type: Paper
-    content: book-text-the-velveteen-rabbit
+    content: book-text-tominos-hell

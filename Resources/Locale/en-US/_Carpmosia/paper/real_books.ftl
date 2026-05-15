@@ -534,4 +534,69 @@ book-text-the-velveteen-rabbit=There was once a velveteen rabbit, and in the beg
  "Why, he looks just like my old Bunny that was lost when I had scarlet fever!"
 
  But he never knew that it really was his own Bunny, come back to look at the child who had first helped him to be Real.
- 
+
+book-text-tominos-hell=Elder sister spills her blood,
+ younger sister breathes out flame—
+ sweet little Tomino alone
+ lets fall his shining jewels.
+
+ All alone, Tomino
+ falls into that hell—
+ a hell of utter darkness,
+ without even flowers.
+
+ Is Tomino’s big sister
+ the one who whips him?
+ The purpose of the scourging
+ hangs dark in his mind.
+
+ Strike him, lash him—ah!
+ Though never quite shattering.
+ There is but one road to Avici,
+ the eternal hell.
+
+ I beg for a guide
+ through that dark hell—
+ to the golden sheep,
+ to the nightingale.
+
+ How much did he put
+ in that leather pouch
+ to prepare for his trek to
+ the eternal hell?
+
+ Spring is coming
+ to the valley, to the wood,
+ to the winding ravines
+ of the blackest hell.
+
+ The nightingale in her cage,
+ the sheep aboard the wagon,
+ and tears well up in the eyes
+ of sweet little Tomino.
+
+ Sing, o nightingale,
+ in the vast, misty forest—
+ he screams he only misses
+ his little sister.
+
+ His wailing desperation
+ echoes throughout hell—
+ a fox’s buttercup
+ opens its golden petals.
+
+ Down past the seven mountains
+ and seven rivers of hell—
+ the solitary journey
+ of sweet little Tomino.
+
+ If in this hell they be found,
+ may they then come to me, please,
+ those sharp spikes of punishment
+ from Needle Mountain.
+
+ Not for idle fancy
+ are those red pins driven in:
+ they serve as hellish signposts
+ for sweet little Tomino.
+
