@@ -1,0 +1,106 @@
+- type: entity
+  parent: BookBase
+  id: booktheWhale
+  name: "the whale by Herman Melville"
+  description: An old book about fishing you think.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: "#654321"
+    - state: detail_rivets
+      color: gold
+    - state: decor_wingette_circle
+      color: gold
+  - type: Paper
+    content: book-text-the-whale
+
+- type: entity
+  parent: BookBase
+  id: bookfaust
+  name: "faust by johann wolfgang von goethe"
+  description: An old play about demon summoning or something
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: "#654321"
+    - state: detail_rivets
+      color: gold
+    - state: decor_wingette_circle
+      color: gold
+  - type: Paper
+    content: book-text-faust
+
+
+- type: entity
+  parent: BookBase
+  id: booknemesis
+  name: "nemesis by lovecraft"
+  description: Spooky and cool poem by a racist.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: "#654321"
+    - state: detail_rivets
+      color: gold
+    - state: decor_wingette_circle
+      color: gold
+  - type: Paper
+    content: book-text-nemesis
+
+- type: entity
+  parent: BookBase
+  id: booktheraven
+  name: "the raven by edgar allen poe"
+  description: Spooky and cool poem.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: "#654321"
+    - state: detail_rivets
+      color: gold
+    - state: decor_wingette_circle
+      color: gold
+  - type: Paper
+    content: book-text-the-raven
+
+- type: entity
+  parent: BookBase
+  id: booknemesis
+  name: "the velveteen rabbit by margery williams"
+  description: A classic tale ment to sooth sick children.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: "#654321"
+    - state: detail_rivets
+      color: gold
+    - state: decor_wingette_circle
+      color: gold
+  - type: Paper
+    content: book-text-the-velveteen-rabbit
+
+- type: entity
+  parent: BookBase
+  id: boooktomino'shell
+  name: "tomino’s hell by saijō yaso"
+  description: You feel you shouldnt read this out loud.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_old
+      color: "#654321"
+    - state: overlay_dirt
+    - state: overlay_blood
+  - type: Paper
+    content: book-text-the-velveteen-rabbit
