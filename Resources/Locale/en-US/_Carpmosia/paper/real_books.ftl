@@ -29,7 +29,7 @@ book-text-the-whale = CHAPTER 1. Loomings.
 
         By reason of these things, then, the whaling voyage was welcome; the great flood-gates of the wonder-world swung open, and in the wild conceits that swayed me to my purpose, two and two there floated into my inmost soul, endless processions of the whale, and, mid most of them all, one grand hooded phantom, like a snow hill in the air.
 
-book-text-faust= FIRST PART OF THE TRAGEDY
+book-text-faust = FIRST PART OF THE TRAGEDY
        NIGHT
 
        (A lofty-arched, narrow, Gothic chamber. FAUST, in a chair at his desk, restless.)
