@@ -8,7 +8,7 @@
     layers:
     - state: paper
     - state: cover_base
-      color: "#654321"
+      color: red
     - state: detail_rivets
       color: gold
     - state: decor_wingette_circle
@@ -75,7 +75,7 @@
   parent: BookBase
   id: bookthevelveteenrabbit
   name: "the velveteen rabbit by margery williams"
-  description: A classic tale ment to sooth sick children.
+  description: A classic tale meant to sooth sick children.
   components:
   - type: Sprite
     layers:
@@ -91,18 +91,88 @@
 
 - type: entity
   parent: BookBase
-  id: boooktominoshell
+  id: booktominoshell
   name: "tomino's hell by saijō yaso"
-  description: You feel you shouldnt read this out loud.
+  description: You feel you shouldn't read this out loud.
   components:
   - type: Sprite
     layers:
     - state: paper
     - state: cover_old
-      color: "#654321"
-    - state: overlay_dirt
-      color: red
+      color: "#987654"
     - state: overlay_blood
-      color: red
   - type: Paper
     content: book-text-tominos-hell
+
+- type: entity
+  parent: BookBase
+  id: bookamodestproposal
+  name: "a modest proposal by dr. jonathan swift"
+  description: Weirdly popular with Unathi.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: "#654321"
+    - state: detail_rivets
+      color: gold
+    - state: decor_wingette_circle
+      color: gold
+  - type: Paper
+    content: book-text-a-modest-proposal
+
+- type: entity
+  parent: BookBase
+  id: bookwurtheringheights
+  name: "wuthering height by emily brontë"
+  description: A story about humanity at its worst.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: "#654321"
+    - state: detail_rivets
+      color: gold
+    - state: decor_wingette_circle
+      color: gold
+  - type: Paper
+    content: book-text-wurthering-heights
+
+
+- type: entity
+  parent: BookBase
+  id: bookthevelveteenrabbit
+  name: "crime and punishment by fyodor dostoevsky"
+  description: What could this be about.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: "#654321"
+    - state: detail_rivets
+      color: gold
+    - state: decor_wingette_circle
+      color: gold
+  - type: Paper
+    content: book-text-crime-and-punishment
+
+- type: entity
+  parent: BookBase
+  id: bookmetamorphosis
+  name: "Metamorphosis by Franz Kafkas"
+  description: Be the mothroach.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: "#654321"
+    - state: detail_rivets
+      color: gold
+    - state: decor_wingette_circle
+      color: gold
+  - type: Paper
+    content: book-text-the-metamorphosis
