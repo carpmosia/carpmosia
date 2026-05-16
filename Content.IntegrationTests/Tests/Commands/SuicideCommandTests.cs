@@ -231,7 +231,7 @@ public sealed class SuicideCommandTests : GameTest
         var mobStateSystem = entManager.System<MobStateSystem>();
         var transformSystem = entManager.System<TransformSystem>();
         var damageableSystem = entManager.System<DamageableSystem>();
-        var tagSystem = entManager.System<TagSystem>();
+        var tagSystem = entManager.System<TagSystem>(); // Carpmosia-edit - Remove Tonguebiting
 
         // We need to know the player and whether they can be hurt, killed, and whether they have a mind
         var player = playerMan.Sessions.First().AttachedEntity!.Value;
@@ -302,7 +302,7 @@ public sealed class SuicideCommandTests : GameTest
         var mobStateSystem = entManager.System<MobStateSystem>();
         var transformSystem = entManager.System<TransformSystem>();
         var damageableSystem = entManager.System<DamageableSystem>();
-        var tagSystem = entManager.System<TagSystem>();
+        var tagSystem = entManager.System<TagSystem>(); // Carpmosia-edit - Remove Tonguebiting
 
         // We need to know the player and whether they can be hurt, killed, and whether they have a mind
         var player = playerMan.Sessions.First().AttachedEntity!.Value;
