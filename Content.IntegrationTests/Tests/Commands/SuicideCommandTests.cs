@@ -79,7 +79,7 @@ public sealed class SuicideCommandTests : GameTest
         var playerMan = server.ResolveDependency<IPlayerManager>();
         var mindSystem = entManager.System<SharedMindSystem>();
         var mobStateSystem = entManager.System<MobStateSystem>();
-        var tagSystem = entManager.System<TagSystem>();
+        var tagSystem = entManager.System<TagSystem>(); // Carpmosia-edit - Remove Tonguebiting
 
         // We need to know the player and whether they can be hurt, killed, and whether they have a mind
         var player = playerMan.Sessions.First().AttachedEntity!.Value;
@@ -124,7 +124,7 @@ public sealed class SuicideCommandTests : GameTest
         var entManager = server.ResolveDependency<IEntityManager>();
         var playerMan = server.ResolveDependency<IPlayerManager>();
         var protoMan = server.ResolveDependency<IPrototypeManager>();
-        var tagSystem = entManager.System<TagSystem>();
+        var tagSystem = entManager.System<TagSystem>(); // Carpmosia-edit - Remove Tonguebiting
 
         var damageableSystem = entManager.System<DamageableSystem>();
         var mindSystem = entManager.System<SharedMindSystem>();
