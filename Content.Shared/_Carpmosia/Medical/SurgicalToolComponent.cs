@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Server.Medical;
+namespace Content.Shared.Medical;
 
 [RegisterComponent]
 public sealed partial class SurgicalToolComponent : Component;
