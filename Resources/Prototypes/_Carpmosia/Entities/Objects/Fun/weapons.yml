@@ -4,6 +4,9 @@
   name: AK-FF
   description: An automatic Foam Force rifle, now THIS is the future of foam gunfights! Foam or be Foamed!
   components:
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Effects/thunk.ogg
   - type: Sprite
     sprite: _Carpmosia/Objects/Fun/Foam/AKFF.rsi
     layers:
@@ -28,18 +31,25 @@
         priority: 1
         whitelist:
           tags:
-          - CartridgeLightRifle
+          - BulletFoam
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
 
 - type: entity
-  parent: BaseMagazineRifle # It goes in an AK, its funny.
+  parent: BaseMagazineRifle # It goes in a fake AK, its funny.
   id: MagazineRifleFoam
   name: "AK-FF Magazine (Foam Dart)"
   description: A curved magazine containing standard foam ammunition.
   components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Fun/Foam/rifle_foam_magazine.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
   - type: BallisticAmmoProvider
     mayTransfer: true
     whitelist:
@@ -48,5 +58,5 @@
     proto: BulletFoam
     capacity: 30
   - type: Tag
-    Tags:
+    tags:
     - FoamRifleMag
