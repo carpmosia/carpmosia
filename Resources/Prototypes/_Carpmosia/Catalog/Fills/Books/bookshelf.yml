@@ -1,0 +1,20 @@
+- type: entityTable
+  id: RandomRealBookTable
+  table: !type:GroupSelector
+    children:
+    - id: BookTheWhale
+    - id: BookFaust
+    - id: BookNemesis
+    - id: BookTheRaven
+    - id: BookTheVelveteenRabbit
+    - id: BookTominosHell
+    - id: BookAModestProposal
+    - id: BookWurtheringHeights
+    - id: BookCrimeAndPunishment
+    - id: BookMetamorphosis
+    - id: BookDonQuixote
+    - id: BookJigokuhen
+    - id: BookHungLouMeng
+    - id: BookDemian
+    - id: BookOdyssey
+    - id: BookTheModernPrometheus

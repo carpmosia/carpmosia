@@ -1,6 +1,6 @@
 - type: entity
   parent: BookBase
-  id: booktheWhale
+  id: BookTheWhale
   name: "the whale by herman melville"
   description: An old book about fishing you think.
   components:
@@ -16,12 +16,11 @@
   - type: Paper
     content: book-text-the-whale
 
-
 - type: entity
   parent: BookBase
-  id: bookfaust
+  id: BookFaust
   name: "faust by johann wolfgang von goethe"
-  description: An old play about demon summoning or something
+  description: An old play about demon summoning or something.
   components:
   - type: Sprite
     layers:
@@ -35,10 +34,9 @@
   - type: Paper
     content: book-text-faust
 
-
 - type: entity
   parent: BookBase
-  id: booknemesis
+  id: BookNemesis
   name: "nemesis by lovecraft"
   description: A poem from the perspective of a mad god.
   components:
@@ -55,10 +53,9 @@
   - type: Paper
     content: book-text-nemesis
 
-
 - type: entity
   parent: BookBase
-  id: booktheraven
+  id: BookTheRaven
   name: "the raven by edgar allen poe"
   description: Spooky and cool poem.
   components:
@@ -74,10 +71,9 @@
   - type: Paper
     content: book-text-the-raven
 
-
 - type: entity
   parent: BookBase
-  id: bookthevelveteenrabbit
+  id: BookTheVelveteenRabbit
   name: "the velveteen rabbit by margery williams"
   description: A classic tale meant to sooth sick children.
   components:
@@ -93,10 +89,9 @@
   - type: Paper
     content: book-text-the-velveteen-rabbit
 
-
 - type: entity
   parent: BookBase
-  id: booktominoshell
+  id: BookTominosHell
   name: "tomino's hell by saijō yaso"
   description: You feel you shouldn't read this out loud.
   components:
@@ -109,10 +104,9 @@
   - type: Paper
     content: book-text-tominos-hell
 
-
 - type: entity
   parent: BookBase
-  id: bookamodestproposal
+  id: BookAModestProposal
   name: "a modest proposal by dr. jonathan swift"
   description: Weirdly popular with Unathi.
   components:
@@ -124,10 +118,9 @@
   - type: Paper
     content: book-text-a-modest-proposal
 
-
 - type: entity
   parent: BookBase
-  id: bookwurtheringheights
+  id: BookWurtheringHeights
   name: "wuthering height by emily brontë"
   description: A story about humanity at its worst.
   components:
@@ -143,10 +136,9 @@
   - type: Paper
     content: book-text-wurthering-heights
 
-
 - type: entity
   parent: BookBase
-  id: bookcrimeandpunishment
+  id: BookCrimeAndPunishment
   name: "crime and punishment by fyodor dostoevsky"
   description: What could this be about.
   components:
@@ -162,11 +154,9 @@
   - type: Paper
     content: book-text-crime-and-punishment
 
-
-
 - type: entity
   parent: BookBase
-  id: bookmetamorphosis
+  id: BookMetamorphosis
   name: "metamorphosis by franz kafkas"
   description: Be the mothroach.
   components:
@@ -182,11 +172,9 @@
   - type: Paper
     content: book-text-the-metamorphosis
 
-
-
 - type: entity
   parent: BookBase
-  id: bookdonquixote
+  id: BookDonQuixote
   name: "don quixote by miguel de cervantes saavedra"
   description: The windmills deserved it.
   components:
@@ -200,11 +188,9 @@
   - type: Paper
     content: book-text-don-quixote
 
-
-
 - type: entity
   parent: BookBase
-  id: bookjigokuhen
+  id: BookJigokuhen
   name: "jigokuhen by ryūnosuke akutagawa"
   description: A story about a spooky painting.
   components:
@@ -220,12 +206,9 @@
   - type: Paper
     content: book-text-jigokuhen
 
-
-
-
 - type: entity
   parent: BookBase
-  id: bookmethungloumeng
+  id: BookHungLouMeng
   name: "hung lou meng by xueqin cao"
   description: The rise and decline of a family.
   components:
@@ -241,10 +224,9 @@
   - type: Paper
     content: book-text-hung-lou-meng
 
-
 - type: entity
   parent: BookBase
-  id: bookdemian
+  id: BookDemian
   name: "demian by hermann hesse"
   description: The Story of Emil Sinclair's youth.
   components:
@@ -263,7 +245,7 @@
 
 - type: entity
   parent: BookBase
-  id: bookodyssey
+  id: BookOdyssey
   name: "odyssey by homer"
   description: It's litterally epic.
   components:
@@ -277,11 +259,9 @@
   - type: Paper
     content: book-text-odyssey
 
-
-
 - type: entity
   parent: BookBase
-  id: bookthemodernprometheus
+  id: BookTheModernPrometheus
   name: "the modern prometheus by mary wollstonecraft shelley"
   description: What SCI would do without us.
   components:
@@ -293,4 +273,3 @@
     - state: icon_lightning
   - type: Paper
     content: book-text-the-modern-prometheus
-
