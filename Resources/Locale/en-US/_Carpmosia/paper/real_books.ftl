@@ -29,6 +29,8 @@ book-text-the-whale = CHAPTER 1. Loomings.
 
         By reason of these things, then, the whaling voyage was welcome; the great flood-gates of the wonder-world swung open, and in the wild conceits that swayed me to my purpose, two and two there floated into my inmost soul, endless processions of the whale, and, mid most of them all, one grand hooded phantom, like a snow hill in the air.
 
+
+
 book-text-faust = FIRST PART OF THE TRAGEDY
        NIGHT
 
@@ -180,7 +182,9 @@ book-text-faust = FIRST PART OF THE TRAGEDY
 
       (He seizes the book, and mysteriously pronounces the sign of the Spirit. A ruddy flame flashes: the Spirit appears in he flame.)
 
-book-text-nemesis=     Thro’ the ghoul-guarded gateways of slumber,
+
+
+book-text-nemesis = Thro’ the ghoul-guarded gateways of slumber,
            Past the wan-moon’d abysses of night,
       I have liv’d o’er my lives without number,
            I have sounded all things with my sight;
@@ -246,7 +250,7 @@ book-text-nemesis=     Thro’ the ghoul-guarded gateways of slumber,
            I have sounded all things with my sight;
  And I struggle and shriek ere the daybreak, being driven to madness with fright.
 
-book-text-the-raven=Once upon a midnight dreary, while I pondered, weak and weary,
+book-text-the-raven = Once upon a midnight dreary, while I pondered, weak and weary,
  Over many a quaint and curious volume of forgotten lore—
     While I nodded, nearly napping, suddenly there came a tapping,
  As of some one gently rapping, rapping at my chamber door.
@@ -371,6 +375,8 @@ book-text-the-raven=Once upon a midnight dreary, while I pondered, weak and wear
     And the lamp-light o’er him streaming throws his shadow on the floor;
  And my soul from out that shadow that lies floating on the floor
             Shall be lifted—nevermore!
+
+
 
 book-text-the-velveteen-rabbit = There was once a velveteen rabbit, and in the beginning he was really splendid. He was fat and bunchy, as a rabbit should be; his coat was spotted brown and white, he had real thread whiskers, and his ears were lined with pink sateen. On Christmas morning, when he sat wedged in the top of the Boy's stocking, with a sprig of holly between his paws, the effect was charming.
 
@@ -535,7 +541,9 @@ book-text-the-velveteen-rabbit = There was once a velveteen rabbit, and in the b
 
  But he never knew that it really was his own Bunny, come back to look at the child who had first helped him to be Real.
 
-book-text-tominos-hell=Elder sister spills her blood,
+
+
+book-text-tominos-hell = Elder sister spills her blood,
  younger sister breathes out flame—
  sweet little Tomino alone
  lets fall his shining jewels.
@@ -600,7 +608,9 @@ book-text-tominos-hell=Elder sister spills her blood,
  they serve as hellish signposts
  for sweet little Tomino.
 
-book-text-a-modest-proposal=It is a melancholy object to those, who walk through this great town, or travel in the country, when they see the streets, the roads, and cabbin-doors crowded with beggars of the female sex, followed by three, four, or six children, all in rags, and importuning every passenger for an alms. These mothers, instead of being able to work for their honest livelihood, are forced to employ all their time in stroling to beg sustenance for their helpless infants who, as they grow up, either turn thieves for want of work, or leave their dear native country, to fight for the Pretender in Spain, or sell themselves to the Barbadoes.
+
+
+book-text-a-modest-proposal = It is a melancholy object to those, who walk through this great town, or travel in the country, when they see the streets, the roads, and cabbin-doors crowded with beggars of the female sex, followed by three, four, or six children, all in rags, and importuning every passenger for an alms. These mothers, instead of being able to work for their honest livelihood, are forced to employ all their time in stroling to beg sustenance for their helpless infants who, as they grow up, either turn thieves for want of work, or leave their dear native country, to fight for the Pretender in Spain, or sell themselves to the Barbadoes.
 
  I think it is agreed by all parties, that this prodigious number of children in the arms, or on the backs, or at the heels of their mothers, and frequently of their fathers, is in the present deplorable state of the kingdom, a very great additional grievance; and therefore whoever could find out a fair, cheap and easy method of making these children sound and useful members of the commonwealth, would deserve so well of the publick, as to have his statue set up for a preserver of the nation.
 
@@ -828,6 +838,8 @@ book-text-crime-and-punishment=CHAPTER I
 
  But no one shared his enjoyment: his silent companion looked with positive hostility and mistrust at all these manifestations. There was another man in the room who looked somewhat like a retired government clerk. He was sitting apart, now and then sipping from his pot and looking round at the company. He, too, appeared to be in some agitation.
 
+
+
 book-text-the-metamorphosis=I
  One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked.
 
@@ -888,3 +900,945 @@ book-text-the-metamorphosis=I
  Gregor realised that it was out of the question to let the chief clerk go away in this mood if his position in the firm was not to be put into extreme danger. That was something his parents did not understand very well; over the years, they had become convinced that this job would provide for Gregor for his entire life, and besides, they had so much to worry about at present that they had lost sight of any thought for the future. Gregor, though, did think about the future. The chief clerk had to be held back, calmed down, convinced and finally won over; the future of Gregor and his family depended on it! If only his sister were here! She was clever; she was already in tears while Gregor was still lying peacefully on his back. And the chief clerk was a lover of women, surely she could persuade him; she would close the front door in the entrance hall and talk him out of his shocked state. But his sister was not there, Gregor would have to do the job himself. And without considering that he still was not familiar with how well he could move about in his present state, or that his speech still might not—or probably would not—be understood, he let go of the door; pushed himself through the opening; tried to reach the chief clerk on the landing who, ridiculously, was holding on to the banister with both hands; but Gregor fell immediately over and, with a little scream as he sought something to hold onto, landed on his numerous little legs. Hardly had that happened than, for the first time that day, he began to feel alright with his body; the little legs had the solid ground under them; to his pleasure, they did exactly as he told them; they were even making the effort to carry him where he wanted to go; and he was soon believing that all his sorrows would soon be finally at an end. He held back the urge to move but swayed from side to side as he crouched there on the floor. His mother was not far away in front of him and seemed, at first, quite engrossed in herself, but then she suddenly jumped up with her arms outstretched and her fingers spread shouting: “Help, for pity’s sake, Help!” The way she held her head suggested she wanted to see Gregor better, but the unthinking way she was hurrying backwards showed that she did not; she had forgotten that the table was behind her with all the breakfast things on it; when she reached the table she sat quickly down on it without knowing what she was doing; without even seeming to notice that the coffee pot had been knocked over and a gush of coffee was pouring down onto the carpet.
 
  “Mother, mother”, said Gregor gently, looking up at her. He had completely forgotten the chief clerk for the moment, but could not help himself snapping in the air with his jaws at the sight of the flow of coffee. That set his mother screaming anew, she fled from the table and into the arms of his father as he rushed towards her. Gregor, though, had no time to spare for his parents now; the chief clerk had already reached the stairs; with his chin on the banister, he looked back for the last time. Gregor made a run for him; he wanted to be sure of reaching him; the chief clerk must have expected something, as he leapt down several steps at once and disappeared; his shouts resounding all around the staircase. The flight of the chief clerk seemed, unfortunately, to put Gregor’s father into a panic as well. Until then he had been relatively self controlled, but now, instead of running after the chief clerk himself, or at least not impeding Gregor as he ran after him, Gregor’s father seized the chief clerk’s stick in his right hand (the chief clerk had left it behind on a chair, along with his hat and overcoat), picked up a large newspaper from the table with his left, and used them to drive Gregor back into his room, stamping his foot at him as he went. Gregor’s appeals to his father were of no help, his appeals were simply not understood, however much he humbly turned his head his father merely stamped his foot all the harder. Across the room, despite the chilly weather, Gregor’s mother had pulled open a window, leant far out of it and pressed her hands to her face. A strong draught of air flew in from the street towards the stairway, the curtains flew up, the newspapers on the table fluttered and some of them were blown onto the floor. Nothing would stop Gregor’s father as he drove him back, making hissing noises at him like a wild man. Gregor had never had any practice in moving backwards and was only able to go very slowly. If Gregor had only been allowed to turn round he would have been back in his room straight away, but he was afraid that if he took the time to do that his father would become impatient, and there was the threat of a lethal blow to his back or head from the stick in his father’s hand any moment. Eventually, though, Gregor realised that he had no choice as he saw, to his disgust, that he was quite incapable of going backwards in a straight line; so he began, as quickly as possible and with frequent anxious glances at his father, to turn himself round. It went very slowly, but perhaps his father was able to see his good intentions as he did nothing to hinder him, in fact now and then he used the tip of his stick to give directions from a distance as to which way to turn. If only his father would stop that unbearable hissing! It was making Gregor quite confused. When he had nearly finished turning round, still listening to that hissing, he made a mistake and turned himself back a little the way he had just come. He was pleased when he finally had his head in front of the doorway, but then saw that it was too narrow, and his body was too broad to get through it without further difficulty. In his present mood, it obviously did not occur to his father to open the other of the double doors so that Gregor would have enough space to get through. He was merely fixed on the idea that Gregor should be got back into his room as quickly as possible. Nor would he ever have allowed Gregor the time to get himself upright as preparation for getting through the doorway. What he did, making more noise than ever, was to drive Gregor forwards all the harder as if there had been nothing in the way; it sounded to Gregor as if there was now more than one father behind him; it was not a pleasant experience, and Gregor pushed himself into the doorway without regard for what might happen. One side of his body lifted itself, he lay at an angle in the doorway, one flank scraped on the white door and was painfully injured, leaving vile brown flecks on it, soon he was stuck fast and would not have been able to move at all by himself, the little legs along one side hung quivering in the air while those on the other side were pressed painfully against the ground. Then his father gave him a hefty shove from behind which released him from where he was held and sent him flying, and heavily bleeding, deep into his room. The door was slammed shut with the stick, then, finally, all was quiet.
+
+
+
+book-text-don-quixote = CHAPTER I. WHICH TREATS OF THE CHARACTER AND PURSUITS OF THE FAMOUS GENTLEMAN DON QUIXOTE OF LA MANCHA
+
+ In a village of La Mancha, the name of which I have no desire to call to mind, there lived not long since one of those gentlemen that keep a lance in the lance-rack, an old buckler, a lean hack, and a greyhound for coursing. An olla of rather more beef than mutton, a salad on most nights, scraps on Saturdays, lentils on Fridays, and a pigeon or so extra on Sundays, made away with three-quarters of his income. The rest of it went in a doublet of fine cloth and velvet breeches and shoes to match for holidays, while on week-days he made a brave figure in his best homespun. He had in his house a housekeeper past forty, a niece under twenty, and a lad for the field and market-place, who used to saddle the hack as well as handle the bill-hook. The age of this gentleman of ours was bordering on fifty; he was of a hardy habit, spare, gaunt-featured, a very early riser and a great sportsman. They will have it his surname was Quixada or Quesada (for here there is some difference of opinion among the authors who write on the subject), although from reasonable conjectures it seems plain that he was called Quexana. This, however, is of but little importance to our tale; it will be enough not to stray a hair’s breadth from the truth in the telling of it.
+
+ You must know, then, that the above-named gentleman whenever he was at leisure (which was mostly all the year round) gave himself up to reading books of chivalry with such ardour and avidity that he almost entirely neglected the pursuit of his field-sports, and even the management of his property; and to such a pitch did his eagerness and infatuation go that he sold many an acre of tillageland to buy books of chivalry to read, and brought home as many of them as he could get. But of all there were none he liked so well as those of the famous Feliciano de Silva’s composition, for their lucidity of style and complicated conceits were as pearls in his sight, particularly when in his reading he came upon courtships and cartels, where he often found passages like “the reason of the unreason with which my reason is afflicted so weakens my reason that with reason I murmur at your beauty;” or again, “the high heavens, that of your divinity divinely fortify you with the stars, render you deserving of the desert your greatness deserves.” Over conceits of this sort the poor gentleman lost his wits, and used to lie awake striving to understand them and worm the meaning out of them; what Aristotle himself could not have made out or extracted had he come to life again for that special purpose. He was not at all easy about the wounds which Don Belianis gave and took, because it seemed to him that, great as were the surgeons who had cured him, he must have had his face and body covered all over with seams and scars. He commended, however, the author’s way of ending his book with the promise of that interminable adventure, and many a time was he tempted to take up his pen and finish it properly as is there proposed, which no doubt he would have done, and made a successful piece of work of it too, had not greater and more absorbing thoughts prevented him.
+
+ Many an argument did he have with the curate of his village (a learned man, and a graduate of Siguenza) as to which had been the better knight, Palmerin of England or Amadis of Gaul. Master Nicholas, the village barber, however, used to say that neither of them came up to the Knight of Phœbus, and that if there was any that could compare with him it was Don Galaor, the brother of Amadis of Gaul, because he had a spirit that was equal to every occasion, and was no finikin knight, nor lachrymose like his brother, while in the matter of valour he was not a whit behind him. In short, he became so absorbed in his books that he spent his nights from sunset to sunrise, and his days from dawn to dark, poring over them; and what with little sleep and much reading his brains got so dry that he lost his wits. His fancy grew full of what he used to read about in his books, enchantments, quarrels, battles, challenges, wounds, wooings, loves, agonies, and all sorts of impossible nonsense; and it so possessed his mind that the whole fabric of invention and fancy he read of was true, that to him no history in the world had more reality in it. He used to say the Cid Ruy Diaz was a very good knight, but that he was not to be compared with the Knight of the Burning Sword who with one back-stroke cut in half two fierce and monstrous giants. He thought more of Bernardo del Carpio because at Roncesvalles he slew Roland in spite of enchantments, availing himself of the artifice of Hercules when he strangled Antæus the son of Terra in his arms. He approved highly of the giant Morgante, because, although of the giant breed which is always arrogant and ill-conditioned, he alone was affable and well-bred. But above all he admired Reinaldos of Montalban, especially when he saw him sallying forth from his castle and robbing everyone he met, and when beyond the seas he stole that image of Mahomet which, as his history says, was entirely of gold. To have a bout of kicking at that traitor of a Ganelon he would have given his housekeeper, and his niece into the bargain.
+
+ In short, his wits being quite gone, he hit upon the strangest notion that ever madman in this world hit upon, and that was that he fancied it was right and requisite, as well for the support of his own honour as for the service of his country, that he should make a knight-errant of himself, roaming the world over in full armour and on horseback in quest of adventures, and putting in practice himself all that he had read of as being the usual practices of knights-errant; righting every kind of wrong, and exposing himself to peril and danger from which, in the issue, he was to reap eternal renown and fame. Already the poor man saw himself crowned by the might of his arm Emperor of Trebizond at least; and so, led away by the intense enjoyment he found in these pleasant fancies, he set himself forthwith to put his scheme into execution.
+
+ The first thing he did was to clean up some armour that had belonged to his great-grandfather, and had been for ages lying forgotten in a corner eaten with rust and covered with mildew. He scoured and polished it as best he could, but he perceived one great defect in it, that it had no closed helmet, nothing but a simple morion. This deficiency, however, his ingenuity supplied, for he contrived a kind of half-helmet of pasteboard which, fitted on to the morion, looked like a whole one. It is true that, in order to see if it was strong and fit to stand a cut, he drew his sword and gave it a couple of slashes, the first of which undid in an instant what had taken him a week to do. The ease with which he had knocked it to pieces disconcerted him somewhat, and to guard against that danger he set to work again, fixing bars of iron on the inside until he was satisfied with its strength; and then, not caring to try any more experiments with it, he passed it and adopted it as a helmet of the most perfect construction.
+
+ He next proceeded to inspect his hack, which, with more quartos than a real and more blemishes than the steed of Gonela, that “tantum pellis et ossa fuit,” surpassed in his eyes the Bucephalus of Alexander or the Babieca of the Cid. Four days were spent in thinking what name to give him, because (as he said to himself) it was not right that a horse belonging to a knight so famous, and one with such merits of his own, should be without some distinctive name, and he strove to adapt it so as to indicate what he had been before belonging to a knight-errant, and what he then was; for it was only reasonable that, his master taking a new character, he should take a new name, and that it should be a distinguished and full-sounding one, befitting the new order and calling he was about to follow. And so, after having composed, struck out, rejected, added to, unmade, and remade a multitude of names out of his memory and fancy, he decided upon calling him Rocinante, a name, to his thinking, lofty, sonorous, and significant of his condition as a hack before he became what he now was, the first and foremost of all the hacks in the world.
+
+ Having got a name for his horse so much to his taste, he was anxious to get one for himself, and he was eight days more pondering over this point, till at last he made up his mind to call himself “Don Quixote,” whence, as has been already said, the authors of this veracious history have inferred that his name must have been beyond a doubt Quixada, and not Quesada as others would have it. Recollecting, however, that the valiant Amadis was not content to call himself curtly Amadis and nothing more, but added the name of his kingdom and country to make it famous, and called himself Amadis of Gaul, he, like a good knight, resolved to add on the name of his, and to style himself Don Quixote of La Mancha, whereby, he considered, he described accurately his origin and country, and did honour to it in taking his surname from it.
+
+ So then, his armour being furbished, his morion turned into a helmet, his hack christened, and he himself confirmed, he came to the conclusion that nothing more was needed now but to look out for a lady to be in love with; for a knight-errant without love was like a tree without leaves or fruit, or a body without a soul. As he said to himself, “If, for my sins, or by my good fortune, I come across some giant hereabouts, a common occurrence with knights-errant, and overthrow him in one onslaught, or cleave him asunder to the waist, or, in short, vanquish and subdue him, will it not be well to have someone I may send him to as a present, that he may come in and fall on his knees before my sweet lady, and in a humble, submissive voice say, ‘I am the giant Caraculiambro, lord of the island of Malindrania, vanquished in single combat by the never sufficiently extolled knight Don Quixote of La Mancha, who has commanded me to present myself before your Grace, that your Highness dispose of me at your pleasure’?” Oh, how our good gentleman enjoyed the delivery of this speech, especially when he had thought of someone to call his Lady! There was, so the story goes, in a village near his own a very good-looking farm-girl with whom he had been at one time in love, though, so far as is known, she never knew it nor gave a thought to the matter. Her name was Aldonza Lorenzo, and upon her he thought fit to confer the title of Lady of his Thoughts; and after some search for a name which should not be out of harmony with her own, and should suggest and indicate that of a princess and great lady, he decided upon calling her Dulcinea del Toboso—she being of El Toboso—a name, to his mind, musical, uncommon, and significant, like all those he had already bestowed upon himself and the things belonging to him.
+
+
+
+book-text-jigokuhen = Neither in the past nor in the time to come could one imagine a person comparable to the High Lord of Horikawa. I heard that, before his birth, Dai Itoku-Myo-o, the King of Magical Science, appeared at his mother’s bedside. From birth, Horikawa was different from the others. Of all the things he ever did, I cannot recall an act that did not deserve our wonderment. To mention an example among many, the structure of his palace – how should I define it? – Immense? Grandiose? – was so astounding as to surpass the boundaries of our limited imagination. Some went so far as to compare his temperament and conduct to those of the First Emperor of the Ch’in or the Emperor Yang, although, while considering this comparison, we should keep in mind the idea that different people have different opinions, as with the proverbial blind men who touched different parts of an elephant and drew contradicting conclusions about the animal. Contrary to those emperors, our lord’s intention was never to enjoy the luxury life can provide. He had a kind and generous heart that would partake in the happiness and distress of all, even the humblest among his subjects. For these reasons, when he encountered a procession of ghosts in the large palace of Nijo, he was able to pass through them unscathed. And when the spirit of Secretary Tooru prowled every night the Kawaranoin Palace in Higashi-Sanjo, famed for the garden inspired by the marine landscape of Shiogama in the Michinoku province, the Lord reprimanded it, after which the spectre vanished forever. Of course, as soon as the people of Kyoto, young and old, men and women, heard Horikawa’s name, they would genuflect as if they had seen Buddha’s avatar.
+
+ One day, on his way home from the banquet of the Plum Blossoms, one of the oxen pulling his cart broke away and injured an old man who was passing by. It is rumoured that the old man joined his hands to express his gratitude for having been touched by the hoof of the Lord’s ox.
+
+ His life was full of many memorable facts, most of which should be bequeathed to posterity.
+
+ During a court banquet, the Emperor gave him thirty horses, all of them white…Once, when construction work on the Nagara Bridge was damaged, he offered his favourite boy attendants as human pillars to propitiate the gods…He had a carbuncle removed from his thigh by a Chinese bonze who had introduced the magical healing methods of a celebrated Chinese physician. If I should recount all the anecdotes, I would never finish. But among all these episodes, none surpasses in horror the story of the Hell scene painted on a screen that is now part of the Lord’s family treasure. Even the High Lord, who was usually impassive, seemed to have been utterly shocked by the events. No need to explain that we, his attendants, were frightened out of our wits. In more than twenty years passed in the service of the Lord, I had never witnessed more horrid a spectacle.
+ 
+ But before telling you the story, I must introduce the painter called Yoshihide, the author of the Hell scene on the screen.
+ 
+ Yoshihide! Some people may even remember him today. In his time he was considered the first among painters, an unrivalled artist. When what I am going to relate happened, he was already over fifty. At first sight, he appeared to be a short, cantankerous old man, all skin and bone. Each time he came to the Lord’s palace, he wore a clove-dyed hunting garment and a floppy eboshi on his head, but he had a vulgar appearance and his lips, too red for his age, had an unsettling bestial quality. I do not know for sure the cause of this red colour. Some said he had the habit of licking his paintbrush. Others, more slanderous, compared his appearance and gait to those of a monkey and nicknamed him Saruhide (Monkey-hide).
+
+ About this moniker, this is the story I heard. Our Monkeyhide had an only daughter, who was fifteen years old and served as a lady-in-waiting in the Lord’s palace. This girl, intelligent and observant beyond her age because she had lost her mother when she was little and had taken care of herself, was charming and very beautiful. For these reasons, she had won the good graces of Her Ladyship and all the waiting ladies.
+
+ Someone from the province of Tamba, west of Kyoto, had offered a well-trained monkey to the Lord. The Prince, the Lord’s young son, who was at the time in the age of mischievousness, named the monkey Yoshihide. The monkey’s gestures were amusing indeed, and everyone in the palace laughed at the animal. If this mockery had been all, things would not have been that bad for the monkey, but each time it climbed up the pine tree in the garden or soiled the mats in the Prince’s bedroom, everyone chased him, shouting, ‘Yoshihide, Yoshihide,’ to tease the poor beast.
+
+ One day, Yoshihide’s daughter, Yuzuki, passed through the long corridor, carrying a letter attached to a winter-plum branch, when she saw the small monkey come from beyond the sliding door and run toward her. The monkey limped and seemed incapable of climbing up one of the palace columns as she used to do. The Prince ran after the monkey, a switch in his hand, and cried, ‘Stop, tangerine thief! Stop.’
+
+ At this sight, the young woman stopped for an instant. Just then, the monkey flopped down at her feet, gripped the hem of her kimono and begged her with doleful cries. She could not refrain from feeling compassion. Holding the plum branch with one hand, she picked the monkey up with the other, her long mauve-coloured sleeve flying.
+
+ ‘Lord,’ she said in a smoothly agreeable voice, bowing. ‘Let me intercede in this monkey’s favour. It is only a beast. Prithee, forgive it.’
+
+ But the Prince had been chasing the monkey with determination. He made a face and stamped his foot three times. ‘Why do you wish to protect it? This monkey is a tangerine thief, I tell you.’
+
+ ‘It is a beast,’ she repeated. Then she took on a sad expression and dared say, ‘When I hear that name, Yoshihide, I have the impression my father is being reprimanded.’
+
+ Hearing this remark, the Prince, arrogant or not, gave in. ‘I see. If you ask in the name of your father, I will pardon the monkey.’ Then he threw the switch down and went back through the sliding door whence he had come.
+ 
+ From that day on, Yoshihide’s daughter and the monkey became fast friends. She tied a beautiful red ribbon around the animal’s neck, and also hung a tiny bell she had received from the young Princess. The monkey would leave her presence on no account. Once, Yuzuki had to stay in bed with a light cold, and the monkey watched over her, gnawing on its fingernails in apparent concern.
+
+ Now things took a peculiar turn. No one would mistreat the monkey any longer. On the contrary, they all began petting it. Not only did the Prince throw persimmons or chestnuts to the monkey, once His Highness became furious because some samurai had shot a kick at the little beast. This news reaching his ears, the Lord gave gracious orders that girl and monkey be brought before his presence. He must also have known why the girl had come to protect the beast.
+
+ ‘You are a good and dutiful daughter,’ the Lord said. ‘I am pleased with you.’ With these words, she received a scarlet hakama from the Lord.
+
+ The monkey mimicked the girl’s deference by raising the hem of the robe to its forehead, to the Lord’s immense amusement and pleasure. You can see that the Lord took the young woman into his good grace because he had been impressed with her filial piety, not because he admired her charms, as it was whispered. The rumours might have been justified on some grounds, but I will talk about such things later on. Suffice it to say that the Lord was not one to fall for as lowly a girl as a painter’s daughter, no matter how charming.
+
+ The girl withdrew from the Lord’s presence feeling highly honoured, but being naturally wise and intelligent, she did nothing to awake her fellow maids’ jealousy. On the contrary, this honour won the ladies’ favour for both herself and her monkey. Her Ladyship loved Yuzuki so much she kept the lady-in-waiting in her constant presence and brought her everywhere she went in her princely carriage.
+
+ Now let me set the girl aside for a while as I tell you about her father, Yoshihide. Although Yoshihide the monkey came to be loved by everyone, Yoshihide the painter continued to be hated by everyone. And they went on calling him ‘Monkeyhide’ behind his back. The residents of the palace were not alone in this general dislike. The great priest of Yokawa, for example, would turn red in the face at the mere mention of Yoshihide’s name, as if he had seen a devil (as the rumour had it, Yoshihide had painted the priest in a humoristic scene depicting his conduct, but I know of no foundation proving the rumour true). At any rate, Yoshihide had a bad reputation everywhere. If one or two people did not speak ill of him, they were his fellow painters, who had seen his paintings but had never met him in person.
+
+ Not only had Yoshihide a vulgar aspect, he also had such shocking habits that everyone considered him a nuisance. For this reputation, he had no one but himself to blame.
+
+ He was avaricious, mean, cowardly, lazy and insatiable, but above all he was insolent and conceited. Always ‘I, the greatest painter in Japan’ was plastered across his forehead. His bad temperament manifested itself beyond his work, through a profound contempt for all customs and practices in life. According to an apprentice who had lived with him for a long time, one day a spirit was spouting a terrible oracle from the mouth of the famous medium of Higaki. Yoshihide, turning a deaf ear to the oracle, took the brush and ink he always carried and painted the medium’s frightening face. Our painter deemed the eventuality of being cursed by a spirit as serious as a child’s play.
+
+ Yoshihide did inconceivably sacrilegious things. In picturing the goddess Kichijoten, he copied the face of an abject courtesan, and in picturing the King of the Magical Science Fudo, the god that destroys all demons, he copied a thief’s figure, and so on, but if someone reprimanded him he answered impudently, ‘How strange. Do you really believe the deities Yoshihide painted will hit him with lightning?’ When he spoke in this way many of his own disciples took leave of him in fearful anticipation of terrible consequences. In other words, Yoshihide was arrogance incarnate – he truly thought he was the smartest man under the sun.
+
+ No need to say how highly he esteemed himself as a painter. His paintings were so different in brushwork and colouring from those of other painters that many of his colleagues, who were on bad terms with him, considered him an impostor. Several legends affirmed that the famous paintings by the ancient masters like Kawanari, Kanaoka and others were so well rendered that one could smell the fragrance of the plum blossoms painted on the doors as the delicate scent wafted about in the moonlit nights, and one could also hear the courtiers painted on a screen play their flutes. But all the paintings by Yoshihide seemed to elicit disturbing feelings. One would cite the scene of the Goshushoji, the cycle of births and deaths, hung on the portal of the Ryugai temple. Each time one passed under the gate at night, one could hear the celestial creatures sigh and sob. Some said they could smell the stench of rotting corpses. As rumour had it, the waiting ladies whose likenesses Yoshihide had painted at the Lord’s command all fell ill and died within a few years. According to the slanderers, those events were proofs of Yoshihide’s dabbling in black arts. His paintings, the critics said, were cursed. Being an eccentric, Yoshihide took pride in these rumours.
+
+ Once, when the Lord told him, as a joke, ‘It would seem you are partial to ugliness,’ he replied with arrogance, a grin on that strangely red mouth of his, ‘That is true, my Lord. It is an unaccomplished artist who cannot perceive beauty in ugliness.’
+
+ Notwithstanding his superiority over any other painter in the country, how could he make such a haughty reply to the Lord? His apprentices secretly nicknamed him ‘Chira-Eiju.’ Maybe you already know that Chira-Eiju was the name of a Tengu, who came from China in older times.
+
+ Nevertheless, even the insufferable, shameless Yoshihide was not without feelings; one, single human emotion remained within him.
+ 
+ Yoshihide adored his only daughter, the little lady-in-waiting, and his love for her bordered on madness. As I said before, she was sweet and devoted to her father. It seemed strange that, to this avaricious man, nothing was beautiful enough for his daughter: kimono, hairpins and expensive hairdressers. Although he never contributed his tithes or mites to any Buddhist temple, he doted so much on her no expense was too extravagant for the girl’s adornment, although I do not know if this rumour is true. He adored her wildly and madly, and he never gave any thought to finding her a good husband. On the contrary, if anyone had courted her, he would have hired street assassins to get rid of the suitor in the dead of night. When the Lord expressed the wish of having the painter’s daughter as a lady-in-waiting, Yoshihide was so displeased he came to the palace with a sour face, even in the presence of the Lord himself. The rumour that the Lord had called the painter’s daughter to the palace because he was enamoured of her beauty might have originated in the displeasure the painter bore so openly. I am sure it was mere gossiping, while it was true that Yoshihide adored his daughter and strongly wished to have her at home with him.
+
+ One day, Yoshihide painted a cherub in the likeness of one of the Lord’s favourite boys. The Lord, pleased, said to the painter, ‘Yoshihide, I will grant any request of yours. So tell me what you wish.’
+
+ ‘If it pleases Your Lordship,’ Yoshihide dared say. ‘Let my daughter be released from your service.’
+
+ The painter’s reply would have been conceivable if he had answered another lord, but who would have imagined Yoshihide would be so presumptuous as to ask of the Lord Horikawa to let go of his favourite lady-in-waiting, even though Yoshihide loved his daughter so much?
+
+ Even though the Lord was very indulgent, he seemed offended. He stared at the painter for a moment, and then he uttered, ‘No. I can’t grant that,’ and left on the spot.
+
+ The two of them found themselves in the same situation four or five times. Thinking back on it, I can recall that the Lord’s gaze became ever colder when he looked at the painter. And the painter’s daughter wept when she was alone in her room, covering her face with the sleeve of her kimono. Thereafter the rumour spread all the more that the Lord was enamoured of the girl.
+
+ Some say that the idea of having the scene from Hell painted on the screen originated in the girl’s refusal to comply with the Lord’s wishes. No. It was only gossip. I am sure of it.
+
+ In our opinion, the Lord did not dismiss the girl because he took pity on her and preferred to let her live in ease and comfort rather than send her back to that misanthropic father of hers. It was certain that the Lord felt affection for such a sweet-tempered girl, but to think His Lordship had amorous motives was a farfetched distortion of truth. No, I dare say it was a perfectly unfounded lie.
+
+ Because of the painter’s insistence on having his daughter back, His Lordship had come to look upon Yoshihide with considerable disfavour. Despite the Lord’s feelings about the painter, one day he summoned him to the palace and commanded him to paint a scene from Hell on a screen.
+
+ As I evoke the screen, I have the impression of seeing that terrifying scene before my eyes. The scene painted by Yoshihide was quite different from those of other artists, first of all because of its composition. The Ten Kings of Hell and their households were confined to a corner, while all the rest consisted of wild flames roiling around the Mountain of Swords and the Forest of Spears, which seemed ready to take fire as well. Save for the blue and yellow of the Chinese-styled costumes worn by the governors of Hell, which stood out here and there, everything else was ablaze, tongues of fires occupying all the space, hooked wheels dancing in fury, black smoke drawn with splattered ink and sparks shooting up, done in gold smeared and mingled with soot.
+
+ These scene would have sufficed to scare the human eye, but one could also see other personages writhing in agony among the flames. None of these characters ever appeared in the representations of Hell painted by other artists. Yoshihide had depicted every social class, from the noble and the dignitary to the beggar and the outcast: mandarins in formal costume, charming young ladies-in-waiting in elaborate five-pleat dresses, bonzes with rosaries hanging from their necks, vagrant clerics wearing high-wedged clogs, very young handmaids in long, clinging kimonos, fortune-tellers in the robes of Shinto priests, holding a holy stick…I would never have the time to describe each of them. These people, tormented by the Gozumezu, fled in all directions among fire and smoke, like so many leaves scattered by the tempest. The woman who curled up like a spider, her hair caught in a fork, had probably been a shrine medium or a priestess. The man with the halberd sticking out of his heart, upside down like a vampire bat, must have been a young province governor, or something like it. And the uncountable others, flogged with iron whips, crushed under a rock a thousand men could barely move, pecked by weird birds or slashed open by the maws of a poisonous dragon. The punishments were as numerous as the sinners.
+
+ One of these horrors, however, stood out in its own horrifying right, surpassing all the rest.
+
+ A carriage pulled by oxen descended from above, grazing the tops of the sword trees, which had branches like animal fangs spitting bodies of dead souls. In the carriage, with its bamboo blinds blown upward by the blast of Hell, a court lady was visible, as splendidly dressed as an empress or an imperial concubine, long black hair streaming and white neck bent backward. Among the flames, the lady writhed in agony. This rendering of a court lady writhing in a flame-wreathed carriage conveyed all the terror of Hell. The frightening intensity of the scene was concentrated on this single personage. It was such an excellent masterpiece the spectator had the impression of hearing desperate screams.
+
+ To paint that horrible scene, something terrible must have befallen the artist. Otherwise, how could even a painter as great as Yoshihide depict the horror of Hell in such a vivid manner? He must have traded his life to be able to paint that screen. Indeed, the Hell Yoshihide painted was the very Hell to which he had condemned himself.
+
+ I am afraid that in my hurry to describe this strange screen, I have lost the thread of my story. So I will return to the moment when Yoshihide received the order to paint the picture of Hell by the Lord.
+
+ For five or six months, Yoshihide absorbed himself in the painting of the screen, without making the briefest courtesy call at the palace. It was strange that, despite his love for his daughter, not once had he the thought of seeing her. According to an apprentice, each time he started painting he became like a man possessed by a fox. In fact, the rumour had it that Yoshihide had gained fame and reputation because he had sworn himself to the vulpine god of Good Fortune.
+
+ ‘For proof,’ some said, ‘snatch a peek at him while he is painting and you will see the spirits of foxes thronging around him.’
+
+ Once he had picked up his brush, he forgot everything but his work. He confined himself to his study and never came out to see the sun. Now that he was painting the screen, his level of inspiration soared.
+
+ Shut up in his study with the blinds always drawn, he would mix his secret mélanges of colours, and had his apprentices dress up in gala costumes or in poor clothes before painting them with great care in the lamp’s light.
+
+ These oddities were usual with him. It would not have taken that special Hell scene to drive him to such extreme eccentricities. For instance, when he painted that scene from the Goshushoji, the Five Phases of the Transmigration of Souls, he once came across rotting corpses in the street; he sat down in front of them and copied faces and hands, down to the single hairs, while normal people averted their eyes.
+
+ Concerning the state of inspiration in which he painted that scene from Hell, no one was ever able to imagine it. I do not have the time to give you all the particulars and I will tell you only the notable moments.
+
+ While one of his disciples was mixing colours, Yoshihide said abruptly. ‘I wish to rest for a while. I’ve had some bad dreams lately.’
+
+ ‘You have, master?’ the apprentice said, without interrupting his work, for Yoshihide’s wish for rest was nothing unusual.
+
+ But then the master asked in humble tones, ‘Could you sit at my bedside while I’m resting?’
+
+ Even though the apprentice did not understand why the master was so worried about his dreams, the request was reasonable, and he said, ‘Very well, sir.’ To which the master, sounding troubled, added with some hesitation, ‘Come into my inner room. Don’t let anyone come inside while I’m sleeping.’
+
+ The apprentice remarked that the room in which his master was working – for the ‘inner room’ meant his study – had the shutters drawn as if it were night, and the screen with the scene sketched in charcoal stood open in the dim light, taking up all the space.
+
+ The artist went to sleep with his arm under his head, as if a great fatigue had descended on him, but after half an hour a terrifying noise came to the apprentice’s ear.
+
+ At first it was a voice that spoke in an incomprehensible way, but little by little the words broke up to resemble the moans of a drowning man trying to speak underwater.
+
+ ‘How “Come to me”? Where am I supposed to go?…What are you saying?…Where to? To Hell?…Come to the burning Hell? Whoever is this? Who could it be…? Ah!’
+
+ The apprentice forgot all about mixing colours to observe the fear on his master’s face. He saw him gasping for breath, mouth open and sparse teeth visible; he noticed the dry lips, the sweating face, pale and wrinkled. Something was moving inside the mouth as if pulled by a string. It was the master’s tongue. Words came out disconnected.
+
+ ‘I thought…It’s really you…I thought you’d come…What? You come to take me away? Yes. Come. Come to Hell. There your daughter is waiting for you.’
+
+ The scared apprentice glimpsed a dark figure looming from above and brushing against the open screen. He shook Yoshihide with all his strength, but the master continued speaking in his dream, refusing to awake. The apprentice found the courage to take the water set aside to wash the brushes, and he splashed it all onto the master’s face.
+
+ The words Yoshihide was saying, ‘I’ll be waiting. Come with this carriage…with this carriage. Come to Hell…’ became groans. Yoshihide sprung up as though he had been stung with a needle, although he seemed to be seeing someone, as if the evil spirits from his nightmares were still hanging upon his eyelids. For a moment he stared at nothing, eyes full of dread and mouth gaping. Then, returning to his senses, he ordered curtly, ‘It’s all right. Off with you now.’
+
+ Knowing very well he would be scolded if he tried to object, the apprentice ran out of his master’s room and, when he saw the sunshine, he felt relieved as if he had awakened from his own nightmare.
+
+ That was not the worst of it. A month later, another apprentice was called into Yoshihide’s study. The master, who was moistening a brush in his mouth, turned to him and said, ‘Strip down, please.’
+
+ As the painter used to give that order from time to time, the boy immediately took off his clothes.
+
+ When the boy was completely naked, Yoshihide said with a strange scowl on his face and no compassion in his eyes, ‘I’d like to see a man in chains. I’m sorry but you should let me do what I want to do for a while.’
+
+ This apprentice was a burly young man who could have wielded a sword better than a brush. Nevertheless, he must have been scared to death if even after years he kept repeating, ‘I believed the master had gone mad and wanted to kill me.’
+
+ Yoshihide, seeing the apprentice hesitate, lost patience. He produced a thin iron chain out of nowhere, sprang onto the boy’s back, and wrenched the chain around his body and finally he yanked at the chain with such merciless force that the apprentice fell, his body hitting the floor with a mighty noise.
+
+ The apprentice’s figure resembled a wine keg rolled over on its side because the boy’s limbs were so cruelly bent and twisted he could move nothing but his neck. Because of the arrested blood circulation, his thick body, face, chest and limbs had become red and then livid in no time. Yoshihide did not heed the boy’s pain and, walking around that keg-shaped body, sketched him from various angles in a realistic fashion. No need to tell what torture the apprentice suffered while his master worked.
+
+ If nothing had happened, the apprentice would have had to bear the pain for a long time. Fortunately – or unfortunately – from an upturned jar flowed an undulating thin ribbon that elongated like black oil. At first, the liquid came out slowly, like a very thick, sticky fluid, but little by little the glistening thing glided up to the nose of the frightened boy, who stopped breathing for a second and then screamed, ‘A snake! A snake!’
+
+ The boy told me that his blood had frozen, but this sensation was natural as the snake was about to touch his chained neck with the tip of its ice-cold tongue. Seeing his apprentice in such a plight, even the cruel Yoshihide became frightened. Upset, he cast away his brush and with a swift gesture, picked up the snake by the tail, letting its head dangle. The snake tried to coil around itself but could not reach Yoshihide’s hand.
+
+ ‘My sketch is ruined and it’s your fault, damned beast,’ he said to the snake, and threw it back into its jar. Mumbling, he undid the chain and freed his apprentice, who got not a single word of sympathy or consolation from his master. A ruined sketch saddened Yoshihide more than having one of his apprentices bitten by a snake.
+
+ Later I was told that he kept the snake for the purpose of making sketches of it.
+
+ After what you have heard so far, you must have a fair idea of Yoshihide’s madness when inspiration possessed him. But let me recount one more episode. This time, an apprentice of thirteen or fourteen almost lost his life because of the screen. One night, Yoshihide called this boy, who had the white complexion of a girl, to his study. In the light of the oil lamp, the apprentice saw the master feeding an exotic bird something that, placed on his palm, resembled raw meat. The bird, as big as a cat, had feathers sticking out of its ears and large round amber-coloured eyes that made it look like a cat indeed.
+
+ Yoshihide by nature hated people prying in his business. He had told nothing to his apprentices about the snake because he never said anything about the material he kept in his study. Once the boys glimpsed a human skull on the master’s desk. Another time they saw silver bowls and lacquered platters or other unusual items, depending on what he was painting, but no one knew where he kept these things. Whence originated the rumour of a benevolent deity bestowing favours on Yoshihide.
+
+ The apprentice who entered thought the strange bird was in the study to provide a model for the screen. He bowed and respectfully addressed the master. ‘What do you wish, sir?’
+
+ Instead of answering, the master licked his red-stained lips and thrust his chin in the bird’s direction. ‘Look how tame it is.’
+
+ ‘What’s this creature, sir? I’ve never seen anything like it.’ The apprentice, curious and diffident, ogled the strange bird that had cat-like ears of feathers.
+
+ Yoshihide, in his customary disparaging tones, said, ‘You’ve never seen it before? That’s the problem with you town-bred folks. This bird is a horned owl a hunter from Kurama gave me yesterday. Mind you, not many owls are as tame as this one.’ He slowly raised his hand and ruffled the owl’s feathers. The bird, which had just finished eating, flew up from the desk with a threatening screech and threw itself into the boy’s face, talons first. If the apprentice had not raised both arms to protect his face with the kimono sleeves, he would have collected a cut or two.
+
+ ‘Ah!’ The apprentice screamed and waved his sleeves to drive the owl away but the bird swooped down on him and clicked its beak, taking advantage of the slightest unguarded movement to peck at him. The boy forgot all about being in his master’s presence. He ran to and fro in the study, jumping up and throwing himself to the floor to escape the talons. The bird followed him and darted at his eyes. Each time the owl spread its wings, the boy smelt odours of rotting leaves, waterfalls, soured fruit or monkey-wine. Remembering the event, the apprentice said the oil lamp shone like moonlight and the master’s study had become a narrow valley lost in the mystery of a ghastly mountain.
+
+ Although he was terrified by the owl, the master’s conduct frightened him even more. Yoshihide, impassive, watched the smooth-faced boy being disfigured by the bird, and calmly sketched the scene on a leaf of paper he had unrolled for the occasion. When the apprentice saw Yoshihide in the process of painting, horror thickened his blood. The master had called him to see him die.
+
+ The apprentice might have been right in thinking the master had wanted to kill him. In truth, Yoshihide had planned to infuriate the owl and then set it on the boy to paint him running about in terror.
+
+ When the boy realised what his master had in mind, he collapsed by the door, hiding his face behind his kimono sleeves and screaming incoherent words. He heard his master rising. Right then, something fell with a loud noise and broke. The bird’s wings flapped faster. The apprentice raised his head and saw that the room had turned pitch black. The master’s irritated voice called the disciples. One of them replied from a distance and came running with some fire.
+
+ In the pale, sooty light of the torch, they saw the light-stand had been knocked down and the oil of the broken lamp formed a pool on the mats. The horned owl tossed about on the floor, flapping only one of its wings. Yoshihide, frightened despite what we know about him, mumbled from behind his desk.
+
+ A black snake had coiled itself around the owl, from the neck to the wing. It turned out the apprentice had upturned the jar, freeing the snake. The owl had pounced on it. For a while, the two apprentices watched the battle with gaping mouths, exchanging bemused glances, but soon they bowed to their master and left without a word. Nobody knows what became of the owl and the snake.
+
+ I could recount several episodes of this kind. The High Lord had ordered the screen decorated with a picture from Hell at the beginning of autumn. During all winter, the disciples worried about their master. Toward the end of winter, Yoshihide seemed unable to continue his work and became gloomier than ever, while his language turned more aggressive. The sketch, complete at eighty percent, displayed no further progress. The master appeared so dissatisfied everyone thought he was about to erase what he had already sketched.
+
+ No one knew what prevented Yoshihide from working, and no one tried to find out. The apprentices, wary after so many incidents, gave Yoshihide a wide berth, as anyone would do if forced to live in the same cage with a tiger or a wolf.
+
+ As a consequence, I do not have much to say about that period. If I had to add anything, I would say that the stubborn old man had become so maudlin he would sometimes be found weeping alone in his room.
+
+ Once, an apprentice went out into the garden and stumbled across his master. All teary, Yoshihide gazed at the sky, which brought the promise of spring. Embarrassed, the disciple slipped away. It was such a strange spectacle, this man so merciless he could paint corpses in the street for the Goshuyoji scene, but now weeping like a child because he was unable to work on the screen.
+
+ While Yoshihide was absorbed in his work with the intensity of a madman, his daughter became more cheerless by the day and it was clear to us she was trying to hold back her tears. Her face, white and melancholic by nature, now displaying black circles under eyes shadowed by heavy eyelashes, gave her a tragic composure. Sad and lonesome, she appeared to have retreated into her inner self. Various guesses were made, such as ‘She misses her father and her home,’ or ‘She’s in love.’ As soon as a rumour spread that the Lord wanted to submit her to his desire, the good people stopped talking about the painter’s daughter, as if they had forgotten all about her.
+
+ Just about this time, as I happened to pass by the corridor in the dead of night, the monkey Yoshihide bounded toward me and persistently pulled at the hem of my hakama. It was a mild night bathed in moonlight and charged with the sweet scent of plum blossoms. In the dim light of the moon, I could see the monkey baring its teeth under a wrinkled nose. The beast screamed wildly. Feeling three parts of fear and seven of anger, as I was afraid the monkey would ruin my new hakama, I was tempted to kick the beast and go my way when I remembered the samurai who had mistreated the monkey and had received a reprimand from the Prince. Moreover, the monkey’s behaviour indicated that something unusual might have happened. I let myself be pulled by the monkey for five ken or so.
+
+ I took a turn in the corridor, in the direction of a placid pond that glistened pale in the darkness behind a pine with finely shaped branches.
+
+ From a room nearby came the noise of an altercation that sounded both passionate and strangely muffled. All was stillness in a dim light that came half from the moon, half from the moonlight reflected by the haze. A great silence reigned, save for the splashing of fish in the pond. And those stifled sounds intruded on this calm, thus the quarrel stopped me. Intrigued, I tiptoed up to the sliding door, ready to deal blows if the arguing people turned out to be rascals.
+
+ The monkey Yoshihide found my approach too slow. Shrieking as if someone had been strangling its neck, the monkey ran around me three times and finally leapt onto my shoulder. I turned my head quickly to the side to avoid the tiny claws, and the monkey gripped my sleeve to hold on. Losing balance, I staggered back and bumped against the sliding door. Now I was forced to act. I threw the door open and was about to rush into the room, beyond the reach of the moonlight, when a young woman bolted out the doorway as if propelled by a spring. She almost bumped into me, stumbled and fell. Kneeling there, she gazed up at me, dishevelled, out of breath and trembling all over as though still under the impression of a dreadful sight.
+
+ I need not tell you I was in the presence of Yoshihide’s daughter. But that night she looked so different, so lively. Her eyes sparkled, large and bright; her cheeks glowed with a rosy blaze. In her untied nightgown, she was alluring, quite unlike her customary childish innocence. How could this attractive creature be the painter’s daughter, who was so fragile and modest?
+
+ Steadying myself against the door, I observed the beautiful girl in the moonlight.
+
+ Hurrying footfalls came from a masculine figure receding into the dark.
+
+ I pointed in the man’s direction and asked in a calm voice, ‘Who is this?’
+
+ The girl bit her lip and shook her head. She appeared to be much chagrined.
+
+ I stooped down and whispered into her ear, ‘Who was that man?’
+
+ She shook her head and pressed her lips together. Tears filled her long-lashed eyes.
+
+ On account of my inborn stupidity, I only understand what shines as clear as daylight under my nose. Not knowing what to say, I remained rooted to the spot as if I were trying to hear her thumping heart. For one thing, I did not wish to be harsh and prod her with more questions.
+
+ I do not know how long I remained stock still, saying nothing. Finally, I shut the door and turned to the girl, who seemed to have recovered a little. As gently as possible, I told her, ‘Now go back to your room.’
+
+ Tormented by the sensation of having witnessed something I was not supposed to see, and ashamed – of what, I do not know – I strode back to the place I had left to follow the monkey. Hardly had I taken ten steps than someone tugged timidly at the hem of my hakama from behind. In surprise, I glanced over my shoulder. Can you guess who it was?
+
+ The monkey Yoshihide gave little bows with its head, hands placed on the ground to express gratitude like a man. The gold bell at its neck tinkled.
+
+ Two weeks had passed when Yoshihide the painter showed himself at the palace without being requested and begged the Lord’s personal audience. He believed his wish would be granted, given the consideration in which the Lord held him in spite of his humble origins.
+
+ The Lord, who did not admit people in his presence easily, made an exception. The painter, sporting his customary orange hunting garment and floppy cap, and looking more sullen than usual, prostrated himself, bowing his head repeatedly. Raising his chin he said in a hoarse voice, ‘Concerning the screen Your Lordship was pleased to command, I would like to tell Your Lordship I have applied myself to the task night and day and have very nearly finished the work.’
+
+ ‘Excellent. I am pleased to hear it.’ Nevertheless, the Lord’s voice lacked conviction.
+
+ ‘No, my Lord.’ Yoshihide lowered his eyes, as though plagued with dissatisfaction. ‘It is almost finished but there is one detail I am unable to paint.’
+
+ ‘What? Is there something in the world you cannot paint?’
+
+ ‘Yes, my Lord. I cannot paint anything if I don’t see it with my own eyes. If I paint something I haven’t seen I cannot convince myself my rendering is exact. Isn’t it like being unable to paint?’
+
+ A scornful smile crept across the Lord’s face. ‘So, if you have to paint Hell, you mean you need to see it?’
+
+ ‘Precisely. A few years ago, when there was a big fire, I saw a burning Hell. That’s why I was able to paint the scene of “Buddha unmoving among the flames.” Your Lordship must know that painting.’
+
+ ‘What about the damned? Did you see them as well?’ The Lord put question upon question, as if he did not wish to hear Yoshihide’s answers.
+
+ ‘I’ve seen a man bound in iron chains. I have made detailed sketches of one beleaguered by an ominous bird. So it can’t be said that I know nothing about the suffering of the damned subjected to various torments. As for the infernal torturers –’ Here Yoshihide paused, an enigmatic grin on his face. ‘Infernal torturers appeared to me in my dreams. Almost every day and night bull-headed, horse-headed, or three-faced, six-armed demons arrow and torment me, beckoning me to follow them and moving their silent lips. Those aren’t the things I cannot paint.’
+
+ Astonished by Yoshihide’s words, the Lord glared at Yoshihide for a moment and then, frowning, he cried, ‘Then what is it that you can’t paint?’
+
+ ‘In the central leaf of the screen, I would like to paint a nobleman’s carriage with a roof of palm leaves, falling from the sky,’ said Yoshihide, looking the Lord intensely in the eyes.
+
+ I had heard that when he spoke about his work, the painter would speak insanely. And in that moment, his gaze displayed madness. ‘In the vehicle, a splendid court lady writhes in the agony of death, her long black hair tossed by the wind. Her face, smothered by the smoke, should look upward to the carriage ceiling, her eyebrows furrowed. Trying to escape the sparks raining over her, she grips the mats with both hands. Around the carriage, a flock of ominous birds fly about, clicking their beaks…Oh, how can I ever paint a court lady in a burning carriage?’
+
+ ‘Mmm…and…?’ The Lord urged Yoshihide to continue as if he found the painter’s words amusing for some reason.
+
+ ‘I cannot paint it,’ Yoshihide repeated, entranced, his red-stained lips trembling as if he had a fever. Then he became animated and said in biting tones, ‘Please, my Lord, burn a nobleman’s carriage before my eyes. And, if possible…’
+
+ The Lord’s face darkened for an instant, but a second later he burst into laughter. ‘All your wishes shall be granted.’ Half choking in his merriment, he added, ‘Don’t worry.’
+
+ The Lord’s words struck me and a terrible premonition gripped my chest. The Lord seemed infected with Yoshihide’s madness. White froth gathered at the corners of his mouth and his eyebrows twitched. As he paused, his throat still vibrated with laughter.
+
+ ‘Yes, I shall burn a carriage with a roof of palm leaves. A splendid girl dressed like a court lady of the highest station shall ride in the carriage. She shall perish in the carriage, tormented by the black smoke and consumed by the fire. Bravo. It is an excellent idea, worthy of the greatest painter in the whole country. I praise you. I praise you highly.’
+
+ Upon hearing these words, Yoshihide turned pale and tried to move his lips as if he were suffocating. But then he set his hands on the mat and bowed, saying, ‘I am grateful, my Lord,’ in a voice so low as to be hardly audible.
+
+ Perhaps the Lord’s words had illustrated the horror of the scheme Yoshihide himself had suggested, and the images must have flashed vividly in his mind. Only this once in my life did I take pity of the man.
+
+ A few days later, as promised, the High Lord summoned Yoshihide to witness the burning of a nobleman’s carriage right before his eyes, although this event did not take place on the grounds of the Lord’s mansion of Horikawa. The carriage was burnt in the mountain mansion of Yukige, the ‘Limit of the Snow,’ where the Lord’s sister had once lived.
+
+ No one had inhabited the house for years and the vast garden was said to be in state of total neglect. In those days, many rumours concerned the fate of the High Lord’s late sister. Some said that on moonless nights, her crimson hakama could be seen moving along the corridors without touching the floor.
+
+ These rumours of gloomy apparitions stemmed from the lonely and desolate nature of the neighbourhood even in the daylight. After dark, the murmur of a torrent added a note of melancholy while night herons fluttered about in the starlight, like winged monsters.
+
+ In the pitch-black, moonless night, torches shed light on the Lord who, dressed in a yellow-green kimono and a brocaded purple hakama, sat cross-legged near the veranda, on a round white cushion hemmed with bicoloured silk. Five or six samurai encircled him in respectful poses. One stood out among them, a man solidly built who had eaten human flesh out of starvation after the battle of Michinogu and was now so strong he could break apart the horns of a living deer. Wearing armour under his kimono and clad in full dignity, he kept by the veranda, the tip of his sheathed katana pointed upward. The scene turned bright or dark according to the movements of the torches that flickered in the night breeze, blurring the boundaries of dream and reality, with a ghastly effect.
+
+ A carriage roofed with palm leaves was stationed in the garden, within a patch of darkness, with no oxen, its shafts resting on their supports, its gilded fittings glittering like stars. When we saw it, a chill came over us even though it was spring. Blue-green tasselled blinds trimmed with embroideries hid the interior. A few servants, serious-faced and stiff, stood near the carriage, carrying blazing torches, and worried about the smoke that drifted toward the veranda.
+
+ Yoshihide, the hero of this night, kneeled opposite the veranda, in his usual hunting attire and worn floppy cap. He looked even smaller and more miserable, as if the sky were weighing down on him. The man who squatted behind him, dressed in a similar fashion, was probably one of his disciples. As both of them knelt in the dark, the colours of their garments were not clearly discernible from my position inside the veranda.
+
+ The time was near midnight. In a silence so deep we could hear our breathing, darkness seemed to spy on us while the nocturnal breeze carried the sooty smell of burning torches in our direction. For a moment, the Lord gazed at the scene in silence. Then he leant forward on his cushion and called harshly, ‘Yoshihide!’
+
+ I am not sure Yoshihide answered because my ears caught only a moan.
+
+ ‘Yoshihide, tonight I will set fire to the carriage as you wished.’ The Lord glanced sideways at his samurai. I had the impression he was exchanging a knowing smile with them, but perhaps it was only my imagination.
+
+ Yoshihide, very stiff, looked at the veranda in a reverent manner and said nothing.
+
+ ‘Look at the carriage. It’s mine. You surely recognise it. I will set fire to the carriage and create a blazing Hell before your eyes but…’ The Lord exchanged another glance with his samurai and then resumed speaking in bitter tones. ‘In the carriage lies a sinful woman, bound in chains. As soon as the carriage will take fire, she will die in terrible agony. It is the perfect model to finish your painting. Watch closely as her snow-white skin burns and sparks braid her black hair.’
+
+ The Lord paused again, shaking his shoulders in silent laughter, and then he said, ‘A spectacle worthy of entering the chronicles. I will appreciate it as well. There, raise the blind and let Yoshihide see the woman inside the carriage.’
+
+ At his command, one of the attendants, holding his torch high, yanked the blind up. The red blazing light from his torch illuminated a woman cruelly bound in chains, reclining on the seat. Golden ornaments glittered in her black hair, which hung loose about her shoulders over a gorgeous Chinese gown of a cherry-blossom colour.
+
+ I very nearly cried out. Who could have mistaken her? The trim maidenly figure and the lovely melancholy profile belonged to Yoshihide’s daughter.
+
+ The samurai sitting opposite me rose and gave Yoshihide a sharp glance, his hand on the hilt of his katana. Mouth gaping, I pivoted to see Yoshihide, who had sprung to his feet like a madman and attempted to rush toward the carriage, arms extended in front of him.
+
+ As I already said, he was in the darkness, and I could not see the expression on his face. But soon he was running into the light as though pulled by an invisible string. At the same time, the Lord cried, ‘Set fire!’ The attendants threw their torches at the carriage with the girl inside. The carriage was engulfed in a pillar of raging flames.
+
+ The flames enveloped the carriage in no time. As soon as the purple tassels hanging from the roof waved in the sudden wind, a vortex of smoke spiralled up against the black sky, and sparks exploded like sprays of water. Bamboo blinds, hangings and metal fittings burst into so many balls of fire, soaring into the night like celestial orbs spurting out of a fallen sun. A moment before I had nearly cried out. Now I was so dumbfounded I could do nothing but gape at this terrifying spectacle. But as for the father, Yoshihide…
+
+ The expression painted on Yoshihide’s face is still alive in my memory. The man, who on impulse had attempted to rush at the carriage, stopped before the roaring fire and, with his arms outstretched, fastened his gaze on the flames and the heavy smoke that enveloped the burning shape. Sparks fell around him, bathing his features in a lurid light so that his ugly wrinkled face was visible down to the tip of his beard.
+
+ His wide-open eyes, twisted lips and twitching cheeks, showed the terror, despair and astonishment that alternated in his heart. Neither the robbers about to be beheaded nor the most odious of sinners of ‘Ten Crimes and Five Faults’ dragged before the Ten Judge-Kings could have worn a more mournful expression. Even the herculean samurai paled and shot a furtive glance at his Lord.
+
+ The Lord, however, lips pressed together and wearing an enigmatic grin, kept his gaze fixed on the carriage. And inside the carriage…I lack the courage to convey a detailed description of the girl I saw in it: the paleness of her face tilted back and choked by the smoke, the length of her black hair intertwined with flames as she tried to shake off the spreading fire, the beauty of the cherry-blossom-coloured Chinese dress, which the flames were devouring by the minute – what a terrible and cruel scene. At one moment, the breeze blew the smoke to the other side, and among the red flames sprinkled with golden dust appeared the girl, biting on her gag and writhing to the point of breaking the chain that bounded her.
+
+ This atrocious torture resembled a genuine scene from Hell brought before our very eyes. Facing the spectacle, we all – even that samurai with supernatural strength – shuddered.
+
+ Then once again we thought that a gust of wind had blasted through the trees. Following the noise, something dark, hardly visible, shot across the black sky like a ball, without either touching the ground or flying through the air. From the roof of the mansion, the thing dived straight into the burning carriage. And through the crimson-lacquered chassis that was crumbling in pieces, among whirls of fire we saw something clasp the shoulders of the girl, who arched her body backwards. The thing gave a long and piercing screech out of the soaring smoke, a shriek like the tearing of silk. One more screech. And another. We could not help letting out a scream of surprise in unison. Against a red curtain of flames, the creature that was holding fast to the dying girl was the monkey nicknamed Yoshihide at the palace of Horikawa.
+
+ But, a second later, the monkey disappeared. When sparks shot into the night, glittering like a pear peel sprinkled with gold, girl and beast sank under a whirl of black smoke. In the middle of the garden, only the burning carriage was visible as it blazed away with terrifying crackles. ‘A pillar of fire’ might have been more appropriate than ‘burning carriage’ to describe the blaze that soared into the starry sky.
+
+ Before the pillar of fire, Yoshihide stood still, rooted to the ground. What a strange transformation. The old wrinkled face, which only a minute before had expressed agony at the infernal spectacle, now radiated a blissful ecstasy. Arms tightly crossed on his chest, he seemed to have forgotten he was in the presence of the High Lord. His eyes did not mirror the girl’s atrocious agony any longer. Did the form of the thrashing body silhouetted by the wonderful red colour satisfy him?
+
+ The strangeness went beyond the sight of this father ecstatically watching his daughter’s agony. At that moment, Yoshihide incarnated a solemn exaltation elevated beyond the human condition, some supernatural dignity similar to the King Lion’s wrath in his nocturnal appearances. Even the uncountable, soulless night birds scattered by the flames seemed aware of the mysterious virtue that shone like a halo over Yoshihide’s worn cap.
+
+ If the birds were scared, so much more were we, the humans, down to the menials. We held our breath and, shivering, watched Yoshihide with the same wonderment we would have felt at the unveiling ceremony of a newly made Buddhist image. Those sputtering flames soaring, immense, into the sky, and Yoshihide who stood, petrified and absorbed in the tragic spectacle. Such greatness and joy.
+
+ But the Lord, who sat in the veranda, fairly removed from the great fire, was as pale as a spectre. White froth at the corners of his mouth, he gasped like a thirsty animal, grasping tightly his knee draped in the purple hakama – with both hands.
+
+ I don’t know who spread the story of a carriage burnt with a woman inside, but I know it reached every corner of the country. Many wondered why the Lord had burned Yoshihide’s daughter alive. Most people thought it was vengeance for the Lord’s thwarted love, although in my opinion the Lord had wanted to chastise the perversity of a painter who had not hesitated in asking that a carriage be burnt before his eyes, even though it involved the sacrifice of a human being, to paint a scene to perfection. This last explanation came from the Lord’s very mouth.
+
+ Since Yoshihide had such a heart of stone he could witness the death of his own daughter, some accused him of being a devil who had sacrificed his paternal love for the sake of his art. The great priest of Yokawa supported this view: ‘Whatever talent they may have in any branch of learning or art, those who did not live according to the five virtues of Confucius, benevolence, justice, courtesy, wisdom and fidelity, are to be condemned to Hell.’
+
+ One month later, when the screen decorated with the scene from Hell was complete, Yoshihide took it to the palace and presented it to the Lord, with all his respect. The great priest, who happened to be there, as soon as he glanced at the screen, was surely struck by the realism of the infernal horrors, a firestorm raging from the sky to the abyss of Hell. Although he had glared angrily at Yoshihide at first, he cried, ‘Bravo!’ tapping his knee in an involuntary gesture. I still remember the Lord drawing a forced smile at the priest’s ejaculation.
+
+ From that day on, no one, at least in the palace, spoke ill of the painter. Those who looked at the screen, even though they hated the personage, were impressed with that mysterious solemnity and with the ghastly realism of Hell’s torments, as if they could feel the bite of the infernal fire.
+
+ By then, Yoshihide had already departed this life.
+
+ The night after he completed his painting, he threw a rope over a beam in his room and hanged himself. Perhaps Yoshihide, who had survived his beloved daughter’s untimely death, could not bear the idea of surviving her absence for long. His body is buried under the ruins of his house. After scores of years, wind and rain have worn down the small tombstone, and moss has covered the barrow, erasing all trace of his grave.
+
+
+
+book-text-hung-lou-meng = CHAPTER I.
+   Chen Shih-yin, in a vision, apprehends perception and spirituality.
+   Chia Yue-ts'un, in the (windy and dusty) world, cherishes fond thoughts
+       of a beautiful maiden.
+
+ This is the opening section; this the first chapter. Subsequent to the visions of a dream which he had, on some previous occasion, experienced, the writer personally relates, he designedly concealed the true circumstances, and borrowed the attributes of perception and spirituality to relate this story of the Record of the Stone. With this purpose, he made use of such designations as Chen Shih-yin (truth under the garb of fiction) and the like. What are, however, the events recorded in this work? Who are the dramatis personae?
+
+ Wearied with the drudgery experienced of late in the world, the author speaking for himself, goes on to explain, with the lack of success which attended every single concern, I suddenly bethought myself of the womankind of past ages. Passing one by one under a minute scrutiny, I felt that in action and in lore, one and all were far above me; that in spite of the majesty of my manliness, I could not, in point of fact, compare with these characters of the gentle sex. And my shame forsooth then knew no bounds; while regret, on the other hand, was of no avail, as there was not even a remote possibility of a day of remedy.
+
+ On this very day it was that I became desirous to compile, in a connected form, for publication throughout the world, with a view to (universal) information, how that I bear inexorable and manifold retribution; inasmuch as what time, by the sustenance of the benevolence of Heaven, and the virtue of my ancestors, my apparel was rich and fine, and as what days my fare was savory and sumptuous, I disregarded the bounty of education and nurture of father and mother, and paid no heed to the virtue of precept and injunction of teachers and friends, with the result that I incurred the punishment, of failure recently in the least trifle, and the reckless waste of half my lifetime. There have been meanwhile, generation after generation, those in the inner chambers, the whole mass of whom could not, on any account, be, through my influence, allowed to fall into extinction, in order that I, unfilial as I have been, may have the means to screen my own shortcomings.
+
+ Hence it is that the thatched shed, with bamboo mat windows, the bed of tow and the stove of brick, which are at present my share, are not sufficient to deter me from carrying out the fixed purpose of my mind. And could I, furthermore, confront the morning breeze, the evening moon, the willows by the steps and the flowers in the courtyard, methinks these would moisten to a greater degree my mortal pen with ink; but though I lack culture and erudition, what harm is there, however, in employing fiction and unrecondite language to give utterance to the merits of these characters? And were I also able to induce the inmates of the inner chamber to understand and diffuse them, could I besides break the weariness of even so much as a single moment, or could I open the eyes of my contemporaries, will it not forsooth prove a boon?
+
+ This consideration has led to the usage of such names as Chia Yue-ts'un and other similar appellations.
+
+ More than any in these pages have been employed such words as dreams and visions; but these dreams constitute the main argument of this work, and combine, furthermore, the design of giving a word of warning to my readers.
+
+ Reader, can you suggest whence the story begins?
+
+ The narration may border on the limits of incoherency and triviality, but it possesses considerable zest. But to begin.
+
+ The Empress Nue Wo, (the goddess of works,) in fashioning blocks of stones, for the repair of the heavens, prepared, at the Ta Huang Hills and Wu Ch'i cave, 36,501 blocks of rough stone, each twelve chang in height, and twenty-four chang square. Of these stones, the Empress Wo only used 36,500; so that one single block remained over and above, without being turned to any account. This was cast down the Ch'ing Keng peak. This stone, strange to say, after having undergone a process of refinement, attained a nature of efficiency, and could, by its innate powers, set itself into motion and was able to expand and to contract.
+
+ When it became aware that the whole number of blocks had been made use of to repair the heavens, that it alone had been destitute of the necessary properties and had been unfit to attain selection, it forthwith felt within itself vexation and shame, and day and night, it gave way to anguish and sorrow.
+
+ One day, while it lamented its lot, it suddenly caught sight, at a great distance, of a Buddhist bonze and of a Taoist priest coming towards that direction. Their appearance was uncommon, their easy manner remarkable. When they drew near this Ch'ing Keng peak, they sat on the ground to rest, and began to converse. But on noticing the block newly-polished and brilliantly clear, which had moreover contracted in dimensions, and become no larger than the pendant of a fan, they were greatly filled with admiration. The Buddhist priest picked it up, and laid it in the palm of his hand.
+
+ "Your appearance," he said laughingly, "may well declare you to be a supernatural object, but as you lack any inherent quality it is necessary to inscribe a few characters on you, so that every one who shall see you may at once recognise you to be a remarkable thing. And subsequently, when you will be taken into a country where honour and affluence will reign, into a family cultured in mind and of official status, in a land where flowers and trees shall flourish with luxuriance, in a town of refinement, renown and glory; when you once will have been there…"
+
+ The stone listened with intense delight.
+
+ "What characters may I ask," it consequently inquired, "will you inscribe? and what place will I be taken to? pray, pray explain to me in lucid terms." "You mustn't be inquisitive," the bonze replied, with a smile, "in days to come you'll certainly understand everything." Having concluded these words, he forthwith put the stone in his sleeve, and proceeded leisurely on his journey, in company with the Taoist priest. Whither, however, he took the stone, is not divulged. Nor can it be known how many centuries and ages elapsed, before a Taoist priest, K'ung K'ung by name, passed, during his researches after the eternal reason and his quest after immortality, by these Ta Huang Hills, Wu Ch'i cave and Ch'ing Keng Peak. Suddenly perceiving a large block of stone, on the surface of which the traces of characters giving, in a connected form, the various incidents of its fate, could be clearly deciphered, K'ung K'ung examined them from first to last. They, in fact, explained how that this block of worthless stone had originally been devoid of the properties essential for the repairs to the heavens, how it would be transmuted into human form and introduced by Mang Mang the High Lord, and Miao Miao, the Divine, into the world of mortals, and how it would be led over the other bank (across the San Sara). On the surface, the record of the spot where it would fall, the place of its birth, as well as various family trifles and trivial love affairs of young ladies, verses, odes, speeches and enigmas was still complete; but the name of the dynasty and the year of the reign were obliterated, and could not be ascertained.
+
+ On the obverse, were also the following enigmatical verses:
+
+   Lacking in virtues meet the azure skies to mend,
+   In vain the mortal world full many a year I wend,
+   Of a former and after life these facts that be,
+   Who will for a tradition strange record for me?
+
+ K'ung K'ung, the Taoist, having pondered over these lines for a while, became aware that this stone had a history of some kind.
+
+ "Brother stone," he forthwith said, addressing the stone, "the concerns of past days recorded on you possess, according to your own account, a considerable amount of interest, and have been for this reason inscribed, with the intent of soliciting generations to hand them down as remarkable occurrences. But in my own opinion, they lack, in the first place, any data by means of which to establish the name of the Emperor and the year of his reign; and, in the second place, these constitute no record of any excellent policy, adopted by any high worthies or high loyal statesmen, in the government of the state, or in the rule of public morals. The contents simply treat of a certain number of maidens, of exceptional character; either of their love affairs or infatuations, or of their small deserts or insignificant talents; and were I to transcribe the whole collection of them, they would, nevertheless, not be estimated as a book of any exceptional worth."
+
+ "Sir Priest," the stone replied with assurance, "why are you so excessively dull? The dynasties recorded in the rustic histories, which have been written from age to age, have, I am fain to think, invariably assumed, under false pretences, the mere nomenclature of the Han and T'ang dynasties. They differ from the events inscribed on my block, which do not borrow this customary practice, but, being based on my own experiences and natural feelings, present, on the contrary, a novel and unique character. Besides, in the pages of these rustic histories, either the aspersions upon sovereigns and statesmen, or the strictures upon individuals, their wives, and their daughters, or the deeds of licentiousness and violence are too numerous to be computed. Indeed, there is one more kind of loose literature, the wantonness and pollution in which work most easy havoc upon youth.
+
+ "As regards the works, in which the characters of scholars and beauties is delineated their allusions are again repeatedly of Wen Chuen, their theme in every page of Tzu Chien; a thousand volumes present no diversity; and a thousand characters are but a counterpart of each other. What is more, these works, throughout all their pages, cannot help bordering on extreme licence. The authors, however, had no other object in view than to give utterance to a few sentimental odes and elegant ballads of their own, and for this reason they have fictitiously invented the names and surnames of both men and women, and necessarily introduced, in addition, some low characters, who should, like a buffoon in a play, create some excitement in the plot.
+
+ "Still more loathsome is a kind of pedantic and profligate literature, perfectly devoid of all natural sentiment, full of self-contradictions; and, in fact, the contrast to those maidens in my work, whom I have, during half my lifetime, seen with my own eyes and heard with my own ears. And though I will not presume to estimate them as superior to the heroes and heroines in the works of former ages, yet the perusal of the motives and issues of their experiences, may likewise afford matter sufficient to banish dulness, and to break the spell of melancholy.
+
+ "As regards the several stanzas of doggerel verse, they may too evoke such laughter as to compel the reader to blurt out the rice, and to spurt out the wine.
+
+ "In these pages, the scenes depicting the anguish of separation, the bliss of reunion, and the fortunes of prosperity and of adversity are all, in every detail, true to human nature, and I have not taken upon myself to make the slightest addition, or alteration, which might lead to the perversion of the truth.
+
+ "My only object has been that men may, after a drinking bout, or after they wake from sleep or when in need of relaxation from the pressure of business, take up this light literature, and not only expunge the traces of antiquated books, and obtain a new kind of distraction, but that they may also lay by a long life as well as energy and strength; for it bears no point of similarity to those works, whose designs are false, whose course is immoral. Now, Sir Priest, what are your views on the subject?"
+
+ K'ung K'ung having pondered for a while over the words, to which he had listened intently, re-perused, throughout, this record of the stone; and finding that the general purport consisted of nought else than a treatise on love, and likewise of an accurate transcription of facts, without the least taint of profligacy injurious to the times, he thereupon copied the contents, from beginning to end, to the intent of charging the world to hand them down as a strange story.
+
+ Hence it was that K'ung K'ung, the Taoist, in consequence of his perception, (in his state of) abstraction, of passion, the generation, from this passion, of voluptuousness, the transmission of this voluptuousness into passion, and the apprehension, by means of passion, of its unreality, forthwith altered his name for that of "Ch'ing Tseng" (the Voluptuous Bonze), and changed the title of "the Memoir of a Stone" (Shih-t'ou-chi,) for that of "Ch'ing Tseng Lu," The Record of the Voluptuous Bonze; while K'ung Mei-chi of Tung Lu gave it the name of "Feng Yueeh Pao Chien," "The Precious Mirror of Voluptuousness." In later years, owing to the devotion by Tsao Hsueeh-ch'in in the Tao Hung study, of ten years to the perusal and revision of the work, the additions and modifications effected by him five times, the affix of an index and the division into periods and chapters, the book was again entitled "Chin Ling Shih Erh Ch'ai," "The Twelve Maidens of Chin Ling." A stanza was furthermore composed for the purpose. This then, and no other, is the origin of the Record of the Stone. The poet says appositely:—
+
+   Pages full of silly litter,
+   Tears a handful sour and bitter;
+   All a fool the author hold,
+   But their zest who can unfold?
+
+ You have now understood the causes which brought about the Record of the Stone, but as you are not, as yet, aware what characters are depicted, and what circumstances are related on the surface of the block, reader, please lend an ear to the narrative on the stone, which runs as follows:—
+
+ In old days, the land in the South East lay low. In this South-East part of the world, was situated a walled town, Ku Su by name. Within the walls a locality, called the Ch'ang Men, was more than all others throughout the mortal world, the centre, which held the second, if not the first place for fashion and life. Beyond this Ch'ang Men was a street called Shih-li-chieh (Ten Li street); in this street a lane, the Jen Ch'ing lane (Humanity and Purity); and in this lane stood an old temple, which on account of its diminutive dimensions, was called, by general consent, the Gourd temple. Next door to this temple lived the family of a district official, Chen by surname, Fei by name, and Shih-yin by style. His wife, nee Feng, possessed a worthy and virtuous disposition, and had a clear perception of moral propriety and good conduct. This family, though not in actual possession of excessive affluence and honours, was, nevertheless, in their district, conceded to be a clan of well-to-do standing. As this Chen Shih-yin was of a contented and unambitious frame of mind, and entertained no hankering after any official distinction, but day after day of his life took delight in gazing at flowers, planting bamboos, sipping his wine and conning poetical works, he was in fact, in the indulgence of these pursuits, as happy as a supernatural being.
+
+ One thing alone marred his happiness. He had lived over half a century and had, as yet, no male offspring around his knees. He had one only child, a daughter, whose infant name was Ying Lien. She was just three years of age. On a long summer day, on which the heat had been intense, Shih-yin sat leisurely in his library. Feeling his hand tired, he dropped the book he held, leant his head on a teapoy, and fell asleep.
+
+ Of a sudden, while in this state of unconsciousness, it seemed as if he had betaken himself on foot to some spot or other whither he could not discriminate. Unexpectedly he espied, in the opposite direction, two priests coming towards him: the one a Buddhist, the other a Taoist. As they advanced they kept up the conversation in which they were engaged. "Whither do you purpose taking the object you have brought away?" he heard the Taoist inquire. To this question the Buddhist replied with a smile: "Set your mind at ease," he said; "there's now in maturity a plot of a general character involving mundane pleasures, which will presently come to a denouement. The whole number of the votaries of voluptuousness have, as yet, not been quickened or entered the world, and I mean to avail myself of this occasion to introduce this object among their number, so as to give it a chance to go through the span of human existence." "The votaries of voluptuousness of these days will naturally have again to endure the ills of life during their course through the mortal world," the Taoist remarked; "but when, I wonder, will they spring into existence? and in what place will they descend?"
+
+ "The account of these circumstances," the bonze ventured to reply, "is enough to make you laugh! They amount to this: there existed in the west, on the bank of the Ling (spiritual) river, by the side of the San Sheng (thrice-born) stone, a blade of the Chiang Chu (purple pearl) grass. At about the same time it was that the block of stone was, consequent upon its rejection by the goddess of works, also left to ramble and wander to its own gratification, and to roam about at pleasure to every and any place. One day it came within the precincts of the Ching Huan (Monitory Vision) Fairy; and this Fairy, cognizant of the fact that this stone had a history, detained it, therefore, to reside at the Ch'ih Hsia (purple clouds) palace, and apportioned to it the duties of attendant on Shen Ying, a fairy of the Ch'ih Hsia palace.
+
+ "This stone would, however, often stroll along the banks of the Ling river, and having at the sight of the blade of spiritual grass been filled with admiration, it, day by day, moistened its roots with sweet dew. This purple pearl grass, at the outset, tarried for months and years; but being at a later period imbued with the essence and luxuriance of heaven and earth, and having incessantly received the moisture and nurture of the sweet dew, divested itself, in course of time, of the form of a grass; assuming, in lieu, a human nature, which gradually became perfected into the person of a girl.
+
+ "Every day she was wont to wander beyond the confines of the Li Hen (divested animosities) heavens. When hungry she fed on the Pi Ch'ing (hidden love) fruit—when thirsty she drank the Kuan ch'ou (discharged sorrows,) water. Having, however, up to this time, not shewn her gratitude for the virtue of nurture lavished upon her, the result was but natural that she should resolve in her heart upon a constant and incessant purpose to make suitable acknowledgment.
+
+ "I have been," she would often commune within herself, "the recipient of the gracious bounty of rain and dew, but I possess no such water as was lavished upon me to repay it! But should it ever descend into the world in the form of a human being, I will also betake myself thither, along with it; and if I can only have the means of making restitution to it, with the tears of a whole lifetime, I may be able to make adequate return."
+
+ "This resolution it is that will evolve the descent into the world of so many pleasure-bound spirits of retribution and the experience of fantastic destinies; and this crimson pearl blade will also be among the number. The stone still lies in its original place, and why should not you and I take it along before the tribunal of the Monitory Vision Fairy, and place on its behalf its name on record, so that it should descend into the world, in company with these spirits of passion, and bring this plot to an issue?"
+
+ "It is indeed ridiculous," interposed the Taoist. "Never before have I heard even the very mention of restitution by means of tears! Why should not you and I avail ourselves of this opportunity to likewise go down into the world? and if successful in effecting the salvation of a few of them, will it not be a work meritorious and virtuous?"
+
+ "This proposal," remarked the Buddhist, "is quite in harmony with my own views. Come along then with me to the palace of the Monitory Vision Fairy, and let us deliver up this good-for-nothing object, and have done with it! And when the company of pleasure-bound spirits of wrath descend into human existence, you and I can then enter the world. Half of them have already fallen into the dusty universe, but the whole number of them have not, as yet, come together."
+
+ "Such being the case," the Taoist acquiesced, "I am ready to follow you, whenever you please to go."
+
+ But to return to Chen Shih-yin. Having heard every one of these words distinctly, he could not refrain from forthwith stepping forward and paying homage. "My spiritual lords," he said, as he smiled, "accept my obeisance." The Buddhist and Taoist priests lost no time in responding to the compliment, and they exchanged the usual salutations. "My spiritual lords," Shih-yin continued; "I have just heard the conversation that passed between you, on causes and effects, a conversation the like of which few mortals have forsooth listened to; but your younger brother is sluggish of intellect, and cannot lucidly fathom the import! Yet could this dulness and simplicity be graciously dispelled, your younger brother may, by listening minutely, with undefiled ear and careful attention, to a certain degree be aroused to a sense of understanding; and what is more, possibly find the means of escaping the anguish of sinking down into Hades."
+
+ The two spirits smiled, "The conversation," they added, "refers to the primordial scheme and cannot be divulged before the proper season; but, when the time comes, mind do not forget us two, and you will readily be able to escape from the fiery furnace."
+
+ Shih-yin, after this reply, felt it difficult to make any further inquiries. "The primordial scheme," he however remarked smiling, "cannot, of course, be divulged; but what manner of thing, I wonder, is the good-for-nothing object you alluded to a short while back? May I not be allowed to judge for myself?"
+
+ "This object about which you ask," the Buddhist Bonze responded, "is intended, I may tell you, by fate to be just glanced at by you." With these words he produced it, and handed it over to Shih-yin.
+
+ Shih-yin received it. On scrutiny he found it, in fact, to be a beautiful gem, so lustrous and so clear that the traces of characters on the surface were distinctly visible. The characters inscribed consisted of the four "T'ung Ling Pao Yue," "Precious Gem of Spiritual Perception." On the obverse, were also several columns of minute words, which he was just in the act of looking at intently, when the Buddhist at once expostulated.
+
+ "We have already reached," he exclaimed, "the confines of vision." Snatching it violently out of his hands, he walked away with the Taoist, under a lofty stone portal, on the face of which appeared in large type the four characters: "T'ai Hsue Huan Ching," "The Visionary limits of the Great Void." On each side was a scroll with the lines:
+
+   When falsehood stands for truth, truth likewise becomes false,
+   Where naught be made to aught, aught changes into naught.
+
+ Shih-yin meant also to follow them on the other side, but, as he was about to make one step forward, he suddenly heard a crash, just as if the mountains had fallen into ruins, and the earth sunk into destruction. As Shih-yin uttered a loud shout, he looked with strained eye; but all he could see was the fiery sun shining, with glowing rays, while the banana leaves drooped their heads. By that time, half of the circumstances connected with the dream he had had, had already slipped from his memory.
+
+ He also noticed a nurse coming towards him with Ying Lien in her arms. To Shih-yin's eyes his daughter appeared even more beautiful, such a bright gem, so precious, and so lovable. Forthwith stretching out his arms, he took her over, and, as he held her in his embrace, he coaxed her to play with him for a while; after which he brought her up to the street to see the great stir occasioned by the procession that was going past.
+
+ He was about to come in, when he caught sight of two priests, one a
+ Taoist, the other a Buddhist, coming hither from the opposite direction.
+ The Buddhist had a head covered with mange, and went barefooted. The
+ Taoist had a limping foot, and his hair was all dishevelled.
+
+ Like maniacs, they jostled along, chattering and laughing as they drew near.
+
+ As soon as they reached Shih-yin's door, and they perceived him with
+ 
+ Ying Lien in his arms, the Bonze began to weep aloud.
+
+ Turning towards Shih-yin, he said to him: "My good Sir, why need you carry in your embrace this living but luckless thing, which will involve father and mother in trouble?"
+
+ These words did not escape Shih-yin's ear; but persuaded that they amounted to raving talk, he paid no heed whatever to the bonze.
+
+ "Part with her and give her to me," the Buddhist still went on to say.
+
+ Shih-yin could not restrain his annoyance; and hastily pressing his daughter closer to him, he was intent upon going in, when the bonze pointed his hand at him, and burst out in a loud fit of laughter.
+
+ He then gave utterance to the four lines that follow:
+
+   You indulge your tender daughter and are laughed at as inane;
+   Vain you face the snow, oh mirror! for it will evanescent wane,
+   When the festival of lanterns is gone by, guard 'gainst your doom,
+   'Tis what time the flames will kindle, and the fire will consume.
+
+ Shih-yin understood distinctly the full import of what he heard; but his heart was still full of conjectures. He was about to inquire who and what they were, when he heard the Taoist remark,—"You and I cannot speed together; let us now part company, and each of us will be then able to go after his own business. After the lapse of three ages, I shall be at the Pei Mang mount, waiting for you; and we can, after our reunion, betake ourselves to the Visionary Confines of the Great Void, there to cancel the name of the stone from the records."
+
+ "Excellent! first rate!" exclaimed the Bonze. And at the conclusion of these words, the two men parted, each going his own way, and no trace was again seen of them.
+
+ "These two men," Shih-yin then pondered within his heart, "must have had many experiences, and I ought really to have made more inquiries of them; but at this juncture to indulge in regret is anyhow too late."
+
+ While Shih-yin gave way to these foolish reflections, he suddenly noticed the arrival of a penniless scholar, Chia by surname, Hua by name, Shih-fei by style and Yue-ts'un by nickname, who had taken up his quarters in the Gourd temple next door. This Chia Yue-ts'un was originally a denizen of Hu-Chow, and was also of literary and official parentage, but as he was born of the youngest stock, and the possessions of his paternal and maternal ancestors were completely exhausted, and his parents and relatives were dead, he remained the sole and only survivor; and, as he found his residence in his native place of no avail, he therefore entered the capital in search of that reputation, which would enable him to put the family estate on a proper standing. He had arrived at this place since the year before last, and had, what is more, lived all along in very straitened circumstances. He had made the temple his temporary quarters, and earned a living by daily occupying himself in composing documents and writing letters for customers. Thus it was that Shih-yin had been in constant relations with him.
+
+ As soon as Yue-ts'un perceived Shih-yin, he lost no time in saluting him. "My worthy Sir," he observed with a forced smile; "how is it you are leaning against the door and looking out? Is there perchance any news astir in the streets, or in the public places?"
+
+ "None whatever," replied Shih-yin, as he returned the smile. "Just a while back, my young daughter was in sobs, and I coaxed her out here to amuse her. I am just now without anything whatever to attend to, so that, dear brother Chia, you come just in the nick of time. Please walk into my mean abode, and let us endeavour, in each other's company, to while away this long summer day."
+
+ After he had made this remark, he bade a servant take his daughter in, while he, hand-in-hand with Yue-ts'un, walked into the library, where a young page served tea. They had hardly exchanged a few sentences, when one of the household came in, in flying haste, to announce that Mr. Yen had come to pay a visit.
+
+ Shih-yin at once stood up. "Pray excuse my rudeness," he remarked apologetically, "but do sit down; I shall shortly rejoin you, and enjoy the pleasure of your society." "My dear Sir," answered Yue-ts'un, as he got up, also in a conceding way, "suit your own convenience. I've often had the honour of being your guest, and what will it matter if I wait a little?" While these apologies were yet being spoken, Shih-yin had already walked out into the front parlour. During his absence, Yue-ts'un occupied himself in turning over the pages of some poetical work to dispel ennui, when suddenly he heard, outside the window, a woman's cough. Yue-ts'un hurriedly got up and looked out. He saw at a glance that it was a servant girl engaged in picking flowers. Her deportment was out of the common; her eyes so bright, her eyebrows so well defined. Though not a perfect beauty, she possessed nevertheless charms sufficient to arouse the feelings. Yue-ts'un unwittingly gazed at her with fixed eye. This waiting-maid, belonging to the Chen family, had done picking flowers, and was on the point of going in, when she of a sudden raised her eyes and became aware of the presence of some person inside the window, whose head-gear consisted of a turban in tatters, while his clothes were the worse for wear. But in spite of his poverty, he was naturally endowed with a round waist, a broad back, a fat face, a square mouth; added to this, his eyebrows were swordlike, his eyes resembled stars, his nose was straight, his cheeks square.
+
+ This servant girl turned away in a hurry and made her escape.
+
+ "This man so burly and strong," she communed within herself, "yet at the same time got up in such poor attire, must, I expect, be no one else than the man, whose name is Chia Yue-ts'un or such like, time after time referred to by my master, and to whom he has repeatedly wished to give a helping hand, but has failed to find a favourable opportunity. And as related to our family there is no connexion or friend in such straits, I feel certain it cannot be any other person than he. Strange to say, my master has further remarked that this man will, for a certainty, not always continue in such a state of destitution."
+
+ As she indulged in this train of thought, she could not restrain herself from turning her head round once or twice.
+
+ When Yue-ts'un perceived that she had looked back, he readily interpreted it as a sign that in her heart her thoughts had been of him, and he was frantic with irrepressible joy.
+
+ "This girl," he mused, "is, no doubt, keen-eyed and eminently shrewd, and one in this world who has seen through me."
+
+ The servant youth, after a short time, came into the room; and when Yue-ts'un made inquiries and found out from him that the guests in the front parlour had been detained to dinner, he could not very well wait any longer, and promptly walked away down a side passage and out of a back door.
+
+ When the guests had taken their leave, Shih-yin did not go back to rejoin Yue-ts'un, as he had come to know that he had already left.
+
+ In time the mid-autumn festivities drew near; and Shih-yin, after the family banquet was over, had a separate table laid in the library, and crossed over, in the moonlight, as far as the temple and invited Yue-ts'un to come round.
+
+ The fact is that Yue-ts'un, ever since the day on which he had seen the girl of the Chen family turn twice round to glance at him, flattered himself that she was friendly disposed towards him, and incessantly fostered fond thoughts of her in his heart. And on this day, which happened to be the mid-autumn feast, he could not, as he gazed at the moon, refrain from cherishing her remembrance. Hence it was that he gave vent to these pentameter verses:
+
+   Alas! not yet divined my lifelong wish,
+   And anguish ceaseless comes upon anguish
+   I came, and sad at heart, my brow I frowned;
+   She went, and oft her head to look turned round.
+   Facing the breeze, her shadow she doth watch,
+   Who's meet this moonlight night with her to match?
+   The lustrous rays if they my wish but read
+   Would soon alight upon her beauteous head!
+
+ Yue-ts'un having, after this recitation, recalled again to mind how that throughout his lifetime his literary attainments had had an adverse fate and not met with an opportunity (of reaping distinction), went on to rub his brow, and as he raised his eyes to the skies, he heaved a deep sigh and once more intoned a couplet aloud:
+
+   The gem in the cask a high price it seeks,
+   The pin in the case to take wing it waits.
+
+ As luck would have it, Shih-yin was at the moment approaching, and upon hearing the lines, he said with a smile: "My dear Yue-ts'un, really your attainments are of no ordinary capacity."
+
+ Yue-ts'un lost no time in smiling and replying. "It would be presumption in my part to think so," he observed. "I was simply at random humming a few verses composed by former writers, and what reason is there to laud me to such an excessive degree? To what, my dear Sir, do I owe the pleasure of your visit?" he went on to inquire. "Tonight," replied Shih-yin, "is the mid-autumn feast, generally known as the full-moon festival; and as I could not help thinking that living, as you my worthy brother are, as a mere stranger in this Buddhist temple, you could not but experience the feeling of loneliness. I have, for the express purpose, prepared a small entertainment, and will be pleased if you will come to my mean abode to have a glass of wine. But I wonder whether you will entertain favourably my modest invitation?" Yue-ts'un, after listening to the proposal, put forward no refusal of any sort; but remarked complacently: "Being the recipient of such marked attention, how can I presume to repel your generous consideration?"
+
+ As he gave expression to these words, he walked off there and then, in company with Shih-yin, and came over once again into the court in front of the library. In a few minutes, tea was over.
+
+ The cups and dishes had been laid from an early hour, and needless to say the wines were luscious; the fare sumptuous.
+
+ The two friends took their seats. At first they leisurely replenished their glasses, and quietly sipped their wine; but as, little by little, they entered into conversation, their good cheer grew more genial, and unawares the glasses began to fly round, and the cups to be exchanged.
+
+ At this very hour, in every house of the neighbourhood, sounded the fife and lute, while the inmates indulged in music and singing. Above head, the orb of the radiant moon shone with an all-pervading splendour, and with a steady lustrous light, while the two friends, as their exuberance increased, drained their cups dry so soon as they reached their lips.
+
+ Yue-ts'un, at this stage of the collation, was considerably under the influence of wine, and the vehemence of his high spirits was irrepressible. As he gazed at the moon, he fostered thoughts, to which he gave vent by the recital of a double couplet.
+
+   'Tis what time three meets five, Selene is a globe!
+   Her pure rays fill the court, the jadelike rails enrobe!
+   Lo! in the heavens her disk to view doth now arise,
+   And in the earth below to gaze men lift their eyes.
+
+ "Excellent!" cried Shih-yin with a loud voice, after he had heard these lines; "I have repeatedly maintained that it was impossible for you to remain long inferior to any, and now the verses you have recited are a prognostic of your rapid advancement. Already it is evident that, before long, you will extend your footsteps far above the clouds! I must congratulate you! I must congratulate you! Let me, with my own hands, pour a glass of wine to pay you my compliments."
+
+ Yue-ts'un drained the cup. "What I am about to say," he explained as he suddenly heaved a sigh, "is not the maudlin talk of a man under the effects of wine. As far as the subjects at present set in the examinations go, I could, perchance, also have well been able to enter the list, and to send in my name as a candidate; but I have, just now, no means whatever to make provision for luggage and for travelling expenses. The distance too to Shen Ching is a long one, and I could not depend upon the sale of papers or the composition of essays to find the means of getting there."
+
+ Shih-yin gave him no time to conclude. "Why did you not speak about this sooner?" he interposed with haste. "I have long entertained this suspicion; but as, whenever I met you, this conversation was never broached, I did not presume to make myself officious. But if such be the state of affairs just now, I lack, I admit, literary qualification, but on the two subjects of friendly spirit and pecuniary means, I have, nevertheless, some experience. Moreover, I rejoice that next year is just the season for the triennial examinations, and you should start for the capital with all despatch; and in the tripos next spring, you will, by carrying the prize, be able to do justice to the proficiency you can boast of. As regards the travelling expenses and the other items, the provision of everything necessary for you by my own self will again not render nugatory your mean acquaintance with me."
+
+ Forthwith, he directed a servant lad to go and pack up at once fifty taels of pure silver and two suits of winter clothes.
+
+ "The nineteenth," he continued, "is a propitious day, and you should lose no time in hiring a boat and starting on your journey westwards. And when, by your eminent talents, you shall have soared high to a lofty position, and we meet again next winter, will not the occasion be extremely felicitous?"
+
+ Yue-ts'un accepted the money and clothes with but scanty expression of gratitude. In fact, he paid no thought whatever to the gifts, but went on, again drinking his wine, as he chattered and laughed.
+
+ It was only when the third watch of that day had already struck that the two friends parted company; and Shih-yin, after seeing Yue-ts'un off, retired to his room and slept, with one sleep all through, never waking until the sun was well up in the skies.
+
+ Remembering the occurrence of the previous night, he meant to write a couple of letters of recommendation for Yue-ts'un to take along with him to the capital, to enable him, after handing them over at the mansions of certain officials, to find some place as a temporary home. He accordingly despatched a servant to ask him to come round, but the man returned and reported that from what the bonze said, "Mr. Chia had started on his journey to the capital, at the fifth watch of that very morning, that he had also left a message with the bonze to deliver to you, Sir, to the effect that men of letters paid no heed to lucky or unlucky days, that the sole consideration with them was the nature of the matter in hand, and that he could find no time to come round in person and bid good-bye."
+
+ Shih-yin after hearing this message had no alternative but to banish the subject from his thoughts.
+
+ In comfortable circumstances, time indeed goes by with easy stride. Soon drew near also the happy festival of the 15th of the 1st moon, and Shih-yin told a servant Huo Ch'i to take Ying Lien to see the sacrificial fires and flowery lanterns.
+
+ About the middle of the night, Huo Ch'i was hard pressed, and he forthwith set Ying Lien down on the doorstep of a certain house. When he felt relieved, he came back to take her up, but failed to find anywhere any trace of Ying Lien. In a terrible plight, Huo Ch'i prosecuted his search throughout half the night; but even by the dawn of day, he had not discovered any clue of her whereabouts. Huo Ch'i, lacking, on the other hand, the courage to go back and face his master, promptly made his escape to his native village.
+
+ Shih-yin—in fact, the husband as well as the wife—seeing that their child had not come home during the whole night, readily concluded that some mishap must have befallen her. Hastily they despatched several servants to go in search of her, but one and all returned to report that there was neither vestige nor tidings of her.
+
+ This couple had only had this child, and this at the meridian of their life, so that her sudden disappearance plunged them in such great distress that day and night they mourned her loss to such a point as to well nigh pay no heed to their very lives.
+
+ A month in no time went by. Shih-yin was the first to fall ill, and his wife, Dame Feng, likewise, by dint of fretting for her daughter, was also prostrated with sickness. The doctor was, day after day, sent for, and the oracle consulted by means of divination.
+
+ Little did any one think that on this day, being the 15th of the 3rd moon, while the sacrificial oblations were being prepared in the Hu Lu temple, a pan with oil would have caught fire, through the want of care on the part of the bonze, and that in a short time the flames would have consumed the paper pasted on the windows.
+
+ Among the natives of this district bamboo fences and wooden partitions were in general use, and these too proved a source of calamity so ordained by fate (to consummate this decree).
+
+ With promptness (the fire) extended to two buildings, then enveloped three, then dragged four (into ruin), and then spread to five houses, until the whole street was in a blaze, resembling the flames of a volcano. Though both the military and the people at once ran to the rescue, the fire had already assumed a serious hold, so that it was impossible for them to afford any effective assistance for its suppression.
+
+ It blazed away straight through the night, before it was extinguished, and consumed, there is in fact no saying how many dwelling houses. Anyhow, pitiful to relate, the Chen house, situated as it was next door to the temple, was, at an early part of the evening, reduced to a heap of tiles and bricks; and nothing but the lives of that couple and several inmates of the family did not sustain any injuries.
+
+ Shih-yin was in despair, but all he could do was to stamp his feet and heave deep sighs. After consulting with his wife, they betook themselves to a farm of theirs, where they took up their quarters temporarily. But as it happened that water had of late years been scarce, and no crops been reaped, robbers and thieves had sprung up like bees, and though the Government troops were bent upon their capture, it was anyhow difficult to settle down quietly on the farm. He therefore had no other resource than to convert, at a loss, the whole of his property into money, and to take his wife and two servant girls and come over for shelter to the house of his father-in-law.
+
+ His father-in-law, Feng Su, by name, was a native of Ta Ju Chou. Although only a labourer, he was nevertheless in easy circumstances at home. When he on this occasion saw his son-in-law come to him in such distress, he forthwith felt at heart considerable displeasure. Fortunately Shih-yin had still in his possession the money derived from the unprofitable realization of his property, so that he produced and handed it to his father-in-law, commissioning him to purchase, whenever a suitable opportunity presented itself, a house and land as a provision for food and raiment against days to come. This Feng Su, however, only expended the half of the sum, and pocketed the other half, merely acquiring for him some fallow land and a dilapidated house.
+
+ Shih-yin being, on the other hand, a man of books and with no experience in matters connected with business and with sowing and reaping, subsisted, by hook and by crook, for about a year or two, when he became more impoverished.
+
+ In his presence, Feng Su would readily give vent to specious utterances, while, with others, and behind his back, he on the contrary expressed his indignation against his improvidence in his mode of living, and against his sole delight of eating and playing the lazy.
+
+ Shih-yin, aware of the want of harmony with his father-in-law, could not help giving way, in his own heart, to feelings of regret and pain. In addition to this, the fright and vexation which he had undergone the year before, the anguish and suffering (he had had to endure), had already worked havoc (on his constitution); and being a man advanced in years, and assailed by the joint attack of poverty and disease, he at length gradually began to display symptoms of decline.
+
+ Strange coincidence, as he, on this day, came leaning on his staff and with considerable strain, as far as the street for a little relaxation, he suddenly caught sight, approaching from the off side, of a Taoist priest with a crippled foot; his maniac appearance so repulsive, his shoes of straw, his dress all in tatters, muttering several sentiments to this effect:
+
+   All men spiritual life know to be good,
+   But fame to disregard they ne'er succeed!
+   From old till now the statesmen where are they?
+   Waste lie their graves, a heap of grass, extinct.
+   All men spiritual life know to be good,
+   But to forget gold, silver, ill succeed!
+   Through life they grudge their hoardings to be scant,
+   And when plenty has come, their eyelids close.
+   All men spiritual life hold to be good,
+   Yet to forget wives, maids, they ne'er succeed!
+   Who speak of grateful love while lives their lord,
+   And dead their lord, another they pursue.
+   All men spiritual life know to be good,
+   But sons and grandsons to forget never succeed!
+   From old till now of parents soft many,
+   But filial sons and grandsons who have seen?
+
+ Shih-yin upon hearing these words, hastily came up to the priest, "What were you so glibly holding forth?" he inquired. "All I could hear were a lot of hao liao (excellent, finality.")
+
+ "You may well have heard the two words 'hao liao,'" answered the Taoist with a smile, "but can you be said to have fathomed their meaning? You should know that all things in this world are excellent, when they have attained finality; when they have attained finality, they are excellent; but when they have not attained finality, they are not excellent; if they would be excellent, they should attain finality. My song is entitled Excellent-finality (hao liao)."
+
+ Shih-yin was gifted with a natural perspicacity that enabled him, as soon as he heard these remarks, to grasp their spirit.
+
+ "Wait a while," he therefore said smilingly; "let me unravel this excellent-finality song of yours; do you mind?"
+
+ "Please by all means go on with the interpretation," urged the Taoist; whereupon Shih-yin proceeded in this strain:
+
+   Sordid rooms and vacant courts,
+   Replete in years gone by with beds where statesmen lay;
+   Parched grass and withered banian trees,
+   Where once were halls for song and dance!
+   Spiders' webs the carved pillars intertwine,
+   The green gauze now is also pasted on the straw windows!
+   What about the cosmetic fresh concocted or the powder just scented;
+   Why has the hair too on each temple become white like hoarfrost!
+   Yesterday the tumulus of yellow earth buried the bleached bones,
+   To-night under the red silk curtain reclines the couple!
+   Gold fills the coffers, silver fills the boxes,
+   But in a twinkle, the beggars will all abuse you!
+   While you deplore that the life of others is not long,
+   You forget that you yourself are approaching death!
+   You educate your sons with all propriety,
+   But they may some day, 'tis hard to say become thieves;
+   Though you choose (your fare and home) the fatted beam,
+   You may, who can say, fall into some place of easy virtue!
+   Through your dislike of the gauze hat as mean,
+   You have come to be locked in a cangue;
+   Yesterday, poor fellow, you felt cold in a tattered coat,
+   To-day, you despise the purple embroidered dress as long!
+   Confusion reigns far and wide! you have just sung your part, I come on
+       the boards,
+   Instead of yours, you recognise another as your native land;
+   What utter perversion!
+   In one word, it comes to this we make wedding clothes for others!
+   (We sow for others to reap.)
+
+ The crazy limping Taoist clapped his hands. "Your interpretation is explicit," he remarked with a hearty laugh, "your interpretation is explicit!"
+
+ Shih-yin promptly said nothing more than,—"Walk on;" and seizing the stole from the Taoist's shoulder, he flung it over his own. He did not, however, return home, but leisurely walked away, in company with the eccentric priest.
+
+ The report of his disappearance was at once bruited abroad, and plunged the whole neighbourhood in commotion; and converted into a piece of news, it was circulated from mouth to mouth.
+
+ Dame Feng, Shih-yin's wife, upon hearing the tidings, had such a fit of weeping that she hung between life and death; but her only alternative was to consult with her father, and to despatch servants on all sides to institute inquiries. No news was however received of him, and she had nothing else to do but to practise resignation, and to remain dependent upon the support of her parents for her subsistence. She had fortunately still by her side, to wait upon her, two servant girls, who had been with her in days gone by; and the three of them, mistress as well as servants, occupied themselves day and night with needlework, to assist her father in his daily expenses.
+
+ This Feng Su had after all, in spite of his daily murmurings against his bad luck, no help but to submit to the inevitable.
+
+ On a certain day, the elder servant girl of the Chen family was at the door purchasing thread, and while there, she of a sudden heard in the street shouts of runners clearing the way, and every one explain that the new magistrate had come to take up his office.
+
+ The girl, as she peeped out from inside the door, perceived the lictors and policemen go by two by two; and when unexpectedly in a state chair, was carried past an official, in black hat and red coat, she was indeed quite taken aback.
+
+ "The face of this officer would seem familiar," she argued within herself; "just as if I had seen him somewhere or other ere this."
+
+ Shortly she entered the house, and banishing at once the occurrence from her mind, she did not give it a second thought. At night, however, while she was waiting to go to bed, she suddenly heard a sound like a rap at the door. A band of men boisterously cried out: "We are messengers, deputed by the worthy magistrate of this district, and come to summon one of you to an enquiry."
+
+ Feng Su, upon hearing these words, fell into such a terrible consternation that his eyes stared wide and his mouth gaped.
+
+ What calamity was impending is not as yet ascertained, but, reader, listen to the explanation contained in the next chapter.
+
+
+
+book-text-demian =  CHAPTER ONE TWO WORLDS
+ I will begin my story with an event of the time when I was ten or eleven years old and went to the Latin school of our little town. Much of the old-time fragrance is wafted back to me, but my sensations are not unmixed, as I pass in review my memories—dark streets and bright houses and towers, the striking of clocks and the features of men, comfortable and homely rooms, rooms full of secrecy and dread of ghosts. I sense again the atmosphere of cosy warmth, of rabbits and servant-girls, of household remedies and dried fruit. Two worlds passed there one through the other. From two poles came forth day and night.
+
+ The one world was my home, but it was even narrower than that, for it really comprised only my parents. This world was for the most part very well known to me; it meant mother and father, love and severity, good example and school. It was a world of subdued lustre, of clarity and cleanliness; here were tender friendly words, washed hands, clean clothes and good manners. Here the morning hymn was sung, and Christmas was kept.
+
+ In this world were straight lines and paths which led into the future; here were duty and guilt, evil conscience and confession, pardon and good resolutions, love and adoration, Bible texts and wisdom. To this world our future had to belong, it had to be crystal-pure, beautiful and well ordered.
+
+ The other world, however, began right in the midst of our own household, and was entirely different, had another odor, another manner of speech and made different promises and demands. In this second world were servant-girls and workmen, ghost stories and breath of scandal. There was a gaily colored flood of monstrous, tempting, terrible, enigmatical goings-on, things such as the slaughter house and prison, drunken men and scolding women, cows in birth-throes, plunging horses, tales of burglaries, murders, suicides. All these beautiful and dreadful, wild and cruel things were round about, in the next street, in the next house. Policemen and tramps passed to and fro, drunken men beat their wives, crowds of young girls flowed out of factories in the evening, old women were able to bewitch you and make you ill, robbers dwelt in the wood, incendiaries were rounded up by mounted policemen—everywhere seethed and reeked this second, passionate world, everywhere, except in our rooms, where mother and father were. And that was a good thing. It was wonderful that here in our house there were peace, order and repose, duty and a good conscience, pardon and love—and wonderful that there were also all the other things, all that was loud and shrill, sinister and violent, yet from which one could escape with one bound to mother.
+
+ And the oddest thing was, how closely the two worlds bordered each other, how near they both were! For instance, our servant Lina, as she sat by the sitting-room door at evening prayers, and sang the hymn with her bright voice, her freshly washed hands laid on her smoothed-out apron, belonged absolutely to father and mother, to us, to what was bright and proper. Immediately after, in the kitchen or in the woodshed, when she was telling me the tale of the headless dwarf, or when she quarreled with the women of the neighborhood in the little butcher’s shop, then she was another person, belonged to the other world, and was enveloped in mystery. It was the same with everything and everyone, especially with myself. To be sure, I belonged to the bright, respectable world, I was my parents’ child, but the other world was present in everything I saw and heard, and I also lived in it, although it was often strange and foreign to me, although one had there regularly a bad conscience and anxiety. Sometimes I even liked to live in the forbidden world best, and often the homecoming into the brightness—however necessary and good it might be—seemed almost like a return to something less beautiful, to something more uninteresting and desolate. At times I realized this: my aim in life was to grow up like my father and mother, as bright and pure, as systematic and superior. But the road to attainment was long, you had to go to school and study and pass tests and examinations. The road led past the other dark world and through it, and it was not improbable that you would remain there and be buried in it. There were stories of prodigal sons to whom that had happened—I was passionately fond of reading them. There the return home to father and to the respectable world was always so liberating and so sublime, I quite felt that this alone was right and good and desirable. But still that part of the stories which dealt with the wicked and profligate was by far the most alluring, and if one had been allowed to acknowledge it openly, it was really often a great pity that the prodigal repented and was redeemed. But one did not say that, nor did one actually think it. It was only present somehow or other as a presentiment or a possibility, deep down in one’s feelings. When I pictured the devil to myself, I could quite well imagine him down below in the street, openly or in disguise, or at the annual fair or in the public house, but I could never imagine him with us at home.
+
+ My sisters also belonged to the bright world. It often seemed to me that they approached more nearly to father and mother; that they were better and nicer mannered than myself, without so many faults. They had their failings, they were naughty, but that did not seem to me to be deep-rooted. It was not the same as for me, for whom the contact with evil was strong and painful, and the dark world so much nearer. My sisters, like my parents, were to be treated with regard and respect. If you had had a quarrel with them, your own conscience accused you afterwards as the wrongdoer and the cause of the squabble, as the one who had to beg pardon. For in opposing my sisters I offended my parents, the representatives of goodness and law. There were secrets which I would much sooner have shared with the most depraved street urchins than with my sisters. On good, bright days when I had a good conscience, it was often delightful to play with my sisters, to be gentle and nice to them, and to see myself under a halo of goodness. That was how it must be if you were an angel! That was the most sublime thing we knew, to be an angel, surrounded by sweet sounds and fragrance like Christmas and happiness. But, oh, how seldom were such days and hours perfect! Often when we were playing one of the nice, harmless, proper games I was so vehement and impetuous, and I so annoyed my sisters that we quarreled and were unhappy. Then when I was carried away by anger I did and said things, the wickedness of which I felt deep and burning within me, even while I was doing and saying them. Then came sad, dark hours of remorse and contrition, the painful moment when I begged pardon, then again a beam of light, a peaceful, grateful happiness without discord, for minutes or hours.
+
+ I used to go to the Latin school. The sons of the mayor and of the head forester were in my class and sometimes used to come to our house. They were wild boys, but still they belonged to the world of goodness and of propriety. In spite of that I had close relations with neighbors’ boys, children of the public school, whom in general we despised. With one of these I must begin my story.
+
+ One half-holiday—I was little more than ten at the time—I went out with two boys of the neighborhood. A public-school boy of about thirteen years joined our party; he was bigger than we were, a coarse and robust fellow, the son of a tailor. His father was a drunkard, and the whole family had a bad reputation. I knew Frank Kromer well, I was afraid of him, and was very much displeased when he joined us. He had already acquired manly ways, and imitated the gait and manner of speech of the young factory hands. Under his leadership we stepped down to the bank of the stream and hid ourselves from the world under the first arch of the bridge. The little bank between the vaulted bridge wall and the sluggishly flowing water was composed of nothing but trash, of broken china and garbage, of twisted bundles of rusty iron wire and other rubbish. You sometimes found there useful things. We had to search the stretch under Frank Kromer’s direction and show him what we found. He then either kept it himself or threw it away into the water. He bid us note whether the things were of lead, brass or tin. Everything we found of this description he kept for himself, as well as an old horn comb. I felt very uneasy in his company, not because I knew that father would have forbidden our playing together had he known of it, but through fear of Frank himself. I was glad that he treated me like the others. He commanded and we obeyed; it seemed habitual to me, although that was the first time I was with him.
+
+ At last we sat down. Frank spat into the water and looked like a full grown man; he spat through a gap in his teeth, directing the sputum in any direction he wished. He began a conversation, and the boys vied with one another in bragging of schoolboy exploits and pranks. I was silent, and yet, if I said nothing, I was afraid of calling attention to myself and inciting Kromer’s anger against me. My two comrades had from the beginning turned their backs on me, and had sided with him; I was a stranger among them, and I felt my clothes and manner to be a provocation. It was impossible that Frank should like me, a Latin schoolboy and the son of a gentleman, and the other two, I felt, as soon as it came to the point, would disown me and leave me in the lurch.
+
+ At last, through mere fright, I also began to relate a story. I invented a long narration of theft, of which I made myself the hero. In a garden by the mill on the corner, I recounted, I had one night with the help of a friend stolen a whole sack of apples, and those none of the ordinary sorts, but russets and golden pippins, the very best. In the danger of the moment I had recourse to the telling of this story, which I invented easily and recounted readily. In order not to have to finish off immediately, and so perhaps be led from bad to worse, I gave full scope to my inventive powers. One of us, I continued, always had to stand sentinel, while the other was throwing down apples from the tree, and the sack had become so heavy that at last we had to open it again and leave half the apples behind; but we returned at the end of half an hour and took the rest away with us.
+
+ I hoped at the end to gain some little applause, I had warmed to my work and had let myself go in my narration. The two small boys waited quiet and expectant, but Frank Kromer looked at me penetratingly through half-closed eyes and asked me in a threatening tone:
+
+ “Is that true?”
+
+ “Yes,” I said.
+
+ “Really and truly?”
+
+ “Yes, really and truly,” I asserted defiantly, though inwardly I was stifling through fear.
+
+ “Can you swear to it?”
+
+ I was terribly frightened, but I answered without hesitation: “Yes.”
+
+ “Then say: ‘I swear by God and all that’s holy’!”
+
+ I said: “I swear by God and all that’s holy!”
+
+ “Aw, gwan!” said he and turned away.
+
+ I thought that everything was now all right, and was glad when he got up and made for the town. When we were on the bridge I said timidly that I must now go home. “Don’t be in such a hurry,” laughed Frank, “we both go the same way.” He dawdled on, and I dared not tear myself away, especially as he was actually taking the road to our house. As we arrived, I looked at the heavy brass-knocker, the sun on the window and the curtains in my mother’s room, and I breathed a sigh of relief. Home at last! What a blessing it was to be at home again, to return to the brightness and peace of the family circle!
+
+ As I quickly opened the door and slipped inside, ready to shut it behind me, Frank Kromer forced his way in as well. He stood beside me in the cool, dark stone corridor which was only lighted from the courtyard, held me by the arm and said softly: “Not so fast, you!”
+
+ Terrified, I looked at him. His grip on my arm was one of iron. I tried to think what he had in his mind, whether he was going to maltreat me. I wondered, if I should scream, whether anyone would come down quickly enough to save me. But I gave up the idea.
+
+
+ “What’s the matter?” I asked. “What d’you want?”
+
+ “Nothing much. I only want to ask you something—something the others needn’t hear.”
+
+ “Well, what do you want me to tell you? I must go upstairs, you know.”
+
+ “You know, don’t you, whose orchard that is by the mill on the corner?” said Frank softly.
+
+ “No, I don’t know; I think it’s the miller’s.”
+
+ Frank had wound his arm round me, and he drew me quite close to him, so that I had to look up directly into his face. His look boded ill, he smiled maliciously, and his face was full of cruelty and power.
+
+ “Now, kid, I can tell you whose the garden is. I have known for a long time that the apples had been stolen, and I also know that the man said he would give two marks to anyone who would tell him who stole the fruit.”
+
+ “Good heavens!” I exclaimed. “But you won’t tell him anything?” I felt it was useless to appeal to his sense of honor. He came from the other world; for him betrayal was no crime. I felt that for a certainty. In these matters people from the “other” world were not like us.
+
+ “Say nothing?” laughed Kromer. “Look here, my friend, d’you think I am minting money and can make two shilling pieces myself? I’m a poor chap, and I haven’t got a rich father like yours, and when I get the chance of earning two shillings I must take it. He might even give me more.”
+
+ Suddenly he let me go free. Our house no longer gave me an impression of peace and safety, the world fell to pieces around me. He would report me as a criminal, my father would be told, perhaps even the police might come for me. The terror of utter chaos menaced me, all that was ugly and dangerous was aligned against me. The fact that I had not stolen at all did not count in the least. I had sworn to it besides. O dear, O dear!
+
+ I burst into tears. I felt I must buy myself off. Despairingly I searched all my pockets. Not an apple, not a penknife, absolutely nothing. All at once I thought of my watch. It was an old silver one which wouldn’t go. I wore it for no special reason. It came down to me from my grandmother. I drew it out quickly.
+
+ “Kromer,” I said, “listen, you mustn’t give me away, that wouldn’t be nice of you. Look here, I will give you my watch; I haven’t anything else, worse luck! You can have it, it’s a silver one; the mechanism is good, there is one little thing wrong, that’s all, it needs repairing.”
+
+ He smiled and took the watch in his big hand. I looked at his hand and felt how coarse and hostile it was, how it grasped at my life and peace.
+
+ “It’s silver,” I said, timidly.
+
+
+ “I wouldn’t give a straw for your silver and your old watch!” he said with deep scorn. “Get it repaired yourself!”
+
+ “But, Frank,” I exclaimed, quivering with fear lest he should go away. “Wait a minute. Do take the watch! It’s really silver, really and truly. And I haven’t got anything else.” He gave me a cold and scornful look.
+
+ “Very well, then, you know who I am going to; or I can tell the police. I know the sergeant very well.”
+
+ He turned to go. I held him back by the sleeve. I could not let that happen. I would much rather have died than bear all that would take place if he went away like that.
+
+ “Frank,” I implored, hoarse with emotion, “please don’t do anything silly! Tell me it’s only a joke, isn’t it?”
+
+ “Oh, yes, a joke, but it might cost you dear.”
+
+ “Do tell me, Frank, what to do. I’ll do anything!” He examined me critically through his screwed-up eyes and laughed again.
+
+ “Don’t be silly,” he said with affected affability. “You know as well as I do. I’ve got the chance of earning a couple of marks, and I’m not such a rich fellow that I can afford to throw it away, you know that well enough. But you’re rich, why, you’ve even got a watch. You need only give me just two marks and everything will be all right.”
+
+ I understood his logic. But two marks! For me that was as much, and just as unobtainable, as ten, as a hundred, as a thousand marks. I had no money. There was a money box that my mother kept for me, with a couple of ten and five pfennig pieces inside which I received from my uncle when he paid us a visit, or from similar sources. I had nothing else. At that age I received no pocket-money at all.
+
+ “I have nothing,” I said sadly. “I have no money at all. But I’ll give you everything I have. I’ve got a book about red Indians, and also soldiers, and a compass. I’ll get that for you.”
+
+ But Kromer only screwed up his evil mouth, and spat on the ground.
+
+ “Quit your jawing,” he said commandingly. “You can keep your old trash yourself. A compass! Don’t make me angry, d’you hear? And hand over the money!”
+
+ “But I haven’t any. I never get money. I can’t help it.”
+
+ “Very well, then, you’ll bring me the two marks in the morning. I shall wait for you in the market after school. That’s all. If you don’t bring any money, look out!”
+
+ “Yes; but where shall I get it, then? Good Lord! if I haven’t any——”
+
+ “There’s enough money in your house. That’s your business. To-morrow after school, then. And I tell you: If you don’t bring it——”
+
+ His eyes darted a terrible look at me, he spat again and vanished like a shadow.
+
+ I could not go upstairs. My life was ruined. I wondered if I should run away and never come back, or go and drown myself. But these thoughts were not clearly formulated. I sat crouched in the dark on the bottom step and I surrendered myself to my misfortune. There Lina found me in tears as she came down with a basket to get wood.
+
+ I begged her to say nothing on her return and I went up. My father’s hat and my mother’s sunshade hung on the rack near the glass door. All these things reminded me of home and tenderness, my heart went out to them imploringly and, grateful for their existence, I felt like the prodigal son when he looked into his old homely room and sensed its familiar atmosphere. All this, the bright father-and-mother world, was mine no longer, and I was buried deeply and guiltily in the strange flood, ensnared in sinful adventures, beset by enemies and dangers, menaced by shame and terror. The hat and sunshade, the good old sandstone floor, the big picture over the hall cupboard, and the voice of my elder sister in the living-room, all this was dearer and more precious to me than ever, but it was no longer consolation and secure possession. All of it was now a reproach. All this belonged to me no more, I could share no more in its cheerfulness and peace. I carried mud on my shoes that I could not wipe off on the mat, I brought shadows in with me, of which the home-world had no knowledge. How many secrets had I already had, how many cares—but that was play, a mere nothing compared with what I was bringing in with me that day.
+
+ Fate was overtaking me, hands were stretched out after me, from which even my mother could not protect me, of which she was to be allowed no knowledge. It was all the same, whether my offense was thieving, or a lie (had I not taken a false oath by God?). My sin was not this or that, I had tendered my hand to the devil. Why did I follow him? Why had I obeyed Kromer, more than ever I did my father? Why had I falsely invented the story of the theft? Why had I plumed myself on having committed a crime, as if it had been a deed of heroism? Now the devil had me by the hand, now the evil one was pursuing me.
+
+ For a moment I felt no further dread of the morrow, but I had the terrible certainty that my way was leading me further and further downhill and into the darkness. I realized clearly that from my wrongdoing other wrongdoings must result, that the greetings and kisses I gave to my parents would be a lie, that a secret destiny I should have to conceal hung over me.
+
+ For an instant confidence and hope came to me like a lightning flash as I gazed at my father’s hat. I would tell him everything, would accept his judgment and the punishment he might mete out; he would be my confidant and would save me. Confession was all that would be necessary, as I had made so many confessions before—a difficult bitter hour, a serious, remorseful plea for forgiveness.
+
+ How sweetly that sounded! How tempting that was! But nothing came of it. I knew that I should not do it. I knew that I had now a secret, that I was burdened with guilt for which I myself would have to bear the responsibility alone. Perhaps I was at this very moment at the cross-roads, perhaps from this hour henceforth I should have to belong to the wicked, forever share secrets with the bad, depend on them, obey them, and become as one of themselves. I had pretended to be a man and a hero, now I had to take the consequences.
+
+ I was glad that my father, as he entered, found fault with my wet boots. It diverted his attention from something worse, and I allowed myself to suffer his reproach, secretly thinking of the other. That gave birth to a peculiar new feeling in me, an evil cutting feeling like a barbed hook. I felt superior to my father! I felt, for an instant’s duration, a certain scorn of his ignorance; his scolding over the wet boots seemed to me petty. “If you only knew!” I thought, and looked upon myself as a criminal who is being tried for having stolen a loaf of bread, while he ought to confess to having committed murder. It was an ugly and repugnant feeling, yet strong and not without a certain charm, and it chained me to my secret and my guilt more securely than anything else. Perhaps Kromer has already gone to the police and given me away, I thought, and a storm is threatening to break over my head, while here I am looked upon as a mere child!
+
+ This was the important and permanent element of the whole event up to this point of my narration. It was the first cleft in the sacredness of parenthood, it was the first split in the pillar on which my childhood had reposed, and which everyone must overthrow, before he can attain to self-realization. The inward, fundamental basis of our destiny is built up from these events, which no outsider observes. Such a split or cleft grows together again, heals up and is forgotten, but in the most secret chamber of the soul it continues to live and bleed.
+
+ I myself felt immediate terror in the presence of this new feeling, I would have liked to embrace my father’s feet there and then, to beg his forgiveness. But one cannot beg pardon for something fundamental, and a child knows and feels that as well and as deeply as any adult.
+
+ I felt the need to think over the affair and to consider ways and means for the morrow; but I did not get around to it. My whole evening was taken up solely in accustoming myself to the changed atmosphere of our living-room. Clock and table, Bible and looking-glass, bookcase and pictures seemed all to be saying good-bye to me. With freezing heart I had to stand by and watch my world, the good happy time of my life, sever itself from me, to be relegated to the past. I was forced to realize that I was being held fast to new sucking roots in the darkness of the unfamiliar world outside. For the first time I tasted death, and death tasted bitter, for it is birth, with the terror and fear of a formidable renewal.
+
+ I was glad to be lying at last in bed. But first I had passed through purgatory in the form of evening prayers, and we had sung a hymn, one of my favorite ones. Alas! I did not join in, and each note was gall and poison for me. I did not join in the common prayer, either, when my father gave the blessing, and when he finished: “Be with us all!” I tore myself convulsively from the circle. The grace of God was with them all, but with me no longer. Cold and very tired, I went away.
+
+ After I had lain awhile in bed, wrapped around in warmth and safety, my troubled heart strayed back once again, and fluttered uneasily in the past. Mother had wished me good-night, as she always did, her step sounded yet in the room, the light of her candle gleamed through the crack in the door. Now, I thought, now she will come back again—she has felt my need, she will give me a kiss and will ask, in tones kind and full of promise, what is the matter. Then I can weep, the lump in my throat will melt away, I will throw my arms about her and will tell her, and everything will be right—I shall be saved! And when the crack in the door had become dark again I still listened for a while and thought—she must come, she must.
+
+ Then I came back to reality, and looked my enemy in the face. I saw him clearly, he had one eye closed, his mouth laughed uncouthly. While I gazed at him and the inevitable gnawed at my heart, he became bigger and more ugly, and his wicked eye lit up devilishly. He was close beside me, until I dropped off to sleep. But I did not dream of him, nor of the day’s events. I dreamed instead that we were in a boat, my parents, my sisters and I, lapped in peace and the brightness of a holiday. I woke up in the middle of the night, with the aftertaste of bliss. I still saw the white summer dresses of my sisters glistening in the sun, and then fell from my paradise back to reality, and the enemy with the wicked eye stood opposite me.
+
+ I looked ill when mother came in quickly in the morning and told me how late it was and wanted to know why I was still in bed, and when she asked what was the matter with me, I vomited.
+
+ But I seemed to have gained a point. I rather liked to be somewhat ill and to be allowed to spend the morning in bed drinking chamomile tea, to listen to mother clearing-up in the next room, and to hear Lina outside in the corridor opening the door to the butcher. To stay away from morning school was rather like a fairy-story, and the sun which played in the room was not the same you saw through the green curtains at school. But to-day all this had lost its charm for me. It had a false ring about it.
+
+ If I had died! But I was only slightly ill, as I had often been before, and nothing was gained by that. It prevented me from going to school, but it did not protect me in any way from Kromer, who would be waiting for me in the market at eleven o’clock. And mother’s friendliness was this time without comfort; it was burdensome and painful. I soon pretended to be asleep again, and thought the matter over, but all to no purpose—I had to be in the market at eleven o’clock. For that reason I got up at ten, and said that I was better. As usual in such cases I was told that either I must go back to bed or go to school in the afternoon. I said I would rather go to school. I had formed a plan.
+
+ I dared not go to Kromer without money. I had to get possession of the little savings box which belonged to me. There was not enough money in it, far from enough, I knew; but it was still a little, and something told me that a little was better than nothing; for at least Kromer had to be appeased.
+
+ I felt horrible as I crept in my socks into my mother’s room and took my box from her writing table; but it was not so horrible as the previous day’s experience. My heart beat so fast I nearly died, and it was no better when I found, at the first look, down below on the stairs, that the box was locked. It was easy to break it open, it was only necessary to cut through a thin plate of tin; but the action caused me pain, for only in doing this was I committing theft. Up to then I had only taken lumps of sugar and fruit on the sly. Now I had stolen something, although it was my own money. I realized I had taken a step nearer Kromer and his world, that I was slipping gradually downwards—and I adopted an attitude of defiance. The devil could run away with me if he liked, there was no way out. I anxiously counted the money, it had sounded so much in the box, now in my hand it was miserably little. There were sixty-five pfennigs. I hid the box in the basement, held the money in my closed fist and went out of the house, with a feeling different from any with which I had ever left the portal before. Someone called to me from above, I thought, but I went quickly on my way.
+
+ There was still plenty of time. I sneaked by a roundabout way through the streets of a changed town, beneath clouds I had never seen before, by houses which seemed to spy on me, and people who suspected me. On the way I recollected that one of my school friends had once found a thaler in the cattle market. I would have liked to pray to God to work a miracle and allow me to make such a treasure-trove. But I had no longer the right to pray. And even then the box would not be made whole again.
+
+
+ Frank Kromer saw me in the distance. However, he came along very slowly and seemed not to be looking out for me. As he approached me he beckoned me commandingly to follow. He passed on tranquilly, without once looking round, went down Straw Street and over the bridge, and stopped on the outskirts of the town in front of a new building. No one was working there, the walls stood bare, without doors or windows. Kromer looked round and then went through the doorway. I followed him. He stepped behind the wall, beckoned to me and stretched out his hand.
+
+ “That makes sixty-five pfennigs,” he said and looked at me.
+
+ “Yes,” I said timidly. “That’s all I have—it’s too little, I know, but it’s all. I haven’t any more.”
+
+ “I thought you were cleverer than that,” he exclaimed, blaming me in what were almost mild terms. “Between men of honor there must be honest dealing. I will not take anything from you, except what is right. You know that. Take your pfennigs back, there! The other—you know who—doesn’t try to beat me down. He pays.”
+
+ “But I have absolutely nothing else. That was my money box.”
+
+ “That’s your affair. But I don’t want to make you unhappy. You still owe me one mark thirty-five pfennig. When can I have it?”
+
+ “Oh, you will soon have it, certainly, Kromer. I don’t know yet—perhaps to-morrow, or the day after, I shall have some more. You understand that I can’t tell my father, don’t you?”
+
+ “That’s no concern of mine. I don’t want to harm you. If I liked, I could get the money before noon, you see, and I’m poor. You wear nice clothes, and you get something better to eat for dinner than I do. But I won’t say anything. I am willing to wait a few days. The day after to-morrow, in the afternoon, I will whistle for you, then you will bring it along. You can recognize my whistle?”
+
+ He gave me a whistle that I had often heard before.
+
+ “Yes,” I said, “I know it.”
+
+ He went away, as if I didn’t belong to him. It had been only a transaction between us, nothing further.
+
+ Even to-day, I believe, Kromer’s whistle would terrify me if I heard it again suddenly. From then on I heard it often. It seemed I heard it continually and always. No place, no game, no work, no idea in which this whistle would not sound. I was dependent on it, it was now the messenger of my fate. On mild, glowing autumn afternoons I was often in our little flower garden, which I loved dearly. A peculiar impulse made me take up again boyish games which I had played formerly. I played, as it were, that I was a boy who was younger than I, who was still good and free, innocent and secure. But in the middle of the game, always expected and yet always terribly disturbing and surprising sounded Kromer’s whistle, destroying the picture my imagination had painted.
+
+ Then I had to go, I had to follow my tormentor to evil and ugly places, had to render an account and let myself be dunned. The whole business may have lasted a few weeks, but it seemed to me like a year, or an eternity. I seldom had money—a five or ten pfennig piece stolen from the kitchen table when Lina left the market basket standing there. Each time I was blamed by Kromer, and heaped with abuse; it was I who deceived him and kept back what was his due, it was I who robbed him and made him unhappy! Seldom in life has need so oppressed me, seldom have I felt a greater helplessness, a greater dependence.
+
+ I had filled up the savings box with toy money—no one made any enquiries. But that as well could be discovered any day. I was even more afraid of mother than of Kromer’s harsh whistle, especially when she stepped up to me softly—was she not going to ask me about the money box?
+
+ As I presented myself to my evil genius several times without money he began to torment and to make use of me after a different fashion. I had to work for him. He had to see to various things for his father. I did that for him or he made me do something more difficult, hop on one leg for ten minutes, or fasten a scrap of paper on to the coat of a passer-by. Many nights these torments realized themselves in my dreams, and I wept and broke out in a cold sweat in my nightmare.
+
+ For a time I was ill. I often vomited and felt cold, but at night I lay in a fever, bathed in perspiration. Mother felt that something was wrong and displayed much sympathy on my behalf, but this tortured me because I could not respond by confiding in her.
+
+ One evening, after I had already gone to bed, she brought me a piece of chocolate. This action was a souvenir of former years when, if I had been good, I was often rewarded in this way before going off to sleep. Now she stood there and held the piece of chocolate out to me. This so pained me that I could do nothing but shake my head. She asked what was the matter with me and stroked my hair. I could only sob out: “Nothing! nothing! I won’t have anything.” She put the chocolate on my bed table and went away. When she wished subsequently to question me on the matter I made as if I knew nothing about it. Once she brought the doctor to me, who examined me and prescribed cold ablutions in the morning.
+
+ My state at that time was a sort of insanity. I was shy and lived in torment like a ghost in the midst of the well-ordered peace of our house. I had no part in the others’ lives, and could seldom, even for as much as an hour, forget my miserable existence. In the presence of my father, who often took me to task in an irritated fashion, I was reserved and wrapped up in myself.
+
+
+
+book-text-odyssey = BOOK I THE GODS IN COUNCIL—MINERVA’S VISIT TO ITHACA—THE CHALLENGE FROM TELEMACHUS TO THE SUITORS.
+ Tell me, O Muse, of that ingenious hero who travelled far and wide after he had sacked the famous town of Troy. Many cities did he visit, and many were the nations with whose manners and customs he was acquainted; moreover he suffered much by sea while trying to save his own life and bring his men safely home; but do what he might he could not save his men, for they perished through their own sheer folly in eating the cattle of the Sun-god Hyperion; so the god prevented them from ever reaching home. Tell me, too, about all these things, oh daughter of Jove, from whatsoever source you may know them.
+
+ So now all who escaped death in battle or by shipwreck had got safely home except Ulysses, and he, though he was longing to return to his wife and country, was detained by the goddess Calypso, who had got him into a large cave and wanted to marry him. But as years went by, there came a time when the gods settled that he should go back to Ithaca; even then, however, when he was among his own people, his troubles were not yet over; nevertheless all the gods had now begun to pity him except Neptune, who still persecuted him without ceasing and would not let him get home.
+
+ Now Neptune had gone off to the Ethiopians, who are at the world’s end, and lie in two halves, the one looking West and the other East.[1] He had gone there to accept a hecatomb of sheep and oxen, and was enjoying himself at his festival; but the other gods met in the house of Olympian Jove, and the sire of gods and men spoke first. At that moment he was thinking of Aegisthus, who had been killed by Agamemnon’s son Orestes; so he said to the other gods:
+
+ “See now, how men lay blame upon us gods for what is after all nothing but their own folly. Look at Aegisthus; he must needs make love to Agamemnon’s wife unrighteously and then kill Agamemnon, though he knew it would be the death of him; for I sent Mercury to warn him not to do either of these things, inasmuch as Orestes would be sure to take his revenge when he grew up and wanted to return home. Mercury told him this in all good will but he would not listen, and now he has paid for everything in full.”
+
+ Then Minerva said, “Father, son of Saturn, King of kings, it served Aegisthus right, and so it would any one else who does as he did; but Aegisthus is neither here nor there; it is for Ulysses that my heart bleeds, when I think of his sufferings in that lonely sea-girt island, far away, poor man, from all his friends. It is an island covered with forest, in the very middle of the sea, and a goddess lives there, daughter of the magician Atlas, who looks after the bottom of the ocean, and carries the great columns that keep heaven and earth asunder. This daughter of Atlas has got hold of poor unhappy Ulysses, and keeps trying by every kind of blandishment to make him forget his home, so that he is tired of life, and thinks of nothing but how he may once more see the smoke of his own chimneys. You, sir, take no heed of this, and yet when Ulysses was before Troy did he not propitiate you with many a burnt sacrifice? Why then should you keep on being so angry with him?”
+
+ And Jove said, “My child, what are you talking about? How can I forget Ulysses than whom there is no more capable man on earth, nor more liberal in his offerings to the immortal gods that live in heaven? Bear in mind, however, that Neptune is still furious with Ulysses for having blinded an eye of Polyphemus king of the Cyclopes. Polyphemus is son to Neptune by the nymph Thoosa, daughter to the sea-king Phorcys; therefore though he will not kill Ulysses outright, he torments him by preventing him from getting home. Still, let us lay our heads together and see how we can help him to return; Neptune will then be pacified, for if we are all of a mind he can hardly stand out against us.”
+
+ And Minerva said, “Father, son of Saturn, King of kings, if, then, the gods now mean that Ulysses should get home, we should first send Mercury to the Ogygian island to tell Calypso that we have made up our minds and that he is to return. In the meantime I will go to Ithaca, to put heart into Ulysses’ son Telemachus; I will embolden him to call the Achaeans in assembly, and speak out to the suitors of his mother Penelope, who persist in eating up any number of his sheep and oxen; I will also conduct him to Sparta and to Pylos, to see if he can hear anything about the return of his dear father—for this will make people speak well of him.”
+
+ So saying she bound on her glittering golden sandals, imperishable, with which she can fly like the wind over land or sea; she grasped the redoubtable bronze-shod spear, so stout and sturdy and strong, wherewith she quells the ranks of heroes who have displeased her, and down she darted from the topmost summits of Olympus, whereon forthwith she was in Ithaca, at the gateway of Ulysses’ house, disguised as a visitor, Mentes, chief of the Taphians, and she held a bronze spear in her hand. There she found the lordly suitors seated on hides of the oxen which they had killed and eaten, and playing draughts in front of the house. Men-servants and pages were bustling about to wait upon them, some mixing wine with water in the mixing-bowls, some cleaning down the tables with wet sponges and laying them out again, and some cutting up great quantities of meat.
+
+ Telemachus saw her long before any one else did. He was sitting moodily among the suitors thinking about his brave father, and how he would send them flying out of the house, if he were to come to his own again and be honoured as in days gone by. Thus brooding as he sat among them, he caught sight of Minerva and went straight to the gate, for he was vexed that a stranger should be kept waiting for admittance. He took her right hand in his own, and bade her give him her spear. “Welcome,” said he, “to our house, and when you have partaken of food you shall tell us what you have come for.”
+
+ He led the way as he spoke, and Minerva followed him. When they were within he took her spear and set it in the spear-stand against a strong bearing-post along with the many other spears of his unhappy father, and he conducted her to a richly decorated seat under which he threw a cloth of damask. There was a footstool also for her feet,[2] and he set another seat near her for himself, away from the suitors, that she might not be annoyed while eating by their noise and insolence, and that he might ask her more freely about his father.
+
+ A maid servant then brought them water in a beautiful golden ewer and poured it into a silver basin for them to wash their hands, and she drew a clean table beside them. An upper servant brought them bread, and offered them many good things of what there was in the house, the carver fetched them plates of all manner of meats and set cups of gold by their side, and a manservant brought them wine and poured it out for them.
+
+ Then the suitors came in and took their places on the benches and seats.[3] Forthwith men servants poured water over their hands, maids went round with the bread-baskets, pages filled the mixing-bowls with wine and water, and they laid their hands upon the good things that were before them. As soon as they had had enough to eat and drink they wanted music and dancing, which are the crowning embellishments of a banquet, so a servant brought a lyre to Phemius, whom they compelled perforce to sing to them. As soon as he touched his lyre and began to sing Telemachus spoke low to Minerva, with his head close to hers that no man might hear.
+
+ “I hope, sir,” said he, “that you will not be offended with what I am going to say. Singing comes cheap to those who do not pay for it, and all this is done at the cost of one whose bones lie rotting in some wilderness or grinding to powder in the surf. If these men were to see my father come back to Ithaca they would pray for longer legs rather than a longer purse, for money would not serve them; but he, alas, has fallen on an ill fate, and even when people do sometimes say that he is coming, we no longer heed them; we shall never see him again. And now, sir, tell me and tell me true, who you are and where you come from. Tell me of your town and parents, what manner of ship you came in, how your crew brought you to Ithaca, and of what nation they declared themselves to be—for you cannot have come by land. Tell me also truly, for I want to know, are you a stranger to this house, or have you been here in my father’s time? In the old days we had many visitors for my father went about much himself.”
+
+ And Minerva answered, “I will tell you truly and particularly all about it. I am Mentes, son of Anchialus, and I am King of the Taphians. I have come here with my ship and crew, on a voyage to men of a foreign tongue being bound for Temesa[4] with a cargo of iron, and I shall bring back copper. As for my ship, it lies over yonder off the open country away from the town, in the harbour Rheithron[5] under the wooded mountain Neritum.[6] Our fathers were friends before us, as old Laertes will tell you, if you will go and ask him. They say, however, that he never comes to town now, and lives by himself in the country, faring hardly, with an old woman to look after him and get his dinner for him, when he comes in tired from pottering about his vineyard. They told me your father was at home again, and that was why I came, but it seems the gods are still keeping him back, for he is not dead yet not on the mainland. It is more likely he is on some sea-girt island in mid ocean, or a prisoner among savages who are detaining him against his will. I am no prophet, and know very little about omens, but I speak as it is borne in upon me from heaven, and assure you that he will not be away much longer; for he is a man of such resource that even though he were in chains of iron he would find some means of getting home again. But tell me, and tell me true, can Ulysses really have such a fine looking fellow for a son? You are indeed wonderfully like him about the head and eyes, for we were close friends before he set sail for Troy where the flower of all the Argives went also. Since that time we have never either of us seen the other.”
+
+ “My mother,” answered Telemachus, “tells me I am son to Ulysses, but it is a wise child that knows his own father. Would that I were son to one who had grown old upon his own estates, for, since you ask me, there is no more ill-starred man under heaven than he who they tell me is my father.”
+
+ And Minerva said, “There is no fear of your race dying out yet, while Penelope has such a fine son as you are. But tell me, and tell me true, what is the meaning of all this feasting, and who are these people? What is it all about? Have you some banquet, or is there a wedding in the family—for no one seems to be bringing any provisions of his own? And the guests—how atrociously they are behaving; what riot they make over the whole house; it is enough to disgust any respectable person who comes near them.”
+
+ “Sir,” said Telemachus, “as regards your question, so long as my father was here it was well with us and with the house, but the gods in their displeasure have willed it otherwise, and have hidden him away more closely than mortal man was ever yet hidden. I could have borne it better even though he were dead, if he had fallen with his men before Troy, or had died with friends around him when the days of his fighting were done; for then the Achaeans would have built a mound over his ashes, and I should myself have been heir to his renown; but now the storm-winds have spirited him away we know not whither; he is gone without leaving so much as a trace behind him, and I inherit nothing but dismay. Nor does the matter end simply with grief for the loss of my father; heaven has laid sorrows upon me of yet another kind; for the chiefs from all our islands, Dulichium, Same, and the woodland island of Zacynthus, as also all the principal men of Ithaca itself, are eating up my house under the pretext of paying their court to my mother, who will neither point blank say that she will not marry,[7] nor yet bring matters to an end; so they are making havoc of my estate, and before long will do so also with myself.”
+
+ “Is that so?” exclaimed Minerva, “then you do indeed want Ulysses home again. Give him his helmet, shield, and a couple of lances, and if he is the man he was when I first knew him in our house, drinking and making merry, he would soon lay his hands about these rascally suitors, were he to stand once more upon his own threshold. He was then coming from Ephyra, where he had been to beg poison for his arrows from Ilus, son of Mermerus. Ilus feared the ever-living gods and would not give him any, but my father let him have some, for he was very fond of him. If Ulysses is the man he then was these suitors will have a short shrift and a sorry wedding.
+
+ “But there! It rests with heaven to determine whether he is to return, and take his revenge in his own house or no; I would, however, urge you to set about trying to get rid of these suitors at once. Take my advice, call the Achaean heroes in assembly to-morrow morning—lay your case before them, and call heaven to bear you witness. Bid the suitors take themselves off, each to his own place, and if your mother’s mind is set on marrying again, let her go back to her father, who will find her a husband and provide her with all the marriage gifts that so dear a daughter may expect. As for yourself, let me prevail upon you to take the best ship you can get, with a crew of twenty men, and go in quest of your father who has so long been missing. Some one may tell you something, or (and people often hear things in this way) some heaven-sent message may direct you. First go to Pylos and ask Nestor; thence go on to Sparta and visit Menelaus, for he got home last of all the Achaeans; if you hear that your father is alive and on his way home, you can put up with the waste these suitors will make for yet another twelve months. If on the other hand you hear of his death, come home at once, celebrate his funeral rites with all due pomp, build a barrow to his memory, and make your mother marry again. Then, having done all this, think it well over in your mind how, by fair means or foul, you may kill these suitors in your own house. You are too old to plead infancy any longer; have you not heard how people are singing Orestes’ praises for having killed his father’s murderer Aegisthus? You are a fine, smart looking fellow; show your mettle, then, and make yourself a name in story. Now, however, I must go back to my ship and to my crew, who will be impatient if I keep them waiting longer; think the matter over for yourself, and remember what I have said to you.”
+
+ “Sir,” answered Telemachus, “it has been very kind of you to talk to me in this way, as though I were your own son, and I will do all you tell me; I know you want to be getting on with your voyage, but stay a little longer till you have taken a bath and refreshed yourself. I will then give you a present, and you shall go on your way rejoicing; I will give you one of great beauty and value—a keepsake such as only dear friends give to one another.”
+
+ Minerva answered, “Do not try to keep me, for I would be on my way at once. As for any present you may be disposed to make me, keep it till I come again, and I will take it home with me. You shall give me a very good one, and I will give you one of no less value in return.”
+
+ With these words she flew away like a bird into the air, but she had given Telemachus courage, and had made him think more than ever about his father. He felt the change, wondered at it, and knew that the stranger had been a god, so he went straight to where the suitors were sitting.
+
+ Phemius was still singing, and his hearers sat rapt in silence as he told the sad tale of the return from Troy, and the ills Minerva had laid upon the Achaeans. Penelope, daughter of Icarius, heard his song from her room upstairs, and came down by the great staircase, not alone, but attended by two of her handmaids. When she reached the suitors she stood by one of the bearing posts that supported the roof of the cloisters[8] with a staid maiden on either side of her. She held a veil, moreover, before her face, and was weeping bitterly.
+
+ “Phemius,” she cried, “you know many another feat of gods and heroes, such as poets love to celebrate. Sing the suitors some one of these, and let them drink their wine in silence, but cease this sad tale, for it breaks my sorrowful heart, and reminds me of my lost husband whom I mourn ever without ceasing, and whose name was great over all Hellas and middle Argos.”[9]
+
+ “Mother,” answered Telemachus, “let the bard sing what he has a mind to; bards do not make the ills they sing of; it is Jove, not they, who makes them, and who sends weal or woe upon mankind according to his own good pleasure. This fellow means no harm by singing the ill-fated return of the Danaans, for people always applaud the latest songs most warmly. Make up your mind to it and bear it; Ulysses is not the only man who never came back from Troy, but many another went down as well as he. Go, then, within the house and busy yourself with your daily duties, your loom, your distaff, and the ordering of your servants; for speech is man’s matter, and mine above all others [10]—for it is I who am master here.”
+
+ She went wondering back into the house, and laid her son’s saying in her heart. Then, going upstairs with her handmaids into her room, she mourned her dear husband till Minerva shed sweet sleep over her eyes. But the suitors were clamorous throughout the covered cloisters[11], and prayed each one that he might be her bed fellow.
+
+ Then Telemachus spoke, “Shameless,” he cried, “and insolent suitors, let us feast at our pleasure now, and let there be no brawling, for it is a rare thing to hear a man with such a divine voice as Phemius has; but in the morning meet me in full assembly that I may give you formal notice to depart, and feast at one another’s houses, turn and turn about, at your own cost. If on the other hand you choose to persist in spunging upon one man, heaven help me, but Jove shall reckon with you in full, and when you fall in my father’s house there shall be no man to avenge you.”
+
+ The suitors bit their lips as they heard him, and marvelled at the boldness of his speech. Then, Antinous, son of Eupeithes, said, “The gods seem to have given you lessons in bluster and tall talking; may Jove never grant you to be chief in Ithaca as your father was before you.”
+
+ Telemachus answered, “Antinous, do not chide with me, but, god willing, I will be chief too if I can. Is this the worst fate you can think of for me? It is no bad thing to be a chief, for it brings both riches and honour. Still, now that Ulysses is dead there are many great men in Ithaca both old and young, and some other may take the lead among them; nevertheless I will be chief in my own house, and will rule those whom Ulysses has won for me.”
+
+ Then Eurymachus, son of Polybus, answered, “It rests with heaven to decide who shall be chief among us, but you shall be master in your own house and over your own possessions; no one while there is a man in Ithaca shall do you violence nor rob you. And now, my good fellow, I want to know about this stranger. What country does he come from? Of what family is he, and where is his estate? Has he brought you news about the return of your father, or was he on business of his own? He seemed a well to do man, but he hurried off so suddenly that he was gone in a moment before we could get to know him.”
+
+ “My father is dead and gone,” answered Telemachus, “and even if some rumour reaches me I put no more faith in it now. My mother does indeed sometimes send for a soothsayer and question him, but I give his prophecyings no heed. As for the stranger, he was Mentes, son of Anchialus, chief of the Taphians, an old friend of my father’s.” But in his heart he knew that it had been the goddess.
+
+ The suitors then returned to their singing and dancing until the evening; but when night fell upon their pleasuring they went home to bed each in his own abode.[12] Telemachus’s room was high up in a tower[13] that looked on to the outer court; hither, then, he hied, brooding and full of thought. A good old woman, Euryclea, daughter of Ops, the son of Pisenor, went before him with a couple of blazing torches. Laertes had bought her with his own money when she was quite young; he gave the worth of twenty oxen for her, and shewed as much respect to her in his household as he did to his own wedded wife, but he did not take her to his bed for he feared his wife’s resentment.[14] She it was who now lighted Telemachus to his room, and she loved him better than any of the other women in the house did, for she had nursed him when he was a baby. He opened the door of his bed room and sat down upon the bed; as he took off his shirt[15] he gave it to the good old woman, who folded it tidily up, and hung it for him over a peg by his bed side, after which she went out, pulled the door to by a silver catch, and drew the bolt home by means of the strap.[16] But Telemachus as he lay covered with a woollen fleece kept thinking all night through of his intended voyage and of the counsel that Minerva had given him.
+
+
+book-text-the-modern-prometheus = Chapter 1
+ I am by birth a Genevese, and my family is one of the most distinguished of that republic. My ancestors had been for many years counsellors and syndics, and my father had filled several public situations with honour and reputation. He was respected by all who knew him for his integrity and indefatigable attention to public business. He passed his younger days perpetually occupied by the affairs of his country; a variety of circumstances had prevented his marrying early, nor was it until the decline of life that he became a husband and the father of a family.
+
+ As the circumstances of his marriage illustrate his character, I cannot refrain from relating them. One of his most intimate friends was a merchant who, from a flourishing state, fell, through numerous mischances, into poverty. This man, whose name was Beaufort, was of a proud and unbending disposition and could not bear to live in poverty and oblivion in the same country where he had formerly been distinguished for his rank and magnificence. Having paid his debts, therefore, in the most honourable manner, he retreated with his daughter to the town of Lucerne, where he lived unknown and in wretchedness. My father loved Beaufort with the truest friendship and was deeply grieved by his retreat in these unfortunate circumstances. He bitterly deplored the false pride which led his friend to a conduct so little worthy of the affection that united them. He lost no time in endeavouring to seek him out, with the hope of persuading him to begin the world again through his credit and assistance.
+
+ Beaufort had taken effectual measures to conceal himself, and it was ten months before my father discovered his abode. Overjoyed at this discovery, he hastened to the house, which was situated in a mean street near the Reuss. But when he entered, misery and despair alone welcomed him. Beaufort had saved but a very small sum of money from the wreck of his fortunes, but it was sufficient to provide him with sustenance for some months, and in the meantime he hoped to procure some respectable employment in a merchant’s house. The interval was, consequently, spent in inaction; his grief only became more deep and rankling when he had leisure for reflection, and at length it took so fast hold of his mind that at the end of three months he lay on a bed of sickness, incapable of any exertion.
+
+ His daughter attended him with the greatest tenderness, but she saw with despair that their little fund was rapidly decreasing and that there was no other prospect of support. But Caroline Beaufort possessed a mind of an uncommon mould, and her courage rose to support her in her adversity. She procured plain work; she plaited straw and by various means contrived to earn a pittance scarcely sufficient to support life.
+
+ Several months passed in this manner. Her father grew worse; her time was more entirely occupied in attending him; her means of subsistence decreased; and in the tenth month her father died in her arms, leaving her an orphan and a beggar. This last blow overcame her, and she knelt by Beaufort’s coffin weeping bitterly, when my father entered the chamber. He came like a protecting spirit to the poor girl, who committed herself to his care; and after the interment of his friend he conducted her to Geneva and placed her under the protection of a relation. Two years after this event Caroline became his wife.
+
+ There was a considerable difference between the ages of my parents, but this circumstance seemed to unite them only closer in bonds of devoted affection. There was a sense of justice in my father’s upright mind which rendered it necessary that he should approve highly to love strongly. Perhaps during former years he had suffered from the late-discovered unworthiness of one beloved and so was disposed to set a greater value on tried worth. There was a show of gratitude and worship in his attachment to my mother, differing wholly from the doting fondness of age, for it was inspired by reverence for her virtues and a desire to be the means of, in some degree, recompensing her for the sorrows she had endured, but which gave inexpressible grace to his behaviour to her. Everything was made to yield to her wishes and her convenience. He strove to shelter her, as a fair exotic is sheltered by the gardener, from every rougher wind and to surround her with all that could tend to excite pleasurable emotion in her soft and benevolent mind. Her health, and even the tranquillity of her hitherto constant spirit, had been shaken by what she had gone through. During the two years that had elapsed previous to their marriage my father had gradually relinquished all his public functions; and immediately after their union they sought the pleasant climate of Italy, and the change of scene and interest attendant on a tour through that land of wonders, as a restorative for her weakened frame.
+
+ From Italy they visited Germany and France. I, their eldest child, was born at Naples, and as an infant accompanied them in their rambles. I remained for several years their only child. Much as they were attached to each other, they seemed to draw inexhaustible stores of affection from a very mine of love to bestow them upon me. My mother’s tender caresses and my father’s smile of benevolent pleasure while regarding me are my first recollections. I was their plaything and their idol, and something better—their child, the innocent and helpless creature bestowed on them by Heaven, whom to bring up to good, and whose future lot it was in their hands to direct to happiness or misery, according as they fulfilled their duties towards me. With this deep consciousness of what they owed towards the being to which they had given life, added to the active spirit of tenderness that animated both, it may be imagined that while during every hour of my infant life I received a lesson of patience, of charity, and of self-control, I was so guided by a silken cord that all seemed but one train of enjoyment to me.
+
+ For a long time I was their only care. My mother had much desired to have a daughter, but I continued their single offspring. When I was about five years old, while making an excursion beyond the frontiers of Italy, they passed a week on the shores of the Lake of Como. Their benevolent disposition often made them enter the cottages of the poor. This, to my mother, was more than a duty; it was a necessity, a passion—remembering what she had suffered, and how she had been relieved—for her to act in her turn the guardian angel to the afflicted. During one of their walks a poor cot in the foldings of a vale attracted their notice as being singularly disconsolate, while the number of half-clothed children gathered about it spoke of penury in its worst shape. One day, when my father had gone by himself to Milan, my mother, accompanied by me, visited this abode. She found a peasant and his wife, hard working, bent down by care and labour, distributing a scanty meal to five hungry babes. Among these there was one which attracted my mother far above all the rest. She appeared of a different stock. The four others were dark-eyed, hardy little vagrants; this child was thin and very fair. Her hair was the brightest living gold, and despite the poverty of her clothing, seemed to set a crown of distinction on her head. Her brow was clear and ample, her blue eyes cloudless, and her lips and the moulding of her face so expressive of sensibility and sweetness that none could behold her without looking on her as of a distinct species, a being heaven-sent, and bearing a celestial stamp in all her features.
+
+ The peasant woman, perceiving that my mother fixed eyes of wonder and admiration on this lovely girl, eagerly communicated her history. She was not her child, but the daughter of a Milanese nobleman. Her mother was a German and had died on giving her birth. The infant had been placed with these good people to nurse: they were better off then. They had not been long married, and their eldest child was but just born. The father of their charge was one of those Italians nursed in the memory of the antique glory of Italy—one among the schiavi ognor frementi, who exerted himself to obtain the liberty of his country. He became the victim of its weakness. Whether he had died or still lingered in the dungeons of Austria was not known. His property was confiscated; his child became an orphan and a beggar. She continued with her foster parents and bloomed in their rude abode, fairer than a garden rose among dark-leaved brambles.
+
+ When my father returned from Milan, he found playing with me in the hall of our villa a child fairer than pictured cherub—a creature who seemed to shed radiance from her looks and whose form and motions were lighter than the chamois of the hills. The apparition was soon explained. With his permission my mother prevailed on her rustic guardians to yield their charge to her. They were fond of the sweet orphan. Her presence had seemed a blessing to them, but it would be unfair to her to keep her in poverty and want when Providence afforded her such powerful protection. They consulted their village priest, and the result was that Elizabeth Lavenza became the inmate of my parents’ house—my more than sister—the beautiful and adored companion of all my occupations and my pleasures.
+
+ Everyone loved Elizabeth. The passionate and almost reverential attachment with which all regarded her became, while I shared it, my pride and my delight. On the evening previous to her being brought to my home, my mother had said playfully, “I have a pretty present for my Victor—tomorrow he shall have it.” And when, on the morrow, she presented Elizabeth to me as her promised gift, I, with childish seriousness, interpreted her words literally and looked upon Elizabeth as mine—mine to protect, love, and cherish. All praises bestowed on her I received as made to a possession of my own. We called each other familiarly by the name of cousin. No word, no expression could body forth the kind of relation in which she stood to me—my more than sister, since till death she was to be mine only.

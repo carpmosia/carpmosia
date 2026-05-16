@@ -1,7 +1,7 @@
 - type: entity
   parent: BookBase
   id: booktheWhale
-  name: "the whale by Herman Melville"
+  name: "the whale by herman melville"
   description: An old book about fishing you think.
   components:
   - type: Sprite
@@ -15,6 +15,7 @@
       color: gold
   - type: Paper
     content: book-text-the-whale
+
 
 - type: entity
   parent: BookBase
@@ -34,23 +35,26 @@
   - type: Paper
     content: book-text-faust
 
+
 - type: entity
   parent: BookBase
   id: booknemesis
   name: "nemesis by lovecraft"
-  description: Spooky and cool poem by a racist.
+  description: A poem from the perspective of a mad god.
   components:
   - type: Sprite
     layers:
     - state: paper
     - state: cover_base
-      color: "#654321"
+      color: red
     - state: detail_rivets
-      color: gold
+      color: purple
     - state: decor_wingette_circle
       color: gold
+    - state: icon_eye
   - type: Paper
     content: book-text-nemesis
+
 
 - type: entity
   parent: BookBase
@@ -70,6 +74,7 @@
   - type: Paper
     content: book-text-the-raven
 
+
 - type: entity
   parent: BookBase
   id: bookthevelveteenrabbit
@@ -88,6 +93,7 @@
   - type: Paper
     content: book-text-the-velveteen-rabbit
 
+
 - type: entity
   parent: BookBase
   id: booktominoshell
@@ -103,6 +109,7 @@
   - type: Paper
     content: book-text-tominos-hell
 
+
 - type: entity
   parent: BookBase
   id: bookamodestproposal
@@ -116,6 +123,7 @@
       color: white
   - type: Paper
     content: book-text-a-modest-proposal
+
 
 - type: entity
   parent: BookBase
@@ -154,10 +162,12 @@
   - type: Paper
     content: book-text-crime-and-punishment
 
+
+
 - type: entity
   parent: BookBase
   id: bookmetamorphosis
-  name: "Metamorphosis by Franz Kafkas"
+  name: "metamorphosis by franz kafkas"
   description: Be the mothroach.
   components:
   - type: Sprite
@@ -166,8 +176,121 @@
     - state: cover_base
       color: green
     - state: detail_rivets
-      color: gold
+      color: black
+    - state: decor_wingette_circle
+      color: black
+  - type: Paper
+    content: book-text-the-metamorphosis
+
+
+
+- type: entity
+  parent: BookBase
+  id: bookdonquixote
+  name: "don quixote by miguel de cervantes saavedra"
+  description: The windmills deserved it.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: black
     - state: decor_wingette_circle
       color: gold
   - type: Paper
-    content: book-text-the-metamorphosis
+    content: book-text-don-quixote
+
+
+
+- type: entity
+  parent: BookBase
+  id: bookjigokuhen
+  name: "jigokuhen by ryūnosuke akutagawa"
+  description: A story about a spooky painting.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: red
+    - state: detail_rivets
+      color: red
+    - state: decor_wingette_circle
+      color: red
+  - type: Paper
+    content: book-text-jigokuhen
+
+
+
+
+- type: entity
+  parent: BookBase
+  id: bookmethungloumeng
+  name: "hung lou meng by xueqin cao"
+  description: The rise and decline of a family.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: black
+    - state: detail_rivets
+      color: green
+    - state: decor_wingette_circle
+      color: green
+  - type: Paper
+    content: book-text-hung-lou-meng
+
+
+- type: entity
+  parent: BookBase
+  id: bookdemian
+  name: "demian by hermann hesse"
+  description: The Story of Emil Sinclair's youth.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: white
+    - state: detail_rivets
+      color: green
+    - state: decor_wingette_circle
+      color: green
+  - type: Paper
+    content: book-text-demian
+
+
+- type: entity
+  parent: BookBase
+  id: bookodyssey
+  name: "odyssey by homer"
+  description: It's litterally epic.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: white
+    - state: decor_wingette_circle
+      color: red
+  - type: Paper
+    content: book-text-odyssey
+
+
+
+- type: entity
+  parent: BookBase
+  id: bookthemodernprometheus
+  name: "the modern prometheus by mary wollstonecraft shelley"
+  description: What SCI would do without us.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: green
+    - state: icon_lightning
+  - type: Paper
+    content: book-text-the-modern-prometheus
+
