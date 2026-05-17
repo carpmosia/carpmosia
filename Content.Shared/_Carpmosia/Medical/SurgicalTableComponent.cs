@@ -2,5 +2,9 @@ using Robust.Shared.GameStates;
 
 namespace Content.Shared.Medical;
 
+/// <summary>
+/// Component for Operating Tables, which Surgical Tool System uses.
+/// </summary>
 [RegisterComponent]
+[Access(typeof(SharedSurgicalToolSystem))]
 public sealed partial class SurgicalTableComponent : Component;
