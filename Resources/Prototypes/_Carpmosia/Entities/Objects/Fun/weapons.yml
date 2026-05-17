@@ -11,6 +11,10 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,2,1
   - type: Gun
     soundGunshot:
       path: /Audio/Effects/thunk.ogg
