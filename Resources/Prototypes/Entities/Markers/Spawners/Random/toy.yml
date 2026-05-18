@@ -265,8 +265,12 @@
       children:
       - id: FoamCrossbow
       - id: WeaponRifleFoam
-      - id: WeaponRifleAkFoam #Carpmosia: AK-FF
-      - id: MagazineRifleFoam #Carpmosia: AK-FF
+      # Carpmosia-start - AK-FF
+      - !type:AllSelector
+        children:
+        - id: WeaponRifleAkFoam
+        - id: MagazineRifleFoam
+      # Carpmosia-end - AK-FF
     - id: BoxDonkSoftBox
 
 - type: entityTable
