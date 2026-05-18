@@ -5,6 +5,7 @@ using Content.Shared.Destructible;
 using Content.Shared.DoAfter;
 using Content.Shared.Gibbing;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Maps;
 using Content.Shared.Mobs.Components;
@@ -49,22 +50,34 @@ public sealed class SharedSurgicalToolSystem : EntitySystem
 
         // If not buckled to a surgical table, ollie out
         if (!TryComp<BuckleComponent>(args.Target, out var buckle))
+        {
+            _popupSystem.PopupClient(Loc.GetString("surgical-operation-fail-table",
+                ("target", Identity.Entity(args.Target.Value, EntityManager))), args.User, PopupType.MediumCaution);
             return;
+        }
 
         if (!TryComp<SurgicalTableComponent>(buckle.BuckledTo, out var surgicalTable))
+        {
+            _popupSystem.PopupClient(Loc.GetString("surgical-operation-fail-table",
+                ("target", Identity.Entity(args.Target.Value, EntityManager))), args.User, PopupType.MediumCaution);
             return;
+        }
+
 
         // If they aren't dead, ollie out
         if (!_mobStateSystem.IsDead(args.Target.Value))
+        {
+            _popupSystem.PopupClient(Loc.GetString("surgical-operation-fail-alive",
+                ("target", Identity.Entity(args.Target.Value, EntityManager))), args.User, PopupType.MediumCaution);
             return;
+        }
 
         // Find the brain, if there is one, then start the doAfter
         foreach (var organ in body.Organs?.ContainedEntities ?? [])
         {
             if (TryComp<BrainComponent>(organ, out var brain))
-            {
                 TryStartDoAfter(args.User, args.Target, (organ, brain), comp.SurgeryDelay);
-            }
+
         }
 
         args.Handled = true;
@@ -85,7 +98,8 @@ public sealed class SharedSurgicalToolSystem : EntitySystem
         if (!_doAfterSystem.TryStartDoAfter(doAfter))
             return false;
 
-        _popupSystem.PopupPredicted("You begin harvesting their brain.", "They begin harvesting that person's brain", ent, user, PopupType.MediumCaution);
+        _popupSystem.PopupPredicted(Loc.GetString("surgical-operation-start"),
+            Loc.GetString("surgical-operation-start-other", ("user", Identity.Entity(user, EntityManager))), user, user, PopupType.MediumCaution);
 
         return true;
     }
@@ -99,6 +113,12 @@ public sealed class SharedSurgicalToolSystem : EntitySystem
         var baseXform = Transform(args.Target.Value);
 
         _transformSystem.PlaceNextTo(ent.Owner, (args.Target.Value, baseXform));
+
+        args.Handled = true;
+
+        if (args.Handled)
+            _popupSystem.PopupPredicted(Loc.GetString("surgical-tool-operation-end",
+                ("target", Identity.Entity(args.Target.Value, EntityManager))), args.Target.Value, args.User, PopupType.MediumCaution);
 
     }
 }

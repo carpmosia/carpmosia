@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseToolSurgery
-  id: SurgicalBag
-  name: surgical bag
-  description: A bag of tools used to perform brain extraction.
+  id: AutoSurgeon
+  name: experimental auto-surgeon
+  description: A handheld device capable of automatic surgical procedures. Due to lobbying by humanoid and borg surgeons, is currently only capable of brain extraction. Requires an operating table and a humanoid corpse to use.
   components:
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/cautery.rsi
