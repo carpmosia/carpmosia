@@ -83,8 +83,10 @@
     baseDecayRate: 0.0083
   - type: Thirst
     baseDecayRate: 0.0083
-  - type: Damageable
-    damageModifierSet: Diona
+  # Carpmosia-start - Damage unmodifiers
+  # type: Damageable
+  # damageModifierSet: Diona
+  # Carpmosia-end - Damage unmodifiers
   - type: DamageVisuals
     damageOverlayGroups:
       Brute:

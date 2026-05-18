@@ -163,8 +163,10 @@
   id: MobVox
   name: Urist McVox
   components:
-  - type: Damageable
-    damageModifierSet: Vox
+  # Carpmosia-start - Damage unmodifiers
+  # type: Damageable
+  # damageModifierSet: Vox
+  # Carpmosia-end - Damage unmodifiers
   - type: Speech
     speechVerb: Vox
     speechSounds: Vox

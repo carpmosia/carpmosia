@@ -164,8 +164,10 @@
       Male: MaleVulpkanin
       Female: FemaleVulpkanin
       Unsexed: MaleVulpkanin
-  - type: Damageable
-    damageModifierSet: Vulpkanin
+  # Carpmosia-start - Damage unmodifiers
+  # type: Damageable
+  # damageModifierSet: Vulpkanin
+  # Carpmosia-end - Damage unmodifiers
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Weapons/pierce.ogg
