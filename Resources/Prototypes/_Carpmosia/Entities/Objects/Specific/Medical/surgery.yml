@@ -5,14 +5,26 @@
   description: A handheld device capable of automatic surgical procedures. Due to lobbying by humanoid and borg surgeons, is currently only capable of brain extraction. Requires an operating table and a humanoid corpse to use.
   components:
   - type: Sprite
-    sprite: Objects/Specific/Medical/Surgery/cautery.rsi
-    state: cautery
+    sprite: _Carpmosia/Objects/Specific/Medical/Surgery/auto_surgeon.rsi
+    layers:
+    - state: icon
   - type: Item
-    sprite: Objects/Specific/Medical/Surgery/cautery.rsi
-    storedRotation: 90
+    size: Normal
+  - type: Clothing
+    sprite: _Carpmosia/Objects/Specific/Medical/Surgery/auto_surgeon.rsi
+    quickEquip: false
+    slots:
+      - Belt
   - type: StaticPrice
     price: 20
   - type: Tag
     tags:
     - SurgeryTool
   - type: SurgicalTool
+  - type: MeleeWeapon
+    wideAnimationRotation: 90
+    damage:
+      types:
+        Blunt: 10
+    soundHit:
+      collection: MetalThud
