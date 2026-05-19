@@ -12,6 +12,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
+using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Network;
@@ -25,6 +26,7 @@ namespace Content.Shared.Medical;
 public sealed class SharedSurgicalToolSystem : EntitySystem
 {
 
+[Dependency] private readonly SharedAudioSystem _audioSystem = default!;
 [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
 [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
 [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
@@ -39,7 +41,7 @@ public sealed class SharedSurgicalToolSystem : EntitySystem
     }
 
 
-    private void OnAfterInteract(EntityUid uid, SurgicalToolComponent comp, AfterInteractEvent args)
+    private void OnAfterInteract(EntityUid uid, SurgicalToolComponent tool, AfterInteractEvent args)
     {
         if (args.Handled || args.Target is null || !args.CanReach)
             return;
@@ -76,14 +78,14 @@ public sealed class SharedSurgicalToolSystem : EntitySystem
         foreach (var organ in body.Organs?.ContainedEntities ?? [])
         {
             if (TryComp<BrainComponent>(organ, out var brain))
-                TryStartDoAfter(args.User, args.Target, (organ, brain), comp.SurgeryDelay);
+                TryStartDoAfter(args.User, args.Target, (organ, brain), tool.SurgeryDelay, tool);
 
         }
 
         args.Handled = true;
     }
 
-    private bool TryStartDoAfter(EntityUid user, EntityUid? target, Entity<BrainComponent> ent, TimeSpan delay)
+    private bool TryStartDoAfter(EntityUid user, EntityUid? target, Entity<BrainComponent> ent, TimeSpan delay, SurgicalToolComponent tool)
     {
 
         var ev = new OrganRemovalDoAfterEvent();
@@ -101,6 +103,8 @@ public sealed class SharedSurgicalToolSystem : EntitySystem
         _popupSystem.PopupPredicted(Loc.GetString("surgical-operation-start"),
             Loc.GetString("surgical-operation-start-other", ("user", Identity.Entity(user, EntityManager))), user, user, PopupType.MediumCaution);
 
+        _audioSystem.PlayPvs(tool.StartSound, ent, AudioParams.Default.WithVariation(0.125f).WithVolume(-1f).WithMaxDistance(20f));
+
         return true;
     }
 
@@ -116,9 +120,11 @@ public sealed class SharedSurgicalToolSystem : EntitySystem
 
         args.Handled = true;
 
-        if (args.Handled)
-            _popupSystem.PopupPredicted(Loc.GetString("surgical-tool-operation-end",
-                ("target", Identity.Entity(args.Target.Value, EntityManager))), args.Target.Value, args.User, PopupType.MediumCaution);
+        _popupSystem.PopupPredicted(Loc.GetString("surgical-tool-operation-end",
+            ("target", Identity.Entity(args.Target.Value, EntityManager))), args.Target.Value, args.User, PopupType.MediumCaution);
+
+        // This is dumb but I can't figure out an easy way to pass in the tool component
+        _audioSystem.PlayPvs(new SoundPathSpecifier("/Audio/_Carpmosia/Items/Medical/endsound.ogg"), ent, AudioParams.Default.WithVariation(0.125f).WithVolume(-1f).WithMaxDistance(20f));
 
     }
 }

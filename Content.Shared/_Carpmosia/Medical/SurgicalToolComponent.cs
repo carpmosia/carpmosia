@@ -1,4 +1,4 @@
-using Robust.Shared.Audio.Systems;
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.Medical;
@@ -13,11 +13,16 @@ public sealed partial class SurgicalToolComponent : Component
     /// Time that it will take for this tool to perform its function.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public TimeSpan SurgeryDelay = TimeSpan.FromSeconds(3);
+    public TimeSpan SurgeryDelay = TimeSpan.FromSeconds(7);
+
+    /// <summary>
+    ///  Audio stream that plays the useSound.
+    /// </summary>
+    public EntityUid? PlayingStream;
 
     /// <summary>
     /// Sound to play when the tool is in use.
     /// </summary>
-    // [DataField, AutoNetworkedField]
-    // public SoundSpecifier SurgerySound = new SoundCollectionSpecifier("");
+    [DataField, AutoNetworkedField]
+    public SoundSpecifier StartSound = new SoundPathSpecifier("/Audio/_Carpmosia/Items/Medical/startsound.ogg");
 }
