@@ -10,8 +10,16 @@
     - state: icon
   - type: Item
     size: Normal
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
   - type: Clothing
     sprite: _Carpmosia/Objects/Specific/Medical/Surgery/auto_surgeon.rsi
+    clothingVisuals:
+      belt:
+      - state: equipped-BELT
     quickEquip: false
     slots:
       - Belt
