@@ -1,6 +1,6 @@
 - type: latheRecipe
   id: CompactDefibrillator
-  result: DefibrillatorCompactEmpty 
+  result: DefibrillatorCompactEmpty
   completetime: 2
   materials:
     Steel: 250
@@ -12,3 +12,12 @@
   materials:
     Plastic: 25
     Steel: 10
+
+- type: latheRecipe
+  parent: BaseSurgicalRecipe
+  id: AutoSurgeon
+  result: AutoSurgeon
+  materials:
+    Steel: 1000
+    Glass: 500
+    Plasma: 300
