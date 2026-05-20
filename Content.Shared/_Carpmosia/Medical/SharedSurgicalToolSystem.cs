@@ -89,7 +89,6 @@ public sealed class SharedSurgicalToolSystem : EntitySystem
 
     private bool TryStartDoAfter(EntityUid user, EntityUid? target, Entity<BrainComponent> ent, TimeSpan delay, SurgicalToolComponent tool)
     {
-
         var ev = new OrganRemovalDoAfterEvent();
 
         var doAfter = new DoAfterArgs(EntityManager, user, delay, ev, ent, target: target, used: tool.Owner)
