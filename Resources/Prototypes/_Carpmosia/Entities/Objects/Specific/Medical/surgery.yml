@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseToolSurgery
+  parent: [ BaseToolSurgery, BaseScienceContraband ]
   id: AutoSurgeon
   name: experimental auto-surgeon
   description: A handheld device capable of automatic surgical procedures. Due to lobbying by humanoid and borg surgeons, is currently only capable of brain extraction. Requires an operating table and a humanoid corpse to use.
