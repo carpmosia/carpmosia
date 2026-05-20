@@ -6,5 +6,5 @@ namespace Content.Shared.Medical;
 /// Component for Operating Tables, which Surgical Tool System uses.
 /// </summary>
 [RegisterComponent]
-[Access(typeof(SharedSurgicalToolSystem))]
+[Access(typeof(SharedOrganRemovalTool))]
 public sealed partial class SurgicalTableComponent : Component;

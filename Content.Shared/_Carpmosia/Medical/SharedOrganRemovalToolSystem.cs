@@ -1,18 +1,17 @@
 using Content.Shared.Body;
 using Content.Shared.Body.Components;
+using Content.Shared.Body.Systems;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Chat;
 using Content.Shared.Destructible;
 using Content.Shared.DoAfter;
-using Content.Shared.Gibbing;
-using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Forensics.Systems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Maps;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
-using Content.Shared.Verbs;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.GameObjects;
@@ -24,12 +23,14 @@ namespace Content.Shared.Medical;
 /// <summary>
 /// Defines behavior for the simple brain extraction tool. Could be easily generecised but this is all temporary anyway pending discomed.
 /// </summary>
-public sealed class SharedSurgicalToolSystem : EntitySystem
+public sealed class SharedOrganRemovalTool : EntitySystem
 {
 
     [Dependency] private readonly ISharedChatManager _chat = default!;
     [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
+    [Dependency] private readonly SharedBloodstreamSystem _bloodstream = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
+    [Dependency] private readonly SharedForensicsSystem _forensics = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
@@ -38,12 +39,12 @@ public sealed class SharedSurgicalToolSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<SurgicalToolComponent, AfterInteractEvent>(OnAfterInteract);
+        SubscribeLocalEvent<OrganRemovalToolComponent, AfterInteractEvent>(OnAfterInteract);
         SubscribeLocalEvent<BrainComponent, OrganRemovalDoAfterEvent>(OnDoAfter);
     }
 
 
-    private void OnAfterInteract(EntityUid uid, SurgicalToolComponent tool, AfterInteractEvent args)
+    private void OnAfterInteract(EntityUid uid, OrganRemovalToolComponent tool, AfterInteractEvent args)
     {
         if (args.Handled || args.Target is null || !args.CanReach)
             return;
@@ -55,23 +56,22 @@ public sealed class SharedSurgicalToolSystem : EntitySystem
         // If not buckled to a surgical table, ollie out
         if (!TryComp<BuckleComponent>(args.Target, out var buckle))
         {
-            _popupSystem.PopupClient(Loc.GetString("surgical-operation-fail-table",
+            _popupSystem.PopupClient(Loc.GetString("organ-removal-operation-fail-table",
                 ("target", Identity.Entity(args.Target.Value, EntityManager))), args.User, PopupType.MediumCaution);
             return;
         }
 
-        if (!TryComp<SurgicalTableComponent>(buckle.BuckledTo, out var surgicalTable))
+        if (!TryComp<SurgicalTableComponent>(buckle.BuckledTo, out var table))
         {
-            _popupSystem.PopupClient(Loc.GetString("surgical-operation-fail-table",
+            _popupSystem.PopupClient(Loc.GetString("organ-removal-operation-fail-table",
                 ("target", Identity.Entity(args.Target.Value, EntityManager))), args.User, PopupType.MediumCaution);
             return;
         }
-
 
         // If they aren't dead, ollie out
         if (!_mobStateSystem.IsDead(args.Target.Value))
         {
-            _popupSystem.PopupClient(Loc.GetString("surgical-operation-fail-alive",
+            _popupSystem.PopupClient(Loc.GetString("organ-removal-operation-fail-alive",
                 ("target", Identity.Entity(args.Target.Value, EntityManager))), args.User, PopupType.MediumCaution);
             return;
         }
@@ -86,12 +86,13 @@ public sealed class SharedSurgicalToolSystem : EntitySystem
         args.Handled = true;
     }
 
-    private bool TryStartDoAfter(EntityUid user, EntityUid? target, Entity<BrainComponent> ent, TimeSpan delay, SurgicalToolComponent tool)
+    private bool TryStartDoAfter(EntityUid user, EntityUid? target, Entity<BrainComponent> ent, TimeSpan delay, OrganRemovalToolComponent tool)
     {
         var ev = new OrganRemovalDoAfterEvent();
 
         var doAfter = new DoAfterArgs(EntityManager, user, delay, ev, ent, target: target, used: tool.Owner)
         {
+            BreakOnDamage = true,
             BreakOnMove = true,
             NeedHand = true,
             BreakOnHandChange = true,
@@ -100,8 +101,8 @@ public sealed class SharedSurgicalToolSystem : EntitySystem
         if (!_doAfterSystem.TryStartDoAfter(doAfter))
             return false;
 
-        _popupSystem.PopupPredicted(Loc.GetString("surgical-operation-start"),
-            Loc.GetString("surgical-operation-start-other", ("user", Identity.Entity(user, EntityManager))), user, user, PopupType.MediumCaution);
+        _popupSystem.PopupPredicted(Loc.GetString("organ-removal-operation-start"),
+            Loc.GetString("organ-removal-operation-start-other", ("user", Identity.Entity(user, EntityManager))), user, user, PopupType.MediumCaution);
 
         _audioSystem.PlayPvs(tool.StartSound, ent, AudioParams.Default.WithVariation(0.125f).WithVolume(2f).WithMaxDistance(20f));
 
@@ -110,9 +111,8 @@ public sealed class SharedSurgicalToolSystem : EntitySystem
 
     private void OnDoAfter(Entity<BrainComponent> ent, ref OrganRemovalDoAfterEvent args)
     {
-
         // The try comp is extremely dumb but in my attempts to refactor it once it fought back so viciously I decided to no longer care
-        if (args.Cancelled || args.Handled || args.Target == null || args.Used == null || !TryComp<SurgicalToolComponent>(args.Used, out var tool))
+        if (args.Cancelled || args.Handled || args.Target == null || args.Used == null || !TryComp<OrganRemovalToolComponent>(args.Used, out var tool))
             return;
 
         var baseXform = Transform(args.Target.Value);
@@ -120,7 +120,14 @@ public sealed class SharedSurgicalToolSystem : EntitySystem
         // Brain plops onto the ground in highly sanitary fashion
         _transformSystem.PlaceNextTo(ent.Owner, (args.Target.Value, baseXform));
 
-        _popupSystem.PopupPredicted(Loc.GetString("surgical-tool-operation-end",
+        // Big bloody mess left behind
+        if (TryComp<BloodstreamComponent>(args.Target.Value, out var bloodstream))
+            _bloodstream.TryBleedOut(new Entity<BloodstreamComponent?>(args.Target.Value, bloodstream), 120);
+
+        // Forensics is fun
+        _forensics.TransferDna(new Entity<OrganRemovalToolComponent>(args.Used.Value, tool), args.Target.Value);
+
+        _popupSystem.PopupPredicted(Loc.GetString("organ-removal-tool-operation-end",
             ("target", Identity.Entity(args.Target.Value, EntityManager))), args.Target.Value, args.User, PopupType.MediumCaution);
 
         _audioSystem.PlayPvs(tool.EndSound, ent, AudioParams.Default.WithVariation(0.125f).WithVolume(-1f).WithMaxDistance(20f));
@@ -129,6 +136,5 @@ public sealed class SharedSurgicalToolSystem : EntitySystem
             ("user", Identity.Entity(args.User, EntityManager)), ("target", Identity.Entity(args.Target.Value, EntityManager))));
 
         args.Handled = true;
-
     }
 }

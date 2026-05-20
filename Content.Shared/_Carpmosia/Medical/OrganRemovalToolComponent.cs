@@ -7,7 +7,7 @@ namespace Content.Shared.Medical;
 /// Component for the simple surgical tool used for brain extraction.
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-public sealed partial class SurgicalToolComponent : Component
+public sealed partial class OrganRemovalToolComponent : Component
 {
     /// <summary>
     /// Time that it will take for this tool to perform its function.
