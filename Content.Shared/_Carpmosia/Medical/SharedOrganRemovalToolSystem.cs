@@ -94,6 +94,7 @@ public sealed class SharedOrganRemovalTool : EntitySystem
         {
             BreakOnDamage = true,
             BreakOnMove = true,
+            BreakOnWeightlessMove = true,
             NeedHand = true,
             BreakOnHandChange = true,
         };
