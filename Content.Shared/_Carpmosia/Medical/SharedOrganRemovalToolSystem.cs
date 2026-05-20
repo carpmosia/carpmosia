@@ -54,14 +54,8 @@ public sealed class SharedOrganRemovalTool : EntitySystem
             return;
 
         // If not buckled to a surgical table, ollie out
-        if (!TryComp<BuckleComponent>(args.Target, out var buckle))
-        {
-            _popupSystem.PopupClient(Loc.GetString("organ-removal-operation-fail-table",
-                ("target", Identity.Entity(args.Target.Value, EntityManager))), args.User, PopupType.MediumCaution);
-            return;
-        }
-
-        if (!TryComp<SurgicalTableComponent>(buckle.BuckledTo, out var table))
+        if (!TryComp<BuckleComponent>(args.Target, out var buckle) ||
+            !TryComp<SurgicalTableComponent>(buckle.BuckledTo, out var table))
         {
             _popupSystem.PopupClient(Loc.GetString("organ-removal-operation-fail-table",
                 ("target", Identity.Entity(args.Target.Value, EntityManager))), args.User, PopupType.MediumCaution);
