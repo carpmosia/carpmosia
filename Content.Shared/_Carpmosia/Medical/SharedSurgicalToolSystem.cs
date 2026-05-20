@@ -81,7 +81,6 @@ public sealed class SharedSurgicalToolSystem : EntitySystem
         {
             if (TryComp<BrainComponent>(organ, out var brain))
                 TryStartDoAfter(args.User, args.Target, (organ, brain), tool.SurgeryDelay, tool);
-
         }
 
         args.Handled = true;
