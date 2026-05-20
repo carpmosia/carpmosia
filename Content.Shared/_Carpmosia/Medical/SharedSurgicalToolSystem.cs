@@ -1,6 +1,7 @@
 using Content.Shared.Body;
 using Content.Shared.Body.Components;
 using Content.Shared.Buckle.Components;
+using Content.Shared.Chat;
 using Content.Shared.Destructible;
 using Content.Shared.DoAfter;
 using Content.Shared.Gibbing;
@@ -26,6 +27,7 @@ namespace Content.Shared.Medical;
 public sealed class SharedSurgicalToolSystem : EntitySystem
 {
 
+    [Dependency] private readonly ISharedChatManager _chat = default!;
     [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
@@ -124,6 +126,9 @@ public sealed class SharedSurgicalToolSystem : EntitySystem
             ("target", Identity.Entity(args.Target.Value, EntityManager))), args.Target.Value, args.User, PopupType.MediumCaution);
 
         _audioSystem.PlayPvs(tool.EndSound, ent, AudioParams.Default.WithVariation(0.125f).WithVolume(-1f).WithMaxDistance(20f));
+
+        _chat.SendAdminAlert(args.User, Loc.GetString("interaction-remove-brain-admin-announcement",
+            ("user", Identity.Entity(args.User, EntityManager)), ("target", Identity.Entity(args.Target.Value, EntityManager))));
 
         args.Handled = true;
 
