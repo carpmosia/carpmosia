@@ -79,6 +79,7 @@ public sealed class SuicideCommandTests : GameTest
         var playerMan = server.ResolveDependency<IPlayerManager>();
         var mindSystem = entManager.System<SharedMindSystem>();
         var mobStateSystem = entManager.System<MobStateSystem>();
+        var tagSystem = entManager.System<TagSystem>(); // Carpmosia-edit - Remove Tonguebiting
 
         // We need to know the player and whether they can be hurt, killed, and whether they have a mind
         var player = playerMan.Sessions.First().AttachedEntity!.Value;
@@ -94,6 +95,7 @@ public sealed class SuicideCommandTests : GameTest
             mobStateComp = entManager.GetComponent<MobStateComponent>(player);
         });
 
+        tagSystem.RemoveTag(player, CannotSuicideTag); // Carpmosia-edit - Remove Tonguebiting
 
         // Check that running the suicide command kills the player
         // and properly ghosts them without them being able to return to their body
@@ -122,6 +124,7 @@ public sealed class SuicideCommandTests : GameTest
         var entManager = server.ResolveDependency<IEntityManager>();
         var playerMan = server.ResolveDependency<IPlayerManager>();
         var protoMan = server.ResolveDependency<IPrototypeManager>();
+        var tagSystem = entManager.System<TagSystem>(); // Carpmosia-edit - Remove Tonguebiting
 
         var damageableSystem = entManager.System<DamageableSystem>();
         var mindSystem = entManager.System<SharedMindSystem>();
@@ -145,6 +148,8 @@ public sealed class SuicideCommandTests : GameTest
             var slashProto = protoMan.Index(DamageType);
             damageableSystem.TryChangeDamage(player, new DamageSpecifier(slashProto, FixedPoint2.New(46.5)));
         });
+
+        tagSystem.RemoveTag(player, CannotSuicideTag); // Carpmosia-edit - Remove Tonguebiting
 
         // Check that running the suicide command kills the player
         // and properly ghosts them without them being able to return to their body
@@ -226,6 +231,7 @@ public sealed class SuicideCommandTests : GameTest
         var mobStateSystem = entManager.System<MobStateSystem>();
         var transformSystem = entManager.System<TransformSystem>();
         var damageableSystem = entManager.System<DamageableSystem>();
+        var tagSystem = entManager.System<TagSystem>(); // Carpmosia-edit - Remove Tonguebiting
 
         // We need to know the player and whether they can be hurt, killed, and whether they have a mind
         var player = playerMan.Sessions.First().AttachedEntity!.Value;
@@ -255,6 +261,8 @@ public sealed class SuicideCommandTests : GameTest
             entManager.TryGetComponent<ExecutionComponent>(item, out var executionComponent);
             Assert.That(executionComponent, Is.Not.EqualTo(null));
         });
+
+        tagSystem.RemoveTag(player, CannotSuicideTag); // Carpmosia-edit - Remove Tonguebiting
 
         // Check that running the suicide command kills the player
         // and properly ghosts them without them being able to return to their body
@@ -294,6 +302,7 @@ public sealed class SuicideCommandTests : GameTest
         var mobStateSystem = entManager.System<MobStateSystem>();
         var transformSystem = entManager.System<TransformSystem>();
         var damageableSystem = entManager.System<DamageableSystem>();
+        var tagSystem = entManager.System<TagSystem>(); // Carpmosia-edit - Remove Tonguebiting
 
         // We need to know the player and whether they can be hurt, killed, and whether they have a mind
         var player = playerMan.Sessions.First().AttachedEntity!.Value;
@@ -323,6 +332,8 @@ public sealed class SuicideCommandTests : GameTest
             entManager.TryGetComponent<ExecutionComponent>(item, out var executionComponent);
             Assert.That(executionComponent, Is.Not.EqualTo(null));
         });
+
+        tagSystem.RemoveTag(player, CannotSuicideTag); // Carpmosia-edit - Remove Tonguebiting
 
         // Check that running the suicide command kills the player
         // and properly ghosts them without them being able to return to their body
