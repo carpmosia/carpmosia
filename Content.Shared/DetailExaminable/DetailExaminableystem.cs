@@ -1,6 +1,7 @@
 // # Carpmosia-rework - Flavor on initial examine
 using Content.Shared.Examine;
 using Content.Shared.IdentityManagement;
+using Robust.Shared.Utility;
 
 namespace Content.Shared.DetailExaminable;
 
@@ -20,6 +21,7 @@ public sealed class DetailExaminableSystem : EntitySystem
         if (!args.IsInDetailsRange)
             return;
 
-        args.PushMarkup($"[italic][color=white]{ent.Comp.Content}[/color][/italic]", priority: -10);
+        var message = FormattedMessage.FromMarkupPermissive($"[italic][color=#c8c8c8]{ent.Comp.Content}[/color][/italic]");
+        args.PushMessage(message, priority: -10);
     }
 }
