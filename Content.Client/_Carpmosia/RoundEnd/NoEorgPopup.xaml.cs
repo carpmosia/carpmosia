@@ -35,7 +35,7 @@ public sealed partial class NoEorgPopup : FancyWindow
         RuleTextLabel.SetMessage(FormattedMessage.FromMarkupOrThrow(Loc.GetString("no-eorg-popup-rule-text")));
 
         _initialSkipState =
-            _cfg.GetCVar(CCVars.CarpmosiaSkipRoundEndNoEorgPopup); // Store the initial CVar value to compare against
+            _cfg.GetCVar(CCVars.SkipEorgPopup); // Store the initial CVar value to compare against
         SkipCheckBox.Pressed = _initialSkipState;
         NoEorgCloseButton.Disabled = true;
 
@@ -50,7 +50,7 @@ public sealed partial class NoEorgPopup : FancyWindow
 
     private void ResetTimer()
     {
-        _remainingTime = _cfg.GetCVar(CCVars.CarpmosiaRoundEndNoEorgPopupTime); // Set how long to show the popup for
+        _remainingTime = _cfg.GetCVar(CCVars.EorgPopupTime); // Set how long to show the popup for
         UpdateCloseButtonText();
     }
 
@@ -59,7 +59,7 @@ public sealed partial class NoEorgPopup : FancyWindow
         if (SkipCheckBox.Pressed == _initialSkipState)
             return;
 
-        _cfg.SetCVar(CCVars.CarpmosiaSkipRoundEndNoEorgPopup, SkipCheckBox.Pressed);
+        _cfg.SetCVar(CCVars.SkipEorgPopup, SkipCheckBox.Pressed);
         _cfg.SaveToFile();
     }
 
