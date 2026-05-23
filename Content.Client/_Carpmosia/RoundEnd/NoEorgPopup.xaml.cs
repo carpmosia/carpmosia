@@ -7,7 +7,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
-namespace Content.Client._Carpmosia.RoundEnd;
+namespace Content.Client.RoundEnd;
 
 [GenerateTypedNameReferences]
 public sealed partial class NoEorgPopup : FancyWindow

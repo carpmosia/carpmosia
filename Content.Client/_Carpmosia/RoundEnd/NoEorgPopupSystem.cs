@@ -2,7 +2,7 @@ using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Robust.Shared.Configuration;
 
-namespace Content.Client._Carpmosia.RoundEnd;
+namespace Content.Client.RoundEnd;
 
 public sealed class NoEorgPopupSystem : EntitySystem
 {
