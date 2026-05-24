@@ -7,7 +7,7 @@ public sealed partial class HumanoidProfileEditor
     private bool _allowFlavorText;
 
     private FlavorText.FlavorText? _flavorText;
-    private LineEdit? _flavorTextEdit; // # Carpmosia-edit - Better flavor text
+    private LineEdit? _flavorTextEdit; // Carpmosia-edit - Better flavor text
 
     /// <summary>
     /// Refreshes the flavor text editor status.
@@ -20,7 +20,7 @@ public sealed partial class HumanoidProfileEditor
                 return;
 
             _flavorText = new FlavorText.FlavorText();
-            AppearanceList.AddChild(_flavorText); // # Carpmosia-edit - Better flavor text
+            AppearanceList.AddChild(_flavorText); // Carpmosia-edit - Better flavor text
             _flavorTextEdit = _flavorText.CFlavorTextInput;
 
             _flavorText.OnFlavorTextChanged += OnFlavorTextChange;
@@ -30,7 +30,7 @@ public sealed partial class HumanoidProfileEditor
             if (_flavorText == null)
                 return;
 
-            RemoveChild(_flavorText); // # Carpmosia-edit - Better flavor text
+            RemoveChild(_flavorText); // Carpmosia-edit - Better flavor text
             _flavorText.OnFlavorTextChanged -= OnFlavorTextChange;
             _flavorText.Dispose();
             _flavorTextEdit?.Dispose();
@@ -52,7 +52,7 @@ public sealed partial class HumanoidProfileEditor
     {
         if (_flavorTextEdit != null)
         {
-            _flavorTextEdit.Text = Profile?.FlavorText ?? ""; // # Carpmosia-edit - Better flavor text
+            _flavorTextEdit.Text = Profile?.FlavorText ?? ""; // Carpmosia-edit - Better flavor text
         }
     }
 }
