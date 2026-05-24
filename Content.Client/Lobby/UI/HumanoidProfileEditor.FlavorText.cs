@@ -8,7 +8,7 @@ public sealed partial class HumanoidProfileEditor
     private bool _allowFlavorText;
 
     private FlavorText.FlavorText? _flavorText;
-    private TextEdit? _flavorTextEdit;
+    private LineEdit? _flavorTextEdit;
 
     /// <summary>
     /// Refreshes the flavor text editor status.
@@ -21,8 +21,7 @@ public sealed partial class HumanoidProfileEditor
                 return;
 
             _flavorText = new FlavorText.FlavorText();
-            TabContainer.AddChild(_flavorText);
-            TabContainer.SetTabTitle(TabContainer.ChildCount - 1, Loc.GetString("humanoid-profile-editor-flavortext-tab"));
+            AppearanceList.AddChild(_flavorText);
             _flavorTextEdit = _flavorText.CFlavorTextInput;
 
             _flavorText.OnFlavorTextChanged += OnFlavorTextChange;
@@ -32,7 +31,7 @@ public sealed partial class HumanoidProfileEditor
             if (_flavorText == null)
                 return;
 
-            TabContainer.RemoveChild(_flavorText);
+            RemoveChild(_flavorText);
             _flavorText.OnFlavorTextChanged -= OnFlavorTextChange;
             _flavorText.Dispose();
             _flavorTextEdit?.Dispose();
@@ -54,7 +53,7 @@ public sealed partial class HumanoidProfileEditor
     {
         if (_flavorTextEdit != null)
         {
-            _flavorTextEdit.TextRope = new Rope.Leaf(Profile?.FlavorText ?? "");
+            _flavorTextEdit.Text = Profile?.FlavorText ?? "";
         }
     }
 }

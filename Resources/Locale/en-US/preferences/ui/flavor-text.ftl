@@ -1,1 +1,2 @@
-flavor-text-placeholder = An outer description of your character that others can get by looking at them...
+flavor-text-label = Visual description:
+flavor-text-placeholder = Any (optional) traits one could get from a glance... ({$maxchars} characters)
