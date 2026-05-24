@@ -9,8 +9,6 @@ public sealed partial class HumanoidProfileEditor
     private FlavorText.FlavorText? _flavorText;
     private LineEdit? _flavorTextEdit; // # Carpmosia-edit - Better flavor text
 
-    
-
     /// <summary>
     /// Refreshes the flavor text editor status.
     /// </summary>
