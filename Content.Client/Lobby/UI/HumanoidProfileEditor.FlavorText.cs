@@ -1,5 +1,4 @@
 using Robust.Client.UserInterface.Controls;
-using Robust.Shared.Utility;
 
 namespace Content.Client.Lobby.UI;
 
@@ -9,6 +8,8 @@ public sealed partial class HumanoidProfileEditor
 
     private FlavorText.FlavorText? _flavorText;
     private LineEdit? _flavorTextEdit;
+
+    
 
     /// <summary>
     /// Refreshes the flavor text editor status.
@@ -21,7 +22,7 @@ public sealed partial class HumanoidProfileEditor
                 return;
 
             _flavorText = new FlavorText.FlavorText();
-            AppearanceList.AddChild(_flavorText);
+            AppearanceList.AddChild(_flavorText); // # Carpmosia-edit - Better flavor text
             _flavorTextEdit = _flavorText.CFlavorTextInput;
 
             _flavorText.OnFlavorTextChanged += OnFlavorTextChange;
@@ -31,7 +32,7 @@ public sealed partial class HumanoidProfileEditor
             if (_flavorText == null)
                 return;
 
-            RemoveChild(_flavorText);
+            RemoveChild(_flavorText); // # Carpmosia-edit - Better flavor text
             _flavorText.OnFlavorTextChanged -= OnFlavorTextChange;
             _flavorText.Dispose();
             _flavorTextEdit?.Dispose();
@@ -53,7 +54,7 @@ public sealed partial class HumanoidProfileEditor
     {
         if (_flavorTextEdit != null)
         {
-            _flavorTextEdit.Text = Profile?.FlavorText ?? "";
+            _flavorTextEdit.Text = Profile?.FlavorText ?? ""; // # Carpmosia-edit - Better flavor text
         }
     }
 }
