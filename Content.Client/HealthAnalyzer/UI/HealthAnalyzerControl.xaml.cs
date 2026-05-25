@@ -1,6 +1,8 @@
 using System.Linq;
 using System.Numerics;
 using Content.Shared.Atmos;
+using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
@@ -142,6 +144,10 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
         var damagePerType = _damageable.GetAllDamage(target.Value).DamageDict;
 
         DrawDiagnosticGroups(damageSortedGroups, damagePerType);
+
+        // Reagents
+
+        DrawReagentList( state.BloodType, state.BloodSolution );
     }
 
     private static string GetStatus(MobState mobState)
@@ -198,6 +204,71 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
 
                 groupContainer.AddChild(CreateDiagnosticItemLabel(damageString.Insert(0, " · ")));
             }
+        }
+    }
+
+    private void DrawReagentList( Solution? bloodType, Solution? bloodSolution )
+    {
+        BloodstreamReagentsContainer.RemoveAllChildren();
+
+        bool show_bloodstream_panel = true;
+        List<ReagentQuantity> bloodstream = new List<ReagentQuantity>();
+
+        if ( bloodType is null || bloodSolution is null )
+        {
+            show_bloodstream_panel = false;
+        }
+
+        if ( show_bloodstream_panel )
+        {
+            // Build out the bloodstream, ignoring the target's blood reagent(s)
+            foreach ( var reagent in bloodSolution!.Contents )
+            {
+                bool should_add = true;
+                foreach ( var blood in bloodType!.Contents )
+                    if ( reagent.Reagent == blood.Reagent )
+                        should_add = false;
+
+                if ( should_add )
+                    bloodstream.Add( reagent );
+            }
+        }
+
+        if ( 0 == bloodstream.Count )
+            show_bloodstream_panel = false;
+
+        BloodstreamLabel.Visible = show_bloodstream_panel;
+        BloodstreamUpperDivider.Visible = show_bloodstream_panel;
+        BloodstreamReagentsContainer.Visible = show_bloodstream_panel;
+        BloodstreamLowerDivider.Visible = show_bloodstream_panel;
+
+        if ( ! show_bloodstream_panel )
+            return;
+
+        foreach ( var reagent in bloodstream )
+        {
+            var localized_name = _prototypes.Index<ReagentPrototype>( reagent.Reagent.Prototype ).LocalizedName;
+            var reagent_color = _prototypes.Index<ReagentPrototype>( reagent.Reagent.Prototype ).SubstanceColor;
+            var reagent_quantity = reagent.Quantity;
+
+            // Build the string for the current reagent
+            // Uses a unicode block character to show the reactant color
+            var reagent_name_num_string = Loc.GetString(
+                "health-analyzer-window-bloodstream-reagent-text",
+                ( "reagentColor", reagent_color ),
+                ( "reagentName", localized_name ),
+                ( "amount", reagent_quantity )
+            );
+
+            var reagent_container = new BoxContainer
+            {
+                Align = AlignMode.Begin,
+                Orientation = LayoutOrientation.Vertical,
+            };
+
+            reagent_container.AddChild( new RichTextLabel{ Text = reagent_name_num_string } );
+
+            BloodstreamReagentsContainer.AddChild( reagent_container );
         }
     }
 

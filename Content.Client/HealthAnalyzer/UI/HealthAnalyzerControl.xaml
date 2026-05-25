@@ -50,4 +50,14 @@
         Orientation="Vertical">
     </BoxContainer>
 
+    <BoxContainer Name="BloodstreamLabel" Visible="False" Margin="0 5 0 0">
+        <Label Text="{Loc 'health-analyzer-window-entity-bloodstream-text'}" />
+    </BoxContainer>
+
+    <PanelContainer Name="BloodstreamUpperDivider" Visible="False" StyleClasses="LowDivider" />
+
+    <BoxContainer Name="BloodstreamReagentsContainer" Visible="False" Orientation="Vertical" Margin="0 5 0 5" />
+
+    <PanelContainer Name="BloodstreamLowerDivider" Visible="False" StyleClasses="LowDivider" Margin="0 5 0 8"/>
+
 </BoxContainer>

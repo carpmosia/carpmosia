@@ -1,5 +1,6 @@
 using Content.Server.Medical.Components;
 using Content.Shared.Body.Components;
+using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage.Components;
 using Content.Shared.DoAfter;
@@ -236,13 +237,16 @@ public sealed class HealthAnalyzerSystem : EntitySystem
         var bloodAmount = float.NaN;
         var bleeding = false;
         var unrevivable = false;
+        Solution? bloodType = null;
+        Solution? bloodSolution = null;
 
         if (TryComp<BloodstreamComponent>(entity, out var bloodstream) &&
             _solutionContainerSystem.ResolveSolution(entity, bloodstream.BloodSolutionName,
-                ref bloodstream.BloodSolution, out var bloodSolution))
+                ref bloodstream.BloodSolution, out bloodSolution))
         {
             bloodAmount = _bloodstreamSystem.GetBloodLevel(entity);
             bleeding = bloodstream.BleedAmount > 0;
+            bloodType = bloodstream.BloodReferenceSolution;
         }
 
         if (TryComp<UnrevivableComponent>(entity, out var unrevivableComp) && unrevivableComp.Analyzable)
@@ -254,7 +258,9 @@ public sealed class HealthAnalyzerSystem : EntitySystem
             bloodAmount,
             null,
             bleeding,
-            unrevivable
+            unrevivable,
+            bloodType,
+            bloodSolution
         );
     }
 }

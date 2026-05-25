@@ -1,4 +1,5 @@
 using Robust.Shared.Serialization;
+using Content.Shared.Chemistry.Components;
 
 namespace Content.Shared.MedicalScanner;
 
@@ -28,10 +29,12 @@ public struct HealthAnalyzerUiState
     public bool? ScanMode;
     public bool? Bleeding;
     public bool? Unrevivable;
+    public readonly Solution? BloodType;
+    public readonly Solution? BloodSolution;
 
     public HealthAnalyzerUiState() {}
 
-    public HealthAnalyzerUiState(NetEntity? targetEntity, float temperature, float bloodLevel, bool? scanMode, bool? bleeding, bool? unrevivable)
+    public HealthAnalyzerUiState(NetEntity? targetEntity, float temperature, float bloodLevel, bool? scanMode, bool? bleeding, bool? unrevivable, Solution? bloodType, Solution? bloodSolution)
     {
         TargetEntity = targetEntity;
         Temperature = temperature;
@@ -39,5 +42,7 @@ public struct HealthAnalyzerUiState
         ScanMode = scanMode;
         Bleeding = bleeding;
         Unrevivable = unrevivable;
+        BloodType = bloodType;
+        BloodSolution = bloodSolution;
     }
 }

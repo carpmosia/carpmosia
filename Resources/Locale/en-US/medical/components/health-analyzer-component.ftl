@@ -11,9 +11,12 @@ health-analyzer-window-entity-temperature-text = Temperature:
 health-analyzer-window-entity-blood-level-text = Blood Level:
 health-analyzer-window-entity-status-text = Status:
 health-analyzer-window-entity-damage-total-text = Total Damage:
+health-analyzer-window-entity-bloodstream-text = Bloodstream:
 
 health-analyzer-window-damage-group-text = {$damageGroup}: {$amount}
 health-analyzer-window-damage-type-text = {$damageType}: {$amount}
+
+health-analyzer-window-bloodstream-reagent-text = [color={$reagentColor}]█[/color]  {$reagentName}: {$amount}u
 
 health-analyzer-window-entity-unrevivable-text = [color=yellow]Unique body composition detected! Patient can not be resuscitated by normal means![/color]
 health-analyzer-window-entity-bleeding-text = [color=red]Patient has open wounds![/color]
