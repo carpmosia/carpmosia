@@ -222,7 +222,6 @@ public abstract class SharedStrippableSystem : EntitySystem
             BreakOnDamage = true,
             BreakOnMove = true,
             NeedHand = true,
-            BlockDuplicate = true, // Carpmosia-edit - Slower stripping
             DuplicateCondition = DuplicateConditions.None // Carpmosia-edit - Slower stripping
         };
 
@@ -327,7 +326,6 @@ public abstract class SharedStrippableSystem : EntitySystem
             BreakOnMove = true,
             NeedHand = true,
             BreakOnHandChange = false, // Allow simultaneously removing multiple items.
-            BlockDuplicate = true, // Carpmosia-edit - Slower stripping
             DuplicateCondition = DuplicateConditions.None // Carpmosia-edit - Slower stripping
         };
 
@@ -431,7 +429,6 @@ public abstract class SharedStrippableSystem : EntitySystem
             BreakOnDamage = true,
             BreakOnMove = true,
             NeedHand = true,
-            BlockDuplicate = true, // Carpmosia-edit - Slower stripping
             DuplicateCondition = DuplicateConditions.None // Carpmosia-edit - Slower stripping
         };
 
@@ -543,7 +540,6 @@ public abstract class SharedStrippableSystem : EntitySystem
             BreakOnMove = true,
             NeedHand = true,
             BreakOnHandChange = false, // Allow simultaneously removing multiple items.
-            BlockDuplicate = true, // Carpmosia-edit - Slower stripping
             DuplicateCondition = DuplicateConditions.None // Carpmosia-edit - Slower stripping
         };
 
