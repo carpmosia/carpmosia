@@ -109,7 +109,7 @@ public sealed class SharedOrganRemovalToolSystem : EntitySystem
             // Brain plops onto the ground in highly sanitary fashion
             if (HasComp<BrainComponent>(organ))
             {
-                _transformSystem.PlaceNextTo(organ, (args.Target.Value, baseXform));
+                _transformSystem.DropNextTo(organ, (args.Target.Value, baseXform));
 
                 // Big bloody mess left behind
                 if (TryComp<BloodstreamComponent>(args.Target.Value, out var bloodstream))
