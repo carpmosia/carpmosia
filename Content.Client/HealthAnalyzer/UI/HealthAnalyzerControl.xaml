@@ -30,9 +30,7 @@
             <Label Text="{Loc 'health-analyzer-window-entity-temperature-text'}" />
             <Label Name="TemperatureLabel" />
             <Label Text="{Loc 'health-analyzer-window-entity-blood-level-text'}" />
-            <Label Name="BloodLabel" />
-            <Label Text="{Loc 'health-analyzer-window-entity-damage-total-text'}" />
-            <Label Name="DamageLabel" />
+            <Label Name="BloodLevelLabel" />
         </GridContainer>
     </BoxContainer>
 
@@ -44,20 +42,36 @@
 
     <PanelContainer StyleClasses="LowDivider" />
 
-    <BoxContainer
-        Name="GroupsContainer"
-        Margin="0 5 0 5"
-        Orientation="Vertical">
-    </BoxContainer>
+    <GridContainer Margin="0 5 0 0" Columns="3">
+        <BoxContainer Name="DamageBox" Margin="5 5 10 5" Orientation="Vertical">
+            <Label Name="TotalDamageLabel" HorizontalAlignment="Center" />
+            <PanelContainer Name="DamageGroupsDivider" StyleClasses="LowDivider" />
+            <Label
+                Name="NoDamage"
+                HorizontalAlignment="Center"
+                Text="{Loc 'health-analyzer-window-no-damage-text'}"
+                FontColorOverride="DeepSkyBlue"
+                Margin="0 5 0 5" />
+            <BoxContainer HorizontalAlignment="Center">
+                <BoxContainer Name="DamageGroupsContainer" Margin="0 5 0 5" Orientation="Vertical" />
+            </BoxContainer>
+        </BoxContainer>
 
-    <BoxContainer Name="BloodstreamLabel" Visible="False" Margin="0 5 0 0">
-        <Label Text="{Loc 'health-analyzer-window-entity-bloodstream-text'}" />
-    </BoxContainer>
+        <PanelContainer StyleClasses="LowDivider" />
 
-    <PanelContainer Name="BloodstreamUpperDivider" Visible="False" StyleClasses="LowDivider" />
-
-    <BoxContainer Name="BloodstreamReagentsContainer" Visible="False" Orientation="Vertical" Margin="0 5 0 5" />
-
-    <PanelContainer Name="BloodstreamLowerDivider" Visible="False" StyleClasses="LowDivider" Margin="0 5 0 8"/>
+        <BoxContainer Name="BloodstreamBox" Margin="10 5 5 5" Orientation="Vertical">
+            <Label Name="BloodstreamLabel" HorizontalAlignment="Center" />
+            <PanelContainer Name="BloodstreamReagentsDivider" StyleClasses="LowDivider" />
+            <Label
+                Name="NoReagents"
+                HorizontalAlignment="Center"
+                Text="{Loc 'health-analyzer-window-no-reagents-text'}"
+                FontColorOverride="DeepSkyBlue"
+                Margin="0 5 0 5" />
+            <BoxContainer HorizontalAlignment="Center">
+                <BoxContainer Name="BloodstreamReagentsContainer" Orientation="Vertical" Margin="0 5 0 5" />
+            </BoxContainer>
+        </BoxContainer>
+    </GridContainer>
 
 </BoxContainer>

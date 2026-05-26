@@ -95,18 +95,10 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
             ? $"{state.Temperature - Atmospherics.T0C:F1} °C ({state.Temperature:F1} K)"
             : Loc.GetString("health-analyzer-window-entity-unknown-value-text");
 
-        BloodLabel.Text = !float.IsNaN(state.BloodLevel)
-            ? $"{state.BloodLevel * 100:F1} %"
-            : Loc.GetString("health-analyzer-window-entity-unknown-value-text");
-
         StatusLabel.Text =
             _entityManager.TryGetComponent<MobStateComponent>(target.Value, out var mobStateComponent)
                 ? GetStatus(mobStateComponent.CurrentState)
                 : Loc.GetString("health-analyzer-window-entity-unknown-text");
-
-        // Total Damage
-
-        DamageLabel.Text = _damageable.GetTotalDamage(target.Value).ToString();
 
         // Alerts
 
@@ -143,11 +135,13 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
 
         var damagePerType = _damageable.GetAllDamage(target.Value).DamageDict;
 
-        DrawDiagnosticGroups(damageSortedGroups, damagePerType);
+        var totalDamage = _damageable.GetTotalDamage(target.Value);
 
-        // Reagents
+        DrawDiagnosticGroups(totalDamage, damageSortedGroups, damagePerType);
 
-        DrawReagentList( state.BloodType, state.BloodSolution );
+        // Bloodstream info
+
+        DrawBloodstreamInfo( state.BloodLevel, state.BloodType, state.BloodSolution );
     }
 
     private static string GetStatus(MobState mobState)
@@ -162,10 +156,18 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
     }
 
     private void DrawDiagnosticGroups(
+        FixedPoint2 totalDamage,
         Dictionary<ProtoId<DamageGroupPrototype>, FixedPoint2> groups,
         IReadOnlyDictionary<ProtoId<DamageTypePrototype>, FixedPoint2> damageDict)
     {
-        GroupsContainer.RemoveAllChildren();
+        DamageGroupsContainer.RemoveAllChildren();
+
+        TotalDamageLabel.Text = $"{Loc.GetString(
+            "health-analyzer-window-entity-damage-total-text",
+            ( "amount", totalDamage.ToString() )
+        )}";
+
+        NoDamage.Visible = ( totalDamage == 0 );
 
         foreach (var (damageGroupId, damageAmount) in groups)
         {
@@ -186,7 +188,7 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
 
             groupContainer.AddChild(CreateDiagnosticGroupTitle(groupTitleText, damageGroupId));
 
-            GroupsContainer.AddChild(groupContainer);
+            DamageGroupsContainer.AddChild(groupContainer);
 
             // Show the damage for each type in that group.
             var group = _prototypes.Index<DamageGroupPrototype>(damageGroupId);
@@ -202,48 +204,59 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
                     ("amount", typeAmount)
                 );
 
-                groupContainer.AddChild(CreateDiagnosticItemLabel(damageString.Insert(0, " · ")));
+                groupContainer.AddChild(CreateDiagnosticItemLabel(damageString.Insert(0, "\t · ")));
             }
         }
     }
 
-    private void DrawReagentList( Solution? bloodType, Solution? bloodSolution )
+    private void DrawBloodstreamInfo( float bloodLevel, Solution? bloodType, Solution? bloodSolution )
     {
         BloodstreamReagentsContainer.RemoveAllChildren();
 
-        bool show_bloodstream_panel = true;
         List<ReagentQuantity> bloodstream = new List<ReagentQuantity>();
+        FixedPoint2 bloodlevel_amount = 0;
+        FixedPoint2 bloodstream_reagent_amount = 0;
 
-        if ( bloodType is null || bloodSolution is null )
-        {
-            show_bloodstream_panel = false;
-        }
-
-        if ( show_bloodstream_panel )
+        if ( bloodType is not null || bloodSolution is not null )
         {
             // Build out the bloodstream, ignoring the target's blood reagent(s)
             foreach ( var reagent in bloodSolution!.Contents )
             {
-                bool should_add = true;
+                bool is_blood = false;
                 foreach ( var blood in bloodType!.Contents )
                     if ( reagent.Reagent == blood.Reagent )
-                        should_add = false;
+                        is_blood = true;
 
-                if ( should_add )
+                // If this reagent is the species' blood, add it to the blood level
+                // Otherwise add it to the bloodstream reagent list
+                if ( is_blood )
+                {
+                    bloodlevel_amount += reagent.Quantity;
+                }
+                else
+                {
                     bloodstream.Add( reagent );
+                    bloodstream_reagent_amount += reagent.Quantity;
+                }
             }
         }
 
-        if ( 0 == bloodstream.Count )
-            show_bloodstream_panel = false;
+        string bloodlevel_percent = !float.IsNaN(bloodLevel)
+            ? $"{bloodLevel * 100:F1} %"
+            : Loc.GetString("health-analyzer-window-entity-unknown-value-text");
 
-        BloodstreamLabel.Visible = show_bloodstream_panel;
-        BloodstreamUpperDivider.Visible = show_bloodstream_panel;
-        BloodstreamReagentsContainer.Visible = show_bloodstream_panel;
-        BloodstreamLowerDivider.Visible = show_bloodstream_panel;
+        BloodLevelLabel.Text = Loc.GetString(
+            "health-analyzer-window-entity-blood-level-numbers-text",
+            ( "amount", bloodlevel_amount.ToString() ),
+            ( "percent", bloodlevel_percent.ToString() )
+        );
 
-        if ( ! show_bloodstream_panel )
-            return;
+        BloodstreamLabel.Text = Loc.GetString(
+            "health-analyzer-window-entity-bloodstream-text",
+            ( "amount", bloodstream_reagent_amount.ToString() )
+        );
+
+        NoReagents.Visible = ( bloodstream.Count == 0 );
 
         foreach ( var reagent in bloodstream )
         {
