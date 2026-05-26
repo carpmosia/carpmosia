@@ -5,8 +5,10 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared.DetailExaminable;
 
-public sealed class DetailExaminableSystem : EntitySystem
-{ 
+public sealed partial class DetailExaminableSystem : EntitySystem
+{
+    [Dependency] private ExamineSystemShared _examine = default!;
+
     public override void Initialize()
     {
         base.Initialize();

@@ -22,3 +22,13 @@
   - !type:OverallPlaytimeRequirement
     time: 1h
   guides: [ BloodBound ]
+
+- type: antagSpecifier
+  parent: DerelictCyborg
+  id: DerelictMedicalCyborg
+  spawnerPrototype: SpawnPointGhostDerelictMedicalCyborg
+
+- type: antagSpecifier
+  parent: DerelictCyborg
+  id: DerelictMedicalCyborg
+  spawnerPrototype: SpawnPointGhostDerelictMedicalCyborg
