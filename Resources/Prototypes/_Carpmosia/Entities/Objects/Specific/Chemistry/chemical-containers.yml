@@ -22,7 +22,7 @@
     size: Large
     shape:
     - 0,0,2,1 # 3x2
-  - type: SolutionContainerManager
+  - type: Solution
     solution:
       maxVol: 90
   - type: SolutionContainerVisuals
@@ -60,7 +60,7 @@
   components:
   - type: Label
     currentLabel: reagent-name-bicaridine
-  - type: SolutionContainerManager
+  - type: Solution
     solution:
       reagents:
       - ReagentId: Bicaridine
@@ -74,7 +74,7 @@
   components:
   - type: Label
     currentLabel: reagent-name-dexalin
-  - type: SolutionContainerManager
+  - type: Solution
     solution:
       reagents:
       - ReagentId: Dexalin
@@ -88,7 +88,7 @@
   components:
   - type: Label
     currentLabel: reagent-name-dylovene
-  - type: SolutionContainerManager
+  - type: Solution
     solution:
       reagents:
       - ReagentId: Dylovene
@@ -102,7 +102,7 @@
   components:
   - type: Label
     currentLabel: reagent-name-epinephrine
-  - type: SolutionContainerManager
+  - type: Solution
     solution:
       reagents:
       - ReagentId: Epinephrine
@@ -116,7 +116,7 @@
   components:
   - type: Label
     currentLabel: reagent-name-hyronalin
-  - type: SolutionContainerManager
+  - type: Solution
     solution:
       reagents:
       - ReagentId: Hyronalin
@@ -130,7 +130,7 @@
   components:
   - type: Label
     currentLabel: reagent-name-inaprovaline
-  - type: SolutionContainerManager
+  - type: Solution
     solution:
       reagents:
       - ReagentId: Inaprovaline
@@ -144,7 +144,7 @@
   components:
   - type: Label
     currentLabel: reagent-name-kelotane
-  - type: SolutionContainerManager
+  - type: Solution
     solution:
       reagents:
       - ReagentId: Kelotane
@@ -158,7 +158,7 @@
   components:
   - type: Label
     currentLabel: reagent-name-saline
-  - type: SolutionContainerManager
+  - type: Solution
     solution:
       reagents:
       - ReagentId: Saline

@@ -5,7 +5,7 @@
   components:
   - type: Label
     currentLabel: reagent-name-traumoxadone
-  - type: SolutionContainerManager
+  - type: Solution
     solution:
       maxVol: 30
       reagents:
@@ -19,7 +19,7 @@
   components:
   - type: Label
     currentLabel: reagent-name-stelloxadone
-  - type: SolutionContainerManager
+  - type: Solution
     solution:
       maxVol: 30
       reagents:
@@ -33,7 +33,7 @@
   components:
   - type: Label
     currentLabel: reagent-name-tetracordrazine
-  - type: SolutionContainerManager
+  - type: Solution
     solution:
       maxVol: 30
       reagents:
@@ -47,7 +47,7 @@
   components:
   - type: Label
     currentLabel: reagent-name-saltpetre
-  - type: SolutionContainerManager
+  - type: Solution
     solution:
       maxVol: 30
       reagents:
