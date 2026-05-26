@@ -30,7 +30,11 @@
             <Label Text="{Loc 'health-analyzer-window-entity-temperature-text'}" />
             <Label Name="TemperatureLabel" />
             <Label Text="{Loc 'health-analyzer-window-entity-blood-level-text'}" />
+            <!-- Carpmosia-start - Health analyzer bloodstream reagents -->
             <Label Name="BloodLevelLabel" />
+            <!-- Label Text="{Loc 'health-analyzer-window-entity-damage-total-text'}" / -->
+            <!-- Label Name="DamageLabel" / -->
+            <!-- Carpmosia-end - Health analyzer bloodstream reagents -->
         </GridContainer>
     </BoxContainer>
 
@@ -42,6 +46,12 @@
 
     <PanelContainer StyleClasses="LowDivider" />
 
+    <!-- Carpmosia-start - Health analyzer bloodstream reagents -->
+    <!-- BoxContainer Name="GroupsContainer" Margin="0 5 0 5" Orientation="Vertical" -->
+    <!-- /BoxContainer -->
+    <!-- Carpmosia-end - Health analyzer bloodstream reagents -->
+
+    <!-- Carpmosia-start - Health analyzer bloodstream reagents -->
     <GridContainer Margin="0 5 0 0" Columns="3">
         <BoxContainer Name="DamageBox" Margin="5 5 10 5" Orientation="Vertical">
             <Label Name="TotalDamageLabel" HorizontalAlignment="Center" />
@@ -73,5 +83,6 @@
             </BoxContainer>
         </BoxContainer>
     </GridContainer>
+    <!-- Carpmosia-end - Health analyzer bloodstream reagents -->
 
 </BoxContainer>

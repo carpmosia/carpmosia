@@ -1,8 +1,8 @@
 using System.Linq;
 using System.Numerics;
 using Content.Shared.Atmos;
-using Content.Shared.Chemistry.Components;
-using Content.Shared.Chemistry.Reagent;
+using Content.Shared.Chemistry.Components; // Carpmosia-edit - Health analyzer bloodstream reagents
+using Content.Shared.Chemistry.Reagent; // Carpmosia-edit - Health analyzer bloodstream reagents
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
@@ -95,10 +95,22 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
             ? $"{state.Temperature - Atmospherics.T0C:F1} °C ({state.Temperature:F1} K)"
             : Loc.GetString("health-analyzer-window-entity-unknown-value-text");
 
+        // Carpmosia-start - Health analyzer bloodstream reagents
+        // BloodLabel.Text = !float.IsNaN(state.BloodLevel)
+        //    ? $"{state.BloodLevel * 100:F1} %"
+        //    : Loc.GetString("health-analyzer-window-entity-unknown-value-text");
+        // Carpmosia-end - Health analyzer bloodstream reagents
+
         StatusLabel.Text =
             _entityManager.TryGetComponent<MobStateComponent>(target.Value, out var mobStateComponent)
                 ? GetStatus(mobStateComponent.CurrentState)
                 : Loc.GetString("health-analyzer-window-entity-unknown-text");
+
+        // Carpmosia-start - Health analyzer bloodstream reagents
+        // Total Damage
+
+        // DamageLabel.Text = _damageable.GetTotalDamage(target.Value).ToString();
+        // Carpmosia-end - Health analyzer bloodstream reagents
 
         // Alerts
 
@@ -133,6 +145,7 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
                 .OrderByDescending(damage => damage.Value)
                 .ToDictionary(x => x.Key, x => x.Value);
 
+        // Carpmosia-start - Health analyzer bloodstream reagents
         var damagePerType = _damageable.GetAllDamage(target.Value).DamageDict;
 
         var totalDamage = _damageable.GetTotalDamage(target.Value);
@@ -142,6 +155,7 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
         // Bloodstream info
 
         DrawBloodstreamInfo( state.BloodLevel, state.BloodType, state.BloodSolution );
+        // Carpmosia-end - Health analyzer bloodstream reagents
     }
 
     private static string GetStatus(MobState mobState)
@@ -156,18 +170,20 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
     }
 
     private void DrawDiagnosticGroups(
-        FixedPoint2 totalDamage,
+        FixedPoint2 totalDamage, // Carpmosia-edit - Health analyzer bloodstream reagents
         Dictionary<ProtoId<DamageGroupPrototype>, FixedPoint2> groups,
         IReadOnlyDictionary<ProtoId<DamageTypePrototype>, FixedPoint2> damageDict)
     {
         DamageGroupsContainer.RemoveAllChildren();
 
+        // Carpmosia-start - Health analyzer bloodstream reagents
         TotalDamageLabel.Text = $"{Loc.GetString(
             "health-analyzer-window-entity-damage-total-text",
             ( "amount", totalDamage.ToString() )
         )}";
 
         NoDamage.Visible = ( totalDamage == 0 );
+        // Carpmosia-end - Health analyzer bloodstream reagents
 
         foreach (var (damageGroupId, damageAmount) in groups)
         {
@@ -204,11 +220,12 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
                     ("amount", typeAmount)
                 );
 
-                groupContainer.AddChild(CreateDiagnosticItemLabel(damageString.Insert(0, "\t · ")));
+                groupContainer.AddChild(CreateDiagnosticItemLabel(damageString.Insert(0, " · ")));
             }
         }
     }
 
+    // Carpmosia-start - Health analyzer bloodstream reagents
     private void DrawBloodstreamInfo( float bloodLevel, Solution? bloodType, Solution? bloodSolution )
     {
         BloodstreamReagentsContainer.RemoveAllChildren();
@@ -284,6 +301,7 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
             BloodstreamReagentsContainer.AddChild( reagent_container );
         }
     }
+    // Carpmosia-end - Health analyzer bloodstream reagents
 
     private Texture GetTexture(string texture)
     {

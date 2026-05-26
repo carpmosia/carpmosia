@@ -1,6 +1,6 @@
 using Content.Server.Medical.Components;
 using Content.Shared.Body.Components;
-using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.Components; // Carpmosia-edit - Health analyzer bloodstream reagents
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage.Components;
 using Content.Shared.DoAfter;
@@ -237,8 +237,8 @@ public sealed partial class HealthAnalyzerSystem : EntitySystem
         var bloodAmount = float.NaN;
         var bleeding = false;
         var unrevivable = false;
-        Solution? bloodType = null;
-        Solution? bloodSolution = null;
+        Solution? bloodType = null; // Carpmosia-edit - Health analyzer bloodstream reagents
+        Solution? bloodSolution = null; // Carpmosia-edit - Health analyzer bloodstream reagents
 
         if (TryComp<BloodstreamComponent>(entity, out var bloodstream) &&
             _solutionContainerSystem.ResolveSolution(entity, bloodstream.BloodSolutionName,
@@ -246,7 +246,7 @@ public sealed partial class HealthAnalyzerSystem : EntitySystem
         {
             bloodAmount = _bloodstreamSystem.GetBloodLevel(entity);
             bleeding = bloodstream.BleedAmount > 0;
-            bloodType = bloodstream.BloodReferenceSolution;
+            bloodType = bloodstream.BloodReferenceSolution; // Carpmosia-edit - Health analyzer bloodstream reagents
         }
 
         if (TryComp<UnrevivableComponent>(entity, out var unrevivableComp) && unrevivableComp.Analyzable)
@@ -259,8 +259,8 @@ public sealed partial class HealthAnalyzerSystem : EntitySystem
             null,
             bleeding,
             unrevivable,
-            bloodType,
-            bloodSolution
+            bloodType, // Carpmosia-edit - Health analyzer bloodstream reagents
+            bloodSolution // Carpmosia-edit - Health analyzer bloodstream reagents
         );
     }
 }
