@@ -9,12 +9,11 @@
   suffix: angostura
   components:
   - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Angostura
-          Quantity: 30
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: Angostura
+        Quantity: 30
   - type: Icon
     sprite: Objects/Consumable/Drinks/wineglass.rsi
     state: icon
@@ -25,12 +24,11 @@
   suffix: sweet revenge
   components:
   - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: SweetRevenge
-          Quantity: 30
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: SweetRevenge
+        Quantity: 30
   - type: Icon
     sprite: _Carpmosia/Objects/Consumable/Drinks/sweetrevengeglass.rsi
     state: icon
@@ -41,12 +39,11 @@
   suffix: old fashioned
   components:
   - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: OldFashioned
-          Quantity: 30
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: OldFashioned
+        Quantity: 30
   - type: Icon
     sprite: _Carpmosia/Objects/Consumable/Drinks/oldfashionedglass.rsi
     state: icon
@@ -57,12 +54,11 @@
   suffix: llb
   components:
   - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: LLB
-          Quantity: 30
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: LLB
+        Quantity: 30
   - type: Icon
     sprite: _Carpmosia/Objects/Consumable/Drinks/llbglass.rsi
     state: icon
@@ -73,12 +69,11 @@
   suffix: rob roy
   components:
   - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: RobRoy
-          Quantity: 30
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: RobRoy
+        Quantity: 30
   - type: Icon
     sprite: _Carpmosia/Objects/Consumable/Drinks/robroyglass.rsi
     state: icon
@@ -89,12 +84,11 @@
   suffix: gunner
   components:
   - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Gunner
-          Quantity: 30
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: Gunner
+        Quantity: 30
   - type: Icon
     sprite: _Carpmosia/Objects/Consumable/Drinks/gunnerglass.rsi
     state: icon
@@ -105,12 +99,11 @@
   suffix: carribean lovers
   components:
   - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: CarribeanLovers
-          Quantity: 30
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: CarribeanLovers
+        Quantity: 30
   - type: Icon
     sprite: _Carpmosia/Objects/Consumable/Drinks/carribeanloversglass.rsi
     state: icon
@@ -121,12 +114,11 @@
   suffix: the last word
   components:
   - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: TheLastWord
-          Quantity: 30
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: TheLastWord
+        Quantity: 30
   - type: Icon
     sprite: _Carpmosia/Objects/Consumable/Drinks/thelastwordglass.rsi
     state: icon
@@ -137,12 +129,11 @@
   suffix: coffee flip
   components:
   - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: CoffeeFlip
-          Quantity: 30
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: CoffeeFlip
+        Quantity: 30
   - type: Icon
     sprite: _Carpmosia/Objects/Consumable/Drinks/coffeeflipglass.rsi
     state: icon
