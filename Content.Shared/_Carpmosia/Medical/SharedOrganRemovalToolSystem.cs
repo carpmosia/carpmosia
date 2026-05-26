@@ -1,3 +1,4 @@
+using System.Reflection.Emit;
 using Content.Shared.Body;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
@@ -5,6 +6,7 @@ using Content.Shared.Buckle.Components;
 using Content.Shared.Chat;
 using Content.Shared.Destructible;
 using Content.Shared.DoAfter;
+using Content.Shared.Examine;
 using Content.Shared.Forensics.Systems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
@@ -17,13 +19,14 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Network;
 using Robust.Shared.Physics.Systems;
+using Robust.Shared.Utility;
 
 namespace Content.Shared.Medical;
 
 /// <summary>
 /// Defines behavior for the simple brain extraction tool. Could be easily generecised but this is all temporary anyway pending discomed.
 /// </summary>
-public sealed class SharedOrganRemovalTool : EntitySystem
+public sealed class SharedOrganRemovalToolSystem : EntitySystem
 {
 
     [Dependency] private readonly ISharedChatManager _chat = default!;
@@ -40,51 +43,40 @@ public sealed class SharedOrganRemovalTool : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<OrganRemovalToolComponent, AfterInteractEvent>(OnAfterInteract);
-        SubscribeLocalEvent<BrainComponent, OrganRemovalDoAfterEvent>(OnDoAfter);
+        SubscribeLocalEvent<OrganRemovalToolComponent, OrganRemovalDoAfterEvent>(OnDoAfter);
+        SubscribeLocalEvent<BrainExtractedComponent, ExaminedEvent>(OnExamined);
+    }
+    private void OnAfterInteract(Entity<OrganRemovalToolComponent> uid, ref AfterInteractEvent args)
+    {
+        if (args.Handled || args.Target is null || !args.CanReach || args.User == args.Target || !HasComp<BodyComponent>(args.Target))
+            return;
+
+        args.Handled = TryStartDoAfter(uid, args.User, args.Target.Value);
     }
 
-
-    private void OnAfterInteract(EntityUid uid, OrganRemovalToolComponent tool, AfterInteractEvent args)
+    private bool TryStartDoAfter(Entity<OrganRemovalToolComponent> tool, EntityUid user, EntityUid target)
     {
-        if (args.Handled || args.Target is null || !args.CanReach)
-            return;
 
-        // If they don't have body component somehow, ollie out
-        if (!TryComp<BodyComponent>(args.Target, out var body))
-            return;
-
-        // If not buckled to a surgical table, ollie out
-        if (!TryComp<BuckleComponent>(args.Target, out var buckle) ||
+        // If not buckled to a surgical table, display message and then end
+        if (!TryComp<BuckleComponent>(target, out var buckle) ||
             !TryComp<SurgicalTableComponent>(buckle.BuckledTo, out var table))
         {
             _popupSystem.PopupClient(Loc.GetString("organ-removal-operation-fail-table",
-                ("target", Identity.Entity(args.Target.Value, EntityManager))), args.User, PopupType.MediumCaution);
-            return;
+                ("target", Identity.Entity(target, EntityManager))), user, PopupType.MediumCaution);
+            return false;
         }
 
-        // If they aren't dead, ollie out
-        if (!_mobStateSystem.IsDead(args.Target.Value))
+        // If they aren't dead, display message and then end
+        if (!_mobStateSystem.IsDead(target))
         {
             _popupSystem.PopupClient(Loc.GetString("organ-removal-operation-fail-alive",
-                ("target", Identity.Entity(args.Target.Value, EntityManager))), args.User, PopupType.MediumCaution);
-            return;
+                ("target", Identity.Entity(target, EntityManager))), user, PopupType.MediumCaution);
+            return false;
         }
 
-        // Find the brain, if there is one, then start the doAfter
-        foreach (var organ in body.Organs?.ContainedEntities ?? [])
-        {
-            if (TryComp<BrainComponent>(organ, out var brain))
-                TryStartDoAfter(args.User, args.Target, (organ, brain), tool.SurgeryDelay, tool);
-        }
-
-        args.Handled = true;
-    }
-
-    private bool TryStartDoAfter(EntityUid user, EntityUid? target, Entity<BrainComponent> ent, TimeSpan delay, OrganRemovalToolComponent tool)
-    {
         var ev = new OrganRemovalDoAfterEvent();
 
-        var doAfter = new DoAfterArgs(EntityManager, user, delay, ev, ent, target: target, used: tool.Owner)
+        var doAfter = new DoAfterArgs(EntityManager, user, tool.Comp.SurgeryDelay, ev, tool, target: target, used: tool)
         {
             BreakOnDamage = true,
             BreakOnMove = true,
@@ -99,37 +91,62 @@ public sealed class SharedOrganRemovalTool : EntitySystem
         _popupSystem.PopupPredicted(Loc.GetString("organ-removal-operation-start"),
             Loc.GetString("organ-removal-operation-start-other", ("user", Identity.Entity(user, EntityManager))), user, user, PopupType.MediumCaution);
 
-        _audioSystem.PlayPvs(tool.StartSound, ent, AudioParams.Default.WithVariation(0.125f).WithVolume(2f).WithMaxDistance(20f));
+        _audioSystem.PlayPvs(tool.Comp.StartSound, tool, AudioParams.Default.WithVariation(0.125f).WithVolume(2f).WithMaxDistance(20f));
 
         return true;
     }
 
-    private void OnDoAfter(Entity<BrainComponent> ent, ref OrganRemovalDoAfterEvent args)
+    private void OnDoAfter(Entity<OrganRemovalToolComponent> tool, ref OrganRemovalDoAfterEvent args)
     {
-        // The try comp is extremely dumb but in my attempts to refactor it once it fought back so viciously I decided to no longer care
-        if (args.Cancelled || args.Handled || args.Target == null || args.Used == null || !TryComp<OrganRemovalToolComponent>(args.Used, out var tool))
+        if (args.Cancelled || args.Handled || args.Target == null || args.Used == null || !TryComp<BodyComponent>(args.Target, out var body))
             return;
 
         var baseXform = Transform(args.Target.Value);
 
-        // Brain plops onto the ground in highly sanitary fashion
-        _transformSystem.PlaceNextTo(ent.Owner, (args.Target.Value, baseXform));
+        // Find the brain, then remove it
+        foreach (var organ in body.Organs?.ContainedEntities ?? [])
+        {
+            // Brain plops onto the ground in highly sanitary fashion
+            if (HasComp<BrainComponent>(organ))
+            {
+                _transformSystem.PlaceNextTo(organ, (args.Target.Value, baseXform));
 
-        // Big bloody mess left behind
-        if (TryComp<BloodstreamComponent>(args.Target.Value, out var bloodstream))
-            _bloodstream.TryBleedOut(new Entity<BloodstreamComponent?>(args.Target.Value, bloodstream), 120);
+                // Big bloody mess left behind
+                if (TryComp<BloodstreamComponent>(args.Target.Value, out var bloodstream))
+                    _bloodstream.TryBleedOut(new Entity<BloodstreamComponent?>(args.Target.Value, bloodstream), 120);
 
-        // Forensics is fun
-        _forensics.TransferDna(new Entity<OrganRemovalToolComponent>(args.Used.Value, tool), args.Target.Value);
+                // Forensics is fun
+                _forensics.TransferDna(new Entity<OrganRemovalToolComponent>(args.Used.Value, tool), args.Target.Value);
 
-        _popupSystem.PopupPredicted(Loc.GetString("organ-removal-tool-operation-end",
+
+                // Display success message, add extracted component for examine text
+                _popupSystem.PopupPredicted(Loc.GetString("organ-removal-tool-operation-end",
+                    ("target", Identity.Entity(args.Target.Value, EntityManager))), args.Target.Value, args.User, PopupType.MediumCaution);
+
+                EnsureComp<BrainExtractedComponent>(args.Target.Value);
+
+                _audioSystem.PlayPvs(tool.Comp.EndSound, tool, AudioParams.Default.WithVariation(0.125f).WithVolume(-1f).WithMaxDistance(20f));
+
+                _chat.SendAdminAlert(args.User, Loc.GetString("interaction-remove-brain-admin-announcement",
+                    ("user", Identity.Entity(args.User, EntityManager)), ("target", Identity.Entity(args.Target.Value, EntityManager))));
+
+                return;
+            }
+        }
+        // We didn't find a brain so display operation fail message. This is dumb but c'est la vie
+        _popupSystem.PopupPredicted(Loc.GetString("organ-removal-operation-fail-brain",
             ("target", Identity.Entity(args.Target.Value, EntityManager))), args.Target.Value, args.User, PopupType.MediumCaution);
+    }
 
-        _audioSystem.PlayPvs(tool.EndSound, ent, AudioParams.Default.WithVariation(0.125f).WithVolume(-1f).WithMaxDistance(20f));
+    // Add examine text to individuals that got their brain removed
+    private void OnExamined(Entity<BrainExtractedComponent> ent, ref ExaminedEvent args)
+    {
+        if (!args.IsInDetailsRange)
+            return;
 
-        _chat.SendAdminAlert(args.User, Loc.GetString("interaction-remove-brain-admin-announcement",
-            ("user", Identity.Entity(args.User, EntityManager)), ("target", Identity.Entity(args.Target.Value, EntityManager))));
+        var msg = Loc.GetString("orgam-removal-examine-text");
 
-        args.Handled = true;
+        if (msg != null)
+            args.PushMarkup(msg);
     }
 }

@@ -6,13 +6,13 @@ namespace Content.Shared.Medical;
 /// <summary>
 /// Component for the simple surgical tool used for brain extraction.
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+[RegisterComponent, AutoGenerateComponentState, Access(typeof(SharedOrganRemovalToolSystem))]
 public sealed partial class OrganRemovalToolComponent : Component
 {
     /// <summary>
     /// Time that it will take for this tool to perform its function.
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField]
     public TimeSpan SurgeryDelay = TimeSpan.FromSeconds(7);
 
     /// <summary>
