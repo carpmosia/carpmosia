@@ -24,11 +24,19 @@
   guides: [ BloodBound ]
 
 - type: antagSpecifier
-  parent: DerelictCyborg
-  id: DerelictMedicalCyborg
-  spawnerPrototype: SpawnPointGhostDerelictMedicalCyborg
-
-- type: antagSpecifier
-  parent: DerelictCyborg
-  id: DerelictMedicalCyborg
-  spawnerPrototype: SpawnPointGhostDerelictMedicalCyborg
+  parent: RestrictedAntag
+  id: BloodBound
+  prefRoles:
+  - BloodBound
+  blacklist:
+    components:
+    - AntagImmune
+  components:
+  - type: BloodBound
+  - type: InitialBloodBound
+  mindRoles:
+  - MindRoleBloodBound
+  briefing:
+    text: blood-bound-initial-role-greeting
+    color: MediumVioletRed
+    sound: "/Audio/_Carpmosia/Misc/blood_bound_greeting.ogg"
