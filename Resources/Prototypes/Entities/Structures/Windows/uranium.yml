@@ -10,8 +10,9 @@
     sprite: _Carpmosia/Structures/Windows/uranium.rsi # Carpmosia-edit - Window resprite
     state: full
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: Glass
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
     - trigger:
