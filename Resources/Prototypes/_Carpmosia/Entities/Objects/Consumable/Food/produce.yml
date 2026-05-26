@@ -11,13 +11,12 @@
     - plastic
   - type: Solution
     solution:
-      food:
-        maxVol: 14
-        reagents:
-        - ReagentId: Oil
-          Quantity: 5
-        - ReagentId: Phosphorus
-          Quantity: 5
+      maxVol: 14
+      reagents:
+      - ReagentId: Oil
+        Quantity: 5
+      - ReagentId: Phosphorus
+        Quantity: 5
   - type: Sprite
     sprite: _Carpmosia/Objects/Specific/Hydroponics/crudcoa.rsi
   - type: Produce
