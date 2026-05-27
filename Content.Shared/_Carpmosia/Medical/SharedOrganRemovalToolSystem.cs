@@ -90,7 +90,7 @@ public sealed partial class SharedOrganRemovalToolSystem : EntitySystem
 
     private void OnDoAfter(Entity<OrganRemovalToolComponent> tool, ref OrganRemovalDoAfterEvent args)
     {
-        if (args.Cancelled || args.Handled || args.Target == null || args.Used == null || !TryComp<BodyComponent>(args.Target, out var body))
+        if (args.Cancelled || args.Handled || args.Target == null || args.Used == null || !TryComp<BodyComponent>(args.Target, out var body) || tool.Comp.Category == null)
             return;
 
         // Find the brain, then remove it
@@ -114,9 +114,10 @@ public sealed partial class SharedOrganRemovalToolSystem : EntitySystem
 
                 // Display success message, add extracted component for examine text
                 _popupSystem.PopupPredicted(Loc.GetString("organ-removal-tool-operation-end",
-                    ("target", Identity.Entity(args.Target.Value, EntityManager))), args.Target.Value, args.User, PopupType.MediumCaution);
+                    ("target", tool.Comp.Category.Value)), args.Target.Value, args.User, PopupType.MediumCaution);
 
-                EnsureComp<BrainExtractedComponent>(args.Target.Value);
+                if (tool.Comp.Category == "Brain")
+                    EnsureComp<BrainExtractedComponent>(args.Target.Value);
 
                 _audioSystem.PlayPvs(tool.Comp.EndSound, tool, AudioParams.Default.WithVariation(0.125f).WithVolume(-1f).WithMaxDistance(20f));
 

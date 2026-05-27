@@ -6,7 +6,7 @@ organ-removal-operation-start = The auto-surgeon begins the procedure.
 
 organ-removal-operation-start-other = {CAPITALIZE($user)} activates the auto-surgeon!
 
-organ-removal-tool-operation-end = The auto-surgeon carefully removes {CAPITALIZE($target)}'s brain!
+organ-removal-tool-operation-end = The auto-surgeon removes the {CAPITALIZE($target)} from the corpse!
 
 organ-removal-examine-text = [color=red]Their head is covered in scars![/color]
 
