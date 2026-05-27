@@ -29,14 +29,14 @@ namespace Content.Shared.Medical;
 public sealed partial class SharedOrganRemovalToolSystem : EntitySystem
 {
 
-    [Dependency] private ISharedChatManager _chat = default!;
-    [Dependency] private SharedAudioSystem _audioSystem = default!;
-    [Dependency] private SharedBloodstreamSystem _bloodstream = default!;
-    [Dependency] private SharedDoAfterSystem _doAfterSystem = default!;
-    [Dependency] private SharedForensicsSystem _forensics = default!;
-    [Dependency] private SharedPopupSystem _popupSystem = default!;
-    [Dependency] private SharedTransformSystem _transformSystem = default!;
-    [Dependency] private MobStateSystem _mobStateSystem = default!;
+    [Dependency] ISharedChatManager _chat = default!;
+    [Dependency] SharedAudioSystem _audioSystem = default!;
+    [Dependency] SharedBloodstreamSystem _bloodstream = default!;
+    [Dependency] SharedDoAfterSystem _doAfterSystem = default!;
+    [Dependency] SharedForensicsSystem _forensics = default!;
+    [Dependency] SharedPopupSystem _popupSystem = default!;
+    [Dependency] SharedTransformSystem _transformSystem = default!;
+    [Dependency] MobStateSystem _mobStateSystem = default!;
 
     public override void Initialize()
     {
