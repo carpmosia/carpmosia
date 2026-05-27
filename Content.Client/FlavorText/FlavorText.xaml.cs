@@ -9,7 +9,7 @@ namespace Content.Client.FlavorText
     [GenerateTypedNameReferences]
     public sealed partial class FlavorText : Control
     {
-        [Dependency] private readonly IConfigurationManager _configurationManager = default!; // Carpmosia-edit - Better flavor text
+        [Dependency] private IConfigurationManager _configurationManager = default!; // Carpmosia-edit - Better flavor text
 
         public Action<string>? OnFlavorTextChanged;
 
