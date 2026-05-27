@@ -8,6 +8,6 @@ organ-removal-operation-start-other = {CAPITALIZE($user)} activates the auto-sur
 
 organ-removal-tool-operation-end = The auto-surgeon carefully removes {CAPITALIZE($target)}'s brain!
 
-orgam-removal-examine-text = [color=red]Their head is covered in scars![/color]
+organ-removal-examine-text = [color=red]Their head is covered in scars![/color]
 
 interaction-remove-brain-admin-announcement = | {CAPITALIZE($user)} has removed {CAPITALIZE ($target)}'s brain using the experimental auto-surgeon!

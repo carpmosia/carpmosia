@@ -137,7 +137,7 @@ public sealed partial class SharedOrganRemovalToolSystem : EntitySystem
         if (!args.IsInDetailsRange)
             return;
 
-        var msg = Loc.GetString("orgam-removal-examine-text");
+        var msg = Loc.GetString("organ-removal-examine-text");
 
         args.PushMarkup(msg);
     }
