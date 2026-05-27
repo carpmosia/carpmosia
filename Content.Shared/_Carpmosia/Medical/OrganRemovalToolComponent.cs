@@ -13,7 +13,7 @@ public sealed partial class OrganRemovalToolComponent : Component
     /// Time that it will take for this tool to perform its function.
     /// </summary>
     [DataField]
-    public TimeSpan SurgeryDelay = TimeSpan.FromSeconds(7);
+    public TimeSpan SurgeryDelay = TimeSpan.FromSeconds(12);
 
     /// <summary>
     ///  Audio stream that plays the useSound.
