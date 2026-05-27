@@ -1,5 +1,7 @@
+using Content.Shared.Body;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Medical;
 
@@ -31,5 +33,11 @@ public sealed partial class OrganRemovalToolComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public SoundSpecifier EndSound = new SoundPathSpecifier("/Audio/_Carpmosia/Items/Medical/endsound.ogg");
+
+    /// <summary>
+    /// What kind of organ is targeted by this tool
+    /// </summary>
+    [DataField("category", required:true)]
+    public ProtoId<OrganCategoryPrototype>? Category;
 
 }

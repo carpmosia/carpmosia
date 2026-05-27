@@ -104,8 +104,12 @@ public sealed partial class SharedOrganRemovalToolSystem : EntitySystem
         // Find the brain, then remove it
         foreach (var organ in body.Organs?.ContainedEntities ?? [])
         {
+            // Get organ component to find category
+            if (!TryComp<OrganComponent>(organ, out var comp))
+                continue;
+
             // Brain plops onto the ground in highly sanitary fashion
-            if (HasComp<BrainComponent>(organ))
+            if (comp.Category == tool.Comp.Category)
             {
                 _transformSystem.DropNextTo(organ, args.Target.Value);
 
