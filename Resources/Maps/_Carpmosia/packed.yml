@@ -1,10 +1,10 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 275.2.0
+  engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 05/19/2026 06:50:13
+  time: 05/26/2026 10:23:32
   entityCount: 16278
 maps:
 - 1
@@ -7098,7 +7098,6 @@ entities:
     - type: Solution
       solution:
         maxVol: 25
-        name: food
         reagents:
         - data: []
           ReagentId: Nutriment
@@ -7110,7 +7109,6 @@ entities:
           ReagentId: Vitamin
           Quantity: 3
     - type: ContainedSolution
-      containerName: food
       container: 3
   - uid: 6
     mapInit: true
@@ -7123,13 +7121,11 @@ entities:
     - type: Solution
       solution:
         maxVol: 30
-        name: drink
         reagents:
         - data: []
           ReagentId: Ketchunaise
           Quantity: 30
     - type: ContainedSolution
-      containerName: drink
       container: 5
 - proto: AccordionInstrument
   entities:
@@ -47948,7 +47944,6 @@ entities:
       pos: 30.716793,-3.5622149
       parent: 2
     - type: SolutionContainerManager
-      solutions: null
       containers:
       - drink
     - type: TransformableContainer
@@ -51688,10 +51683,6 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
-          maxVol: 0
-          name: food
           reagents: []
       containers:
       - food
@@ -74198,7 +74189,6 @@ entities:
       solutions:
         bloodstream:
           maxVol: 600
-          name: bloodstream
           reagents:
           - data:
             - !type:DnaData
@@ -74207,11 +74197,9 @@ entities:
             Quantity: 300
         bloodstreamTemporary:
           maxVol: 4
-          name: bloodstreamTemporary
           reagents: []
         metabolites:
           maxVol: 600
-          name: metabolites
           reagents: []
       containers: []
 - proto: KitchenMicrowave
