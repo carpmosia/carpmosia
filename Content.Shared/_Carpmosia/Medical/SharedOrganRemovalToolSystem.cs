@@ -101,15 +101,13 @@ public sealed partial class SharedOrganRemovalToolSystem : EntitySystem
         if (args.Cancelled || args.Handled || args.Target == null || args.Used == null || !TryComp<BodyComponent>(args.Target, out var body))
             return;
 
-        var baseXform = Transform(args.Target.Value);
-
         // Find the brain, then remove it
         foreach (var organ in body.Organs?.ContainedEntities ?? [])
         {
             // Brain plops onto the ground in highly sanitary fashion
             if (HasComp<BrainComponent>(organ))
             {
-                _transformSystem.DropNextTo(organ, (args.Target.Value, baseXform));
+                _transformSystem.DropNextTo(organ, args.Target.Value);
 
                 // Big bloody mess left behind
                 if (TryComp<BloodstreamComponent>(args.Target.Value, out var bloodstream))
