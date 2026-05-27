@@ -6,9 +6,9 @@ using Robust.Shared.Player;
 
 namespace Content.Shared.BloodBound.EntitySystems;
 
-public abstract class SharedBloodBoundSystem : EntitySystem
+public abstract partial class SharedBloodBoundSystem : EntitySystem
 {
-    [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
+    [Dependency] private SharedActionsSystem _actionsSystem = default!;
 
     public override void Initialize()
     {
