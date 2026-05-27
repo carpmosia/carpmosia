@@ -59,7 +59,7 @@ public sealed partial class SharedOrganRemovalToolSystem : EntitySystem
 
         // If not buckled to a surgical table, display message and then end
         if (!TryComp<BuckleComponent>(target, out var buckle) ||
-            !TryComp<SurgicalTableComponent>(buckle.BuckledTo, out var table))
+            !HasComp<SurgicalTableComponent>(buckle.BuckledTo))
         {
             _popupSystem.PopupClient(Loc.GetString("organ-removal-operation-fail-table",
                 ("target", Identity.Entity(target, EntityManager))), user, PopupType.MediumCaution);
