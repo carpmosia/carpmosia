@@ -26,17 +26,17 @@ namespace Content.Shared.Medical;
 /// <summary>
 /// Defines behavior for the simple brain extraction tool. Could be easily generecised but this is all temporary anyway pending discomed.
 /// </summary>
-public sealed class SharedOrganRemovalToolSystem : EntitySystem
+public sealed partial class SharedOrganRemovalToolSystem : EntitySystem
 {
 
-    [Dependency] private readonly ISharedChatManager _chat = default!;
-    [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
-    [Dependency] private readonly SharedBloodstreamSystem _bloodstream = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
-    [Dependency] private readonly SharedForensicsSystem _forensics = default!;
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
-    [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
+    [Dependency] private ISharedChatManager _chat = default!;
+    [Dependency] private SharedAudioSystem _audioSystem = default!;
+    [Dependency] private SharedBloodstreamSystem _bloodstream = default!;
+    [Dependency] private SharedDoAfterSystem _doAfterSystem = default!;
+    [Dependency] private SharedForensicsSystem _forensics = default!;
+    [Dependency] private SharedPopupSystem _popupSystem = default!;
+    [Dependency] private SharedTransformSystem _transformSystem = default!;
+    [Dependency] private MobStateSystem _mobStateSystem = default!;
 
     public override void Initialize()
     {
