@@ -118,7 +118,6 @@ public sealed partial class SharedOrganRemovalToolSystem : EntitySystem
                 // Forensics is fun
                 _forensics.TransferDna(new Entity<OrganRemovalToolComponent>(args.Used.Value, tool), args.Target.Value);
 
-
                 // Display success message, add extracted component for examine text
                 _popupSystem.PopupPredicted(Loc.GetString("organ-removal-tool-operation-end",
                     ("target", Identity.Entity(args.Target.Value, EntityManager))), args.Target.Value, args.User, PopupType.MediumCaution);
