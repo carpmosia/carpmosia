@@ -127,6 +127,18 @@
   equipment:
     id: MedicalPDA
 
+  # Carpmosia start - alternative-job-titles
+- type: loadout
+  id: CoronerPDA
+  equipment:
+    id: CoronerPDA
+
+- type: loadout
+  id: NursePDA
+  equipment:
+    id: NursePDA
+  # Carpmosia end - alternative-job-titles
+
 - type: loadout
   id: SeniorPhysicianPDA
   effects:

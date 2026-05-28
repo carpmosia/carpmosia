@@ -38,9 +38,12 @@
   parent: [ CivilianBackpack, CommonBackpack ]
   id: PassengerBackpack
 
-# - type: loadoutGroup
-#   parent: [ CivilianPDA, CommonPDA ]
-#   id: PassengerPDA
+- type: loadoutGroup
+  parent: [ CivilianPDA, CommonPDA ]
+  id: PassengerPDA
+  loadouts:
+    - PassengerPDA
+    - AssistantPDA
 
 # - type: loadoutGroup
 #   parent: [ CivilianBelt, CommonBelt ]

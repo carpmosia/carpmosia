@@ -31,9 +31,12 @@
   parent: [ CivilianBackpack, CommonBackpack ]
   id: ReporterBackpack
 
-# - type: loadoutGroup
-#   parent: [ CivilianPDA, CommonPDA ]
-#   id: ReporterPDA
+- type: loadoutGroup
+  parent: [ CivilianPDA, CommonPDA ]
+  id: ReporterPDA
+  loadouts:
+    - ReporterPDA
+    - JournalistPDA
 
 # - type: loadoutGroup
 #   parent: [ CivilianBelt, CommonBelt ]

@@ -1,0 +1,84 @@
+#Supply
+- type: entity
+  parent: CargoPDA
+  id: PostmanPDA
+  name: postman pda
+  components:
+  - type: Pda
+    id: PostmanIDCard
+
+- type: entity
+  parent: CargoPDA
+  id: LogisticsAccountantPDA
+  name: logistics accountant pda
+  components:
+  - type: Pda
+    id: LogisticsAccountantIDCard
+
+#Engineering
+- type: entity
+  parent: EngineerPDA
+  id: CommunicationsOperatorPDA
+  name: communications operator pda
+  components:
+  - type: Pda
+    id: CommunicationsOperatorIDCard
+
+- type: entity
+  parent: EngineerPDA
+  id: StationArchitectPDA
+  name: station architect pda
+  components:
+  - type: Pda
+    id: StationArchitectIDCard
+
+#Medical
+- type: entity
+  parent: MedicalPDA
+  id: NursePDA
+  name: nurse pda
+  components:
+  - type: Pda
+    id: NurseIDCard
+
+- type: entity
+  parent: MedicalPDA
+  id: CoronerPDA
+  name: coroner pda
+  components:
+  - type: Pda
+    id: CoronerIDCard
+
+#Science
+- type: entity
+  parent: SciencePDA
+  id: XenoarcheologistPDA
+  name: xenoarcheologist pda
+  components:
+  - type: Pda
+    id: XenoarcheologistIDCard
+
+- type: entity
+  parent: SciencePDA
+  id: RoboticistPDA
+  name: roboticist pda
+  components:
+  - type: Pda
+    id: RoboticistIDCard
+
+#Misc
+- type: entity
+  parent: PassengerPDA
+  id: AssistantPDA
+  name: assistant pda
+  components:
+  - type: Pda
+    id: AssistantIDCard
+
+- type: entity
+  parent: ReporterPDA
+  id: JournalistPDA
+  name: journalist pda
+  components:
+  - type: Pda
+    id: JournalistIDCard
