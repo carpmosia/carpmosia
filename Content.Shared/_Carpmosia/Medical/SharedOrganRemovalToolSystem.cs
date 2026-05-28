@@ -38,6 +38,7 @@ public sealed partial class SharedOrganRemovalToolSystem : EntitySystem
         SubscribeLocalEvent<OrganRemovalToolComponent, OrganRemovalDoAfterEvent>(OnDoAfter);
         SubscribeLocalEvent<BrainExtractedComponent, ExaminedEvent>(OnExamined);
     }
+
     private void OnAfterInteract(Entity<OrganRemovalToolComponent> uid, ref AfterInteractEvent args)
     {
         if (args.Handled || args.Target is null || !args.CanReach || args.User == args.Target || !HasComp<BodyComponent>(args.Target))
