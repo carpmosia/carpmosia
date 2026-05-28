@@ -147,7 +147,12 @@
   id: ScientistPDA
   equipment:
     id: SciencePDA
-    id: XenoarcheologistPDA # Carpmosia edit - alternative-job-titles
+
+  # Carpmosia start - alternative-job-titles
+- type: loadout
+  id: XenoarcheologistPDA
+  equipment:
+    id: XenoarcheologistPDA
 
 - type: loadout
   id: SeniorResearcherPDA
