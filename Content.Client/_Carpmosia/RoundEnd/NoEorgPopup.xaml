@@ -26,7 +26,8 @@
                       Margin="0 0 0 10" />
             <Button Name="NoEorgCloseButton"
                     HorizontalAlignment="Center"
-                    MinWidth="150" />
+                    MinWidth="150"
+                    MinHeight="26" />
         </BoxContainer>
     </BoxContainer>
 </controls:FancyWindow>
