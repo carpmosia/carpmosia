@@ -22,6 +22,12 @@ public sealed partial class OrganRemovalToolComponent : Component
     public EntityUid? PlayingStream;
 
     /// <summary>
+    /// Sound to play on doafter start.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public SoundSpecifier StartSound = new SoundPathSpecifier("/Audio/_Carpmosia/Items/Medical/startsound.ogg");
+
+    /// <summary>
     /// Sound to play on doafter end.
     /// </summary>
     [DataField, AutoNetworkedField]
