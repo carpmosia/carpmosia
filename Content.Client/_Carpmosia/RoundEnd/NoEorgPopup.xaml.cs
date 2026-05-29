@@ -28,8 +28,7 @@ public sealed partial class NoEorgPopup : FancyWindow
 
     private void InitializeUI()
     {
-        _initialSkipState =
-            _cfg.GetCVar(CCVars.SkipEorgPopup); // Store the initial CVar value to compare against
+        _initialSkipState = _cfg.GetCVar(CCVars.SkipEorgPopup); // Store the initial CVar value to compare against
         SkipCheckBox.Pressed = _initialSkipState;
         NoEorgCloseButton.Disabled = true;
 
