@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 267.3.0
+  engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 12/02/2025 22:35:03
-  entityCount: 21891
+  time: 05/26/2026 10:23:24
+  entityCount: 21890
 maps:
 - 1
 grids:
@@ -918,41 +918,6 @@ entities:
             2453: -32,-51
             2454: -32,-50
         - node:
-            color: '#FFFFFFFF'
-            id: BrickTileTechMaintSteelHalfCornerNe
-          decals:
-            2936: 49,-16
-        - node:
-            color: '#FFFFFFFF'
-            id: BrickTileTechMaintSteelHalfCornerNw
-          decals:
-            2937: 40,-11
-        - node:
-            color: '#FFFFFFFF'
-            id: BrickTileTechMaintSteelHalfLineN
-          decals:
-            2938: 32,-11
-            2939: 33,-11
-            2940: 34,-11
-            3424: -9,-54
-            3425: -8,-54
-            3426: -7,-54
-            3427: -6,-54
-            3428: -5,-54
-            3429: -4,-54
-            3430: -3,-54
-        - node:
-            color: '#FFFFFFFF'
-            id: BrickTileTechMaintSteelHalfLineS
-          decals:
-            2882: 26,-96
-            2884: 24,-96
-            2885: 32,-96
-            2887: 34,-96
-            2933: 52,-66
-            2934: 53,-66
-            2935: 54,-66
-        - node:
             color: '#52B4E9FF'
             id: BrickTileSteelCornerNe
           decals:
@@ -1567,6 +1532,41 @@ entities:
             2873: 23,-96
             2874: 23,-95
             2991: 31,-62
+        - node:
+            color: '#FFFFFFFF'
+            id: BrickTileTechMaintSteelHalfCornerNe
+          decals:
+            2936: 49,-16
+        - node:
+            color: '#FFFFFFFF'
+            id: BrickTileTechMaintSteelHalfCornerNw
+          decals:
+            2937: 40,-11
+        - node:
+            color: '#FFFFFFFF'
+            id: BrickTileTechMaintSteelHalfLineN
+          decals:
+            2938: 32,-11
+            2939: 33,-11
+            2940: 34,-11
+            3424: -9,-54
+            3425: -8,-54
+            3426: -7,-54
+            3427: -6,-54
+            3428: -5,-54
+            3429: -4,-54
+            3430: -3,-54
+        - node:
+            color: '#FFFFFFFF'
+            id: BrickTileTechMaintSteelHalfLineS
+          decals:
+            2882: 26,-96
+            2884: 24,-96
+            2885: 32,-96
+            2887: 34,-96
+            2933: 52,-66
+            2934: 53,-66
+            2935: 54,-66
         - node:
             color: '#1A394AFF'
             id: BrickTileWhiteCornerNe
@@ -6452,6 +6452,9 @@ entities:
     - type: RadiationGridResistance
     - type: NavMap
     - type: ImplicitRoof
+    - type: TileHistory
+      chunkHistory: {}
+    - type: ExplosionAirtightGrid
   - uid: 4
     components:
     - type: MetaData
@@ -6461,13 +6464,11 @@ entities:
     - type: Solution
       solution:
         maxVol: 1000
-        name: puddle
         reagents:
         - data: []
           ReagentId: Blood
           Quantity: 5
     - type: ContainedSolution
-      containerName: puddle
       container: 3
 - proto: AcousticGuitarInstrument
   entities:
@@ -52206,8 +52207,8 @@ entities:
           restitution: 0
           friction: 0.4
     - type: EntityStorage
-      open: True
       removedMasks: 20
+      open: True
     - type: PlaceableSurface
       isPlaceable: True
   - uid: 8193
@@ -98392,6 +98393,13 @@ entities:
     - type: Transform
       pos: -10.472088,-25.736689
       parent: 2
+- proto: LawbringerCircuitBoard
+  entities:
+  - uid: 16807
+    components:
+    - type: Transform
+      pos: 46.515175,-89.55879
+      parent: 2
 - proto: LightBulbCrystalBlue
   entities:
   - uid: 14688
@@ -99633,8 +99641,8 @@ entities:
           restitution: 0
           friction: 0.4
     - type: EntityStorage
-      open: True
       removedMasks: 20
+      open: True
     - type: PlaceableSurface
       isPlaceable: True
 - proto: LockerWardenFilled
@@ -103011,7 +103019,6 @@ entities:
       pos: 9.5,-63.5
       parent: 2
     - type: PoweredLight
-      isBlinking: True
       lastGhostBlink: 886.0657806
   - uid: 15230
     components:
@@ -103749,7 +103756,6 @@ entities:
       pos: 4.5,-15.5
       parent: 2
     - type: PoweredLight
-      isBlinking: True
       lastGhostBlink: 1363.0319703
   - uid: 15360
     components:
@@ -103757,7 +103763,6 @@ entities:
       pos: 0.5,-15.5
       parent: 2
     - type: PoweredLight
-      isBlinking: True
       lastGhostBlink: 1363.0319703
   - uid: 15361
     components:
@@ -104428,7 +104433,6 @@ entities:
       pos: 34.5,-65.5
       parent: 2
     - type: PoweredLight
-      isBlinking: True
       lastGhostBlink: 10899.2891007
   - uid: 15477
     components:
@@ -104751,7 +104755,6 @@ entities:
       pos: 16.5,-6.5
       parent: 2
     - type: PoweredLight
-      isBlinking: True
       lastGhostBlink: 2616.997383
   - uid: 15533
     components:
@@ -104759,7 +104762,6 @@ entities:
       pos: 19.5,-6.5
       parent: 2
     - type: PoweredLight
-      isBlinking: True
       lastGhostBlink: 2616.997383
   - uid: 15534
     components:
@@ -105156,7 +105158,6 @@ entities:
       pos: -7.5,-70.5
       parent: 2
     - type: PoweredLight
-      isBlinking: True
       lastGhostBlink: 1427.4985725
   - uid: 15602
     components:
@@ -105788,7 +105789,6 @@ entities:
       pos: 80.5,-0.5
       parent: 2
     - type: PoweredLight
-      isBlinking: True
       lastGhostBlink: 5282.0947179
   - uid: 15690
     components:
@@ -105914,7 +105914,6 @@ entities:
       pos: 0.5,-19.5
       parent: 2
     - type: PoweredLight
-      isBlinking: True
       lastGhostBlink: 1363.0319703
   - uid: 15710
     components:
@@ -106358,10 +106357,6 @@ entities:
     - type: SolutionContainerManager
       solutions:
         puddle:
-          temperature: 293.15
-          canReact: True
-          maxVol: 0
-          name: puddle
           reagents: []
       containers:
       - puddle
@@ -111981,13 +111976,6 @@ entities:
     - type: Transform
       pos: 3.4376178,12.449493
       parent: 2
-- proto: RobocopCircuitBoard
-  entities:
-  - uid: 16807
-    components:
-    - type: Transform
-      pos: 46.515175,-89.55879
-      parent: 2
 - proto: RollerBed
   entities:
   - uid: 16808
@@ -115912,7 +115900,7 @@ entities:
     - type: Transform
       pos: 56.5,-66.5
       parent: 2
-- proto: SpacemenFigureSpawner
+- proto: SpacemenFigurineSpawner90
   entities:
   - uid: 17357
     components:
@@ -116132,13 +116120,6 @@ entities:
     components:
     - type: Transform
       pos: -12.5,-27.5
-      parent: 2
-- proto: SpawnPointBoxer
-  entities:
-  - uid: 17390
-    components:
-    - type: Transform
-      pos: 77.5,-93.5
       parent: 2
 - proto: SpawnPointCaptain
   entities:
@@ -138857,8 +138838,8 @@ entities:
         immutable: False
         temperature: 293.14673
         moles: {}
-      open: True
       removedMasks: 20
+      open: True
 - proto: WardrobeGreenFilled
   entities:
   - uid: 21533
