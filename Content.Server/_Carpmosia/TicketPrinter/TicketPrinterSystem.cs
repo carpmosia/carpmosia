@@ -4,10 +4,10 @@ using Content.Server.Stack;
 
 namespace Content.Server.TicketPrinter;
 
-public sealed class TicketPrinterSystem : SharedTicketPrinterSystem
+public sealed partial class TicketPrinterSystem : SharedTicketPrinterSystem
 {
-    [Dependency] private readonly StackSystem _stack = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private StackSystem _stack = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
 
     public override void Initialize()
     {
