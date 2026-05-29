@@ -2,10 +2,10 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 270.1.0
+  engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 01/20/2026 02:40:37
+  time: 05/26/2026 10:24:53
   entityCount: 24851
 maps:
 - 1
@@ -16115,6 +16115,8 @@ entities:
     - type: NavMap
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
+    - type: TileHistory
+      chunkHistory: {}
 - proto: AcousticGuitarInstrument
   entities:
   - uid: 3
@@ -107812,7 +107814,6 @@ entities:
   - uid: 15084
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 65.5,-41.5
       parent: 2
   - uid: 15085
@@ -107928,13 +107929,11 @@ entities:
   - uid: 15107
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 65.5,-44.5
       parent: 2
   - uid: 15108
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 65.5,-43.5
       parent: 2
   - uid: 15109
@@ -107950,7 +107949,6 @@ entities:
   - uid: 15111
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 65.5,-42.5
       parent: 2
   - uid: 15112
@@ -111426,7 +111424,6 @@ entities:
   - uid: 15806
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: 79.5,-39.5
       parent: 2
   - uid: 15807
@@ -111912,7 +111909,6 @@ entities:
   - uid: 15903
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: 80.5,-39.5
       parent: 2
   - uid: 15904
@@ -112258,7 +112254,6 @@ entities:
   - uid: 15972
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: 81.5,-39.5
       parent: 2
   - uid: 15973
@@ -112539,7 +112534,6 @@ entities:
   - uid: 16028
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 65.5,-40.5
       parent: 2
   - uid: 16029
@@ -113380,7 +113374,6 @@ entities:
   - uid: 16196
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -21.5,-35.5
       parent: 2
   - uid: 16197
