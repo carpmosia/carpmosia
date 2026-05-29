@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.IntegrationTests.Fixtures;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
@@ -21,7 +22,7 @@ using Robust.Shared.Prototypes;
 namespace Content.IntegrationTests.Tests.Commands;
 
 [TestFixture]
-public sealed class SuicideCommandTests
+public sealed class SuicideCommandTests : GameTest
 {
 
     [TestPrototypes]
@@ -57,6 +58,13 @@ public sealed class SuicideCommandTests
     private static readonly ProtoId<TagPrototype> CannotSuicideTag = "CannotSuicide";
     private static readonly ProtoId<DamageTypePrototype> DamageType = "Slash";
 
+    public override PoolSettings PoolSettings => new PoolSettings
+    {
+        Connected = true,
+        Dirty = true,
+        DummyTicker = false
+    };
+
     /// <summary>
     /// Run the suicide command in the console
     /// Should successfully kill the player and ghost them
@@ -64,18 +72,14 @@ public sealed class SuicideCommandTests
     [Test]
     public async Task TestSuicide()
     {
-        await using var pair = await PoolManager.GetServerClient(new PoolSettings
-        {
-            Connected = true,
-            Dirty = true,
-            DummyTicker = false
-        });
+        var pair = Pair;
         var server = pair.Server;
         var consoleHost = server.ResolveDependency<IConsoleHost>();
         var entManager = server.ResolveDependency<IEntityManager>();
         var playerMan = server.ResolveDependency<IPlayerManager>();
         var mindSystem = entManager.System<SharedMindSystem>();
         var mobStateSystem = entManager.System<MobStateSystem>();
+        var tagSystem = entManager.System<TagSystem>(); // Carpmosia-edit - Remove Tonguebiting
 
         // We need to know the player and whether they can be hurt, killed, and whether they have a mind
         var player = playerMan.Sessions.First().AttachedEntity!.Value;
@@ -91,6 +95,7 @@ public sealed class SuicideCommandTests
             mobStateComp = entManager.GetComponent<MobStateComponent>(player);
         });
 
+        tagSystem.RemoveTag(player, CannotSuicideTag); // Carpmosia-edit - Remove Tonguebiting
 
         // Check that running the suicide command kills the player
         // and properly ghosts them without them being able to return to their body
@@ -104,8 +109,6 @@ public sealed class SuicideCommandTests
                             !ghostComp.CanReturnToBody);
             });
         });
-
-        await pair.CleanReturnAsync();
     }
 
     /// <summary>
@@ -115,17 +118,13 @@ public sealed class SuicideCommandTests
     [Test]
     public async Task TestSuicideWhileDamaged()
     {
-        await using var pair = await PoolManager.GetServerClient(new PoolSettings
-        {
-            Connected = true,
-            Dirty = true,
-            DummyTicker = false
-        });
+        var pair = Pair;
         var server = pair.Server;
         var consoleHost = server.ResolveDependency<IConsoleHost>();
         var entManager = server.ResolveDependency<IEntityManager>();
         var playerMan = server.ResolveDependency<IPlayerManager>();
         var protoMan = server.ResolveDependency<IPrototypeManager>();
+        var tagSystem = entManager.System<TagSystem>(); // Carpmosia-edit - Remove Tonguebiting
 
         var damageableSystem = entManager.System<DamageableSystem>();
         var mindSystem = entManager.System<SharedMindSystem>();
@@ -150,6 +149,8 @@ public sealed class SuicideCommandTests
             damageableSystem.TryChangeDamage(player, new DamageSpecifier(slashProto, FixedPoint2.New(46.5)));
         });
 
+        tagSystem.RemoveTag(player, CannotSuicideTag); // Carpmosia-edit - Remove Tonguebiting
+
         // Check that running the suicide command kills the player
         // and properly ghosts them without them being able to return to their body
         // and that all the damage is concentrated in the Slash category
@@ -166,8 +167,6 @@ public sealed class SuicideCommandTests
                 Assert.That(damageableSystem.GetTotalDamage(player), Is.EqualTo(lethalDamageThreshold));
             });
         });
-
-        await pair.CleanReturnAsync();
     }
 
     /// <summary>
@@ -177,12 +176,7 @@ public sealed class SuicideCommandTests
     [Test]
     public async Task TestSuicideWhenCannotSuicide()
     {
-        await using var pair = await PoolManager.GetServerClient(new PoolSettings
-        {
-            Connected = true,
-            Dirty = true,
-            DummyTicker = false
-        });
+        var pair = Pair;
         var server = pair.Server;
         var consoleHost = server.ResolveDependency<IConsoleHost>();
         var entManager = server.ResolveDependency<IEntityManager>();
@@ -217,8 +211,6 @@ public sealed class SuicideCommandTests
                             !ghostComp.CanReturnToBody);
             });
         });
-
-        await pair.CleanReturnAsync();
     }
 
 
@@ -228,12 +220,7 @@ public sealed class SuicideCommandTests
     [Test]
     public async Task TestSuicideByHeldItem()
     {
-        await using var pair = await PoolManager.GetServerClient(new PoolSettings
-        {
-            Connected = true,
-            Dirty = true,
-            DummyTicker = false
-        });
+        var pair = Pair;
         var server = pair.Server;
         var consoleHost = server.ResolveDependency<IConsoleHost>();
         var entManager = server.ResolveDependency<IEntityManager>();
@@ -244,6 +231,7 @@ public sealed class SuicideCommandTests
         var mobStateSystem = entManager.System<MobStateSystem>();
         var transformSystem = entManager.System<TransformSystem>();
         var damageableSystem = entManager.System<DamageableSystem>();
+        var tagSystem = entManager.System<TagSystem>(); // Carpmosia-edit - Remove Tonguebiting
 
         // We need to know the player and whether they can be hurt, killed, and whether they have a mind
         var player = playerMan.Sessions.First().AttachedEntity!.Value;
@@ -274,6 +262,8 @@ public sealed class SuicideCommandTests
             Assert.That(executionComponent, Is.Not.EqualTo(null));
         });
 
+        tagSystem.RemoveTag(player, CannotSuicideTag); // Carpmosia-edit - Remove Tonguebiting
+
         // Check that running the suicide command kills the player
         // and properly ghosts them without them being able to return to their body
         // and that all the damage is concentrated in the Slash category
@@ -292,8 +282,6 @@ public sealed class SuicideCommandTests
                 Assert.That(damageableSystem.GetAllDamage((player, damageableComp)).DamageDict["Slash"], Is.EqualTo(lethalDamageThreshold));
             });
         });
-
-        await pair.CleanReturnAsync();
     }
 
     /// <summary>
@@ -303,12 +291,7 @@ public sealed class SuicideCommandTests
     [Test]
     public async Task TestSuicideByHeldItemSpreadDamage()
     {
-        await using var pair = await PoolManager.GetServerClient(new PoolSettings
-        {
-            Connected = true,
-            Dirty = true,
-            DummyTicker = false
-        });
+        var pair = Pair;
         var server = pair.Server;
         var consoleHost = server.ResolveDependency<IConsoleHost>();
         var entManager = server.ResolveDependency<IEntityManager>();
@@ -319,6 +302,7 @@ public sealed class SuicideCommandTests
         var mobStateSystem = entManager.System<MobStateSystem>();
         var transformSystem = entManager.System<TransformSystem>();
         var damageableSystem = entManager.System<DamageableSystem>();
+        var tagSystem = entManager.System<TagSystem>(); // Carpmosia-edit - Remove Tonguebiting
 
         // We need to know the player and whether they can be hurt, killed, and whether they have a mind
         var player = playerMan.Sessions.First().AttachedEntity!.Value;
@@ -349,6 +333,8 @@ public sealed class SuicideCommandTests
             Assert.That(executionComponent, Is.Not.EqualTo(null));
         });
 
+        tagSystem.RemoveTag(player, CannotSuicideTag); // Carpmosia-edit - Remove Tonguebiting
+
         // Check that running the suicide command kills the player
         // and properly ghosts them without them being able to return to their body
         // and that slash damage is split in half
@@ -367,7 +353,5 @@ public sealed class SuicideCommandTests
                 Assert.That(damageableSystem.GetAllDamage((player, damageableComp)).DamageDict["Slash"], Is.EqualTo(lethalDamageThreshold / 2));
             });
         });
-
-        await pair.CleanReturnAsync();
     }
 }

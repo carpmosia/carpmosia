@@ -1,6 +1,6 @@
 - type: entity
   id: BaseWeaponBattery
-  parent: BaseItem
+  parent: [ BaseItem, BasePointerCrosshair ] # Carpmosia-edit - Pointing modifier
   abstract: true
   components:
   - type: Sprite
@@ -63,7 +63,7 @@
 
 - type: entity
   id: BaseWeaponPowerCell
-  parent: BaseItem
+  parent: [ BaseItem, BasePointerCrosshair ] # Carpmosia-edit - Pointing modifier
   abstract: true
   components:
   - type: Sprite
@@ -842,7 +842,7 @@
   name: energy shotgun
   parent: [BaseWeaponBattery, BaseGunWieldable, BaseSecurityContraband]
   id: WeaponEnergyShotgun
-  description: A one-of-a-kind prototype energy weapon that uses various shotgun configurations. It offers the possibility of both lethal and non-lethal shots, making it a versatile weapon.
+  description: An energy weapon in limited production issued to NanoTrasen security forces. Draws from a hypercapacitive power cell in concentrated bursts to fire window piercing projectile volleys. Capable of longer sustained fire than most kinetic shotguns. # Carpmosia-edit - Streamlined eshotgun
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/energy_shotgun.rsi
@@ -860,27 +860,29 @@
   - type: Clothing
     sprite: Objects/Weapons/Guns/Battery/energy_shotgun.rsi
   - type: Gun
-    fireRate: 2
+    fireRate: 1 # Carpmosia-edit - Streamlined eshotgun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: BatteryAmmoProvider
-    proto: BulletLaserSpreadNarrow
-    fireCost: 80
-  - type: BatteryWeaponFireModes
-    fireModes:
-    - proto: BulletLaserSpreadNarrow
-      fireCost: 80
-    - proto: BulletDisablerSmgSpread
-      fireCost: 48
-      pacifismAllowedMode: true
+# Carpmosia-start - Streamlined eshotgun
+    proto: BulletLaserSpreadPiercing
+    fireCost: 100
+#  - type: BatteryWeaponFireModes
+#    fireModes:
+#    - proto: BulletLaserSpreadNarrow
+#      fireCost: 80
+#    - proto: BulletDisablerSmgSpread
+#      fireCost: 48
+#      pacifismAllowedMode: true
+# Carpmosia-end - Streamlined eshotgun
   - type: Item
     size: Large
     sprite: Objects/Weapons/Guns/Battery/inhands_64x.rsi
     heldPrefix: energy
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Battery
-    maxCharge: 480
-    startingCharge: 480
+    maxCharge: 1200 # Carpmosia-edit - Streamlined eshotgun
+    startingCharge: 1200 # Carpmosia-edit - Streamlined eshotgun
 
 - type: entity
   name: energy magnum

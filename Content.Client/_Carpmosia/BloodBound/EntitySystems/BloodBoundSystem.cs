@@ -7,10 +7,10 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client.BloodBound.EntitySystems;
 
-public sealed class BloodBoundSystem : SharedBloodBoundSystem
+public sealed partial class BloodBoundSystem : SharedBloodBoundSystem
 {
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private IPlayerManager _playerManager = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
 
     public override void Initialize()
     {
