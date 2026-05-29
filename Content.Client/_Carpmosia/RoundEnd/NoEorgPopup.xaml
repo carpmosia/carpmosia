@@ -7,16 +7,16 @@
     MinSize="520 450"
     MaxSize="520 450">
     <BoxContainer Orientation="Vertical" Margin="20">
-        <Label Name="TitleLabel"
+        <Label Text="{Loc 'no-eorg-popup-label'}"
                StyleClasses="LabelBig"
                HorizontalAlignment="Center"
                Margin="0 0 0 5" />
         <PanelContainer StyleClasses="BackgroundDark" Margin="0 0 0 10">
             <BoxContainer Orientation="Vertical" Margin="10">
-                <RichTextLabel Name="MessageLabel" HorizontalAlignment="Center" />
+                <RichTextLabel Text="{Loc 'no-eorg-popup-message'}" HorizontalAlignment="Center" />
                 <Control MinSize="0 5" />
-                <RichTextLabel Name="RuleLabel" HorizontalAlignment="Center" />
-                <RichTextLabel Name="RuleTextLabel" HorizontalAlignment="Center" Margin="0 5 0 0" />
+                <RichTextLabel Text="{Loc 'no-eorg-popup-rule'}" HorizontalAlignment="Center" />
+                <RichTextLabel Text="{Loc 'no-eorg-popup-rule-text'}"  HorizontalAlignment="Center" Margin="0 5 0 0" />
             </BoxContainer>
         </PanelContainer>
         <BoxContainer Orientation="Vertical" VerticalAlignment="Bottom" Margin="0 10 0 0">

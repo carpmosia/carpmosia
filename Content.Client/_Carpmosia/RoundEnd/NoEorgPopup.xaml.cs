@@ -29,11 +29,6 @@ public sealed partial class NoEorgPopup : FancyWindow
 
     private void InitializeUI()
     {
-        TitleLabel.Text = Loc.GetString("no-eorg-popup-label");
-        MessageLabel.SetMessage(FormattedMessage.FromMarkupOrThrow(Loc.GetString("no-eorg-popup-message")));
-        RuleLabel.SetMessage(FormattedMessage.FromMarkupOrThrow(Loc.GetString("no-eorg-popup-rule")));
-        RuleTextLabel.SetMessage(FormattedMessage.FromMarkupOrThrow(Loc.GetString("no-eorg-popup-rule-text")));
-
         _initialSkipState =
             _cfg.GetCVar(CCVars.SkipEorgPopup); // Store the initial CVar value to compare against
         SkipCheckBox.Pressed = _initialSkipState;
