@@ -84,8 +84,6 @@ public sealed partial class SharedOrganRemovalToolSystem : EntitySystem
         _popupSystem.PopupPredicted(Loc.GetString("organ-removal-operation-start"),
             Loc.GetString("organ-removal-operation-start-other", ("user", Identity.Entity(user, EntityManager))), user, user, PopupType.MediumCaution);
 
-        _audioSystem.PlayPvs(tool.Comp.StartSound, tool, AudioParams.Default.WithVariation(0.125f).WithVolume(2f).WithMaxDistance(20f));
-
         return true;
     }
 
