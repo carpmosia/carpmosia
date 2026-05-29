@@ -1,0 +1,28 @@
+<ui:FancyWindow
+    xmlns="https://spacestation14.io"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Content.Client.Thaven.ThavenMoodsMenu"
+    xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    Title="{Loc 'moods-ui-menu-title'}"
+    MinSize="200 100"
+    SetSize="450 515"
+>
+    <BoxContainer Orientation="Vertical"
+            HorizontalExpand="True"
+            VerticalExpand="True">
+        <PanelContainer VerticalExpand="True" Margin="10 10 10 10">
+            <PanelContainer.PanelOverride>
+                <gfx:StyleBoxFlat BackgroundColor="#1B1B1E"/>
+            </PanelContainer.PanelOverride>
+            <ScrollContainer HScrollEnabled="False"
+                    HorizontalExpand="True"
+                    VerticalExpand="True">
+                <BoxContainer Name="MoodDisplayContainer"
+                    Orientation="Vertical"
+                    VerticalExpand="True"
+                    Margin="10 10 10 0"/>
+            </ScrollContainer>
+        </PanelContainer>
+    </BoxContainer>
+</ui:FancyWindow>

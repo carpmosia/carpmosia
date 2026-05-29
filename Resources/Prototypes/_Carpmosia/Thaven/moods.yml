@@ -1,0 +1,6 @@
+- type: weightedRandom
+  id: ThavenMoodsRandom
+  weights:
+    ThavenMoodsPositive: 0.45
+    ThavenMoodsNegative: 0.45
+    ThavenMoodsWildcard: 0.1

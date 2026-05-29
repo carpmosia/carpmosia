@@ -1,0 +1,335 @@
+# "No, and" moods will discourage players from certain behaviors and objects
+
+# Make sure to add new moods to this dataset or they will not be selected!!!!!!
+- type: dataset
+  id: ThavenMoodsNegative
+  values:
+  - SecretMoods
+  - NoModernMedicine
+  - DepartmentDisapproval
+  - DontSpeakToCommand
+  - DisapproveOfDrugs
+  - ExcessivelyDisorganized
+  - DetestSilicons
+  - DinnerFloor
+  - HugBad
+  - AlwaysAlone
+  - Atheist
+  - Procrastinator
+  - NoRadio
+  - ImproperStorage
+  - Ferengi
+  - ToolLicense
+  - LyingBad
+  - VampireInvitation
+  - NoDragging
+  - DrunkRespect
+  - RankSnob
+  - HardsuitsBad
+  - HatHair
+  - DistrustFashion
+  - HappyBad
+  - OnlyPills
+  - AvoidPuddles
+  - FoodRestrict
+  - Claustrophobic
+  - Agoraphobic
+  - NonSmoker
+  - MadHatter
+  - Crawler
+  - Elevated
+
+
+# Your Moods are a strictly-kept secret, and should never be revealed to anyone.
+- type: thavenMood
+  id: SecretMoods
+  moodName: mood-negative-secret-moods-name
+  moodDesc: mood-negative-secret-moods-desc
+  conflicts:
+  - SecretMoodsShared
+
+
+# You do not approve of modern medicine and abstain from treatment with it.
+- type: thavenMood
+  id: NoModernMedicine
+  moodName: mood-negative-no-modern-medicine-name
+  moodDesc: mood-negative-no-modern-medicine-desc
+
+
+# You disapprove of [DEPARTMENT]
+- type: thavenMood
+  id: DepartmentDisapproval
+  moodName: mood-negative-department-disapproval-name
+  moodDesc: mood-negative-department-disapproval-desc
+  moodVars:
+    department: Departments
+
+
+# Never Speak To Command: You are too lowly to speak to Command, even if spoken to first.
+- type: thavenMood
+  id: DontSpeakToCommand
+  moodName: mood-negative-dont-speak-to-command-name
+  moodDesc: mood-negative-dont-speak-to-command-desc
+  conflicts:
+  - OnlySpeakToCommand
+  - MostImportant
+
+
+# You detest mind-altering drugs, including alcohol, and must abstain from them.
+- type: thavenMood
+  id: DisapproveOfDrugs
+  moodName: mood-negative-disapprove-of-drugs-name
+  moodDesc: mood-negative-disapprove-of-drugs-desc
+  conflicts:
+  - MustDoDrugs
+
+# Personal property is theft. All of your possessions must be publicly accessible (within reason.)
+- type: thavenMood
+  id: ExcessivelyDisorganized
+  moodName: mood-negative-excessively-disorganized-name
+  moodDesc: mood-negative-excessively-disorganized-desc
+  conflicts:
+  - ExcessivelyOrganized
+
+# Silicons are beneath you: Speaking to them is demeaning, and must be avoided at all costs.
+- type: thavenMood
+  id: DetestSilicons
+  moodName: mood-negative-detest-silicons-name
+  moodDesc: mood-negative-detest-silicons-desc
+  conflicts:
+  - WorshipSilicons
+
+# Food and drink must only be consumed off of the floor.
+- type: thavenMood
+  id: DinnerFloor
+  moodName: mood-negative-dinner-floor-name
+  moodDesc: mood-negative-dinner-floor-desc
+  conflicts:
+  - DinnerEtiquette
+
+# Hugging someone is a grave insult.
+- type: thavenMood
+  id: HugBad
+  moodName: mood-negative-hug-bad-name
+  moodDesc: mood-negative-hug-bad-desc
+  conflicts:
+  - HugGood
+
+# You must strive to be alone whenever possible.
+- type: thavenMood
+  id: AlwaysAlone
+  moodName: mood-negative-always-alone-name
+  moodDesc: mood-negative-always-alone-desc
+  conflicts:
+  - NeverAlone
+
+# You do not approve of organized religion. It should be dismantled or disrupted wherever possible.
+- type: thavenMood
+  id: Atheist
+  moodName: mood-negative-atheist-name
+  moodDesc: mood-negative-atheist-desc
+  conflicts:
+  - VeryReligious
+
+# Punctuality is impolite. You must walk slowly at all times, and be fashionably late to any obligations.
+- type: thavenMood
+  id: Procrastinator
+  moodName: mood-negative-procrastinator-name
+  moodDesc: mood-negative-procrastinator-desc
+  conflicts:
+  - Scheduler
+
+# Using radio communications is exceptionally rude. All conversations must be had in-person, face-to-face. Throw away your headset.
+- type: thavenMood
+  id: NoRadio
+  moodName: mood-negative-no-radio-name
+  moodDesc: mood-negative-no-radio-desc
+  conflicts:
+  - RadioOnly
+
+# Carrying tools on your person is demeaning. If you must use them, they should be dragged behind you, shamefully.
+- type: thavenMood
+  id: ImproperStorage
+  moodName: mood-negative-improper-storage-name
+  moodDesc: mood-negative-improper-storage-desc
+  conflicts:
+  - ProperStorage
+
+# You have an entrepreneurial spirit. Profit is the most important thing in life, above all else.
+- type: thavenMood
+  id: Ferengi
+  moodName: mood-negative-ferengi-name
+  moodDesc: mood-negative-ferengi-desc
+
+# You must obtain a license in order to carry or use any tool, and have it stamped by the relevant authorities.
+- type: thavenMood
+  id: ToolLicense
+  moodName: mood-negative-tool-license-name
+  moodDesc: mood-negative-tool-license-desc
+
+# Anyone who lies, no matter how trivial the falsehood, is the worst kind of criminal.
+- type: thavenMood
+  id: LyingBad
+  moodName: mood-negative-lying-bad-name
+  moodDesc: mood-negative-lying-bad-desc
+  conflicts:
+  - CompulsiveLiar
+
+# You physically cannot pass through a closed door unless you have been invited in, personally, at least once.
+- type: thavenMood
+  id: VampireInvitation
+  moodName: mood-negative-vampire-invitation-name
+  moodDesc: mood-negative-vampire-invitation-desc
+
+# The dead must be treated with utmost respect. Dragging bodies across the ground is horrific.
+- type: thavenMood
+  id: NoDragging
+  moodName: mood-negative-no-dragging-name
+  moodDesc: mood-negative-no-dragging-desc
+
+# You do not respect anyone who is not drunk.
+- type: thavenMood
+  id: DrunkRespect
+  moodName: mood-negative-drunk-respect-name
+  moodDesc: mood-negative-drunk-respect-desc
+  conflicts:
+  - DisapproveOfDrugs
+
+# You refuse to respond to anyone who is of a lower rank than you.
+- type: thavenMood
+  id: RankSnob
+  moodName: mood-negative-rank-snob-name
+  moodDesc: mood-negative-rank-snob-desc
+  conflicts:
+  - DontSpeakToCommand
+
+# [CLOTHING ITEM] is SO last year. You cannot wear them.
+- type: thavenMood
+  id: HardsuitsBad
+  moodName: mood-negative-hardsuits-bad-name
+  moodDesc: mood-negative-hardsuits-bad-desc
+  moodVars:
+    clothes: Clothes
+
+# Hats and helmets make your hair look bad. You cannot wear them.
+- type: thavenMood
+  id: HatHair
+  moodName: mood-negative-hat-hair-name
+  moodDesc: mood-negative-hat-hair-desc
+  conflicts:
+  - HardsuitsBad
+  - UniformIsJob
+
+# Never trust anyone whose outfit is better than yours.
+- type: thavenMood
+  id: DistrustFashion
+  moodName: mood-negative-distrust-fashion-name
+  moodDesc: mood-negative-distrust-fashion-desc
+
+# Cheerfulness indicates untrustworthiness.
+- type: thavenMood
+  id: HappyBad
+  moodName: mood-negative-happy-bad-name
+  moodDesc: mood-negative-happy-bad-desc
+
+# You only accept medication in the form of pills/patches/syringes.
+- type: thavenMood
+  id: OnlyPills
+  moodName: mood-negative-only-pills-name
+  moodDesc: mood-negative-only-pills-desc
+  moodVars:
+    medRestriction: MedDeliveryRestriction
+  conflicts:
+  - NoModernMedicine
+
+# It is undignified to walk over spilled liquids. You should avoid it at all costs.
+- type: thavenMood
+  id: AvoidPuddles
+  moodName: mood-negative-avoid-puddles-name
+  moodDesc: mood-negative-avoid-puddles-desc
+  conflicts:
+  - PuddleDrinker
+  - DinnerFloor
+
+# You are a strict (food restriction name).
+- type: thavenMood
+  id: FoodRestrict
+  moodName: mood-negative-food-restrict-name
+  moodDesc: mood-negative-food-restrict-desc
+  moodVars:
+    food: FoodRestrictions
+  conflicts:
+  - PlantPacifist
+
+# Claustrophobic: Small rooms cause you great distress. Avoid them where possible, and renovate your workplace if necessary.
+- type: thavenMood
+  id: Claustrophobic
+  moodName: mood-negative-claustrophobic-name
+  moodDesc: mood-negative-claustrophobic-desc
+  conflicts:
+  - Agoraphobic
+  - StationIsAlive
+
+# Agoraphobic: Open spaces are uncomfortable. Seek to rearrange such spaces into small, efficient and modular rooms.
+- type: thavenMood
+  id: Agoraphobic
+  moodName: mood-negative-agoraphobic-name
+  moodDesc: mood-negative-agoraphobic-desc
+  conflicts:
+  - Claustrophobic
+  - StationIsAlive
+
+# Non-Smoker: Secondhand smoke is incredibly dangerous. Avoid areas where people are smoking in public.
+- type: thavenMood
+  id: NonSmoker
+  moodName: mood-negative-nonsmoker-name
+  moodDesc: mood-negative-nonsmoker-desc
+
+# “[WORD]” is an extremely offensive taboo.
+- type: thavenMood
+  id: WordBad
+  moodName: mood-negative-word-bad-name
+  moodDesc: mood-negative-word-bad-desc
+  moodVars:
+    word1: ThavenWords
+    word2: ThavenWords
+    word3: ThavenWords
+
+# Mad Hatter: You are alone on the station. Everyone else is a figment of your imagination.
+- type: thavenMood
+  id: MadHatter
+  moodName: mood-negative-mad-hatter-name
+  moodDesc: mood-negative-mad-hatter-desc
+
+# Creepy Crawly: You have extreme vertigo, to the point where merely standing upright can cause discomfort. You're much more comfortable crawling along the floor.
+- type: thavenMood
+  id: Crawler
+  moodName: mood-negative-crawler-name
+  moodDesc: mood-negative-crawler-desc
+
+# The Floor Is Lava: You prefer to be elevated whenever possible - Standing atop tables, railings, etc., is where you feel the most comfortable.
+- type: thavenMood
+  id: Elevated
+  moodName: mood-negative-elevated-name
+  moodDesc: mood-negative-elevated-desc
+  conflicts:
+  - Crawler
+
+# [ITEM]s are an abomination. You must avoid them at all costs, and destroy them if necessary.
+#- type: thavenMood
+#  id: ItemBad
+#  moodName: mood-negative-item-bad-name
+#  moodDesc: mood-negative-item-bad-desc
+#  moodVars:
+#    item: ThavenMoodItem
+#  conflicts:
+#  - ItemGood
+
+
+#  You detest the color [COLOR]. It disgusts you, and you want anything of that color removed from your vicinity.
+#- type: thavenMood
+#  id: ColorBad
+#  moodName: mood-negative-color-bad-name
+#  moodDesc: mood-negative-color-bad-desc
+#  conflicts:
+#  - ColorGood
