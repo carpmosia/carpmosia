@@ -179,24 +179,24 @@
       EmergencyBurnKit: 1
       EmergencyBruteKit: 1
 
-- type: entity
-  id: GiftsSecurityGuns
-  parent: CargoGiftsBase
-  components:
-  - type: StationEvent
-    weight: 3
-    duration: 120
-    earliestStart: 20
-    minimumPlayers: 50
-  - type: CargoGiftsRule
-    description: cargo-gift-security-guns
-    dest: cargo-gift-dest-sec
-    gifts:
-      SecurityArmor: 3
-      ArmorySmg: 1
-      ArmoryShotgun: 1
-      ArmoryLaser: 1
-      ArmoryRifle: 1
+# - type: entity
+#   id: GiftsSecurityGuns
+#   parent: CargoGiftsBase
+#   components:
+#   - type: StationEvent
+#     weight: 3
+#     duration: 120
+#     earliestStart: 20
+#     minimumPlayers: 50
+#   - type: CargoGiftsRule
+#     description: cargo-gift-security-guns
+#     dest: cargo-gift-dest-sec
+#     gifts:
+#       SecurityArmor: 3
+#       ArmorySmg: 1
+#       ArmoryShotgun: 1
+#       ArmoryLaser: 1
+#       ArmoryRifle: 1
 
 - type: entity
   id: GiftsSecurityRiot
