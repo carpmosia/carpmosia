@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using Content.Server.Docking; // Carpmosia-edit - Starlight cable/pipe docking
 using Content.Server.NodeContainer.NodeGroups;
 using Content.Server.NodeContainer.Nodes;
 using Content.Shared.Examine;
@@ -16,6 +17,7 @@ namespace Content.Server.NodeContainer.EntitySystems
     public sealed partial class NodeContainerSystem : SharedNodeContainerSystem
     {
         [Dependency] private NodeGroupSystem _nodeGroupSystem = default!;
+        [Dependency] private PipeDockingSystem _pipeDockingSystem = default!; // Carpmosia-edit - Starlight cable/pipe docking
         [Dependency] private EntityQuery<NodeContainerComponent> _nodeContainerQuery = default!;
 
         public override void Initialize()
@@ -139,6 +141,8 @@ namespace Content.Server.NodeContainer.EntitySystems
 
         private void OnShutdownEvent(EntityUid uid, NodeContainerComponent component, ComponentShutdown args)
         {
+            _pipeDockingSystem.RemoveDockConnections(uid); // Carpmosia-edit - Starlight cable/pipe docking
+
             foreach (var node in component.Nodes.Values)
             {
                 _nodeGroupSystem.QueueNodeRemove(node);
@@ -163,6 +167,12 @@ namespace Content.Server.NodeContainer.EntitySystems
                 else
                     _nodeGroupSystem.QueueNodeRemove(node);
             }
+            // Carpmosia-start - Starlight cable/pipe docking
+            if (args.Anchored)
+                _pipeDockingSystem.TryConnectDockedPipe(uid);
+            else
+                _pipeDockingSystem.RemoveDockConnections(uid);
+            // Carpmosia-end - Starlight cable/pipe docking
         }
 
         private void OnReAnchor(EntityUid uid, NodeContainerComponent component, ref ReAnchorEvent args)
