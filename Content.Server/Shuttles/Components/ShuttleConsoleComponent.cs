@@ -20,5 +20,11 @@ namespace Content.Server.Shuttles.Components
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite), DataField("whitelistSpecific")]
         public List<EntityUid> FTLWhitelist = new List<EntityUid>();
+
+        // Carpmosia-start - Ban civvie FTL
+        [DataField("ftlBanned")]
+        [ViewVariables(VVAccess.ReadWrite)]
+        public bool FTLBanned { get; set; } = false;
+        // Carpmosia-end - Ban civvie FTL
     }
 }
