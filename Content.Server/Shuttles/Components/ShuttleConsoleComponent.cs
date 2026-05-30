@@ -25,9 +25,9 @@ namespace Content.Server.Shuttles.Components
         /// <summary>
         ///  Whether or not the Map and FTL functions should be displayed on the shuttle console.
         /// </summary>
-        [DataField("ftlBanned")]
+        [DataField("ftlAllowed")]
         [ViewVariables(VVAccess.ReadWrite)]
-        public bool FTLBanned { get; set; } = false;
+        public bool FTLAllowed { get; set; } = true;
         // Carpmosia-end - Ban civvie FTL
     }
 }

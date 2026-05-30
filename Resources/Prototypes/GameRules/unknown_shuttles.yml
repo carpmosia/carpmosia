@@ -41,7 +41,7 @@
   - type: StationEvent
     weight: 2
   - type: LoadMapRule
-    gridPath: /Maps/Shuttles/ShuttleEvent/honki.yml
+    gridPath: /Maps/_Carpmosia/Shuttles/ShuttleEvent/honki.yml
 
 - type: entity
   parent: BaseUnknownShuttleRule
@@ -62,7 +62,7 @@
     earliestStart: 45 # late to hopefully have enough ghosts to fill all roles quickly.
     minimumPlayers: 25
   - type: LoadMapRule
-    gridPath: /Maps/Shuttles/ShuttleEvent/quark.yml
+    gridPath: /Maps/_Carpmosia/Shuttles/ShuttleEvent/quark.yml
 
 - type: entity
   id: UnknownShuttleInstigator
@@ -80,4 +80,4 @@
   - type: StationEvent
     weight: 1 # lower because antags
   - type: LoadMapRule
-    gridPath: /Maps/Shuttles/ShuttleEvent/manowar.yml
+    gridPath: /Maps/_Carpmosia/Shuttles/ShuttleEvent/man-o-war.yml

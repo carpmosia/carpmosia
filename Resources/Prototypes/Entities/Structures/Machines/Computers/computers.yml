@@ -175,7 +175,7 @@
   - type: Computer
     board: ShuttleConsoleCircuitboard
   - type: ShuttleConsole # Carpmosia-edit - Ban civvie FTL
-    ftlBanned: true # Carpmosia-edit - Ban civvie FTL
+    ftlAllowed: false # Carpmosia-edit - Ban civvie FTL
 
 - type: entity
   parent: BaseComputerShuttle
@@ -239,7 +239,7 @@
   - type: StealTarget
     stealGroup: CargoShuttleConsoleCircuitboard
   - type: ShuttleConsole # Carpmosia-edit - Ban civvie FTL
-    ftlBanned: true # Carpmosia-edit - Ban civvie FTL
+    ftlAllowed: false # Carpmosia-edit - Ban civvie FTL
 
 - type: entity
   parent: BaseComputerAiAccess

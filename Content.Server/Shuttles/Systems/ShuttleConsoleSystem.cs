@@ -276,7 +276,7 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
         {
             if (!TryComp<ShuttleConsoleComponent>(consoleUid, out var consoleComp)) // Carpmosia-edit - Ban civvie FTL
                 return; // Carpmosia-edit - Ban civvie FTL
-            _ui.SetUiState(consoleUid, ShuttleConsoleUiKey.Key, new ShuttleBoundUserInterfaceState(navState, mapState, dockState, consoleComp.FTLBanned)); // Carpmosia-edit - Ban civvie FTL
+            _ui.SetUiState(consoleUid, ShuttleConsoleUiKey.Key, new ShuttleBoundUserInterfaceState(navState, mapState, dockState, consoleComp.FTLAllowed)); // Carpmosia-edit - Ban civvie FTL
         }
     }
 

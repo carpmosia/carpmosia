@@ -136,7 +136,7 @@ public sealed partial class ShuttleConsoleWindow : FancyWindow,
 
     public void UpdateState(EntityUid owner, ShuttleBoundUserInterfaceState cState)
     {
-        MapModeButton.Visible = !cState.FTLBanned; // Carpmosia-edit - Ban civvie FTL
+        MapModeButton.Visible = cState.FTLAllowed; // Carpmosia-edit - Ban civvie FTL
 
         var coordinates = _entManager.GetCoordinates(cState.NavState.Coordinates);
         NavContainer.SetShuttle(coordinates?.EntityId);
