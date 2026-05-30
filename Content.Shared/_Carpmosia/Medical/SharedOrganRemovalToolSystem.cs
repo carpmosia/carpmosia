@@ -84,7 +84,7 @@ public sealed partial class SharedOrganRemovalToolSystem : EntitySystem
         _popupSystem.PopupPredicted(Loc.GetString("organ-removal-operation-start"),
             Loc.GetString("organ-removal-operation-start-other", ("user", Identity.Entity(user, EntityManager))), user, user, PopupType.MediumCaution);
 
-        _audioSystem.PlayPredicted(tool.Comp.StartSound, tool, user, AudioParams.Default.WithVariation(0.125f).WithVolume(2f).WithMaxDistance(20f));
+        _audioSystem.PlayPredicted(tool.Comp.StartSound, tool, user, AudioParams.Default.WithVariation(0.125f).WithVolume(3f).WithMaxDistance(20f));
 
         return true;
     }
@@ -120,7 +120,7 @@ public sealed partial class SharedOrganRemovalToolSystem : EntitySystem
                 if (tool.Comp.Category == "Brain")
                     EnsureComp<BrainExtractedComponent>(args.Target.Value);
 
-                _audioSystem.PlayPredicted(tool.Comp.EndSound, tool, args.User, AudioParams.Default.WithVariation(0.125f).WithVolume(-1f).WithMaxDistance(20f));
+                _audioSystem.PlayPredicted(tool.Comp.EndSound, tool, args.User, AudioParams.Default.WithVariation(0.125f).WithVolume(1f).WithMaxDistance(20f));
 
                 _chat.SendAdminAlert(args.User, Loc.GetString("interaction-remove-brain-admin-announcement",
                     ("user", Identity.Entity(args.User, EntityManager)), ("target", Identity.Entity(args.Target.Value, EntityManager))));
