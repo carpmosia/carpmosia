@@ -21,7 +21,10 @@ public sealed partial class HumanoidProfileEditor
                 return;
 
             _flavorText = new FlavorText.FlavorText();
-            AppearanceList.AddChild(_flavorText); // Carpmosia-edit - Better flavor text
+            // Carpmosia-start - Better flavor text
+            AppearanceList.AddChild(_flavorText); 
+            // TabContainer.SetTabTitle(TabContainer.ChildCount - 1, Loc.GetString("humanoid-profile-editor-flavortext-tab"));
+            // Carpmosia-end - Better flavor text
             _flavorTextEdit = _flavorText.CFlavorTextInput;
 
             _flavorText.OnFlavorTextChanged += OnFlavorTextChange;
