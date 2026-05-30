@@ -22,6 +22,9 @@ namespace Content.Server.Shuttles.Components
         public List<EntityUid> FTLWhitelist = new List<EntityUid>();
 
         // Carpmosia-start - Ban civvie FTL
+        /// <summary>
+        ///  Whether or not the Map and FTL functions should be displayed on the shuttle console.
+        /// </summary>
         [DataField("ftlBanned")]
         [ViewVariables(VVAccess.ReadWrite)]
         public bool FTLBanned { get; set; } = false;
