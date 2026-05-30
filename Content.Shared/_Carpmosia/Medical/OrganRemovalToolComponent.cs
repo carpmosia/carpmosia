@@ -36,7 +36,7 @@ public sealed partial class OrganRemovalToolComponent : Component
     /// <summary>
     /// What kind of organ is targeted by this tool
     /// </summary>
-    [DataField("category", required:true)]
+    [DataField("category", required: true)]
     public ProtoId<OrganCategoryPrototype>? Category;
 
 }
