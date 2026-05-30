@@ -28,27 +28,29 @@
 #   cost: 7500
 #   category: cargoproduct-category-name-armory
 #   group: market
+# Carpmosia-end - Remove Cargo Armory
 
-# - type: cargoProduct
-#   id: TrackingImplant
-#   icon:
-#     sprite: Objects/Specific/Medical/implanter.rsi
-#     state: implanter0
-#   product: CrateTrackingImplants
-#   cost: 1000
-#   category: cargoproduct-category-name-armory
-#   group: market
+- type: cargoProduct
+  id: TrackingImplant
+  icon:
+    sprite: Objects/Specific/Medical/implanter.rsi
+    state: implanter0
+  product: CrateTrackingImplants
+  cost: 1000
+  category: cargoproduct-category-name-armory
+  group: market
 
-# - type: cargoProduct
-#   id: TrainingBombs
-#   icon:
-#     sprite: Structures/Machines/bomb.rsi
-#     state: training-bomb
-#   product: CrateTrainingBombs
-#   cost: 3000
-#   category: cargoproduct-category-name-armory
-#   group: market
+- type: cargoProduct
+  id: TrainingBombs
+  icon:
+    sprite: Structures/Machines/bomb.rsi
+    state: training-bomb
+  product: CrateTrainingBombs
+  cost: 3000
+  category: cargoproduct-category-name-armory
+  group: market
 
+# Carpmosia-start - Remove Cargo Armory
 # - type: cargoProduct
 #   id: ArmoryLaser
 #   icon:
