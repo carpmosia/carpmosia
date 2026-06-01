@@ -1,0 +1,9 @@
+
+- type: radioChannel
+  id: BBTelepathy
+  name: chat-radio-bbtelepathy
+  keycode: 'a'
+  frequency: 2003
+  color: "#c71585"
+  # long range since I don't wanna make a special xenoborg telecomm server
+  longRange: true

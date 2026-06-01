@@ -23,6 +23,7 @@ using Content.Shared.Preferences;
 using Content.Shared.Roles.Components;
 using Content.Shared.Zombies;
 using Robust.Server.Player;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Diagnostics.CodeAnalysis;
 
@@ -115,7 +116,14 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
             return;
 
         // Actual conversion logic
-        var convertedComp = CopyComp(entity, args.Target, originalComponent);
+
+        if (!Proto.Resolve(entity.Comp.ConvertPrototype, out var def))
+            return;
+
+        EntityManager.AddComponents(args.Target, def.Components);
+
+        if(!TryComp<BloodBoundComponent>(args.Target, out var convertedComp))
+            return;
 
         _npcFactionSystem.AddFaction(args.Target, entity.Comp.BloodBoundFaction);
 
@@ -132,7 +140,7 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
 
         if (!_roleSystem.MindHasRole(targetMindId, out Entity<MindRoleComponent, BloodBoundRoleComponent>? targetRole))
         {
-            _roleSystem.MindAddRole(targetMindId, entity.Comp.BloodBoundMindRole, targetMind);
+            _roleSystem.MindAddRoles(targetMindId, def.MindRoles, targetMind);
             _roleSystem.MindHasRole(targetMindId, out targetRole);
         }
 
