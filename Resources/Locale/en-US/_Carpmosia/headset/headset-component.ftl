@@ -1,2 +1,1 @@
-
 chat-radio-bbtelepathy = Telepathy
