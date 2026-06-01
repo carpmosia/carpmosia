@@ -9,8 +9,9 @@
   - type: Icon
     sprite: _Carpmosia/Structures/Windows/uranium_reinforced.rsi # Carpmosia-edit - Window resprite
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: RGlass
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
     - trigger:

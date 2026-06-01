@@ -12,13 +12,13 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared.Whistle;
 
-public sealed class WhistleSystem : EntitySystem
+public sealed partial class WhistleSystem : EntitySystem
 {
-    [Dependency] private readonly EntityLookupSystem _entityLookup = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly SharedActionsSystem _actions = default!; // Carpmosia-edit - Whistle action
-    [Dependency] private readonly UseDelaySystem _useDelay = default!; // Carpmosia-edit - Whistle action
+    [Dependency] private EntityLookupSystem _entityLookup = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private SharedActionsSystem _actions = default!; // Carpmosia-edit - Whistle action
+    [Dependency] private UseDelaySystem _useDelay = default!; // Carpmosia-edit - Whistle action
 
     public override void Initialize()
     {
