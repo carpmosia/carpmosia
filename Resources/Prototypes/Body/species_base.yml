@@ -75,10 +75,8 @@
     - RatvarianLanguage
     - PressureImmunity
     - Muted
-    - TemporaryBlindness
     - Pacified
     - Flashed
-    - RadiationProtection
     - Adrenaline
   - type: Identity
   - type: IdExaminable
@@ -159,6 +157,7 @@
     - FootstepSound
     - DoorBumpOpener
     - AnomalyHost
+    - CannotSuicide # Carpmosia-edit - Remove Tonguebiting
 
 - type: entity
   abstract: true
