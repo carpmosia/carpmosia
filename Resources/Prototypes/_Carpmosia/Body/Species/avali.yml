@@ -169,8 +169,9 @@
       Female: FemaleAvali
       Unsexed: MaleAvali
   - type: Damageable
-    damageContainer: Biological
     damageModifierSet: Avali
+  - type: Injurable
+    damageContainer: Biological
   - type: MeleeWeapon
     soundHit:
       collection: AlienClaw

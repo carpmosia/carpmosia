@@ -9,15 +9,13 @@
   - type: FlavorProfile
     flavors:
     - plastic
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 14
-        reagents:
-        - ReagentId: Oil
-          Quantity: 5
-        - ReagentId: Phosphorus
-          Quantity: 5
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Oil
+        Quantity: 5
+      - ReagentId: Phosphorus
+        Quantity: 5
   - type: Sprite
     sprite: _Carpmosia/Objects/Specific/Hydroponics/crudcoa.rsi
   - type: Produce

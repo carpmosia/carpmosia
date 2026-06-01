@@ -15,17 +15,11 @@
     maxDifficulty: 7.5
   - type: AntagSelection
     agentName: blood-bound-round-end-agent-name
-    selectionTime: IntraPlayerSpawn
-    definitions:
-    - prefRoles: [ BloodBound ]
-      max: 1
-      playerRatio: 1 # if I counted right this should be about 40 players for 2 BBs
-      briefing:
-        text: blood-bound-initial-role-greeting
-        color: MediumVioletRed
-        sound: /Audio/_Carpmosia/Misc/blood_bound_greeting.ogg
-      components:
-      - type: BloodBound
-      - type: InitialBloodBound
-      mindRoles:
-      - MindRoleBloodBound
+    selectionTime: PrePlayerSpawn
+    antags:
+    - !type:LinearAntagCount
+      proto: BloodBound
+      playerRatio: 1
+      range:
+        min: 1
+        max: 1
