@@ -36,23 +36,7 @@
   suffix: FTL capable
   description: Used to pilot a shuttle.
   components:
-    - type: Sprite
-      layers:
-      - map: ["computerLayerBody"]
-        state: computer
-      - map: ["computerLayerKeyboard"]
-        state: generic_keyboard
-      - map: ["computerLayerScreen"]
-        state: shuttle
-      - map: ["computerLayerKeys"]
-        state: generic_keys
-    - type: RadarConsole
-      maxRange: 256
-    - type: PointLight
-      radius: 1.5
-      energy: 1.6
-      color: "#43ccb5"
-    - type: Computer
-      board: ShuttleConsoleCircuitboard
-    - type: ShuttleConsole
-      ftlAllowed: true
+  - type: RadarConsole
+    maxRange: 256
+  - type: ShuttleConsole
+    ftlAllowed: true
