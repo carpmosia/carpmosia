@@ -43,7 +43,7 @@ public sealed partial class PowerCauterySystem : EntitySystem
         SubscribeLocalEvent<PowerCauteryComponent, UseInHandEvent>(OnCauteryUse);
         SubscribeLocalEvent<PowerCauteryComponent, AfterInteractEvent>(OnCauteryAfterInteract);
         SubscribeLocalEvent<PowerCauteryComponent, ExaminedEvent>(OnCauteryExamined);
-        SubscribeLocalEvent<DamageableComponent, PowerCauteryDoAfterEvent>(OnDoAfter);
+        SubscribeLocalEvent<InjurableComponent, PowerCauteryDoAfterEvent>(OnDoAfter);
     }
 
     // entrypoints
@@ -75,7 +75,7 @@ public sealed partial class PowerCauterySystem : EntitySystem
     }
 
     // checks
-    private bool IsBleeding(Entity<PowerCauteryComponent> cautery, Entity<DamageableComponent> target)
+    private bool IsBleeding(Entity<PowerCauteryComponent> cautery, Entity<InjurableComponent> target)
     {
         if (!TryComp<BloodstreamComponent>(target, out var bloodstream))
             return false;
@@ -96,20 +96,20 @@ public sealed partial class PowerCauterySystem : EntitySystem
         return couldDraw;
     }
 
-    private bool MatchDamageContainers(List<ProtoId<DamageContainerPrototype>>? containers, DamageableComponent damagable)
+    private bool MatchDamageContainers(List<ProtoId<DamageContainerPrototype>>? containers, InjurableComponent injurable)
     {
         if (containers is null)
             return true;
 
         // DamageContainerID is nullable so we need to do this hogwash with a null check
-        if (damagable.DamageContainerID is not null && containers.Contains(damagable.DamageContainerID.Value))
+        if (injurable.DamageContainer is not null && containers.Contains(injurable.DamageContainer.Value))
             return true;
 
         return false;
     }
 
     // cauterization
-    private bool TryCauterize(Entity<PowerCauteryComponent> cautery, Entity<DamageableComponent?> target, EntityUid user)
+    private bool TryCauterize(Entity<PowerCauteryComponent> cautery, Entity<InjurableComponent?> target, EntityUid user)
     {
         if (!Resolve(target, ref target.Comp, false))
             return false;
@@ -160,7 +160,7 @@ public sealed partial class PowerCauterySystem : EntitySystem
         return true;
     }
 
-    private void OnDoAfter(Entity<DamageableComponent> target, ref PowerCauteryDoAfterEvent args)
+    private void OnDoAfter(Entity<InjurableComponent> target, ref PowerCauteryDoAfterEvent args)
     {
         if (args.Handled || args.Cancelled)
             return;
