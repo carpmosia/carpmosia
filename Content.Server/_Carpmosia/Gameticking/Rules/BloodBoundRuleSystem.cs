@@ -23,7 +23,6 @@ using Content.Shared.Preferences;
 using Content.Shared.Roles.Components;
 using Content.Shared.Zombies;
 using Robust.Server.Player;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Diagnostics.CodeAnalysis;
 
@@ -122,7 +121,7 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
 
         EntityManager.AddComponents(args.Target, def.Components);
 
-        if(!TryComp<BloodBoundComponent>(args.Target, out var convertedComp))
+        if (!TryComp<BloodBoundComponent>(args.Target, out var convertedComp))
             return;
 
         _npcFactionSystem.AddFaction(args.Target, entity.Comp.BloodBoundFaction);
