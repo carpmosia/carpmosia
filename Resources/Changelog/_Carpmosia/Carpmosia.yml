@@ -1653,7 +1653,8 @@
 - author: arenaconspiracy
   changes:
   - message: 'The Secret gamemode weight has been edited. At 20 players ready, the
-      chances are: NukeOps 25% - Xenoborgs 25% - Traitors 20% - Survival 10% - Revolution 10% - Zombies 10%'
+      chances are: NukeOps 25% - Xenoborgs 25% - Traitors 20% - Survival 10% - Revolution
+      10% - Zombies 10%'
     type: Tweak
   id: 270
   time: '2026-05-26T01:22:09.0000000+00:00'
@@ -1708,4 +1709,11 @@
   id: 276
   time: '2026-06-01T21:45:00.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/354
+- author: arenaconspiracy
+  changes:
+  - message: You can no longer strip multiple items at a time off of people.
+    type: Tweak
+  id: 277
+  time: '2026-06-02T10:44:25.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/359
 Order: -1
