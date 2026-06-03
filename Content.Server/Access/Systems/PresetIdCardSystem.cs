@@ -79,7 +79,7 @@ public sealed partial class PresetIdCardSystem : EntitySystem
 
         _accessSystem.SetAccessToJob(uid, job, extended);
 
-        _cardSystem.TryChangeJobTitle(uid, id.CustomTitle ?? job.LocalizedName);
+        _cardSystem.TryChangeJobTitle(uid, id.CustomTitle ?? job.LocalizedName); // Carpmosia-edit - alternative-job-titles
         _cardSystem.TryChangeJobDepartment(uid, job);
 
         if (_prototypeManager.Resolve(job.Icon, out var jobIcon))
