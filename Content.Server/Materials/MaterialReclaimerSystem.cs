@@ -26,8 +26,8 @@ using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.Gibbing;
 using Content.Shared.Humanoid;
-using Content.Shared.Damage.Components; // using Content.Shared.Gibbing; Carpmosia-edit - Survivable recyclers
-using Content.Shared.Damage.Systems; // using Content.Shared.Gibbing; Carpmosia-edit - Survivable recyclers
+using Content.Shared.Damage.Components; // Carpmosia-edit - Survivable recyclers
+using Content.Shared.Damage.Systems; // Carpmosia-edit - Survivable recyclers
 
 namespace Content.Server.Materials;
 
@@ -189,11 +189,11 @@ public sealed partial class MaterialReclaimerSystem : SharedMaterialReclaimerSys
         if (component.ReclaimMaterials)
             SpawnMaterialsFromComposition(uid, item, completion * component.Efficiency, xform: xform);
 
-        // Carpmosia-start - Survivable recyclers
-        bool deleteItem = true;
+        bool deleteItem = true; // Carpmosia-edit - Survivable recyclers
 
         if (CanGib(uid, item, component))
         {
+        // Carpmosia-start - Survivable recyclers
             var logImpact = HasComp<HumanoidProfileComponent>(item) ? LogImpact.Extreme : LogImpact.Medium;
             _adminLogger.Add(LogType.Gib, logImpact, $"{ToPrettyString(item):victim} was minced by {ToPrettyString(uid):entity} ");
             _damage.TryChangeDamage(item, component.Damage);
@@ -219,8 +219,8 @@ public sealed partial class MaterialReclaimerSystem : SharedMaterialReclaimerSys
         RaiseLocalEvent(uid, ref ev);
         // Carpmosia-end - Salvage Tickets
 
-        if (deleteItem)
-            QueueDel(item);
+        if (deleteItem) // Carpmosia-edit - Survivable recyclers
+            QueueDel(item); // Carpmosia-edit - Survivable recyclers
     }
 
     private void SpawnMaterialsFromComposition(EntityUid reclaimer,
