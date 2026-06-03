@@ -199,14 +199,6 @@ public sealed partial class MaterialReclaimerSystem : SharedMaterialReclaimerSys
             _damage.TryChangeDamage(item, component.Damage);
             _appearance.SetData(uid, RecyclerVisuals.Bloody, true);
             deleteItem = false;
-        /*
-            var logImpact = HasComp<HumanoidProfileComponent>(item) ? LogImpact.Extreme : LogImpact.Medium;
-            _adminLogger.Add(LogType.Gib, logImpact, $"{ToPrettyString(item):victim} was gibbed by {ToPrettyString(uid):entity} ");
-            if (component.ReclaimSolutions)
-                SpawnChemicalsFromComposition(uid, item, completion, false, component, xform);
-            _gibbing.Gib(item);
-            _appearance.SetData(uid, RecyclerVisuals.Bloody, true);
-        */
         // Carpmosia-end - Survivable recyclers
         }
         else
