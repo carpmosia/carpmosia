@@ -4,6 +4,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
+using Content.Shared.Damage; // Carpmosia-edit - Survivable recyclers
 
 namespace Content.Shared.Materials;
 
@@ -137,6 +138,14 @@ public sealed partial class MaterialReclaimerComponent : Component
     /// </remarks>
     [DataField, AutoNetworkedField]
     public int ItemsProcessed;
+
+    // Carpmosia-start - Survivable recyclers
+    /// <summary>
+    /// Damage to deal to entities when emagged
+    /// </summary>
+    [DataField]
+    public DamageSpecifier Damage = default!;
+    // Carpmosia-end - Survivable recyclers
 }
 
 [NetSerializable, Serializable]
