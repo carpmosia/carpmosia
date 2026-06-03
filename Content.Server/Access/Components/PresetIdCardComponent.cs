@@ -9,9 +9,10 @@ public sealed partial class PresetIdCardComponent : Component
     [DataField("job")]
     public ProtoId<JobPrototype>? JobName;
 
-    [DataField]
+    // Carpmosia-start - alternative-job-titles
+    [DataField("customTitle")]
     public LocId? CustomTitle;
-
+    // Carpmosia-end - alternative-job-titles
     [DataField("name")]
     public string? IdName;
 }
