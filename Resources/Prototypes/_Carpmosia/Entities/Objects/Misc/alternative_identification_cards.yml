@@ -5,7 +5,6 @@
   name: postman ID card
   components:
   - type: PresetIdCard
-    job: CargoTechnician
     customTitle: "alt-job-title-postman"
 
 - type: entity
@@ -14,7 +13,6 @@
   name: logistics accountant ID card
   components:
   - type: PresetIdCard
-    job: CargoTechnician
     customTitle: "alt-job-title-logistics-accountant"
 
 #Engineering
@@ -24,7 +22,6 @@
   name: communications operator id card
   components:
   - type: PresetIdCard
-    job: StationEngineer
     customTitle: "alt-job-title-communications-operator"
 
 - type: entity
@@ -33,7 +30,6 @@
   name: station architect id card
   components:
   - type: PresetIdCard
-    job: StationEngineer
     customTitle: "alt-job-title-station-architect"
 
 #Medical
@@ -43,17 +39,7 @@
   name: nurse id card
   components:
   - type: PresetIdCard
-    job: MedicalDoctor
     customTitle: "alt-job-title-nurse"
-
-- type: entity
-  parent: MedicalIDCard
-  id: CoronerIDCard
-  name: coroner id card
-  components:
-  - type: PresetIdCard
-    job: MedicalDoctor
-    customTitle: "alt-job-title-coroner"
 
 #Science
 - type: entity
@@ -62,7 +48,6 @@
   name: roboticist id card
   components:
   - type: PresetIdCard
-    job: Scientist
     customTitle: "alt-job-title-roboticist"
 
 - type: entity
@@ -71,7 +56,6 @@
   name: xenoarcheologist id card
   components:
   - type: PresetIdCard
-    job: Scientist
     customTitle: "alt-job-title-xenoarcheologist"
 
 #Misc
@@ -81,7 +65,6 @@
   name: assistant id card
   components:
   - type: PresetIdCard
-    job: Passenger
     customTitle: "alt-job-title-assistant"
 
 - type: entity
@@ -90,5 +73,4 @@
   name: journalist id card
   components:
   - type: PresetIdCard
-    job: Reporter
     customTitle: "alt-job-title-journalist"

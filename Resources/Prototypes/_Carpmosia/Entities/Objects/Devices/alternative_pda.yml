@@ -41,14 +41,6 @@
   - type: Pda
     id: NurseIDCard
 
-- type: entity
-  parent: MedicalPDA
-  id: CoronerPDA
-  name: coroner pda
-  components:
-  - type: Pda
-    id: CoronerIDCard
-
 #Science
 - type: entity
   parent: SciencePDA
