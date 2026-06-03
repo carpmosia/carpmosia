@@ -116,7 +116,7 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
 
         // Actual conversion logic
 
-        if (!Proto.Resolve(entity.Comp.ConvertPrototype, out var def))
+        if (!Proto.Resolve(entity.Comp.ConvertPrototype, out var def) || def.Briefing == null)
             return;
 
         EntityManager.AddComponents(args.Target, def.Components);
@@ -173,11 +173,14 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
             _targetObjectiveSystem.SetTarget(objective, args.Target);
         }
 
+        // Get briefing text
+        var text = def.Briefing.Value.Text == null ? string.Empty : Loc.GetString(def.Briefing.Value.Text);
+
         // Visuals
         _antagSystem.SendBriefing(args.Target,
-            Loc.GetString(entity.Comp.BriefingText),
-            entity.Comp.BriefingColor,
-            entity.Comp.BriefingSound);
+            text,
+            def.Briefing.Value.Color,
+            def.Briefing.Value.Sound);
 
         _popupSystem.PopupEntity(
             Loc.GetString(
@@ -251,6 +254,16 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
             return false;
         }
 
+        // Get convert proto, error if we cant find it
+        if (!Proto.Resolve(entity.Comp.ConvertPrototype, out var def))
+        {
+            DebugTools.Assert("Blood bound tried to convert but the convert proto failed to resolve.");
+            Log.Error("Blood bound convert proto failed to resolve.");
+            errorMessage = "uhoh";
+            return false;
+        }
+
+
         // Stop the blood bound from converting a target.
         foreach (var objective in converterMind.Objectives)
         {
@@ -276,20 +289,6 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
             return false;
         }
 
-        // Check antag preference
-        if (entity.Comp.RequiredAntagPreference != null &&
-            _preferencesManager.TryGetCachedPreferences(targetMind.UserId.Value, out var preferences))
-        {
-
-            var profile = (HumanoidCharacterProfile)preferences.SelectedCharacter;
-
-            if (profile.AntagPreferences.Contains(entity.Comp.RequiredAntagPreference!.Value) != true)
-            {
-                errorMessage = "blood-bound-convert-failed-preference";
-                return false;
-            }
-        }
-
         if (!_mobStateSystem.IsAlive(target))
         {
             errorMessage = "blood-bound-convert-failed-dead";
@@ -302,6 +301,20 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
             return false;
         }
 
-        return true;
+        // Check antag preference, dumb way to iterate through this, but needs must
+        if (def.PrefRoles != null &&
+            _preferencesManager.TryGetCachedPreferences(targetMind.UserId.Value, out var preferences))
+        {
+            var profile = (HumanoidCharacterProfile)preferences.SelectedCharacter;
+            foreach (var role in def.PrefRoles)
+            {
+                if (profile.AntagPreferences.Contains(role))
+                    return true;
+            }
+        }
+
+        // If we somehow get here, its because we failed to find the preferences
+        errorMessage = "blood-bound-convert-failed-preference";
+        return false;
     }
 }
