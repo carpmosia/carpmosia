@@ -23,7 +23,7 @@ namespace Content.Shared.Healing.Systems;
 /// Modifies bleeding stacks per doafter, at the cost of power.
 /// </summary>
 /// <remarks>
-/// Separate from <see cref="HealingSystem"> because this wants ONLY bleeding and not damage,
+/// Separate from HealingSystem because this wants ONLY bleeding and not damage,
 /// and i'm not about to bolt on power consumption logic to topicals, which work with stacks.
 /// </remarks>
 public sealed partial class PowerCauterySystem : EntitySystem
@@ -75,7 +75,7 @@ public sealed partial class PowerCauterySystem : EntitySystem
     }
 
     // checks
-    private bool IsBleeding(Entity<PowerCauteryComponent> cautery, Entity<InjurableComponent> target)
+    private bool IsBleeding(Entity<InjurableComponent> target)
     {
         if (!TryComp<BloodstreamComponent>(target, out var bloodstream))
             return false;
@@ -91,12 +91,12 @@ public sealed partial class PowerCauterySystem : EntitySystem
         bool couldDraw = (_battery.GetCharge(ent) >= draw);
 
         if (couldDraw)
-            _battery.UseCharge(ent, draw);
+            _battery.TryUseCharge(ent, draw);
 
         return couldDraw;
     }
 
-    private bool MatchDamageContainers(List<ProtoId<DamageContainerPrototype>>? containers, InjurableComponent injurable)
+    private static bool MatchDamageContainers(List<ProtoId<DamageContainerPrototype>>? containers, InjurableComponent injurable)
     {
         if (containers is null)
             return true;
@@ -123,7 +123,7 @@ public sealed partial class PowerCauterySystem : EntitySystem
             return false;
 
         // is the target even bleeding
-        if (!IsBleeding(cautery, target!))
+        if (!IsBleeding(target!))
         {
             _popupSystem.PopupClient(Loc.GetString("medical-item-cant-use", ("item", cautery.Owner)), cautery, user);
             return false;
@@ -171,9 +171,6 @@ public sealed partial class PowerCauterySystem : EntitySystem
         if (!TryComp(args.Used, out BatteryComponent? battery))
             return;
 
-        // get target bloodstream
-        TryComp<BloodstreamComponent>(target, out var bloodstream);
-
         // try to draw from our battery, fail if we can't
         bool powered = GetAndDrawPower((args.Used.Value, battery), cautery.PowerDraw);
         if (!powered)
@@ -183,11 +180,8 @@ public sealed partial class PowerCauterySystem : EntitySystem
         }
 
         // Stem bleeding.
-        if (cautery.BloodlossModifier != 0 && bloodstream != null)
-        {
-            var isBleeding = bloodstream.BleedAmount > 0;
+        if (TryComp<BloodstreamComponent>(target, out var bloodstream))
             _bloodstreamSystem.TryModifyBleedAmount((target.Owner, bloodstream), cautery.BloodlossModifier);
-        }
 
         // Log the cauterizing.
         if (target.Owner != args.User)
@@ -205,15 +199,12 @@ public sealed partial class PowerCauterySystem : EntitySystem
         _audio.PlayPredicted(cautery.EndSound, target.Owner, args.User);
 
         // repeat if our target is still bleeding
-        args.Repeat = IsBleeding((args.Used.Value, cautery), target);
+        args.Repeat = IsBleeding(target);
 
         args.Handled = true;
 
         // say we're finished if we're not repeating
         if (!args.Repeat)
-        {
             _popupSystem.PopupClient(Loc.GetString("medical-item-finished-using", ("item", args.Used)), target.Owner, args.User);
-            return;
-        }
     }
 }
