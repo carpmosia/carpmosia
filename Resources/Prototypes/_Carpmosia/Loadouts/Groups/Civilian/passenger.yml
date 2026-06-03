@@ -42,8 +42,8 @@
   parent: [ CivilianPDA, CommonPDA ]
   id: PassengerPDA
   loadouts:
-    - PassengerPDA
-    - AssistantPDA
+  - PassengerPDA
+  - AssistantPDA
 
 # - type: loadoutGroup
 #   parent: [ CivilianBelt, CommonBelt ]
