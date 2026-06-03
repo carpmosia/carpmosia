@@ -47,6 +47,7 @@
             </BoxContainer>
 
             <!-- EmergencyPart -->
+            <!-- Carpmosia-start - No recalls
             <BoxContainer Orientation="Vertical"
                 SeparationOverride="6">
 
@@ -57,6 +58,7 @@
                     Text="Placeholder Text"
                     ToolTip="{Loc 'comms-console-menu-emergency-shuttle-button-tooltip'}"/>
             </BoxContainer>
+            Carpmosia-end - No recalls -->
         </BoxContainer>
     </BoxContainer>
 </controls:FancyWindow>

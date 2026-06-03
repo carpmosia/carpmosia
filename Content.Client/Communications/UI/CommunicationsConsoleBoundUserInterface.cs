@@ -85,10 +85,10 @@ namespace Content.Client.Communications.UI
                 _menu.CurrentLevel = commsState.CurrentAlert;
                 _menu.CountdownEnd = commsState.ExpectedCountdownEnd;
 
-                _menu.UpdateCountdown();
+                // _menu.UpdateCountdown(); // Carpmosia-start - No recalls
                 _menu.UpdateAlertLevels(commsState.AlertLevels, _menu.CurrentLevel);
                 _menu.AlertLevelButton.Disabled = !_menu.AlertLevelSelectable;
-                _menu.EmergencyShuttleButton.Disabled = !_menu.CanCall;
+                // _menu.EmergencyShuttleButton.Disabled = !_menu.CanCall; // Carpmosia-start - No recalls
                 _menu.AnnounceButton.Disabled = !_menu.CanAnnounce;
                 _menu.BroadcastButton.Disabled = !_menu.CanBroadcast;
             }

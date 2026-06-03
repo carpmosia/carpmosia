@@ -70,14 +70,14 @@ namespace Content.Client.Communications.UI
 
             AlertLevelButton.Disabled = !AlertLevelSelectable;
 
-            EmergencyShuttleButton.OnPressed += _ => OnEmergencyLevel?.Invoke();
-            EmergencyShuttleButton.Disabled = !CanCall;
+            // EmergencyShuttleButton.OnPressed += _ => OnEmergencyLevel?.Invoke(); // Carpmosia-edit - No recalls
+            // EmergencyShuttleButton.Disabled = !CanCall; // Carpmosia-edit - No recalls
         }
 
         protected override void FrameUpdate(FrameEventArgs args)
         {
             base.FrameUpdate(args);
-            UpdateCountdown();
+            // UpdateCountdown(); // Carpmosia-start - No recalls
         }
 
         // The current alert could make levels unselectable, so we need to ensure that the UI reacts properly.
@@ -117,6 +117,7 @@ namespace Content.Client.Communications.UI
             }
         }
 
+        /*  // Carpmosia-start - No recalls
         public void UpdateCountdown()
         {
             if (!CountdownStarted)
@@ -133,5 +134,6 @@ namespace Content.Client.Communications.UI
                 ("time", diff.ToString(@"hh\:mm\:ss", CultureInfo.CurrentCulture)));
             CountdownLabel.SetMessage(infoText);
         }
+        */ // Carpmosia-end - No recalls
     }
 }
