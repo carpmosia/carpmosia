@@ -149,6 +149,18 @@
   - !type:BuyerAccessCondition
 
 - type: listing
+  id: SalvageStoreSalvageRig
+  productEntity: ClothingBeltSalvageWebbing
+  cost:
+    SalvageTicket: 1600
+  categories:
+  - SalvageStoreEquipment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 4
+  - !type:BuyerAccessCondition
+
+- type: listing
   id: SalvageStoreVoidJetpack
   productEntity: JetpackVoidFilled
   cost:
