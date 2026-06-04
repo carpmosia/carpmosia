@@ -2789,15 +2789,7 @@ entities:
     - type: Transform
       pos: 6.5,1.5
       parent: 2
-- proto: IntercomAll
-  entities:
-  - uid: 70
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 0.5,-1.5
-      parent: 2
-- proto: MagazineShotgunBeanbag
+- proto: ClothingHeadHatUshanka
   entities:
   - uid: 539
     components:

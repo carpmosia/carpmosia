@@ -4108,18 +4108,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: IntercomAll
-  entities:
-  - uid: 469
-    components:
-    - type: MetaData
-      desc: An intercom for emergency situations. It's in pristine condition.
-      name: emergency intercom
-    - type: Transform
-      anchored: False
-      rot: 3.141592653589793 rad
-      pos: 0.125,-9.5
-      parent: 1
 - proto: LeftArmHuman
   entities:
   - uid: 327
@@ -4180,7 +4168,7 @@ entities:
           showEnts: False
           occludes: True
           ents: []
-- proto: MagazinePistolIncendiary
+- proto: MaterialBananium
   entities:
   - uid: 331
     components:
