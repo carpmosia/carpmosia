@@ -258,7 +258,6 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
         if (!Proto.Resolve(entity.Comp.ConvertPrototype, out var def))
         {
             DebugTools.Assert("Blood bound tried to convert but the convert proto failed to resolve.");
-            Log.Error("Blood bound convert proto failed to resolve.");
             errorMessage = "uhoh";
             return false;
         }
@@ -301,16 +300,16 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
             return false;
         }
 
+        // If null, just return true
+        if (def.PrefRoles == null || !_preferencesManager.TryGetCachedPreferences(targetMind.UserId.Value, out var preferences))
+            return true;
+
         // Check antag preference, dumb way to iterate through this, but needs must
-        if (def.PrefRoles != null &&
-            _preferencesManager.TryGetCachedPreferences(targetMind.UserId.Value, out var preferences))
+        var profile = (HumanoidCharacterProfile)preferences.SelectedCharacter;
+        foreach (var role in def.PrefRoles)
         {
-            var profile = (HumanoidCharacterProfile)preferences.SelectedCharacter;
-            foreach (var role in def.PrefRoles)
-            {
-                if (profile.AntagPreferences.Contains(role))
-                    return true;
-            }
+            if (profile.AntagPreferences.Contains(role))
+                return true;
         }
 
         // If we somehow get here, its because we failed to find the preferences
