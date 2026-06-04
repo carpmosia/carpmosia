@@ -8,7 +8,6 @@ using Content.Server.Objectives.Components;
 using Content.Server.Objectives.Systems;
 using Content.Server.Objectives;
 using Content.Server.Popups;
-using Content.Server.Preferences.Managers;
 using Content.Server.Roles;
 using Content.Server.Stunnable;
 using Content.Shared.BloodBound.Components;
@@ -33,7 +32,6 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
     [Dependency] private IAdminLogManager _adminLogManager = default!;
     [Dependency] private IEntityManager _entityManager = default!;
     [Dependency] private IPlayerManager _playerManager = default!;
-    [Dependency] private IServerPreferencesManager _preferencesManager = default!;
     [Dependency] private ActionsSystem _actionsSystem = default!;
     [Dependency] private AntagSelectionSystem _antagSystem = default!;
     [Dependency] private MindSystem _mindSystem = default!;
@@ -300,17 +298,12 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
             return false;
         }
 
-        // If null, just return true
-        if (def.PrefRoles == null || !_preferencesManager.TryGetCachedPreferences(targetMind.UserId.Value, out var preferences))
+        // Check antag preference
+        if(def.PrefRoles == null ||
+        (_playerManager.TryGetSessionById(targetMind.UserId, out var session)
+         && _antagSystem.TryGetValidAntagPreferences(session, out var prefs)
+         && prefs.Contains(def.PrefRoles[0]))) // Should never be null but a bit scary
             return true;
-
-        // Check antag preference, dumb way to iterate through this, but needs must
-        var profile = (HumanoidCharacterProfile)preferences.SelectedCharacter;
-        foreach (var role in def.PrefRoles)
-        {
-            if (profile.AntagPreferences.Contains(role))
-                return true;
-        }
 
         // If we somehow get here, its because we failed to find the preferences
         errorMessage = "blood-bound-convert-failed-preference";
