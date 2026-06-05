@@ -301,8 +301,7 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
         // Check antag preference
         if(def.PrefRoles == null ||
         (_playerManager.TryGetSessionById(targetMind.UserId, out var session)
-         && _antagSystem.TryGetValidAntagPreferences(session, out var prefs)
-         && prefs.Contains(def.PrefRoles[0]))) // Should never be null but a bit scary
+         && _antagSystem.TryGetValidAntagPreferences(session, def.PrefRoles)))
             return true;
 
         // If we somehow get here, its because we failed to find the preferences
