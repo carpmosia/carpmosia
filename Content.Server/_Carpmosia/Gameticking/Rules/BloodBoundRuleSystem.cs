@@ -18,7 +18,6 @@ using Content.Shared.Mindshield.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Popups;
-using Content.Shared.Preferences;
 using Content.Shared.Roles.Components;
 using Content.Shared.Zombies;
 using Robust.Server.Player;
@@ -114,7 +113,7 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
 
         // Actual conversion logic
 
-        if (!Proto.Resolve(entity.Comp.ConvertPrototype, out var def) || def.Briefing == null)
+        if (!Proto.Resolve(entity.Comp.ConvertPrototype, out var def))
             return;
 
         EntityManager.AddComponents(args.Target, def.Components);
@@ -140,8 +139,6 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
             _roleSystem.MindAddRoles(targetMindId, def.MindRoles, targetMind);
             _roleSystem.MindHasRole(targetMindId, out targetRole);
         }
-
-        DebugTools.AssertNotNull(targetRole, "Blood bound role was null after assigning it.");
 
         convertedComp.Bound = entity;
         targetRole!.Value.Comp2.Bound = entity;
@@ -171,14 +168,11 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
             _targetObjectiveSystem.SetTarget(objective, args.Target);
         }
 
-        // Get briefing text
-        var text = def.Briefing.Value.Text == null ? string.Empty : Loc.GetString(def.Briefing.Value.Text);
-
-        // Visuals
-        _antagSystem.SendBriefing(args.Target,
-            text,
-            def.Briefing.Value.Color,
-            def.Briefing.Value.Sound);
+        if (def.Briefing?.Text != null)
+            _antagSystem.SendBriefing(args.Target,
+                Loc.GetString(def.Briefing.Value.Text),
+                def.Briefing.Value.Color,
+                def.Briefing.Value.Sound);
 
         _popupSystem.PopupEntity(
             Loc.GetString(
@@ -299,9 +293,8 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
         }
 
         // Check antag preference
-        if(def.PrefRoles == null ||
-        (_playerManager.TryGetSessionById(targetMind.UserId, out var session)
-         && _antagSystem.TryGetValidAntagPreferences(session, def.PrefRoles)))
+        if(_playerManager.TryGetSessionById(targetMind.UserId, out var session)
+         && _antagSystem.TryGetValidAntagPreferences(session, def.PrefRoles))
             return true;
 
         // If we somehow get here, its because we failed to find the preferences
