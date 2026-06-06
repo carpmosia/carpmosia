@@ -575,13 +575,8 @@
       visible: false
   - type: Icon
     sprite: _Carpmosia/Objects/Specific/Chemistry/syringe.rsi # Carpmosia-start - chem resprite
-    layers:
-      - state: cryo_base
-        map: ["enum.SolutionContainerLayers.Base"]
-      - state: cryo0
-        map: ["enum.SolutionContainerLayers.Fill"]
-        visible: false # Carpmosia-end - chem resprite
-  - type: SolutionContainerVisuals # Carpmosia-start - chem resprite
+    state: cryo_base
+  - type: SolutionContainerVisuals
     emptySpriteName: cryo0
     maxFillLevels: 2
     fillBaseName: cryo # Carpmosia-end - chem resprite
