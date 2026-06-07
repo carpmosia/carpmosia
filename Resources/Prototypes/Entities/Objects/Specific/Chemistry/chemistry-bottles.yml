@@ -102,7 +102,8 @@
 - type: entity
   parent: BaseChemistryEmptyBottle
   id: ChemistryEmptyBottle01
-  components: # Carpmosia-start - chem resprite
+# Carpmosia-start - chem resprite
+  components:
   - type: Sprite
     sprite: _Carpmosia/Objects/Specific/Chemistry/bottle.rsi
     layers:
@@ -113,7 +114,8 @@
     - state: bottle-1-overlay
   - type: Item
     size: Tiny
-    sprite: _Carpmosia/Objects/Specific/Chemistry/beaker.rsi # Carpmosia-end - chem resprite
+    sprite: _Carpmosia/Objects/Specific/Chemistry/beaker.rsi
+# Carpmosia-end - chem resprite
 
 - type: entity
   parent: BaseChemistryEmptyBottle
@@ -126,10 +128,12 @@
     - state: bottle-2-1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
-    - state: bottle-2-overlay # Carpmosia-start - chem resprite
+# Carpmosia-start - chem resprite
+    - state: bottle-2-overlay
   - type: Item
     size: Tiny
-    sprite: _Carpmosia/Objects/Specific/Chemistry/bottle.rsi # Carpmosia-end - chem resprite
+    sprite: _Carpmosia/Objects/Specific/Chemistry/bottle.rsi
+# Carpmosia-end - chem resprite
   - type: SolutionContainerVisuals
     fillBaseName: bottle-2-
 
@@ -144,10 +148,12 @@
     - state: bottle-3-1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
-    - state: bottle-3-overlay # Carpmosia-start - chem resprite
+# Carpmosia-start - chem resprite
+    - state: bottle-3-overlay
   - type: Item
     size: Tiny
-    sprite: _Carpmosia/Objects/Specific/Chemistry/bottle.rsi # Carpmosia-end - chem resprite
+    sprite: _Carpmosia/Objects/Specific/Chemistry/bottle.rsi
+# Carpmosia-end - chem resprite
   - type: SolutionContainerVisuals
     fillBaseName: bottle-3-
 
@@ -162,10 +168,12 @@
     - state: bottle-4-1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
-    - state: bottle-4-overlay # Carpmosia-start - chem resprite
+# Carpmosia-start - chem resprite
+    - state: bottle-4-overlay
   - type: Item
     size: Tiny
-    sprite: _Carpmosia/Objects/Specific/Chemistry/bottle.rsi # Carpmosia-end - chem resprite
+    sprite: _Carpmosia/Objects/Specific/Chemistry/bottle.rsi
+# Carpmosia-end - chem resprite
   - type: SolutionContainerVisuals
     fillBaseName: bottle-4-
 
