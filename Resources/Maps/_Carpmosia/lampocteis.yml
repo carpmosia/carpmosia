@@ -1,10 +1,10 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 275.2.0
+  engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 05/23/2026 08:21:20
+  time: 05/26/2026 10:23:35
   entityCount: 11961
 maps:
 - 1
@@ -4334,13 +4334,11 @@ entities:
     - type: Solution
       solution:
         maxVol: 100
-        name: drink
         reagents:
         - data: []
           ReagentId: Rum
           Quantity: 55
     - type: ContainedSolution
-      containerName: drink
       container: 3
   - uid: 6
     mapInit: true
@@ -4353,13 +4351,11 @@ entities:
     - type: Solution
       solution:
         maxVol: 5
-        name: drink
         reagents:
         - data: []
           ReagentId: Rum
           Quantity: 5
     - type: ContainedSolution
-      containerName: drink
       container: 5
   - uid: 8
     mapInit: true
@@ -4372,13 +4368,11 @@ entities:
     - type: Solution
       solution:
         maxVol: 30
-        name: drink
         reagents:
         - data: []
           ReagentId: Mustard
           Quantity: 30
     - type: ContainedSolution
-      containerName: drink
       container: 7
   - uid: 10
     mapInit: true
@@ -4391,13 +4385,11 @@ entities:
     - type: Solution
       solution:
         maxVol: 20
-        name: drink
         reagents:
         - data: []
           ReagentId: Mayo
           Quantity: 20
     - type: ContainedSolution
-      containerName: drink
       container: 9
   - uid: 12
     mapInit: true
@@ -4410,7 +4402,6 @@ entities:
     - type: Solution
       solution:
         maxVol: 30
-        name: drink
         reagents:
         - data: []
           ReagentId: Mold
@@ -4425,7 +4416,6 @@ entities:
           ReagentId: Blood
           Quantity: 1
     - type: ContainedSolution
-      containerName: drink
       container: 11
   - uid: 13
     mapInit: true
@@ -4438,7 +4428,6 @@ entities:
     - type: Solution
       solution:
         maxVol: 5
-        name: grindable
         reagents:
         - data: []
           ReagentId: Aluminium
@@ -4447,7 +4436,6 @@ entities:
           ReagentId: Iron
           Quantity: 1
     - type: ContainedSolution
-      containerName: grindable
       container: 11
   - uid: 16
     mapInit: true
@@ -4460,7 +4448,6 @@ entities:
     - type: Solution
       solution:
         maxVol: 5
-        name: food
         reagents:
         - data: []
           ReagentId: Nutriment
@@ -4469,7 +4456,6 @@ entities:
           ReagentId: Vitamin
           Quantity: 1
     - type: ContainedSolution
-      containerName: food
       container: 15
   - uid: 18
     mapInit: true
@@ -4482,7 +4468,6 @@ entities:
     - type: Solution
       solution:
         maxVol: 5
-        name: food
         reagents:
         - data: []
           ReagentId: Nutriment
@@ -4491,7 +4476,6 @@ entities:
           ReagentId: Vitamin
           Quantity: 1
     - type: ContainedSolution
-      containerName: food
       container: 17
   - uid: 20
     mapInit: true
@@ -4504,7 +4488,6 @@ entities:
     - type: Solution
       solution:
         maxVol: 5
-        name: food
         reagents:
         - data: []
           ReagentId: Nutriment
@@ -4513,7 +4496,6 @@ entities:
           ReagentId: Vitamin
           Quantity: 1
     - type: ContainedSolution
-      containerName: food
       container: 19
   - uid: 22
     mapInit: true
@@ -4526,7 +4508,6 @@ entities:
     - type: Solution
       solution:
         maxVol: 5
-        name: food
         reagents:
         - data: []
           ReagentId: Nutriment
@@ -4538,7 +4519,6 @@ entities:
           ReagentId: Vitamin
           Quantity: 1
     - type: ContainedSolution
-      containerName: food
       container: 21
   - uid: 24
     mapInit: true
@@ -4551,7 +4531,6 @@ entities:
     - type: Solution
       solution:
         maxVol: 5
-        name: food
         reagents:
         - data: []
           ReagentId: Nutriment
@@ -4560,7 +4539,6 @@ entities:
           ReagentId: Vitamin
           Quantity: 1
     - type: ContainedSolution
-      containerName: food
       container: 23
   - uid: 26
     mapInit: true
@@ -4573,7 +4551,6 @@ entities:
     - type: Solution
       solution:
         maxVol: 5
-        name: food
         reagents:
         - data: []
           ReagentId: Nutriment
@@ -4582,7 +4559,6 @@ entities:
           ReagentId: Vitamin
           Quantity: 1
     - type: ContainedSolution
-      containerName: food
       container: 25
   - uid: 28
     mapInit: true
@@ -4595,13 +4571,11 @@ entities:
     - type: Solution
       solution:
         maxVol: 300
-        name: drink
         reagents:
         - data: []
           ReagentId: Coffee
           Quantity: 300
     - type: ContainedSolution
-      containerName: drink
       container: 27
 - proto: ActionToggleInternals
   entities:
@@ -35608,7 +35582,6 @@ entities:
       pos: -16.320265,-0.42328072
       parent: 2
     - type: SolutionContainerManager
-      solutions: null
       containers:
       - drink
     - type: Label
@@ -35662,7 +35635,6 @@ entities:
       pos: -1.3108091,-15.458479
       parent: 2
     - type: SolutionContainerManager
-      solutions: null
       containers:
       - drink
     - type: TransformableContainer
@@ -35706,7 +35678,6 @@ entities:
       pos: -2.7365913,-32.484234
       parent: 2
     - type: SolutionContainerManager
-      solutions: null
       containers:
       - drink
     - type: MeleeWeapon
@@ -35799,7 +35770,6 @@ entities:
       pos: 27.289276,-25.1627
       parent: 2
     - type: SolutionContainerManager
-      solutions: null
       containers:
       - drink
       - grindable
@@ -35836,7 +35806,6 @@ entities:
       pos: 21.506222,-19.873772
       parent: 2
     - type: SolutionContainerManager
-      solutions: null
       containers:
       - drink
     - type: Label
@@ -35882,7 +35851,6 @@ entities:
       pos: 21.436779,-20.443613
       parent: 2
     - type: SolutionContainerManager
-      solutions: null
       containers:
       - drink
     - type: MeleeWeapon
@@ -39214,10 +39182,6 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
-          maxVol: 0
-          name: food
           reagents: []
       containers:
       - food
@@ -39245,10 +39209,6 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
-          maxVol: 0
-          name: food
           reagents: []
       containers:
       - food
@@ -39276,10 +39236,6 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
-          maxVol: 0
-          name: food
           reagents: []
       containers:
       - food
@@ -39307,10 +39263,6 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
-          maxVol: 0
-          name: food
           reagents: []
       containers:
       - food
@@ -39338,10 +39290,6 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
-          maxVol: 0
-          name: food
           reagents: []
       containers:
       - food
@@ -39369,10 +39317,6 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
-          maxVol: 0
-          name: food
           reagents: []
       containers:
       - food
@@ -60514,19 +60458,13 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
           maxVol: 10
-          name: null
           reagents:
           - data: []
             ReagentId: Fiber
             Quantity: 10
         bloodstream:
-          temperature: 293.15
-          canReact: True
           maxVol: 600
-          name: bloodstream
           reagents:
           - data:
             - !type:DnaData
@@ -60534,17 +60472,12 @@ entities:
             ReagentId: Blood
             Quantity: 300
         bloodstreamTemporary:
-          temperature: 293.15
-          canReact: True
           maxVol: 4
-          name: bloodstreamTemporary
           reagents: []
         metabolites:
-          temperature: 293.15
-          canReact: True
           maxVol: 600
-          name: metabolites
           reagents: []
+      containers: []
     missingComponents:
     - Clothing
     - Edible
