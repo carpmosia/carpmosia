@@ -1,10 +1,10 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 268.0.0
+  engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 12/29/2025 00:12:35
+  time: 05/26/2026 10:23:29
   entityCount: 24859
 maps:
 - 1
@@ -16102,6 +16102,8 @@ entities:
     - type: NavMap
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
+    - type: TileHistory
+      chunkHistory: {}
 - proto: AcousticGuitarInstrument
   entities:
   - uid: 3
@@ -115098,8 +115100,6 @@ entities:
     - type: Transform
       pos: 41.43434,-9.850339
       parent: 2
-- proto: HandheldHealthAnalyzerUnpowered
-  entities:
   - uid: 16494
     components:
     - type: Transform

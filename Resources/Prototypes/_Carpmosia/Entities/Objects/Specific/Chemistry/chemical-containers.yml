@@ -22,10 +22,9 @@
     size: Large
     shape:
     - 0,0,2,1 # 3x2
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 90
+  - type: Solution
+    solution:
+      maxVol: 90
   - type: SolutionContainerVisuals
     maxFillLevels: 4
     inHandsMaxFillLevels: 2
@@ -61,12 +60,11 @@
   components:
   - type: Label
     currentLabel: reagent-name-bicaridine
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: Bicaridine
-          Quantity: 90
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Bicaridine
+        Quantity: 90
 
 - type: entity
   parent: Fluidbag
@@ -76,12 +74,11 @@
   components:
   - type: Label
     currentLabel: reagent-name-dexalin
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: Dexalin
-          Quantity: 90
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Dexalin
+        Quantity: 90
 
 - type: entity
   parent: Fluidbag
@@ -91,12 +88,11 @@
   components:
   - type: Label
     currentLabel: reagent-name-dylovene
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: Dylovene
-          Quantity: 90
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Dylovene
+        Quantity: 90
 
 - type: entity
   parent: Fluidbag
@@ -106,12 +102,11 @@
   components:
   - type: Label
     currentLabel: reagent-name-epinephrine
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: Epinephrine
-          Quantity: 90
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Epinephrine
+        Quantity: 90
 
 - type: entity
   parent: Fluidbag
@@ -121,12 +116,11 @@
   components:
   - type: Label
     currentLabel: reagent-name-hyronalin
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: Hyronalin
-          Quantity: 90
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Hyronalin
+        Quantity: 90
 
 - type: entity
   parent: Fluidbag
@@ -136,12 +130,11 @@
   components:
   - type: Label
     currentLabel: reagent-name-inaprovaline
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: Inaprovaline
-          Quantity: 90
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Inaprovaline
+        Quantity: 90
 
 - type: entity
   parent: Fluidbag
@@ -151,12 +144,11 @@
   components:
   - type: Label
     currentLabel: reagent-name-kelotane
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: Kelotane
-          Quantity: 90
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Kelotane
+        Quantity: 90
 
 - type: entity
   parent: Fluidbag
@@ -166,9 +158,8 @@
   components:
   - type: Label
     currentLabel: reagent-name-saline
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: Saline
-          Quantity: 90
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Saline
+        Quantity: 90
