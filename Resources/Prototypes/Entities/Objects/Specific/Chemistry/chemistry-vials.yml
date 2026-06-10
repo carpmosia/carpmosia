@@ -29,7 +29,7 @@
   description: A small vial.
   components:
   - type: Item
-# Carpmosia-start - chem resprite
+  # Carpmosia-start - chem resprite
     sprite: _Carpmosia/Objects/Specific/Chemistry/vial.rsi
   - type: Sprite
     sprite: _Carpmosia/Objects/Specific/Chemistry/vial.rsi
@@ -40,7 +40,7 @@
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
     - state: icon_overlay
-# Carpmosia-end - chem resprite
+  # Carpmosia-end - chem resprite
   - type: SolutionContainerVisuals
     maxFillLevels: 6
     inHandsMaxFillLevels: 4
@@ -80,7 +80,7 @@
   description: A smaller vial.
   components:
   - type: Item
-# Carpmosia-start - chem resprite
+  # Carpmosia-start - chem resprite
     sprite: _Carpmosia/Objects/Specific/Chemistry/vial_mini.rsi
   - type: Sprite
     sprite: _Carpmosia/Objects/Specific/Chemistry/vial_mini.rsi
@@ -91,7 +91,7 @@
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
     - state: icon_overlay
-# Carpmosia-end - chem resprite
+  # Carpmosia-end - chem resprite
   - type: SolutionContainerVisuals
     maxFillLevels: 5
     inHandsMaxFillLevels: 4
