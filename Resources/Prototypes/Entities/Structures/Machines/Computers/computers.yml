@@ -174,8 +174,10 @@
       state: generic_panel_open
   - type: Computer
     board: ShuttleConsoleCircuitboard
-  - type: ShuttleConsole # Carpmosia-edit - Ban civvie FTL
-    ftlAllowed: false # Carpmosia-edit - Ban civvie FTL
+  # Carpmosia-start - Ban civvie FTL
+  - type: ShuttleConsole
+    ftlAllowed: false
+  # Carpmosia-end - Ban civvie FTL
 
 - type: entity
   parent: BaseComputerShuttle
@@ -238,8 +240,10 @@
     board: CargoShuttleConsoleCircuitboard
   - type: StealTarget
     stealGroup: CargoShuttleConsoleCircuitboard
-  - type: ShuttleConsole # Carpmosia-edit - Ban civvie FTL
-    ftlAllowed: false # Carpmosia-edit - Ban civvie FTL
+  # Carpmosia-start - Ban civvie FTL
+  - type: ShuttleConsole
+    ftlAllowed: false
+  # Carpmosia-end - Ban civvie FTL
 
 - type: entity
   parent: BaseComputerAiAccess

@@ -32,11 +32,7 @@
 - type: entity
   parent: ComputerShuttle
   id: ComputerShuttleEvent
-  name: shuttle console
-  suffix: FTL capable
-  description: Used to pilot a shuttle.
+  suffix: FTL
   components:
-  - type: RadarConsole
-    maxRange: 256
   - type: ShuttleConsole
     ftlAllowed: true
