@@ -1,7 +1,7 @@
 - type: entity
-  suffix: traumoxadone
   parent: Beaker
   id: TraumoxadoneBeakerSmall
+  suffix: traumoxadone
   components:
   - type: Label
     currentLabel: reagent-name-cryoxadone
@@ -12,9 +12,9 @@
         Quantity: 60
 
 - type: entity
-  suffix: aloxadone
   parent: Beaker
   id: AloxadoneBeakerSmall
+  suffix: aloxadone
   components:
   - type: Label
     currentLabel: reagent-name-aloxadone
@@ -25,9 +25,9 @@
         Quantity: 60
 
 - type: entity
-  suffix: doxarubixadone
   parent: Beaker
   id: DoxarubixadoneBeakerSmall
+  suffix: doxarubixadone
   components:
   - type: Label
     currentLabel: reagent-name-doxarubixadone
@@ -38,9 +38,9 @@
         Quantity: 60
 
 - type: entity
-  suffix: leporazine
   parent: Beaker
   id: LeporazineBeakerSmall
+  suffix: leporazine
   components:
   - type: Label
     currentLabel: reagent-name-leporazine
@@ -51,9 +51,9 @@
         Quantity: 60
 
 - type: entity
-  suffix: stelloxadone
   parent: Beaker
   id: StelloxadoneBeakerSmall
+  suffix: stelloxadone
   components:
   - type: Label
     currentLabel: reagent-name-stelloxadone
