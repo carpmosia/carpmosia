@@ -1,0 +1,67 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Created by GlupiyBrush (GitHub, Discord)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "bluespace",
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
+        },
+        {
+            "name": "bluespace-overlay"
+        },
+        {
+            "name": "bluespace1"
+        },
+        {
+            "name": "bluespace2"
+        },
+        {
+            "name": "bluespace3"
+        },
+        {
+            "name": "bluespace4"
+        },
+        {
+            "name": "bluespace5"
+        },
+        {
+            "name": "bluespace6"
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-left-fill-1",
+            "directions": 4
+        },
+        {
+            "name": "inhand-left-fill-2",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right-fill-1",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right-fill-2",
+            "directions": 4
+        }
+    ]
+}

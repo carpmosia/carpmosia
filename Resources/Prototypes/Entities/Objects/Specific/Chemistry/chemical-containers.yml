@@ -5,22 +5,22 @@
   description: Used to contain a very large amount of chemicals or solutions. Chugging is extremely ill-advised.
   components:
   - type: Sprite
-    sprite: Objects/Specific/Chemistry/jug.rsi
+    sprite: _Carpmosia/Objects/Specific/Chemistry/jug.rsi # Carpmosia-edit - chem resprite
   # Carpmosia-start - Closable Jugs
     layers:
     - state: icon_empty
       map: ["enum.OpenableVisuals.Layer"]
-      sprite: _Carpmosia/Objects/Specific/Chemistry/jug.rsi
     - state: fill-1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
+    - state: icon_overlay # Carpmosia-edit - chem resprite
   # Carpmosia-end - Closable Jugs
   - type: Item
     size: Large
-    sprite: Objects/Specific/Chemistry/jug.rsi
+    sprite: _Carpmosia/Objects/Specific/Chemistry/jug.rsi # Carpmosia-edit - chem resprite
   - type: SolutionContainerVisuals
     maxFillLevels: 6
-    inHandsMaxFillLevels: 5
+    inHandsMaxFillLevels: 4 # Carpmosia-edit - chem resprite
   - type: ExaminableSolution
     exactVolume: true # Chemistry item
   # Carpmosia-start - Closable Jugs

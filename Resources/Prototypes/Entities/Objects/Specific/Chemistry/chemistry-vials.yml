@@ -5,6 +5,16 @@
   components:
   - type: Item
     size: Tiny
+  # Carpmosia-start - chem resprite
+  - type: Sprite
+    layers:
+    - state: icon_empty
+      map: ["enum.OpenableVisuals.Layer"]
+    - state: fill-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+    - state: icon_overlay
+  # Carpmosia-end - chem resprite
   - type: Openable
     sound:
       collection: bottleCloseSounds # using closed here for the quieter sound
@@ -29,9 +39,9 @@
   description: A small vial.
   components:
   - type: Item
-    sprite: Objects/Specific/Chemistry/vial.rsi
+    sprite: _Carpmosia/Objects/Specific/Chemistry/vial.rsi # Carpmosia-edit - chem resprite
   - type: Sprite
-    sprite: Objects/Specific/Chemistry/vial.rsi
+    sprite: _Carpmosia/Objects/Specific/Chemistry/vial.rsi # Carpmosia-edit - chem resprite
   - type: SolutionContainerVisuals
     maxFillLevels: 6
     inHandsMaxFillLevels: 4
@@ -71,9 +81,9 @@
   description: A smaller vial.
   components:
   - type: Item
-    sprite: Objects/Specific/Chemistry/vial_mini.rsi
+    sprite: _Carpmosia/Objects/Specific/Chemistry/vial_mini.rsi # Carpmosia-edit - chem resprite
   - type: Sprite
-    sprite: Objects/Specific/Chemistry/vial_mini.rsi
+    sprite: _Carpmosia/Objects/Specific/Chemistry/vial_mini.rsi # Carpmosia-edit - chem resprite
   - type: SolutionContainerVisuals
     maxFillLevels: 5
     inHandsMaxFillLevels: 4

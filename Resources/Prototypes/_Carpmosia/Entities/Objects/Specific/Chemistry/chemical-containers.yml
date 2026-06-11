@@ -11,6 +11,7 @@
     - state: fill-1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
+    - state: icon_overlay
   - type: MeleeWeapon
     soundNoDamage:
       path: "/Audio/Effects/Fluids/splat.ogg"
@@ -27,7 +28,7 @@
       maxVol: 90
   - type: SolutionContainerVisuals
     maxFillLevels: 4
-    inHandsMaxFillLevels: 2
+    inHandsMaxFillLevels: 3
   - type: Edible
     edible: Drink
     destroyOnEmpty: false
