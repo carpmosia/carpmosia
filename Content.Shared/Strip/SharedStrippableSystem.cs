@@ -222,7 +222,7 @@ public abstract partial class SharedStrippableSystem : EntitySystem
             BreakOnDamage = true,
             BreakOnMove = true,
             NeedHand = true,
-            DuplicateCondition = DuplicateConditions.None // Carpmosia-edit - Slower stripping
+            DuplicateCondition = IsRestrained(target) ? DuplicateConditions.SameTool : DuplicateConditions.None // Carpmosia-edit - Stripping changes
         };
 
         _doAfterSystem.TryStartDoAfter(doAfterArgs);
@@ -326,7 +326,7 @@ public abstract partial class SharedStrippableSystem : EntitySystem
             BreakOnMove = true,
             NeedHand = true,
             BreakOnHandChange = false, // Allow simultaneously removing multiple items.
-            DuplicateCondition = DuplicateConditions.None // Carpmosia-edit - Slower stripping
+            DuplicateCondition = IsRestrained(target) ? DuplicateConditions.SameTool : DuplicateConditions.None // Carpmosia-edit - Stripping changes
         };
 
         _doAfterSystem.TryStartDoAfter(doAfterArgs);
@@ -429,7 +429,7 @@ public abstract partial class SharedStrippableSystem : EntitySystem
             BreakOnDamage = true,
             BreakOnMove = true,
             NeedHand = true,
-            DuplicateCondition = DuplicateConditions.None // Carpmosia-edit - Slower stripping
+            DuplicateCondition = IsRestrained(target) ? DuplicateConditions.SameTool : DuplicateConditions.None // Carpmosia-edit - Stripping changes
         };
 
         _doAfterSystem.TryStartDoAfter(doAfterArgs);
@@ -540,7 +540,7 @@ public abstract partial class SharedStrippableSystem : EntitySystem
             BreakOnMove = true,
             NeedHand = true,
             BreakOnHandChange = false, // Allow simultaneously removing multiple items.
-            DuplicateCondition = DuplicateConditions.None // Carpmosia-edit - Slower stripping
+            DuplicateCondition = IsRestrained(target) ? DuplicateConditions.SameTool : DuplicateConditions.None  // Carpmosia-edit - Stripping changes
         };
 
         _doAfterSystem.TryStartDoAfter(doAfterArgs);
@@ -699,4 +699,16 @@ public abstract partial class SharedStrippableSystem : EntitySystem
 
         return !HasComp<BypassInteractionChecksComponent>(viewer);
     }
+
+    // Carpmosia-start - Stripping changes
+    public bool IsRestrained(EntityUid target)
+    {
+        if (TryComp<CuffableComponent>(target, out var cuffed) && cuffed.CuffedHandCount > 0)
+        {
+            return true;
+        }
+
+        return false;
+    }
+    // Carpmosia-end - Stripping changes
 }
