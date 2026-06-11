@@ -2789,7 +2789,7 @@ entities:
     - type: Transform
       pos: 6.5,1.5
       parent: 2
-- proto: IntercomCommon
+- proto: IntercomCommon # Carpmosia-edit - Decontraing salv
   entities:
   - uid: 70
     components:
@@ -2797,18 +2797,15 @@ entities:
       rot: 3.141592653589793 rad
       pos: 0.5,-1.5
       parent: 2
-- proto: ClothingHeadHatUshanka
+  # Carpmosia-start - Decontraing salv
+- proto: BoxBeanbag
   entities:
   - uid: 539
     components:
     - type: Transform
       pos: 21.62893,-0.4529693
       parent: 2
-  - uid: 540
-    components:
-    - type: Transform
-      pos: 21.309292,-0.5621033
-      parent: 2
+  # Carpmosia-start - Decontraing salv
 - proto: NitrogenCanister
   entities:
   - uid: 532
