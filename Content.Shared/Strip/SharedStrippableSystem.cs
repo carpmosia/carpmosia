@@ -540,7 +540,7 @@ public abstract partial class SharedStrippableSystem : EntitySystem
             BreakOnMove = true,
             NeedHand = true,
             BreakOnHandChange = false, // Allow simultaneously removing multiple items.
-            DuplicateCondition = IsRestrained(target) ? DuplicateConditions.SameTool : DuplicateConditions.None  // Carpmosia-edit - Stripping changes
+            DuplicateCondition = IsRestrained(target) ? DuplicateConditions.SameTool : DuplicateConditions.None // Carpmosia-edit - Stripping changes
         };
 
         _doAfterSystem.TryStartDoAfter(doAfterArgs);
