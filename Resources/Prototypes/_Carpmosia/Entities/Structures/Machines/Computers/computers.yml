@@ -27,3 +27,12 @@
       board: SalvageShuttleConsoleCircuitboard
     - type: StealTarget
       stealGroup: SalvageShuttleConsoleCircuitboard
+
+# Used for event spawned Shuttles that spawn off the station map
+- type: entity
+  parent: ComputerShuttle
+  id: ComputerShuttleEvent
+  suffix: FTL
+  components:
+  - type: ShuttleConsole
+    ftlAllowed: true
