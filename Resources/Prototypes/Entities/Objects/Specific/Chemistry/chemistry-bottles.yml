@@ -102,38 +102,18 @@
 - type: entity
   parent: BaseChemistryEmptyBottle
   id: ChemistryEmptyBottle01
-  # Carpmosia-start - chem resprite
-  components:
-  - type: Sprite
-    sprite: _Carpmosia/Objects/Specific/Chemistry/bottle.rsi
-    layers:
-    - state: bottle-1
-    - state: bottle-1-1
-      map: ["enum.SolutionContainerLayers.Fill"]
-      visible: false
-    - state: bottle-1-overlay
-  - type: Item
-    size: Tiny
-    sprite: _Carpmosia/Objects/Specific/Chemistry/beaker.rsi
-  # Carpmosia-end - chem resprite
 
 - type: entity
   parent: BaseChemistryEmptyBottle
   id: ChemistryEmptyBottle02
   components:
   - type: Sprite
-    sprite: _Carpmosia/Objects/Specific/Chemistry/bottle.rsi # Carpmosia-edit - chem resprite
     layers:
     - state: bottle-2
     - state: bottle-2-1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
-  # Carpmosia-start - chem resprite
-    - state: bottle-2-overlay
-  - type: Item
-    size: Tiny
-    sprite: _Carpmosia/Objects/Specific/Chemistry/bottle.rsi
-  # Carpmosia-end - chem resprite
+    - state: bottle-2-overlay # Carpmosia-edut - chem resprite
   - type: SolutionContainerVisuals
     fillBaseName: bottle-2-
 
@@ -142,18 +122,12 @@
   id: ChemistryEmptyBottle03
   components:
   - type: Sprite
-    sprite: _Carpmosia/Objects/Specific/Chemistry/bottle.rsi # Carpmosia-edit - chem resprite
     layers:
     - state: bottle-3
     - state: bottle-3-1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
-  # Carpmosia-start - chem resprite
-    - state: bottle-3-overlay
-  - type: Item
-    size: Tiny
-    sprite: _Carpmosia/Objects/Specific/Chemistry/bottle.rsi
-  # Carpmosia-end - chem resprite
+    - state: bottle-3-overlay # Carpmosia-edut - chem resprite
   - type: SolutionContainerVisuals
     fillBaseName: bottle-3-
 
@@ -162,18 +136,12 @@
   id: ChemistryEmptyBottle04
   components:
   - type: Sprite
-    sprite: _Carpmosia/Objects/Specific/Chemistry/bottle.rsi # Carpmosia-edit - chem resprite
     layers:
     - state: bottle-4
     - state: bottle-4-1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
-  # Carpmosia-start - chem resprite
-    - state: bottle-4-overlay
-  - type: Item
-    size: Tiny
-    sprite: _Carpmosia/Objects/Specific/Chemistry/bottle.rsi
-  # Carpmosia-end - chem resprite
+    - state: bottle-4-overlay # Carpmosia-edut - chem resprite
   - type: SolutionContainerVisuals
     fillBaseName: bottle-4-
 
