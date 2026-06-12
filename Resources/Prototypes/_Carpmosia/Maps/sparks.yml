@@ -27,6 +27,10 @@
           ChiefEngineer:         [ 1, 1 ]
           ResearchDirector:      [ 1, 1 ]
           Quartermaster:         [ 1, 1 ]
+          # Security (5)
+          Warden:                [ 1, 1 ]
+          Detective:             [ 1, 1 ]
+          SecurityOfficer:       [ 3, 3 ]
           # Service (8-10)
           Bartender:             [ 1, 1 ]
           Botanist:              [ 2, 2 ]
@@ -47,10 +51,6 @@
           # Silicon (2)
           StationAi:             [ 1, 1 ]
           Borg:                  [ 1, 1 ]
-          # Security (5)
-          Warden:                [ 1, 1 ]
-          Detective:             [ 1, 1 ]
-          SecurityOfficer:       [ 3, 3 ]
           # Supply (5-6)
           SalvageSpecialist:     [ 3, 3 ]
           CargoTechnician:       [ 2, 3 ]
