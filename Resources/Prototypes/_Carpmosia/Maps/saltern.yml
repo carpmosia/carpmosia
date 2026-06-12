@@ -19,7 +19,7 @@
           prefixCreator: '14'
       - type: StationJobs
         availableJobs:
-          #service
+          # Service
           Captain: [ 1, 1 ]
           HeadOfPersonnel: [ 1, 1 ]
           Bartender: [ 1, 1 ]
@@ -29,38 +29,38 @@
           Chaplain: [ 1, 1 ]
           Librarian: [ 1, 1 ]
           ServiceWorker: [ 2, 2 ]
-          #engineering
+          # Engineering
           ChiefEngineer: [ 1, 1 ]
           AtmosphericTechnician: [ 2, 2 ]
           StationEngineer: [ 4, 4 ]
           TechnicalAssistant: [ 4, 4 ]
-          #medical
+          # Medical
           ChiefMedicalOfficer: [ 1, 1 ]
           Chemist: [ 2, 2 ]
           MedicalDoctor: [ 3, 3 ]
           MedicalIntern: [ 4, 4 ]
           Paramedic: [ 1, 1 ]
-          #science
+          # Science
           ResearchDirector: [ 1, 1 ]
           Scientist: [ 4, 4 ]
           ResearchAssistant: [ 2, 2 ]
           Borg: [ 2, 2 ]
-          #security
+          # Security
           HeadOfSecurity: [ 1, 1 ]
           Warden: [ 1, 1 ]
           Detective: [ 1, 1 ]
           SecurityOfficer: [ 4, 4 ]
           SecurityCadet: [ 4, 4 ]
-          #supply
+          # Supply
           Quartermaster: [ 1, 1 ]
           SalvageSpecialist: [ 1, 3 ]
           CargoTechnician: [ 2, 2 ]
-          #civillian
+          # Civillian
           Passenger: [ -1, -1 ]
           Clown: [ 1, 1 ]
           Mime: [ 1, 1 ]
           Musician: [ 1, 1 ]
           Lawyer: [ 2, 2 ]
           Reporter: [ 1, 1 ]
-          #silicon
+          # Silicon
           StationAi: [ 1, 1 ]

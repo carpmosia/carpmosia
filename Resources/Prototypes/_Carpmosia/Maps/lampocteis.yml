@@ -18,7 +18,7 @@
         emergencyShuttlePath: /Maps/_Carpmosia/Shuttles/emergency_ghoti.yml
       - type: StationJobs
         availableJobs: # 49 jobs total w/o latejoins & interns, 58 jobs total w/ latejoins & interns
-          #command (7)
+          # Command (7)
           Captain: [ 1, 1 ]
           HeadOfPersonnel: [ 1, 1 ]
           HeadOfSecurity: [ 1, 1 ]
@@ -26,7 +26,7 @@
           ChiefEngineer: [ 1, 1 ]
           ResearchDirector: [ 1, 1 ]
           Quartermaster: [ 1, 1 ]
-          #service (11 - 12)
+          # Service (11 - 12)
           Bartender: [ 2, 2 ]
           Botanist: [ 2, 2 ]
           Chef: [ 2, 2 ]
@@ -34,32 +34,32 @@
           Chaplain: [ 1, 1 ]
           Librarian: [ 1, 1 ]
           ServiceWorker: [ 2, 2 ]
-          #engineering (4)
+          # Engineering (4)
           AtmosphericTechnician: [ 2, 2 ]
           StationEngineer: [ 2, 2 ]
           TechnicalAssistant: [ 2, 2 ] #intern, not counted
-          #medical (6)
+          # Medical (6)
           Chemist: [ 2, 2 ]
           MedicalDoctor: [ 2, 2 ]
           MedicalIntern: [ 2, 2 ] #intern, not counted
           Paramedic: [ 2, 2 ]
-          #science (3)
+          # Science (3)
           Scientist: [ 3, 3 ]
           ResearchAssistant: [ 2, 2 ] #intern, not counted
-          #security (7)
+          # Security (7)
           Warden: [ 1, 1 ]
           SecurityOfficer: [ 4, 4 ]
           Detective: [ 1, 1 ]
           SecurityCadet: [ 2, 2 ] #intern, not counted
           Lawyer: [ 1, 1 ]
-          #supply (5)
+          # Supply (5)
           SalvageSpecialist: [ 2, 2 ]
           CargoTechnician: [ 3, 3 ]
-          #civilian (3+)
+          # Civilian (3+)
           Passenger: [ -1, -1 ] #infinite, not counted
           Clown: [ 1, 1 ]
           Mime: [ 1, 1 ]
           Musician: [ 1, 1 ]
-          #silicon (3)
+          # Silicon (3)
           StationAi: [ 1, 1 ]
           Borg: [ 2, 2 ]
