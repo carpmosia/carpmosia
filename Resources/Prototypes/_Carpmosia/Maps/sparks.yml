@@ -37,15 +37,12 @@
           # Engineering (4-5)
           AtmosphericTechnician: [ 2, 2 ]
           StationEngineer:       [ 2, 3 ]
-          TechnicalAssistant:    [ 2, 2 ] #intern, not counted
           # Medical (4-5)
           Chemist:               [ 1, 1 ]
           MedicalDoctor:         [ 2, 3 ]
-          MedicalIntern:         [ 2, 2 ] #intern, not counted
           Paramedic:             [ 1, 1 ]
           # Science (3-4)
           Scientist:             [ 3, 4 ]
-          ResearchAssistant:     [ 2, 2 ] #intern, not counted
           # Silicon (2)
           StationAi:             [ 1, 1 ]
           Borg:                  [ 1, 1 ]
@@ -53,12 +50,17 @@
           Warden:                [ 1, 1 ]
           Detective:             [ 1, 1 ]
           SecurityOfficer:       [ 3, 3 ]
-          SecurityCadet:         [ 2, 2 ]  #intern, not counted
           # Supply (5-6)
           SalvageSpecialist:     [ 3, 3 ]
           CargoTechnician:       [ 2, 3 ]
           # Civillian (3+)
-          Passenger:             [-1,-1 ] #infinite, not counted
           Clown:                 [ 1, 1 ]
           Mime:                  [ 1, 1 ]
           Musician:              [ 1, 1 ]
+          # Interns & Fallback (not counted)
+          SecurityCadet:         [ 2, 2 ]
+          TechnicalAssistant:    [ 2, 2 ]
+          MedicalIntern:         [ 2, 2 ]
+          ResearchAssistant:     [ 2, 2 ]
+          Passenger:             [-1,-1 ]
+
