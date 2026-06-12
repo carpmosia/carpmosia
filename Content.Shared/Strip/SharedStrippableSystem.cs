@@ -703,12 +703,7 @@ public abstract partial class SharedStrippableSystem : EntitySystem
     // Carpmosia-start - Stripping changes
     public bool IsRestrained(EntityUid target)
     {
-        if (TryComp<CuffableComponent>(target, out var cuffed) && cuffed.CuffedHandCount > 0)
-        {
-            return true;
-        }
-
-        return false;
+        return TryComp<CuffableComponent>(target, out var cuffed) && cuffed.CuffedHandCount > 0;
     }
     // Carpmosia-end - Stripping changes
 }
