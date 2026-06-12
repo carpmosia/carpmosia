@@ -41,6 +41,10 @@
           Chemist:               [ 2, 2 ]
           MedicalDoctor:         [ 4, 6 ]
           Paramedic:             [ 2, 2 ]
+          # Science (4 - 6)
+          Scientist:             [ 4, 6 ]
+          StationAi:             [ 1, 1 ]
+          Borg:                  [ 3, 3 ]
           # Service (14)
           Bartender:             [ 2, 2 ]
           Botanist:              [ 3, 3 ]
@@ -52,15 +56,10 @@
           Reporter:              [ 1, 1 ]
           Lawyer:                [ 2, 2 ]
           Psychologist:          [ 1, 1 ]
-          # Science (4 - 6)
-          Scientist:             [ 4, 6 ]
           # Civilian (3+)
           Clown:                 [ 1, 1 ]
           Mime:                  [ 1, 1 ]
           Musician:              [ 1, 1 ]
-          # Silicon (4)
-          StationAi:             [ 1, 1 ]
-          Borg:                  [ 3, 3 ]
           # Interns & Fallback (not counted)
           SecurityCadet:         [ 2, 2 ]
           TechnicalAssistant:    [ 2, 2 ]
