@@ -1822,4 +1822,14 @@
   id: 291
   time: '2026-06-12T14:53:26.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/391
+- author: imatsoup
+  changes:
+  - message: Someone in restraints can have multiple items stripped off their person
+      at once again.
+    type: Tweak
+  - message: Thieves can now strip people slightly faster when pickpocketing
+    type: Tweak
+  id: 292
+  time: '2026-06-12T15:26:54.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/388
 Order: -1
