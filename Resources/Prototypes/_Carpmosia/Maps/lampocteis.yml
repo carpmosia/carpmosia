@@ -13,7 +13,7 @@
         mapNameTemplate: '{0} Lampocteis Carrier {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
-          prefixCreator: '14'
+          prefixCreator: 'JLF'
       - type: StationEmergencyShuttle
         emergencyShuttlePath: /Maps/_Carpmosia/Shuttles/emergency_ghoti.yml
       - type: StationJobs
