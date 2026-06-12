@@ -10,13 +10,13 @@
     Saltern:
       stationProto: StandardNanotrasenStation
       components:
-      - type: StationEmergencyShuttle
-        emergencyShuttlePath: /Maps/_Carpmosia/Shuttles/emergency_saltern.yml
       - type: StationNameSetup
         mapNameTemplate: '{0} Saltern {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: '14'
+      - type: StationEmergencyShuttle
+        emergencyShuttlePath: /Maps/_Carpmosia/Shuttles/emergency_saltern.yml
       - type: StationJobs
         availableJobs:
           # Command (7)
