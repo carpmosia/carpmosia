@@ -41,6 +41,7 @@
           Chemist:               [ 2, 2 ]
           MedicalDoctor:         [ 2, 2 ]
           Paramedic:             [ 2, 2 ]
+          # Psychologist:
         # Science (3)
           Scientist:             [ 3, 3 ]
           StationAi:             [ 1, 1 ]
@@ -48,16 +49,16 @@
         # Service (11 - 12)
           Bartender:             [ 2, 2 ]
           Botanist:              [ 2, 2 ]
-          Chef:                  [ 2, 2 ]
-          Janitor:               [ 1, 2 ]
           Chaplain:              [ 1, 1 ]
-          Librarian:             [ 1, 1 ]
-          ServiceWorker:         [ 2, 2 ]
-          Lawyer:                [ 1, 1 ]
-        # Civilian (3+)
+          Chef:                  [ 2, 2 ]
           Clown:                 [ 1, 1 ]
+          Janitor:               [ 1, 2 ]
+          Lawyer:                [ 1, 1 ]
+          Librarian:             [ 1, 1 ]
           Mime:                  [ 1, 1 ]
           Musician:              [ 1, 1 ]
+          # Reporter:
+          ServiceWorker:         [ 2, 2 ]
         # Interns & Fallback (not counted)
           SecurityCadet:         [ 2, 2 ]
           TechnicalAssistant:    [ 2, 2 ]
