@@ -1832,4 +1832,12 @@
   id: 292
   time: '2026-06-12T15:26:54.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/388
+- author: Atakku
+  changes:
+  - message: BureaucraticError's extreme case of locking out every job has been tweaked
+      to leave more (20-30%) of jobs unlocked
+    type: Tweak
+  id: 293
+  time: '2026-06-12T22:05:20.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/394
 Order: -1
