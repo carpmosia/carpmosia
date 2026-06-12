@@ -19,7 +19,7 @@
         emergencyShuttlePath: /Maps/_Carpmosia/Shuttles/emergency_ghoti.yml
       - type: StationJobs
         availableJobs: # 49 jobs total w/o latejoins & interns, 58 jobs total w/ latejoins & interns
-          # Command (7)
+        # Command (7)
           Captain:               [ 1, 1 ]
           HeadOfPersonnel:       [ 1, 1 ]
           HeadOfSecurity:        [ 1, 1 ]
@@ -27,25 +27,25 @@
           ChiefEngineer:         [ 1, 1 ]
           ResearchDirector:      [ 1, 1 ]
           Quartermaster:         [ 1, 1 ]
-          # Security (7)
+        # Security (7)
           Warden:                [ 1, 1 ]
           Detective:             [ 1, 1 ]
           SecurityOfficer:       [ 4, 4 ]
-          # Cargo (5)
+        # Cargo (5)
           SalvageSpecialist:     [ 2, 2 ]
           CargoTechnician:       [ 3, 3 ]
-          # Engineering (4)
+        # Engineering (4)
           AtmosphericTechnician: [ 2, 2 ]
           StationEngineer:       [ 2, 2 ]
-          # Medical (6)
+        # Medical (6)
           Chemist:               [ 2, 2 ]
           MedicalDoctor:         [ 2, 2 ]
           Paramedic:             [ 2, 2 ]
-          # Science (3)
+        # Science (3)
           Scientist:             [ 3, 3 ]
           StationAi:             [ 1, 1 ]
           Borg:                  [ 2, 2 ]
-          # Service (11 - 12)
+        # Service (11 - 12)
           Bartender:             [ 2, 2 ]
           Botanist:              [ 2, 2 ]
           Chef:                  [ 2, 2 ]
@@ -54,12 +54,11 @@
           Librarian:             [ 1, 1 ]
           ServiceWorker:         [ 2, 2 ]
           Lawyer:                [ 1, 1 ]
-          # Civilian (3+)
+        # Civilian (3+)
           Clown:                 [ 1, 1 ]
           Mime:                  [ 1, 1 ]
           Musician:              [ 1, 1 ]
-          # Silicon (3)
-          # Interns & Fallback (not counted)
+        # Interns & Fallback (not counted)
           SecurityCadet:         [ 2, 2 ]
           TechnicalAssistant:    [ 2, 2 ]
           MedicalIntern:         [ 2, 2 ]

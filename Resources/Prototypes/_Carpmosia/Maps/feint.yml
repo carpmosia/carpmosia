@@ -19,7 +19,7 @@
         emergencyShuttlePath: /Maps/_Carpmosia/Shuttles/emergency_feint.yml
       - type: StationJobs
         availableJobs: # 44 jobs total w/o latejoins & interns, 59 jobs total w/ latejoins & interns
-          # Command (7)
+        # Command (7)
           Captain:               [ 1, 1 ]
           HeadOfPersonnel:       [ 1, 1 ]
           HeadOfSecurity:        [ 1, 1 ]
@@ -27,25 +27,25 @@
           ChiefEngineer:         [ 1, 1 ]
           ResearchDirector:      [ 1, 1 ]
           Quartermaster:         [ 1, 1 ]
-          # Security (5 - 6)
+        # Security (5 - 6)
           Warden:                [ 1, 1 ]
           Detective:             [ 1, 1 ]
           SecurityOfficer:       [ 2, 3 ]
-          # Cargo (4 - 5)
+        # Cargo (4 - 5)
           SalvageSpecialist:     [ 2, 2 ]
           CargoTechnician:       [ 2, 3 ]
-          # Engineering (5 - 6)
+        # Engineering (5 - 6)
           AtmosphericTechnician: [ 2, 2 ]
           StationEngineer:       [ 3, 4 ]
-          # Medical (6 - 7)
+        # Medical (6 - 7)
           Chemist:               [ 2, 2 ]
           MedicalDoctor:         [ 2, 3 ]
           Paramedic:             [ 2, 2 ]
-          # Science (2 - 3)
+        # Science (2 - 3)
           Scientist:             [ 2, 3 ]
           StationAi:             [ 1, 1 ]
           Borg:                  [ 2, 2 ]
-          # Service (12 - 15)
+        # Service (12 - 15)
           Bartender:             [ 1, 1 ]
           Botanist:              [ 1, 2 ]
           Chef:                  [ 1, 2 ]
@@ -58,7 +58,7 @@
           Mime:                  [ 1, 1 ]
           Musician:              [ 1, 1 ]
           Lawyer:                [ 1, 1 ]
-          # Interns & Fallback (not counted)
+        # Interns & Fallback (not counted)
           SecurityCadet:         [ 2, 2 ]
           TechnicalAssistant:    [ 2, 2 ]
           MedicalIntern:         [ 2, 2 ]

@@ -19,7 +19,7 @@
         emergencyShuttlePath: /Maps/Shuttles/emergency_amber.yml
       - type: StationJobs
         availableJobs: # 60 jobs total w/o latejoins & interns, 77 jobs total w/ latejoins & interns
-          # Command (7)
+        # Command (7)
           Captain:               [ 1, 1 ]
           HeadOfPersonnel:       [ 1, 1 ]
           HeadOfSecurity:        [ 1, 1 ]
@@ -27,25 +27,25 @@
           ChiefEngineer:         [ 1, 1 ]
           ResearchDirector:      [ 1, 1 ]
           Quartermaster:         [ 1, 1 ]
-          # Security (8 - 10)
+        # Security (8 - 10)
           Warden:                [ 1, 1 ]
           Detective:             [ 1, 1 ]
           SecurityOfficer:       [ 4, 6 ]
-          # Cargo (6 - 7)
+        # Cargo (6 - 7)
           SalvageSpecialist:     [ 3, 3 ]
           CargoTechnician:       [ 3, 4 ]
-          # Engineering (5 - 7)
+        # Engineering (5 - 7)
           AtmosphericTechnician: [ 3, 3 ]
           StationEngineer:       [ 2, 4 ]
-          # Medical (9 - 11)
+        # Medical (9 - 11)
           Chemist:               [ 2, 2 ]
           MedicalDoctor:         [ 4, 6 ]
           Paramedic:             [ 2, 2 ]
-          # Science (4 - 6)
+        # Science (4 - 6)
           Scientist:             [ 4, 6 ]
           StationAi:             [ 1, 1 ]
           Borg:                  [ 3, 3 ]
-          # Service (14)
+        # Service (14)
           Bartender:             [ 2, 2 ]
           Botanist:              [ 3, 3 ]
           Chef:                  [ 2, 2 ]
@@ -56,11 +56,11 @@
           Reporter:              [ 1, 1 ]
           Lawyer:                [ 2, 2 ]
           Psychologist:          [ 1, 1 ]
-          # Civilian (3+)
+        # Civilian (3+)
           Clown:                 [ 1, 1 ]
           Mime:                  [ 1, 1 ]
           Musician:              [ 1, 1 ]
-          # Interns & Fallback (not counted)
+        # Interns & Fallback (not counted)
           SecurityCadet:         [ 2, 2 ]
           TechnicalAssistant:    [ 2, 2 ]
           MedicalIntern:         [ 2, 2 ]
