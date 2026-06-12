@@ -336,7 +336,7 @@
   - type: Item
     sprite: _Carpmosia/Objects/Specific/Chemistry/beaker_bluespace.rsi
   - type: SolutionContainerVisuals
-    maxFillLevels: 6
+    maxFillLevels: 9
     inHandsMaxFillLevels: 2
     fillBaseName: bluespace
     inHandsFillBaseName: -fill-
@@ -565,7 +565,7 @@
   - type: SolutionContainerVisuals
   # Carpmosia-start - chem resprite
     emptySpriteName: bluespace0
-    maxFillLevels: 3
+    maxFillLevels: 6
     fillBaseName: bluespace
   # Carpmosia-end - chem resprite
   - type: Tag
