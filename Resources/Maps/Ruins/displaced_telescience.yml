@@ -4001,13 +4001,11 @@ entities:
   - uid: 317
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 0.5,1.5
       parent: 1
   - uid: 318
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 4.5,1.5
       parent: 1
 - proto: GrilleBroken
@@ -4110,7 +4108,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: IntercomAll
+- proto: IntercomCommon # Carpmosia-edit - Decontraing salv
   entities:
   - uid: 469
     components:
@@ -4182,7 +4180,7 @@ entities:
           showEnts: False
           occludes: True
           ents: []
-- proto: MagazinePistolIncendiary
+- proto: MaterialBananium # Carpmosia-edit - Decontraing salv
   entities:
   - uid: 331
     components:

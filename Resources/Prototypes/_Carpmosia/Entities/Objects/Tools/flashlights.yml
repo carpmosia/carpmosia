@@ -1,0 +1,40 @@
+- type: entity
+  parent: [FlashlightLantern, BaseSecurityContraband]
+  id: NeckLiteSecBase
+  name: angled seclite
+  description:  An angled flashlight with an attached strap that secures around your shoulders, lighting up your way hands-free. Features a lower power draw and lower radius than a seclite.
+  components:
+  - type: ToggleableVisuals
+    clothingVisuals:
+      neck:
+      - state: equipped-NECK-light
+        shader: unshaded
+      - type: ItemTogglePointLight
+      belt:
+      - state: equipped-BELT-overlay
+        shader: unshaded
+      - type: ItemTogglePointLight
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Tools/necklitesecbase.rsi
+    layers:
+    - state: neckseclite
+    - state: neckseclite-overlay
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+  - type: Tag
+    tags:
+    - SecBeltEquip
+  - type: Item
+    sprite: _Carpmosia/Objects/Tools/necklitesecbase.rsi
+    storedRotation: 0
+  - type: PointLight
+    radius: 6
+  - type: HandheldLight
+    addPrefix: false
+    wattage: 0.25
+  - type: Clothing
+    sprite: _Carpmosia/Objects/Tools/necklitesecbase.rsi
+    slots:
+    - Belt
+    - Neck

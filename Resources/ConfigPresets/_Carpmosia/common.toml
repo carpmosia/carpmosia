@@ -14,6 +14,7 @@ chat.motd = "Join Carpmosia Discord: https://discord.gg/carpmosia"
 game.map_pool = "CarpmosiaMapPool"
 game.cryo_sleep_rejoining = true
 game.soft_max_players = 99
+game.secret_weight_prototype = "CarpmosiaSecret"
 
 # CCVars.Game.Infolinks
 infolinks.discord = "https://discord.gg/ZACStvA8uV"
@@ -25,6 +26,7 @@ infolinks.appeal = "https://discord.gg/ZACStvA8uV"
 ic.name_length = 40
 ic.loadout_name_length = 40
 ic.flavor_text = true
+ic.flavor_text_length = 120
 ic.id_job_length = 40
 ic.punctuation = true
 

@@ -20,15 +20,15 @@ namespace Content.Shared.Materials;
 /// Handles interactions and logic related to <see cref="MaterialReclaimerComponent"/>,
 /// <see cref="CollideMaterialReclaimerComponent"/>, and <see cref="ActiveMaterialReclaimerComponent"/>.
 /// </summary>
-public abstract class SharedMaterialReclaimerSystem : EntitySystem
+public abstract partial class SharedMaterialReclaimerSystem : EntitySystem
 {
-    [Dependency] private readonly ISharedAdminLogManager _adminLog = default!;
-    [Dependency] protected readonly IGameTiming Timing = default!;
-    [Dependency] protected readonly SharedAmbientSoundSystem AmbientSound = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] protected readonly SharedContainerSystem Container = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
-    [Dependency] private readonly EmagSystem _emag = default!;
+    [Dependency] private ISharedAdminLogManager _adminLog = default!;
+    [Dependency] protected IGameTiming Timing = default!;
+    [Dependency] protected SharedAmbientSoundSystem AmbientSound = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] protected SharedContainerSystem Container = default!;
+    [Dependency] private EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private EmagSystem _emag = default!;
 
     public const string ActiveReclaimerContainerId = "active-material-reclaimer-container";
 
@@ -257,3 +257,12 @@ public abstract class SharedMaterialReclaimerSystem : EntitySystem
 
 [ByRefEvent]
 public record struct GotReclaimedEvent(EntityCoordinates ReclaimerCoordinates);
+
+// Carpmosia-start - Salvage Tickets
+/// <summary>
+/// Event raised on a Reclaimer when it finishes reclaiming an entity
+/// </summary>
+/// <param name="Item">Entity Reclaimed</param>
+[ByRefEvent]
+public record struct ReclaimFinishedEvent(EntityUid Item);
+// Carpmosia-end - Salvage Tickets

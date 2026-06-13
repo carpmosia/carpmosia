@@ -130,8 +130,6 @@
         enum.WiresUiKey.Key:
           type: WiresBoundUserInterface
   - type: RadarConsole
-  - type: WorldLoader
-    radius: 256
   - type: PointLight
     radius: 1.5
     energy: 4.0
@@ -176,6 +174,10 @@
       state: generic_panel_open
   - type: Computer
     board: ShuttleConsoleCircuitboard
+  # Carpmosia-start - Ban civvie FTL
+  - type: ShuttleConsole
+    ftlAllowed: false
+  # Carpmosia-end - Ban civvie FTL
 
 - type: entity
   parent: BaseComputerShuttle
@@ -200,8 +202,6 @@
       - Syndicate
   - type: RadarConsole
     maxRange: 384
-  - type: WorldLoader
-    radius: 1536
   - type: PointLight
     radius: 1.5
     energy: 4.0
@@ -240,6 +240,10 @@
     board: CargoShuttleConsoleCircuitboard
   - type: StealTarget
     stealGroup: CargoShuttleConsoleCircuitboard
+  # Carpmosia-start - Ban civvie FTL
+  - type: ShuttleConsole
+    ftlAllowed: false
+  # Carpmosia-end - Ban civvie FTL
 
 - type: entity
   parent: BaseComputerAiAccess
@@ -684,8 +688,9 @@
     energy: 4.0
     color: "#3c5eb5"
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallicStrong
+  - type: Injurable
+    damageContainer: StructuralInorganic
 
 - type: entity
   parent: ComputerComms
@@ -1199,8 +1204,9 @@
     speechVerb: Robotic
     speechSounds: Pai
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallicStrong
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: GuideHelp
     guides:
     - Cloning

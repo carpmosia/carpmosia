@@ -15,7 +15,7 @@ namespace Content.Client.UserInterface.Systems.Emotes;
 
 public sealed partial class EmotesUIController : UIController, IOnStateChanged<GameplayState>
 {
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
 
     private EmotesWindow? _altMenu;
 

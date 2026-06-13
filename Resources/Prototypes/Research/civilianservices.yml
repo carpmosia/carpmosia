@@ -103,6 +103,7 @@
   - FauxTileAstroIce
   - FauxTileAstroSnow
   - FauxTileAstroAsteroidSand
+  - FauxTileAstroAsteroidSandBorderless
   - FauxTileDesertAstroSand
   - FauxTileAstroIronsand
   - FauxTileAstroIronsandBorderless
@@ -225,8 +226,10 @@
   id: BluespaceChemistry
   name: research-technology-bluespace-chemistry
   icon:
-    sprite: Objects/Specific/Chemistry/beaker_bluespace.rsi
-    state: beakerbluespace
+    # Carpmosia-start - chem resprite
+    sprite: _Carpmosia/Objects/Specific/Chemistry/beaker_bluespace.rsi
+    state: bluespace
+    # Carpmosia-end - chem resprite
   discipline: CivilianServices
   tier: 2 # Carpmosia-edit - civilian research tweaks
   cost: 10000

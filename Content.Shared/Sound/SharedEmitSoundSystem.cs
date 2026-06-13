@@ -27,17 +27,17 @@ namespace Content.Shared.Sound;
 /// Will play a sound on various events if the affected entity has a component derived from BaseEmitSoundComponent
 /// </summary>
 [UsedImplicitly]
-public abstract class SharedEmitSoundSystem : EntitySystem
+public abstract partial class SharedEmitSoundSystem : EntitySystem
 {
-    [Dependency] protected readonly IGameTiming Timing = default!;
-    [Dependency] private readonly INetManager _netMan = default!;
-    [Dependency] protected readonly IRobustRandom Random = default!;
-    [Dependency] private   readonly SharedAmbientSoundSystem _ambient = default!;
-    [Dependency] private   readonly SharedAudioSystem _audioSystem = default!;
-    [Dependency] protected readonly SharedPopupSystem Popup = default!;
-    [Dependency] private readonly SharedMapSystem _map = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
-    [Dependency] private readonly TurfSystem _turf = default!;
+    [Dependency] protected IGameTiming Timing = default!;
+    [Dependency] private INetManager _netMan = default!;
+    [Dependency] protected IRobustRandom Random = default!;
+    [Dependency] private SharedAmbientSoundSystem _ambient = default!;
+    [Dependency] private SharedAudioSystem _audioSystem = default!;
+    [Dependency] protected SharedPopupSystem Popup = default!;
+    [Dependency] private SharedMapSystem _map = default!;
+    [Dependency] private EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private TurfSystem _turf = default!;
 
     public override void Initialize()
     {
@@ -51,11 +51,22 @@ public abstract class SharedEmitSoundSystem : EntitySystem
         SubscribeLocalEvent<EmitSoundOnDropComponent, DroppedEvent>(OnEmitSoundOnDrop);
         SubscribeLocalEvent<EmitSoundOnInteractUsingComponent, InteractUsingEvent>(OnEmitSoundOnInteractUsing);
         SubscribeLocalEvent<EmitSoundOnUIOpenComponent, AfterActivatableUIOpenEvent>(HandleEmitSoundOnUIOpen);
+        SubscribeLocalEvent<EmitSoundOnActionComponent, SoundActionEvent>(OnSoundAction); // Carpmosia-edit - Whistle action
 
         SubscribeLocalEvent<EmitSoundOnCollideComponent, StartCollideEvent>(OnEmitSoundOnCollide);
 
         SubscribeLocalEvent<SoundWhileAliveComponent, MobStateChangedEvent>(OnMobState);
     }
+
+    // Carpmosia-start - Whistle action
+    private void OnSoundAction(Entity<EmitSoundOnActionComponent> ent, ref SoundActionEvent args)
+    {
+        TryEmitSound(ent, ent.Comp, args.Performer, true);
+
+        if (ent.Comp.Handle)
+            args.Handled = true;
+    }
+    // Carpmosia-end - Whistle action
 
     private void HandleEmitSoundOnUIOpen(EntityUid uid, EmitSoundOnUIOpenComponent component, AfterActivatableUIOpenEvent args)
     {

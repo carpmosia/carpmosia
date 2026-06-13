@@ -22,4 +22,15 @@ public sealed partial class WhistleComponent : Component
     /// </summary>
     [DataField]
     public float Distance = 0;
+
+    // Carpmosia-start - Whistle action
+    /// <summary>
+    /// Entity prototype for the whistling action
+    /// </summary>
+    [DataField]
+    public EntProtoId ActionId = "ActionWhistle";
+
+    [DataField]
+    public EntityUid? Action;
+    // Carpmosia-end - Whistle action
 }

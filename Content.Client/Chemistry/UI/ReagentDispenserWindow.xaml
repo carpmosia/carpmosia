@@ -9,16 +9,14 @@
     <BoxContainer Orientation="Horizontal">
         <BoxContainer Orientation="Vertical" MinWidth="170">
             <Label Text="{Loc 'reagent-dispenser-window-amount-to-dispense-label'}" HorizontalAlignment="Center" />
-            <!-- Carpmosia-start - Base 60 Chem -->
             <ui:ButtonGrid
                 Name="AmountGrid"
                 Access="Public"
                 Columns="3"
                 HorizontalAlignment="Center"
                 Margin="5"
-                ButtonList="1,5,10,15,20,25,30,40,50,60,100,120"
+                ButtonList="1,5,10,15,20,30,40,60,120"
                 RadioGroup="True">
-            <!-- Carpmosia-end - Base 60 Chem -->
             </ui:ButtonGrid>
             <Control VerticalExpand="True" />
             <Label Name="ContainerInfoName"

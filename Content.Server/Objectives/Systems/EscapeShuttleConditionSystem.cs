@@ -6,10 +6,10 @@ using Content.Shared.Objectives.Components;
 
 namespace Content.Server.Objectives.Systems;
 
-public sealed class EscapeShuttleConditionSystem : EntitySystem
+public sealed partial class EscapeShuttleConditionSystem : EntitySystem
 {
-    [Dependency] private readonly EmergencyShuttleSystem _emergencyShuttle = default!;
-    [Dependency] private readonly SharedMindSystem _mind = default!;
+    [Dependency] private EmergencyShuttleSystem _emergencyShuttle = default!;
+    [Dependency] private SharedMindSystem _mind = default!;
 
     public override void Initialize()
     {
@@ -18,21 +18,22 @@ public sealed class EscapeShuttleConditionSystem : EntitySystem
         SubscribeLocalEvent<EscapeShuttleConditionComponent, ObjectiveGetProgressEvent>(OnGetProgress);
     }
 
-    private void OnGetProgress(EntityUid uid, EscapeShuttleConditionComponent comp, ref ObjectiveGetProgressEvent args)
+    private void OnGetProgress(Entity<EscapeShuttleConditionComponent> entity, ref ObjectiveGetProgressEvent args) // Carpmosia-edit - escape restrained
     {
-        args.Progress = GetProgress(args.MindId, args.Mind);
+        args.Progress = GetProgress(args.MindId, args.Mind, entity.Comp.AllowRestrained); // Carpmosia-edit - escape restrained
     }
 
-    public float GetProgress(EntityUid mindId, MindComponent mind) // Carpmosia-edit - Harmony Blood Bound
+    public float GetProgress(EntityUid mindId, MindComponent mind, bool AllowRestrained = false) // Carpmosia-edit - Harmony Blood Bound / escape restrained
     {
         // not escaping alive if you're deleted/dead
         if (mind.OwnedEntity == null || _mind.IsCharacterDeadIc(mind))
             return 0f;
 
-        // You're not escaping if you're restrained!
-        // Granting 50% as to allow for partial completion of the objective.
-        if (TryComp<CuffableComponent>(mind.OwnedEntity, out var cuffed) && cuffed.CuffedHandCount > 0)
-            return _emergencyShuttle.IsTargetEscaping(mind.OwnedEntity.Value) ? 0.5f : 0f;
+        // Carpmosia-start - escape restrained
+        if (!AllowRestrained)
+            if (TryComp<CuffableComponent>(mind.OwnedEntity, out var cuffed) && cuffed.CuffedHandCount > 0)
+                return _emergencyShuttle.IsTargetEscaping(mind.OwnedEntity.Value) ? 0.5f : 0f;
+        // Carpmosia-end - escape restrained
 
         // Any emergency shuttle counts for this objective, but not pods.
         return _emergencyShuttle.IsTargetEscaping(mind.OwnedEntity.Value) ? 1f : 0f;
