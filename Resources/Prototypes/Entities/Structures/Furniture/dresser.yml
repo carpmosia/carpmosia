@@ -9,6 +9,7 @@
     state: dresser
   - type: Damageable
     damageModifierSet: Wood
+  - type: Injurable
     damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
@@ -161,6 +162,16 @@
       weight: 0.008
     - id: ClothingHandsGlovesBoxingYellow
       weight: 0.008
+    # Carpmosia-start - Cat paws
+    - id: ClothingHandsCatPawsBrown
+      weight: 0.005
+    - id: ClothingHandsCatPawsBlack
+      weight: 0.005
+    - id: ClothingHandsCatPawsBlackWhite
+      weight: 0.005
+    - id: ClothingHandsCatPawsWhite
+      weight: 0.005
+    # Carpmosia-end - Cat paws
     - id: ClothingUniformJumpskirtJanimaid
       weight: 0.005
     - id: ClothingUniformJumpskirtJanimaidmini

@@ -43,7 +43,7 @@
     state: xylophone
 
 - type: entity
-  parent: BaseHandheldInstrument
+  parent: [ BaseHandheldInstrument, BasePointerMicrophone ] # Carpmosia-edit - Pointing modifier
   id: MicrophoneInstrument
   name: microphone
   description: Perfect for singing your heart out.

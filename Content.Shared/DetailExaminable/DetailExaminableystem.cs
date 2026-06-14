@@ -1,45 +1,29 @@
+// Carpmosia-rework - Better visual descriptions
 using Content.Shared.Examine;
 using Content.Shared.IdentityManagement;
-using Content.Shared.Verbs;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.DetailExaminable;
 
-public sealed class DetailExaminableSystem : EntitySystem
+public sealed partial class DetailExaminableSystem : EntitySystem
 {
-    [Dependency] private readonly ExamineSystemShared _examine = default!;
+    [Dependency] private ExamineSystemShared _examine = default!;
 
     public override void Initialize()
     {
         base.Initialize();
-
-        SubscribeLocalEvent<DetailExaminableComponent, GetVerbsEvent<ExamineVerb>>(OnGetExamineVerbs);
+        SubscribeLocalEvent<DetailExaminableComponent, ExaminedEvent>(OnExamined);
     }
 
-    private void OnGetExamineVerbs(Entity<DetailExaminableComponent> ent, ref GetVerbsEvent<ExamineVerb> args)
+    private void OnExamined(Entity<DetailExaminableComponent> ent, ref ExaminedEvent args)
     {
-        if (Identity.Name(args.Target, EntityManager) != MetaData(args.Target).EntityName)
+        if (Identity.Name(args.Examined, EntityManager) != MetaData(args.Examined).EntityName)
             return;
 
-        var detailsRange = _examine.IsInDetailsRange(args.User, ent);
+        if (!args.IsInDetailsRange)
+            return;
 
-        var user = args.User;
-
-        var verb = new ExamineVerb
-        {
-            Act = () =>
-            {
-                var markup = new FormattedMessage();
-                markup.AddMarkupPermissive(ent.Comp.Content);
-                _examine.SendExamineTooltip(user, ent, markup, false, false);
-            },
-            Text = Loc.GetString("detail-examinable-verb-text"),
-            Category = VerbCategory.Examine,
-            Disabled = !detailsRange,
-            Message = detailsRange ? null : Loc.GetString("detail-examinable-verb-disabled"),
-            Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/examine.svg.192dpi.png"))
-        };
-
-        args.Verbs.Add(verb);
+        var message = FormattedMessage.FromMarkupPermissive($"[italic][color=#c8c8c8]{ent.Comp.Content}[/color][/italic]");
+        args.PushMessage(message, priority: -10);
     }
 }

@@ -5,6 +5,7 @@
 
 - type: entity
   abstract: true
+  parent: BasePointerCrosshair # Carpmosia-edit - Pointing modifier
   id: BaseToyGun
   components:
   - type: PacifismAllowedGun # They don't hurt!
@@ -162,6 +163,7 @@
 
 - type: entity
   abstract: true
+  parent: BasePointerDagger # Carpmosia-edit - Pointing modifier
   id: BaseToySword
   components:
   - type: DisarmMalus
@@ -312,7 +314,7 @@
     - 0,0,1,3
 
 - type: entity
-  parent: [ BaseItem, BaseToySword ]
+  parent: [ BasePointerHammer, BaseItem, BaseToySword ] # Carpmosia-edit - Pointing modifier
   id: ToyHammer
   name: rubber hammer
   description: A brightly colored hammer made of rubber.

@@ -1,6 +1,6 @@
 - type: entity
   name: pickaxe
-  parent: BaseItem
+  parent: [ BaseItem, BasePointerHammer ] # Carpmosia-edit - Pointing modifier
   id: Pickaxe
   description: Notched to perfection, for jamming it into rocks.
   components:
@@ -41,7 +41,7 @@
 
 - type: entity
   name: mining drill
-  parent: BaseItem
+  parent: [ BaseItem, BasePointerHammer ] # Carpmosia-edit - Pointing modifier
   id: MiningDrill
   description: Powerful tool used to quickly drill through rocks.
   components:
@@ -89,7 +89,7 @@
 
 - type: entity
   abstract: true
-  parent: BaseItem
+  parent: [ BaseItem, BasePointerHammer ] # Carpmosia-edit - Pointing modifier
   id: BaseWeaponCrusher # Crusher? But I...
   name: crusher
   description: An early design of the proto-kinetic accelerator.

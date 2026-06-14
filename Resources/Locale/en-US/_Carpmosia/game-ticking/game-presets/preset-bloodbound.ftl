@@ -9,10 +9,12 @@ blood-bound-initial-role-greeting =
     You are a blood bound.
     You have been given the ability to take a blood oath with one member of the crew.
     Use this ability wisely and finish your objectives given to you by an anonymous source.
+    Use :a to speak telepathically with your Blood Bound.
 
 blood-bound-role-greeting =
     You have been sworn into a blood oath.
     Listen to your blood bound and help them accomplish their objectives.
+    Use :a to speak telepathically with your Blood Bound.
 
 blood-bound-briefing = Collaborate with your blood bound to accomplish all your objectives.
 

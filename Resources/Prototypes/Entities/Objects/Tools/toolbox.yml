@@ -1,6 +1,6 @@
 - type: entity
   id: ToolboxBase
-  parent: BaseStorageItem
+  parent: [ BaseStorageItem, BasePointerHammer ] # Carpmosia-edit - Pointing modifier
   abstract: true
   components:
   - type: Sprite
@@ -81,6 +81,7 @@
   description: A toolbox typically stocked with electrical gear.
   components:
   - type: Damageable
+  - type: Injurable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:
