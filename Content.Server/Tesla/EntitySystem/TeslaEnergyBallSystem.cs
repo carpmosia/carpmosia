@@ -58,6 +58,7 @@ public sealed partial class TeslaEnergyBallSystem : EntitySystem
             QueueDel(uid);
         }
         // Carpmosia-start - Engine Loose Rework
+        // When enough miniballs have spawned, trigger a rupture (explode into miniballs)
         if (component.SpawnedCount == component.RuptureAmount)
         {
             for (var i = 0; i < component.SpawnAmount; i++)
