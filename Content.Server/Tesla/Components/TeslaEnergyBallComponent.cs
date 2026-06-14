@@ -85,7 +85,7 @@ public sealed partial class TeslaEnergyBallComponent : Component
 
     // Carpmosia-start - Engine Loose Rework
     /// <summary>
-    /// Entities that spawn when the energy limit is reached
+    /// Entities that spawn when the tesla ruptures. Alt proto to prevent minis from being stuck in place
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public EntProtoId EmpSpawnProto = "TeslaMiniEnergyBallHunter";
