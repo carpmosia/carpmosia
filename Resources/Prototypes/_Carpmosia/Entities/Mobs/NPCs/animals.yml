@@ -54,3 +54,84 @@
   - type: Insulated
   - type: Respirator
     minSaturation: 5.0
+
+- type: entity
+  parent: [ SolutionFood, SolutionTiny, SimpleSpaceMobBase ]
+  id: MobBagFish
+  name: bag fish
+  description: A cute iddle widdle fish rolling around in a plastic bag!
+  components:
+  - type: Emoting
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Carpmosia/Mobs/Animals/bagfish.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: 0
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: 0-moving
+    noMovementLayers:
+      movement:
+        state: 0
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 100
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      10: Dead
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: 0
+      Critical:
+        Base: dead
+      Dead:
+        Base: dead
+  - type: Item
+    size: Tiny
+  - type: Tag
+    tags:
+    - CannotSuicide
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 2
+      - ReagentId: Water
+        Quantity: 10
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Piercing
+        damage: 30
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 1
+    baseSprintSpeed : 1.4
+  - type: MobPrice
+    price: 100
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 3
+      - ReagentId: Water
+        Quantity: 12
+  - type: ZombieImmune
