@@ -1,114 +1,114 @@
 - type: entity
   parent: BaseSign
   categories: [ HideSpawnMenu ]
-  id: MapIconBase
+  id: MapPreviewBase
   components:
   - type: Sprite
     sprite: _Carpmosia/Interface/Misc/map_icons.rsi
 
 # Carpmaps
 - type: entity
-  parent: MapIconBase
-  id: MapIconAmber
+  parent: MapPreviewBase
+  id: MapPreviewAmber
   components:
   - type: Sprite
     state: amber
 
 - type: entity
-  parent: MapIconBase
-  id: MapIconFeint
+  parent: MapPreviewBase
+  id: MapPreviewFeint
   components:
   - type: Sprite
     state: feint
 
 - type: entity
-  parent: MapIconBase
-  id: MapIconLampocteis
+  parent: MapPreviewBase
+  id: MapPreviewLampocteis
   components:
   - type: Sprite
     state: lampocteis
 
 - type: entity
-  parent: MapIconBase
-  id: MapIconOasis
+  parent: MapPreviewBase
+  id: MapPreviewOasis
   components:
   - type: Sprite
     state: oasis
 
 - type: entity
-  parent: MapIconBase
-  id: MapIconPacked
+  parent: MapPreviewBase
+  id: MapPreviewPacked
   components:
   - type: Sprite
     state: packed
 
 - type: entity
-  parent: MapIconBase
-  id: MapIconSaltern
+  parent: MapPreviewBase
+  id: MapPreviewSaltern
   components:
   - type: Sprite
     state: saltern
 
 - type: entity
-  parent: MapIconBase
-  id: MapIconSparks
+  parent: MapPreviewBase
+  id: MapPreviewSparks
   components:
   - type: Sprite
     state: sparks
 
 # Upstream
 - type: entity
-  parent: MapIconBase
-  id: MapIconBagel
+  parent: MapPreviewBase
+  id: MapPreviewBagel
   components:
   - type: Sprite
     state: bagel
 
 - type: entity
-  parent: MapIconBase
-  id: MapIconBox
+  parent: MapPreviewBase
+  id: MapPreviewBox
   components:
   - type: Sprite
     state: box
 
 - type: entity
-  parent: MapIconBase
-  id: MapIconElkridge
+  parent: MapPreviewBase
+  id: MapPreviewElkridge
   components:
   - type: Sprite
     state: elkridge
 
 - type: entity
-  parent: MapIconBase
-  id: MapIconExo
+  parent: MapPreviewBase
+  id: MapPreviewExo
   components:
   - type: Sprite
     state: exo
 
 - type: entity
-  parent: MapIconBase
-  id: MapIconFland
+  parent: MapPreviewBase
+  id: MapPreviewFland
   components:
   - type: Sprite
     state: fland
 
 - type: entity
-  parent: MapIconBase
-  id: MapIconMarathon
+  parent: MapPreviewBase
+  id: MapPreviewMarathon
   components:
   - type: Sprite
     state: marathon
 
 - type: entity
-  parent: MapIconBase
-  id: MapIconPlasma
+  parent: MapPreviewBase
+  id: MapPreviewPlasma
   components:
   - type: Sprite
     state: plasma
 
 - type: entity
-  parent: MapIconBase
-  id: MapIconSnowball
+  parent: MapPreviewBase
+  id: MapPreviewSnowball
   components:
   - type: Sprite
     state: snowball
