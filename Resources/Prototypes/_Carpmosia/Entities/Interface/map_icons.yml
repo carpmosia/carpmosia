@@ -1,0 +1,114 @@
+- type: entity
+  parent: BaseSign
+  categories: [ HideSpawnMenu ]
+  id: MapIconBase
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Interface/Misc/map_icons.rsi
+
+# Carpmaps
+- type: entity
+  parent: MapIconBase
+  id: MapIconAmber
+  components:
+  - type: Sprite
+    state: amber
+
+- type: entity
+  parent: MapIconBase
+  id: MapIconFeint
+  components:
+  - type: Sprite
+    state: feint
+
+- type: entity
+  parent: MapIconBase
+  id: MapIconLampocteis
+  components:
+  - type: Sprite
+    state: lampocteis
+
+- type: entity
+  parent: MapIconBase
+  id: MapIconOasis
+  components:
+  - type: Sprite
+    state: oasis
+
+- type: entity
+  parent: MapIconBase
+  id: MapIconPacked
+  components:
+  - type: Sprite
+    state: packed
+
+- type: entity
+  parent: MapIconBase
+  id: MapIconSaltern
+  components:
+  - type: Sprite
+    state: saltern
+
+- type: entity
+  parent: MapIconBase
+  id: MapIconSparks
+  components:
+  - type: Sprite
+    state: sparks
+
+# Upstream
+- type: entity
+  parent: MapIconBase
+  id: MapIconBagel
+  components:
+  - type: Sprite
+    state: bagel
+
+- type: entity
+  parent: MapIconBase
+  id: MapIconBox
+  components:
+  - type: Sprite
+    state: box
+
+- type: entity
+  parent: MapIconBase
+  id: MapIconElkridge
+  components:
+  - type: Sprite
+    state: elkridge
+
+- type: entity
+  parent: MapIconBase
+  id: MapIconExo
+  components:
+  - type: Sprite
+    state: exo
+
+- type: entity
+  parent: MapIconBase
+  id: MapIconFland
+  components:
+  - type: Sprite
+    state: fland
+
+- type: entity
+  parent: MapIconBase
+  id: MapIconMarathon
+  components:
+  - type: Sprite
+    state: marathon
+
+- type: entity
+  parent: MapIconBase
+  id: MapIconPlasma
+  components:
+  - type: Sprite
+    state: plasma
+
+- type: entity
+  parent: MapIconBase
+  id: MapIconSnowball
+  components:
+  - type: Sprite
+    state: snowball
