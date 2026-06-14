@@ -5,62 +5,64 @@
   mapIcon: /Textures/_Carpmosia/Interface/MapVote/carp.png
   minPlayers: 0
   maxPlayers: 25
-  cVars:
-    shuttle.mass_limit: 3000 #if code exists to automatically set cvars from map spawn, this will let Sparks FTL.
+  # fallback
   stations:
     Sparks:
       stationProto: StandardNanotrasenStation
       components:
-        - type: StationNameSetup
-          mapNameTemplate: '{0} Sparks {1}'
-          nameGenerator:
-            !type:NanotrasenNameGenerator
-            prefixCreator: 'SC'
-        - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/_Carpmosia/Shuttles/emergency_compact.yml
-        - type: StationJobs
-          availableJobs: #41 roundstart jobs, 55 total including interns and latejoins.
-            #command (7)
-            Captain: [ 1, 1 ]
-            HeadOfPersonnel: [ 1, 1 ]
-            HeadOfSecurity: [ 1, 1 ]
-            ChiefMedicalOfficer: [ 1, 1 ]
-            ChiefEngineer: [ 1, 1 ]
-            ResearchDirector: [ 1, 1 ]
-            Quartermaster: [ 1, 1 ]
-            #service (8-10)
-            Bartender: [ 1, 1 ]
-            Botanist: [ 2, 2 ]
-            Chef: [ 1, 1 ]
-            Janitor: [ 1, 2 ]
-            Chaplain: [ 1, 1 ]
-            Librarian: [ 1, 1 ]
-            ServiceWorker: [ 1, 2 ]
-            #engineering (4-5)
-            AtmosphericTechnician: [ 2, 2 ]
-            StationEngineer: [ 2, 3 ]
-            TechnicalAssistant: [ 2, 2 ] #intern, not counted
-            #medical (4-5)
-            Chemist: [ 1, 1 ]
-            MedicalDoctor: [ 2, 3 ]
-            MedicalIntern: [ 2, 2 ] #intern, not counted
-            Paramedic: [ 1, 1 ]
-            #science (3-4)
-            Scientist: [ 3, 4 ]
-            ResearchAssistant: [ 2, 2 ] #intern, not counted
-            #silicon (2)
-            StationAi: [ 1, 1 ]
-            Borg: [ 1, 1 ]
-            #security (5)
-            Warden: [ 1, 1 ]
-            Detective: [ 1, 1 ]
-            SecurityOfficer: [ 3, 3 ]
-            SecurityCadet: [ 2, 2 ]  #intern, not counted
-            #supply (5-6)
-            SalvageSpecialist: [ 3, 3 ]
-            CargoTechnician: [ 2, 3 ]
-            #civillian (3+)
-            Passenger: [ -1, -1 ] #infinite, not counted
-            Clown: [ 1, 1 ]
-            Mime: [ 1, 1 ]
-            Musician: [ 1, 1 ]
+      - type: StationNameSetup
+        mapNameTemplate: '{0} Sparks {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: 'SC'
+      - type: StationEmergencyShuttle
+        emergencyShuttlePath: /Maps/_Carpmosia/Shuttles/emergency_compact.yml
+      - type: StationJobs
+        availableJobs: # 41 jobs total w/o latejoins & interns, 55 jobs total w/ latejoins & interns
+        # Command (7)
+          Captain:               [ 1, 1 ]
+          HeadOfPersonnel:       [ 1, 1 ]
+          HeadOfSecurity:        [ 1, 1 ]
+          ChiefMedicalOfficer:   [ 1, 1 ]
+          ChiefEngineer:         [ 1, 1 ]
+          ResearchDirector:      [ 1, 1 ]
+          Quartermaster:         [ 1, 1 ]
+        # Security (5)
+          Warden:                [ 1, 1 ]
+          Detective:             [ 1, 1 ]
+          SecurityOfficer:       [ 3, 3 ]
+        # Cargo (5 - 6)
+          SalvageSpecialist:     [ 3, 3 ]
+          CargoTechnician:       [ 2, 3 ]
+        # Engineering (4 - 5)
+          AtmosphericTechnician: [ 2, 2 ]
+          StationEngineer:       [ 2, 3 ]
+        # Medical (4 - 5)
+          Chemist:               [ 1, 1 ]
+          MedicalDoctor:         [ 2, 3 ]
+          Paramedic:             [ 1, 1 ]
+          # Psychologist:
+        # Science (5 - 6)
+          Scientist:             [ 3, 4 ]
+          StationAi:             [ 1, 1 ]
+          Borg:                  [ 1, 1 ]
+        # Service (11 - 13)
+          Bartender:             [ 1, 1 ]
+          Botanist:              [ 2, 2 ]
+          Chaplain:              [ 1, 1 ]
+          Chef:                  [ 1, 1 ]
+          Clown:                 [ 1, 1 ]
+          Janitor:               [ 1, 2 ]
+          # Lawyer:
+          Librarian:             [ 1, 1 ]
+          Mime:                  [ 1, 1 ]
+          Musician:              [ 1, 1 ]
+          # Reporter:
+          ServiceWorker:         [ 1, 2 ]
+        # Interns & Fallback (8)
+          SecurityCadet:         [ 2, 2 ]
+          TechnicalAssistant:    [ 2, 2 ]
+          MedicalIntern:         [ 2, 2 ]
+          ResearchAssistant:     [ 2, 2 ]
+          Passenger:             [-1,-1 ]
+
