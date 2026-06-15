@@ -1,7 +1,7 @@
 - type: entity
-  name: syndicarp
-  id: MobCarpSyndie
   parent: BaseMobCarp
+  id: MobCarpSyndie
+  name: syndicarp
   description: A bloodred carp trained in carp-to-carp combat. It has been genetically engineered to deliver a small amount of vestine with its bite.
   components:
   - type: Sprite
