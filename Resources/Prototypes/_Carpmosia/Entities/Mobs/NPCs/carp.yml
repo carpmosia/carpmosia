@@ -1,0 +1,43 @@
+- type: entity
+  name: syndicarp
+  id: MobCarpSyndie
+  parent: BaseMobCarp
+  description: A bloodred carp trained in carp-to-carp combat. It has been genetically engineered to deliver a small amount of vestine with its bite.
+  components:
+    - type: Sprite
+      drawdepth: Mobs
+      sprite: _Carpmosia/Mobs/Aliens/Carps/syndie.rsi
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: alive
+        - map: ["enum.DamageStateVisualLayers.BaseUnshaded"]
+          state: mouth
+          shader: unshaded
+    - type: NpcFactionMember
+      factions:
+        - Syndicate
+    - type: Access
+      tags:
+        - NuclearOperative
+        - SyndicateAgent
+        - Carp
+        - DoorBumpOpener
+    - type: ExplosionResistance
+      damageCoefficient: 0.2
+    - type: SolutionManager
+      solutions:
+        - SolutionVenomSyndicarp
+    - type: MeleeChemicalInjector
+      solution: melee
+      transferAmount: 1.5
+
+- type: entity
+  parent: [SolutionWeapon, SolutionTiny]
+  id: SolutionVenomSyndicarp
+  categories: [HideSpawnMenu]
+  components:
+    - type: Solution
+      solution:
+        reagents:
+          - ReagentId: Vestine
+            Quantity: 30
