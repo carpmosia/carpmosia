@@ -45,12 +45,13 @@ public sealed partial class TeslaEnergyBallComponent : Component
     /// The amount of miniballs a tesla can create before the tesla ruptures.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float RuptureAmount = 4f;
+    public float RuptureAmount = 3f;
+
     /// <summary>
     /// Range of the EMP in tiles.
     /// </summary>
     [DataField]
-    public float EmpRange = 6f;
+    public float EmpRange = 8f;
 
     /// <summary>
     /// Power consumed from batteries by the EMP.

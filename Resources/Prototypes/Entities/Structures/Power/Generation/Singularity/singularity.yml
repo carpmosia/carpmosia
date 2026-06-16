@@ -50,8 +50,10 @@
     radsPerLevel: 2
     energyLoss: 1
   - type: RandomWalk # To make the singularity move around.
-    maxSpeed: 2.5
-    minSpeed: 1.875
+    # Carpmosia-start - Engine Loose Rework
+    maxSpeed: 0.4
+    minSpeed: 0.2
+    # Carpmosia-end - Engine Loose Rework
   - type: SingularityDistortion
     falloffPower: 2.529822
     intensity: 3645

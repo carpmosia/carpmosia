@@ -46,7 +46,7 @@ public sealed partial class SingularitySystem : SharedSingularitySystem
         SubscribeLocalEvent<SingularityComponent, ComponentGetState>(HandleSingularityState);
 
         // TODO: Figure out where all this coupling should be handled.
-        SubscribeLocalEvent<RandomWalkComponent, SingularityLevelChangedEvent>(UpdateRandomWalk);
+        // SubscribeLocalEvent<RandomWalkComponent, SingularityLevelChangedEvent>(UpdateRandomWalk);
         SubscribeLocalEvent<GravityWellComponent, SingularityLevelChangedEvent>(UpdateGravityWell);
 
         var vvHandle = Vvm.GetTypeHandler<SingularityComponent>();
@@ -267,8 +267,10 @@ public sealed partial class SingularitySystem : SharedSingularitySystem
     {
         comp.EnergyDrain = args.NewValue switch
         {
-            6 => 0,
-            5 => 0,
+            // Carpmosia-start - Engine Loose Rework
+            6 => 80,
+            5 => 40,
+            // Carpmosia-end - Engine Loose Rework
             4 => 20,
             3 => 10,
             2 => 5,
@@ -277,18 +279,20 @@ public sealed partial class SingularitySystem : SharedSingularitySystem
         };
     }
 
+    // Carpmosia-start - Engine Loose Rework
     /// <summary>
     /// Updates the possible speeds of the singulos random walk when the singularities level changes.
     /// </summary>
     /// <param name="uid">The entity UID of the singularity.</param>
     /// <param name="comp">The random walk component component sharing the entity with the singulo component.</param>
     /// <param name="args">The event arguments.</param>
-    private void UpdateRandomWalk(EntityUid uid, RandomWalkComponent comp, SingularityLevelChangedEvent args)
-    {
-        var scale = MathF.Max(args.NewValue, 4);
-        comp.MinSpeed = 7.5f / scale;
-        comp.MaxSpeed = 10f / scale;
-    }
+    // private void UpdateRandomWalk(EntityUid uid, RandomWalkComponent comp, SingularityLevelChangedEvent args)
+    // {
+    //     var scale = MathF.Max(args.NewValue, 4);
+    //     comp.MinSpeed = 7.5f / scale;
+    //     comp.MaxSpeed = 10f / scale;
+    // }
+    // Carpmosia-end - Engine Loose Rework
 
     /// <summary>
     /// Updates the size and strength of the singularities gravity well when the singularities level changes.
