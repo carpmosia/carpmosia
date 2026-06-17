@@ -46,7 +46,7 @@ public sealed partial class SingularitySystem : SharedSingularitySystem
         SubscribeLocalEvent<SingularityComponent, ComponentGetState>(HandleSingularityState);
 
         // TODO: Figure out where all this coupling should be handled.
-        // SubscribeLocalEvent<RandomWalkComponent, SingularityLevelChangedEvent>(UpdateRandomWalk);
+        SubscribeLocalEvent<RandomWalkComponent, SingularityLevelChangedEvent>(UpdateRandomWalk);
         SubscribeLocalEvent<GravityWellComponent, SingularityLevelChangedEvent>(UpdateGravityWell);
 
         var vvHandle = Vvm.GetTypeHandler<SingularityComponent>();
@@ -286,12 +286,12 @@ public sealed partial class SingularitySystem : SharedSingularitySystem
     /// <param name="uid">The entity UID of the singularity.</param>
     /// <param name="comp">The random walk component component sharing the entity with the singulo component.</param>
     /// <param name="args">The event arguments.</param>
-    // private void UpdateRandomWalk(EntityUid uid, RandomWalkComponent comp, SingularityLevelChangedEvent args)
-    // {
-    //     var scale = MathF.Max(args.NewValue, 4);
-    //     comp.MinSpeed = 7.5f / scale;
-    //     comp.MaxSpeed = 10f / scale;
-    // }
+    private void UpdateRandomWalk(EntityUid uid, RandomWalkComponent comp, SingularityLevelChangedEvent args)
+    {
+        var scale = MathF.Max(args.NewValue, 4);
+        comp.MinSpeed = 0.8f / scale;
+        comp.MaxSpeed = 1.2f / scale;
+    }
     // Carpmosia-end - Engine Loose Rework
 
     /// <summary>
