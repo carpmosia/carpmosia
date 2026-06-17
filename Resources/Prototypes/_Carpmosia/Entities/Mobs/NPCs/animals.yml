@@ -67,14 +67,14 @@
     sprite: _Carpmosia/Mobs/Animals/bagfish.rsi
     layers:
     - map: ["enum.DamageStateVisualLayers.Base", "movement"]
-      state: 0
+      state: alive
   - type: SpriteMovement
     movementLayers:
       movement:
-        state: 0-moving
+        state: alive-moving
     noMovementLayers:
       movement:
-        state: 0
+        state: alive
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -93,7 +93,7 @@
   - type: DamageStateVisuals
     states:
       Alive:
-        Base: 0
+        Base: alive
       Critical:
         Base: dead
       Dead:
