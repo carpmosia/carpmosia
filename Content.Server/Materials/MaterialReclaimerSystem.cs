@@ -26,6 +26,8 @@ using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.Gibbing;
 using Content.Shared.Humanoid;
+using Content.Shared.Damage.Components; // Carpmosia-edit - Survivable recyclers
+using Content.Shared.Damage.Systems; // Carpmosia-edit - Survivable recyclers
 
 namespace Content.Server.Materials;
 
@@ -44,6 +46,7 @@ public sealed partial class MaterialReclaimerSystem : SharedMaterialReclaimerSys
     [Dependency] private StackSystem _stack = default!;
     [Dependency] private SharedMindSystem _mind = default!;
     [Dependency] private IAdminLogManager _adminLogger = default!;
+    [Dependency] private DamageableSystem _damage = default!; // Carpmosia-edit - Survivable recyclers
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -186,14 +189,17 @@ public sealed partial class MaterialReclaimerSystem : SharedMaterialReclaimerSys
         if (component.ReclaimMaterials)
             SpawnMaterialsFromComposition(uid, item, completion * component.Efficiency, xform: xform);
 
+        bool deleteItem = true; // Carpmosia-edit - Survivable recyclers
+
         if (CanGib(uid, item, component))
         {
+        // Carpmosia-start - Survivable recyclers
             var logImpact = HasComp<HumanoidProfileComponent>(item) ? LogImpact.Extreme : LogImpact.Medium;
-            _adminLogger.Add(LogType.Gib, logImpact, $"{ToPrettyString(item):victim} was gibbed by {ToPrettyString(uid):entity} ");
-            if (component.ReclaimSolutions)
-                SpawnChemicalsFromComposition(uid, item, completion, false, component, xform);
-            _gibbing.Gib(item);
+            _adminLogger.Add(LogType.Gib, logImpact, $"{ToPrettyString(item):victim} was minced by {ToPrettyString(uid):entity} ");
+            _damage.TryChangeDamage(item, component.Damage);
             _appearance.SetData(uid, RecyclerVisuals.Bloody, true);
+            deleteItem = false;
+        // Carpmosia-end - Survivable recyclers
         }
         else
         {
@@ -205,7 +211,8 @@ public sealed partial class MaterialReclaimerSystem : SharedMaterialReclaimerSys
         RaiseLocalEvent(uid, ref ev);
         // Carpmosia-end - Salvage Tickets
 
-        QueueDel(item);
+        if (deleteItem) // Carpmosia-edit - Survivable recyclers
+            QueueDel(item); // Carpmosia-edit - Survivable recyclers
     }
 
     private void SpawnMaterialsFromComposition(EntityUid reclaimer,
