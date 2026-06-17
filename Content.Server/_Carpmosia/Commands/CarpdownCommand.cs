@@ -3,7 +3,7 @@ using Content.Shared.Administration;
 using Robust.Server;
 using Robust.Shared.Console;
 
-namespace Content.Server.Atmos.Commands;
+namespace Content.Server.Commands;
 
 [AdminCommand(AdminFlags.Debug)]
 public sealed partial class CarpdownCommand : LocalizedCommands
