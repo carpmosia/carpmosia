@@ -49,7 +49,7 @@ public sealed partial class ProtovoteCommand : LocalizedEntityCommands
             EntProtoId arg = args[i];
             if (!_prototype.TryIndex<EntityPrototype>(arg, out var proto))
             {
-                shell.WriteError(Loc.GetString("cmd-tippy-error-no-prototype", ("proto", arg)));
+                shell.WriteError(Loc.GetString("cmd-protovote-error-no-prototype", ("proto", arg)));
                 return;
             }
             options.Options.Add(((proto.Name, (string?)null, (EntProtoId?)arg), i));
@@ -72,12 +72,12 @@ public sealed partial class ProtovoteCommand : LocalizedEntityCommands
             {
                 var ties = string.Join(", ", eventArgs.Winners.Select(c => args[(int) c]));
                 _adminLogger.Add(LogType.Vote, LogImpact.Medium, $"Custom vote {options.Title} finished as tie: {ties}");
-                _chatManager.DispatchServerAnnouncement(Loc.GetString("cmd-customvote-on-finished-tie", ("title", options.Title), ("ties", ties)));
+                _chatManager.DispatchServerAnnouncement(Loc.GetString("cmd-protovote-on-finished-tie", ("title", options.Title), ("ties", ties)));
             }
             else
             {
                 _adminLogger.Add(LogType.Vote, LogImpact.Medium, $"Custom vote {options.Title} finished: {args[(int) eventArgs.Winner]}");
-                _chatManager.DispatchServerAnnouncement(Loc.GetString("cmd-customvote-on-finished-win", ("title", options.Title), ("winner", args[(int) eventArgs.Winner])));
+                _chatManager.DispatchServerAnnouncement(Loc.GetString("cmd-protovote-on-finished-win", ("title", options.Title), ("winner", args[(int) eventArgs.Winner])));
             }
 
             _voteWebhooks.UpdateWebhookIfConfigured(webhookState, eventArgs);
@@ -92,7 +92,7 @@ public sealed partial class ProtovoteCommand : LocalizedEntityCommands
     public override CompletionResult GetCompletion(IConsoleShell shell, string[] args)
     {
         if (args.Length == 1)
-            return CompletionResult.FromHint(Loc.GetString("cmd-customvote-arg-title"));
+            return CompletionResult.FromHint(Loc.GetString("cmd-protovote-arg-title"));
 
         if (args.Length > MaxArgCount)
             return CompletionResult.Empty;
@@ -100,6 +100,6 @@ public sealed partial class ProtovoteCommand : LocalizedEntityCommands
         var n = args.Length - 1;
         return CompletionResult.FromHintOptions(
                 CompletionHelper.PrototypeIdsLimited<EntityPrototype>(args[n], _prototype),
-                Loc.GetString("cmd-customvote-arg-option-n", ("n", n)));
+                Loc.GetString("cmd-protovote-arg-option-n", ("n", n)));
     }
 }
