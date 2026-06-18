@@ -8,14 +8,40 @@
   "copyright": "Made by github.com/Jakeybobble for Carpmosia",
   "states": [
     {
-      "name": "dead"
+      "name": "bag-dead"
     },
     {
-      "name": "alive",
+      "name": "fish",
       "directions": 4
     },
     {
-      "name": "alive-moving",
+      "name": "fish-moving",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "bag",
+      "directions": 4
+    },
+    {
+      "name": "bag-moving",
       "directions": 4,
       "delays": [
         [

@@ -59,22 +59,32 @@
   parent: [ SolutionFood, SolutionTiny, SimpleSpaceMobBase ]
   id: MobBagFish
   name: bag fish
-  description: A cute iddle widdle fish rolling around in a plastic bag!
+  description: An iddle widdle fish rolling around in a plastic bag!
   components:
   - type: Emoting
   - type: Sprite
     drawdepth: Mobs
     sprite: _Carpmosia/Mobs/Animals/bagfish.rsi
     layers:
-    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
-      state: alive
+    - map: ["fish", "movement-fish"]
+      state: fish
+    - map: ["enum.DamageStateVisualLayers.Base", "movement-bag"]
+      state: bag
   - type: SpriteMovement
     movementLayers:
-      movement:
-        state: alive-moving
+      movement-bag:
+        state: bag-moving
+      movement-fish:
+        state: fish-moving
     noMovementLayers:
-      movement:
-        state: alive
+      movement-bag:
+        state: bag
+      movement-fish:
+        state: fish
+  - type: RandomSprite
+    available:
+      - fish:
+          fish: Rainbow
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -86,6 +96,7 @@
         - SmallMobMask
         layer:
         - SmallMobLayer
+  - type: MobState
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -93,11 +104,11 @@
   - type: DamageStateVisuals
     states:
       Alive:
-        Base: alive
+        Base: bag
       Critical:
-        Base: dead
+        Base: bag-dead
       Dead:
-        Base: dead
+        Base: bag-dead
   - type: Item
     size: Tiny
   - type: Tag
