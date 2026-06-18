@@ -1,4 +1,4 @@
-namespace Content.Server.Atmos.Piping.Components;
+namespace Content.Shared.Atmos.Piping.Components; // Carpmosia-edit - Port Vent Crawling
 
 [RegisterComponent]
 public sealed partial class GasPipeManifoldComponent : Component

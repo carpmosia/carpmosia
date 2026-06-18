@@ -1,4 +1,5 @@
 using Content.Client.UserInterface.Systems.Sandbox;
+using Content.Shared.DrawDepth; // Carpmosia-edit - Port Vent Crawling
 using Content.Shared.SubFloor;
 using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
@@ -32,6 +33,7 @@ public sealed partial class SubFloorHideSystem : SharedSubFloorHideSystem
         }
     }
 
+    /// <inheritdoc/>
     public override void Initialize()
     {
         base.Initialize();
@@ -63,7 +65,12 @@ public sealed partial class SubFloorHideSystem : SharedSubFloorHideSystem
 
         scannerRevealed &= !ShowAll; // no transparency for show-subfloor mode.
 
-        var revealed = !covered || ShowAll || scannerRevealed;
+        // Carpmosia-start - Port Vent Crawling
+        var revealEv = new GetSubFloorRevealEvent();
+        RaiseLocalEvent(uid, ref revealEv);
+
+        var revealed = !covered || ShowAll || scannerRevealed || revealEv.Revealed;
+        // Carpmosia-end - Port Vent Crawling
 
         // set visibility & color of each layer
         foreach (var layer in args.Sprite.AllLayers)
@@ -118,3 +125,17 @@ public sealed partial class SubFloorHideSystem : SharedSubFloorHideSystem
         }
     }
 }
+
+// Carpmosia-start - Port Vent Crawling
+/// <summary>
+/// Raised on a subfloor-hidden entity to let client systems reveal it locally.
+/// </summary>
+[ByRefEvent]
+public sealed class GetSubFloorRevealEvent : EntityEventArgs
+{
+    /// <summary>
+    /// Whether the entity should be shown even if covered by a floor tile.
+    /// </summary>
+    public bool Revealed;
+}
+// Carpmosia-end - Port Vent Crawling
