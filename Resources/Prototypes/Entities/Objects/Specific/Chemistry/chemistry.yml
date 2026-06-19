@@ -7,14 +7,15 @@
     tags:
     - GlassBeaker
   - type: Sprite
-    sprite: Objects/Specific/Chemistry/beaker.rsi
+    sprite: _Carpmosia/Objects/Specific/Chemistry/beaker.rsi # Carpmosia-edit - chem resprite
     layers:
       - state: beaker
       - state: beaker1
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
+      - state: beaker-overlay # Carpmosia-edit - chem resprite
   - type: Item
-    sprite: Objects/Specific/Chemistry/beaker.rsi
+    sprite: _Carpmosia/Objects/Specific/Chemistry/beaker.rsi # Carpmosia-edit - chem resprite
   - type: MeleeWeapon
     soundNoDamage:
       path: "/Audio/Effects/Fluids/splat.ogg"
@@ -104,14 +105,15 @@
     tags:
     - GlassBeaker
   - type: Sprite
-    sprite: Objects/Specific/Chemistry/beaker.rsi
+    sprite: _Carpmosia/Objects/Specific/Chemistry/beaker.rsi # Carpmosia-edit - chem resprite
     layers:
       - state: beaker
       - state: beaker1
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
+      - state: beaker-overlay # Carpmosia-edit - chem resprite
   - type: Item
-    sprite: Objects/Specific/Chemistry/beaker.rsi
+    sprite: _Carpmosia/Objects/Specific/Chemistry/beaker.rsi # Carpmosia-edit - chem resprite
   - type: MeleeWeapon
     soundNoDamage:
       path: "/Audio/Effects/Fluids/splat.ogg"
@@ -277,15 +279,16 @@
   - type: Spillable
     solution: beaker
   - type: Sprite
-    sprite: Objects/Specific/Chemistry/beaker_large.rsi
+    sprite: _Carpmosia/Objects/Specific/Chemistry/beaker_large.rsi # Carpmosia-edit - chem resprite
     layers:
       - state: beakerlarge
       - state: beakerlarge1
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
+      - state: beakerlarge-overlay # Carpmosia-edit - chem resprite
   - type: Item
     size: Normal
-    sprite: Objects/Specific/Chemistry/beaker_large.rsi
+    sprite: _Carpmosia/Objects/Specific/Chemistry/beaker_large.rsi # Carpmosia-edit - chem resprite
   - type: Appearance
   - type: SolutionContainerVisuals
     maxFillLevels: 6
@@ -307,9 +310,9 @@
   - type: Spillable
     solution: beaker
   - type: Sprite
-    sprite: Objects/Specific/Chemistry/beaker_cryostasis.rsi
+    sprite: _Carpmosia/Objects/Specific/Chemistry/beaker_cryostasis.rsi # Carpmosia-edit - chem resprite
     layers:
-      - state: beakernoreact
+      - state: cryo # Carpmosia-edit - chem resprite
   - type: SolutionContainerVisuals
     maxFillLevels: 0
 
@@ -322,11 +325,22 @@
   - type: Spillable
     solution: beaker
   - type: Sprite
-    sprite: Objects/Specific/Chemistry/beaker_bluespace.rsi
+  # Carpmosia-start - chem resprite
+    sprite: _Carpmosia/Objects/Specific/Chemistry/beaker_bluespace.rsi
     layers:
-      - state: beakerbluespace
+      - state: bluespace
+      - state: bluespace1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: bluespace-overlay
+  - type: Item
+    sprite: _Carpmosia/Objects/Specific/Chemistry/beaker_bluespace.rsi
   - type: SolutionContainerVisuals
-    maxFillLevels: 0
+    maxFillLevels: 9
+    inHandsMaxFillLevels: 2
+    fillBaseName: bluespace
+    inHandsFillBaseName: -fill-
+  # Carpmosia-end - chem resprite
 
 - type: entity
   name: dropper
@@ -335,12 +349,13 @@
   id: Dropper
   components:
   - type: Sprite
-    sprite: Objects/Specific/Chemistry/dropper.rsi
+    sprite: _Carpmosia/Objects/Specific/Chemistry/dropper.rsi # Carpmosia-edit - chem resprite
     layers:
       - state: dropper
       - state: dropper1
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
+      - state: dropper_overlay # Carpmosia-edit - chem resprite
   - type: Injector
     ignoreMobs: true
     ignoreClosed: false
@@ -358,7 +373,7 @@
   - type: Spillable
     solution: injector
   - type: Item
-    sprite: Objects/Specific/Chemistry/dropper.rsi
+    sprite: _Carpmosia/Objects/Specific/Chemistry/dropper.rsi # Carpmosia-edit - chem resprite
     size: Tiny
   - type: Appearance
   - type: SolutionContainerVisuals
@@ -381,14 +396,15 @@
   description: State-of-the-art hydraulic dropper built for cyborgs.
   components:
   - type: Sprite
-    sprite: Objects/Specific/Chemistry/dropper.rsi
+    sprite: _Carpmosia/Objects/Specific/Chemistry/dropper.rsi # Carpmosia-edit - chem resprite
     layers:
       - state: borgdropper
       - state: dropper1
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
+      - state: dropper_overlay # Carpmosia-edit - chem resprite
   - type: Item
-    sprite: Objects/Specific/Chemistry/dropper.rsi
+    sprite: _Carpmosia/Objects/Specific/Chemistry/dropper.rsi # Carpmosia-edit - chem resprite
 
 - type: entity
   name: syringe
@@ -398,19 +414,24 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Objects/Specific/Chemistry/syringe.rsi
+  # Carpmosia-start - chem resprite
+    sprite: _Carpmosia/Objects/Specific/Chemistry/syringe.rsi
     layers:
+      - state: syringe_base
+        map: ["enum.SolutionContainerLayers.Base"]
+  # Carpmosia-end - chem resprite
       - state: syringe1
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
-      - state: syringe_base0
-        map: ["enum.SolutionContainerLayers.Base"]
+      - state: syringe_base_overlay # Carpmosia-edit - chem resprite
   - type: Icon
-    sprite: Objects/Specific/Chemistry/syringe.rsi
-    state: "syringe_base0"
+  # Carpmosia-start - chem resprite
+    sprite: _Carpmosia/Objects/Specific/Chemistry/syringe.rsi
+    state: "syringe_base"
   - type: Item
     size: Tiny
-    sprite: Objects/Specific/Chemistry/syringe.rsi
+    sprite: _Carpmosia/Objects/Specific/Chemistry/syringe.rsi
+  # Carpmosia-end - chem resprite
   - type: Injector
     activeModeProtoId: SyringeDrawMode
     allowedModes:
@@ -425,7 +446,10 @@
     solution: injector
   - type: Appearance
   - type: SolutionContainerVisuals
-    maxFillLevels: 2
+    # Carpmosia-start - chem resprite
+    emptySpriteName: syringe0
+    maxFillLevels: 3
+    # Carpmosia-end - chem resprite
     fillBaseName: syringe
     inHandsMaxFillLevels: 3
     inHandsFillBaseName: -fill-
@@ -449,17 +473,21 @@
   id: MiniSyringe
   components:
   - type: Sprite
-    sprite: Objects/Specific/Chemistry/syringe.rsi
+  # Carpmosia-start - chem resprite
+    sprite: _Carpmosia/Objects/Specific/Chemistry/syringe.rsi
     layers:
+      - state: minisyringe
       - state: minisyringe1
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
-      - state: syringeproj
+      - state: minisyringe_overlay
+  # Carpmosia-end - chem resprite
   - type: SolutionContainerVisuals
     maxFillLevels: 3
     fillBaseName: minisyringe
     inHandsMaxFillLevels: 3
     inHandsFillBaseName: -fill-
+    emptySpriteName: # Carpmosia-edit - chem resprite
   - type: EmbeddableProjectile
     offset: "0,-0.1"
     minimumSpeed: 3
@@ -518,22 +546,28 @@
   components:
   - type: Sprite
     layers:
-    - state: syringe1
+  # Carpmosia-start - chem resprite
+    - state: bluespace_base
+      map: ["enum.SolutionContainerLayers.Base"]
+    - state: bluespace1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
-    - state: bluespace_base0
-      map: ["enum.SolutionContainerLayers.Base"]
+    - state: bluespace_base_overlay
   - type: Icon
-    sprite: Objects/Specific/Chemistry/syringe.rsi
-    state: bluespace_base0
+    sprite: _Carpmosia/Objects/Specific/Chemistry/syringe.rsi
+    state: bluespace_base
+  # Carpmosia-end - chem resprite
   - type: Injector
     activeModeProtoId: BluespaceSyringeDrawMode
     allowedModes:
     - BluespaceSyringeInjectMode
     - BluespaceSyringeDrawMode
   - type: SolutionContainerVisuals
-    maxFillLevels: 2
-    fillBaseName: syringe
+  # Carpmosia-start - chem resprite
+    emptySpriteName: bluespace0
+    maxFillLevels: 6
+    fillBaseName: bluespace
+  # Carpmosia-end - chem resprite
   - type: Tag
     tags:
     - Syringe
@@ -547,14 +581,22 @@
   components:
   - type: Sprite
     layers:
-    - state: syringe1
+  # Carpmosia-start - chem resprite
+    - state: cryo_base
+      map: ["enum.SolutionContainerLayers.Base"]
+    - state: cryo1
+  # Carpmosia-end - chem resprite
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
-    - state: cryo_base0
-      map: ["enum.SolutionContainerLayers.Base"]
   - type: Icon
-    sprite: Objects/Specific/Chemistry/syringe.rsi
-    state: cryo_base0
+  # Carpmosia-start - chem resprite
+    sprite: _Carpmosia/Objects/Specific/Chemistry/syringe.rsi
+    state: cryo_base
+  - type: SolutionContainerVisuals
+    emptySpriteName: cryo0
+    maxFillLevels: 2
+    fillBaseName: cryo
+  # Carpmosia-end - chem resprite
   - type: Tag
     tags:
     - Syringe
@@ -624,10 +666,14 @@
   components:
   - type: Item
     size: Tiny
-    sprite: Objects/Specific/Chemistry/pills_canister.rsi
+  # Carpmosia-start - chem resprite
+    sprite: _Carpmosia/Objects/Specific/Chemistry/pills_canister.rsi
   - type: Sprite
-    sprite: Objects/Specific/Chemistry/pills_canister.rsi
-    state: pill_canister
+    sprite: _Carpmosia/Objects/Specific/Chemistry/pills_canister.rsi
+    layers:
+    - state: pill_canister
+    - state: pill_canister_overlay
+  # Carpmosia-end - chem resprite
   - type: Tag
     tags:
       - PillCanister

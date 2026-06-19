@@ -4108,7 +4108,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: IntercomAll
+- proto: IntercomCommon # Carpmosia-edit - Decontraing salv
   entities:
   - uid: 469
     components:
@@ -4180,7 +4180,7 @@ entities:
           showEnts: False
           occludes: True
           ents: []
-- proto: MagazinePistolIncendiary
+- proto: MaterialBananium # Carpmosia-edit - Decontraing salv
   entities:
   - uid: 331
     components:

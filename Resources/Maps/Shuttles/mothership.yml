@@ -2474,7 +2474,7 @@ entities:
     - type: Transform
       pos: 6.5,3.5
       parent: 1
-- proto: Recycler
+- proto: BaseRecycler # Carpmosia-edit - Fix Xenoborgs Getting Tickets
   entities:
   - uid: 111
     components:
