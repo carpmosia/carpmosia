@@ -20,9 +20,10 @@
     sprite: _Carpmosia/Objects/Specific/Hydroponics/crudcoa.rsi
   - type: Produce
     seedId: crudcoa
-  - type: Log
-    spawnedPrototype: SheetPlastic1
-    spawnCount: 1
+  - type: ToolRefinable
+    qualityNeeded: Sawing
+    refineResult:
+    - id: SheetPlastic1
   - type: PhysicalComposition
     materialComposition:
       Plastic: 100

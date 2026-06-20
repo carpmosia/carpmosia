@@ -142,7 +142,6 @@
   name: Urist McRaptor
   components:
   - type: Butcherable
-    butcheringType: Spike
     spawned:
     - id: FoodMeatChicken
       amount: 3
@@ -219,10 +218,10 @@
     thermalRegulationTemperatureThreshold: 10
 
 - type: entity
-  parent: OrganBase
+  parent: OrganBaseOrganic
   id: OrganAvali
   abstract: true
-  suffix: human
+  suffix: Avali
 
 - type: entity
   id: OrganAvaliMetabolizer
