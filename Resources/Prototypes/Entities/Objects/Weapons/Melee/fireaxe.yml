@@ -7,7 +7,6 @@
   - type: Tag
     tags:
     - FireAxe
-  - type: Sharp
   - type: Execution
     doAfterDuration: 4.0
   - type: Sprite
@@ -46,8 +45,10 @@
       path: /Audio/Items/crowbar.ogg
     # Carpmosia-end - Plating axing
     qualities:
-      - Prying
-      - Axing # Carpmosia-edit - Plating axing
+    - Prying
+    - Axing # Carpmosia-edit - Plating axing
+    - Slicing
+    - Sawing
   - type: ToolTileCompatible
   - type: Prying
   - type: UseDelay
