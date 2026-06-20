@@ -83,8 +83,8 @@
         state: fish
   - type: RandomSprite
     available:
-      - fish:
-          fish: Rainbow
+    - fish:
+        fish: Rainbow
   - type: Physics
   - type: Fixtures
     fixtures:
