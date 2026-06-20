@@ -130,8 +130,8 @@
       - !type:GibBehavior
         recursive: false
   - type: MovementSpeedModifier
-    baseWalkSpeed : 1
-    baseSprintSpeed : 1.4
+    baseWalkSpeed : 0.65
+    baseSprintSpeed : 1.0
   - type: MobPrice
     price: 100
   - type: Extractable
