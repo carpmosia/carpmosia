@@ -150,6 +150,8 @@
   - type: MovementSpeedModifier
     baseWalkSpeed : 0.65
     baseSprintSpeed : 1.0
+  - type: CombatMode
+    combatToggleAction: ActionCombatModeToggleOff
   - type: MobPrice
     price: 100
   - type: Extractable
