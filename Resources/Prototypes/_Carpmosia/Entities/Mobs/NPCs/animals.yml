@@ -124,8 +124,26 @@
   - type: Destructible
     thresholds:
     - trigger: !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 40
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
+    - trigger: !type:DamageTypeTrigger
+        damageType: Slash
+        damage: 40
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
+    - trigger: !type:DamageTypeTrigger
         damageType: Piercing
-        damage: 30
+        damage: 40
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
+    - trigger: !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 60
       behaviors:
       - !type:GibBehavior
         recursive: false
