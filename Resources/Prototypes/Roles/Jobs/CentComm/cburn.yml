@@ -21,6 +21,7 @@
     jumpsuit: ClothingUniformJumpsuitColorBrown
     back: ClothingBackpackDuffelCBURN
     mask: ClothingMaskGasERT
+    neck: ClothingNeckMantle
     eyes: ClothingEyesGlassesSecurity
     ears: ClothingHeadsetAltCentCom
     gloves: ClothingHandsGlovesCombat
@@ -28,15 +29,23 @@
     shoes: ClothingShoesBootsCombatFilled
     id: CBURNPDA
     pocket1: RadioHandheld
-    pocket2: WeaponLaserGun
+    pocket2: WeaponPistolMk58
     belt: ClothingBeltBandolier
   storage:
     back:
-    - WeaponShotgunDoubleBarreled
+    - JawsOfLife
     - BoxShotgunIncendiary
     - GrenadeFlashBang
-    - PillAmbuzolPlus
-    - PillAmbuzol
+    - MagazinePistol
+    - ChemistryBottleAmbuzolPlus
+    - ChemistryBottleAmbuzol
+    - Syringe
+    - Zipties
+    - MedkitAdvancedFilled
+    - HoloprojectorSecurity
+  inhand:
+  - AmbuzolPlusAutoInjector
+  - WeaponShotgunEnforcer
 
 - type: chameleonOutfit
   id: CBURNChameleonOutfit
