@@ -533,6 +533,37 @@
 ## CBURN
 
 - type: entity
+  id: RandomHumanoidSpawnerCBURNPointman
+  name: CBURN Pointman
+  suffix: ERTRole
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: cburn
+    - type: RandomHumanoidSpawner
+      settings: CBURNPointman
+
+- type: randomHumanoidSettings
+  id: CBURNPointman
+  parent: EventHumanoidCentcomm
+  components:
+    - type: Loadout
+      prototypes: [CBURNGear]
+      roleLoadout: [ RoleSurvivalEVA ]
+    - type: GhostRole
+      name: ghost-role-information-cburn-pointman-name
+      description: ghost-role-information-cburn-pointman-description
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: short
+      job: CBURN
+    - type: RandomMetadata
+      nameSegments:
+      - NamesMilitaryFirst
+      - NamesMilitaryLast
+      nameFormat: name-format-ert
+
+- type: entity
   id: RandomHumanoidSpawnerCBURNUnit
   name: CBURN Agent
   suffix: ERTRole
