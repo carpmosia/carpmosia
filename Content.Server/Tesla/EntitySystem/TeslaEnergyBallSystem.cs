@@ -56,7 +56,6 @@ public sealed partial class TeslaEnergyBallSystem : EntitySystem
         {
             component.Energy -= component.NeedEnergyToSpawn;
             Spawn(component.SpawnProto, Transform(uid).Coordinates);
-            component.SpawnedCount++; // Carpmosia-edit - Engine Loose Rework
         }
         if (component.Energy < component.EnergyToDespawn)
         {

@@ -36,18 +36,6 @@ public sealed partial class TeslaEnergyBallComponent : Component
 
     // Carpmosia-start - Engine Loose Rework
     /// <summary>
-    /// Counts how many times this tesla has spawned miniballs.
-    /// </summary>
-    [DataField]
-    public float SpawnedCount;
-
-    /// <summary>
-    /// The amount of miniballs a tesla can create before the tesla ruptures.
-    /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float RuptureAmount = 3f;
-
-    /// <summary>
     /// Range of the EMP in tiles.
     /// </summary>
     [DataField]
