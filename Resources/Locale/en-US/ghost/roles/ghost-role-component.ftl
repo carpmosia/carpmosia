@@ -184,7 +184,7 @@ ghost-role-information-ert-medical-description = Assist with medical efforts to 
 
 ghost-role-information-cburn-agent-name = CBURN Agent
 ## Carpmosia-start - CBURN rework
-ghost-role-information-cburn-agent-description = A highly trained CentComm agent, deployed with a team to clear the station of zombies. # Carpmosia edit - Tweaked description slightly
+ghost-role-information-cburn-agent-description = A highly trained CentComm agent, deployed with a team to clear the station of zombies.
 
 ghost-role-information-cburn-pointman-name = CBURN Pointman
 ghost-role-information-cburn-pointman-description = The leader of the CBURN squad. Begin the push into infected territory and eradicate undead personnel.
