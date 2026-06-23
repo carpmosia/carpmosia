@@ -1,4 +1,5 @@
 using Content.Server.Administration.Logs;
+using Content.Server.Power.SMES;
 using Content.Server.Singularity.Components;
 using Content.Server.Tesla.Components;
 using Content.Shared.Emp; // Carpmosia-edit - Engine Loose Rework
@@ -36,6 +37,11 @@ public sealed partial class TeslaEnergyBallSystem : EntitySystem
         if (TryComp<SinguloFoodComponent>(args.Entity, out var singuloFood))
         {
             AdjustEnergy(tesla, tesla.Comp, singuloFood.Energy);
+        // Carpmosia-start - Engine Loose Rework
+        } else if(HasComp<SmesComponent>(args.Entity))
+        {
+            Rupture(tesla);
+        // Carpmosia-end - Engine Loose Rework
         } else
         {
             AdjustEnergy(tesla, tesla.Comp, tesla.Comp.ConsumeStuffEnergy);
@@ -57,16 +63,16 @@ public sealed partial class TeslaEnergyBallSystem : EntitySystem
             _audio.PlayPvs(component.SoundCollapse, uid);
             QueueDel(uid);
         }
-        // Carpmosia-start - Engine Loose Rework
-        // When enough miniballs have spawned, trigger a rupture (explode into miniballs)
-        if (component.SpawnedCount == component.RuptureAmount)
-        {
-            for (var i = 0; i < component.SpawnAmount; i++)
-                Spawn(component.EmpSpawnProto, Transform(uid).Coordinates);
-
-            _emp.EmpPulse(_transform.GetMapCoordinates(uid), component.EmpRange, component.EmpConsumption, component.EmpDuration);
-            QueueDel(uid);
-        }
-        // Carpmosia-end - Engine Loose Rework
     }
+
+    // Carpmosia-start - Engine Loose Rework
+    private void Rupture(Entity<TeslaEnergyBallComponent> tesla)
+    {
+        for (var i = 0; i < tesla.Comp.SpawnAmount; i++)
+            Spawn(tesla.Comp.EmpSpawnProto, Transform(tesla).Coordinates);
+
+        _emp.EmpPulse(_transform.GetMapCoordinates(tesla), tesla.Comp.EmpRange, tesla.Comp.EmpConsumption, tesla.Comp.EmpDuration);
+        QueueDel(tesla);
+    }
+    // Carpmosia-end - Engine Loose Rework
 }
