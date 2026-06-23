@@ -1,0 +1,31 @@
+﻿- type: startingGear
+  id: CBURNGearPointman
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorBrown
+    back: ClothingBackpackDuffelCBURN
+    mask: ClothingMaskGasERT
+    neck: ClothingNeckMantle
+    eyes: ClothingEyesGlassesSecurity
+    ears: ClothingHeadsetAltCentCom
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitCBURN
+    shoes: ClothingShoesBootsCombatFilled
+    id: CBURNPDA
+    pocket1: RadioHandheld
+    pocket2: WeaponPistolMk58
+    belt: ClothingBeltBandolierFilledIncendiary
+  storage:
+    back:
+    - JawsOfLife
+    - BoxShotgunIncendiary
+    - GrenadeFlashBang
+    - MagazinePistol
+    - ChemistryBottleAmbuzolPlus
+    - ChemistryBottleAmbuzol
+    - Syringe
+    - Zipties
+    - MedkitAdvancedFilled
+    - HoloprojectorSecurity
+  inhand:
+  - AmbuzolPlusAutoInjector
+  - WeaponShotgunEnforcer

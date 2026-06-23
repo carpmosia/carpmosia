@@ -182,6 +182,7 @@ ghost-role-information-ert-security-description = Assist with security efforts t
 ghost-role-information-ert-medical-name = ERT Medical
 ghost-role-information-ert-medical-description = Assist with medical efforts to resolve the station's issues.
 
+# Carpmosia edit - Added the Pointman and gave both different descriptions
 ghost-role-information-cburn-agent-name = CBURN Agent
 ghost-role-information-cburn-agent-description = A highly trained CentComm agent, deployed with a team to clear the station of zombies.
 

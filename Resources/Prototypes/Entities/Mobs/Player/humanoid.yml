@@ -531,37 +531,8 @@
     roleLoadout: [ RoleSurvivalMilitaryDouble ]
 
 ## CBURN
-
-- type: entity
-  id: RandomHumanoidSpawnerCBURNPointman
-  name: CBURN Pointman
-  suffix: ERTRole
-  components:
-    - type: Sprite
-      sprite: Markers/jobs.rsi
-      state: cburn
-    - type: RandomHumanoidSpawner
-      settings: CBURNPointman
-
-- type: randomHumanoidSettings
-  id: CBURNPointman
-  parent: EventHumanoidCentcomm
-  components:
-    - type: Loadout
-      prototypes: [CBURNGearPointman]
-      roleLoadout: [ RoleSurvivalEVA ]
-    - type: GhostRole
-      name: ghost-role-information-cburn-pointman-name
-      description: ghost-role-information-cburn-pointman-description
-      rules: ghost-role-information-nonantagonist-rules
-      raffle:
-        settings: short
-      job: CBURN
-    - type: RandomMetadata
-      nameSegments:
-      - NamesMilitaryFirst
-      - NamesMilitaryLast
-      nameFormat: name-format-ert
+## Carpmosia edit: Added the CBURN Pointman spawner which is in Prototypes/_Carpmosia/Entities/Mobs/Player/humanoid.yml
+## Everything else is now clarified to be for the CBURN Agent (e.g. CBURNGear -> CBURNGearAgent)
 
 - type: entity
   id: RandomHumanoidSpawnerCBURNUnit
