@@ -54,3 +54,111 @@
   - type: Insulated
   - type: Respirator
     minSaturation: 5.0
+
+- type: entity
+  parent: [ SolutionFood, SolutionTiny, SimpleSpaceMobBase ]
+  id: MobBagFish
+  name: bag fish
+  description: An iddle widdle fish rolling around in a plastic bag!
+  components:
+  - type: Emoting
+  - type: Sprite
+    drawdepth: SmallMobs
+    sprite: _Carpmosia/Mobs/Animals/bagfish.rsi
+    layers:
+    - map: ["fish", "movement-fish"]
+      state: fish
+    - map: ["enum.DamageStateVisualLayers.Base", "movement-bag"]
+      state: bag
+  - type: SpriteMovement
+    movementLayers:
+      movement-bag:
+        state: bag-moving
+      movement-fish:
+        state: fish-moving
+    noMovementLayers:
+      movement-bag:
+        state: bag
+      movement-fish:
+        state: fish
+  - type: RandomSprite
+    available:
+    - fish:
+        fish: Rainbow
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeCircle
+          radius: 0.15
+        density: 100
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      10: Dead
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: bag
+      Critical:
+        Base: bag-dead
+      Dead:
+        Base: bag-dead
+  - type: Item
+    size: Tiny
+  - type: Tag
+    tags:
+    - CannotSuicide
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 2
+      - ReagentId: Water
+        Quantity: 10
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 40
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
+    - trigger: !type:DamageTypeTrigger
+        damageType: Slash
+        damage: 40
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
+    - trigger: !type:DamageTypeTrigger
+        damageType: Piercing
+        damage: 40
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
+    - trigger: !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 60
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 0.65
+    baseSprintSpeed : 1.0
+  - type: MobPrice
+    price: 100
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 3
+      - ReagentId: Water
+        Quantity: 12
+  - type: ZombieImmune
