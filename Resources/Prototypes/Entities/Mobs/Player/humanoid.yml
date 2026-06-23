@@ -531,8 +531,6 @@
     roleLoadout: [ RoleSurvivalMilitaryDouble ]
 
 ## CBURN
-## Carpmosia edit: Added the CBURN Pointman spawner which is in Prototypes/_Carpmosia/Entities/Mobs/Player/humanoid.yml
-## Everything else is now clarified to be for the CBURN Agent (e.g. CBURNGear -> CBURNGearAgent)
 
 - type: entity
   id: RandomHumanoidSpawnerCBURNUnit
@@ -550,7 +548,7 @@
   parent: EventHumanoidCentcomm
   components:
     - type: Loadout
-      prototypes: [CBURNGearAgent]
+      prototypes: [CBURNGear]
       roleLoadout: [ RoleSurvivalEVA ]
     - type: GhostRole
       name: ghost-role-information-cburn-agent-name
