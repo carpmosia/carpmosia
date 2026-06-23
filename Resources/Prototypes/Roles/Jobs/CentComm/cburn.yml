@@ -19,7 +19,7 @@
   id: CBURNGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorBrown
-    back: WeaponSubMachineGunDrozd # Carpmosia-edit - Agent loadout changes
+    back: WeaponSubMachineGunDrozd # Carpmosia-edit - CBURN rework
     mask: ClothingMaskGasERT
     eyes: ClothingEyesGlassesSecurity
     ears: ClothingHeadsetAltCentCom
@@ -28,10 +28,10 @@
     shoes: ClothingShoesBootsCombatFilled
     id: CBURNPDA
     pocket1: RadioHandheld
-    pocket2: WeaponLaserSvalinn # Carpmosia-edit - Agent loadout changes
-    belt: ClothingBeltMilitaryWebbingERT # Carpmosia-edit - Agent loadout changes
+    pocket2: WeaponLaserSvalinn # Carpmosia-edit - CBURN rework
+    belt: ClothingBeltMilitaryWebbingERT # Carpmosia-edit - CBURN rework
   storage:
-    # Carpmosia-start - CBURN rework, Agent loadout changes
+    # Carpmosia-start - CBURN rework
     belt:
     - MagazinePistolSubMachineGunIncendiary
     - MagazinePistolSubMachineGunIncendiary
