@@ -16,7 +16,7 @@
     implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
 
 - type: startingGear
-  id: CBURNGear
+  id: CBURNGearPointman
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorBrown
     back: ClothingBackpackDuffelCBURN
@@ -30,7 +30,7 @@
     id: CBURNPDA
     pocket1: RadioHandheld
     pocket2: WeaponPistolMk58
-    belt: ClothingBeltBandolier
+    belt: ClothingBeltBandolierFilledIncendiary
   storage:
     back:
     - JawsOfLife
@@ -46,6 +46,35 @@
   inhand:
   - AmbuzolPlusAutoInjector
   - WeaponShotgunEnforcer
+
+- type: startingGear
+  id: CBURNGearAgent
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorBrown
+    back: WeaponSubMachineGunDrozd
+    mask: ClothingMaskGasERT
+    eyes: ClothingEyesGlassesSecurity
+    ears: ClothingHeadsetAltCentCom
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitCBURN
+    shoes: ClothingShoesBootsCombatFilled
+    id: CBURNPDA
+    pocket1: RadioHandheld
+    pocket2: WeaponLaserSvalinn
+    belt: ClothingBeltMilitaryWebbingERT
+  storage:
+    belt:
+    - MagazinePistolSubMachineGunIncendiary
+    - MagazinePistolSubMachineGunIncendiary
+    - MagazineBoxPistolIncendiary
+    - PowerCellMicroreactor
+    - GrenadeFlashBang
+    - HoloprojectorSecurity
+    - MedicatedSuture
+    - ChemistryBottleAmbuzol
+    - Syringe
+  inhand:
+  - AmbuzolPlusAutoInjector
 
 - type: chameleonOutfit
   id: CBURNChameleonOutfit

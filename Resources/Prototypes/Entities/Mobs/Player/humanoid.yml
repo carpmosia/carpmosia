@@ -548,7 +548,7 @@
   parent: EventHumanoidCentcomm
   components:
     - type: Loadout
-      prototypes: [CBURNGear]
+      prototypes: [CBURNGearPointman]
       roleLoadout: [ RoleSurvivalEVA ]
     - type: GhostRole
       name: ghost-role-information-cburn-pointman-name
@@ -579,7 +579,7 @@
   parent: EventHumanoidCentcomm
   components:
     - type: Loadout
-      prototypes: [CBURNGear]
+      prototypes: [CBURNGearAgent]
       roleLoadout: [ RoleSurvivalEVA ]
     - type: GhostRole
       name: ghost-role-information-cburn-agent-name
