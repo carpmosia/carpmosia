@@ -106,7 +106,7 @@ public sealed partial class DisposalHolderComponent : Component, IGasMixtureHold
     /// (as set by <see cref="EscapeChance"/>).
     /// </summary>
     [DataField]
-    public int DirectionChangeThreshold = 20;
+    public int DirectionChangeThreshold = 200; // Carpmosia-edit - Fix disposals exploding
 
     /// <summary>
     /// When given the opportunity, the holder has this chance of escaping the disposals system.

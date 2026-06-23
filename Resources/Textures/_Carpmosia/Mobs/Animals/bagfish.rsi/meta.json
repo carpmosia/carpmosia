@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made by github.com/Jakeybobble for Carpmosia",
+  "states": [
+    {
+      "name": "bag-dead"
+    },
+    {
+      "name": "fish",
+      "directions": 4
+    },
+    {
+      "name": "fish-moving",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "bag",
+      "directions": 4
+    },
+    {
+      "name": "bag-moving",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ]
+      ]
+    }
+  ]
+}
