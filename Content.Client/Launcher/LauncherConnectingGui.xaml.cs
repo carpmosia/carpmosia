@@ -18,7 +18,7 @@ namespace Content.Client.Launcher
     [GenerateTypedNameReferences]
     public sealed partial class LauncherConnectingGui : Control
     {
-        private const float RedialWaitTimeSeconds = 15f;
+        private const float RedialWaitTimeSeconds = 25f; // Carpmosia-edit - longer redial
         private readonly LauncherConnecting _state;
         private float _waitTime;
 
@@ -156,7 +156,7 @@ namespace Content.Client.Launcher
             var tip = tipList[randomIndex];
             LoginTip.SetMessage(Loc.GetString(tip));
 
-            LoginTipTitle.Text = Loc.GetString("connecting-window-tip", ("numberTip", randomIndex));
+            LoginTipTitle.Text = Loc.GetString("connecting-window-tip", ("numberTip", randomIndex + 1));
         }
 
         protected override void FrameUpdate(FrameEventArgs args)

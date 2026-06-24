@@ -24,10 +24,10 @@ namespace Content.Server.Voting.Managers
 {
     public sealed partial class VoteManager
     {
-        [Dependency] private readonly IPlayerLocator _locator = default!;
-        [Dependency] private readonly ILogManager _logManager = default!;
-        [Dependency] private readonly IBanManager _bans = default!;
-        [Dependency] private readonly VoteWebhooks _voteWebhooks = default!;
+        [Dependency] private IPlayerLocator _locator = default!;
+        [Dependency] private ILogManager _logManager = default!;
+        [Dependency] private IBanManager _bans = default!;
+        [Dependency] private VoteWebhooks _voteWebhooks = default!;
 
         private VotingSystem? _votingSystem;
         private RoleSystem? _roleSystem;
@@ -279,7 +279,7 @@ namespace Content.Server.Voting.Managers
 
             foreach (var (k, v) in maps)
             {
-                options.Options.Add(((v.MapName, v.MapIcon, v.IconPrototype), k)); // Carpmosia-edit - Better map vote
+                options.Options.Add(((v.MapName, v.MapIcon, v.MapPreview), k)); // Carpmosia-edit - Better map vote
             }
 
             WirePresetVoteInitiator(options, initiator);

@@ -10,6 +10,7 @@ ghost-role-information-pet-snail-name = Pet snail
 ghost-role-information-pet-butterfly-name = Pet butterfly
 ghost-role-information-pet-bee-name = Pet bee
 ghost-role-information-pet-mothroach-name = Pet mothroach
+ghost-role-information-pet-fish-name = Pet fish
 
 ghost-role-information-pet-description = A cute little pocket pet. Follow and obey your owner!
 

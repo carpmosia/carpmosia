@@ -86,3 +86,12 @@
     Hologram:
       sprite: _Carpmosia/Mobs/Silicon/holograms.rsi
       state: ai_devil
+
+- type: stationAiCustomization
+  id: StationAiHologramMoth
+  name: station-ai-hologram-moth
+  previewKey: Hologram
+  layerData:
+    Hologram:
+      sprite: _Carpmosia/Mobs/Silicon/holograms.rsi
+      state: ai_moth

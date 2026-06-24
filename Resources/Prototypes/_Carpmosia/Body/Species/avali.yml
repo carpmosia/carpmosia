@@ -142,7 +142,6 @@
   name: Urist McRaptor
   components:
   - type: Butcherable
-    butcheringType: Spike
     spawned:
     - id: FoodMeatChicken
       amount: 3
@@ -169,8 +168,9 @@
       Female: FemaleAvali
       Unsexed: MaleAvali
   - type: Damageable
-    damageContainer: Biological
     damageModifierSet: Avali
+  - type: Injurable
+    damageContainer: Biological
   - type: MeleeWeapon
     soundHit:
       collection: AlienClaw
@@ -218,10 +218,10 @@
     thermalRegulationTemperatureThreshold: 10
 
 - type: entity
-  parent: OrganBase
+  parent: OrganBaseOrganic
   id: OrganAvali
   abstract: true
-  suffix: human
+  suffix: Avali
 
 - type: entity
   id: OrganAvaliMetabolizer

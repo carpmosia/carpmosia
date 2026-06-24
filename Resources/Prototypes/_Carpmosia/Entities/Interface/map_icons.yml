@@ -1,0 +1,129 @@
+- type: entity
+  abstract: true
+  parent: BaseSign
+  id: BaseMapPreview
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Interface/Misc/map_icons.rsi
+
+# Carpmaps
+- type: entity
+  parent: BaseMapPreview
+  categories: [ HideSpawnMenu ]
+  id: MapPreviewAmber
+  components:
+  - type: Sprite
+    state: amber
+
+- type: entity
+  parent: BaseMapPreview
+  categories: [ HideSpawnMenu ]
+  id: MapPreviewFeint
+  components:
+  - type: Sprite
+    state: feint
+
+- type: entity
+  parent: BaseMapPreview
+  categories: [ HideSpawnMenu ]
+  id: MapPreviewLampocteis
+  components:
+  - type: Sprite
+    state: lampocteis
+
+- type: entity
+  parent: BaseMapPreview
+  categories: [ HideSpawnMenu ]
+  id: MapPreviewOasis
+  components:
+  - type: Sprite
+    state: oasis
+
+- type: entity
+  parent: BaseMapPreview
+  categories: [ HideSpawnMenu ]
+  id: MapPreviewPacked
+  components:
+  - type: Sprite
+    state: packed
+
+- type: entity
+  parent: BaseMapPreview
+  categories: [ HideSpawnMenu ]
+  id: MapPreviewSaltern
+  components:
+  - type: Sprite
+    state: saltern
+
+- type: entity
+  parent: BaseMapPreview
+  categories: [ HideSpawnMenu ]
+  id: MapPreviewSparks
+  components:
+  - type: Sprite
+    state: sparks
+
+# Upstream
+- type: entity
+  parent: BaseMapPreview
+  categories: [ HideSpawnMenu ]
+  id: MapPreviewBagel
+  components:
+  - type: Sprite
+    state: bagel
+
+- type: entity
+  parent: BaseMapPreview
+  categories: [ HideSpawnMenu ]
+  id: MapPreviewBox
+  components:
+  - type: Sprite
+    state: box
+
+- type: entity
+  parent: BaseMapPreview
+  categories: [ HideSpawnMenu ]
+  id: MapPreviewElkridge
+  components:
+  - type: Sprite
+    state: elkridge
+
+- type: entity
+  parent: BaseMapPreview
+  categories: [ HideSpawnMenu ]
+  id: MapPreviewExo
+  components:
+  - type: Sprite
+    state: exo
+
+- type: entity
+  parent: BaseMapPreview
+  categories: [ HideSpawnMenu ]
+  id: MapPreviewFland
+  components:
+  - type: Sprite
+    state: fland
+
+- type: entity
+  parent: BaseMapPreview
+  categories: [ HideSpawnMenu ]
+  id: MapPreviewMarathon
+  components:
+  - type: Sprite
+    state: marathon
+
+- type: entity
+  parent: BaseMapPreview
+  categories: [ HideSpawnMenu ]
+  id: MapPreviewPlasma
+  components:
+  - type: Sprite
+    state: plasma
+
+- type: entity
+  parent: BaseMapPreview
+  categories: [ HideSpawnMenu ]
+  id: MapPreviewSnowball
+  components:
+  - type: Sprite
+    state: snowball

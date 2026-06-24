@@ -5,6 +5,16 @@
   components:
   - type: Item
     size: Tiny
+  # Carpmosia-start - chem resprite
+  - type: Sprite
+    layers:
+    - state: icon_empty
+      map: ["enum.OpenableVisuals.Layer"]
+    - state: fill-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+    - state: icon_overlay
+  # Carpmosia-end - chem resprite
   - type: Openable
     sound:
       collection: bottleCloseSounds # using closed here for the quieter sound
@@ -23,34 +33,24 @@
 ## Entities
 
 - type: entity
-  parent: BaseChemistryVial
+  parent: [SolutionTiny, BaseChemistryVial]
   id: ChemistryEmptyVial
   name: vial
   description: A small vial.
   components:
   - type: Item
-    sprite: Objects/Specific/Chemistry/vial.rsi
+    sprite: _Carpmosia/Objects/Specific/Chemistry/vial.rsi # Carpmosia-edit - chem resprite
   - type: Sprite
-    sprite: Objects/Specific/Chemistry/vial.rsi
+    sprite: _Carpmosia/Objects/Specific/Chemistry/vial.rsi # Carpmosia-edit - chem resprite
   - type: SolutionContainerVisuals
     maxFillLevels: 6
     inHandsMaxFillLevels: 4
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
   - type: SolutionTransfer
     maxTransferAmount: 30
   - type: StaticPrice
     price: 100
   - type: Destructible
     thresholds:
-    - trigger: &DamageTrigger100
-        !type:DamageTrigger
-        damage: 100
-      behaviors: &OverkillBehavior
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 15 # stronger than base
@@ -69,22 +69,18 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: BaseChemistryVial
+  parent: [SolutionVeryTiny, BaseChemistryVial]
   id: ChemistryEmptyVialSmall
   name: mini vial
   description: A smaller vial.
   components:
   - type: Item
-    sprite: Objects/Specific/Chemistry/vial_mini.rsi
+    sprite: _Carpmosia/Objects/Specific/Chemistry/vial_mini.rsi # Carpmosia-edit - chem resprite
   - type: Sprite
-    sprite: Objects/Specific/Chemistry/vial_mini.rsi
+    sprite: _Carpmosia/Objects/Specific/Chemistry/vial_mini.rsi # Carpmosia-edit - chem resprite
   - type: SolutionContainerVisuals
     maxFillLevels: 5
     inHandsMaxFillLevels: 4
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 10
   - type: SolutionTransfer
     maxTransferAmount: 10
   - type: StaticPrice
@@ -94,8 +90,6 @@
       Glass: 10
   - type: Destructible
     thresholds:
-    - trigger: *DamageTrigger100
-      behaviors: *OverkillBehavior
     - trigger:
         !type:DamageTrigger
         damage: 5 # smaller so weaker
@@ -114,13 +108,11 @@
   components:
   - type: Label
     currentLabel: reagent-name-vestine
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Vestine
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Vestine
+        Quantity: 30
   - type: Tag
     tags: &TagVial # Remove trash tag when we have a filled solution
     - CentrifugeCompatible
@@ -132,13 +124,11 @@
   components:
   - type: Label
     currentLabel: reagent-name-radium
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 10
-        reagents:
-          - ReagentId: Radium
-            Quantity: 5
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Radium
+        Quantity: 5
   - type: Tag
     tags: *TagVial
 
@@ -149,13 +139,11 @@
   components:
   - type: Label
     currentLabel: reagent-name-chlorine
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 10
-        reagents:
-          - ReagentId: Chlorine
-            Quantity: 5
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Chlorine
+        Quantity: 5
   - type: Tag
     tags: *TagVial
 
@@ -166,12 +154,10 @@
   components:
   - type: Label
     currentLabel: reagent-name-plasma
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 10
-        reagents:
-          - ReagentId: Plasma
-            Quantity: 10
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Plasma
+        Quantity: 15
   - type: Tag
     tags: *TagVial

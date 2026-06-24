@@ -1,10 +1,10 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 275.2.0
+  engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 05/09/2026 01:11:18
+  time: 05/26/2026 10:23:43
   entityCount: 10411
 maps:
 - 1
@@ -3820,10 +3820,10 @@ entities:
             2: 3871
           12,22:
             2: 254
-            5: 57344
+            3: 57344
           12,23:
             2: 16385
-            5: 3822
+            3: 3822
           9,25:
             2: 3296
           9,26:
@@ -3909,9 +3909,9 @@ entities:
             2: 19976
           14,6:
             1: 224
-            3: 57344
+            4: 57344
           14,7:
-            4: 224
+            5: 224
           14,8:
             2: 61166
           15,5:
@@ -4540,6 +4540,11 @@ entities:
             Oxygen: 21.824879
             Nitrogen: 82.10312
         - volume: 2500
+          temperature: 235
+          moles:
+            Oxygen: 27.225372
+            Nitrogen: 102.419266
+        - volume: 2500
           temperature: 293.15
           moles:
             Nitrogen: 6666.982
@@ -4547,11 +4552,6 @@ entities:
           temperature: 293.15
           moles:
             Oxygen: 6666.982
-        - volume: 2500
-          temperature: 235
-          moles:
-            Oxygen: 27.225372
-            Nitrogen: 102.419266
         - volume: 2500
           temperature: 293.15
           moles:
@@ -26962,20 +26962,16 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
           maxVol: 30
-          name: null
           reagents:
           - data: []
             ReagentId: Fiber
             Quantity: 30
         stain:
-          temperature: 293.15
           canReact: False
           maxVol: 5
-          name: stain
           reagents: []
+      containers: []
 - proto: ClothingUniformJumpskirtJanimaid
   entities:
   - uid: 4009
@@ -26985,20 +26981,16 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
           maxVol: 30
-          name: null
           reagents:
           - data: []
             ReagentId: Fiber
             Quantity: 30
         stain:
-          temperature: 293.15
           canReact: False
           maxVol: 5
-          name: stain
           reagents: []
+      containers: []
     - type: Physics
       canCollide: False
 - proto: ClothingUniformJumpskirtJanimaidmini
@@ -27010,20 +27002,16 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
           maxVol: 30
-          name: null
           reagents:
           - data: []
             ReagentId: Fiber
             Quantity: 30
         stain:
-          temperature: 293.15
           canReact: False
           maxVol: 5
-          name: stain
           reagents: []
+      containers: []
     - type: Physics
       canCollide: False
 - proto: ClothingUniformJumpskirtPurpleElegantDress
@@ -27036,20 +27024,16 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
           maxVol: 30
-          name: null
           reagents:
           - data: []
             ReagentId: Fiber
             Quantity: 30
         stain:
-          temperature: 293.15
           canReact: False
           maxVol: 5
-          name: stain
           reagents: []
+      containers: []
 - proto: ClothingUniformJumpskirtRedElegantDress
   entities:
   - uid: 4012
@@ -27060,20 +27044,16 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
           maxVol: 30
-          name: null
           reagents:
           - data: []
             ReagentId: Fiber
             Quantity: 30
         stain:
-          temperature: 293.15
           canReact: False
           maxVol: 5
-          name: stain
           reagents: []
+      containers: []
 - proto: ClothingUniformJumpskirtTacticalMaid
   entities:
   - uid: 4014
@@ -27085,20 +27065,16 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
           maxVol: 30
-          name: null
           reagents:
           - data: []
             ReagentId: Fiber
             Quantity: 30
         stain:
-          temperature: 293.15
           canReact: False
           maxVol: 5
-          name: stain
           reagents: []
+      containers: []
     - type: InsideEntityStorage
 - proto: ClothingUniformJumpsuitHawaiRed
   entities:
@@ -27110,20 +27086,16 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
           maxVol: 30
-          name: null
           reagents:
           - data: []
             ReagentId: Fiber
             Quantity: 30
         stain:
-          temperature: 293.15
           canReact: False
           maxVol: 5
-          name: stain
           reagents: []
+      containers: []
 - proto: Coal1
   entities:
   - uid: 4036
@@ -61849,26 +61821,19 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
           maxVol: 30
-          name: null
           reagents:
           - data: []
             ReagentId: Fiber
             Quantity: 30
         absorbed:
-          temperature: 293.15
-          canReact: True
           maxVol: 30
-          name: null
           reagents: []
         stain:
-          temperature: 293.15
           canReact: False
           maxVol: 5
-          name: stain
           reagents: []
+      containers: []
   - uid: 9037
     components:
     - type: Transform
@@ -61877,26 +61842,19 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
           maxVol: 30
-          name: null
           reagents:
           - data: []
             ReagentId: Fiber
             Quantity: 30
         absorbed:
-          temperature: 293.15
-          canReact: True
           maxVol: 30
-          name: null
           reagents: []
         stain:
-          temperature: 293.15
           canReact: False
           maxVol: 5
-          name: stain
           reagents: []
+      containers: []
   - uid: 9038
     components:
     - type: Transform
@@ -61905,26 +61863,19 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
           maxVol: 30
-          name: null
           reagents:
           - data: []
             ReagentId: Fiber
             Quantity: 30
         absorbed:
-          temperature: 293.15
-          canReact: True
           maxVol: 30
-          name: null
           reagents: []
         stain:
-          temperature: 293.15
           canReact: False
           maxVol: 5
-          name: stain
           reagents: []
+      containers: []
 - proto: TowelColorNT
   entities:
   - uid: 9039
@@ -61942,26 +61893,19 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
           maxVol: 30
-          name: null
           reagents:
           - data: []
             ReagentId: Fiber
             Quantity: 30
         absorbed:
-          temperature: 293.15
-          canReact: True
           maxVol: 30
-          name: null
           reagents: []
         stain:
-          temperature: 293.15
           canReact: False
           maxVol: 5
-          name: stain
           reagents: []
+      containers: []
 - proto: ToyAi
   entities:
   - uid: 9041

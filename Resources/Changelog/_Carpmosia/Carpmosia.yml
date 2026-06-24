@@ -1544,4 +1544,392 @@
   id: 256
   time: '2026-05-11T21:09:46.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/332
+- author: wavesneglected
+  changes:
+  - message: Saltern's Atmospherics department's APC now starts wired!
+    type: Tweak
+  - message: Saltern's Atmospherics department now has properly wired buttons!
+    type: Tweak
+  - message: Saltern's max Player count has been reduced to 20.
+    type: Tweak
+  id: 257
+  time: '2026-05-12T10:00:47.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/339
+- author: SnappingOpossum
+  changes:
+  - message: Nitrous oxide and frezon prices have been reduced.
+    type: Tweak
+  id: 258
+  time: '2026-05-12T16:31:09.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/338
+- author: Cr0w-alt-f4
+  changes:
+  - message: Packed is now a Carp maintained map
+    type: Tweak
+  - message: Updated TEG burn chamber on Packed to comply with Delta P
+    type: Fix
+  id: 259
+  time: '2026-05-12T16:39:12.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/284
+- author: Merrokitsune
+  changes:
+  - message: Added holopads to salvage shuttle.
+    type: Add
+  id: 260
+  time: '2026-05-12T20:38:03.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/186
+- author: arenaconspiracy
+  changes:
+  - message: The NanoMed Plus now comes stocked with 90 unit disposable bags of essential
+      medicines.
+    type: Add
+  - message: The NanoMed Plus no longer stocks medical & EMT belts.
+    type: Remove
+  id: 261
+  time: '2026-05-12T22:33:01.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/319
+- author: imatsoup
+  changes:
+  - message: The particle accelerator will now alert engineering if it is activated,
+      deactivated, or if it's strength is set to 4.
+    type: Add
+  id: 262
+  time: '2026-05-12T22:35:52.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/341
+- author: 7sm5
+  changes:
+  - message: The SecTech now holds a new flashlight variant you can wear in your neck
+      slot.
+    type: Add
+  - message: Security Officer's lockers have a chance to hold an angled seclite
+    type: Add
+  id: 263
+  time: '2026-05-12T23:36:55.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/323
+- author: wavesneglected
+  changes:
+  - message: Added Lampocteis station, a low-population map for 0-10 players.
+    type: Add
+  id: 264
+  time: '2026-05-13T10:07:56.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/329
+- author: Breadboxyy
+  changes:
+  - message: Added a moth hologram for Station AIs!
+    type: Add
+  id: 265
+  time: '2026-05-13T16:30:30.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/343
+- author: imatsoup
+  changes:
+  - message: The /suicide command will now cause you to ghost instead.
+    type: Tweak
+  id: 266
+  time: '2026-05-19T12:22:45.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/345
+- author: wavesneglected
+  changes:
+  - message: Updated Lampocteis according to reported feedback.
+    type: Tweak
+  id: 267
+  time: '2026-05-20T07:36:15.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/344
+- author: wavesneglected
+  changes:
+  - message: Some Apcs on packed no longer start unpowered.
+    type: Tweak
+  - message: Security has been slightly renovated on Packed.
+    type: Tweak
+  id: 268
+  time: '2026-05-23T14:04:27.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/350
+- author: wavesneglected
+  changes:
+  - message: Lampocteis Station now has an extra tile around the gravity gen.
+    type: Tweak
+  id: 269
+  time: '2026-05-24T01:08:29.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/357
+- author: arenaconspiracy
+  changes:
+  - message: 'The Secret gamemode weight has been edited. At 20 players ready, the
+      chances are: NukeOps 25% - Xenoborgs 25% - Traitors 20% - Survival 10% - Revolution
+      10% - Zombies 10%'
+    type: Tweak
+  id: 270
+  time: '2026-05-26T01:22:09.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/355
+- author: Breadboxyy
+  changes:
+  - message: Added a popup to remind players that EORG is banned!
+    type: Add
+  id: 271
+  time: '2026-05-29T18:38:24.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/353
+- author: imatsoup
+  changes:
+  - message: The armory catalogue in the cargo request computer has been removed.
+    type: Remove
+  id: 272
+  time: '2026-05-30T08:18:40.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/365
+- author: imatsoup
+  changes:
+  - message: Getting hit by a cream pie will no longer force you to drop your held
+      items!
+    type: Tweak
+  id: 273
+  time: '2026-05-30T21:48:00.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/366
+- author: microfiche
+  changes:
+  - message: Character descriptions now show up immediately when examined.
+    type: Tweak
+  - message: The description textbox is now on the appearance page.
+    type: Tweak
+  - message: Reduced character description to 120 characters.
+    type: Tweak
+  id: 274
+  time: '2026-05-30T21:49:49.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/358
+- author: imatsoup
+  changes:
+  - message: Removed damage based gibbing and ashing. Other methods still work for
+      now.
+    type: Remove
+  id: 275
+  time: '2026-06-01T21:45:36.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/362
+- author: imatsoup
+  changes:
+  - message: The RoboTech Deluxe vendor and exosuit fabricator now hold the Experimental
+      Auto-Surgeon for the purposes of brain removal with minimal effort on the part
+      of the roboticist.
+    type: Add
+  id: 276
+  time: '2026-06-01T21:45:00.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/354
+- author: arenaconspiracy
+  changes:
+  - message: You can no longer strip multiple items at a time off of people.
+    type: Tweak
+  id: 277
+  time: '2026-06-02T10:44:25.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/359
+- author: imatsoup
+  changes:
+  - message: Blood Bound may now communicate with each other via Telepathy! (their
+      own private radio channel)
+    type: Add
+  id: 278
+  time: '2026-06-05T07:08:02.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/374
+- author: microfiche
+  changes:
+  - message: Vulpkanin jumpsuits fit better.
+    type: Tweak
+  id: 279
+  time: '2026-06-05T07:25:23.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/376
+- author: deadmanswaggin
+  changes:
+  - message: Scalpels can now be stored in shoes with items slots (e.g. Jackboots,
+      Cowboy Boots, et cetera).
+    type: Add
+  id: 280
+  time: '2026-06-10T22:23:50.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/372
+- author: imatsoup
+  changes:
+  - message: Salvage Rigs can now be purchased from the Salvage Store for 1600 tickets.
+    type: Add
+  id: 281
+  time: '2026-06-10T23:20:38.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/380
+- author: wavesneglected
+  changes:
+  - message: Carpmosia's Roleplay and Core rules have been rewritten to be simpler.
+      Please review them before joining in!
+    type: Tweak
+  id: 282
+  time: '2026-06-10T23:19:41.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/356
+- author: imatsoup
+  changes:
+  - message: Civilian shuttles (the standard Shuttle Console and the Cargo Shuttle
+      Console) no longer have FTL capability.
+    type: Tweak
+  id: 283
+  time: '2026-06-10T23:24:27.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/367
+- author: imatsoup
+  changes:
+  - message: The Xenoborg Mothership can now FTL again.
+    type: Fix
+  id: 284
+  time: '2026-06-11T08:48:53.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/385
+- author: imatsoup
+  changes:
+  - message: Fixed a typo in the title of roleplay rule 6
+    type: Fix
+  id: 285
+  time: '2026-06-11T09:15:46.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/386
+- author: Atakku
+  changes:
+  - message: Shortened the rule popup time from 180 seconds to 90
+    type: Tweak
+  id: 286
+  time: '2026-06-11T18:53:36.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/387
+- author: BrushTool
+  changes:
+  - message: Chemical containers were resprited
+    type: Tweak
+  id: 287
+  time: '2026-06-11T18:43:59.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/382
+- author: SnappingOpossum
+  changes:
+  - message: Xenoborgs as a main gamemode have been made rarer.
+    type: Tweak
+  - message: Traitor and survival have been made more common.
+    type: Tweak
+  id: 288
+  time: '2026-06-11T23:28:48.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/390
+- author: imatsoup
+  changes:
+  - message: Most instances of contraband salvage loot are now replaced or removed.
+      The prison wreck and syndicate shuttle are also gone.
+    type: Tweak
+  id: 289
+  time: '2026-06-12T00:25:07.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/381
+- author: imatsoup
+  changes:
+  - message: The recycler on the Xenoborg Mothership will no longer spawn salvage
+      tickets
+    type: Tweak
+  id: 290
+  time: '2026-06-12T14:28:00.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/389
+- author: GlupiyBrush
+  changes:
+  - message: Minor fixes for the chem resprite
+    type: Tweak
+  id: 291
+  time: '2026-06-12T14:53:26.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/391
+- author: imatsoup
+  changes:
+  - message: Someone in restraints can have multiple items stripped off their person
+      at once again.
+    type: Tweak
+  - message: Thieves can now strip people slightly faster when pickpocketing
+    type: Tweak
+  id: 292
+  time: '2026-06-12T15:26:54.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/388
+- author: Atakku
+  changes:
+  - message: BureaucraticError's extreme case of locking out every job has been tweaked
+      to leave more (20-30%) of jobs unlocked
+    type: Tweak
+  id: 293
+  time: '2026-06-12T22:05:20.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/394
+- author: SnappingOpossum
+  changes:
+  - message: ChemMaster UI has been slimmed back down to its old size.
+    type: Tweak
+  id: 294
+  time: '2026-06-14T08:08:03.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/395
+- author: Atakku
+  changes:
+  - message: Increased the redial timeout from 15 to 25 seconds
+    type: Tweak
+  id: 295
+  time: '2026-06-14T17:10:29.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/398
+- author: Atakku
+  changes:
+  - message: Sparks is now in rotation!
+    type: Tweak
+  - message: Lampocteis is now in rotation!
+    type: Tweak
+  id: 296
+  time: '2026-06-14T17:19:41.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/393
+- author: Atakku
+  changes:
+  - message: Added map previews to the map vote for all maps in current rotation
+    type: Add
+  id: 297
+  time: '2026-06-15T09:36:13.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/247
+- author: Atakku
+  changes:
+  - message: Added Carp Day holiday, that occurs on 18th of October!
+    type: Add
+  id: 298
+  time: '2026-06-17T08:54:06.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/401
+- author: Atakku
+  changes:
+  - message: Map previews have been made bigger, increased in resolution, and made
+      overall sharper
+    type: Tweak
+  id: 299
+  time: '2026-06-17T15:47:11.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/405
+- author: imatsoup
+  changes:
+  - message: Insulative Gloves are now engineering contraband.
+    type: Tweak
+  - message: The Youtool has more budget insuls.
+    type: Tweak
+  - message: The Youtool manager wire inventory has a new item.
+    type: Tweak
+  id: 300
+  time: '2026-06-17T16:30:40.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/396
+- author: imatsoup
+  changes:
+  - message: Budget insuls are no longer contraband.
+    type: Fix
+  id: 301
+  time: '2026-06-21T09:30:30.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/407
+- author: Jakeybobble
+  changes:
+  - message: Pet fish can now be picked as an inventory pet in loadouts
+    type: Add
+  id: 302
+  time: '2026-06-21T11:13:30.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/400
+- author: Atakku
+  changes:
+  - message: Fixed disposals unanchoring all the time
+    type: Fix
+  id: 303
+  time: '2026-06-21T22:01:57.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/414
+- author: Atakku
+  changes:
+  - message: Added 9 new tracks by mrjajakes to play in the background whenever a
+      nuke is armed!
+    type: Add
+  id: 304
+  time: '2026-06-24T17:36:35.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/418
+- author: Jakeybobble
+  changes:
+  - message: Pet fish can no longer bite things
+    type: Tweak
+  id: 305
+  time: '2026-06-24T17:50:42.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/413
 Order: -1
