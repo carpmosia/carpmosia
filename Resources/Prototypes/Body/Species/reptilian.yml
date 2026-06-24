@@ -142,8 +142,10 @@
       Unsexed: MaleReptilian
   - type: BodyEmotes
     soundsId: ReptilianBodyEmotes
-  - type: Damageable
-    damageModifierSet: Scale
+  # Carpmosia-start - Damage unmodifiers
+  # type: Damageable
+  # damageModifierSet: Scale
+  # Carpmosia-end - Damage unmodifiers
   - type: MeleeWeapon
     soundHit:
       collection: AlienClaw

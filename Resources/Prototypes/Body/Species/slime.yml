@@ -112,8 +112,10 @@
       Male: MaleSlime
       Female: FemaleSlime
       Unsexed: MaleSlime
-  - type: Damageable
-    damageModifierSet: Slime
+  # Carpmosia-start - Damage unmodifiers
+  # type: Damageable
+  # damageModifierSet: Slime
+  # Carpmosia-end - Damage unmodifiers
   - type: PassiveDamage # Around 8 damage a minute healed
     allowedStates:
     - Alive
