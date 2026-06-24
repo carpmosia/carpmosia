@@ -1283,9 +1283,9 @@
       color: *color-centcomm-top
     - state: stripe_bottom
       color: *color-centcomm-bottom
-    - sprite: _Carpmosia/Interface/Misc/job_icons.rsi # Carpmosia-edit - CBURN rework
+    - sprite: *icon-rsi
       offset: *icon-offset
-      state: CBURN-agent # Carpmosia-edit - CBURN rework
+      state: CBURN
   - type: Item
     heldPrefix: blue
   - type: PresetIdCard
