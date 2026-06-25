@@ -122,6 +122,8 @@
         Heat: 2.0
   - type: ThermalRegulator
     normalBodyTemperature: 312.0
+  - type: Wagging
+    action: ActionToggleWaggingVulpkanin
   # TODO: bloodstream?
 
 - type: entity

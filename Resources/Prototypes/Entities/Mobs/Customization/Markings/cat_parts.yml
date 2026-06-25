@@ -23,7 +23,7 @@
 - type: marking
   id: CatTail
   bodyPart: Tail
-  groupWhitelist: [Human, Tajaran] # Carpmosia-edit - Port Tajaran
+  groupWhitelist: [] # Carpmosia-edit - Remove non-animated tails
   coloring:
     default:
       type:
