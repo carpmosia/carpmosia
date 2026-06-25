@@ -56,6 +56,7 @@
     sprite: Clothing/Uniforms/Jumpsuit/bartender_purple.rsi
 
 - type: entity
+  ## Carpmosia-start - Captain's jumpsuit is now foldable
   parent: [ClothingUniformBase, BaseCommandContraband, ClothingUniformFoldableBase]
   id: ClothingUniformJumpsuitCaptain
   name: captain's jumpsuit
@@ -63,6 +64,7 @@
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/captain.rsi
+  ## Carpmosia-end - Captain's jumpsuit is now foldable
 
 - type: entity
   parent: [ClothingUniformBase, ClothingUniformFoldableBase]
