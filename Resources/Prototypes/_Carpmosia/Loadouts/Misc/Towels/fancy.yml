@@ -1,0 +1,35 @@
+- type: loadout
+  id: TowelColorMime
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 25h
+  storage:
+    back:
+    - TowelColorMime
+  groupBy: "towels_fancy"
+
+- type: loadout
+  id: TowelColorSilver
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 50h
+  storage:
+    back:
+    - TowelColorSilver
+  groupBy: "towels_fancy"
+
+- type: loadout
+  id: TowelColorGold
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 100h
+  storage:
+    back:
+    - TowelColorGold
+  groupBy: "towels_fancy"
