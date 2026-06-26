@@ -40,13 +40,13 @@ public sealed partial class MappingHelperWindow : DefaultWindow
     ("Light", 2, [
         "Poweredlight",  "PoweredSmallLight",
     ]),
-    ("Nothing", 2, [
+    ("Decorum", 2, [
         "ChairOfficeDark", "WaterCooler", "Chair", "Rack", "WeldingFuelTankFull", "WaterTankFull", "ComfyChair"
     ]),
-    ("Nothing", 2, [
+    ("Railings", 2, [
         "RailingCorner", "Railing", "RailingRound", "RailingCornerSmall"
     ]),
-    ("Nothing", 2, [
+    ("Disposals", 2, [
         "DisposalPipe", "DisposalBend",
         "DisposalRouterFlipped", "DisposalRouter",
         "DisposalJunctionFlipped", "DisposalJunction",
