@@ -4,7 +4,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:OverallPlaytimeRequirement
-      time: 20h
+      time: 10h
   storage:
     back:
       - PlushieLizardJobBoxer
@@ -16,7 +16,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:OverallPlaytimeRequirement
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobZookeeper
@@ -29,7 +29,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: Security
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobSecuritycadet
@@ -42,7 +42,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobChiefMedicalOfficer
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobChiefmedicalofficer
@@ -55,7 +55,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobMedicalDoctor
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobMedicaldoctor
@@ -68,7 +68,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: Medical
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobMedicalintern
@@ -81,7 +81,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobChemist
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobChemist
@@ -94,7 +94,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobParamedic
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobParamedic
@@ -107,7 +107,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobReporter
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobReporter
@@ -120,7 +120,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobPsychologist
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobPsychologist
@@ -133,7 +133,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobMusician
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobMusician
@@ -146,7 +146,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobQuartermaster
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobQuartermaster
@@ -159,7 +159,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobCargoTechnician
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobCargotechnician
@@ -172,7 +172,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobSalvageSpecialist
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobSalvagespecialist
@@ -185,7 +185,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobChiefEngineer
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobChiefengineer
@@ -198,7 +198,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: Engineering
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobTechnicalassistant
@@ -211,7 +211,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobStationEngineer
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobStationengineer
@@ -224,7 +224,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobAtmosphericTechnician
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobAtmospherictechnician
@@ -237,7 +237,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobResearchDirector
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobResearchdirector
@@ -250,7 +250,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobScientist
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobScientist
@@ -263,7 +263,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: Science
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobResearchassistant
@@ -276,7 +276,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobHeadOfSecurity
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobHeadofsecurity
@@ -289,7 +289,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobWarden
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobWarden
@@ -302,7 +302,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobDetective
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobDetective
@@ -315,7 +315,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobSecurityOfficer
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobSecurityofficer
@@ -328,7 +328,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobMime
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobMime
@@ -341,7 +341,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobBotanist
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobBotanist
@@ -354,7 +354,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobClown
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobClown
@@ -367,7 +367,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobCaptain
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobCaptain
@@ -380,7 +380,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobHeadOfPersonnel
-      time: 20h
+      time: 10h
   storage:
     back:
       - PlushieLizardJobHeadofpersonnel
@@ -393,7 +393,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobPassenger
-      time: 20h
+      time: 10h
   storage:
     back:
       - PlushieLizardJobPassenger
@@ -406,7 +406,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobBartender
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobBartender
@@ -419,7 +419,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobServiceWorker
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobServiceworker
@@ -432,7 +432,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobChef
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobChef
@@ -445,7 +445,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobLibrarian
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobLibrarian
@@ -458,7 +458,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobLawyer
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobLawyer
@@ -471,7 +471,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobChaplain
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobChaplain
@@ -484,7 +484,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobJanitor
-      time: 20h
+      time: 10h
   storage:
     back:
     - PlushieLizardJobJanitor
