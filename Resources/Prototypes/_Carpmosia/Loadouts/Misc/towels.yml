@@ -3,88 +3,124 @@
   storage:
     back:
     - TowelColorWhite
-  groupBy: "towels_basic"
+  groupBy: "towels"
 
 - type: loadout
   id: TowelColorGray
   storage:
     back:
     - TowelColorGray
-  groupBy: "towels_basic"
+  groupBy: "towels"
 
 - type: loadout
   id: TowelColorBlack
   storage:
     back:
     - TowelColorBlack
-  groupBy: "towels_basic"
+  groupBy: "towels"
 
 - type: loadout
   id: TowelColorRed
   storage:
     back:
     - TowelColorRed
-  groupBy: "towels_basic"
+  groupBy: "towels"
 
 - type: loadout
   id: TowelColorOrange
   storage:
     back:
     - TowelColorOrange
-  groupBy: "towels_basic"
+  groupBy: "towels"
 
 - type: loadout
   id: TowelColorLightBrown
   storage:
     back:
     - TowelColorLightBrown
-  groupBy: "towels_basic"
+  groupBy: "towels"
 
 - type: loadout
   id: TowelColorYellow
   storage:
     back:
     - TowelColorYellow
-  groupBy: "towels_basic"
+  groupBy: "towels"
 
 - type: loadout
   id: TowelColorDarkGreen
   storage:
     back:
     - TowelColorDarkGreen
-  groupBy: "towels_basic"
+  groupBy: "towels"
 
 - type: loadout
   id: TowelColorGreen
   storage:
     back:
     - TowelColorGreen
-  groupBy: "towels_basic"
+  groupBy: "towels"
 
 - type: loadout
   id: TowelColorLightBlue
   storage:
     back:
     - TowelColorLightBlue
-  groupBy: "towels_basic"
+  groupBy: "towels"
 
 - type: loadout
   id: TowelColorDarkBlue
   storage:
     back:
     - TowelColorDarkBlue
-  groupBy: "towels_basic"
+  groupBy: "towels"
 
 - type: loadout
   id: TowelColorPurple
   storage:
     back:
     - TowelColorPurple
-  groupBy: "towels_basic"
+  groupBy: "towels"
 
 - type: loadout
   id: TowelColorMaroon
   storage:
     back:
     - TowelColorMaroon
-  groupBy: "towels_basic"
+  groupBy: "towels"
+
+- type: loadout
+  id: TowelColorMime
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 25h
+  storage:
+    back:
+    - TowelColorMime
+  groupBy: "towels"
+
+- type: loadout
+  id: TowelColorSilver
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 50h
+  storage:
+    back:
+    - TowelColorSilver
+  groupBy: "towels"
+
+- type: loadout
+  id: TowelColorGold
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 100h
+  storage:
+    back:
+    - TowelColorGold
+  groupBy: "towels"
