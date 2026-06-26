@@ -23,6 +23,11 @@ namespace Content.Shared.Movement.Components
         [DataField, AutoNetworkedField]
         public float FootstepVariation;
 
+        // Carpmosia-start - Footstep volumes
+        [DataField, AutoNetworkedField]
+        public float FootstepModifier = 1.0f;
+        // Carpmosia-end - Footstep volumes
+
         [ViewVariables(VVAccess.ReadWrite)]
         public EntityCoordinates LastPosition { get; set; }
 

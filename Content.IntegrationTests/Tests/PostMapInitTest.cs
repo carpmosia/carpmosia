@@ -49,7 +49,7 @@ namespace Content.IntegrationTests.Tests
 
         private static readonly string[] Grids =
         {
-            "/Maps/centcomm.yml",
+            "/Maps/_Carpmosia/centcomm.yml", // Carpmosia-edit - Centcomm tweaks
             AdminTestArenaSystem.ArenaMapPath
         };
 
@@ -83,6 +83,7 @@ namespace Content.IntegrationTests.Tests
             "/Maps/centcomm.yml",
             "/Maps/Shuttles/AdminSpawn/**", // admin gaming
             "/Maps/_Carpmosia/Legacy/**", // Carpmosia-edit - Legacy maps
+            "/Maps/_Carpmosia/centcomm.yml", // Carpmosia-edit - Centcomm Tweaks
         };
 
         /// <summary>
