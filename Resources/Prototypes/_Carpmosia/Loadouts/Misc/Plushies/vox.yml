@@ -5,11 +5,11 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: Engineering
-      time: 5h
+      time: 1h
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:OverallPlaytimeRequirement
-      time: 10h
+      time: 2.5h
 
 - type: loadout
   id: PlushieVox
