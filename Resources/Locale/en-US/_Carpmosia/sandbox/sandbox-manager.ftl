@@ -1,1 +1,1 @@
-sandbox-window-mapping-menu-button = Mapping Menu
+sandbox-window-mapping-helper-button = Mapping Helper

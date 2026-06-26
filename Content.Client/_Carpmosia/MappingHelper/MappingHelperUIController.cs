@@ -9,14 +9,14 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Client.MappingMenu;
+namespace Content.Client.MappingHelper;
 
-public sealed class MappingMenuUIController : UIController, IOnStateExited<GameplayState>
+public sealed class MappingHelperUIController : UIController, IOnStateExited<GameplayState>
 {
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [Dependency] private readonly IPlacementManager _placement = default!;
 
-    private MappingMenuWindow? _window;
+    private MappingHelperWindow? _window;
 
     public void ToggleWindow()
     {
@@ -44,7 +44,7 @@ public sealed class MappingMenuUIController : UIController, IOnStateExited<Gamep
     {
         if (_window is { Disposed: false })
             return;
-        _window = UIManager.CreateWindow<MappingMenuWindow>();
+        _window = UIManager.CreateWindow<MappingHelperWindow>();
         _window.OnClose += WindowClosed;
     }
 

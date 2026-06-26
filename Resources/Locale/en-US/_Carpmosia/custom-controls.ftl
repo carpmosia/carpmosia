@@ -1,2 +1,2 @@
-## MappingMenu
-mapping-menu-window-title = Mapping Menu
+## MappingHelper
+mapping-helper-window-title = Mapping Helper

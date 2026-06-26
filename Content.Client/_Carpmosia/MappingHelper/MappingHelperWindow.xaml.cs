@@ -6,10 +6,10 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using Robust.Client.Placement;
 
-namespace Content.Client.MappingMenu;
+namespace Content.Client.MappingHelper;
 
 [GenerateTypedNameReferences]
-public sealed partial class MappingMenuWindow : DefaultWindow
+public sealed partial class MappingHelperWindow : DefaultWindow
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IPlacementManager _place = default!;
@@ -54,7 +54,7 @@ public sealed partial class MappingMenuWindow : DefaultWindow
     ])
     ];
 
-    public MappingMenuWindow()
+    public MappingHelperWindow()
     {
         RobustXamlLoader.Load(this);
 
