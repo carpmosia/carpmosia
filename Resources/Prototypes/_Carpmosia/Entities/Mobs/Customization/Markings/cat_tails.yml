@@ -1,7 +1,7 @@
 - type: marking
   id: CatTailBasic
   bodyPart: Tail
-  groupWhitelist: [Human, Tajaran]
+  groupWhitelist: [Human, Vulpkanin, Tajaran]
   coloring:
     default:
       type:
@@ -22,7 +22,7 @@
 - type: marking
   id: CatTailBasicWithBow
   bodyPart: Tail
-  groupWhitelist: [Human, Tajaran]
+  groupWhitelist: [Human, Vulpkanin, Tajaran]
   coloring:
     default:
       type:
@@ -49,7 +49,7 @@
 - type: marking
   id: CatTailBasicWithBell
   bodyPart: Tail
-  groupWhitelist: [Human, Tajaran]
+  groupWhitelist: [Human, Vulpkanin, Tajaran]
   coloring:
     default:
       type:
@@ -95,7 +95,7 @@
           !type:SimpleColoring
             color: "#FFFFFF"
   bodyPart: Tail
-  groupWhitelist: [Human, Tajaran]
+  groupWhitelist: [Human, Vulpkanin, Tajaran]
   sprites:
   - sprite: _Carpmosia/Mobs/Customization/cat_tails.rsi
     state: basic_tail_tip
@@ -113,15 +113,6 @@
   id: CatTailBasicAnimated
   bodyPart: Tail
   groupWhitelist: []
-  coloring:
-    default:
-      type:
-        !type:CategoryColoring
-          category: Hair
-      fallbackTypes:
-      - !type:CategoryColoring
-        category: FacialHair
-      - !type:SkinColoring
   sprites:
   - sprite: _Carpmosia/Mobs/Customization/cat_tails.rsi
     state: basic_tail_tip_wagging
@@ -134,19 +125,6 @@
   id: CatTailBasicWithBowAnimated
   bodyPart: Tail
   groupWhitelist: []
-  coloring:
-    default:
-      type:
-        !type:CategoryColoring
-          category: Hair
-      fallbackTypes:
-      - !type:CategoryColoring
-        category: FacialHair
-    layers:
-      basic_bow:
-        type:
-          !type:SimpleColoring
-            color: "#FFFFFF"
   sprites:
   - sprite: _Carpmosia/Mobs/Customization/cat_tails.rsi
     state: basic_tail_tip_wagging
@@ -161,20 +139,6 @@
   id: CatTailBasicWithBellAnimated
   bodyPart: Tail
   groupWhitelist: []
-  coloring:
-    default:
-      type:
-        !type:CategoryColoring
-          category: Hair
-      fallbackTypes:
-      - !type:CategoryColoring
-        category: FacialHair
-      - !type:SkinColoring
-    layers:
-      basic_bell:
-        type:
-          !type:SimpleColoring
-            color: "#FFFFFF"
   sprites:
   - sprite: _Carpmosia/Mobs/Customization/cat_tails.rsi
     state: basic_tail_tip_wagging
@@ -187,24 +151,6 @@
 
 - type: marking
   id: CatTailBasicWithBowAndBellAnimated
-  coloring:
-    default:
-      type:
-        !type:CategoryColoring
-          category: Hair
-      fallbackTypes:
-      - !type:CategoryColoring
-        category: FacialHair
-      - !type:SkinColoring
-    layers:
-      basic_bow:
-        type:
-          !type:SimpleColoring
-            color: "#FFFFFF"
-      basic_bell:
-        type:
-          !type:SimpleColoring
-            color: "#FFFFFF"
   bodyPart: Tail
   groupWhitelist: []
   sprites:
