@@ -250,6 +250,8 @@ book-text-nemesis = Thro’ the ghoul-guarded gateways of slumber,
            I have sounded all things with my sight;
  And I struggle and shriek ere the daybreak, being driven to madness with fright.
 
+
+
 book-text-the-raven = Once upon a midnight dreary, while I pondered, weak and weary,
  Over many a quaint and curious volume of forgotten lore—
     While I nodded, nearly napping, suddenly there came a tapping,
@@ -676,6 +678,8 @@ book-text-a-modest-proposal = It is a melancholy object to those, who walk throu
 
  I profess in the sincerity of my heart, that I have not the least personal interest in endeavouring to promote this necessary work, having no other motive than the publick good of my country, by advancing our trade, providing for infants, relieving the poor, and giving some pleasure to the rich. I have no children, by which I can propose to get a single penny; the youngest being nine years old, and my wife past child-bearing.
 
+
+
 book-text-wurthering-heights=CHAPTER I
  1801—I have just returned from a visit to my landlord—the solitary neighbour that I shall be troubled with. This is certainly a beautiful country! In all England, I do not believe that I could have fixed on a situation so completely removed from the stir of society. A perfect misanthropist’s Heaven—and Mr. Heathcliff and I are such a suitable pair to divide the desolation between us. A capital fellow! He little imagined how my heart warmed towards him when I beheld his black eyes withdraw so suspiciously under their brows, as I rode up, and when his fingers sheltered themselves, with a jealous resolution, still further in his waistcoat, as I announced my name.
 
@@ -730,6 +734,8 @@ book-text-wurthering-heights=CHAPTER I
  “Come, come,” he said, “you are flurried, Mr. Lockwood. Here, take a little wine. Guests are so exceedingly rare in this house that I and my dogs, I am willing to own, hardly know how to receive them. Your health, sir?”
 
  I bowed and returned the pledge; beginning to perceive that it would be foolish to sit sulking for the misbehaviour of a pack of curs; besides, I felt loth to yield the fellow further amusement at my expense; since his humour took that turn. He—probably swayed by prudential consideration of the folly of offending a good tenant—relaxed a little in the laconic style of chipping off his pronouns and auxiliary verbs, and introduced what he supposed would be a subject of interest to me,—a discourse on the advantages and disadvantages of my present place of retirement. I found him very intelligent on the topics we touched; and before I went home, I was encouraged so far as to volunteer another visit to-morrow. He evidently wished no repetition of my intrusion. I shall go, notwithstanding. It is astonishing how sociable I feel myself compared with him.
+
+
 
 book-text-crime-and-punishment=CHAPTER I
  On an exceptionally hot evening early in July a young man came out of the garret in which he lodged in S. Place and walked slowly, as though in hesitation, towards K. bridge.
@@ -840,7 +846,7 @@ book-text-crime-and-punishment=CHAPTER I
 
 
 
-book-text-the-metamorphosis=I
+book-text-the-metamorphosis = I
  One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked.
 
  “What’s happened to me?” he thought. It wasn’t a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls. A collection of textile samples lay spread out on the table—Samsa was a travelling salesman—and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer.
@@ -1842,3 +1848,1233 @@ book-text-the-modern-prometheus = Chapter 1
  When my father returned from Milan, he found playing with me in the hall of our villa a child fairer than pictured cherub—a creature who seemed to shed radiance from her looks and whose form and motions were lighter than the chamois of the hills. The apparition was soon explained. With his permission my mother prevailed on her rustic guardians to yield their charge to her. They were fond of the sweet orphan. Her presence had seemed a blessing to them, but it would be unfair to her to keep her in poverty and want when Providence afforded her such powerful protection. They consulted their village priest, and the result was that Elizabeth Lavenza became the inmate of my parents’ house—my more than sister—the beautiful and adored companion of all my occupations and my pleasures.
 
  Everyone loved Elizabeth. The passionate and almost reverential attachment with which all regarded her became, while I shared it, my pride and my delight. On the evening previous to her being brought to my home, my mother had said playfully, “I have a pretty present for my Victor—tomorrow he shall have it.” And when, on the morrow, she presented Elizabeth to me as her promised gift, I, with childish seriousness, interpreted her words literally and looked upon Elizabeth as mine—mine to protect, love, and cherish. All praises bestowed on her I received as made to a possession of my own. We called each other familiarly by the name of cousin. No word, no expression could body forth the kind of relation in which she stood to me—my more than sister, since till death she was to be mine only.
+
+
+
+book-text-romance-of-the-three-kingdoms = Chapter 1 : Three Heroes Swear Brotherhood In The Peach Garden; One Victory Shatters The Rebels In Battlegrounds.
+
+ The world under heaven, after a long period of division, tends to unite; after a long period of union, tends to divide. This has been so since antiquity. When the rule of the Zhou Dynasty weakened, seven contending kingdoms sprang up, warring one with another until the kingdom of Qin prevailed and possessed the empire. But when Qin’s destiny had been fulfilled, arose two opposing kingdoms, Chu and Han, to fight for the mastery. And Han was the victor.
+
+ The rise of the fortunes of Han began when Liu Bang the Supreme Ancestor slew a white serpent to raise the banners of uprising, which only ended when the whole empire belonged to Han (BC 202). This magnificent heritage was handed down in successive Han emperors for two hundred years, till the rebellion of Wang Mang caused a disruption. But soon Liu Xiu the Latter Han Founder restored the empire, and Han emperors continued their rule for another two hundred years till the days of Emperor Xian, which were doomed to see the beginning of the empire’s division into three parts, known to history as The Three Kingdoms.
+
+ But the descent into misrule hastened in the reigns of the two predecessors of Emperor Xian —-Emperors Huan and Ling —-who sat in the dragon throne about the middle of the second century.
+
+ Emperor Huan paid no heed to the good people of his court, but gave his confidence to the Palace eunuchs. He lived and died, leaving the scepter to Emperor Ling, whose advisers were Regent Marshal Dou Wu and Imperial Guardian Chen Fan. Dou Wu and Chen Fan, disgusted with the abuses of the eunuchs in the affairs of the state, plotted the destruction for the power-abusing eunuchs. But Chief Eunuch Cao Jie was not to be disposed of easily. The plot leaked out, and the honest Dou Wu and Chen Fan were put to death, leaving the eunuchs stronger than before.
+
+ It fell upon the day of full moon of the fourth month, the second year, in the era of Established Calm (AD 168), that Emperor Ling went in state to the Hall of Virtue. As he drew near the throne, a rushing whirlwind arose in the corner of the hall and, lo! from the roof beams floated down a monstrous black serpent that coiled itself up on the very seat of majesty. The Emperor fell in a swoon. Those nearest him hastily raised and bore him to his palace, while the courtiers scattered and fled. The serpent disappeared.
+
+ But there followed a terrific tempest, thunder, hail, and torrents of rain, lasting till midnight and working havoc on all sides. Two years later the earth quaked in Capital Luoyang, while along the coast a huge tidal wave rushed in which, in its recoil, swept away all the dwellers by the sea. Another evil omen was recorded ten years later, when the reign title was changed to Radiant Harmony (AD 178): Certain hens suddenly crowed. At the new moon of the sixth month, a long wreath of murky cloud wound its way into the Hall of Virtue, while in the following month a rainbow was seen in the Dragon Chamber. Away from the capital, a part of the Yuan Mountains collapsed, leaving a mighty rift in the flank.
+
+ Such were some of various omens. Emperor Ling, greatly moved by these signs of the displeasure of Heaven, issued an edict asking his ministers for an explanation of the calamities and marvels.
+
+ Court Counselor Cai Yong replied bluntly: “Falling rainbows and changes of fowls’ sexes are brought about by the interference of empresses and eunuchs in state affairs.”
+
+ The Emperor read this memorial with deep sighs, and Chief Eunuch Cao Jie, from his place behind the throne, anxiously noted these signs of grief. An opportunity offering, Cao Jie informed his fellows, and a charge was trumped up against Cai Yong, who was driven from the court and forced to retire to his country house.
+
+ With this victory the eunuchs grew bolder. Ten of them, rivals in wickedness and associates in evil deeds, formed a powerful party known as the Ten Regular Attendants —-Zhang Rang, Zhao Zhong, Cheng Kuang, Duan Gui, Feng Xu, Guo Sheng, Hou Lan, Jian Shuo, Cao Jie, and Xia Yun.
+
+ One of them, Zhang Rang, won such influence that he became the Emperor’s most honored and trusted adviser. The Emperor even called him “Foster Father”. So the corrupt state administration went quickly from bad to worse, till the country was ripe for rebellion and buzzed with brigandage.
+
+ At this time in the county of Julu was a certain Zhang family, of whom three brothers bore the name of Zhang Jue, Zhang Ba, and Zhang Lian, respectively. The eldest Zhang Jue was an unclassed graduate, who devoted himself to medicine. One day, while culling simples in the woods, Zhang Jue met a venerable old gentleman with very bright, emerald eyes and fresh complexion, who walked with an oak-wood staff. The old man beckoned Zhang Jue into a cave and there gave him three volumes of The Book of Heaven.
+
+ “This book,” said the old gentleman, “is the Essential Arts of Peace. With the aid of these volumes, you can convert the world and rescue humankind. But you must be single-minded, or, rest assured, you will greatly suffer.”
+
+ With a humble obeisance, Zhang Jue took the book and asked the name of his benefactor.
+
+ “I am Saint Hermit of the Southern Land,” was the reply, as the old gentleman disappeared in thin air.
+
+ Zhang Jue studied the wonderful book eagerly and strove day and night to reduce its precepts to practice. Before long, he could summon the winds and command the rain, and he became known as the Mystic of the Way of Peace.
+
+ In the first month of the first year of Central Stability (AD 184), there was a terrible pestilence that ran throughout the land, whereupon Zhang Jue distributed charmed remedies to the afflicted. The godly medicines brought big successes, and soon he gained the tittle of the Wise and Worthy Master. He began to have a following of disciples whom he initiated into the mysteries and sent abroad throughout all the land. They, like their master, could write charms and recite formulas, and their fame increased his following.
+
+ Zhang Jue began to organize his disciples. He established thirty-six circuits, the larger with ten thousand or more members, the smaller with about half that number. Each circuit had its chief who took the military title of General. They talked wildly of the death of the blue heaven and the setting up of the golden one; they said a new cycle was beginning and would bring universal good fortune to all members; and they persuaded people to chalk the symbols for the first year of the new cycle on the main door of their dwellings.
+
+ With the growth of the number of his supporters grew also the ambition of Zhang Jue. The Wise and Worthy Master dreamed of empire. One of his partisans, Ma Yuanyi, was sent bearing gifts to gain the support of the eunuchs within the Palace.
+
+ To his brothers Zhang Jue said, “For schemes like ours always the most difficult part is to gain the popular favor. But that is already ours. Such an opportunity must not pass.”
+
+ And they began to prepare. Many yellow flags and banners were made, and a day was chosen for the uprising. Then Zhang Jue wrote letters to Feng Xu and sent them by one of his followers, Tang Zhou, who alas! betrayed his trust and reported the plot to the court. The Emperor summoned the trusty Regent Marshal He Jin and bade him look to the issue. Ma Yuanyi was at once taken and beheaded. Feng Xu and many others were cast into prison.
+
+ The plot having thus become known, the Zhang brothers were forced at once to take the field. They took up grandiose titles: Zhang Jue the Lord of Heaven, Zhang Ba the Lord of Earth, and Zhang Lian the Lord of Human. And in these names they put forth this manifesto:
+
+ “The good fortune of the Han is exhausted, and the Wise and Worthy Man has appeared. Discern the will of Heaven, O ye people, and walk in the way of righteousness, whereby alone ye may attain to peace.”
+
+ Support was not lacking. On every side people bound their heads with yellow scarves and joined the army of the rebel Zhang Jue, so that soon his strength was nearly half a million strong, and the official troops melted away at a whisper of his coming.
+
+ Regent Marshal and Imperial Guardian, He Jin, memorialized for general preparations against the Yellow Scarves, and an edict called upon everyone to fight against the rebels. In the meantime, three Imperial Commanders —-Lu Zhi, Huangfu Song, and Zhu Jun —-marched against them in three directions with veteran soldiers.
+
+ Meanwhile Zhang Jue led his army into Youzhou, the northeastern region of the empire. The Imperial Protector of Youzhou was Liu Yan, a scion of the Imperial House. Learning of the approach of the rebels, Liu Yan called in Commander Zhou Jing to consult over the position.
+
+ Zhou Jing said, “They are many and we few. We must enlist more troops to oppose them.”
+
+ Liu Yan agreed, and he put out notices calling for volunteers to serve against the rebels. One of these notices was posted up in the county of Zhuo, where lived one man of high spirit.
+
+ This man was no mere bookish scholar, nor found he any pleasure in study. But he was liberal and amiable, albeit a man of few words, hiding all feeling under a calm exterior. He had always cherished a yearning for high enterprise and had cultivated the friendship of humans of mark. He was tall of stature. His ears were long, the lobes touching his shoulders, and his hands hung down below his knees. His eyes were very big and prominent so that he could see backward past his ears. His complexion was as clear as jade, and he had rich red lips.
+
+ He was a descendant of Prince Sheng of Zhongshan whose father was the Emperor Jing (reigned BC 157-141), the fourth emperor of the Han Dynasty. His name was Liu Bei. Many years before, one of his forbears had been the governor of that very county, but had lost his rank for remissness in ceremonial offerings. However, that branch of the family had remained on in the place, gradually becoming poorer and poorer as the years rolled on. His father Liu Hong had been a scholar and a virtuous official but died young. The widow and orphan were left alone, and Liu Bei as a lad won a reputation for filial piety.
+
+ At this time the family had sunk deep in poverty, and Liu Bei gained his living by selling straw sandals and weaving grass mats. The family home was in a village near the chief city of Zhuo. Near the house stood a huge mulberry tree, and seen from afar its curved profile resembled the canopy of a wagon. Noting the luxuriance of its foliage, a soothsayer had predicted that one day a man of distinction would come forth from the family.
+
+ As a child, Liu Bei played with the other village children beneath this tree, and he would climb up into it, saying, “I am the Son of Heaven, and this is my chariot!” His uncle, Liu Yuanqi, recognized that Liu Bei was no ordinary boy and saw to it that the family did not come to actual want.
+
+ When Liu Bei was fifteen, his mother sent him traveling for his education. For a time he served Zheng Xuan and Lu Zhi as masters. And he became great friends with Gongsun Zan.
+
+ Liu Bei was twenty-eight when the outbreak of the Yellow Scarves called for soldiers. The sight of the notice saddened him, and he sighed as he read it.
+
+ Suddenly a rasping voice behind him cried, “Sir, why sigh if you do nothing to help your country?”
+
+ Turning quickly he saw standing there a man about his own height, with a bullet head like a leopard’s, large eyes, a swallow pointed chin, and whiskers like a tiger’s . He spoke in a loud bass voice and looked as irresistible as a dashing horse. At once Liu Bei saw he was no ordinary man and asked who he was.
+
+ “Zhang Fei is my name,” replied the stranger. “I live near here where I have a farm; and I am a wine seller and a butcher as well; and I like to become acquainted with worthy people. Your sighs as you read the notice drew me toward you.”
+
+ Liu Bei replied, “I am of the Imperial Family, Liu Bei is my name. And I wish I could destroy these Yellow Scarves and restore peace to the land, but alas! I am helpless.”
+
+ “I have the means,” said Zhang Fei. “Suppose you and I raised some troops and tried what we could do.”
+
+ This was happy news for Liu Bei, and the two betook themselves to the village inn to talk over the project. As they were drinking, a huge, tall fellow appeared pushing a hand-cart along the road. At the threshold he halted and entered the inn to rest awhile and he called for wine.
+
+ “And be quick!” added he. “For I am in haste to get into the town and offer myself for the army.”
+
+ Liu Bei looked over the newcomer, item by item, and he noted the man had a huge frame, a long beard, a vivid face like an apple, and deep red lips. He had eyes like a phoenix’s and fine bushy eyebrows like silkworms. His whole appearance was dignified and awe-inspiring. Presently, Liu Bei crossed over, sat down beside him and asked his name.
+
+ “I am Guan Yu,” replied he. “I am a native of the east side of the river, but I have been a fugitive on the waters for some five years, because I slew a ruffian who, since he was wealthy and powerful, was a bully. I have come to join the army here.”
+
+ Then Liu Bei told Guan Yu his own intentions, and all three went away to Zhang Fei’s farm where they could talk over the grand project.
+
+ Said Zhang Fei, “The peach trees in the orchard behind the house are just in full flower. Tomorrow we will institute a sacrifice there and solemnly declare our intention before Heaven and Earth, and we three will swear brotherhood and unity of aims and sentiments: Thus will we enter upon our great task.”
+
+ Both Liu Bei and Guan Yu gladly agreed.
+
+ All three being of one mind, next day they prepared the sacrifices, a black ox, a white horse, and wine for libation. Beneath the smoke of the incense burning on the altar, they bowed their heads and recited this oath:
+
+ “We three —-Liu Bei, Guan Yu, and Zhang Fei —-though of different families, swear brotherhood, and promise mutual help to one end. We will rescue each other in difficulty; we will aid each other in danger. We swear to serve the state and save the people. We ask not the same day of birth, but we seek to die together. May Heaven, the all-ruling, and Earth, the all-producing, read our hearts. If we turn aside from righteousness or forget kindliness, may Heaven and Human smite us!”
+
+ They rose from their knees. The two others bowed before Liu Bei as their elder brother, and Zhang Fei was to be the youngest of the trio. This solemn ceremony performed, they slew other oxen and made a feast to which they invited the villagers. Three hundred joined them, and all feasted and drank deep in the Peach Garden.
+
+ The next day weapons were mustered. But there were no horses to ride. This was a real grief. But soon they were cheered by the arrival of two horse dealers with a drove of horses.
+
+ “Thus does Heaven help us!” said Liu Bei.
+
+ And the three brothers went forth to welcome the merchants. They were Zhang Shiping and Su Shuang from Zhongshan. They went northwards every year to buy horses. They were now on their way home because of the Yellow Scarves. The brothers invited them to the farm, where wine was served before them. Then Liu Bei told them of the plan to strive for tranquillity. Zhang Shiping and Su Shuang were glad and at once gave the brothers fifty good steeds, and beside, five hundred ounces of gold and silver and one thousand five hundred pounds of steel fit for the forging of weapons.
+
+ The brothers expressed their gratitude, and the merchants took their leave. Then blacksmiths were summoned to forge weapons. For Liu Bei they made a pair of ancient swords; for Guan Yu they fashioned a long-handled, curve blade called Green-Dragon Saber, which weighed a full one hundred pounds; and for Zhang Fei they created a ten-foot spear called Serpent Halberd. Each too had a helmet and full armor.
+
+ When weapons were ready, the troop, now five hundred strong, marched to Commander Zhou Jing, who presented them to Imperial Protector Liu Yan. When the ceremony of introduction was over, Liu Bei declared his ancestry, and Liu Yan at once accorded him the esteem due to a relation.
+
+ Before many days it was announced that the rebellion had actually broken out, and a Yellow Scarves chieftain, Cheng Yuanzhi, had invaded the region with a body of fifty thousand rebels. Liu Yan bade Zhou Jing and the three brothers to go out to oppose them with the five hundred troops. Liu Bei joyfully undertook to lead the van and marched to the foot of the Daxing Hills where they saw the rebels. The rebels wore their hair flying about their shoulders, and their foreheads were bound with yellow scarves.
+
+ When the two armies had been drawn up opposite each other, Liu Bei rode to the front, Guan Yu to his left, Zhang Fei to his right.
+
+ Flourishing his whip, Liu Bei began to hurl reproaches at the rebels, crying, “O malcontents! Why not dismount and be bound?”
+
+ Their leader Cheng Yuanzhi, full of rage, sent out one general, Deng Mao, to begin the battle. At once rode forward Zhang Fei, his serpent halberd poised to strike. One thrust and Deng Mao rolled off his horse, pierced through the heart. At this Cheng Yuanzhi himself whipped up his steed and rode forth with sword raised ready to slay Zhang Fei. But Guan Yu swung up his ponderous green-dragon saber and rode at Cheng Yuanzhi. At the sight, fear seized upon Cheng Yuanzhi, and before he could defend himself, the great saber fell, cutting him in halves.
+
+
+ Two heroes new to war’s alarms,
+
+ Ride boldly forth to try their arms.
+
+ Their doughty deeds three kingdoms tell,
+
+ And poets sing how these befell.
+
+ Their leader fallen, the rebels threw away their weapons and fled. The official soldiers dashed in among them. Many thousands surrendered and the victory was complete. Thus this part of the rebellion was broken up.
+
+ On their return, Liu Yan personally met them and distributed rewards. But the next day, letters came from Imperial Protector Gong Jing of Qingzhou Region saying that the rebels were laying siege to the chief city and it was near falling. Help was needed quickly.
+
+ “I will go,” said Liu Bei as soon as he heard the news.
+
+ And he set out at once with his own soldiers, reinforced by a body of five thousand under Zhou Jing. The rebels, seeing help coming, at once attacked most fiercely. The relieving force being comparatively small could not prevail and retired some ten miles, where they made a camp.
+
+ “They are many and we but few,” said Liu Bei to his brothers. “We can only beat them by superior strategy.”
+
+ So they prepared an ambush. Guan Yu and Zhang Fei, each with a goodly party, went behind the hills, right and left, and there hid. When the gongs beat they were to move out to support the main army.
+
+ These preparations made, the drums rolled noisily for Liu Bei to advance. The rebels also came forward. But Liu Bei suddenly retired. Thinking this was their chance, the rebels pressed forward and were led over the hills. Then suddenly the gongs sounded for the ambush. Guan Yu and Zhang Fei poured out from right and left as Liu Bei faced around to meet the rebels. Under three-side attack, the rebels lost heavily and fled to the walls of Qingzhou City. But Imperial Protector Gong Jing led out an armed body to attack them, and the rebels were entirely defeated and many slain. Qingzhou was no longer in danger.
+
+
+ though fierce as tigers soldiers be,
+
+ Battles are won by strategy.
+
+ A hero comes; he gains renown,
+
+ Already destined for a crown.
+
+ After the celebrations in honor of victory were over, Commander Zhou Jing proposed to return to Youzhou.
+
+ But Liu Bei said, “We are informed that Imperial Commander Lu Zhi has been struggling with a horde of rebels led by Zhang Jue at Guangzong. Lu Zhi was once my teacher, and I want to go help him.”
+
+ So Liu Bei and Zhou Jing separated, and the three brothers with their troops made their way to Guangzong. They found Lu Zhi’s camp, were admitted to his presence, and declared the reason of their coming. The Commander received them with great joy, and they remained with him while he made his plans.
+
+ At that time Zhang Jue’s one hundred fifty thousand troops and Lu Zhi’s fifty thousand troops were facing each other. Neither had had any success.
+
+ Lu Zhi said to Liu Bei, “I am able to surround these rebels here. But the other two brothers, Zhang Ba and Zhang Lian, are strongly entrenched opposite Huangfu Song and Zhu Jun at Yingchuan. I will give you a thousand more troops, and with these you can go to find out what is happening, and we can then settle the moment for concerted attack.”
+
+ So Liu Bei set off and marched as quickly as possible to Yingchuan. At that time the imperial troops were attacking with success, and the rebels had retired upon Changshe. They had encamped among the thick grass.
+
+ Seeing this, Huangfu Song said to Zhu Jun, “The rebels are camping in the field. We can attack them by fire.”
+
+ So the Imperial Commanders bade every man cut a bundle of dry grass and laid an ambush. That night the wind blew a gale, and at the second watch they started a blaze. At the same time Huangfu Song and Zhu Jun’s troops attacked the rebels and set their camp on fire. The flames rose to the very heaven. The rebels were thrown into great confusion. There was no time to saddle horses or don armor: They fled in all directions.
+
+ The battle continued until dawn. Zhang Lian and Zhang Ba, with a group of flying rebels, found a way of escape. But suddenly a troop of soldiers with crimson banners appeared to oppose them. Their leader was a man of medium stature with small eyes and a long beard. He was Cao Cao, a Beijuo man, holding the rank of Cavalry Commander. His father was Cao Song, but he was not really a Cao. Cao Song had been born to the Xiahou family, but he had been brought up by Eunuch Cao Teng and had taken this family name.
+
+ As a young man Cao Cao had been fond of hunting and delighted in songs and dancing. He was resourceful and full of guile. An uncle, seeing the young fellow so unsteady, used to get angry with him and told his father of his misdeeds. His father remonstrated with him.
+
+ But Cao Cao made equal to the occasion. One day, seeing his uncle coming, he fell to the ground in a pretended fit. The uncle alarmed ran to tell his father, who came, and there was the youth in most perfect health.
+
+ “But your uncle said you were in a fit. Are you better?” said his father.
+
+ “I have never suffered from fits or any such illness,” said Cao Cao. “But I have lost my uncle’s affection, and he has deceived you.”
+
+ Thereafter, whatever the uncle might say of his faults, his father paid no heed. So the young man grew up licentious and uncontrolled.
+
+ A man of the time named Qiao Xuan said to Cao Cao, “Rebellion is at hand, and only a man of the greatest ability can succeed in restoring tranquillity. That man is yourself.”
+
+ And He Yong of Nanyang said of him, “The dynasty of Han is about to fall. He who can restore peace is this man and only he.”
+
+ Cao Cao went to inquire his future of a wise man of Runan named Xu Shao.
+
+ “What manner of man am I?” asked Cao Cao.
+
+ The seer made no reply, and again and again Cao Cao pressed the question.
+
+ Then Xu Shao replied, “In peace you are an able subject; in chaos you are a crafty hero!”
+
+ Cao Cao greatly rejoiced to hear this.
+
+ Cao Cao graduated at twenty and earned a reputation of piety and integrity. He began his career as Commanding Officer in a county within the Capital District. In the four gates of the city he guarded, he hung up clubs of various sorts, and he would punish any breach of the law whatever the rank of the offender. Now an uncle of Eunuch Jian Shuo was found one night in the streets with a sword and was arrested. In due course he was beaten. Thereafter no one dared to offend again, and Cao Cao’s name became heard. Soon he became a magistrate of Dunqiu.
+
+ At the outbreak of the Yellow Scarves, Cao Cao held the rank of General and was given command of five thousand horse and foot to help fight at Yingchuan. He just happened to fall in with the newly defeated rebels whom he cut to pieces. Thousands were slain and endless banners and drums and horses were captured, together with huge sums of money. However, Zhang Ba and Zhang Lian got away; and after an interview with Huangfu Song, Cao Cao went in pursuit of them.
+
+ Meanwhile Liu Bei and his brothers were hastening toward Yingchuan, when they heard the din of battle and saw flames rising high toward the sky. But they arrived too late for the fighting. They saw Huangfu Song and Zhu Jun to whom they told the intentions of Lu Zhi.
+
+ “The rebel power is quite broken here,” said the commanders, “but they will surely make for Guangzong to join Zhang Jue. You can do nothing better than hasten back.”
+
+ The three brothers thus retraced their steps. Half way along the road they met a party of soldiers escorting a prisoner in a cage-cart. When they drew near, they saw the prisoner was no other than Lu Zhi, the man they were going to help. Hastily dismounting, Liu Bei asked what had happened.
+
+ Lu Zhi explained, “I had surrounded the rebels and was on the point of smashing them, when Zhang Jue employed some of his supernatural powers and prevented my victory. The court sent down Eunuch Zhuo Feng to inquire into my failure, and that official demanded a bribe. I told him how hard pressed we were and asked him where, in the circumstances, I could find a gift for him. He went away in wrath and reported that I was hiding behind my ramparts and would not give battle and that I disheartened my army. So I was superseded by Dong Zhuo, and I have to go to the capital to answer the charge.”
+
+ This story put Zhang Fei into a rage. He was for slaying the escort and setting free Lu Zhi. But Liu Bei checked him.
+
+ “The government will take the due course,” said Liu Bei. “You must not act hastily!”
+
+ And the escort and the three brothers went two ways.
+
+ It was useless to continue on that road to Guangzong, so Guan Yu proposed to go back to Zhuo, and they retook the road. Two days later they heard the thunder of battle behind some hills. Hastening to the top, they beheld the government soldiers suffering great loss, and they saw the countryside was full of Yellow Scarves. On the rebels’ banners were the words Zhang Jue the Lord of Heaven written large.
+
+ “We will attack this Zhang Jue!” said Liu Bei to his brothers, and they galloped out to join in the battle.
+
+ Zhang Jue had worsted Dong Zhuo and was following up his advantage. He was in hot pursuit when the three brothers dashed into his army, threw his ranks into confusion, and drove him back fifteen miles. Then the brothers returned with the rescued general to his camp.
+
+ “What offices have you?” asked Dong Zhuo, when he had leisure to speak to the brothers.
+
+ “None,” replied they.
+
+ And Dong Zhuo treated them with disrespect. Liu Bei retired calmly, but Zhang Fei was furious.
+
+ “We have just rescued this menial in a bloody fight,” cried Zhang Fei, “and now he is rude to us! Nothing but his death can slake my anger.”
+
+ Zhang Fei stamped toward Dong Zhuo’s tent, holding firmly a sharp sword.
+
+ As it was in olden time so it is today,
+
+
+ The simple wight may merit well,
+
+ Officialdom holds sway;
+
+ Zhang Fei, the blunt and hasty,
+
+ Where can you find his peer?
+
+ But slaying the ungrateful would
+
+ Mean many deaths a year.
+
+ Dong Zhuo’s fate will be unrolled in later chapters.
+
+
+
+book-text-treasure-island = I The Old Sea-dog at the “Admiral Benbow”
+ Squire Trelawney, Dr. Livesey, and the rest of these gentlemen having asked me to write down the whole particulars about Treasure Island, from the beginning to the end, keeping nothing back but the bearings of the island, and that only because there is still treasure not yet lifted, I take up my pen in the year of grace 17—, and go back to the time when my father kept the Admiral Benbow inn and the brown old seaman with the sabre cut first took up his lodging under our roof.
+
+ I remember him as if it were yesterday, as he came plodding to the inn door, his sea-chest following behind him in a hand-barrow—a tall, strong, heavy, nut-brown man, his tarry pigtail falling over the shoulder of his soiled blue coat, his hands ragged and scarred, with black, broken nails, and the sabre cut across one cheek, a dirty, livid white. I remember him looking round the cove and whistling to himself as he did so, and then breaking out in that old sea-song that he sang so often afterwards:
+
+ “Fifteen men on the dead man’s chest—
+     Yo-ho-ho, and a bottle of rum!”
+
+ in the high, old tottering voice that seemed to have been tuned and broken at the capstan bars. Then he rapped on the door with a bit of stick like a handspike that he carried, and when my father appeared, called roughly for a glass of rum. This, when it was brought to him, he drank slowly, like a connoisseur, lingering on the taste and still looking about him at the cliffs and up at our signboard.
+
+ “This is a handy cove,” says he at length; “and a pleasant sittyated grog-shop. Much company, mate?”
+
+ My father told him no, very little company, the more was the pity.
+
+ “Well, then,” said he, “this is the berth for me. Here you, matey,” he cried to the man who trundled the barrow; “bring up alongside and help up my chest. I’ll stay here a bit,” he continued. “I’m a plain man; rum and bacon and eggs is what I want, and that head up there for to watch ships off. What you mought call me? You mought call me captain. Oh, I see what you’re at—there”; and he threw down three or four gold pieces on the threshold. “You can tell me when I’ve worked through that,” says he, looking as fierce as a commander.
+
+ And indeed bad as his clothes were and coarsely as he spoke, he had none of the appearance of a man who sailed before the mast, but seemed like a mate or skipper accustomed to be obeyed or to strike. The man who came with the barrow told us the mail had set him down the morning before at the Royal George, that he had inquired what inns there were along the coast, and hearing ours well spoken of, I suppose, and described as lonely, had chosen it from the others for his place of residence. And that was all we could learn of our guest.
+
+ He was a very silent man by custom. All day he hung round the cove or upon the cliffs with a brass telescope; all evening he sat in a corner of the parlour next the fire and drank rum and water very strong. Mostly he would not speak when spoken to, only look up sudden and fierce and blow through his nose like a fog-horn; and we and the people who came about our house soon learned to let him be. Every day when he came back from his stroll he would ask if any seafaring men had gone by along the road. At first we thought it was the want of company of his own kind that made him ask this question, but at last we began to see he was desirous to avoid them. When a seaman did put up at the Admiral Benbow (as now and then some did, making by the coast road for Bristol) he would look in at him through the curtained door before he entered the parlour; and he was always sure to be as silent as a mouse when any such was present. For me, at least, there was no secret about the matter, for I was, in a way, a sharer in his alarms. He had taken me aside one day and promised me a silver fourpenny on the first of every month if I would only keep my “weather-eye open for a seafaring man with one leg” and let him know the moment he appeared. Often enough when the first of the month came round and I applied to him for my wage, he would only blow through his nose at me and stare me down, but before the week was out he was sure to think better of it, bring me my four-penny piece, and repeat his orders to look out for “the seafaring man with one leg.”
+
+ How that personage haunted my dreams, I need scarcely tell you. On stormy nights, when the wind shook the four corners of the house and the surf roared along the cove and up the cliffs, I would see him in a thousand forms, and with a thousand diabolical expressions. Now the leg would be cut off at the knee, now at the hip; now he was a monstrous kind of a creature who had never had but the one leg, and that in the middle of his body. To see him leap and run and pursue me over hedge and ditch was the worst of nightmares. And altogether I paid pretty dear for my monthly fourpenny piece, in the shape of these abominable fancies.
+
+ But though I was so terrified by the idea of the seafaring man with one leg, I was far less afraid of the captain himself than anybody else who knew him. There were nights when he took a deal more rum and water than his head would carry; and then he would sometimes sit and sing his wicked, old, wild sea-songs, minding nobody; but sometimes he would call for glasses round and force all the trembling company to listen to his stories or bear a chorus to his singing. Often I have heard the house shaking with “Yo-ho-ho, and a bottle of rum,” all the neighbours joining in for dear life, with the fear of death upon them, and each singing louder than the other to avoid remark. For in these fits he was the most overriding companion ever known; he would slap his hand on the table for silence all round; he would fly up in a passion of anger at a question, or sometimes because none was put, and so he judged the company was not following his story. Nor would he allow anyone to leave the inn till he had drunk himself sleepy and reeled off to bed.
+
+ His stories were what frightened people worst of all. Dreadful stories they were—about hanging, and walking the plank, and storms at sea, and the Dry Tortugas, and wild deeds and places on the Spanish Main. By his own account he must have lived his life among some of the wickedest men that God ever allowed upon the sea, and the language in which he told these stories shocked our plain country people almost as much as the crimes that he described. My father was always saying the inn would be ruined, for people would soon cease coming there to be tyrannized over and put down, and sent shivering to their beds; but I really believe his presence did us good. People were frightened at the time, but on looking back they rather liked it; it was a fine excitement in a quiet country life, and there was even a party of the younger men who pretended to admire him, calling him a “true sea-dog” and a “real old salt” and such like names, and saying there was the sort of man that made England terrible at sea.
+
+ In one way, indeed, he bade fair to ruin us, for he kept on staying week after week, and at last month after month, so that all the money had been long exhausted, and still my father never plucked up the heart to insist on having more. If ever he mentioned it, the captain blew through his nose so loudly that you might say he roared, and stared my poor father out of the room. I have seen him wringing his hands after such a rebuff, and I am sure the annoyance and the terror he lived in must have greatly hastened his early and unhappy death.
+
+ All the time he lived with us the captain made no change whatever in his dress but to buy some stockings from a hawker. One of the cocks of his hat having fallen down, he let it hang from that day forth, though it was a great annoyance when it blew. I remember the appearance of his coat, which he patched himself upstairs in his room, and which, before the end, was nothing but patches. He never wrote or received a letter, and he never spoke with any but the neighbours, and with these, for the most part, only when drunk on rum. The great sea-chest none of us had ever seen open.
+
+ He was only once crossed, and that was towards the end, when my poor father was far gone in a decline that took him off. Dr. Livesey came late one afternoon to see the patient, took a bit of dinner from my mother, and went into the parlour to smoke a pipe until his horse should come down from the hamlet, for we had no stabling at the old Benbow. I followed him in, and I remember observing the contrast the neat, bright doctor, with his powder as white as snow and his bright, black eyes and pleasant manners, made with the coltish country folk, and above all, with that filthy, heavy, bleared scarecrow of a pirate of ours, sitting, far gone in rum, with his arms on the table. Suddenly he—the captain, that is—began to pipe up his eternal song:
+
+ “Fifteen men on the dead man’s chest—
+     Yo-ho-ho, and a bottle of rum!
+ Drink and the devil had done for the rest—
+     Yo-ho-ho, and a bottle of rum!”
+
+ At first I had supposed “the dead man’s chest” to be that identical big box of his upstairs in the front room, and the thought had been mingled in my nightmares with that of the one-legged seafaring man. But by this time we had all long ceased to pay any particular notice to the song; it was new, that night, to nobody but Dr. Livesey, and on him I observed it did not produce an agreeable effect, for he looked up for a moment quite angrily before he went on with his talk to old Taylor, the gardener, on a new cure for the rheumatics. In the meantime, the captain gradually brightened up at his own music, and at last flapped his hand upon the table before him in a way we all knew to mean silence. The voices stopped at once, all but Dr. Livesey’s; he went on as before speaking clear and kind and drawing briskly at his pipe between every word or two. The captain glared at him for a while, flapped his hand again, glared still harder, and at last broke out with a villainous, low oath, “Silence, there, between decks!”
+
+ “Were you addressing me, sir?” says the doctor; and when the ruffian had told him, with another oath, that this was so, “I have only one thing to say to you, sir,” replies the doctor, “that if you keep on drinking rum, the world will soon be quit of a very dirty scoundrel!”
+
+ The old fellow’s fury was awful. He sprang to his feet, drew and opened a sailor’s clasp-knife, and balancing it open on the palm of his hand, threatened to pin the doctor to the wall.
+
+ The doctor never so much as moved. He spoke to him as before, over his shoulder and in the same tone of voice, rather high, so that all the room might hear, but perfectly calm and steady: “If you do not put that knife this instant in your pocket, I promise, upon my honour, you shall hang at the next assizes.”
+
+ Then followed a battle of looks between them, but the captain soon knuckled under, put up his weapon, and resumed his seat, grumbling like a beaten dog.
+
+ “And now, sir,” continued the doctor, “since I now know there’s such a fellow in my district, you may count I’ll have an eye upon you day and night. I’m not a doctor only; I’m a magistrate; and if I catch a breath of complaint against you, if it’s only for a piece of incivility like tonight’s, I’ll take effectual means to have you hunted down and routed out of this. Let that suffice.”
+
+ Soon after, Dr. Livesey’s horse came to the door and he rode away, but the captain held his peace that evening, and for many evenings to come.
+
+
+
+
+book-text-les-miserables = BOOK FIRST—A JUST MAN 
+ CHAPTER I—M. MYRIEL
+ 
+
+ In 1815, M. Charles-François-Bienvenu Myriel was Bishop of D—— He was an old man of about seventy-five years of age; he had occupied the see of D—— since 1806.
+
+ Although this detail has no connection whatever with the real substance of what we are about to relate, it will not be superfluous, if merely for the sake of exactness in all points, to mention here the various rumors and remarks which had been in circulation about him from the very moment when he arrived in the diocese. True or false, that which is said of men often occupies as important a place in their lives, and above all in their destinies, as that which they do. M. Myriel was the son of a councillor of the Parliament of Aix; hence he belonged to the nobility of the bar. It was said that his father, destining him to be the heir of his own post, had married him at a very early age, eighteen or twenty, in accordance with a custom which is rather widely prevalent in parliamentary families. In spite of this marriage, however, it was said that Charles Myriel created a great deal of talk. He was well formed, though rather short in stature, elegant, graceful, intelligent; the whole of the first portion of his life had been devoted to the world and to gallantry.
+
+ The Revolution came; events succeeded each other with precipitation; the parliamentary families, decimated, pursued, hunted down, were dispersed. M. Charles Myriel emigrated to Italy at the very beginning of the Revolution. There his wife died of a malady of the chest, from which she had long suffered. He had no children. What took place next in the fate of M. Myriel? The ruin of the French society of the olden days, the fall of his own family, the tragic spectacles of ’93, which were, perhaps, even more alarming to the emigrants who viewed them from a distance, with the magnifying powers of terror,—did these cause the ideas of renunciation and solitude to germinate in him? Was he, in the midst of these distractions, these affections which absorbed his life, suddenly smitten with one of those mysterious and terrible blows which sometimes overwhelm, by striking to his heart, a man whom public catastrophes would not shake, by striking at his existence and his fortune? No one could have told: all that was known was, that when he returned from Italy he was a priest.
+
+ In 1804, M. Myriel was the Curé of B—— [Brignolles]. He was already advanced in years, and lived in a very retired manner.
+
+ About the epoch of the coronation, some petty affair connected with his curacy—just what, is not precisely known—took him to Paris. Among other powerful persons to whom he went to solicit aid for his parishioners was M. le Cardinal Fesch. One day, when the Emperor had come to visit his uncle, the worthy Curé, who was waiting in the anteroom, found himself present when His Majesty passed. Napoleon, on finding himself observed with a certain curiosity by this old man, turned round and said abruptly:—
+
+ “Who is this good man who is staring at me?”
+
+ “Sire,” said M. Myriel, “you are looking at a good man, and I at a great man. Each of us can profit by it.”
+
+ That very evening, the Emperor asked the Cardinal the name of the Curé, and some time afterwards M. Myriel was utterly astonished to learn that he had been appointed Bishop of D——
+
+ What truth was there, after all, in the stories which were invented as to the early portion of M. Myriel’s life? No one knew. Very few families had been acquainted with the Myriel family before the Revolution.
+
+ M. Myriel had to undergo the fate of every newcomer in a little town, where there are many mouths which talk, and very few heads which think. He was obliged to undergo it although he was a bishop, and because he was a bishop. But after all, the rumors with which his name was connected were rumors only,—noise, sayings, words; less than words—palabres, as the energetic language of the South expresses it.
+
+ However that may be, after nine years of episcopal power and of residence in D——, all the stories and subjects of conversation which engross petty towns and petty people at the outset had fallen into profound oblivion. No one would have dared to mention them; no one would have dared to recall them.
+
+ M. Myriel had arrived at D—— accompanied by an elderly spinster, Mademoiselle Baptistine, who was his sister, and ten years his junior.
+
+ Their only domestic was a female servant of the same age as Mademoiselle Baptistine, and named Madame Magloire, who, after having been the servant of M. le Curé, now assumed the double title of maid to Mademoiselle and housekeeper to Monseigneur.
+
+ Mademoiselle Baptistine was a long, pale, thin, gentle creature; she realized the ideal expressed by the word “respectable”; for it seems that a woman must needs be a mother in order to be venerable. She had never been pretty; her whole life, which had been nothing but a succession of holy deeds, had finally conferred upon her a sort of pallor and transparency; and as she advanced in years she had acquired what may be called the beauty of goodness. What had been leanness in her youth had become transparency in her maturity; and this diaphaneity allowed the angel to be seen. She was a soul rather than a virgin. Her person seemed made of a shadow; there was hardly sufficient body to provide for sex; a little matter enclosing a light; large eyes forever drooping;—a mere pretext for a soul’s remaining on the earth.
+
+ Madame Magloire was a little, fat, white old woman, corpulent and bustling; always out of breath,—in the first place, because of her activity, and in the next, because of her asthma.
+
+ On his arrival, M. Myriel was installed in the episcopal palace with the honors required by the Imperial decrees, which class a bishop immediately after a major-general. The mayor and the president paid the first call on him, and he, in turn, paid the first call on the general and the prefect.
+
+ The installation over, the town waited to see its bishop at work.
+
+
+
+
+book-text-art-of-war = I. Laying Plans
+
+ 1. Sun Tzu said: The art of war is of vital importance to the State.
+
+ 2. It is a matter of life and death, a road either to safety or to ruin. Hence it is a subject of inquiry which can on no account be neglected.
+
+ 3. The art of war, then, is governed by five constant factors, to be taken into account in one's deliberations, when seeking to determine the conditions obtaining in the field.
+
+ 4. These are: (1) The Moral Law; (2) Heaven; (3) Earth; (4) The Commander; (5) Method and discipline.
+
+ 5,6. The Moral Law causes the people to be in complete accord with their ruler, so that they will follow him regardless of their lives, undismayed by any danger.
+
+ 7. Heaven signifies night and day, cold and heat, times and seasons.
+
+ 8. Earth comprises distances, great and small; danger and security; open ground and narrow passes; the chances of life and death.
+
+ 9. The Commander stands for the virtues of wisdom, sincerely, benevolence, courage and strictness.
+
+ 10. By method and discipline are to be understood the marshaling of the army in its proper subdivisions, the graduations of rank among the officers, the maintenance of roads by which supplies may reach the army, and the control of military expenditure.
+
+ 11. These five heads should be familiar to every general: he who knows them will be victorious; he who knows them not will fail.
+
+ 12. Therefore, in your deliberations, when seeking to determine the military conditions, let them be made the basis of a comparison, in this wise:--
+
+ 13. (1) Which of the two sovereigns is imbued with the Moral law? (2) Which of the two generals has most ability? (3) With whom lie the advantages derived from Heaven and Earth? (4) On which side is discipline most rigorously enforced? (5) Which army is stronger? (6) On which side are officers and men more highly trained? (7) In which army is there the greater constancy both in reward and punishment?
+
+ 14. By means of these seven considerations I can forecast victory or defeat.
+
+ 15. The general that hearkens to my counsel and acts upon it, will conquer: let such a one be retained in command! The general that hearkens not to my counsel nor acts upon it, will suffer defeat:--let such a one be dismissed!
+
+ 16. While heading the profit of my counsel, avail yourself also of any helpful circumstances over and beyond the ordinary rules.
+
+ 17. According as circumstances are favorable, one should modify one's plans.
+
+ 18. All warfare is based on deception.
+
+ 19. Hence, when able to attack, we must seem unable; when using our forces, we must seem inactive; when we are near, we must make the enemy believe we are far away; when far away, we must make him believe we are near.
+
+ 20. Hold out baits to entice the enemy. Feign disorder, and crush him.
+
+ 21. If he is secure at all points, be prepared for him. If he is in superior strength, evade him.
+
+ 22. If your opponent is of choleric temper, seek to irritate him. Pretend to be weak, that he may grow arrogant.
+
+ 23. If he is taking his ease, give him no rest. If his forces are united, separate them.
+
+ 24. Attack him where he is unprepared, appear where you are not expected.
+
+ 25. These military devices, leading to victory, must not be divulged beforehand.
+
+ 26. Now the general who wins a battle makes many calculations in his temple ere the battle is fought. The general who loses a battle makes but few calculations beforehand. Thus do many calculations lead to victory, and few calculations to defeat: how much more no calculation at all! It is by attention to this point that I can foresee who is likely to win or lose.
+
+ II. Waging War
+
+ 1. Sun Tzu said: In the operations of war, where there are in the field a thousand swift chariots, as many heavy chariots, and a hundred thousand mail-clad soldiers, with provisions enough to carry them a thousand li, the expenditure at home and at the front, including entertainment of guests, small items such as glue and paint, and sums spent on chariots and armor, will reach the total of a thousand ounces of silver per day. Such is the cost of raising an army of 100,000 men.
+
+ 2. When you engage in actual fighting, if victory is long in coming, then men's weapons will grow dull and their ardor will be damped. If you lay siege to a town, you will exhaust your strength.
+
+ 3. Again, if the campaign is protracted, the resources of the State will not be equal to the strain.
+
+ 4. Now, when your weapons are dulled, your ardor damped, your strength exhausted and your treasure spent, other chieftains will spring up to take advantage of your extremity. Then no man, however wise, will be able to avert the consequences that must ensue.
+
+ 5. Thus, though we have heard of stupid haste in war, cleverness has never been seen associated with long delays.
+
+ 6. There is no instance of a country having benefited from prolonged warfare.
+
+ 7. It is only one who is thoroughly acquainted with the evils of war that can thoroughly understand the profitable way of carrying it on.
+
+ 8. The skillful soldier does not raise a second levy, neither are his supply-wagons loaded more than twice.
+
+ 9. Bring war material with you from home, but forage on the enemy. Thus the army will have food enough for its needs.
+
+ 10. Poverty of the State exchequer causes an army to be maintained by contributions from a distance. Contributing to maintain an army at a distance causes the people to be impoverished.
+
+ 11. On the other hand, the proximity of an army causes prices to go up; and high prices cause the people's substance to be drained away.
+
+ 12. When their substance is drained away, the peasantry will be afflicted by heavy exactions.
+
+ 13,14. With this loss of substance and exhaustion of strength, the homes of the people will be stripped bare, and three-tenths of their income will be dissipated; while government expenses for broken chariots, worn-out horses, breast-plates and helmets, bows and arrows, spears and shields, protective mantles, draught-oxen and heavy wagons, will amount to four-tenths of its total revenue.
+
+ 15. Hence a wise general makes a point of foraging on the enemy. One cartload of the enemy's provisions is equivalent to twenty of one's own, and likewise a single picul of his provender is equivalent to twenty from one's own store.
+
+ 16. Now in order to kill the enemy, our men must be roused to anger; that there may be advantage from defeating the enemy, they must have their rewards.
+
+ 17. Therefore in chariot fighting, when ten or more chariots have been taken, those should be rewarded who took the first. Our own flags should be substituted for those of the enemy, and the chariots mingled and used in conjunction with ours. The captured soldiers should be kindly treated and kept.
+
+ 18. This is called, using the conquered foe to augment one's own strength.
+
+ 19. In war, then, let your great object be victory, not lengthy campaigns.
+
+ 20. Thus it may be known that the leader of armies is the arbiter of the people's fate, the man on whom it depends whether the nation shall be in peace or in peril.
+
+ III. Attack by Stratagem
+
+ 1. Sun Tzu said: In the practical art of war, the best thing of all is to take the enemy's country whole and intact; to shatter and destroy it is not so good. So, too, it is better to recapture an army entire than to destroy it, to capture a regiment, a detachment or a company entire than to destroy them.
+
+ 2. Hence to fight and conquer in all your battles is not supreme excellence; supreme excellence consists in breaking the enemy's resistance without fighting.
+
+ 3. Thus the highest form of generalship is to balk the enemy's plans; the next best is to prevent the junction of the enemy's forces; the next in order is to attack the enemy's army in the field; and the worst policy of all is to besiege walled cities.
+
+ 4. The rule is, not to besiege walled cities if it can possibly be avoided. The preparation of mantlets, movable shelters, and various implements of war, will take up three whole months; and the piling up of mounds over against the walls will take three months more.
+
+ 5. The general, unable to control his irritation, will launch his men to the assault like swarming ants, with the result that one-third of his men are slain, while the town still remains untaken. Such are the disastrous effects of a siege.
+
+ 6. Therefore the skillful leader subdues the enemy's troops without any fighting; he captures their cities without laying siege to them; he overthrows their kingdom without lengthy operations in the field.
+
+ 7. With his forces intact he will dispute the mastery of the Empire, and thus, without losing a man, his triumph will be complete. This is the method of attacking by stratagem.
+
+ 8. It is the rule in war, if our forces are ten to the enemy's one, to surround him; if five to one, to attack him; if twice as numerous, to divide our army into two.
+
+ 9. If equally matched, we can offer battle; if slightly inferior in numbers, we can avoid the enemy; if quite unequal in every way, we can flee from him.
+
+ 10. Hence, though an obstinate fight may be made by a small force, in the end it must be captured by the larger force.
+
+ 11. Now the general is the bulwark of the State; if the bulwark is complete at all points; the State will be strong; if the bulwark is defective, the State will be weak.
+
+ 12. There are three ways in which a ruler can bring misfortune upon his army:--
+
+ 13. (1) By commanding the army to advance or to retreat, being ignorant of the fact that it cannot obey. This is called hobbling the army.
+
+ 14. (2) By attempting to govern an army in the same way as he administers a kingdom, being ignorant of the conditions which obtain in an army. This causes restlessness in the soldier's minds.
+
+ 15. (3) By employing the officers of his army without discrimination, through ignorance of the military principle of adaptation to circumstances. This shakes the confidence of the soldiers.
+
+ 16. But when the army is restless and distrustful, trouble is sure to come from the other feudal princes. This is simply bringing anarchy into the army, and flinging victory away.
+
+ 17. Thus we may know that there are five essentials for victory: (1) He will win who knows when to fight and when not to fight. (2) He will win who knows how to handle both superior and inferior forces. (3) He will win whose army is animated by the same spirit throughout all its ranks. (4) He will win who, prepared himself, waits to take the enemy unprepared. (5) He will win who has military capacity and is not interfered with by the sovereign.
+
+ 18. Hence the saying: If you know the enemy and know yourself, you need not fear the result of a hundred battles. If you know yourself but not the enemy, for every victory gained you will also suffer a defeat. If you know neither the enemy nor yourself, you will succumb in every battle.
+
+ IV. Tactical Dispositions
+
+ 1. Sun Tzu said: The good fighters of old first put themselves beyond the possibility of defeat, and then waited for an opportunity of defeating the enemy.
+
+ 2. To secure ourselves against defeat lies in our own hands, but the opportunity of defeating the enemy is provided by the enemy himself.
+
+ 3. Thus the good fighter is able to secure himself against defeat, but cannot make certain of defeating the enemy.
+
+ 4. Hence the saying: One may know how to conquer without being able to do it.
+
+ 5. Security against defeat implies defensive tactics; ability to defeat the enemy means taking the offensive.
+
+ 6. Standing on the defensive indicates insufficient strength; attacking, a superabundance of strength.
+
+ 7. The general who is skilled in defense hides in the most secret recesses of the earth; he who is skilled in attack flashes forth from the topmost heights of heaven. Thus on the one hand we have ability to protect ourselves; on the other, a victory that is complete.
+
+ 8. To see victory only when it is within the ken of the common herd is not the acme of excellence.
+
+ 9. Neither is it the acme of excellence if you fight and conquer and the whole Empire says, "Well done!"
+
+ 10. To lift an autumn hair is no sign of great strength; to see the sun and moon is no sign of sharp sight; to hear the noise of thunder is no sign of a quick ear.
+
+ 11. What the ancients called a clever fighter is one who not only wins, but excels in winning with ease.
+
+ 12. Hence his victories bring him neither reputation for wisdom nor credit for courage.
+
+ 13. He wins his battles by making no mistakes. Making no mistakes is what establishes the certainty of victory, for it means conquering an enemy that is already defeated.
+
+ 14. Hence the skillful fighter puts himself into a position which makes defeat impossible, and does not miss the moment for defeating the enemy.
+
+ 15. Thus it is that in war the victorious strategist only seeks battle after the victory has been won, whereas he who is destined to defeat first fights and afterwards looks for victory.
+
+ 16. The consummate leader cultivates the moral law, and strictly adheres to method and discipline; thus it is in his power to control success.
+
+ 17. In respect of military method, we have, firstly, Measurement; secondly, Estimation of quantity; thirdly, Calculation; fourthly, Balancing of chances; fifthly, Victory.
+
+ 18. Measurement owes its existence to Earth; Estimation of quantity to Measurement; Calculation to Estimation of quantity; Balancing of chances to Calculation; and Victory to Balancing of chances.
+
+ 19. A victorious army opposed to a routed one, is as a pound's weight placed in the scale against a single grain.
+
+ 20. The onrush of a conquering force is like the bursting of pent-up waters into a chasm a thousand fathoms deep.
+
+ V. Energy
+
+ 1. Sun Tzu said: The control of a large force is the same principle as the control of a few men: it is merely a question of dividing up their numbers.
+
+ 2. Fighting with a large army under your command is nowise different from fighting with a small one: it is merely a question of instituting signs and signals.
+
+ 3. To ensure that your whole host may withstand the brunt of the enemy's attack and remain unshaken-- this is effected by maneuvers direct and indirect.
+
+ 4. That the impact of your army may be like a grindstone dashed against an egg--this is effected by the science of weak points and strong.
+
+ 5. In all fighting, the direct method may be used for joining battle, but indirect methods will be needed in order to secure victory.
+
+ 6. Indirect tactics, efficiently applied, are inexhaustible as Heaven and Earth, unending as the flow of rivers and streams; like the sun and moon, they end but to begin anew; like the four seasons, they pass away to return once more.
+
+ 7. There are not more than five musical notes, yet the combinations of these five give rise to more melodies than can ever be heard.
+
+ 8. There are not more than five primary colors (blue, yellow, red, white, and black), yet in combination they produce more hues than can ever been seen.
+
+ 9. There are not more than five cardinal tastes (sour, acrid, salt, sweet, bitter), yet combinations of them yield more flavors than can ever be tasted.
+
+ 10. In battle, there are not more than two methods of attack--the direct and the indirect; yet these two in combination give rise to an endless series of maneuvers.
+
+ 11. The direct and the indirect lead on to each other in turn. It is like moving in a circle--you never come to an end. Who can exhaust the possibilities of their combination?
+
+ 12. The onset of troops is like the rush of a torrent which will even roll stones along in its course.
+
+ 13. The quality of decision is like the well-timed swoop of a falcon which enables it to strike and destroy its victim.
+
+ 14. Therefore the good fighter will be terrible in his onset, and prompt in his decision.
+
+ 15. Energy may be likened to the bending of a crossbow; decision, to the releasing of a trigger.
+
+ 16. Amid the turmoil and tumult of battle, there may be seeming disorder and yet no real disorder at all; amid confusion and chaos, your array may be without head or tail, yet it will be proof against defeat.
+
+ 17. Simulated disorder postulates perfect discipline, simulated fear postulates courage; simulated weakness postulates strength.
+
+ 18. Hiding order beneath the cloak of disorder is simply a question of subdivision; concealing courage under a show of timidity presupposes a fund of latent energy; masking strength with weakness is to be effected by tactical dispositions.
+
+ 19. Thus one who is skillful at keeping the enemy on the move maintains deceitful appearances, according to which the enemy will act. He sacrifices something, that the enemy may snatch at it.
+
+ 20. By holding out baits, he keeps him on the march; then with a body of picked men he lies in wait for him.
+
+ 21. The clever combatant looks to the effect of combined energy, and does not require too much from individuals. Hence his ability to pick out the right men and utilize combined energy.
+
+ 22. When he utilizes combined energy, his fighting men become as it were like unto rolling logs or stones. For it is the nature of a log or stone to remain motionless on level ground, and to move when on a slope; if four-cornered, to come to a standstill, but if round-shaped, to go rolling down.
+
+ 23. Thus the energy developed by good fighting men is as the momentum of a round stone rolled down a mountain thousands of feet in height. So much on the subject of energy.
+
+ VI. Weak Points and Strong
+
+ 1. Sun Tzu said: Whoever is first in the field and awaits the coming of the enemy, will be fresh for the fight; whoever is second in the field and has to hasten to battle will arrive exhausted.
+
+ 2. Therefore the clever combatant imposes his will on the enemy, but does not allow the enemy's will to be imposed on him.
+
+ 3. By holding out advantages to him, he can cause the enemy to approach of his own accord; or, by inflicting damage, he can make it impossible for the enemy to draw near.
+
+ 4. If the enemy is taking his ease, he can harass him; if well supplied with food, he can starve him out; if quietly encamped, he can force him to move.
+
+ 5. Appear at points which the enemy must hasten to defend; march swiftly to places where you are not expected.
+
+ 6. An army may march great distances without distress, if it marches through country where the enemy is not.
+
+ 7. You can be sure of succeeding in your attacks if you only attack places which are undefended.You can ensure the safety of your defense if you only hold positions that cannot be attacked.
+
+ 8. Hence that general is skillful in attack whose opponent does not know what to defend; and he is skillful in defense whose opponent does not know what to attack.
+
+ 9. O divine art of subtlety and secrecy! Through you we learn to be invisible, through you inaudible; and hence we can hold the enemy's fate in our hands.
+
+ 10. You may advance and be absolutely irresistible, if you make for the enemy's weak points; you may retire and be safe from pursuit if your movements are more rapid than those of the enemy.
+
+ 11. If we wish to fight, the enemy can be forced to an engagement even though he be sheltered behind a high rampart and a deep ditch. All we need do is attack some other place that he will be obliged to relieve.
+
+ 12. If we do not wish to fight, we can prevent the enemy from engaging us even though the lines of our encampment be merely traced out on the ground. All we need do is to throw something odd and unaccountable in his way.
+
+ 13. By discovering the enemy's dispositions and remaining invisible ourselves, we can keep our forces concentrated, while the enemy's must be divided.
+
+ 14. We can form a single united body, while the enemy must split up into fractions. Hence there will be a whole pitted against separate parts of a whole, which means that we shall be many to the enemy's few.
+
+ 15. And if we are able thus to attack an inferior force with a superior one, our opponents will be in dire straits.
+
+ 16. The spot where we intend to fight must not be made known; for then the enemy will have to prepare against a possible attack at several different points; and his forces being thus distributed in many directions, the numbers we shall have to face at any given point will be proportionately few.
+
+ 17. For should the enemy strengthen his van, he will weaken his rear; should he strengthen his rear, he will weaken his van; should he strengthen his left, he will weaken his right; should he strengthen his right, he will weaken his left. If he sends reinforcements everywhere, he will everywhere be weak.
+
+ 18. Numerical weakness comes from having to prepare against possible attacks; numerical strength, from compelling our adversary to make these preparations against us.
+
+ 19. Knowing the place and the time of the coming battle, we may concentrate from the greatest distances in order to fight.
+
+ 20. But if neither time nor place be known, then the left wing will be impotent to succor the right, the right equally impotent to succor the left, the van unable to relieve the rear, or the rear to support the van. How much more so if the furthest portions of the army are anything under a hundred LI apart, and even the nearest are separated by several LI!
+
+ 21. Though according to my estimate the soldiers of Yueh exceed our own in number, that shall advantage them nothing in the matter of victory. I say then that victory can be achieved.
+
+ 22. Though the enemy be stronger in numbers, we may prevent him from fighting. Scheme so as to discover his plans and the likelihood of their success.
+
+ 23. Rouse him, and learn the principle of his activity or inactivity. Force him to reveal himself, so as to find out his vulnerable spots.
+
+ 24. Carefully compare the opposing army with your own, so that you may know where strength is superabundant and where it is deficient.
+
+ 25. In making tactical dispositions, the highest pitch you can attain is to conceal them; conceal your dispositions, and you will be safe from the prying of the subtlest spies, from the machinations of the wisest brains.
+
+ 26. How victory may be produced for them out of the enemy's own tactics--that is what the multitude cannot comprehend.
+
+ 27. All men can see the tactics whereby I conquer, but what none can see is the strategy out of which victory is evolved.
+
+ 28. Do not repeat the tactics which have gained you one victory, but let your methods be regulated by the infinite variety of circumstances.
+
+ 29. Military tactics are like unto water; for water in its natural course runs away from high places and hastens downwards.
+
+ 30. So in war, the way is to avoid what is strong and to strike at what is weak.
+
+ 31. Water shapes its course according to the nature of the ground over which it flows; the soldier works out his victory in relation to the foe whom he is facing.
+
+ 32. Therefore, just as water retains no constant shape, so in warfare there are no constant conditions.
+
+ 33. He who can modify his tactics in relation to his opponent and thereby succeed in winning, may be called a heaven-born captain.
+
+ 34. The five elements (water, fire, wood, metal, earth) are not always equally predominant; the four seasons make way for each other in turn. There are short days and long; the moon has its periods of waning and waxing.
+
+ VII. Maneuvering
+
+ 1. Sun Tzu said: In war, the general receives his commands from the sovereign.
+
+ 2. Having collected an army and concentrated his forces, he must blend and harmonize the different elements thereof before pitching his camp.
+
+ 3. After that, comes tactical maneuvering, than which there is nothing more difficult. The difficulty of tactical maneuvering consists in turning the devious into the direct, and misfortune into gain.
+
+ 4. Thus, to take a long and circuitous route, after enticing the enemy out of the way, and though starting after him, to contrive to reach the goal before him, shows knowledge of the artifice of deviation.
+
+ 5. Maneuvering with an army is advantageous; with an undisciplined multitude, most dangerous.
+
+ 6. If you set a fully equipped army in march in order to snatch an advantage, the chances are that you will be too late. On the other hand, to detach a flying column for the purpose involves the sacrifice of its baggage and stores.
+
+ 7. Thus, if you order your men to roll up their buff-coats, and make forced marches without halting day or night, covering double the usual distance at a stretch, doing a hundred LI in order to wrest an advantage, the leaders of all your three divisions will fall into the hands of the enemy.
+
+ 8. The stronger men will be in front, the jaded ones will fall behind, and on this plan only one-tenth of your army will reach its destination.
+
+ 9. If you march fifty LI in order to outmaneuver the enemy, you will lose the leader of your first division, and only half your force will reach the goal.
+
+ 10. If you march thirty LI with the same object, two-thirds of your army will arrive.
+
+ 11. We may take it then that an army without its baggage-train is lost; without provisions it is lost; without bases of supply it is lost.
+
+ 12. We cannot enter into alliances until we are acquainted with the designs of our neighbors.
+
+ 13. We are not fit to lead an army on the march unless we are familiar with the face of the country--its mountains and forests, its pitfalls and precipices, its marshes and swamps.
+
+ 14. We shall be unable to turn natural advantage to account unless we make use of local guides.
+
+ 15. In war, practice dissimulation, and you will succeed.
+
+ 16. Whether to concentrate or to divide your troops, must be decided by circumstances.
+
+ 17. Let your rapidity be that of the wind, your compactness that of the forest.
+
+ 18. In raiding and plundering be like fire, is immovability like a mountain.
+
+ 19. Let your plans be dark and impenetrable as night, and when you move, fall like a thunderbolt.
+
+ 20. When you plunder a countryside, let the spoil be divided amongst your men; when you capture new territory, cut it up into allotments for the benefit of the soldiery.
+
+ 21. Ponder and deliberate before you make a move.
+
+ 22. He will conquer who has learnt the artifice of deviation. Such is the art of maneuvering.
+
+ 23. The Book of Army Management says: On the field of battle, the spoken word does not carry far enough: hence the institution of gongs and drums. Nor can ordinary objects be seen clearly enough: hence the institution of banners and flags.
+
+ 24. Gongs and drums, banners and flags, are means whereby the ears and eyes of the host may be focused on one particular point.
+
+ 25. The host thus forming a single united body, is it impossible either for the brave to advance alone, or for the cowardly to retreat alone. This is the art of handling large masses of men.
+
+ 26. In night-fighting, then, make much use of signal-fires and drums, and in fighting by day, of flags and banners, as a means of influencing the ears and eyes of your army.
+
+ 27. A whole army may be robbed of its spirit; a commander-in-chief may be robbed of his presence of mind.
+
+ 28. Now a soldier's spirit is keenest in the morning; by noonday it has begun to flag; and in the evening, his mind is bent only on returning to camp.
+
+ 29. A clever general, therefore, avoids an army when its spirit is keen, but attacks it when it is sluggish and inclined to return. This is the art of studying moods.
+
+ 30. Disciplined and calm, to await the appearance of disorder and hubbub amongst the enemy:--this is the art of retaining self-possession.
+
+ 31. To be near the goal while the enemy is still far from it, to wait at ease while the enemy is toiling and struggling, to be well-fed while the enemy is famished:--this is the art of husbanding one's strength.
+
+ 32. To refrain from intercepting an enemy whose banners are in perfect order, to refrain from attacking an army drawn up in calm and confident array:--this is the art of studying circumstances.
+
+ 33. It is a military axiom not to advance uphill against the enemy, nor to oppose him when he comes downhill.
+
+ 34. Do not pursue an enemy who simulates flight; do not attack soldiers whose temper is keen.
+
+ 35. Do not swallow bait offered by the enemy. Do not interfere with an army that is returning home.
+
+ 36. When you surround an army, leave an outlet free. Do not press a desperate foe too hard.
+
+ 37. Such is the art of warfare.
+
+ VIII. Variation in Tactics
+
+ 1. Sun Tzu said: In war, the general receives his commands from the sovereign, collects his army and concentrates his forces
+
+ 2. When in difficult country, do not encamp. In country where high roads intersect, join hands with your allies. Do not linger in dangerously isolated positions. In hemmed-in situations, you must resort to stratagem. In desperate position, you must fight.
+
+ 3. There are roads which must not be followed, armies which must be not attacked, towns which must be besieged, positions which must not be contested, commands of the sovereign which must not be obeyed.
+
+ 4. The general who thoroughly understands the advantages that accompany variation of tactics knows how to handle his troops.
+
+ 5. The general who does not understand these, may be well acquainted with the configuration of the country, yet he will not be able to turn his knowledge to practical account.
+
+ 6. So, the student of war who is unversed in the art of war of varying his plans, even though he be acquainted with the Five Advantages, will fail to make the best use of his men.
+
+ 7. Hence in the wise leader's plans, considerations of advantage and of disadvantage will be blended together.
+
+ 8. If our expectation of advantage be tempered in this way, we may succeed in accomplishing the essential part of our schemes.
+
+ 9. If, on the other hand, in the midst of difficulties we are always ready to seize an advantage, we may extricate ourselves from misfortune.
+
+ 10. Reduce the hostile chiefs by inflicting damage on them; and make trouble for them, and keep them constantly engaged; hold out specious allurements, and make them rush to any given point.
+
+ 11. The art of war teaches us to rely not on the likelihood of the enemy's not coming, but on our own readiness to receive him; not on the chance of his not attacking, but rather on the fact that we have made our position unassailable.
+
+ 12. There are five dangerous faults which may affect a general: (1) Recklessness, which leads to destruction; (2) cowardice, which leads to capture; (3) a hasty temper, which can be provoked by insults; (4) a delicacy of honor which is sensitive to shame; (5) over-solicitude for his men, which exposes him to worry and trouble.
+
+ 13. These are the five besetting sins of a general, ruinous to the conduct of war.
+
+ 14. When an army is overthrown and its leader slain, the cause will surely be found among these five dangerous faults. Let them be a subject of meditation.
+
+ IX. The Army on the March
+
+ 1. Sun Tzu said: We come now to the question of encamping the army, and observing signs of the enemy. Pass quickly over mountains, and keep in the neighborhood of valleys.
+
+ 2. Camp in high places, facing the sun. Do not climb heights in order to fight. So much for mountain warfare.
+
+ 3. After crossing a river, you should get far away from it.
+
+ 4. When an invading force crosses a river in its onward march, do not advance to meet it in mid-stream. It will be best to let half the army get across, and then deliver your attack.
+
+ 5. If you are anxious to fight, you should not go to meet the invader near a river which he has to cross.
+
+ 6. Moor your craft higher up than the enemy, and facing the sun. Do not move up-stream to meet the enemy. So much for river warfare.
+
+ 7. In crossing salt-marshes, your sole concern should be to get over them quickly, without any delay.
+
+ 8. If forced to fight in a salt-marsh, you should have water and grass near you, and get your back to a clump of trees. So much for operations in salt-marches.
+
+ 9. In dry, level country, take up an easily accessible position with rising ground to your right and on your rear, so that the danger may be in front, and safety lie behind. So much for campaigning in flat country.
+
+ 10. These are the four useful branches of military knowledge which enabled the Yellow Emperor to vanquish four several sovereigns.
+
+ 11. All armies prefer high ground to low and sunny places to dark.
+
+ 12. If you are careful of your men, and camp on hard ground, the army will be free from disease of every kind, and this will spell victory.
+
+ 13. When you come to a hill or a bank, occupy the sunny side, with the slope on your right rear. Thus you will at once act for the benefit of your soldiers and utilize the natural advantages of the ground.
+
+ 14. When, in consequence of heavy rains up-country, a river which you wish to ford is swollen and flecked with foam, you must wait until it subsides.
+
+ 15. Country in which there are precipitous cliffs with torrents running between, deep natural hollows, confined places, tangled thickets, quagmires and crevasses, should be left with all possible speed and not approached.
+
+ 16. While we keep away from such places, we should get the enemy to approach them; while we face them, we should let the enemy have them on his rear.
+
+ 17. If in the neighborhood of your camp there should be any hilly country, ponds surrounded by aquatic grass, hollow basins filled with reeds, or woods with thick undergrowth, they must be carefully routed out and searched; for these are places where men in ambush or insidious spies are likely to be lurking.
+
+ 18. When the enemy is close at hand and remains quiet, he is relying on the natural strength of his position.
+
+ 19. When he keeps aloof and tries to provoke a battle, he is anxious for the other side to advance.
+
+ 20. If his place of encampment is easy of access, he is tendering a bait.
+
+ 21. Movement amongst the trees of a forest shows that the enemy is advancing. The appearance of a number of screens in the midst of thick grass means that the enemy wants to make us suspicious.
+
+ 22. The rising of birds in their flight is the sign of an ambuscade. Startled beasts indicate that a sudden attack is coming.
+
+ 23. When there is dust rising in a high column, it is the sign of chariots advancing; when the dust is low, but spread over a wide area, it betokens the approach of infantry. When it branches out in different directions, it shows that parties have been sent to collect firewood. A few clouds of dust moving to and fro signify that the army is encamping.
+
+ 24. Humble words and increased preparations are signs that the enemy is about to advance. Violent language and driving forward as if to the attack are signs that he will retreat.
+
+ 25. When the light chariots come out first and take up a position on the wings, it is a sign that the enemy is forming for battle.
+
+ 26. Peace proposals unaccompanied by a sworn covenant indicate a plot.
+
+ 27. When there is much running about and the soldiers fall into rank, it means that the critical moment has come.
+
+ 28. When some are seen advancing and some retreating, it is a lure.
+
+ 29. When the soldiers stand leaning on their spears, they are faint from want of food.
+
+ 30. If those who are sent to draw water begin by drinking themselves, the army is suffering from thirst.
+
+ 31. If the enemy sees an advantage to be gained and makes no effort to secure it, the soldiers are exhausted.
+
+ 32. If birds gather on any spot, it is unoccupied. Clamor by night betokens nervousness.
+
+ 33. If there is disturbance in the camp, the general's authority is weak. If the banners and flags are shifted about, sedition is afoot. If the officers are angry, it means that the men are weary.
+
+ 34. When an army feeds its horses with grain and kills its cattle for food, and when the men do not hang their cooking-pots over the camp-fires, showing that they will not return to their tents, you may know that they are determined to fight to the death.
+
+ 35. The sight of men whispering together in small knots or speaking in subdued tones points to disaffection amongst the rank and file.
+
+ 36. Too frequent rewards signify that the enemy is at the end of his resources; too many punishments betray a condition of dire distress.
+
+ 37. To begin by bluster, but afterwards to take fright at the enemy's numbers, shows a supreme lack of intelligence.
+
+ 38. When envoys are sent with compliments in their mouths, it is a sign that the enemy wishes for a truce.
+
+ 39. If the enemy's troops march up angrily and remain facing ours for a long time without either joining battle or taking themselves off again, the situation is one that demands great vigilance and circumspection.
+
+ 40. If our troops are no more in number than the enemy, that is amply sufficient; it only means that no direct attack can be made. What we can do is simply to concentrate all our available strength, keep a close watch on the enemy, and obtain reinforcements.
+
+ 41. He who exercises no forethought but makes light of his opponents is sure to be captured by them.
+
+ 42. If soldiers are punished before they have grown attached to you, they will not prove submissive; and, unless submissive, then will be practically useless. If, when the soldiers have become attached to you, punishments are not enforced, they will still be unless.
+
+ 43. Therefore soldiers must be treated in the first instance with humanity, but kept under control by means of iron discipline. This is a certain road to victory.
+
+ 44. If in training soldiers commands are habitually enforced, the army will be well-disciplined; if not, its discipline will be bad.
+
+ 45. If a general shows confidence in his men but always insists on his orders being obeyed, the gain will be mutual.
+
+ X. Terrain
+
+ 1. Sun Tzu said: We may distinguish six kinds of terrain, to wit: (1) Accessible ground; (2) entangling ground; (3) temporizing ground; (4) narrow passes; (5) precipitous heights; (6) positions at a great distance from the enemy.
+
+ 2. Ground which can be freely traversed by both sides is called accessible.
+
+ 3. With regard to ground of this nature, be before the enemy in occupying the raised and sunny spots, and carefully guard your line of supplies. Then you will be able to fight with advantage.
+
+ 4. Ground which can be abandoned but is hard to re-occupy is called entangling.
+
+ 5. From a position of this sort, if the enemy is unprepared, you may sally forth and defeat him. But if the enemy is prepared for your coming, and you fail to defeat him, then, return being impossible, disaster will ensue.
+
+ 6. When the position is such that neither side will gain by making the first move, it is called temporizing ground.
+
+ 7. In a position of this sort, even though the enemy should offer us an attractive bait, it will be advisable not to stir forth, but rather to retreat, thus enticing the enemy in his turn; then, when part of his army has come out, we may deliver our attack with advantage.
+
+ 8. With regard to narrow passes, if you can occupy them first, let them be strongly garrisoned and await the advent of the enemy.
+
+ 9. Should the army forestall you in occupying a pass, do not go after him if the pass is fully garrisoned, but only if it is weakly garrisoned.
+
+ 10. With regard to precipitous heights, if you are beforehand with your adversary, you should occupy the raised and sunny spots, and there wait for him to come up.
+
+ 11. If the enemy has occupied them before you, do not follow him, but retreat and try to entice him away.
+
+ 12. If you are situated at a great distance from the enemy, and the strength of the two armies is equal, it is not easy to provoke a battle, and fighting will be to your disadvantage.
+
+ 13. These six are the principles connected with Earth. The general who has attained a responsible post must be careful to study them.
+
+ 14. Now an army is exposed to six several calamities, not arising from natural causes, but from faults for which the general is responsible. These are: (1) Flight; (2) insubordination; (3) collapse; (4) ruin; (5) disorganization; (6) rout.
+
+ 15. Other conditions being equal, if one force is hurled against another ten times its size, the result will be the flight of the former.
+
+ 16. When the common soldiers are too strong and their officers too weak, the result is insubordination. When the officers are too strong and the common soldiers too weak, the result is collapse.
+
+ 17. When the higher officers are angry and insubordinate, and on meeting the enemy give battle on their own account from a feeling of resentment, before the commander-in-chief can tell whether or no he is in a position to fight, the result is ruin.
+
+ 18. When the general is weak and without authority; when his orders are not clear and distinct; when there are no fixes duties assigned to officers and men, and the ranks are formed in a slovenly haphazard manner, the result is utter disorganization.
+
+ 19. When a general, unable to estimate the enemy's strength, allows an inferior force to engage a larger one, or hurls a weak detachment against a powerful one, and neglects to place picked soldiers in the front rank, the result must be rout.
+
+ 20. These are six ways of courting defeat, which must be carefully noted by the general who has attained a responsible post.
+
+ 21. The natural formation of the country is the soldier's best ally; but a power of estimating the adversary, of controlling the forces of victory, and of shrewdly calculating difficulties, dangers and distances, constitutes the test of a great general.
+
+ 22. He who knows these things, and in fighting puts his knowledge into practice, will win his battles. He who knows them not, nor practices them, will surely be defeated.
+
+ 23. If fighting is sure to result in victory, then you must fight, even though the ruler forbid it; if fighting will not result in victory, then you must not fight even at the ruler's bidding.
+
+ 24. The general who advances without coveting fame and retreats without fearing disgrace, whose only thought is to protect his country and do good service for his sovereign, is the jewel of the kingdom.
+
+ 25. Regard your soldiers as your children, and they will follow you into the deepest valleys; look upon them as your own beloved sons, and they will stand by you even unto death.
+
+ 26. If, however, you are indulgent, but unable to make your authority felt; kind-hearted, but unable to enforce your commands; and incapable, moreover, of quelling disorder: then your soldiers must be likened to spoilt children; they are useless for any practical purpose.
+
+ 27. If we know that our own men are in a condition to attack, but are unaware that the enemy is not open to attack, we have gone only halfway towards victory.
+
+ 28. If we know that the enemy is open to attack, but are unaware that our own men are not in a condition to attack, we have gone only halfway towards victory.
+
+ 29. If we know that the enemy is open to attack, and also know that our men are in a condition to attack, but are unaware that the nature of the ground makes fighting impracticable, we have still gone only halfway towards victory.
+
+ 30. Hence the experienced soldier, once in motion, is never bewildered; once he has broken camp, he is never at a loss.
+
+ 31. Hence the saying: If you know the enemy and know yourself, your victory will not stand in doubt; if you know Heaven and know Earth, you may make your victory complete.
+
+ XI. The Nine Situations
+
+ 1. Sun Tzu said: The art of war recognizes nine varieties of ground: (1) Dispersive ground; (2) facile ground; (3) contentious ground; (4) open ground; (5) ground of intersecting highways; (6) serious ground; (7) difficult ground; (8) hemmed-in ground; (9) desperate ground.
+
+ 2. When a chieftain is fighting in his own territory, it is dispersive ground.
+
+ 3. When he has penetrated into hostile territory, but to no great distance, it is facile ground.
+
+ 4. Ground the possession of which imports great advantage to either side, is contentious ground.
+
+ 5. Ground on which each side has liberty of movement is open ground.
+
+ 6. Ground which forms the key to three contiguous states, so that he who occupies it first has most of the Empire at his command, is a ground of intersecting highways.
+
+ 7. When an army has penetrated into the heart of a hostile country, leaving a number of fortified cities in its rear, it is serious ground.
+
+ 8. Mountain forests, rugged steeps, marshes and fens--all country that is hard to traverse: this is difficult ground.
+
+ 9. Ground which is reached through narrow gorges, and from which we can only retire by tortuous paths, so that a small number of the enemy would suffice to crush a large body of our men: this is hemmed in ground.
+
+ 10. Ground on which we can only be saved from destruction by fighting without delay, is desperate ground.
+
+ 11. On dispersive ground, therefore, fight not. On facile ground, halt not. On contentious ground, attack not.
+
+ 12. On open ground, do not try to block the enemy's way. On the ground of intersecting highways, join hands with your allies.
+
+ 13. On serious ground, gather in plunder. In difficult ground, keep steadily on the march.
+
+ 14. On hemmed-in ground, resort to stratagem. On desperate ground, fight.
+
+ 15. Those who were called skillful leaders of old knew how to drive a wedge between the enemy's front and rear; to prevent co-operation between his large and small divisions; to hinder the good troops from rescuing the bad, the officers from rallying their men.
+
+ 16. When the enemy's men were united, they managed to keep them in disorder.
+
+ 17. When it was to their advantage, they made a forward move; when otherwise, they stopped still.
+
+ 18. If asked how to cope with a great host of the enemy in orderly array and on the point of marching to the attack, I should say: "Begin by seizing something which your opponent holds dear; then he will be amenable to your will."
+
+ 19. Rapidity is the essence of war: take advantage of the enemy's unreadiness, make your way by unexpected routes, and attack unguarded spots.
+
+ 20. The following are the principles to be observed by an invading force: The further you penetrate into a country, the greater will be the solidarity of your troops, and thus the defenders will not prevail against you.
+
+ 21. Make forays in fertile country in order to supply your army with food.
+
+ 22. Carefully study the well-being of your men, and do not overtax them. Concentrate your energy and hoard your strength. Keep your army continually on the move, and devise unfathomable plans.
+
+ 23. Throw your soldiers into positions whence there is no escape, and they will prefer death to flight. If they will face death, there is nothing they may not achieve. Officers and men alike will put forth their uttermost strength.
+
+ 24. Soldiers when in desperate straits lose the sense of fear. If there is no place of refuge, they will stand firm. If they are in hostile country, they will show a stubborn front. If there is no help for it, they will fight hard.
+
+ 25. Thus, without waiting to be marshaled, the soldiers will be constantly on the qui vive; without waiting to be asked, they will do your will; without restrictions, they will be faithful; without giving orders, they can be trusted.
+
+ 26. Prohibit the taking of omens, and do away with superstitious doubts. Then, until death itself comes, no calamity need be feared.
+
+ 27. If our soldiers are not overburdened with money, it is not because they have a distaste for riches; if their lives are not unduly long, it is not because they are disinclined to longevity.
+
+ 28. On the day they are ordered out to battle, your soldiers may weep, those sitting up bedewing their garments, and those lying down letting the tears run down their cheeks. But let them once be brought to bay, and they will display the courage of a Chu or a Kuei.
+
+ 29. The skillful tactician may be likened to the shuai-jan. Now the shuai-jan is a snake that is found in the ChUng mountains. Strike at its head, and you will be attacked by its tail; strike at its tail, and you will be attacked by its head; strike at its middle, and you will be attacked by head and tail both.
+
+ 30. Asked if an army can be made to imitate the shuai-jan, I should answer, Yes. For the men of Wu and the men of Yueh are enemies; yet if they are crossing a river in the same boat and are caught by a storm, they will come to each other's assistance just as the left hand helps the right.
+
+ 31. Hence it is not enough to put one's trust in the tethering of horses, and the burying of chariot wheels in the ground
+
+ 32. The principle on which to manage an army is to set up one standard of courage which all must reach.
+
+ 33. How to make the best of both strong and weak--that is a question involving the proper use of ground.
+
+ 34. Thus the skillful general conducts his army just as though he were leading a single man, willy-nilly, by the hand.
+
+ 35. It is the business of a general to be quiet and thus ensure secrecy; upright and just, and thus maintain order.
+
+ 36. He must be able to mystify his officers and men by false reports and appearances, and thus keep them in total ignorance.
+
+ 37. By altering his arrangements and changing his plans, he keeps the enemy without definite knowledge. By shifting his camp and taking circuitous routes, he prevents the enemy from anticipating his purpose.
+
+ 38. At the critical moment, the leader of an army acts like one who has climbed up a height and then kicks away the ladder behind him. He carries his men deep into hostile territory before he shows his hand.
+
+ 39. He burns his boats and breaks his cooking-pots; like a shepherd driving a flock of sheep, he drives his men this way and that, and nothing knows whither he is going.
+
+ 40. To muster his host and bring it into danger:--this may be termed the business of the general.
+
+ 41. The different measures suited to the nine varieties of ground; the expediency of aggressive or defensive tactics; and the fundamental laws of human nature: these are things that must most certainly be studied.
+
+ 42. When invading hostile territory, the general principle is, that penetrating deeply brings cohesion; penetrating but a short way means dispersion.
+
+ 43. When you leave your own country behind, and take your army across neighborhood territory, you find yourself on critical ground. When there are means of communication on all four sides, the ground is one of intersecting highways.
+
+ 44. When you penetrate deeply into a country, it is serious ground. When you penetrate but a little way, it is facile ground.
+
+ 45. When you have the enemy's strongholds on your rear, and narrow passes in front, it is hemmed-in ground. When there is no place of refuge at all, it is desperate ground.
+
+ 46. Therefore, on dispersive ground, I would inspire my men with unity of purpose. On facile ground, I would see that there is close connection between all parts of my army.
+
+ 47. On contentious ground, I would hurry up my rear.
+
+ 48. On open ground, I would keep a vigilant eye on my defenses. On ground of intersecting highways, I would consolidate my alliances.
+
+ 49. On serious ground, I would try to ensure a continuous stream of supplies. On difficult ground, I would keep pushing on along the road.
+
+ 50. On hemmed-in ground, I would block any way of retreat. On desperate ground, I would proclaim to my soldiers the hopelessness of saving their lives.
+
+ 51. For it is the soldier's disposition to offer an obstinate resistance when surrounded, to fight hard when he cannot help himself, and to obey promptly when he has fallen into danger.
+
+ 52. We cannot enter into alliance with neighboring princes until we are acquainted with their designs. We are not fit to lead an army on the march unless we are familiar with the face of the country--its mountains and forests, its pitfalls and precipices, its marshes and swamps. We shall be unable to turn natural advantages to account unless we make use of local guides.
+
+ 53. To be ignored of any one of the following four or five principles does not befit a warlike prince.
+
+ 54. When a warlike prince attacks a powerful state, his generalship shows itself in preventing the concentration of the enemy's forces. He overawes his opponents, and their allies are prevented from joining against him.
+
+ 55. Hence he does not strive to ally himself with all and sundry, nor does he foster the power of other states. He carries out his own secret designs, keeping his antagonists in awe. Thus he is able to capture their cities and overthrow their kingdoms.
+
+ 56. Bestow rewards without regard to rule, issue orders without regard to previous arrangements; and you will be able to handle a whole army as though you had to do with but a single man.
+
+ 57. Confront your soldiers with the deed itself; never let them know your design. When the outlook is bright, bring it before their eyes; but tell them nothing when the situation is gloomy.
+
+ 58. Place your army in deadly peril, and it will survive; plunge it into desperate straits, and it will come off in safety.
+
+ 59. For it is precisely when a force has fallen into harm's way that is capable of striking a blow for victory.
+
+ 60. Success in warfare is gained by carefully accommodating ourselves to the enemy's purpose.
+
+ 61. By persistently hanging on the enemy's flank, we shall succeed in the long run in killing the commander-in-chief.
+
+ 62. This is called ability to accomplish a thing by sheer cunning.
+
+ 63. On the day that you take up your command, block the frontier passes, destroy the official tallies, and stop the passage of all emissaries.
+
+ 64. Be stern in the council-chamber, so that you may control the situation.
+
+ 65. If the enemy leaves a door open, you must rush in.
+
+ 66. Forestall your opponent by seizing what he holds dear, and subtly contrive to time his arrival on the ground.
+
+ 67. Walk in the path defined by rule, and accommodate yourself to the enemy until you can fight a decisive battle.
+
+ 68. At first, then, exhibit the coyness of a maiden, until the enemy gives you an opening; afterwards emulate the rapidity of a running hare, and it will be too late for the enemy to oppose you.
+
+ XII. The Attack by Fire
+
+ 1. Sun Tzu said: There are five ways of attacking with fire. The first is to burn soldiers in their camp; the second is to burn stores; the third is to burn baggage trains; the fourth is to burn arsenals and magazines; the fifth is to hurl dropping fire amongst the enemy.
+
+ 2. In order to carry out an attack, we must have means available. The material for raising fire should always be kept in readiness.
+
+ 3. There is a proper season for making attacks with fire, and special days for starting a conflagration.
+
+ 4. The proper season is when the weather is very dry; the special days are those when the moon is in the constellations of the Sieve, the Wall, the Wing or the Cross-bar; for these four are all days of rising wind.
+
+ 5. In attacking with fire, one should be prepared to meet five possible developments:
+
+ 6. (1) When fire breaks out inside to enemy's camp, respond at once with an attack from without.
+
+ 7. (2) If there is an outbreak of fire, but the enemy's soldiers remain quiet, bide your time and do not attack.
+
+ 8. (3) When the force of the flames has reached its height, follow it up with an attack, if that is practicable; if not, stay where you are.
+
+ 9. (4) If it is possible to make an assault with fire from without, do not wait for it to break out within, but deliver your attack at a favorable moment.
+
+ 10. (5) When you start a fire, be to windward of it. Do not attack from the leeward.
+
+ 11. A wind that rises in the daytime lasts long, but a night breeze soon falls.
+
+ 12. In every army, the five developments connected with fire must be known, the movements of the stars calculated, and a watch kept for the proper days.
+
+ 13. Hence those who use fire as an aid to the attack show intelligence; those who use water as an aid to the attack gain an accession of strength.
+
+ 14. By means of water, an enemy may be intercepted, but not robbed of all his belongings.
+
+ 15. Unhappy is the fate of one who tries to win his battles and succeed in his attacks without cultivating the spirit of enterprise; for the result is waste of time and general stagnation.
+
+ 16. Hence the saying: The enlightened ruler lays his plans well ahead; the good general cultivates his resources.
+
+ 17. Move not unless you see an advantage; use not your troops unless there is something to be gained; fight not unless the position is critical.
+
+ 18. No ruler should put troops into the field merely to gratify his own spleen; no general should fight a battle simply out of pique.
+
+ 19. If it is to your advantage, make a forward move; if not, stay where you are.
+
+ 20. Anger may in time change to gladness; vexation may be succeeded by content.
+
+ 21. But a kingdom that has once been destroyed can never come again into being; nor can the dead ever be brought back to life.
+
+ 22. Hence the enlightened ruler is heedful, and the good general full of caution. This is the way to keep a country at peace and an army intact.
+
+ XIII. The Use of Spies
+
+ 1. Sun Tzu said: Raising a host of a hundred thousand men and marching them great distances entails heavy loss on the people and a drain on the resources of the State. The daily expenditure will amount to a thousand ounces of silver. There will be commotion at home and abroad, and men will drop down exhausted on the highways. As many as seven hundred thousand families will be impeded in their labor.
+
+ 2. Hostile armies may face each other for years, striving for the victory which is decided in a single day. This being so, to remain in ignorance of the enemy's condition simply because one grudges the outlay of a hundred ounces of silver in honors and emoluments, is the height of inhumanity.
+
+ 3. One who acts thus is no leader of men, no present help to his sovereign, no master of victory.
+
+ 4. Thus, what enables the wise sovereign and the good general to strike and conquer, and achieve things beyond the reach of ordinary men, is foreknowledge.
+
+ 5. Now this foreknowledge cannot be elicited from spirits; it cannot be obtained inductively from experience, nor by any deductive calculation.
+
+ 6. Knowledge of the enemy's dispositions can only be obtained from other men.
+
+ 7. Hence the use of spies, of whom there are five classes: (1) Local spies; (2) inward spies; (3) converted spies; (4) doomed spies; (5) surviving spies.
+
+ 8. When these five kinds of spy are all at work, none can discover the secret system. This is called "divine manipulation of the threads." It is the sovereign's most precious faculty.
+
+ 9. Having local spies means employing the services of the inhabitants of a district.
+
+ 10. Having inward spies, making use of officials of the enemy.
+
+ 11. Having converted spies, getting hold of the enemy's spies and using them for our own purposes.
+
+ 12. Having doomed spies, doing certain things openly for purposes of deception, and allowing our spies to know of them and report them to the enemy.
+
+ 13. Surviving spies, finally, are those who bring back news from the enemy's camp.
+
+ 14. Hence it is that which none in the whole army are more intimate relations to be maintained than with spies. None should be more liberally rewarded. In no other business should greater secrecy be preserved.
+
+ 15. Spies cannot be usefully employed without a certain intuitive sagacity.
+
+ 16. They cannot be properly managed without benevolence and straightforwardness.
+
+ 17. Without subtle ingenuity of mind, one cannot make certain of the truth of their reports.
+
+ 18. Be subtle! be subtle! and use your spies for every kind of business.
+
+ 19. If a secret piece of news is divulged by a spy before the time is ripe, he must be put to death together with the man to whom the secret was told.
+
+ 20. Whether the object be to crush an army, to storm a city, or to assassinate an individual, it is always necessary to begin by finding out the names of the attendants, the aides-de-camp, and door-keepers and sentries of the general in command. Our spies must be commissioned to ascertain these.
+
+ 21. The enemy's spies who have come to spy on us must be sought out, tempted with bribes, led away and comfortably housed. Thus they will become converted spies and available for our service.
+
+ 22. It is through the information brought by the converted spy that we are able to acquire and employ local and inward spies.
+
+ 23. It is owing to his information, again, that we can cause the doomed spy to carry false tidings to the enemy.
+
+ 24. Lastly, it is by his information that the surviving spy can be used on appointed occasions.
+
+ 25. The end and aim of spying in all its five varieties is knowledge of the enemy; and this knowledge can only be derived, in the first instance, from the converted spy. Hence it is essential that the converted spy be treated with the utmost liberality.
+
+ 26. Of old, the rise of the Yin dynasty was due to I Chih who had served under the Hsia. Likewise, the rise of the Chou dynasty was due to Lu Ya who had served under the Yin.
+
+ 27. Hence it is only the enlightened ruler and the wise general who will use the highest intelligence of the army for purposes of spying and thereby they achieve great results. Spies are a most important element in water, because on them depends an army's ability to move.
+
+
+
+
+book-text-king-in-yellow = THE REPAIRER OF REPUTATIONS I
+ “Ne raillons pas les fous; leur folie dure plus longtemps que la nôtre.... Voila toute la différence.”
+ 
+ Toward the end of the year 1920 the Government of the United States had practically completed the programme, adopted during the last months of President Winthrop’s administration. The country was apparently tranquil. Everybody knows how the Tariff and Labour questions were settled. The war with Germany, incident on that country’s seizure of the Samoan Islands, had left no visible scars upon the republic, and the temporary occupation of Norfolk by the invading army had been forgotten in the joy over repeated naval victories, and the subsequent ridiculous plight of General Von Gartenlaube’s forces in the State of New Jersey. The Cuban and Hawaiian investments had paid one hundred per cent and the territory of Samoa was well worth its cost as a coaling station. The country was in a superb state of defence. Every coast city had been well supplied with land fortifications; the army under the parental eye of the General Staff, organized according to the Prussian system, had been increased to 300,000 men, with a territorial reserve of a million; and six magnificent squadrons of cruisers and battle-ships patrolled the six stations of the navigable seas, leaving a steam reserve amply fitted to control home waters. The gentlemen from the West had at last been constrained to acknowledge that a college for the training of diplomats was as necessary as law schools are for the training of barristers; consequently we were no longer represented abroad by incompetent patriots. The nation was prosperous; Chicago, for a moment paralyzed after a second great fire, had risen from its ruins, white and imperial, and more beautiful than the white city which had been built for its plaything in 1893. Everywhere good architecture was replacing bad, and even in New York, a sudden craving for decency had swept away a great portion of the existing horrors. Streets had been widened, properly paved and lighted, trees had been planted, squares laid out, elevated structures demolished and underground roads built to replace them. The new government buildings and barracks were fine bits of architecture, and the long system of stone quays which completely surrounded the island had been turned into parks which proved a god-send to the population. The subsidizing of the state theatre and state opera brought its own reward. The United States National Academy of Design was much like European institutions of the same kind. Nobody envied the Secretary of Fine Arts, either his cabinet position or his portfolio. The Secretary of Forestry and Game Preservation had a much easier time, thanks to the new system of National Mounted Police. We had profited well by the latest treaties with France and England; the exclusion of foreign-born Jews as a measure of self-preservation, the settlement of the new independent negro state of Suanee, the checking of immigration, the new laws concerning naturalization, and the gradual centralization of power in the executive all contributed to national calm and prosperity. When the Government solved the Indian problem and squadrons of Indian cavalry scouts in native costume were substituted for the pitiable organizations tacked on to the tail of skeletonized regiments by a former Secretary of War, the nation drew a long sigh of relief. When, after the colossal Congress of Religions, bigotry and intolerance were laid in their graves and kindness and charity began to draw warring sects together, many thought the millennium had arrived, at least in the new world which after all is a world by itself.
+ 
+ But self-preservation is the first law, and the United States had to look on in helpless sorrow as Germany, Italy, Spain and Belgium writhed in the throes of Anarchy, while Russia, watching from the Caucasus, stooped and bound them one by one.
+ 
+ In the city of New York the summer of 1899 was signalized by the dismantling of the Elevated Railroads. The summer of 1900 will live in the memories of New York people for many a cycle; the Dodge Statue was removed in that year. In the following winter began that agitation for the repeal of the laws prohibiting suicide which bore its final fruit in the month of April, 1920, when the first Government Lethal Chamber was opened on Washington Square.
+ 
+ I had walked down that day from Dr. Archer’s house on Madison Avenue, where I had been as a mere formality. Ever since that fall from my horse, four years before, I had been troubled at times with pains in the back of my head and neck, but now for months they had been absent, and the doctor sent me away that day saying there was nothing more to be cured in me. It was hardly worth his fee to be told that; I knew it myself. Still I did not grudge him the money. What I minded was the mistake which he made at first. When they picked me up from the pavement where I lay unconscious, and somebody had mercifully sent a bullet through my horse’s head, I was carried to Dr. Archer, and he, pronouncing my brain affected, placed me in his private asylum where I was obliged to endure treatment for insanity. At last he decided that I was well, and I, knowing that my mind had always been as sound as his, if not sounder, “paid my tuition” as he jokingly called it, and left. I told him, smiling, that I would get even with him for his mistake, and he laughed heartily, and asked me to call once in a while. I did so, hoping for a chance to even up accounts, but he gave me none, and I told him I would wait.
+ 
+ The fall from my horse had fortunately left no evil results; on the contrary it had changed my whole character for the better. From a lazy young man about town, I had become active, energetic, temperate, and above all—oh, above all else—ambitious. There was only one thing which troubled me, I laughed at my own uneasiness, and yet it troubled me.
+ 
+ During my convalescence I had bought and read for the first time, The King in Yellow. I remember after finishing the first act that it occurred to me that I had better stop. I started up and flung the book into the fireplace; the volume struck the barred grate and fell open on the hearth in the firelight. If I had not caught a glimpse of the opening words in the second act I should never have finished it, but as I stooped to pick it up, my eyes became riveted to the open page, and with a cry of terror, or perhaps it was of joy so poignant that I suffered in every nerve, I snatched the thing out of the coals and crept shaking to my bedroom, where I read it and reread it, and wept and laughed and trembled with a horror which at times assails me yet. This is the thing that troubles me, for I cannot forget Carcosa where black stars hang in the heavens; where the shadows of men’s thoughts lengthen in the afternoon, when the twin suns sink into the lake of Hali; and my mind will bear for ever the memory of the Pallid Mask. I pray God will curse the writer, as the writer has cursed the world with this beautiful, stupendous creation, terrible in its simplicity, irresistible in its truth—a world which now trembles before the King in Yellow. When the French Government seized the translated copies which had just arrived in Paris, London, of course, became eager to read it. It is well known how the book spread like an infectious disease, from city to city, from continent to continent, barred out here, confiscated there, denounced by Press and pulpit, censured even by the most advanced of literary anarchists. No definite principles had been violated in those wicked pages, no doctrine promulgated, no convictions outraged. It could not be judged by any known standard, yet, although it was acknowledged that the supreme note of art had been struck in The King in Yellow, all felt that human nature could not bear the strain, nor thrive on words in which the essence of purest poison lurked. The very banality and innocence of the first act only allowed the blow to fall afterward with more awful effect.
+ 
+ It was, I remember, the 13th day of April, 1920, that the first Government Lethal Chamber was established on the south side of Washington Square, between Wooster Street and South Fifth Avenue. The block which had formerly consisted of a lot of shabby old buildings, used as cafés and restaurants for foreigners, had been acquired by the Government in the winter of 1898. The French and Italian cafés and restaurants were torn down; the whole block was enclosed by a gilded iron railing, and converted into a lovely garden with lawns, flowers and fountains. In the centre of the garden stood a small, white building, severely classical in architecture, and surrounded by thickets of flowers. Six Ionic columns supported the roof, and the single door was of bronze. A splendid marble group of the “Fates” stood before the door, the work of a young American sculptor, Boris Yvain, who had died in Paris when only twenty-three years old.
+ 
+ The inauguration ceremonies were in progress as I crossed University Place and entered the square. I threaded my way through the silent throng of spectators, but was stopped at Fourth Street by a cordon of police. A regiment of United States lancers were drawn up in a hollow square round the Lethal Chamber. On a raised tribune facing Washington Park stood the Governor of New York, and behind him were grouped the Mayor of New York and Brooklyn, the Inspector-General of Police, the Commandant of the state troops, Colonel Livingston, military aid to the President of the United States, General Blount, commanding at Governor’s Island, Major-General Hamilton, commanding the garrison of New York and Brooklyn, Admiral Buffby of the fleet in the North River, Surgeon-General Lanceford, the staff of the National Free Hospital, Senators Wyse and Franklin of New York, and the Commissioner of Public Works. The tribune was surrounded by a squadron of hussars of the National Guard.
+ 
+ The Governor was finishing his reply to the short speech of the Surgeon-General. I heard him say: “The laws prohibiting suicide and providing punishment for any attempt at self-destruction have been repealed. The Government has seen fit to acknowledge the right of man to end an existence which may have become intolerable to him, through physical suffering or mental despair. It is believed that the community will be benefited by the removal of such people from their midst. Since the passage of this law, the number of suicides in the United States has not increased. Now the Government has determined to establish a Lethal Chamber in every city, town and village in the country, it remains to be seen whether or not that class of human creatures from whose desponding ranks new victims of self-destruction fall daily will accept the relief thus provided.” He paused, and turned to the white Lethal Chamber. The silence in the street was absolute. “There a painless death awaits him who can no longer bear the sorrows of this life. If death is welcome let him seek it there.” Then quickly turning to the military aid of the President’s household, he said, “I declare the Lethal Chamber open,” and again facing the vast crowd he cried in a clear voice: “Citizens of New York and of the United States of America, through me the Government declares the Lethal Chamber to be open.”
+ 
+ The solemn hush was broken by a sharp cry of command, the squadron of hussars filed after the Governor’s carriage, the lancers wheeled and formed along Fifth Avenue to wait for the commandant of the garrison, and the mounted police followed them. I left the crowd to gape and stare at the white marble Death Chamber, and, crossing South Fifth Avenue, walked along the western side of that thoroughfare to Bleecker Street. Then I turned to the right and stopped before a dingy shop which bore the sign:
+ 
+ HAWBERK, ARMOURER.
+ 
+ I glanced in at the doorway and saw Hawberk busy in his little shop at the end of the hall. He looked up, and catching sight of me cried in his deep, hearty voice, “Come in, Mr. Castaigne!” Constance, his daughter, rose to meet me as I crossed the threshold, and held out her pretty hand, but I saw the blush of disappointment on her cheeks, and knew that it was another Castaigne she had expected, my cousin Louis. I smiled at her confusion and complimented her on the banner she was embroidering from a coloured plate. Old Hawberk sat riveting the worn greaves of some ancient suit of armour, and the ting! ting! ting! of his little hammer sounded pleasantly in the quaint shop. Presently he dropped his hammer, and fussed about for a moment with a tiny wrench. The soft clash of the mail sent a thrill of pleasure through me. I loved to hear the music of steel brushing against steel, the mellow shock of the mallet on thigh pieces, and the jingle of chain armour. That was the only reason I went to see Hawberk. He had never interested me personally, nor did Constance, except for the fact of her being in love with Louis. This did occupy my attention, and sometimes even kept me awake at night. But I knew in my heart that all would come right, and that I should arrange their future as I expected to arrange that of my kind doctor, John Archer. However, I should never have troubled myself about visiting them just then, had it not been, as I say, that the music of the tinkling hammer had for me this strong fascination. I would sit for hours, listening and listening, and when a stray sunbeam struck the inlaid steel, the sensation it gave me was almost too keen to endure. My eyes would become fixed, dilating with a pleasure that stretched every nerve almost to breaking, until some movement of the old armourer cut off the ray of sunlight, then, still thrilling secretly, I leaned back and listened again to the sound of the polishing rag, swish! swish! rubbing rust from the rivets.
+ 
+ Constance worked with the embroidery over her knees, now and then pausing to examine more closely the pattern in the coloured plate from the Metropolitan Museum.
+ 
+ “Who is this for?” I asked.
+ 
+ Hawberk explained, that in addition to the treasures of armour in the Metropolitan Museum of which he had been appointed armourer, he also had charge of several collections belonging to rich amateurs. This was the missing greave of a famous suit which a client of his had traced to a little shop in Paris on the Quai d’Orsay. He, Hawberk, had negotiated for and secured the greave, and now the suit was complete. He laid down his hammer and read me the history of the suit, traced since 1450 from owner to owner until it was acquired by Thomas Stainbridge. When his superb collection was sold, this client of Hawberk’s bought the suit, and since then the search for the missing greave had been pushed until it was, almost by accident, located in Paris.
+ 
+ “Did you continue the search so persistently without any certainty of the greave being still in existence?” I demanded.
+ 
+ “Of course,” he replied coolly.
+ 
+ Then for the first time I took a personal interest in Hawberk.
+ 
+ “It was worth something to you,” I ventured.
+ 
+ “No,” he replied, laughing, “my pleasure in finding it was my reward.”
+ 
+ “Have you no ambition to be rich?” I asked, smiling.
+ 
+ “My one ambition is to be the best armourer in the world,” he answered gravely.
+ 
+ Constance asked me if I had seen the ceremonies at the Lethal Chamber. She herself had noticed cavalry passing up Broadway that morning, and had wished to see the inauguration, but her father wanted the banner finished, and she had stayed at his request.
+ 
+ “Did you see your cousin, Mr. Castaigne, there?” she asked, with the slightest tremor of her soft eyelashes.
+ 
+ “No,” I replied carelessly. “Louis’ regiment is manœuvring out in Westchester County.” I rose and picked up my hat and cane.
+ 
+ “Are you going upstairs to see the lunatic again?” laughed old Hawberk. If Hawberk knew how I loathe that word “lunatic,” he would never use it in my presence. It rouses certain feelings within me which I do not care to explain. However, I answered him quietly: “I think I shall drop in and see Mr. Wilde for a moment or two.”
+ 
+ “Poor fellow,” said Constance, with a shake of the head, “it must be hard to live alone year after year poor, crippled and almost demented. It is very good of you, Mr. Castaigne, to visit him as often as you do.”
+ 
+ “I think he is vicious,” observed Hawberk, beginning again with his hammer. I listened to the golden tinkle on the greave plates; when he had finished I replied:
+ 
+ “No, he is not vicious, nor is he in the least demented. His mind is a wonder chamber, from which he can extract treasures that you and I would give years of our lives to acquire.”
+ 
+ Hawberk laughed.
+ 
+ I continued a little impatiently: “He knows history as no one else could know it. Nothing, however trivial, escapes his search, and his memory is so absolute, so precise in details, that were it known in New York that such a man existed, the people could not honour him enough.”
+ 
+ “Nonsense,” muttered Hawberk, searching on the floor for a fallen rivet.
+ 
+ “Is it nonsense,” I asked, managing to suppress what I felt, “is it nonsense when he says that the tassets and cuissards of the enamelled suit of armour commonly known as the ‘Prince’s Emblazoned’ can be found among a mass of rusty theatrical properties, broken stoves and ragpicker’s refuse in a garret in Pell Street?”
+ 
+ Hawberk’s hammer fell to the ground, but he picked it up and asked, with a great deal of calm, how I knew that the tassets and left cuissard were missing from the “Prince’s Emblazoned.”
+ 
+ “I did not know until Mr. Wilde mentioned it to me the other day. He said they were in the garret of 998 Pell Street.”
+ 
+ “Nonsense,” he cried, but I noticed his hand trembling under his leathern apron.
+ 
+ “Is this nonsense too?” I asked pleasantly, “is it nonsense when Mr. Wilde continually speaks of you as the Marquis of Avonshire and of Miss Constance—”
+ 
+ I did not finish, for Constance had started to her feet with terror written on every feature. Hawberk looked at me and slowly smoothed his leathern apron.
+ 
+ “That is impossible,” he observed, “Mr. Wilde may know a great many things—”
+ 
+ “About armour, for instance, and the ‘Prince’s Emblazoned,’” I interposed, smiling.
+ 
+ “Yes,” he continued, slowly, “about armour also—may be—but he is wrong in regard to the Marquis of Avonshire, who, as you know, killed his wife’s traducer years ago, and went to Australia where he did not long survive his wife.”
+ 
+ “Mr. Wilde is wrong,” murmured Constance. Her lips were blanched, but her voice was sweet and calm.
+ 
+ “Let us agree, if you please, that in this one circumstance Mr. Wilde is wrong,” I said.
+ 
+
+
+
