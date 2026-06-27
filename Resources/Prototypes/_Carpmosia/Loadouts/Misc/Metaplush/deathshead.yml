@@ -2,8 +2,7 @@
   id: MothPlushieDeathshead
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobBartender
       time: 20h
 
