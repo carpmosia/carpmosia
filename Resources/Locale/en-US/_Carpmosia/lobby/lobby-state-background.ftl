@@ -4,5 +4,7 @@ lobby-state-background-medbayredalert-title = Medbay on red alert
 lobby-state-background-medbayredalert-artist = Cannedeeljuice
 lobby-state-background-drunkardsspree-title = Drunkards' Spree
 lobby-state-background-drunkardsspree-artist = Saver310
+lobby-state-background-thefirstwave-title = The First Wave
+lobby-state-background-thefirstwave-artist = UBlueberry
 lobby-state-background-chitters-title = *chitters*
 lobby-state-background-chitters-artist = Lunarr

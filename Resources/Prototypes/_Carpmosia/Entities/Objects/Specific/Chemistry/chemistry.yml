@@ -1,0 +1,64 @@
+- type: entity
+  parent: Beaker
+  id: TraumoxadoneBeakerSmall
+  suffix: traumoxadone
+  components:
+  - type: Label
+    currentLabel: reagent-name-cryoxadone
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Traumoxadone
+        Quantity: 60
+
+- type: entity
+  parent: Beaker
+  id: AloxadoneBeakerSmall
+  suffix: aloxadone
+  components:
+  - type: Label
+    currentLabel: reagent-name-aloxadone
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Aloxadone
+        Quantity: 60
+
+- type: entity
+  parent: Beaker
+  id: DoxarubixadoneBeakerSmall
+  suffix: doxarubixadone
+  components:
+  - type: Label
+    currentLabel: reagent-name-doxarubixadone
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Doxarubixadone
+        Quantity: 60
+
+- type: entity
+  parent: Beaker
+  id: LeporazineBeakerSmall
+  suffix: leporazine
+  components:
+  - type: Label
+    currentLabel: reagent-name-leporazine
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Leporazine
+        Quantity: 60
+
+- type: entity
+  parent: Beaker
+  id: StelloxadoneBeakerSmall
+  suffix: stelloxadone
+  components:
+  - type: Label
+    currentLabel: reagent-name-stelloxadone
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Stelloxadone
+        Quantity: 60
