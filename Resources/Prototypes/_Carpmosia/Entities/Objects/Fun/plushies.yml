@@ -192,3 +192,8 @@
     sprite: _Carpmosia/Objects/Fun/Plushies/deathshead.rsi
   - type: Clothing
     sprite: _Carpmosia/Objects/Fun/Plushies/deathshead.rsi
+  - type: ReactionMixer
+    mixMessage: "spoon-mixing-success"
+    timeToMix: 0.5
+    reactionTypes:
+    - Stir
