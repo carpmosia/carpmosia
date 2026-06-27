@@ -190,5 +190,29 @@
   components:
   - type: Sprite
     sprite: _Carpmosia/Objects/Fun/Plushies/deathshead.rsi
+<<<<<<< HEAD
+=======
+    state: icon
+  - type: ActivatableUI
+    key: enum.NetworkConfiguratorUiKey.List
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.NetworkConfiguratorUiKey.List:
+        type: NetworkConfiguratorBoundUserInterface
+      enum.NetworkConfiguratorUiKey.Configure:
+        type: NetworkConfiguratorBoundUserInterface
+      enum.NetworkConfiguratorUiKey.Link:
+        type: NetworkConfiguratorBoundUserInterface
+  - type: NetworkConfigurator
+  - type: EmitSoundOnLand
+    sound: *PlushieMothSqueak
+  - type: EmitSoundOnCollide
+    sound: *PlushieMothScream
+  - type: MeleeWeapon
+    soundHit: *PlushieMothScream
+  - type: Edible
+    useSound: *PlushieMothScream
+>>>>>>> 6f20e67aaf (Fix EVERYTHING)
   - type: Clothing
     sprite: _Carpmosia/Objects/Fun/Plushies/deathshead.rsi
