@@ -5,7 +5,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobBartender
-      time: 50h
+      time: 20h
 
 - type: loadout
   id: MothPlushieDeathshead
@@ -14,7 +14,7 @@
     proto: MothPlushieDeathshead
   storage:
     back:
-    - PlushieMothLanka
+    - PlushieMothDeathshead
   groupBy: "metaplush"
 
 - type: loadout

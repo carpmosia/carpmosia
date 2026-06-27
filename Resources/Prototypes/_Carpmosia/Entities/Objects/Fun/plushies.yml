@@ -6,7 +6,7 @@
   components:
   - type: Sprite
     sprite: _Carpmosia/Objects/Fun/Plushies/screams.rsi
-  - type: Item
+  - type: Clothing
     sprite: _Carpmosia/Objects/Fun/Plushies/screams.rsi
   - type: EmitSoundOnUse
     sound: &PlushieLizardScreamsSound
@@ -28,11 +28,6 @@
     transferAmount: 10
   - type: MeleeWeapon
     soundHit: *PlushieLizardScreamsSound
-  - type: Clothing
-    quickEquip: false
-    sprite: _Carpmosia/Objects/Fun/Plushies/screams.rsi
-    slots:
-    - HEAD
   - type: Explosive
     canCreateVacuum: false
     deleteAfterExplosion: false
@@ -59,14 +54,15 @@
         Quantity: 10
 
 - type: entity
-  parent: BasePlushie
+  parent: PlushieArachind
   id: PlushieArachindCole
   name: tider spider plushie
   description: An adorable stuffed toy that resembles an arachnid, specifically a certain tider. It shivers in the presence of contraband.
   components:
   - type: Sprite
     sprite: _Carpmosia/Objects/Fun/Plushies/cole.rsi
-    state: icon
+  - type: Clothing
+    sprite: _Carpmosia/Objects/Fun/Plushies/cole.rsi
   - type: EmitSoundOnUse
     sound: &PlushieArachnidSound
       path: /Audio/Voice/Arachnid/arachnid_scream.ogg
@@ -86,11 +82,6 @@
     useSound: *PlushieArachnidSound
   - type: MeleeWeapon
     soundHit: *PlushieArachnidSound
-  - type: Clothing
-    quickEquip: false
-    sprite: _Carpmosia/Objects/Fun/Plushies/cole.rsi
-    slots:
-    - HEAD
 
 - type: entity
   parent: PlushieLizard
@@ -105,7 +96,7 @@
     - state: fill-1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
-  - type: Item
+  - type: Clothing
     sprite: _Carpmosia/Objects/Fun/Plushies/axel.rsi
   - type: EmitSoundOnUse
     sound: &PlushieLizardAxelSound
@@ -127,11 +118,6 @@
     transferAmount: 10
   - type: MeleeWeapon
     soundHit: *PlushieLizardAxelSound
-  - type: Clothing
-    quickEquip: false
-    sprite: _Carpmosia/Objects/Fun/Plushies/axel.rsi
-    slots:
-    - HEAD
   - type: Extractable
     juiceSolution:
       reagents:
@@ -171,7 +157,8 @@
   components:
   - type: Sprite
     sprite: _Carpmosia/Objects/Fun/Plushies/lanka.rsi
-    state: icon
+  - type: Clothing
+    sprite: _Carpmosia/Objects/Fun/Plushies/lanka.rsi
   - type: ActivatableUI
     key: enum.NetworkConfiguratorUiKey.List
     inHandsOnly: true
@@ -194,11 +181,6 @@
     soundHit: *PlushieMothScream
   - type: Edible
     useSound: *PlushieMothScream
-  - type: Clothing
-    quickEquip: false
-    sprite: _Carpmosia/Objects/Fun/Plushies/lanka.rsi
-    slots:
-    - HEAD
 
 - type: entity
   parent: PlushieMoth
@@ -208,31 +190,5 @@
   components:
   - type: Sprite
     sprite: _Carpmosia/Objects/Fun/Plushies/deathshead.rsi
-    state: icon
-  - type: ActivatableUI
-    key: enum.NetworkConfiguratorUiKey.List
-    inHandsOnly: true
-  - type: UserInterface
-    interfaces:
-      enum.NetworkConfiguratorUiKey.List:
-        type: NetworkConfiguratorBoundUserInterface
-      enum.NetworkConfiguratorUiKey.Configure:
-        type: NetworkConfiguratorBoundUserInterface
-      enum.NetworkConfiguratorUiKey.Link:
-        type: NetworkConfiguratorBoundUserInterface
-  - type: NetworkConfigurator
-  - type: EmitSoundOnLand
-    sound: &PlushieMothSqueak
-      path: /Audio/Voice/Moth/moth_squeak.ogg
-  - type: EmitSoundOnCollide
-    sound: &PlushieMothScream
-      path: /Audio/Voice/Moth/moth_scream.ogg
-  - type: MeleeWeapon
-    soundHit: *PlushieMothScream
-  - type: Edible
-    useSound: *PlushieMothScream
   - type: Clothing
-    quickEquip: false
     sprite: _Carpmosia/Objects/Fun/Plushies/deathshead.rsi
-    slots:
-    - HEAD
