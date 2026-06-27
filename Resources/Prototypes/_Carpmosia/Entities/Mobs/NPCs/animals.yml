@@ -111,6 +111,11 @@
         Base: bag-dead
   - type: Item
     size: Tiny
+  - type: Clothing
+    quickEquip: false
+    sprite: _Carpmosia/Mobs/Animals/bagfish.rsi
+    slots:
+    - HEAD
   - type: Tag
     tags:
     - CannotSuicide
