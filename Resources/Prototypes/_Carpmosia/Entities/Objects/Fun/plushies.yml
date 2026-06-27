@@ -190,8 +190,6 @@
   components:
   - type: Sprite
     sprite: _Carpmosia/Objects/Fun/Plushies/deathshead.rsi
-<<<<<<< HEAD
-=======
     state: icon
   - type: ActivatableUI
     key: enum.NetworkConfiguratorUiKey.List
@@ -213,6 +211,5 @@
     soundHit: *PlushieMothScream
   - type: Edible
     useSound: *PlushieMothScream
->>>>>>> 6f20e67aaf (Fix EVERYTHING)
   - type: Clothing
     sprite: _Carpmosia/Objects/Fun/Plushies/deathshead.rsi
