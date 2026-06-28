@@ -2,8 +2,7 @@
   id: LizardPlushieRussian
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:DepartmentTimeRequirement
+    requirement: !type:DepartmentTimeRequirement
       department: Civilian
       time: 20h
 
