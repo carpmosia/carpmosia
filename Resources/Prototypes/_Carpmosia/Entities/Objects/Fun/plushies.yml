@@ -199,3 +199,14 @@
     sprite: _Carpmosia/Objects/Fun/Plushies/lanka.rsi
     slots:
     - HEAD
+
+- type: entity
+  parent: PlushieLizard
+  id: PlushieLizardRussian
+  name: russian lizard plushie
+  description: An adorable plushie depicting a certain russian lizard. Smells like hard alcohol and dust.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Fun/Plushies/russian.rsi
+  - type: Clothing
+    sprite: _Carpmosia/Objects/Fun/Plushies/russian.rsi
