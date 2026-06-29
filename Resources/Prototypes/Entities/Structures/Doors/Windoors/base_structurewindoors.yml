@@ -29,7 +29,7 @@
         layer:
         - GlassAirlockLayer
   - type: Sprite
-    sprite: Structures/Doors/Windoors/windoor.rsi
+    sprite: _Carpmosia/Structures/Doors/Windoors/windoor.rsi # Carpmosia-edit - Windoor resprite
     layers:
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
@@ -39,6 +39,7 @@
       visible: false
     - state: welded
       map: ["enum.WeldableLayers.BaseWelded"]
+      sprite: Structures/Doors/Windoors/windoor.rsi # Carpmosia-edit - Windoor resprite
     - state: bolted_unlit
       shader: unshaded
       map: ["enum.DoorVisualLayers.BaseBolted"]
@@ -181,7 +182,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/windoor.rsi
+    sprite: _Carpmosia/Structures/Doors/Windoors/windoor.rsi # Carpmosia-edit - Windoor resprite
     layers:
     - state: secure_underlay
     - state: closed
@@ -192,6 +193,7 @@
       visible: false
     - state: welded
       map: [ "enum.WeldableLayers.BaseWelded" ]
+      sprite: Structures/Doors/Windoors/windoor.rsi # Carpmosia-edit - Windoor resprite
     - state: bolted_unlit
       shader: unshaded
       map: [ "enum.DoorVisualLayers.BaseBolted" ]
@@ -253,7 +255,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/plasma.rsi
+    sprite: _Carpmosia/Structures/Doors/Windoors/plasma.rsi # Carpmosia-edit - Windoor resprite
     layers:
     - state: closed
       map: [ "enum.DoorVisualLayers.Base" ]
@@ -263,6 +265,7 @@
       visible: false
     - state: welded
       map: [ "enum.WeldableLayers.BaseWelded" ]
+      sprite: Structures/Doors/Windoors/plasma.rsi # Carpmosia-edit - Windoor resprite
     - state: bolted_unlit
       shader: unshaded
       map: [ "enum.DoorVisualLayers.BaseBolted" ]
@@ -316,7 +319,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/plasma.rsi
+    sprite: _Carpmosia/Structures/Doors/Windoors/plasma.rsi # Carpmosia-edit - Windoor resprite
     layers:
     - state: secure_underlay
     - state: closed
@@ -327,6 +330,7 @@
       visible: false
     - state: welded
       map: [ "enum.WeldableLayers.BaseWelded" ]
+      sprite: Structures/Doors/Windoors/plasma.rsi # Carpmosia-edit - Windoor resprite
     - state: bolted_unlit
       shader: unshaded
       map: [ "enum.DoorVisualLayers.BaseBolted" ]
@@ -388,7 +392,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/uranium.rsi
+    sprite: _Carpmosia/Structures/Doors/Windoors/uranium.rsi # Carpmosia-edit - Windoor resprite
     layers:
     - state: closed
       map: [ "enum.DoorVisualLayers.Base" ]
@@ -398,6 +402,7 @@
       visible: false
     - state: welded
       map: [ "enum.WeldableLayers.BaseWelded" ]
+      sprite: Structures/Doors/Windoors/uranium.rsi # Carpmosia-edit - Windoor resprite
     - state: bolted_unlit
       shader: unshaded
       map: [ "enum.DoorVisualLayers.BaseBolted" ]
@@ -451,7 +456,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/uranium.rsi
+    sprite: _Carpmosia/Structures/Doors/Windoors/uranium.rsi # Carpmosia-edit - Windoor resprite
     layers:
     - state: secure_underlay
     - state: closed
@@ -462,6 +467,7 @@
       visible: false
     - state: welded
       map: [ "enum.WeldableLayers.BaseWelded" ]
+      sprite: Structures/Doors/Windoors/uranium.rsi # Carpmosia-edit - Windoor resprite
     - state: bolted_unlit
       shader: unshaded
       map: [ "enum.DoorVisualLayers.BaseBolted" ]
