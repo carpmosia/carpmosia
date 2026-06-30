@@ -1,0 +1,6 @@
+- type: entity
+  id: Potluck
+  parent: BaseGameRule
+  components:
+  - type: GameRule
+    minPlayers: 40
