@@ -1,0 +1,14 @@
+# Traitor gamerule but half the amount
+- type: entity
+  parent: Traitor
+  id: TraitorLite
+  components:
+  - type: AntagSelection
+    lateJoinAdditional: true
+    antags:
+    - !type:LinearAntagCount
+      proto: Traitor
+      playerRatio: 20
+      range:
+        min: 1
+        max: 8
