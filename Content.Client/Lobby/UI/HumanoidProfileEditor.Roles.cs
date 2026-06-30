@@ -48,7 +48,7 @@ public sealed partial class HumanoidProfileEditor
         _loadoutWindow?.Dispose();
     }
 
-    private void OpenLoadout(JobPrototype? jobProto, RoleLoadout roleLoadout, RoleLoadoutPrototype roleLoadoutProto)
+    private void OpenLoadout(object? jobProto, RoleLoadout roleLoadout, RoleLoadoutPrototype roleLoadoutProto) // Carpmosia-edit - Antag loadouts
     {
         _loadoutWindow?.Dispose();
         _loadoutWindow = null;
@@ -57,12 +57,17 @@ public sealed partial class HumanoidProfileEditor
         if (collection == null || _playerManager.LocalSession == null || Profile == null)
             return;
 
-        JobOverride = jobProto;
+        JobOverride = jobProto as JobPrototype; // Carpmosia-edit - Antag loadouts
         var session = _playerManager.LocalSession;
 
         _loadoutWindow = new LoadoutWindow(Profile, roleLoadout, roleLoadoutProto, _playerManager.LocalSession, collection)
         {
-            Title = Loc.GetString("loadout-window-title-loadout", ("job", $"{jobProto?.LocalizedName}")),
+            Title = Loc.GetString("loadout-window-title-loadout", ("job", $"{jobProto switch
+            {
+                JobPrototype i => i.LocalizedName,
+                AntagPrototype i => i.LocalizedName,
+                _ => null
+            }}")),
         };
 
         // Refresh the buttons etc.
@@ -92,7 +97,7 @@ public sealed partial class HumanoidProfileEditor
             ReloadPreview();
         };
 
-        JobOverride = jobProto;
+        JobOverride = jobProto as JobPrototype; // Carpmosia-edit - Antag loadouts
         ReloadPreview();
 
         _loadoutWindow.OnClose += () =>
@@ -346,13 +351,42 @@ public sealed partial class HumanoidProfileEditor
 
             antagContainer.AddChild(selector);
 
-            antagContainer.AddChild(new Button()
+            // Carpmosia-start - Antag loadouts
+            var loadoutWindowBtn = new Button()
             {
                 Disabled = true,
                 Text = Loc.GetString("loadout-window"),
                 HorizontalAlignment = HAlignment.Right,
                 Margin = new Thickness(3f, 0f, 0f, 0f),
-            });
+            };
+
+            var collection = IoCManager.Instance!;
+            var protoManager = collection.Resolve<IPrototypeManager>();
+
+            // If no loadout found then disabled button
+            if (protoManager.TryIndex<RoleLoadoutPrototype>(LoadoutSystem.GetAntagPrototype(antag.ID), out var roleLoadoutProto))
+            {
+                loadoutWindowBtn.Disabled = false;
+                loadoutWindowBtn.OnPressed += args =>
+                {
+                    RoleLoadout? loadout = null;
+
+                    // Clone so we don't modify the underlying loadout.
+                    Profile?.Loadouts.TryGetValue(LoadoutSystem.GetAntagPrototype(antag.ID), out loadout);
+                    loadout = loadout?.Clone();
+
+                    if (loadout == null)
+                    {
+                        loadout = new RoleLoadout(roleLoadoutProto.ID);
+                        loadout.SetDefault(Profile, _playerManager.LocalSession, _prototypeManager);
+                    }
+
+                    OpenLoadout(antag, loadout, roleLoadoutProto);
+                };
+            }
+
+            antagContainer.AddChild(loadoutWindowBtn);
+            // Carpmosia-end - Antag loadouts
 
             AntagList.AddChild(antagContainer);
         }
