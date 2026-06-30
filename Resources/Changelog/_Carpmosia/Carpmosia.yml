@@ -2066,4 +2066,20 @@
   id: 323
   time: '2026-06-30T12:22:17.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/437
+- author: Atakku
+  changes:
+  - message: 'Secret game preset has been rebalanced, check PR #446 for more details.'
+    type: Tweak
+  - message: Potluck has been added to the Secret preset rotation.
+    type: Add
+  - message: Thief subgamemode chance has been increased from 50% to 75%
+    type: Tweak
+  - message: Zombie and Survival now can sometimes get roundstart Thieves & Blood
+      bound. Also Zombie game preset can very rarely get roundstart Xenoborgs.
+    type: Tweak
+  - message: Game preset voting has been disabled.
+    type: Tweak
+  id: 324
+  time: '2026-06-30T21:20:03.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/446
 Order: -1
