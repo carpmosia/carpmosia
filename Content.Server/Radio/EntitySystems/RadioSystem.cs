@@ -142,6 +142,11 @@ public sealed partial class RadioSystem : EntitySystem
             if (attemptEv.Cancelled)
                 continue;
 
+            // Carpmosia-start - no-headset channels
+            if (channel.NoHeadset && HasComp<HeadsetComponent>(radioSource))
+                continue;
+            // Carpmosia-end - no-headset channels
+
             // send the message
             RaiseLocalEvent(receiver, ref ev);
         }
