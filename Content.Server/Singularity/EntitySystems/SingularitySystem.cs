@@ -267,8 +267,10 @@ public sealed partial class SingularitySystem : SharedSingularitySystem
     {
         comp.EnergyDrain = args.NewValue switch
         {
-            6 => 0,
-            5 => 0,
+            // Carpmosia-start - Engine Loose Rework
+            6 => 80,
+            5 => 40,
+            // Carpmosia-end - Engine Loose Rework
             4 => 20,
             3 => 10,
             2 => 5,
@@ -286,8 +288,10 @@ public sealed partial class SingularitySystem : SharedSingularitySystem
     private void UpdateRandomWalk(EntityUid uid, RandomWalkComponent comp, SingularityLevelChangedEvent args)
     {
         var scale = MathF.Max(args.NewValue, 4);
-        comp.MinSpeed = 7.5f / scale;
-        comp.MaxSpeed = 10f / scale;
+        // Carpmosia-start - Engine Loose Rework
+        comp.MinSpeed = 0.8f / scale;
+        comp.MaxSpeed = 1.2f / scale;
+        // Carpmosia-end - Engine Loose Rework
     }
 
     /// <summary>

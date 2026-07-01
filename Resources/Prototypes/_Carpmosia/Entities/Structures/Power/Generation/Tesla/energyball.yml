@@ -1,0 +1,15 @@
+# Used so the miniballs spawned on rupture don't get stuck in place.
+- type: entity
+  parent: TeslaMiniEnergyBall
+  id: TeslaMiniEnergyBallHunter
+  name: mini ball lightning
+  suffix: Chases Players
+  description: The cub of a destructive energy cage. Not as dangerous, but still not worth touching with bare hands.
+  components:
+  - type: TimedDespawn
+    lifetime: 30
+  - type: ChasingWalk
+    minSpeed: 2
+    maxSpeed: 3
+    chasingComponent:
+    - type: LightningTarget
