@@ -13,6 +13,20 @@
     - UplinkAllies
 
 - type: listing
+  id: UplinkClothingOuterSuitFireSyndicate
+  name: uplink-clothing-outer-syndicate-fire-name
+  description: uplink-clothing-outer-syndicate-fire-desc
+  icon: { sprite: /Textures/_Carpmosia/Clothing/Head/Helmets/syndicate_fire.rsi, state: icon }
+  productEntity: ClothingBackpackSyndicateFireBundle
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 4
+  cost:
+    Telecrystal: 6
+  categories:
+  - UplinkWearables
+
+- type: listing
   id: UplinkEnergySabre
   name: uplink-energysabre-name
   description: uplink-energysabre-desc

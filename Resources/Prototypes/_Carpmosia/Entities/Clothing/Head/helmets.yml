@@ -1,0 +1,29 @@
+- type: entity
+  parent: [ ClothingHeadHelmetBase, BaseSyndicateContraband ]
+  id: ClothingHeadHelmetFireSyndicate
+  name: syndicate fire helmet
+  description: A threatening looking fire helmet made by the Syndicate. Geared for fire fighting, fire starting, and normal fighting.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Clothing/Head/Helmets/syndicate_fire.rsi
+  - type: Clothing
+    sprite: _Carpmosia/Clothing/Head/Helmets/syndicate_fire.rsi
+    quickEquip: true
+  - type: IngestionBlocker
+  - type: TemperatureProtection
+    heatingCoefficient: 0.3
+    coolingCoefficient: 0.8
+  - type: FireProtection
+    reduction: 0.2
+  - type: PressureProtection
+    highPressureMultiplier: 0.25
+  - type: Item
+    size: Normal
+    shape:
+    - 0, 0, 1, 1
+  - type: IdentityBlocker
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD
+      Snout: HEAD
+  - type: BreathMask
