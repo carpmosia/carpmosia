@@ -1,0 +1,10 @@
+- type: entity
+  id: PrefabStartMarker
+  parent: BaseRoomMarker
+  name: Prefab start marker
+  components:
+  - type: PrefabSpawner
+  - type: Sprite
+    layers:
+      - state: arrow
+      - state: start

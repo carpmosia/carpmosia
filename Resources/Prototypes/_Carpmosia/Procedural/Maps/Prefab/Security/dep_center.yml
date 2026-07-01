@@ -1,0 +1,25 @@
+- type: dungeonRoom
+  id: PrefabSecurityCenter1
+  size: 57,57
+  atlas: /Maps/_Carpmosia/Procedural/prefab.yml
+  offset: 349,1
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PrefabSecurityCenter
+
+- type: Tag
+  id: PrefabSecurityCenter
+
+- type: entity
+  id: PrefabSecurityCenterMarker
+  parent: BasePrefabCenterMarker
+  suffix: Security, Center
+  components:
+  - type: RoomFill
+    roomWhitelist:
+      tags:
+      - PrefabSecurityCenter
+  - type: Sprite
+    layers:
+      - state: center
+      - state: security
