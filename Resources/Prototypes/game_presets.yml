@@ -71,19 +71,19 @@
 #     - SpaceTrafficControlEventScheduler
 #     - BasicRoundstartVariation
 
-# - type: gamePreset
-#   id: Extended
-#   alias:
-#   - extended
-#   - shittersafari
-#   name: extended-title
-#   showInVote: false #2boring2vote
-#   description: extended-description
-#   rules:
-#   - BasicStationEventScheduler
-#   - MeteorSwarmScheduler
-#   - SpaceTrafficControlEventScheduler
-#   - BasicRoundstartVariation
+- type: gamePreset
+  id: Extended
+  alias:
+  - extended
+  - shittersafari
+  name: extended-title
+  showInVote: false #2boring2vote
+  description: extended-description
+  rules:
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
 
 - type: gamePreset
   id: Greenshift
