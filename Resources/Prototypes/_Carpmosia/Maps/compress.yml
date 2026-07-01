@@ -1,0 +1,67 @@
+- type: gameMap
+  id: Compress
+  mapName: 'Compress'
+  mapPath: /Maps/_Carpmosia/compress.yml
+  minPlayers: 0
+  maxPlayers: 20
+  stations:
+    Compress:
+      stationProto: StandardNanotrasenStation
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: '{0} Compress {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: '14'
+      - type: StationEmergencyShuttle
+        emergencyShuttlePath: /Maps/Shuttles/emergency.yml
+      - type: StationCargoShuttle
+        path: /Maps/Shuttles/cargo.yml
+      - type: StationJobs
+        availableJobs: # 39 jobs total w/o latejoins & interns, 46 jobs total w/ latejoins & interns
+          #command (7)
+          Captain: [ 1, 1 ]
+          HeadOfPersonnel: [ 1, 1 ]
+          ChiefEngineer: [ 1, 1 ]
+          ChiefMedicalOfficer: [ 1, 1 ]
+          ResearchDirector: [ 1, 1 ]
+          HeadOfSecurity: [ 1, 1 ]
+          Quartermaster: [ 1, 1 ]
+          #service (9)
+          Bartender: [ 1, 1 ]
+          Botanist: [ 1, 1 ]
+          Chef: [ 1, 1 ]
+          Janitor: [ 1, 1 ]
+          Chaplain: [ 1, 1 ]
+          Librarian: [ 1, 1 ]
+          ServiceWorker: [ 2, 2 ]
+          Reporter: [ 1, 1 ]
+          #engineering (3-4)
+          AtmosphericTechnician: [ 1, 1 ]
+          StationEngineer: [ 2, 3 ]
+          TechnicalAssistant: [ 1, 1 ] #intern, not counted
+          #medical (4)
+          Chemist: [ 1, 1 ]
+          MedicalDoctor: [ 2, 2 ]
+          Paramedic: [ 1, 1 ]
+          MedicalIntern: [ 1, 1 ] #intern, not counted
+          #science (2-3)
+          Scientist: [ 2, 3 ] #science is pretty small, so it has fewer slots
+          ResearchAssistant: [ 1, 1 ] #intern, not counted
+          #security (5)
+          Warden: [ 1, 1 ]
+          SecurityOfficer: [ 2, 2 ]
+          Detective: [ 1, 1 ] 
+          SecurityCadet: [ 1, 1 ] #intern, not counted
+          Lawyer: [ 1, 1 ]
+          #supply (3-4)
+          SalvageSpecialist: [ 1, 2 ] #salvage may have a latejoin friend as a treat
+          CargoTechnician: [ 2, 2 ]
+          #civilian (3 - 3+)
+          Passenger: [ -1, -1 ]  #infinite
+          Clown: [ 1, 1 ] 
+          Mime: [ 1, 1 ]
+          Musician: [ 1, 1 ]
+          #silicon (3)
+          Borg: [ 2, 2 ]
+          StationAi: [ 1, 1 ]
