@@ -69,7 +69,15 @@ public sealed partial class NukeopsRuleComponent : Component
     ///     Delay between war declaration and nuke ops arrival on station map. Gives crew time to prepare
     /// </summary>
     [DataField]
-    public TimeSpan WarNukieArriveDelay = TimeSpan.FromMinutes(15);
+    public TimeSpan WarNukieArriveDelay = TimeSpan.FromMinutes(20); // Carpmosia-edit - Nukie tweaks
+
+    // Carpmosia-start - Nukie tweaks
+    /// <summary>
+    ///     Delay between nuke ops arrival on station map without war declaration. Gives crew time to prepare
+    /// </summary>
+    [DataField]
+    public TimeSpan NonWarNukieArriveDelay = TimeSpan.FromMinutes(30);
+    // Carpmosia-end - Nukie tweaks
 
     /// <summary>
     ///     Time crew can't call emergency shuttle after war declaration.

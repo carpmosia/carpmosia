@@ -409,6 +409,19 @@ public sealed partial class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleCompon
                     continue;
                 }
             }
+            // Carpmosia-start - Nukeops tweaks
+            else
+            {
+                var timeRemain = nukeops.NonWarNukieArriveDelay.Subtract(Timing.CurTime);
+                if (timeRemain > TimeSpan.Zero)
+                {
+                    ev.Cancelled = true;
+                    ev.Reason = Loc.GetString("war-ops-infiltrator-unavailable",
+                        ("time", timeRemain.ToString("mm\\:ss")));
+                    continue;
+                }
+            }
+            // Carpmosia-end - Nukeops tweaks
 
             nukeops.LeftOutpost = true;
         }
