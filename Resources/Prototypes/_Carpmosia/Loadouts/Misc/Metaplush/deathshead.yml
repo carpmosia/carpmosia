@@ -1,0 +1,26 @@
+- type: loadoutEffectGroup
+  id: MothPlushieDeathshead
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement: !type:RoleTimeRequirement
+      role: JobBartender
+      time: 20h
+
+- type: loadout
+  id: MothPlushieDeathshead
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: MothPlushieDeathshead
+  storage:
+    back:
+    - PlushieMothDeathshead
+  groupBy: "metaplush"
+
+- type: loadout
+  id: HatPlushieDeathshead
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: MothPlushieDeathshead
+  equipment:
+    head: PlushieMothDeathshead
+  groupBy: "metaplush"
