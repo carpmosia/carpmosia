@@ -16,17 +16,23 @@
     # Randomly generated books
     - id: BookRandomStory
       amount: !type:RangeNumberSelector
-        range: 0, 8
+        range: 2, 5 # Carpmosia-edit - Books update
     # Guidebooks
     - !type:NestedSelector
       rolls: !type:RangeNumberSelector
-        range: 0, 2
+        range: 1, 2 # Carpmosia-edit - Books update
       tableId: RandomGuidebookTable
     # Handwritten books
     - !type:NestedSelector
       rolls: !type:RangeNumberSelector
-        range: 0, 3
+        range: 1, 3 # Carpmosia-edit - Books update
       tableId: RandomHandwrittenBookTable
+    # Carpmosia-start - Books update
+    # Real books
+    - !type:NestedSelector
+      rolls: 2, 4
+      tableId: RandomRealBookTable
+    # Carpmosia-end - Books update
 
 - type: entityTable
   id: RandomHandwrittenBookTable
@@ -91,3 +97,8 @@
       tableId: RandomGuidebookTable
     - !type:NestedSelector
       tableId: RandomHandwrittenBookTable
+    # Carpmosia-start - Books update
+    # Real books
+    - !type:NestedSelector
+      tableId: RandomRealBookTable
+    # Carpmosia-end - Books update

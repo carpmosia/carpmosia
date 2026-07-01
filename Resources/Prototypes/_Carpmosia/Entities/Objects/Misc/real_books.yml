@@ -1,0 +1,358 @@
+- type: entity
+  parent: BookBase
+  id: BookTheWhale
+  name: "the whale by herman melville"
+  description: An old book about fishing you think.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: blue
+    - state: detail_rivets
+      color: gold
+    - state: decor_wingette_circle
+      color: gold
+  - type: Paper
+    content: book-text-the-whale
+
+- type: entity
+  parent: BookBase
+  id: BookFaust
+  name: "faust by johann wolfgang von goethe"
+  description: An old play about demon summoning or something.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: "#654321"
+    - state: detail_rivets
+      color: gold
+    - state: decor_wingette_circle
+      color: gold
+  - type: Paper
+    content: book-text-faust
+
+- type: entity
+  parent: BookBase
+  id: BookNemesis
+  name: "nemesis by lovecraft"
+  description: A poem from the perspective of a mad god.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: red
+    - state: detail_rivets
+      color: purple
+    - state: decor_wingette_circle
+      color: gold
+    - state: icon_eye
+  - type: Paper
+    content: book-text-nemesis
+
+- type: entity
+  parent: BookBase
+  id: BookTheRaven
+  name: "the raven by edgar allen poe"
+  description: Spooky and cool poem.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: black
+    - state: detail_rivets
+      color: purple
+    - state: decor_wingette_circle
+      color: purple
+  - type: Paper
+    content: book-text-the-raven
+
+- type: entity
+  parent: BookBase
+  id: BookTheVelveteenRabbit
+  name: "the velveteen rabbit by margery williams"
+  description: A classic tale meant to sooth sick children.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: red
+    - state: detail_rivets
+      color: white
+    - state: decor_wingette_circle
+      color: white
+  - type: Paper
+    content: book-text-the-velveteen-rabbit
+
+- type: entity
+  parent: BookBase
+  id: BookTominosHell
+  name: "tomino's hell by saijō yaso"
+  description: You feel you shouldn't read this out loud.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper_blood
+    - state: cover_old
+      color: "#987654"
+    - state: overlay_blood
+  - type: Paper
+    content: book-text-tominos-hell
+
+- type: entity
+  parent: BookBase
+  id: BookAModestProposal
+  name: "a modest proposal by dr. jonathan swift"
+  description: Weirdly popular with Unathi.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: white
+  - type: Paper
+    content: book-text-a-modest-proposal
+
+- type: entity
+  parent: BookBase
+  id: BookWurtheringHeights
+  name: "wuthering height by emily brontë"
+  description: A story about humanity at its worst.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: purple
+    - state: detail_rivets
+      color: gold
+    - state: decor_wingette_circle
+      color: gold
+  - type: Paper
+    content: book-text-wurthering-heights
+
+- type: entity
+  parent: BookBase
+  id: BookCrimeAndPunishment
+  name: "crime and punishment by fyodor dostoevsky"
+  description: What could this be about.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: gold
+    - state: detail_rivets
+      color: red
+    - state: decor_wingette_circle
+      color: red
+  - type: Paper
+    content: book-text-crime-and-punishment
+
+- type: entity
+  parent: BookBase
+  id: BookMetamorphosis
+  name: "metamorphosis by franz kafkas"
+  description: Be the mothroach.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: green
+    - state: detail_rivets
+      color: black
+    - state: decor_wingette_circle
+      color: black
+  - type: Paper
+    content: book-text-the-metamorphosis
+
+- type: entity
+  parent: BookBase
+  id: BookDonQuixote
+  name: "don quixote by miguel de cervantes saavedra"
+  description: The windmills deserved it.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: black
+    - state: decor_wingette_circle
+      color: gold
+  - type: Paper
+    content: book-text-don-quixote
+
+- type: entity
+  parent: BookBase
+  id: BookJigokuhen
+  name: "jigokuhen by ryūnosuke akutagawa"
+  description: A story about a spooky painting.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: red
+    - state: detail_rivets
+      color: red
+    - state: decor_wingette_circle
+      color: red
+  - type: Paper
+    content: book-text-jigokuhen
+
+- type: entity
+  parent: BookBase
+  id: BookHungLouMeng
+  name: "hung lou meng by xueqin cao"
+  description: The rise and decline of a family.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: black
+    - state: detail_rivets
+      color: green
+    - state: decor_wingette_circle
+      color: green
+  - type: Paper
+    content: book-text-hung-lou-meng
+
+- type: entity
+  parent: BookBase
+  id: BookDemian
+  name: "demian by hermann hesse"
+  description: The story of Emil Sinclair's youth.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: white
+    - state: detail_rivets
+      color: green
+    - state: decor_wingette_circle
+      color: green
+  - type: Paper
+    content: book-text-demian
+
+- type: entity
+  parent: BookBase
+  id: BookOdyssey
+  name: "odyssey by homer"
+  description: It's litterally epic.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: white
+    - state: decor_wingette_circle
+      color: red
+  - type: Paper
+    content: book-text-odyssey
+
+- type: entity
+  parent: BookBase
+  id: BookTheModernPrometheus
+  name: "the modern prometheus by mary wollstonecraft shelley"
+  description: What SCI would do without us.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: green
+    - state: icon_lightning
+  - type: Paper
+    content: book-text-the-modern-prometheus
+
+- type: entity
+  parent: BookBase
+  id: BookRomanceOfTheThreeKingdoms 
+  name: "romance of the three kingdoms by luo guanzhong"
+  description: Gets good after the first 100 chapters.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: red
+    - state: icon_time
+  - type: Paper
+    content: book-text-romance-of-the-three-kingdoms 
+
+- type: entity
+  parent: BookBase
+  id: BookTreasureIsland
+  name: "treasure island by robert louis stevenson"
+  description: Yarr it be pirating time.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: black
+    - state: icon_skull
+  - type: Paper
+    content: book-text-the-modern-prometheus
+
+- type: entity
+  parent: BookBase
+  id: BookLesMiserables
+  name: "les misérables by victor hugo"
+  description: For reason there has never been a good film adapation.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: white
+    - state: detail_rivets
+      color: blue
+    - state: decor_wingette_circle
+      color: red
+  - type: Paper
+    content: book-text-les-miserables
+
+- type: entity
+  parent: BookBase
+  id: BookArtOfWar
+  name: "Sun"
+  description: To sum up when losiing, don't.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: green
+    - state: detail_rivets
+      color: gold
+    - state: decor_wingette_circle
+      color: gold
+  - type: Paper
+    content: book-text-art-of-war
+
+- type: entity
+  parent: BookBase
+  id: BookKingInYellow
+  name: "the king in yellow by robert w. chambers"
+  description: For some reason this reminds you of robot lesbians.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: gold
+    - state: detail_rivets
+      color: white
+    - state: decor_wingette_circle
+      color: white
+  - type: Paper
+    content: book-text-king-in-yellow
