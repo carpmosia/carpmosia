@@ -1,0 +1,19 @@
+- type: entity
+  parent: BaseStructure
+  id: TestAreaOfEffectStructure
+  name: test AoE damage structure
+  description: A test structure that applies area of effect damage periodically. For testing purposes only.
+  components:
+  - type: AreaOfEffect
+    radius: 5.0
+    cooldown: 2.5
+    damage:
+      types:
+        Heat: 10
+        Blunt: 3
+    blacklist:
+      tags:
+      - Structure
+  - type: Sprite
+    sprite: Structures/Wallmounts/camera.rsi
+    state: camera

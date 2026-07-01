@@ -1,0 +1,20 @@
+- type: entity
+  parent: BaseItem
+  id: TestAreaOfEffectItem
+  name: test AoE damage item
+  categories: [ HideSpawnMenu ]
+  suffix: Debug
+  components:
+  - type: AreaOfEffect
+    radius: 3.0
+    cooldown: 1
+    damage:
+      types:
+        Blunt: 5
+        Poison: 2
+    blacklist:
+      tags:
+      - Structure
+  - type: Sprite
+    sprite: Objects/Misc/pens.rsi
+    state: pen
