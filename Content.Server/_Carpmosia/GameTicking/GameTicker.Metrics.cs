@@ -2,6 +2,7 @@ using System.Linq;
 using Content.Shared.GameTicking;
 using Robust.Server.DataMetrics;
 using System.Diagnostics.Metrics;
+using System.Diagnostics;
 
 namespace Content.Server.GameTicking;
 
@@ -12,6 +13,7 @@ public sealed partial class GameTicker
 
     private Dictionary<PlayerGameStatus, int>? _playerStatusCounts;
 
+    [Conditional("RELEASE")]
     private void InitializeMetrics()
     {
         _metrics.UpdateMetrics += MetricsOnUpdateMetrics;
