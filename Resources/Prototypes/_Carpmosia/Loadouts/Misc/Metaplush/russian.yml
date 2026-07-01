@@ -1,0 +1,26 @@
+- type: loadoutEffectGroup
+  id: LizardPlushieRussian
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement: !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 20h
+
+- type: loadout
+  id: LizardPlushieRussian
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: LizardPlushieRussian
+  storage:
+    back:
+    - PlushieLizardRussian
+  groupBy: "metaplush"
+
+- type: loadout
+  id: HatPlushieRussian
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: LizardPlushieRussian
+  equipment:
+    head: PlushieLizardRussian
+  groupBy: "metaplush"
