@@ -1,0 +1,66 @@
+- type: gameMap
+  id: Rail
+  mapName: 'Rail'
+  mapPath: /Maps/_Carpmosia/rail.yml
+  mapIcon: /Textures/_Carpmosia/Interface/MapVote/carp.png
+  minPlayers: 15
+  maxPlayers: 57
+  # fallback
+  stations:
+    Rail:
+      stationProto: StandardNanotrasenStation
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: '{0} Rail Station {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: 'RS'
+      - type: StationEmergencyShuttle
+        emergencyShuttlePath: /Maps/_Carpmosia/Shuttles/emergency_rail.yml
+      - type: StationJobs
+        availableJobs: # 57 jobs total w/o latejoins & interns, 74 jobs total w/ latejoins & interns
+        # Command (7)
+          Captain:               [ 1, 1 ]
+          HeadOfPersonnel:       [ 1, 1 ]
+          HeadOfSecurity:        [ 1, 1 ]
+          ChiefMedicalOfficer:   [ 1, 1 ]
+          ChiefEngineer:         [ 1, 1 ]
+          ResearchDirector:      [ 1, 1 ]
+          Quartermaster:         [ 1, 1 ]
+        # Security (6 - 8)
+          Warden:                [ 1, 1 ]
+          Detective:             [ 1, 1 ]
+          SecurityOfficer:       [ 4, 6 ]
+        # Cargo (6 - 7)
+          SalvageSpecialist:     [ 3, 3 ]
+          CargoTechnician:       [ 3, 4 ]
+        # Engineering (5 - 7)
+          AtmosphericTechnician: [ 3, 3 ]
+          StationEngineer:       [ 2, 4 ]
+        # Medical (9 - 11)
+          Chemist:               [ 2, 2 ]
+          MedicalDoctor:         [ 4, 6 ]
+          Paramedic:             [ 2, 2 ]
+        # Science (8 - 10)
+          Scientist:             [ 3, 5 ]
+          StationAi:             [ 1, 1 ]
+          Borg:                  [ 3, 3 ]
+        # Service (19)
+          Bartender:             [ 2, 2 ]
+          Botanist:              [ 3, 3 ]
+          Chaplain:              [ 1, 1 ]
+          Chef:                  [ 2, 2 ]
+          Clown:                 [ 1, 1 ]
+          Janitor:               [ 2, 2 ]
+          Lawyer:                [ 1, 1 ]
+          Librarian:             [ 1, 1 ]
+          Mime:                  [ 1, 1 ]
+          Musician:              [ 1, 1 ]
+          Reporter:              [ 1, 1 ]
+          ServiceWorker:         [ 2, 2 ]
+        # Interns & Fallback (8)
+          SecurityCadet:         [ 2, 2 ]
+          TechnicalAssistant:    [ 2, 2 ]
+          MedicalIntern:         [ 2, 2 ]
+          ResearchAssistant:     [ 2, 2 ]
+          Passenger:             [-1,-1 ]
