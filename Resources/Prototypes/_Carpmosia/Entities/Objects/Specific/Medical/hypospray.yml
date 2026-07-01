@@ -1,0 +1,32 @@
+- type: entity
+  parent: ChemicalMedipen
+  id: AmbuzolPlusAutoInjector
+  name: ambuzol plus auto-injector
+  description: A single-dose, non-refillable medipen containing ambuzol plus, which can cure and prevent zombie infection as long as the recipient is alive. This is intended for use by CBURN operatives before responding to distress calls.
+  components:
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: base-needle-inhand-left
+      - state: base-colorA-inhand-left
+        color: "#1274b5"
+      - state: base-colorB-inhand-left
+      right:
+      - state: base-needle-inhand-right
+      - state: base-colorA-inhand-right
+        color: "#1274b5"
+      - state: base-colorB-inhand-right
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: ambupluspen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: ambupluspen_empty
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: AmbuzolPlus
+        Quantity: 20

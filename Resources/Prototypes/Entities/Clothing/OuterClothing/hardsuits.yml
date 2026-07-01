@@ -1008,8 +1008,10 @@
   - type: ZombificationResistance
     zombificationResistanceCoefficient: 0.25
   - type: ClothingSpeedModifier
-    walkModifier: 1.0
-    sprintModifier: 1.0
+    ## Carpmosia-start - CBURN rework
+    walkModifier: 0.95
+    sprintModifier: 0.95
+    ## Carpmosia-end - CBURN rework
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetCBURN

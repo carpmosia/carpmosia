@@ -19,7 +19,7 @@
   id: CBURNGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorBrown
-    back: ClothingBackpackDuffelCBURN
+    back: WeaponSubMachineGunDrozd # Carpmosia-edit - CBURN rework
     mask: ClothingMaskGasERT
     eyes: ClothingEyesGlassesSecurity
     ears: ClothingHeadsetAltCentCom
@@ -28,15 +28,23 @@
     shoes: ClothingShoesBootsCombatFilled
     id: CBURNPDA
     pocket1: RadioHandheld
-    pocket2: WeaponLaserGun
-    belt: ClothingBeltBandolier
+    pocket2: WeaponLaserSvalinn # Carpmosia-edit - CBURN rework
+    belt: ClothingBeltMilitaryWebbingERT # Carpmosia-edit - CBURN rework
   storage:
-    back:
-    - WeaponShotgunDoubleBarreled
-    - BoxShotgunIncendiary
+  # Carpmosia-start - CBURN rework
+    belt:
+    - MagazinePistolSubMachineGunIncendiary
+    - MagazinePistolSubMachineGunIncendiary
+    - MagazineBoxPistolIncendiary
+    - PowerCellMicroreactor
     - GrenadeFlashBang
-    - PillAmbuzolPlus
-    - PillAmbuzol
+    - HoloprojectorSecurity
+    - MedicatedSuture
+    - ChemistryBottleAmbuzol
+    - Syringe
+  inhand:
+  - AmbuzolPlusAutoInjector
+  # Carpmosia-end - CBURN rework, Agent loadout changes
 
 - type: chameleonOutfit
   id: CBURNChameleonOutfit
