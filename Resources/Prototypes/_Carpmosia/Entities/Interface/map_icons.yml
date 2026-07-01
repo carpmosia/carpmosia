@@ -11,6 +11,7 @@
   parent: BaseMapPreview
   categories: [ HideSpawnMenu ]
   id: MapPreviewAmber
+  name: Amber
   components:
   - type: Sprite
     state: amber
@@ -19,6 +20,7 @@
   parent: BaseMapPreview
   categories: [ HideSpawnMenu ]
   id: MapPreviewFeint
+  name: Feint
   components:
   - type: Sprite
     state: feint
@@ -27,6 +29,7 @@
   parent: BaseMapPreview
   categories: [ HideSpawnMenu ]
   id: MapPreviewLampocteis
+  name: Lampocteis
   components:
   - type: Sprite
     state: lampocteis
@@ -35,6 +38,7 @@
   parent: BaseMapPreview
   categories: [ HideSpawnMenu ]
   id: MapPreviewOasis
+  name: Oasis
   components:
   - type: Sprite
     state: oasis
@@ -43,6 +47,7 @@
   parent: BaseMapPreview
   categories: [ HideSpawnMenu ]
   id: MapPreviewPacked
+  name: Packed
   components:
   - type: Sprite
     state: packed
@@ -51,6 +56,7 @@
   parent: BaseMapPreview
   categories: [ HideSpawnMenu ]
   id: MapPreviewSaltern
+  name: Saltern
   components:
   - type: Sprite
     state: saltern
@@ -59,6 +65,7 @@
   parent: BaseMapPreview
   categories: [ HideSpawnMenu ]
   id: MapPreviewSparks
+  name: Sparks
   components:
   - type: Sprite
     state: sparks
@@ -68,6 +75,7 @@
   parent: BaseMapPreview
   categories: [ HideSpawnMenu ]
   id: MapPreviewBagel
+  name: Bagel
   components:
   - type: Sprite
     state: bagel
@@ -76,6 +84,7 @@
   parent: BaseMapPreview
   categories: [ HideSpawnMenu ]
   id: MapPreviewBox
+  name: Box
   components:
   - type: Sprite
     state: box
@@ -84,6 +93,7 @@
   parent: BaseMapPreview
   categories: [ HideSpawnMenu ]
   id: MapPreviewElkridge
+  name: Elkridge
   components:
   - type: Sprite
     state: elkridge
@@ -92,6 +102,7 @@
   parent: BaseMapPreview
   categories: [ HideSpawnMenu ]
   id: MapPreviewExo
+  name: Exo
   components:
   - type: Sprite
     state: exo
@@ -100,6 +111,7 @@
   parent: BaseMapPreview
   categories: [ HideSpawnMenu ]
   id: MapPreviewFland
+  name: Fland
   components:
   - type: Sprite
     state: fland
@@ -108,6 +120,7 @@
   parent: BaseMapPreview
   categories: [ HideSpawnMenu ]
   id: MapPreviewMarathon
+  name: Marathon
   components:
   - type: Sprite
     state: marathon
@@ -116,6 +129,7 @@
   parent: BaseMapPreview
   categories: [ HideSpawnMenu ]
   id: MapPreviewPlasma
+  name: Plasma
   components:
   - type: Sprite
     state: plasma
@@ -124,6 +138,7 @@
   parent: BaseMapPreview
   categories: [ HideSpawnMenu ]
   id: MapPreviewSnowball
+  name: Snowball
   components:
   - type: Sprite
     state: snowball
