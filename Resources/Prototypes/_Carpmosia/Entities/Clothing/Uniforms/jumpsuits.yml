@@ -1,0 +1,19 @@
+- type: entity
+  parent: [ ClothingUniformBase, ClothingUniformFoldableBase ]
+  id: ClothingUniformJumpsuitBrigmedic
+  name: brigmedic jumpsuit
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Clothing/Uniforms/Jumpsuit/brigmedic.rsi
+  - type: Clothing
+    sprite: _Carpmosia/Clothing/Uniforms/Jumpsuit/brigmedic.rsi
+
+- type: entity
+  parent: [ ClothingUniformBase, ClothingUniformFoldableBase ]
+  id: ClothingUniformJumpsuitBrigmedicGrey
+  name: grey brigmedic jumpsuit
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Clothing/Uniforms/Jumpsuit/brigmedic_grey.rsi
+  - type: Clothing
+    sprite: _Carpmosia/Clothing/Uniforms/Jumpsuit/brigmedic_grey.rsi

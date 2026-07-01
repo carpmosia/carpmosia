@@ -400,6 +400,8 @@
 - type: entity
   parent: [ ClothingOuterSizeArmoredBasic, ClothingOuterStorageBase ] # Carpmosia-edit - Outer clothing resize
   id: ClothingOuterCoatAMG
+  suffix: Obsolete # Carpmosia-edit - New Brigmedic
+  categories: [ HideSpawnMenu ] # Carpmosia-edit - New Brigmedic # TODO migrate this to the new gown
   name: armored medical gown
   description: The version of the medical gown, with elements of a bulletproof vest, looks strange, but your heart is protected.
   components:

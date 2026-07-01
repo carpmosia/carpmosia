@@ -1,5 +1,14 @@
 # Secure
 - type: entity
+  parent: WindoorSecureSecurityLocked
+  id: WindoorSecureBrigmedicLocked
+  suffix: Brigmedic, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBrigmedic ]
+
+- type: entity
   parent: WindoorSecureEngineeringLocked
   id: WindoorSecureLogisticsLocked
   suffix: Cargo/Engineering, Locked

@@ -597,6 +597,49 @@
       whitelist:
         components:
         - IdCard
+    # Carpmosia-start - New Brigmedic
+    accessLevels:
+    # Misc.
+    - Captain
+    - Brig
+    - Command
+    - Cryogenics
+    - External
+    - Maintenance
+    # Security
+    - HeadOfSecurity
+    - Armory
+    - Brigmedic # all of ↑ this ↓ for a single access flag. fuck my life
+    - Detective
+    - GenpopEnter
+    - GenpopLeave
+    - Security
+    # Cargo
+    - Quartermaster
+    - Cargo
+    - Salvage
+    # Engineering
+    - ChiefEngineer
+    - Atmospherics
+    - Engineering
+    # Medical
+    - ChiefMedicalOfficer
+    - Chemistry
+    - Medical
+    # Science
+    - ResearchDirector
+    - Research
+    # Service
+    - HeadOfPersonnel
+    - Bar
+    - Chapel
+    - Hydroponics
+    - Janitor
+    - Kitchen
+    - Lawyer
+    - Service
+    - Theatre
+    # Carpmosia-end - New Brigmedic
   - type: ActivatableUI
     key: enum.IdCardConsoleUiKey.Key
   - type: UserInterface

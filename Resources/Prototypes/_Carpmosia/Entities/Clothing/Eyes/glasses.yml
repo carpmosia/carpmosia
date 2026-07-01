@@ -35,3 +35,34 @@
     tags:
     - PetWearable
     - WhitelistChameleon
+
+- type: entity
+  parent: [ ClothingEyesBase, ShowMedicalIcons, BaseSecurityContraband ]
+  id: ClothingEyesGlassesBrigmedic
+  name: brigmedic glasses
+  description: A pair of white framed protective sunglasses with an integrated health overlay. NanoTrasen incessantly reminds brigmedics in training to NOT hand these off to the Chief Medical Officer.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Clothing/Eyes/Glasses/brigmedic.rsi
+  - type: Clothing
+    sprite: _Carpmosia/Clothing/Eyes/Glasses/brigmedic.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+  - type: GuideHelp
+    guides:
+    - Security
+    - Medical
+  - type: IdentityBlocker
+    coverage: EYES
+
+- type: entity
+  parent: ClothingEyesGlassesBrigmedic
+  id: ClothingEyesVisorBrigmedic
+  name: brigmedic visor
+  description: A sleek protective visor with an integrated health overlay. NanoTrasen incessantly reminds brigmedics in training to NOT hand these off to the Chief Medical Officer.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Clothing/Eyes/Glasses/brigmedic_visor.rsi
+  - type: Clothing
+    sprite: _Carpmosia/Clothing/Eyes/Glasses/brigmedic_visor.rsi

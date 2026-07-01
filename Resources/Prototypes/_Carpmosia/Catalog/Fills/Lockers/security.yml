@@ -1,0 +1,21 @@
+- type: entityTable
+  id: FillLockerBrigmedic
+  table: !type:AllSelector
+    children:
+    - id: ClothingEyesGlassesBrigmedic
+    - id: HandheldHealthAnalyzer
+    - id: MedkitFilled
+    - id: BoxBottle
+    - id: PowerCautery
+    - id: JetInjector
+    - id: FluidbagBicaridine
+    - id: FluidbagKelotane
+    - id: FluidbagEpinephrine
+    - id: FluidbagSaline
+    - id: BoxZiptie
+    - id: Flash
+    - id: RadioHandheldSecurity
+    - id: NeckLiteSecBase
+    - id: HoloprojectorSecurity
+    - id: EmergencyRollerBedSpawnFolded
+    - id: BoxBodyBag

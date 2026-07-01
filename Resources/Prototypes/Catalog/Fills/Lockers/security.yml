@@ -118,7 +118,7 @@
         tableId: FillLockerBrigmedic
 
 - type: entityTable
-  id: FillLockerBrigmedic
+  id: FillLockerBrigmedicOld # Carpmosia-edit - New Brigmedic
   table: !type:AllSelector
     children:
     - id: ClothingEyesGlassesSecurity

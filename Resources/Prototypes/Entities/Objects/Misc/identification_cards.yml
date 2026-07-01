@@ -515,6 +515,8 @@
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Brigmedic
+  - type: PresetIdCard # Carpmosia-edit - New Brigmedic
+    job: Brigmedic # Carpmosia-edit - New Brigmedic
 
 - type: entity
   parent: SecurityIDCard

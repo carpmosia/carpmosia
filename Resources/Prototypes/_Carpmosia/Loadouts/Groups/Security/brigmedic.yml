@@ -1,0 +1,76 @@
+- type: loadoutGroup
+  parent: [ SecurityHead, CommonHead ]
+  id: BrigmedicHead
+  loadouts:
+  - BrigmedicBeret
+  - BrigmedicCap
+
+- type: loadoutGroup
+  parent: [ CommonGlasses ]
+  id: BrigmedicGlasses
+  minLimit: 1
+  loadouts:
+  - BrigmedicGlasses
+  - BrigmedicVisor
+
+# - type: loadoutGroup
+#   parent: [ SecurityMask, CommonMask ]
+#   id: BrigmedicMask
+
+# - type: loadoutGroup
+#   parent: [ SecurityNeck, CommonNeck ]
+#   id: BrigmedicNeck
+
+- type: loadoutGroup
+  parent: [ MedicalGloves, CommonGloves ]
+  id: BrigmedicGloves
+
+- type: loadoutGroup
+  parent: [ SecurityJumpsuit, CommonJumpsuit ]
+  id: BrigmedicJumpsuit
+  loadouts:
+  - BrigmedicJumpsuit
+  - BrigmedicJumpskirt
+  - BrigmedicJumpsuitGrey
+  - BrigmedicJumpskirtGrey
+
+- type: loadoutGroup
+  parent: [ SecurityBackpack, CommonBackpack ]
+  id: BrigmedicBackpack
+  loadouts:
+  - BrigmedicBackpack
+  - BrigmedicDuffelbag
+  - BrigmedicSatchel
+
+# - type: loadoutGroup
+#   parent: [ SecurityPDA, CommonPDA ]
+#   id: BrigmedicPDA
+
+# - type: loadoutGroup
+#   parent: [ SecurityBelt, CommonBelt ]
+#   id: BrigmedicBelt
+
+- type: loadoutGroup
+  parent: [ SecurityOuterClothing, CommonOuterClothing ]
+  id: BrigmedicOuterClothing
+  minLimit: 1
+  loadouts:
+  - BrigmedicArmorGown
+  - BrigmedicArmorVest
+  - BrigmedicArmorCoat
+
+- type: loadoutGroup
+  parent: [ PrioritySecurityShoes, CommonShoes, SecurityShoes ]
+  id: BrigmedicShoes
+
+# - type: loadoutGroup
+#   parent: BaseSpecial
+#   id: BrigmedicSpecial
+
+- type: loadoutGroup
+  parent: [ SecurityTrinkets, CommonTrinkets ]
+  id: BrigmedicTrinkets
+
+- type: loadoutGroup
+  parent: [ SecurityPets, CommonPets ]
+  id: BrigmedicPets

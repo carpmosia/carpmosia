@@ -258,6 +258,7 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseSecurityContraband]
   id: ClothingOuterHardsuitBrigmedic
+  categories: [ HideSpawnMenu ] # Carpmosia-edit - New Brigmedic
   name: brigmedic hardsuit
   description: Special hardsuit of the guardian angel of the brig. It is the medical version of the security hardsuit.
   components:
