@@ -30,9 +30,11 @@
             <Label Text="{Loc 'health-analyzer-window-entity-temperature-text'}" />
             <Label Name="TemperatureLabel" />
             <Label Text="{Loc 'health-analyzer-window-entity-blood-level-text'}" />
-            <Label Name="BloodLabel" />
-            <Label Text="{Loc 'health-analyzer-window-entity-damage-total-text'}" />
-            <Label Name="DamageLabel" />
+            <!-- Carpmosia-start - Health analyzer bloodstream reagents -->
+            <Label Name="BloodLevelLabel" />
+            <!-- Label Text="{Loc 'health-analyzer-window-entity-damage-total-text'}" / -->
+            <!-- Label Name="DamageLabel" / -->
+            <!-- Carpmosia-end - Health analyzer bloodstream reagents -->
         </GridContainer>
     </BoxContainer>
 
@@ -44,10 +46,43 @@
 
     <PanelContainer StyleClasses="LowDivider" />
 
-    <BoxContainer
-        Name="GroupsContainer"
-        Margin="0 5 0 5"
-        Orientation="Vertical">
-    </BoxContainer>
+    <!-- Carpmosia-start - Health analyzer bloodstream reagents -->
+    <!-- BoxContainer Name="GroupsContainer" Margin="0 5 0 5" Orientation="Vertical" -->
+    <!-- /BoxContainer -->
+    <!-- Carpmosia-end - Health analyzer bloodstream reagents -->
+
+    <!-- Carpmosia-start - Health analyzer bloodstream reagents -->
+    <GridContainer Margin="0 5 0 0" Columns="3">
+        <BoxContainer Name="DamageBox" Margin="5 5 10 5" Orientation="Vertical">
+            <Label Name="TotalDamageLabel" HorizontalAlignment="Center" />
+            <PanelContainer Name="DamageGroupsDivider" StyleClasses="LowDivider" />
+            <Label
+                Name="NoDamage"
+                HorizontalAlignment="Center"
+                Text="{Loc 'health-analyzer-window-no-damage-text'}"
+                FontColorOverride="DeepSkyBlue"
+                Margin="0 5 0 5" />
+            <BoxContainer HorizontalAlignment="Center">
+                <BoxContainer Name="DamageGroupsContainer" Margin="0 5 0 5" Orientation="Vertical" />
+            </BoxContainer>
+        </BoxContainer>
+
+        <PanelContainer StyleClasses="LowDivider" />
+
+        <BoxContainer Name="BloodstreamBox" Margin="10 5 5 5" Orientation="Vertical">
+            <Label Name="BloodstreamLabel" HorizontalAlignment="Center" />
+            <PanelContainer Name="BloodstreamReagentsDivider" StyleClasses="LowDivider" />
+            <Label
+                Name="NoReagents"
+                HorizontalAlignment="Center"
+                Text="{Loc 'health-analyzer-window-no-reagents-text'}"
+                FontColorOverride="DeepSkyBlue"
+                Margin="0 5 0 5" />
+            <BoxContainer HorizontalAlignment="Center">
+                <BoxContainer Name="BloodstreamReagentsContainer" Orientation="Vertical" Margin="0 5 0 5" />
+            </BoxContainer>
+        </BoxContainer>
+    </GridContainer>
+    <!-- Carpmosia-end - Health analyzer bloodstream reagents -->
 
 </BoxContainer>
