@@ -1,0 +1,24 @@
+- type: constructionGraph
+  id: PaperBin
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: done
+      steps:
+      - material: Steel
+        amount: 1
+        doAfter: 2
+  - node: done
+    entity: PaperBin
+    edges:
+    - to: start
+      steps:
+      - tool: Screwing
+        doAfter: 2
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 1
+      - !type:EmptyAllContainers
+      - !type:DeleteEntity
