@@ -170,7 +170,6 @@
         Quantity: 12
   - type: ZombieImmune
 
-# TO TEST: Handcuff
 - type: entity
   parent: MobBaseAncestor
   id: MobKitti
@@ -183,13 +182,26 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       sprite: _Carpmosia/Mobs/Animals/kitti.rsi
       state: kitti
+    - map: ["overlay"]
+      sprite: _Carpmosia/Mobs/Animals/kitti.rsi
+      state: overlay-none
     - map: ["enum.HumanoidVisualLayers.Handcuffs"]
       color: "#ffffff"
       sprite: Objects/Misc/handcuffs.rsi
+    - map: [ "ears" ]
+    - map: [ "id" ]
+    - map: [ "mask" ]
+    - map: [ "head" ]
   - type: RandomSprite
+    getAllGroups: true
     available:
     - enum.DamageStateVisualLayers.Base:
         kitti: KittiColors
+    - overlay:
+        overlay-none: ""
+        overlay-belly: ""
+        overlay-paws: ""
+        overlay-both: ""
   - type: Speech
     speechSounds: Cat
     speechVerb: SmallMob
@@ -202,3 +214,51 @@
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Animals/cat_meow.ogg
+    interactFailureSound:
+      path: /Audio/Animals/cat_hiss.ogg
+  # Tajaran body temperature/thresholds
+  - type: Temperature
+    currentTemperature: 312.0
+  - type: TemperatureDamage
+    heatDamageThreshold: 322
+    coldDamageThreshold: 245
+    coldDamage:
+      types:
+        Cold: 0.08
+    heatDamage:
+      types:
+        Heat: 2.0
+  - type: ThermalRegulator
+    normalBodyTemperature: 312.0
+  - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Slash: 3
+        Piercing: 5
+  - type: Clumsy
+    gunShootFailDamage:
+      types:
+        Blunt: 3
+        Piercing: 4
+        Heat: 5
+    catchingFailDamage:
+      types:
+        Blunt: 1
+    clumsySound:
+      path: /Audio/Animals/cat_hiss.ogg
+  - type: AlwaysRevolutionaryConvertible
+  - type: GhostTakeoverAvailable
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-feline
+  - type: GhostRole
+    prob: 0.05
+    makeSentient: true
+    # TODO: Verify
+    name: ghost-role-information-kitti-name
+    description: ghost-role-information-kitti-description
+    rules: ghost-role-information-nonantagonist-rules
