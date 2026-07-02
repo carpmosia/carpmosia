@@ -169,3 +169,36 @@
       - ReagentId: Water
         Quantity: 12
   - type: ZombieImmune
+
+# TO TEST: Handcuff
+- type: entity
+  parent: MobBaseAncestor
+  id: MobKitti
+  name: Kitti
+  description: This is soooooooooo TODO
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      sprite: _Carpmosia/Mobs/Animals/kitti.rsi
+      state: kitti
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
+      color: "#ffffff"
+      sprite: Objects/Misc/handcuffs.rsi
+  - type: RandomSprite
+    available:
+    - enum.DamageStateVisualLayers.Base:
+        kitti: KittiColors
+  - type: Speech
+    speechSounds: Cat
+    speechVerb: SmallMob
+  - type: ReplacementAccent
+    accent: cat
+  - type: InteractionPopup
+    successChance: 0.9
+    interactSuccessString: petting-success-cat
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/cat_meow.ogg
