@@ -1,4 +1,6 @@
+using Content.Server.AlertLevel; // Carpmosia-edit - Nukeops Arrival Message
 using Content.Server.Antag;
+using Content.Server.Chat.Systems; // Carpmosia-edit - Nukeops Arrival Message
 using Content.Server.Communications;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Nuke;
@@ -33,21 +35,26 @@ using Content.Shared.Store.Components;
 using Content.Shared.Tag;
 using Content.Shared.Zombies;
 using Robust.Server.Player;
+using Robust.Shared.Audio.Systems; // Carpmosia-edit - Nukeops Arrival Message
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
+using Robust.Shared.Player; // Carpmosia-edit - Nukeops Arrival Message
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using System.Data;
 using System.Linq;
+using System.Reflection.Emit; // Carpmosia-edit - Nukeops Arrival Message
 using System.Text;
 
 namespace Content.Server.GameTicking.Rules;
 
 public sealed partial class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
 {
+    [Dependency] private AlertLevelSystem _alertLevelSystem = default!; // Carpmosia-edit - Nukeops Arrival Message
     [Dependency] private AntagSelectionSystem _antag = default!;
+    [Dependency] private ChatSystem _chat = default!; // Carpmosia-edit - Nukeops Arrival Message
     [Dependency] private EmergencyShuttleSystem _emergency = default!;
     [Dependency] private SharedIdCardSystem _idCard = default!;
     [Dependency] private SharedJobSystem _jobs = default!;
@@ -57,6 +64,7 @@ public sealed partial class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleCompon
     [Dependency] private NpcFactionSystem _npcFaction = default!;
     [Dependency] private PopupSystem _popupSystem = default!;
     [Dependency] private RoundEndSystem _roundEndSystem = default!;
+    [Dependency] private SharedAudioSystem _audio = default!; // Carpmosia-edit - Nukeops Arrival Message
     [Dependency] private SharedContainerSystem _containers = default!;
     [Dependency] private SharedRoleSystem _roles = default!;
     [Dependency] private SharedStationSystem _station = default!;
@@ -89,6 +97,7 @@ public sealed partial class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleCompon
         SubscribeLocalEvent<NukeopsRoleComponent, GetBriefingEvent>(OnGetBriefing);
 
         SubscribeLocalEvent<ConsoleFTLAttemptEvent>(OnShuttleFTLAttempt);
+        SubscribeLocalEvent<FTLCompletedEvent>(OnShuttleFTLCompleted); // Carpmosia-edit - Nukeops Arrival Message
         SubscribeLocalEvent<WarDeclaredEvent>(OnWarDeclared);
         SubscribeLocalEvent<CommunicationConsoleCallShuttleAttemptEvent>(OnShuttleCallAttempt);
 
@@ -433,6 +442,27 @@ public sealed partial class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleCompon
             }
         }
     }
+
+    // Carpmosia-start - Nukeops Arrival Message
+    private void OnShuttleFTLCompleted(ref FTLCompletedEvent ev)
+    {
+        var query = QueryActiveRules();
+        while (query.MoveNext(out var uid, out _, out var nukeops, out _))
+        {
+            if (ev.Entity != GetShuttle((uid, nukeops)))
+                continue;
+            if (!TryGetRandomStation(out var chosenStation))
+                return;
+            if (_alertLevelSystem.GetLevel(chosenStation.Value) == "red")
+                return;
+
+            _alertLevelSystem.SetLevel(chosenStation.Value, "red", true, true, true);
+            var msg = Loc.GetString("nukeops-shuttle-warning");
+            _chat.DispatchGlobalAnnouncement(msg, playSound: false, colorOverride: Color.Red);
+            _audio.PlayGlobal("/Audio/Misc/notice1.ogg", Filter.Broadcast(), true);
+        }
+    }
+    // Carpmosia-end - Nukeops Arrival Message
 
     private void OnWarDeclared(ref WarDeclaredEvent ev)
     {
