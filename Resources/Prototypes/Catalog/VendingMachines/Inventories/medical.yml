@@ -31,6 +31,8 @@
 - type: vendingMachineInventory
   id: NanoMedPlusInventory
   startingInventory:
+    # Medical Essential Gear
+    ClothingBeltMedical: 2 # Carpmosia-edit - Empty medical belts due to bottle content moved to fluid bags
     # Shared Essential
     HandheldHealthAnalyzer: 3
     JetInjector: 3
