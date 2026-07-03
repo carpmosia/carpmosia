@@ -1,0 +1,12 @@
+- type: entity
+  parent: RehydratableAnimalCube
+  id: KittiCube
+  name: kitti cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobKitti
+  - type: Tag
+    tags:
+    - Meat
+    - MonkeyCube
