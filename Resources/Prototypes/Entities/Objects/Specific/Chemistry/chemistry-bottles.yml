@@ -14,15 +14,17 @@
       Glass: 25
   - type: SpaceGarbage
   - type: Sprite
-    sprite: Objects/Specific/Chemistry/bottle.rsi
+    sprite: _Carpmosia/Objects/Specific/Chemistry/bottle.rsi # Carpmosia-edit - chem resprite
     layers:
     - state: bottle-1
     - state: bottle-1-1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
+    - state: bottle-1-overlay # Carpmosia-edit - chem resprite
   - type: Appearance
   - type: SolutionContainerVisuals
     maxFillLevels: 6
+    inHandsMaxFillLevels: 3 # Carpmosia-edit - chem resprite
     fillBaseName: bottle-1-
   - type: Edible
     edible: Drink
@@ -51,7 +53,7 @@
         type: TransferAmountBoundUserInterface
   - type: Item
     size: Tiny
-    sprite: Objects/Specific/Chemistry/beaker.rsi
+    sprite: _Carpmosia/Objects/Specific/Chemistry/beaker.rsi # Carpmosia-edit - chem resprite
   - type: Spillable
     solution: drink
   - type: MeleeWeapon
@@ -111,6 +113,7 @@
     - state: bottle-2-1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
+    - state: bottle-2-overlay # Carpmosia-edit - chem resprite
   - type: SolutionContainerVisuals
     fillBaseName: bottle-2-
 
@@ -124,6 +127,7 @@
     - state: bottle-3-1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
+    - state: bottle-3-overlay # Carpmosia-edit - chem resprite
   - type: SolutionContainerVisuals
     fillBaseName: bottle-3-
 
@@ -137,6 +141,7 @@
     - state: bottle-4-1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
+    - state: bottle-4-overlay # Carpmosia-edit - chem resprite
   - type: SolutionContainerVisuals
     fillBaseName: bottle-4-
 

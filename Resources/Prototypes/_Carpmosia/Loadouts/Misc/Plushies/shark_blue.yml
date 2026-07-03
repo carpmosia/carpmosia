@@ -5,12 +5,12 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobJanitor
-      time: 5h
+      time: 1h
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
       department: Medical
-      time: 5h
+      time: 1h
 
 - type: loadout
   id: PlushieSharkBlue

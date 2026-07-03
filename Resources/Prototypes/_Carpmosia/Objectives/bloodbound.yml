@@ -4,7 +4,7 @@
   id: BaseBloodBoundObjective
   components:
   - type: Objective
-    issuer: objective-issuer-blood-bound
+    issuer: BloodBound
   - type: RoleRequirement
     roles:
     - BloodBoundRole
@@ -18,7 +18,7 @@
   components:
   - type: Objective
     difficulty: 0 # never given randomly anyways
-    issuer: objective-issuer-blood-bound
+    issuer: BloodBound
     icon:
       sprite: /Textures/Interface/Alerts/bleed.rsi
       state: bleed10

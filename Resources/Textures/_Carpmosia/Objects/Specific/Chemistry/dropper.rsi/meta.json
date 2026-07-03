@@ -1,0 +1,39 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Created by GlupiyBrush (GitHub, Discord)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "dropper"
+        },
+        {
+            "name": "dropper_overlay"
+        },
+        {
+            "name": "borgdropper"
+        },
+        {
+            "name": "dropper1"
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-left-fill-1",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right-fill-1",
+            "directions": 4
+        }
+    ]
+}

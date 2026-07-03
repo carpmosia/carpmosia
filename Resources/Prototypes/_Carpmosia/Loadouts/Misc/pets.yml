@@ -17,6 +17,12 @@
     - MobPetSnail
 
 - type: loadout
+  id: PetFish
+  storage:
+    back:
+    - MobPetFish
+
+- type: loadout
   id: PetMothroach
   effects:
   - !type:JobRequirementLoadoutEffect
