@@ -106,11 +106,9 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
                 ? GetStatus(mobStateComponent.CurrentState)
                 : Loc.GetString("health-analyzer-window-entity-unknown-text");
 
-        // Carpmosia-start - Health analyzer bloodstream reagents
         // Total Damage
 
-        // DamageLabel.Text = _damageable.GetTotalDamage(target.Value).ToString();
-        // Carpmosia-end - Health analyzer bloodstream reagents
+        // DamageLabel.Text = _damageable.GetTotalDamage(target.Value).ToString(); // Carpmosia-edit - Health analyzer bloodstream reagents
 
         // Alerts
 
@@ -145,9 +143,9 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
                 .OrderByDescending(damage => damage.Value)
                 .ToDictionary(x => x.Key, x => x.Value);
 
-        // Carpmosia-start - Health analyzer bloodstream reagents
         var damagePerType = _damageable.GetAllDamage(target.Value).DamageDict;
 
+        // Carpmosia-start - Health analyzer bloodstream reagents
         var totalDamage = _damageable.GetTotalDamage(target.Value);
 
         DrawDiagnosticGroups(totalDamage, damageSortedGroups, damagePerType);
@@ -174,9 +172,9 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
         Dictionary<ProtoId<DamageGroupPrototype>, FixedPoint2> groups,
         IReadOnlyDictionary<ProtoId<DamageTypePrototype>, FixedPoint2> damageDict)
     {
+        // Carpmosia-start - Health analyzer bloodstream reagents
         DamageGroupsContainer.RemoveAllChildren();
 
-        // Carpmosia-start - Health analyzer bloodstream reagents
         TotalDamageLabel.Text = $"{Loc.GetString(
             "health-analyzer-window-entity-damage-total-text",
             ( "amount", totalDamage.ToString() )
@@ -204,7 +202,7 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
 
             groupContainer.AddChild(CreateDiagnosticGroupTitle(groupTitleText, damageGroupId));
 
-            DamageGroupsContainer.AddChild(groupContainer);
+            DamageGroupsContainer.AddChild(groupContainer); // Carpmosia-edit - Health analyzer bloodstream reagents
 
             // Show the damage for each type in that group.
             var group = _prototypes.Index<DamageGroupPrototype>(damageGroupId);
@@ -230,11 +228,11 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
     {
         BloodstreamReagentsContainer.RemoveAllChildren();
 
-        List<ReagentQuantity> bloodstream = new List<ReagentQuantity>();
-        FixedPoint2 bloodlevel_amount = 0;
-        FixedPoint2 bloodstream_reagent_amount = 0;
+        List<ReagentQuantity> bloodstream = new();
+        FixedPoint2 bloodlevelAmount = FixedPoint2.Zero;
+        FixedPoint2 bloodstreamReagentAmount = FixedPoint2.Zero;
 
-        if ( bloodType is not null || bloodSolution is not null )
+        if ( bloodType is not null && bloodSolution is not null )
         {
             // Build out the bloodstream, ignoring the target's blood reagent(s)
             foreach ( var reagent in bloodSolution!.Contents )
@@ -248,57 +246,55 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
                 // Otherwise add it to the bloodstream reagent list
                 if ( is_blood )
                 {
-                    bloodlevel_amount += reagent.Quantity;
+                    bloodlevelAmount += reagent.Quantity;
                 }
                 else
                 {
                     bloodstream.Add( reagent );
-                    bloodstream_reagent_amount += reagent.Quantity;
+                    bloodstreamReagentAmount += reagent.Quantity;
                 }
             }
         }
 
-        string bloodlevel_percent = !float.IsNaN(bloodLevel)
+        string bloodlevelPercent = !float.IsNaN(bloodLevel)
             ? $"{bloodLevel * 100:F1} %"
             : Loc.GetString("health-analyzer-window-entity-unknown-value-text");
 
         BloodLevelLabel.Text = Loc.GetString(
             "health-analyzer-window-entity-blood-level-numbers-text",
-            ( "amount", bloodlevel_amount.ToString() ),
-            ( "percent", bloodlevel_percent.ToString() )
+            ( "amount", bloodlevelAmount.ToString() ),
+            ( "percent", bloodlevelPercent.ToString() )
         );
 
         BloodstreamLabel.Text = Loc.GetString(
             "health-analyzer-window-entity-bloodstream-text",
-            ( "amount", bloodstream_reagent_amount.ToString() )
+            ( "amount", bloodstreamReagentAmount.ToString() )
         );
 
-        NoReagents.Visible = ( bloodstream.Count == 0 );
+        NoReagents.Visible = bloodstream.Count == 0;
 
-        foreach ( var reagent in bloodstream )
+        foreach ( var ( reagentID, reagentQuantity ) in bloodstream )
         {
-            var localized_name = _prototypes.Index<ReagentPrototype>( reagent.Reagent.Prototype ).LocalizedName;
-            var reagent_color = _prototypes.Index<ReagentPrototype>( reagent.Reagent.Prototype ).SubstanceColor;
-            var reagent_quantity = reagent.Quantity;
+            var reagentProto = _prototypes.Index<ReagentPrototype>( reagentID.Prototype );
 
-            // Build the string for the current reagent
-            // Uses a unicode block character to show the reactant color
-            var reagent_name_num_string = Loc.GetString(
-                "health-analyzer-window-bloodstream-reagent-text",
-                ( "reagentColor", reagent_color ),
-                ( "reagentName", localized_name ),
-                ( "amount", reagent_quantity )
-            );
-
-            var reagent_container = new BoxContainer
+            var reagentContainer = new BoxContainer
             {
                 Align = AlignMode.Begin,
                 Orientation = LayoutOrientation.Vertical,
             };
 
-            reagent_container.AddChild( new RichTextLabel{ Text = reagent_name_num_string } );
+            // Uses a unicode block character to show the reactant color
+            reagentContainer.AddChild(
+                new RichTextLabel{ Text =
+                    Loc.GetString( "health-analyzer-window-bloodstream-reagent-text",
+                        ( "reagentColor", reagentProto.SubstanceColor ),
+                        ( "reagentName", reagentProto.LocalizedName ),
+                        ( "amount", reagentQuantity )
+                    )
+                }
+            );
 
-            BloodstreamReagentsContainer.AddChild( reagent_container );
+            BloodstreamReagentsContainer.AddChild( reagentContainer );
         }
     }
     // Carpmosia-end - Health analyzer bloodstream reagents

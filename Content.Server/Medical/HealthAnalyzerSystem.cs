@@ -242,7 +242,7 @@ public sealed partial class HealthAnalyzerSystem : EntitySystem
 
         if (TryComp<BloodstreamComponent>(entity, out var bloodstream) &&
             _solutionContainerSystem.ResolveSolution(entity, bloodstream.BloodSolutionName,
-                ref bloodstream.BloodSolution, out bloodSolution))
+                ref bloodstream.BloodSolution, out bloodSolution)) // Carpmosia-edit - Health analyzer bloodstream reagents
         {
             bloodAmount = _bloodstreamSystem.GetBloodLevel(entity);
             bleeding = bloodstream.BleedAmount > 0;

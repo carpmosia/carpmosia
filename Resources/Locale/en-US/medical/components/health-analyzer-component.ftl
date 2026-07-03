@@ -11,17 +11,21 @@ health-analyzer-window-entity-temperature-text = Temperature:
 health-analyzer-window-entity-blood-level-text = Blood Level:
 health-analyzer-window-entity-status-text = Status:
 
+# Carpmosia-edit - Health analyzer bloodstream reagents
 health-analyzer-window-entity-blood-level-numbers-text = {$amount}u [{$percent}]
 
+# Carpmosia-edit - Health analyzer bloodstream reagents
 health-analyzer-window-entity-damage-total-text = Total Damage: {$amount}
 health-analyzer-window-damage-group-text = {$damageGroup}: {$amount}
 health-analyzer-window-damage-type-text = {$damageType}: {$amount}
 
+## Carpmosia-start - Health analyzer bloodstream reagents
 health-analyzer-window-entity-bloodstream-text = Bloodstream: {$amount}u
 health-analyzer-window-bloodstream-reagent-text = [color={$reagentColor}]█[/color]  {$reagentName}: {$amount}u
 
 health-analyzer-window-no-damage-text = No damage detected
 health-analyzer-window-no-reagents-text = No reagents detected
+## Carpmosia-end - Health analyzer bloodstream reagents
 
 health-analyzer-window-entity-unrevivable-text = [color=yellow]Unique body composition detected! Patient can not be resuscitated by normal means![/color]
 health-analyzer-window-entity-bleeding-text = [color=red]Patient has open wounds![/color]
