@@ -31,12 +31,14 @@
 - type: vendingMachineInventory
   id: NanoMedPlusInventory
   startingInventory:
+    # Medical Essential Gear
+    #ClothingBeltMedicalFilled: 2 # Carpmosia-edit - Dingus bags
     # Shared Essential
     HandheldHealthAnalyzer: 3
     JetInjector: 3
-    # Medical Essential Gear
     ClothingBeltMedical: 2 # Carpmosia-edit - Dingus bags
     # Paramed Essential Gear
+    #ClothingBeltMedicalEMTFilled: 1 # Carpmosia-edit - Dingus bags
     EmergencyRollerBedSpawnFolded: 1
     BoxBodyBag: 1
     # Extra Expendable Gear
