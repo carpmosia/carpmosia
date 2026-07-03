@@ -50,7 +50,7 @@ public sealed partial class ContentAudioSystem : SharedContentAudioSystem
             },
             true);
 
-        SubscribeLocalEvent<RoundEndMessageEvent>(OnRoundEnd);
+        // SubscribeLocalEvent<RoundEndMessageEvent>(OnRoundEnd); // Carpmosia-edit - Kill round end music
         SubscribeLocalEvent<PlayerJoinedLobbyEvent>(OnPlayerJoinedLobby);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundCleanup);
         SubscribeLocalEvent<RoundStartingEvent>(OnRoundStart);
