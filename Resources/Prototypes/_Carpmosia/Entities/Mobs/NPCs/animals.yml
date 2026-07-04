@@ -217,6 +217,8 @@
       path: /Audio/Animals/cat_meow.ogg
     interactFailureSound:
       path: /Audio/Animals/cat_hiss.ogg
+  - type: Deathgasp
+    prototype: DefaultDeathgasp
   # Tajaran body temperature/thresholds
   - type: Temperature
     currentTemperature: 312.0
