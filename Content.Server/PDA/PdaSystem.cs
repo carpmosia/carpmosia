@@ -65,7 +65,7 @@ namespace Content.Server.PDA
             SubscribeLocalEvent<PdaComponent, InventoryRelayedEvent<ChameleonControllerOutfitSelectedEvent>>(OnRelayedEventToIdCard);
             SubscribeLocalEvent<PdaComponent, InventoryRelayedEvent<VoiceMaskNameUpdatedEvent>>(OnRelayedEventToIdCard);
 
-            SubscribeLocalEvent<PdaComponent, DroppedEvent>(OnDrop); // Carpmosia-edit - Uplink Auto-locker
+            SubscribeLocalEvent<RingerUplinkComponent, DroppedEvent>(OnDrop); // Carpmosia-edit - Uplink Auto-locker
         }
 
         private void OnRelayedEventToIdCard<T>(Entity<PdaComponent> ent, ref InventoryRelayedEvent<T> args)
@@ -309,13 +309,10 @@ namespace Content.Server.PDA
         }
 
         // Carpmosia-start - Uplink Auto-locker
-        private void OnDrop(Entity<PdaComponent> ent, ref DroppedEvent args)
+        private void OnDrop(Entity<RingerUplinkComponent> ent, ref DroppedEvent args)
         {
-            if (!TryComp<RingerUplinkComponent>(ent, out var uplink))
-                return;
-
-            if (uplink!= null && uplink.Unlocked)
-                _ringer.LockUplink((ent.Owner, uplink));
+            _ringer.LockUplink(ent.Owner);
+            UpdatePdaUi(ent);
         }
         // Carpmosia-end - Uplink Auto-locker
 
