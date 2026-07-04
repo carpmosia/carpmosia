@@ -68,7 +68,7 @@ namespace Content.Server.GameTicking
 
             if (!foundOne)
             {
-                stationNames.Append(_gameMapManager.GetSelectedMap()?.MapName ??
+                stationNames.Append(_gameMapManager.GetSelectedMap() is { } maps ? string.Join(" & ", maps.Select(x => x.MapName)) :
                                     Loc.GetString("game-ticker-no-map-selected"));
             }
 

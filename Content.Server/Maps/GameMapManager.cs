@@ -25,9 +25,9 @@ public sealed partial class GameMapManager : IGameMapManager
     [ViewVariables(VVAccess.ReadOnly)]
     private readonly Queue<string> _previousMaps = new();
     [ViewVariables(VVAccess.ReadOnly)]
-    private GameMapPrototype? _configSelectedMap;
+    private IEnumerable<GameMapPrototype>? _configSelectedMap; // Carpmosia-edit - Multistation
     [ViewVariables(VVAccess.ReadOnly)]
-    private GameMapPrototype? _selectedMap; // Don't change this value during a round!
+    private IEnumerable<GameMapPrototype>? _selectedMap; // Carpmosia-edit - Multistation
     [ViewVariables(VVAccess.ReadOnly)]
     private bool _mapRotationEnabled;
     [ViewVariables(VVAccess.ReadOnly)]
@@ -41,9 +41,11 @@ public sealed partial class GameMapManager : IGameMapManager
 
         _configurationManager.OnValueChanged(CCVars.GameMap, value =>
         {
-            if (TryLookupMap(value, out GameMapPrototype? map))
+            var maps = value.Split(";").Select(x => TryLookupMap(x, out GameMapPrototype? map) ? map : null).OfType<GameMapPrototype>().ToArray(); // Carpmosia-edit - Multistation
+
+            if (maps.Length > 0) // Carpmosia-edit - Multistation
             {
-                _configSelectedMap = map;
+                _configSelectedMap = maps; // Carpmosia-edit - Multistation
                 return;
             }
 
@@ -56,12 +58,12 @@ public sealed partial class GameMapManager : IGameMapManager
             if (_configurationManager.GetCVar<bool>(CCVars.UsePersistence))
             {
                 var startMap = _configurationManager.GetCVar<string>(CCVars.PersistenceMap);
-                _configSelectedMap = _prototypeManager.Index<GameMapPrototype>(startMap);
+                _configSelectedMap = [_prototypeManager.Index<GameMapPrototype>(startMap)]; // Carpmosia-edit - Multistation
 
                 var mapPath = new ResPath(value);
                 if (_resMan.UserData.Exists(mapPath))
                 {
-                    _configSelectedMap = _configSelectedMap.Persistence(mapPath);
+                    _configSelectedMap = _configSelectedMap.Select(x => x.Persistence(mapPath)); // Carpmosia-edit - Multistation
                     _log.Info($"Using persistence map from {value}");
                     return;
                 }
@@ -129,7 +131,7 @@ public sealed partial class GameMapManager : IGameMapManager
         return _prototypeManager.EnumeratePrototypes<GameMapPrototype>();
     }
 
-    public GameMapPrototype? GetSelectedMap()
+    public IEnumerable<GameMapPrototype>? GetSelectedMap()
     {
         return _configSelectedMap ?? _selectedMap;
     }
@@ -143,7 +145,7 @@ public sealed partial class GameMapManager : IGameMapManager
     {
         if (!TryLookupMap(gameMap, out var map) || !IsMapEligible(map))
             return false;
-        _selectedMap = map;
+        _selectedMap = [map];
         return true;
     }
 
@@ -151,20 +153,20 @@ public sealed partial class GameMapManager : IGameMapManager
     {
         if (!TryLookupMap(gameMap, out var map))
             throw new ArgumentException($"The map \"{gameMap}\" is invalid!");
-        _selectedMap = map;
+        _selectedMap = [map];
     }
 
     public void SelectMapRandom()
     {
         var maps = CurrentlyEligibleMaps().ToList();
-        _selectedMap = _random.Pick(maps);
+        _selectedMap = [_random.Pick(maps)];
     }
 
     public void SelectMapFromRotationQueue(bool markAsPlayed = false)
     {
         var map = GetFirstInRotationQueue();
 
-        _selectedMap = map;
+        _selectedMap = [map];
 
         if (markAsPlayed)
             EnqueueMap(map.ID);
