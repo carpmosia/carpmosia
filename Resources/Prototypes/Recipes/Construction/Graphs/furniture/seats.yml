@@ -103,6 +103,58 @@
           steps:
             - tool: Screwing
               doAfter: 1
+        # Carpmosia-start - whoopie furniture
+        - to: chairWhoopie
+          steps:
+            - tag: WhoopieCushion
+              name: construction-graph-tag-whoopie-cushion
+              icon:
+                sprite: Objects/Fun/whoopie.rsi
+                state: icon
+              doAfter: 1
+
+    - node: chairWhoopie
+      entity: WhoopieChair
+      edges:
+        - to: chair
+          completed:
+            - !type:SpawnPrototype
+              prototype: WhoopieCushion
+          steps:
+            - tool: Prying
+              doAfter: 1
+
+    - node: chairGreyscale
+      entity: ChairGreyscale
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+          steps:
+            - tool: Screwing
+              doAfter: 1
+        # Carpmosia-start - whoopie furniture
+        - to: chairGreyscaleWhoopie
+          steps:
+            - tag: WhoopieCushion
+              name: construction-graph-tag-whoopie-cushion
+              icon:
+                sprite: Objects/Fun/whoopie.rsi
+                state: icon
+              doAfter: 1
+
+    - node: chairGreyscaleWhoopie
+      entity: WhoopieChairGreyscale
+      edges:
+        - to: chairGreyscale
+          completed:
+            - !type:SpawnPrototype
+              prototype: WhoopieCushion
+          steps:
+            - tool: Prying
+              doAfter: 1
+  # Carpmosia-end - whoopie furniture
 
     - node: stool
       entity: Stool
@@ -114,6 +166,27 @@
           steps:
             - tool: Screwing
               doAfter: 1
+        # Carpmosia-start - whoopie furniture
+        - to: stoolWhoopie
+          steps:
+            - tag: WhoopieCushion
+              name: construction-graph-tag-whoopie-cushion
+              icon:
+                sprite: Objects/Fun/whoopie.rsi
+                state: icon
+              doAfter: 1
+
+    - node: stoolWhoopie
+      entity: WhoopieStool
+      edges:
+        - to: stool
+          completed:
+            - !type:SpawnPrototype
+              prototype: WhoopieCushion
+          steps:
+            - tool: Prying
+              doAfter: 1
+    # Carpmosia-end - whoopie furniture
 
     - node: stoolBar
       entity: StoolBar
@@ -125,6 +198,27 @@
           steps:
             - tool: Screwing
               doAfter: 1
+        # Carpmosia-start - whoopie furniture
+        - to: stoolBarWhoopie
+          steps:
+            - tag: WhoopieCushion
+              name: construction-graph-tag-whoopie-cushion
+              icon:
+                sprite: Objects/Fun/whoopie.rsi
+                state: icon
+              doAfter: 1
+
+    - node: stoolBarWhoopie
+      entity: WhoopieBarStool
+      edges:
+        - to: stoolBar
+          completed:
+            - !type:SpawnPrototype
+              prototype: WhoopieCushion
+          steps:
+            - tool: Prying
+              doAfter: 1
+    # Carpmosia-end - whoopie furniture
 
     - node: chairBrass
       entity: ChairBrass
@@ -136,6 +230,27 @@
           steps:
             - tool: Screwing
               doAfter: 1
+        # Carpmosia-start - whoopie furniture
+        - to: chairBrassWhoopie
+          steps:
+            - tag: WhoopieCushion
+              name: construction-graph-tag-whoopie-cushion
+              icon:
+                sprite: Objects/Fun/whoopie.rsi
+                state: icon
+              doAfter: 1
+
+    - node: chairBrassWhoopie
+      entity: WhoopieChairBrass
+      edges:
+        - to: chairBrass
+          completed:
+            - !type:SpawnPrototype
+              prototype: WhoopieCushion
+          steps:
+            - tool: Prying
+              doAfter: 1
+    # Carpmosia-end - whoopie furniture
 
     - node: chairOffice
       entity: ChairOfficeLight
@@ -148,7 +263,27 @@
           steps:
             - tool: Screwing
               doAfter: 1
+        # Carpmosia-start - whoopie furniture
+        - to: chairOfficeWhoopie
+          steps:
+            - tag: WhoopieCushion
+              name: construction-graph-tag-whoopie-cushion
+              icon:
+                sprite: Objects/Fun/whoopie.rsi
+                state: icon
+              doAfter: 1
 
+    - node: chairOfficeWhoopie
+      entity: WhoopieChairOfficeLight
+      edges:
+        - to: chairOffice
+          completed:
+            - !type:SpawnPrototype
+              prototype: WhoopieCushion
+          steps:
+            - tool: Prying
+              doAfter: 1
+    # Carpmosia-end - whoopie furniture
     - node: chairOfficeDark
       entity: ChairOfficeDark
       edges:
@@ -160,7 +295,27 @@
           steps:
             - tool: Screwing
               doAfter: 1
+        # Carpmosia-start - whoopie furniture
+        - to: chairOfficeDarkWhoopie
+          steps:
+            - tag: WhoopieCushion
+              name: construction-graph-tag-whoopie-cushion
+              icon:
+                sprite: Objects/Fun/whoopie.rsi
+                state: icon
+              doAfter: 1
 
+    - node: chairOfficeDarkWhoopie
+      entity: WhoopieChairOfficeDark
+      edges:
+        - to: chairOfficeDark
+          completed:
+            - !type:SpawnPrototype
+              prototype: WhoopieCushion
+          steps:
+            - tool: Prying
+              doAfter: 1
+    # Carpmosia-end - whoopie furniture
     - node: chairComfy
       entity: ComfyChair
       edges:
@@ -172,6 +327,27 @@
           steps:
             - tool: Screwing
               doAfter: 1
+        # Carpmosia-start - whoopie furniture
+        - to: chairComfyWhoopie
+          steps:
+            - tag: WhoopieCushion
+              name: construction-graph-tag-whoopie-cushion
+              icon:
+                sprite: Objects/Fun/whoopie.rsi
+                state: icon
+              doAfter: 1
+
+    - node: chairComfyWhoopie
+      entity: WhoopieComfyChair
+      edges:
+        - to: chairComfy
+          completed:
+            - !type:SpawnPrototype
+              prototype: WhoopieCushion
+          steps:
+            - tool: Prying
+              doAfter: 1
+    # Carpmosia-end - whoopie furniture
 
     - node: chairPilotSeat
       entity: ChairPilotSeat
@@ -184,6 +360,27 @@
           steps:
             - tool: Screwing
               doAfter: 2
+        # Carpmosia-start - whoopie furniture
+        - to: chairPilotSeatWhoopie
+          steps:
+            - tag: WhoopieCushion
+              name: construction-graph-tag-whoopie-cushion
+              icon:
+                sprite: Objects/Fun/whoopie.rsi
+                state: icon
+              doAfter: 1
+
+    - node: chairPilotSeatWhoopie
+      entity: WhoopieChairPilotSeat
+      edges:
+        - to: chairPilotSeat
+          completed:
+            - !type:SpawnPrototype
+              prototype: WhoopieCushion
+          steps:
+            - tool: Prying
+              doAfter: 1
+    # Carpmosia-end - whoopie furniture
 
     - node: chairWood
       entity: ChairWood
@@ -196,6 +393,27 @@
           steps:
             - tool: Screwing
               doAfter: 1
+        # Carpmosia-start - whoopie furniture
+        - to: chairWoodWhoopie
+          steps:
+            - tag: WhoopieCushion
+              name: construction-graph-tag-whoopie-cushion
+              icon:
+                sprite: Objects/Fun/whoopie.rsi
+                state: icon
+              doAfter: 1
+
+    - node: chairWoodWhoopie
+      entity: WhoopieChairWood
+      edges:
+        - to: chairWood
+          completed:
+            - !type:SpawnPrototype
+              prototype: WhoopieCushion
+          steps:
+            - tool: Prying
+              doAfter: 1
+    # Carpmosia-end - whoopie furniture
 
     - node: chairMeat
       entity: ChairMeat
@@ -208,6 +426,27 @@
           steps:
             - tool: Screwing
               doAfter: 1
+        # Carpmosia-start - whoopie furniture
+        - to: chairMeatWhoopie
+          steps:
+            - tag: WhoopieCushion
+              name: construction-graph-tag-whoopie-cushion
+              icon:
+                sprite: Objects/Fun/whoopie.rsi
+                state: icon
+              doAfter: 1
+
+    - node: chairMeatWhoopie
+      entity: WhoopieChairMeat
+      edges:
+        - to: chairMeat
+          completed:
+            - !type:SpawnPrototype
+              prototype: WhoopieCushion
+          steps:
+            - tool: Prying
+              doAfter: 1
+    # Carpmosia-end - whoopie furniture
 
     - node: chairFolding
       entity: ChairFolding
@@ -235,6 +474,27 @@
           steps:
             - tool: Screwing
               doAfter: 1
+        # Carpmosia-start - whoopie furniture
+        - to: chairSteelBenchWhoopie
+          steps:
+            - tag: WhoopieCushion
+              name: construction-graph-tag-whoopie-cushion
+              icon:
+                sprite: Objects/Fun/whoopie.rsi
+                state: icon
+              doAfter: 1
+
+    - node: chairSteelBenchWhoopie
+      entity: WhoopieSteelBench
+      edges:
+        - to: chairSteelBench
+          completed:
+            - !type:SpawnPrototype
+              prototype: WhoopieCushion
+          steps:
+            - tool: Prying
+              doAfter: 1
+    # Carpmosia-end - whoopie furniture
 
     - node: stoolCard
       entity: CardStool
@@ -249,6 +509,27 @@
           steps:
             - tool: Slicing
               doAfter: 1
+        # Carpmosia-start - whoopie furniture
+        - to: stoolCardWhoopie
+          steps:
+            - tag: WhoopieCushion
+              name: construction-graph-tag-whoopie-cushion
+              icon:
+                sprite: Objects/Fun/whoopie.rsi
+                state: icon
+              doAfter: 1
+
+    - node: stoolCardWhoopie
+      entity: WhoopieCardStool
+      edges:
+        - to: stoolCard
+          completed:
+            - !type:SpawnPrototype
+              prototype: WhoopieCushion
+          steps:
+            - tool: Prying
+              doAfter: 1
+    # Carpmosia-end - whoopie furniture
 
     - node: chairWoodBench
       entity: WoodenBench
@@ -261,6 +542,27 @@
           steps:
             - tool: Screwing
               doAfter: 2
+        # Carpmosia-start - whoopie furniture
+        - to: chairWoodBenchWhoopie
+          steps:
+            - tag: WhoopieCushion
+              name: construction-graph-tag-whoopie-cushion
+              icon:
+                sprite: Objects/Fun/whoopie.rsi
+                state: icon
+              doAfter: 1
+
+    - node: chairWoodBenchWhoopie
+      entity: WhoopieWoodenBench
+      edges:
+        - to: chairWoodBench
+          completed:
+            - !type:SpawnPrototype
+              prototype: WhoopieCushion
+          steps:
+            - tool: Prying
+              doAfter: 1
+    # Carpmosia-end - whoopie furniture
 
     - node: redComfBench
       entity: BenchRedComfy
@@ -295,3 +597,28 @@
               doAfter: 1
             - tool: Screwing
               doAfter: 1
+
+    # Carpmosia-start - whoopie furniture
+    - node: chairXeno
+      entity: ChairXeno
+      edges:
+        - to: chairXenoWhoopie
+          steps:
+            - tag: WhoopieCushion
+              name: construction-graph-tag-whoopie-cushion
+              icon:
+                sprite: Objects/Fun/whoopie.rsi
+                state: icon
+              doAfter: 1
+
+    - node: chairXenoWhoopie
+      entity: WhoopieChairXeno
+      edges:
+        - to: chairXeno
+          completed:
+            - !type:SpawnPrototype
+              prototype: WhoopieCushion
+          steps:
+            - tool: Prying
+              doAfter: 1
+# Carpmosia-end - whoopie furniture

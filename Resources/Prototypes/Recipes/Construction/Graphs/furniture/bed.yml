@@ -47,6 +47,28 @@
           steps:
             - tool: Screwing
               doAfter: 1
+              # Carpmosia-start - whoopie furniture
+        - to: bedWhoopie
+          steps:
+          - tag: WhoopieCushion
+            name: construction-graph-tag-whoopie-cushion
+            icon:
+              sprite: Objects/Fun/whoopie.rsi
+              state: icon
+            doAfter: 1
+
+    - node: bedWhoopie
+      entity: WhoopieBed
+      edges:
+        - to: bed
+          completed:
+            - !type:SpawnPrototype
+              prototype: WhoopieCushion
+          steps:
+            - tool: Prying
+              doAfter: 1
+# Carpmosia-end -whoopie furniture
+
     - node: dogbed
       entity: DogBed
       edges:
@@ -58,6 +80,28 @@
           steps:
             - tool: Screwing
               doAfter: 1
+              # Carpmosia-start - whoopie furniture
+        - to: dogbedWhoopie
+          steps:
+          - tag: WhoopieCushion
+            name: construction-graph-tag-whoopie-cushion
+            icon:
+              sprite: Objects/Fun/whoopie.rsi
+              state: icon
+            doAfter: 1
+
+    - node: dogbedWhoopie
+      entity: WhoopieDogBed
+      edges:
+        - to: dogbed
+          completed:
+            - !type:SpawnPrototype
+              prototype: WhoopieCushion
+          steps:
+            - tool: Prying
+              doAfter: 1
+# Carpmosia-end - whoopie furniture
+
     - node: medicalbed
       entity: MedicalBed
       edges:
@@ -72,3 +116,70 @@
           steps:
             - tool: Screwing
               doAfter: 1
+              # Carpmosia-start - whoopie furniture
+        - to: medicalbedWhoopie
+          steps:
+          - tag: WhoopieCushion
+            name: construction-graph-tag-whoopie-cushion
+            icon:
+              sprite: Objects/Fun/whoopie.rsi
+              state: icon
+            doAfter: 1
+
+    - node: medicalbedWhoopie
+      entity: WhoopieMedicalBed
+      edges:
+        - to: medicalbed
+          completed:
+            - !type:SpawnPrototype
+              prototype: WhoopieCushion
+          steps:
+            - tool: Prying
+              doAfter: 1
+
+    - node: psychbed
+      entity: PsychBed
+      edges:
+        - to: psychbedWhoopie
+          steps:
+          - tag: WhoopieCushion
+            name: construction-graph-tag-whoopie-cushion
+            icon:
+              sprite: Objects/Fun/whoopie.rsi
+              state: icon
+            doAfter: 1
+
+    - node: psychbedWhoopie
+      entity: WhoopiePsychBed
+      edges:
+        - to: psychbed
+          completed:
+            - !type:SpawnPrototype
+              prototype: WhoopieCushion
+          steps:
+            - tool: Prying
+              doAfter: 1
+
+    - node: mattress
+      entity: Mattress
+      edges:
+        - to: mattressWhoopie
+          steps:
+          - tag: WhoopieCushion
+            name: construction-graph-tag-whoopie-cushion
+            icon:
+              sprite: Objects/Fun/whoopie.rsi
+              state: icon
+            doAfter: 1
+
+    - node: mattressWhoopie
+      entity: WhoopieMattress
+      edges:
+        - to: mattress
+          completed:
+            - !type:SpawnPrototype
+              prototype: WhoopieCushion
+          steps:
+            - tool: Prying
+              doAfter: 1
+ # Carpmosia-end - whoopie furniture

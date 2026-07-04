@@ -58,7 +58,6 @@
   - type: Anchorable
   - type: Pullable
 
-
 - type: entity
   parent: Bed
   id: MedicalBed
@@ -123,6 +122,11 @@
     state: mattress
   - type: Damageable
     damageModifierSet: Inflatable
+  #carpmosia-start - Whoopie Furniture, needed to upgrade into whoopie version
+  - type: Construction
+    graph: bed
+    node: mattress
+  #carpmosia-end - Whoopie Furniture
 
 - type: entity
   parent: Bed
@@ -180,3 +184,8 @@
           MaterialWoodPlank:
             min: 2
             max: 2
+  #carpmosia-start - Whoopie Furniture, needed to upgrade into whoopie version
+  - type: Construction
+    graph: bed
+    node: psychbed
+  #carpmosia-end - Whoopie Furniture
