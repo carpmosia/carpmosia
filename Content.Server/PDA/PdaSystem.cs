@@ -311,7 +311,9 @@ namespace Content.Server.PDA
         // Carpmosia-start - Uplink Auto-locker
         private void OnDrop(Entity<RingerUplinkComponent> ent, ref DroppedEvent args)
         {
-            _ringer.LockUplink(ent.Owner);
+            if (TryComp<RemoteStoreComponent>(ent, out var remoteStore))
+                remoteStore.Store = null;
+            _ringer.LockUplink(ent!);
             UpdatePdaUi(ent);
         }
         // Carpmosia-end - Uplink Auto-locker
