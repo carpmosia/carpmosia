@@ -182,9 +182,10 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       sprite: _Carpmosia/Mobs/Animals/kitti.rsi
       state: kitti
-    - map: ["overlay"]
+    - map: [ "overlay" ]
       sprite: _Carpmosia/Mobs/Animals/kitti.rsi
       state: overlay-none
+    - map: [ "jumpsuit" ]
     - map: ["enum.HumanoidVisualLayers.Handcuffs"]
       color: "#ffffff"
       sprite: Objects/Misc/handcuffs.rsi
