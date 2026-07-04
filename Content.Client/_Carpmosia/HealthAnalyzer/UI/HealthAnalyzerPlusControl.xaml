@@ -49,7 +49,7 @@
             <Label
                 Name="NoDamage"
                 HorizontalAlignment="Center"
-                Text="{Loc 'health-analyzer-window-no-damage-text'}"
+                Text="{Loc 'health-analyzer-plus-window-no-damage-text'}"
                 FontColorOverride="DeepSkyBlue"
                 Margin="0 5 0 5" />
             <BoxContainer HorizontalAlignment="Center">
@@ -65,7 +65,7 @@
             <Label
                 Name="NoReagents"
                 HorizontalAlignment="Center"
-                Text="{Loc 'health-analyzer-window-no-reagents-text'}"
+                Text="{Loc 'health-analyzer-plus-window-no-reagents-text'}"
                 FontColorOverride="DeepSkyBlue"
                 Margin="0 5 0 5" />
             <BoxContainer HorizontalAlignment="Center">

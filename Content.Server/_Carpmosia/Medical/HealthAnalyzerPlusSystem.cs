@@ -10,6 +10,7 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.Item.ItemToggle;
 using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.MedicalScanner;
+using Content.Shared.MedicalScannerPlus;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
 using Content.Shared.PowerCell;
@@ -204,17 +205,17 @@ public sealed partial class HealthAnalyzerPlusSystem : EntitySystem
     /// <param name="scanMode">True makes the UI show ACTIVE, False makes the UI show INACTIVE</param>
     public void UpdateScannedUser(EntityUid healthAnalyzer, EntityUid target, bool scanMode)
     {
-        if (!_uiSystem.HasUi(healthAnalyzer, HealthAnalyzerUiKey.Key)
+        if (!_uiSystem.HasUi(healthAnalyzer, HealthAnalyzerPlusUiKey.Key)
             || !HasComp<DamageableComponent>(target))
             return;
 
-        var uiState = GetHealthAnalyzerUiState(target);
+        var uiState = GetHealthAnalyzerPlusUiState(target);
         uiState.ScanMode = scanMode;
 
         _uiSystem.ServerSendUiMessage(
             healthAnalyzer,
-            HealthAnalyzerUiKey.Key,
-            new HealthAnalyzerScannedUserMessage(uiState)
+            HealthAnalyzerPlusUiKey.Key,
+            new HealthAnalyzerPlusScannedUserMessage(uiState)
         );
     }
 
