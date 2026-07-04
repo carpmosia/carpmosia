@@ -232,8 +232,7 @@
   - type: ThermalRegulator
     normalBodyTemperature: 312.0
   - type: MeleeWeapon
-    altDisarm: false
-    angle: 0
+    angle: 30
     animation: WeaponArcBite
     soundHit:
       path: /Audio/Effects/bite.ogg
