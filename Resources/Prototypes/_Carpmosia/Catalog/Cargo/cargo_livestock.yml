@@ -7,3 +7,16 @@
   cost: 5000
   category: cargoproduct-category-name-livestock
   group: market
+
+- type: cargoProduct
+  id: LivestockKittiCube
+  icon:
+    sprite: _Carpmosia/Objects/Misc/kitticube.rsi
+    state: box
+  product: KittiCubeBox
+  container:
+    entity: WrappedParcel
+    containerId: contents
+  cost: 2000
+  category: cargoproduct-category-name-livestock
+  group: market
