@@ -181,11 +181,13 @@ public sealed partial class EmergencyShuttleSystem
             // Stagger launches coz funny
             while (podQuery.MoveNext(out _, out var pod))
             {
-                pod.LaunchTime = _timing.CurTime + TimeSpan.FromSeconds(_random.NextFloat(0.05f, 0.75f));
+                pod.LaunchTime = _timing.CurTime + TimeSpan.FromSeconds(_random.NextFloat(0.05f, 10f)); // Carpmosia-edit - Evac pod tweaks
             }
         }
 
         var podLaunchQuery = EntityQueryEnumerator<EscapePodComponent, ShuttleComponent>();
+
+        TryGetArrivals(out var arrivals);
 
         while (podLaunchQuery.MoveNext(out var uid, out var pod, out var shuttle))
         {
@@ -200,7 +202,7 @@ public sealed partial class EmergencyShuttleSystem
             }
 
             // Don't dock them. If you do end up doing this then stagger launch.
-            _shuttle.FTLToDock(uid, shuttle, centcomm.Entity.Value, hyperspaceTime: TransitTime);
+            _shuttle.FTLToCoordinates(uid, shuttle, new EntityCoordinates(), Angle.Zero, hyperspaceTime: TransitTime); // Carpmosia-edit - Evac pod tweaks
             RemCompDeferred<EscapePodComponent>(uid);
         }
 
