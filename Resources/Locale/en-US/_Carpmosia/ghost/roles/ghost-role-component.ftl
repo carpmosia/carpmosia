@@ -3,4 +3,4 @@ ghost-role-information-syndimothroach-description = You're a highly engineered p
 ghost-role-information-syndimothroach-rules = You are a [color=red][bold]Team Antagonist[/bold][/color] with the agent who summoned you.
 
 ghost-role-information-kitti-name = Kitti
-ghost-role-information-kitti-description = TODO!!!!!!!!!!!!!!!!!
+ghost-role-information-kitti-description = Where's the meow at?

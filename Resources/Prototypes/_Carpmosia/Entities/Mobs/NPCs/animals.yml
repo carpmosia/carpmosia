@@ -174,7 +174,7 @@
   parent: MobBaseAncestor
   id: MobKitti
   name: Kitti
-  description: This is soooooooooo TODO
+  description: Cousins to the sentient race of cat people. Known for living in primitive box forts and knocking cups over.
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -258,7 +258,6 @@
   - type: GhostRole
     prob: 0.05
     makeSentient: true
-    # TODO: Verify
     name: ghost-role-information-kitti-name
     description: ghost-role-information-kitti-description
     rules: ghost-role-information-nonantagonist-rules
