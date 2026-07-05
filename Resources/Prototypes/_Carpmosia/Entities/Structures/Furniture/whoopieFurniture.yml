@@ -1,8 +1,7 @@
 - type: entity #whoopie component. adding this as additional parent and then we have haha-fartbuckle.
-  name: Whoopie Base
-  suffix: whoopie
   abstract: true
   id: WhoopieBase
+  suffix: whoopie
   components:
   - type: Strap
     buckleSound:
@@ -47,7 +46,6 @@
 - type: entity
   parent: [DogBed, WhoopieBase]
   id: WhoopieDogBed
-  name: dog bed
   components:
   - type: Construction
     graph: bed
@@ -74,7 +72,6 @@
 - type: entity
   parent: [WhoopieBase, Mattress]
   id: WhoopieMattress
-  name: mattress
   components:
   - type: Construction
     graph: bed
@@ -85,7 +82,6 @@
 - type: entity
   parent: [PsychBed, WhoopieBase]
   id: WhoopiePsychBed
-  name: psychologist bed
   components:
   - type: Construction
     graph: bed
@@ -110,19 +106,16 @@
 
 #seats/chairs
 - type: entity
-  name: chair
-  suffix: whoopie
-  id: WhoopieChair
   parent: [WhoopieBase, Chair]
+  id: WhoopieChair
   components:
   - type: Construction
     graph: Seat
     node: chairWhoopie
 
 - type: entity 
-  name: chair
-  id: WhoopieChairGreyscale
   parent: [WhoopieBase, ChairGreyscale]
+  id: WhoopieChairGreyscale
   suffix: White, whoopie
   components:
   - type: Construction
@@ -130,36 +123,32 @@
     node: chairGreyscaleWhoopie
 
 - type: entity 
-  name: stool
-  id: WhoopieStool
   parent: [WhoopieBase, Stool]
+  id: WhoopieStool
   components:
   - type: Construction
     graph: Seat
     node: stoolWhoopie
 
 - type: entity
-  name: bar stool
-  id: WhoopieBarStool
   parent: [WhoopieBase, StoolBar]
+  id: WhoopieBarStool
   components:
   - type: Construction
     graph: Seat
     node: stoolBarWhoopie
 
 - type: entity
-  name: brass chair
-  id: WhoopieChairBrass
   parent: [WhoopieBase, ChairBrass]
+  id: WhoopieChairBrass
   components:
   - type: Construction
     graph: Seat
     node: chairBrassWhoopie
 
 - type: entity
-  name: white office chair
-  id: WhoopieChairOfficeLight
   parent: [WhoopieBase, OfficeChairBase]
+  id: WhoopieChairOfficeLight
   components:
   - type: Construction
     graph: Seat
@@ -168,38 +157,32 @@
     state: office-white
 
 - type: entity 
-  name: dark office chair
-  suffix: whoopie
-  id: WhoopieChairOfficeDark
   parent: [WhoopieBase, ChairOfficeDark]
+  id: WhoopieChairOfficeDark
   components:
   - type: Construction
     graph: Seat
     node: chairOfficeDarkWhoopie
 
 - type: entity
-  name: comfy chair
-  suffix: whoopie
-  id: WhoopieComfyChair
   parent: [WhoopieBase, ComfyChair]
+  id: WhoopieComfyChair
   components:
   - type: Construction
     graph: Seat
     node: chairComfyWhoopie
 
 - type: entity
-  name: pilot seat
-  suffix: whoopie
-  id: WhoopieChairPilotSeat
   parent: [WhoopieBase, ChairPilotSeat]
+  id: WhoopieChairPilotSeat
   components:
   - type: Construction
     graph: Seat
     node: chairPilotSeatWhoopie
 
 - type: entity
-  id: WhoopieChairWood
   parent: [ChairWood, WhoopieBase]
+  id: WhoopieChairWood
   components:
   - type: Construction
     graph: Seat
@@ -224,27 +207,24 @@
             max: 1
 
 - type: entity
-  name: meat chair
-  id: WhoopieChairMeat
   parent: [WhoopieBase, ChairMeat]
+  id: WhoopieChairMeat
   components:
   - type: Construction
     graph: Seat
     node: chairMeatWhoopie
 
 - type: entity
-  name: steel bench
-  id: WhoopieSteelBench
   parent: [WhoopieBase, SteelBench]
+  id: WhoopieSteelBench
   components:
   - type: Construction
     graph: Seat
     node: chairSteelBenchWhoopie
 
 - type: entity
-  name: cardboard stool
-  id: WhoopieCardStool
   parent: [CardStool, WhoopieBase]
+  id: WhoopieCardStool
   components:
   - type: Destructible
     thresholds:
@@ -266,9 +246,8 @@
     node: stoolCardWhoopie
 
 - type: entity
-  name: wooden bench
-  id: WhoopieWoodenBench
   parent: [WoodenBench, WhoopieBase]
+  id: WhoopieWoodenBench
   components:
   - type: Destructible
     thresholds:
@@ -293,7 +272,6 @@
     node: chairWoodBenchWhoopie
 
 - type: entity
-  name: xeno chair
   parent: [WhoopieBase, ChairXeno]
   id: WhoopieChairXeno
   components:
