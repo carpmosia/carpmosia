@@ -1,0 +1,48 @@
+- type: guideEntry
+  id: CommandSOP
+  name: guide-entry-command-sop
+  text: "/ServerInfo/_Carpmosia/Guidebook/SOP/SOP-Main.xml"
+  priority: 15
+  children:
+  - CaptainSOP
+  - HOPSOP
+  - HOSSOP
+  - CMOSOP
+  - CESOP
+  - QMSOP
+  - RDSOP
+
+- type: guideEntry
+  id: CaptainSOP
+  name: guide-entry-captain-sop
+  text: "/ServerInfo/_Carpmosia/Guidebook/Command/CaptainSOP.xml"
+
+- type: guideEntry
+  id: HOPSOP
+  name: guide-entry-hop-sop
+  text: "/ServerInfo/_Carpmosia/Guidebook/Service/HOPSOP.xml"
+
+- type: guideEntry
+  id: HOSSOP
+  name: guide-entry-hos-sop
+  text: "/ServerInfo/_Carpmosia/Guidebook/Security/HOSSOP.xml"
+
+- type: guideEntry
+  id: CMOSOP
+  name: guide-entry-cmo-sop
+  text: "/ServerInfo/_Carpmosia/Guidebook/Medical/CMOSOP.xml"
+
+- type: guideEntry
+  id: CESOP
+  name: guide-entry-ce-sop
+  text: "/ServerInfo/_Carpmosia/Guidebook/Engineering/CESOP.xml"
+
+- type: guideEntry
+  id: QMSOP
+  name: guide-entry-qm-sop
+  text: "/ServerInfo/_Carpmosia/Guidebook/Cargo/QMSOP.xml"
+
+- type: guideEntry
+  id: RDSOP
+  name: guide-entry-rd-sop
+  text: "/ServerInfo/_Carpmosia/Guidebook/Science/RDSOP.xml"
