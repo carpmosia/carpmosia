@@ -47,7 +47,7 @@
           steps:
             - tool: Screwing
               doAfter: 1
-              # Carpmosia-start - whoopie furniture
+        # Carpmosia-start - whoopie furniture
         - to: bedWhoopie
           steps:
           - tag: WhoopieCushion
@@ -67,7 +67,7 @@
           steps:
             - tool: Prying
               doAfter: 1
-# Carpmosia-end -whoopie furniture
+        # Carpmosia-end -whoopie furniture
 
     - node: dogbed
       entity: DogBed
@@ -80,7 +80,7 @@
           steps:
             - tool: Screwing
               doAfter: 1
-              # Carpmosia-start - whoopie furniture
+        # Carpmosia-start - whoopie furniture
         - to: dogbedWhoopie
           steps:
           - tag: WhoopieCushion
@@ -100,7 +100,7 @@
           steps:
             - tool: Prying
               doAfter: 1
-# Carpmosia-end - whoopie furniture
+        # Carpmosia-end - whoopie furniture
 
     - node: medicalbed
       entity: MedicalBed
@@ -116,7 +116,7 @@
           steps:
             - tool: Screwing
               doAfter: 1
-              # Carpmosia-start - whoopie furniture
+        # Carpmosia-start - whoopie furniture
         - to: medicalbedWhoopie
           steps:
           - tag: WhoopieCushion
@@ -182,4 +182,4 @@
           steps:
             - tool: Prying
               doAfter: 1
- # Carpmosia-end - whoopie furniture
+        # Carpmosia-end - whoopie furniture

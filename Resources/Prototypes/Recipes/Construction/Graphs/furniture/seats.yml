@@ -123,6 +123,7 @@
           steps:
             - tool: Prying
               doAfter: 1
+        # Carpmosia-end - whoopie furniture
 
     - node: chairGreyscale
       entity: ChairGreyscale
@@ -154,7 +155,7 @@
           steps:
             - tool: Prying
               doAfter: 1
-  # Carpmosia-end - whoopie furniture
+        # Carpmosia-end - whoopie furniture
 
     - node: stool
       entity: Stool
@@ -186,7 +187,7 @@
           steps:
             - tool: Prying
               doAfter: 1
-    # Carpmosia-end - whoopie furniture
+        # Carpmosia-end - whoopie furniture
 
     - node: stoolBar
       entity: StoolBar
@@ -218,7 +219,7 @@
           steps:
             - tool: Prying
               doAfter: 1
-    # Carpmosia-end - whoopie furniture
+        # Carpmosia-end - whoopie furniture
 
     - node: chairBrass
       entity: ChairBrass
@@ -250,7 +251,7 @@
           steps:
             - tool: Prying
               doAfter: 1
-    # Carpmosia-end - whoopie furniture
+        # Carpmosia-end - whoopie furniture
 
     - node: chairOffice
       entity: ChairOfficeLight
@@ -283,7 +284,7 @@
           steps:
             - tool: Prying
               doAfter: 1
-    # Carpmosia-end - whoopie furniture
+        # Carpmosia-end - whoopie furniture
     - node: chairOfficeDark
       entity: ChairOfficeDark
       edges:
@@ -315,7 +316,7 @@
           steps:
             - tool: Prying
               doAfter: 1
-    # Carpmosia-end - whoopie furniture
+        # Carpmosia-end - whoopie furniture
     - node: chairComfy
       entity: ComfyChair
       edges:
@@ -347,7 +348,7 @@
           steps:
             - tool: Prying
               doAfter: 1
-    # Carpmosia-end - whoopie furniture
+        # Carpmosia-end - whoopie furniture
 
     - node: chairPilotSeat
       entity: ChairPilotSeat
@@ -380,7 +381,7 @@
           steps:
             - tool: Prying
               doAfter: 1
-    # Carpmosia-end - whoopie furniture
+        # Carpmosia-end - whoopie furniture
 
     - node: chairWood
       entity: ChairWood
@@ -413,7 +414,7 @@
           steps:
             - tool: Prying
               doAfter: 1
-    # Carpmosia-end - whoopie furniture
+        # Carpmosia-end - whoopie furniture
 
     - node: chairMeat
       entity: ChairMeat
@@ -446,7 +447,7 @@
           steps:
             - tool: Prying
               doAfter: 1
-    # Carpmosia-end - whoopie furniture
+        # Carpmosia-end - whoopie furniture
 
     - node: chairFolding
       entity: ChairFolding
@@ -494,7 +495,7 @@
           steps:
             - tool: Prying
               doAfter: 1
-    # Carpmosia-end - whoopie furniture
+        # Carpmosia-end - whoopie furniture
 
     - node: stoolCard
       entity: CardStool
@@ -529,7 +530,7 @@
           steps:
             - tool: Prying
               doAfter: 1
-    # Carpmosia-end - whoopie furniture
+        # Carpmosia-end - whoopie furniture
 
     - node: chairWoodBench
       entity: WoodenBench
@@ -562,7 +563,7 @@
           steps:
             - tool: Prying
               doAfter: 1
-    # Carpmosia-end - whoopie furniture
+        # Carpmosia-end - whoopie furniture
 
     - node: redComfBench
       entity: BenchRedComfy
@@ -621,4 +622,4 @@
           steps:
             - tool: Prying
               doAfter: 1
-# Carpmosia-end - whoopie furniture
+    # Carpmosia-end - whoopie furniture
