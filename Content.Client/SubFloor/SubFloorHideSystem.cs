@@ -87,13 +87,15 @@ public sealed partial class SubFloorHideSystem : SharedSubFloorHideSystem
 
         _sprite.SetVisible((uid, args.Sprite), hasVisibleLayer || revealed);
 
-        if (ShowAll)
-        {
-            // Allows sandbox mode to make wires visible over other stuff.
-            component.OriginalDrawDepth ??= args.Sprite.DrawDepth;
-            _sprite.SetDrawDepth((uid, args.Sprite), (int)Shared.DrawDepth.DrawDepth.Overdoors);
-        }
-        else if (scannerRevealed)
+        // Carpmosia-start - Just better toggle subfloor
+        // if (ShowAll)
+        // {
+        //     // Allows sandbox mode to make wires visible over other stuff.
+        //     component.OriginalDrawDepth ??= args.Sprite.DrawDepth;
+        //     _sprite.SetDrawDepth((uid, args.Sprite), (int)Shared.DrawDepth.DrawDepth.Overdoors);
+        // }
+        if (ShowAll || scannerRevealed)
+        // Carpmosia-end - Just better toggle subfloor
         {
             // Allows a t-ray to show wires/pipes above carpets/puddles.
             if (component.OriginalDrawDepth is not null)
