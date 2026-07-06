@@ -1,6 +1,6 @@
 # TODO: same as other wallmount cabinets they should use a base structure prototype
 - type: entity
-  parent: BaseWallmountCabinet
+  parent: [ BaseWallmountCabinet, BaseRecharger ]
   id: DefibrillatorCabinet
   name: defibrillator cabinet
   description: A small wall mounted cabinet designed to hold a defibrillator.
@@ -20,7 +20,7 @@
   - type: ItemSlots
     slots:
       ItemCabinet:
-        ejectOnInteract: true
+        ejectOnInteract: false
         whitelist:
           components:
           - Defibrillator
@@ -38,6 +38,10 @@
       - !type:PlaySoundBehavior
         sound:
           collection: MetalGlassBreak
+  - type: Charger
+    slotId: ItemCabinet
+  - type: ApcPowerReceiver
+    powerLoad: 1 # same as draw given in ChargerComponent.PassiveDraw; increased
 
 - type: entity
   parent: DefibrillatorCabinet
@@ -61,3 +65,4 @@
   parent: [DefibrillatorCabinetFilled, DefibrillatorCabinetOpen]
   id: DefibrillatorCabinetFilledOpen
   suffix: Filled, Open
+
