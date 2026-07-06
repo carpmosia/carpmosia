@@ -20,7 +20,7 @@
   - type: ItemSlots
     slots:
       ItemCabinet:
-        ejectOnInteract: false
+        ejectOnInteract: true
         whitelist:
           components:
           - Defibrillator
