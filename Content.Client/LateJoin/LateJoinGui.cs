@@ -40,7 +40,7 @@ namespace Content.Client.LateJoin
 
         private readonly Dictionary<NetEntity, Dictionary<string, List<JobButton>>> _jobButtons = new();
         private readonly Dictionary<NetEntity, Dictionary<string, BoxContainer>> _jobCategories = new();
-        private readonly List<ScrollContainer> _jobLists = new();
+        // private readonly List<ScrollContainer> _jobLists = new();
 
         private readonly Control _base;
 
@@ -80,38 +80,65 @@ namespace Content.Client.LateJoin
         private void RebuildUI()
         {
             _base.RemoveAllChildren();
-            _jobLists.Clear();
+            // _jobLists.Clear();
             _jobButtons.Clear();
             _jobCategories.Clear();
+
+            var box1 = new BoxContainer
+            {
+                Orientation = LayoutOrientation.Horizontal,
+                HorizontalExpand = true
+            };
+            _base.AddChild(box1);
+            var scroller = new ScrollContainer()
+            {
+                VerticalExpand = true
+            };
+            _base.AddChild(scroller);
+            var box2 = new BoxContainer
+            {
+                Orientation = LayoutOrientation.Horizontal,
+                VerticalExpand = true,
+                HorizontalExpand = true
+            };
+            scroller.AddChild(box2);
 
             if (!_gameTicker.DisallowedLateJoin && _gameTicker.StationNames.Count == 0)
                 _sawmill.Warning("No stations exist, nothing to display in late-join GUI");
 
             foreach (var (id, name) in _gameTicker.StationNames)
             {
+                var boxbox = new BoxContainer
+                {
+                    Orientation = LayoutOrientation.Vertical,
+                    VerticalExpand = true,
+                };
+
+                box1.AddChild(boxbox);
+
                 var jobList = new BoxContainer
                 {
                     Orientation = LayoutOrientation.Vertical,
                     Margin = new Thickness(0, 0, 5f, 0),
                 };
 
-                var collapseButton = new ContainerButton()
-                {
-                    HorizontalAlignment = HAlignment.Right,
-                    ToggleMode = true,
-                    Children =
-                    {
-                        new TextureRect
-                        {
-                            StyleClasses = { OptionButton.StyleClassOptionTriangle },
-                            Margin = new Thickness(8, 0),
-                            HorizontalAlignment = HAlignment.Center,
-                            VerticalAlignment = VAlignment.Center,
-                        }
-                    }
-                };
+                //var collapseButton = new ContainerButton()
+                //{
+                //    HorizontalAlignment = HAlignment.Right,
+                //    ToggleMode = true,
+                //    Children =
+                //    {
+                //        new TextureRect
+                //        {
+                //            StyleClasses = { OptionButton.StyleClassOptionTriangle },
+                //            Margin = new Thickness(8, 0),
+                //            HorizontalAlignment = HAlignment.Center,
+                //            VerticalAlignment = VAlignment.Center,
+                //        }
+                //    }
+                //};
 
-                _base.AddChild(new StripeBack()
+                boxbox.AddChild(new StripeBack()
                 {
                     Children =
                     {
@@ -125,7 +152,7 @@ namespace Content.Client.LateJoin
                                     Text = name,
                                     Align = Label.AlignMode.Center,
                                 },
-                                collapseButton
+                                // collapseButton
                             }
                         }
                     }
@@ -139,31 +166,31 @@ namespace Content.Client.LateJoin
                     };
                     crewManifestButton.OnPressed += _ => _crewManifest.RequestCrewManifest(id);
 
-                    _base.AddChild(crewManifestButton);
+                    boxbox.AddChild(crewManifestButton);
                 }
 
-                var jobListScroll = new ScrollContainer()
-                {
-                    VerticalExpand = true,
-                    Children = { jobList },
-                    Visible = false,
-                };
+                // var jobListScroll = new ScrollContainer()
+                // {
+                //     VerticalExpand = true,
+                //     Children = { jobList },
+                //     Visible = false,
+                // };
 
-                if (_jobLists.Count == 0)
-                    jobListScroll.Visible = true;
+                // if (_jobLists.Count == 0)
+                //     jobListScroll.Visible = true;
 
-                _jobLists.Add(jobListScroll);
+                // _jobLists.Add(jobListScroll);
 
-                _base.AddChild(jobListScroll);
+                box2.AddChild(jobList);
 
-                collapseButton.OnToggled += _ =>
-                {
-                    foreach (var section in _jobLists)
-                    {
-                        section.Visible = false;
-                    }
-                    jobListScroll.Visible = true;
-                };
+                // collapseButton.OnToggled += _ =>
+                // {
+                //     foreach (var section in _jobLists)
+                //     {
+                //         section.Visible = false;
+                //     }
+                //     jobListScroll.Visible = true;
+                // };
 
                 var firstCategory = true;
                 var departments = _prototypeManager.EnumeratePrototypes<DepartmentPrototype>().ToArray();
