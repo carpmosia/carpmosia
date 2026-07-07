@@ -35,8 +35,8 @@ guide-entry-carpmosia-rules-s9 = S9
 
 guide-entry-command-sop = Command SOP
 guide-entry-captain-sop = Captain SOP
-guide-entry-hop-sop = HOP SOP
-guide-entry-hos-sop = HOS SOP
+guide-entry-hop-sop = HoP SOP
+guide-entry-hos-sop = HoS SOP
 guide-entry-cmo-sop = CMO SOP
 guide-entry-ce-sop = CE SOP
 guide-entry-qm-sop = QM SOP
