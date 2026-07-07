@@ -454,7 +454,7 @@ public sealed partial class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleCompon
             if (!TryGetRandomStation(out var chosenStation))
                 return;
 
-            if (!_alertLevelSystem.GetLevel(chosenStation.Value) == "red")
+            if (_alertLevelSystem.GetLevel(chosenStation.Value) != "red")
                 _alertLevelSystem.SetLevel(chosenStation.Value, "red", true, true, true);
 
             var msg = Loc.GetString("nukeops-shuttle-warning");
