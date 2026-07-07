@@ -453,10 +453,10 @@ public sealed partial class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleCompon
                 continue;
             if (!TryGetRandomStation(out var chosenStation))
                 return;
-            if (_alertLevelSystem.GetLevel(chosenStation.Value) == "red")
-                return;
 
-            _alertLevelSystem.SetLevel(chosenStation.Value, "red", true, true, true);
+            if (!_alertLevelSystem.GetLevel(chosenStation.Value) == "red")
+                _alertLevelSystem.SetLevel(chosenStation.Value, "red", true, true, true);
+
             var msg = Loc.GetString("nukeops-shuttle-warning");
             _chat.DispatchGlobalAnnouncement(msg, playSound: false, colorOverride: Color.Red);
             _audio.PlayGlobal("/Audio/Misc/notice1.ogg", Filter.Broadcast(), true);
