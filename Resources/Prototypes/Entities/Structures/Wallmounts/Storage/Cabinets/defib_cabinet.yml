@@ -41,7 +41,7 @@
   - type: Charger
     slotId: ItemCabinet
   - type: ApcPowerReceiver
-    powerLoad: 1 # same as draw given in ChargerComponent.PassiveDraw; increased
+    powerLoad: 1
 
 - type: entity
   parent: DefibrillatorCabinet
@@ -65,4 +65,3 @@
   parent: [DefibrillatorCabinetFilled, DefibrillatorCabinetOpen]
   id: DefibrillatorCabinetFilledOpen
   suffix: Filled, Open
-
