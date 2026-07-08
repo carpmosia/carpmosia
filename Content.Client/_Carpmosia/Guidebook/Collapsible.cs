@@ -5,9 +5,6 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace Content.Client.Guidebook.Richtext;
 
-/// <summary>
-/// Control for embedding an AI Lawset in a guidebook
-/// </summary>
 [UsedImplicitly]
 public sealed class Collapsible : Robust.Client.UserInterface.Controls.Collapsible, IDocumentTag
 {
