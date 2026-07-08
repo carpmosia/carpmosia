@@ -2023,9 +2023,16 @@
   url: https://github.com/carpmosia/carpmosia/pull/421
 - author: UBlueberry
   changes:
-  - message: Added The First Wave lobby art.
+  - message: Captain jumpsuit can now be folded for a new look.
     type: Add
   id: 318
+  time: '2026-06-27T13:51:35.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/412
+- author: UBlueberry
+  changes:
+  - message: Added The First Wave lobby art.
+    type: Add
+  id: 319
   time: '2026-06-27T13:54:46.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/433
 - author: Jakeybobble
@@ -2034,14 +2041,14 @@
     type: Add
   - message: Pet fish have new in-hand sprites.
     type: Add
-  id: 319
+  id: 320
   time: '2026-06-27T15:08:17.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/432
 - author: Atakku
   changes:
   - message: Jorge can no longer be zombified and thefore break the reality.
     type: Fix
-  id: 320
+  id: 321
   time: '2026-06-29T15:44:21.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/443
 - author: Atakku
@@ -2049,21 +2056,21 @@
   - message: Resprited glass, plasma and uranium windoors to match their directional
       window counterparts
     type: Tweak
-  id: 321
+  id: 322
   time: '2026-06-29T16:01:22.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/442
 - author: Atakku
   changes:
   - message: Most of the towels can now be printed at the uniform printer
     type: Add
-  id: 322
+  id: 323
   time: '2026-06-29T23:43:01.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/434
 - author: UBlueberry
   changes:
   - message: '"The First Wave" lobby art has received an update'
     type: Tweak
-  id: 323
+  id: 324
   time: '2026-06-30T12:22:17.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/437
 - author: Atakku
@@ -2079,14 +2086,86 @@
     type: Tweak
   - message: Game preset voting has been disabled.
     type: Tweak
-  id: 324
+  id: 325
   time: '2026-06-30T21:20:03.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/446
 - author: Atakku
   changes:
   - message: Fixed overflow role rolebans not working
     type: Fix
-  id: 325
+  id: 326
   time: '2026-06-30T21:37:12.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/447
+- author: Saver310
+  changes:
+  - message: Changed texture filtering to true for the lobby art "Drunkards' Spree"
+    type: Fix
+  id: 327
+  time: '2026-07-01T14:31:21.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/441
+- author: CDWimmer
+  changes:
+  - message: Envelopes can now be crafted from a single piece of paper
+    type: Add
+  id: 328
+  time: '2026-07-01T14:44:20.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/449
+- author: imatsoup
+  changes:
+  - message: The Traumoxadone beakers at Centcomm now have the correct label.
+    type: Tweak
+  id: 329
+  time: '2026-07-02T18:08:27.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/455
+- author: Atakku
+  changes:
+  - message: 'Pride month is over: removed Carpmosia pride logo'
+    type: Remove
+  - message: Replaced Carpmosia logo with lesbian version
+    type: Add
+  id: 330
+  time: '2026-07-03T23:24:34.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/456
+- author: imatsoup
+  changes:
+  - message: Open Traitor Uplinks now lock when their PDA is stripped or dropped.
+    type: Tweak
+  id: 331
+  time: '2026-07-05T10:09:10.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/460
+- author: CDWimmer
+  changes:
+  - message: Paper bins are now craftable for 2 steel. The paperwork shall be organised.
+    type: Add
+  id: 332
+  time: '2026-07-05T15:38:40.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/436
+- author: Jakeybobble
+  changes:
+  - message: Added two empty medical belts to the NanoMed Plus inventory.
+    type: Tweak
+  id: 333
+  time: '2026-07-05T15:40:56.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/454
+- author: Atakku
+  changes:
+  - message: Killed end of round music so musicians can play their music without distractions.
+    type: Remove
+  id: 334
+  time: '2026-07-05T15:42:02.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/458
+- author: Atakku
+  changes:
+  - message: Bumped up med restock price from 2000 to 2050 spesos
+    type: Fix
+  id: 335
+  time: '2026-07-05T16:41:50.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/466
+- author: Atakku
+  changes:
+  - message: Fixed lobby music sometimes not playing
+    type: Fix
+  id: 336
+  time: '2026-07-07T13:16:35.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/471
 Order: -1
