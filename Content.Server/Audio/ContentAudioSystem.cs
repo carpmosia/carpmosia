@@ -84,7 +84,7 @@ public sealed partial class ContentAudioSystem : SharedContentAudioSystem
         }
     }
 
-    private void OnRoundEnd(RoundEndMessageEvent ev)
+    public void RandomizeLobbyMusic() // Carpmosia-edit - Kill round end music
     {
         // The lobby song is set here instead of in RestartRound,
         // because ShowRoundEndScoreboard triggers the start of the music playing

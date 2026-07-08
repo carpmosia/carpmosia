@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Numerics;
 using Content.Server.Announcements;
+using Content.Server.Audio; // Carpmosia-edit - Kill round end music
 using Content.Server.Discord;
 using Content.Server.GameTicking.Events;
 using Content.Server.Maps;
@@ -32,6 +33,7 @@ namespace Content.Server.GameTicking
         [Dependency] private DiscordWebhook _discord = default!;
         [Dependency] private RoleSystem _role = default!;
         [Dependency] private ITaskManager _taskManager = default!;
+        [Dependency] private ContentAudioSystem _contentAudio = default!; // Carpmosia-edit - Kill round end music
 
         private static readonly Counter RoundNumberMetric = Metrics.CreateCounter(
             "ss14_round_number",
@@ -663,6 +665,7 @@ namespace Content.Server.GameTicking
             RunLevel = GameRunLevel.PreRoundLobby;
             RandomizeLobbyBackground();
             ResettingCleanup();
+            _contentAudio.RandomizeLobbyMusic(); // Carpmosia-edit - Kill round end music
             IncrementRoundNumber();
             SendRoundStartingDiscordMessage();
 
