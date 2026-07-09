@@ -106,7 +106,7 @@ public sealed partial class NukeopsRuleComponent : Component
     /// Whether the arrival alert has played.
     /// </summary>
     [DataField]
-    public bool ArrivalAnnounced = false;
+    public bool ArrivalAnnounced;
 
     /// <summary>
     /// Alert levels that are 'below' red, used for changing it to red on FTL end
