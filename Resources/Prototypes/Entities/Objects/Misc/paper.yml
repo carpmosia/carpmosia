@@ -391,6 +391,11 @@
   id: Envelope
   description: 'A small envelope for keeping prying eyes off of your sensitive documents.'
   components:
+  # Carpmosia-start - Craftable envelopes
+  - type: Construction
+    graph: Envelope
+    node: envelope
+  # Carpmosia-end - Craftable envelopes
   - type: Sprite
     sprite: Objects/Misc/bureaucracy.rsi
     layers:

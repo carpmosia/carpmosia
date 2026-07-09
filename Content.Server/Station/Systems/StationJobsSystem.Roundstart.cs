@@ -301,11 +301,20 @@ public sealed partial class StationJobsSystem
 
             _random.Shuffle(givenStations);
 
+            var roleBans = _banManager.GetJobBans(player); // Carpmosia-edit - Fix passenger rolebans
+
             foreach (var station in givenStations)
             {
                 // Pick a random overflow job from that station
                 var overflows = GetOverflowJobs(station).ToList();
                 _random.Shuffle(overflows);
+
+                // Carpmosia-start - Fix passenger rolebans
+                if (roleBans != null)
+                {
+                    overflows.RemoveAll(roleBans.Contains);
+                }
+                // Carpmosia-end - Fix passenger rolebans
 
                 // Stations with no overflow slots should simply get skipped over.
                 if (overflows.Count == 0)
