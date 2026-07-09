@@ -467,8 +467,10 @@ public sealed partial class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleCompon
             // Don't announce if we aren't going to the right place
             if (targetStationMap == null || targetStationMap != Transform(ev.MapUid).MapID)
                 continue;
-            // Only set the alert level if its not already red
-            if (_alertLevelSystem.GetLevel(chosenStation.Value) != "red")
+                
+            // Only set the alert level if its not already red or higher
+            var alert = _alertLevelSystem.GetLevel(chosenStation.Value);
+            if (alert != "red" || alert != "gamma" || alert != "delta" || alert != "epsilon")
                 _alertLevelSystem.SetLevel(chosenStation.Value, "red", false, false, true);
 
             var msg = Loc.GetString("nukeops-shuttle-warning");
