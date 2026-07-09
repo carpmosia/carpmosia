@@ -452,13 +452,29 @@ public sealed partial class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleCompon
                 continue;
             if (!TryGetRandomStation(out var chosenStation))
                 return;
+            // Don't announce multiple times
+            if (nukeops.ArrivalAnnounced == true )
+                continue;
 
+            MapId? targetStationMap = null;
+            if (nukeops.TargetStation != null && TryComp(nukeops.TargetStation, out StationDataComponent? data))
+            {
+                var grid = data.Grids.FirstOrNull();
+                targetStationMap = grid != null
+                    ? Transform(grid.Value).MapID
+                    : null;
+            }
+            // Don't announce if we aren't going to the right place
+            if (targetStationMap == null || targetStationMap != Transform(ev.MapUid).MapID)
+                continue;
+            // Only set the alert level if its not already red
             if (_alertLevelSystem.GetLevel(chosenStation.Value) != "red")
-                _alertLevelSystem.SetLevel(chosenStation.Value, "red", true, true, true);
+                _alertLevelSystem.SetLevel(chosenStation.Value, "red", false, false, true);
 
             var msg = Loc.GetString("nukeops-shuttle-warning");
             _chat.DispatchGlobalAnnouncement(msg, playSound: false, colorOverride: Color.Red);
             _audio.PlayGlobal("/Audio/Misc/notice1.ogg", Filter.Broadcast(), true);
+            nukeops.ArrivalAnnounced = true;
         }
     }
     // Carpmosia-end - Nukeops Arrival Message
