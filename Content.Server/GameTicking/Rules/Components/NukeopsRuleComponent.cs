@@ -102,8 +102,17 @@ public sealed partial class NukeopsRuleComponent : Component
     public SoundSpecifier GreetSoundNotification = new SoundPathSpecifier("/Audio/Ambience/Antag/nukeops_start.ogg");
 
     // Carpmosia-start - Nukeops Arrival Message
+    /// <summary>
+    /// Whether the arrival alert has played.
+    /// </summary>
     [DataField]
     public bool ArrivalAnnounced = false;
+
+    /// <summary>
+    /// Alert levels that are 'below' red, used for changing it to red on FTL end
+    /// </summary>
+    [DataField]
+    public HashSet<string> Alerts = new HashSet<string>() { "green", "blue", "yellow", "violet" };
     // Carpmosia-end - Nukeops Arrival Message
 }
 
