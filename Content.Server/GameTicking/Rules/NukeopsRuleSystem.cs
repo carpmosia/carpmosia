@@ -475,7 +475,7 @@ public sealed partial class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleCompon
 
             var msg = Loc.GetString("nukeops-shuttle-warning");
             _chat.DispatchGlobalAnnouncement(msg, playSound: false, colorOverride: Color.Red);
-            _audio.PlayGlobal("/Audio/Misc/notice1.ogg", Filter.Broadcast(), true);
+            _audio.PlayGlobal(new SoundPathSpecifier("/Audio/Misc/notice1.ogg"), Filter.Broadcast(), true);
             nukeops.ArrivalAnnounced = true;
         }
     }
