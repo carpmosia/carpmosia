@@ -453,7 +453,7 @@ public sealed partial class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleCompon
             if (!TryGetRandomStation(out var chosenStation))
                 return;
             // Don't announce multiple times
-            if (nukeops.ArrivalAnnounced == true )
+            if (nukeops.ArrivalAnnounced)
                 continue;
 
             MapId? targetStationMap = null;
