@@ -45,7 +45,6 @@ using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using System.Data;
 using System.Linq;
-using System.Reflection.Emit; // Carpmosia-edit - Nukeops Arrival Message
 using System.Text;
 
 namespace Content.Server.GameTicking.Rules;
