@@ -133,9 +133,9 @@
   url: https://github.com/carpmosia/carpmosia/pull/34
 - author: stuff3541
   changes:
-  - message: changed slime to free agent.
+  - message: Changed slime to Free Agent.
     type: Tweak
-  - message: changed spider to be free agent.
+  - message: Changed spider to be Free Agent.
     type: Tweak
   id: 17
   time: '2025-10-21T21:43:17.0000000+00:00'
@@ -2168,4 +2168,59 @@
   id: 336
   time: '2026-07-07T13:16:35.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/471
+- author: Atakku
+  changes:
+  - message: Warden icon has been replaced with a different one to differentiate them
+      from Prisoners
+    type: Tweak
+  id: 337
+  time: '2026-07-08T20:48:42.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/473
+- author: Atakku
+  changes:
+  - message: Increased warops arrival delay to 20 minutes (from 15)
+    type: Tweak
+  - message: Added a general arrival delay of 20 minutes for non-warops nukies
+    type: Add
+  - message: Lowered minimum operator requirement for war ops from 4 to 3
+    type: Tweak
+  - message: Corpsman Medicine Bundle waiting time has been decreased from 20 minutes
+      to 18
+    type: Tweak
+  id: 338
+  time: '2026-07-08T23:52:19.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/452
+- author: Atakku
+  changes:
+  - message: Rules have been reformatted for an easier continuous reading experience
+    type: Tweak
+  id: 339
+  time: '2026-07-09T10:34:51.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/445
+- author: imatsoup
+  changes:
+  - message: Added Emergency Lasers, bulky old-gen laser carbines that cargo can buy
+      as a last-resort
+    type: Add
+  - message: Added the Emergency Laser crate to the cargo request computer under the
+      Armory category
+    type: Add
+  id: 340
+  time: '2026-07-10T22:40:59.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/474
+- author: Kingwawa-1
+  changes:
+  - message: Defibrillator cabinets now recharge defibrillators inside them.
+    type: Add
+  id: 341
+  time: '2026-07-10T22:50:05.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/470
+- author: imatsoup
+  changes:
+  - message: It is now considered a moderate crime to possess unauthorized weaponry
+      (including explosives)
+    type: Tweak
+  id: 342
+  time: '2026-07-10T22:52:27.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/459
 Order: -1
