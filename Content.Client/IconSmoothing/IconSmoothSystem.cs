@@ -347,10 +347,10 @@ namespace Content.Client.IconSmoothing
             var pos = _mapSystem.TileIndicesFor(gridUid, grid, xform.Coordinates);
 
             var east_pos = pos + (Vector2i)xform.LocalRotation.RotateVec(new(1, 0));
-            var east = MatchingDiagonalEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, east_pos), xform.LocalRotation);
+            var east = MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, east_pos));
 
             var south_pos = pos + (Vector2i)xform.LocalRotation.RotateVec(new(0, -1));
-            var south = MatchingDiagonalEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, south_pos), xform.LocalRotation);
+            var south = MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, south_pos));
 
             if (!east & !south)
             {
@@ -379,24 +379,6 @@ namespace Content.Client.IconSmoothing
             {
                 _sprite.LayerSetRsiState(sprite.AsNullable(), 0, $"{smooth.StateBase}4");
             }
-        }
-
-        private bool MatchingDiagonalEntity(IconSmoothComponent smooth, AnchoredEntitiesEnumerator candidates, Angle rotation)
-        {
-            while (candidates.MoveNext(out var entity))
-            {
-                if (
-                    _iconSmoothQuery.TryGetComponent(entity, out var other) &&
-                    other.SmoothKey != null &&
-                    (other.SmoothKey == smooth.SmoothKey || smooth.AdditionalKeys.Contains(other.SmoothKey)) &&
-                    other.Enabled
-                    
-                    )
-                {
-                    return true;
-                }
-            }
-            return false;
         }
         // Carpmosia-end - Better diagonals
 
