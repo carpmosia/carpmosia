@@ -112,5 +112,6 @@ public enum SpeciesNaming : byte
     First,
     FirstLast,
     FirstDashFirst,
+    FirstFirst, // Carpmosia-edit - Tajaran naming
     TheFirstofLast,
 }

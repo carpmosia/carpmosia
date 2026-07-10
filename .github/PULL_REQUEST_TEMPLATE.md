@@ -17,6 +17,11 @@
        - [ ] Implemented Z and X to handle Y edge case.
        - [ ] Added a new component for all X to prevent Z. -->
 
+## Test plan
+<!--
+Describe how you tested the pull request, and how someone reviewing this PR can test it themselves.
+-->
+
 ## Media
 <!-- Attach media if the PR makes in-game changes (clothing, items, features, etc).
        Small fixes/refactors are exempt. Media will be used when forwarded to Discord -->

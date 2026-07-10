@@ -1,5 +1,6 @@
 using Content.Shared.Actions.Components;
 using Content.Shared.Actions;
+using Content.Shared.Antag;
 using Content.Shared.BloodBound.EntitySystems;
 using Content.Shared.NPC.Prototypes;
 using Content.Shared.Objectives.Components;
@@ -40,6 +41,12 @@ public sealed partial class InitialBloodBoundComponent : Component
     /// </summary>
     [DataField]
     public ProtoId<AntagPrototype>? RequiredAntagPreference = "BloodBoundConvertible";
+
+    /// <summary>
+    /// The antag specifier prototyped used in conversion.
+    /// </summary>
+    [DataField]
+    public ProtoId<AntagSpecifierPrototype> ConvertPrototype = "BloodBoundConvertible";
 
     /// <summary>
     /// The popup that will happen when a blood bound is converted.

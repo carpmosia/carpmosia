@@ -20,5 +20,14 @@ namespace Content.Server.Shuttles.Components
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite), DataField("whitelistSpecific")]
         public List<EntityUid> FTLWhitelist = new List<EntityUid>();
+
+        // Carpmosia-start - Ban civvie FTL
+        /// <summary>
+        ///  Whether or not the Map and FTL functions should be displayed on the shuttle console.
+        /// </summary>
+        [DataField("ftlAllowed")]
+        [ViewVariables(VVAccess.ReadWrite)]
+        public bool FTLAllowed { get; set; } = true;
+        // Carpmosia-end - Ban civvie FTL
     }
 }

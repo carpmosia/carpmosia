@@ -13,13 +13,13 @@ using Robust.Shared.Containers; // Carpmosia-edit - Insert storage contents into
 
 namespace Content.Server.Materials;
 
-public sealed class ProduceMaterialExtractorSystem : EntitySystem
+public sealed partial class ProduceMaterialExtractorSystem : EntitySystem
 {
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly MaterialStorageSystem _materialStorage = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!; // Carpmosia-edit - Insert storage contents into biogenerator
+    [Dependency] private AudioSystem _audio = default!;
+    [Dependency] private MaterialStorageSystem _materialStorage = default!;
+    [Dependency] private SharedSolutionContainerSystem _solutionContainer = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedDoAfterSystem _doAfterSystem = default!; // Carpmosia-edit - Insert storage contents into biogenerator
 
     /// <inheritdoc/>
     public override void Initialize()

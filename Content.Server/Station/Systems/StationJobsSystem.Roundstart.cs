@@ -17,9 +17,9 @@ namespace Content.Server.Station.Systems;
 // Contains code for round-start spawning.
 public sealed partial class StationJobsSystem
 {
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly IBanManager _banManager = default!;
-    [Dependency] private readonly AntagSelectionSystem _antag = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private IBanManager _banManager = default!;
+    [Dependency] private AntagSelectionSystem _antag = default!;
 
     private Dictionary<int, HashSet<string>> _jobsByWeight = default!;
     private List<int> _orderedWeights = default!;
@@ -301,11 +301,20 @@ public sealed partial class StationJobsSystem
 
             _random.Shuffle(givenStations);
 
+            var roleBans = _banManager.GetJobBans(player); // Carpmosia-edit - Fix passenger rolebans
+
             foreach (var station in givenStations)
             {
                 // Pick a random overflow job from that station
                 var overflows = GetOverflowJobs(station).ToList();
                 _random.Shuffle(overflows);
+
+                // Carpmosia-start - Fix passenger rolebans
+                if (roleBans != null)
+                {
+                    overflows.RemoveAll(roleBans.Contains);
+                }
+                // Carpmosia-end - Fix passenger rolebans
 
                 // Stations with no overflow slots should simply get skipped over.
                 if (overflows.Count == 0)
@@ -345,13 +354,20 @@ public sealed partial class StationJobsSystem
     {
         var outputDict = new Dictionary<NetUserId, List<string>>(profiles.Count);
 
+        var antags = _antag.GetAntagJobs();
+
         foreach (var (player, profile) in profiles)
         {
             var roleBans = _banManager.GetJobBans(player);
-            var antagBlocked = _antag.GetPreSelectedAntagSessions();
             var profileJobs = profile.JobPriorities.Keys.Select(k => new ProtoId<JobPrototype>(k)).ToList();
             var ev = new StationJobsGetCandidatesEvent(player, profileJobs);
             RaiseLocalEvent(ref ev);
+
+            // Shouldn't happen but you know :P
+            if (!_player.TryGetSessionById(player, out var session))
+                continue;
+
+            var (whitelist, blacklist) = antags.GetValueOrDefault(session);
 
             List<string>? availableJobs = null;
 
@@ -365,7 +381,10 @@ public sealed partial class StationJobsSystem
                 if (!_prototypeManager.Resolve(jobId, out var job))
                     continue;
 
-                if (!job.CanBeAntag && (!_player.TryGetSessionById(player, out var session) || antagBlocked.Contains(session)))
+                if (whitelist != null && !whitelist.Contains(jobId))
+                    continue;
+
+                if (blacklist != null && blacklist.Contains(jobId))
                     continue;
 
                 if (weight is not null && job.Weight != weight.Value)

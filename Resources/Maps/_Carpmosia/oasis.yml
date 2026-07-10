@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 268.0.0
+  engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 12/10/2025 00:34:38
-  entityCount: 33196
+  time: 05/26/2026 10:23:41
+  entityCount: 33195
 maps:
 - 1
 grids:
@@ -861,21 +861,6 @@ entities:
             16144: 34,-52
         - node:
             color: '#FFFFFFFF'
-            id: BrickTileTechMaintGratingHalfInnerSw
-          decals:
-            17290: 40,29
-        - node:
-            color: '#FFFFFFFF'
-            id: BrickTileTechMaintGratingHalfLineS
-          decals:
-            17289: 39,29
-        - node:
-            color: '#FFFFFFFF'
-            id: BrickTileTechMaintGratingHalfLineW
-          decals:
-            17288: 40,28
-        - node:
-            color: '#FFFFFFFF'
             id: BrickTileSteelCornerNe
           decals:
             2323: -4,-50
@@ -1375,6 +1360,21 @@ entities:
             16852: -17,-43
             16853: -17,-42
         - node:
+            color: '#FFFFFFFF'
+            id: BrickTileTechMaintGratingHalfInnerSw
+          decals:
+            17290: 40,29
+        - node:
+            color: '#FFFFFFFF'
+            id: BrickTileTechMaintGratingHalfLineS
+          decals:
+            17289: 39,29
+        - node:
+            color: '#FFFFFFFF'
+            id: BrickTileTechMaintGratingHalfLineW
+          decals:
+            17288: 40,28
+        - node:
             color: '#00BEBE7F'
             id: BrickTileWhiteCornerNe
           decals:
@@ -1723,13 +1723,6 @@ entities:
             17274: -27,-30
         - node:
             color: '#52B4E996'
-            id: BrickTileWhiteHalfLineE
-          decals:
-            16679: -15,-28
-            16680: -15,-27
-            17306: -9,-39
-        - node:
-            color: '#52B4E996'
             id: BrickTileWhiteHalfInnerNe
           decals:
             17296: -9,-34
@@ -1751,6 +1744,13 @@ entities:
             id: BrickTileWhiteHalfInnerSw
           decals:
             17298: -7,-34
+        - node:
+            color: '#52B4E996'
+            id: BrickTileWhiteHalfLineE
+          decals:
+            16679: -15,-28
+            16680: -15,-27
+            17306: -9,-39
         - node:
             color: '#52B4E996'
             id: BrickTileWhiteHalfLineN
@@ -13729,6 +13729,8 @@ entities:
       id: Oasis
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
+    - type: TileHistory
+      chunkHistory: {}
   - uid: 4
     mapInit: true
     paused: true
@@ -13740,13 +13742,11 @@ entities:
     - type: Solution
       solution:
         maxVol: 30
-        name: beaker
         reagents:
         - data: []
           ReagentId: Frezon
           Quantity: 30
     - type: ContainedSolution
-      containerName: beaker
       container: 3
   - uid: 6
     mapInit: true
@@ -13759,13 +13759,11 @@ entities:
     - type: Solution
       solution:
         maxVol: 30
-        name: beaker
         reagents:
         - data: []
           ReagentId: Tritium
           Quantity: 30
     - type: ContainedSolution
-      containerName: beaker
       container: 5
   - uid: 10
     mapInit: true
@@ -13778,13 +13776,11 @@ entities:
     - type: Solution
       solution:
         maxVol: 20
-        name: food
         reagents:
         - data: []
           ReagentId: PotassiumIodide
           Quantity: 10
     - type: ContainedSolution
-      containerName: food
       container: 9
   - uid: 12
     mapInit: true
@@ -13797,13 +13793,11 @@ entities:
     - type: Solution
       solution:
         maxVol: 20
-        name: food
         reagents:
         - data: []
           ReagentId: PotassiumIodide
           Quantity: 10
     - type: ContainedSolution
-      containerName: food
       container: 11
   - uid: 14
     mapInit: true
@@ -13816,13 +13810,11 @@ entities:
     - type: Solution
       solution:
         maxVol: 20
-        name: food
         reagents:
         - data: []
           ReagentId: PotassiumIodide
           Quantity: 10
     - type: ContainedSolution
-      containerName: food
       container: 13
   - uid: 16
     mapInit: true
@@ -13835,13 +13827,11 @@ entities:
     - type: Solution
       solution:
         maxVol: 20
-        name: food
         reagents:
         - data: []
           ReagentId: PotassiumIodide
           Quantity: 10
     - type: ContainedSolution
-      containerName: food
       container: 15
   - uid: 18
     mapInit: true
@@ -13854,13 +13844,11 @@ entities:
     - type: Solution
       solution:
         maxVol: 20
-        name: food
         reagents:
         - data: []
           ReagentId: PotassiumIodide
           Quantity: 10
     - type: ContainedSolution
-      containerName: food
       container: 17
   - uid: 21
     mapInit: true
@@ -13873,13 +13861,11 @@ entities:
     - type: Solution
       solution:
         maxVol: 20
-        name: food
         reagents:
         - data: []
           ReagentId: Hyronalin
           Quantity: 10
     - type: ContainedSolution
-      containerName: food
       container: 20
   - uid: 23
     mapInit: true
@@ -13892,13 +13878,11 @@ entities:
     - type: Solution
       solution:
         maxVol: 20
-        name: food
         reagents:
         - data: []
           ReagentId: Hyronalin
           Quantity: 10
     - type: ContainedSolution
-      containerName: food
       container: 22
   - uid: 25
     mapInit: true
@@ -13911,13 +13895,11 @@ entities:
     - type: Solution
       solution:
         maxVol: 20
-        name: food
         reagents:
         - data: []
           ReagentId: Hyronalin
           Quantity: 10
     - type: ContainedSolution
-      containerName: food
       container: 24
   - uid: 27
     mapInit: true
@@ -13930,13 +13912,11 @@ entities:
     - type: Solution
       solution:
         maxVol: 20
-        name: food
         reagents:
         - data: []
           ReagentId: Hyronalin
           Quantity: 10
     - type: ContainedSolution
-      containerName: food
       container: 26
   - uid: 29
     mapInit: true
@@ -13949,13 +13929,11 @@ entities:
     - type: Solution
       solution:
         maxVol: 20
-        name: food
         reagents:
         - data: []
           ReagentId: Hyronalin
           Quantity: 10
     - type: ContainedSolution
-      containerName: food
       container: 28
   - uid: 31
     mapInit: true
@@ -13968,13 +13946,11 @@ entities:
     - type: Solution
       solution:
         maxVol: 30
-        name: drink
         reagents:
         - data: []
           ReagentId: Vodka
           Quantity: 30
     - type: ContainedSolution
-      containerName: drink
       container: 30
   - uid: 33
     mapInit: true
@@ -13987,7 +13963,6 @@ entities:
     - type: Solution
       solution:
         maxVol: 20
-        name: pen
         reagents:
         - data: []
           ReagentId: Arithrazine
@@ -13996,7 +13971,6 @@ entities:
           ReagentId: Bicaridine
           Quantity: 5
     - type: ContainedSolution
-      containerName: pen
       container: 32
   - uid: 36
     mapInit: true
@@ -14009,13 +13983,11 @@ entities:
     - type: Solution
       solution:
         maxVol: 20
-        name: food
         reagents:
         - data: []
           ReagentId: Hyronalin
           Quantity: 10
     - type: ContainedSolution
-      containerName: food
       container: 35
   - uid: 38
     mapInit: true
@@ -14028,13 +14000,11 @@ entities:
     - type: Solution
       solution:
         maxVol: 20
-        name: food
         reagents:
         - data: []
           ReagentId: Hyronalin
           Quantity: 10
     - type: ContainedSolution
-      containerName: food
       container: 37
   - uid: 40
     mapInit: true
@@ -14047,13 +14017,11 @@ entities:
     - type: Solution
       solution:
         maxVol: 20
-        name: food
         reagents:
         - data: []
           ReagentId: Hyronalin
           Quantity: 10
     - type: ContainedSolution
-      containerName: food
       container: 39
   - uid: 42
     mapInit: true
@@ -14066,13 +14034,11 @@ entities:
     - type: Solution
       solution:
         maxVol: 20
-        name: food
         reagents:
         - data: []
           ReagentId: Hyronalin
           Quantity: 10
     - type: ContainedSolution
-      containerName: food
       container: 41
   - uid: 44
     mapInit: true
@@ -14085,13 +14051,11 @@ entities:
     - type: Solution
       solution:
         maxVol: 20
-        name: food
         reagents:
         - data: []
           ReagentId: Hyronalin
           Quantity: 10
     - type: ContainedSolution
-      containerName: food
       container: 43
   - uid: 46
     mapInit: true
@@ -14104,13 +14068,11 @@ entities:
     - type: Solution
       solution:
         maxVol: 30
-        name: drink
         reagents:
         - data: []
           ReagentId: Vodka
           Quantity: 30
     - type: ContainedSolution
-      containerName: drink
       container: 45
   - uid: 49
     mapInit: true
@@ -14123,13 +14085,11 @@ entities:
     - type: Solution
       solution:
         maxVol: 30
-        name: food
         reagents:
         - data: []
           ReagentId: Fiber
           Quantity: 30
     - type: ContainedSolution
-      containerName: food
       container: 48
   - uid: 51
     mapInit: true
@@ -14142,13 +14102,11 @@ entities:
     - type: Solution
       solution:
         maxVol: 10
-        name: food
         reagents:
         - data: []
           ReagentId: Fiber
           Quantity: 10
     - type: ContainedSolution
-      containerName: food
       container: 50
   - uid: 53
     mapInit: true
@@ -14161,13 +14119,11 @@ entities:
     - type: Solution
       solution:
         maxVol: 30
-        name: food
         reagents:
         - data: []
           ReagentId: Fiber
           Quantity: 30
     - type: ContainedSolution
-      containerName: food
       container: 52
   - uid: 66
     mapInit: true
@@ -14180,13 +14136,11 @@ entities:
     - type: Solution
       solution:
         maxVol: 60
-        name: beaker
         reagents:
         - data: []
           ReagentId: Leporazine
           Quantity: 60
     - type: ContainedSolution
-      containerName: beaker
       container: 65
   - uid: 26922
     components:
@@ -15613,6 +15567,8 @@ entities:
     - type: NavMap
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
+    - type: TileHistory
+      chunkHistory: {}
 - proto: AcousticGuitarInstrument
   entities:
   - uid: 67
@@ -24810,66 +24766,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -21.467142,7.192469
       parent: 2
-- proto: BaseChemistryEmptyVial
-  entities:
-  - uid: 3
-    mapInit: true
-    paused: true
-    components:
-    - type: MetaData
-      name: frezon vial
-    - type: Transform
-      pos: 22.289179,-49.3355
-      parent: 2
-    - type: Tag
-      tags:
-      - CentrifugeCompatible
-    - type: SolutionContainerManager
-      solutions: null
-      containers:
-      - beaker
-    - type: MeleeWeapon
-      nextAttack: -148.7064897
-    - type: EmitSoundOnCollide
-      nextSound: -3904.402735
-    - type: ContainerContainer
-      containers:
-        solution@beaker: !type:ContainerSlot
-          ent: 4
-    - type: Forensics
-      residues: []
-      dnas: []
-      fibers: []
-      fingerprints: []
-  - uid: 5
-    mapInit: true
-    paused: true
-    components:
-    - type: MetaData
-      name: tritium vial
-    - type: Transform
-      pos: 22.523554,-49.3355
-      parent: 2
-    - type: Tag
-      tags:
-      - CentrifugeCompatible
-    - type: SolutionContainerManager
-      solutions: null
-      containers:
-      - beaker
-    - type: MeleeWeapon
-      nextAttack: -58.7732463
-    - type: EmitSoundOnCollide
-      nextSound: -3904.402735
-    - type: ContainerContainer
-      containers:
-        solution@beaker: !type:ContainerSlot
-          ent: 6
-    - type: Forensics
-      residues: []
-      dnas: []
-      fibers: []
-      fingerprints: []
 - proto: BaseComputer
   entities:
   - uid: 1044
@@ -24949,7 +24845,6 @@ entities:
     - type: MeleeWeapon
       nextAttack: -48.1669626
     - type: SolutionContainerManager
-      solutions: null
       containers:
       - beaker
     - type: EmitSoundOnCollide
@@ -70337,6 +70232,64 @@ entities:
     - type: Transform
       pos: -19.325394,-47.313946
       parent: 2
+- proto: ChemistryEmptyVial
+  entities:
+  - uid: 3
+    mapInit: true
+    paused: true
+    components:
+    - type: MetaData
+      name: frezon vial
+    - type: Transform
+      pos: 22.289179,-49.3355
+      parent: 2
+    - type: Tag
+      tags:
+      - CentrifugeCompatible
+    - type: SolutionContainerManager
+      containers:
+      - beaker
+    - type: MeleeWeapon
+      nextAttack: -148.7064897
+    - type: EmitSoundOnCollide
+      nextSound: -3904.402735
+    - type: ContainerContainer
+      containers:
+        solution@beaker: !type:ContainerSlot
+          ent: 4
+    - type: Forensics
+      residues: []
+      dnas: []
+      fibers: []
+      fingerprints: []
+  - uid: 5
+    mapInit: true
+    paused: true
+    components:
+    - type: MetaData
+      name: tritium vial
+    - type: Transform
+      pos: 22.523554,-49.3355
+      parent: 2
+    - type: Tag
+      tags:
+      - CentrifugeCompatible
+    - type: SolutionContainerManager
+      containers:
+      - beaker
+    - type: MeleeWeapon
+      nextAttack: -58.7732463
+    - type: EmitSoundOnCollide
+      nextSound: -3904.402735
+    - type: ContainerContainer
+      containers:
+        solution@beaker: !type:ContainerSlot
+          ent: 6
+    - type: Forensics
+      residues: []
+      dnas: []
+      fibers: []
+      fingerprints: []
 - proto: ChemistryHotplate
   entities:
   - uid: 8844
@@ -71932,10 +71885,6 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
-          maxVol: 0
-          name: food
           reagents: []
       containers:
       - food
@@ -72814,10 +72763,6 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
-          maxVol: 0
-          name: food
           reagents: []
       containers:
       - food
@@ -72939,10 +72884,6 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
-          maxVol: 0
-          name: food
           reagents: []
       containers:
       - food
@@ -87158,7 +87099,6 @@ entities:
     - type: Transform
       parent: 7
     - type: SolutionContainerManager
-      solutions: null
       containers:
       - drink
     - type: TransformableContainer
@@ -87192,7 +87132,6 @@ entities:
     - type: Transform
       parent: 7
     - type: SolutionContainerManager
-      solutions: null
       containers:
       - drink
     - type: TransformableContainer
@@ -88938,13 +88877,6 @@ entities:
     components:
     - type: Transform
       pos: -17.5,-9.5
-      parent: 2
-- proto: FigureSpawner
-  entities:
-  - uid: 11672
-    components:
-    - type: Transform
-      pos: -1.5,-62.5
       parent: 2
 - proto: filingCabinetDrawerRandom
   entities:
@@ -141276,6 +141208,13 @@ entities:
     - type: Transform
       pos: -56.05085,0.6887263
       parent: 2
+- proto: MechFigurineSpawner50
+  entities:
+  - uid: 11672
+    components:
+    - type: Transform
+      pos: -1.5,-62.5
+      parent: 2
 - proto: MedicalBed
   entities:
   - uid: 18088
@@ -144451,10 +144390,6 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
-          maxVol: 0
-          name: food
           reagents: []
       containers:
       - food
@@ -144479,10 +144414,6 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
-          maxVol: 0
-          name: food
           reagents: []
       containers:
       - food
@@ -144507,10 +144438,6 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
-          maxVol: 0
-          name: food
           reagents: []
       containers:
       - food
@@ -144535,10 +144462,6 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
-          maxVol: 0
-          name: food
           reagents: []
       containers:
       - food
@@ -144563,10 +144486,6 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
-          maxVol: 0
-          name: food
           reagents: []
       containers:
       - food
@@ -144591,10 +144510,6 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
-          maxVol: 0
-          name: food
           reagents: []
       containers:
       - food
@@ -144619,10 +144534,6 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
-          maxVol: 0
-          name: food
           reagents: []
       containers:
       - food
@@ -144647,10 +144558,6 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
-          maxVol: 0
-          name: food
           reagents: []
       containers:
       - food
@@ -144675,10 +144582,6 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
-          maxVol: 0
-          name: food
           reagents: []
       containers:
       - food
@@ -144703,10 +144606,6 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
-          maxVol: 0
-          name: food
           reagents: []
       containers:
       - food
@@ -144733,10 +144632,6 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
-          maxVol: 0
-          name: food
           reagents: []
       containers:
       - food
@@ -144761,10 +144656,6 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
-          maxVol: 0
-          name: food
           reagents: []
       containers:
       - food
@@ -144789,10 +144680,6 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
-          maxVol: 0
-          name: food
           reagents: []
       containers:
       - food
@@ -144817,10 +144704,6 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
-          maxVol: 0
-          name: food
           reagents: []
       containers:
       - food
@@ -144845,10 +144728,6 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
-          maxVol: 0
-          name: food
           reagents: []
       containers:
       - food
@@ -145407,6 +145286,43 @@ entities:
     - type: Transform
       pos: 31.976513,24.950718
       parent: 1
+- proto: PlushieSpawner50
+  entities:
+  - uid: 22873
+    components:
+    - type: Transform
+      pos: -8.5,53.5
+      parent: 2
+  - uid: 22874
+    components:
+    - type: Transform
+      pos: 32.5,-58.5
+      parent: 2
+  - uid: 22875
+    components:
+    - type: Transform
+      pos: -17.5,36.5
+      parent: 2
+  - uid: 22876
+    components:
+    - type: Transform
+      pos: -18.5,35.5
+      parent: 2
+  - uid: 29182
+    components:
+    - type: Transform
+      pos: 21.5,-5.5
+      parent: 26922
+  - uid: 29183
+    components:
+    - type: Transform
+      pos: 14.5,6.5
+      parent: 26922
+  - uid: 29184
+    components:
+    - type: Transform
+      pos: 14.5,-7.5
+      parent: 26922
 - proto: PonderingOrb
   entities:
   - uid: 18449
@@ -147333,7 +147249,6 @@ entities:
       pos: -0.5,9.5
       parent: 2
     - type: PoweredLight
-      isBlinking: True
       lastGhostBlink: 5235.1280982
   - uid: 18733
     components:
@@ -147342,7 +147257,6 @@ entities:
       pos: 1.5,9.5
       parent: 2
     - type: PoweredLight
-      isBlinking: True
       lastGhostBlink: 5235.1280982
   - uid: 18734
     components:
@@ -147363,7 +147277,6 @@ entities:
       pos: -2.5,9.5
       parent: 2
     - type: PoweredLight
-      isBlinking: True
       lastGhostBlink: 5235.1280982
   - uid: 18737
     components:
@@ -150474,7 +150387,6 @@ entities:
     - type: Transform
       parent: 7
     - type: SolutionContainerManager
-      solutions: null
       containers:
       - pen
     - type: EmitSoundOnCollide
@@ -164820,6 +164732,10 @@ entities:
         path: /Audio/Effects/closetclose.ogg
       openSound: !type:SoundPathSpecifier
         path: /Audio/Effects/closetopen.ogg
+      whitelist:
+        components:
+        - MobState
+        - Item
   - uid: 21301
     components:
     - type: Transform
@@ -166968,7 +166884,7 @@ entities:
     - type: Transform
       pos: -47.348946,-23.472473
       parent: 2
-- proto: SpacemenFigureSpawner
+- proto: SpacemenFigurineSpawner90
   entities:
   - uid: 21582
     components:
@@ -168270,13 +168186,6 @@ entities:
     components:
     - type: Transform
       pos: 44.5,-15.5
-      parent: 2
-- proto: SpawnPointZookeeper
-  entities:
-  - uid: 21809
-    components:
-    - type: Transform
-      pos: -19.5,-3.5
       parent: 2
 - proto: SpectralLocator
   entities:
@@ -175670,43 +175579,6 @@ entities:
     - type: Transform
       pos: 62.45151,0.11313832
       parent: 2
-- proto: ToySpawner
-  entities:
-  - uid: 22873
-    components:
-    - type: Transform
-      pos: -8.5,53.5
-      parent: 2
-  - uid: 22874
-    components:
-    - type: Transform
-      pos: 32.5,-58.5
-      parent: 2
-  - uid: 22875
-    components:
-    - type: Transform
-      pos: -17.5,36.5
-      parent: 2
-  - uid: 22876
-    components:
-    - type: Transform
-      pos: -18.5,35.5
-      parent: 2
-  - uid: 29182
-    components:
-    - type: Transform
-      pos: 21.5,-5.5
-      parent: 26922
-  - uid: 29183
-    components:
-    - type: Transform
-      pos: 14.5,6.5
-      parent: 26922
-  - uid: 29184
-    components:
-    - type: Transform
-      pos: 14.5,-7.5
-      parent: 26922
 - proto: TrashBag
   entities:
   - uid: 1335

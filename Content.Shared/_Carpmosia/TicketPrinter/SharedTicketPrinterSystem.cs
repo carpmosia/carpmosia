@@ -7,10 +7,10 @@ using Robust.Shared.GameObjects;
 
 namespace Content.Shared.TicketPrinter;
 
-public abstract class SharedTicketPrinterSystem : EntitySystem
+public abstract partial class SharedTicketPrinterSystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private EntityWhitelistSystem _whitelistSystem = default!;
     public override void Initialize()
     {
         base.Initialize();

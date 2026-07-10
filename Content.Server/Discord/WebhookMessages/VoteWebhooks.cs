@@ -8,11 +8,11 @@ using System.Text.Json.Nodes;
 
 namespace Content.Server.Discord.WebhookMessages;
 
-public sealed class VoteWebhooks : IPostInjectInit
+public sealed partial class VoteWebhooks : IPostInjectInit
 {
-    [Dependency] private readonly IEntitySystemManager _entSys = default!;
-    [Dependency] private readonly DiscordWebhook _discord = default!;
-    [Dependency] private readonly IBaseServer _baseServer = default!;
+    [Dependency] private IEntitySystemManager _entSys = default!;
+    [Dependency] private DiscordWebhook _discord = default!;
+    [Dependency] private IBaseServer _baseServer = default!;
 
     private ISawmill _sawmill = default!;
 
@@ -34,7 +34,7 @@ public sealed class VoteWebhooks : IPostInjectInit
         {
             var newVote = new WebhookEmbedField
             {
-                Name = voteOption.text is (string name, string, EntProtoId) ? name : (string) voteOption.text, // Carpmosia-start - Better map vote
+                Name = voteOption.text is (string name, _, _) ? name : (string)voteOption.text, // Carpmosia-start - Better map vote
                 Value = Loc.GetString("custom-vote-webhook-option-pending")
             };
             fields.Add(newVote);

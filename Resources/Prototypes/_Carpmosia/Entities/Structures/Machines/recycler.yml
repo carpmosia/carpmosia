@@ -1,0 +1,10 @@
+- type: entity
+  parent: BaseRecycler
+  id: Recycler
+  name: recycler
+  suffix: ""
+  components:
+  - type: TicketPrinter
+    whitelist:
+      tags:
+      - SalvageScrap

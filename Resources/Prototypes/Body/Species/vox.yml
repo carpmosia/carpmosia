@@ -181,34 +181,35 @@
       Female: UnisexVox
       Unsexed: UnisexVox
   - type: Butcherable
-    butcheringType: Spike
     spawned:
     - id: FoodMeatChicken
       amount: 5
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Blunt
-        damage: 400
-      behaviors:
-      - !type:GibBehavior { }
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Heat
-        damage: 1500
-      behaviors:
-      - !type:SpawnEntitiesBehavior
-        spawnInContainer: true
-        spawn:
-          FoodMeatChickenFriedVox:
-            min: 3
-            max: 5
-      - !type:BurnBodyBehavior
-        popupMessage: bodyburn-vox-text-others
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MeatLaserImpact
+    # Carpmosia-start - Remove Gibbing/Ashing
+    # - trigger:
+    #     !type:DamageTypeTrigger
+    #     damageType: Blunt
+    #     damage: 400
+    #   behaviors:
+    #   - !type:GibBehavior { }
+    # - trigger:
+    #     !type:DamageTypeTrigger
+    #     damageType: Heat
+    #     damage: 1500
+    #   behaviors:
+    #   - !type:SpawnEntitiesBehavior
+    #     spawnInContainer: true
+    #     spawn:
+    #       FoodMeatChickenFriedVox:
+    #         min: 3
+    #         max: 5
+    #   - !type:BurnBodyBehavior
+    #     popupMessage: bodyburn-vox-text-others
+    #   - !type:PlaySoundBehavior
+    #     sound:
+    #       collection: MeatLaserImpact
+    # Carpmosia-end - Remove Gibbing/Ashing
     - trigger:
         !type:DamageTypeTrigger
         damageType: Radiation
@@ -247,7 +248,7 @@
     bloodReferenceSolution:
       reagents:
       - ReagentId: AmmoniaBlood
-        Quantity: 300
+        Quantity: 600
   - type: MeleeWeapon
     soundHit:
       collection: AlienClaw
@@ -259,7 +260,7 @@
   - type: Wagging
 
 - type: entity
-  parent: OrganBase
+  parent: OrganBaseOrganic
   id: OrganVox
   abstract: true
   suffix: Vox

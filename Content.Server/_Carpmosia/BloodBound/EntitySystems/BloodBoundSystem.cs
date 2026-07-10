@@ -8,11 +8,11 @@ using Content.Shared.Roles.Components;
 
 namespace Content.Server.BloodBound.EntitySystems;
 
-public sealed class BloodBoundSystem : SharedBloodBoundSystem
+public sealed partial class BloodBoundSystem : SharedBloodBoundSystem
 {
-    [Dependency] private readonly MindSystem _mindSystem = default!;
-    [Dependency] private readonly RoleSystem _roleSystem = default!;
-    [Dependency] private readonly TargetObjectiveSystem _targetObjectiveSystem = default!;
+    [Dependency] private MindSystem _mindSystem = default!;
+    [Dependency] private RoleSystem _roleSystem = default!;
+    [Dependency] private TargetObjectiveSystem _targetObjectiveSystem = default!;
 
     public override void Initialize()
     {

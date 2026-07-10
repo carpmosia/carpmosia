@@ -2,10 +2,10 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 270.1.0
+  engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 01/20/2026 02:41:14
+  time: 05/26/2026 10:25:04
   entityCount: 33916
 maps:
 - 1
@@ -12775,6 +12775,8 @@ entities:
     - type: NavMap
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
+    - type: TileHistory
+      chunkHistory: {}
   - uid: 33196
     components:
     - type: MetaData
@@ -13001,6 +13003,8 @@ entities:
           stiffness: 8283.516
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
+    - type: TileHistory
+      chunkHistory: {}
   - uid: 33403
     components:
     - type: MetaData
@@ -13137,6 +13141,8 @@ entities:
           stiffness: 3894.268
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
+    - type: TileHistory
+      chunkHistory: {}
   - uid: 33498
     components:
     - type: MetaData
@@ -13348,6 +13354,8 @@ entities:
           stiffness: 5578.9595
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
+    - type: TileHistory
+      chunkHistory: {}
   - uid: 33639
     components:
     - type: MetaData
@@ -13489,6 +13497,8 @@ entities:
     - type: RadiationGridResistance
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
+    - type: TileHistory
+      chunkHistory: {}
   - uid: 33703
     components:
     - type: MetaData
@@ -13652,6 +13662,8 @@ entities:
           stiffness: 6766.638
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
+    - type: TileHistory
+      chunkHistory: {}
 - proto: AcousticGuitarInstrument
   entities:
   - uid: 3
@@ -81842,13 +81854,6 @@ entities:
     - type: Transform
       pos: -5.5,79.5
       parent: 2
-- proto: CrateVendingMachineRestockDonutFilled
-  entities:
-  - uid: 12242
-    components:
-    - type: Transform
-      pos: -120.5,108.5
-      parent: 2
 - proto: CrateWoodenGrave
   entities:
   - uid: 12243
@@ -81896,12 +81901,12 @@ entities:
       pos: 0.5,180.5
       parent: 2
     - type: EntityStorage
-      removedMasks: 20
       air:
         volume: 200
         immutable: False
         temperature: 293.1496
         moles: {}
+      removedMasks: 20
       open: True
     - type: Fixtures
       fixtures:
@@ -100034,10 +100039,7 @@ entities:
     - type: SolutionContainerManager
       solutions:
         food:
-          temperature: 293.15
-          canReact: True
           maxVol: 45
-          name: null
           reagents:
           - data: null
             ReagentId: MuteToxin
@@ -100048,6 +100050,7 @@ entities:
           - data: null
             ReagentId: Pax
             Quantity: 15
+      containers: []
     - type: SingularityDistortion
       falloffPower: 1.4142137
       intensity: 31.249992
@@ -131374,7 +131377,6 @@ entities:
   - uid: 19237
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -3.5,3.5
       parent: 2
   - uid: 19238
@@ -131385,7 +131387,6 @@ entities:
   - uid: 19239
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -89.5,87.5
       parent: 2
   - uid: 19240
@@ -131696,7 +131697,6 @@ entities:
   - uid: 19301
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 58.5,35.5
       parent: 2
   - uid: 19302
@@ -131717,7 +131717,6 @@ entities:
   - uid: 19305
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: 0.5,89.5
       parent: 2
   - uid: 19306
@@ -132033,7 +132032,6 @@ entities:
   - uid: 19368
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: -0.5,89.5
       parent: 2
   - uid: 19369
@@ -132054,13 +132052,11 @@ entities:
   - uid: 19372
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -108.5,17.5
       parent: 2
   - uid: 19373
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -105.5,17.5
       parent: 2
   - uid: 19374
@@ -132371,85 +132367,71 @@ entities:
   - uid: 19435
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -60.5,127.5
       parent: 2
   - uid: 19436
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -59.5,127.5
       parent: 2
   - uid: 19437
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -58.5,127.5
       parent: 2
   - uid: 19438
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -58.5,133.5
       parent: 2
   - uid: 19439
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -59.5,133.5
       parent: 2
   - uid: 19440
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -60.5,133.5
       parent: 2
   - uid: 19441
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -64.5,135.5
       parent: 2
   - uid: 19442
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -65.5,135.5
       parent: 2
   - uid: 19443
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -66.5,135.5
       parent: 2
   - uid: 19444
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -66.5,125.5
       parent: 2
   - uid: 19445
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -65.5,125.5
       parent: 2
   - uid: 19446
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -64.5,125.5
       parent: 2
   - uid: 19447
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -66.5,128.5
       parent: 2
   - uid: 19448
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -64.5,128.5
       parent: 2
   - uid: 19449
@@ -132460,13 +132442,11 @@ entities:
   - uid: 19450
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -66.5,132.5
       parent: 2
   - uid: 19451
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -64.5,132.5
       parent: 2
   - uid: 19452
@@ -132477,13 +132457,11 @@ entities:
   - uid: 19453
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -65.5,128.5
       parent: 2
   - uid: 19454
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -65.5,132.5
       parent: 2
   - uid: 19455
@@ -132504,7 +132482,6 @@ entities:
   - uid: 19458
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -111.5,33.5
       parent: 2
   - uid: 19459
@@ -132525,13 +132502,11 @@ entities:
   - uid: 19462
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 69.5,27.5
       parent: 2
   - uid: 19463
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -109.5,33.5
       parent: 2
   - uid: 19464
@@ -132562,13 +132537,11 @@ entities:
   - uid: 19469
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 14.5,173.5
       parent: 2
   - uid: 19470
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 10.5,173.5
       parent: 2
   - uid: 19471
@@ -132949,37 +132922,31 @@ entities:
   - uid: 19546
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -109.5,17.5
       parent: 2
   - uid: 19547
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -112.5,17.5
       parent: 2
   - uid: 19548
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -104.5,17.5
       parent: 2
   - uid: 19549
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -111.5,17.5
       parent: 2
   - uid: 19550
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -107.5,17.5
       parent: 2
   - uid: 19551
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: 1.5,89.5
       parent: 2
   - uid: 19552
@@ -135390,19 +135357,16 @@ entities:
   - uid: 20033
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -89.5,88.5
       parent: 2
   - uid: 20034
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -89.5,89.5
       parent: 2
   - uid: 20035
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -89.5,90.5
       parent: 2
   - uid: 20036
@@ -136528,115 +136492,96 @@ entities:
   - uid: 33322
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -0.5,3.5
       parent: 33196
   - uid: 33454
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 4.5,4.5
       parent: 33403
   - uid: 33455
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 1.5,4.5
       parent: 33403
   - uid: 33456
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 3.5,5.5
       parent: 33403
   - uid: 33457
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 2.5,5.5
       parent: 33403
   - uid: 33558
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -0.5,3.5
       parent: 33498
   - uid: 33559
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -0.5,4.5
       parent: 33498
   - uid: 33560
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 0.5,5.5
       parent: 33498
   - uid: 33561
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 1.5,5.5
       parent: 33498
   - uid: 33562
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 2.5,5.5
       parent: 33498
   - uid: 33563
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 3.5,4.5
       parent: 33498
   - uid: 33564
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 3.5,3.5
       parent: 33498
   - uid: 33565
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 2.5,2.5
       parent: 33498
   - uid: 33566
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 0.5,2.5
       parent: 33498
   - uid: 33649
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: -0.5,2.5
       parent: 33639
   - uid: 33650
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: 0.5,2.5
       parent: 33639
   - uid: 33651
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: 1.5,2.5
       parent: 33639
   - uid: 33652
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -2.5,-1.5
       parent: 33639
   - uid: 33653
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 3.5,-1.5
       parent: 33639
   - uid: 33654
@@ -139868,33 +139813,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -73.02609,182.28293
       parent: 2
-- proto: LeftArmSkeleton
-  entities:
-  - uid: 20783
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -70.30249,67.68201
-      parent: 2
-  - uid: 20784
-    components:
-    - type: Transform
-      pos: -134.37924,87.75849
-      parent: 2
-- proto: LeftHandSkeleton
-  entities:
-  - uid: 20785
-    components:
-    - type: Transform
-      pos: -134.35797,87.696495
-      parent: 2
-- proto: LeftLegSkeleton
-  entities:
-  - uid: 20786
-    components:
-    - type: Transform
-      pos: -131.90509,85.363
-      parent: 2
 - proto: LightBulbBroken
   entities:
   - uid: 20787
@@ -142202,6 +142120,13 @@ entities:
     - type: Transform
       pos: -49.5,-7.5
       parent: 2
+- proto: OrganArachnidFootRight
+  entities:
+  - uid: 23880
+    components:
+    - type: Transform
+      pos: -43.763634,54.1556
+      parent: 2
 - proto: OrganHumanEyes
   entities:
   - uid: 21135
@@ -142220,6 +142145,40 @@ entities:
     components:
     - type: Transform
       pos: -37.63288,58.673306
+      parent: 2
+- proto: OrganSkeletonPersonArmLeft
+  entities:
+  - uid: 20783
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -70.30249,67.68201
+      parent: 2
+  - uid: 20784
+    components:
+    - type: Transform
+      pos: -134.37924,87.75849
+      parent: 2
+- proto: OrganSkeletonPersonFootRight
+  entities:
+  - uid: 23879
+    components:
+    - type: Transform
+      pos: -129.75058,82.76152
+      parent: 2
+- proto: OrganSkeletonPersonHandLeft
+  entities:
+  - uid: 20785
+    components:
+    - type: Transform
+      pos: -134.35797,87.696495
+      parent: 2
+- proto: OrganSkeletonPersonLegLeft
+  entities:
+  - uid: 20786
+    components:
+    - type: Transform
+      pos: -131.90509,85.363
       parent: 2
 - proto: OxygenCanister
   entities:
@@ -157906,20 +157865,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -69.96949,166.53644
       parent: 2
-- proto: OrganSkeletonPersonFootRight
-  entities:
-  - uid: 23879
-    components:
-    - type: Transform
-      pos: -129.75058,82.76152
-      parent: 2
-- proto: OrganArachnidFootRight
-  entities:
-  - uid: 23880
-    components:
-    - type: Transform
-      pos: -43.763634,54.1556
-      parent: 2
 - proto: RightLegBorg
   entities:
   - uid: 23881
@@ -167101,13 +167046,12 @@ entities:
       solutions:
         injector:
           temperature: 372.10287
-          canReact: True
           maxVol: 15
-          name: null
           reagents:
           - data: null
             ReagentId: Desoxyephedrine
             Quantity: 15
+      containers: []
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
@@ -167122,13 +167066,12 @@ entities:
       solutions:
         injector:
           temperature: 372.10287
-          canReact: True
           maxVol: 15
-          name: null
           reagents:
           - data: null
             ReagentId: Desoxyephedrine
             Quantity: 15
+      containers: []
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
@@ -167142,14 +167085,12 @@ entities:
     - type: SolutionContainerManager
       solutions:
         injector:
-          temperature: 293.15
-          canReact: True
           maxVol: 15
-          name: null
           reagents:
           - data: null
             ReagentId: SpaceDrugs
             Quantity: 15
+      containers: []
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
@@ -167163,14 +167104,12 @@ entities:
     - type: SolutionContainerManager
       solutions:
         injector:
-          temperature: 293.15
-          canReact: True
           maxVol: 15
-          name: null
           reagents:
           - data: null
             ReagentId: SpaceDrugs
             Quantity: 15
+      containers: []
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
@@ -167184,14 +167123,12 @@ entities:
     - type: SolutionContainerManager
       solutions:
         injector:
-          temperature: 293.15
-          canReact: True
           maxVol: 15
-          name: null
           reagents:
           - data: null
             ReagentId: SpaceDrugs
             Quantity: 15
+      containers: []
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
@@ -167205,14 +167142,12 @@ entities:
     - type: SolutionContainerManager
       solutions:
         injector:
-          temperature: 293.15
-          canReact: True
           maxVol: 15
-          name: null
           reagents:
           - data: null
             ReagentId: SpaceDrugs
             Quantity: 15
+      containers: []
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
@@ -167226,14 +167161,12 @@ entities:
     - type: SolutionContainerManager
       solutions:
         injector:
-          temperature: 293.15
-          canReact: True
           maxVol: 15
-          name: null
           reagents:
           - data: null
             ReagentId: SpaceDrugs
             Quantity: 15
+      containers: []
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
@@ -167247,14 +167180,12 @@ entities:
     - type: SolutionContainerManager
       solutions:
         injector:
-          temperature: 293.15
-          canReact: True
           maxVol: 15
-          name: null
           reagents:
           - data: null
             ReagentId: SpaceDrugs
             Quantity: 15
+      containers: []
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
@@ -173883,6 +173814,13 @@ entities:
     components:
     - type: Transform
       pos: -5.5,78.5
+      parent: 2
+- proto: VendingMachineRestockDonut
+  entities:
+  - uid: 12242
+    components:
+    - type: Transform
+      pos: -120.5,108.5
       parent: 2
 - proto: VendingMachineRoboDrobe
   entities:

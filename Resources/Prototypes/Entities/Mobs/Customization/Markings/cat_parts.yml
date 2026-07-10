@@ -1,7 +1,7 @@
 - type: marking
   id: CatEars
   bodyPart: HeadTop # Carpmosia-edit - Allow cat parts
-  groupWhitelist: [Human]
+  groupWhitelist: [Human, Tajaran] # Carpmosia-edit - Port Tajaran
   coloring:
     default:
       type:
@@ -23,7 +23,7 @@
 - type: marking
   id: CatTail
   bodyPart: Tail
-  groupWhitelist: [Human]
+  groupWhitelist: [] # Carpmosia-edit - Remove non-animated tails
   coloring:
     default:
       type:

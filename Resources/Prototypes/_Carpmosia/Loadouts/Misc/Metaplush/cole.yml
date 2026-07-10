@@ -2,10 +2,9 @@
   id: ArachindPlushieCole
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobPassenger
-      time: 50h
+      time: 20h
 
 - type: loadout
   id: ArachindPlushieCole

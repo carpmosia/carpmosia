@@ -10,8 +10,10 @@
     - id: GiftsMedical
     - id: GiftsPizzaPartyLarge
     - id: GiftsPizzaPartySmall
-    - id: GiftsSecurityGuns
-    - id: GiftsSecurityRiot
+    # Carpmosia-start - Remove Cargo Armory
+    # - id: GiftsSecurityGuns
+    # - id: GiftsSecurityRiot
+    # Carpmosia-end - Remove Cargo Armory
     - id: GiftsSpacingSupplies
     - id: GiftsVendingRestock
 
@@ -179,39 +181,41 @@
       EmergencyBurnKit: 1
       EmergencyBruteKit: 1
 
-- type: entity
-  id: GiftsSecurityGuns
-  parent: CargoGiftsBase
-  components:
-  - type: StationEvent
-    weight: 3
-    duration: 120
-    earliestStart: 20
-    minimumPlayers: 50
-  - type: CargoGiftsRule
-    description: cargo-gift-security-guns
-    dest: cargo-gift-dest-sec
-    gifts:
-      SecurityArmor: 3
-      ArmorySmg: 1
-      ArmoryShotgun: 1
-      ArmoryLaser: 1
-      ArmoryRifle: 1
+# Carpmosia-start - Remove Cargo Armory
+# - type: entity
+#   id: GiftsSecurityGuns
+#   parent: CargoGiftsBase
+#   components:
+#   - type: StationEvent
+#     weight: 3
+#     duration: 120
+#     earliestStart: 20
+#     minimumPlayers: 50
+#   - type: CargoGiftsRule
+#     description: cargo-gift-security-guns
+#     dest: cargo-gift-dest-sec
+#     gifts:
+#       SecurityArmor: 3
+#       ArmorySmg: 1
+#       ArmoryShotgun: 1
+#       ArmoryLaser: 1
+#       ArmoryRifle: 1
 
-- type: entity
-  id: GiftsSecurityRiot
-  parent: CargoGiftsBase
-  components:
-  - type: StationEvent
-    weight: 4
-    duration: 120
-    earliestStart: 20
-    minimumPlayers: 50
-  - type: CargoGiftsRule
-    description: cargo-gift-security-riot
-    dest: cargo-gift-dest-sec
-    gifts:
-      SecurityRiot: 2
-      SecurityRestraints: 2
-      SecurityNonLethal: 2
-      SecurityNonlethalThrowables: 1
+# - type: entity
+#   id: GiftsSecurityRiot
+#   parent: CargoGiftsBase
+#   components:
+#   - type: StationEvent
+#     weight: 4
+#     duration: 120
+#     earliestStart: 20
+#     minimumPlayers: 50
+#   - type: CargoGiftsRule
+#     description: cargo-gift-security-riot
+#     dest: cargo-gift-dest-sec
+#     gifts:
+#       SecurityRiot: 2
+#       SecurityRestraints: 2
+#       SecurityNonLethal: 2
+#       SecurityNonlethalThrowables: 1
+# Carpmosia-end - Remove Cargo Armory

@@ -8,3 +8,4 @@ station-ai-hologram-mothroach = Mothroach form
 station-ai-hologram-dionanymph = Nymph form
 station-ai-hologram-angel = Angel form
 station-ai-hologram-devil = Devil form
+station-ai-hologram-moth = Moth form

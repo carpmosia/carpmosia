@@ -1,7 +1,8 @@
 ﻿- type: entity
-  id: Recycler
+  id: BaseRecycler # Carpmosia - Fix Xenoborgs Getting Tickets
   parent: BaseMachinePowered
   name: recycler
+  suffix: No Salvage Tickets # Carpmosia - Fix Xenoborgs Getting Tickets
   description: A large crushing machine used to recycle small items inefficiently. There are lights on the side.
   components:
   - type: AmbientSound
@@ -115,9 +116,3 @@
   - type: Speech
     speechVerb: Robotic
     speechSounds: SyndieBorg
-  # Carpmosia-start - Salvage Tickets
-  - type: TicketPrinter
-    whitelist:
-      tags:
-      - SalvageScrap
-  # Carpmosia-end - Salvage Tickets

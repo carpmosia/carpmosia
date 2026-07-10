@@ -2,10 +2,10 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 270.1.0
+  engineVersion: 277.0.0
   forkId: ""
   forkVersion: ""
-  time: 01/20/2026 02:40:52
+  time: 05/26/2026 10:24:40
   entityCount: 33982
 maps:
 - 1
@@ -4097,6 +4097,8 @@ entities:
     - type: SpreaderGrid
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
+    - type: TileHistory
+      chunkHistory: {}
 - proto: AcousticGuitarInstrument
   entities:
   - uid: 3
@@ -142417,13 +142419,11 @@ entities:
   - uid: 23144
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 39.5,51.5
       parent: 2
   - uid: 23145
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 29.5,51.5
       parent: 2
   - uid: 23146
@@ -142434,7 +142434,6 @@ entities:
   - uid: 23147
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 34.5,51.5
       parent: 2
   - uid: 23148
@@ -142450,7 +142449,6 @@ entities:
   - uid: 23150
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 38.5,51.5
       parent: 2
   - uid: 23151
@@ -142461,25 +142459,21 @@ entities:
   - uid: 23152
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 36.5,51.5
       parent: 2
   - uid: 23153
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 33.5,51.5
       parent: 2
   - uid: 23154
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 37.5,51.5
       parent: 2
   - uid: 23155
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 30.5,51.5
       parent: 2
   - uid: 23156
@@ -142505,7 +142499,6 @@ entities:
   - uid: 23160
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 31.5,51.5
       parent: 2
   - uid: 23161
@@ -142521,13 +142514,11 @@ entities:
   - uid: 23163
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 32.5,51.5
       parent: 2
   - uid: 23164
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 35.5,51.5
       parent: 2
   - uid: 23165

@@ -19,6 +19,15 @@ public sealed partial class CCVars
     public static readonly CVarDef<bool> ReducedMotion =
         CVarDef.Create("accessibility.reduced_motion", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 
+    // Carpmosia-start - AI Navmap
+    // /// <summary>
+    // ///     Replaces the AI static camera effect with a plain gradient.
+    // ///     Used for photosensitivity triggers.
+    // /// </summary>
+    // public static readonly CVarDef<bool> DisableAiStatic =
+    //     CVarDef.Create("accessibility.disable_ai_static", false, CVar.CLIENTONLY | CVar.ARCHIVE);
+    // Carpmosia-end - AI Navmap
+
     public static readonly CVarDef<bool> ChatEnableColorName =
         CVarDef.Create("accessibility.enable_color_name",
             true,
