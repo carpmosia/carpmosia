@@ -4,3 +4,10 @@
   sprite:
     sprite: Objects/Misc/module.rsi
     state: cpuboard
+
+- type: stealTargetGroup
+  id: ReactorFuelRodSteal
+  name: steal-target-groups-reactorfuelrod
+  sprite:
+    sprite: _Carpmosia/Objects/Power/FissionGenerator/reactor_parts.rsi
+    state: default_rod
