@@ -1,4 +1,4 @@
-using Content.Shared._FarHorizons.CCVar;
+using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
 
 namespace Content.Shared._FarHorizons.Power.Generation.FissionGenerator;
@@ -33,14 +33,14 @@ public abstract class SharedReactorPartSystem : EntitySystem
 
     private void InitializeCVars()
     {
-        Subs.CVar(_cfg, FHCCVars.ReactionRate, value => ReactionRate = value, true);
-        Subs.CVar(_cfg, FHCCVars.NeutronReactionBias, value => NeutronReactionBias = value, true);
-        Subs.CVar(_cfg, FHCCVars.ReactionReactant, value => ReactionReactant = value, true);
-        Subs.CVar(_cfg, FHCCVars.ReactionProduct, value => ReactionProduct = value, true);
-        Subs.CVar(_cfg, FHCCVars.StimulatedHeatingFactor, value => StimulatedHeatingFactor = value, true);
-        Subs.CVar(_cfg, FHCCVars.SpontaneousHeatingFactor, value => SpontaneousHeatingFactor = value, true);
-        Subs.CVar(_cfg, FHCCVars.SpontaneousReactionConsumptionMultiplier, value => SpontaneousReactionConsumptionMultiplier = value, true);
-        Subs.CVar(_cfg, FHCCVars.ReactorPartHotTemp, value => ReactorPartHotTemp = value, true);
-        Subs.CVar(_cfg, FHCCVars.ReactorPartBurnTemp, value => ReactorPartBurnTemp = value, true);
+        Subs.CVar(_cfg, CCVars.ReactionRate, value => ReactionRate = value, true);
+        Subs.CVar(_cfg, CCVars.NeutronReactionBias, value => NeutronReactionBias = value, true);
+        Subs.CVar(_cfg, CCVars.ReactionReactant, value => ReactionReactant = value, true);
+        Subs.CVar(_cfg, CCVars.ReactionProduct, value => ReactionProduct = value, true);
+        Subs.CVar(_cfg, CCVars.StimulatedHeatingFactor, value => StimulatedHeatingFactor = value, true);
+        Subs.CVar(_cfg, CCVars.SpontaneousHeatingFactor, value => SpontaneousHeatingFactor = value, true);
+        Subs.CVar(_cfg, CCVars.SpontaneousReactionConsumptionMultiplier, value => SpontaneousReactionConsumptionMultiplier = value, true);
+        Subs.CVar(_cfg, CCVars.ReactorPartHotTemp, value => ReactorPartHotTemp = value, true);
+        Subs.CVar(_cfg, CCVars.ReactorPartBurnTemp, value => ReactorPartBurnTemp = value, true);
     }
 }
