@@ -124,6 +124,7 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
 
         Gui.RequestWarpsPressed += RequestWarps;
         Gui.ReturnToBodyPressed += ReturnToBody;
+        Gui.ReturnToLobbyPressed += ReturnToLobby; // Carpmosia-edit - Return to lobby
         Gui.GhostRolesPressed += GhostRolesPressed;
         Gui.TargetWindow.WarpClicked += OnWarpClicked;
         Gui.TargetWindow.OnGhostnadoClicked += OnGhostnadoClicked;
@@ -138,6 +139,7 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
 
         Gui.RequestWarpsPressed -= RequestWarps;
         Gui.ReturnToBodyPressed -= ReturnToBody;
+        Gui.ReturnToLobbyPressed -= ReturnToLobby; // Carpmosia-edit - Return to lobby
         Gui.GhostRolesPressed -= GhostRolesPressed;
         Gui.TargetWindow.WarpClicked -= OnWarpClicked;
 
@@ -148,6 +150,13 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
     {
         _system?.ReturnToBody();
     }
+
+    // Carpmosia-start - Return to lobby
+    private void ReturnToLobby()
+    {
+        _system?.ReturnToLobby();
+    }
+    // Carpmosia-ebd - Return to lobby
 
     private void RequestWarps()
     {

@@ -192,6 +192,14 @@ namespace Content.Client.Ghost
             RaiseNetworkEvent(msg);
         }
 
+        // Carpmosia-start - Return to lobby
+        public void ReturnToLobby()
+        {
+            var msg = new GhostReturnToLobbyRequest();
+            RaiseNetworkEvent(msg);
+        }
+        // Carpmosia-end - Return to lobby
+
         public void OpenGhostRoles()
         {
             _console.RemoteExecuteCommand(null, "ghostroles");
