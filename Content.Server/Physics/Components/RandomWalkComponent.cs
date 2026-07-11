@@ -54,14 +54,12 @@ public sealed partial class RandomWalkComponent : Component
     /// Constant value used to scale minimum speed
     /// </summary>
     [DataField]
-    [ViewVariables(VVAccess.ReadWrite)]
     public float BaseMin = 7.5f;
 
     /// <summary>
     /// Constant value used to scale maximum speed
     /// </summary>
     [DataField]
-    [ViewVariables(VVAccess.ReadWrite)]
     public float BaseMax = 10f;
     // Carpmosia-end - Engine Loose Rework
     #region Update Timing

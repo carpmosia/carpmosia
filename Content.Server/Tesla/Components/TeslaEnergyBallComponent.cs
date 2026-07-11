@@ -57,7 +57,7 @@ public sealed partial class TeslaEnergyBallComponent : Component
     /// How many miniballs are spawned when the tesla ruptures.
     /// </summary>
     [DataField]
-    public float SpawnAmount = 4;
+    public int SpawnAmount = 4;
     // Carpmosia-end - Engine Loose Rework
 
     /// <summary>
