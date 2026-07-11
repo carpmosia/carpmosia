@@ -49,6 +49,21 @@ public sealed partial class RandomWalkComponent : Component
     [ViewVariables(VVAccess.ReadOnly)]
     public bool StepOnStartup = false;
 
+    // Carpmosia-start - Engine Loose Rework
+    /// <summary>
+    /// Constant value used to scale minimum speed
+    /// </summary>
+    [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public float BaseMin = 7.5f;
+
+    /// <summary>
+    /// Constant value used to scale maximum speed
+    /// </summary>
+    [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public float BaseMax = 10f;
+    // Carpmosia-end - Engine Loose Rework
     #region Update Timing
 
     /// <summary>

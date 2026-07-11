@@ -289,8 +289,8 @@ public sealed partial class SingularitySystem : SharedSingularitySystem
     {
         var scale = MathF.Max(args.NewValue, 4);
         // Carpmosia-start - Engine Loose Rework
-        comp.MinSpeed = 0.8f / scale;
-        comp.MaxSpeed = 1.2f / scale;
+        comp.MinSpeed = comp.BaseMin / scale;
+        comp.MaxSpeed = comp.BaseMax / scale;
         // Carpmosia-end - Engine Loose Rework
     }
 
