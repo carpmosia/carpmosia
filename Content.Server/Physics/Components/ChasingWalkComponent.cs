@@ -72,7 +72,7 @@ public sealed partial class ChasingWalkComponent : Component
     /// The maximum radius in which the entity chooses the target component to follow
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float MaxChaseRadius = 25;
+    public float MaxChaseRadius = 50; // Carpmosia-edit - Engine Loose Rework
 
     /// <summary>
     /// The entity uid, chasing by the component owner
