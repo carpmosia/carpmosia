@@ -2,8 +2,7 @@
   id: LizardPlushieScreams
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobAtmosphericTechnician
       time: 20h
 

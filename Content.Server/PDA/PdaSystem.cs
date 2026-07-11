@@ -13,6 +13,7 @@ using Content.Shared.CartridgeLoader;
 using Content.Shared.Chat;
 using Content.Shared.DeviceNetwork.Components;
 using Content.Shared.Implants;
+using Content.Shared.Interaction.Events; // Carpmosia-edit - Uplink Auto-locker
 using Content.Shared.Inventory;
 using Content.Shared.Light;
 using Content.Shared.Light.EntitySystems;
@@ -63,6 +64,8 @@ namespace Content.Server.PDA
             SubscribeLocalEvent<AlertLevelChangedEvent>(OnAlertLevelChanged);
             SubscribeLocalEvent<PdaComponent, InventoryRelayedEvent<ChameleonControllerOutfitSelectedEvent>>(OnRelayedEventToIdCard);
             SubscribeLocalEvent<PdaComponent, InventoryRelayedEvent<VoiceMaskNameUpdatedEvent>>(OnRelayedEventToIdCard);
+
+            SubscribeLocalEvent<RingerUplinkComponent, DroppedEvent>(OnDrop); // Carpmosia-edit - Uplink Auto-locker
         }
 
         private void OnRelayedEventToIdCard<T>(Entity<PdaComponent> ent, ref InventoryRelayedEvent<T> args)
@@ -304,6 +307,16 @@ namespace Content.Server.PDA
                 UpdatePdaUi(uid, pda);
             }
         }
+
+        // Carpmosia-start - Uplink Auto-locker
+        private void OnDrop(Entity<RingerUplinkComponent> ent, ref DroppedEvent args)
+        {
+            if (TryComp<RemoteStoreComponent>(ent, out var remoteStore))
+                remoteStore.Store = null;
+            _ringer.LockUplink(ent!);
+            UpdatePdaUi(ent);
+        }
+        // Carpmosia-end - Uplink Auto-locker
 
         /// <summary>
         /// Returns the currently unlocked store, if there is one.

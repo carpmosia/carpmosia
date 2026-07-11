@@ -2,8 +2,7 @@
   id: LizardPlushieAxel
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:DepartmentTimeRequirement
+    requirement: !type:DepartmentTimeRequirement
       department: Medical
       time: 20h
 
