@@ -245,7 +245,7 @@ public sealed partial class GasTurbineWindow : FancyWindow
 
     private void UpdateIndicators(GasTurbineBuiState msg)
     {
-        var FilePath = "/Textures/_FarHorizons/Interface/FissionGenerator/indicator_lamps/";
+        var FilePath = "/Textures/_Carpmosia/Interface/FissionGenerator/indicator_lamps/";
         // These are just if/else statements in black magic form
         TurbineOverspeed.TexturePath = msg.Overspeed ? FilePath + "redlit.png" : FilePath + "reddim.png";
         TurbineOvertemp.TexturePath = msg.Overtemp ? FilePath + "redlit.png" : FilePath + "reddim.png";

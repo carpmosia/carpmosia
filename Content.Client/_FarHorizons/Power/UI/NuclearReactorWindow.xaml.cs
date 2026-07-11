@@ -183,7 +183,7 @@ public sealed partial class NuclearReactorWindow : FancyWindow
                 var icon = new TextureRect()
                 {
                     SetSize = new(32, 32),
-                    TexturePath = "/Textures/_FarHorizons/Interface/FissionGenerator/reactor_part_inserted/base.png"
+                    TexturePath = "/Textures/_Carpmosia/Interface/FissionGenerator/reactor_part_inserted/base.png"
                 };
                 var button = new Button
                 {
@@ -245,7 +245,7 @@ public sealed partial class NuclearReactorWindow : FancyWindow
                 }
 
                 var icon = exists ? _data[vect].IconName : "base";
-                _reactorRect[vect].TexturePath = "/Textures/_FarHorizons/Interface/FissionGenerator/reactor_part_inserted/" +  icon + ".png";
+                _reactorRect[vect].TexturePath = "/Textures/_Carpmosia/Interface/FissionGenerator/reactor_part_inserted/" +  icon + ".png";
                 _reactorRect[vect].Modulate = y == _targetX && x == _targetY 
                     ? Color.InterpolateBetween(Color.FromHex("#666"), Color.FromHex("#222"), ((float)Math.Sin(_targetPulse) / 2) + 1) 
                     : Color.Black;

@@ -34,7 +34,7 @@ public sealed class NuclearReactorSystem : EntitySystem
         if (!TryComp<SpriteComponent>(uid, out var sprite))
             return;
 
-        if (!_resourceCache.TryGetResource("/Textures/_FarHorizons/Structures/Power/Generation/FissionGenerator/reactor_component_cap.rsi", out RSIResource? resource))
+        if (!_resourceCache.TryGetResource("/Textures/_Carpmosia/Structures/Power/Generation/FissionGenerator/reactor_component_cap.rsi", out RSIResource? resource))
             return;
 
         Entity<SpriteComponent?> entSprite = (uid, sprite);

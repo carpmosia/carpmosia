@@ -143,9 +143,9 @@ public sealed class NuclearReactorSystem : EntitySystem
         // I hate everything about this, but it ensures the audio doesn't just stop if you don't look at it
         comp.AlarmAudioHighThermal = SpawnAttachedTo("ReactorAlarmEntity", new(uid, 0, 0));
         comp.AlarmAudioHighTemp = SpawnAttachedTo("ReactorAlarmEntity", new(uid, 0, 0));
-        _ambientSoundSystem.SetSound(comp.AlarmAudioHighTemp.Value, new SoundPathSpecifier("/Audio/_FarHorizons/Machines/reactor_alarm_2.ogg"));
+        _ambientSoundSystem.SetSound(comp.AlarmAudioHighTemp.Value, new SoundPathSpecifier("/Audio/_Carpmosia/Machines/reactor_alarm_2.ogg"));
         comp.AlarmAudioHighRads = SpawnAttachedTo("ReactorAlarmEntity", new(uid, 0, 0));
-        _ambientSoundSystem.SetSound(comp.AlarmAudioHighRads.Value, new SoundPathSpecifier("/Audio/_FarHorizons/Machines/reactor_alarm_3.ogg"));
+        _ambientSoundSystem.SetSound(comp.AlarmAudioHighRads.Value, new SoundPathSpecifier("/Audio/_Carpmosia/Machines/reactor_alarm_3.ogg"));
     }
 
     #region Prefab
@@ -385,7 +385,7 @@ public sealed class NuclearReactorSystem : EntitySystem
 
         // Sound for the control rods moving, basically an audio cue that the reactor's doing something important
         if (ControlRods > 0 && !MathHelper.CloseTo(comp.AvgInsertion, AvgControlRodInsertion))
-            _audio.PlayPvs(new SoundPathSpecifier("/Audio/_FarHorizons/Machines/relay_click.ogg"), uid);
+            _audio.PlayPvs(new SoundPathSpecifier("/Audio/_Carpmosia/Machines/relay_click.ogg"), uid);
 
         var CasingGas = ProcessCasingGas(comp, GasInput);
         if (CasingGas != null)

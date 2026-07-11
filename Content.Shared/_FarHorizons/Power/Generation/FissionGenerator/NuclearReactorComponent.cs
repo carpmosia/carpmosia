@@ -124,7 +124,7 @@ public sealed partial class NuclearReactorComponent : Component
     /// <summary>
     /// Sound that plays globally on meltdown
     /// </summary>
-    public SoundSpecifier MeltdownSound = new SoundPathSpecifier("/Audio/_FarHorizons/Machines/meltdown_siren.ogg");
+    public SoundSpecifier MeltdownSound = new SoundPathSpecifier("/Audio/_Carpmosia/Machines/meltdown_siren.ogg");
 
     /// <summary>
     /// Radio channel to send alerts to

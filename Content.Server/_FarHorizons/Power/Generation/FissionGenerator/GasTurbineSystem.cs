@@ -66,9 +66,9 @@ public sealed class GasTurbineSystem : EntitySystem
     [Dependency] private readonly UserInterfaceSystem _uiSystem = null!;
 
     private readonly List<string> _damageSoundList = [
-        "/Audio/_FarHorizons/Effects/engine_grump1.ogg",
-        "/Audio/_FarHorizons/Effects/engine_grump2.ogg",
-        "/Audio/_FarHorizons/Effects/engine_grump3.ogg",
+        "/Audio/_Carpmosia/Effects/engine_grump1.ogg",
+        "/Audio/_Carpmosia/Effects/engine_grump2.ogg",
+        "/Audio/_Carpmosia/Effects/engine_grump3.ogg",
         "/Audio/Effects/metal_slam5.ogg",
         "/Audio/Effects/metal_scrape2.ogg"
     ];
@@ -128,7 +128,7 @@ public sealed class GasTurbineSystem : EntitySystem
 
         comp.AlarmAudioOvertemp = SpawnAttachedTo("GasTurbineAlarmEntity", new(uid, 0, 0));
         comp.AlarmAudioUnderspeed = SpawnAttachedTo("GasTurbineAlarmEntity", new(uid, 0, 0));
-        _ambientSoundSystem.SetSound(comp.AlarmAudioUnderspeed.Value, new SoundPathSpecifier("/Audio/_FarHorizons/Machines/alarm_beep.ogg"));
+        _ambientSoundSystem.SetSound(comp.AlarmAudioUnderspeed.Value, new SoundPathSpecifier("/Audio/_Carpmosia/Machines/alarm_beep.ogg"));
         _ambientSoundSystem.SetVolume(comp.AlarmAudioUnderspeed.Value, -4);
     }
 
@@ -286,11 +286,11 @@ public sealed class GasTurbineSystem : EntitySystem
             {
                 // Sacrifices must be made to have a smooth ramp up:
                 // This will generate 2 audio streams every second with up to 4 of them playing at once... surely this can't go wrong :clueless:
-                _audio.PlayPvs(new SoundPathSpecifier("/Audio/_FarHorizons/Ambience/Objects/turbine_room.ogg"), uid, AudioParams.Default.WithPitchScale(comp.RPM / comp.BestRPM).WithVolume(-2));
+                _audio.PlayPvs(new SoundPathSpecifier("/Audio/_Carpmosia/Ambience/Objects/turbine_room.ogg"), uid, AudioParams.Default.WithPitchScale(comp.RPM / comp.BestRPM).WithVolume(-2));
 
                 var healthPercent = (float)comp.BladeHealth / comp.BladeHealthMax;
                 if (healthPercent < 1)
-                    _audio.PlayPvs(new SoundPathSpecifier("/Audio/_FarHorizons/Ambience/Objects/bad_bearing.ogg"), uid, AudioParams.Default.WithPitchScale(comp.RPM / comp.BestRPM)
+                    _audio.PlayPvs(new SoundPathSpecifier("/Audio/_Carpmosia/Ambience/Objects/bad_bearing.ogg"), uid, AudioParams.Default.WithPitchScale(comp.RPM / comp.BestRPM)
                         .WithVolume((healthPercent * -6f) - 2));
             }
 
