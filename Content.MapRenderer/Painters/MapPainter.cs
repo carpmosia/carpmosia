@@ -24,6 +24,7 @@ using Robust.UnitTesting.Pool;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
+using Robust.Shared.Utility;
 
 namespace Content.MapRenderer.Painters
 {
@@ -175,7 +176,7 @@ namespace Content.MapRenderer.Painters
                 if (_map is RenderMapPrototype)
                 {
                     var mapId = sEntityManager.System<GameTicker>().DefaultMap;
-                    _grids = sMapManager.GetAllGrids(mapId).ToArray();
+                    _grids = [.. sMapManager.GetAllGrids(mapId.FirstOrDefault())]; // Carpmosia-edit - Multistation
                 }
 
                 foreach (var (uid, _) in _grids)
