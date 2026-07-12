@@ -5,22 +5,22 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client._FarHorizons.Power.Generation.FissionGenerator;
 
-public sealed class ReactorPartSystem : EntitySystem
+public sealed partial class ReactorPartSystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly SpriteSystem _sprite = default!;
-    
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private SpriteSystem _sprite = default!;
+
     private static readonly ProtoId<ShaderPrototype> _shaderID = "HeatDistortionFH";
     private ShaderInstance _heatShader = default!;
 
     public override void Initialize()
     {
         base.Initialize();
-        
+
         _heatShader = _proto.Index(_shaderID).InstanceUnique();
 
-        SubscribeLocalEvent<ReactorPartComponent, AppearanceChangeEvent>(OnAppearanceChange);
-        SubscribeLocalEvent<ReactorPartComponent, ComponentInit>(OnComponentInit);
+        //SubscribeLocalEvent<ReactorPartComponent, AppearanceChangeEvent>(OnAppearanceChange);
+        //SubscribeLocalEvent<ReactorPartComponent, ComponentInit>(OnComponentInit);
     }
 
     private void OnAppearanceChange(EntityUid uid, ReactorPartComponent component, ref AppearanceChangeEvent args)
