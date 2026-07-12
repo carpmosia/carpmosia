@@ -22,6 +22,11 @@
     - state: nukefestive
       map: ["christmas"]
       visible: false
+    # Carpmosia-start - carpnuke
+    - state: carpnuke
+      map: ["carpnuke"]
+      visible: false
+    # Carpmosia-start - carpnuke
   - type: Appearance
   - type: HolidayVisuals
     holidays:
@@ -36,6 +41,10 @@
           festive: { visible: true }
         pride:
           pride: { visible: true }
+        # Carpmosia-start - carpnuke
+        carpday:
+          carpnuke: { visible: true }
+        # Carpmosia-start - carpnuke
       enum.NukeVisuals.Deployed:
         enum.NukeVisualLayers.Base:
           False: { state: nuclearbomb_base }
