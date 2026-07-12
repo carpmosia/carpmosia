@@ -1,0 +1,30 @@
+- type: entity
+  abstract: true
+  id: BasePaperYellow
+  suffix: yellow
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper
+      color: "#f7e574"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: "#f7e574"
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: PaperVisuals
+    backgroundModulate: "#f7e574"
+    contentImageModulate: "#f7e574"
+
+- type: entity
+  parent: [ BasePaperYellow, Paper ]
+  id: PaperColorYellow
+  description: A piece of yellow paper.
+
+- type: entity
+  parent: [ BasePaperYellow, PaperOffice ]
+  id: PaperOfficeColorYellow
+  description: A plain sheet of yellow office paper.
