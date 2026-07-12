@@ -7,7 +7,7 @@
   - type: Transform
     anchored: true
   - type: Sprite
-    sprite: Objects/Devices/nuke.rsi
+    sprite: _Carpmosia/Objects/Devices/nuke.rsi # Carpmosia-edit - carpnuke
     noRot: true
     layers:
     - state: nuclearbomb_base
@@ -139,7 +139,7 @@
     anchored: false
   - type: NukeLabel
   - type: Sprite
-    sprite: Objects/Devices/nuke.rsi
+    sprite: _Carpmosia/Objects/Devices/nuke.rsi # Carpmosia-edit - carpnuke
     layers:
     - state: nuclearbomb_base
     - state: nukefestive
