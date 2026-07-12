@@ -6,3 +6,5 @@ lobby-state-background-drunkardsspree-title = Drunkards' Spree
 lobby-state-background-drunkardsspree-artist = Saver310
 lobby-state-background-thefirstwave-title = The First Wave
 lobby-state-background-thefirstwave-artist = UBlueberry
+lobby-state-background-hamsplosion-title = Hamsplosion
+lobby-state-background-hamsplosion-artist = Saver310
