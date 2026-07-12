@@ -19,8 +19,8 @@ public sealed partial class ReactorPartSystem : EntitySystem
 
         _heatShader = _proto.Index(_shaderID).InstanceUnique();
 
-        //SubscribeLocalEvent<ReactorPartComponent, AppearanceChangeEvent>(OnAppearanceChange);
-        //SubscribeLocalEvent<ReactorPartComponent, ComponentInit>(OnComponentInit);
+        SubscribeLocalEvent<ReactorPartComponent, AppearanceChangeEvent>(OnAppearanceChange);
+        SubscribeLocalEvent<ReactorPartComponent, ComponentInit>(OnComponentInit);
     }
 
     private void OnAppearanceChange(EntityUid uid, ReactorPartComponent component, ref AppearanceChangeEvent args)
@@ -39,5 +39,5 @@ public sealed partial class ReactorPartSystem : EntitySystem
     }
 
     private void OnComponentInit(Entity<ReactorPartComponent> ent, ref ComponentInit args)
-        => _sprite.LayerSetColor((ent.Owner, EntityManager.GetComponent<SpriteComponent>(ent.Owner)), 0, _proto.Index(ent.Comp.Material).Color);
+        => _sprite.LayerSetColor((ent.Owner, Comp<SpriteComponent>(ent.Owner)), 0, _proto.Index(ent.Comp.Material).Color);
 }
