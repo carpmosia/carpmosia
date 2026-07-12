@@ -6,6 +6,7 @@ using Content.Server.Discord;
 using Content.Server.GameTicking.Events;
 using Content.Server.Maps;
 using Content.Server.Roles;
+using Content.Server.Voting.Managers; // Carpmosia-edit - Automatic map vote
 using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Content.Shared.GameTicking;
@@ -14,6 +15,7 @@ using Content.Shared.Mind;
 using Content.Shared.Players;
 using Content.Shared.Preferences;
 using Content.Shared.Roles.Components;
+using Content.Shared.Voting; // Carpmosia-edit - Automatic map vote
 using JetBrains.Annotations;
 using Prometheus;
 using Robust.Shared.Asynchronous;
@@ -34,6 +36,7 @@ namespace Content.Server.GameTicking
         [Dependency] private RoleSystem _role = default!;
         [Dependency] private ITaskManager _taskManager = default!;
         [Dependency] private ContentAudioSystem _contentAudio = default!; // Carpmosia-edit - Kill round end music
+        [Dependency] private IVoteManager _voteManager = default!; // Carpmosia-edit - Automatic map vote
 
         private static readonly Counter RoundNumberMetric = Metrics.CreateCounter(
             "ss14_round_number",
@@ -684,6 +687,14 @@ namespace Content.Server.GameTicking
                 UpdateInfoText();
 
                 ReqWindowAttentionAll();
+
+                // Carpmosia-start - Automatic map vote
+                // There isn't really a better way to identify an already running map vote...
+                if (!_voteManager.ActiveVotes.Any(x => x.Title == Loc.GetString("ui-vote-map-title")))
+                {
+                    _voteManager.CreateStandardVote(null, StandardVoteType.Map);
+                }
+                // Carpmosia-end - Automatic map vote
             }
         }
 
