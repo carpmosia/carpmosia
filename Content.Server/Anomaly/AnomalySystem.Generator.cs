@@ -10,6 +10,7 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Content.Shared.Power;
+using Content.Shared.Emag.Systems;
 
 namespace Content.Server.Anomaly;
 
@@ -30,8 +31,18 @@ public sealed partial class AnomalySystem
         SubscribeLocalEvent<AnomalyGeneratorComponent, MaterialAmountChangedEvent>(OnGeneratorMaterialAmountChanged);
         SubscribeLocalEvent<AnomalyGeneratorComponent, AnomalyGeneratorGenerateButtonPressedEvent>(OnGenerateButtonPressed);
         SubscribeLocalEvent<AnomalyGeneratorComponent, PowerChangedEvent>(OnGeneratorPowerChanged);
+        SubscribeLocalEvent<AnomalyGeneratorComponent, GotEmaggedEvent>(OnEmagged); // Carpmosia-edit - Emagging anomaly generators
         SubscribeLocalEvent<GeneratingAnomalyGeneratorComponent, ComponentStartup>(OnGeneratingStartup);
     }
+
+    // Carpmosia-start - Emagging anomaly generators
+    private void OnEmagged(Entity<AnomalyGeneratorComponent> ent, ref GotEmaggedEvent args)
+    {
+        ent.Comp.CooldownLength = ent.Comp.GenerationLength;
+        ent.Comp.CooldownEndTime = TimeSpan.Zero;
+        args.Handled = true;
+    }
+    // Carpmosia-end - Emagging anomaly generators
 
     private void OnGeneratorPowerChanged(EntityUid uid, AnomalyGeneratorComponent component, ref PowerChangedEvent args)
     {

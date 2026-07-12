@@ -53,6 +53,12 @@ public sealed partial class AnomalyGeneratorWindow : FancyWindow
     {
         if (_timing.CurTime > _cooldownEnd)
         {
+            // Carpmosia-start - Emagging anomaly generators
+            if (GenerateButton.Disabled)
+            {
+                UpdateReady();
+            }
+            // Carpmosia-end - Emagging anomaly generators
             CooldownLabel.SetMarkup(Loc.GetString("anomaly-generator-no-cooldown"));
         }
         else
