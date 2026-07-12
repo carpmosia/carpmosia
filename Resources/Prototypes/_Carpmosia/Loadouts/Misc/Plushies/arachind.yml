@@ -2,13 +2,11 @@
   id: PlushieArachind
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:DepartmentTimeRequirement
+    requirement: !type:DepartmentTimeRequirement
       department: Security
       time: 2.5h
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:OverallPlaytimeRequirement
+    requirement: !type:OverallPlaytimeRequirement
       time: 5h
 
 - type: loadout

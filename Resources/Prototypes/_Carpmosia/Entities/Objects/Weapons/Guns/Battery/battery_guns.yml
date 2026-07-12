@@ -1,0 +1,23 @@
+- type: entity
+  name: emergency laser
+  parent: [BaseLaserRifle, BaseGunWieldable, BaseSecurityContraband]
+  id: WeaponEmergencyLaser
+  description: Bulky last generation laser carbines. The last refuge of a desperate spaceman.
+  components:
+  - type: Item
+    size: Ginormous
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Weapons/Guns/Battery/emergency_laser.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: PointLight
+    radius: 1.5
+    energy: 14
+    color: "#ff0043"
+    mask: /Textures/Effects/LightMasks/double_cone.png
+  - type: RotatingLight
+    speed: 180

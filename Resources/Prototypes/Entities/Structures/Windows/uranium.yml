@@ -30,7 +30,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: IconSmooth
-    key: windows_uranium # Carpmosia-edit - Wall resprite
+    key: windows_uranium # Carpmosia-edit - Window resprite
     base: full # Carpmosia-edit - Window resprite
   - type: Construction
     graph: Window
@@ -112,9 +112,11 @@
     - Diagonal
     - Window
   - type: IconSmooth
-    mode: Diagonal
-    key: windows_uranium # Carpmosia-edit - Wall resprite
-    base: diagonal # Carpmosia-edit - Window resprite
+    # Carpmosia-start - Window resprite
+    mode: DiagonalPlus
+    key: windows_uranium
+    base: diagonal
+    # Carpmosia-end - Window resprite
   - type: Icon
     sprite: _Carpmosia/Structures/Windows/uranium.rsi # Carpmosia-edit - Window resprite
     state: diagonal0 # Carpmosia-edit - Window resprite
