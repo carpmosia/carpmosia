@@ -179,6 +179,46 @@
     tags:
     - HideContextMenu
 
+# Evil variants
+- type: entity
+  parent: Holopad
+  id: HolopadEvil
+  name: evil holopad
+  components:
+  - type: Holopad
+    hologramProtoId: HolopadHologramEvil
+  - type: PointLight
+    color: "#feafe1"
+
+- type: entity
+  id: HolopadHologramEvil
+  name: evil hologram
+  categories: [ HideSpawnMenu, DoNotMap ]
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite # Sprite data is dynamically set in Client.HolopadSystem
+  - type: Appearance
+  - type: TypingIndicator
+    proto: robot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Xenoborg
+    speechBubbleOffset: 0.45
+  - type: HolopadHologram
+    rsiPath: Structures/Machines/holopad.rsi
+    rsiState: icon_in_call
+    shaderName: Hologram
+    color1: "#e265b8"
+    color2: "#813a69"
+    alpha: 0.9
+    intensity: 2
+    scrollRate: 0.125
+    offset: -0.02, 0.45
+  - type: Tag
+    tags:
+    - HideContextMenu
+
 ## Mapping prototypes
 # General
 - type: entity
