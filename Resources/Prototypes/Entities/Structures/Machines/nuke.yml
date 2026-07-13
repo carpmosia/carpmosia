@@ -27,7 +27,7 @@
       sprite: _Carpmosia/Objects/Devices/nuke.rsi
       map: ["carpday"]
       visible: false
-    # Carpmosia-start - Carp nuke
+    # Carpmosia-end - Carp nuke
   - type: Appearance
   - type: HolidayVisuals
     holidays:
@@ -38,7 +38,7 @@
       # Carpmosia-start - Carp nuke
       carpday:
       - CarpDay
-      # Carpmosia-start - Carp nuke
+      # Carpmosia-end - Carp nuke
   - type: GenericVisualizer
     visuals:
       enum.HolidayVisuals.Holiday:
@@ -49,7 +49,7 @@
         # Carpmosia-start - Carp nuke
         carpday:
           carpday: { visible: true }
-        # Carpmosia-start - Carp nuke
+        # Carpmosia-end - Carp nuke
       enum.NukeVisuals.Deployed:
         enum.NukeVisualLayers.Base:
           False: { state: nuclearbomb_base }
