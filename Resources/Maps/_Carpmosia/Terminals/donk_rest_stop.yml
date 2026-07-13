@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.2.1
   forkId: ""
   forkVersion: ""
-  time: 07/13/2026 14:19:10
-  entityCount: 2011
+  time: 07/13/2026 17:09:26
+  entityCount: 2009
 maps: []
 grids:
 - 1
@@ -1194,7 +1194,7 @@ entities:
       pos: 0.5,-23.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -33102.035
+      secondsUntilStateChange: -33691.75
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -5130,14 +5130,6 @@ entities:
       dnas: []
       fibers: []
       fingerprints: []
-- proto: DrinkMopwataBottleRandom
-  entities:
-  - uid: 780
-    components:
-    - type: Transform
-      parent: 779
-    - type: Physics
-      canCollide: False
 - proto: DrinkMugHeart
   entities:
   - uid: 781
@@ -5595,8 +5587,6 @@ entities:
       pos: 12.5,-32.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 13
       - 21
@@ -9487,8 +9477,6 @@ entities:
       pos: -8.5,-23.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 7
     - type: AtmosPipeColor
@@ -9792,8 +9780,6 @@ entities:
       pos: -4.5,-23.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 7
     - type: AtmosPipeColor
@@ -10487,9 +10473,6 @@ entities:
         1975:
         - - Output
           - DoorBolt
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: Physics
       canCollide: False
       bodyType: Static
@@ -10959,14 +10942,6 @@ entities:
     - type: Transform
       pos: 5.4923863,-26.273575
       parent: 1
-- proto: PonderingOrb
-  entities:
-  - uid: 1505
-    components:
-    - type: Transform
-      parent: 1504
-    - type: Physics
-      canCollide: False
 - proto: PosterContrabandAtmosiaDeclarationIndependence
   entities:
   - uid: 1506
@@ -12524,49 +12499,12 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -19.5,-19.5
       parent: 1
-    - type: ContainerContainer
-      containers:
-        stash: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: 780
-        DisposalUnitComponent: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        solutions: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-  - uid: 1504
+  - uid: 780
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -20.5,-17.5
       parent: 1
-    - type: DisposalUnit
-      nextAllowedInsertSound: 72088.1612452
-      container:
-        showEnts: False
-        occludes: True
-        ents:
-        - 1505
-      nextFlush: 72118.0612452
-    - type: ContainerContainer
-      containers:
-        stash: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        DisposalUnitComponent: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 1505
-        solutions: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
 - proto: TowelColorNT
   entities:
   - uid: 1745
@@ -13785,9 +13723,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 0.5,-26.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: DeviceLinkSink
       invokeCounter: 1
   - uid: 1976
