@@ -1,7 +1,7 @@
 - type: gameMap
   id: DonkRestStop
   isGrid: true
-  mapName: 'Donk Co. rest stop'
+  mapName: 'Donk Co. Rest Stop'
   mapPath: /Maps/_Carpmosia/Terminals/donk_rest_stop.yml
   minPlayers: 0
   stations:
@@ -9,7 +9,7 @@
       stationProto: NanotrasenCentralCommand
       components:
         - type: StationNameSetup
-          mapNameTemplate: '{0} Central Command {1}'
+          mapNameTemplate: '{0} Donk Co. Rest Stop {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: 'TG'
