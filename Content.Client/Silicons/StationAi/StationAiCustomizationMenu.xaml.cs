@@ -89,7 +89,7 @@ public sealed partial class StationAiCustomizationMenu : FancyWindow
         }
     }
 
-    private sealed class StationAiCustomizationEntryContainer : BoxContainer
+    private sealed partial class StationAiCustomizationEntryContainer : BoxContainer // Carpmosia-edit - Better AI Hologram preview
     {
         public ProtoId<StationAiCustomizationPrototype> ProtoId;
         public Button SelectButton;
