@@ -689,10 +689,13 @@ namespace Content.Server.GameTicking
                 ReqWindowAttentionAll();
 
                 // Carpmosia-start - Automatic map vote
-                // There isn't really a better way to identify an already running map vote...
-                if (!_voteManager.ActiveVotes.Any(x => x.Title == Loc.GetString("ui-vote-map-title")))
+                if (_cfg.GetCVar(CCVars.GameLobbyAutoVote))
                 {
-                    _voteManager.CreateStandardVote(null, StandardVoteType.Map);
+                    // There isn't really a better way to identify an already running map vote...
+                    if (!_voteManager.ActiveVotes.Any(x => x.Title == Loc.GetString("ui-vote-map-title")))
+                    {
+                        _voteManager.CreateStandardVote(null, StandardVoteType.Map);
+                    }
                 }
                 // Carpmosia-end - Automatic map vote
             }
