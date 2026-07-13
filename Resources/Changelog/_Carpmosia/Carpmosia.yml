@@ -2184,6 +2184,9 @@
     type: Add
   - message: Lowered minimum operator requirement for war ops from 4 to 3
     type: Tweak
+  - message: Corpsman Medicine Bundle waiting time has been decreased from 20 minutes
+      to 18
+    type: Tweak
   id: 338
   time: '2026-07-08T23:52:19.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/452
@@ -2194,4 +2197,62 @@
   id: 339
   time: '2026-07-09T10:34:51.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/445
+- author: imatsoup
+  changes:
+  - message: Added Emergency Lasers, bulky old-gen laser carbines that cargo can buy
+      as a last-resort
+    type: Add
+  - message: Added the Emergency Laser crate to the cargo request computer under the
+      Armory category
+    type: Add
+  id: 340
+  time: '2026-07-10T22:40:59.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/474
+- author: Kingwawa-1
+  changes:
+  - message: Defibrillator cabinets now recharge defibrillators inside them.
+    type: Add
+  id: 341
+  time: '2026-07-10T22:50:05.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/470
+- author: imatsoup
+  changes:
+  - message: It is now considered a moderate crime to possess unauthorized weaponry
+      (including explosives)
+    type: Tweak
+  id: 342
+  time: '2026-07-10T22:52:27.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/459
+- author: Atakku
+  changes:
+  - message: Diagonal walls and window sprites have been drastically improved.
+    type: Tweak
+  id: 343
+  time: '2026-07-10T23:11:24.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/478
+- author: Saver310
+  changes:
+  - message: Added Ace Deathshead metaplush
+    type: Add
+  id: 344
+  time: '2026-07-10T23:42:04.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/435
+- author: Atakku
+  changes:
+  - message: Added a reagent grinder and biogenerator to Botany on Lampocteis
+    type: Tweak
+  - message: Added a reagent grinder to Kitchen on Lampocteis
+    type: Tweak
+  - message: Added lawyer spawners on Lampocteis
+    type: Tweak
+  id: 345
+  time: '2026-07-13T17:04:46.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/489
+- author: Atakku
+  changes:
+  - message: Added "Dragon Attack" lobby art.
+    type: Add
+  id: 346
+  time: '2026-07-13T17:10:32.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/488
 Order: -1

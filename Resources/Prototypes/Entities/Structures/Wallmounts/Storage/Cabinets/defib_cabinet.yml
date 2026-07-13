@@ -38,6 +38,15 @@
       - !type:PlaySoundBehavior
         sound:
           collection: MetalGlassBreak
+  # Carpmosia-start - Defib Rechargers
+  - type: Charger
+    slotId: ItemCabinet
+  - type: ApcPowerReceiver
+    powerLoad: 1
+  - type: ExtensionCableReceiver
+  - type: LightningTarget
+    priority: 1
+  # Carpmosia-end - Defib Rechargers
 
 - type: entity
   parent: DefibrillatorCabinet

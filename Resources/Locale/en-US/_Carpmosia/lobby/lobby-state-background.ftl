@@ -10,5 +10,8 @@ lobby-state-background-drunkardsspree-artist = Saver310
 lobby-state-background-thefirstwave-title = The First Wave
 lobby-state-background-thefirstwave-artist = UBlueberry
 
+lobby-state-background-dragonattack-title = Dragon Attack
+lobby-state-background-dragonattack-artist = inari6666
+
 lobby-state-background-chitters-title = *chitters*
 lobby-state-background-chitters-artist = Lunarr

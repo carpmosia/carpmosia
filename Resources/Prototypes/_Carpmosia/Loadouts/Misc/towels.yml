@@ -93,8 +93,7 @@
   id: TowelColorMime
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:OverallPlaytimeRequirement
+    requirement: !type:OverallPlaytimeRequirement
       time: 25h
   storage:
     back:
@@ -105,8 +104,7 @@
   id: TowelColorSilver
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:OverallPlaytimeRequirement
+    requirement: !type:OverallPlaytimeRequirement
       time: 50h
   storage:
     back:
@@ -117,8 +115,7 @@
   id: TowelColorGold
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:OverallPlaytimeRequirement
+    requirement: !type:OverallPlaytimeRequirement
       time: 100h
   storage:
     back:

@@ -11,8 +11,8 @@
   artist: lobby-state-background-medbayredalert-artist
 
 - type: lobbyBackground
-  id: Drunkards
-  background: /Textures/_Carpmosia/LobbyScreens/DrunkardsSpree.png
+  id: DrunkardsSpree
+  background: /Textures/_Carpmosia/LobbyScreens/DrunkardsSpree.webp
   title: lobby-state-background-drunkardsspree-title
   artist: lobby-state-background-drunkardsspree-artist
 
@@ -27,3 +27,9 @@
   background: /Textures/_Carpmosia/LobbyScreens/Chitters.png
   title: lobby-state-background-chitters-title
   artist: lobby-state-background-chitters-artist
+
+- type: lobbyBackground
+  id: DragonAttack
+  background: /Textures/_Carpmosia/LobbyScreens/DragonAttack.webp
+  title: lobby-state-background-dragonattack-title
+  artist: lobby-state-background-dragonattack-artist
