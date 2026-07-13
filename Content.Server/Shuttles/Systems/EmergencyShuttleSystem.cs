@@ -9,7 +9,7 @@ using Content.Server.Communications;
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Events;
-using Content.Server.Maps;
+using Content.Server.Maps; // Carpmosia-edit - Replaced CC with Terminals
 using Content.Server.Pinpointer;
 using Content.Server.RoundEnd;
 using Content.Server.Screens.Components;
@@ -24,7 +24,7 @@ using Content.Shared.DeviceNetwork;
 using Content.Shared.DeviceNetwork.Components;
 using Content.Shared.GameTicking;
 using Content.Shared.Localizations;
-using Content.Shared.Maps;
+using Content.Shared.Maps; // Carpmosia-edit - Replaced CC with Terminals
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Events;
 using Content.Shared.Shuttles.Systems;
@@ -69,7 +69,7 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
     [Dependency] private StationSystem _station = default!;
     [Dependency] private TransformSystem _transformSystem = default!;
     [Dependency] private UserInterfaceSystem _uiSystem = default!;
-    [Dependency] private IPrototypeManager _protoMan = default!;
+    [Dependency] private IPrototypeManager _protoMan = default!; // Carpmosia-edit - Replaced CC with Terminals
 
     private const float ShuttleSpawnBuffer = 1f;
 
