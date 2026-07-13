@@ -12,3 +12,6 @@ lobby-state-background-thefirstwave-artist = UBlueberry
 
 lobby-state-background-dragonattack-title = Dragon Attack
 lobby-state-background-dragonattack-artist = inari6666
+
+lobby-state-background-runninglate-title = Running Late
+lobby-state-background-runninglate-artist = Saver310
