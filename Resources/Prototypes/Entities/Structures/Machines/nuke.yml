@@ -7,7 +7,7 @@
   - type: Transform
     anchored: true
   - type: Sprite
-    sprite: _Carpmosia/Objects/Devices/nuke.rsi # Carpmosia-edit - carpnuke
+    sprite: Objects/Devices/nuke.rsi
     noRot: true
     layers:
     - state: nuclearbomb_base
@@ -24,7 +24,8 @@
       visible: false
     # Carpmosia-start - carpnuke
     - state: carpnuke
-      map: ["carpnuke"]
+      sprite: _Carpmosia/Objects/Devices/nuke.rsi
+      map: ["carpday"]
       visible: false
     # Carpmosia-start - carpnuke
   - type: Appearance
@@ -47,7 +48,7 @@
           pride: { visible: true }
         # Carpmosia-start - carpnuke
         carpday:
-          carpnuke: { visible: true }
+          carpday: { visible: true }
         # Carpmosia-start - carpnuke
       enum.NukeVisuals.Deployed:
         enum.NukeVisualLayers.Base:
