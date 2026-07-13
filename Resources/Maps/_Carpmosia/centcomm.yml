@@ -4,7 +4,7 @@ meta:
   engineVersion: 277.2.1
   forkId: ""
   forkVersion: ""
-  time: 07/13/2026 00:04:42
+  time: 07/13/2026 16:02:15
   entityCount: 524
 maps: []
 grids:
@@ -55,7 +55,7 @@ entities:
     - type: MetaData
       name: Central Command
     - type: Transform
-      pos: 120,120
+      pos: 0,0
       parent: invalid
     - type: MapGrid
       chunks:
@@ -1251,6 +1251,7 @@ entities:
     - type: Transform
       pos: -0.5,-0.5
       parent: 1
+    - type: StationAnchor
 - proto: DefibrillatorCabinetFilled
   entities:
   - uid: 201
