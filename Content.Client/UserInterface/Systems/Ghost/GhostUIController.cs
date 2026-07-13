@@ -1,8 +1,10 @@
 ﻿using Content.Client.Gameplay;
 using Content.Client.Ghost;
+using Content.Client.Lobby;
 using Content.Client.UserInterface.Systems.Gameplay;
 using Content.Client.UserInterface.Systems.Ghost.Widgets;
 using Content.Shared.Ghost;
+using Robust.Client.State;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
 
@@ -12,6 +14,7 @@ namespace Content.Client.UserInterface.Systems.Ghost;
 public sealed partial class GhostUIController : UIController, IOnSystemChanged<GhostSystem>
 {
     [Dependency] private IEntityNetworkManager _net = default!;
+    [Dependency] private IStateManager _state = default!;
 
     [UISystemDependency] private readonly GhostSystem? _system = default;
 
@@ -44,6 +47,7 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         system.PlayerDetached += OnPlayerDetached;
         system.GhostWarpsResponse += OnWarpsResponse;
         system.GhostRoleCountUpdated += OnRoleCountUpdated;
+        system.RoundEndMessage += OnRoundEndMessage; // Carpmosia-edit - Return to lobby
     }
 
     public void OnSystemUnloaded(GhostSystem system)
@@ -54,6 +58,7 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         system.PlayerDetached -= OnPlayerDetached;
         system.GhostWarpsResponse -= OnWarpsResponse;
         system.GhostRoleCountUpdated -= OnRoleCountUpdated;
+        system.RoundEndMessage -= OnRoundEndMessage; // Carpmosia-edit - Return to lobby
     }
 
     public void UpdateGui()
@@ -64,7 +69,7 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         }
 
         Gui.Visible = _system?.IsGhost ?? false;
-        Gui.Update(_system?.AvailableGhostRoleCount, _system?.Player?.CanReturnToBody);
+        Gui.Update(_system?.AvailableGhostRoleCount, _system?.Player?.CanReturnToBody, _state.CurrentState is LobbyState); // Carpmosia-edit - Return to lobby
     }
 
     private void OnPlayerRemoved(GhostComponent component)
@@ -155,6 +160,11 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
     private void ReturnToLobby()
     {
         _system?.ReturnToLobby();
+    }
+
+    private void OnRoundEndMessage()
+    {
+        UpdateGui();
     }
     // Carpmosia-ebd - Return to lobby
 

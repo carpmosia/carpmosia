@@ -38,9 +38,10 @@ public sealed partial class GhostGui : UIWidget
         Visible = false;
     }
 
-    public void Update(int? roles, bool? canReturnToBody)
+    public void Update(int? roles, bool? canReturnToBody, bool? canReturnToLobby) // Carpmosia-edit - Return to lobby
     {
         ReturnToBodyButton.Disabled = !canReturnToBody ?? true;
+        ReturnToLobbyButton.Disabled = !canReturnToLobby ?? true; // Carpmosia-edit - Return to lobby
 
         if (roles != null)
         {

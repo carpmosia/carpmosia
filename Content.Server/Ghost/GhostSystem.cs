@@ -276,7 +276,8 @@ namespace Content.Server.Ghost
         // Carpmosia-start - Return to lobby
         private void OnGhostReturnToLobbyRequest(GhostReturnToLobbyRequest msg, EntitySessionEventArgs args)
         {
-            if (args.SenderSession.AttachedEntity is not {Valid: true} attached
+            if (_gameTicker.RunLevel != GameRunLevel.PostRound
+                || args.SenderSession.AttachedEntity is not {Valid: true} attached
                 || !TryComp(attached, out ActorComponent? actor))
             {
                 Log.Warning($"User {args.SenderSession.Name} sent an invalid {nameof(GhostReturnToLobbyRequest)}");

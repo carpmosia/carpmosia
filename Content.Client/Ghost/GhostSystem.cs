@@ -1,5 +1,6 @@
 using Content.Client.Movement.Systems;
 using Content.Shared.Actions;
+using Content.Shared.GameTicking; // Carpmosia-edit - Return to lobby
 using Content.Shared.Ghost;
 using Robust.Client.Console;
 using Robust.Client.GameObjects;
@@ -50,6 +51,7 @@ namespace Content.Client.Ghost
         public event Action? PlayerDetached;
         public event Action<GhostWarpsResponseEvent>? GhostWarpsResponse;
         public event Action<GhostUpdateGhostRoleCountEvent>? GhostRoleCountUpdated;
+        public event Action? RoundEndMessage;
 
         public override void Initialize()
         {
@@ -64,6 +66,7 @@ namespace Content.Client.Ghost
 
             SubscribeNetworkEvent<GhostWarpsResponseEvent>(OnGhostWarpsResponse);
             SubscribeNetworkEvent<GhostUpdateGhostRoleCountEvent>(OnUpdateGhostRoleCount);
+            SubscribeNetworkEvent<RoundEndMessageEvent>(OnRoundEndMessage);
 
             SubscribeLocalEvent<EyeComponent, ToggleLightingActionEvent>(OnToggleLighting);
             SubscribeLocalEvent<EyeComponent, ToggleFoVActionEvent>(OnToggleFoV);
@@ -197,6 +200,11 @@ namespace Content.Client.Ghost
         {
             var msg = new GhostReturnToLobbyRequest();
             RaiseNetworkEvent(msg);
+        }
+
+        public void OnRoundEndMessage(RoundEndMessageEvent _)
+        {
+            RoundEndMessage?.Invoke();
         }
         // Carpmosia-end - Return to lobby
 
