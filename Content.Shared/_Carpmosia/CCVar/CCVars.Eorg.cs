@@ -5,12 +5,6 @@ namespace Content.Shared.CCVar;
 public sealed partial class CCVars
 {
     /// <summary>
-    ///     Swaps the emotes menu with an alternative menu
-    /// </summary>
-    public static readonly CVarDef<bool> AltEmotesMenu =
-        CVarDef.Create("hud.alt_emotes_menu", false, CVar.CLIENTONLY | CVar.ARCHIVE);
-
-    /// <summary>
     /// Whether the no EORG popup is enabled.
     /// </summary>
     public static readonly CVarDef<bool> EorgPopupEnabled =
@@ -27,10 +21,4 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<float> EorgPopupTime =
         CVarDef.Create("game.eorg_popup_time", 5f, CVar.SERVER | CVar.REPLICATED);
-
-    /// <summary>
-    /// Whenever new player join alerts should be sent to admin chat in Discord
-    /// </summary>
-    public static readonly CVarDef<bool> AdminChatAlertNewjoin =
-        CVarDef.Create("admin.chat_alert_newjoin", true, CVar.SERVERONLY);
 }
