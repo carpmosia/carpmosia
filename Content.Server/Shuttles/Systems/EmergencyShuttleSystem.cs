@@ -530,7 +530,7 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
         }
 
         // Carpmosia-start - Replaced CC with Terminals
-        var poolProtoId = ConfigManager.GetCVar(CCVars.GameMapPool);
+        var poolProtoId = ConfigManager.GetCVar(CCVars.GameMapPoolTerminal);
         if (!_protoMan.TryIndex<GameMapPoolPrototype>(poolProtoId, out var poolProto))
         {
             Log.Error($"Failed to set up terminal grid!");
