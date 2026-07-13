@@ -95,6 +95,8 @@ public sealed partial class StationAiCustomizationMenu : FancyWindow
         public Button SelectButton;
 
         // Carpmosia-start - Better AI Hologram preview
+        [Dependency] private IPrototypeManager _protoManager = default!;
+
         private static readonly ProtoId<ShaderPrototype> HologramShader = "Hologram";
         private static readonly Vector3 ShaderColor1;
         private static readonly Vector3 ShaderColor2;
@@ -186,8 +188,7 @@ public sealed partial class StationAiCustomizationMenu : FancyWindow
             // Carpmosia-start - Better AI Hologram preview
             if (prototype.PreviewKey == "Hologram")
             {
-                var prototypes = IoCManager.Resolve<IPrototypeManager>();
-                var instance = prototypes.Index(HologramShader).InstanceUnique();
+                var instance = _protoManager.Index(HologramShader).InstanceUnique();
                 instance.SetParameter("color1", ShaderColor1);
                 instance.SetParameter("color2", ShaderColor2);
                 instance.SetParameter("alpha", 0.9f);
