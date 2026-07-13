@@ -698,9 +698,9 @@
   name: riveted wall
   components:
   - type: Sprite
-    sprite: Structures/Walls/riveted.rsi
+    sprite: _Carpmosia/Structures/Walls/riveted.rsi # Carpmosia-edit - Wall resprite
   - type: Icon
-    sprite: Structures/Walls/riveted.rsi
+    sprite: _Carpmosia/Structures/Walls/riveted.rsi # Carpmosia-edit - Wall resprite
   - type: Damageable
     damageModifierSet: StructuralMetallicStrong
   - type: Injurable
@@ -719,8 +719,8 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: IconSmooth
-    key: walls
-    base: riveted
+    key: basic_wall # Carpmosia-edit - Wall resprite
+    base: full # Carpmosia-edit - Wall resprite
   - type: StaticPrice
     price: 150
 
