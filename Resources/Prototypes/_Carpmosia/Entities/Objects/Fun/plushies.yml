@@ -172,15 +172,15 @@
         type: NetworkConfiguratorBoundUserInterface
   - type: NetworkConfigurator
   - type: EmitSoundOnLand
-    sound: &PlushieMothSqueak
+    sound: &PlushieMothSqueakLanka
       path: /Audio/Voice/Moth/moth_squeak.ogg
   - type: EmitSoundOnCollide
-    sound: &PlushieMothScream
+    sound: &PlushieMothScreamLanka
       path: /Audio/Voice/Moth/moth_scream.ogg
   - type: MeleeWeapon
-    soundHit: *PlushieMothScream
+    soundHit: *PlushieMothScreamLanka
   - type: Edible
-    useSound: *PlushieMothScream
+    useSound: *PlushieMothScreamLanka
 
 - type: entity
   parent: PlushieMoth
@@ -197,3 +197,35 @@
     timeToMix: 0.5
     reactionTypes:
     - Stir
+
+- type: entity
+  parent: PlushieMoth
+  id: PlushieMothFirewalker
+  name: atmosian moth plushie
+  description: A fluffy plushie resembling a certain atmosian. Smells of frezon.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Fun/Plushies/firewalker.rsi
+  - type: Clothing
+    sprite: _Carpmosia/Objects/Fun/Plushies/firewalker.rsi
+  - type: GasAnalyzer
+  - type: ActivatableUI
+    inHandsOnly: true
+    singleUser: true
+    requireActiveHand: false
+    key: enum.GasAnalyzerUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.GasAnalyzerUiKey.Key:
+        type: GasAnalyzerBoundUserInterface
+  - type: EmitSoundOnLand
+    sound: &PlushieMothSqueakFirewalker
+      path: /Audio/Voice/Moth/moth_squeak.ogg
+  - type: EmitSoundOnCollide
+    sound: &PlushieMothScreamFirewalker
+      path: /Audio/Voice/Moth/moth_scream.ogg
+  - type: MeleeWeapon
+    soundHit: *PlushieMothScreamFirewalker
+  - type: Edible
+    useSound: *PlushieMothScreamFirewalker
+
