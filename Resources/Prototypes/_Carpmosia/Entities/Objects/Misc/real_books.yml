@@ -275,7 +275,7 @@
 
 - type: entity
   parent: BookBase
-  id: BookRomanceOfTheThreeKingdoms 
+  id: BookRomanceOfTheThreeKingdoms
   name: "romance of the three kingdoms by luo guanzhong"
   description: Gets good after the first 100 chapters.
   components:
@@ -286,7 +286,7 @@
       color: red
     - state: icon_time
   - type: Paper
-    content: book-text-romance-of-the-three-kingdoms 
+    content: book-text-romance-of-the-three-kingdoms
 
 - type: entity
   parent: BookBase

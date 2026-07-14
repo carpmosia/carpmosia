@@ -1239,13 +1239,12 @@ book-text-jigokuhen =
 
     The night after he completed his painting, he threw a rope over a beam in his room and hanged himself. Perhaps Yoshihide, who had survived his beloved daughter’s untimely death, could not bear the idea of surviving her absence for long. His body is buried under the ruins of his house. After scores of years, wind and rain have worn down the small tombstone, and moss has covered the barrow, erasing all trace of his grave.
 
-# this is where i stopped, i will come back to this and review more
 book-text-hung-lou-meng =
     CHAPTER I.
 
-      Chen Shih-yin, in a vision, apprehends perception and spirituality.
-      Chia Yue-ts'un, in the (windy and dusty) world, cherishes fond thoughts
-          of a beautiful maiden.
+        Chen Shih-yin, in a vision, apprehends perception and spirituality.
+        Chia Yue-ts'un, in the (windy and dusty) world, cherishes fond thoughts
+            of a beautiful maiden.
 
     This is the opening section; this the first chapter. Subsequent to the visions of a dream which he had, on some previous occasion, experienced, the writer personally relates, he designedly concealed the true circumstances, and borrowed the attributes of perception and spirituality to relate this story of the Record of the Stone. With this purpose, he made use of such designations as Chen Shih-yin (truth under the garb of fiction) and the like. What are, however, the events recorded in this work? Who are the dramatis personae?
 
@@ -1277,10 +1276,10 @@ book-text-hung-lou-meng =
 
     On the obverse, were also the following enigmatical verses:
 
-      Lacking in virtues meet the azure skies to mend,
-      In vain the mortal world full many a year I wend,
-      Of a former and after life these facts that be,
-      Who will for a tradition strange record for me?
+        Lacking in virtues meet the azure skies to mend,
+        In vain the mortal world full many a year I wend,
+        Of a former and after life these facts that be,
+        Who will for a tradition strange record for me?
 
     K'ung K'ung, the Taoist, having pondered over these lines for a while, became aware that this stone had a history of some kind.
 
@@ -1302,10 +1301,10 @@ book-text-hung-lou-meng =
 
     Hence it was that K'ung K'ung, the Taoist, in consequence of his perception, (in his state of) abstraction, of passion, the generation, from this passion, of voluptuousness, the transmission of this voluptuousness into passion, and the apprehension, by means of passion, of its unreality, forthwith altered his name for that of "Ch'ing Tseng" (the Voluptuous Bonze), and changed the title of "the Memoir of a Stone" (Shih-t'ou-chi,) for that of "Ch'ing Tseng Lu," The Record of the Voluptuous Bonze; while K'ung Mei-chi of Tung Lu gave it the name of "Feng Yueeh Pao Chien," "The Precious Mirror of Voluptuousness." In later years, owing to the devotion by Tsao Hsueeh-ch'in in the Tao Hung study, of ten years to the perusal and revision of the work, the additions and modifications effected by him five times, the affix of an index and the division into periods and chapters, the book was again entitled "Chin Ling Shih Erh Ch'ai," "The Twelve Maidens of Chin Ling." A stanza was furthermore composed for the purpose. This then, and no other, is the origin of the Record of the Stone. The poet says appositely:—
 
-      Pages full of silly litter,
-      Tears a handful sour and bitter;
-      All a fool the author hold,
-      But their zest who can unfold?
+        Pages full of silly litter,
+        Tears a handful sour and bitter;
+        All a fool the author hold,
+        But their zest who can unfold?
 
     You have now understood the causes which brought about the Record of the Stone, but as you are not, as yet, aware what characters are depicted, and what circumstances are related on the surface of the block, reader, please lend an ear to the narrative on the stone, which runs as follows:—
 
@@ -1343,8 +1342,8 @@ book-text-hung-lou-meng =
 
     "We have already reached," he exclaimed, "the confines of vision." Snatching it violently out of his hands, he walked away with the Taoist, under a lofty stone portal, on the face of which appeared in large type the four characters: "T'ai Hsue Huan Ching," "The Visionary limits of the Great Void." On each side was a scroll with the lines:
 
-      When falsehood stands for truth, truth likewise becomes false,
-      Where naught be made to aught, aught changes into naught.
+        When falsehood stands for truth, truth likewise becomes false,
+        Where naught be made to aught, aught changes into naught.
 
     Shih-yin meant also to follow them on the other side, but, as he was about to make one step forward, he suddenly heard a crash, just as if the mountains had fallen into ruins, and the earth sunk into destruction. As Shih-yin uttered a loud shout, he looked with strained eye; but all he could see was the fiery sun shining, with glowing rays, while the banana leaves drooped their heads. By that time, half of the circumstances connected with the dream he had had, had already slipped from his memory.
 
@@ -1371,10 +1370,10 @@ book-text-hung-lou-meng =
 
     He then gave utterance to the four lines that follow:
 
-      You indulge your tender daughter and are laughed at as inane;
-      Vain you face the snow, oh mirror! for it will evanescent wane,
-      When the festival of lanterns is gone by, guard 'gainst your doom,
-      'Tis what time the flames will kindle, and the fire will consume.
+        You indulge your tender daughter and are laughed at as inane;
+        Vain you face the snow, oh mirror! for it will evanescent wane,
+        When the festival of lanterns is gone by, guard 'gainst your doom,
+        'Tis what time the flames will kindle, and the fire will consume.
 
     Shih-yin understood distinctly the full import of what he heard; but his heart was still full of conjectures. He was about to inquire who and what they were, when he heard the Taoist remark,—"You and I cannot speed together; let us now part company, and each of us will be then able to go after his own business. After the lapse of three ages, I shall be at the Pei Mang mount, waiting for you; and we can, after our reunion, betake ourselves to the Visionary Confines of the Great Void, there to cancel the name of the stone from the records."
 
@@ -1410,19 +1409,19 @@ book-text-hung-lou-meng =
 
     The fact is that Yue-ts'un, ever since the day on which he had seen the girl of the Chen family turn twice round to glance at him, flattered himself that she was friendly disposed towards him, and incessantly fostered fond thoughts of her in his heart. And on this day, which happened to be the mid-autumn feast, he could not, as he gazed at the moon, refrain from cherishing her remembrance. Hence it was that he gave vent to these pentameter verses:
 
-      Alas! not yet divined my lifelong wish,
-      And anguish ceaseless comes upon anguish
-      I came, and sad at heart, my brow I frowned;
-      She went, and oft her head to look turned round.
-      Facing the breeze, her shadow she doth watch,
-      Who's meet this moonlight night with her to match?
-      The lustrous rays if they my wish but read
-      Would soon alight upon her beauteous head!
+        Alas! not yet divined my lifelong wish,
+        And anguish ceaseless comes upon anguish
+        I came, and sad at heart, my brow I frowned;
+        She went, and oft her head to look turned round.
+        Facing the breeze, her shadow she doth watch,
+        Who's meet this moonlight night with her to match?
+        The lustrous rays if they my wish but read
+        Would soon alight upon her beauteous head!
 
     Yue-ts'un having, after this recitation, recalled again to mind how that throughout his lifetime his literary attainments had had an adverse fate and not met with an opportunity (of reaping distinction), went on to rub his brow, and as he raised his eyes to the skies, he heaved a deep sigh and once more intoned a couplet aloud:
 
-      The gem in the cask a high price it seeks,
-      The pin in the case to take wing it waits.
+        The gem in the cask a high price it seeks,
+        The pin in the case to take wing it waits.
 
     As luck would have it, Shih-yin was at the moment approaching, and upon hearing the lines, he said with a smile: "My dear Yue-ts'un, really your attainments are of no ordinary capacity."
 
@@ -1438,10 +1437,10 @@ book-text-hung-lou-meng =
 
     Yue-ts'un, at this stage of the collation, was considerably under the influence of wine, and the vehemence of his high spirits was irrepressible. As he gazed at the moon, he fostered thoughts, to which he gave vent by the recital of a double couplet.
 
-      'Tis what time three meets five, Selene is a globe!
-      Her pure rays fill the court, the jadelike rails enrobe!
-      Lo! in the heavens her disk to view doth now arise,
-      And in the earth below to gaze men lift their eyes.
+        'Tis what time three meets five, Selene is a globe!
+        Her pure rays fill the court, the jadelike rails enrobe!
+        Lo! in the heavens her disk to view doth now arise,
+        And in the earth below to gaze men lift their eyes.
 
     "Excellent!" cried Shih-yin with a loud voice, after he had heard these lines; "I have repeatedly maintained that it was impossible for you to remain long inferior to any, and now the verses you have recited are a prognostic of your rapid advancement. Already it is evident that, before long, you will extend your footsteps far above the clouds! I must congratulate you! I must congratulate you! Let me, with my own hands, pour a glass of wine to pay you my compliments."
 
@@ -1491,22 +1490,22 @@ book-text-hung-lou-meng =
 
     Strange coincidence, as he, on this day, came leaning on his staff and with considerable strain, as far as the street for a little relaxation, he suddenly caught sight, approaching from the off side, of a Taoist priest with a crippled foot; his maniac appearance so repulsive, his shoes of straw, his dress all in tatters, muttering several sentiments to this effect:
 
-      All men spiritual life know to be good,
-      But fame to disregard they ne'er succeed!
-      From old till now the statesmen where are they?
-      Waste lie their graves, a heap of grass, extinct.
-      All men spiritual life know to be good,
-      But to forget gold, silver, ill succeed!
-      Through life they grudge their hoardings to be scant,
-      And when plenty has come, their eyelids close.
-      All men spiritual life hold to be good,
-      Yet to forget wives, maids, they ne'er succeed!
-      Who speak of grateful love while lives their lord,
-      And dead their lord, another they pursue.
-      All men spiritual life know to be good,
-      But sons and grandsons to forget never succeed!
-      From old till now of parents soft many,
-      But filial sons and grandsons who have seen?
+        All men spiritual life know to be good,
+        But fame to disregard they ne'er succeed!
+        From old till now the statesmen where are they?
+        Waste lie their graves, a heap of grass, extinct.
+        All men spiritual life know to be good,
+        But to forget gold, silver, ill succeed!
+        Through life they grudge their hoardings to be scant,
+        And when plenty has come, their eyelids close.
+        All men spiritual life hold to be good,
+        Yet to forget wives, maids, they ne'er succeed!
+        Who speak of grateful love while lives their lord,
+        And dead their lord, another they pursue.
+        All men spiritual life know to be good,
+        But sons and grandsons to forget never succeed!
+        From old till now of parents soft many,
+        But filial sons and grandsons who have seen?
 
     Shih-yin upon hearing these words, hastily came up to the priest, "What were you so glibly holding forth?" he inquired. "All I could hear were a lot of hao liao (excellent, finality.")
 
@@ -1518,34 +1517,34 @@ book-text-hung-lou-meng =
 
     "Please by all means go on with the interpretation," urged the Taoist; whereupon Shih-yin proceeded in this strain:
 
-      Sordid rooms and vacant courts,
-      Replete in years gone by with beds where statesmen lay;
-      Parched grass and withered banian trees,
-      Where once were halls for song and dance!
-      Spiders' webs the carved pillars intertwine,
-      The green gauze now is also pasted on the straw windows!
-      What about the cosmetic fresh concocted or the powder just scented;
-      Why has the hair too on each temple become white like hoarfrost!
-      Yesterday the tumulus of yellow earth buried the bleached bones,
-      To-night under the red silk curtain reclines the couple!
-      Gold fills the coffers, silver fills the boxes,
-      But in a twinkle, the beggars will all abuse you!
-      While you deplore that the life of others is not long,
-      You forget that you yourself are approaching death!
-      You educate your sons with all propriety,
-      But they may some day, 'tis hard to say become thieves;
-      Though you choose (your fare and home) the fatted beam,
-      You may, who can say, fall into some place of easy virtue!
-      Through your dislike of the gauze hat as mean,
-      You have come to be locked in a cangue;
-      Yesterday, poor fellow, you felt cold in a tattered coat,
-      To-day, you despise the purple embroidered dress as long!
-      Confusion reigns far and wide! you have just sung your part, I come on
-          the boards,
-      Instead of yours, you recognise another as your native land;
-      What utter perversion!
-      In one word, it comes to this we make wedding clothes for others!
-      (We sow for others to reap.)
+        Sordid rooms and vacant courts,
+        Replete in years gone by with beds where statesmen lay;
+        Parched grass and withered banian trees,
+        Where once were halls for song and dance!
+        Spiders' webs the carved pillars intertwine,
+        The green gauze now is also pasted on the straw windows!
+        What about the cosmetic fresh concocted or the powder just scented;
+        Why has the hair too on each temple become white like hoarfrost!
+        Yesterday the tumulus of yellow earth buried the bleached bones,
+        To-night under the red silk curtain reclines the couple!
+        Gold fills the coffers, silver fills the boxes,
+        But in a twinkle, the beggars will all abuse you!
+        While you deplore that the life of others is not long,
+        You forget that you yourself are approaching death!
+        You educate your sons with all propriety,
+        But they may some day, 'tis hard to say become thieves;
+        Though you choose (your fare and home) the fatted beam,
+        You may, who can say, fall into some place of easy virtue!
+        Through your dislike of the gauze hat as mean,
+        You have come to be locked in a cangue;
+        Yesterday, poor fellow, you felt cold in a tattered coat,
+        To-day, you despise the purple embroidered dress as long!
+        Confusion reigns far and wide! you have just sung your part, I come on
+            the boards,
+        Instead of yours, you recognise another as your native land;
+        What utter perversion!
+        In one word, it comes to this we make wedding clothes for others!
+        (We sow for others to reap.)
 
     The crazy limping Taoist clapped his hands. "Your interpretation is explicit," he remarked with a hearty laugh, "your interpretation is explicit!"
 
@@ -1569,7 +1568,10 @@ book-text-hung-lou-meng =
 
     What calamity was impending is not as yet ascertained, but, reader, listen to the explanation contained in the next chapter.
 
-book-text-demian =  CHAPTER ONE TWO WORLDS
+book-text-demian =
+    CHAPTER ONE
+    TWO WORLDS
+
     I will begin my story with an event of the time when I was ten or eleven years old and went to the Latin school of our little town. Much of the old-time fragrance is wafted back to me, but my sensations are not unmixed, as I pass in review my memories—dark streets and bright houses and towers, the striking of clocks and the features of men, comfortable and homely rooms, rooms full of secrecy and dread of ghosts. I sense again the atmosphere of cosy warmth, of rabbits and servant-girls, of household remedies and dried fruit. Two worlds passed there one through the other. From two poles came forth day and night.
 
     The one world was my home, but it was even narrower than that, for it really comprised only my parents. This world was for the most part very well known to me; it meant mother and father, love and severity, good example and school. It was a world of subdued lustre, of clarity and cleanliness; here were tender friendly words, washed hands, clean clothes and good manners. Here the morning hymn was sung, and Christmas was kept.
@@ -1755,7 +1757,10 @@ book-text-demian =  CHAPTER ONE TWO WORLDS
 
     My state at that time was a sort of insanity. I was shy and lived in torment like a ghost in the midst of the well-ordered peace of our house. I had no part in the others’ lives, and could seldom, even for as much as an hour, forget my miserable existence. In the presence of my father, who often took me to task in an irritated fashion, I was reserved and wrapped up in myself.
 
-book-text-odyssey = BOOK I THE GODS IN COUNCIL—MINERVA’S VISIT TO ITHACA—THE CHALLENGE FROM TELEMACHUS TO THE SUITORS.
+book-text-odyssey =
+    BOOK I.
+    THE GODS IN COUNCIL - MINERVA’S VISIT TO ITHACA - THE CHALLENGE FROM TELEMACHUS TO THE SUITORS.
+
     Tell me, O Muse, of that ingenious hero who travelled far and wide after he had sacked the famous town of Troy. Many cities did he visit, and many were the nations with whose manners and customs he was acquainted; moreover he suffered much by sea while trying to save his own life and bring his men safely home; but do what he might he could not save his men, for they perished through their own sheer folly in eating the cattle of the Sun-god Hyperion; so the god prevented them from ever reaching home. Tell me, too, about all these things, oh daughter of Jove, from whatsoever source you may know them.
 
     So now all who escaped death in battle or by shipwreck had got safely home except Ulysses, and he, though he was longing to return to his wife and country, was detained by the goddess Calypso, who had got him into a large cave and wanted to marry him. But as years went by, there came a time when the gods settled that he should go back to Ithaca; even then, however, when he was among his own people, his troubles were not yet over; nevertheless all the gods had now begun to pity him except Neptune, who still persecuted him without ceasing and would not let him get home.
@@ -1820,7 +1825,9 @@ book-text-odyssey = BOOK I THE GODS IN COUNCIL—MINERVA’S VISIT TO ITHACA—T
 
     The suitors then returned to their singing and dancing until the evening; but when night fell upon their pleasuring they went home to bed each in his own abode.[12] Telemachus’s room was high up in a tower[13] that looked on to the outer court; hither, then, he hied, brooding and full of thought. A good old woman, Euryclea, daughter of Ops, the son of Pisenor, went before him with a couple of blazing torches. Laertes had bought her with his own money when she was quite young; he gave the worth of twenty oxen for her, and shewed as much respect to her in his household as he did to his own wedded wife, but he did not take her to his bed for he feared his wife’s resentment.[14] She it was who now lighted Telemachus to his room, and she loved him better than any of the other women in the house did, for she had nursed him when he was a baby. He opened the door of his bed room and sat down upon the bed; as he took off his shirt[15] he gave it to the good old woman, who folded it tidily up, and hung it for him over a peg by his bed side, after which she went out, pulled the door to by a silver catch, and drew the bolt home by means of the strap.[16] But Telemachus as he lay covered with a woollen fleece kept thinking all night through of his intended voyage and of the counsel that Minerva had given him.
 
-book-text-the-modern-prometheus = Chapter 1
+book-text-the-modern-prometheus =
+    Chapter I
+
     I am by birth a Genevese, and my family is one of the most distinguished of that republic. My ancestors had been for many years counsellors and syndics, and my father had filled several public situations with honour and reputation. He was respected by all who knew him for his integrity and indefatigable attention to public business. He passed his younger days perpetually occupied by the affairs of his country; a variety of circumstances had prevented his marrying early, nor was it until the decline of life that he became a husband and the father of a family.
 
     As the circumstances of his marriage illustrate his character, I cannot refrain from relating them. One of his most intimate friends was a merchant who, from a flourishing state, fell, through numerous mischances, into poverty. This man, whose name was Beaufort, was of a proud and unbending disposition and could not bear to live in poverty and oblivion in the same country where he had formerly been distinguished for his rank and magnificence. Having paid his debts, therefore, in the most honourable manner, he retreated with his daughter to the town of Lucerne, where he lived unknown and in wretchedness. My father loved Beaufort with the truest friendship and was deeply grieved by his retreat in these unfortunate circumstances. He bitterly deplored the false pride which led his friend to a conduct so little worthy of the affection that united them. He lost no time in endeavouring to seek him out, with the hope of persuading him to begin the world again through his credit and assistance.
@@ -1843,7 +1850,10 @@ book-text-the-modern-prometheus = Chapter 1
 
     Everyone loved Elizabeth. The passionate and almost reverential attachment with which all regarded her became, while I shared it, my pride and my delight. On the evening previous to her being brought to my home, my mother had said playfully, “I have a pretty present for my Victor—tomorrow he shall have it.” And when, on the morrow, she presented Elizabeth to me as her promised gift, I, with childish seriousness, interpreted her words literally and looked upon Elizabeth as mine—mine to protect, love, and cherish. All praises bestowed on her I received as made to a possession of my own. We called each other familiarly by the name of cousin. No word, no expression could body forth the kind of relation in which she stood to me—my more than sister, since till death she was to be mine only.
 
-book-text-romance-of-the-three-kingdoms = Chapter 1 : Three Heroes Swear Brotherhood In The Peach Garden; One Victory Shatters The Rebels In Battlegrounds.
+book-text-romance-of-the-three-kingdoms =
+    Chapter 1
+    Three Heroes Swear Brotherhood In The Peach Garden;
+    One Victory Shatters The Rebels In Battlegrounds.
 
     The world under heaven, after a long period of division, tends to unite; after a long period of union, tends to divide. This has been so since antiquity. When the rule of the Zhou Dynasty weakened, seven contending kingdoms sprang up, warring one with another until the kingdom of Qin prevailed and possessed the empire. But when Qin’s destiny had been fulfilled, arose two opposing kingdoms, Chu and Han, to fight for the mastery. And Han was the victor.
 
@@ -2086,12 +2096,15 @@ book-text-romance-of-the-three-kingdoms = Chapter 1 : Three Heroes Swear Brother
 
     Dong Zhuo’s fate will be unrolled in later chapters.
 
-book-text-treasure-island = I The Old Sea-dog at the “Admiral Benbow”
+book-text-treasure-island =
+    CHAPTER I
+    THE OLD SEA DOG AT THE "ADMIRAL BENBOW":
+
     Squire Trelawney, Dr. Livesey, and the rest of these gentlemen having asked me to write down the whole particulars about Treasure Island, from the beginning to the end, keeping nothing back but the bearings of the island, and that only because there is still treasure not yet lifted, I take up my pen in the year of grace 17—, and go back to the time when my father kept the Admiral Benbow inn and the brown old seaman with the sabre cut first took up his lodging under our roof.
 
     I remember him as if it were yesterday, as he came plodding to the inn door, his sea-chest following behind him in a hand-barrow—a tall, strong, heavy, nut-brown man, his tarry pigtail falling over the shoulder of his soiled blue coat, his hands ragged and scarred, with black, broken nails, and the sabre cut across one cheek, a dirty, livid white. I remember him looking round the cove and whistling to himself as he did so, and then breaking out in that old sea-song that he sang so often afterwards:
 
-    “Fifteen men on the dead man’s chest—
+        “Fifteen men on the dead man’s chest—
         Yo-ho-ho, and a bottle of rum!”
 
     in the high, old tottering voice that seemed to have been tuned and broken at the capstan bars. Then he rapped on the door with a bit of stick like a handspike that he carried, and when my father appeared, called roughly for a glass of rum. This, when it was brought to him, he drank slowly, like a connoisseur, lingering on the taste and still looking about him at the cliffs and up at our signboard.
@@ -2118,10 +2131,10 @@ book-text-treasure-island = I The Old Sea-dog at the “Admiral Benbow”
 
     He was only once crossed, and that was towards the end, when my poor father was far gone in a decline that took him off. Dr. Livesey came late one afternoon to see the patient, took a bit of dinner from my mother, and went into the parlour to smoke a pipe until his horse should come down from the hamlet, for we had no stabling at the old Benbow. I followed him in, and I remember observing the contrast the neat, bright doctor, with his powder as white as snow and his bright, black eyes and pleasant manners, made with the coltish country folk, and above all, with that filthy, heavy, bleared scarecrow of a pirate of ours, sitting, far gone in rum, with his arms on the table. Suddenly he—the captain, that is—began to pipe up his eternal song:
 
-    “Fifteen men on the dead man’s chest—
-        Yo-ho-ho, and a bottle of rum!
-    Drink and the devil had done for the rest—
-        Yo-ho-ho, and a bottle of rum!”
+        “Fifteen men on the dead man’s chest—
+            Yo-ho-ho, and a bottle of rum!
+        Drink and the devil had done for the rest—
+            Yo-ho-ho, and a bottle of rum!”
 
     At first I had supposed “the dead man’s chest” to be that identical big box of his upstairs in the front room, and the thought had been mingled in my nightmares with that of the one-legged seafaring man. But by this time we had all long ceased to pay any particular notice to the song; it was new, that night, to nobody but Dr. Livesey, and on him I observed it did not produce an agreeable effect, for he looked up for a moment quite angrily before he went on with his talk to old Taylor, the gardener, on a new cure for the rheumatics. In the meantime, the captain gradually brightened up at his own music, and at last flapped his hand upon the table before him in a way we all knew to mean silence. The voices stopped at once, all but Dr. Livesey’s; he went on as before speaking clear and kind and drawing briskly at his pipe between every word or two. The captain glared at him for a while, flapped his hand again, glared still harder, and at last broke out with a villainous, low oath, “Silence, there, between decks!”
 
@@ -2137,9 +2150,8 @@ book-text-treasure-island = I The Old Sea-dog at the “Admiral Benbow”
 
     Soon after, Dr. Livesey’s horse came to the door and he rode away, but the captain held his peace that evening, and for many evenings to come.
 
-book-text-les-miserables = BOOK FIRST—A JUST MAN 
-    CHAPTER I—M. MYRIEL
-    
+book-text-les-miserables =
+    CHAPTER I. M. MYRIEL
 
     In 1815, M. Charles-François-Bienvenu Myriel was Bishop of D—— He was an old man of about seventy-five years of age; he had occupied the see of D—— since 1806.
 
@@ -2175,7 +2187,8 @@ book-text-les-miserables = BOOK FIRST—A JUST MAN
 
     The installation over, the town waited to see its bishop at work.
 
-book-text-art-of-war = I. Laying Plans
+book-text-art-of-war =
+        I. Laying Plans
 
     1. Sun Tzu said: The art of war is of vital importance to the State.
 
@@ -2227,7 +2240,7 @@ book-text-art-of-war = I. Laying Plans
 
     26. Now the general who wins a battle makes many calculations in his temple ere the battle is fought. The general who loses a battle makes but few calculations beforehand. Thus do many calculations lead to victory, and few calculations to defeat: how much more no calculation at all! It is by attention to this point that I can foresee who is likely to win or lose.
 
-    II. Waging War
+        II. Waging War
 
     1. Sun Tzu said: In the operations of war, where there are in the field a thousand swift chariots, as many heavy chariots, and a hundred thousand mail-clad soldiers, with provisions enough to carry them a thousand li, the expenditure at home and at the front, including entertainment of guests, small items such as glue and paint, and sums spent on chariots and armor, will reach the total of a thousand ounces of silver per day. Such is the cost of raising an army of 100,000 men.
 
@@ -2267,7 +2280,7 @@ book-text-art-of-war = I. Laying Plans
 
     20. Thus it may be known that the leader of armies is the arbiter of the people's fate, the man on whom it depends whether the nation shall be in peace or in peril.
 
-    III. Attack by Stratagem
+        III. Attack by Stratagem
 
     1. Sun Tzu said: In the practical art of war, the best thing of all is to take the enemy's country whole and intact; to shatter and destroy it is not so good. So, too, it is better to recapture an army entire than to destroy it, to capture a regiment, a detachment or a company entire than to destroy them.
 
@@ -2305,7 +2318,7 @@ book-text-art-of-war = I. Laying Plans
 
     18. Hence the saying: If you know the enemy and know yourself, you need not fear the result of a hundred battles. If you know yourself but not the enemy, for every victory gained you will also suffer a defeat. If you know neither the enemy nor yourself, you will succumb in every battle.
 
-    IV. Tactical Dispositions
+        IV. Tactical Dispositions
 
     1. Sun Tzu said: The good fighters of old first put themselves beyond the possibility of defeat, and then waited for an opportunity of defeating the enemy.
 
@@ -2347,7 +2360,7 @@ book-text-art-of-war = I. Laying Plans
 
     20. The onrush of a conquering force is like the bursting of pent-up waters into a chasm a thousand fathoms deep.
 
-    V. Energy
+        V. Energy
 
     1. Sun Tzu said: The control of a large force is the same principle as the control of a few men: it is merely a question of dividing up their numbers.
 
@@ -2395,7 +2408,7 @@ book-text-art-of-war = I. Laying Plans
 
     23. Thus the energy developed by good fighting men is as the momentum of a round stone rolled down a mountain thousands of feet in height. So much on the subject of energy.
 
-    VI. Weak Points and Strong
+        VI. Weak Points and Strong
 
     1. Sun Tzu said: Whoever is first in the field and awaits the coming of the enemy, will be fresh for the fight; whoever is second in the field and has to hasten to battle will arrive exhausted.
 
@@ -2465,7 +2478,7 @@ book-text-art-of-war = I. Laying Plans
 
     34. The five elements (water, fire, wood, metal, earth) are not always equally predominant; the four seasons make way for each other in turn. There are short days and long; the moon has its periods of waning and waxing.
 
-    VII. Maneuvering
+        VII. Maneuvering
 
     1. Sun Tzu said: In war, the general receives his commands from the sovereign.
 
@@ -2541,7 +2554,7 @@ book-text-art-of-war = I. Laying Plans
 
     37. Such is the art of warfare.
 
-    VIII. Variation in Tactics
+        VIII. Variation in Tactics
 
     1. Sun Tzu said: In war, the general receives his commands from the sovereign, collects his army and concentrates his forces
 
@@ -2571,7 +2584,7 @@ book-text-art-of-war = I. Laying Plans
 
     14. When an army is overthrown and its leader slain, the cause will surely be found among these five dangerous faults. Let them be a subject of meditation.
 
-    IX. The Army on the March
+        IX. The Army on the March
 
     1. Sun Tzu said: We come now to the question of encamping the army, and observing signs of the enemy. Pass quickly over mountains, and keep in the neighborhood of valleys.
 
@@ -2663,7 +2676,7 @@ book-text-art-of-war = I. Laying Plans
 
     45. If a general shows confidence in his men but always insists on his orders being obeyed, the gain will be mutual.
 
-    X. Terrain
+        X. Terrain
 
     1. Sun Tzu said: We may distinguish six kinds of terrain, to wit: (1) Accessible ground; (2) entangling ground; (3) temporizing ground; (4) narrow passes; (5) precipitous heights; (6) positions at a great distance from the enemy.
 
@@ -2727,7 +2740,7 @@ book-text-art-of-war = I. Laying Plans
 
     31. Hence the saying: If you know the enemy and know yourself, your victory will not stand in doubt; if you know Heaven and know Earth, you may make your victory complete.
 
-    XI. The Nine Situations
+        XI. The Nine Situations
 
     1. Sun Tzu said: The art of war recognizes nine varieties of ground: (1) Dispersive ground; (2) facile ground; (3) contentious ground; (4) open ground; (5) ground of intersecting highways; (6) serious ground; (7) difficult ground; (8) hemmed-in ground; (9) desperate ground.
 
@@ -2865,7 +2878,7 @@ book-text-art-of-war = I. Laying Plans
 
     68. At first, then, exhibit the coyness of a maiden, until the enemy gives you an opening; afterwards emulate the rapidity of a running hare, and it will be too late for the enemy to oppose you.
 
-    XII. The Attack by Fire
+        XII. The Attack by Fire
 
     1. Sun Tzu said: There are five ways of attacking with fire. The first is to burn soldiers in their camp; the second is to burn stores; the third is to burn baggage trains; the fourth is to burn arsenals and magazines; the fifth is to hurl dropping fire amongst the enemy.
 
@@ -2911,7 +2924,7 @@ book-text-art-of-war = I. Laying Plans
 
     22. Hence the enlightened ruler is heedful, and the good general full of caution. This is the way to keep a country at peace and an army intact.
 
-    XIII. The Use of Spies
+        XIII. The Use of Spies
 
     1. Sun Tzu said: Raising a host of a hundred thousand men and marching them great distances entails heavy loss on the people and a drain on the resources of the State. The daily expenditure will amount to a thousand ounces of silver. There will be commotion at home and abroad, and men will drop down exhausted on the highways. As many as seven hundred thousand families will be impeded in their labor.
 
@@ -2967,53 +2980,56 @@ book-text-art-of-war = I. Laying Plans
 
     27. Hence it is only the enlightened ruler and the wise general who will use the highest intelligence of the army for purposes of spying and thereby they achieve great results. Spies are a most important element in water, because on them depends an army's ability to move.
 
-book-text-king-in-yellow = THE REPAIRER OF REPUTATIONS I
+book-text-king-in-yellow =
+    THE REPAIRER OF REPUTATIONS
+    I
+
     “Ne raillons pas les fous; leur folie dure plus longtemps que la nôtre.... Voila toute la différence.”
-    
+
     Toward the end of the year 1920 the Government of the United States had practically completed the programme, adopted during the last months of President Winthrop’s administration. The country was apparently tranquil. Everybody knows how the Tariff and Labour questions were settled. The war with Germany, incident on that country’s seizure of the Samoan Islands, had left no visible scars upon the republic, and the temporary occupation of Norfolk by the invading army had been forgotten in the joy over repeated naval victories, and the subsequent ridiculous plight of General Von Gartenlaube’s forces in the State of New Jersey. The Cuban and Hawaiian investments had paid one hundred per cent and the territory of Samoa was well worth its cost as a coaling station. The country was in a superb state of defence. Every coast city had been well supplied with land fortifications; the army under the parental eye of the General Staff, organized according to the Prussian system, had been increased to 300,000 men, with a territorial reserve of a million; and six magnificent squadrons of cruisers and battle-ships patrolled the six stations of the navigable seas, leaving a steam reserve amply fitted to control home waters. The gentlemen from the West had at last been constrained to acknowledge that a college for the training of diplomats was as necessary as law schools are for the training of barristers; consequently we were no longer represented abroad by incompetent patriots. The nation was prosperous; Chicago, for a moment paralyzed after a second great fire, had risen from its ruins, white and imperial, and more beautiful than the white city which had been built for its plaything in 1893. Everywhere good architecture was replacing bad, and even in New York, a sudden craving for decency had swept away a great portion of the existing horrors. Streets had been widened, properly paved and lighted, trees had been planted, squares laid out, elevated structures demolished and underground roads built to replace them. The new government buildings and barracks were fine bits of architecture, and the long system of stone quays which completely surrounded the island had been turned into parks which proved a god-send to the population. The subsidizing of the state theatre and state opera brought its own reward. The United States National Academy of Design was much like European institutions of the same kind. Nobody envied the Secretary of Fine Arts, either his cabinet position or his portfolio. The Secretary of Forestry and Game Preservation had a much easier time, thanks to the new system of National Mounted Police. We had profited well by the latest treaties with France and England; the exclusion of foreign-born Jews as a measure of self-preservation, the settlement of the new independent negro state of Suanee, the checking of immigration, the new laws concerning naturalization, and the gradual centralization of power in the executive all contributed to national calm and prosperity. When the Government solved the Indian problem and squadrons of Indian cavalry scouts in native costume were substituted for the pitiable organizations tacked on to the tail of skeletonized regiments by a former Secretary of War, the nation drew a long sigh of relief. When, after the colossal Congress of Religions, bigotry and intolerance were laid in their graves and kindness and charity began to draw warring sects together, many thought the millennium had arrived, at least in the new world which after all is a world by itself.
-    
+
     But self-preservation is the first law, and the United States had to look on in helpless sorrow as Germany, Italy, Spain and Belgium writhed in the throes of Anarchy, while Russia, watching from the Caucasus, stooped and bound them one by one.
-    
+
     In the city of New York the summer of 1899 was signalized by the dismantling of the Elevated Railroads. The summer of 1900 will live in the memories of New York people for many a cycle; the Dodge Statue was removed in that year. In the following winter began that agitation for the repeal of the laws prohibiting suicide which bore its final fruit in the month of April, 1920, when the first Government Lethal Chamber was opened on Washington Square.
-    
+
     I had walked down that day from Dr. Archer’s house on Madison Avenue, where I had been as a mere formality. Ever since that fall from my horse, four years before, I had been troubled at times with pains in the back of my head and neck, but now for months they had been absent, and the doctor sent me away that day saying there was nothing more to be cured in me. It was hardly worth his fee to be told that; I knew it myself. Still I did not grudge him the money. What I minded was the mistake which he made at first. When they picked me up from the pavement where I lay unconscious, and somebody had mercifully sent a bullet through my horse’s head, I was carried to Dr. Archer, and he, pronouncing my brain affected, placed me in his private asylum where I was obliged to endure treatment for insanity. At last he decided that I was well, and I, knowing that my mind had always been as sound as his, if not sounder, “paid my tuition” as he jokingly called it, and left. I told him, smiling, that I would get even with him for his mistake, and he laughed heartily, and asked me to call once in a while. I did so, hoping for a chance to even up accounts, but he gave me none, and I told him I would wait.
-    
+
     The fall from my horse had fortunately left no evil results; on the contrary it had changed my whole character for the better. From a lazy young man about town, I had become active, energetic, temperate, and above all—oh, above all else—ambitious. There was only one thing which troubled me, I laughed at my own uneasiness, and yet it troubled me.
-    
+
     During my convalescence I had bought and read for the first time, The King in Yellow. I remember after finishing the first act that it occurred to me that I had better stop. I started up and flung the book into the fireplace; the volume struck the barred grate and fell open on the hearth in the firelight. If I had not caught a glimpse of the opening words in the second act I should never have finished it, but as I stooped to pick it up, my eyes became riveted to the open page, and with a cry of terror, or perhaps it was of joy so poignant that I suffered in every nerve, I snatched the thing out of the coals and crept shaking to my bedroom, where I read it and reread it, and wept and laughed and trembled with a horror which at times assails me yet. This is the thing that troubles me, for I cannot forget Carcosa where black stars hang in the heavens; where the shadows of men’s thoughts lengthen in the afternoon, when the twin suns sink into the lake of Hali; and my mind will bear for ever the memory of the Pallid Mask. I pray God will curse the writer, as the writer has cursed the world with this beautiful, stupendous creation, terrible in its simplicity, irresistible in its truth—a world which now trembles before the King in Yellow. When the French Government seized the translated copies which had just arrived in Paris, London, of course, became eager to read it. It is well known how the book spread like an infectious disease, from city to city, from continent to continent, barred out here, confiscated there, denounced by Press and pulpit, censured even by the most advanced of literary anarchists. No definite principles had been violated in those wicked pages, no doctrine promulgated, no convictions outraged. It could not be judged by any known standard, yet, although it was acknowledged that the supreme note of art had been struck in The King in Yellow, all felt that human nature could not bear the strain, nor thrive on words in which the essence of purest poison lurked. The very banality and innocence of the first act only allowed the blow to fall afterward with more awful effect.
-    
+
     It was, I remember, the 13th day of April, 1920, that the first Government Lethal Chamber was established on the south side of Washington Square, between Wooster Street and South Fifth Avenue. The block which had formerly consisted of a lot of shabby old buildings, used as cafés and restaurants for foreigners, had been acquired by the Government in the winter of 1898. The French and Italian cafés and restaurants were torn down; the whole block was enclosed by a gilded iron railing, and converted into a lovely garden with lawns, flowers and fountains. In the centre of the garden stood a small, white building, severely classical in architecture, and surrounded by thickets of flowers. Six Ionic columns supported the roof, and the single door was of bronze. A splendid marble group of the “Fates” stood before the door, the work of a young American sculptor, Boris Yvain, who had died in Paris when only twenty-three years old.
-    
+
     The inauguration ceremonies were in progress as I crossed University Place and entered the square. I threaded my way through the silent throng of spectators, but was stopped at Fourth Street by a cordon of police. A regiment of United States lancers were drawn up in a hollow square round the Lethal Chamber. On a raised tribune facing Washington Park stood the Governor of New York, and behind him were grouped the Mayor of New York and Brooklyn, the Inspector-General of Police, the Commandant of the state troops, Colonel Livingston, military aid to the President of the United States, General Blount, commanding at Governor’s Island, Major-General Hamilton, commanding the garrison of New York and Brooklyn, Admiral Buffby of the fleet in the North River, Surgeon-General Lanceford, the staff of the National Free Hospital, Senators Wyse and Franklin of New York, and the Commissioner of Public Works. The tribune was surrounded by a squadron of hussars of the National Guard.
-    
+
     The Governor was finishing his reply to the short speech of the Surgeon-General. I heard him say: “The laws prohibiting suicide and providing punishment for any attempt at self-destruction have been repealed. The Government has seen fit to acknowledge the right of man to end an existence which may have become intolerable to him, through physical suffering or mental despair. It is believed that the community will be benefited by the removal of such people from their midst. Since the passage of this law, the number of suicides in the United States has not increased. Now the Government has determined to establish a Lethal Chamber in every city, town and village in the country, it remains to be seen whether or not that class of human creatures from whose desponding ranks new victims of self-destruction fall daily will accept the relief thus provided.” He paused, and turned to the white Lethal Chamber. The silence in the street was absolute. “There a painless death awaits him who can no longer bear the sorrows of this life. If death is welcome let him seek it there.” Then quickly turning to the military aid of the President’s household, he said, “I declare the Lethal Chamber open,” and again facing the vast crowd he cried in a clear voice: “Citizens of New York and of the United States of America, through me the Government declares the Lethal Chamber to be open.”
-    
+
     The solemn hush was broken by a sharp cry of command, the squadron of hussars filed after the Governor’s carriage, the lancers wheeled and formed along Fifth Avenue to wait for the commandant of the garrison, and the mounted police followed them. I left the crowd to gape and stare at the white marble Death Chamber, and, crossing South Fifth Avenue, walked along the western side of that thoroughfare to Bleecker Street. Then I turned to the right and stopped before a dingy shop which bore the sign:
-    
+
     HAWBERK, ARMOURER.
-    
+
     I glanced in at the doorway and saw Hawberk busy in his little shop at the end of the hall. He looked up, and catching sight of me cried in his deep, hearty voice, “Come in, Mr. Castaigne!” Constance, his daughter, rose to meet me as I crossed the threshold, and held out her pretty hand, but I saw the blush of disappointment on her cheeks, and knew that it was another Castaigne she had expected, my cousin Louis. I smiled at her confusion and complimented her on the banner she was embroidering from a coloured plate. Old Hawberk sat riveting the worn greaves of some ancient suit of armour, and the ting! ting! ting! of his little hammer sounded pleasantly in the quaint shop. Presently he dropped his hammer, and fussed about for a moment with a tiny wrench. The soft clash of the mail sent a thrill of pleasure through me. I loved to hear the music of steel brushing against steel, the mellow shock of the mallet on thigh pieces, and the jingle of chain armour. That was the only reason I went to see Hawberk. He had never interested me personally, nor did Constance, except for the fact of her being in love with Louis. This did occupy my attention, and sometimes even kept me awake at night. But I knew in my heart that all would come right, and that I should arrange their future as I expected to arrange that of my kind doctor, John Archer. However, I should never have troubled myself about visiting them just then, had it not been, as I say, that the music of the tinkling hammer had for me this strong fascination. I would sit for hours, listening and listening, and when a stray sunbeam struck the inlaid steel, the sensation it gave me was almost too keen to endure. My eyes would become fixed, dilating with a pleasure that stretched every nerve almost to breaking, until some movement of the old armourer cut off the ray of sunlight, then, still thrilling secretly, I leaned back and listened again to the sound of the polishing rag, swish! swish! rubbing rust from the rivets.
-    
+
     Constance worked with the embroidery over her knees, now and then pausing to examine more closely the pattern in the coloured plate from the Metropolitan Museum.
-    
+
     “Who is this for?” I asked.
-    
+
     Hawberk explained, that in addition to the treasures of armour in the Metropolitan Museum of which he had been appointed armourer, he also had charge of several collections belonging to rich amateurs. This was the missing greave of a famous suit which a client of his had traced to a little shop in Paris on the Quai d’Orsay. He, Hawberk, had negotiated for and secured the greave, and now the suit was complete. He laid down his hammer and read me the history of the suit, traced since 1450 from owner to owner until it was acquired by Thomas Stainbridge. When his superb collection was sold, this client of Hawberk’s bought the suit, and since then the search for the missing greave had been pushed until it was, almost by accident, located in Paris.
-    
+
     “Did you continue the search so persistently without any certainty of the greave being still in existence?” I demanded.
-    
+
     “Of course,” he replied coolly.
-    
+
     Then for the first time I took a personal interest in Hawberk.
-    
+
     “It was worth something to you,” I ventured.
-    
+
     “No,” he replied, laughing, “my pleasure in finding it was my reward.”
-    
+
     “Have you no ambition to be rich?” I asked, smiling.
-    
+
     “My one ambition is to be the best armourer in the world,” he answered gravely.
-    
+
     Constance asked me if I had seen the ceremonies at the Lethal Chamber. She herself had noticed cavalry passing up Broadway that morning, and had wished to see the inauguration, but her father wanted the banner finished, and she had stayed at his request.
 
     “Did you see your cousin, Mr. Castaigne, there?” she asked, with the slightest tremor of her soft eyelashes.
