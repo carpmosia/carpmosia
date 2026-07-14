@@ -38,6 +38,11 @@ namespace Content.Shared.Humanoid
                 case SpeciesNaming.FirstDashFirst:
                     return Loc.GetString("namepreset-firstdashfirst",
                         ("first1", GetFirstName(speciesProto, gender)), ("first2", GetFirstName(speciesProto, gender)));
+                // Carpmosia-start - Tajaran naming
+                case SpeciesNaming.FirstFirst:
+                    return Loc.GetString("namepreset-firstfirst",
+                        ("first1", GetFirstName(speciesProto)), ("first2", GetFirstName(speciesProto, gender).ToLower()));
+                // Carpmosia-end - Tajaran naming
                 case SpeciesNaming.FirstLast:
                 default:
                     return Loc.GetString("namepreset-firstlast",

@@ -28,7 +28,7 @@
     back:
     - ClothingMultipleHeadphones
 
-# Carpmosia-rework - Borg hats
+# Carpmosia-start - Borg hats
 # Toys
 # - type: loadout
 #   id: PlushieLizard
@@ -41,6 +41,7 @@
 #   storage:
 #     back:
 #     - PlushieSpaceLizard
+# Carpmosia-end - Borg hats
 
 - type: loadout
   id: ThreeCandles
@@ -133,7 +134,7 @@
   groupBy: "folders"
 
 # Pins
-#  Carpmosia-rework - Loadout Rework 2
+#  Carpmosia-start - Loadout Rework 2
 # - type: loadout
 #   id: ClothingNeckLGBTPin
 #   storage:
@@ -259,6 +260,7 @@
 #     back:
 #     - ClothingNeckGenderfluidPin
 #   groupBy: "pin"
+#  Carpmosia-end - Loadout Rework 2
 
 # Canes
 # The white cane is intentionally not included here. Thats for the blind.
@@ -329,9 +331,11 @@
   groupBy: "canes"
 
 # Towels
-- type: loadout
-  id: TowelColorWhite
-  storage:
-    back:
-    - TowelColorWhite
-  groupBy: "towels"
+#  Carpmosia-start - Loadout Rework
+# - type: loadout
+#   id: TowelColorWhite
+#   storage:
+#     back:
+#     - TowelColorWhite
+#   groupBy: "towels"
+#  Carpmosia-end - Loadout Rework

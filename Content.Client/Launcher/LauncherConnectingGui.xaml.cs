@@ -18,7 +18,7 @@ namespace Content.Client.Launcher
     [GenerateTypedNameReferences]
     public sealed partial class LauncherConnectingGui : Control
     {
-        private const float RedialWaitTimeSeconds = 15f;
+        private const float RedialWaitTimeSeconds = 25f; // Carpmosia-edit - longer redial
         private readonly LauncherConnecting _state;
         private float _waitTime;
 

@@ -28,12 +28,6 @@
   - type: Injurable
   - type: Destructible
     thresholds:
-    - trigger: # Excess damage, don't spawn entities
-        !type:DamageTrigger
-        damage: 100
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
     - trigger:
         !type:DamageTrigger
         damage: 15
@@ -397,6 +391,11 @@
   id: Envelope
   description: 'A small envelope for keeping prying eyes off of your sensitive documents.'
   components:
+  # Carpmosia-start - Craftable envelopes
+  - type: Construction
+    graph: Envelope
+    node: envelope
+  # Carpmosia-end - Craftable envelopes
   - type: Sprite
     sprite: Objects/Misc/bureaucracy.rsi
     layers:

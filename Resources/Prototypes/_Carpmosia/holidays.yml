@@ -1,0 +1,7 @@
+- type: holiday
+  id: CarpDay
+  name: holiday-name-carp-day
+  beginDay: 18
+  beginMonth: October
+  greet: !type:Custom
+    text: holiday-custom-carp-day

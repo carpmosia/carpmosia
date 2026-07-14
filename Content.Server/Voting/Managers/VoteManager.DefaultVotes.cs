@@ -279,7 +279,7 @@ namespace Content.Server.Voting.Managers
 
             foreach (var (k, v) in maps)
             {
-                options.Options.Add(((v.MapName, v.MapIcon, v.IconPrototype), k)); // Carpmosia-edit - Better map vote
+                options.Options.Add(((v.MapName, v.MapIcon, v.MapPreview), k)); // Carpmosia-edit - Better map vote
             }
 
             WirePresetVoteInitiator(options, initiator);

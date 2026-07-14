@@ -67,3 +67,14 @@
   - type: GhostRole
     name: ghost-role-information-pet-mothroach-name
     allowSpeech: true
+
+- type: entity
+  parent: [ BasePet, MobBagFish ]
+  id: MobPetFish
+  name: Pet fish
+  components:
+  - type: GhostRole
+    name: ghost-role-information-pet-fish-name
+  - type: HTN
+    rootTask:
+      task: PetFollowCompound # Doesnt eat food

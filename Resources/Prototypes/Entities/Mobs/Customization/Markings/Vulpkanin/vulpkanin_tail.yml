@@ -1,8 +1,19 @@
 # Tail Markings
 - type: marking
   id: VulpTailFennec
+  # Carpmosia-start - more tails for everyone
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+      - !type:CategoryColoring
+        category: FacialHair
+      - !type:SkinColoring
+  # Carpmosia-end - more tails for everyone
   bodyPart: Tail
-  groupWhitelist: [ Vulpkanin ]
+  groupWhitelist: [ Human, Vulpkanin, Tajaran ] # Carpmosia-edit - more tails for everyone
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: fennec
@@ -11,8 +22,19 @@
 
 - type: marking
   id: VulpTailFluffy
+  # Carpmosia-start - more tails for everyone
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+      - !type:CategoryColoring
+        category: FacialHair
+      - !type:SkinColoring
+  # Carpmosia-end - more tails for everyone
   bodyPart: Tail
-  groupWhitelist: [ Vulpkanin ]
+  groupWhitelist: [ Human, Vulpkanin, Tajaran ] # Carpmosia-edit - more tails for everyone
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: fluffy
@@ -21,8 +43,19 @@
 
 - type: marking
   id: VulpTailHusky
+  # Carpmosia-start - more tails for everyone
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+      - !type:CategoryColoring
+        category: FacialHair
+      - !type:SkinColoring
+  # Carpmosia-end - more tails for everyone
   bodyPart: Tail
-  groupWhitelist: [ Vulpkanin ]
+  groupWhitelist: [ Human, Vulpkanin, Tajaran ] # Carpmosia-edit - more tails for everyone
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: husky
@@ -33,8 +66,19 @@
 
 - type: marking
   id: VulpTailLong
+  # Carpmosia-start - more tails for everyone
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+      - !type:CategoryColoring
+        category: FacialHair
+      - !type:SkinColoring
+  # Carpmosia-end - more tails for everyone
   bodyPart: Tail
-  groupWhitelist: [ Vulpkanin ]
+  groupWhitelist: [ Human, Vulpkanin, Tajaran ] # Carpmosia-edit - more tails for everyone
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: long
@@ -43,8 +87,19 @@
 
 - type: marking
   id: VulpTailVulp
+  # Carpmosia-start - more tails for everyone
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+      - !type:CategoryColoring
+        category: FacialHair
+      - !type:SkinColoring
+  # Carpmosia-end - more tails for everyone
   bodyPart: Tail
-  groupWhitelist: [ Vulpkanin ]
+  groupWhitelist: [ Human, Vulpkanin, Tajaran ] # Carpmosia-edit - more tails for everyone
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: vulp
@@ -53,8 +108,19 @@
 
 - type: marking
   id: VulpTailVulpFade
+  # Carpmosia-start - more tails for everyone
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+      - !type:CategoryColoring
+        category: FacialHair
+      - !type:SkinColoring
+  # Carpmosia-end - more tails for everyone
   bodyPart: Tail
-  groupWhitelist: [ Vulpkanin ]
+  groupWhitelist: [ Human, Vulpkanin, Tajaran ] # Carpmosia-edit - more tails for everyone
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: vulp
@@ -63,8 +129,19 @@
 
 - type: marking
   id: VulpTailCoyote
+  # Carpmosia-start - more tails for everyone
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+      - !type:CategoryColoring
+        category: FacialHair
+      - !type:SkinColoring
+  # Carpmosia-end - more tails for everyone
   bodyPart: Tail
-  groupWhitelist: [ Vulpkanin ]
+  groupWhitelist: [ Human, Vulpkanin, Tajaran ] # Carpmosia-edit - more tails for everyone
   sprites:
   - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
     state: coyote

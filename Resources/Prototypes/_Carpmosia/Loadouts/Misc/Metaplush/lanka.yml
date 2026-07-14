@@ -2,10 +2,9 @@
   id: MothPlushieLanka
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobStationEngineer
-      time: 50h
+      time: 20h
 
 - type: loadout
   id: MothPlushieLanka
