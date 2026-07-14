@@ -16,7 +16,7 @@ public sealed partial class StationCentcommComponent : Component
     public float ShuttleIndex;
 
     [DataField]
-    public ResPath Map = new("/Maps/_Carpmosia/centcomm.yml"); // Carpmosia-edit - Centcomm Tweaks
+    public ResPath Map = new("/Maps/_Carpmosia/centcomm.yml"); // Carpmosia-edit - Centcomm tweaks
 
     /// <summary>
     /// Centcomm entity that was loaded.
