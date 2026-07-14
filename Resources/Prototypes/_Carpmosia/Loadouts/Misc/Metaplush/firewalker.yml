@@ -1,0 +1,26 @@
+- type: loadoutEffectGroup
+  id: MothPlushieFirewalker
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement: !type:RoleTimeRequirement
+      role: JobAtmosphericTechnician
+      time: 20h
+
+- type: loadout
+  id: MothPlushieFirewalker
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: MothPlushieFirewalker
+  storage:
+    back:
+    - PlushieMothFirewalker
+  groupBy: "metaplush"
+
+- type: loadout
+  id: HatPlushieFirewalker
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: MothPlushieFirewalker
+  equipment:
+    head: PlushieMothFirewalker
+  groupBy: "metaplush"
