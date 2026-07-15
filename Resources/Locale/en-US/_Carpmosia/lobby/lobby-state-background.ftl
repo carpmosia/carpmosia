@@ -12,3 +12,7 @@ lobby-state-background-thefirstwave-artist = UBlueberry
 
 lobby-state-background-dragonattack-title = Dragon Attack
 lobby-state-background-dragonattack-artist = inari6666
+
+lobby-state-background-nyxoneantoohavinagreattime-title = nyxoneantoohavinagreattime
+lobby-state-background-nyxoneantoohavinagreattime-artist = Saver310
+
