@@ -34,7 +34,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: IconSmooth
-    key: windows_plasma # Carpmosia-edit - Wall resprite
+    key: windows_plasma # Carpmosia-edit - Window resprite
     base: full # Carpmosia-edit - Window resprite
   - type: Construction
     graph: Window
@@ -119,9 +119,11 @@
     - Diagonal
     - Window
   - type: IconSmooth
-    mode: Diagonal
-    key: windows_plasma # Carpmosia-edit - Wall resprite
-    base: diagonal # Carpmosia-edit - Window resprite
+    # Carpmosia-start - Window resprite
+    mode: DiagonalPlus
+    key: windows_plasma
+    base: diagonal
+    # Carpmosia-end - Window resprite
   - type: Icon
     sprite: _Carpmosia/Structures/Windows/plasma_reinforced.rsi # Carpmosia-edit - Window resprite
     state: diagonal0 # Carpmosia-edit - Window resprite

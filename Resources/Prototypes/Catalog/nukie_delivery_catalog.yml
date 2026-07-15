@@ -13,7 +13,7 @@
   productEntity: ClothingBackpackDuffelSyndicateFilledMedicine
   categories:
   - NukieDelivery
-  restockTime: 1200
+  restockTime: 18m # Carpmosia-edit - Nukie tweaks
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1

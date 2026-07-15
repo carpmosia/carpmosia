@@ -476,7 +476,7 @@
       color: *color-security-top
     - state: stripe_bottom
       color: *color-security-bottom
-    - sprite: *icon-rsi
+    - sprite: _Carpmosia/Interface/Misc/job_icons.rsi # Carpmosia-edit - New warden job icon
       offset: *icon-offset
       state: Warden
   - type: PresetIdCard

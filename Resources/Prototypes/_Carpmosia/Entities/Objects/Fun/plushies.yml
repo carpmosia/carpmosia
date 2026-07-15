@@ -29,10 +29,7 @@
   - type: MeleeWeapon
     soundHit: *PlushieLizardScreamsSound
   - type: Clothing
-    quickEquip: false
     sprite: _Carpmosia/Objects/Fun/Plushies/screams.rsi
-    slots:
-    - HEAD
   - type: Explosive
     canCreateVacuum: false
     deleteAfterExplosion: false
@@ -59,14 +56,15 @@
         Quantity: 10
 
 - type: entity
-  parent: BasePlushie
+  parent: PlushieArachind
   id: PlushieArachindCole
   name: tider spider plushie
   description: An adorable stuffed toy that resembles an arachnid, specifically a certain tider. It shivers in the presence of contraband.
   components:
   - type: Sprite
     sprite: _Carpmosia/Objects/Fun/Plushies/cole.rsi
-    state: icon
+  - type: Clothing
+    sprite: _Carpmosia/Objects/Fun/Plushies/cole.rsi
   - type: EmitSoundOnUse
     sound: &PlushieArachnidSound
       path: /Audio/Voice/Arachnid/arachnid_scream.ogg
@@ -86,11 +84,6 @@
     useSound: *PlushieArachnidSound
   - type: MeleeWeapon
     soundHit: *PlushieArachnidSound
-  - type: Clothing
-    quickEquip: false
-    sprite: _Carpmosia/Objects/Fun/Plushies/cole.rsi
-    slots:
-    - HEAD
 
 - type: entity
   parent: PlushieLizard
@@ -128,34 +121,30 @@
   - type: MeleeWeapon
     soundHit: *PlushieLizardAxelSound
   - type: Clothing
-    quickEquip: false
     sprite: _Carpmosia/Objects/Fun/Plushies/axel.rsi
-    slots:
-    - HEAD
   - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: Blood
-        Quantity: 30
+    grindableSolutionName: food
+    juiceSolution: null
   - type: Solution
     solution:
+      maxVol: 30
       reagents:
       - ReagentId: Fiber
         Quantity: 10
       - ReagentId: Blood
         Quantity: 10
   - type: MixableSolution
-    solution: coloring
+    solution: food
   - type: ExaminableSolution
-    solution: coloring
+    solution: food
     exactVolume: true
   - type: DrawableSolution
-    solution: coloring
+    solution: food
   - type: InjectableSolution
-    solution: coloring
+    solution: food
   - type: Appearance
   - type: SolutionContainerVisuals
-    solutionName: coloring
+    solutionName: food
     maxFillLevels: 4
     fillBaseName: fill-
     inHandsMaxFillLevels: 4
@@ -171,7 +160,8 @@
   components:
   - type: Sprite
     sprite: _Carpmosia/Objects/Fun/Plushies/lanka.rsi
-    state: icon
+  - type: Clothing
+    sprite: _Carpmosia/Objects/Fun/Plushies/lanka.rsi
   - type: ActivatableUI
     key: enum.NetworkConfiguratorUiKey.List
     inHandsOnly: true
@@ -194,8 +184,19 @@
     soundHit: *PlushieMothScream
   - type: Edible
     useSound: *PlushieMothScream
+
+- type: entity
+  parent: PlushieMoth
+  id: PlushieMothDeathshead
+  name: bartender moth plushie
+  description: A fluffy plushie resembling a certain moth bartender. The tiny text reads "Do not give alcohol after midnight".
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Fun/Plushies/deathshead.rsi
   - type: Clothing
-    quickEquip: false
-    sprite: _Carpmosia/Objects/Fun/Plushies/lanka.rsi
-    slots:
-    - HEAD
+    sprite: _Carpmosia/Objects/Fun/Plushies/deathshead.rsi
+  - type: ReactionMixer
+    mixMessage: "spoon-mixing-success"
+    timeToMix: 0.5
+    reactionTypes:
+    - Stir
