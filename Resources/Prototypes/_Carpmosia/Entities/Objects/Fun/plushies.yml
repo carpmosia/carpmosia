@@ -127,7 +127,7 @@
         Quantity: 30
   - type: SolutionManager
     solutions:
-    - SolutionLizardAxelColoring
+    - SolutionPlushieLizardAxelColoring
   - type: Solution
     id: food
     solution:
@@ -158,7 +158,7 @@
 
 - type: entity
   parent: Solution
-  id: SolutionLizardAxelColoring
+  id: SolutionPlushieLizardAxelColoring
   categories: [ HideSpawnMenu ]
   components:
   - type: Solution
