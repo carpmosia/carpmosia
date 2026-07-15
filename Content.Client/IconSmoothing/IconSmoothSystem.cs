@@ -20,6 +20,7 @@ namespace Content.Client.IconSmoothing
         [Dependency] private SpriteSystem _sprite = default!;
         [Dependency] private EntityQuery<IconSmoothComponent> _iconSmoothQuery = default!;
         [Dependency] private EntityQuery<SpriteComponent> _spriteQuery = default!;
+        [Dependency] private EntityQuery<TransformComponent> _xformQuery = default!; // Carpmosia-start - Better diagonals
 
         private readonly Queue<EntityUid> _dirtyEntities = new();
         private readonly Queue<EntityUid> _anchorChangedEntities = new();
@@ -281,6 +282,11 @@ namespace Content.Client.IconSmoothing
                 case IconSmoothingMode.Diagonal:
                     CalculateNewSpriteDiagonal(gridEntity, smooth, spriteEnt, xform);
                     break;
+                // Carpmosia-start - Better diagonals
+                case IconSmoothingMode.DiagonalPlus:
+                    CalculateNewSpriteDiagonalPlus(gridEntity, smooth, spriteEnt, xform);
+                    break;
+                // Carpmosia-end - Better diagonals
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -324,6 +330,57 @@ namespace Content.Client.IconSmoothing
                 _sprite.LayerSetRsiState(sprite.AsNullable(), 0, $"{smooth.StateBase}0");
             }
         }
+
+        // Carpmosia-start - Better diagonals
+        private void CalculateNewSpriteDiagonalPlus(Entity<MapGridComponent>? gridEntity, IconSmoothComponent smooth,
+            Entity<SpriteComponent> sprite, TransformComponent xform)
+        {
+            if (gridEntity == null)
+            {
+                _sprite.LayerSetRsiState(sprite.AsNullable(), 0, $"{smooth.StateBase}0");
+                return;
+            }
+
+            var gridUid = gridEntity.Value.Owner;
+            var grid = gridEntity.Value.Comp;
+
+            var pos = _mapSystem.TileIndicesFor(gridUid, grid, xform.Coordinates);
+
+            var east_pos = pos + (Vector2i)xform.LocalRotation.RotateVec(new(1, 0));
+            var east = MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, east_pos));
+
+            var south_pos = pos + (Vector2i)xform.LocalRotation.RotateVec(new(0, -1));
+            var south = MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, south_pos));
+
+            if (!east & !south)
+            {
+                _sprite.LayerSetRsiState(sprite.AsNullable(), 0, $"{smooth.StateBase}0");
+                return;
+            }
+            if (!east & south)
+            {
+                _sprite.LayerSetRsiState(sprite.AsNullable(), 0, $"{smooth.StateBase}1");
+                return;
+            }
+            if (east & !south)
+            {
+                _sprite.LayerSetRsiState(sprite.AsNullable(), 0, $"{smooth.StateBase}2");
+                return;
+            }
+
+            var edge_pos = pos + (Vector2i)xform.LocalRotation.RotateVec(new(1, -1));
+            var edge = MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, edge_pos));
+
+            if (!edge)
+            {
+                _sprite.LayerSetRsiState(sprite.AsNullable(), 0, $"{smooth.StateBase}3");
+            }
+            else
+            {
+                _sprite.LayerSetRsiState(sprite.AsNullable(), 0, $"{smooth.StateBase}4");
+            }
+        }
+        // Carpmosia-end - Better diagonals
 
         private void CalculateNewSpriteCardinal(Entity<MapGridComponent>? gridEntity, IconSmoothComponent smooth, Entity<SpriteComponent> sprite, TransformComponent xform)
         {
