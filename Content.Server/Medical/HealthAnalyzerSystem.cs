@@ -232,6 +232,10 @@ public sealed partial class HealthAnalyzerSystem : EntitySystem
 
         if (TryComp<TemperatureComponent>(entity, out var temp))
             bodyTemperature = temp.CurrentTemperature;
+        // Carpmosia-start - Internal temp authority
+        if (TryComp<InternalTemperatureComponent>(entity, out var internalTemp) && internalTemp.IsAuthoritative)
+            bodyTemperature = internalTemp.Temperature;
+        // Carpmosia-end - Internal temp authority
 
         var bloodAmount = float.NaN;
         var bleeding = false;
