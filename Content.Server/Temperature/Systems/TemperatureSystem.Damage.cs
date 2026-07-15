@@ -84,8 +84,13 @@ public sealed partial class TemperatureSystem
     {
         entity.Comp.LastUpdate = _gameTiming.CurTime;
 
+        float currentTemperature;
         if (!HasComp<DamageableComponent>(entity) || !TemperatureQuery.TryComp(entity, out var temperature))
             return;
+        currentTemperature = temperature.CurrentTemperature;
+        // Prefer the entity's internal temperature if it's marked as representing its real temperature.
+        if (InternalTemperatureQuery.TryComp(entity, out var internalTemperature) && internalTemperature.IsAuthoritative)
+            currentTemperature = internalTemperature.Temperature;
 
         // See this link for where the scaling func comes from:
         // https://www.desmos.com/calculator/0vknqtdvq9
@@ -98,7 +103,7 @@ public sealed partial class TemperatureSystem
         var heatDamageThreshold = entity.Comp.ParentHeatDamageThreshold ?? entity.Comp.HeatDamageThreshold;
         var coldDamageThreshold = entity.Comp.ParentColdDamageThreshold ?? entity.Comp.ColdDamageThreshold;
 
-        if (temperature.CurrentTemperature >= heatDamageThreshold)
+        if (currentTemperature >= heatDamageThreshold)
         {
             if (!entity.Comp.TakingDamage)
             {
@@ -106,11 +111,11 @@ public sealed partial class TemperatureSystem
                 entity.Comp.TakingDamage = true;
             }
 
-            var diff = Math.Abs(temperature.CurrentTemperature - heatDamageThreshold);
+            var diff = Math.Abs(currentTemperature - heatDamageThreshold);
             var tempDamage = c / (1 + a * Math.Pow(Math.E, -heatK * diff)) - y;
             _damageable.TryChangeDamage(entity.Owner, entity.Comp.HeatDamage * tempDamage * deltaTime.TotalSeconds, ignoreResistances: true, interruptsDoAfters: false);
         }
-        else if (temperature.CurrentTemperature <= coldDamageThreshold)
+        else if (currentTemperature <= coldDamageThreshold)
         {
             if (!entity.Comp.TakingDamage)
             {
@@ -118,7 +123,7 @@ public sealed partial class TemperatureSystem
                 entity.Comp.TakingDamage = true;
             }
 
-            var diff = Math.Abs(temperature.CurrentTemperature - coldDamageThreshold);
+            var diff = Math.Abs(currentTemperature - coldDamageThreshold);
             var tempDamage =
                 Math.Sqrt(diff * (Math.Pow(entity.Comp.DamageCap.Double(), 2) / coldDamageThreshold));
             _damageable.TryChangeDamage(entity.Owner, entity.Comp.ColdDamage * tempDamage * deltaTime.TotalSeconds, ignoreResistances: true, interruptsDoAfters: false);
