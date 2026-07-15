@@ -1,9 +1,15 @@
 - type: entity
   id: Supermatter
-  name: Supermatter
-  description: Supermatters
-  component:
+  name: Supermatter Crystal
+  description: An extremely dense, unstable crystal of pure matter. Its crystalline structure ensures crystal's integrity, but any external force can trigger the fission process.
+  components:
+  - type: Supermatter
   - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Transform
+    noRot: true
   - type: Fixtures
     fixtures:
       SupermatterCollider:
@@ -17,9 +23,60 @@
         - SingularityLayer
         layer:
         - SingularityLayer
+  - type: Damageable
+    damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: Inorganic
+  - type: PointLight
+    color: "#F4CF3AFF"
+    radius: 2.5
+    energy: 5
   - type: Appearance
   - type: Sprite
     sprite: _Carpmosia/Structures/Power/Generation/supermatter.rsi
+    snapCardinals: true
     layers:
     - map: [ "VisualLevel" ]
       state: supermatter
+
+# - type: entity
+#   id: Supermatter
+#   name: Supermatter
+#   description: da forbidden cheese
+#   placement:
+#     mode: SnapgridCenter
+#   components:
+#   - type: Clickable
+#   - type: InteractionOutline
+#   - type: Sprite
+#     sprite: _Carpmosia/Structures/Power/Generation/supermatter.rsi
+#     state: supermatter
+#     snapCardinals: true
+#   - type: Physics
+#     bodyType: Static
+#   - type: Transform
+#     noRot: true
+#   - type: Fixtures
+#     fixtures:
+#       fix1:
+#         shape:
+#           !type:PhysShapeAabb
+#           bounds: "-0.45,-0.45,0.45,0.45"
+#         density: 5000
+#         mask:
+#         - MachineMask
+#         layer:
+#         - MachineLayer
+#   - type: AtmosDevice
+#     requireAnchored: false
+#   - type: PointLight
+#     color: "#FFFF00"
+#     radius: 2
+#     energy: 2.5
+#   - type: Damageable
+#     damageModifierSet: Metallic
+#   - type: Injurable
+#     damageContainer: Inorganic
+#   - type: RadiationSource
+#     intensity: 0
+#     slope: 1
