@@ -33,3 +33,23 @@
   - type: Appearance
   - type: StaticPrice
     price: 2500
+
+#Carpmosia Start
+- type: entity
+  parent: BaseItem
+  id: SvalinnMachineGunFlatpack #Carpmosia edit - Making this gun less inconvinient to craft
+  name: LSE-400c "Svalinn machine gun" flatpack
+  description: A flatpack used for placing down a prebuilt LSE-400c.
+  components:
+  - type: Item
+    size: Large
+  - type: Flatpack
+    entity: ShuttleGunSvalinnMachineGun
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Devices/flatpack.rsi
+    layers:
+    - state: svalinn
+  - type: Appearance
+  - type: StaticPrice
+    price: 2000
+#Carpmosia End
