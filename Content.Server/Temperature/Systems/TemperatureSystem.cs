@@ -115,6 +115,8 @@ public sealed partial class TemperatureSystem : SharedTemperatureSystem
 
     private void OnRejuvenate(EntityUid uid, TemperatureComponent comp, RejuvenateEvent args)
     {
+        if (InternalTemperatureQuery.TryComp(uid, out var internalTemp))
+            internalTemp.Temperature = Atmospherics.T20C;
         ForceChangeTemperature(uid, Atmospherics.T20C, comp);
     }
 

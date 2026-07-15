@@ -27,7 +27,7 @@ public sealed partial class TemperatureSystem
     [Dependency] private EntityQuery<TemperatureDamageComponent> _tempDamageQuery = default!;
     [Dependency] private EntityQuery<ContainerTemperatureComponent> _containerTemperatureQuery = default!;
     [Dependency] private EntityQuery<ThermalRegulatorComponent> _thermalRegulatorQuery = default!;
-    [Dependency] private EntityQuery<InternalTemperatureComponent> _internalTemperatureQuery = default!;
+    [Dependency] private EntityQuery<InternalTemperatureComponent> _internalTemperatureQuery = default!; // Carpmosia-edit - Usable internal temp
 
     /// <summary>
     ///     All the components that will have their damage updated at the end of the tick.
