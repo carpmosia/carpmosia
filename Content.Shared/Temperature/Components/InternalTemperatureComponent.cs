@@ -22,7 +22,7 @@ public sealed partial class InternalTemperatureComponent : Component
     /// This should be false if InternalTemperature is being used for temperature regulation as described in <see cref="InternalTemperatureComponent"/>'s remarks.
     /// Even when true, internal temperature will lag behind things like regulation and reagents that change body temperature.
     /// </remarks>
-    [DataField, ViewVariables(VVAccess.ReadOnly)]
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
     public bool IsAuthoritative;
     // Carpmosia-end - Authoritative InternalTemperature
 
