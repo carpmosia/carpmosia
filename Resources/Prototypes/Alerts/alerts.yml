@@ -20,8 +20,8 @@
     - category: Breathing # Vox gang not calling this oxygen
     - category: Pressure
     - alertType: Bleed
+    - category: InternalTemperature # Carpmosia-edit - Internal temp authority
     - category: Temperature
-    - category: InternalTemperature
     - category: Hunger
     - category: Thirst
     - alertType: Magboots
@@ -124,6 +124,7 @@
   name: alerts-too-hot-name
   description: alerts-too-hot-desc
 
+# Carpmosia-start - Internal temp authority
 - type: alert
   parent: Cold # generic icons
   id: InternalCold
@@ -137,6 +138,7 @@
   category: InternalTemperature
   name: alerts-internal-too-hot-name
   description: alerts-internal-too-hot-desc
+# Carpmosia-end - Internal temp authority
 
 - type: alert
   id: Weightless

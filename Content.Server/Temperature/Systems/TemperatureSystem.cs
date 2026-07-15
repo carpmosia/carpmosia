@@ -115,8 +115,10 @@ public sealed partial class TemperatureSystem : SharedTemperatureSystem
 
     private void OnRejuvenate(EntityUid uid, TemperatureComponent comp, RejuvenateEvent args)
     {
+        // Carpmosia-start - Internal temp authority
         if (InternalTemperatureQuery.TryComp(uid, out var internalTemp))
             internalTemp.Temperature = Atmospherics.T20C;
+        // Carpmosia-end - Internal temp authority
         ForceChangeTemperature(uid, Atmospherics.T20C, comp);
     }
 

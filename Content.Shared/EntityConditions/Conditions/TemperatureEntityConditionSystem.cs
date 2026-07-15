@@ -12,11 +12,13 @@ public sealed partial class TemperatureEntityConditionSystem : EntityConditionSy
 {
     protected override void Condition(Entity<TemperatureComponent> entity, ref EntityConditionEvent<TemperatureCondition> args)
     {
+        // Carpmosia-start - Internal temp authority
         var currentTemperature = entity.Comp.CurrentTemperature;
         if (TryComp(entity, out InternalTemperatureComponent? internalTemperature) && internalTemperature.IsAuthoritative)
             currentTemperature = internalTemperature.Temperature;
 
         if (currentTemperature >= args.Condition.Min && currentTemperature <= args.Condition.Max)
+        // Carpmosia-end - Internal temp authority
             args.Result = true;
     }
 }

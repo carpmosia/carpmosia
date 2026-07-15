@@ -27,7 +27,7 @@ public sealed partial class TemperatureSystem
     [Dependency] private EntityQuery<TemperatureDamageComponent> _tempDamageQuery = default!;
     [Dependency] private EntityQuery<ContainerTemperatureComponent> _containerTemperatureQuery = default!;
     [Dependency] private EntityQuery<ThermalRegulatorComponent> _thermalRegulatorQuery = default!;
-    [Dependency] private EntityQuery<InternalTemperatureComponent> _internalTemperatureQuery = default!; // Carpmosia-edit - Usable internal temp
+    [Dependency] private EntityQuery<InternalTemperatureComponent> _internalTemperatureQuery = default!; // Carpmosia-edit - Internal temp authority
 
     /// <summary>
     ///     All the components that will have their damage updated at the end of the tick.
@@ -41,10 +41,12 @@ public sealed partial class TemperatureSystem
     /// </summary>
     public static readonly ProtoId<AlertCategoryPrototype> TemperatureAlertCategory = "Temperature";
 
+    // Carpmosia-start - Internal temp authority
     /// <summary>
     /// Alert prototype for Internal Temperature.
     /// </summary>
     public static readonly ProtoId<AlertCategoryPrototype> InternalTemperatureAlertCategory = "InternalTemperature";
+    // Carpmosia-end - Internal temp authority
 
     /// <summary>
     /// The maximum severity applicable to temperature alerts.
@@ -90,13 +92,15 @@ public sealed partial class TemperatureSystem
     {
         entity.Comp.LastUpdate = _gameTiming.CurTime;
 
-        float currentTemperature;
         if (!HasComp<DamageableComponent>(entity) || !TemperatureQuery.TryComp(entity, out var temperature))
             return;
-        currentTemperature = temperature.CurrentTemperature;
+
+        // Carpmosia-start - Internal temp authority
+        var currentTemperature = temperature.CurrentTemperature;
         // Prefer the entity's internal temperature if it's marked as representing its real temperature.
         if (InternalTemperatureQuery.TryComp(entity, out var internalTemperature) && internalTemperature.IsAuthoritative)
             currentTemperature = internalTemperature.Temperature;
+        // Carpmosia-end - Internal temp authority
 
         // See this link for where the scaling func comes from:
         // https://www.desmos.com/calculator/0vknqtdvq9
@@ -109,7 +113,7 @@ public sealed partial class TemperatureSystem
         var heatDamageThreshold = entity.Comp.ParentHeatDamageThreshold ?? entity.Comp.HeatDamageThreshold;
         var coldDamageThreshold = entity.Comp.ParentColdDamageThreshold ?? entity.Comp.ColdDamageThreshold;
 
-        if (currentTemperature >= heatDamageThreshold)
+        if (currentTemperature >= heatDamageThreshold) // Carpmosia-edit - Internal temp authority
         {
             if (!entity.Comp.TakingDamage)
             {
@@ -117,11 +121,11 @@ public sealed partial class TemperatureSystem
                 entity.Comp.TakingDamage = true;
             }
 
-            var diff = Math.Abs(currentTemperature - heatDamageThreshold);
+            var diff = Math.Abs(currentTemperature - heatDamageThreshold); // Carpmosia-edit - Internal temp authority
             var tempDamage = c / (1 + a * Math.Pow(Math.E, -heatK * diff)) - y;
             _damageable.TryChangeDamage(entity.Owner, entity.Comp.HeatDamage * tempDamage * deltaTime.TotalSeconds, ignoreResistances: true, interruptsDoAfters: false);
         }
-        else if (currentTemperature <= coldDamageThreshold)
+        else if (currentTemperature <= coldDamageThreshold) // Carpmosia-edit - Internal temp authority
         {
             if (!entity.Comp.TakingDamage)
             {
@@ -129,7 +133,7 @@ public sealed partial class TemperatureSystem
                 entity.Comp.TakingDamage = true;
             }
 
-            var diff = Math.Abs(currentTemperature - coldDamageThreshold);
+            var diff = Math.Abs(currentTemperature - coldDamageThreshold); // Carpmosia-edit - Internal temp authority
             var tempDamage =
                 Math.Sqrt(diff * (Math.Pow(entity.Comp.DamageCap.Double(), 2) / coldDamageThreshold));
             _damageable.TryChangeDamage(entity.Owner, entity.Comp.ColdDamage * tempDamage * deltaTime.TotalSeconds, ignoreResistances: true, interruptsDoAfters: false);
@@ -185,6 +189,7 @@ public sealed partial class TemperatureSystem
         else
             _alerts.ClearAlertCategory(entity.AsNullable(), TemperatureAlertCategory);
 
+        // Carpmosia-start - Internal temp authority
         // Do the same for the (now modified by external temp) internal temp, if the entity has one, and it is authoritative.
         if (!_internalTemperatureQuery.TryComp(entity, out var internalTemp) || !internalTemp.IsAuthoritative)
             return;
@@ -199,6 +204,7 @@ public sealed partial class TemperatureSystem
         {
             _alerts.ClearAlertCategory(entity.AsNullable(), InternalTemperatureAlertCategory);
         }
+        // Carpmosia-end - Internal temp authority
     }
 
     private void EnqueueDamage(Entity<TemperatureDamageComponent> ent, ref OnTemperatureChangeEvent args)

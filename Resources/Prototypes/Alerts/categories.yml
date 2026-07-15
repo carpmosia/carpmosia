@@ -4,8 +4,10 @@
 - type: alertCategory
   id: Temperature
 
+# Carpmosia-start - Internal temp authority
 - type: alertCategory
   id: InternalTemperature
+# Carpmosia-end - Internal temp authority
 
 - type: alertCategory
   id: Breathing

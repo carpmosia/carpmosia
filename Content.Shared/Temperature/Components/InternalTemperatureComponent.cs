@@ -1,6 +1,6 @@
-using Content.Shared.Temperature.Systems;
+using Content.Shared.Temperature.Systems; // Carpmosia-edit - Internal temp authority
 
-namespace Content.Shared.Temperature.Components;
+namespace Content.Shared.Temperature.Components; // Carpmosia-edit - Internal temp authority
 
 /// <summary>
 /// Entity has an internal temperature which conducts heat from its surface.
@@ -11,10 +11,10 @@ namespace Content.Shared.Temperature.Components;
 /// Too hot? Suffering heatstroke, start sweating to cool off and increase thirst.
 /// Too cold? Suffering hypothermia, start shivering to warm up and increase hunger.
 /// </remarks>
-[RegisterComponent, Access(typeof(SharedTemperatureSystem))]
+[RegisterComponent, Access(typeof(SharedTemperatureSystem))] // Carpmosia-edit - Internal temp authority
 public sealed partial class InternalTemperatureComponent : Component
 {
-    // Carpmosia-start - Authoritative InternalTemperature
+    // Carpmosia-start - Internal temp authority
     /// <summary>
     /// If true, the entity's internal temperature will be used for temperature-based damage and reagent limits instead of it's surface temperature.
     /// </summary>
@@ -24,7 +24,7 @@ public sealed partial class InternalTemperatureComponent : Component
     /// </remarks>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public bool IsAuthoritative;
-    // Carpmosia-end - Authoritative InternalTemperature
+    // Carpmosia-end - Internal temp authority
 
     /// <summary>
     /// Internal temperature which is modified by surface temperature.
