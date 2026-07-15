@@ -36,10 +36,16 @@ public sealed partial class TeslaEnergyBallComponent : Component
 
     // Carpmosia-start - Engine Loose Rework
     /// <summary>
+    /// Played when the entity ruptures
+    /// </summary>
+    [DataField]
+    public SoundSpecifier? SoundExplosion = new SoundCollectionSpecifier("Explosion");
+
+    /// <summary>
     /// Range of the EMP in tiles.
     /// </summary>
     [DataField]
-    public float EmpRange = 8f;
+    public float EmpRange = 20f;
 
     /// <summary>
     /// Power consumed from batteries by the EMP.

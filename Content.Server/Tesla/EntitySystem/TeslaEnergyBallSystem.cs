@@ -11,6 +11,7 @@ using Robust.Shared.Physics.Events;
 using Content.Server.Lightning.Components;
 using Robust.Server.Audio;
 using Content.Server.Singularity.Events;
+using Content.Server.Lightning; // Carpmosia-edit - Engine Loose Rework
 
 namespace Content.Server.Tesla.EntitySystems;
 
@@ -22,6 +23,7 @@ public sealed partial class TeslaEnergyBallSystem : EntitySystem
     [Dependency] private AudioSystem _audio = default!;
     [Dependency] private SharedEmpSystem _emp = default!; // Carpmosia-edit - Engine Loose Rework
     [Dependency] private SharedTransformSystem _transform = default!; // Carpmosia-edit - Engine Loose Rework
+    [Dependency] private LightningSystem _lightning = default!;
 
     public override void Initialize()
     {
@@ -40,7 +42,7 @@ public sealed partial class TeslaEnergyBallSystem : EntitySystem
         }
         else if (HasComp<SmesComponent>(args.Entity))
         {
-            Rupture(tesla);
+            Rupture(tesla, tesla.Comp);
         // Carpmosia-end - Engine Loose Rework
         } else
         {
@@ -65,13 +67,16 @@ public sealed partial class TeslaEnergyBallSystem : EntitySystem
     }
 
     // Carpmosia-start - Engine Loose Rework
-    private void Rupture(Entity<TeslaEnergyBallComponent> tesla)
+    private void Rupture(EntityUid uid, TeslaEnergyBallComponent comp)
     {
-        for (var i = 0; i < tesla.Comp.SpawnAmount; i++)
-            Spawn(tesla.Comp.EmpSpawnProto, Transform(tesla).Coordinates);
+        for (var i = 0; i < comp.SpawnAmount; i++)
+            Spawn(comp.EmpSpawnProto, Transform(uid).Coordinates);
 
-        _emp.EmpPulse(_transform.GetMapCoordinates(tesla), tesla.Comp.EmpRange, tesla.Comp.EmpConsumption, tesla.Comp.EmpDuration);
-        QueueDel(tesla);
+        _audio.PlayPvs(comp.SoundExplosion, Transform(uid).Coordinates);
+        _emp.EmpPulse(_transform.GetMapCoordinates(uid), comp.EmpRange, comp.EmpConsumption, comp.EmpDuration);
+        _lightning.ShootRandomLightnings(uid, comp.EmpRange, comp.SpawnAmount * 4, arcDepth: 3);
+
+        QueueDel(uid);
     }
     // Carpmosia-end - Engine Loose Rework
 }
