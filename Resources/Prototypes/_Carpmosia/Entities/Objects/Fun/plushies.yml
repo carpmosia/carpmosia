@@ -105,6 +105,8 @@
         volume: 0
         pitch: 0.6
         variation: 0.3
+  - type: Item
+    sprite: _Carpmosia/Objects/Fun/Plushies/axel.rsi
   - type: EmitSoundOnLand
     sound: *PlushieLizardAxelSound
   - type: EmitSoundOnActivate
@@ -123,8 +125,13 @@
       reagents:
       - ReagentId: Blood
         Quantity: 30
+  - type: SolutionManager
+    solutions:
+    - SolutionLizardAxelColoring
   - type: Solution
+    id: food
     solution:
+      maxVol: 20
       reagents:
       - ReagentId: Fiber
         Quantity: 10
@@ -148,6 +155,16 @@
     inHandsFillBaseName: -fill-
     equippedMaxFillLevels: 4
     equippedFillBaseName: -fill-
+
+- type: entity
+  parent: Solution
+  id: SolutionLizardAxelColoring
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Solution
+    id: coloring
+    solution:
+      maxVol: 30
 
 - type: entity
   parent: PlushieMoth
