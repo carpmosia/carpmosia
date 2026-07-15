@@ -38,7 +38,8 @@ public sealed partial class TeslaEnergyBallSystem : EntitySystem
         {
             AdjustEnergy(tesla, tesla.Comp, singuloFood.Energy);
         // Carpmosia-start - Engine Loose Rework
-        } else if(HasComp<SmesComponent>(args.Entity))
+        }
+        else if (HasComp<SmesComponent>(args.Entity))
         {
             Rupture(tesla);
         // Carpmosia-end - Engine Loose Rework
