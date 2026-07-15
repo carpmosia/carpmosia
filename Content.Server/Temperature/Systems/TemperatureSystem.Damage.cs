@@ -27,6 +27,7 @@ public sealed partial class TemperatureSystem
     [Dependency] private EntityQuery<TemperatureDamageComponent> _tempDamageQuery = default!;
     [Dependency] private EntityQuery<ContainerTemperatureComponent> _containerTemperatureQuery = default!;
     [Dependency] private EntityQuery<ThermalRegulatorComponent> _thermalRegulatorQuery = default!;
+    [Dependency] private EntityQuery<InternalTemperatureComponent> _internalTemperatureQuery = default!;
 
     /// <summary>
     ///     All the components that will have their damage updated at the end of the tick.
@@ -39,6 +40,11 @@ public sealed partial class TemperatureSystem
     /// Alert prototype for Temperature.
     /// </summary>
     public static readonly ProtoId<AlertCategoryPrototype> TemperatureAlertCategory = "Temperature";
+
+    /// <summary>
+    /// Alert prototype for Internal Temperature.
+    /// </summary>
+    public static readonly ProtoId<AlertCategoryPrototype> InternalTemperatureAlertCategory = "InternalTemperature";
 
     /// <summary>
     /// The maximum severity applicable to temperature alerts.
@@ -178,6 +184,19 @@ public sealed partial class TemperatureSystem
             _alerts.ShowAlert(entity.AsNullable(), type, alertLevel);
         else
             _alerts.ClearAlertCategory(entity.AsNullable(), TemperatureAlertCategory);
+
+        // Do the same for the (now modified by external temp) internal temp, if the entity has one, and it is authoritative.
+        if (!_internalTemperatureQuery.TryComp(entity, out var internalTemp) || !internalTemp.IsAuthoritative)
+            return;
+
+        var internalTempScale = (internalTemp.Temperature - idealTemp) / (threshold - idealTemp);
+        var internalAlertLevel = (short)ContentHelpers.RoundToLevels(internalTempScale - MinAlertTemperatureScale, 1.00f - MinAlertTemperatureScale, MaxTemperatureAlertSeverity + 1);
+        if (internalAlertLevel > 0)
+            _alerts.ShowAlert(entity.AsNullable(), type, internalAlertLevel);
+        else
+        {
+            _alerts.ClearAlertCategory(entity.AsNullable(), InternalTemperatureAlertCategory);
+        }
     }
 
     private void EnqueueDamage(Entity<TemperatureDamageComponent> ent, ref OnTemperatureChangeEvent args)

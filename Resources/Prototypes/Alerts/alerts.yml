@@ -21,6 +21,7 @@
     - category: Pressure
     - alertType: Bleed
     - category: Temperature
+    - category: InternalTemperature
     - category: Hunger
     - category: Thirst
     - alertType: Magboots
@@ -122,6 +123,20 @@
   maxSeverity: 3
   name: alerts-too-hot-name
   description: alerts-too-hot-desc
+
+- type: alert
+  parent: Cold # generic icons
+  id: InternalCold
+  category: InternalTemperature
+  name: alerts-internal-too-cold-name
+  description: alerts-internal-too-cold-desc
+
+- type: alert
+  parent: Hot # generic icons
+  id: InternalHot
+  category: InternalTemperature
+  name: alerts-internal-too-hot-name
+  description: alerts-internal-too-hot-desc
 
 - type: alert
   id: Weightless

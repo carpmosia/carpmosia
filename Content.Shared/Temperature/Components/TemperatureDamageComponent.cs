@@ -81,6 +81,18 @@ public sealed partial class TemperatureDamageComponent : Component
     public ProtoId<AlertPrototype> ColdAlert = "Cold";
 
     /// <summary>
+    /// The id of the alert thrown when the entity's InternalTemperature is too cold.
+    /// </summary>
+    [DataField]
+    public ProtoId<AlertPrototype> InternalColdAlert = "InternalCold";
+
+    /// <summary>
+    /// The id of the alert thrown when the entity's InternalTemperature is too hot.
+    /// </summary>
+    [DataField]
+    public ProtoId<AlertPrototype> InternalHotAlert = "InternalHot";
+
+    /// <summary>
     /// The last time this entity processed temperature damage.
     /// </summary>
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
