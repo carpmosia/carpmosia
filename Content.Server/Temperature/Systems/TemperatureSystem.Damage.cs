@@ -189,10 +189,12 @@ public sealed partial class TemperatureSystem
         if (!_internalTemperatureQuery.TryComp(entity, out var internalTemp) || !internalTemp.IsAuthoritative)
             return;
 
+        var internalType = internalTemp.Temperature <= idealTemp ? thresholds.InternalColdAlert : thresholds.InternalHotAlert;
+
         var internalTempScale = (internalTemp.Temperature - idealTemp) / (threshold - idealTemp);
         var internalAlertLevel = (short)ContentHelpers.RoundToLevels(internalTempScale - MinAlertTemperatureScale, 1.00f - MinAlertTemperatureScale, MaxTemperatureAlertSeverity + 1);
         if (internalAlertLevel > 0)
-            _alerts.ShowAlert(entity.AsNullable(), type, internalAlertLevel);
+            _alerts.ShowAlert(entity.AsNullable(), internalType, internalAlertLevel);
         else
         {
             _alerts.ClearAlertCategory(entity.AsNullable(), InternalTemperatureAlertCategory);
