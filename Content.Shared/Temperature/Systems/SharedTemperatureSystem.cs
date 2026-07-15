@@ -17,6 +17,7 @@ public abstract partial class SharedTemperatureSystem : EntitySystem
     [Dependency] private MovementSpeedModifierSystem _movementSpeedModifier = default!;
 
     [Dependency] protected EntityQuery<TemperatureComponent> TemperatureQuery = default!;
+    [Dependency] protected EntityQuery<InternalTemperatureComponent> InternalTemperatureQuery = default!;
 
     /// <summary>
     /// Band-aid for unpredicted atmos. Delays the application for a short period so that laggy clients can get the replicated temperature.
