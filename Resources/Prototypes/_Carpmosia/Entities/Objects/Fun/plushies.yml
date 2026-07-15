@@ -6,7 +6,7 @@
   components:
   - type: Sprite
     sprite: _Carpmosia/Objects/Fun/Plushies/screams.rsi
-  - type: Clothing
+  - type: Item
     sprite: _Carpmosia/Objects/Fun/Plushies/screams.rsi
   - type: EmitSoundOnUse
     sound: &PlushieLizardScreamsSound
@@ -28,6 +28,8 @@
     transferAmount: 10
   - type: MeleeWeapon
     soundHit: *PlushieLizardScreamsSound
+  - type: Clothing
+    sprite: _Carpmosia/Objects/Fun/Plushies/screams.rsi
   - type: Explosive
     canCreateVacuum: false
     deleteAfterExplosion: false
@@ -96,7 +98,7 @@
     - state: fill-1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
-  - type: Clothing
+  - type: Item
     sprite: _Carpmosia/Objects/Fun/Plushies/axel.rsi
   - type: EmitSoundOnUse
     sound: &PlushieLizardAxelSound
@@ -105,8 +107,6 @@
         volume: 0
         pitch: 0.6
         variation: 0.3
-  - type: Item
-    sprite: _Carpmosia/Objects/Fun/Plushies/axel.rsi
   - type: EmitSoundOnLand
     sound: *PlushieLizardAxelSound
   - type: EmitSoundOnActivate
@@ -120,6 +120,8 @@
     transferAmount: 10
   - type: MeleeWeapon
     soundHit: *PlushieLizardAxelSound
+  - type: Clothing
+    sprite: _Carpmosia/Objects/Fun/Plushies/axel.rsi
   - type: Extractable
     juiceSolution:
       reagents:
