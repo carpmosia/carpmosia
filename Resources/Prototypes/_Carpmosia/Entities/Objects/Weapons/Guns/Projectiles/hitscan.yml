@@ -1,0 +1,41 @@
+- type: entity
+  parent: BasicHitscan
+  id: XenoHeavyLaser
+  name: blue high-energy laser ray
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HitscanBasicDamage
+    damage:
+      types:
+        Heat: 28
+  - type: HitscanBasicVisuals
+    muzzleFlash:
+      sprite: _Carpmosia/Objects/Weapons/Guns/Projectiles/projectiles.rsi
+      state: muzzle_xeno_laser
+    travelFlash:
+      sprite: _Carpmosia/Objects/Weapons/Guns/Projectiles/projectiles.rsi
+      state: xeno_laser
+    impactFlash:
+      sprite: _Carpmosia/Objects/Weapons/Guns/Projectiles/projectiles.rsi
+      state: impact_xeno_laser
+
+- type: entity
+  parent: BasicHitscan
+  id: OldModelLaser
+  name: old model laser ray
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HitscanBasicDamage
+    damage:
+      types:
+        Heat: 17
+  - type: HitscanBasicVisuals
+    muzzleFlash:
+      sprite: _Carpmosia/Objects/Weapons/Guns/Projectiles/projectiles.rsi
+      state: muzzle_retro
+    travelFlash:
+      sprite: _Carpmosia/Objects/Weapons/Guns/Projectiles/projectiles.rsi
+      state: retro
+    impactFlash:
+      sprite: _Carpmosia/Objects/Weapons/Guns/Projectiles/projectiles.rsi
+      state: impact_retro
