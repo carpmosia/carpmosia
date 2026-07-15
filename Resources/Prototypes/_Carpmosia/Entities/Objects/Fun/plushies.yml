@@ -123,48 +123,34 @@
   - type: Clothing
     sprite: _Carpmosia/Objects/Fun/Plushies/axel.rsi
   - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: Blood
-        Quantity: 30
-  - type: SolutionManager
-    solutions:
-    - SolutionPlushieLizardAxelColoring
+    grindableSolutionName: food
+    juiceSolution: null
   - type: Solution
     solution:
+      maxVol: 30
       reagents:
       - ReagentId: Fiber
         Quantity: 10
       - ReagentId: Blood
         Quantity: 10
   - type: MixableSolution
-    solution: coloring
+    solution: food
   - type: ExaminableSolution
-    solution: coloring
+    solution: food
     exactVolume: true
   - type: DrawableSolution
-    solution: coloring
+    solution: food
   - type: InjectableSolution
-    solution: coloring
+    solution: food
   - type: Appearance
   - type: SolutionContainerVisuals
-    solutionName: coloring
+    solutionName: food
     maxFillLevels: 4
     fillBaseName: fill-
     inHandsMaxFillLevels: 4
     inHandsFillBaseName: -fill-
     equippedMaxFillLevels: 4
     equippedFillBaseName: -fill-
-
-- type: entity
-  parent: Solution
-  id: SolutionPlushieLizardAxelColoring
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Solution
-    id: coloring
-    solution:
-      maxVol: 30
 
 - type: entity
   parent: PlushieMoth
