@@ -2274,7 +2274,10 @@
   url: https://github.com/carpmosia/carpmosia/pull/497
 - author: Cr0w-alt-f4
   changes:
-  - message: more books
+  - message: Increased minimum book spawn on bookshelf from 0 to 6, and max from 13
+      to 14.
+    type: Tweak
+  - message: Added 21 new real books to spawn on bookshelves.
     type: Add
   id: 349
   time: '2026-07-14T16:24:32.0000000+00:00'
@@ -2289,4 +2292,18 @@
   id: 350
   time: '2026-07-15T16:23:03.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/505
+- author: Atakku
+  changes:
+  - message: Removed metaplushies, as well as their loadouts, and etc.
+    type: Remove
+  id: 351
+  time: '2026-07-16T02:26:22.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/512
+- author: Atakku
+  changes:
+  - message: Removed unnecessary beacons from Donk Co Rest Stop
+    type: Fix
+  id: 352
+  time: '2026-07-16T02:39:29.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/513
 Order: -1
