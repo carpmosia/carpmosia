@@ -182,7 +182,7 @@
   - type: Item
     storedOffset: 0,-5
   - type: BatteryAmmoProvider
-    proto: RedMediumLaser
+    proto: OldModelLaser #Carpmosia-Edit - Unique beam
     fireCost: 62.5
   - type: MagazineVisuals
     magState: mag
@@ -681,7 +681,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: BatteryAmmoProvider
-    proto: RedMediumLaser
+    proto: OldModelLaser #Carpmosia-Edit Unique beam
     fireCost: 100
   - type: BatterySelfRecharger
     autoRechargeRate: 40
@@ -987,15 +987,35 @@
       map: [ "enum.GunVisualLayers.Base" ]
     - state: mag-unshaded-4
       map: [ "enum.GunVisualLayers.MagUnshaded" ]
+  # Carpmosia-Start - Adding the Melee Component
+  - type: MeleeWeapon
+    attackRate: 1.5
+    angle: 45
+    animation: WeaponArcFist
+    wideAnimationRotation: -90
+    damage:
+      types:
+        Blunt: 10
+  - type: AltFireMelee
+    attackType: Heavy
+  # Carpmosia-End - Adding the Melee Component
 
 - type: entity
   parent: [WeaponLaserCannon, BaseXenoborgContraband]
   id: WeaponLaserCannonXenoborg
-  name: xenoborg laser cannon
+  name: xenoborg laser cannon #Could Rename to Xenoborg Mantis Cannon but idk your choice
   components:
+  # Carpmosia-Start - Adding Unique Sprite
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Weapons/Guns/Battery/xenoborg_laser_cannon.rsi
+    layers:
+    - state: base
+      map: [ "enum.GunVisualLayers.Base" ]
+    - state: mag-unshaded-4
+      map: [ "enum.GunVisualLayers.MagUnshaded" ]
+  #Carpmosia-End - Adding Unique Sprite
   - type: BatterySelfRecharger
     autoRechargeRate: 30
-  # "remove" wield bonus and penalty so borgs can use it
   - type: GunWieldBonus
     minAngle: 0
     maxAngle: 0
@@ -1003,3 +1023,21 @@
     fireRate: 2
     minAngle: 1
     maxAngle: 2
+  # Carpmosia-Start - Adding the Melee Component
+  - type: MeleeWeapon
+    attackRate: 0.5
+    angle: 0
+    animation: WeaponArcFist
+    wideAnimationRotation: -45
+    damage:
+      types:
+        Blunt: 30
+    soundHit:
+      path: "/Audio/Items/Handcuffs/rope_breakout.ogg"
+  - type: AltFireMelee
+    attackType: Heavy
+  - type: MeleeThrowOnHit
+    unanchorOnHit: Unanchorable
+  - type: BatteryAmmoProvider
+    proto: XenoHeavyLaser
+  # Carpmosia-End - Adding the Melee Component
