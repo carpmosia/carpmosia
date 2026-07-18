@@ -182,7 +182,7 @@
   - type: Item
     storedOffset: 0,-5
   - type: BatteryAmmoProvider
-    proto: OldModelLaser # Carpmosia-Edit - Unique beam
+    proto: OldModelLaser # Carpmosia-edit - Laser rework
     fireCost: 62.5
   - type: MagazineVisuals
     magState: mag
@@ -681,7 +681,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: BatteryAmmoProvider
-    proto: OldModelLaser # Carpmosia-Edit - Unique beam
+    proto: OldModelLaser # Carpmosia-edit - Laser rework
     fireCost: 100
   - type: BatterySelfRecharger
     autoRechargeRate: 40
@@ -987,7 +987,7 @@
       map: [ "enum.GunVisualLayers.Base" ]
     - state: mag-unshaded-4
       map: [ "enum.GunVisualLayers.MagUnshaded" ]
-  # Carpmosia-Start - Adding the melee component
+  # Carpmosia-start - Laser rework
   - type: MeleeWeapon
     attackRate: 1.5
     angle: 45
@@ -998,7 +998,7 @@
         Blunt: 10
   - type: AltFireMelee
     attackType: Heavy
-  # Carpmosia-End - Adding the melee component
+  # Carpmosia-end - Laser rework
 
 - type: entity
   parent: [WeaponLaserCannon, BaseXenoborgContraband]
@@ -1015,7 +1015,7 @@
     fireRate: 2
     minAngle: 1
     maxAngle: 2
-  # Carpmosia-Start - Adding the melee component, gun sprite and hitscan proto
+  # Carpmosia-start - Laser rework
   - type: MeleeWeapon
     attackRate: 0.5
     angle: 0
@@ -1039,4 +1039,4 @@
       map: [ "enum.GunVisualLayers.Base" ]
     - state: mag-unshaded-4
       map: [ "enum.GunVisualLayers.MagUnshaded" ]
-  # Carpmosia-End - Adding the melee component, gun sprite and hitscan proto
+  # Carpmosia-end - Laser rework
