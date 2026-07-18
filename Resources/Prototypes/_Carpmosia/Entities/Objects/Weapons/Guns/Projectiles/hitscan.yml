@@ -1,13 +1,9 @@
 - type: entity
-  parent: BasicHitscan
+  parent: RedHeavyLaser
   id: XenoHeavyLaser
   name: blue high-energy laser ray
   categories: [ HideSpawnMenu ]
   components:
-  - type: HitscanBasicDamage
-    damage:
-      types:
-        Heat: 28
   - type: HitscanBasicVisuals
     muzzleFlash:
       sprite: _Carpmosia/Objects/Weapons/Guns/Projectiles/projectiles.rsi
@@ -20,15 +16,11 @@
       state: impact_xeno_laser
 
 - type: entity
-  parent: BasicHitscan
+  parent: RedMediumLaser
   id: OldModelLaser
   name: old model laser ray
   categories: [ HideSpawnMenu ]
   components:
-  - type: HitscanBasicDamage
-    damage:
-      types:
-        Heat: 17
   - type: HitscanBasicVisuals
     muzzleFlash:
       sprite: _Carpmosia/Objects/Weapons/Guns/Projectiles/projectiles.rsi

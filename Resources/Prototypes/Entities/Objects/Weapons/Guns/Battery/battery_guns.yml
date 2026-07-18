@@ -182,7 +182,7 @@
   - type: Item
     storedOffset: 0,-5
   - type: BatteryAmmoProvider
-    proto: OldModelLaser #Carpmosia-Edit - Unique beam
+    proto: OldModelLaser # Carpmosia-Edit - Unique beam
     fireCost: 62.5
   - type: MagazineVisuals
     magState: mag
@@ -681,7 +681,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: BatteryAmmoProvider
-    proto: OldModelLaser #Carpmosia-Edit Unique beam
+    proto: OldModelLaser # Carpmosia-Edit Unique beam
     fireCost: 100
   - type: BatterySelfRecharger
     autoRechargeRate: 40
@@ -1003,7 +1003,7 @@
 - type: entity
   parent: [WeaponLaserCannon, BaseXenoborgContraband]
   id: WeaponLaserCannonXenoborg
-  name: xenoborg laser cannon #Could Rename to Xenoborg Mantis Cannon but idk your choice
+  name: xenoborg laser cannon
   components:
   # Carpmosia-Start - Adding Unique Sprite
   - type: Sprite
@@ -1013,9 +1013,10 @@
       map: [ "enum.GunVisualLayers.Base" ]
     - state: mag-unshaded-4
       map: [ "enum.GunVisualLayers.MagUnshaded" ]
-  #Carpmosia-End - Adding Unique Sprite
+  # Carpmosia-End - Adding Unique Sprite
   - type: BatterySelfRecharger
     autoRechargeRate: 30
+  # "remove" wield bonus and penalty so borgs can use it
   - type: GunWieldBonus
     minAngle: 0
     maxAngle: 0
