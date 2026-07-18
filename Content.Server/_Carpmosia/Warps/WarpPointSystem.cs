@@ -14,6 +14,7 @@ public sealed class WarpPointSystem : EntitySystem
         SubscribeLocalEvent<MetaDataComponent, StationPostInitEvent>(OnStationPostInitEvent);
     }
 
+    // Sets up warp point components directly on station (Nuke disk, Nuke)
     private void OnMapInit(EntityUid ent, WarpPointComponent comp, MapInitEvent _)
     {
         if (string.IsNullOrEmpty(comp.Location))
@@ -27,6 +28,7 @@ public sealed class WarpPointSystem : EntitySystem
         Log.Error("DOING THIS SHIT FOR " + comp.Location);
     }
 
+    // Sets up warp point components on subgrids added by the station (ATS and etc)
     private void OnStationPostInitEvent(EntityUid stationId, MetaDataComponent stationMeta, StationPostInitEvent _)
     {
         List<EntityUid?> stationGrids = [];
