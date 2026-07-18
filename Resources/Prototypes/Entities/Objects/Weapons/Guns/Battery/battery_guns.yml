@@ -681,7 +681,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: BatteryAmmoProvider
-    proto: OldModelLaser # Carpmosia-Edit Unique beam
+    proto: OldModelLaser # Carpmosia-Edit - Unique beam
     fireCost: 100
   - type: BatterySelfRecharger
     autoRechargeRate: 40
@@ -987,7 +987,7 @@
       map: [ "enum.GunVisualLayers.Base" ]
     - state: mag-unshaded-4
       map: [ "enum.GunVisualLayers.MagUnshaded" ]
-  # Carpmosia-Start - Adding the Melee Component
+  # Carpmosia-Start - Adding the melee component
   - type: MeleeWeapon
     attackRate: 1.5
     angle: 45
@@ -998,22 +998,13 @@
         Blunt: 10
   - type: AltFireMelee
     attackType: Heavy
-  # Carpmosia-End - Adding the Melee Component
+  # Carpmosia-End - Adding the melee component
 
 - type: entity
   parent: [WeaponLaserCannon, BaseXenoborgContraband]
   id: WeaponLaserCannonXenoborg
   name: xenoborg laser cannon
   components:
-  # Carpmosia-Start - Adding Unique Sprite
-  - type: Sprite
-    sprite: _Carpmosia/Objects/Weapons/Guns/Battery/xenoborg_laser_cannon.rsi
-    layers:
-    - state: base
-      map: [ "enum.GunVisualLayers.Base" ]
-    - state: mag-unshaded-4
-      map: [ "enum.GunVisualLayers.MagUnshaded" ]
-  # Carpmosia-End - Adding Unique Sprite
   - type: BatterySelfRecharger
     autoRechargeRate: 30
   # "remove" wield bonus and penalty so borgs can use it
@@ -1024,7 +1015,7 @@
     fireRate: 2
     minAngle: 1
     maxAngle: 2
-  # Carpmosia-Start - Adding the Melee Component
+  # Carpmosia-Start - Adding the melee component, gun sprite and hitscan proto
   - type: MeleeWeapon
     attackRate: 0.5
     angle: 0
@@ -1041,4 +1032,11 @@
     unanchorOnHit: Unanchorable
   - type: BatteryAmmoProvider
     proto: XenoHeavyLaser
-  # Carpmosia-End - Adding the Melee Component
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Weapons/Guns/Battery/xenoborg_laser_cannon.rsi
+    layers:
+    - state: base
+      map: [ "enum.GunVisualLayers.Base" ]
+    - state: mag-unshaded-4
+      map: [ "enum.GunVisualLayers.MagUnshaded" ]
+  # Carpmosia-End - Adding the melee component, gun sprite and hitscan proto
