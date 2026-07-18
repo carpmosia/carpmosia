@@ -12,6 +12,7 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Timing;
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Warps;
+using Content.Server.Station.Components; // Carpmosia-edit - Warp point prefixes
 
 namespace Content.Server.Pinpointer;
 
@@ -212,7 +213,15 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
 
         // We set this on mapinit just in case the text was edited via VV or something.
         if (TryComp<WarpPointComponent>(ent, out var warpPoint))
-            warpPoint.Location = navMap.Text;
+        // Carpmosia-start - Warp point prefixes
+        {
+            if (!string.IsNullOrEmpty(navMap.Text)
+                    && TryComp<BecomesStationComponent>(Transform(ent).GridUid, out var station))
+                warpPoint.Location = station.Id + " - " + navMap.Text;
+            else
+                warpPoint.Location = navMap.Text;
+        }
+        // Carpmosia-end - Warp point prefixes
 
         UpdateBeaconEnabledVisuals((ent, navMap));
     }
