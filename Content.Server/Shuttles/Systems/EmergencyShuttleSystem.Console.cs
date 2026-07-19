@@ -17,7 +17,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Timer = Robust.Shared.Timing.Timer;
 using Robust.Shared.Random;
-using System.Numerics;
+using System.Numerics; // Carpmosia-edit - Evac pod tweaks
 
 namespace Content.Server.Shuttles.Systems;
 
@@ -204,8 +204,11 @@ public sealed partial class EmergencyShuttleSystem
             }
 
             // Don't dock them. If you do end up doing this then stagger launch.
-            if (_shuttle.TryGetFTLProximity(uid, new EntityCoordinates(arrivals, Vector2.Zero), out var coords, out var targAngle, minOffset: 128f, maxOffset: 256f)) // Carpmosia-edit - Evac pod tweaks
-                _shuttle.FTLToCoordinates(uid, shuttle, coords, targAngle, hyperspaceTime: TransitTime * _random.NextFloat(0.2f, 0.7f)); // Carpmosia-edit - Evac pod tweaks
+            // Carpmosia-start - Evac pod tweaks
+            var (target, minOffset, maxOffset) = arrivals.IsValid() ? (arrivals, 96f, 192f) : (uid, 512f, 1024f); // Fallback in case arrivals is disabled
+            if (_shuttle.TryGetFTLProximity(uid, new EntityCoordinates(target, Vector2.Zero), out var coords, out var targAngle, minOffset, maxOffset))
+                _shuttle.FTLToCoordinates(uid, shuttle, coords, targAngle, hyperspaceTime: TransitTime * _random.NextFloat(0.2f, 0.7f));
+            // Carpmosia-end - Evac pod tweaks
             RemCompDeferred<EscapePodComponent>(uid);
         }
 

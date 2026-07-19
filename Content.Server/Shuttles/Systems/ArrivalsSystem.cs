@@ -553,7 +553,7 @@ public sealed partial class ArrivalsSystem : EntitySystem
             _biomes.EnsurePlanet(mapUid, _protoManager.Index(template));
             var restricted = new RestrictedRangeComponent
             {
-                Range = 32f
+                Range = 256f // Carpmosia-edit - Evac pod tweaks
             };
             AddComp(mapUid, restricted);
         }
