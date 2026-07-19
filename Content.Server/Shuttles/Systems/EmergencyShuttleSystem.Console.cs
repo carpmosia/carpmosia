@@ -17,6 +17,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Timer = Robust.Shared.Timing.Timer;
 using Robust.Shared.Random;
+using System.Numerics;
 
 namespace Content.Server.Shuttles.Systems;
 
@@ -24,6 +25,7 @@ namespace Content.Server.Shuttles.Systems;
 // Move state data into the emergency shuttle component
 public sealed partial class EmergencyShuttleSystem
 {
+    [Dependency] private ArrivalsSystem _arrivals = default!; // Carpmosia-edit - Evac pod tweaks
     /*
      * Handles the emergency shuttle's console and early launching.
      */
@@ -181,13 +183,13 @@ public sealed partial class EmergencyShuttleSystem
             // Stagger launches coz funny
             while (podQuery.MoveNext(out _, out var pod))
             {
-                pod.LaunchTime = _timing.CurTime + TimeSpan.FromSeconds(_random.NextFloat(0.05f, 10f)); // Carpmosia-edit - Evac pod tweaks
+                pod.LaunchTime = _timing.CurTime + TimeSpan.FromSeconds(TransitTime * _random.NextFloat(0.05f, 0.25f)); // Carpmosia-edit - Evac pod tweaks
             }
         }
 
         var podLaunchQuery = EntityQueryEnumerator<EscapePodComponent, ShuttleComponent>();
 
-        TryGetArrivals(out var arrivals);
+        _arrivals.TryGetArrivals(out var arrivals); // Carpmosia-edit - Evac pod tweaks
 
         while (podLaunchQuery.MoveNext(out var uid, out var pod, out var shuttle))
         {
@@ -202,7 +204,8 @@ public sealed partial class EmergencyShuttleSystem
             }
 
             // Don't dock them. If you do end up doing this then stagger launch.
-            _shuttle.FTLToCoordinates(uid, shuttle, new EntityCoordinates(), Angle.Zero, hyperspaceTime: TransitTime); // Carpmosia-edit - Evac pod tweaks
+            if (_shuttle.TryGetFTLProximity(uid, new EntityCoordinates(arrivals, Vector2.Zero), out var coords, out var targAngle, minOffset: 128f, maxOffset: 256f)) // Carpmosia-edit - Evac pod tweaks
+                _shuttle.FTLToCoordinates(uid, shuttle, coords, targAngle, hyperspaceTime: TransitTime * _random.NextFloat(0.2f, 0.7f)); // Carpmosia-edit - Evac pod tweaks
             RemCompDeferred<EscapePodComponent>(uid);
         }
 

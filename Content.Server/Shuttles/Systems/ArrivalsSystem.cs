@@ -432,7 +432,7 @@ public sealed partial class ArrivalsSystem : EntitySystem
         EnsureComp<PreventPilotComponent>(uid);
     }
 
-    private bool TryGetArrivals(out EntityUid uid)
+    public bool TryGetArrivals(out EntityUid uid) // Carpmosia-edit - Evac pod tweaks
     {
         var arrivalsQuery = EntityQueryEnumerator<ArrivalsSourceComponent>();
 
