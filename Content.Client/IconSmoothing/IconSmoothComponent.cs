@@ -76,6 +76,14 @@ namespace Content.Client.IconSmoothing
         /// </summary>
         Diagonal,
 
+        // Carpmosia-start - Better diagonals
+        /// <summary>
+        ///     The icon represents a triangular sprite with only 5 states:
+        ///     None occupied, South occupied, East occupied, South and East occupied, South, East and South / East occupied.
+        /// </summary>
+        DiagonalPlus,
+        // Carpmosia-end - Better diagonals
+
         /// <summary>
         ///     Where this component contributes to our neighbors being calculated but we do not update our own sprite.
         /// </summary>

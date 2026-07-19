@@ -2,8 +2,7 @@
   id: LizardPlushieBoxer
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:OverallPlaytimeRequirement
+    requirement: !type:OverallPlaytimeRequirement
       time: 10h
   storage:
     back:
@@ -14,8 +13,7 @@
   id: LizardPlushieZookeeper
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:OverallPlaytimeRequirement
+    requirement: !type:OverallPlaytimeRequirement
       time: 10h
   storage:
     back:
@@ -26,8 +24,7 @@
   id: LizardPlushieSecurityCadet
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:DepartmentTimeRequirement
+    requirement: !type:DepartmentTimeRequirement
       department: Security
       time: 10h
   storage:
@@ -39,8 +36,7 @@
   id: LizardPlushieChiefMedicalOfficer
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobChiefMedicalOfficer
       time: 10h
   storage:
@@ -52,8 +48,7 @@
   id: LizardPlushieMedicalDoctor
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobMedicalDoctor
       time: 10h
   storage:
@@ -65,8 +60,7 @@
   id: LizardPlushieMedicalIntern
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:DepartmentTimeRequirement
+    requirement: !type:DepartmentTimeRequirement
       department: Medical
       time: 10h
   storage:
@@ -78,8 +72,7 @@
   id: LizardPlushieChemist
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobChemist
       time: 10h
   storage:
@@ -91,8 +84,7 @@
   id: LizardPlushieParamedic
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobParamedic
       time: 10h
   storage:
@@ -104,8 +96,7 @@
   id: LizardPlushieReporter
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobReporter
       time: 10h
   storage:
@@ -117,8 +108,7 @@
   id: LizardPlushiePsychologist
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobPsychologist
       time: 10h
   storage:
@@ -130,8 +120,7 @@
   id: LizardPlushieMusician
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobMusician
       time: 10h
   storage:
@@ -143,8 +132,7 @@
   id: LizardPlushieQuartermaster
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobQuartermaster
       time: 10h
   storage:
@@ -156,8 +144,7 @@
   id: LizardPlushieCargoTechnician
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobCargoTechnician
       time: 10h
   storage:
@@ -169,8 +156,7 @@
   id: LizardPlushieSalvageSpecialist
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobSalvageSpecialist
       time: 10h
   storage:
@@ -182,8 +168,7 @@
   id: LizardPlushieChiefEngineer
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobChiefEngineer
       time: 10h
   storage:
@@ -195,8 +180,7 @@
   id: LizardPlushieTechnicalAssistant
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:DepartmentTimeRequirement
+    requirement: !type:DepartmentTimeRequirement
       department: Engineering
       time: 10h
   storage:
@@ -208,8 +192,7 @@
   id: LizardPlushieStationEngineer
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobStationEngineer
       time: 10h
   storage:
@@ -221,8 +204,7 @@
   id: LizardPlushieAtmosphericTechnician
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobAtmosphericTechnician
       time: 10h
   storage:
@@ -234,8 +216,7 @@
   id: LizardPlushieResearchDirector
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobResearchDirector
       time: 10h
   storage:
@@ -247,8 +228,7 @@
   id: LizardPlushieScientist
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobScientist
       time: 10h
   storage:
@@ -260,8 +240,7 @@
   id: LizardPlushieResearchAssistant
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:DepartmentTimeRequirement
+    requirement: !type:DepartmentTimeRequirement
       department: Science
       time: 10h
   storage:
@@ -273,8 +252,7 @@
   id: LizardPlushieHeadofSecurity
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobHeadOfSecurity
       time: 10h
   storage:
@@ -286,8 +264,7 @@
   id: LizardPlushieWarden
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobWarden
       time: 10h
   storage:
@@ -299,8 +276,7 @@
   id: LizardPlushieDetective
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobDetective
       time: 10h
   storage:
@@ -312,8 +288,7 @@
   id: LizardPlushieSecurity
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobSecurityOfficer
       time: 10h
   storage:
@@ -325,8 +300,7 @@
   id: LizardPlushieMime
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobMime
       time: 10h
   storage:
@@ -338,8 +312,7 @@
   id: LizardPlushieBotanist
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobBotanist
       time: 10h
   storage:
@@ -351,8 +324,7 @@
   id: LizardPlushieClown
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobClown
       time: 10h
   storage:
@@ -364,8 +336,7 @@
   id: LizardPlushieCaptain
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobCaptain
       time: 10h
   storage:
@@ -377,8 +348,7 @@
   id: LizardPlushieHeadOfPersonnel
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobHeadOfPersonnel
       time: 10h
   storage:
@@ -390,8 +360,7 @@
   id: LizardPlushiePassenger
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobPassenger
       time: 10h
   storage:
@@ -403,8 +372,7 @@
   id: LizardPlushieBartender
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobBartender
       time: 10h
   storage:
@@ -416,8 +384,7 @@
   id: LizardPlushieServiceWorker
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobServiceWorker
       time: 10h
   storage:
@@ -429,8 +396,7 @@
   id: LizardPlushieChef
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobChef
       time: 10h
   storage:
@@ -442,8 +408,7 @@
   id: LizardPlushieLibrarian
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobLibrarian
       time: 10h
   storage:
@@ -455,8 +420,7 @@
   id: LizardPlushieLawyer
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobLawyer
       time: 10h
   storage:
@@ -468,8 +432,7 @@
   id: LizardPlushieChaplain
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobChaplain
       time: 10h
   storage:
@@ -481,8 +444,7 @@
   id: LizardPlushieJanitor
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobJanitor
       time: 10h
   storage:

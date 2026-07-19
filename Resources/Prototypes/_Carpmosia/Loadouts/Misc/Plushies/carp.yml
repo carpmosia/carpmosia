@@ -2,13 +2,11 @@
   id: PlushieCarp
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement:  !type:RoleTimeRequirement
       role: AntagDragon
       time: 1h
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobCargoTechnician
       time: 1h
 

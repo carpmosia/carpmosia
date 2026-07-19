@@ -9,6 +9,7 @@ using Content.Server.Communications;
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Events;
+using Content.Server.Maps; // Carpmosia-edit - Replaced CC with Terminals
 using Content.Server.Pinpointer;
 using Content.Server.RoundEnd;
 using Content.Server.Screens.Components;
@@ -23,6 +24,7 @@ using Content.Shared.DeviceNetwork;
 using Content.Shared.DeviceNetwork.Components;
 using Content.Shared.GameTicking;
 using Content.Shared.Localizations;
+using Content.Shared.Maps; // Carpmosia-edit - Replaced CC with Terminals
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Events;
 using Content.Shared.Shuttles.Systems;
@@ -67,6 +69,7 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
     [Dependency] private StationSystem _station = default!;
     [Dependency] private TransformSystem _transformSystem = default!;
     [Dependency] private UserInterfaceSystem _uiSystem = default!;
+    [Dependency] private IPrototypeManager _protoMan = default!; // Carpmosia-edit - Replaced CC with Terminals
 
     private const float ShuttleSpawnBuffer = 1f;
 
@@ -526,6 +529,55 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
             return;
         }
 
+        // Carpmosia-start - Replaced CC with Terminals
+        var poolProtoId = ConfigManager.GetCVar(CCVars.GameMapPoolTerminal);
+        if (!_protoMan.TryIndex<GameMapPoolPrototype>(poolProtoId, out var poolProto))
+        {
+            Log.Error($"Failed to set up terminal grid!");
+            return;
+        }
+
+        var mapProtoId = _random.Pick(poolProto.Maps);
+        if (!_protoMan.TryIndex<GameMapPrototype>(mapProtoId, out var mapProto))
+        {
+            Log.Error($"Failed to set up terminal grid!");
+            return;
+        }
+
+        var mapTerminal = _mapSystem.CreateMap(out var mapIdTerminal);
+        if (!_loader.TryLoadGrid(mapIdTerminal, mapProto.MapPath, out var gridTerminal))
+        {
+            Log.Error($"Failed to set up terminal grid!");
+            return;
+        }
+
+        if (!Exists(mapTerminal))
+        {
+            Log.Error($"Failed to set up terminal map!");
+            QueueDel(gridTerminal);
+            return;
+        }
+
+        if (!Exists(gridTerminal))
+        {
+            Log.Error($"Failed to set up terminal grid!");
+            QueueDel(mapTerminal);
+            return;
+        }
+
+        var xformTerminal = Transform(gridTerminal.Value);
+        if (xformTerminal.ParentUid != mapTerminal || xformTerminal.MapUid != mapTerminal)
+        {
+            Log.Error($"Terminal grid is not parented to its own map?");
+            QueueDel(mapTerminal);
+            QueueDel(gridTerminal);
+            return;
+        }
+
+        _metaData.SetEntityName(mapTerminal, Loc.GetString("map-name-terminal"));
+        Log.Info($"Created terminal grid {ToPrettyString(gridTerminal)} on map {ToPrettyString(mapTerminal)} for station {ToPrettyString(station)}");
+        // Carpmosia-end - Replaced CC with Terminals
+
         if (string.IsNullOrEmpty(component.Map.ToString()))
         {
             Log.Warning("No CentComm map found, skipping setup.");
@@ -562,10 +614,10 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
             return;
         }
 
-        component.MapEntity = map;
+        component.MapEntity = mapTerminal; // Carpmosia-edit - Replaced CC with Terminals
         _metaData.SetEntityName(map, Loc.GetString("map-name-centcomm"));
-        component.Entity = grid;
-        _shuttle.TryAddFTLDestination(mapId, true, out _);
+        component.Entity = gridTerminal; // Carpmosia-edit - Replaced CC with Terminals
+        _shuttle.TryAddFTLDestination(mapIdTerminal, true, out _); // Carpmosia-edit - Replaced CC with Terminals
         Log.Info($"Created centcomm grid {ToPrettyString(grid)} on map {ToPrettyString(map)} for station {ToPrettyString(station)}");
     }
 
