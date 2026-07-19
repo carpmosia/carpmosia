@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "CC-BY-SA-3.0",
+  "copyright": "TODO",
+  "states": [
+    {
+      "name": "feline0",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3,
+          0.4
+        ]
+      ]
+    },
+    {
+      "name": "feline1"
+    },
+    {
+      "name": "feline2"
+    },
+    {
+      "name": "feline3",
+      "delays": [
+        [
+          0.2,
+          0.3,
+          0.3,
+          0.5,
+          0.5
+        ]
+      ]
+    }
+  ]
+}
