@@ -15,42 +15,41 @@ public sealed class WarpPointSystem : EntitySystem
     }
 
     // Sets up warp point components directly on station (Nuke disk, Nuke)
-    private void OnMapInit(EntityUid ent, WarpPointComponent comp, MapInitEvent _)
+    private void OnMapInit(Entity<WarpPointComponent> ent, ref MapInitEvent _)
     {
-        if (string.IsNullOrEmpty(comp.Location))
+        if (string.IsNullOrEmpty(ent.Comp.Location))
             return;
 
         var gridUid = Transform(ent).GridUid;
         if (!TryComp<BecomesStationComponent>(gridUid, out var bs))
             return;
 
-        comp.Location = bs.Id + " - " + comp.Location;
-        Log.Error("DOING THIS SHIT FOR " + comp.Location);
+        ent.Comp.Location = bs.Id + " - " + ent.Comp.Location;
     }
 
     // Sets up warp point components on subgrids added by the station (ATS and etc)
-    private void OnStationPostInitEvent(EntityUid stationId, MetaDataComponent stationMeta, StationPostInitEvent _)
+    private void OnStationPostInitEvent(Entity<MetaDataComponent> ent, ref StationPostInitEvent _)
     {
         List<EntityUid?> stationGrids = [];
-        var stationName = "Unknown";
+        var stationName = Loc.GetString("generic-unknown");
 
         var smQuery = AllEntityQuery<StationMemberComponent>();
-        while (smQuery.MoveNext(out var ent, out var comp))
+        while (smQuery.MoveNext(out var uid, out var comp))
         {
-            if (comp.Station != stationId)
+            if (comp.Station != ent.Owner)
                 continue;
 
-            if (TryComp<BecomesStationComponent>(ent, out var bs))
+            if (TryComp<BecomesStationComponent>(uid, out var bs))
                 stationName = bs.Id;
             else
-                stationGrids.Add(ent);
+                stationGrids.Add(uid);
         }
 
-        var wpQuery = AllEntityQuery<WarpPointComponent, TransformComponent>();
-        while (wpQuery.MoveNext(out var _, out var comp, out var xForm))
+        var wpQuery = AllEntityQuery<WarpPointComponent>();
+        while (wpQuery.MoveNext(out var uid, out var comp))
         {
-            if (xForm?.GridUid is not EntityUid some
-                || !stationGrids.Contains(some))
+            if (Transform(uid).GridUid is not EntityUid some
+                    || !stationGrids.Contains(some))
                 continue;
 
             if (string.IsNullOrEmpty(comp.Location))
