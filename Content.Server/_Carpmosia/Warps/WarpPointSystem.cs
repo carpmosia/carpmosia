@@ -1,7 +1,8 @@
+using Content.Server.GameTicking;
 using Content.Server.Station.Components;
-using Content.Server.Station.Events;
 using Content.Shared.Station.Components;
 using Content.Shared.Warps;
+using Robust.Shared.Map;
 
 namespace Content.Server.Warps;
 
@@ -10,52 +11,59 @@ public sealed class WarpPointSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<WarpPointComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<MetaDataComponent, StationPostInitEvent>(OnStationPostInitEvent);
+
+        SubscribeLocalEvent<WarpPointComponent, ComponentStartup>(OnComponentStartup);
+        SubscribeLocalEvent<WarpPointComponent, EntityUnpausedEvent>(OnComponentStartup);
     }
 
-    // Sets up warp point components directly on station (Nuke disk, Nuke)
-    private void OnMapInit(Entity<WarpPointComponent> ent, ref MapInitEvent _)
+    private void OnComponentStartup<T>(Entity<WarpPointComponent> ent, ref T _)
     {
-        if (string.IsNullOrEmpty(ent.Comp.Location))
+        if (Transform(ent.Owner).GridUid is not EntityUid grid)
             return;
 
-        var gridUid = Transform(ent).GridUid;
-        if (!TryComp<BecomesStationComponent>(gridUid, out var bs))
-            return;
-
-        ent.Comp.Location = bs.Id + " - " + ent.Comp.Location;
-    }
-
-    // Sets up warp point components on subgrids added by the station (ATS and etc)
-    private void OnStationPostInitEvent(Entity<MetaDataComponent> ent, ref StationPostInitEvent _)
-    {
-        List<EntityUid?> stationGrids = [];
-        var stationName = Loc.GetString("generic-unknown");
-
-        var smQuery = AllEntityQuery<StationMemberComponent>();
-        while (smQuery.MoveNext(out var uid, out var comp))
+        if (TryComp<StationMemberComponent>(grid, out var member))
         {
-            if (comp.Station != ent.Owner)
-                continue;
+            if (!TryComp<StationNameSetupComponent>(member.Station, out var name))
+                return;
 
-            if (TryComp<BecomesStationComponent>(uid, out var bs))
-                stationName = bs.Id;
-            else
-                stationGrids.Add(uid);
+            ent.Comp.Origin = name.ShortName;
         }
-
-        var wpQuery = AllEntityQuery<WarpPointComponent>();
-        while (wpQuery.MoveNext(out var uid, out var comp))
+        // Fallback for misc maps (CentComm, Terminal, Arrivals)
+        else if (Transform(ent.Owner).MapUid is EntityUid map)
         {
-            if (Transform(uid).GridUid is not EntityUid some
-                    || !stationGrids.Contains(some))
-                continue;
+            var name = MetaData(map).EntityName.Trim();
+            // Fallback for new maps created for Nukeops and Wizard
+            if (string.IsNullOrEmpty(name) || name == "Map Entity")
+                return;
+            ent.Comp.Origin = name;
+        }
+    }
 
+
+    private void OnRoundStart(GameRunLevelChangedEvent ev)
+    {
+        if (ev.New != GameRunLevel.InRound)
+            return;
+
+        var query = AllEntityQuery<WarpPointComponent>();
+        while (query.MoveNext(out var uid, out var comp))
+        {
             if (string.IsNullOrEmpty(comp.Location))
                 continue;
 
-            comp.Location = stationName + " - " + comp.Location;
+            if (Transform(uid).GridUid is not EntityUid grid)
+                continue;
+
+            if (TryComp<StationMemberComponent>(grid, out var member))
+            {
+                if (!TryComp<StationNameSetupComponent>(member.Station, out var name))
+                    continue;
+
+                comp.Location = name.ShortName + " - " + comp.Location;
+            }
+            // Fallback for misc maps (CentComm, Terminal, Arrivals)
+            else if (Transform(uid).MapUid is EntityUid map)
+                comp.Location = MetaData(map).EntityName + " - " + comp.Location;
         }
     }
 }

@@ -540,7 +540,7 @@ public sealed partial class ArrivalsSystem : EntitySystem
         if (!_loader.TryLoadGrid(mapId, path, out var grid))
             return;
 
-        _metaData.SetEntityName(mapUid, Loc.GetString("map-name-terminal"));
+        _metaData.SetEntityName(mapUid, Loc.GetString("map-name-arrivals")); // Carpmosia-end - Warp point prefixes
 
         EnsureComp<ArrivalsSourceComponent>(grid.Value);
         EnsureComp<ProtectedGridComponent>(grid.Value);

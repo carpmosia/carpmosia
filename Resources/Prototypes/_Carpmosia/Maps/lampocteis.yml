@@ -8,10 +8,11 @@
   maxPlayers: 10
   # fallback
   stations:
-    Lampocteis:
+    Jelfy:
       stationProto: StandardNanotrasenStation
       components:
       - type: StationNameSetup
+        shortName: Lampocteis
         mapNameTemplate: '{0} Lampocteis Carrier {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
