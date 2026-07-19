@@ -2,7 +2,7 @@ using Content.Shared.Examine;
 
 namespace Content.Shared._Carpmosia.Supermatter;
 
-public sealed partial class SupermatterSystem : EntitySystem
+public sealed partial class SharedSupermatterSystem : EntitySystem
 {
     public override void Initialize()
     {
@@ -11,7 +11,7 @@ public sealed partial class SupermatterSystem : EntitySystem
 
     public void OnExamined(EntityUid uid, SupermatterComponent comp, ExaminedEvent args)
     {
-        if (comp.Delamitaion)
+        if (comp.Delamination)
         {
             if (comp.Integrity < -50f)
             {

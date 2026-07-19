@@ -4,6 +4,11 @@
   description: An extremely dense, unstable crystal of pure matter. Its crystalline structure ensures crystal's integrity, but any external force can trigger the fission process.
   components:
   - type: Supermatter
+  - type: RadiationSource
+    intensity: 0
+    slope: 10
+  - type: AtmosDevice
+    requireAnchored: false
   - type: Clickable
   - type: InteractionOutline
   - type: Physics

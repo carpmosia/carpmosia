@@ -33,4 +33,10 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> AdminChatAlertNewjoin =
         CVarDef.Create("admin.chat_alert_newjoin", true, CVar.SERVERONLY);
+
+    /// <summary>
+    /// Time interval between each supermatter update.
+    /// </summary>
+    public static readonly CVarDef<float> SupermatterUpdateRate =
+        CVarDef.Create("game.supermatter_update_rate", 0.5f, CVar.SERVERONLY);
 }
