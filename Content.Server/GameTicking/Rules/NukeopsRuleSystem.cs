@@ -13,6 +13,7 @@ using Content.Server.Station.Components;
 using Content.Server.StationRecords.Systems;
 using Content.Server.Store.Systems;
 using Content.Shared.Access.Systems;
+using Content.Shared.GameTicking; // Carpmosia-edit - Nukeops tweaks
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
@@ -63,6 +64,7 @@ public sealed partial class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleCompon
     [Dependency] private StationRecordsSystem _records = default!;
     [Dependency] private StoreSystem _store = default!;
     [Dependency] private TagSystem _tag = default!;
+    [Dependency] private SharedGameTicker _gameTicker = default!; // Carpmosia-edit - Nukeops tweaks
 
     private static readonly ProtoId<CurrencyPrototype> TelecrystalCurrencyPrototype = "Telecrystal";
     private static readonly ProtoId<TagPrototype> NukeOpsUplinkTagPrototype = "NukeOpsUplink";
@@ -409,6 +411,19 @@ public sealed partial class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleCompon
                     continue;
                 }
             }
+            // Carpmosia-start - Nukeops tweaks
+            else
+            {
+                var timeRemain = nukeops.NonWarNukieArriveDelay.Subtract(_gameTicker.RoundDuration());
+                if (timeRemain > TimeSpan.Zero)
+                {
+                    ev.Cancelled = true;
+                    ev.Reason = Loc.GetString("war-ops-infiltrator-unavailable",
+                        ("time", timeRemain.ToString("mm\\:ss")));
+                    continue;
+                }
+            }
+            // Carpmosia-end - Nukeops tweaks
 
             nukeops.LeftOutpost = true;
         }
