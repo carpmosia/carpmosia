@@ -107,8 +107,6 @@
         type: InstrumentBoundUserInterface
       enum.HealthAnalyzerUiKey.Key:
         type: HealthAnalyzerBoundUserInterface
-      enum.HealthAnalyzerPlusUiKey.Key:
-        type: HealthAnalyzerPlusBoundUserInterface
   - type: RemoteStore # PDAs can access uplinks so they need this component.
   - type: Tag
     tags:
@@ -1564,8 +1562,6 @@
         type: InstrumentBoundUserInterface
       enum.HealthAnalyzerUiKey.Key:
         type: HealthAnalyzerBoundUserInterface
-      enum.HealthAnalyzerPlusUiKey.Key:
-        type: HealthAnalyzerPlusBoundUserInterface
       enum.ChameleonUiKey.Key:
         type: ChameleonBoundUserInterface
 
