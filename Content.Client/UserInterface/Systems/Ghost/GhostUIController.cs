@@ -69,7 +69,7 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         }
 
         Gui.Visible = _system?.IsGhost ?? false;
-        Gui.Update(_system?.AvailableGhostRoleCount, _system?.Player?.CanReturnToBody, _state.CurrentState is LobbyState); // Carpmosia-edit - Return to lobby
+        Gui.Update(_system?.AvailableGhostRoleCount, _system?.Player?.CanReturnToBody, true); // Carpmosia-edit - Return to lobby
     }
 
     private void OnPlayerRemoved(GhostComponent component)

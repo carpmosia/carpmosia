@@ -5,6 +5,7 @@ using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.Mind;
 using Content.Server.Roles.Jobs;
+using Content.Server.Shuttles.Systems; // Carpmosia-start - Return to lobby
 using Content.Shared.Actions;
 using Content.Shared.CCVar;
 using Content.Shared.Damage;
@@ -67,6 +68,7 @@ namespace Content.Server.Ghost
         [Dependency] private TagSystem _tag = default!;
         [Dependency] private NameModifierSystem _nameMod = default!;
         [Dependency] private GhostSpriteStateSystem _ghostState = default!;
+        [Dependency] private EmergencyShuttleSystem _emergency = default!; // Carpmosia-start - Return to lobby
 
         [Dependency] private EntityQuery<GhostComponent> _ghostQuery = default!;
         [Dependency] private EntityQuery<PhysicsComponent> _physicsQuery = default!;
@@ -276,7 +278,8 @@ namespace Content.Server.Ghost
         // Carpmosia-start - Return to lobby
         private void OnGhostReturnToLobbyRequest(GhostReturnToLobbyRequest msg, EntitySessionEventArgs args)
         {
-            if (_gameTicker.RunLevel != GameRunLevel.PostRound
+            // Checking for post round in case of an early "restartround"
+            if (!(_emergency.EmergencyShuttleArrived || _gameTicker.RunLevel == GameRunLevel.PostRound)
                 || args.SenderSession.AttachedEntity is not {Valid: true} attached
                 || !TryComp(attached, out ActorComponent? actor))
             {
