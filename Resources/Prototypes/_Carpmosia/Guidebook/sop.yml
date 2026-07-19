@@ -1,48 +1,48 @@
 - type: guideEntry
-  id: CommandSOP
-  name: guide-entry-command-sop
+  id: SOPCommand
+  name: guide-entry-sop-command
   text: "/ServerInfo/_Carpmosia/Guidebook/SOP/Index.xml"
   priority: 15
   children:
-  - CaptainSOP
-  - HOPSOP
-  - HOSSOP
-  - CMOSOP
-  - CESOP
-  - QMSOP
-  - RDSOP
+  - SOPCaptain
+  - SOPChiefEngineer
+  - SOPChiefMedicalOfficer
+  - SOPHeadOfPersonnel
+  - SOPHeadOfSecurity
+  - SOPQuartermaster
+  - SOPResearchDirector
 
 - type: guideEntry
-  id: CaptainSOP
-  name: guide-entry-captain-sop
-  text: "/ServerInfo/_Carpmosia/Guidebook/Command/CaptainSOP.xml"
+  id: SOPCaptain
+  name: guide-entry-sop-captain
+  text: "/ServerInfo/_Carpmosia/Guidebook/SOP/Captain.xml"
 
 - type: guideEntry
-  id: HOPSOP
-  name: guide-entry-hop-sop
-  text: "/ServerInfo/_Carpmosia/Guidebook/Service/HOPSOP.xml"
+  id: SOPChiefEngineer
+  name: guide-entry-sop-ce
+  text: "/ServerInfo/_Carpmosia/Guidebook/SOP/ChiefEngineer.xml"
 
 - type: guideEntry
-  id: HOSSOP
-  name: guide-entry-hos-sop
-  text: "/ServerInfo/_Carpmosia/Guidebook/Security/HOSSOP.xml"
+  id: SOPChiefMedicalOfficer
+  name: guide-entry-sop-cmo
+  text: "/ServerInfo/_Carpmosia/Guidebook/SOP/ChiefMedicalOfficer.xml"
 
 - type: guideEntry
-  id: CMOSOP
-  name: guide-entry-cmo-sop
-  text: "/ServerInfo/_Carpmosia/Guidebook/Medical/CMOSOP.xml"
+  id: SOPHeadOfPersonnel
+  name: guide-entry-sop-hop
+  text: "/ServerInfo/_Carpmosia/Guidebook/SOP/HeadOfPersonnel.xml"
 
 - type: guideEntry
-  id: CESOP
-  name: guide-entry-ce-sop
-  text: "/ServerInfo/_Carpmosia/Guidebook/Engineering/CESOP.xml"
+  id: SOPHeadOfSecurity
+  name: guide-entry-sop-hos
+  text: "/ServerInfo/_Carpmosia/Guidebook/SOP/HeadOfSecurity.xml"
 
 - type: guideEntry
-  id: QMSOP
-  name: guide-entry-qm-sop
-  text: "/ServerInfo/_Carpmosia/Guidebook/Cargo/QMSOP.xml"
+  id: SOPQuartermaster
+  name: guide-entry-sop-qm
+  text: "/ServerInfo/_Carpmosia/Guidebook/SOP/Quartermaster.xml"
 
 - type: guideEntry
-  id: RDSOP
-  name: guide-entry-rd-sop
-  text: "/ServerInfo/_Carpmosia/Guidebook/Science/RDSOP.xml"
+  id: SOPResearchDirector
+  name: guide-entry-sop-rd
+  text: "/ServerInfo/_Carpmosia/Guidebook/SOP/ResearchDirector.xml"
