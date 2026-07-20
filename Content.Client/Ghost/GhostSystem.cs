@@ -51,7 +51,7 @@ namespace Content.Client.Ghost
         public event Action? PlayerDetached;
         public event Action<GhostWarpsResponseEvent>? GhostWarpsResponse;
         public event Action<GhostUpdateGhostRoleCountEvent>? GhostRoleCountUpdated;
-        public event Action<bool>? TickerLateJoinStatus;
+        public event Action<bool>? TickerLateJoinStatus; // Carpmosia-edit - Return to lobby
 
         public override void Initialize()
         {
@@ -66,7 +66,7 @@ namespace Content.Client.Ghost
 
             SubscribeNetworkEvent<GhostWarpsResponseEvent>(OnGhostWarpsResponse);
             SubscribeNetworkEvent<GhostUpdateGhostRoleCountEvent>(OnUpdateGhostRoleCount);
-            SubscribeNetworkEvent<TickerLateJoinStatusEvent>(OnTickerLateJoinStatus);
+            SubscribeNetworkEvent<TickerLateJoinStatusEvent>(OnTickerLateJoinStatus); // Carpmosia-edit - Return to lobby
 
             SubscribeLocalEvent<EyeComponent, ToggleLightingActionEvent>(OnToggleLighting);
             SubscribeLocalEvent<EyeComponent, ToggleFoVActionEvent>(OnToggleFoV);

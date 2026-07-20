@@ -1,10 +1,8 @@
 ﻿using Content.Client.Gameplay;
 using Content.Client.Ghost;
-using Content.Client.Lobby;
 using Content.Client.UserInterface.Systems.Gameplay;
 using Content.Client.UserInterface.Systems.Ghost.Widgets;
 using Content.Shared.Ghost;
-using Robust.Client.State;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
 
@@ -14,7 +12,6 @@ namespace Content.Client.UserInterface.Systems.Ghost;
 public sealed partial class GhostUIController : UIController, IOnSystemChanged<GhostSystem>
 {
     [Dependency] private IEntityNetworkManager _net = default!;
-    [Dependency] private IStateManager _state = default!;
 
     [UISystemDependency] private readonly GhostSystem? _system = default;
 
