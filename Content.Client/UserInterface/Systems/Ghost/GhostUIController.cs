@@ -19,6 +19,7 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
     [UISystemDependency] private readonly GhostSystem? _system = default;
 
     private GhostGui? Gui => UIManager.GetActiveUIWidgetOrNull<GhostGui>();
+    private bool _canReturnToLobby = false; // Carpmosia-edit - Return to lobby
 
     public override void Initialize()
     {
@@ -47,7 +48,7 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         system.PlayerDetached += OnPlayerDetached;
         system.GhostWarpsResponse += OnWarpsResponse;
         system.GhostRoleCountUpdated += OnRoleCountUpdated;
-        system.RoundEndMessage += OnRoundEndMessage; // Carpmosia-edit - Return to lobby
+        system.TickerLateJoinStatus += OnTickerLateJoinStatus; // Carpmosia-edit - Return to lobby
     }
 
     public void OnSystemUnloaded(GhostSystem system)
@@ -58,7 +59,7 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         system.PlayerDetached -= OnPlayerDetached;
         system.GhostWarpsResponse -= OnWarpsResponse;
         system.GhostRoleCountUpdated -= OnRoleCountUpdated;
-        system.RoundEndMessage -= OnRoundEndMessage; // Carpmosia-edit - Return to lobby
+        system.TickerLateJoinStatus -= OnTickerLateJoinStatus; // Carpmosia-edit - Return to lobby
     }
 
     public void UpdateGui()
@@ -69,7 +70,7 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         }
 
         Gui.Visible = _system?.IsGhost ?? false;
-        Gui.Update(_system?.AvailableGhostRoleCount, _system?.Player?.CanReturnToBody, true); // Carpmosia-edit - Return to lobby
+        Gui.Update(_system?.AvailableGhostRoleCount, _system?.Player?.CanReturnToBody, _canReturnToLobby); // Carpmosia-edit - Return to lobby
     }
 
     private void OnPlayerRemoved(GhostComponent component)
@@ -162,8 +163,9 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         _system?.ReturnToLobby();
     }
 
-    private void OnRoundEndMessage()
+    private void OnTickerLateJoinStatus(bool canReturnToLobby)
     {
+        _canReturnToLobby = canReturnToLobby;
         UpdateGui();
     }
     // Carpmosia-ebd - Return to lobby

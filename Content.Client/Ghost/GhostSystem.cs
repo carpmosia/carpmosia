@@ -51,7 +51,7 @@ namespace Content.Client.Ghost
         public event Action? PlayerDetached;
         public event Action<GhostWarpsResponseEvent>? GhostWarpsResponse;
         public event Action<GhostUpdateGhostRoleCountEvent>? GhostRoleCountUpdated;
-        public event Action? RoundEndMessage;
+        public event Action<bool>? TickerLateJoinStatus;
 
         public override void Initialize()
         {
@@ -66,7 +66,7 @@ namespace Content.Client.Ghost
 
             SubscribeNetworkEvent<GhostWarpsResponseEvent>(OnGhostWarpsResponse);
             SubscribeNetworkEvent<GhostUpdateGhostRoleCountEvent>(OnUpdateGhostRoleCount);
-            SubscribeNetworkEvent<RoundEndMessageEvent>(OnRoundEndMessage);
+            SubscribeNetworkEvent<TickerLateJoinStatusEvent>(OnTickerLateJoinStatus);
 
             SubscribeLocalEvent<EyeComponent, ToggleLightingActionEvent>(OnToggleLighting);
             SubscribeLocalEvent<EyeComponent, ToggleFoVActionEvent>(OnToggleFoV);
@@ -202,9 +202,9 @@ namespace Content.Client.Ghost
             RaiseNetworkEvent(msg);
         }
 
-        public void OnRoundEndMessage(RoundEndMessageEvent _)
+        public void OnTickerLateJoinStatus(TickerLateJoinStatusEvent msg)
         {
-            RoundEndMessage?.Invoke();
+            TickerLateJoinStatus?.Invoke(msg.Disallowed);
         }
         // Carpmosia-end - Return to lobby
 

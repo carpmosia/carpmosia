@@ -92,6 +92,7 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
         SubscribeLocalEvent<EmergencyShuttleComponent, FTLCompletedEvent>(OnEmergencyFTLComplete);
         SubscribeNetworkEvent<EmergencyShuttleRequestPositionMessage>(OnShuttleRequestPosition);
         InitializeEmergencyConsole();
+        InitializeEmergencyLobby(); // Carpmosia-edit - Return to lobby
     }
 
     private void OnRoundStart(RoundStartingEvent ev)
@@ -441,6 +442,7 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
 
         _consoleAccumulator = ConfigManager.GetCVar(CCVars.EmergencyShuttleDockTime);
         EmergencyShuttleArrived = true;
+        UpdateReturnToLobby(); // Carpmosia-edit - Return to lobby
 
         var query = AllEntityQuery<StationEmergencyShuttleComponent>();
 
