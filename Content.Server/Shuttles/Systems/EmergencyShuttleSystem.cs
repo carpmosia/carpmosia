@@ -618,6 +618,7 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
         // Carpmosia-start - Replaced CC with Terminals
         component.MapEntity = mapTerminal;
         component.Entity = gridTerminal;
+        //_metaData.SetEntityName(mapTerminal, Loc.GetString("map-name-centcomm")); // Moved up
         _shuttle.TryAddFTLDestination(mapIdTerminal, true, out _);
         // Carpmosia-end - Replaced CC with Terminals
         Log.Info($"Created centcomm grid {ToPrettyString(grid)} on map {ToPrettyString(map)} for station {ToPrettyString(station)}");
