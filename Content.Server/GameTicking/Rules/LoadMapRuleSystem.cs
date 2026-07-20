@@ -19,7 +19,6 @@ public sealed partial class LoadMapRuleSystem : StationEventSystem<LoadMapRuleCo
     [Dependency] private MapLoaderSystem _mapLoader = default!;
     [Dependency] private TransformSystem _transform = default!;
     [Dependency] private GridPreloaderSystem _gridPreloader = default!;
-    [Dependency] private MetaDataSystem _metaData = default!; // Carpmosia-edit - Warp point prefixes
 
     protected override void Added(EntityUid uid, LoadMapRuleComponent comp, GameRuleComponent rule, GameRuleAddedEvent args)
     {

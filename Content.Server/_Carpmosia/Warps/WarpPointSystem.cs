@@ -16,7 +16,7 @@ public sealed class WarpPointSystem : EntitySystem
 
     private void OnComponentStartup<T>(Entity<WarpPointComponent> ent, ref T _)
     {
-        if (Transform(ent.Owner).GridUid is not EntityUid grid)
+        if (Transform(ent.Owner).GridUid is not { } grid)
             return;
 
         if (TryComp<StationMemberComponent>(grid, out var member))
@@ -27,11 +27,11 @@ public sealed class WarpPointSystem : EntitySystem
             ent.Comp.Origin = name.ShortName;
         }
         // Fallback for misc maps (CentComm, Terminal, Arrivals)
-        else if (Transform(ent.Owner).MapUid is EntityUid map)
+        else if (Transform(ent.Owner).MapUid is { } map)
         {
             var name = MetaData(map).EntityName.Trim();
             // Fallback for new maps created for Nukeops and Wizard
-            if (string.IsNullOrEmpty(name) || name == "Map Entity")
+            if (string.IsNullOrEmpty(name) || name == $"Map Entity")
                 return;
             ent.Comp.Origin = name;
         }
