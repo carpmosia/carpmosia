@@ -6,6 +6,8 @@ namespace Content.Server.Warps;
 
 public sealed class WarpPointSystem : EntitySystem
 {
+    private const string DefaultMapName = "Map Entity";
+
     public override void Initialize()
     {
         base.Initialize();
@@ -31,7 +33,7 @@ public sealed class WarpPointSystem : EntitySystem
         {
             var name = MetaData(map).EntityName.Trim();
             // Fallback for new maps created for Nukeops and Wizard
-            if (string.IsNullOrEmpty(name) || name == $"Map Entity")
+            if (string.IsNullOrEmpty(name) || name == DefaultMapName)
                 return;
             ent.Comp.Origin = name;
         }

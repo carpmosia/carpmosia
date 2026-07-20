@@ -16,7 +16,6 @@ public sealed partial class WarpPointComponent : Component
     /// <summary>
     /// Origin of this warp point.
     /// </summary>
-    [DataField]
     public string Origin = "Unknown";
     // Carpmosia-end - Warp point prefixes
 
