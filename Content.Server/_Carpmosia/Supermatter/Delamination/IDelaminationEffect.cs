@@ -1,5 +1,6 @@
-
 using Content.Shared._Carpmosia.Supermatter;
+
+namespace Content.Server._Carpmosia.Supermatter.Delamination;
 
 /// <summary>
 /// Approved by Dr. Isaac Kleiner

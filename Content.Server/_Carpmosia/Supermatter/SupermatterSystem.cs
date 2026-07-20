@@ -1,6 +1,7 @@
 using Content.Server.Atmos.EntitySystems;
 using Content.Shared.CCVar;
 using Content.Server.Lightning;
+using Content.Server._Carpmosia.Supermatter.Delamination;
 using Content.Shared._Carpmosia.Supermatter;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
@@ -52,6 +53,9 @@ public sealed partial class SupermatterSystem : EntitySystem
 
         while (query.MoveNext(out var uid, out var comp))
         {
+            if (comp.Stable)
+                continue;
+
             if (radUpdate)
             {
                 _radAccumulator = 0f;
@@ -69,14 +73,20 @@ public sealed partial class SupermatterSystem : EntitySystem
     public void OnDamage(EntityUid uid, SupermatterComponent comp, DamageDealtEvent args)
     {
         FixedPoint2 total = args.Damage.GetTotal();
+
+        if (total <= 0)
+            return;
+
+        comp.Stable = true;
+        comp.StoredPower = (float)(total * 2.5f);
     }
 
     public void OnRadiationUpdate(EntityUid uid, SupermatterComponent comp)
     {
         if (TryComp<RadiationSourceComponent>(uid, out var radComp))
         {
-            float energySpent = comp.StoredPower * 0.025f;
-            comp.StoredPower *= 0.975f;
+            float energySpent = comp.StoredPower * 0.05f;
+            comp.StoredPower *= 0.95f;
 
             float radPower = 10f * MathF.Log(energySpent + 1);
 
@@ -102,6 +112,9 @@ public sealed partial class SupermatterSystem : EntitySystem
 
     public void OnAtmosUpdate(EntityUid uid, SupermatterComponent comp, AtmosDeviceUpdateEvent args)
     {
+        if (comp.Stable)
+            return;
+
         var environment = _atmosphereSystem.GetContainingMixture(uid, args.Grid, args.Map, true, true);
 
         if (environment == null)
@@ -155,7 +168,7 @@ public sealed partial class SupermatterSystem : EntitySystem
         // For example, 50 ticks in space will start the delamination
         // Or, one tick in 100.000 degrees
         // One tick in 200.000 degrees should blow it up instantly
-        comp.Integrity -= Math.Max(0, envAir.Temperature - 3000) / 1000; // 4000 degrees -> -4 integrity / AtmosUpdate
+        comp.Integrity -= Math.Max(0, envAir.Temperature - 1750) / 500; // 4000 degrees -> -4.5 integrity / AtmosUpdate
         comp.Integrity -= Math.Max(0, envAir.TotalMoles - 2000) / 1000;  // 4000 moles -> -2 integrity / AtmosUpdate
         comp.Integrity -= (100 - Math.Min(100, envAir.Temperature)) / 50; // 0 kelvin (Space) -> -2 inegrity / AtmosUpdate
 
