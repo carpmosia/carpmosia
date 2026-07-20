@@ -11,6 +11,7 @@ using Content.Server.GameTicking;
 using Content.Server.GameTicking.Events;
 using Content.Server.Maps; // Carpmosia-edit - Replaced CC with Terminals
 using Content.Server.Pinpointer;
+using Content.Server.ReturnToLobby;
 using Content.Server.RoundEnd;
 using Content.Server.Screens.Components;
 using Content.Server.Shuttles.Components;
@@ -70,6 +71,7 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
     [Dependency] private TransformSystem _transformSystem = default!;
     [Dependency] private UserInterfaceSystem _uiSystem = default!;
     [Dependency] private IPrototypeManager _protoMan = default!; // Carpmosia-edit - Replaced CC with Terminals
+    [Dependency] private ReturnToLobbySystem _returnToLobby = default!; // Carpmosia-edit - Return to lobby
 
     private const float ShuttleSpawnBuffer = 1f;
 
@@ -95,7 +97,6 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
         SubscribeLocalEvent<EmergencyShuttleComponent, FTLCompletedEvent>(OnEmergencyFTLComplete);
         SubscribeNetworkEvent<EmergencyShuttleRequestPositionMessage>(OnShuttleRequestPosition);
         InitializeEmergencyConsole();
-        InitializeEmergencyLobby(); // Carpmosia-edit - Return to lobby
     }
 
     private void OnRoundStart(RoundStartingEvent ev)
@@ -445,7 +446,7 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
 
         _consoleAccumulator = ConfigManager.GetCVar(CCVars.EmergencyShuttleDockTime);
         EmergencyShuttleArrived = true;
-        UpdateReturnToLobby(); // Carpmosia-edit - Return to lobby
+        _returnToLobby.UpdateStatus(); // Carpmosia-edit - Return to lobby
 
         var query = AllEntityQuery<StationEmergencyShuttleComponent>();
 
