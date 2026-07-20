@@ -34,6 +34,7 @@ public sealed partial class SupermatterSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<SupermatterComponent, AtmosDeviceUpdateEvent>(OnAtmosUpdate);
+        SubscribeLocalEvent<SupermatterComponent, DamageDealtEvent>(OnDamage);
     }
 
     public override void Update(float frameTime)
@@ -77,8 +78,8 @@ public sealed partial class SupermatterSystem : EntitySystem
         if (total <= 0)
             return;
 
-        comp.Stable = true;
-        comp.StoredPower = (float)(total * 2.5f);
+        comp.Stable = false;
+        comp.StoredPower += (float)(total * 2.5f);
     }
 
     public void OnRadiationUpdate(EntityUid uid, SupermatterComponent comp)
