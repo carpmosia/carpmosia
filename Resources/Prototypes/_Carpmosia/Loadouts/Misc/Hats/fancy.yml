@@ -2,8 +2,7 @@
   id: HatUshanka
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:DepartmentTimeRequirement
+    requirement: !type:DepartmentTimeRequirement
       department: Cargo
       time: 1h
   equipment:
@@ -14,8 +13,7 @@
   id: HatTophat
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobBartender
       time: 1h
   equipment:
@@ -26,8 +24,7 @@
   id: HatCone
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:DepartmentTimeRequirement
+    requirement: !type:DepartmentTimeRequirement
       department: Engineering
       time: 1h
   equipment:

@@ -2184,7 +2184,8 @@
     type: Add
   - message: Lowered minimum operator requirement for war ops from 4 to 3
     type: Tweak
-  - message: Corpsman Medicine Bundle waiting time has been decreased from 20 minutes to 18
+  - message: Corpsman Medicine Bundle waiting time has been decreased from 20 minutes
+      to 18
     type: Tweak
   id: 338
   time: '2026-07-08T23:52:19.0000000+00:00'
@@ -2196,4 +2197,134 @@
   id: 339
   time: '2026-07-09T10:34:51.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/445
+- author: imatsoup
+  changes:
+  - message: Added Emergency Lasers, bulky old-gen laser carbines that cargo can buy
+      as a last-resort
+    type: Add
+  - message: Added the Emergency Laser crate to the cargo request computer under the
+      Armory category
+    type: Add
+  id: 340
+  time: '2026-07-10T22:40:59.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/474
+- author: Kingwawa-1
+  changes:
+  - message: Defibrillator cabinets now recharge defibrillators inside them.
+    type: Add
+  id: 341
+  time: '2026-07-10T22:50:05.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/470
+- author: imatsoup
+  changes:
+  - message: It is now considered a moderate crime to possess unauthorized weaponry
+      (including explosives)
+    type: Tweak
+  id: 342
+  time: '2026-07-10T22:52:27.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/459
+- author: Atakku
+  changes:
+  - message: Diagonal walls and window sprites have been drastically improved.
+    type: Tweak
+  id: 343
+  time: '2026-07-10T23:11:24.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/478
+- author: Saver310
+  changes:
+  - message: Added Ace Deathshead metaplush
+    type: Add
+  id: 344
+  time: '2026-07-10T23:42:04.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/435
+- author: Atakku
+  changes:
+  - message: Added a reagent grinder and biogenerator to Botany on Lampocteis
+    type: Tweak
+  - message: Added a reagent grinder to Kitchen on Lampocteis
+    type: Tweak
+  - message: Added lawyer spawners on Lampocteis
+    type: Tweak
+  id: 345
+  time: '2026-07-13T17:04:46.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/489
+- author: Atakku
+  changes:
+  - message: Added "Dragon Attack" lobby art.
+    type: Add
+  id: 346
+  time: '2026-07-13T17:10:32.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/488
+- author: Atakku
+  changes:
+  - message: Updated obeys-to parameters on 2 Carpmosia lawsets
+    type: Tweak
+  id: 347
+  time: '2026-07-14T02:07:36.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/483
+- author: Atakku
+  changes:
+  - message: 'Added a new terminal station: "Donk Co. Rest Stop"'
+    type: Add
+  - message: CentComm has been replaced with a randomly selected neutral ground terminal
+      station.
+    type: Tweak
+  id: 348
+  time: '2026-07-14T02:39:16.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/497
+- author: Cr0w-alt-f4
+  changes:
+  - message: Increased minimum book spawn on bookshelf from 0 to 6, and max from 13
+      to 14.
+    type: Tweak
+  - message: Added 21 new real books to spawn on bookshelves.
+    type: Add
+  id: 349
+  time: '2026-07-14T16:24:32.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/346
+- author: Jakeybobble
+  changes:
+  - message: Fixed cursed axolotl plushie in-hand sprites and being unable to inject
+      solutions into it
+    type: Fix
+  - message: Fixed screaming lizard plushie in-hand sprites
+    type: Fix
+  id: 350
+  time: '2026-07-15T16:23:03.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/505
+- author: Atakku
+  changes:
+  - message: Removed metaplushies, as well as their loadouts, and etc.
+    type: Remove
+  id: 351
+  time: '2026-07-16T02:26:22.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/512
+- author: Atakku
+  changes:
+  - message: Removed unnecessary beacons from Donk Co Rest Stop
+    type: Fix
+  id: 352
+  time: '2026-07-16T02:39:29.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/513
+- author: GlupiyBrush
+  changes:
+  - message: Changed the icon of the LAMP objective
+    type: Tweak
+  id: 353
+  time: '2026-07-19T18:25:06.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/510
+- author: GlupiyBrush
+  changes:
+  - message: Special version of the nuke was added for the Carp Day
+    type: Add
+  id: 354
+  time: '2026-07-19T18:26:27.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/496
+- author: Jakeybobble
+  changes:
+  - message: Gave Tajaran a typing indicator.
+    type: Add
+  id: 355
+  time: '2026-07-20T15:08:20.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/518
 Order: -1
