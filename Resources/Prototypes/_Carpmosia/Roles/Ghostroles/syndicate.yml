@@ -1,0 +1,13 @@
+- type: ghostRole
+  id: SyndicateKitti
+  name: ghost-role-information-syndicate-kitti-reinforcement-name
+  description: ghost-role-information-syndicate-kitti-reinforcement-description
+  rules: ghost-role-information-syndicate-reinforcement-rules
+  entityPrototype: MobKittiSyndicateAgent
+
+- type: ghostRole
+  id: SyndicateKittiNukeops
+  name: ghost-role-information-syndicate-kitti-reinforcement-name
+  description: ghost-role-information-syndicate-kitti-reinforcement-description
+  rules: ghost-role-information-nukeop-reinforcement-rules
+  entityPrototype: MobKittiSyndicateAgentNukeops

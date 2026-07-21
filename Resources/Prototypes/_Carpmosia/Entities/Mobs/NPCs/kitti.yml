@@ -1,0 +1,153 @@
+- type: entity
+  abstract: true
+  parent: MobBaseAncestor
+  id: MobBaseKitti
+  name: kitti
+  description: Cousins to the sentient race of cat people. Known for living in primitive box forts and knocking cups over.
+  components:
+  - type: NameIdentifier
+    group: Kitti
+  - type: ReplacementAccent
+    accent: cat
+  - type: Speech
+    speechSounds: Cat
+    speechVerb: SmallMob
+  - type: Deathgasp
+    prototype: DefaultDeathgasp
+  - type: Vocal
+    sounds:
+      Male: MaleTajaran
+      Female: FemaleTajaran
+      Unsexed: MaleTajaran
+  - type: TypingIndicator
+    proto: tajaran
+  - type: InteractionPopup
+    successChance: 0.9
+    interactSuccessString: petting-success-cat
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/cat_meow.ogg
+    interactFailureSound:
+      path: /Audio/Animals/cat_hiss.ogg
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      60: Critical
+      125: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.5
+    baseSprintSpeed: 5
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    angle: 30
+    animation: WeaponArcBite
+    damage:
+      types:
+        Slash: 3
+        Piercing: 5
+  # Tajaran body temperature/thresholds
+  - type: Temperature
+    currentTemperature: 312.0
+  - type: TemperatureDamage
+    heatDamageThreshold: 322
+    coldDamageThreshold: 245
+    coldDamage:
+      types:
+        Cold: 0.08
+    heatDamage:
+      types:
+        Heat: 2.0
+  - type: ThermalRegulator
+    normalBodyTemperature: 312.0
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      sprite: _Carpmosia/Mobs/Animals/kitti.rsi
+      state: kitti
+    - map: [ "overlay" ]
+      sprite: _Carpmosia/Mobs/Animals/kitti.rsi
+      state: overlay-none
+    - map: [ "jumpsuit" ]
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
+      color: "#ffffff"
+      sprite: Objects/Misc/handcuffs.rsi
+    - map: [ "ears" ]
+    - map: [ "id" ]
+    - map: [ "outerClothing" ]
+    - map: [ "mask" ]
+    - map: [ "head" ]
+  - type: RandomSprite
+    getAllGroups: true
+    available:
+    - enum.DamageStateVisualLayers.Base:
+        kitti: KittiColors
+    - overlay:
+        overlay-none: ""
+        overlay-belly: ""
+        overlay-paws: ""
+        overlay-both: ""
+  - type: Butcherable
+    spawned:
+    - id: FoodMeat
+      amount: 2
+  - type: AlwaysRevolutionaryConvertible
+  - type: GhostTakeoverAvailable
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-feline
+  - type: GhostRole
+    prob: 0.05
+    makeSentient: true
+    name: ghost-role-information-kitti-name
+    description: ghost-role-information-kitti-description
+    rules: ghost-role-information-nonantagonist-rules
+
+- type: entity
+  parent: MobBaseKitti
+  id: MobKitti
+  components:
+  - type: Clumsy
+    gunShootFailDamage:
+      types:
+        Blunt: 3
+        Piercing: 4
+        Heat: 5
+    catchingFailDamage:
+      types:
+        Blunt: 1
+    clumsySound:
+      path: /Audio/Animals/cat_hiss.ogg
+
+- type: entity
+  parent: MobBaseKitti
+  id: MobBaseSyndicateKitti
+  suffix: syndicate base
+  components:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Critical
+      200: Dead
+  - type: NpcFactionMember
+    factions:
+    - Syndicate
+  - type: Loadout
+    prototypes: [SyndicateOperativeGearMonkey]
+
+- type: entity
+  parent: MobBaseSyndicateKitti
+  id: MobKittiSyndicateAgent
+  suffix: syndicate agent
+  components:
+    # make the player a traitor once its taken
+  - type: AutoTraitor
+    profile: TraitorReinforcement
+
+- type: entity
+  parent: MobBaseSyndicateKitti
+  id: MobKittiSyndicateAgentNukeops # Reinforcement exclusive to nukeops uplink
+  suffix: NukeOps
+  components:
+  - type: NukeOperative
