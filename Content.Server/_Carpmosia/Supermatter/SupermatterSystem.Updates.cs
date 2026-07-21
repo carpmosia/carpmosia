@@ -43,63 +43,72 @@ public sealed partial class SupermatterSystem
 
         while (query.MoveNext(out var uid, out var comp))
         {
-            if (!comp.Active)
+            Entity<SupermatterComponent> ent = (uid, comp);
+
+            if (!ent.Comp.Active)
                 continue;
 
             if (radUpdate)
-                OnRadiationUpdate(uid, comp);
+                OnRadiationUpdate(ent);
 
             if (smUpdate)
-                OnUpdate(uid, comp);
+                OnUpdate(ent);
         }
 
         _accumulator = smUpdate ? 0f : _accumulator;
         _radAccumulator = radUpdate ? 0f : _radAccumulator;
     }
 
-    public void OnRadiationUpdate(EntityUid uid, SupermatterComponent comp)
+    public void OnRadiationUpdate(Entity<SupermatterComponent> ent)
     {
-        if (TryComp<RadiationSourceComponent>(uid, out var radComp))
+        if (TryComp<RadiationSourceComponent>(ent, out var radComp))
         {
-            float energySpent = comp.StoredPower * 0.05f;
-            comp.StoredPower *= 0.95f;
+            float energySpent = ent.Comp.StoredPower * 0.05f;
+            ent.Comp.StoredPower *= 0.95f;
 
             float radPower = 10f * MathF.Log(energySpent + 1);
 
-            _radSystem.SetIntensity(new Entity<RadiationSourceComponent?>(uid, radComp), radPower);
+            _radSystem.SetIntensity(new Entity<RadiationSourceComponent?>(ent, radComp), radPower);
             Log.Info("Rad energy spent:\t" + energySpent);
         }
     }
 
-    public void OnUpdate(EntityUid uid, SupermatterComponent comp)
+    public void OnUpdate(Entity<SupermatterComponent> ent)
     {
-        float spentPower = comp.StoredPower * 0.66f;
-        int lightnings = (int)(spentPower / 2500);
+        float spentPower = ent.Comp.StoredPower * 0.66f;
+        int lightnings = (int)(spentPower / 5000);
 
         if (lightnings != 0)
         {
-            comp.StoredPower -= spentPower;
-            _lightningSystem.ShootRandomLightnings(uid, 7, lightnings);
+            ent.Comp.StoredPower -= 5000 * lightnings;
+            _lightningSystem.ShootRandomLightnings(ent, 7, lightnings, arcDepth:3);
         }
 
-        if (comp.Integrity < 0)
-            comp.DelaminationTime += _accumulator;
+        if (ent.Comp.StoredPower > 10000)
+        {
+            ent.Comp.Integrity -= (ent.Comp.StoredPower - 10000) / 1000; // 15000 units = -5 integrity
+            ent.Comp.StoredPower = 8000;
+        }
+
+        if (ent.Comp.Integrity < 0)
+            ent.Comp.DelaminationTime += _accumulator;
         else
-            comp.DelaminationTime = 0f;
+            ent.Comp.DelaminationTime = 0f;
 
-        if (comp.Integrity < -100 || comp.DelaminationTime > _cfg.GetCVar(CCVars.SupermatterDelaminationTimer))
-            Delaminate(uid, comp);
+        if (ent.Comp.Integrity < -100 || ent.Comp.DelaminationTime > _cfg.GetCVar(CCVars.SupermatterDelaminationTimer))
+            Delaminate(ent);
 
-        Log.Info("Integrity:\t\t" + comp.Integrity.ToString());
-        Log.Info("Stored Power:\t" + comp.StoredPower.ToString());
+        Log.Info("Integrity:\t\t" + ent.Comp.Integrity.ToString());
+        Log.Info("Stored Power:\t" + ent.Comp.StoredPower.ToString());
+        Dirty(ent);
     }
 
-    public void OnAtmosUpdate(EntityUid uid, SupermatterComponent comp, AtmosDeviceUpdateEvent args)
+    public void OnAtmosUpdate(Entity<SupermatterComponent> ent, ref AtmosDeviceUpdateEvent args)
     {
-        if (!comp.Active)
+        if (!ent.Comp.Active)
             return;
 
-        var environment = _atmosphereSystem.GetContainingMixture(uid, args.Grid, args.Map, true, true);
+        var environment = _atmosphereSystem.GetContainingMixture((EntityUid)ent, args.Grid, args.Map, true, true);
 
         if (environment == null)
             return;
@@ -108,13 +117,13 @@ public sealed partial class SupermatterSystem
 
         #region Multipliers
 
-        comp.WasteMultiplier = 1f;
-        comp.HeatProductionMultiplier = 1f;
-        comp.HeatPowerGainMultiplier = 1f;
-        comp.HeatProtectionMultiplier = 1f;
-        comp.IntegrityEffectMultiplier = 1f;
-        comp.PowerTransmissionMultiplier = 1f;
-        comp.PowerDecayMultiplier = 1f;
+        ent.Comp.WasteMultiplier = 1f;
+        ent.Comp.HeatProductionMultiplier = 1f;
+        ent.Comp.HeatPowerGainMultiplier = 1f;
+        ent.Comp.HeatProtectionMultiplier = 1f;
+        ent.Comp.IntegrityEffectMultiplier = 1f;
+        ent.Comp.PowerTransmissionMultiplier = 1f;
+        ent.Comp.PowerDecayMultiplier = 1f;
 
         for (int i = 0; i < Atmospherics.TotalNumberOfGases; i++)
         {
@@ -130,13 +139,13 @@ public sealed partial class SupermatterSystem
 
             if (_protoMan.TryIndex(protoId, out var gasPrototype))
             {
-                comp.WasteMultiplier += gasPrototype.WasteMultiplier * proportion;
-                comp.HeatProductionMultiplier += gasPrototype.HeatProductionMultiplier * proportion;
-                comp.HeatPowerGainMultiplier += gasPrototype.HeatPowerGainMultiplier * proportion;
-                comp.HeatProtectionMultiplier += gasPrototype.HeatProtectionMultiplier * proportion;
-                comp.IntegrityEffectMultiplier += gasPrototype.IntegrityEffectMultiplier * proportion;
-                comp.PowerTransmissionMultiplier += gasPrototype.PowerTransmissionMultiplier * proportion;
-                comp.PowerDecayMultiplier += gasPrototype.PowerDecayMultiplier * proportion;
+                ent.Comp.WasteMultiplier += gasPrototype.WasteMultiplier * proportion;
+                ent.Comp.HeatProductionMultiplier += gasPrototype.HeatProductionMultiplier * proportion;
+                ent.Comp.HeatPowerGainMultiplier += gasPrototype.HeatPowerGainMultiplier * proportion;
+                ent.Comp.HeatProtectionMultiplier += gasPrototype.HeatProtectionMultiplier * proportion;
+                ent.Comp.IntegrityEffectMultiplier += gasPrototype.IntegrityEffectMultiplier * proportion;
+                ent.Comp.PowerTransmissionMultiplier += gasPrototype.PowerTransmissionMultiplier * proportion;
+                ent.Comp.PowerDecayMultiplier += gasPrototype.PowerDecayMultiplier * proportion;
             }
         }
 
@@ -146,19 +155,20 @@ public sealed partial class SupermatterSystem
 
         // Sum of all the "fuel" gases. Supermatter will absorb these
         var genMoles = envAir[0] + envAir[9];
-        comp.StoredPower += genMoles * envAir.Temperature / 50;
+        ent.Comp.StoredPower += genMoles * envAir.Temperature / 50;
 
         // This damage is calculated in Damage per AtmosUpdate
         // For example, 50 ticks in space will start the delamination
         // Or, one tick in 100.000 degrees
         // One tick in 200.000 degrees should blow it up instantly
-        comp.Integrity -= Math.Max(0, envAir.Temperature - 1750) / 500; // 4000 degrees -> -4.5 integrity / AtmosUpdate
-        comp.Integrity -= Math.Max(0, envAir.TotalMoles - 2000) / 1000; // 4000 moles -> -2 integrity / AtmosUpdate
-        comp.Integrity -=
-            (100 - Math.Min(100, envAir.Temperature)) / 50; // 0 kelvin (Space) -> -2 inegrity / AtmosUpdate
+        ent.Comp.Integrity -= Math.Max(0, envAir.Temperature - 1750) / 500; // 4000 degrees -> -4.5 integrity / AtmosUpdate
+        ent.Comp.Integrity -= Math.Max(0, envAir.TotalMoles - 2000) / 1000; // 4000 moles -> -2 integrity / AtmosUpdate
+        ent.Comp.Integrity -= (100 - Math.Min(100, envAir.Temperature)) / 50; // 0 kelvin (Space) -> -2 inegrity / AtmosUpdate
 
         environment.AdjustMoles(Gas.Plasma, envAir.TotalMoles * 0.8f);
         environment.AdjustMoles(Gas.Oxygen, envAir.TotalMoles * 0.2f);
+
+        ent.Comp.MolesAbsorbed = envAir.TotalMoles;
 
         float wasteProportion = 1f;
         if (environment.TotalMoles != 0)
@@ -168,5 +178,6 @@ public sealed partial class SupermatterSystem
         }
 
         Log.Info("Temp:\t\t" + environment.Temperature);
+        Log.Info("Moles eaten:\t" + ent.Comp.MolesAbsorbed);
     }
 }

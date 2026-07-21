@@ -13,10 +13,11 @@ public sealed partial class SupermatterComponent : Component
     public float IntegrityRegeneration = 1f; // Per second
 
     [ViewVariables]
-    [AutoNetworkedField]
+    [DataField, AutoNetworkedField]
     public bool Active = false;
 
     [ViewVariables]
+    [DataField, AutoNetworkedField]
     public float Integrity = 100f;
 
     [ViewVariables]
