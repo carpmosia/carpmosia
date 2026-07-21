@@ -1,9 +1,9 @@
 - type: entity
-  name: kitti
-  id: MobBaseKitti
-  parent: MobBaseAncestor
-  description: Cousins to the sentient race of cat people. Known for living in primitive box forts and knocking cups over.
   abstract: true
+  parent: MobBaseAncestor
+  id: MobBaseKitti
+  name: kitti
+  description: Cousins to the sentient race of cat people. Known for living in primitive box forts and knocking cups over.
   components:
   - type: NameIdentifier
     group: Kitti
@@ -107,9 +107,8 @@
     rules: ghost-role-information-nonantagonist-rules
 
 - type: entity
-  name: kitti
-  id: MobKitti
   parent: MobBaseKitti
+  id: MobKitti
   components:
   - type: Clumsy
     gunShootFailDamage:
@@ -124,8 +123,8 @@
       path: /Audio/Animals/cat_hiss.ogg
 
 - type: entity
-  id: MobBaseSyndicateKitti
   parent: MobBaseKitti
+  id: MobBaseSyndicateKitti
   suffix: syndicate base
   components:
   - type: MobThresholds
@@ -140,8 +139,8 @@
     prototypes: [SyndicateOperativeGearMonkey]
 
 - type: entity
-  id: MobKittiSyndicateAgent
   parent: MobBaseSyndicateKitti
+  id: MobKittiSyndicateAgent
   suffix: syndicate agent
   components:
     # make the player a traitor once its taken
@@ -149,8 +148,8 @@
     profile: TraitorReinforcement
 
 - type: entity
-  id: MobKittiSyndicateAgentNukeops # Reinforcement exclusive to nukeops uplink
   parent: MobBaseSyndicateKitti
+  id: MobKittiSyndicateAgentNukeops # Reinforcement exclusive to nukeops uplink
   suffix: NukeOps
   components:
   - type: NukeOperative
