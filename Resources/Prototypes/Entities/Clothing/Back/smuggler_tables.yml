@@ -646,8 +646,7 @@
         range: 1, 10
     # Carpmosia-start - Kitti
     - id: KittiCube
-      amount: !type:RangeNumberSelector
-        range: 1, 10
+      amount: 1, 10
     # Carpmosia-end - Kitti
     - id: CowCube
       amount: !type:RangeNumberSelector
