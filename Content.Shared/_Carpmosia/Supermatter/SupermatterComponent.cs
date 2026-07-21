@@ -1,16 +1,20 @@
+using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._Carpmosia.Supermatter;
 
+[NetworkedComponent]
+[AutoGenerateComponentState]
 [RegisterComponent]
 public sealed partial class SupermatterComponent : Component
 {
-    [ViewVariables]
-    public bool Stable = true;
+    [DataField]
+    public float IntegrityRegeneration = 1f; // Per second
 
     [ViewVariables]
-    public bool Delamination = false;
+    [AutoNetworkedField]
+    public bool Active = false;
 
     [ViewVariables]
     public float Integrity = 100f;
@@ -20,6 +24,9 @@ public sealed partial class SupermatterComponent : Component
 
     [ViewVariables]
     public float StoredPower = 0f;
+
+    [ViewVariables]
+    public float DelaminationTime = 0f;
 
     // Multipliers
 

@@ -5,14 +5,14 @@ namespace Content.Server._Carpmosia.Supermatter.Delamination;
 /// <summary>
 /// Approved by Dr. Isaac Kleiner
 /// </summary>
-public interface IDelaminationEffect
+public abstract class BaseDelaminationEffect : EntitySystem
 {
-    public bool Requirements(SupermatterComponent comp)
+    public virtual bool Requirements(SupermatterComponent comp)
     {
         return false;
     }
 
-    public void Delamination(EntityUid uid, SupermatterComponent comp)
+    public virtual void Delamination(EntityUid uid, SupermatterComponent comp)
     {
 
     }

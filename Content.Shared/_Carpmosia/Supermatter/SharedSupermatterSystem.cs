@@ -11,7 +11,7 @@ public sealed partial class SharedSupermatterSystem : EntitySystem
 
     public void OnExamined(EntityUid uid, SupermatterComponent comp, ExaminedEvent args)
     {
-        if (comp.Delamination)
+        if (comp.Integrity < 0f)
         {
             if (comp.Integrity < -50f)
             {
@@ -23,10 +23,10 @@ public sealed partial class SharedSupermatterSystem : EntitySystem
             return;
         }
 
-        if (comp.Stable)
-            args.PushMarkup(Loc.GetString("supermatter-examined-stable"));
-        else
+        if (comp.Active)
             args.PushMarkup(Loc.GetString("supermatter-examined-unstable"));
+        else
+            args.PushMarkup(Loc.GetString("supermatter-examined-stable"));
 
         if (comp.Integrity < 85f)
             args.PushMarkup(Loc.GetString("supermatter-examined-low-integrity"));

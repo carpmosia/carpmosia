@@ -1,7 +1,9 @@
+using System.Linq;
 using Content.Server.Atmos.EntitySystems;
 using Content.Shared.CCVar;
 using Content.Server.Lightning;
 using Content.Server._Carpmosia.Supermatter.Delamination;
+using Content.Server.Singularity.Events;
 using Content.Shared._Carpmosia.Supermatter;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
@@ -16,8 +18,7 @@ using Robust.Shared.GameObjects;
 
 namespace Content.Server._Carpmosia.Supermatter;
 
-// Thinking about a refactor... Should all the "Action" go into the update cycle?
-// No delams since I want to transfer them to interfaces. Infinite delaminations.
+// cheese
 public sealed partial class SupermatterSystem : EntitySystem
 {
     [Dependency] private IConfigurationManager _cfg = default!;
@@ -26,49 +27,14 @@ public sealed partial class SupermatterSystem : EntitySystem
     [Dependency] private IPrototypeManager _protoMan = default!;
     [Dependency] private SharedRadiationSystem _radSystem = default!;
 
-    private float _accumulator = 0f; // all supermatters are synced now
-    private float _radAccumulator = 0f;
-
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<SupermatterComponent, AtmosDeviceUpdateEvent>(OnAtmosUpdate);
+        InitializeUpdates();
+
         SubscribeLocalEvent<SupermatterComponent, DamageDealtEvent>(OnDamage);
-    }
-
-    public override void Update(float frameTime)
-    {
-        base.Update(frameTime);
-
-        _accumulator += frameTime;
-        _radAccumulator += frameTime;
-
-        bool radUpdate = _radAccumulator > _cfg.GetCVar(CCVars.RadiationGridcastUpdateRate);
-        bool smUpdate = _accumulator > _cfg.GetCVar(CCVars.SupermatterUpdateRate);
-
-        if (!(radUpdate || smUpdate))
-            return;
-
-        var query = EntityQueryEnumerator<SupermatterComponent>();
-
-        while (query.MoveNext(out var uid, out var comp))
-        {
-            if (comp.Stable)
-                continue;
-
-            if (radUpdate)
-            {
-                _radAccumulator = 0f;
-                OnRadiationUpdate(uid, comp);
-            }
-
-            if (smUpdate)
-            {
-                _accumulator = 0f;
-                OnUpdate(uid, comp);
-            }
-        }
+        SubscribeLocalEvent<SupermatterComponent, EntityConsumedByEventHorizonEvent>(OnEventHorizonEntity);
     }
 
     public void OnDamage(EntityUid uid, SupermatterComponent comp, DamageDealtEvent args)
@@ -78,110 +44,21 @@ public sealed partial class SupermatterSystem : EntitySystem
         if (total <= 0)
             return;
 
-        comp.Stable = false;
+        comp.Active = true;
         comp.StoredPower += (float)(total * 2.5f);
     }
 
-    public void OnRadiationUpdate(EntityUid uid, SupermatterComponent comp)
+    public void OnEventHorizonEntity(EntityUid uid, SupermatterComponent comp, EntityConsumedByEventHorizonEvent args)
     {
-        if (TryComp<RadiationSourceComponent>(uid, out var radComp))
-        {
-            float energySpent = comp.StoredPower * 0.05f;
-            comp.StoredPower *= 0.95f;
-
-            float radPower = 10f * MathF.Log(energySpent + 1);
-
-            _radSystem.SetIntensity(new Entity<RadiationSourceComponent?>(uid, radComp), radPower);
-            Log.Info("Rad energy spent:\t" + energySpent);
-        }
+        comp.Active = true;
     }
 
-    public void OnUpdate(EntityUid uid, SupermatterComponent comp)
+    public void Delaminate(EntityUid uid, SupermatterComponent comp)
     {
-        float spentPower = comp.StoredPower * 0.66f;
-        int lightnings = (int)(spentPower / 2500);
+        // TODO: add delam logic
+        // No idea how to do the whole interface thing, since there's no automatic
+        // dependency injection in non-RT classes
 
-        if (lightnings != 0)
-        {
-            comp.StoredPower -= spentPower;
-            _lightningSystem.ShootRandomLightnings(uid, 7, lightnings);
-        }
-
-        Log.Info("Integrity:\t\t" + comp.Integrity.ToString());
-        Log.Info("Stored Power:\t" + comp.StoredPower.ToString());
-    }
-
-    public void OnAtmosUpdate(EntityUid uid, SupermatterComponent comp, AtmosDeviceUpdateEvent args)
-    {
-        if (comp.Stable)
-            return;
-
-        var environment = _atmosphereSystem.GetContainingMixture(uid, args.Grid, args.Map, true, true);
-
-        if (environment == null)
-            return;
-
-        var envAir = environment.RemoveRatio(0.5f);
-
-        #region Multipliers
-
-        comp.WasteMultiplier = 1f;
-        comp.HeatProductionMultiplier = 1f;
-        comp.HeatPowerGainMultiplier = 1f;
-        comp.HeatProtectionMultiplier = 1f;
-        comp.IntegrityEffectMultiplier = 1f;
-        comp.PowerTransmissionMultiplier = 1f;
-        comp.PowerDecayMultiplier = 1f;
-
-        for (int i = 0; i < Atmospherics.TotalNumberOfGases; i++)
-        {
-            float moles = envAir[i];
-
-            if (moles == 0)
-                continue;
-
-            float proportion = moles / envAir.TotalMoles;
-
-            string gas = ((Gas)i).ToString();
-            var protoId = new ProtoId<SupermatterGasEffectPrototype>(gas);
-
-            if (_protoMan.TryIndex(protoId, out var gasPrototype))
-            {
-                comp.WasteMultiplier += gasPrototype.WasteMultiplier * proportion;
-                comp.HeatProductionMultiplier += gasPrototype.HeatProductionMultiplier * proportion;
-                comp.HeatPowerGainMultiplier += gasPrototype.HeatPowerGainMultiplier * proportion;
-                comp.HeatProtectionMultiplier += gasPrototype.HeatProtectionMultiplier * proportion;
-                comp.IntegrityEffectMultiplier += gasPrototype.IntegrityEffectMultiplier * proportion;
-                comp.PowerTransmissionMultiplier += gasPrototype.PowerTransmissionMultiplier * proportion;
-                comp.PowerDecayMultiplier += gasPrototype.PowerDecayMultiplier * proportion;
-            }
-        }
-
-        #endregion
-
-        // IT DOESNT USE ANY MODIFIERS SINCE I NEED TO FINE-TUNE IT
-
-        // Sum of all the "fuel" gases. Supermatter will absorb these
-        var genMoles = envAir[0] + envAir[9];
-        comp.StoredPower += genMoles * envAir.Temperature / 50;
-
-        // This damage is calculated in Damage per AtmosUpdate
-        // For example, 50 ticks in space will start the delamination
-        // Or, one tick in 100.000 degrees
-        // One tick in 200.000 degrees should blow it up instantly
-        comp.Integrity -= Math.Max(0, envAir.Temperature - 1750) / 500; // 4000 degrees -> -4.5 integrity / AtmosUpdate
-        comp.Integrity -= Math.Max(0, envAir.TotalMoles - 2000) / 1000;  // 4000 moles -> -2 integrity / AtmosUpdate
-        comp.Integrity -= (100 - Math.Min(100, envAir.Temperature)) / 50; // 0 kelvin (Space) -> -2 inegrity / AtmosUpdate
-
-        environment.AdjustMoles(Gas.Plasma, envAir.TotalMoles * 0.8f);
-        environment.AdjustMoles(Gas.Oxygen, envAir.TotalMoles * 0.2f);
-
-        float wasteProportion = 1f;
-        if (environment.TotalMoles != 0)
-        {
-            wasteProportion = genMoles * 0.5f / environment.TotalMoles;
-            environment.Temperature = environment.Temperature * (1 - wasteProportion) + 1500f * wasteProportion;
-        }
-        Log.Info("Temp:\t\t" + environment.Temperature);
+        QueueDel(uid);
     }
 }
