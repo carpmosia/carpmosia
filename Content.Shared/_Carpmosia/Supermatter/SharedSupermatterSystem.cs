@@ -30,8 +30,5 @@ public sealed partial class SharedSupermatterSystem : EntitySystem
 
         if (ent.Comp.Integrity < 85f)
             args.PushMarkup(Loc.GetString("supermatter-examined-low-integrity"));
-
-        Log.Info(ent.Comp.Active.ToString());
-        Log.Info(ent.Comp.Integrity.ToString());
     }
 }

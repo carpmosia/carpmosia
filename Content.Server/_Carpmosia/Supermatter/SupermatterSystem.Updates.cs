@@ -178,6 +178,6 @@ public sealed partial class SupermatterSystem
         }
 
         Log.Info("Temp:\t\t" + environment.Temperature);
-        Log.Info("Moles eaten:\t" + ent.Comp.MolesAbsorbed);
+        Log.Info("Moles eaten:\t\t" + ent.Comp.MolesAbsorbed);
     }
 }
