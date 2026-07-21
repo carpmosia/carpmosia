@@ -26,6 +26,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
+using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
 namespace Content.Server.GameTicking
@@ -694,7 +695,12 @@ namespace Content.Server.GameTicking
                     // There isn't really a better way to identify an already running map vote...
                     if (!_voteManager.ActiveVotes.Any(x => x.Title == Loc.GetString("ui-vote-map-title")))
                     {
-                        _voteManager.CreateStandardVote(null, StandardVoteType.Map);
+                        // 5 second buffer for vote to be finished before map preloading begins
+                        var preloadTime = RoundPreloadTime + TimeSpan.FromSeconds(5);
+                        // Currently this results in a 40 second delay before a map vote is called
+                        // enough for people to leave/join for map pop to be accurate
+                        var delay = LobbyDuration - (preloadTime + TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.VoteTimerMap)));
+                        Timer.Spawn(delay, () =>  _voteManager.CreateStandardVote(null, StandardVoteType.Map));
                     }
                 }
                 // Carpmosia-end - Automatic map vote
