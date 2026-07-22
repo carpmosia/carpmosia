@@ -20,8 +20,8 @@ public sealed partial class ReturnToLobbySystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeNetworkEvent<RoundEndMessageEvent>((_) => UpdateStatus());
-        SubscribeNetworkEvent<RoundRestartCleanupEvent>((_) => UpdateStatus());
+        SubscribeLocalEvent<RoundEndMessageEvent>((_) => UpdateStatus());
+        SubscribeLocalEvent<RoundRestartCleanupEvent>((_) => UpdateStatus());
         _playerManager.PlayerStatusChanged += PlayerStatusChanged;
     }
 
