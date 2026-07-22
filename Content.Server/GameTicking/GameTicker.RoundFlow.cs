@@ -693,7 +693,7 @@ namespace Content.Server.GameTicking
                 if (_cfg.GetCVar(CCVars.GameLobbyAutoVote))
                 {
                     // There isn't really a better way to identify an already running map vote...
-                    if (!_voteManager.ActiveVotes.Any(x => x.Title == Loc.GetString("ui-vote-map-title")))
+                    if (_voteManager.ActiveVotes.All(x => x.Title != Loc.GetString("ui-vote-map-title")))
                     {
                         // 5 second buffer for vote to be finished before map preloading begins
                         var preloadTime = RoundPreloadTime + TimeSpan.FromSeconds(5);
