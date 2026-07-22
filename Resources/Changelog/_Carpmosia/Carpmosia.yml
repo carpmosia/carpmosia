@@ -2320,4 +2320,80 @@
   id: 354
   time: '2026-07-19T18:26:27.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/496
+- author: Jakeybobble
+  changes:
+  - message: Gave Tajaran a typing indicator.
+    type: Add
+  id: 355
+  time: '2026-07-20T15:08:20.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/518
+- author: Atakku
+  changes:
+  - message: AI Holopad customization menu has been tweaked
+    type: Tweak
+  - message: Mothroach, Weh and Diona nympth AI forms have been changed to use the
+      real Mothroach, Lizard Plushie, and Diona nymth sprites
+    type: Tweak
+  - message: 'Added a new AI Form: Clown lizard plushie'
+    type: Add
+  id: 356
+  time: '2026-07-20T17:23:29.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/492
+- author: Atakku
+  changes:
+  - message: Lobby time has been shortened from 300 seconds to 150 seconds
+    type: Tweak
+  - message: End of round has been extended from 300 seconds to 450 seconds
+    type: Tweak
+  id: 357
+  time: '2026-07-21T10:43:13.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/495
+- author: Jakeybobble
+  changes:
+  - message: Added the Kitti, a bipedal feline ancestor.
+    type: Add
+  - message: Added kitti cube boxes to the cargo market.
+    type: Add
+  - message: Added a recipe for kitti cubes to the biogenerator.
+    type: Add
+  - message: Changed variant cube box to include kitti cubes.
+    type: Tweak
+  - message: Added kitti to syndicate reinforcement radio.
+    type: Add
+  id: 358
+  time: '2026-07-21T14:31:09.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/467
+- author: Atakku
+  changes:
+  - message: Map vote has been changed to be exclusively automatic at the start of
+      each round, unless started by an Admin.
+    type: Tweak
+  id: 359
+  time: '2026-07-22T03:08:25.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/494
+- author: Atakku
+  changes:
+  - message: Ghosts now have a button to return to lobby early, which unlocks as soon
+      as the evac shuttle arrives.
+    type: Add
+  - message: Late-joining is disabled when the evac shuttle arrives.
+    type: Tweak
+  id: 360
+  time: '2026-07-22T03:08:36.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/482
+- author: Atakku
+  changes:
+  - message: Evac pods now have a much larger randomized FTL delay
+    type: Tweak
+  - message: Evac pods leave the FTL space at a randomized delay, before the Evac
+      shuttle arrives to the Terminal
+    type: Tweak
+  - message: Evac pods no longer FTL to the Terminal, instead they land at a random
+      spot on the Arrivals planet.
+    type: Tweak
+  - message: Arrivals cloud radius has been increased to account for the Evac pods.
+    type: Tweak
+  id: 361
+  time: '2026-07-22T08:31:58.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/461
 Order: -1

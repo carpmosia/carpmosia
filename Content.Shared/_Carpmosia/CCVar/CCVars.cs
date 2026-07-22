@@ -21,4 +21,10 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<string> GameMapPoolTerminal =
         CVarDef.Create("game.map_pool_terminal", "DefaultTerminalPool", CVar.SERVERONLY);
+
+    /// <summary>
+    /// Whenever the lobby auto vote is enabled
+    /// </summary>
+    public static readonly CVarDef<bool> GameLobbyAutoVote =
+        CVarDef.Create("game.lobby_auto_vote", false, CVar.SERVERONLY);
 }
