@@ -94,6 +94,7 @@ public sealed partial class StationAiCustomizationMenu : FancyWindow
         public ProtoId<StationAiCustomizationPrototype> ProtoId;
         public Button SelectButton;
 
+        // Carpmosia-start - Better AI Hologram preview
         private static readonly ProtoId<ShaderPrototype> HologramShader = "Hologram";
         private static readonly Vector3 ShaderColor1;
         private static readonly Vector3 ShaderColor2;
