@@ -26,7 +26,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
-using Robust.Shared.Timing;
+using Robust.Shared.Timing; // Carpmosia-edit - Automatic map vote
 using Robust.Shared.Utility;
 
 namespace Content.Server.GameTicking
