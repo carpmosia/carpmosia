@@ -16,7 +16,7 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
     [UISystemDependency] private readonly GhostSystem? _system = default;
 
     private GhostGui? Gui => UIManager.GetActiveUIWidgetOrNull<GhostGui>();
-    private bool _canReturnToLobby = false; // Carpmosia-edit - Return to lobby
+    private bool _canReturnToLobby; // Carpmosia-edit - Return to lobby
 
     public override void Initialize()
     {
