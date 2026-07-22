@@ -681,11 +681,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: BatteryAmmoProvider
-<<<<<<< HEAD
     proto: RedMediumLaser
-=======
-    proto: OldModelLaser # Carpmosia-edit - Laser rework
->>>>>>> 2e42867c58702b0e429c88bce96f7b5d63871da8
     fireCost: 100
   - type: BatterySelfRecharger
     autoRechargeRate: 40

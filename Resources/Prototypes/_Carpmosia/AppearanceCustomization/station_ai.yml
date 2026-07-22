@@ -43,13 +43,22 @@
       state: ai_clown
 
 - type: stationAiCustomization
-  id: StationAiHologramWeh
-  name: station-ai-hologram-weh
+  id: StationAiHologramPlushieLizard
+  name: station-ai-hologram-plushie-lizard
   previewKey: Hologram
   layerData:
     Hologram:
-      sprite: _Carpmosia/Mobs/Silicon/holograms.rsi
-      state: ai_weh
+      sprite: Objects/Fun/Plushies/lizard.rsi
+      state: icon
+
+- type: stationAiCustomization
+  id: StationAiHologramPlushieLizardClown
+  name: station-ai-hologram-plushie-lizard-clown
+  previewKey: Hologram
+  layerData:
+    Hologram:
+      sprite: Objects/Fun/plushielizard_jobs.rsi
+      state: clown
 
 - type: stationAiCustomization
   id: StationAiHologramMothroach
@@ -57,17 +66,17 @@
   previewKey: Hologram
   layerData:
     Hologram:
-      sprite: _Carpmosia/Mobs/Silicon/holograms.rsi
-      state: ai_mothroach
+      sprite: Mobs/Animals/mothroach/mothroach.rsi
+      state: mothroach
 
 - type: stationAiCustomization
-  id: StationAiHologramDionanymph
-  name: station-ai-hologram-dionanymph
+  id: StationAiHologramDionaNymph
+  name: station-ai-hologram-diona-nymph
   previewKey: Hologram
   layerData:
     Hologram:
-      sprite: _Carpmosia/Mobs/Silicon/holograms.rsi
-      state: ai_dionanymph
+      sprite: Mobs/Animals/nymph.rsi
+      state: nymph
 
 - type: stationAiCustomization
   id: StationAiHologramAngel
