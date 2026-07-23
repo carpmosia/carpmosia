@@ -49,17 +49,19 @@ public sealed partial class ForceMapsCommand : LocalizedCommands
 
     public override CompletionResult GetCompletion(IConsoleShell shell, string[] args)
     {
-        if (args.Length == 1)
-        {
-            var options = _prototypeManager
-                .EnumeratePrototypes<GameMapPrototype>()
-                .Where(p => !p.ID.StartsWith("Legacy")) // Carpmosia-edit - Legacy maps
-                .Select(p => new CompletionOption(p.ID, p.MapName))
-                .OrderBy(p => p.Value);
+        if (args.Length == 0)
+            return CompletionResult.Empty;
 
-            return CompletionResult.FromHintOptions(options, Loc.GetString($"cmd-forcemap-hint"));
-        }
+        if (args.Length > MaxArgCount)
+            return CompletionResult.Empty;
 
-        return CompletionResult.Empty;
+        var n = args.Length - 1;
+        var options = _prototypeManager
+            .EnumeratePrototypes<GameMapPrototype>()
+            .Where(p => !p.ID.StartsWith("Legacy"))
+            .Where(p => !p.ID.StartsWith("Terminal"))
+            .Select(p => new CompletionOption(p.ID, p.MapName))
+            .OrderBy(p => p.Value);
+        return CompletionResult.FromHintOptions(options, Loc.GetString($"cmd-forcemap-hint"));
     }
 }
