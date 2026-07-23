@@ -13,12 +13,20 @@
     requireAnchored: false
   - type: Clickable
   - type: InteractionOutline
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: DeviceList
+  - type: DeviceLinkSource
+    range: 25
+    ports:
+      - SupermatterData
   - type: Physics
     bodyType: Static
   - type: Transform
     noRot: true
   - type: EventHorizon
-    radius: 0.5
+    radius: 0.24
     consumeTiles: false
     canBreachContainment: false
     colliderFixtureId: EventHorizonCollider
