@@ -2,13 +2,11 @@
   id: PlushieMagicarp
   effects:
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: AntagWizard
       time: 1h
   - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
+    requirement: !type:RoleTimeRequirement
       role: JobSalvageSpecialist
       time: 1h
 
