@@ -90,6 +90,7 @@ namespace Content.Server.Ghost
 
             SubscribeNetworkEvent<GhostWarpsRequestEvent>(OnGhostWarpsRequest);
             SubscribeNetworkEvent<GhostReturnToBodyRequest>(OnGhostReturnToBodyRequest);
+            SubscribeNetworkEvent<GhostReturnToLobbyRequest>(OnGhostReturnToLobbyRequest); // Carpmosia-edit - Return to lobby
             SubscribeNetworkEvent<GhostWarpToTargetRequestEvent>(OnGhostWarpToTargetRequest);
             SubscribeNetworkEvent<GhostnadoRequestEvent>(OnGhostnadoRequest);
 
@@ -271,6 +272,22 @@ namespace Content.Server.Ghost
 
             _mind.UnVisit(actor.PlayerSession);
         }
+
+        // Carpmosia-start - Return to lobby
+        private void OnGhostReturnToLobbyRequest(GhostReturnToLobbyRequest msg, EntitySessionEventArgs args)
+        {
+            // Checking for post round in case of an early "restartround"
+            if (!_configurationManager.GetCVar(CCVars.GameDisallowLateJoins)
+                || args.SenderSession.AttachedEntity is not {Valid: true} attached
+                || !TryComp(attached, out ActorComponent? actor))
+            {
+                Log.Warning($"User {args.SenderSession.Name} sent an invalid {nameof(GhostReturnToLobbyRequest)}");
+                return;
+            }
+
+            _gameTicker.Respawn(actor.PlayerSession);
+        }
+        // Carpmosia-end - Return to lobby
 
         #region Warp
 
