@@ -16,6 +16,14 @@
   equipment:
     jumpsuit: ClothingUniformJumpskirtJanimaid
 
+- type: loadout
+  id: ServiceMaidskirtMini
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: CompetentService
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtJanimaidmini
+
 # Shoes
 - type: loadout
   id: GaloshesShoes
