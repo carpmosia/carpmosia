@@ -143,6 +143,11 @@
   - type: HideLayerClothing
     slots:
     - Tail
+  # Carpmosia-start - Ancestor suits
+  - type: Tag
+    tags:
+    - MonkeyWearable
+  # Carpmosia-end - Ancestor suits
 
 - type: entity
   parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseToggleClothing, BaseHighlyIllegalContraband]
