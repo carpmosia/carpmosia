@@ -63,6 +63,7 @@ public enum PaperColor : byte
     Blue,
     Indigo,
     Purple,
+    Pink,
 }
 // Carpmosia-end - Colored paper
 

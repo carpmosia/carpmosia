@@ -245,3 +245,34 @@
   parent: [ BasePaperPurple, PaperOffice ]
   id: PaperOfficeColorPurple
   description: A plain sheet of purple office paper.
+
+- type: entity
+  abstract: true
+  id: BasePaperPink
+  suffix: pink
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper
+      color: &pink "#F8BBD0"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: *pink
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: PaperVisuals
+    backgroundModulate: *pink
+    contentImageModulate: *pink
+
+- type: entity
+  parent: [ BasePaperPink, Paper ]
+  id: PaperColorPink
+  description: A piece of pink paper.
+
+- type: entity
+  parent: [ BasePaperPink, PaperOffice ]
+  id: PaperOfficeColorPink
+  description: A plain sheet of pink office paper.

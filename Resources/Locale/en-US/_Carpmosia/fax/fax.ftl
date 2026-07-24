@@ -7,3 +7,4 @@ fax-machine-ui-color-selector-teal = Teal
 fax-machine-ui-color-selector-blue = Blue
 fax-machine-ui-color-selector-indigo = Indigo
 fax-machine-ui-color-selector-purple = Purple
+fax-machine-ui-color-selector-pink = Pink
