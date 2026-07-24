@@ -1,0 +1,9 @@
+fax-machine-ui-color-selector-white = White
+fax-machine-ui-color-selector-red = Red
+fax-machine-ui-color-selector-orange = Orange
+fax-machine-ui-color-selector-yellow = Yellow
+fax-machine-ui-color-selector-green = Green
+fax-machine-ui-color-selector-teal = Teal
+fax-machine-ui-color-selector-blue = Blue
+fax-machine-ui-color-selector-indigo = Indigo
+fax-machine-ui-color-selector-purple = Purple

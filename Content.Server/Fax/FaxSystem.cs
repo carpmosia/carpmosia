@@ -432,6 +432,11 @@ public sealed partial class FaxSystem : EntitySystem
     {
         var prototype = args.OfficePaper ? component.PrintOfficePaperId : component.PrintPaperId;
 
+        // Carpmosia-start - Colored paper
+        if (args.PaperColor != PaperColor.White)
+            prototype += $"Color{args.PaperColor}";
+        // Carpmosia-end - Colored paper
+
         var name = Loc.GetString("fax-machine-printed-paper-name");
 
         var printout = new FaxPrintout(args.Content, name, args.Label, prototype);
