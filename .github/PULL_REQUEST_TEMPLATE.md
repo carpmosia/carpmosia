@@ -13,8 +13,9 @@
 ## Technical details
 <!-- Describe what code changes you did or will do in this PR and optionally why.
        Feel free to use check boxes to track your progress, for example: -->
-- [x] You can use these for tracking progress!
-- [ ] This item is incomplete!
+- [x] Resprited X and Y to work with this change.
+- [x] Implemented Z and X to handle Y edge case.
+- [ ] Added a new component for all X to prevent Z.
 
 ## Test plan
 <!-- Describe how you tested the pull request, and how someone reviewing this PR can test it themselves. -->
