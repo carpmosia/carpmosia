@@ -484,7 +484,7 @@ public sealed partial class FaxSystem : EntitySystem
         var printout = new FaxPrintout(paper.Content,
                                        nameMod?.BaseName ?? metadata.EntityName,
                                        labelComponent?.CurrentLabel,
-                                       metadata.EntityPrototype?.ID ?? component.PrintPaperId,
+                                       metadata.EntityPrototype?.ID ?? component.PrintPaperId[PaperColor.White].Item1, // Carpmosia-edit - Colored paper
                                        paper.StampState,
                                        paper.StampedBy,
                                        paper.EditingDisabled);
