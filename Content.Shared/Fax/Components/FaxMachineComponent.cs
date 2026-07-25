@@ -139,7 +139,7 @@ public sealed partial class FaxMachineComponent : Component
         { PaperColor.Blue, ("PaperColorBlue", "PaperOfficeColorBlue")},
         { PaperColor.Indigo, ("PaperColorIndigo", "PaperOfficeColorIndigo")},
         { PaperColor.Purple, ("PaperColorPurple", "PaperOfficeColorPurple")},
-        { PaperColor.Pink, ("PaperColorPink", "PaperOfficeColorPinkLINTERTEST")}
+        { PaperColor.Pink, ("PaperColorPink", "PaperOfficeColorPink")}
     };
 
     // /// <summary>
