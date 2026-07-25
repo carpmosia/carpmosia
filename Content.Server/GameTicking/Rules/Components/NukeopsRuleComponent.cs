@@ -143,7 +143,7 @@ public enum WinCondition : byte
     NukeExplodedOnNukieOutpost,
     NukeExplodedOnIncorrectLocation,
     NukeActiveInStation,
-    NukeActiveAtCentCom,
+    // NukeActiveAtCentCom, // Carpmosia-edit - Replaced CC with Terminals
     NukeDiskOnCentCom,
     NukeDiskNotOnCentCom,
     NukiesAbandoned,

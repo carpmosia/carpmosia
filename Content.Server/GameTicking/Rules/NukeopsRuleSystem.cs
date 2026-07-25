@@ -297,12 +297,14 @@ public sealed partial class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleCompon
                 continue;
 
             // UH OH
-            if (nukeTransform.MapUid != null && centcomms.Contains(nukeTransform.MapUid.Value))
-            {
-                ent.Comp.WinConditions.Add(WinCondition.NukeActiveAtCentCom);
-                SetWinType((ent, ent), WinType.OpsMajor);
-                return;
-            }
+            // Carpmosia-start - Replaced CC with Terminals
+            // if (nukeTransform.MapUid != null && centcomms.Contains(nukeTransform.MapUid.Value))
+            // {
+            //     ent.Comp.WinConditions.Add(WinCondition.NukeActiveAtCentCom);
+            //     SetWinType((ent, ent), WinType.OpsMajor);
+            //     return;
+            // }
+            // Carpmosia-end - Replaced CC with Terminals
 
             if (nukeTransform.GridUid == null || ent.Comp.TargetStation == null)
                 continue;
