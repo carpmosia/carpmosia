@@ -33,7 +33,7 @@ guide-entry-carpmosia-rules-s7 = S7
 guide-entry-carpmosia-rules-s8 = S8
 guide-entry-carpmosia-rules-s9 = S9
 
-guide-entry-sop-command = Operating Procedure
+guide-entry-sop = Operating Procedure
 guide-entry-sop-captain = Captain
 guide-entry-sop-ce = Chief Engineer
 guide-entry-sop-cmo = Chief Medical Officer
