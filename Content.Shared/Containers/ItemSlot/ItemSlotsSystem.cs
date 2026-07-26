@@ -289,7 +289,8 @@ namespace Content.Shared.Containers.ItemSlots
             ItemSlot slot,
             EntityUid item,
             EntityUid? user,
-            bool excludeUserAudio = false)
+            bool excludeUserAudio = false,
+            bool suppressSound = false) // Starlight - add suppressSound parameter
         {
             bool? inserted = slot.ContainerSlot != null ? _containers.Insert(item, slot.ContainerSlot) : null;
             // ContainerSlot automatically raises a directed EntInsertedIntoContainerMessage
@@ -299,6 +300,13 @@ namespace Content.Shared.Containers.ItemSlots
                 _adminLogger.Add(LogType.Action,
                     LogImpact.Low,
                     $"{ToPrettyString(user.Value)} inserted {ToPrettyString(item)} into {slot.ContainerSlot?.ID + " slot of "}{ToPrettyString(uid)}");
+
+            // Starlight start - support suppressing generation of sounds
+            if (suppressSound)
+            {
+                return;
+            }
+            // Starlight end
 
             _audioSystem.PlayPredicted(slot.InsertSound, uid, excludeUserAudio ? user : null);
         }
@@ -372,12 +380,13 @@ namespace Content.Shared.Containers.ItemSlots
             ItemSlot slot,
             EntityUid item,
             EntityUid? user,
-            bool excludeUserAudio = false)
+            bool excludeUserAudio = false,
+            bool suppressSound = false) // Starlight - add suppressSound parameter
         {
             if (!CanInsert(uid, item, user, slot))
                 return false;
 
-            Insert(uid, slot, item, user, excludeUserAudio: excludeUserAudio);
+            Insert(uid, slot, item, user, excludeUserAudio: excludeUserAudio, suppressSound); // Starlight-edit - pass through suppressSound
             return true;
         }
 

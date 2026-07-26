@@ -768,6 +768,16 @@
         whitelist:
           components:
           - FloorTile
+    #Starlight-edit: start
+    - hand:
+        emptyRepresentative: PlasmaTank
+        emptyLabel: borg-slot-fuel-empty
+        whitelist:
+          components:
+          - GasTank
+          - AmeFuelContainer
+          - ReactorPart # FH edit
+    #Starlight-edit: end
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: construction-module }
 
