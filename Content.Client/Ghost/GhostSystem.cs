@@ -1,5 +1,6 @@
 using Content.Client.Movement.Systems;
 using Content.Shared.Actions;
+using Content.Shared.GameTicking; // Carpmosia-edit - Return to lobby
 using Content.Shared.Ghost;
 using Robust.Client.Console;
 using Robust.Client.GameObjects;
@@ -50,6 +51,7 @@ namespace Content.Client.Ghost
         public event Action? PlayerDetached;
         public event Action<GhostWarpsResponseEvent>? GhostWarpsResponse;
         public event Action<GhostUpdateGhostRoleCountEvent>? GhostRoleCountUpdated;
+        public event Action<bool>? TickerLateJoinStatus; // Carpmosia-edit - Return to lobby
 
         public override void Initialize()
         {
@@ -64,6 +66,7 @@ namespace Content.Client.Ghost
 
             SubscribeNetworkEvent<GhostWarpsResponseEvent>(OnGhostWarpsResponse);
             SubscribeNetworkEvent<GhostUpdateGhostRoleCountEvent>(OnUpdateGhostRoleCount);
+            SubscribeNetworkEvent<TickerLateJoinStatusEvent>(OnTickerLateJoinStatus); // Carpmosia-edit - Return to lobby
 
             SubscribeLocalEvent<EyeComponent, ToggleLightingActionEvent>(OnToggleLighting);
             SubscribeLocalEvent<EyeComponent, ToggleFoVActionEvent>(OnToggleFoV);
@@ -191,6 +194,19 @@ namespace Content.Client.Ghost
             var msg = new GhostReturnToBodyRequest();
             RaiseNetworkEvent(msg);
         }
+
+        // Carpmosia-start - Return to lobby
+        public void ReturnToLobby()
+        {
+            var msg = new GhostReturnToLobbyRequest();
+            RaiseNetworkEvent(msg);
+        }
+
+        public void OnTickerLateJoinStatus(TickerLateJoinStatusEvent msg)
+        {
+            TickerLateJoinStatus?.Invoke(msg.Disallowed);
+        }
+        // Carpmosia-end - Return to lobby
 
         public void OpenGhostRoles()
         {

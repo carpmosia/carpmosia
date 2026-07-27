@@ -1,0 +1,27 @@
+- type: entity
+  parent: BoxCardboard
+  id: KittiCubeBox
+  name: kitti cube box
+  description: Drymate brand kitti cubes. Just add water!
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: KittiCubeWrapped
+        amount: 8
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Misc/monkeycube.rsi
+    state: box_kitti
+
+- type: entity
+  parent: BaseWrappedCube
+  id: KittiCubeWrapped
+  name: kitti cube
+  description: Unwrap this to get a kitti cube.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Misc/monkeycube.rsi
+    state: wrapper_kitti
+  - type: SpawnItemsOnUse
+    items:
+    - id: KittiCube

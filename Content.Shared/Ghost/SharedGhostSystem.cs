@@ -202,6 +202,14 @@ namespace Content.Shared.Ghost
     {
     }
 
+    // Carpmosia-start - Return to lobby
+    /// <summary>
+    /// A client to server request for respawn (return to lobby)
+    /// </summary>
+    [Serializable, NetSerializable]
+    public sealed class GhostReturnToLobbyRequest : EntityEventArgs;
+    // Carpmosia-end - Return to lobby
+
     /// <summary>
     /// A server to client update with the available ghost role count
     /// </summary>

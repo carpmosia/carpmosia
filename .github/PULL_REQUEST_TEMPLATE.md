@@ -12,15 +12,13 @@
 
 ## Technical details
 <!-- Describe what code changes you did or will do in this PR and optionally why.
-       Feel free to use check boxes to track your progress, for example:
-       - [ ] Resprited X and Y to work with this change.
-       - [ ] Implemented Z and X to handle Y edge case.
-       - [ ] Added a new component for all X to prevent Z. -->
+       Feel free to use check boxes to track your progress, for example: -->
+- [x] Resprited X and Y to work with this change.
+- [x] Implemented Z and X to handle Y edge case.
+- [ ] Added a new component for all X to prevent Z.
 
 ## Test plan
-<!--
-Describe how you tested the pull request, and how someone reviewing this PR can test it themselves.
--->
+<!-- Describe how you tested the pull request, and how someone reviewing this PR can test it themselves. -->
 
 ## Media
 <!-- Attach media if the PR makes in-game changes (clothing, items, features, etc).
@@ -31,11 +29,8 @@ Describe how you tested the pull request, and how someone reviewing this PR can 
        prototype renames, and provide instructions for fixing them. -->
 
 ## Changelog
-<!-- Edit this to cover all player facing changes in a concise and short matter.
-       Feel free to remove or add as many add, remove, fix, tweak lines as you need.
-       If there are no player facing changes, you can remove it altogether.
-       This will be visible in-game and on Discord. -->
-:cl:
+:cl: <!-- DO NOT REMOVE THIS LINE UNLESS THERE IS NO CHANGELOG -->
+<!-- Edit these as you may need, remove/add as many as you want -->
 - add: Added fun!
 - remove: Removed fun!
 - tweak: Changed fun!

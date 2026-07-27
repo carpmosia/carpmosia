@@ -12,6 +12,13 @@ public sealed partial class WarpPointComponent : Component
     [DataField]
     public string? Location;
 
+    // Carpmosia-start - Warp point prefixes
+    /// <summary>
+    /// Origin of this warp point.
+    /// </summary>
+    public string Origin = "Unknown";
+    // Carpmosia-end - Warp point prefixes
+
     /// <summary>
     /// If true, ghosts warping to this entity will begin following it.
     /// </summary>

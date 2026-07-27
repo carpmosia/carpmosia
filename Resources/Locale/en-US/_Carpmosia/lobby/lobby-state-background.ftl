@@ -15,3 +15,6 @@ lobby-state-background-dragonattack-artist = inari6666
 
 lobby-state-background-chitters-title = *chitters*
 lobby-state-background-chitters-artist = Lunarr
+
+lobby-state-background-adayinsci-title = A day in Sci
+lobby-state-background-adayinsci-artist = spaceworm12

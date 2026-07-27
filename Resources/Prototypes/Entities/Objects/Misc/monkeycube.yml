@@ -68,9 +68,13 @@
       storagebase: !type:AllSelector
         children:
         - id: KoboldCubeWrapped
-          amount: 4
+          amount: 3 # Carpmosia-edit - Kitti
         - id: MonkeyCubeWrapped
-          amount: 4
+          amount: 3 # Carpmosia-edit - Kitti
+        # Carpmosia-start - Kitti
+        - id: KittiCubeWrapped
+          amount: 3
+        # Carpmosia-end - Kitti
   - type: Sprite
     sprite: Objects/Misc/monkeycube.rsi
     state: box_variant
