@@ -80,8 +80,7 @@ public sealed partial class SingularityAttractorSystem : EntitySystem
                 return;
 
             //Carpmosia-start - Engine Loose Rework
-            walk.MinSpeed = 7.5f;
-            walk.MaxSpeed = 10f;
+            walk.NextStepTime = TimeSpan.Zero;
             //Carpmosia-end - Engine Loose Rework
 
             biasBy = Vector2.Normalize(biasBy) * (attractor.BaseRange / length);
