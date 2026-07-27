@@ -1,5 +1,5 @@
 # Robust.Cvars
-net.tickrate = 60
+net.tickrate = 30
 
 # CCVars.Atmos
 atmos.max_explosion_range = 100
@@ -43,4 +43,5 @@ shuttle.arrivals_returns = true
 
 # CCVars.Vote
 vote.preset_enabled = false
-vote.map_enabled = true
+vote.map_enabled = false
+vote.timermap = 180

@@ -83,6 +83,7 @@ namespace Content.IntegrationTests.Tests
             "/Maps/centcomm.yml",
             "/Maps/Shuttles/AdminSpawn/**", // admin gaming
             "/Maps/_Carpmosia/Legacy/**", // Carpmosia-edit - Legacy maps
+            "/Maps/_Carpmosia/Terminals/**", // Carpmosia-edit - Replaced CC with Terminals
             "/Maps/_Carpmosia/centcomm.yml", // Carpmosia-edit - Centcomm Tweaks
         };
 

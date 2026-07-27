@@ -2,7 +2,7 @@
   id: Bagel
   mapName: 'Bagel Station'
   mapPath: /Maps/bagel.yml
-  mapPreview: MapPreviewBagel # Carpmosia - Map previews
+  mapPreview: MapPreviewBagel # Carpmosia-edit - Map previews
   minPlayers: 35
   maxPlayers: 80
   stations:
@@ -10,6 +10,7 @@
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
+          shortName: Bagel # Carpmosia-edit - Warp point prefixes
           mapNameTemplate: '{0} Bagel Station {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
