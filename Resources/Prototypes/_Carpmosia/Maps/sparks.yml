@@ -12,6 +12,7 @@
       stationProto: StandardNanotrasenStation
       components:
       - type: StationNameSetup
+        shortName: Sparks
         mapNameTemplate: '{0} Sparks {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator

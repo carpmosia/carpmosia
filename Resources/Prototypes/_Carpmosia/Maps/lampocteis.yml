@@ -12,10 +12,11 @@
       stationProto: StandardNanotrasenStation
       components:
       - type: StationNameSetup
+        shortName: Lampocteis
         mapNameTemplate: '{0} Lampocteis Carrier {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
-          prefixCreator: 'JLF'
+          prefixCreator: 'JF'
       - type: StationEmergencyShuttle
         emergencyShuttlePath: /Maps/_Carpmosia/Shuttles/emergency_ghoti.yml
       - type: StationJobs

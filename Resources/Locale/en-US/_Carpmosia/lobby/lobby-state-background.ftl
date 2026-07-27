@@ -15,3 +15,6 @@ lobby-state-background-dragonattack-artist = inari6666
 
 lobby-state-background-runninglate-title = Running Late
 lobby-state-background-runninglate-artist = Saver310
+
+lobby-state-background-adayinsci-title = A day in Sci
+lobby-state-background-adayinsci-artist = spaceworm12

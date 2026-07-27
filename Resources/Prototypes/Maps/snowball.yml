@@ -2,7 +2,7 @@
   id: Snowball
   mapName: 'Snowball Station'
   mapPath: /Maps/snowball.yml
-  mapPreview: MapPreviewSnowball # Carpmosia - Map previews
+  mapPreview: MapPreviewSnowball # Carpmosia-edit - Map previews
   minPlayers: 5 # Carpmosia-edit - Snowball is not high-pop
   maxPlayers: 30 # Carpmosia-edit - Snowball is not high-pop
   stations:
@@ -10,6 +10,7 @@
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
+          shortName: Snowball # Carpmosia-edit - Warp point prefixes
           mapNameTemplate: '{0} Snowball Station {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
