@@ -432,7 +432,7 @@ public sealed partial class ArrivalsSystem : EntitySystem
         EnsureComp<PreventPilotComponent>(uid);
     }
 
-    private bool TryGetArrivals(out EntityUid uid)
+    public bool TryGetArrivals(out EntityUid uid) // Carpmosia-edit - Evac pod tweaks
     {
         var arrivalsQuery = EntityQueryEnumerator<ArrivalsSourceComponent>();
 
@@ -540,7 +540,7 @@ public sealed partial class ArrivalsSystem : EntitySystem
         if (!_loader.TryLoadGrid(mapId, path, out var grid))
             return;
 
-        _metaData.SetEntityName(mapUid, Loc.GetString("map-name-terminal"));
+        _metaData.SetEntityName(mapUid, Loc.GetString("map-name-arrivals")); // Carpmosia-end - Warp point prefixes
 
         EnsureComp<ArrivalsSourceComponent>(grid.Value);
         EnsureComp<ProtectedGridComponent>(grid.Value);
@@ -553,7 +553,7 @@ public sealed partial class ArrivalsSystem : EntitySystem
             _biomes.EnsurePlanet(mapUid, _protoManager.Index(template));
             var restricted = new RestrictedRangeComponent
             {
-                Range = 32f
+                Range = 256f // Carpmosia-edit - Evac pod tweaks
             };
             AddComp(mapUid, restricted);
         }

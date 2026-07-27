@@ -173,7 +173,7 @@ namespace Content.Client.Lobby
 
         private void LobbyLateJoinStatusUpdated()
         {
-            Lobby!.ReadyButton.Disabled = _gameTicker.DisallowedLateJoin;
+            Lobby!.ReadyButton.Disabled = _gameTicker.IsGameStarted && _gameTicker.DisallowedLateJoin; // Carpmosia-edit - Return to lobby
         }
 
         private void UpdateLobbyUi()
@@ -182,6 +182,7 @@ namespace Content.Client.Lobby
             {
                 Lobby!.ReadyButton.Text = Loc.GetString("lobby-state-ready-button-join-state");
                 Lobby!.ReadyButton.ToggleMode = false;
+                Lobby!.ReadyButton.Disabled = _gameTicker.DisallowedLateJoin; // Carpmosia-edit - Return to lobby
                 Lobby!.ReadyButton.Pressed = false;
                 Lobby!.ObserveButton.Disabled = false;
             }

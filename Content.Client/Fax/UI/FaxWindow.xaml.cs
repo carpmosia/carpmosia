@@ -18,6 +18,7 @@ public sealed partial class FaxWindow : DefaultWindow
     public event Action<string>? PeerSelected;
 
     public bool OfficePaper = false;
+    public PaperColor PaperColor = PaperColor.White; // Carpmosia-edit - Colored paper
 
     public FaxWindow()
     {
@@ -32,6 +33,20 @@ public sealed partial class FaxWindow : DefaultWindow
         RefreshButton.OnPressed += _ => RefreshButtonPressed?.Invoke();
         PeerSelector.OnItemSelected += args =>
             PeerSelected?.Invoke((string)args.Button.GetItemMetadata(args.Id)!);
+
+        // Carpmosia-start - Colored paper
+        foreach (var color in Enum.GetValues<PaperColor>())
+        {
+            ColorSelector.AddItem(Loc.GetString($"fax-machine-ui-color-selector-{color.ToString().ToLower()}"));
+            ColorSelector.SetItemMetadata(ColorSelector.ItemCount - 1, color);
+        }
+
+        ColorSelector.OnItemSelected += args =>
+        {
+            PaperColor = (PaperColor)args.Button.GetItemMetadata(args.Id)!;
+            ColorSelector.Select(args.Id);
+        };
+        // Carpmosia-end - Colored paper
     }
 
     public void UpdateState(FaxUiState state)

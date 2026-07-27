@@ -430,7 +430,15 @@ public sealed partial class FaxSystem : EntitySystem
     /// </summary>
     public void PrintFile(EntityUid uid, FaxMachineComponent component, FaxFileMessage args)
     {
-        var prototype = args.OfficePaper ? component.PrintOfficePaperId : component.PrintPaperId;
+        // Carpmosia-start - Colored paper
+        if (!component.PrintPaperId.TryGetValue(args.PaperColor, out var paper))
+        {
+            Log.Error($"No prototypes defined for PaperColor {args.PaperColor}");
+            return;
+        }
+
+        var prototype = args.OfficePaper ? paper.Item2 : paper.Item1;
+        // Carpmosia-end - Colored paper
 
         var name = Loc.GetString("fax-machine-printed-paper-name");
 
@@ -476,7 +484,7 @@ public sealed partial class FaxSystem : EntitySystem
         var printout = new FaxPrintout(paper.Content,
                                        nameMod?.BaseName ?? metadata.EntityName,
                                        labelComponent?.CurrentLabel,
-                                       metadata.EntityPrototype?.ID ?? component.PrintPaperId,
+                                       metadata.EntityPrototype?.ID ?? component.PrintPaperId[PaperColor.White].Item1, // Carpmosia-edit - Colored paper
                                        paper.StampState,
                                        paper.StampedBy,
                                        paper.EditingDisabled);

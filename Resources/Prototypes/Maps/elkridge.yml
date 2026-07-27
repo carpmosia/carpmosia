@@ -2,7 +2,7 @@
   id: Elkridge
   mapName: 'Elkridge Depot'
   mapPath: /Maps/elkridge.yml
-  mapPreview: MapPreviewElkridge # Carpmosia - Map previews
+  mapPreview: MapPreviewElkridge # Carpmosia-edit - Map previews
   minPlayers: 15
   maxPlayers: 45
   stations:
@@ -10,6 +10,7 @@
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
+          shortName: Elkridge # Carpmosia-edit - Warp point prefixes
           mapNameTemplate: '{0} Elkridge Depot {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator

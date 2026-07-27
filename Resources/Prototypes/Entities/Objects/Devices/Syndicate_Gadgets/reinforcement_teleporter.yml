@@ -68,7 +68,7 @@
       settings: default
   - type: GhostRoleMobSpawner
     prototype: MobMonkeySyndicateAgent
-    selectablePrototypes: ["SyndicateMonkey", "SyndicateKobold"]
+    selectablePrototypes: ["SyndicateMonkey", "SyndicateKobold", "SyndicateKitti"] # Carpmosia-edit - Kitti
 
 - type: entity
   parent: ReinforcementRadioSyndicateAncestor
@@ -79,7 +79,7 @@
     rules: ghost-role-information-nukeop-reinforcement-rules
   - type: GhostRoleMobSpawner
     prototype: MobMonkeySyndicateAgentNukeops
-    selectablePrototypes: ["SyndicateMonkeyNukeops", "SyndicateKoboldNukeops"]
+    selectablePrototypes: ["SyndicateMonkeyNukeops", "SyndicateKoboldNukeops", "SyndicateKittiNukeops"] # Carpmosia-edit - Kitti
 
 - type: entity
   parent: ReinforcementRadio
