@@ -279,20 +279,24 @@ public sealed partial class SingularitySystem : SharedSingularitySystem
         };
     }
 
+    // Carpmosia-start - Engine Loose Rework
     /// <summary>
     /// Updates the possible speeds of the singulos random walk when the singularities level changes.
     /// </summary>
     /// <param name="uid">The entity UID of the singularity.</param>
     /// <param name="comp">The random walk component component sharing the entity with the singulo component.</param>
     /// <param name="args">The event arguments.</param>
-    private void UpdateRandomWalk(EntityUid uid, RandomWalkComponent comp, SingularityLevelChangedEvent args)
+    private void UpdateRandomWalk(Entity<RandomWalkComponent> ent, ref SingularityLevelChangedEvent args)
     {
-        var scale = MathF.Max(args.NewValue, 4);
-        // Carpmosia-start - Engine Loose Rework
-        comp.MinSpeed = comp.BaseMin / scale;
-        comp.MaxSpeed = comp.BaseMax / scale;
-        // Carpmosia-end - Engine Loose Rework
+        var scale = args.NewValue;
+
+        if(!TryComp<SingularityComponent>(ent, out var singularity))
+            return;
+
+        ent.Comp.MinSpeed = singularity.BaseMin / scale;
+        ent.Comp.MaxSpeed = singularity.BaseMax / scale;
     }
+    // Carpmosia-end - Engine Loose Rework
 
     /// <summary>
     /// Updates the size and strength of the singularities gravity well when the singularities level changes.
