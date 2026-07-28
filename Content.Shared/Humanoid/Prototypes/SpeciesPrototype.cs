@@ -4,12 +4,24 @@ using Content.Shared.Dataset;
 using Content.Shared.Humanoid.Markings;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array; // Carpmosia-edit - Choose any voice
 
 namespace Content.Shared.Humanoid.Prototypes;
 
 [Prototype]
-public sealed partial class SpeciesPrototype : IPrototype
+public sealed partial class SpeciesPrototype : IPrototype, IInheritingPrototype
 {
+    // Carpmosia-start - Choose any voice
+    /// <inheritdoc />
+    [NeverPushInheritance]
+    [AbstractDataField]
+    public bool Abstract { get; private set; }
+
+    /// <inheritdoc />
+    [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<SpeciesPrototype>))]
+    public string[]? Parents { get; private set; }
+    // Carpmosia-end - Choose any voice
+
     /// <summary>
     /// Prototype ID of the species.
     /// </summary>
@@ -92,6 +104,7 @@ public sealed partial class SpeciesPrototype : IPrototype
     ///     List of user selectable voices in the menu. This should at least have the same sound banks as the defaults.
     /// </summary>
     [DataField]
+    [AlwaysPushInheritance] // Carpmosia-edit - Choose any voice
     public HashSet<ProtoId<EmoteSoundsPrototype>> Voices = ["MaleHuman", "FemaleHuman"];
 
     /// <summary>
