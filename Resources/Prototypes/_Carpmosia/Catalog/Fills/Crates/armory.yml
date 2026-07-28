@@ -1,0 +1,11 @@
+- type: entity
+  parent: [ CrateCommandSecure, BaseSecurityContraband ]
+  id: CrateEmergencyLasers
+  name: emergency lasers
+  description: Contains four cheap last-generation laser carbines.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage:
+        id: WeaponEmergencyLaser
+        amount: 4

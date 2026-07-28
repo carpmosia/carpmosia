@@ -12,6 +12,7 @@
       stationProto: StandardNanotrasenStation
       components:
       - type: StationNameSetup
+        shortName: Packed
         mapNameTemplate: '{0} Packed {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator

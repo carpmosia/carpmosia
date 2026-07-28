@@ -10,8 +10,8 @@
     Resizable="True"
     MinHeight="200"
     MinWidth="250"
-    SetHeight="250"
-    SetWidth="450"
+    SetHeight="300"
+    SetWidth="480"
 >
     <ScrollContainer VerticalExpand="True" HorizontalExpand="True" Margin="2">
         <GridContainer Name="EmotesGrid" Columns="3" HorizontalExpand="True"/>

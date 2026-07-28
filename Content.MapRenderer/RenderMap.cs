@@ -57,6 +57,9 @@ public sealed class RenderMapFile : RenderMap
                 case "_Carpmosia":
                     prefix = "carp_";
                     break;
+                case "Terminals":
+                    prefix = "terminal_";
+                    break;
                 case "Legacy":
                     prefix = "legacy_";
                     break;

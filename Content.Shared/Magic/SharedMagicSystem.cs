@@ -52,7 +52,6 @@ namespace Content.Shared.Magic;
 public abstract partial class SharedMagicSystem : EntitySystem
 {
     [Dependency] private ISerializationManager _seriMan = default!;
-    [Dependency] private IMapManager _mapManager = default!;
     [Dependency] private SharedMapSystem _mapSystem = default!;
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private SharedGunSystem _gunSystem = default!;
@@ -77,7 +76,7 @@ public abstract partial class SharedMagicSystem : EntitySystem
     [Dependency] private DamageableSystem _damageableSystem = default!; // Carpmosia-edit - Wizard Smite Rework
     [Dependency] private MobStateSystem _mobStateSystem = default!; // Carpmosia-edit - Wizard Smite Rework
     [Dependency] private MobThresholdSystem _mobThresholdSystem = default!; // Carpmosia-edit - Wizard Smite Rework
-    [Dependency] private TargetSystem _target = default!;
+    [Dependency] private AliveHumanoidTargetSystem _target = default!;
 
     private static readonly ProtoId<TagPrototype> InvalidForGlobalSpawnSpellTag = "InvalidForGlobalSpawnSpell";
 
@@ -127,7 +126,7 @@ public abstract partial class SharedMagicSystem : EntitySystem
             return;
 
         args.Cancelled = true;
-        _popup.PopupClient(Loc.GetString("spell-requirements-failed"), args.Performer, args.Performer);
+        _popup.PopupEntity(Loc.GetString("spell-requirements-failed"), args.Performer, args.Performer);
 
         // TODO: Pre-cast do after, either here or in SharedActionsSystem
     }
@@ -298,7 +297,7 @@ public abstract partial class SharedMagicSystem : EntitySystem
         var ent = Spawn(ev.Prototype, fromMap);
         var direction = _transform.ToMapCoordinates(toCoords).Position -
                          fromMap.Position;
-        _gunSystem.ShootProjectile(ent, direction, userVelocity, ev.Performer, ev.Performer, 25f);
+        _gunSystem.ShootProjectile(ent, direction, userVelocity, ev.Performer, ev.Performer, ev.ProjectileSpeed);
     }
     // End Projectile Spells
     #endregion
@@ -353,7 +352,7 @@ public abstract partial class SharedMagicSystem : EntitySystem
         if (!_net.IsServer)
             return;
 
-        var ent = Spawn(proto, position.SnapToGrid(EntityManager, _mapManager));
+        var ent = Spawn(proto, position.SnapToGrid(EntityManager));
 
         if (lifetime != null)
         {
@@ -514,7 +513,7 @@ public abstract partial class SharedMagicSystem : EntitySystem
 
         ev.Handled = true;
 
-        var allHumans = _target.GetAliveHumans();
+        var allHumans = _target.GetMinds();
 
         foreach (var human in allHumans)
         {

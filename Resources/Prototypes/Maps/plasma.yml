@@ -2,7 +2,7 @@
   id: Plasma
   mapName: 'Plasma'
   mapPath: /Maps/plasma.yml
-  mapPreview: MapPreviewPlasma # Carpmosia - Map previews
+  mapPreview: MapPreviewPlasma # Carpmosia-edit - Map previews
   minPlayers: 30
   maxPlayers: 80
   stations:
@@ -10,6 +10,7 @@
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
+          shortName: Plasma # Carpmosia-edit - Warp point prefixes
           mapNameTemplate: '{0} Plasma {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator

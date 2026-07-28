@@ -189,10 +189,22 @@ namespace Content.Shared.Ghost
     }
 
     /// <summary>
-    /// A client to server request for their ghost to be warped to the most followed entity.
+    /// A client to server request for their ghost to be warped to the most followed player.
     /// </summary>
     [Serializable, NetSerializable]
     public sealed class GhostnadoRequestEvent : EntityEventArgs;
+
+    /// <summary>
+    /// A client to server request for their ghost to be warped to a random player with at least one ghost follower.
+    /// </summary>
+    [Serializable, NetSerializable]
+    public sealed class WarpToRandomFollowedRequestEvent : EntityEventArgs;
+    /// <summary>
+
+    /// A client to server request for their ghost to be warped to a random player.
+    /// </summary>
+    [Serializable, NetSerializable]
+    public sealed class WarpToRandomRequestEvent : EntityEventArgs;
 
     /// <summary>
     /// A client to server request for their ghost to return to body
@@ -201,6 +213,14 @@ namespace Content.Shared.Ghost
     public sealed class GhostReturnToBodyRequest : EntityEventArgs
     {
     }
+
+    // Carpmosia-start - Return to lobby
+    /// <summary>
+    /// A client to server request for respawn (return to lobby)
+    /// </summary>
+    [Serializable, NetSerializable]
+    public sealed class GhostReturnToLobbyRequest : EntityEventArgs;
+    // Carpmosia-end - Return to lobby
 
     /// <summary>
     /// A server to client update with the available ghost role count
