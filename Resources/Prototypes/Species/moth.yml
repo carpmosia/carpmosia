@@ -1,4 +1,5 @@
 - type: species
+  parent: BaseVoices # Carpmosia-edit - Choose any voice
   id: Moth
   name: species-name-moth
   roundStart: true
@@ -13,5 +14,8 @@
   - UnisexMoth
   - UnisexMoth
   - UnisexMoth
-  voices:
-  - UnisexMoth
+  # Carpmosia-start - Choose any voice
+  # voices:
+  # - UnisexMoth
+  # Carpmosia-end - Choose any voice
+

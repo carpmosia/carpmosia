@@ -1,4 +1,5 @@
 - type: species
+  parent: BaseVoices
   id: Tajaran
   name: species-name-tajaran
   roundStart: true
@@ -13,6 +14,3 @@
   - MaleTajaran
   - FemaleTajaran
   - MaleTajaran
-  voices:
-  - MaleTajaran
-  - FemaleTajaran

@@ -1,4 +1,5 @@
 - type: species
+  parent: BaseVoices # Carpmosia-edit - Choose any voice
   id: Diona
   name: species-name-diona
   roundStart: true
@@ -16,5 +17,8 @@
   - UnisexDiona
   - UnisexDiona
   - UnisexDiona
-  voices:
-  - UnisexDiona
+  # Carpmosia-start - Choose any voice
+  # voices:
+  # - UnisexDwarf
+  # - FemaleDwarf
+  # Carpmosia-end - Choose any voice

@@ -1,4 +1,5 @@
 - type: species
+  parent: BaseVoices # Carpmosia-edit - Choose any voice
   id: Dwarf
   name: species-name-dwarf
   roundStart: true
@@ -9,6 +10,8 @@
   - UnisexDwarf
   - FemaleDwarf
   - UnisexDwarf
-  voices:
-  - UnisexDwarf
-  - FemaleDwarf
+  # Carpmosia-start - Choose any voice
+  # voices:
+  # - UnisexDwarf
+  # - FemaleDwarf
+  # Carpmosia-end - Choose any voice

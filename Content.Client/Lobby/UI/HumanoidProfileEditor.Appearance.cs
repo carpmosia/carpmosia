@@ -116,6 +116,8 @@ public sealed partial class HumanoidProfileEditor
         if (_voices.All(proto => Profile?.Voice != proto.ID))
             SetVoice(speciesPrototype.DefaultSoundsBySex[(int)Profile.Sex]);
 
+        _voices = [.. _voices.OrderBy(i => i.VoiceSelectorName)]; // Carpmosia-edit - Choose any voice
+
         for (var i = 0; i < availableVoices.Count; i++)
         {
             var name = Loc.GetString(_voices[i].VoiceSelectorName);

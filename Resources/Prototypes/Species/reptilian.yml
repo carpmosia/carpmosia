@@ -1,4 +1,5 @@
 - type: species
+  parent: BaseVoices # Carpmosia-edit - Choose any voice
   id: Reptilian
   name: species-name-reptilian
   roundStart: true
@@ -13,6 +14,8 @@
   - MaleReptilian
   - FemaleReptilian
   - MaleReptilian
-  voices:
-  - MaleReptilian
-  - FemaleReptilian
+  # Carpmosia-start - Choose any voice
+  # voices:
+  # - MaleReptilian
+  # - FemaleReptilian
+  # Carpmosia-end - Choose any voice
