@@ -9,7 +9,7 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototy
 namespace Content.Shared.Humanoid.Prototypes;
 
 [Prototype]
-public sealed partial class SpeciesPrototype : IPrototype, IInheritingPrototype
+public sealed partial class SpeciesPrototype : IPrototype, IInheritingPrototype // Carpmosia-edit - Choose any voice
 {
     // Carpmosia-start - Choose any voice
     /// <inheritdoc />
