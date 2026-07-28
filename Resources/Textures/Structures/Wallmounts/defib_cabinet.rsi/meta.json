@@ -8,16 +8,48 @@
   },
   "states": [
     {
-      "name": "closed"
+        "name": "closed"
     },
     {
-      "name": "fill"
+        "name": "fill"
     },
     {
-      "name": "frame"
+        "name": "frame"
     },
     {
-      "name": "open"
+        "name": "open"
+    },
+    {
+        "name": "light-charged",
+        "delays": [
+           [
+                0.5,
+                0.5
+            ]
+        ]
+    },
+    {
+        "name": "light-charging",
+        "delays": [
+           [
+                0.2,
+                0.2,
+                0.2,
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ]
+        ]
+    },
+    {
+        "name": "light-empty",
+        "delays": [
+           [
+                0.5,
+                0.5
+            ]
+        ]
     }
   ]
 }
