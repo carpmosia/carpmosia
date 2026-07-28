@@ -148,13 +148,9 @@ public sealed partial class DungeonJob
                 {
                     // Carpmosia-start - Kill dungeon logspam
                     var key = gen.Replacement ?? "null";
-                    if (remaining.ContainsKey(key))
+                    if (!remaining.TryAdd(key, 1))
                     {
                         remaining[key]++;
-                    }
-                    else
-                    {
-                        remaining.Add(key, 1);
                     }
                     // Carpmosia-start - Kill dungeon logspam
                 }

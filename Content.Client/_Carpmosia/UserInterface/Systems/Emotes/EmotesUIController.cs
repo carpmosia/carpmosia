@@ -5,7 +5,8 @@ using Content.Client.UserInterface.Controls;
 using Content.Shared.CCVar;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Input;
-using Robust.Client.UserInterface.Controllers;
+using Robust.Client.GameObjects;
+using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Configuration;
 using Robust.Shared.Input.Binding;
@@ -13,9 +14,11 @@ using Robust.Shared.Utility;
 
 namespace Content.Client.UserInterface.Systems.Emotes;
 
-public sealed partial class EmotesUIController : UIController, IOnStateChanged<GameplayState>
+public sealed partial class EmotesUIController
 {
     [Dependency] private IConfigurationManager _cfg = default!;
+
+    [UISystemDependency] private readonly SpriteSystem _sprite = default!;
 
     private EmotesWindow? _altMenu;
 
@@ -118,11 +121,11 @@ public sealed partial class EmotesUIController : UIController, IOnStateChanged<G
     {
         var list = new List<EmoteButton>();
 
-        foreach (var (key, rawList) in emotesByCategory)
+        foreach (var rawList in emotesByCategory.Values)
         {
             foreach (var emote in rawList)
             {
-                var button = new EmoteButton(emote);
+                var button = new EmoteButton(emote, _sprite);
                 button.OnPressed += _ =>
                 {
                     _altMenu?.StartLocking();
