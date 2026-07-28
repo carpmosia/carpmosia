@@ -2396,4 +2396,87 @@
   id: 361
   time: '2026-07-22T08:31:58.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/461
+- author: korczoczek
+  changes:
+  - message: Janimaid uniforms are now available in the uniform printer
+    type: Tweak
+  id: 362
+  time: '2026-07-24T23:45:33.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/410
+- author: Atakku
+  changes:
+  - message: Janitorial maid uniform has been renamed to Service maid uniform, and
+      fully replaced it in loadouts as well.
+    type: Tweak
+  - message: Previous service maid uniform has been removed.
+    type: Remove
+  - message: Janitorial maid uniform with miniskirt has been renamed to Service maid
+      uniform with miniskirt.
+    type: Tweak
+  - message: Added Service maid uniform with miniskirt to the loadout of Janitor,
+      Bartender, Chef and Service worker
+    type: Add
+  id: 363
+  time: '2026-07-25T00:06:49.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/524
+- author: Atakku
+  changes:
+  - message: Lobby duration has been changed back from 150 seconds to 300.
+    type: Tweak
+  - message: Map vote duration has been doubled from 90 seconds to 180.
+    type: Tweak
+  id: 364
+  time: '2026-07-25T00:24:13.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/526
+- author: P3tux0
+  changes:
+  - message: Gave ancestors (Monkeys, Kobolds, Kittis) and scurrets a pocket slot
+    type: Tweak
+  id: 365
+  time: '2026-07-25T01:04:50.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/519
+- author: Atakku
+  changes:
+  - message: Added 9 colored variants of regular and office paper!
+    type: Add
+  id: 366
+  time: '2026-07-25T01:24:05.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/493
+- author: luarequire
+  changes:
+  - message: Added a new song 'metro station' by 'foxiewoxie / sleep4winter'
+    type: Add
+  id: 367
+  time: '2026-07-25T10:31:10.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/504
+- author: Atakku
+  changes:
+  - message: Most of the ghost warp points are now prefixed with the respective station
+      name
+    type: Add
+  id: 368
+  time: '2026-07-25T20:39:24.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/516
+- author: Atakku
+  changes:
+  - message: The alternative emote menu is now enabled by default. You can revert
+      to the old menu in UI options.
+    type: Tweak
+  id: 369
+  time: '2026-07-25T20:52:51.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/531
+- author: Atakku
+  changes:
+  - message: Nuking CC/Terminal is no longer counted as a nukeops major win.
+    type: Remove
+  id: 370
+  time: '2026-07-25T20:58:01.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/532
+- author: Atakku
+  changes:
+  - message: Added a new lobby art, "A day in Sci" by spaceworm12
+    type: Add
+  id: 371
+  time: '2026-07-26T10:17:18.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/529
 Order: -1

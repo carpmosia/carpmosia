@@ -5,10 +5,10 @@ namespace Content.Shared.CCVar;
 public sealed partial class CCVars
 {
     /// <summary>
-    ///     Swaps the emotes menu with an alternative menu
+    /// Disables the new emotes menu
     /// </summary>
-    public static readonly CVarDef<bool> AltEmotesMenu =
-        CVarDef.Create("hud.alt_emotes_menu", false, CVar.CLIENTONLY | CVar.ARCHIVE);
+    public static readonly CVarDef<bool> OldEmotesMenu =
+        CVarDef.Create("hud.old_emotes_menu", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 
     /// <summary>
     /// Whenever new player join alerts should be sent to admin chat in Discord

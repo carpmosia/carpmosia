@@ -5,7 +5,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: Civilian
-      time: 20h
+      time: 10h
 
 # Jumpsuit
 - type: loadout
@@ -14,7 +14,15 @@
   - !type:GroupLoadoutEffect
     proto: CompetentService
   equipment:
-    jumpsuit: ClothingUniformJumpskirtServicemaid
+    jumpsuit: ClothingUniformJumpskirtJanimaid
+
+- type: loadout
+  id: ServiceMaidskirtMini
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: CompetentService
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtJanimaidmini
 
 # Shoes
 - type: loadout
