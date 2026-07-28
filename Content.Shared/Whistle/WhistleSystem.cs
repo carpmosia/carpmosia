@@ -38,7 +38,7 @@ public sealed partial class WhistleSystem : EntitySystem
     }
 
     [SubscribeLocalEvent]
-    public void OnWhistleAction(Entity<WhistleComponent> ent, ref SoundActionEvent args)
+    private void OnWhistleAction(Entity<WhistleComponent> ent, ref SoundActionEvent args)
     {
         if (!_timing.IsFirstTimePredicted)
             return;
