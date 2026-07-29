@@ -1,8 +1,9 @@
 - type: job
   id: Reporter
   name: job-name-reporter
-  description: job-description-reporter
+  description: job-description-Reporter
   playTimeTracker: JobReporter
+  weight: 40 # Carpmosia-edit - Job weights
   startingGear: ReporterGear
   icon: "JobIconReporter"
   supervisors: job-supervisors-hop

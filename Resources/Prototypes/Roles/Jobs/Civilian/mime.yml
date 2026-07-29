@@ -6,6 +6,7 @@
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 4h
+  weight: 20 # Carpmosia-edit - Job weights
   startingGear: MimeGear
   icon: "JobIconMime"
   supervisors: job-supervisors-hop

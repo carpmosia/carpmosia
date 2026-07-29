@@ -7,6 +7,7 @@
     - !type:DepartmentTimeRequirement
       department: Engineering
       time: 2.5h
+  weight: 50 # Carpmosia-edit - Job weights
   startingGear: StationEngineerGear
   icon: "JobIconStationEngineer"
   supervisors: job-supervisors-ce

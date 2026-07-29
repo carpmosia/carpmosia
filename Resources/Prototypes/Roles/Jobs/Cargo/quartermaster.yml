@@ -13,7 +13,7 @@
     - !type:DepartmentTimeRequirement
       department: Cargo
       time: 10h
-  weight: 10
+  weight: 95 # Carpmosia-edit - Job weights
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"
   supervisors: job-supervisors-captain

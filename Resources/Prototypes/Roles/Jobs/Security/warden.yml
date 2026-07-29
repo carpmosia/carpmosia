@@ -10,7 +10,7 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 10h
-  weight: 5
+  weight: 90 # Carpmosia-edit - Job weights
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos

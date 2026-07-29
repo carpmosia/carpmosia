@@ -7,6 +7,7 @@
   - !type:DepartmentTimeRequirement
     department: Medical
     time: 2.5h
+  weight: 75 # Carpmosia-edit - Job weights
   startingGear: ParamedicGear
   icon: "JobIconParamedic"
   supervisors: job-supervisors-cmo

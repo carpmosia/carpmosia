@@ -15,7 +15,7 @@
     - !type:DepartmentTimeRequirement
       department: Medical
       time: 10h
-  weight: 10
+  weight: 95 # Carpmosia-edit - Job weights
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"
   supervisors: job-supervisors-captain

@@ -3,6 +3,7 @@
   name: job-name-janitor
   description: job-description-janitor
   playTimeTracker: JobJanitor
+  weight: 40 # Carpmosia-edit - Job weights
   startingGear: JanitorGear
   icon: "JobIconJanitor"
   supervisors: job-supervisors-hop

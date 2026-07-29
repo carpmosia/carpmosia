@@ -7,6 +7,7 @@
     - !type:DepartmentTimeRequirement
       department: Civilian
       time: 0.5h
+  weight: 45 # Carpmosia-edit - Job weights
   startingGear: ChefGear
   icon: "JobIconChef"
   supervisors: job-supervisors-hop
