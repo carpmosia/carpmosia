@@ -127,7 +127,7 @@ public sealed class JobTest : GameTest
         await pair.Server.WaitPost(() => ticker.StartRound());
         await pair.RunTicksSync(10);
 
-        AssertJob(pair, Passenger);
+        AssertJob(pair, Engineer); // Carpmosia-edit - Job weights
 
         await pair.Server.WaitPost(() => ticker.RestartRound());
     }
