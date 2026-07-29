@@ -97,10 +97,7 @@
   - type: TypingIndicator
     proto: tajaran
   - type: Vocal
-    sounds:
-      Male: MaleTajaran
-      Female: FemaleTajaran
-      Unsexed: MaleTajaran
+    emoteSounds: MaleTajaran
   - type: Damageable
     damageModifierSet: Tajaran
   - type: MeleeWeapon

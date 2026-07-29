@@ -59,12 +59,18 @@ public sealed partial class TeleportLocationsSystem : SharedTeleportLocationsSys
 
         var allEnts = AllEntityQuery<WarpPointComponent>();
 
+        // Selecting suitable entities with the warpPoint component using whitelist
         while (allEnts.MoveNext(out var warpEnt, out var warpPointComp))
         {
-            if (_whitelist.IsWhitelistPass(warpPointComp.Blacklist, warpEnt) || string.IsNullOrWhiteSpace(warpPointComp.Location))
+
+            if (string.IsNullOrWhiteSpace(warpPointComp.Location))
                 continue;
 
-            ent.Comp.AvailableWarps.Add(new TeleportPoint(warpPointComp.Origin + " - " + warpPointComp.Location, GetNetEntity(warpEnt))); // Carpmosia-edit - Warp point prefixes
+            if (!_whitelist.CheckBoth(warpEnt, ent.Comp.Blacklist, ent.Comp.Whitelist))
+
+                continue;
+
+            ent.Comp.AvailableWarps.Add(new TeleportPoint(warpPointComp.Origin + " - " + Loc.GetString(warpPointComp.Location), GetNetEntity(warpEnt))); // Carpmosia-edit - Warp point prefixes
         }
 
         Dirty(ent);

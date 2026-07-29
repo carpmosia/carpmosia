@@ -48,7 +48,7 @@
       - !type:DoActsBehavior
         acts: ["Breakage"]
   - type: Sprite
-    sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi
+    sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Carpmosia-edit - 5 pipe layers
     drawdepth: ThinPipe
     visible: false
   - type: Appearance

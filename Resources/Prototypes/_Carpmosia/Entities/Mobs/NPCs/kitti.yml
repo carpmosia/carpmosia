@@ -15,10 +15,7 @@
   - type: Deathgasp
     prototype: DefaultDeathgasp
   - type: Vocal
-    sounds:
-      Male: MaleTajaran
-      Female: FemaleTajaran
-      Unsexed: MaleTajaran
+    emoteSounds: MaleTajaran
   - type: TypingIndicator
     proto: tajaran
   - type: InteractionPopup

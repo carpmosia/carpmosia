@@ -6,7 +6,7 @@
   suffix: Salvage Shuttle Cockpit
   components:
   - type: Label
-    currentLabel: holopad-cargo-salvage-shuttle-cockpit
+    localizedLabel: holopad-cargo-salvage-shuttle-cockpit
 
 - type: entity
   parent: HolopadLongRange
@@ -14,4 +14,4 @@
   suffix: Salvage Shuttle Bay
   components:
   - type: Label
-    currentLabel: holopad-cargo-salvage-shuttle-bay
+    localizedLabel: holopad-cargo-salvage-shuttle-bay

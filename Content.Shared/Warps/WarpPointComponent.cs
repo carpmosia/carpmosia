@@ -1,4 +1,3 @@
-﻿using Content.Shared.Whitelist;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.Warps;
@@ -10,7 +9,7 @@ namespace Content.Shared.Warps;
 public sealed partial class WarpPointComponent : Component
 {
     [DataField]
-    public string? Location;
+    public LocId? Location;
 
     // Carpmosia-start - Warp point prefixes
     /// <summary>
@@ -24,11 +23,4 @@ public sealed partial class WarpPointComponent : Component
     /// </summary>
     [DataField]
     public bool Follow;
-
-    /// <summary>
-    /// What points should be excluded?
-    /// Useful where you want things like a ghost to reach only like CentComm
-    /// </summary>
-    [DataField]
-    public EntityWhitelist? Blacklist;
 }
