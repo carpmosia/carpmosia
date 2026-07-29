@@ -10,7 +10,7 @@
   - !type:DepartmentTimeRequirement
     department: Science
     time: 10h
-  weight: 10
+  # weight: 10 # Carpmosia-edit - Job priority rebalance
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"
   supervisors: job-supervisors-captain
