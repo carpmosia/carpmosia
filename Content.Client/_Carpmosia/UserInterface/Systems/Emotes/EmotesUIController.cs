@@ -94,7 +94,7 @@ public sealed partial class EmotesUIController : UIController, IOnStateChanged<G
             // Make sure the emotes are up-to-date
             UpdateEmotes();
 
-            if (_cfg.GetCVar(CCVars.AltEmotesMenu))
+            if (!_cfg.GetCVar(CCVars.OldEmotesMenu))
             {
                 _altMenu.Open();
             }

@@ -10,13 +10,7 @@ public sealed partial class SelfAndTargetEscapeShuttleConditionSystem : EntitySy
     [Dependency] private MindSystem _mindSystem = default!;
     [Dependency] private TargetObjectiveSystem _targetObjectiveSystem = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<SelfAndTargetEscapeShuttleConditionComponent, ObjectiveGetProgressEvent>(OnGetProgress);
-    }
-
+    [SubscribeLocalEvent]
     private void OnGetProgress(Entity<SelfAndTargetEscapeShuttleConditionComponent> entity, ref ObjectiveGetProgressEvent args)
     {
         var progress = _escapeShuttleConditionSystem.GetProgress(args.MindId, args.Mind);

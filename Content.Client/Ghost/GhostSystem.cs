@@ -1,6 +1,9 @@
 using Content.Client.Movement.Systems;
 using Content.Shared.Actions;
+using Content.Shared.GameTicking; // Carpmosia-edit - Return to lobby
 using Content.Shared.Ghost;
+using Content.Shared.NightVision;
+using Content.Shared.Overlays;
 using Robust.Client.Console;
 using Robust.Client.GameObjects;
 using Robust.Client.Player;
@@ -13,9 +16,9 @@ namespace Content.Client.Ghost
         [Dependency] private IClientConsoleHost _console = default!;
         [Dependency] private IPlayerManager _playerManager = default!;
         [Dependency] private SharedActionsSystem _actions = default!;
-        [Dependency] private PointLightSystem _pointLightSystem = default!;
         [Dependency] private ContentEyeSystem _contentEye = default!;
         [Dependency] private SpriteSystem _sprite = default!;
+        [Dependency] private SharedNightVisionSystem _nv = default!;
 
         public int AvailableGhostRoleCount { get; private set; }
 
@@ -50,6 +53,7 @@ namespace Content.Client.Ghost
         public event Action? PlayerDetached;
         public event Action<GhostWarpsResponseEvent>? GhostWarpsResponse;
         public event Action<GhostUpdateGhostRoleCountEvent>? GhostRoleCountUpdated;
+        public event Action<bool>? TickerLateJoinStatus; // Carpmosia-edit - Return to lobby
 
         public override void Initialize()
         {
@@ -64,6 +68,7 @@ namespace Content.Client.Ghost
 
             SubscribeNetworkEvent<GhostWarpsResponseEvent>(OnGhostWarpsResponse);
             SubscribeNetworkEvent<GhostUpdateGhostRoleCountEvent>(OnUpdateGhostRoleCount);
+            SubscribeNetworkEvent<TickerLateJoinStatusEvent>(OnTickerLateJoinStatus); // Carpmosia-edit - Return to lobby
 
             SubscribeLocalEvent<EyeComponent, ToggleLightingActionEvent>(OnToggleLighting);
             SubscribeLocalEvent<EyeComponent, ToggleFoVActionEvent>(OnToggleFoV);
@@ -81,27 +86,25 @@ namespace Content.Client.Ghost
             if (args.Handled)
                 return;
 
-            TryComp<PointLightComponent>(uid, out var light);
-
             if (!component.DrawLight)
             {
                 // normal lighting
                 Popup.PopupEntity(Loc.GetString("ghost-gui-toggle-lighting-manager-popup-normal"), args.Performer);
                 _contentEye.RequestEye(component.DrawFov, true);
             }
-            else if (!light?.Enabled ?? false) // skip this option if we have no PointLightComponent
+            else if (TryComp<NightVisionComponent>(uid, out var nv) && !nv.Enabled)
             {
-                // enable personal light
-                Popup.PopupEntity(Loc.GetString("ghost-gui-toggle-lighting-manager-popup-personal-light"), args.Performer);
-                _pointLightSystem.SetEnabled(uid, true, light);
+                Popup.PopupEntity(Loc.GetString("ghost-gui-toggle-lighting-manager-popup-half-bright"), args.Performer);
+                _nv.SetEnabled((uid, nv), true);
             }
             else
             {
                 // fullbright mode
                 Popup.PopupEntity(Loc.GetString("ghost-gui-toggle-lighting-manager-popup-fullbright"), args.Performer);
                 _contentEye.RequestEye(component.DrawFov, false);
-                _pointLightSystem.SetEnabled(uid, false, light);
+                _nv.SetEnabled((uid, nv), false);
             }
+
             args.Handled = true;
         }
 
@@ -191,6 +194,19 @@ namespace Content.Client.Ghost
             var msg = new GhostReturnToBodyRequest();
             RaiseNetworkEvent(msg);
         }
+
+        // Carpmosia-start - Return to lobby
+        public void ReturnToLobby()
+        {
+            var msg = new GhostReturnToLobbyRequest();
+            RaiseNetworkEvent(msg);
+        }
+
+        public void OnTickerLateJoinStatus(TickerLateJoinStatusEvent msg)
+        {
+            TickerLateJoinStatus?.Invoke(msg.Disallowed);
+        }
+        // Carpmosia-end - Return to lobby
 
         public void OpenGhostRoles()
         {
