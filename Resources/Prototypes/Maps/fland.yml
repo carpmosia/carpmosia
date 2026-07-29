@@ -2,13 +2,14 @@
   id: Fland
   mapName: 'Fland Installation'
   mapPath: /Maps/fland.yml
-  mapPreview: MapPreviewFland # Carpmosia - Map previews
+  mapPreview: MapPreviewFland # Carpmosia-edit - Map previews
   minPlayers: 70
   stations:
     Fland:
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
+          shortName: Fland # Carpmosia-edit - Warp point prefixes
           mapNameTemplate: '{0} Fland Installation {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator

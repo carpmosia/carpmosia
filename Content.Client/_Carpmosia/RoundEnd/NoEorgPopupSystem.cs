@@ -10,15 +10,10 @@ public sealed partial class NoEorgPopupSystem : EntitySystem
 
     private NoEorgPopup? _window;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-        SubscribeNetworkEvent<RoundEndMessageEvent>(OnRoundEnd);
-    }
-
+    [SubscribeNetworkEvent]
     private void OnRoundEnd(RoundEndMessageEvent ev)
     {
-        if (_cfg.GetCVar(CCVars.SkipEorgPopup) || _cfg.GetCVar(CCVars.EorgPopupEnabled) == false)
+        if (_cfg.GetCVar(CCVars.SkipEorgPopup) || !_cfg.GetCVar(CCVars.EorgPopupEnabled))
             return;
 
         OpenNoEorgPopup();

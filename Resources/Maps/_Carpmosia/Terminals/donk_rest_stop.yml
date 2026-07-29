@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.2.1
   forkId: ""
   forkVersion: ""
-  time: 07/14/2026 01:32:25
-  entityCount: 2062
+  time: 07/16/2026 02:19:07
+  entityCount: 2050
 maps: []
 grids:
 - 1
@@ -1191,7 +1191,7 @@ entities:
       pos: 0.5,-23.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -36118.79
+      secondsUntilStateChange: -36246.47
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -4116,90 +4116,12 @@ entities:
     - type: Transform
       pos: 0.5,-30.5
       parent: 1
-- proto: DefaultStationBeaconArrivals
-  entities:
-  - uid: 2030
-    components:
-    - type: Transform
-      pos: -20.5,-11.5
-      parent: 1
-  - uid: 2032
-    components:
-    - type: Transform
-      pos: -20.5,-35.5
-      parent: 1
-  - uid: 2034
-    components:
-    - type: Transform
-      pos: 7.5,-11.5
-      parent: 1
-  - uid: 2036
-    components:
-    - type: Transform
-      pos: 7.5,-35.5
-      parent: 1
-- proto: DefaultStationBeaconBar
-  entities:
-  - uid: 1447
-    components:
-    - type: Transform
-      pos: -6.5,-16.5
-      parent: 1
 - proto: DefaultStationBeaconCentCommAfterhours
   entities:
   - uid: 610
     components:
     - type: Transform
       pos: -6.5,-23.5
-      parent: 1
-- proto: DefaultStationBeaconCryosleep
-  entities:
-  - uid: 2029
-    components:
-    - type: Transform
-      pos: -15.5,-26.5
-      parent: 1
-- proto: DefaultStationBeaconEngineering
-  entities:
-  - uid: 2027
-    components:
-    - type: Transform
-      pos: -19.5,-28.5
-      parent: 1
-- proto: DefaultStationBeaconJanitorsCloset
-  entities:
-  - uid: 2023
-    components:
-    - type: Transform
-      pos: 7.5,-30.5
-      parent: 1
-- proto: DefaultStationBeaconKitchen
-  entities:
-  - uid: 185
-    components:
-    - type: Transform
-      pos: -6.5,-30.5
-      parent: 1
-- proto: DefaultStationBeaconMedbay
-  entities:
-  - uid: 2025
-    components:
-    - type: Transform
-      pos: -16.5,-17.5
-      parent: 1
-- proto: DefaultStationBeaconSecurity
-  entities:
-  - uid: 2033
-    components:
-    - type: Transform
-      pos: 7.5,-18.5
-      parent: 1
-- proto: DefaultStationBeaconVox
-  entities:
-  - uid: 2024
-    components:
-    - type: Transform
-      pos: 4.5,-27.5
       parent: 1
 - proto: DisposalBend
   entities:

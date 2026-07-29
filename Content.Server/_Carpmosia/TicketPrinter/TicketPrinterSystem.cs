@@ -1,5 +1,4 @@
 using Content.Shared.TicketPrinter;
-using Robust.Shared.Prototypes;
 using Content.Server.Stack;
 
 namespace Content.Server.TicketPrinter;
@@ -7,12 +6,6 @@ namespace Content.Server.TicketPrinter;
 public sealed partial class TicketPrinterSystem : SharedTicketPrinterSystem
 {
     [Dependency] private StackSystem _stack = default!;
-    [Dependency] private IPrototypeManager _proto = default!;
-
-    public override void Initialize()
-    {
-        base.Initialize();
-    }
 
     /// <summary>
     /// Applies ticket multiplier and spawns tickets, stores any remainder for future spawns
@@ -21,7 +14,7 @@ public sealed partial class TicketPrinterSystem : SharedTicketPrinterSystem
     /// <param name="amount">Base amount of tickets to spawn</param>
     protected override void PrintTickets(Entity<TicketPrinterComponent> ent, float amount)
     {
-        if (!_proto.Resolve(ent.Comp.TicketProtoId, out var proto)) //does it exist?
+        if (!ProtoMan.Resolve(ent.Comp.TicketProtoId, out var proto)) //does it exist?
             return; //Will return Invalid EntProtoId errors if trying to spawn an entity proto ID that doesn't exist.
 
         var spawnAmount = ent.Comp.Remainder + amount * ent.Comp.TicketMultiplier; //apply multiplier, then add on any remainders of previous prints.
