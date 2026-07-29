@@ -483,11 +483,6 @@ public sealed partial class StationJobsSystem : EntitySystem
         {
             return picked;
         }
-
-        if (TryPick(JobPriority.Low6, out picked))
-        {
-            return picked;
-        }
         // Carpmosia-end - More job priorities
 
         return null;

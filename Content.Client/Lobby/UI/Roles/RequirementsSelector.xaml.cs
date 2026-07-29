@@ -125,7 +125,7 @@ public sealed partial class RequirementsSelector : BoxContainer
         return new Button
         {
             Text = text,
-            MinWidth = 44, // Carpmosia-edit - More job priorities
+            MinWidth = 45, // Carpmosia-edit - More job priorities
             HorizontalExpand = true,
         };
     }

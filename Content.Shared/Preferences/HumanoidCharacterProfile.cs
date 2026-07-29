@@ -732,7 +732,6 @@ namespace Content.Shared.Preferences
                 {
                     JobPriority.Never => false, // Drop never since that's assumed default.
                     // Carpmosia-start - More job priorities
-                    JobPriority.Low6 => true,
                     JobPriority.Low5 => true,
                     JobPriority.Low4 => true,
                     JobPriority.Low3 => true,

@@ -371,7 +371,6 @@ namespace Content.Server.Database
         // These enum values HAVE to match the ones in JobPriority in Content.Shared
         Never = 0,
         // Carpmosia-start - More job priorities
-        Low6 = 1,
         Low5 = 2,
         Low4 = 3,
         Low3 = 4,

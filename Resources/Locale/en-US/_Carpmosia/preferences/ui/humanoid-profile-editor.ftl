@@ -5,5 +5,4 @@ humanoid-profile-editor-job-priority-3-button = 3
 humanoid-profile-editor-job-priority-4-button = 4
 humanoid-profile-editor-job-priority-5-button = 5
 humanoid-profile-editor-job-priority-6-button = 6
-humanoid-profile-editor-job-priority-7-button = 7
-humanoid-profile-editor-job-priority-8-button = H
+humanoid-profile-editor-job-priority-7-button = H
