@@ -10,15 +10,7 @@ public abstract partial class SharedBloodBoundSystem : EntitySystem
 {
     [Dependency] private SharedActionsSystem _actionsSystem = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<InitialBloodBoundComponent, MapInitEvent>(OnInitialBloodBoundMapInit);
-        SubscribeLocalEvent<InitialBloodBoundComponent, ComponentShutdown>(OnInitialBloodBoundhutdown);
-        SubscribeLocalEvent<BloodBoundComponent, ComponentGetStateAttemptEvent>(OnBloodBoundAttemptGetState);
-    }
-
+    [SubscribeLocalEvent]
     private void OnInitialBloodBoundMapInit(Entity<InitialBloodBoundComponent> entity, ref MapInitEvent args)
     {
         _actionsSystem.AddAction(entity, ref entity.Comp.ConvertActionEntity, entity.Comp.ConvertAction);
@@ -26,12 +18,14 @@ public abstract partial class SharedBloodBoundSystem : EntitySystem
         Dirty(entity);
     }
 
-    private void OnInitialBloodBoundhutdown(Entity<InitialBloodBoundComponent> entity, ref ComponentShutdown args)
+    [SubscribeLocalEvent]
+    private void OnInitialBloodBoundShutdown(Entity<InitialBloodBoundComponent> entity, ref ComponentShutdown args)
     {
         _actionsSystem.RemoveAction(entity.Comp.ConvertActionEntity);
         _actionsSystem.RemoveAction(entity.Comp.CheckConvertActionEntity);
     }
 
+    [SubscribeLocalEvent]
     private void OnBloodBoundAttemptGetState(
         Entity<BloodBoundComponent> entity,
         ref ComponentGetStateAttemptEvent args)

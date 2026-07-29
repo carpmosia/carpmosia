@@ -20,4 +20,12 @@ public sealed partial class StationNameSetupComponent : Component
     /// </summary>
     [DataField("nameGenerator")]
     public StationNameGenerator? NameGenerator { get; private set; }
+
+    // Carpmosia-start - Warp point prefixes
+    /// <summary>
+    /// Short name that will be used for waypoints
+    /// </summary>
+    [DataField("shortName")]
+    public string ShortName { get; private set; } = "Unknown";
+    // Carpmosia-end - Warp point prefixes
 }

@@ -117,8 +117,7 @@ public enum WinType : byte
     /// </summary>
     OpsMajor,
     /// <summary>
-    ///     Minor win. All nukies were alive at the end of the round.
-    ///     Alternatively, some nukies were alive, but the disk was left behind.
+    ///     Operative minor win. At least one nukie survived, and the disk was left behind.
     /// </summary>
     OpsMinor,
     /// <summary>
@@ -143,7 +142,7 @@ public enum WinCondition : byte
     NukeExplodedOnNukieOutpost,
     NukeExplodedOnIncorrectLocation,
     NukeActiveInStation,
-    NukeActiveAtCentCom,
+    // NukeActiveAtCentCom, // Carpmosia-edit - Replaced CC with Terminals
     NukeDiskOnCentCom,
     NukeDiskNotOnCentCom,
     NukiesAbandoned,

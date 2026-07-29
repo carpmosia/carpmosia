@@ -16,17 +16,20 @@ using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Timer = Robust.Shared.Timing.Timer;
-using Robust.Shared.Random;
+using System.Numerics; // Carpmosia-edit - Evac pod tweaks
+using Robust.Shared.Audio;
 
 namespace Content.Server.Shuttles.Systems;
 
 // TODO full game saves
 // Move state data into the emergency shuttle component
+
+/// <summary>
+/// Handles the emergency shuttle's console and early launching.
+/// </summary>
 public sealed partial class EmergencyShuttleSystem
 {
-    /*
-     * Handles the emergency shuttle's console and early launching.
-     */
+    [Dependency] private ArrivalsSystem _arrivals = default!; // Carpmosia-edit - Evac pod tweaks
 
     /// <summary>
     /// Has the emergency shuttle arrived?
@@ -69,6 +72,7 @@ public sealed partial class EmergencyShuttleSystem
 
     private static readonly ProtoId<AccessLevelPrototype> EmergencyRepealAllAccess = "EmergencyShuttleRepealAll";
     private static readonly Color DangerColor = Color.Red;
+    private static readonly SoundPathSpecifier AnnounceStartSound = new SoundPathSpecifier("/Audio/Misc/notice1.ogg");
 
     /// <summary>
     /// Have the emergency shuttles been authorised to launch at CentCom?
@@ -181,11 +185,13 @@ public sealed partial class EmergencyShuttleSystem
             // Stagger launches coz funny
             while (podQuery.MoveNext(out _, out var pod))
             {
-                pod.LaunchTime = _timing.CurTime + TimeSpan.FromSeconds(_random.NextFloat(0.05f, 0.75f));
+                pod.LaunchTime = _timing.CurTime + TimeSpan.FromSeconds(TransitTime * _random.NextFloat(0.05f, 0.25f)); // Carpmosia-edit - Evac pod tweaks
             }
         }
 
         var podLaunchQuery = EntityQueryEnumerator<EscapePodComponent, ShuttleComponent>();
+
+        _arrivals.TryGetArrivals(out var arrivals); // Carpmosia-edit - Evac pod tweaks
 
         while (podLaunchQuery.MoveNext(out var uid, out var pod, out var shuttle))
         {
@@ -200,7 +206,11 @@ public sealed partial class EmergencyShuttleSystem
             }
 
             // Don't dock them. If you do end up doing this then stagger launch.
-            _shuttle.FTLToDock(uid, shuttle, centcomm.Entity.Value, hyperspaceTime: TransitTime);
+            // Carpmosia-start - Evac pod tweaks
+            var (target, minOffset, maxOffset) = arrivals.IsValid() ? (arrivals, 96f, 192f) : (uid, 512f, 1024f); // Fallback in case arrivals is disabled
+            if (_shuttle.TryGetFTLProximity(uid, new EntityCoordinates(target, Vector2.Zero), out var coords, out var targAngle, minOffset, maxOffset))
+                _shuttle.FTLToCoordinates(uid, shuttle, coords, targAngle, hyperspaceTime: TransitTime * _random.NextFloat(0.2f, 0.7f));
+            // Carpmosia-end - Evac pod tweaks
             RemCompDeferred<EscapePodComponent>(uid);
         }
 
@@ -297,7 +307,7 @@ public sealed partial class EmergencyShuttleSystem
                 playSound: false, colorOverride: DangerColor);
 
         if (!CheckForLaunch(component))
-            _audio.PlayGlobal("/Audio/Misc/notice1.ogg", Filter.Broadcast(), recordReplay: true);
+            _audio.PlayGlobal(AnnounceStartSound, Filter.Broadcast(), recordReplay: true);
 
         UpdateAllEmergencyConsoles();
     }
@@ -401,7 +411,7 @@ public sealed partial class EmergencyShuttleSystem
             playSound: false,
             colorOverride: DangerColor);
 
-        _audio.PlayGlobal("/Audio/Misc/notice1.ogg", Filter.Broadcast(), recordReplay: true);
+        _audio.PlayGlobal(AnnounceStartSound, Filter.Broadcast(), recordReplay: true);
     }
 
     public bool DelayEmergencyRoundEnd()

@@ -122,7 +122,6 @@
   - type: Tag
     tags:
     - DoorBumpOpener
-    - GhostOnlyWarp
     - Unimplantable
   - type: Appearance
   - type: Speech
@@ -130,10 +129,7 @@
     allowedEmotes: ['Chirp']
   - type: Emoting
   - type: Vocal
-    sounds:
-      Male: UnisexDiona
-      Female: UnisexDiona
-      Unsexed: UnisexDiona
+    emoteSounds: UnisexDiona
   - type: TypingIndicator
     proto: diona
   - type: Grammar
@@ -146,8 +142,5 @@
     price: 2000
   - type: WarpPoint
     follow: true
-    location: Jorge
-    blacklist:
-      tags:
-      - GhostOnlyWarp
+    location: location-jorge
   - type: ZombieImmune
