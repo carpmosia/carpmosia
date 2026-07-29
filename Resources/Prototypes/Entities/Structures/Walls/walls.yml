@@ -667,6 +667,7 @@
     state: diagonal0 # Carpmosia-edit - Wall resprite
   # Carpmosia-start - Wall resprite
   - type: IconSmooth
+    mode: DiagonalPlus
     key: basic_wall
     base: diagonal
   # Carpmosia-end - Wall resprite
@@ -957,6 +958,7 @@
     state: diagonal0
   # Carpmosia-start - Wall resprite
   - type: IconSmooth
+    mode: DiagonalPlus
     key: basic_wall
     base: diagonal
   # Carpmosia-end - Wall resprite

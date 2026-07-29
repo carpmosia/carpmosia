@@ -1,10 +1,12 @@
 using System.Linq;
 using System.Numerics;
 using Content.Server.Announcements;
+using Content.Server.Audio; // Carpmosia-edit - Kill round end music
 using Content.Server.Discord;
 using Content.Server.GameTicking.Events;
 using Content.Server.Maps;
 using Content.Server.Roles;
+using Content.Server.Voting.Managers; // Carpmosia-edit - Automatic map vote
 using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Content.Shared.GameTicking;
@@ -13,6 +15,7 @@ using Content.Shared.Mind;
 using Content.Shared.Players;
 using Content.Shared.Preferences;
 using Content.Shared.Roles.Components;
+using Content.Shared.Voting; // Carpmosia-edit - Automatic map vote
 using JetBrains.Annotations;
 using Prometheus;
 using Robust.Shared.Asynchronous;
@@ -23,6 +26,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
+using Robust.Shared.Timing; // Carpmosia-edit - Automatic map vote
 using Robust.Shared.Utility;
 
 namespace Content.Server.GameTicking
@@ -32,6 +36,8 @@ namespace Content.Server.GameTicking
         [Dependency] private DiscordWebhook _discord = default!;
         [Dependency] private RoleSystem _role = default!;
         [Dependency] private ITaskManager _taskManager = default!;
+        [Dependency] private ContentAudioSystem _contentAudio = default!; // Carpmosia-edit - Kill round end music
+        [Dependency] private IVoteManager _voteManager = default!; // Carpmosia-edit - Automatic map vote
 
         private static readonly Counter RoundNumberMetric = Metrics.CreateCounter(
             "ss14_round_number",
@@ -119,7 +125,7 @@ namespace Content.Server.GameTicking
             }
 
             if (CurrentPreset?.MapPool != null &&
-                _prototypeManager.TryIndex<GameMapPoolPrototype>(CurrentPreset.MapPool, out var pool) &&
+                ProtoMan.TryIndex<GameMapPoolPrototype>(CurrentPreset.MapPool, out var pool) &&
                 !pool.Maps.Contains(mainStationMap.ID))
             {
                 var msg = Loc.GetString("game-ticker-start-round-invalid-map",
@@ -663,6 +669,7 @@ namespace Content.Server.GameTicking
             RunLevel = GameRunLevel.PreRoundLobby;
             RandomizeLobbyBackground();
             ResettingCleanup();
+            _contentAudio.RandomizeLobbyMusic(); // Carpmosia-edit - Kill round end music
             IncrementRoundNumber();
             SendRoundStartingDiscordMessage();
 
@@ -681,6 +688,22 @@ namespace Content.Server.GameTicking
                 UpdateInfoText();
 
                 ReqWindowAttentionAll();
+
+                // Carpmosia-start - Automatic map vote
+                if (_cfg.GetCVar(CCVars.GameLobbyAutoVote))
+                {
+                    // There isn't really a better way to identify an already running map vote...
+                    if (_voteManager.ActiveVotes.All(x => x.Title != Loc.GetString("ui-vote-map-title")))
+                    {
+                        // 5 second buffer for vote to be finished before map preloading begins
+                        var preloadTime = RoundPreloadTime + TimeSpan.FromSeconds(5);
+                        // Currently this results in a 40 second delay before a map vote is called
+                        // enough for people to leave/join for map pop to be accurate
+                        var delay = LobbyDuration - (preloadTime + TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.VoteTimerMap)));
+                        Timer.Spawn(delay, () =>  _voteManager.CreateStandardVote(null, StandardVoteType.Map));
+                    }
+                }
+                // Carpmosia-end - Automatic map vote
             }
         }
 
@@ -723,8 +746,6 @@ namespace Content.Server.GameTicking
             RaiseNetworkEvent(ev);
 
             EntityManager.FlushEntities();
-
-            _mapManager.Restart();
 
             _banManager.Restart();
 
@@ -791,7 +812,7 @@ namespace Content.Server.GameTicking
         {
             if (CurrentPreset == null) return;
 
-            var options = _prototypeManager.EnumeratePrototypes<RoundAnnouncementPrototype>().ToList();
+            var options = ProtoMan.EnumeratePrototypes<RoundAnnouncementPrototype>().ToList();
 
             if (options.Count == 0)
                 return;

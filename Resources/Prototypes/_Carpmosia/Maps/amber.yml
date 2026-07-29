@@ -12,6 +12,7 @@
       stationProto: StandardNanotrasenStation
       components:
       - type: StationNameSetup
+        shortName: Amber
         mapNameTemplate: '{0} Amber Station {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
