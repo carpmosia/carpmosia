@@ -12,6 +12,7 @@
       stationProto: StandardNanotrasenStation
       components:
       - type: StationNameSetup
+        shortName: Oasis
         mapNameTemplate: '{0} Oasis {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator

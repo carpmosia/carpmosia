@@ -548,6 +548,7 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
         }
 
         var mapTerminal = _mapSystem.CreateMap(out var mapIdTerminal);
+        _metaData.SetEntityName(mapTerminal, Loc.GetString("map-name-terminal"));
         if (!_loader.TryLoadGrid(mapIdTerminal, mapProto.MapPath, out var gridTerminal))
         {
             Log.Error($"Failed to set up terminal grid!");
@@ -577,7 +578,6 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
             return;
         }
 
-        _metaData.SetEntityName(mapTerminal, Loc.GetString("map-name-terminal"));
         Log.Info($"Created terminal grid {ToPrettyString(gridTerminal)} on map {ToPrettyString(mapTerminal)} for station {ToPrettyString(station)}");
         // Carpmosia-end - Replaced CC with Terminals
 
@@ -588,6 +588,7 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
         }
 
         var map = _mapSystem.CreateMap(out var mapId);
+        _metaData.SetEntityName(map, Loc.GetString("map-name-centcomm")); // Carpmosia-edit - Warp point prefixes
         if (!_loader.TryLoadGrid(mapId, component.Map, out var grid))
         {
             Log.Error($"Failed to set up centcomm grid!");
@@ -617,10 +618,12 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
             return;
         }
 
-        component.MapEntity = mapTerminal; // Carpmosia-edit - Replaced CC with Terminals
-        _metaData.SetEntityName(map, Loc.GetString("map-name-centcomm"));
-        component.Entity = gridTerminal; // Carpmosia-edit - Replaced CC with Terminals
-        _shuttle.TryAddFTLDestination(mapIdTerminal, true, out _); // Carpmosia-edit - Replaced CC with Terminals
+        // Carpmosia-start - Replaced CC with Terminals
+        component.MapEntity = mapTerminal;
+        component.Entity = gridTerminal;
+        //_metaData.SetEntityName(mapTerminal, Loc.GetString("map-name-centcomm")); // Moved up
+        _shuttle.TryAddFTLDestination(mapIdTerminal, true, out _);
+        // Carpmosia-end - Replaced CC with Terminals
         Log.Info($"Created centcomm grid {ToPrettyString(grid)} on map {ToPrettyString(map)} for station {ToPrettyString(station)}");
     }
 

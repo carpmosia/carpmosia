@@ -101,6 +101,12 @@
                         StyleClasses="OpenRight"
                         HorizontalExpand="True"/>
 
+                    <!-- Carpmosia-start - Paper colors -->
+                    <OptionButton Name="ColorSelector"
+                        StyleClasses="OpenBoth"
+                        HorizontalExpand="True"/>
+                    <!-- Carpmosia-end - Paper colors -->
+
                     <Button Name="FileButton"
                         Text="{Loc 'fax-machine-ui-file-button'}"
                         StyleClasses="OpenLeft"

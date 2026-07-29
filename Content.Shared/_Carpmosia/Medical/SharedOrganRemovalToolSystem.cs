@@ -30,15 +30,7 @@ public sealed partial class SharedOrganRemovalToolSystem : EntitySystem
     [Dependency] private SharedTransformSystem _transformSystem = default!;
     [Dependency] private MobStateSystem _mobStateSystem = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<OrganRemovalToolComponent, AfterInteractEvent>(OnAfterInteract);
-        SubscribeLocalEvent<OrganRemovalToolComponent, OrganRemovalDoAfterEvent>(OnDoAfter);
-        SubscribeLocalEvent<BrainExtractedComponent, ExaminedEvent>(OnExamined);
-    }
-
+    [SubscribeLocalEvent]
     private void OnAfterInteract(Entity<OrganRemovalToolComponent> uid, ref AfterInteractEvent args)
     {
         if (args.Handled || args.Target is null || !args.CanReach || args.User == args.Target || !HasComp<BodyComponent>(args.Target))
@@ -54,16 +46,20 @@ public sealed partial class SharedOrganRemovalToolSystem : EntitySystem
         if (!TryComp<BuckleComponent>(target, out var buckle) ||
             !HasComp<SurgicalTableComponent>(buckle.BuckledTo))
         {
-            _popupSystem.PopupClient(Loc.GetString("organ-removal-operation-fail-table",
-                ("target", Identity.Entity(target, EntityManager))), user, PopupType.MediumCaution);
+            _popupSystem.PopupEntity(Loc.GetString("organ-removal-operation-fail-table",
+                ("target", Identity.Entity(target, EntityManager))),
+                user,
+                PopupType.MediumCaution);
             return false;
         }
 
         // If they aren't dead, display message and then end
         if (!_mobStateSystem.IsDead(target))
         {
-            _popupSystem.PopupClient(Loc.GetString("organ-removal-operation-fail-alive",
-                ("target", Identity.Entity(target, EntityManager))), user, PopupType.MediumCaution);
+            _popupSystem.PopupEntity(Loc.GetString("organ-removal-operation-fail-alive",
+                ("target", Identity.Entity(target, EntityManager))),
+                user,
+                PopupType.MediumCaution);
             return false;
         }
 
@@ -81,14 +77,18 @@ public sealed partial class SharedOrganRemovalToolSystem : EntitySystem
         if (!_doAfterSystem.TryStartDoAfter(doAfter))
             return false;
 
-        _popupSystem.PopupPredicted(Loc.GetString("organ-removal-operation-start"),
-            Loc.GetString("organ-removal-operation-start-other", ("user", Identity.Entity(user, EntityManager))), user, user, PopupType.MediumCaution);
+        _popupSystem.PopupEntity(Loc.GetString("organ-removal-operation-start"),
+            Loc.GetString("organ-removal-operation-start-other", ("user", Identity.Entity(user, EntityManager))),
+            user,
+            user,
+            PopupType.MediumCaution);
 
         _audioSystem.PlayPredicted(tool.Comp.StartSound, tool, user, AudioParams.Default.WithVariation(0.125f).WithVolume(3f).WithMaxDistance(20f));
 
         return true;
     }
 
+    [SubscribeLocalEvent]
     private void OnDoAfter(Entity<OrganRemovalToolComponent> tool, ref OrganRemovalDoAfterEvent args)
     {
         if (args.Cancelled || args.Handled || args.Target == null || args.Used == null || !TryComp<BodyComponent>(args.Target, out var body) || tool.Comp.Category == null)
@@ -114,8 +114,11 @@ public sealed partial class SharedOrganRemovalToolSystem : EntitySystem
                 _forensics.TransferDna(new Entity<OrganRemovalToolComponent>(args.Used.Value, tool), args.Target.Value);
 
                 // Display success message, add extracted component for examine text
-                _popupSystem.PopupPredicted(Loc.GetString("organ-removal-tool-operation-end",
-                    ("target", tool.Comp.Category.Value)), args.Target.Value, args.User, PopupType.MediumCaution);
+                _popupSystem.PopupEntity(Loc.GetString("organ-removal-tool-operation-end",
+                    ("target", tool.Comp.Category.Value)),
+                    args.Target.Value,
+                    args.User,
+                    PopupType.MediumCaution);
 
                 if (tool.Comp.Category == "Brain")
                     EnsureComp<BrainExtractedComponent>(args.Target.Value);
@@ -129,11 +132,15 @@ public sealed partial class SharedOrganRemovalToolSystem : EntitySystem
             }
         }
         // We didn't find a brain so display operation fail message. This is dumb but c'est la vie
-        _popupSystem.PopupPredicted(Loc.GetString("organ-removal-operation-fail-brain",
-            ("target", Identity.Entity(args.Target.Value, EntityManager))), args.Target.Value, args.User, PopupType.MediumCaution);
+        _popupSystem.PopupEntity(Loc.GetString("organ-removal-operation-fail-brain",
+            ("target", Identity.Entity(args.Target.Value, EntityManager))),
+            args.Target.Value,
+            args.User,
+            PopupType.MediumCaution);
     }
 
     // Add examine text to individuals that got their brain removed
+    [SubscribeLocalEvent]
     private void OnExamined(Entity<BrainExtractedComponent> ent, ref ExaminedEvent args)
     {
         if (!args.IsInDetailsRange)

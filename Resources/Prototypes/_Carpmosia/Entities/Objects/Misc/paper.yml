@@ -1,0 +1,278 @@
+- type: entity
+  abstract: true
+  id: BasePaperRed
+  suffix: red
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper
+      color: &red "#FFCDD2"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: *red
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: PaperVisuals
+    backgroundModulate: *red
+    contentImageModulate: *red
+
+- type: entity
+  parent: [ BasePaperRed, Paper ]
+  id: PaperColorRed
+  description: A piece of red paper.
+
+- type: entity
+  parent: [ BasePaperRed, PaperOffice ]
+  id: PaperOfficeColorRed
+  description: A plain sheet of red office paper.
+
+- type: entity
+  abstract: true
+  id: BasePaperOrange
+  suffix: orange
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper
+      color: &orange "#FFE0B2"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: *orange
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: PaperVisuals
+    backgroundModulate: *orange
+    contentImageModulate: *orange
+
+- type: entity
+  parent: [ BasePaperOrange, Paper ]
+  id: PaperColorOrange
+  description: A piece of orange paper.
+
+- type: entity
+  parent: [ BasePaperOrange, PaperOffice ]
+  id: PaperOfficeColorOrange
+  description: A plain sheet of orange office paper.
+
+- type: entity
+  abstract: true
+  id: BasePaperYellow
+  suffix: yellow
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper
+      color: &yellow "#FFF9C4"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: *yellow
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: PaperVisuals
+    backgroundModulate: *yellow
+    contentImageModulate: *yellow
+
+- type: entity
+  parent: [ BasePaperYellow, Paper ]
+  id: PaperColorYellow
+  description: A piece of yellow paper.
+
+- type: entity
+  parent: [ BasePaperYellow, PaperOffice ]
+  id: PaperOfficeColorYellow
+  description: A plain sheet of yellow office paper.
+
+- type: entity
+  abstract: true
+  id: BasePaperGreen
+  suffix: green
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper
+      color: &green "#C8E6C9"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: *green
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: PaperVisuals
+    backgroundModulate: *green
+    contentImageModulate: *green
+
+- type: entity
+  parent: [ BasePaperGreen, Paper ]
+  id: PaperColorGreen
+  description: A piece of green paper.
+
+- type: entity
+  parent: [ BasePaperGreen, PaperOffice ]
+  id: PaperOfficeColorGreen
+  description: A plain sheet of green office paper.
+
+- type: entity
+  abstract: true
+  id: BasePaperTeal
+  suffix: teal
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper
+      color: &teal "#B2DFDB"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: *teal
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: PaperVisuals
+    backgroundModulate: *teal
+    contentImageModulate: *teal
+
+- type: entity
+  parent: [ BasePaperTeal, Paper ]
+  id: PaperColorTeal
+  description: A piece of teal paper.
+
+- type: entity
+  parent: [ BasePaperTeal, PaperOffice ]
+  id: PaperOfficeColorTeal
+  description: A plain sheet of teal office paper.
+
+- type: entity
+  abstract: true
+  id: BasePaperBlue
+  suffix: blue
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper
+      color: &blue "#BBDEFB"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: *blue
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: PaperVisuals
+    backgroundModulate: *blue
+    contentImageModulate: *blue
+
+- type: entity
+  parent: [ BasePaperBlue, Paper ]
+  id: PaperColorBlue
+  description: A piece of blue paper.
+
+- type: entity
+  parent: [ BasePaperBlue, PaperOffice ]
+  id: PaperOfficeColorBlue
+  description: A plain sheet of blue office paper.
+
+- type: entity
+  abstract: true
+  id: BasePaperIndigo
+  suffix: indigo
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper
+      color: &indigo "#C5CAE9"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: *indigo
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: PaperVisuals
+    backgroundModulate: *indigo
+    contentImageModulate: *indigo
+
+- type: entity
+  parent: [ BasePaperIndigo, Paper ]
+  id: PaperColorIndigo
+  description: A piece of indigo paper.
+
+- type: entity
+  parent: [ BasePaperIndigo, PaperOffice ]
+  id: PaperOfficeColorIndigo
+  description: A plain sheet of indigo office paper.
+
+- type: entity
+  abstract: true
+  id: BasePaperPurple
+  suffix: purple
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper
+      color: &purple "#E1BEE7"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: *purple
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: PaperVisuals
+    backgroundModulate: *purple
+    contentImageModulate: *purple
+
+- type: entity
+  parent: [ BasePaperPurple, Paper ]
+  id: PaperColorPurple
+  description: A piece of purple paper.
+
+- type: entity
+  parent: [ BasePaperPurple, PaperOffice ]
+  id: PaperOfficeColorPurple
+  description: A plain sheet of purple office paper.
+
+- type: entity
+  abstract: true
+  id: BasePaperPink
+  suffix: pink
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper
+      color: &pink "#F8BBD0"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: *pink
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: PaperVisuals
+    backgroundModulate: *pink
+    contentImageModulate: *pink
+
+- type: entity
+  parent: [ BasePaperPink, Paper ]
+  id: PaperColorPink
+  description: A piece of pink paper.
+
+- type: entity
+  parent: [ BasePaperPink, PaperOffice ]
+  id: PaperOfficeColorPink
+  description: A plain sheet of pink office paper.
