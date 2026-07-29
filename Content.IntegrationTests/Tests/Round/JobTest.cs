@@ -150,7 +150,7 @@ public sealed class JobTest : GameTest
         var engineer = pair.Server.ProtoMan.Index(Engineer);
         var passenger = pair.Server.ProtoMan.Index(Passenger);
         Assert.That(captain.Weight, Is.GreaterThan(engineer.Weight));
-        Assert.That(engineer.Weight, Is.EqualTo(passenger.Weight));
+        Assert.That(engineer.Weight, Is.GreaterThan(passenger.Weight)); // Carpmosia-edit - Job weights
 
         await pair.SetJobPriorities((Passenger, JobPriority.Medium), (Engineer, JobPriority.High), (Captain, JobPriority.Low));
         ticker.ToggleReadyAll(true);
