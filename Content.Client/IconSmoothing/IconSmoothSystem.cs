@@ -370,9 +370,7 @@ namespace Content.Client.IconSmoothing
             var edgePos = pos + (Vector2i)xform.LocalRotation.RotateVec(new Vector2(1, -1));
             var edge = MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, edgePos));
 
-            _sprite.LayerSetRsiState(sprite.AsNullable(),
-                0,
-                edge ? $"{smooth.StateBase}4" : $"{smooth.StateBase}3");
+            _sprite.LayerSetRsiState(sprite.AsNullable(), 0, edge ? $"{smooth.StateBase}4" : $"{smooth.StateBase}3");
         }
         // Carpmosia-end - Better diagonals
 
