@@ -2479,4 +2479,29 @@
   id: 371
   time: '2026-07-26T10:17:18.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/529
+- author: Jakeybobble
+  changes:
+  - message: Fixed Tajaran and Avali voices being shown as unknown.
+    type: Fix
+  id: 372
+  time: '2026-07-29T00:11:01.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/534
+- author: Atakku
+  changes:
+  - message: WizardSpawn has been removed from moderate antag events
+    type: Remove
+  id: 373
+  time: '2026-07-29T00:24:49.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/540
+- author: imatsoup
+  changes:
+  - message: The threshold of votes required for a round restart vote to pass has
+      been reduced.
+    type: Tweak
+  - message: Round restart votes will no longer automatically fail if there is an
+      admin present.
+    type: Tweak
+  id: 374
+  time: '2026-07-29T00:26:37.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/538
 Order: -1
