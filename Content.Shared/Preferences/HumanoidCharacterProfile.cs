@@ -731,6 +731,13 @@ namespace Content.Shared.Preferences
                 .Where(p => prototypeManager.TryIndex<JobPrototype>(p.Key, out var job) && job.SetPreference && p.Value switch
                 {
                     JobPriority.Never => false, // Drop never since that's assumed default.
+                    // Carpmosia-start - More job priorities
+                    JobPriority.Low6 => true,
+                    JobPriority.Low5 => true,
+                    JobPriority.Low4 => true,
+                    JobPriority.Low3 => true,
+                    JobPriority.Low2 => true,
+                    // Carpmosia-end - More job priorities
                     JobPriority.Low => true,
                     JobPriority.Medium => true,
                     JobPriority.High => true,
