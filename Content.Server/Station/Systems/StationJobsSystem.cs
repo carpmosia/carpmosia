@@ -464,22 +464,12 @@ public sealed partial class StationJobsSystem : EntitySystem
         }
 
         // Carpmosia-start - More job priorities
-        if (TryPick(JobPriority.Low2, out picked))
+        if (TryPick(JobPriority.Lower, out picked))
         {
             return picked;
         }
 
-        if (TryPick(JobPriority.Low3, out picked))
-        {
-            return picked;
-        }
-
-        if (TryPick(JobPriority.Low4, out picked))
-        {
-            return picked;
-        }
-
-        if (TryPick(JobPriority.Low5, out picked))
+        if (TryPick(JobPriority.Lowest, out picked))
         {
             return picked;
         }

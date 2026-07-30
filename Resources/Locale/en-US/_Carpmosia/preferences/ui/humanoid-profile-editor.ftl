@@ -1,8 +1,3 @@
-humanoid-profile-editor-job-priority-0-button = N
-humanoid-profile-editor-job-priority-1-button = 1
-humanoid-profile-editor-job-priority-2-button = 2
-humanoid-profile-editor-job-priority-3-button = 3
-humanoid-profile-editor-job-priority-4-button = 4
-humanoid-profile-editor-job-priority-5-button = 5
-humanoid-profile-editor-job-priority-6-button = 6
-humanoid-profile-editor-job-priority-7-button = H
+humanoid-profile-editor-job-priority-min-button = Min
+humanoid-profile-editor-job-priority-mid-button = Mid
+humanoid-profile-editor-job-priority-max-button = Max

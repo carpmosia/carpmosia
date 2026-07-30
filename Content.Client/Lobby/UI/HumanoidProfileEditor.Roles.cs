@@ -131,15 +131,13 @@ public sealed partial class HumanoidProfileEditor
 
         var items = new[]
         {
+                ("humanoid-profile-editor-job-priority-never-button", (int) JobPriority.Never),
                 // Carpmosia-start - More job priorities
-                ("humanoid-profile-editor-job-priority-0-button", (int) JobPriority.Never),
-                ("humanoid-profile-editor-job-priority-1-button", (int) JobPriority.Low5),
-                ("humanoid-profile-editor-job-priority-2-button", (int) JobPriority.Low4),
-                ("humanoid-profile-editor-job-priority-3-button", (int) JobPriority.Low3),
-                ("humanoid-profile-editor-job-priority-4-button", (int) JobPriority.Low2),
-                ("humanoid-profile-editor-job-priority-5-button", (int) JobPriority.Low),
-                ("humanoid-profile-editor-job-priority-6-button", (int) JobPriority.Medium),
-                ("humanoid-profile-editor-job-priority-7-button", (int) JobPriority.High),
+                ("humanoid-profile-editor-job-priority-min-button", (int) JobPriority.Lowest),
+                ("humanoid-profile-editor-job-priority-low-button", (int) JobPriority.Lower),
+                ("humanoid-profile-editor-job-priority-mid-button", (int) JobPriority.Low),
+                ("humanoid-profile-editor-job-priority-high-button", (int) JobPriority.Medium),
+                ("humanoid-profile-editor-job-priority-max-button", (int) JobPriority.High),
                 // Carpmosia-end - More job priorities
             };
 
