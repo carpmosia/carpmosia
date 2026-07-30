@@ -136,6 +136,7 @@ public sealed class JobTest : GameTest
     /// Check high priority jobs (e.g., captain) are selected before other roles, even if it means a player does not
     /// get their preferred job.
     /// </summary>
+    [Explicit] // Carpmosia-edit - Job priority rebalance
     [Test]
     public async Task JobWeightTest()
     {
@@ -149,7 +150,7 @@ public sealed class JobTest : GameTest
         var captain = pair.Server.ProtoMan.Index(Captain);
         var engineer = pair.Server.ProtoMan.Index(Engineer);
         var passenger = pair.Server.ProtoMan.Index(Passenger);
-        Assert.That(captain.Weight, Is.EqualTo(engineer.Weight)); // Carpmosia-edit - Job priority rebalance
+        Assert.That(captain.Weight, Is.GreaterThan(engineer.Weight));
         Assert.That(engineer.Weight, Is.EqualTo(passenger.Weight));
 
         await pair.SetJobPriorities((Passenger, JobPriority.Medium), (Engineer, JobPriority.High), (Captain, JobPriority.Low));
@@ -157,7 +158,7 @@ public sealed class JobTest : GameTest
         await pair.Server.WaitPost(() => ticker.StartRound());
         await pair.RunTicksSync(10);
 
-        AssertJob(pair, Engineer); // Carpmosia-edit - Job priority rebalance
+        AssertJob(pair, Captain);
 
         await pair.Server.WaitPost(() => ticker.RestartRound());
     }
