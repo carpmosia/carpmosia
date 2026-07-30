@@ -274,7 +274,7 @@ public sealed partial class SingularitySystem : SharedSingularitySystem
             4 => 20,
             3 => 10,
             2 => 5,
-            1 => 1,
+            1 => 3, // Carpmosia-edit - Engine Loose Rework
             _ => 0
         };
     }
