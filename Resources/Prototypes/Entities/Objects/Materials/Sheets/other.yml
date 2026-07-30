@@ -5,9 +5,9 @@
   description: A sheet of material, used often on the station in various applications.
   components:
   - type: Sprite
-    sprite: _Carpmosia/Objects/Materials/Sheets/other.rsi
+    sprite: _Carpmosia/Objects/Materials/Sheets/other.rsi # Carpmosia-edit - Material resprite
   - type: Item
-    sprite: _Carpmosia/Objects/Materials/Sheets/other.rsi
+    sprite: _Carpmosia/Objects/Materials/Sheets/other.rsi # Carpmosia-edit - Material resprite
 
 - type: entity
   parent: SheetOtherBase
@@ -220,7 +220,7 @@
   suffix: Full
   components:
     - type: Sprite
-      sprite: _Carpmosia/Objects/Materials/Sheets/meaterial.rsi
+      sprite: _Carpmosia/Objects/Materials/Sheets/meaterial.rsi # Carpmosia-edit - Material resprite
       layers:
       - state: meat_3
         map: [ "base" ]
@@ -239,7 +239,7 @@
         - meat_2
         - meat_3
     - type: Item
-      sprite: _Carpmosia/Objects/Materials/Sheets/meaterial.rsi
+      sprite: _Carpmosia/Objects/Materials/Sheets/meaterial.rsi # Carpmosia-edit - Material resprite
       heldPrefix: meat
     - type: Solution
       solution:
