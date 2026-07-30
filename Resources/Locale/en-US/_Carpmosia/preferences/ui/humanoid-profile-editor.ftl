@@ -1,3 +1,8 @@
+humanoid-profile-editor-job-priority-min-button = Min
+humanoid-profile-editor-job-priority-mid-button = Mid
+humanoid-profile-editor-job-priority-max-button = Max
+
+# Voices
 humanoid-profile-editor-voice-avali-masculine = [M] Avali
 humanoid-profile-editor-voice-avali-feminine = [F] Avali
 humanoid-profile-editor-voice-tajaran-masculine = [M] Tajaran

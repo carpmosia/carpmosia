@@ -19,7 +19,7 @@
     - !type:DepartmentTimeRequirement
       department: Command
       time: 4h
-  weight: 20
+  # weight: 20 # Carpmosia-edit - Job priority rebalance
   startingGear: CaptainGear
   icon: "JobIconCaptain"
   joinNotifyCrew: true

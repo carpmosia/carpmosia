@@ -9,7 +9,7 @@
   - !type:RoleTimeRequirement
     role: JobBorg
     time: 5h
-  weight: 10
+  # weight: 10 # Carpmosia-edit - Job priority rebalance
   icon: JobIconStationAi
   supervisors: job-supervisors-rd
   jobEntity: StationAiBrain
