@@ -268,8 +268,8 @@ public sealed partial class SingularitySystem : SharedSingularitySystem
         comp.EnergyDrain = args.NewValue switch
         {
             // Carpmosia-start - Engine Loose Rework
-            6 => 80,
-            5 => 40,
+            6 => 30,
+            5 => 25,
             // Carpmosia-end - Engine Loose Rework
             4 => 20,
             3 => 10,
