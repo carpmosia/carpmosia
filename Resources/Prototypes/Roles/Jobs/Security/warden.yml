@@ -11,6 +11,7 @@
       department: Security
       time: 10h
   # weight: 5 # Carpmosia-edit - Job priority rebalance
+  displayWeight: 75 # Carpmosia-edit - Reorder jobs
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos

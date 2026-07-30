@@ -10,6 +10,7 @@
     role: JobBorg
     time: 5h
   # weight: 10 # Carpmosia-edit - Job priority rebalance
+  displayWeight: 96 # Carpmosia-edit - Reorder jobs
   icon: JobIconStationAi
   supervisors: job-supervisors-rd
   jobEntity: StationAiBrain
