@@ -79,10 +79,7 @@ public sealed partial class SingularityAttractorSystem : EntitySystem
             if (length <= MinAttractRange)
                 return;
 
-            //Carpmosia-start - Engine Loose Rework
-            walk.NextStepTime = TimeSpan.Zero;
-            //Carpmosia-end - Engine Loose Rework
-
+            walk.NextStepTime = TimeSpan.Zero; // Carpmosia-edit - Engine Loose Rework
             biasBy = Vector2.Normalize(biasBy) * (attractor.BaseRange / length);
 
             walk.BiasVector += biasBy;
