@@ -129,6 +129,19 @@
                 </BoxContainer>
                 <BoxContainer Orientation="Vertical">
                     <!-- Jobs -->
+                    <!-- Carpmosia-start - Job priority rebalance -->
+                    <BoxContainer Orientation="Horizontal" Margin="8 8 8 8" HorizontalAlignment="Center">
+                        <TextureRect
+                            Stretch="KeepAspect"
+                            TexturePath="/Textures/_Carpmosia/Logo/icon/icon-64x64.png"
+                        />
+                        <Label
+                            Text="{Loc 'humanoid-profile-editor-job-notice'}"
+                            VerticalAlignment="Center"
+                            Margin="8 0 0 0"
+                        />
+                    </BoxContainer>
+                    <!-- Carpmosia-end - Job priority rebalance -->
                     <OptionButton Name="PreferenceUnavailableButton" />
                     <ScrollContainer VerticalExpand="True">
                         <BoxContainer Name="JobList" Orientation="Vertical" />
