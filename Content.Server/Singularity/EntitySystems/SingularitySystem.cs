@@ -283,8 +283,7 @@ public sealed partial class SingularitySystem : SharedSingularitySystem
     /// <summary>
     /// Updates the possible speeds of the singulos random walk when the singularities level changes.
     /// </summary>
-    /// <param name="uid">The entity UID of the singularity.</param>
-    /// <param name="comp">The random walk component component sharing the entity with the singulo component.</param>
+    /// <param name="ent">The entity/component who's speed is being modified.</param>
     /// <param name="args">The event arguments.</param>
     private void UpdateRandomWalk(Entity<RandomWalkComponent> ent, ref SingularityLevelChangedEvent args)
     {
