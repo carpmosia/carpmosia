@@ -288,7 +288,7 @@ public sealed partial class SingularitySystem : SharedSingularitySystem
     /// <param name="args">The event arguments.</param>
     private void UpdateRandomWalk(Entity<RandomWalkComponent> ent, ref SingularityLevelChangedEvent args)
     {
-        var scale = args.NewValue;
+        var scale = MathF.Max(args.NewValue, 2);
 
         if(!TryComp<SingularityComponent>(ent, out var singularity))
             return;
