@@ -23,7 +23,7 @@ public sealed partial class TeslaEnergyBallSystem : EntitySystem
     [Dependency] private AudioSystem _audio = default!;
     [Dependency] private SharedEmpSystem _emp = default!; // Carpmosia-edit - Engine Loose Rework
     [Dependency] private SharedTransformSystem _transform = default!; // Carpmosia-edit - Engine Loose Rework
-    [Dependency] private LightningSystem _lightning = default!;
+    [Dependency] private LightningSystem _lightning = default!; // Carpmosia-edit - Engine Loose Rework
 
     public override void Initialize()
     {
@@ -70,10 +70,14 @@ public sealed partial class TeslaEnergyBallSystem : EntitySystem
     private void Rupture(EntityUid uid, TeslaEnergyBallComponent comp)
     {
         for (var i = 0; i < comp.SpawnAmount; i++)
-            Spawn(comp.EmpSpawnProto, Transform(uid).Coordinates);
+        {
+            SpawnAtPosition(comp.EmpSpawnProto, Transform(uid).Coordinates);
+        }
 
-        _audio.PlayPvs(comp.SoundExplosion, Transform(uid).Coordinates);
-        _emp.EmpPulse(_transform.GetMapCoordinates(uid), comp.EmpRange, comp.EmpConsumption, comp.EmpDuration);
+        var entTransform = Transform(uid).Coordinates;
+
+        _audio.PlayPvs(comp.SoundExplosion, entTransform);
+        _emp.EmpPulse(entTransform, comp.EmpRange, comp.EmpConsumption, comp.EmpDuration);
         _lightning.ShootRandomLightnings(uid, comp.EmpRange, comp.SpawnAmount * 4, arcDepth: 3);
 
         QueueDel(uid);

@@ -55,8 +55,8 @@
     # Carpmosia-end - Engine Loose Rework
   - type: RandomWalk # To make the singularity move around.
     # Carpmosia-start - Engine Loose Rework
-    maxSpeed: 1.4
-    minSpeed: 1
+    maxSpeed: 0.7
+    minSpeed: 0.5
     # Carpmosia-end - Engine Loose Rework
   - type: SingularityDistortion
     falloffPower: 2.529822

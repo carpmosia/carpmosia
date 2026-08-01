@@ -82,7 +82,7 @@ public sealed partial class TeslaEnergyBallComponent : Component
     /// <summary>
     /// Entities that spawn when the tesla ruptures. Alt proto to prevent minis from being stuck in place
     /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public EntProtoId EmpSpawnProto = "TeslaMiniEnergyBallHunter";
     // Carpmosia-end - Engine Loose Rework
 
