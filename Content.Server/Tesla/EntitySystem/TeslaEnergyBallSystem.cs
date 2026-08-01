@@ -69,15 +69,15 @@ public sealed partial class TeslaEnergyBallSystem : EntitySystem
     // Carpmosia-start - Engine Loose Rework
     private void Rupture(Entity<TeslaEnergyBallComponent> ent)
     {
+        var coords = Transform(ent).Coordinates;
+
         for (var i = 0; i < ent.Comp.SpawnAmount; i++)
         {
-            SpawnAtPosition(ent.Comp.EmpSpawnProto, Transform(ent).Coordinates);
+            SpawnAtPosition(ent.Comp.EmpSpawnProto, coords);
         }
 
-        var entTransform = Transform(ent).Coordinates;
-
-        _audio.PlayPvs(ent.Comp.SoundExplosion, entTransform);
-        _emp.EmpPulse(entTransform, ent.Comp.EmpRange, ent.Comp.EmpConsumption, ent.Comp.EmpDuration);
+        _audio.PlayPvs(ent.Comp.SoundExplosion, coords);
+        _emp.EmpPulse(coords, ent.Comp.EmpRange, ent.Comp.EmpConsumption, ent.Comp.EmpDuration);
         _lightning.ShootRandomLightnings(ent, ent.Comp.EmpRange, ent.Comp.SpawnAmount * 4, arcDepth: 3);
 
         QueueDel(ent);
