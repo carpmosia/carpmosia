@@ -78,7 +78,7 @@ public sealed partial class ChasingWalkSystem : VirtualController
             // Actually, we move walk randomly instead until we find a target
             if (!TryComp<PhysicsComponent>(uid, out var physics))
                 return;
-            var speed = _random.NextAngle().ToVec().Normalized() * _random.NextFloat(component.MinSpeed, component.MaxSpeed);
+            var speed = _random.NextVector2(component.MinSpeed, component.MaxSpeed);
             _physics.SetLinearVelocity(uid, speed);
             _physics.SetBodyStatus(uid, physics, BodyStatus.InAir);
             if (component.RotateWithImpulse)
