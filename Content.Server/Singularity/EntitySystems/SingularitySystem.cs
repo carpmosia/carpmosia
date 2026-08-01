@@ -287,7 +287,7 @@ public sealed partial class SingularitySystem : SharedSingularitySystem
     /// <param name="args">The event arguments.</param>
     private void UpdateRandomWalk(EntityUid uid, RandomWalkComponent comp, SingularityLevelChangedEvent args)
     {
-          // Carpmosia-start - Engine Loose Rework
+        // Carpmosia-start - Engine Loose Rework
         var scale = MathF.Max(args.NewValue, 2);
 
         if(!TryComp<SingularityComponent>(uid, out var singularity))
@@ -296,7 +296,7 @@ public sealed partial class SingularitySystem : SharedSingularitySystem
         comp.MinSpeed = singularity.BaseMin / scale;
         comp.MaxSpeed = singularity.BaseMax / scale;
         comp.NextStepTime = TimeSpan.Zero;
-         // Carpmosia-end - Engine Loose Rework
+        // Carpmosia-end - Engine Loose Rework
     }
 
     /// <summary>
