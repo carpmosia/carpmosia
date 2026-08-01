@@ -42,7 +42,7 @@ public sealed partial class TeslaEnergyBallSystem : EntitySystem
         }
         else if (HasComp<SmesComponent>(args.Entity))
         {
-            Rupture(tesla, tesla.Comp);
+            Rupture((tesla, tesla.Comp));
         // Carpmosia-end - Engine Loose Rework
         } else
         {
@@ -67,20 +67,20 @@ public sealed partial class TeslaEnergyBallSystem : EntitySystem
     }
 
     // Carpmosia-start - Engine Loose Rework
-    private void Rupture(EntityUid uid, TeslaEnergyBallComponent comp)
+    private void Rupture(Entity<TeslaEnergyBallComponent> ent)
     {
-        for (var i = 0; i < comp.SpawnAmount; i++)
+        for (var i = 0; i < ent.Comp.SpawnAmount; i++)
         {
-            SpawnAtPosition(comp.EmpSpawnProto, Transform(uid).Coordinates);
+            SpawnAtPosition(ent.Comp.EmpSpawnProto, Transform(ent).Coordinates);
         }
 
-        var entTransform = Transform(uid).Coordinates;
+        var entTransform = Transform(ent).Coordinates;
 
-        _audio.PlayPvs(comp.SoundExplosion, entTransform);
-        _emp.EmpPulse(entTransform, comp.EmpRange, comp.EmpConsumption, comp.EmpDuration);
-        _lightning.ShootRandomLightnings(uid, comp.EmpRange, comp.SpawnAmount * 4, arcDepth: 3);
+        _audio.PlayPvs(ent.Comp.SoundExplosion, entTransform);
+        _emp.EmpPulse(entTransform, ent.Comp.EmpRange, ent.Comp.EmpConsumption, ent.Comp.EmpDuration);
+        _lightning.ShootRandomLightnings(ent, ent.Comp.EmpRange, ent.Comp.SpawnAmount * 4, arcDepth: 3);
 
-        QueueDel(uid);
+        QueueDel(ent);
     }
     // Carpmosia-end - Engine Loose Rework
 }
