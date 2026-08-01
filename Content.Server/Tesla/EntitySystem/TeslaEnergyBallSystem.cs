@@ -42,7 +42,7 @@ public sealed partial class TeslaEnergyBallSystem : EntitySystem
         }
         else if (HasComp<SmesComponent>(args.Entity))
         {
-            Rupture((tesla, tesla.Comp));
+            Rupture(tesla);
         // Carpmosia-end - Engine Loose Rework
         } else
         {
