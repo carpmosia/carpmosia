@@ -285,7 +285,7 @@ public sealed partial class SingularitySystem : SharedSingularitySystem
     /// <param name="uid">The entity UID of the singularity.</param>
     /// <param name="comp">The random walk component component sharing the entity with the singulo component.</param>
     /// <param name="args">The event arguments.</param>
-    private void UpdateRandomWalk(EntityUid uid, RandomWalkComponent comp, ref SingularityLevelChangedEvent args)
+    private void UpdateRandomWalk(EntityUid uid, RandomWalkComponent comp, SingularityLevelChangedEvent args)
     {
           // Carpmosia-start - Engine Loose Rework
         var scale = MathF.Max(args.NewValue, 2);
