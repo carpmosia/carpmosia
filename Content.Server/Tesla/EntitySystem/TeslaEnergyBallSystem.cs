@@ -21,9 +21,11 @@ namespace Content.Server.Tesla.EntitySystems;
 public sealed partial class TeslaEnergyBallSystem : EntitySystem
 {
     [Dependency] private AudioSystem _audio = default!;
-    [Dependency] private SharedEmpSystem _emp = default!; // Carpmosia-edit - Engine Loose Rework
-    [Dependency] private SharedTransformSystem _transform = default!; // Carpmosia-edit - Engine Loose Rework
-    [Dependency] private LightningSystem _lightning = default!; // Carpmosia-edit - Engine Loose Rework
+    // Carpmosia-start - Engine Loose Rework
+    [Dependency] private SharedEmpSystem _emp = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private LightningSystem _lightning = default!;
+    // Carpmosia-end - Engine Loose Rework
 
     public override void Initialize()
     {
