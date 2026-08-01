@@ -295,7 +295,7 @@ public sealed partial class SingularitySystem : SharedSingularitySystem
 
         ent.Comp.MinSpeed = singularity.BaseMin / scale;
         ent.Comp.MaxSpeed = singularity.BaseMax / scale;
-        walk.NextStepTime = TimeSpan.Zero;
+        ent.Comp.NextStepTime = TimeSpan.Zero;
     }
     // Carpmosia-end - Engine Loose Rework
 
