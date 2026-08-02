@@ -25,9 +25,9 @@ public sealed partial class GameMapManager : IGameMapManager
     [ViewVariables(VVAccess.ReadOnly)]
     private readonly Queue<string> _previousMaps = new();
     [ViewVariables(VVAccess.ReadOnly)]
-    private IEnumerable<GameMapPrototype>? _configSelectedMap; // Carpmosia-edit - Multistation
+    private List<GameMapPrototype>? _configSelectedMap; // Carpmosia-edit - Multistation
     [ViewVariables(VVAccess.ReadOnly)]
-    private IEnumerable<GameMapPrototype>? _selectedMap; // Carpmosia-edit - Multistation
+    private List<GameMapPrototype>? _selectedMap; // Carpmosia-edit - Multistation
     [ViewVariables(VVAccess.ReadOnly)]
     private bool _mapRotationEnabled;
     [ViewVariables(VVAccess.ReadOnly)]
@@ -41,11 +41,11 @@ public sealed partial class GameMapManager : IGameMapManager
 
         _configurationManager.OnValueChanged(CCVars.GameMap, value =>
         {
-            var maps = value.Split(";").Select(x => TryLookupMap(x, out GameMapPrototype? map) ? map : null).OfType<GameMapPrototype>().ToArray(); // Carpmosia-edit - Multistation
+            var maps = value.Split(";").Select(x => TryLookupMap(x, out var map) ? map : null).OfType<GameMapPrototype>(); // Carpmosia-edit - Multistation
 
-            if (maps.Length > 0) // Carpmosia-edit - Multistation
+            if (maps.Any()) // Carpmosia-edit - Multistation
             {
-                _configSelectedMap = maps; // Carpmosia-edit - Multistation
+                _configSelectedMap = [.. maps]; // Carpmosia-edit - Multistation
                 return;
             }
 
@@ -63,7 +63,7 @@ public sealed partial class GameMapManager : IGameMapManager
                 var mapPath = new ResPath(value);
                 if (_resMan.UserData.Exists(mapPath))
                 {
-                    _configSelectedMap = _configSelectedMap.Select(x => x.Persistence(mapPath)); // Carpmosia-edit - Multistation
+                    _configSelectedMap = [.. _configSelectedMap.Select(x => x.Persistence(mapPath))]; // Carpmosia-edit - Multistation
                     _log.Info($"Using persistence map from {value}");
                     return;
                 }

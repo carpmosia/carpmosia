@@ -64,7 +64,6 @@ namespace Content.Server.GameTicking.Commands
             if (args.Length > MaxArgCount)
                 return CompletionResult.Empty;
 
-            var n = args.Length - 1;
             var options = _prototypeManager
                 .EnumeratePrototypes<GameMapPrototype>()
                 .Where(p => !p.ID.StartsWith("Legacy"))

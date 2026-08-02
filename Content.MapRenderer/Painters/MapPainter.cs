@@ -24,7 +24,6 @@ using Robust.UnitTesting.Pool;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
-using Robust.Shared.Utility; // Carpmosia-edit - Multistation
 
 namespace Content.MapRenderer.Painters
 {
