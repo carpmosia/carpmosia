@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Client.Administration.UI.CustomControls; // Carpmosia-edit - Wide latejoin
 using Content.Client.CrewManifest;
 using Content.Client.GameTicking.Managers;
 using Content.Client.Lobby;
@@ -18,7 +19,6 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
-using Content.Client.Administration.UI.CustomControls; // Carpmosia-edit - Wide latejoin
 
 namespace Content.Client.LateJoin
 {
