@@ -184,7 +184,7 @@ namespace Content.Client.LateJoin
                     };
                     crewManifestButton.OnPressed += _ => _crewManifest.RequestCrewManifest(id);
 
-                    headerBox.AddChild(crewManifestButton);
+                    headerBox.AddChild(crewManifestButton); // Carpmosia-edit - Wide latejoin
                 }
 
                 // Carpmosia-start - Wide latejoin
