@@ -1,7 +1,6 @@
 using Content.Server.GameTicking;
 using Content.Server.Voting;
 using Robust.Server;
-using Robust.Shared.Prototypes; // Carpmosia-edit - Better map vote
 using Robust.Shared.Utility;
 using System.Text.Json;
 using System.Text.Json.Nodes;
@@ -34,7 +33,7 @@ public sealed partial class VoteWebhooks : IPostInjectInit
         {
             var newVote = new WebhookEmbedField
             {
-                Name = voteOption.text is (string name, string, EntProtoId) ? name : (string) voteOption.text, // Carpmosia-start - Better map vote
+                Name = voteOption.text is (string name, _, _) ? name : (string)voteOption.text, // Carpmosia-start - Better map vote
                 Value = Loc.GetString("custom-vote-webhook-option-pending")
             };
             fields.Add(newVote);

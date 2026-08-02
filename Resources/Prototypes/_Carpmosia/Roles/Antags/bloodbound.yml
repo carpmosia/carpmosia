@@ -34,9 +34,40 @@
   components:
   - type: BloodBound
   - type: InitialBloodBound
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - BBTelepathy
+  - type: ActiveRadio
+    channels:
+    - BBTelepathy
   mindRoles:
   - MindRoleBloodBound
   briefing:
     text: blood-bound-initial-role-greeting
+    color: MediumVioletRed
+    sound: "/Audio/_Carpmosia/Misc/blood_bound_greeting.ogg"
+
+- type: antagSpecifier
+  parent: RestrictedAntag
+  id: BloodBoundConvertible
+  prefRoles:
+  - BloodBoundConvertible
+  blacklist:
+    components:
+    - AntagImmune
+  components:
+  - type: BloodBound
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - BBTelepathy
+  - type: ActiveRadio
+    channels:
+    - BBTelepathy
+  mindRoles:
+  - MindRoleBloodBound
+  briefing:
+    text: blood-bound-role-greeting
     color: MediumVioletRed
     sound: "/Audio/_Carpmosia/Misc/blood_bound_greeting.ogg"

@@ -40,14 +40,32 @@ public sealed class FaxFileMessage : BoundUserInterfaceMessage
     public string? Label;
     public string Content;
     public bool OfficePaper;
+    public PaperColor PaperColor; // Carpmosia-edit - Colored paper
 
-    public FaxFileMessage(string? label, string content, bool officePaper)
+    public FaxFileMessage(string? label, string content, bool officePaper, PaperColor paperColor) // Carpmosia-edit - Colored paper
     {
         Label = label;
         Content = content;
         OfficePaper = officePaper;
+        PaperColor = paperColor; // Carpmosia-edit - Colored paper
     }
 }
+
+// Carpmosia-start - Colored paper
+public enum PaperColor : byte
+{
+    White,
+    Red,
+    Orange,
+    Yellow,
+    Green,
+    Teal,
+    Blue,
+    Indigo,
+    Purple,
+    Pink,
+}
+// Carpmosia-end - Colored paper
 
 public static class FaxFileMessageValidation
 {

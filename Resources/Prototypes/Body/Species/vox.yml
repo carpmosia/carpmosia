@@ -176,39 +176,37 @@
       sprite: Effects/creampie.rsi
       state: creampie_vox
   - type: Vocal
-    sounds:
-      Male: UnisexVox
-      Female: UnisexVox
-      Unsexed: UnisexVox
+    emoteSounds: UnisexVox
   - type: Butcherable
-    butcheringType: Spike
     spawned:
     - id: FoodMeatChicken
       amount: 5
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Blunt
-        damage: 400
-      behaviors:
-      - !type:GibBehavior { }
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Heat
-        damage: 1500
-      behaviors:
-      - !type:SpawnEntitiesBehavior
-        spawnInContainer: true
-        spawn:
-          FoodMeatChickenFriedVox:
-            min: 3
-            max: 5
-      - !type:BurnBodyBehavior
-        popupMessage: bodyburn-vox-text-others
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MeatLaserImpact
+    # Carpmosia-start - Remove Gibbing/Ashing
+    # - trigger:
+    #     !type:DamageTypeTrigger
+    #     damageType: Blunt
+    #     damage: 400
+    #   behaviors:
+    #   - !type:GibBehavior { }
+    # - trigger:
+    #     !type:DamageTypeTrigger
+    #     damageType: Heat
+    #     damage: 1500
+    #   behaviors:
+    #   - !type:SpawnEntitiesBehavior
+    #     spawnInContainer: true
+    #     spawn:
+    #       FoodMeatChickenFriedVox:
+    #         min: 3
+    #         max: 5
+    #   - !type:BurnBodyBehavior
+    #     popupMessage: bodyburn-vox-text-others
+    #   - !type:PlaySoundBehavior
+    #     sound:
+    #       collection: MeatLaserImpact
+    # Carpmosia-end - Remove Gibbing/Ashing
     - trigger:
         !type:DamageTypeTrigger
         damageType: Radiation
@@ -259,7 +257,7 @@
   - type: Wagging
 
 - type: entity
-  parent: OrganBase
+  parent: OrganBaseOrganic
   id: OrganVox
   abstract: true
   suffix: Vox
@@ -301,6 +299,10 @@
 - type: entity
   parent: [ OrganBaseTorso, OrganVoxExternal ]
   id: OrganVoxTorso
+  components:
+  - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Tail
 
 - type: entity
   parent: [ OrganBaseHead, OrganVoxExternal ]

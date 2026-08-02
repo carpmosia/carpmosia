@@ -11,6 +11,7 @@
     - state: fill-1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
+    - state: icon_overlay
   - type: MeleeWeapon
     soundNoDamage:
       path: "/Audio/Effects/Fluids/splat.ogg"
@@ -27,7 +28,7 @@
       maxVol: 90
   - type: SolutionContainerVisuals
     maxFillLevels: 4
-    inHandsMaxFillLevels: 2
+    inHandsMaxFillLevels: 3
   - type: Edible
     edible: Drink
     destroyOnEmpty: false
@@ -59,7 +60,7 @@
   suffix: bicaridine
   components:
   - type: Label
-    currentLabel: reagent-name-bicaridine
+    localizedLabel: reagent-name-bicaridine
   - type: Solution
     solution:
       reagents:
@@ -73,7 +74,7 @@
   suffix: dexalin
   components:
   - type: Label
-    currentLabel: reagent-name-dexalin
+    localizedLabel: reagent-name-dexalin
   - type: Solution
     solution:
       reagents:
@@ -87,7 +88,7 @@
   suffix: dylovene
   components:
   - type: Label
-    currentLabel: reagent-name-dylovene
+    localizedLabel: reagent-name-dylovene
   - type: Solution
     solution:
       reagents:
@@ -101,7 +102,7 @@
   suffix: epinephrine
   components:
   - type: Label
-    currentLabel: reagent-name-epinephrine
+    localizedLabel: reagent-name-epinephrine
   - type: Solution
     solution:
       reagents:
@@ -115,7 +116,7 @@
   suffix: hyronalin
   components:
   - type: Label
-    currentLabel: reagent-name-hyronalin
+    localizedLabel: reagent-name-hyronalin
   - type: Solution
     solution:
       reagents:
@@ -129,7 +130,7 @@
   suffix: inaprovaline
   components:
   - type: Label
-    currentLabel: reagent-name-inaprovaline
+    localizedLabel: reagent-name-inaprovaline
   - type: Solution
     solution:
       reagents:
@@ -143,7 +144,7 @@
   suffix: kelotane
   components:
   - type: Label
-    currentLabel: reagent-name-kelotane
+    localizedLabel: reagent-name-kelotane
   - type: Solution
     solution:
       reagents:
@@ -157,7 +158,7 @@
   suffix: saline
   components:
   - type: Label
-    currentLabel: reagent-name-saline
+    localizedLabel: reagent-name-saline
   - type: Solution
     solution:
       reagents:

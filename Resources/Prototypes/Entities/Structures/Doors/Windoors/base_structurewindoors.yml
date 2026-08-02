@@ -29,7 +29,7 @@
         layer:
         - GlassAirlockLayer
   - type: Sprite
-    sprite: Structures/Doors/Windoors/windoor.rsi
+    sprite: _Carpmosia/Structures/Doors/Windoors/windoor.rsi # Carpmosia-edit - Windoor resprite
     layers:
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
@@ -39,6 +39,7 @@
       visible: false
     - state: welded
       map: ["enum.WeldableLayers.BaseWelded"]
+      sprite: Structures/Doors/Windoors/windoor.rsi # Carpmosia-edit - Windoor resprite
     - state: bolted_unlit
       shader: unshaded
       map: ["enum.DoorVisualLayers.BaseBolted"]
@@ -96,12 +97,6 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 400
-      behaviors: #excess damage (nuke?). avoid computational cost of spawning entities.
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-    - trigger:
-        !type:DamageTrigger
         damage: 200
       behaviors:
       - !type:SpawnEntitiesBehavior
@@ -132,6 +127,8 @@
       path: /Audio/Machines/windoor_open.ogg
     denySound:
       path: /Audio/Machines/airlock_deny.ogg
+    checkFixtureCollision: true
+    allowMachineLayer: true
   - type: Airlock
     keepOpenIfClicked: true
     openPanelVisible: true
@@ -187,7 +184,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/windoor.rsi
+    sprite: _Carpmosia/Structures/Doors/Windoors/windoor.rsi # Carpmosia-edit - Windoor resprite
     layers:
     - state: secure_underlay
     - state: closed
@@ -198,6 +195,7 @@
       visible: false
     - state: welded
       map: [ "enum.WeldableLayers.BaseWelded" ]
+      sprite: Structures/Doors/Windoors/windoor.rsi # Carpmosia-edit - Windoor resprite
     - state: bolted_unlit
       shader: unshaded
       map: [ "enum.DoorVisualLayers.BaseBolted" ]
@@ -225,12 +223,6 @@
     damageModifierSet: RGlass
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 600
-      behaviors: #excess damage (nuke?). avoid computational cost of spawning entities.
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 400
@@ -265,7 +257,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/plasma.rsi
+    sprite: _Carpmosia/Structures/Doors/Windoors/plasma.rsi # Carpmosia-edit - Windoor resprite
     layers:
     - state: closed
       map: [ "enum.DoorVisualLayers.Base" ]
@@ -275,6 +267,7 @@
       visible: false
     - state: welded
       map: [ "enum.WeldableLayers.BaseWelded" ]
+      sprite: Structures/Doors/Windoors/plasma.rsi # Carpmosia-edit - Windoor resprite
     - state: bolted_unlit
       shader: unshaded
       map: [ "enum.DoorVisualLayers.BaseBolted" ]
@@ -300,12 +293,6 @@
       visible: false
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 480
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 240
@@ -334,7 +321,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/plasma.rsi
+    sprite: _Carpmosia/Structures/Doors/Windoors/plasma.rsi # Carpmosia-edit - Windoor resprite
     layers:
     - state: secure_underlay
     - state: closed
@@ -345,6 +332,7 @@
       visible: false
     - state: welded
       map: [ "enum.WeldableLayers.BaseWelded" ]
+      sprite: Structures/Doors/Windoors/plasma.rsi # Carpmosia-edit - Windoor resprite
     - state: bolted_unlit
       shader: unshaded
       map: [ "enum.DoorVisualLayers.BaseBolted" ]
@@ -370,12 +358,6 @@
       visible: false
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 800
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 530
@@ -412,7 +394,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/uranium.rsi
+    sprite: _Carpmosia/Structures/Doors/Windoors/uranium.rsi # Carpmosia-edit - Windoor resprite
     layers:
     - state: closed
       map: [ "enum.DoorVisualLayers.Base" ]
@@ -422,6 +404,7 @@
       visible: false
     - state: welded
       map: [ "enum.WeldableLayers.BaseWelded" ]
+      sprite: Structures/Doors/Windoors/uranium.rsi # Carpmosia-edit - Windoor resprite
     - state: bolted_unlit
       shader: unshaded
       map: [ "enum.DoorVisualLayers.BaseBolted" ]
@@ -447,12 +430,6 @@
       visible: false
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 400
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 240
@@ -481,7 +458,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Structures/Doors/Windoors/uranium.rsi
+    sprite: _Carpmosia/Structures/Doors/Windoors/uranium.rsi # Carpmosia-edit - Windoor resprite
     layers:
     - state: secure_underlay
     - state: closed
@@ -492,6 +469,7 @@
       visible: false
     - state: welded
       map: [ "enum.WeldableLayers.BaseWelded" ]
+      sprite: Structures/Doors/Windoors/uranium.rsi # Carpmosia-edit - Windoor resprite
     - state: bolted_unlit
       shader: unshaded
       map: [ "enum.DoorVisualLayers.BaseBolted" ]
@@ -517,12 +495,6 @@
       visible: false
   - type: Destructible
     thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 1200
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 400

@@ -1,0 +1,39 @@
+- type: entity
+  parent: [ BaseToolSurgery, BaseScienceContraband ]
+  id: AutoSurgeon
+  name: experimental auto-surgeon
+  description: A handheld device capable of automatic surgical procedures. Due to lobbying by humanoid and borg surgeons, is currently only capable of brain extraction. Requires an operating table and a humanoid corpse to use.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Specific/Medical/Surgery/auto_surgeon.rsi
+    layers:
+    - state: icon
+  - type: Item
+    size: Normal
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
+  - type: Clothing
+    sprite: _Carpmosia/Objects/Specific/Medical/Surgery/auto_surgeon.rsi
+    clothingVisuals:
+      belt:
+      - state: equipped-BELT
+    quickEquip: false
+    slots:
+      - Belt
+  - type: StaticPrice
+    price: 20
+  - type: Tag
+    tags:
+    - SurgeryTool
+  - type: OrganRemovalTool
+    category: Brain
+  - type: MeleeWeapon
+    wideAnimationRotation: 90
+    damage:
+      types:
+        Blunt: 10
+    soundHit:
+      collection: MetalThud

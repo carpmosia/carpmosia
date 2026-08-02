@@ -8,7 +8,6 @@ using Content.Server.Objectives.Components;
 using Content.Server.Objectives.Systems;
 using Content.Server.Objectives;
 using Content.Server.Popups;
-using Content.Server.Preferences.Managers;
 using Content.Server.Roles;
 using Content.Server.Stunnable;
 using Content.Shared.BloodBound.Components;
@@ -19,7 +18,6 @@ using Content.Shared.Mindshield.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Popups;
-using Content.Shared.Preferences;
 using Content.Shared.Roles.Components;
 using Content.Shared.Zombies;
 using Robust.Server.Player;
@@ -33,7 +31,6 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
     [Dependency] private IAdminLogManager _adminLogManager = default!;
     [Dependency] private IEntityManager _entityManager = default!;
     [Dependency] private IPlayerManager _playerManager = default!;
-    [Dependency] private IServerPreferencesManager _preferencesManager = default!;
     [Dependency] private ActionsSystem _actionsSystem = default!;
     [Dependency] private AntagSelectionSystem _antagSystem = default!;
     [Dependency] private MindSystem _mindSystem = default!;
@@ -45,15 +42,7 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
     [Dependency] private StunSystem _stunSystem = default!;
     [Dependency] private TargetObjectiveSystem _targetObjectiveSystem = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<BloodBoundRuleComponent, ObjectivesTextPrependEvent>(OnObjectivesTextPrepend);
-        SubscribeLocalEvent<InitialBloodBoundComponent, BloodBoundConvertActionEvent>(OnBloodBoundConvert);
-        SubscribeLocalEvent<InitialBloodBoundComponent, BloodBoundCheckConvertActionEvent>(OnBloodBoundCheckConvert);
-    }
-
+    [SubscribeLocalEvent]
     private void OnObjectivesTextPrepend(Entity<BloodBoundRuleComponent> entity, ref ObjectivesTextPrependEvent args)
     {
         var antags = _antagSystem.GetAntagIdentifiers(entity.Owner).ToList();
@@ -89,6 +78,7 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
         }
     }
 
+    [SubscribeLocalEvent]
     private void OnBloodBoundConvert(Entity<InitialBloodBoundComponent> entity,
         ref BloodBoundConvertActionEvent args)
     {
@@ -115,7 +105,14 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
             return;
 
         // Actual conversion logic
-        var convertedComp = CopyComp(entity, args.Target, originalComponent);
+
+        if (!ProtoMan.Resolve(entity.Comp.ConvertPrototype, out var def))
+            return;
+
+        EntityManager.AddComponents(args.Target, def.Components);
+
+        if (!TryComp<BloodBoundComponent>(args.Target, out var convertedComp))
+            return;
 
         _npcFactionSystem.AddFaction(args.Target, entity.Comp.BloodBoundFaction);
 
@@ -132,11 +129,9 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
 
         if (!_roleSystem.MindHasRole(targetMindId, out Entity<MindRoleComponent, BloodBoundRoleComponent>? targetRole))
         {
-            _roleSystem.MindAddRole(targetMindId, entity.Comp.BloodBoundMindRole, targetMind);
+            _roleSystem.MindAddRoles(targetMindId, def.MindRoles, targetMind);
             _roleSystem.MindHasRole(targetMindId, out targetRole);
         }
-
-        DebugTools.AssertNotNull(targetRole, "Blood bound role was null after assigning it.");
 
         convertedComp.Bound = entity;
         targetRole!.Value.Comp2.Bound = entity;
@@ -166,11 +161,11 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
             _targetObjectiveSystem.SetTarget(objective, args.Target);
         }
 
-        // Visuals
-        _antagSystem.SendBriefing(args.Target,
-            Loc.GetString(entity.Comp.BriefingText),
-            entity.Comp.BriefingColor,
-            entity.Comp.BriefingSound);
+        if (def.Briefing?.Text != null)
+            _antagSystem.SendBriefing(args.Target,
+                Loc.GetString(def.Briefing.Value.Text),
+                def.Briefing.Value.Color,
+                def.Briefing.Value.Sound);
 
         _popupSystem.PopupEntity(
             Loc.GetString(
@@ -192,6 +187,7 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
         Dirty(args.Target, convertedComp);
     }
 
+    [SubscribeLocalEvent]
     private void OnBloodBoundCheckConvert(Entity<InitialBloodBoundComponent> entity,
         ref BloodBoundCheckConvertActionEvent args)
     {
@@ -244,6 +240,15 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
             return false;
         }
 
+        // Get convert proto, error if we cant find it
+        if (!ProtoMan.Resolve(entity.Comp.ConvertPrototype, out var def))
+        {
+            DebugTools.Assert("Blood bound tried to convert but the convert proto failed to resolve.");
+            errorMessage = "uhoh";
+            return false;
+        }
+
+
         // Stop the blood bound from converting a target.
         foreach (var objective in converterMind.Objectives)
         {
@@ -269,20 +274,6 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
             return false;
         }
 
-        // Check antag preference
-        if (entity.Comp.RequiredAntagPreference != null &&
-            _preferencesManager.TryGetCachedPreferences(targetMind.UserId.Value, out var preferences))
-        {
-
-            var profile = (HumanoidCharacterProfile)preferences.SelectedCharacter;
-
-            if (profile.AntagPreferences.Contains(entity.Comp.RequiredAntagPreference!.Value) != true)
-            {
-                errorMessage = "blood-bound-convert-failed-preference";
-                return false;
-            }
-        }
-
         if (!_mobStateSystem.IsAlive(target))
         {
             errorMessage = "blood-bound-convert-failed-dead";
@@ -295,6 +286,13 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
             return false;
         }
 
-        return true;
+        // Check antag preference
+        if(_playerManager.TryGetSessionById(targetMind.UserId, out var session)
+         && _antagSystem.TryGetValidAntagPreferences(session, def.PrefRoles))
+            return true;
+
+        // If we somehow get here, its because we failed to find the preferences
+        errorMessage = "blood-bound-convert-failed-preference";
+        return false;
     }
 }

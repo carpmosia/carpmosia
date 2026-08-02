@@ -28,7 +28,7 @@
     back:
     - ClothingMultipleHeadphones
 
-# Carpmosia-rework - Borg hats
+# Carpmosia-start - Borg hats
 # Toys
 # - type: loadout
 #   id: PlushieLizard
@@ -41,6 +41,7 @@
 #   storage:
 #     back:
 #     - PlushieSpaceLizard
+# Carpmosia-end - Borg hats
 
 - type: loadout
   id: ThreeCandles
@@ -133,7 +134,7 @@
   groupBy: "folders"
 
 # Pins
-#  Carpmosia-rework - Loadout Rework 2
+#  Carpmosia-start - Loadout Rework 2
 # - type: loadout
 #   id: ClothingNeckLGBTPin
 #   storage:
@@ -259,79 +260,14 @@
 #     back:
 #     - ClothingNeckGenderfluidPin
 #   groupBy: "pin"
-
-# Canes
-# The white cane is intentionally not included here. Thats for the blind.
-- type: loadout
-  id: OffsetCane
-  storage:
-    back:
-    - OffsetCane
-  groupBy: "canes"
-
-- type: loadout
-  id: OffsetCaneWood
-  storage:
-    back:
-    - OffsetCaneWood
-  groupBy: "canes"
-
-- type: loadout
-  id: OffsetCaneClown
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
-      role: JobClown
-      time: 3600 # 1hr
-  storage:
-    back:
-    - OffsetCaneClown
-  groupBy: "canes"
-
-- type: loadout
-  id: OffsetCaneMime
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
-      role: JobMime
-      time: 3600 # 1hr
-  storage:
-    back:
-    - OffsetCaneMime
-  groupBy: "canes"
-
-- type: loadout
-  id: OffsetCaneNT
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:DepartmentTimeRequirement
-      department: Command
-      time: 18000 # 5hr
-  storage:
-    back:
-    - OffsetCaneNT
-  groupBy: "canes"
-
-- type: loadout
-  id: Cane
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
-      role: JobLibrarian
-      time: 3600 # 1hr same as Jamjar.
-  storage:
-    back:
-    - Cane
-  groupBy: "canes"
+#  Carpmosia-end - Loadout Rework 2
 
 # Towels
-- type: loadout
-  id: TowelColorWhite
-  storage:
-    back:
-    - TowelColorWhite
-  groupBy: "towels"
+#  Carpmosia-start - Loadout Rework
+# - type: loadout
+#   id: TowelColorWhite
+#   storage:
+#     back:
+#     - TowelColorWhite
+#   groupBy: "towels"
+#  Carpmosia-end - Loadout Rework

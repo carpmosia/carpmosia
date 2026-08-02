@@ -1955,7 +1955,7 @@ entities:
     - type: Transform
       pos: 0.5,5.5
       parent: 1
-- proto: ComputerShuttle
+- proto: ComputerShuttleEvent # Carpmosia-edit - Fix Mothership FTL
   entities:
   - uid: 291
     components:
@@ -2474,7 +2474,7 @@ entities:
     - type: Transform
       pos: 6.5,3.5
       parent: 1
-- proto: Recycler
+- proto: BaseRecycler # Carpmosia-edit - Fix Xenoborgs Getting Tickets
   entities:
   - uid: 111
     components:

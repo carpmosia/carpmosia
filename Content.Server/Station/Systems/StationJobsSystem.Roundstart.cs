@@ -1,12 +1,10 @@
 using System.Linq;
 using Content.Server.Administration.Managers;
 using Content.Server.Antag;
-using Content.Server.Players.PlayTimeTracking;
 using Content.Server.Station.Components;
 using Content.Server.Station.Events;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
-using Robust.Server.Player;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -17,7 +15,6 @@ namespace Content.Server.Station.Systems;
 // Contains code for round-start spawning.
 public sealed partial class StationJobsSystem
 {
-    [Dependency] private IPrototypeManager _prototypeManager = default!;
     [Dependency] private IBanManager _banManager = default!;
     [Dependency] private AntagSelectionSystem _antag = default!;
 
@@ -30,7 +27,7 @@ public sealed partial class StationJobsSystem
     private void InitializeRoundStart()
     {
         _jobsByWeight = new Dictionary<int, HashSet<string>>();
-        foreach (var job in _prototypeManager.EnumeratePrototypes<JobPrototype>())
+        foreach (var job in ProtoMan.EnumeratePrototypes<JobPrototype>())
         {
             if (!_jobsByWeight.ContainsKey(job.Weight))
                 _jobsByWeight.Add(job.Weight, new HashSet<string>());
@@ -301,11 +298,20 @@ public sealed partial class StationJobsSystem
 
             _random.Shuffle(givenStations);
 
+            var roleBans = _banManager.GetJobBans(player); // Carpmosia-edit - Fix passenger rolebans
+
             foreach (var station in givenStations)
             {
                 // Pick a random overflow job from that station
                 var overflows = GetOverflowJobs(station).ToList();
                 _random.Shuffle(overflows);
+
+                // Carpmosia-start - Fix passenger rolebans
+                if (roleBans != null)
+                {
+                    overflows.RemoveAll(roleBans.Contains);
+                }
+                // Carpmosia-end - Fix passenger rolebans
 
                 // Stations with no overflow slots should simply get skipped over.
                 if (overflows.Count == 0)
@@ -369,7 +375,7 @@ public sealed partial class StationJobsSystem
                 if (!(priority == selectedPriority || selectedPriority is null))
                     continue;
 
-                if (!_prototypeManager.Resolve(jobId, out var job))
+                if (!ProtoMan.Resolve(jobId, out var job))
                     continue;
 
                 if (whitelist != null && !whitelist.Contains(jobId))

@@ -5,6 +5,13 @@
   description: What secrets lie at the bottom of its endless stack?
   suffix: Empty
   components:
+  # Carpmosia-start - Craftable paperbins
+  - type: Construction
+    graph: PaperBin
+    node: done
+    containers:
+    - entity_storage
+  # Carpmosia-end - Craftable paperbins
   - type: Sprite
     sprite: Objects/Misc/bureaucracy.rsi
     state: paper_bin0

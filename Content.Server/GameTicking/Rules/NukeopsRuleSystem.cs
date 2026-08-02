@@ -10,9 +10,9 @@ using Content.Server.RoundEnd;
 using Content.Server.Shuttles.Events;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Components;
-using Content.Server.StationRecords.Systems;
 using Content.Server.Store.Systems;
 using Content.Shared.Access.Systems;
+using Content.Shared.GameTicking; // Carpmosia-edit - Nukeops tweaks
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
@@ -42,6 +42,7 @@ using Robust.Shared.Utility;
 using System.Data;
 using System.Linq;
 using System.Text;
+using Content.Shared.StationRecords.Systems;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -63,6 +64,7 @@ public sealed partial class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleCompon
     [Dependency] private StationRecordsSystem _records = default!;
     [Dependency] private StoreSystem _store = default!;
     [Dependency] private TagSystem _tag = default!;
+    [Dependency] private SharedGameTicker _gameTicker = default!; // Carpmosia-edit - Nukeops tweaks
 
     private static readonly ProtoId<CurrencyPrototype> TelecrystalCurrencyPrototype = "Telecrystal";
     private static readonly ProtoId<TagPrototype> NukeOpsUplinkTagPrototype = "NukeOpsUplink";
@@ -295,12 +297,14 @@ public sealed partial class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleCompon
                 continue;
 
             // UH OH
-            if (nukeTransform.MapUid != null && centcomms.Contains(nukeTransform.MapUid.Value))
-            {
-                ent.Comp.WinConditions.Add(WinCondition.NukeActiveAtCentCom);
-                SetWinType((ent, ent), WinType.OpsMajor);
-                return;
-            }
+            // Carpmosia-start - Replaced CC with Terminals
+            // if (nukeTransform.MapUid != null && centcomms.Contains(nukeTransform.MapUid.Value))
+            // {
+            //     ent.Comp.WinConditions.Add(WinCondition.NukeActiveAtCentCom);
+            //     SetWinType((ent, ent), WinType.OpsMajor);
+            //     return;
+            // }
+            // Carpmosia-end - Replaced CC with Terminals
 
             if (nukeTransform.GridUid == null || ent.Comp.TargetStation == null)
                 continue;
@@ -321,14 +325,14 @@ public sealed partial class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleCompon
 
         if (_antag.AllAntagsAlive(ent.Owner))
         {
-            SetWinType(ent, WinType.OpsMinor);
             ent.Comp.WinConditions.Add(WinCondition.AllNukiesAlive);
-            return;
         }
-
-        ent.Comp.WinConditions.Add(_antag.AnyAliveAntags(ent.Owner)
-            ? WinCondition.SomeNukiesAlive
-            : WinCondition.AllNukiesDead);
+        else
+        {
+            ent.Comp.WinConditions.Add(_antag.AnyAliveAntags(ent.Owner)
+                ? WinCondition.SomeNukiesAlive
+                : WinCondition.AllNukiesDead);
+        }
 
         var diskAtCentCom = false;
         var diskQuery = AllEntityQuery<NukeDiskComponent, TransformComponent>();
@@ -343,7 +347,6 @@ public sealed partial class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleCompon
         }
 
         // If the disk is currently at Central Command, the crew wins - just slightly.
-        // This also implies that some nuclear operatives have died.
         SetWinType(ent,
             diskAtCentCom
             ? WinType.CrewMinor
@@ -409,6 +412,19 @@ public sealed partial class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleCompon
                     continue;
                 }
             }
+            // Carpmosia-start - Nukeops tweaks
+            else
+            {
+                var timeRemain = nukeops.NonWarNukieArriveDelay.Subtract(_gameTicker.RoundDuration());
+                if (timeRemain > TimeSpan.Zero)
+                {
+                    ev.Cancelled = true;
+                    ev.Reason = Loc.GetString("war-ops-infiltrator-unavailable",
+                        ("time", timeRemain.ToString("mm\\:ss")));
+                    continue;
+                }
+            }
+            // Carpmosia-end - Nukeops tweaks
 
             nukeops.LeftOutpost = true;
         }

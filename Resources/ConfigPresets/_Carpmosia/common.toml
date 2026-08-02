@@ -1,5 +1,5 @@
 # Robust.Cvars
-net.tickrate = 60
+net.tickrate = 30
 
 # CCVars.Atmos
 atmos.max_explosion_range = 100
@@ -11,7 +11,6 @@ audio.lobby_music_collection = "LobbyMusic"
 chat.motd = "Join Carpmosia Discord: https://discord.gg/carpmosia"
 
 # CCVars.Game
-game.map_pool = "CarpmosiaMapPool"
 game.cryo_sleep_rejoining = true
 game.soft_max_players = 99
 game.secret_weight_prototype = "CarpmosiaSecret"
@@ -26,6 +25,7 @@ infolinks.appeal = "https://discord.gg/ZACStvA8uV"
 ic.name_length = 40
 ic.loadout_name_length = 40
 ic.flavor_text = true
+ic.flavor_text_length = 120
 ic.id_job_length = 40
 ic.punctuation = true
 
@@ -42,4 +42,8 @@ server.rules_file = "CarpmosiaRules"
 shuttle.arrivals_returns = true
 
 # CCVars.Vote
-vote.map_enabled = true
+vote.preset_enabled = false
+vote.map_enabled = false
+vote.timermap = 180
+vote.restart_required_ratio = 0.65
+vote.restart_not_allowed_when_admin_online = false
