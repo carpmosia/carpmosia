@@ -18,6 +18,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
+using Content.Client.Administration.UI.CustomControls; // Carpmosia-edit - Wide latejoin
 
 namespace Content.Client.LateJoin
 {
@@ -44,9 +45,11 @@ namespace Content.Client.LateJoin
 
         private readonly Control _base;
 
+        private static int _columnWidth = 320; // Carpmosia-edit - Wide latejoin
+
         public LateJoinGui()
         {
-            MinSize = SetSize = new Vector2(360, 560);
+            MinSize = MaxSize = SetSize = new Vector2(30 + _columnWidth + 10, 560); // Carpmosia-edit - Wide latejoin
             IoCManager.InjectDependencies(this);
             _sprites = _entitySystem.GetEntitySystem<SpriteSystem>();
             _crewManifest = _entitySystem.GetEntitySystem<CrewManifestSystem>();
@@ -84,42 +87,52 @@ namespace Content.Client.LateJoin
             _jobButtons.Clear();
             _jobCategories.Clear();
 
-            var box1 = new BoxContainer
+            // Carpmosia-start - Wide latejoin
+            var headersBox = new BoxContainer
             {
                 Orientation = LayoutOrientation.Horizontal,
                 HorizontalExpand = true
             };
-            _base.AddChild(box1);
-            var scroller = new ScrollContainer()
-            {
-                VerticalExpand = true
-            };
-            _base.AddChild(scroller);
-            var box2 = new BoxContainer
+            _base.AddChild(headersBox);
+
+            var joblistsBox = new BoxContainer
             {
                 Orientation = LayoutOrientation.Horizontal,
                 VerticalExpand = true,
-                HorizontalExpand = true
             };
-            scroller.AddChild(box2);
+            _base.AddChild(new ScrollContainer()
+            {
+                VerticalExpand = true,
+                Children = { joblistsBox },
+            });
+
+            if (_gameTicker.StationNames.Count > 0) // Account for padding, separators, and scrollbar
+                MinSize = MaxSize = SetSize = new Vector2(30 + (_columnWidth + 10) * _gameTicker.StationNames.Count + 2 * (_gameTicker.StationNames.Count - 1), MinSize.Y);
+            // Carpmosia-end - Wide latejoin
 
             if (!_gameTicker.DisallowedLateJoin && _gameTicker.StationNames.Count == 0)
                 _sawmill.Warning("No stations exist, nothing to display in late-join GUI");
 
             foreach (var (id, name) in _gameTicker.StationNames)
             {
-                var boxbox = new BoxContainer
+                var headerBox = new BoxContainer
                 {
                     Orientation = LayoutOrientation.Vertical,
+                    Margin = new Thickness(5f, 0, 5f, 0f),
+                    SetWidth = _columnWidth,
                     VerticalExpand = true,
                 };
 
-                box1.AddChild(boxbox);
+                if (headersBox.Children.Any())
+                    headersBox.AddChild(new VSeparator());
+
+                headersBox.AddChild(headerBox);
 
                 var jobList = new BoxContainer
                 {
                     Orientation = LayoutOrientation.Vertical,
-                    Margin = new Thickness(0, 0, 5f, 0),
+                    Margin = new Thickness(5f, 0, 5f, 0f),
+                    SetWidth = _columnWidth
                 };
 
                 //var collapseButton = new ContainerButton()
@@ -138,7 +151,7 @@ namespace Content.Client.LateJoin
                 //    }
                 //};
 
-                boxbox.AddChild(new StripeBack()
+                headerBox.AddChild(new StripeBack()
                 {
                     Children =
                     {
@@ -166,7 +179,7 @@ namespace Content.Client.LateJoin
                     };
                     crewManifestButton.OnPressed += _ => _crewManifest.RequestCrewManifest(id);
 
-                    boxbox.AddChild(crewManifestButton);
+                    headerBox.AddChild(crewManifestButton);
                 }
 
                 // var jobListScroll = new ScrollContainer()
@@ -181,7 +194,9 @@ namespace Content.Client.LateJoin
 
                 // _jobLists.Add(jobListScroll);
 
-                box2.AddChild(jobList);
+                if (joblistsBox.Children.Any())
+                    joblistsBox.AddChild(new VSeparator());
+                joblistsBox.AddChild(jobList);
 
                 // collapseButton.OnToggled += _ =>
                 // {
