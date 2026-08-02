@@ -579,7 +579,7 @@ public sealed partial class MoverController : SharedMoverController
                 }
             }
 
-            /// Carpmosia-start - rotate shuttle along movement vector
+            // Carpmosia-start - rotate shuttle along movement vector
             if (!alignInput.Equals(0f) && !MathHelper.CloseTo(body.LinearVelocity.Length(), 0f, 0.01f))
             {
                 // Get velocity relative to the shuttle
@@ -587,8 +587,9 @@ public sealed partial class MoverController : SharedMoverController
                 var torqueMul = body.InvI * frameTime;
 
                 //find angle between current orientation and movement vector
-                var targetAngle = alignInput > 0f ?
-                    MathF.Acos(shuttleVelocity.Y / shuttleVelocity.Length()) : MathF.Acos(-shuttleVelocity.Y / shuttleVelocity.Length());
+                var targetAngle = alignInput > 0f
+                    ? MathF.Acos(shuttleVelocity.Y / shuttleVelocity.Length())
+                    : MathF.Acos(-shuttleVelocity.Y / shuttleVelocity.Length());
 
                 targetAngle *= MathF.Sign(shuttleVelocity.X);
 
@@ -636,7 +637,7 @@ public sealed partial class MoverController : SharedMoverController
             {
                 shuttle.AccParams.PrevError = 0f;
             }
-            /// Carpmosia-end - rotate shuttle along movement vector
+            // Carpmosia-end - rotate shuttle along movement vector
 
             if (linearInput.Length().Equals(0f))
             {

@@ -7,6 +7,7 @@
     - !type:DepartmentTimeRequirement
       department: Medical
       time: 2.5h
+  displayWeight: 50 # Carpmosia-edit - Reorder jobs
   startingGear: DoctorGear
   icon: "JobIconMedicalDoctor"
   supervisors: job-supervisors-cmo

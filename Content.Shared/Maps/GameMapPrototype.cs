@@ -34,10 +34,10 @@ public sealed partial class GameMapPrototype : IPrototype
 
     // Carpmosia-start - Better map votes
     [DataField]
-    public string? MapIcon = null;
+    public string? MapIcon;
 
     [DataField]
-    public EntProtoId? MapPreview = null;
+    public EntProtoId? MapPreview;
     // Carpmosia-end - Better map votes
 
     /// <summary>

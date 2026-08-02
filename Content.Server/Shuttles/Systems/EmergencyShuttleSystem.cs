@@ -534,37 +534,31 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
 
         // Carpmosia-start - Replaced CC with Terminals
         var poolProtoId = ConfigManager.GetCVar(CCVars.GameMapPoolTerminal);
-        if (!_protoMan.TryIndex<GameMapPoolPrototype>(poolProtoId, out var poolProto))
-        {
-            Log.Error($"Failed to set up terminal grid!");
+        if (!_protoMan.Resolve<GameMapPoolPrototype>(poolProtoId, out var poolProto))
             return;
-        }
 
         var mapProtoId = _random.Pick(poolProto.Maps);
-        if (!_protoMan.TryIndex<GameMapPrototype>(mapProtoId, out var mapProto))
-        {
-            Log.Error($"Failed to set up terminal grid!");
+        if (!_protoMan.Resolve<GameMapPrototype>(mapProtoId, out var mapProto))
             return;
-        }
 
         var mapTerminal = _mapSystem.CreateMap(out var mapIdTerminal);
         _metaData.SetEntityName(mapTerminal, Loc.GetString("map-name-terminal"));
         if (!_loader.TryLoadGrid(mapIdTerminal, mapProto.MapPath, out var gridTerminal))
         {
-            Log.Error($"Failed to set up terminal grid!");
+            Log.Error($"Failed to load terminal grid of {mapProtoId}");
             return;
         }
 
         if (!Exists(mapTerminal))
         {
-            Log.Error($"Failed to set up terminal map!");
+            Log.Error("Terminal map doesn't exist after loading grid?");
             QueueDel(gridTerminal);
             return;
         }
 
         if (!Exists(gridTerminal))
         {
-            Log.Error($"Failed to set up terminal grid!");
+            Log.Error("Terminal grid doesn't exist after being loaded?");
             QueueDel(mapTerminal);
             return;
         }
@@ -572,7 +566,7 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
         var xformTerminal = Transform(gridTerminal.Value);
         if (xformTerminal.ParentUid != mapTerminal || xformTerminal.MapUid != mapTerminal)
         {
-            Log.Error($"Terminal grid is not parented to its own map?");
+            Log.Error("Terminal grid is not parented to its own map?");
             QueueDel(mapTerminal);
             QueueDel(gridTerminal);
             return;

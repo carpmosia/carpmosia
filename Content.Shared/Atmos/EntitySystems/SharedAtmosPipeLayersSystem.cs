@@ -177,13 +177,15 @@ public abstract partial class SharedAtmosPipeLayersSystem : EntitySystem
     {
         var newLayer = ((int)ent.Comp.CurrentPipeLayer + 1) % ent.Comp.NumberOfPipeLayers;
         // Carpmosia-start - 5 pipe layers // Remapping to 1 2 4 5 3 for screwing convenience
-        if (ent.Comp.NumberOfPipeLayers == 5) {
-            if (ent.Comp.CurrentPipeLayer == AtmosPipeLayer.Secondary)
-                newLayer = 3;
-            if (ent.Comp.CurrentPipeLayer == AtmosPipeLayer.Quinary)
-                newLayer = 2;
-            if (ent.Comp.CurrentPipeLayer == AtmosPipeLayer.Tertiary)
-                newLayer = 0;
+        if (ent.Comp.NumberOfPipeLayers == 5)
+        {
+            newLayer = ent.Comp.CurrentPipeLayer switch
+            {
+                AtmosPipeLayer.Secondary => 3,
+                AtmosPipeLayer.Quinary => 2,
+                AtmosPipeLayer.Tertiary => 0,
+                _ => newLayer,
+            };
         }
         // Carpmosia-end - 5 pipe layers
         SetPipeLayer(ent, (AtmosPipeLayer)newLayer, user, used);

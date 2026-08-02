@@ -118,11 +118,11 @@ public sealed partial class AlignAtmosPipeLayers : SnapgridCenter
             // Carpmosia-start - 5 pipe layers
             if (mouseCoordsDiff.Length() > MouseDeadzoneRadius)
             {
-                layer = (direction == Direction.North || direction == Direction.East) ? AtmosPipeLayer.Quaternary : AtmosPipeLayer.Quinary;
+                layer = direction is Direction.North or Direction.East ? AtmosPipeLayer.Quaternary : AtmosPipeLayer.Quinary;
             }
             else
             {
-                layer = (direction == Direction.North || direction == Direction.East) ? AtmosPipeLayer.Secondary : AtmosPipeLayer.Tertiary;
+                layer = direction is Direction.North or Direction.East ? AtmosPipeLayer.Secondary : AtmosPipeLayer.Tertiary;
             }
             // Carpmosia-end - 5 pipe layers
         }

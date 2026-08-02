@@ -51,22 +51,13 @@ public sealed class RenderMapFile : RenderMap
     {
         get
         {
-            var prefix = "";
-            switch (Directory.GetParent(FileName)?.Name)
+            var prefix = Directory.GetParent(FileName)?.Name switch
             {
-                case "_Carpmosia":
-                    prefix = "carp_";
-                    break;
-                case "Terminals":
-                    prefix = "terminal_";
-                    break;
-                case "Legacy":
-                    prefix = "legacy_";
-                    break;
-                default:
-                    prefix = "";
-                    break;
-            }
+                "_Carpmosia" => "carp_",
+                "Legacy" => "legacy_",
+                "Terminals" => "terminal_",
+                _ => string.Empty,
+            };
             return prefix + Path.GetFileNameWithoutExtension(FileName);
         }
     }

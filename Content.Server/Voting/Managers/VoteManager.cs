@@ -535,8 +535,8 @@ namespace Content.Server.Voting.Managers
         {
             public object Data;
             public string Text;
-            public string? Icon = null; // Carpmosia-edit - Better map vote
-            public EntProtoId? Proto = null; // Carpmosia-edit - Better map vote
+            public readonly string? Icon = null; // Carpmosia-edit - Better map vote
+            public readonly EntProtoId? Proto = null; // Carpmosia-edit - Better map vote
             public int Votes;
 
             public VoteEntry(object data, object meta) // Carpmosia-edit - Better map vote
