@@ -1,6 +1,8 @@
 using Content.Server.Administration.Logs;
+using Content.Server.Power.SMES; // Carpmosia-edit - Engine Loose Rework
 using Content.Server.Singularity.Components;
 using Content.Server.Tesla.Components;
+using Content.Shared.Emp; // Carpmosia-edit - Engine Loose Rework
 using Content.Shared.Database;
 using Content.Shared.Singularity.Components;
 using Content.Shared.Mind.Components;
@@ -9,6 +11,7 @@ using Robust.Shared.Physics.Events;
 using Content.Server.Lightning.Components;
 using Robust.Server.Audio;
 using Content.Server.Singularity.Events;
+using Content.Server.Lightning; // Carpmosia-edit - Engine Loose Rework
 
 namespace Content.Server.Tesla.EntitySystems;
 
@@ -18,6 +21,11 @@ namespace Content.Server.Tesla.EntitySystems;
 public sealed partial class TeslaEnergyBallSystem : EntitySystem
 {
     [Dependency] private AudioSystem _audio = default!;
+    // Carpmosia-start - Engine Loose Rework
+    [Dependency] private SharedEmpSystem _emp = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private LightningSystem _lightning = default!;
+    // Carpmosia-end - Engine Loose Rework
 
     public override void Initialize()
     {
@@ -32,6 +40,12 @@ public sealed partial class TeslaEnergyBallSystem : EntitySystem
         if (TryComp<SinguloFoodComponent>(args.Entity, out var singuloFood))
         {
             AdjustEnergy(tesla, tesla.Comp, singuloFood.Energy);
+        // Carpmosia-start - Engine Loose Rework
+        }
+        else if (HasComp<SmesComponent>(args.Entity))
+        {
+            Rupture(tesla);
+        // Carpmosia-end - Engine Loose Rework
         } else
         {
             AdjustEnergy(tesla, tesla.Comp, tesla.Comp.ConsumeStuffEnergy);
@@ -53,4 +67,22 @@ public sealed partial class TeslaEnergyBallSystem : EntitySystem
             QueueDel(uid);
         }
     }
+
+    // Carpmosia-start - Engine Loose Rework
+    private void Rupture(Entity<TeslaEnergyBallComponent> ent)
+    {
+        var coords = Transform(ent).Coordinates;
+
+        for (var i = 0; i < ent.Comp.SpawnAmount; i++)
+        {
+            SpawnAtPosition(ent.Comp.EmpSpawnProto, coords);
+        }
+
+        _audio.PlayPvs(ent.Comp.SoundExplosion, coords);
+        _emp.EmpPulse(coords, ent.Comp.EmpRange, ent.Comp.EmpConsumption, ent.Comp.EmpDuration);
+        _lightning.ShootRandomLightnings(ent, ent.Comp.EmpRange, ent.Comp.SpawnAmount * 4, arcDepth: 3);
+
+        QueueDel(ent);
+    }
+    // Carpmosia-end - Engine Loose Rework
 }

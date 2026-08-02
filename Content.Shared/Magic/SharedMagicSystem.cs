@@ -408,8 +408,8 @@ public abstract partial class SharedMagicSystem : EntitySystem
     // Carpmosia-start - Wizard Smite Rework
     private void OnDamageSmiteSpell(DamageSmiteSpellEvent ev)
     {
-        FixedPoint2 dealtDamage = ev.Damage;
-        DamageSpecifier dspec = new DamageSpecifier();
+        var dealtDamage = ev.Damage;
+        var dspec = new DamageSpecifier();
 
         if (HasComp<MobStateComponent>(ev.Target))
         {

@@ -20,7 +20,7 @@ public sealed partial class MapMigrationSystem : EntitySystem
     [Dependency] private IResourceManager _resMan = default!;
 
     // Carpmosia-start - Migration system
-    private static readonly string[] _migrationFiles =
+    private static readonly string[] MigrationFiles =
     [
         "/migration.yml",
         "/_Carpmosia/migration.yml"
@@ -33,7 +33,7 @@ public sealed partial class MapMigrationSystem : EntitySystem
         SubscribeLocalEvent<BeforeEntityReadEvent>(OnBeforeReadEvent);
 
 #if DEBUG
-        foreach (var file in _migrationFiles) { // Carpmosia-edit - Migration system // Fuck formatting to avoid conflicts in the future
+        foreach (var file in MigrationFiles) { // Carpmosia-edit - Migration system // Fuck formatting to avoid conflicts in the future
         if (!TryReadFile(file, out var mappings)) // Carpmosia-edit - Migration system 
             return;
 
@@ -67,7 +67,7 @@ public sealed partial class MapMigrationSystem : EntitySystem
 
     private void OnBeforeReadEvent(BeforeEntityReadEvent ev)
     {
-        foreach (var file in _migrationFiles) { // Carpmosia-edit - Migration system // Fuck formatting to avoid conflicts in the future
+        foreach (var file in MigrationFiles) { // Carpmosia-edit - Migration system // Fuck formatting to avoid conflicts in the future
         if (!TryReadFile(file, out var mappings)) // Carpmosia-edit - Migration system
             return;
 

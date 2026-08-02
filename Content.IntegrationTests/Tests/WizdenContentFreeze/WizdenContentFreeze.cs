@@ -16,6 +16,7 @@ public sealed class WizdenContentFreeze : GameTest
     ///
     /// https://github.com/space-wizards/space-station-14/issues/8524
     /// </summary>
+    [Explicit] // Carpmosia-edit - unfreeze the microwave
     [Test]
     public async Task MicrowaveRecipesFreezeTest()
     {
@@ -26,11 +27,6 @@ public sealed class WizdenContentFreeze : GameTest
 
         var recipesCount = protoMan.Count<FoodRecipePrototype>();
         var recipesLimit = 218;
-
-        // Carpmosia-start - unfreeze the microwave
-        recipesCount = 0;
-        recipesLimit = 0;
-        // Carpmosia-end - unfreeze the microwave
 
         if (recipesCount > recipesLimit)
         {
