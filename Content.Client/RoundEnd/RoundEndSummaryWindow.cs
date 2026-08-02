@@ -7,6 +7,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Shared.Utility;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
+using Content.Client.Stylesheets;
 
 namespace Content.Client.RoundEnd;
 
@@ -51,6 +52,7 @@ public sealed partial class RoundEndSummaryWindow : DefaultWindow
 
         RoundId = roundId;
         var roundEndTabs = new TabContainer();
+        roundEndTabs.AddChild(MakeEorgTab()); // Carpmosia-edit - No Eorg Popup
         roundEndTabs.AddChild(MakeRoundEndSummaryTab(gm, roundEnd, roundTimeSpan, roundId));
         roundEndTabs.AddChild(MakePlayerManifestTab());
 
@@ -59,6 +61,61 @@ public sealed partial class RoundEndSummaryWindow : DefaultWindow
         OpenCenteredRight();
         MoveToFront();
     }
+
+    // Carpmosia-start - No Eorg Popup
+    private static BoxContainer MakeEorgTab()
+    {
+        var tab = new BoxContainer
+        {
+            Orientation = LayoutOrientation.Vertical,
+            Name = Loc.GetString("round-end-summary-window-eorg-tab-title"),
+            Margin = new Thickness(20)
+        };
+
+        tab.AddChild(new Label
+        {
+            Text = Loc.GetString("no-eorg-popup-label"),
+            StyleClasses = { "LabelBig" },
+            HorizontalAlignment = HAlignment.Center,
+            Margin = new Thickness(0, 0, 0, 5)
+        });
+
+        var box = new BoxContainer()
+        {
+            Orientation = LayoutOrientation.Vertical,
+            Margin = new Thickness(10),
+        };
+
+        box.AddChild(new RichTextLabel()
+        {
+            Text = Loc.GetString("no-eorg-popup-message"),
+            HorizontalAlignment = HAlignment.Center,
+        });
+        box.AddChild(new Control()
+        {
+            MinSize = new Vector2(0, 5)
+        });
+        box.AddChild(new RichTextLabel()
+        {
+            Text = Loc.GetString("no-eorg-popup-rule"),
+            HorizontalAlignment = HAlignment.Center,
+        });
+        box.AddChild(new RichTextLabel()
+        {
+            Text = Loc.GetString("no-eorg-popup-rule-text"),
+            HorizontalAlignment = HAlignment.Center,
+            Margin = new Thickness(0, 5, 0, 0)
+        });
+
+        tab.AddChild(new PanelContainer()
+        {
+            StyleClasses = { "BackgroundDark" },
+            Children = { box }
+        });
+
+        return tab;
+    }
+    // Carpmosia-end - No Eorg Popup
 
     private static BoxContainer MakeRoundEndSummaryTab(string gamemode, string roundEnd, TimeSpan roundDuration, int roundId)
     {

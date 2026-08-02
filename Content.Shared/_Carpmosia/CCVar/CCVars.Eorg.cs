@@ -11,12 +11,6 @@ public sealed partial class CCVars
         CVarDef.Create("game.eorg_popup_enabled", true, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
-    /// Skip the no EORG popup.
-    /// </summary>
-    public static readonly CVarDef<bool> SkipEorgPopup =
-        CVarDef.Create("game.skip_eorg_popup", false, CVar.CLIENTONLY | CVar.ARCHIVE);
-
-    /// <summary>
     /// How long to display the EORG popup for.
     /// </summary>
     public static readonly CVarDef<float> EorgPopupTime =
