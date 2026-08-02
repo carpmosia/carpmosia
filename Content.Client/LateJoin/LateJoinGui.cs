@@ -115,12 +115,11 @@ namespace Content.Client.LateJoin
 
             foreach (var (id, name) in _gameTicker.StationNames)
             {
-
                 var jobList = new BoxContainer
                 {
                     Orientation = LayoutOrientation.Vertical,
-                    Margin = new Thickness(5f, 0, 5f, 0f),
-                    SetWidth = _columnWidth
+                    Margin = new Thickness(5f, 0, 5f, 0f), // Carpmosia-edit - Wide latejoin
+                    SetWidth = _columnWidth // Carpmosia-edit - Wide latejoin
                 };
 
                 // Carpmosia-start - Wide latejoin
@@ -154,7 +153,7 @@ namespace Content.Client.LateJoin
                 headersBox.AddChild(headerBox);
                 // Carpmosia-end - Wide latejoin
 
-                headerBox.AddChild(new StripeBack()
+                headerBox.AddChild(new StripeBack() // Carpmosia-edit - Wide latejoin
                 {
                     Children =
                     {
@@ -168,7 +167,7 @@ namespace Content.Client.LateJoin
                                     Text = name,
                                     Align = Label.AlignMode.Center,
                                 },
-                                // collapseButton
+                                // collapseButton // Carpmosia-edit - Wide latejoin
                             }
                         }
                     }
@@ -185,6 +184,7 @@ namespace Content.Client.LateJoin
                     headerBox.AddChild(crewManifestButton);
                 }
 
+                // Carpmosia-start - Wide latejoin
                 // var jobListScroll = new ScrollContainer()
                 // {
                 //     VerticalExpand = true,
@@ -209,6 +209,7 @@ namespace Content.Client.LateJoin
                 //     }
                 //     jobListScroll.Visible = true;
                 // };
+                // Carpmosia-end - Wide latejoin
 
                 var firstCategory = true;
                 var departments = _prototypeManager.EnumeratePrototypes<DepartmentPrototype>().ToArray();
