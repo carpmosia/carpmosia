@@ -91,7 +91,7 @@ namespace Content.Client.LateJoin
             var headersBox = new BoxContainer
             {
                 Orientation = LayoutOrientation.Horizontal,
-                HorizontalExpand = true
+                HorizontalExpand = true,
             };
             _base.AddChild(headersBox);
 
@@ -119,7 +119,7 @@ namespace Content.Client.LateJoin
                 {
                     Orientation = LayoutOrientation.Vertical,
                     Margin = new Thickness(5f, 0, 5f, 0f), // Carpmosia-edit - Wide latejoin
-                    SetWidth = _columnWidth // Carpmosia-edit - Wide latejoin
+                    SetWidth = _columnWidth, // Carpmosia-edit - Wide latejoin
                 };
 
                 // Carpmosia-start - Wide latejoin
