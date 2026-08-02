@@ -31,7 +31,7 @@ public interface IGameMapManager
     /// Gets the currently selected map
     /// </summary>
     /// <returns>selected map</returns>
-    IEnumerable<GameMapPrototype>? GetSelectedMap(); // Carpmosia-edit - Multistation
+    List<GameMapPrototype>? GetSelectedMap(); // Carpmosia-edit - Multistation
 
     // Carpmosia-start - Multistation
     /// <summary>

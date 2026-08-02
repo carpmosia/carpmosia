@@ -131,7 +131,7 @@ public sealed partial class GameMapManager : IGameMapManager
         return _prototypeManager.EnumeratePrototypes<GameMapPrototype>();
     }
 
-    public IEnumerable<GameMapPrototype>? GetSelectedMap() // Carpmosia-edit - Multistation
+    public List<GameMapPrototype>? GetSelectedMap() // Carpmosia-edit - Multistation
     {
         return _configSelectedMap ?? _selectedMap;
     }
