@@ -32,6 +32,7 @@ namespace Content.Server.GameTicking.Commands
             // Carpmosia-start - Multistation
             if (string.IsNullOrEmpty(args[0]))
             {
+                _configurationManager.SetCVar(CCVars.GameMap, string.Empty);
                 shell.WriteLine(Loc.GetString("cmd-forcemap-cleared"));
                 return;
             }
