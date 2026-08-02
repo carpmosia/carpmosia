@@ -45,11 +45,11 @@ namespace Content.Client.LateJoin
 
         private readonly Control _base;
 
-        private readonly static int _columnWidth = 320; // Carpmosia-edit - Wide latejoin
+        private const int ColumnWidth = 320; // Carpmosia-edit - Wide latejoin
 
         public LateJoinGui()
         {
-            MinSize = MaxSize = SetSize = new Vector2(30 + _columnWidth + 10, 560); // Carpmosia-edit - Wide latejoin
+            MinSize = MaxSize = SetSize = new Vector2(30 + ColumnWidth + 10, 560); // Carpmosia-edit - Wide latejoin
             IoCManager.InjectDependencies(this);
             _sprites = _entitySystem.GetEntitySystem<SpriteSystem>();
             _crewManifest = _entitySystem.GetEntitySystem<CrewManifestSystem>();
@@ -107,7 +107,7 @@ namespace Content.Client.LateJoin
             });
 
             if (_gameTicker.StationNames.Count > 0) // Account for padding, separators, and scrollbar
-                MinSize = MaxSize = SetSize = new Vector2(30 + (_columnWidth + 10) * _gameTicker.StationNames.Count + 2 * (_gameTicker.StationNames.Count - 1), MinSize.Y);
+                MinSize = MaxSize = SetSize = new Vector2(30 + (ColumnWidth + 10) * _gameTicker.StationNames.Count + 2 * (_gameTicker.StationNames.Count - 1), MinSize.Y);
             // Carpmosia-end - Wide latejoin
 
             if (!_gameTicker.DisallowedLateJoin && _gameTicker.StationNames.Count == 0)
@@ -119,7 +119,7 @@ namespace Content.Client.LateJoin
                 {
                     Orientation = LayoutOrientation.Vertical,
                     Margin = new Thickness(5f, 0, 5f, 0f), // Carpmosia-edit - Wide latejoin
-                    SetWidth = _columnWidth, // Carpmosia-edit - Wide latejoin
+                    SetWidth = ColumnWidth, // Carpmosia-edit - Wide latejoin
                 };
 
                 // Carpmosia-start - Wide latejoin
@@ -143,7 +143,7 @@ namespace Content.Client.LateJoin
                 {
                     Orientation = LayoutOrientation.Vertical,
                     Margin = new Thickness(5f, 0, 5f, 0f),
-                    SetWidth = _columnWidth,
+                    SetWidth = ColumnWidth,
                     VerticalExpand = true,
                 };
 
