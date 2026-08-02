@@ -70,6 +70,13 @@ public sealed class ForceMapTest : GameTest
             Assert.That(gameMapMan.GetSelectedMap()?.Select(x => x.ID), Is.EqualTo([TestMapEligibleName]), // Carpmosia-edit - Multistation
                 $"Forcemap failed with a valid map ({TestMapEligibleName})");
 
+            // Carpmosia-start - Multistation
+            // Try setting multiple valid maps
+            consoleHost.ExecuteCommand($"forcemap {TestMapEligibleName} {TestMapEligibleName}");
+            Assert.That(gameMapMan.GetSelectedMap()?.Select(x => x.ID), Is.EqualTo([TestMapEligibleName, TestMapEligibleName]),
+                $"Forcemap failed with valid maps ({TestMapEligibleName}, {TestMapEligibleName})");
+            // Carpmosia-end - Multistation
+
             // Try changing to a map that exists but is ineligible
             consoleHost.ExecuteCommand($"forcemap {TestMapIneligibleName}");
             Assert.That(gameMapMan.GetSelectedMap()?.Select(x => x.ID), Is.EqualTo([TestMapIneligibleName]), // Carpmosia-edit - Multistation

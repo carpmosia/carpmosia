@@ -23,9 +23,9 @@ namespace Content.Server.GameTicking.Commands
 
         public override void Execute(IConsoleShell shell, string argStr, string[] args)
         {
-            if (args.Length < 2 || args.Length > MaxArgCount) // Carpmosia-start - Multistation
+            if (args.Length < 1 || args.Length > MaxArgCount) // Carpmosia-start - Multistation
             {
-                shell.WriteError(Loc.GetString("shell-need-between-arguments", ("lower", 2), ("upper", MaxArgCount))); // Carpmosia-start - Multistation
+                shell.WriteError(Loc.GetString("shell-need-between-arguments", ("lower", 1), ("upper", MaxArgCount))); // Carpmosia-start - Multistation
                 return;
             }
 
