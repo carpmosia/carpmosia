@@ -189,7 +189,7 @@ public sealed partial class GameTicker
             !ProtoMan.TryIndex<GameMapPoolPrototype>(Preset.MapPool, out var pool))
             return;
 
-        if (map.All(x => pool.Maps.Contains(x.ID)))
+        if (map.All(x => pool.Maps.Contains(x.ID))) // Carpmosia-edit - Multistation
             return;
 
         _gameMapManager.SelectMapRandom();

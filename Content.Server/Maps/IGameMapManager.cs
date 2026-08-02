@@ -33,6 +33,14 @@ public interface IGameMapManager
     /// <returns>selected map</returns>
     IEnumerable<GameMapPrototype>? GetSelectedMap(); // Carpmosia-edit - Multistation
 
+    // Carpmosia-start - Multistation
+    /// <summary>
+    /// Gets the currently selected map
+    /// </summary>
+    /// <returns>selected map</returns>
+    string? GetSelectedMapName();
+    // Carpmosia-end - Multistation
+
     /// <summary>
     /// Clears the selected map, if any
     /// </summary>

@@ -838,7 +838,7 @@ namespace Content.Server.GameTicking
                 if (_webhookIdentifier == null)
                     return;
 
-                var mapName = _gameMapManager.GetSelectedMap() is { } maps ? string.Join(" & ", maps.Select(x => x.MapName)) : Loc.GetString("discord-round-notifications-unknown-map"); // Carpmosia-edit - Multistation
+                var mapName = _gameMapManager.GetSelectedMapName() ?? Loc.GetString("discord-round-notifications-unknown-map"); // Carpmosia-edit - Multistation
                 var content = Loc.GetString("discord-round-notifications-started", ("id", RoundId), ("map", mapName));
 
                 var payload = new WebhookPayload { Content = content };

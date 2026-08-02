@@ -486,6 +486,7 @@ namespace Content.Server.GameTicking
                 return spawn;
             }
 
+            // Carpmosia-start - Multistation
             foreach (var map in DefaultMap)
             {
                 if (_map.MapExists(map))
@@ -495,6 +496,7 @@ namespace Content.Server.GameTicking
                         return new EntityCoordinates(mapUid, Vector2.Zero);
                 }
             }
+            // Carpmosia-end - Multistation
 
             // Just pick a point at this point I guess.
             foreach (var map in _map.GetAllMapIds())
