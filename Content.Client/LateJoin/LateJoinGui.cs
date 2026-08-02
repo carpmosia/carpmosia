@@ -149,8 +149,11 @@ namespace Content.Client.LateJoin
 
                 if (headersBox.Children.Any())
                     headersBox.AddChild(new VSeparator());
-
                 headersBox.AddChild(headerBox);
+
+                if (joblistsBox.Children.Any())
+                    joblistsBox.AddChild(new VSeparator());
+                joblistsBox.AddChild(jobList);
                 // Carpmosia-end - Wide latejoin
 
                 headerBox.AddChild(new StripeBack() // Carpmosia-edit - Wide latejoin
@@ -197,9 +200,7 @@ namespace Content.Client.LateJoin
 
                 // _jobLists.Add(jobListScroll);
 
-                if (joblistsBox.Children.Any())
-                    joblistsBox.AddChild(new VSeparator());
-                joblistsBox.AddChild(jobList);
+                // _base.AddChild(jobListScroll);
 
                 // collapseButton.OnToggled += _ =>
                 // {
