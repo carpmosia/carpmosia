@@ -21,7 +21,7 @@ public sealed partial class MappingGuidelineTest : GameTest
 {
     private static readonly ResPath[] MapFiles = GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", false);
 
-    private static YamlNode? LoadMapYaml(ResPath map, IResourceManager resMan)
+    private static YamlMappingNode? LoadMapYaml(ResPath map, IResourceManager resMan)
     {
         var rootedPath = map.ToRootedPath();
         if (!resMan.TryContentFileRead(rootedPath, out var fileStream))
@@ -34,7 +34,7 @@ public sealed partial class MappingGuidelineTest : GameTest
         var yamlStream = new YamlStream();
         yamlStream.Load(reader);
 
-        return yamlStream.Documents[0].RootNode;
+        return (YamlMappingNode)yamlStream.Documents[0].RootNode;
     }
 
     private static (EntityUid, Vector2)? GetTilePos(YamlNode entNode)
@@ -78,7 +78,8 @@ public sealed partial class MappingGuidelineTest : GameTest
         if (LoadMapYaml(map, resMan) is not { } root)
             return;
 
-        var entities = (YamlSequenceNode)root["entities"];
+        if (!root.TryGetNode<YamlSequenceNode>("entities", out var entities))
+            return;
 
         // Collect all walls
         var wallProtos = Pair.GetPrototypesWithComponent<IsRoofComponent>().Select(x => x.Item1.ID).ToHashSet();
@@ -90,13 +91,15 @@ public sealed partial class MappingGuidelineTest : GameTest
             .SelectMany(x => ((YamlSequenceNode)x["entities"]).Select(GetTilePos).OfType<(EntityUid, Vector2)>())
             .ToHashSet();
 
-        //Console.WriteLine($"{wallPos.Count} {wallPos}");
-
         using (Assert.EnterMultipleScope())
         {
             foreach (var proto in entities)
             {
                 var protoId = proto["proto"].AsString();
+
+                // Skip the walls themselves
+                if (wallProtos.Contains(protoId))
+                    continue;
 
                 // Skip allowed entities
                 if (wallmountProtos.Contains(protoId))
