@@ -92,7 +92,7 @@ public sealed partial class MappingGuidelineTest : GameTest
 
         //Console.WriteLine($"{wallPos.Count} {wallPos}");
 
-        Assert.Multiple(() =>
+        using (Assert.EnterMultipleScope())
         {
             foreach (var proto in entities)
             {
@@ -109,9 +109,9 @@ public sealed partial class MappingGuidelineTest : GameTest
                         continue;
 
                     Assert.That(!wallPos.Contains(trans),
-                        $"\nMap {map} contains non-wallmount entity {protoId} ({ent["uid"]}) mapped under a wall ({trans})");
+                        $"Grid {trans.Item1} contains non-wallmount entity {protoId} {ent["uid"]} mapped under a wall at {trans.Item2}");
                 }
             }
-        });
+        }
     }
 }
