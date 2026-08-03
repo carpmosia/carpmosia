@@ -14,6 +14,8 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.Maths;
 using System.Diagnostics.CodeAnalysis;
 using Content.Server.Power.Components;
+using System.Diagnostics;
+using Robust.Packaging.AssetProcessing;
 
 namespace Content.IntegrationTests.Tests;
 
@@ -128,7 +130,7 @@ public sealed partial class MappingGuidelineTest : GameTest
                         continue;
 
                     Assert.That(!wallPos.Contains(trans),
-                        $"Grid {trans.Item1} contains {ent["uid"]} ({protoId}) mapped under a wall at {trans.Item2}");
+                        $"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) mapped under a wall at tile {trans.Item2}");
                 }
             }
         }
