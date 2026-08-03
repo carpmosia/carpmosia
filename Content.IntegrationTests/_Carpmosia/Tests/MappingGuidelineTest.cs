@@ -21,11 +21,14 @@ public sealed partial class MappingGuidelineTest : GameTest
 {
     private static readonly ResPath[] MapFiles = GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "amber.yml", false);
 
-    private static YamlNode LoadMapYaml(ResPath map, IResourceManager resMan)
+    private static YamlNode? LoadMapYaml(ResPath map, IResourceManager resMan)
     {
         var rootedPath = map.ToRootedPath();
         if (!resMan.TryContentFileRead(rootedPath, out var fileStream))
+        {
             Assert.Fail($"Map not found: {rootedPath}");
+            return null;
+        }
 
         using var reader = new StreamReader(fileStream);
         var yamlStream = new YamlStream();
@@ -71,7 +74,9 @@ public sealed partial class MappingGuidelineTest : GameTest
         var resMan = server.ResolveDependency<IResourceManager>();
         var protoMan = server.ResolveDependency<IPrototypeManager>();
 
-        var root = LoadMapYaml(map, resMan);
+        if (LoadMapYaml(map, resMan) is not { } root)
+            return;
+
         var entities = (YamlSequenceNode)root["entities"];
 
         // Collect all walls
