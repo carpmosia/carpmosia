@@ -62,7 +62,7 @@ public sealed partial class MappingGuidelineTest : GameTest
             return null;
 
         var rawPos = posRaw.AsString().Split(",").Select(float.Parse).ToArray();
-        var tilePos = new Vector2(rawPos[0] + 0.5f, rawPos[1] + 0.5f).Floored();
+        var tilePos = new Vector2(rawPos[0], rawPos[1]).Floored();
 
         return (parent, tilePos);
     }
