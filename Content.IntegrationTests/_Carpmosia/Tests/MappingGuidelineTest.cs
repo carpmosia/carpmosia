@@ -13,6 +13,7 @@ using System.Numerics;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Maths;
 using System.Diagnostics.CodeAnalysis;
+using Content.Server.Power.Components;
 
 namespace Content.IntegrationTests.Tests;
 
@@ -59,7 +60,7 @@ public sealed partial class MappingGuidelineTest : GameTest
             return null;
 
         var rawPos = posRaw.AsString().Split(",").Select(float.Parse).ToArray();
-        var tilePos = new Vector2(rawPos[0], rawPos[1]).Floored();
+        var tilePos = new Vector2(rawPos[0] + 0.5f, rawPos[1] + 0.5f).Floored();
 
         return (parent, tilePos);
     }
@@ -87,7 +88,16 @@ public sealed partial class MappingGuidelineTest : GameTest
         // Collect all wallmount entities
         var wallmountProtos = Pair.GetPrototypesWithComponent<WallMountComponent>().Select(x => x.Item1.ID).ToHashSet();
 
+        // Collect all apcs
+        var apcProtos = Pair.GetPrototypesWithComponent<ApcComponent>().Select(x => x.Item1.ID).ToHashSet();
+
+        // Collect all wall positions
         var wallPos = entities.Where(ent => wallProtos.Contains(ent["proto"].AsString()))
+            .SelectMany(x => ((YamlSequenceNode)x["entities"]).Select(GetTilePos).OfType<(EntityUid, Vector2)>())
+            .ToHashSet();
+
+        // Collect all apc positions
+        var apcPos = entities.Where(ent => apcProtos.Contains(ent["proto"].AsString()))
             .SelectMany(x => ((YamlSequenceNode)x["entities"]).Select(GetTilePos).OfType<(EntityUid, Vector2)>())
             .ToHashSet();
 
@@ -101,9 +111,11 @@ public sealed partial class MappingGuidelineTest : GameTest
                 if (wallProtos.Contains(protoId))
                     continue;
 
-                // Skip allowed entities
+                // Skip wallmount entities
                 if (wallmountProtos.Contains(protoId))
                     continue;
+
+                var isApcCable = protoId == "CableApcExtension" || protoId == "CableMV";
 
                 foreach (var ent in (YamlSequenceNode)proto["entities"])
                 {
@@ -111,8 +123,12 @@ public sealed partial class MappingGuidelineTest : GameTest
                     if (GetTilePos(ent) is not { } trans)
                         continue;
 
+                    // These are allowed to be mapped under a wall when an APC is present
+                    if (isApcCable && apcPos.Contains(trans))
+                        continue;
+
                     Assert.That(!wallPos.Contains(trans),
-                        $"Grid {trans.Item1} contains non-wallmount entity {protoId} {ent["uid"]} mapped under a wall at {trans.Item2}");
+                        $"Grid {trans.Item1} contains {ent["uid"]} ({protoId}) mapped under a wall at {trans.Item2}");
                 }
             }
         }
