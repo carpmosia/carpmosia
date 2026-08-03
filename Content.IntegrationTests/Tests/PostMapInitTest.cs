@@ -95,8 +95,8 @@ namespace Content.IntegrationTests.Tests
             .ToArray();
 
         private static readonly string[] GameMaps = GameDataScrounger.PrototypesOfKind<GameMapPrototype>().Where(x => x != PoolManager.TestMap).Where(x => !x.StartsWith("Legacy")).ToArray(); // Carpmosia-edit - Legacy maps
-        private static readonly ResPath[] AllMapFiles = GameDataScrounger.FilesInDirectoryInVfs("/Maps", "*.yml");
-        private static readonly ResPath[] ShuttleMapFiles = GameDataScrounger.FilesInDirectoryInVfs("/Maps/Shuttles", "*.yml");
+        private static readonly ResPath[] AllMapFiles = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps", "*.yml"), .. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml")]; // Carpmosia-edit - Carpmaps
+        private static readonly ResPath[] ShuttleMapFiles = [.. GameDataScrounger.FilesInDirectoryInVfs("/Map/Shuttles", "*.yml"), .. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia/Shuttles", "*.yml")]; // Carpmosia-edit - Carpmaps
 
         private static readonly ProtoId<EntityCategoryPrototype> DoNotMapCategory = "DoNotMap";
 
