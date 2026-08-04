@@ -4,7 +4,7 @@ meta:
   engineVersion: 283.1.3
   forkId: carpmosia
   forkVersion: ""
-  time: 08/04/2026 20:32:08
+  time: 08/04/2026 20:45:04
   entityCount: 16278
 maps:
 - 1
@@ -62084,13 +62084,13 @@ entities:
       color: '#03FCD3FF'
     - type: AtmosPipeLayers
       pipeLayer: Secondary
+- proto: GasPortDistro
+  entities:
   - uid: 9537
     components:
     - type: Transform
       parent: 2
       pos: 81.5,34.5
-    - type: AtmosPipeColor
-      color: '#0335FCFF'
 - proto: GasPortWaste
   entities:
   - uid: 9521
