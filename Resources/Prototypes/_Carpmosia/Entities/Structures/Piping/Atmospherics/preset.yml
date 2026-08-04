@@ -1,69 +1,108 @@
 # Distro
 - type: entity
   abstract: true
-  id: BaseGasPipeDistro
+  id: BaseAtmosDistro
   placement:
     mode: SnapgridCenter
   components:
   - type: AtmosPipeColor
     color: '#0055CCFF'
 
+# Distro pipes
 - type: entity
-  parent: [BaseGasPipeDistro, GasPipeHalfAlt4]
+  parent: [BaseAtmosDistro, GasPipeHalfAlt4]
   id: GasPipeHalfDistro
   suffix: Half, Distro
 
 - type: entity
-  parent: [BaseGasPipeDistro, GasPipeStraightAlt4]
+  parent: [BaseAtmosDistro, GasPipeStraightAlt4]
   id: GasPipeStraightDistro
   suffix: Straight, Distro
 
 - type: entity
-  parent: [BaseGasPipeDistro, GasPipeBendAlt4]
+  parent: [BaseAtmosDistro, GasPipeBendAlt4]
   id: GasPipeBendDistro
   suffix: Bend, Distro
 
 - type: entity
-  parent: [BaseGasPipeWaste, GasPipeTJunctionAlt4]
+  parent: [BaseAtmosDistro, GasPipeTJunctionAlt4]
   id: GasPipeTJunctionDistro
   suffix: TJunction, Distro
 
 - type: entity
-  parent: [BaseGasPipeWaste, GasPipeFourwayAlt4]
+  parent: [BaseAtmosDistro, GasPipeFourwayAlt4]
   id: GasPipeFourwayDistro
   suffix: Fourway, Distro
+
+- type: entity
+  parent: [BaseAtmosDistro, GasPipeFourwayAlt4]
+  id: GasPipeFourwayDistro
+  suffix: Fourway, Distro
+
+# Distro unary
+- type: entity
+  parent: [BaseAtmosDistro, GasVentPumpAlt4]
+  id: GasVentPumpDistro
+  suffix: Distro
+  components:
+  - type: GasPressurePump
+    targetPressure: 303.9
+    enabled: True
+
+# Distro binary
+- type: entity
+  parent: [BaseAtmosDistro, GasPressurePumpAlt4]
+  id: GasPressurePumpDistro
+  suffix: Distro
 
 # Waste
 - type: entity
   abstract: true
-  id: BaseGasPipeWaste
+  id: BaseAtmosWaste
   placement:
     mode: SnapgridCenter
   components:
   - type: AtmosPipeColor
     color: '#990000FF'
 
+# Waste pipes
 - type: entity
-  parent: [BaseGasPipeWaste, GasPipeHalfAlt3]
+  parent: [BaseAtmosWaste, GasPipeHalfAlt3]
   id: GasPipeHalfWaste
   suffix: Half, Waste
 
 - type: entity
-  parent: [BaseGasPipeWaste, GasPipeStraightAlt3]
+  parent: [BaseAtmosWaste, GasPipeStraightAlt3]
   id: GasPipeStraightWaste
   suffix: Straight, Waste
 
 - type: entity
-  parent: [BaseGasPipeWaste, GasPipeBendAlt3]
+  parent: [BaseAtmosWaste, GasPipeBendAlt3]
   id: GasPipeBendWaste
   suffix: Bend, Waste
 
 - type: entity
-  parent: [BaseGasPipeWaste, GasPipeTJunctionAlt3]
+  parent: [BaseAtmosWaste, GasPipeTJunctionAlt3]
   id: GasPipeTJunctionWaste
   suffix: TJunction, Waste
 
 - type: entity
-  parent: [BaseGasPipeWaste, GasPipeFourwayAlt3]
+  parent: [BaseAtmosWaste, GasPipeFourwayAlt3]
   id: GasPipeFourwayWaste
   suffix: Fourway, Waste
+
+# Waste unary
+- type: entity
+  parent: [BaseAtmosWaste, GasVentScrubberAlt3]
+  id: GasVentScrubberWaste
+  suffix: Waste
+
+# Waste binary
+- type: entity
+  parent: [BaseAtmosWaste, GasPressurePumpAlt3]
+  id: GasPressurePumpWaste
+  suffix: Waste
+  components:
+  - type: GasPressurePump
+    targetPressure: 4500
+    enabled: True
