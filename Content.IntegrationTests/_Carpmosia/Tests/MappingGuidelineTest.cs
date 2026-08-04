@@ -145,4 +145,60 @@ public sealed partial class MappingGuidelineTest : GameTest
             }
         }
     }
+
+    [Test]
+    [TestCaseSource(nameof(MapFiles))]
+    [SuppressMessage("Assertion", "NUnit2014:Use SomeItemsConstraint for better assertion messages in case of failure")]
+    public async Task MappedUnconnectedApcsTest(ResPath map)
+    {
+        var pair = Pair;
+        var server = pair.Server;
+
+        var resMan = server.ResolveDependency<IResourceManager>();
+        var protoMan = server.ResolveDependency<IPrototypeManager>();
+
+        if (LoadMapYaml(map, resMan) is not { } root)
+            return;
+
+        if (!root.TryGetNode<YamlSequenceNode>("entities", out var entities))
+            return;
+
+        // Collect all apcs
+        var apcProtos = Pair.GetPrototypesWithComponent<ApcComponent>().Select(x => x.Item1.ID).ToHashSet();
+
+        // Collect all lv cable positions
+        var lvPos = entities.Where(ent => ent["proto"].AsString() == "CableApcExtension")
+            .SelectMany(x => ((YamlSequenceNode)x["entities"]).Select(GetTilePos).OfType<(EntityUid, Vector2)>())
+            .ToHashSet();
+
+        // Collect all mv cable positions
+        var mvPos = entities.Where(ent => ent["proto"].AsString() == "CableMV")
+            .SelectMany(x => ((YamlSequenceNode)x["entities"]).Select(GetTilePos).OfType<(EntityUid, Vector2)>())
+            .ToHashSet();
+
+        using (Assert.EnterMultipleScope())
+        {
+            foreach (var proto in entities)
+            {
+                var protoId = proto["proto"].AsString();
+
+                // Skip unrelated entities
+                if (!apcProtos.Contains(protoId))
+                    continue;
+
+                foreach (var ent in (YamlSequenceNode)proto["entities"])
+                {
+                    // Skip invalid transforms
+                    if (GetTilePos(ent) is not { } trans)
+                        continue;
+
+                    Assert.That(lvPos.Contains(trans),
+                        $"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) that is missing an LV cable at {trans.Item2}");
+
+                    Assert.That(mvPos.Contains(trans),
+                        $"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) that is missing an MV cable at {trans.Item2}");
+                }
+            }
+        }
+    }
 }
