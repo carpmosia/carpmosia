@@ -140,6 +140,11 @@
 
 # Waste unary
 - type: entity
+  parent: [BaseAtmosWaste, GasPassiveVentAlt3]
+  id: GasPassiveVentWaste
+  suffix: Waste
+
+- type: entity
   parent: [BaseAtmosWaste, GasVentScrubberAlt3]
   id: GasVentScrubberWaste
   suffix: Waste
