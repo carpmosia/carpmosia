@@ -44,6 +44,11 @@
     enabled: true
     targetPressure: 303.9
 
+- type: entity
+  parent: [BaseAtmosDistro, GasPassiveVentAlt4]
+  id: GasPassiveVentDistro
+  suffix: Distro
+
 # Distro binary
 - type: entity
   parent: [BaseAtmosDistro, GasPressurePumpAlt4]
