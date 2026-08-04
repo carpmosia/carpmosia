@@ -14,8 +14,6 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.Maths;
 using System.Diagnostics.CodeAnalysis;
 using Content.Server.Power.Components;
-using System.Diagnostics;
-using Robust.Packaging.AssetProcessing;
 
 namespace Content.IntegrationTests.Tests;
 
@@ -23,6 +21,14 @@ namespace Content.IntegrationTests.Tests;
 public sealed partial class MappingGuidelineTest : GameTest
 {
     private static readonly ResPath[] MapFiles = GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", false);
+
+    private static readonly EntProtoId[] WallmountWhitelist = [
+        "RandomPosterAny",
+        "RandomPosterContraband",
+        "RandomPosterLegit",
+        "RandomPainting",
+        "PlaqueAtmos"
+    ];
 
     private static YamlMappingNode? LoadMapYaml(ResPath map, IResourceManager resMan)
     {
@@ -115,6 +121,10 @@ public sealed partial class MappingGuidelineTest : GameTest
 
                 // Skip wallmount entities
                 if (wallmountProtos.Contains(protoId))
+                    continue;
+
+                // Skip whitelisted entities
+                if (WallmountWhitelist.Contains(protoId))
                     continue;
 
                 var isApcCable = protoId == "CableApcExtension" || protoId == "CableMV";
