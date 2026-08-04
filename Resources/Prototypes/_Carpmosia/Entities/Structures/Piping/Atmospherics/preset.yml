@@ -34,11 +34,6 @@
   id: GasPipeFourwayDistro
   suffix: Fourway, Distro
 
-- type: entity
-  parent: [BaseAtmosDistro, GasPipeFourwayAlt4]
-  id: GasPipeFourwayDistro
-  suffix: Fourway, Distro
-
 # Distro unary
 - type: entity
   parent: [BaseAtmosDistro, GasVentPumpAlt4]
