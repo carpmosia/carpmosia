@@ -50,9 +50,22 @@
   id: GasPressurePumpDistro
   suffix: Distro
 
+- type: entity
+  parent: [BaseAtmosDistro, GasValveAlt4]
+  id: GasValveDistro
+  suffix: Distro
+  components:
+  - type: GasValve
+    open: true
+
+- type: entity
+  parent: [BaseAtmosDistro, GasPortAlt4]
+  id: GasPortDistro
+  suffix: Distro
+
 # Distro trinary
 - type: entity
-  parent: [BaseAtmosDistro, GasMixerAlt3]
+  parent: [BaseAtmosDistro, GasMixerAlt4]
   id: GasMixerDistro
   suffix: Distro
   components:
@@ -63,7 +76,7 @@
     inletTwoConcentration: 0.22
 
 - type: entity
-  parent: [BaseAtmosDistro, GasMixerFlippedAlt3]
+  parent: [BaseAtmosDistro, GasMixerFlippedAlt4]
   id: GasMixerFlippedDistro
   suffix: Flipped, Distro
   components:
@@ -115,6 +128,11 @@
   id: GasVentScrubberWaste
   suffix: Waste
 
+- type: entity
+  parent: [BaseAtmosWaste, GasOutletInjectorAlt3]
+  id: GasOutletInjectorWaste
+  suffix: Waste
+
 # Waste binary
 - type: entity
   parent: [BaseAtmosWaste, GasPressurePumpAlt3]
@@ -124,6 +142,19 @@
   - type: GasPressurePump
     enabled: true
     targetPressure: 4500
+
+- type: entity
+  parent: [BaseAtmosWaste, GasValveAlt3]
+  id: GasValveWaste
+  suffix: Waste
+  components:
+  - type: GasValve
+    open: true
+
+- type: entity
+  parent: [BaseAtmosWaste, GasPortAlt3]
+  id: GasPortWaste
+  suffix: Waste
 
 # Waste trinary
 - type: entity
