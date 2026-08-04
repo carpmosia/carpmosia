@@ -21,3 +21,42 @@
     mask: /Textures/Effects/LightMasks/double_cone.png
   - type: RotatingLight
     speed: 180
+
+- type: entity
+  name: phototherapy laser
+  parent: [BaseWeaponPowerCellSmall, BaseGunWieldable, BaseSyndicateContraband]
+  id: PhotoTherapyLaser
+  description: A Highly experimental handheld medication device that uses concentrated light to evoke fast regeneration, requires powercells.
+  components:
+  - type: Item
+    size: Huge
+    shape:
+    - 0,0,4,1
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Weapons/Guns/Battery/phototherapy_laser.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: false
+  - type: Appearance
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Battery/phototherapy_laser.rsi
+  - type: Gun
+    fireRate: 2
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Hits/laser_sear_wall.ogg
+  - type: BatteryAmmoProvider
+    proto: RejuvenationLaser
+    fireCost: 14
+  - type: Tag
+    tags:
+    - TurretCompatibleWeapon
