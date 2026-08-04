@@ -4,7 +4,7 @@ meta:
   engineVersion: 283.1.3
   forkId: carpmosia
   forkVersion: ""
-  time: 08/04/2026 22:10:14
+  time: 08/04/2026 23:27:13
   entityCount: 11965
 maps:
 - 1
@@ -39209,14 +39209,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 17.5,2.5
-  - uid: 5765
-    components:
-    - type: Transform
-      parent: 2
-      rot: -1.5707963267948966 rad
-      pos: 36.5,-0.5
-    - type: AtmosPipeColor
-      color: '#990000FF'
   - uid: 5766
     components:
     - type: Transform
@@ -39259,20 +39251,26 @@ entities:
       parent: 2
       rot: 1.5707963267948966 rad
       pos: -37.5,-17.5
-  - uid: 5773
-    components:
-    - type: Transform
-      parent: 2
-      rot: 1.5707963267948966 rad
-      pos: -54.5,-23.5
-    - type: AtmosPipeColor
-      color: '#990000FF'
   - uid: 5774
     components:
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
       pos: -15.5,-17.5
+- proto: GasPassiveVentWaste
+  entities:
+  - uid: 5765
+    components:
+    - type: Transform
+      parent: 2
+      rot: -1.5707963267948966 rad
+      pos: 36.5,-0.5
+  - uid: 5773
+    components:
+    - type: Transform
+      parent: 2
+      rot: 1.5707963267948966 rad
+      pos: -54.5,-23.5
 - proto: GasPipeBend
   entities:
   - uid: 5779
@@ -40712,15 +40710,13 @@ entities:
       pos: 12.5,-13.5
     - type: AtmosPipeColor
       color: '#990000FF'
-- proto: GasPipeSensorDistribution
+- proto: GasPipeSensorDistro
   entities:
   - uid: 6016
     components:
     - type: Transform
       parent: 2
       pos: -43.5,-13.5
-    - type: AtmosPipeColor
-      color: '#0055CCFF'
 - proto: GasPipeSensorTEGCold
   entities:
   - uid: 6017
@@ -40741,15 +40737,13 @@ entities:
       pos: -50.5,-17.5
     - type: AtmosPipeColor
       color: '#B3A234FF'
-- proto: GasPipeSensorWasteAlt1
+- proto: GasPipeSensorWaste
   entities:
   - uid: 6019
     components:
     - type: Transform
       parent: 2
       pos: -43.5,-12.5
-    - type: AtmosPipeColor
-      color: '#990000FF'
 - proto: GasPipeStraight
   entities:
   - uid: 6049

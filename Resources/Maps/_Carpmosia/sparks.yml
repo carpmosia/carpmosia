@@ -4,7 +4,7 @@ meta:
   engineVersion: 283.1.3
   forkId: carpmosia
   forkVersion: ""
-  time: 08/04/2026 22:10:35
+  time: 08/04/2026 23:27:34
   entityCount: 10412
 maps:
 - 1
@@ -33982,27 +33982,6 @@ entities:
       pos: 58.5,18.5
     - type: AtmosPipeColor
       color: '#333333FF'
-  - uid: 5037
-    components:
-    - type: Transform
-      parent: 2
-      pos: 71.5,20.5
-    - type: AtmosPipeColor
-      color: '#990000FF'
-  - uid: 5038
-    components:
-    - type: Transform
-      parent: 2
-      pos: 57.5,29.5
-    - type: AtmosPipeColor
-      color: '#0055CCFF'
-  - uid: 5039
-    components:
-    - type: Transform
-      parent: 2
-      pos: 57.5,27.5
-    - type: AtmosPipeColor
-      color: '#0055CCFF'
   - uid: 5040
     components:
     - type: Transform
@@ -34041,13 +34020,6 @@ entities:
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 51.5,40.5
-  - uid: 5046
-    components:
-    - type: Transform
-      parent: 2
-      pos: 54.5,27.5
-    - type: AtmosPipeColor
-      color: '#0055CCFF'
   - uid: 5047
     components:
     - type: Transform
@@ -34056,14 +34028,6 @@ entities:
       pos: 73.5,103.5
     - type: AtmosPipeColor
       color: '#947507FF'
-  - uid: 5048
-    components:
-    - type: Transform
-      parent: 2
-      rot: 1.5707963267948966 rad
-      pos: 55.5,32.5
-    - type: AtmosPipeColor
-      color: '#990000FF'
   - uid: 5049
     components:
     - type: Transform
@@ -34090,6 +34054,36 @@ entities:
       pos: 74.5,15.5
     - type: AtmosPipeColor
       color: '#333333FF'
+- proto: GasPassiveVentDistro
+  entities:
+  - uid: 5038
+    components:
+    - type: Transform
+      parent: 2
+      pos: 57.5,29.5
+  - uid: 5039
+    components:
+    - type: Transform
+      parent: 2
+      pos: 57.5,27.5
+  - uid: 5046
+    components:
+    - type: Transform
+      parent: 2
+      pos: 54.5,27.5
+- proto: GasPassiveVentWaste
+  entities:
+  - uid: 5037
+    components:
+    - type: Transform
+      parent: 2
+      pos: 71.5,20.5
+  - uid: 5048
+    components:
+    - type: Transform
+      parent: 2
+      rot: 1.5707963267948966 rad
+      pos: 55.5,32.5
 - proto: GasPipeBend
   entities:
   - uid: 5060

@@ -4,7 +4,7 @@ meta:
   engineVersion: 283.1.3
   forkId: carpmosia
   forkVersion: ""
-  time: 08/04/2026 22:10:27
+  time: 08/04/2026 23:27:26
   entityCount: 16278
 maps:
 - 1
@@ -51697,14 +51697,6 @@ entities:
       color: '#03FCD3FF'
     - type: AtmosPipeLayers
       pipeLayer: Secondary
-  - uid: 7782
-    components:
-    - type: Transform
-      parent: 2
-      rot: 3.141592653589793 rad
-      pos: 44.5,-50.5
-    - type: AtmosPipeColor
-      color: '#990000FF'
   - uid: 7783
     components:
     - type: Transform
@@ -51753,15 +51745,6 @@ entities:
       parent: 2
       rot: 3.141592653589793 rad
       pos: 79.5,-9.5
-  - uid: 7792
-    components:
-    - type: Transform
-      parent: 2
-      pos: 62.5,27.5
-    - type: AtmosPipeLayers
-      pipeLayer: Tertiary
-    - type: AtmosPipeColor
-      color: '#0055CCFF'
   - uid: 7793
     components:
     - type: Transform
@@ -51769,22 +51752,6 @@ entities:
       pos: 63.5,27.5
     - type: AtmosPipeColor
       color: '#947507FF'
-  - uid: 7794
-    components:
-    - type: Transform
-      parent: 2
-      pos: 82.5,36.5
-    - type: AtmosPipeLayers
-      pipeLayer: Secondary
-    - type: AtmosPipeColor
-      color: '#990000FF'
-  - uid: 7795
-    components:
-    - type: Transform
-      parent: 2
-      pos: 71.5,25.5
-    - type: AtmosPipeColor
-      color: '#990000FF'
   - uid: 7796
     components:
     - type: Transform
@@ -51831,6 +51798,35 @@ entities:
       parent: 2
       rot: 3.141592653589793 rad
       pos: 46.5,-46.5
+- proto: GasPassiveVentDistro
+  entities:
+  - uid: 7792
+    components:
+    - type: Transform
+      parent: 2
+      pos: 62.5,27.5
+    - type: AtmosPipeLayers
+      pipeLayer: Tertiary
+- proto: GasPassiveVentWaste
+  entities:
+  - uid: 7782
+    components:
+    - type: Transform
+      parent: 2
+      rot: 3.141592653589793 rad
+      pos: 44.5,-50.5
+  - uid: 7794
+    components:
+    - type: Transform
+      parent: 2
+      pos: 82.5,36.5
+    - type: AtmosPipeLayers
+      pipeLayer: Secondary
+  - uid: 7795
+    components:
+    - type: Transform
+      parent: 2
+      pos: 71.5,25.5
 - proto: GasPipeBend
   entities:
   - uid: 7803
@@ -53025,15 +53021,13 @@ entities:
       color: '#03FCD3FF'
     - type: Label
       currentLabel: Cryogenics
-- proto: GasPipeSensorDistribution
+- proto: GasPipeSensorDistro
   entities:
   - uid: 7996
     components:
     - type: Transform
       parent: 2
       pos: 31.5,-26.5
-    - type: AtmosPipeColor
-      color: '#0055CCFF'
 - proto: GasPipeSensorMixedAir
   entities:
   - uid: 7997
@@ -53071,8 +53065,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 30.5,-26.5
-    - type: AtmosPipeColor
-      color: '#990000FF'
 - proto: GasPipeStraight
   entities:
   - uid: 8012

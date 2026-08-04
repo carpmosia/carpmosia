@@ -4,7 +4,7 @@ meta:
   engineVersion: 283.1.3
   forkId: carpmosia
   forkVersion: ""
-  time: 08/04/2026 22:12:11
+  time: 08/04/2026 23:29:08
   entityCount: 2050
 maps: []
 grids:
@@ -6111,16 +6111,6 @@ entities:
       parent: 1
       rot: -1.5707963267948966 rad
       pos: 2.5,-31.5
-- proto: GasPassiveVentAlt3
-  entities:
-  - uid: 900
-    components:
-    - type: Transform
-      parent: 1
-      rot: 1.5707963267948966 rad
-      pos: -21.5,-31.5
-    - type: AtmosPipeColor
-      color: '#990000FF'
 - proto: GasPassiveVentAlt4
   entities:
   - uid: 901
@@ -6131,14 +6121,20 @@ entities:
       pos: -16.5,-29.5
     - type: AtmosPipeColor
       color: '#03FCD3FF'
+- proto: GasPassiveVentWaste
+  entities:
+  - uid: 900
+    components:
+    - type: Transform
+      parent: 1
+      rot: 1.5707963267948966 rad
+      pos: -21.5,-31.5
   - uid: 902
     components:
     - type: Transform
       parent: 1
       rot: -1.5707963267948966 rad
       pos: -16.5,-31.5
-    - type: AtmosPipeColor
-      color: '#990000FF'
 - proto: GasPipeBend
   entities:
   - uid: 2013

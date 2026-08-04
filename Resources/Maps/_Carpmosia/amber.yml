@@ -4,7 +4,7 @@ meta:
   engineVersion: 283.1.3
   forkId: carpmosia
   forkVersion: ""
-  time: 08/04/2026 22:26:46
+  time: 08/04/2026 23:27:18
   entityCount: 24859
 maps:
 - 1
@@ -82395,14 +82395,6 @@ entities:
       parent: 2
       rot: -1.5707963267948966 rad
       pos: -10.5,-30.5
-  - uid: 11857
-    components:
-    - type: Transform
-      parent: 2
-      rot: 3.141592653589793 rad
-      pos: 31.5,-60.5
-    - type: AtmosPipeColor
-      color: '#990000FF'
   - uid: 11858
     components:
     - type: Transform
@@ -82411,14 +82403,6 @@ entities:
       pos: 7.5,-8.5
     - type: AtmosPipeColor
       color: '#B3A234FF'
-  - uid: 11859
-    components:
-    - type: Transform
-      parent: 2
-      rot: 3.141592653589793 rad
-      pos: -16.5,28.5
-    - type: AtmosPipeColor
-      color: '#990000FF'
   - uid: 11860
     components:
     - type: Transform
@@ -82470,13 +82454,25 @@ entities:
     - type: Transform
       parent: 2
       pos: 0.5,6.5
+- proto: GasPassiveVentWaste
+  entities:
+  - uid: 11857
+    components:
+    - type: Transform
+      parent: 2
+      rot: 3.141592653589793 rad
+      pos: 31.5,-60.5
+  - uid: 11859
+    components:
+    - type: Transform
+      parent: 2
+      rot: 3.141592653589793 rad
+      pos: -16.5,28.5
   - uid: 11869
     components:
     - type: Transform
       parent: 2
       pos: 6.5,2.5
-    - type: AtmosPipeColor
-      color: '#990000FF'
 - proto: GasPipeBend
   entities:
   - uid: 11870
@@ -84084,15 +84080,13 @@ entities:
       currentLabel: Cryopods
     - type: NameModifier
       baseName: gas pipe sensor
-- proto: GasPipeSensorDistribution
+- proto: GasPipeSensorDistro
   entities:
   - uid: 12141
     components:
     - type: Transform
       parent: 2
       pos: -8.5,-7.5
-    - type: AtmosPipeColor
-      color: '#0055CCFF'
 - proto: GasPipeSensorMixedAir
   entities:
   - uid: 12142
@@ -84130,8 +84124,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -9.5,-6.5
-    - type: AtmosPipeColor
-      color: '#990000FF'
 - proto: GasPipeStraight
   entities:
   - uid: 12003

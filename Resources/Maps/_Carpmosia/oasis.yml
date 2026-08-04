@@ -4,7 +4,7 @@ meta:
   engineVersion: 283.1.3
   forkId: carpmosia
   forkVersion: ""
-  time: 08/04/2026 22:10:33
+  time: 08/04/2026 23:27:32
   entityCount: 33196
 maps:
 - 1
@@ -93961,22 +93961,6 @@ entities:
       color: '#03FCD3FF'
 - proto: GasPassiveVent
   entities:
-  - uid: 12300
-    components:
-    - type: Transform
-      parent: 2
-      rot: 3.141592653589793 rad
-      pos: 25.5,-54.5
-    - type: AtmosPipeColor
-      color: '#990000FF'
-  - uid: 12301
-    components:
-    - type: Transform
-      parent: 2
-      rot: 3.141592653589793 rad
-      pos: 18.5,-54.5
-    - type: AtmosPipeColor
-      color: '#990000FF'
   - uid: 12302
     components:
     - type: Transform
@@ -94013,23 +93997,6 @@ entities:
       parent: 2
       rot: -1.5707963267948966 rad
       pos: -11.5,23.5
-  - uid: 12308
-    components:
-    - type: Transform
-      parent: 2
-      pos: -15.5,50.5
-    - type: AtmosPipeColor
-      color: '#990000FF'
-  - uid: 12309
-    components:
-    - type: Transform
-      parent: 2
-      rot: 1.5707963267948966 rad
-      pos: -26.5,45.5
-    - type: AtmosPipeLayers
-      pipeLayer: Secondary
-    - type: AtmosPipeColor
-      color: '#990000FF'
   - uid: 12310
     components:
     - type: Transform
@@ -94042,22 +94009,6 @@ entities:
       parent: 2
       rot: 1.5707963267948966 rad
       pos: -40.5,31.5
-  - uid: 12312
-    components:
-    - type: Transform
-      parent: 2
-      rot: 3.141592653589793 rad
-      pos: 17.5,-54.5
-    - type: AtmosPipeColor
-      color: '#0055CCFF'
-  - uid: 12313
-    components:
-    - type: Transform
-      parent: 2
-      rot: 3.141592653589793 rad
-      pos: 24.5,-54.5
-    - type: AtmosPipeColor
-      color: '#0055CCFF'
   - uid: 12314
     components:
     - type: Transform
@@ -94086,14 +94037,6 @@ entities:
       parent: 2
       rot: 1.5707963267948966 rad
       pos: -40.5,13.5
-  - uid: 28191
-    components:
-    - type: Transform
-      parent: 26921
-      rot: 1.5707963267948966 rad
-      pos: 1.5,-9.5
-    - type: AtmosPipeColor
-      color: '#990000FF'
   - uid: 28192
     components:
     - type: Transform
@@ -94136,29 +94079,6 @@ entities:
       parent: 26921
       rot: -1.5707963267948966 rad
       pos: 64.5,6.5
-  - uid: 28199
-    components:
-    - type: Transform
-      parent: 26921
-      rot: -1.5707963267948966 rad
-      pos: 25.5,-44.5
-    - type: AtmosPipeColor
-      color: '#990000FF'
-  - uid: 28200
-    components:
-    - type: Transform
-      parent: 26921
-      pos: -6.5,29.5
-    - type: AtmosPipeColor
-      color: '#990000FF'
-  - uid: 28201
-    components:
-    - type: Transform
-      parent: 26921
-      rot: 1.5707963267948966 rad
-      pos: 20.5,-23.5
-    - type: AtmosPipeColor
-      color: '#990000FF'
   - uid: 28202
     components:
     - type: Transform
@@ -94176,16 +94096,80 @@ entities:
     - type: Transform
       parent: 26921
       pos: 52.5,16.5
-- proto: GasPassiveVentAlt2
+- proto: GasPassiveVentDistro
   entities:
+  - uid: 12312
+    components:
+    - type: Transform
+      parent: 2
+      rot: 3.141592653589793 rad
+      pos: 17.5,-54.5
+  - uid: 12313
+    components:
+    - type: Transform
+      parent: 2
+      rot: 3.141592653589793 rad
+      pos: 24.5,-54.5
+- proto: GasPassiveVentWaste
+  entities:
+  - uid: 12300
+    components:
+    - type: Transform
+      parent: 2
+      rot: 3.141592653589793 rad
+      pos: 25.5,-54.5
+  - uid: 12301
+    components:
+    - type: Transform
+      parent: 2
+      rot: 3.141592653589793 rad
+      pos: 18.5,-54.5
+  - uid: 12308
+    components:
+    - type: Transform
+      parent: 2
+      pos: -15.5,50.5
+      anchored: False
+    - type: Physics
+      canCollide: True
+      bodyType: Dynamic
+  - uid: 12309
+    components:
+    - type: Transform
+      parent: 2
+      rot: 1.5707963267948966 rad
+      pos: -26.5,45.5
+    - type: AtmosPipeLayers
+      pipeLayer: Secondary
   - uid: 12318
     components:
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: -40.5,33.5
-    - type: AtmosPipeColor
-      color: '#990000FF'
+  - uid: 28191
+    components:
+    - type: Transform
+      parent: 26921
+      rot: 1.5707963267948966 rad
+      pos: 1.5,-9.5
+  - uid: 28199
+    components:
+    - type: Transform
+      parent: 26921
+      rot: -1.5707963267948966 rad
+      pos: 25.5,-44.5
+  - uid: 28200
+    components:
+    - type: Transform
+      parent: 26921
+      pos: -6.5,29.5
+  - uid: 28201
+    components:
+    - type: Transform
+      parent: 26921
+      rot: 1.5707963267948966 rad
+      pos: 20.5,-23.5
 - proto: GasPipeBend
   entities:
   - uid: 12319

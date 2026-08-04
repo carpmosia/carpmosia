@@ -68,6 +68,14 @@
   id: GasPortDistro
   suffix: Distro
 
+- type: entity
+  parent: [BaseAtmosDistro, GasPipeSensorAlt4]
+  id: GasPipeSensorDistro
+  suffix: Distro
+  components:
+  - type: Label
+    localizedLabel: gas-pipe-sensor-distribution-loop
+
 # Distro trinary
 - type: entity
   parent: [BaseAtmosDistro, GasFilterAlt4]
@@ -181,6 +189,14 @@
   parent: [BaseAtmosWaste, GasPortAlt3]
   id: GasPortWaste
   suffix: Waste
+
+- type: entity
+  parent: [BaseAtmosWaste, GasPipeSensorAlt3]
+  id: GasPipeSensorWaste
+  suffix: Waste
+  components:
+  - type: Label
+    localizedLabel: gas-pipe-sensor-waste-loop
 
 # Waste trinary
 - type: entity

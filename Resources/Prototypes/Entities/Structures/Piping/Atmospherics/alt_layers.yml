@@ -342,77 +342,79 @@
   - type: Construction
     node: sensorAlt2
 
+# Carpmosia-start - Pipe presets
 # GasPipeSensorDistribution
 
-- type: entity
-  parent: [GasPipeLayerAlt1, GasPipeSensorDistribution]
-  id: GasPipeSensorDistributionAlt1
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt1.rsi # Carpmosia-edit - 5 pipe layers
-    layers:
-    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Carpmosia-edit - 5 pipe layers
-      map: [ "enum.PipeVisualLayers.Pipe" ]
-      state: pipeStraight
-    - map: ["base"]
-      state: base
-    - map: [ "enum.PowerDeviceVisualLayers.Powered" ]
-      state: lights
-      shader: unshaded
+# - type: entity
+#   parent: [GasPipeLayerAlt1, GasPipeSensorDistribution]
+#   id: GasPipeSensorDistributionAlt1
+#   categories: [ HideSpawnMenu ]
+#   components:
+#   - type: Sprite
+#     sprite: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt1.rsi # Carpmosia-edit - 5 pipe layers
+#     layers:
+#     - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Carpmosia-edit - 5 pipe layers
+#       map: [ "enum.PipeVisualLayers.Pipe" ]
+#       state: pipeStraight
+#     - map: ["base"]
+#       state: base
+#     - map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+#       state: lights
+#       shader: unshaded
 
-- type: entity
-  parent: [GasPipeLayerAlt2, GasPipeSensorDistribution]
-  id: GasPipeSensorDistributionAlt2
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt2.rsi # Carpmosia-edit - 5 pipe layers
-    layers:
-    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Carpmosia-edit - 5 pipe layers
-      map: [ "enum.PipeVisualLayers.Pipe" ]
-      state: pipeStraight
-    - map: ["base"]
-      state: base
-    - map: [ "enum.PowerDeviceVisualLayers.Powered" ]
-      state: lights
-      shader: unshaded
+# - type: entity
+#   parent: [GasPipeLayerAlt2, GasPipeSensorDistribution]
+#   id: GasPipeSensorDistributionAlt2
+#   categories: [ HideSpawnMenu ]
+#   components:
+#   - type: Sprite
+#     sprite: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt2.rsi # Carpmosia-edit - 5 pipe layers
+#     layers:
+#     - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Carpmosia-edit - 5 pipe layers
+#       map: [ "enum.PipeVisualLayers.Pipe" ]
+#       state: pipeStraight
+#     - map: ["base"]
+#       state: base
+#     - map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+#       state: lights
+#       shader: unshaded
 
 # GasPipeSensorWaste
 
-- type: entity
-  parent: [GasPipeLayerAlt1, GasPipeSensorWaste]
-  id: GasPipeSensorWasteAlt1
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt1.rsi # Carpmosia-edit - 5 pipe layers
-    layers:
-    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Carpmosia-edit - 5 pipe layers
-      map: [ "enum.PipeVisualLayers.Pipe" ]
-      state: pipeStraight
-    - map: ["base"]
-      state: base
-    - map: [ "enum.PowerDeviceVisualLayers.Powered" ]
-      state: lights
-      shader: unshaded
+# - type: entity
+#   parent: [GasPipeLayerAlt1, GasPipeSensorWaste]
+#   id: GasPipeSensorWasteAlt1
+#   categories: [ HideSpawnMenu ]
+#   components:
+#   - type: Sprite
+#     sprite: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt1.rsi # Carpmosia-edit - 5 pipe layers
+#     layers:
+#     - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt1.rsi # Carpmosia-edit - 5 pipe layers
+#       map: [ "enum.PipeVisualLayers.Pipe" ]
+#       state: pipeStraight
+#     - map: ["base"]
+#       state: base
+#     - map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+#       state: lights
+#       shader: unshaded
 
-- type: entity
-  parent: [GasPipeLayerAlt2, GasPipeSensorWaste]
-  id: GasPipeSensorWasteAlt2
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt2.rsi # Carpmosia-edit - 5 pipe layers
-    layers:
-    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Carpmosia-edit - 5 pipe layers
-      map: [ "enum.PipeVisualLayers.Pipe" ]
-      state: pipeStraight
-    - map: ["base"]
-      state: base
-    - map: [ "enum.PowerDeviceVisualLayers.Powered" ]
-      state: lights
-      shader: unshaded
+# - type: entity
+#   parent: [GasPipeLayerAlt2, GasPipeSensorWaste]
+#   id: GasPipeSensorWasteAlt2
+#   categories: [ HideSpawnMenu ]
+#   components:
+#   - type: Sprite
+#     sprite: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt2.rsi # Carpmosia-edit - 5 pipe layers
+#     layers:
+#     - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt2.rsi # Carpmosia-edit - 5 pipe layers
+#       map: [ "enum.PipeVisualLayers.Pipe" ]
+#       state: pipeStraight
+#     - map: ["base"]
+#       state: base
+#     - map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+#       state: lights
+#       shader: unshaded
+# Carpmosia-end - Pipe presets
 
 # GasPipeSensorMixedAir
 
