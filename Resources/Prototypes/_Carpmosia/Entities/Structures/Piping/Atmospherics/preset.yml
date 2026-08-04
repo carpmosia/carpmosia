@@ -1,0 +1,69 @@
+# Distro
+- type: entity
+  abstract: true
+  id: BaseGasPipeDistro
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: AtmosPipeColor
+    color: '#0055CCFF'
+
+- type: entity
+  parent: [BaseGasPipeDistro, GasPipeHalfAlt4]
+  id: GasPipeHalfDistro
+  suffix: Half, Distro
+
+- type: entity
+  parent: [BaseGasPipeDistro, GasPipeStraightAlt4]
+  id: GasPipeStraightDistro
+  suffix: Straight, Distro
+
+- type: entity
+  parent: [BaseGasPipeDistro, GasPipeBendAlt4]
+  id: GasPipeBendDistro
+  suffix: Bend, Distro
+
+- type: entity
+  parent: [BaseGasPipeWaste, GasPipeTJunctionAlt4]
+  id: GasPipeTJunctionDistro
+  suffix: TJunction, Distro
+
+- type: entity
+  parent: [BaseGasPipeWaste, GasPipeFourwayAlt4]
+  id: GasPipeFourwayDistro
+  suffix: Fourway, Distro
+
+# Waste
+- type: entity
+  abstract: true
+  id: BaseGasPipeWaste
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: AtmosPipeColor
+    color: '#990000FF'
+
+- type: entity
+  parent: [BaseGasPipeWaste, GasPipeHalfAlt3]
+  id: GasPipeHalfWaste
+  suffix: Half, Waste
+
+- type: entity
+  parent: [BaseGasPipeWaste, GasPipeStraightAlt3]
+  id: GasPipeStraightWaste
+  suffix: Straight, Waste
+
+- type: entity
+  parent: [BaseGasPipeWaste, GasPipeBendAlt3]
+  id: GasPipeBendWaste
+  suffix: Bend, Waste
+
+- type: entity
+  parent: [BaseGasPipeWaste, GasPipeTJunctionAlt3]
+  id: GasPipeTJunctionWaste
+  suffix: TJunction, Waste
+
+- type: entity
+  parent: [BaseGasPipeWaste, GasPipeFourwayAlt3]
+  id: GasPipeFourwayWaste
+  suffix: Fourway, Waste
