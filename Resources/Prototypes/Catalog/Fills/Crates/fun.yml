@@ -129,9 +129,10 @@
           tableId: WoodwindInstrumentTable # 200 speso max
         - !type:NestedSelector
           tableId: KeyedPercussionInstrumentTable # 300 speso max
+        # Carpmosia-edit - Fix cargo bounty arbitrage #546 (max 3 percussion instruments per crate, below the 4 needed for BountyPercussion)
         - !type:NestedSelector
-          tableId: SpecialInstrumentTable # x2 200 speso max
-          rolls: 2
+          tableId: SpecialInstrumentTable # x1 200 speso max
+          rolls: 1
 
 # Rest of the fun
 
