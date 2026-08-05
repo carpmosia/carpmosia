@@ -39,10 +39,6 @@
   parent: [BaseAtmosDistro, GasVentPumpAlt4]
   id: GasVentPumpDistro
   suffix: Distro
-  components:
-  - type: GasPressurePump
-    enabled: true
-    targetPressure: 303.9
 
 - type: entity
   parent: [BaseAtmosDistro, GasPassiveVentAlt4]
@@ -54,6 +50,10 @@
   parent: [BaseAtmosDistro, GasPressurePumpAlt4]
   id: GasPressurePumpDistro
   suffix: Distro
+  components:
+  - type: GasPressurePump
+    enabled: true
+    targetPressure: 303.9
 
 - type: entity
   parent: [BaseAtmosDistro, GasValveAlt4]
@@ -214,3 +214,85 @@
   components:
   - type: GasFilter
     enabled: true
+
+# Distro nitrogen
+- type: entity
+  abstract: true
+  id: BaseAtmosNitrogen
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: AtmosPipeColor
+    color: '#FF1212FF'
+
+# Nitrogen pipes
+- type: entity
+  parent: [BaseAtmosNitrogen, GasPipeHalfAlt2]
+  id: GasPipeHalfNitrogen
+  suffix: Half, Nitrogen
+
+- type: entity
+  parent: [BaseAtmosNitrogen, GasPipeStraightAlt2]
+  id: GasPipeStraightNitrogen
+  suffix: Straight, Nitrogen
+
+- type: entity
+  parent: [BaseAtmosNitrogen, GasPipeBendAlt2]
+  id: GasPipeBendNitrogen
+  suffix: Bend, Nitrogen
+
+- type: entity
+  parent: [BaseAtmosNitrogen, GasPipeTJunctionAlt2]
+  id: GasPipeTJunctionNitrogen
+  suffix: TJunction, Nitrogen
+
+- type: entity
+  parent: [BaseAtmosNitrogen, GasPipeFourwayAlt2]
+  id: GasPipeFourwayNitrogen
+  suffix: Fourway, Nitrogen
+
+# Nitrogen unary
+- type: entity
+  parent: [BaseAtmosNitrogen, AirSensorVoxBase, GasVentPumpAlt2]
+  id: GasVentPumpNitrogen
+  suffix: Nitrogen
+
+- type: entity
+  parent: [BaseAtmosNitrogen, AirSensorVoxBase, GasVentScrubberAlt3]
+  id: GasVentScrubberNitrogen
+  suffix: Nitrogen
+  components:
+  - type: GasVentScrubber
+    wideNet: true # Air alarm with auto mode overrides filters with hardcoded defaults so default to widenet
+    filterGases:
+    - Oxygen # filter out oxygen as well as regular harmful gases
+    - CarbonDioxide
+    - Plasma
+    - Tritium
+    - WaterVapor
+    - Ammonia
+    - NitrousOxide
+    - Frezon
+
+# Nitrogen binary
+- type: entity
+  parent: [BaseAtmosNitrogen, GasPressurePumpAlt2]
+  id: GasPressurePumpNitrogen
+  suffix: Nitrogen
+  components:
+  - type: GasPressurePump
+    enabled: true
+    targetPressure: 303.9
+
+- type: entity
+  parent: [BaseAtmosNitrogen, GasValveAlt2]
+  id: GasValveNitrogen
+  suffix: Nitrogen
+  components:
+  - type: GasValve
+    open: true
+
+- type: entity
+  parent: [BaseAtmosNitrogen, GasPortAlt2]
+  id: GasPortNitrogen
+  suffix: Nitrogen
