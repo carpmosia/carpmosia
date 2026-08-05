@@ -9175,6 +9175,8 @@ entities:
       pos: -21.5,-26.5
     - type: PowerSupplier
       supplyRate: 50000
+      supplyRampRate: 5000
+      supplyRampTolerance: 5000
 - proto: GravityGeneratorMini
   entities:
   - uid: 1367
