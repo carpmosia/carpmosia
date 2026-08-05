@@ -15,3 +15,6 @@ lobby-state-background-dragonattack-artist = inari6666
 
 lobby-state-background-adayinsci-title = A day in Sci
 lobby-state-background-adayinsci-artist = spaceworm12
+
+lobby-state-background-bestiesforever-title = Besties Forever
+lobby-state-background-bestiesforever-artist = inari6666
