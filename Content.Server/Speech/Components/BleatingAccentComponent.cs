@@ -12,11 +12,11 @@ public sealed partial class BleatingAccentComponent : BaseAccentComponent
     /// Amount of vowel repeats, baaaah.
     /// </summary>
     [DataField]
-    public int Repeats = 4;
+    public int Repeats = 3;
 
     /// <summary>
     /// Any characters that will be inserted near the end of the repeated vowels, baaa-ah.
     /// </summary>
     [DataField]
-    public string Stop = string.Empty;
+    public string Stop = "'";
 }
