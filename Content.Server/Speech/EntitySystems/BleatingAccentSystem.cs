@@ -2,14 +2,11 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using Content.Server.Speech.Components;
 using Content.Shared.Speech.EntitySystems;
-using Robust.Shared.Random;
 
 namespace Content.Server.Speech.EntitySystems;
 
 public sealed partial class BleatingAccentSystem : RelayAccentSystem<BleatingAccentComponent>
 {
-    [Dependency] private IRobustRandom _random = default!;
-
     [GeneratedRegex("([mbdlpwhrkcnytfo])([aiu])", RegexOptions.IgnoreCase, "en-US")]
     private static partial Regex BleatRegex();
 
