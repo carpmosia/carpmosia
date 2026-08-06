@@ -15,8 +15,8 @@ public sealed partial class BleatingAccentComponent : BaseAccentComponent
     public int Repeats = 4;
 
     /// <summary>
-    /// A character (if any) that will be inserted near the end of the repeated vowels, baaa'ah.
+    /// Any characters that will be inserted near the end of the repeated vowels, baaa-ah.
     /// </summary>
     [DataField]
-    public string? Stop;
+    public string Break = string.Empty;
 }
