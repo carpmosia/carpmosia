@@ -15,9 +15,8 @@ public sealed partial class BleatingAccentComponent : BaseAccentComponent
     public int Repeats = 4;
 
     /// <summary>
-    /// If a dash will be inserted in the middle of repeated vowels.
-    /// Rounds up (baa-ah rather than ba-aah).
+    /// A character (if any) that will be inserted near the end of the repeated vowels, baaa'ah.
     /// </summary>
     [DataField]
-    public bool Wobble;
+    public string? Stop;
 }
