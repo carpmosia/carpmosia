@@ -12,25 +12,24 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared.Whistle;
 
-public sealed class WhistleSystem : EntitySystem
+public sealed partial class WhistleSystem : EntitySystem
 {
-    [Dependency] private readonly EntityLookupSystem _entityLookup = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly SharedActionsSystem _actions = default!; // Carpmosia-edit - Whistle action
-    [Dependency] private readonly UseDelaySystem _useDelay = default!; // Carpmosia-edit - Whistle action
+    [Dependency] private EntityLookupSystem _entityLookup = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private SharedActionsSystem _actions = default!; // Carpmosia-edit - Whistle action
+    [Dependency] private UseDelaySystem _useDelay = default!; // Carpmosia-edit - Whistle action
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<WhistleComponent, UseInHandEvent>(OnUseInHand);
-        SubscribeLocalEvent<WhistleComponent, GetItemActionsEvent>(OnGetItemActions); // Carpmosia-edit - Whistle action
-        SubscribeLocalEvent<WhistleComponent, SoundActionEvent>(OnWhistleAction); // Carpmosia-edit - Whistle action
     }
 
     // Carpmosia-start - Whistle action
-    private void OnGetItemActions(Entity<WhistleComponent> ent, ref GetItemActionsEvent args)
+    [SubscribeLocalEvent]
+    private static void OnGetItemActions(Entity<WhistleComponent> ent, ref GetItemActionsEvent args)
     {
         if (args.SlotFlags == SlotFlags.POCKET)
             return;
@@ -38,7 +37,8 @@ public sealed class WhistleSystem : EntitySystem
         args.AddAction(ref ent.Comp.Action, ent.Comp.ActionId);
     }
 
-    public void OnWhistleAction(Entity<WhistleComponent> ent, ref SoundActionEvent args)
+    [SubscribeLocalEvent]
+    private void OnWhistleAction(Entity<WhistleComponent> ent, ref SoundActionEvent args)
     {
         if (!_timing.IsFirstTimePredicted)
             return;

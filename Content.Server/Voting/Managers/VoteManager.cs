@@ -28,18 +28,18 @@ namespace Content.Server.Voting.Managers
 {
     public sealed partial class VoteManager : IVoteManager
     {
-        [Dependency] private readonly IServerNetManager _netManager = default!;
-        [Dependency] private readonly IConfigurationManager _cfg = default!;
-        [Dependency] private readonly IGameTiming _timing = default!;
-        [Dependency] private readonly IPlayerManager _playerManager = default!;
-        [Dependency] private readonly IChatManager _chatManager = default!;
-        [Dependency] private readonly IAdminManager _adminMgr = default!;
-        [Dependency] private readonly IRobustRandom _random = default!;
-        [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-        [Dependency] private readonly IGameMapManager _gameMapManager = default!;
-        [Dependency] private readonly IEntityManager _entityManager = default!;
-        [Dependency] private readonly IAdminLogManager _adminLogger = default!;
-        [Dependency] private readonly ISharedPlaytimeManager _playtimeManager = default!;
+        [Dependency] private IServerNetManager _netManager = default!;
+        [Dependency] private IConfigurationManager _cfg = default!;
+        [Dependency] private IGameTiming _timing = default!;
+        [Dependency] private IPlayerManager _playerManager = default!;
+        [Dependency] private IChatManager _chatManager = default!;
+        [Dependency] private IAdminManager _adminMgr = default!;
+        [Dependency] private IRobustRandom _random = default!;
+        [Dependency] private IPrototypeManager _prototypeManager = default!;
+        [Dependency] private IGameMapManager _gameMapManager = default!;
+        [Dependency] private IEntityManager _entityManager = default!;
+        [Dependency] private IAdminLogManager _adminLogger = default!;
+        [Dependency] private ISharedPlaytimeManager _playtimeManager = default!;
 
         private int _nextVoteId = 1;
 
@@ -535,8 +535,8 @@ namespace Content.Server.Voting.Managers
         {
             public object Data;
             public string Text;
-            public string? Icon = null; // Carpmosia-edit - Better map vote
-            public EntProtoId? Proto = null; // Carpmosia-edit - Better map vote
+            public readonly string? Icon = null; // Carpmosia-edit - Better map vote
+            public readonly EntProtoId? Proto = null; // Carpmosia-edit - Better map vote
             public int Votes;
 
             public VoteEntry(object data, object meta) // Carpmosia-edit - Better map vote

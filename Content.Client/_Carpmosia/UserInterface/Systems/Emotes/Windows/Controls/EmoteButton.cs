@@ -1,31 +1,29 @@
 using System.Numerics;
 using Content.Shared.Chat.Prototypes;
+using Robust.Client.GameObjects;
 using Robust.Client.UserInterface.Controls;
-using Robust.Client.Utility;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
 
 namespace Content.Client.UserInterface.Systems.Emotes.Controls;
 
 public sealed class EmoteButton : Button
 {
-    private readonly BoxContainer _box;
-
     public readonly TextureRect Icon;
     public new readonly RichTextLabel Label;
 
-    public EmoteButton(EmotePrototype emote)
+    public EmoteButton(EmotePrototype emote, SpriteSystem sprite)
     {
         MinSize = new Vector2(0, 24);
         Margin = new Thickness(1);
         HorizontalAlignment = HAlignment.Left;
 
-        _box = new BoxContainer
+        var box = new BoxContainer
         {
             Orientation = LayoutOrientation.Horizontal,
             MinSize = new Vector2(0, 24),
             Margin = new Thickness(1)
         };
-        AddChild(_box);
+        AddChild(box);
 
         Icon = new TextureRect
         {
@@ -39,9 +37,9 @@ public sealed class EmoteButton : Button
             MinSize = new Vector2(24, 24),
             MaxSize = new Vector2(24, 24),
             Visible = true,
-            Texture = emote.Icon.Frame0()
+            Texture = sprite.Frame0(emote.Icon),
         };
-        _box.AddChild(Icon);
+        box.AddChild(Icon);
 
         Label = new RichTextLabel
         {
@@ -51,8 +49,8 @@ public sealed class EmoteButton : Button
             VerticalAlignment = VAlignment.Center,
             Margin = new Thickness(1),
             Text = Loc.GetString(emote.Name),
-            Visible = true
+            Visible = true,
         };
-        _box.AddChild(Label);
+        box.AddChild(Label);
     }
 }

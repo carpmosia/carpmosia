@@ -2,6 +2,7 @@
   id: Exo
   mapName: 'Exo'
   mapPath: /Maps/exo.yml
+  mapPreview: MapPreviewExo # Carpmosia-edit - Map previews
   minPlayers: 40
   maxPlayers: 80
   stations:
@@ -9,6 +10,7 @@
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
+          shortName: Exo # Carpmosia-edit - Warp point prefixes
           mapNameTemplate: 'Exomorph Vessel "Conquest" EXO-{1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
@@ -40,6 +42,7 @@
             MedicalDoctor: [ 4, 4 ]
             MedicalIntern: [ 3, 3 ]
             Paramedic: [ 1, 1 ]
+            Psychologist: [ 1, 1 ]
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 4, 4 ]
@@ -47,9 +50,9 @@
             #security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
-            SecurityOfficer: [ 4, 4 ]
+            SecurityOfficer: [ 5, 5 ]
             Detective: [ 1, 1 ]
-            SecurityCadet: [ 4, 4 ]
+            SecurityCadet: [ 3, 3 ]
             Lawyer: [ 2, 2 ]
             #supply
             Quartermaster: [ 1, 1 ]

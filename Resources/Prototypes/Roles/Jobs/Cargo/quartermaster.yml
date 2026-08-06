@@ -13,11 +13,11 @@
     - !type:DepartmentTimeRequirement
       department: Cargo
       time: 10h
-  weight: 10
+  # weight: 10 # Carpmosia-edit - Job priority rebalance
+  displayWeight: 95 # Carpmosia-edit - Reorder jobs
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"
   supervisors: job-supervisors-captain
-  canBeAntag: false
   access:
   - Cargo
   - Salvage

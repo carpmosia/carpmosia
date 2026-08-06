@@ -124,7 +124,7 @@ public sealed partial class RoleLoadout : IEquatable<RoleLoadout>
                 continue;
             }
 
-            var loadouts = groupProto.MaxLimit > 0 ? groupLoadouts[..Math.Min(groupLoadouts.Count, groupProto.MaxLimit)] : groupLoadouts; // Carpmosia-edit - Lawset loadouts
+            var loadouts = groupProto.MaxLimit > 0 ? groupLoadouts[..Math.Min(groupLoadouts.Count, groupProto.MaxLimit)] : groupLoadouts;
 
             // Validate first
             for (var i = loadouts.Count - 1; i >= 0; i--)
@@ -297,10 +297,8 @@ public sealed partial class RoleLoadout : IEquatable<RoleLoadout>
         var groupLoadouts = SelectedLoadouts[selectedGroup];
 
         // Need to unselect existing ones if we're at or above limit
-        // Carpmosia-start - Lawset loadouts
         var groupProto = protoManager.Index(selectedGroup);
         var limit = groupProto.MaxLimit > 0 ? Math.Max(0, groupLoadouts.Count + 1 - protoManager.Index(selectedGroup).MaxLimit) : 0;
-        // Carpmosia-end - Lawset loadouts
 
         for (var i = 0; i < groupLoadouts.Count; i++)
         {

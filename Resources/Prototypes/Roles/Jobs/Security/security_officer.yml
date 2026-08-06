@@ -7,10 +7,10 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 4h
+  displayWeight: 25 # Carpmosia-edit - Reorder jobs
   startingGear: SecurityOfficerGear
   icon: "JobIconSecurityOfficer"
   supervisors: job-supervisors-hos
-  canBeAntag: false
   access:
   - Security
   - Brig

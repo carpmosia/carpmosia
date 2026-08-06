@@ -101,7 +101,7 @@
   molarMass: 44
   color: '#8F00FF'
   reagent: NitrousOxide
-  pricePerMole: 1 # Carpmosia-edit - More valuable gasses
+  pricePerMole: 0.1
 
 - type: gas
   id: Frezon
@@ -116,4 +116,4 @@
   gasMolesVisible: 0.6
   color: '#3a758c'
   reagent: Frezon
-  pricePerMole: 4 # Carpmosia-edit - More valuable gasses
+  pricePerMole: 1.5 # Carpmosia-edit - More valuable gasses

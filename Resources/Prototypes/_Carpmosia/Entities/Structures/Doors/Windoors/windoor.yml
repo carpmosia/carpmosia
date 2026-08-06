@@ -1,0 +1,9 @@
+# Secure
+- type: entity
+  parent: WindoorSecureEngineeringLocked
+  id: WindoorSecureLogisticsLocked
+  suffix: Cargo/Engineering, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsLogistics ]

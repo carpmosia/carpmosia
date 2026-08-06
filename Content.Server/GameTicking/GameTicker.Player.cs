@@ -1,5 +1,7 @@
+using Content.Server.Discord.DiscordLink; // Carpmosia-edit - Discord newjoin alert
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
+using Content.Shared.Chat; // Carpmosia-edit - Discord newjoin alert
 using Content.Shared.Database;
 using Content.Shared.GameTicking;
 using Content.Shared.GameWindow;
@@ -18,7 +20,8 @@ namespace Content.Server.GameTicking
     [UsedImplicitly]
     public sealed partial class GameTicker
     {
-        [Dependency] private readonly IPlayerManager _playerManager = default!;
+        [Dependency] private IPlayerManager _playerManager = default!;
+        [Dependency] private DiscordChatLink _discordLink = default!; // Carpmosia-edit - Discord newjoin alert
 
         private void InitializePlayer()
         {
@@ -71,6 +74,12 @@ namespace Content.Server.GameTicking
                         _audio.PlayGlobal(new SoundPathSpecifier("/Audio/Effects/newplayerping.ogg"),
                             Filter.Empty().AddPlayers(_adminManager.ActiveAdmins), false,
                             audioParams: new AudioParams { Volume = -5f });
+                        
+                    // Carpmosia-start - Discord newjoin alert
+                    if (firstConnection && _cfg.GetCVar(CCVars.AdminChatAlertNewjoin))
+                        _discordLink.SendMessage(Loc.GetString("player-first-join-message", ("name", args.Session.Name)),
+                            "System", ChatChannel.AdminChat);
+                    // Carpmosia-end - Discord newjoin alert
 
                     if (LobbyEnabled && _roundStartCountdownHasNotStartedYetDueToNoPlayers)
                     {

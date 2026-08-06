@@ -2316,49 +2316,41 @@ entities:
   - uid: 72
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -1.5,3.5
       parent: 2
   - uid: 73
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -0.5,4.5
       parent: 2
   - uid: 74
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 4.5,3.5
       parent: 2
   - uid: 75
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 3.5,4.5
       parent: 2
   - uid: 76
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 4.5,-0.5
       parent: 2
   - uid: 77
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 3.5,-1.5
       parent: 2
   - uid: 78
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -0.5,-1.5
       parent: 2
   - uid: 79
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -1.5,-0.5
       parent: 2
   - uid: 234
@@ -2797,7 +2789,7 @@ entities:
     - type: Transform
       pos: 6.5,1.5
       parent: 2
-- proto: IntercomAll
+- proto: IntercomCommon # Carpmosia-edit - Decontraing salv
   entities:
   - uid: 70
     components:
@@ -2805,13 +2797,15 @@ entities:
       rot: 3.141592653589793 rad
       pos: 0.5,-1.5
       parent: 2
-- proto: MagazineShotgunBeanbag
+- proto: BoxBeanbag # Carpmosia-edit - Decontraing salv
   entities:
   - uid: 539
     components:
     - type: Transform
       pos: 21.62893,-0.4529693
       parent: 2
+- proto: ClothingHeadHatUshanka # Carpmosia-edit - Decontraing salv
+  entities: # Carpmosia-edit - Decontraing salv
   - uid: 540
     components:
     - type: Transform

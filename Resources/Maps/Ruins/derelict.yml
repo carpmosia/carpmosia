@@ -2654,7 +2654,7 @@ entities:
     - type: Transform
       pos: 26.373707,46.90609
       parent: 2
-- proto: ClothingHeadHelmetSwatSyndicate
+- proto: ClothingHeadHatUshanka # Carpmosia-edit - Decontraing salv
   entities:
   - uid: 2364
     components:
@@ -3811,13 +3811,11 @@ entities:
   - uid: 1948
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: -10.5,32.5
       parent: 2
   - uid: 1949
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: -11.5,33.5
       parent: 2
   - uid: 2033
@@ -5762,7 +5760,7 @@ entities:
     - type: Transform
       pos: 11.434327,43.308563
       parent: 2
-- proto: ToolboxSyndicate
+- proto: ToolboxMechanical # Carpmosia-edit - Decontraing salv
   entities:
   - uid: 2191
     components:

@@ -16,17 +16,19 @@
   title: lobby-state-background-pharmacy-title
   artist: lobby-state-background-pharmacy-artist
 
-- type: lobbyBackground
-  id: SSXIV
-  background: /Textures/LobbyScreens/ssxiv.webp
-  title: lobby-state-background-SSXIV-title
-  artist: lobby-state-background-SSXIV-artist
+# Carpmosia-start - Derotate some lobby arts
+# - type: lobbyBackground
+#   id: SSXIV
+#   background: /Textures/LobbyScreens/ssxiv.webp
+#   title: lobby-state-background-SSXIV-title
+#   artist: lobby-state-background-SSXIV-artist
 
-- type: lobbyBackground
-  id: Susstation
-  background: /Textures/LobbyScreens/susstation.webp
-  title: lobby-state-background-susstation-title
-  artist: lobby-state-background-susstation-artist
+# - type: lobbyBackground
+#   id: Susstation
+#   background: /Textures/LobbyScreens/susstation.webp
+#   title: lobby-state-background-susstation-title
+#   artist: lobby-state-background-susstation-artist
+# Carpmosia-end - Derotate some lobby arts
 
 - type: lobbyBackground
   id: SkellyVsTheRev
@@ -34,11 +36,13 @@
   title: lobby-state-background-skellyvstherev-title
   artist: lobby-state-background-skellyvstherev-artist
 
-- type: lobbyBackground
-  id: Doomed
-  background: /Textures/LobbyScreens/doomed.webp
-  title: lobby-state-background-doomed-title
-  artist: lobby-state-background-doomed-artist
+# Carpmosia-start - Derotate some lobby arts
+# - type: lobbyBackground
+#   id: Doomed
+#   background: /Textures/LobbyScreens/doomed.webp
+#   title: lobby-state-background-doomed-title
+#   artist: lobby-state-background-doomed-artist
+# Carpmosia-end - Derotate some lobby arts
 
 - type: lobbyBackground
   id: Blueprint

@@ -12,9 +12,9 @@ namespace Content.Server.GameTicking;
 
 public sealed partial class GameTicker
 {
-    [Dependency] private readonly IReplayRecordingManager _replays = default!;
-    [Dependency] private readonly IResourceManager _resourceManager = default!;
-    [Dependency] private readonly ISerializationManager _serialman = default!;
+    [Dependency] private IReplayRecordingManager _replays = default!;
+    [Dependency] private IResourceManager _resourceManager = default!;
+    [Dependency] private ISerializationManager _serialman = default!;
 
 
     private ISawmill _sawmillReplays = default!;
@@ -123,7 +123,7 @@ public sealed partial class GameTicker
     {
         // Write round info like map and round end summery into the replay_final.yml file. Useful for external parsers.
 
-        metadata["map"] = new ValueDataNode(_gameMapManager.GetSelectedMap()?.MapName);
+        metadata["map"] = new ValueDataNode(_gameMapManager.GetSelectedMapName()); // Carpmosia-edit - Multistation
         metadata["gamemode"] = new ValueDataNode(CurrentPreset != null ? Loc.GetString(CurrentPreset.ModeTitle) : string.Empty);
         metadata["roundEndPlayers"] = _serialman.WriteValue(_replayRoundPlayerInfo);
         metadata["roundEndText"] = new ValueDataNode(_replayRoundText);

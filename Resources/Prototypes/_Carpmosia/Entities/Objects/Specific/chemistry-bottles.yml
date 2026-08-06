@@ -4,14 +4,12 @@
   suffix: traumoxadone
   components:
   - type: Label
-    currentLabel: reagent-name-traumoxadone
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Traumoxadone
-          Quantity: 30
+    localizedLabel: reagent-name-traumoxadone
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Traumoxadone
+        Quantity: 30
 
 - type: entity
   parent: BaseChemistryBottleFilled
@@ -19,14 +17,12 @@
   suffix: stelloxadone
   components:
   - type: Label
-    currentLabel: reagent-name-stelloxadone
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Stelloxadone
-          Quantity: 30
+    localizedLabel: reagent-name-stelloxadone
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Stelloxadone
+        Quantity: 30
 
 - type: entity
   parent: BaseChemistryBottleFilled
@@ -34,14 +30,12 @@
   suffix: tetracordrazine
   components:
   - type: Label
-    currentLabel: reagent-name-tetracordrazine
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Tetracordrazine
-          Quantity: 30
+    localizedLabel: reagent-name-tetracordrazine
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Tetracordrazine
+        Quantity: 30
 
 - type: entity
   parent: BaseChemistryBottleFilled
@@ -49,11 +43,9 @@
   suffix: saltpetre
   components:
   - type: Label
-    currentLabel: reagent-name-saltpetre
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Saltpetre
-          Quantity: 30
+    localizedLabel: reagent-name-saltpetre
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Saltpetre
+        Quantity: 30

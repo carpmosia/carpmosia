@@ -7,7 +7,6 @@
   - type: Tag
     tags:
     - FireAxe
-  - type: Sharp
   - type: Execution
     doAfterDuration: 4.0
   - type: Sprite
@@ -38,6 +37,7 @@
     quickEquip: false
     slots:
     - back
+    - suitStorage
   - type: Tool
     # Carpmosia-start - Plating axing
     speedModifier: 0.4
@@ -45,8 +45,10 @@
       path: /Audio/Items/crowbar.ogg
     # Carpmosia-end - Plating axing
     qualities:
-      - Prying
-      - Axing # Carpmosia-edit - Plating axing
+    - Prying
+    - Axing # Carpmosia-edit - Plating axing
+    - Slicing
+    - Sawing
   - type: ToolTileCompatible
   - type: Prying
   - type: UseDelay
@@ -59,11 +61,12 @@
 - type: entity
   id: FireAxeFlaming
   name: fire axe
-  parent: [BaseSyndicateContraband, FireAxe]
+  parent: [ BaseSyndicateContraband, FireAxe ]
   description: Why fight fire with an axe when you can fight with fire and axe? Now featuring rugged rubberized handle!
   components:
   - type: MeleeWeapon
-    wideAnimationRotation: 90
+    wideAnimationRotation: 135
+    swingLeft: true
   - type: IgniteOnMeleeHit
     fireStacks: 1
   - type: Sprite
@@ -74,6 +77,7 @@
     quickEquip: false
     slots:
     - back
+    - suitStorage
   # Carpmosia-start - Plating axing
   - type: Tool
     qualities:

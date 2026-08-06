@@ -68,7 +68,7 @@ namespace Content.Server.GameTicking
 
             if (!foundOne)
             {
-                stationNames.Append(_gameMapManager.GetSelectedMap()?.MapName ??
+                stationNames.Append(_gameMapManager.GetSelectedMapName() ?? // Carpmosia-edit - Multistation
                                     Loc.GetString("game-ticker-no-map-selected"));
             }
 

@@ -10,9 +10,9 @@ using Robust.Shared.Random;
 namespace Content.Server.StationEvents.Events;
 
 [UsedImplicitly]
-public sealed class BureaucraticErrorRule : StationEventSystem<BureaucraticErrorRuleComponent>
+public sealed partial class BureaucraticErrorRule : StationEventSystem<BureaucraticErrorRuleComponent>
 {
-    [Dependency] private readonly StationJobsSystem _stationJobs = default!;
+    [Dependency] private StationJobsSystem _stationJobs = default!;
 
     protected override void Started(EntityUid uid, BureaucraticErrorRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
@@ -29,12 +29,20 @@ public sealed class BureaucraticErrorRule : StationEventSystem<BureaucraticError
         if (jobList.Count == 0)
             return;
 
+        // Carpmosia-start - Less annoying bureaucratic error
+        var lower = (int) (jobList.Count * 0.20);
+        var upper = (int) (jobList.Count * 0.30);
+        // Changing every role is maybe a bit too chaotic so instead change 20-30% of them.
+        var num = RobustRandom.Next(lower, upper);
+
         // Low chance to completely change up the late-join landscape by closing all positions except infinite slots.
         // Lower chance than the /tg/ equivalent of this event.
         if (RobustRandom.Prob(0.25f))
         {
-            var chosenJob = RobustRandom.PickAndTake(jobList);
-            _stationJobs.MakeJobUnlimited(chosenStation.Value, chosenJob); // INFINITE chaos.
+            for (var i = 0; i < num; i++)
+            {
+                _stationJobs.MakeJobUnlimited(chosenStation.Value, RobustRandom.PickAndTake(jobList)); // INFINITE chaos.
+            }
             foreach (var job in jobList)
             {
                 if (_stationJobs.IsJobUnlimited(chosenStation.Value, job))
@@ -44,10 +52,7 @@ public sealed class BureaucraticErrorRule : StationEventSystem<BureaucraticError
         }
         else
         {
-            var lower = (int) (jobList.Count * 0.20);
-            var upper = (int) (jobList.Count * 0.30);
-            // Changing every role is maybe a bit too chaotic so instead change 20-30% of them.
-            var num = RobustRandom.Next(lower, upper);
+        // Carpmosia-end - Less annoying bureaucratic error
             for (var i = 0; i < num; i++)
             {
                 var chosenJob = RobustRandom.PickAndTake(jobList);

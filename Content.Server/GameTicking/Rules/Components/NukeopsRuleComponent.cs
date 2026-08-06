@@ -69,7 +69,15 @@ public sealed partial class NukeopsRuleComponent : Component
     ///     Delay between war declaration and nuke ops arrival on station map. Gives crew time to prepare
     /// </summary>
     [DataField]
-    public TimeSpan WarNukieArriveDelay = TimeSpan.FromMinutes(15);
+    public TimeSpan WarNukieArriveDelay = TimeSpan.FromMinutes(20); // Carpmosia-edit - Nukie tweaks
+
+    // Carpmosia-start - Nukie tweaks
+    /// <summary>
+    ///     Delay between nuke ops arrival on station map without war declaration. Gives crew time to prepare
+    /// </summary>
+    [DataField]
+    public TimeSpan NonWarNukieArriveDelay = TimeSpan.FromMinutes(20);
+    // Carpmosia-end - Nukie tweaks
 
     /// <summary>
     ///     Time crew can't call emergency shuttle after war declaration.
@@ -81,7 +89,7 @@ public sealed partial class NukeopsRuleComponent : Component
     ///     Minimal operatives count for war declaration
     /// </summary>
     [DataField]
-    public int WarDeclarationMinOps = 4;
+    public int WarDeclarationMinOps = 3; // Carpmosia-edit - Nukie tweaks
 
     [DataField]
     public WinType WinType = WinType.Neutral;
@@ -109,8 +117,7 @@ public enum WinType : byte
     /// </summary>
     OpsMajor,
     /// <summary>
-    ///     Minor win. All nukies were alive at the end of the round.
-    ///     Alternatively, some nukies were alive, but the disk was left behind.
+    ///     Operative minor win. At least one nukie survived, and the disk was left behind.
     /// </summary>
     OpsMinor,
     /// <summary>
@@ -135,7 +142,7 @@ public enum WinCondition : byte
     NukeExplodedOnNukieOutpost,
     NukeExplodedOnIncorrectLocation,
     NukeActiveInStation,
-    NukeActiveAtCentCom,
+    // NukeActiveAtCentCom, // Carpmosia-edit - Replaced CC with Terminals
     NukeDiskOnCentCom,
     NukeDiskNotOnCentCom,
     NukiesAbandoned,

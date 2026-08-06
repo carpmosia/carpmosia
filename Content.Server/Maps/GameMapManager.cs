@@ -13,21 +13,21 @@ using Robust.Shared.Utility;
 
 namespace Content.Server.Maps;
 
-public sealed class GameMapManager : IGameMapManager
+public sealed partial class GameMapManager : IGameMapManager
 {
-    [Dependency] private readonly IEntityManager _entityManager = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly IConfigurationManager _configurationManager = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly IResourceManager _resMan = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private IEntityManager _entityManager = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private IConfigurationManager _configurationManager = default!;
+    [Dependency] private IPlayerManager _playerManager = default!;
+    [Dependency] private IResourceManager _resMan = default!;
+    [Dependency] private IRobustRandom _random = default!;
 
     [ViewVariables(VVAccess.ReadOnly)]
     private readonly Queue<string> _previousMaps = new();
     [ViewVariables(VVAccess.ReadOnly)]
-    private GameMapPrototype? _configSelectedMap;
+    private List<GameMapPrototype>? _configSelectedMap; // Carpmosia-edit - Multistation
     [ViewVariables(VVAccess.ReadOnly)]
-    private GameMapPrototype? _selectedMap; // Don't change this value during a round!
+    private List<GameMapPrototype>? _selectedMap; // Carpmosia-edit - Multistation
     [ViewVariables(VVAccess.ReadOnly)]
     private bool _mapRotationEnabled;
     [ViewVariables(VVAccess.ReadOnly)]
@@ -41,9 +41,11 @@ public sealed class GameMapManager : IGameMapManager
 
         _configurationManager.OnValueChanged(CCVars.GameMap, value =>
         {
-            if (TryLookupMap(value, out GameMapPrototype? map))
+            var maps = value.Split(";").Select(x => TryLookupMap(x, out var map) ? map : null).OfType<GameMapPrototype>(); // Carpmosia-edit - Multistation
+
+            if (maps.Any()) // Carpmosia-edit - Multistation
             {
-                _configSelectedMap = map;
+                _configSelectedMap = [.. maps]; // Carpmosia-edit - Multistation
                 return;
             }
 
@@ -56,12 +58,12 @@ public sealed class GameMapManager : IGameMapManager
             if (_configurationManager.GetCVar<bool>(CCVars.UsePersistence))
             {
                 var startMap = _configurationManager.GetCVar<string>(CCVars.PersistenceMap);
-                _configSelectedMap = _prototypeManager.Index<GameMapPrototype>(startMap);
+                _configSelectedMap = [_prototypeManager.Index<GameMapPrototype>(startMap)]; // Carpmosia-edit - Multistation
 
                 var mapPath = new ResPath(value);
                 if (_resMan.UserData.Exists(mapPath))
                 {
-                    _configSelectedMap = _configSelectedMap.Persistence(mapPath);
+                    _configSelectedMap = [.. _configSelectedMap.Select(x => x.Persistence(mapPath))]; // Carpmosia-edit - Multistation
                     _log.Info($"Using persistence map from {value}");
                     return;
                 }
@@ -129,10 +131,17 @@ public sealed class GameMapManager : IGameMapManager
         return _prototypeManager.EnumeratePrototypes<GameMapPrototype>();
     }
 
-    public GameMapPrototype? GetSelectedMap()
+    public List<GameMapPrototype>? GetSelectedMap() // Carpmosia-edit - Multistation
     {
         return _configSelectedMap ?? _selectedMap;
     }
+
+    // Carpmosia-start - Multistation
+    public string? GetSelectedMapName()
+    {
+        return GetSelectedMap() is { } maps ? string.Join(" & ", maps.Select(x => x.MapName)) : null;
+    }
+    // Carpmosia-end - Multistation
 
     public void ClearSelectedMap()
     {
@@ -143,7 +152,7 @@ public sealed class GameMapManager : IGameMapManager
     {
         if (!TryLookupMap(gameMap, out var map) || !IsMapEligible(map))
             return false;
-        _selectedMap = map;
+        _selectedMap = [map]; // Carpmosia-edit - Multistation
         return true;
     }
 
@@ -151,20 +160,20 @@ public sealed class GameMapManager : IGameMapManager
     {
         if (!TryLookupMap(gameMap, out var map))
             throw new ArgumentException($"The map \"{gameMap}\" is invalid!");
-        _selectedMap = map;
+        _selectedMap = [map]; // Carpmosia-edit - Multistation
     }
 
     public void SelectMapRandom()
     {
         var maps = CurrentlyEligibleMaps().ToList();
-        _selectedMap = _random.Pick(maps);
+        _selectedMap = [_random.Pick(maps)]; // Carpmosia-edit - Multistation
     }
 
     public void SelectMapFromRotationQueue(bool markAsPlayed = false)
     {
         var map = GetFirstInRotationQueue();
 
-        _selectedMap = map;
+        _selectedMap = [map]; // Carpmosia-edit - Multistation
 
         if (markAsPlayed)
             EnqueueMap(map.ID);

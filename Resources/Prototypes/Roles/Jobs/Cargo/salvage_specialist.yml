@@ -7,10 +7,10 @@
     - !type:DepartmentTimeRequirement
       department: Cargo
       time: 2.5h
+  displayWeight: 60 # Carpmosia-edit - Reorder jobs
   icon: "JobIconShaftMiner"
   startingGear: SalvageSpecialistGear
   supervisors: job-supervisors-qm
-  canBeAntag: false # Carpmosia-edit - No more salvage antags
   access:
   - Cargo
   - Salvage

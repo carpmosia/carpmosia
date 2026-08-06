@@ -16,11 +16,11 @@ namespace Content.Server.Singularity.EntitySystems;
 /// Handles their accumulation of energy upon consuming entities (see <see cref="EventHorizonComponent"/>) and gradual dissipation.
 /// Also handles synchronizing server-side components with the singuarities level.
 /// </summary>
-public sealed class SingularitySystem : SharedSingularitySystem
+public sealed partial class SingularitySystem : SharedSingularitySystem
 {
 #region Dependencies
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly PvsOverrideSystem _pvs = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private PvsOverrideSystem _pvs = default!;
 #endregion Dependencies
 
     /// <summary>
@@ -267,12 +267,14 @@ public sealed class SingularitySystem : SharedSingularitySystem
     {
         comp.EnergyDrain = args.NewValue switch
         {
-            6 => 0,
-            5 => 0,
+            // Carpmosia-start - Engine Loose Rework
+            6 => 30,
+            5 => 25,
+            // Carpmosia-end - Engine Loose Rework
             4 => 20,
             3 => 10,
             2 => 5,
-            1 => 1,
+            1 => 3, // Carpmosia-edit - Engine Loose Rework
             _ => 0
         };
     }
@@ -285,9 +287,16 @@ public sealed class SingularitySystem : SharedSingularitySystem
     /// <param name="args">The event arguments.</param>
     private void UpdateRandomWalk(EntityUid uid, RandomWalkComponent comp, SingularityLevelChangedEvent args)
     {
-        var scale = MathF.Max(args.NewValue, 4);
-        comp.MinSpeed = 7.5f / scale;
-        comp.MaxSpeed = 10f / scale;
+        // Carpmosia-start - Engine Loose Rework
+        var scale = MathF.Max(args.NewValue, 2);
+
+        if(!TryComp<SingularityComponent>(uid, out var singularity))
+            return;
+
+        comp.MinSpeed = singularity.BaseMin / scale;
+        comp.MaxSpeed = singularity.BaseMax / scale;
+        comp.NextStepTime = TimeSpan.Zero;
+        // Carpmosia-end - Engine Loose Rework
     }
 
     /// <summary>

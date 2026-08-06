@@ -8,9 +8,9 @@ using Robust.Client.UserInterface;
 namespace Content.Client.Fax.UI;
 
 [UsedImplicitly]
-public sealed class FaxBoundUi : BoundUserInterface
+public sealed partial class FaxBoundUi : BoundUserInterface
 {
-    [Dependency] private readonly IFileDialogManager _fileDialogManager = default!;
+    [Dependency] private IFileDialogManager _fileDialogManager = default!;
 
     [ViewVariables]
     private FaxWindow? _window;
@@ -69,7 +69,8 @@ public sealed class FaxBoundUi : BoundUserInterface
         SendMessage(new FaxFileMessage(
             label?[..Math.Min(label.Length, FaxFileMessageValidation.MaxLabelSize)],
             content[..Math.Min(content.Length, FaxFileMessageValidation.MaxContentSize)],
-            _window.OfficePaper));
+            _window.OfficePaper,
+            _window.PaperColor)); // Carpmosia-end - Colored paper
     }
 
     private void OnSendButtonPressed()

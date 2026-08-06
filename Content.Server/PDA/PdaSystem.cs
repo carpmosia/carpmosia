@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using Content.Server.Access.Systems;
 using Content.Server.AlertLevel;
 using Content.Server.CartridgeLoader;
@@ -13,6 +14,7 @@ using Content.Shared.CartridgeLoader;
 using Content.Shared.Chat;
 using Content.Shared.DeviceNetwork.Components;
 using Content.Shared.Implants;
+using Content.Shared.Interaction.Events; // Carpmosia-edit - Uplink Auto-locker
 using Content.Shared.Inventory;
 using Content.Shared.Light;
 using Content.Shared.Light.EntitySystems;
@@ -28,18 +30,18 @@ using Robust.Shared.Utility;
 
 namespace Content.Server.PDA
 {
-    public sealed class PdaSystem : SharedPdaSystem
+    public sealed partial class PdaSystem : SharedPdaSystem
     {
-        [Dependency] private readonly CartridgeLoaderSystem _cartridgeLoader = default!;
-        [Dependency] private readonly InstrumentSystem _instrument = default!;
-        [Dependency] private readonly RingerSystem _ringer = default!;
-        [Dependency] private readonly StationSystem _station = default!;
-        [Dependency] private readonly StoreSystem _store = default!;
-        [Dependency] private readonly IChatManager _chatManager = default!;
-        [Dependency] private readonly UserInterfaceSystem _ui = default!;
-        [Dependency] private readonly UnpoweredFlashlightSystem _unpoweredFlashlight = default!;
-        [Dependency] private readonly ContainerSystem _containerSystem = default!;
-        [Dependency] private readonly IdCardSystem _idCard = default!;
+        [Dependency] private CartridgeLoaderSystem _cartridgeLoader = default!;
+        [Dependency] private InstrumentSystem _instrument = default!;
+        [Dependency] private RingerSystem _ringer = default!;
+        [Dependency] private StationSystem _station = default!;
+        [Dependency] private StoreSystem _store = default!;
+        [Dependency] private IChatManager _chatManager = default!;
+        [Dependency] private UserInterfaceSystem _ui = default!;
+        [Dependency] private UnpoweredFlashlightSystem _unpoweredFlashlight = default!;
+        [Dependency] private ContainerSystem _containerSystem = default!;
+        [Dependency] private IdCardSystem _idCard = default!;
 
         public override void Initialize()
         {
@@ -63,6 +65,8 @@ namespace Content.Server.PDA
             SubscribeLocalEvent<AlertLevelChangedEvent>(OnAlertLevelChanged);
             SubscribeLocalEvent<PdaComponent, InventoryRelayedEvent<ChameleonControllerOutfitSelectedEvent>>(OnRelayedEventToIdCard);
             SubscribeLocalEvent<PdaComponent, InventoryRelayedEvent<VoiceMaskNameUpdatedEvent>>(OnRelayedEventToIdCard);
+
+            SubscribeLocalEvent<RingerUplinkComponent, DroppedEvent>(OnDrop); // Carpmosia-edit - Uplink Auto-locker
         }
 
         private void OnRelayedEventToIdCard<T>(Entity<PdaComponent> ent, ref InventoryRelayedEvent<T> args)
@@ -202,7 +206,7 @@ namespace Content.Server.PDA
             if (!TryComp(uid, out CartridgeLoaderComponent? loader))
                 return;
 
-            var programs = _cartridgeLoader.GetAvailablePrograms(uid, loader);
+            var programs = GetNetEntityList(_cartridgeLoader.GetAllPrograms(uid).ToList());
             var id = CompOrNull<IdCardComponent>(pda.ContainedId);
             var state = new PdaUpdateState(
                 programs,
@@ -304,6 +308,16 @@ namespace Content.Server.PDA
                 UpdatePdaUi(uid, pda);
             }
         }
+
+        // Carpmosia-start - Uplink Auto-locker
+        private void OnDrop(Entity<RingerUplinkComponent> ent, ref DroppedEvent args)
+        {
+            if (TryComp<RemoteStoreComponent>(ent, out var remoteStore))
+                remoteStore.Store = null;
+            _ringer.LockUplink(ent!);
+            UpdatePdaUi(ent);
+        }
+        // Carpmosia-end - Uplink Auto-locker
 
         /// <summary>
         /// Returns the currently unlocked store, if there is one.

@@ -4,18 +4,12 @@ using Content.Shared.Objectives.Components;
 
 namespace Content.Server.Objectives.Systems;
 
-public sealed class SelfAndTargetSurviveConditionSystem : EntitySystem
+public sealed partial class SelfAndTargetSurviveConditionSystem : EntitySystem
 {
-    [Dependency] private readonly SharedMindSystem _mindSystem = default!;
-    [Dependency] private readonly TargetObjectiveSystem _targetObjectiveSystem = default!;
+    [Dependency] private SharedMindSystem _mindSystem = default!;
+    [Dependency] private TargetObjectiveSystem _targetObjectiveSystem = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<SelfAndTargetSurviveConditionComponent, ObjectiveGetProgressEvent>(OnGetProgress);
-    }
-
+    [SubscribeLocalEvent]
     private void OnGetProgress(Entity<SelfAndTargetSurviveConditionComponent> entity, ref ObjectiveGetProgressEvent args)
     {
         var progress = _mindSystem.IsCharacterDeadIc(args.Mind) ? 0f : 1f;

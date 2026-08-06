@@ -1,5 +1,7 @@
 using Content.Server.ParticleAccelerator.Wires;
+using Content.Shared.Radio; // Carpmosia-edit - PA radio alerts
 using Content.Shared.Singularity.Components;
+using Robust.Shared.Prototypes; // Carpmosia-edit - PA radio alerts
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server.ParticleAccelerator.Components;
@@ -132,4 +134,37 @@ public sealed partial class ParticleAcceleratorControlBoxComponent : Component
     /// </summary>
     [ViewVariables]
     public bool CanBeEnabled = true;
+
+    // Carpmosia-start - PA radio alerts
+    /// <summary>
+    /// The radio channel to broadcast on when something happens to this PA
+    /// </summary>
+    [DataField]
+    public ProtoId<RadioChannelPrototype> RadioChannel = "Engineering";
+
+    /// <summary>
+    /// Whether a radio channel should be alerted if anything happens to this PA
+    /// </summary>
+    [DataField]
+    public bool AlertRadio = true;
+
+    /// <summary>
+    /// Localized string to use when this particle accelerator is activated and AlertRadio is set to true
+    /// </summary>
+    [DataField]
+    public LocId LocActivated = "pa-activated-broadcast";
+
+    /// <summary>
+    /// Localized string to use when this particle accelerator is deactivated and AlertRadio is set to true
+    /// </summary>
+    [DataField]
+    public LocId LocDeactivated = "pa-deactivated-broadcast";
+
+    /// <summary>
+    /// Localized string to use when this particle accelerator is set above a certain strength and AlertRadio is set to true
+    /// </summary>
+    [DataField]
+    public LocId LocWarning = "pa-warning-broadcast";
+    // Carpmosia-end - PA radio alerts
+
 }

@@ -11,13 +11,9 @@
     - DoorBumpOpener
     - SiliconEmotes
     - Unimplantable
-    - GhostOnlyWarp
   - type: WarpPoint
     follow: true
-    location: overclocked cleanbot
-    blacklist:
-      tags:
-      - GhostOnlyWarp
+    location: location-overclocked-cleanbot
 
 - type: entity
   parent: MobCleanBotAdmeme
@@ -42,13 +38,10 @@
   - type: MovementSpeedModifier
     baseSprintSpeed: 12
   - type: SolutionRegeneration
-    solution: absorbed
     generated:
       reagents:
       - ReagentId: Water
         Quantity: 30
-  - type: WarpPoint
-    location: overclocked cleanbot
 
 - type: entity
   parent: MobCleanBotAdmeme
@@ -61,8 +54,7 @@
   - type: Fixtures
     fixtures:
       fix1:
-        shape:
-          !type:PhysShapeCircle
+        shape: !type:PhysShapeCircle
           radius: .25
         density: 190
         mask:
@@ -84,7 +76,7 @@
   - type: CanEscapeInventory
   - type: MultiHandedItem
   - type: WarpPoint
-    location: space roomba
+    location: location-space-roomba
 
 - type: entity
   parent: [ MobSiliconBase, MobCombat ]

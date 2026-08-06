@@ -9,7 +9,9 @@ using Content.Server.Communications;
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Events;
+using Content.Server.Maps; // Carpmosia-edit - Replaced CC with Terminals
 using Content.Server.Pinpointer;
+using Content.Server.ReturnToLobby; // Carpmosia-edit - Return to lobby
 using Content.Server.RoundEnd;
 using Content.Server.Screens.Components;
 using Content.Server.Shuttles.Components;
@@ -23,6 +25,7 @@ using Content.Shared.DeviceNetwork;
 using Content.Shared.DeviceNetwork.Components;
 using Content.Shared.GameTicking;
 using Content.Shared.Localizations;
+using Content.Shared.Maps; // Carpmosia-edit - Replaced CC with Terminals
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Events;
 using Content.Shared.Shuttles.Systems;
@@ -46,27 +49,29 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
      * Handles the escape shuttle + CentCom.
      */
 
-    [Dependency] private readonly IAdminLogManager _logger = default!;
-    [Dependency] private readonly IAdminManager _admin = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
-    [Dependency] private readonly AccessReaderSystem _reader = default!;
-    [Dependency] private readonly ChatSystem _chatSystem = default!;
-    [Dependency] private readonly CommunicationsConsoleSystem _commsConsole = default!;
-    [Dependency] private readonly DeviceNetworkSystem _deviceNetworkSystem = default!;
-    [Dependency] private readonly DockingSystem _dock = default!;
-    [Dependency] private readonly GameTicker _ticker = default!;
-    [Dependency] private readonly IdCardSystem _idSystem = default!;
-    [Dependency] private readonly NavMapSystem _navMap = default!;
-    [Dependency] private readonly MapLoaderSystem _loader = default!;
-    [Dependency] private readonly MetaDataSystem _metaData = default!;
-    [Dependency] private readonly RoundEndSystem _roundEnd = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly ShuttleSystem _shuttle = default!;
-    [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly TransformSystem _transformSystem = default!;
-    [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
+    [Dependency] private IAdminLogManager _logger = default!;
+    [Dependency] private IAdminManager _admin = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private SharedMapSystem _mapSystem = default!;
+    [Dependency] private AccessReaderSystem _reader = default!;
+    [Dependency] private ChatSystem _chatSystem = default!;
+    [Dependency] private CommunicationsConsoleSystem _commsConsole = default!;
+    [Dependency] private DeviceNetworkSystem _deviceNetworkSystem = default!;
+    [Dependency] private DockingSystem _dock = default!;
+    [Dependency] private GameTicker _ticker = default!;
+    [Dependency] private IdCardSystem _idSystem = default!;
+    [Dependency] private NavMapSystem _navMap = default!;
+    [Dependency] private MapLoaderSystem _loader = default!;
+    [Dependency] private MetaDataSystem _metaData = default!;
+    [Dependency] private RoundEndSystem _roundEnd = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private ShuttleSystem _shuttle = default!;
+    [Dependency] private StationSystem _station = default!;
+    [Dependency] private TransformSystem _transformSystem = default!;
+    [Dependency] private UserInterfaceSystem _uiSystem = default!;
+    [Dependency] private IPrototypeManager _protoMan = default!; // Carpmosia-edit - Replaced CC with Terminals
+    [Dependency] private ReturnToLobbySystem _returnToLobby = default!; // Carpmosia-edit - Return to lobby
 
     private const float ShuttleSpawnBuffer = 1f;
 
@@ -441,6 +446,7 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
 
         _consoleAccumulator = ConfigManager.GetCVar(CCVars.EmergencyShuttleDockTime);
         EmergencyShuttleArrived = true;
+        _returnToLobby.UpdateStatus(); // Carpmosia-edit - Return to lobby
 
         var query = AllEntityQuery<StationEmergencyShuttleComponent>();
 
@@ -526,6 +532,49 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
             return;
         }
 
+        // Carpmosia-start - Replaced CC with Terminals
+        var poolProtoId = ConfigManager.GetCVar(CCVars.GameMapPoolTerminal);
+        if (!_protoMan.Resolve<GameMapPoolPrototype>(poolProtoId, out var poolProto))
+            return;
+
+        var mapProtoId = _random.Pick(poolProto.Maps);
+        if (!_protoMan.Resolve<GameMapPrototype>(mapProtoId, out var mapProto))
+            return;
+
+        var mapTerminal = _mapSystem.CreateMap(out var mapIdTerminal);
+        _metaData.SetEntityName(mapTerminal, Loc.GetString("map-name-terminal"));
+        if (!_loader.TryLoadGrid(mapIdTerminal, mapProto.MapPath, out var gridTerminal))
+        {
+            Log.Error($"Failed to load terminal grid of {mapProtoId}");
+            return;
+        }
+
+        if (!Exists(mapTerminal))
+        {
+            Log.Error("Terminal map doesn't exist after loading grid?");
+            QueueDel(gridTerminal);
+            return;
+        }
+
+        if (!Exists(gridTerminal))
+        {
+            Log.Error("Terminal grid doesn't exist after being loaded?");
+            QueueDel(mapTerminal);
+            return;
+        }
+
+        var xformTerminal = Transform(gridTerminal.Value);
+        if (xformTerminal.ParentUid != mapTerminal || xformTerminal.MapUid != mapTerminal)
+        {
+            Log.Error("Terminal grid is not parented to its own map?");
+            QueueDel(mapTerminal);
+            QueueDel(gridTerminal);
+            return;
+        }
+
+        Log.Info($"Created terminal grid {ToPrettyString(gridTerminal)} on map {ToPrettyString(mapTerminal)} for station {ToPrettyString(station)}");
+        // Carpmosia-end - Replaced CC with Terminals
+
         if (string.IsNullOrEmpty(component.Map.ToString()))
         {
             Log.Warning("No CentComm map found, skipping setup.");
@@ -533,6 +582,7 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
         }
 
         var map = _mapSystem.CreateMap(out var mapId);
+        _metaData.SetEntityName(map, Loc.GetString("map-name-centcomm")); // Carpmosia-edit - Warp point prefixes
         if (!_loader.TryLoadGrid(mapId, component.Map, out var grid))
         {
             Log.Error($"Failed to set up centcomm grid!");
@@ -562,10 +612,12 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
             return;
         }
 
-        component.MapEntity = map;
-        _metaData.SetEntityName(map, Loc.GetString("map-name-centcomm"));
-        component.Entity = grid;
-        _shuttle.TryAddFTLDestination(mapId, true, out _);
+        // Carpmosia-start - Replaced CC with Terminals
+        component.MapEntity = mapTerminal;
+        component.Entity = gridTerminal;
+        //_metaData.SetEntityName(mapTerminal, Loc.GetString("map-name-centcomm")); // Moved up
+        _shuttle.TryAddFTLDestination(mapIdTerminal, true, out _);
+        // Carpmosia-end - Replaced CC with Terminals
         Log.Info($"Created centcomm grid {ToPrettyString(grid)} on map {ToPrettyString(map)} for station {ToPrettyString(station)}");
     }
 

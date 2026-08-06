@@ -19,12 +19,12 @@
     - !type:DepartmentTimeRequirement
       department: Command
       time: 4h
-  weight: 20
+  # weight: 20 # Carpmosia-edit - Job priority rebalance
+  displayWeight: 99 # Carpmosia-edit - Reorder jobs
   startingGear: CaptainGear
   icon: "JobIconCaptain"
   joinNotifyCrew: true
   supervisors: job-supervisors-centcom
-  canBeAntag: false
   accessGroups:
   - AllAccess
   special:

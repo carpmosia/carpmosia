@@ -22,6 +22,12 @@
     - state: nukefestive
       map: ["christmas"]
       visible: false
+    # Carpmosia-start - Carp nuke
+    - state: carpnuke
+      sprite: _Carpmosia/Objects/Devices/nuke.rsi
+      map: ["carpday"]
+      visible: false
+    # Carpmosia-end - Carp nuke
   - type: Appearance
   - type: HolidayVisuals
     holidays:
@@ -29,6 +35,10 @@
       - FestiveSeason
       pride:
       - PrideMonth
+      # Carpmosia-start - Carp nuke
+      carpday:
+      - CarpDay
+      # Carpmosia-end - Carp nuke
   - type: GenericVisualizer
     visuals:
       enum.HolidayVisuals.Holiday:
@@ -36,6 +46,10 @@
           festive: { visible: true }
         pride:
           pride: { visible: true }
+        # Carpmosia-start - Carp nuke
+        carpday:
+          carpday: { visible: true }
+        # Carpmosia-end - Carp nuke
       enum.NukeVisuals.Deployed:
         enum.NukeVisualLayers.Base:
           False: { state: nuclearbomb_base }
@@ -107,15 +121,9 @@
       Nuke: !type:ContainerSlot
   - type: StealTarget
     stealGroup: NuclearBomb
-  - type: Tag
-    tags:
-    - GhostOnlyWarp
   - type: WarpPoint
     follow: true
-    location: nuclear bomb
-    blacklist:
-      tags:
-      - GhostOnlyWarp
+    location: location-nuclear-bomb
   - type: FTLSmashImmune
 
 - type: entity
@@ -129,7 +137,7 @@
     bodyType: Dynamic
 
 - type: entity
-  parent: StorageTank
+  parent: StorageTankBig
   id: NuclearBombKeg
   name: nuclear fission explosive
   suffix: keg
@@ -175,12 +183,11 @@
         - MachineMask
         layer:
         - WallLayer
-  - type: SolutionContainerManager
-    solutions:
-      tank:
-        reagents:
-        - ReagentId: NuclearCola
-          Quantity: 3000
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: NuclearCola
+        Quantity: 3840
   - type: ReagentTank
     transferAmount: 100
   - type: StaticPrice

@@ -5841,7 +5841,6 @@ entities:
   - uid: 1282
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 123.5,0.5
       parent: 1
   - uid: 1283
@@ -5852,91 +5851,76 @@ entities:
   - uid: 1289
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 123.5,-7.5
       parent: 1
   - uid: 1308
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 123.5,-0.5
       parent: 1
   - uid: 1313
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 123.5,-8.5
       parent: 1
   - uid: 1316
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 123.5,-5.5
       parent: 1
   - uid: 1318
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 123.5,-2.5
       parent: 1
   - uid: 1319
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 123.5,-4.5
       parent: 1
   - uid: 1368
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 123.5,-14.5
       parent: 1
   - uid: 1369
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 123.5,-13.5
       parent: 1
   - uid: 1371
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 123.5,-16.5
       parent: 1
   - uid: 1372
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 123.5,-17.5
       parent: 1
   - uid: 1373
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 123.5,-23.5
       parent: 1
   - uid: 1374
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 123.5,-22.5
       parent: 1
   - uid: 1375
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 123.5,-20.5
       parent: 1
   - uid: 1376
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 123.5,-19.5
       parent: 1
   - uid: 1377
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 123.5,-18.5
       parent: 1
 - proto: GrilleBroken
@@ -6291,7 +6275,7 @@ entities:
     - type: Transform
       pos: 4.945919,4.3761344
       parent: 1
-- proto: MagazinePistolSubMachineGunTopMountedEmpty
+- proto: IngotGold # Carpmosia-edit - Decontraing salv
   entities:
   - uid: 1698
     components:
@@ -6303,7 +6287,7 @@ entities:
     - type: Transform
       pos: 120.48175,-7.394827
       parent: 1
-- proto: MagazineShotgunEmpty
+- proto: IngotSilver # Carpmosia-edit - Decontraing salv
   entities:
   - uid: 1242
     components:
@@ -12151,7 +12135,7 @@ entities:
     - type: Transform
       pos: 28.5,-4.5
       parent: 1
-- proto: WeaponSubMachineGunWt550
+- proto: MaterialBananium # Carpmosia-edit - Decontraing salv
   entities:
   - uid: 1699
     components:

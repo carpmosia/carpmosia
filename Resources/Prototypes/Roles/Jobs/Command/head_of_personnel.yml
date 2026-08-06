@@ -19,11 +19,11 @@
     - !type:DepartmentTimeRequirement
       department: Command
       time: 2.5h
-  weight: 20
+  # weight: 20 # Carpmosia-edit - Job priority rebalance
+  displayWeight: 98 # Carpmosia-edit - Reorder jobs
   startingGear: HoPGear
   icon: "JobIconHeadOfPersonnel"
   supervisors: job-supervisors-captain
-  canBeAntag: false
   access:
   - Command
   - HeadOfPersonnel

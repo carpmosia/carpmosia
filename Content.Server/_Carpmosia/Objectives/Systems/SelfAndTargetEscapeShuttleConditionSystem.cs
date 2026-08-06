@@ -4,19 +4,13 @@ using Content.Shared.Objectives.Components;
 
 namespace Content.Server.Objectives.Systems;
 
-public sealed class SelfAndTargetEscapeShuttleConditionSystem : EntitySystem
+public sealed partial class SelfAndTargetEscapeShuttleConditionSystem : EntitySystem
 {
-    [Dependency] private readonly EscapeShuttleConditionSystem _escapeShuttleConditionSystem = default!;
-    [Dependency] private readonly MindSystem _mindSystem = default!;
-    [Dependency] private readonly TargetObjectiveSystem _targetObjectiveSystem = default!;
+    [Dependency] private EscapeShuttleConditionSystem _escapeShuttleConditionSystem = default!;
+    [Dependency] private MindSystem _mindSystem = default!;
+    [Dependency] private TargetObjectiveSystem _targetObjectiveSystem = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<SelfAndTargetEscapeShuttleConditionComponent, ObjectiveGetProgressEvent>(OnGetProgress);
-    }
-
+    [SubscribeLocalEvent]
     private void OnGetProgress(Entity<SelfAndTargetEscapeShuttleConditionComponent> entity, ref ObjectiveGetProgressEvent args)
     {
         var progress = _escapeShuttleConditionSystem.GetProgress(args.MindId, args.Mind);
