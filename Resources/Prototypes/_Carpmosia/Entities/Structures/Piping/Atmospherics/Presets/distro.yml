@@ -1,0 +1,115 @@
+- type: entity
+  abstract: true
+  id: BaseAtmosDistro
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: AtmosPipeColor
+    color: '#0055CCFF'
+
+# Pipes
+- type: entity
+  parent: [BaseAtmosDistro, GasPipeHalfAlt4]
+  id: GasPipeHalfDistro
+  suffix: Distro, Half
+
+- type: entity
+  parent: [BaseAtmosDistro, GasPipeStraightAlt4]
+  id: GasPipeStraightDistro
+  suffix: Distro, Straight
+
+- type: entity
+  parent: [BaseAtmosDistro, GasPipeBendAlt4]
+  id: GasPipeBendDistro
+  suffix: Distro, Bend
+
+- type: entity
+  parent: [BaseAtmosDistro, GasPipeTJunctionAlt4]
+  id: GasPipeTJunctionDistro
+  suffix: Distro, TJunction
+
+- type: entity
+  parent: [BaseAtmosDistro, GasPipeFourwayAlt4]
+  id: GasPipeFourwayDistro
+  suffix: Distro, Fourway
+
+# Unary
+- type: entity
+  parent: [BaseAtmosDistro, GasVentPumpAlt4]
+  id: GasVentPumpDistro
+  suffix: Distro
+
+- type: entity
+  parent: [BaseAtmosDistro, GasPassiveVentAlt4]
+  id: GasPassiveVentDistro
+  suffix: Distro
+
+# Binary
+- type: entity
+  parent: [BaseAtmosDistro, GasPressurePumpAlt4]
+  id: GasPressurePumpDistro
+  suffix: Distro
+  components:
+  - type: GasPressurePump
+    enabled: true
+    targetPressure: 303.9
+
+- type: entity
+  parent: [BaseAtmosDistro, GasValveAlt4]
+  id: GasValveDistro
+  suffix: Distro
+  components:
+  - type: GasValve
+    open: true
+
+- type: entity
+  parent: [BaseAtmosDistro, GasPortAlt4]
+  id: GasPortDistro
+  suffix: Distro
+
+- type: entity
+  parent: [BaseAtmosDistro, GasPipeSensorAlt4]
+  id: GasPipeSensorDistro
+  suffix: Distro
+  components:
+  - type: Label
+    localizedLabel: gas-pipe-sensor-distribution-loop
+
+# Trinary
+- type: entity
+  parent: [BaseAtmosDistro, GasFilterAlt4]
+  id: GasFilterDistro
+  suffix: Distro
+  components:
+  - type: GasFilter
+    enabled: true
+
+- type: entity
+  parent: [BaseAtmosDistro, GasFilterFlippedAlt4]
+  id: GasFilterFlippedDistro
+  suffix: Distro, Flipped
+  components:
+  - type: GasFilter
+    enabled: true
+
+- type: entity
+  parent: [BaseAtmosDistro, GasMixer]
+  id: GasMixerDistro
+  suffix: Distro
+  components:
+  - type: GasMixer
+    enabled: true
+    targetPressure: 4500
+    inletOneConcentration: 0.78
+    inletTwoConcentration: 0.22
+
+- type: entity
+  parent: [BaseAtmosDistro, GasMixerFlippedAlt4]
+  id: GasMixerFlippedDistro
+  suffix: Distro, Flipped
+  components:
+  - type: GasMixer
+    enabled: true
+    targetPressure: 4500
+    inletOneConcentration: 0.78
+    inletTwoConcentration: 0.22

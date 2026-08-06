@@ -89,7 +89,7 @@
 - type: entity
   parent: GasPipeBase
   id: GasPipeHalf
-  suffix: Half
+  suffix: Regular, Half # Carpmosia-edit - Pipe presets
   placement:
     mode: AlignAtmosPipeLayers
   components:
@@ -129,7 +129,7 @@
 - type: entity
   parent: GasPipeBase
   id: GasPipeStraight
-  suffix: Straight
+  suffix: Regular, Straight # Carpmosia-edit - Pipe presets
   placement:
     mode: AlignAtmosPipeLayers
   components:
@@ -176,7 +176,7 @@
 - type: entity
   parent: GasPipeBase
   id: GasPipeBend
-  suffix: Bend
+  suffix: Regular, Bend # Carpmosia-edit - Pipe presets
   placement:
     mode: AlignAtmosPipeLayers
   components:
@@ -232,7 +232,7 @@
   id: GasPipeTJunction
   placement:
     mode: AlignAtmosPipeLayers
-  suffix: TJunction
+  suffix: Regular, TJunction # Carpmosia-edit - Pipe presets
   components:
   - type: NodeContainer
     nodes:
@@ -277,7 +277,7 @@
 - type: entity
   parent: GasPipeBase
   id: GasPipeFourway
-  suffix: Fourway
+  suffix: Regular, Fourway # Carpmosia-edit - Pipe presets
   placement:
     mode: AlignAtmosPipeLayers
   components:
