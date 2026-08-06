@@ -104,7 +104,7 @@
     inletTwoConcentration: 0.22
 
 - type: entity
-  parent: [BaseAtmosDistro, GasMixerFlippedAlt4]
+  parent: [BaseAtmosDistro, GasMixerFlipped]
   id: GasMixerFlippedDistro
   suffix: Distro, Flipped
   components:
