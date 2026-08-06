@@ -9,11 +9,6 @@
 
 # Pipes
 - type: entity
-  parent: [BaseAtmosDistro, GasPipeHalfAlt4]
-  id: GasPipeHalfDistro
-  suffix: Distro, Half
-
-- type: entity
   parent: [BaseAtmosDistro, GasPipeStraightAlt4]
   id: GasPipeStraightDistro
   suffix: Distro, Straight

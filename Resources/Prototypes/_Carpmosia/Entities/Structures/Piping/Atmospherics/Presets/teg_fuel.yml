@@ -1,0 +1,36 @@
+- type: entity
+  abstract: true
+  id: BaseAtmosFuel
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: AtmosPipeColor
+    color: '#FF5722FF'
+
+# Pipes
+- type: entity
+  parent: [BaseAtmosFuel, GasPipeStraight]
+  id: GasPipeStraightFuel
+  suffix: Fuel, Straight
+
+- type: entity
+  parent: [BaseAtmosFuel, GasPipeBend]
+  id: GasPipeBendFuel
+  suffix: Fuel, Bend
+
+- type: entity
+  parent: [BaseAtmosFuel, GasPipeTJunction]
+  id: GasPipeTJunctionFuel
+  suffix: Fuel, TJunction
+
+# Unary
+- type: entity
+  parent: [BaseAtmosFuel, GasOutletInjector]
+  id: GasOutletInjectorFuel
+  suffix: Fuel
+
+# Binary
+- type: entity
+  parent: [BaseAtmosFuel, GasPressurePump]
+  id: GasPressurePumpFuel
+  suffix: Fuel

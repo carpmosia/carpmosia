@@ -5,14 +5,9 @@
     mode: SnapgridCenter
   components:
   - type: AtmosPipeColor
-    color: '#A64488FF'
+    color: '#E91E63FF'
 
 # Pipes
-- type: entity
-  parent: [BaseAtmosHotLoop, GasPipeHalfAlt1]
-  id: GasPipeHalfHotLoop
-  suffix: Hot Loop, Half
-
 - type: entity
   parent: [BaseAtmosHotLoop, GasPipeStraightAlt1]
   id: GasPipeStraightHotLoop

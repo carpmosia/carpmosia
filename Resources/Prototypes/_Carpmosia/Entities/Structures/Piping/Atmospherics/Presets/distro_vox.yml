@@ -9,11 +9,6 @@
 
 # Pipes
 - type: entity
-  parent: [BaseAtmosNitrogen, GasPipeHalfAlt2]
-  id: GasPipeHalfNitrogen
-  suffix: Nitrogen, Half
-
-- type: entity
   parent: [BaseAtmosNitrogen, GasPipeStraightAlt2]
   id: GasPipeStraightNitrogen
   suffix: Nitrogen, Straight

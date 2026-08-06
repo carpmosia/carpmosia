@@ -9,11 +9,6 @@
 
 # Pipes
 - type: entity
-  parent: [BaseAtmosWaste, GasPipeHalfAlt3]
-  id: GasPipeHalfWaste
-  suffix: Waste, Half
-
-- type: entity
   parent: [BaseAtmosWaste, GasPipeStraightAlt3]
   id: GasPipeStraightWaste
   suffix: Waste, Straight
