@@ -6,6 +6,7 @@ namespace Content.Server.Speech.Components;
 /// Makes this entity speak like a sheep or a goat in all chat messages it sends.
 /// </summary>
 [RegisterComponent]
+// Carpmosia-start - configurable bleating
 public sealed partial class BleatingAccentComponent : BaseAccentComponent
 {
     /// <summary>
@@ -20,3 +21,4 @@ public sealed partial class BleatingAccentComponent : BaseAccentComponent
     [DataField]
     public string Stop = "'";
 }
+// Carpmosia-end - configurable bleating
