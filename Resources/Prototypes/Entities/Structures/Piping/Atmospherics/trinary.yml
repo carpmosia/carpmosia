@@ -31,6 +31,7 @@
   parent: GasTrinaryBase
   id: GasFilter
   name: gas filter
+  suffix: Basic # Carpmosia-edit - Pipe presets
   description: Very useful for filtering gases.
   placement:
     mode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
@@ -95,7 +96,7 @@
   parent: GasFilter
   id: GasFilterFlipped
   name: gas filter
-  suffix: Flipped
+  suffix: Basic, Flipped # Carpmosia-edit - Pipe presets
   placement:
     mode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
   components:
@@ -151,6 +152,7 @@
   parent: GasTrinaryBase
   id: GasMixer
   name: gas mixer
+  suffix: Basic # Carpmosia-edit - Pipe presets
   description: Very useful for mixing gases.
   placement:
     mode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
@@ -215,7 +217,7 @@
   parent: GasMixer
   id: GasMixerFlipped
   name: gas mixer
-  suffix: Flipped
+  suffix: Basic, Flipped # Carpmosia-edit - Pipe presets
   placement:
     mode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
   components:
@@ -267,6 +269,7 @@
   parent: GasPipeBase
   id: PressureControlledValve
   name: pneumatic valve
+  suffix: Basic # Carpmosia-edit - Pipe presets
   description: A bidirectional valve controlled by pressure. Opens if the output pipe is lower than the pressure of the control pipe by 101.325 kPa.
   placement:
     mode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes

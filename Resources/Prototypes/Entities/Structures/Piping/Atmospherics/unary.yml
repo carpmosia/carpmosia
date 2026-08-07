@@ -24,6 +24,7 @@
   parent: [GasUnaryBase, AirSensorBase]
   id: GasVentPump
   name: air vent
+  suffix: Basic # Carpmosia-edit - Pipe presets
   description: Has a valve and a pump attached to it.
   placement:
     mode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
@@ -91,6 +92,7 @@
   parent: GasUnaryBase
   id: GasPassiveVent
   name: passive vent
+  suffix: Basic # Carpmosia-edit - Pipe presets
   description: It's an open vent.
   placement:
     mode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
@@ -132,6 +134,7 @@
   parent: [GasUnaryBase, AirSensorBase]
   id: GasVentScrubber
   name: air scrubber
+  suffix: Basic # Carpmosia-edit - Pipe presets
   description: Has a valve and pump attached to it.
   placement:
     mode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
@@ -199,6 +202,7 @@
   parent: GasUnaryBase
   id: GasOutletInjector
   name: air injector
+  suffix: Basic # Carpmosia-edit - Pipe presets
   description: Has a valve and pump attached to it.
   placement:
     mode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes

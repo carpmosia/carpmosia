@@ -2,6 +2,7 @@
   parent: [AirSensorBase, GasBinaryBase]
   id: GasPipeSensor
   name: gas pipe sensor
+  suffix: Basic # Carpmosia-edit - Pipe presets
   description: Reports on the status of the gas in the attached pipe network.
   placement:
     mode: AlignAtmosPipeLayers

@@ -28,12 +28,6 @@
   id: GasPipeFourwayNitrogen
   suffix: Nitrogen, Fourway
 
-# Unary
-- type: entity
-  parent: [BaseAtmosNitrogen, AirSensorVoxBase, GasVentPumpAlt2]
-  id: GasVentPumpNitrogen
-  suffix: Nitrogen
-
 # Binary
 - type: entity
   parent: [BaseAtmosNitrogen, GasPressurePumpAlt2]
