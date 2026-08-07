@@ -60,6 +60,11 @@
     targetPressure: 4500
 
 - type: entity
+  parent: [BaseAtmosWaste, GasPassiveGateAlt3]
+  id: GasPassiveGateWaste
+  suffix: Waste
+
+- type: entity
   parent: [BaseAtmosWaste, GasValveAlt3]
   id: GasValveWaste
   suffix: Waste
