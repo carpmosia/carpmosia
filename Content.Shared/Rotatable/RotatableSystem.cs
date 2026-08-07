@@ -43,7 +43,7 @@ public sealed partial class RotatableSystem : EntitySystem
             return;
 
         // Check if the object is anchored.
-        if (TryComp<PhysicsComponent>(uid, out var physics) && physics.BodyType == BodyType.Static
+        if (TryComp<PhysicsComponent>(uid, out var physics) && physics.BodyType == BodyType.Static // Carpmosia-edit - Bypass checks for aghosts
             && !HasComp<BypassInteractionChecksComponent>(args.User)) // Carpmosia-edit - Bypass checks for aghosts
             return;
 
@@ -190,7 +190,7 @@ public sealed partial class RotatableSystem : EntitySystem
             return false;
 
         // Check if the object is anchored.
-        if (TryComp<PhysicsComponent>(entity, out var physics) && physics.BodyType == BodyType.Static
+        if (TryComp<PhysicsComponent>(entity, out var physics) && physics.BodyType == BodyType.Static // Carpmosia-edit - Bypass checks for aghosts
             && !HasComp<BypassInteractionChecksComponent>(entity)) // Carpmosia-edit - Bypass checks for aghosts
         {
             _popup.PopupEntity(Loc.GetString("flippable-component-try-flip-is-stuck"), entity, player);
