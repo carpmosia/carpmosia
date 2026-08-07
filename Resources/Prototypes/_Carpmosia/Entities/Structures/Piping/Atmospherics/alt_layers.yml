@@ -1135,41 +1135,6 @@
   - type: Construction
     node: sensorAlt4
 
-# GasPipeSensorMixedAir
-- type: entity
-  parent: [GasPipeLayerAlt3, GasPipeSensorMixedAir]
-  id: GasPipeSensorMixedAirAlt3
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt3.rsi
-    layers:
-    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi
-      map: [ "enum.PipeVisualLayers.Pipe" ]
-      state: pipeStraight
-    - map: ["base"]
-      state: base
-    - map: [ "enum.PowerDeviceVisualLayers.Powered" ]
-      state: lights
-      shader: unshaded
-
-- type: entity
-  parent: [GasPipeLayerAlt4, GasPipeSensorMixedAir]
-  id: GasPipeSensorMixedAirAlt4
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _Carpmosia/Structures/Piping/Atmospherics/gas_pipe_sensor_alt4.rsi
-    layers:
-    - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi
-      map: [ "enum.PipeVisualLayers.Pipe" ]
-      state: pipeStraight
-    - map: ["base"]
-      state: base
-    - map: [ "enum.PowerDeviceVisualLayers.Powered" ]
-      state: lights
-      shader: unshaded
-
 # GasPressureRegulator
 - type: entity
   parent: [GasPipeLayerAlt3, GasPressureRegulator]

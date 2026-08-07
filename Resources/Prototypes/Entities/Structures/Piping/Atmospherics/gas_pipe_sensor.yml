@@ -93,26 +93,20 @@
 #       Primary: GasPipeSensorWaste
 #       Secondary: GasPipeSensorWasteAlt1
 #       Tertiary: GasPipeSensorWasteAlt2
-# Carpmosia-end - Pipe presets
 
-- type: entity
-  parent: GasPipeSensor
-  id: GasPipeSensorMixedAir
-  suffix: Mixed air
-  components:
-  - type: Label
-    localizedLabel: gas-pipe-sensor-mixed-air
-  - type: AtmosPipeLayers
-    alternativePrototypes:
-      Primary: GasPipeSensorMixedAir
-      Secondary: GasPipeSensorMixedAirAlt1
-      Tertiary: GasPipeSensorMixedAirAlt2
-      # Carpmosia-start - 5 pipe layers
-      Quaternary: GasPipeSensorMixedAirAlt3
-      Quinary: GasPipeSensorMixedAirAlt4
-      # Carpmosia-end - 5 pipe layers
+# - type: entity
+#   parent: GasPipeSensor
+#   id: GasPipeSensorMixedAir
+#   suffix: Mixed air
+#   components:
+#   - type: Label
+#     localizedLabel: gas-pipe-sensor-mixed-air
+#   - type: AtmosPipeLayers
+#     alternativePrototypes:
+#       Primary: GasPipeSensorMixedAir
+#       Secondary: GasPipeSensorMixedAirAlt1
+#       Tertiary: GasPipeSensorMixedAirAlt2
 
-# Carpmosia-start - Pipe presets
 # - type: entity
 #   parent: GasPipeSensor
 #   id: GasPipeSensorTEGHot
