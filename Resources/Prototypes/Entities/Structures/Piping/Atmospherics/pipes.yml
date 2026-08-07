@@ -89,7 +89,7 @@
 - type: entity
   parent: GasPipeBase
   id: GasPipeHalf
-  suffix: Basic, Half # Carpmosia-edit - Pipe presets
+  suffix: Half
   placement:
     mode: AlignAtmosPipeLayers
   components:
@@ -129,7 +129,7 @@
 - type: entity
   parent: GasPipeBase
   id: GasPipeStraight
-  suffix: Basic, Straight # Carpmosia-edit - Pipe presets
+  suffix: Straight
   placement:
     mode: AlignAtmosPipeLayers
   components:
@@ -176,7 +176,7 @@
 - type: entity
   parent: GasPipeBase
   id: GasPipeBend
-  suffix: Basic, Bend # Carpmosia-edit - Pipe presets
+  suffix: Bend
   placement:
     mode: AlignAtmosPipeLayers
   components:
@@ -232,7 +232,7 @@
   id: GasPipeTJunction
   placement:
     mode: AlignAtmosPipeLayers
-  suffix: Basic, TJunction # Carpmosia-edit - Pipe presets
+  suffix: TJunction
   components:
   - type: NodeContainer
     nodes:
@@ -277,7 +277,7 @@
 - type: entity
   parent: GasPipeBase
   id: GasPipeFourway
-  suffix: Basic, Fourway # Carpmosia-edit - Pipe presets
+  suffix: Fourway
   placement:
     mode: AlignAtmosPipeLayers
   components:
@@ -359,7 +359,6 @@
 - type: entity
   parent: GasPipeSansLayers
   id: GasPipeManifold
-  suffix: Basic # Carpmosia-edit - Pipe presets
   name: gas pipe manifold
   description: Allows gas pipes of different configurations to be connected together.
   placement:

@@ -11,17 +11,17 @@
 - type: entity
   parent: [BaseAtmosFuel, GasPipeStraight]
   id: GasPipeStraightFuel
-  suffix: Fuel, Straight
+  suffix: zFuel, Straight
 
 - type: entity
   parent: [BaseAtmosFuel, GasPipeBend]
   id: GasPipeBendFuel
-  suffix: Fuel, Bend
+  suffix: zFuel, Bend
 
 - type: entity
   parent: [BaseAtmosFuel, GasPipeTJunction]
   id: GasPipeTJunctionFuel
-  suffix: Fuel, TJunction
+  suffix: zFuel, TJunction
 
 # Unary
 - type: entity

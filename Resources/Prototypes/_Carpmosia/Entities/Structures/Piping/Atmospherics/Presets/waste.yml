@@ -11,22 +11,22 @@
 - type: entity
   parent: [BaseAtmosWaste, GasPipeStraightAlt3]
   id: GasPipeStraightWaste
-  suffix: Waste, Straight
+  suffix: zWaste, Straight
 
 - type: entity
   parent: [BaseAtmosWaste, GasPipeBendAlt3]
   id: GasPipeBendWaste
-  suffix: Waste, Bend
+  suffix: zWaste, Bend
 
 - type: entity
   parent: [BaseAtmosWaste, GasPipeTJunctionAlt3]
   id: GasPipeTJunctionWaste
-  suffix: Waste, TJunction
+  suffix: zWaste, TJunction
 
 - type: entity
   parent: [BaseAtmosWaste, GasPipeFourwayAlt3]
   id: GasPipeFourwayWaste
-  suffix: Waste, Fourway
+  suffix: zWaste, Fourway
 
 - type: entity
   parent: [BaseAtmosWaste, GasPipeManifold]
@@ -97,7 +97,7 @@
 - type: entity
   parent: [BaseAtmosWaste, GasFilterFlippedAlt3]
   id: GasFilterFlippedWaste
-  suffix: Waste, Flipped
+  suffix: Flipped, Waste
   components:
   - type: GasFilter
     enabled: true

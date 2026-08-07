@@ -11,22 +11,22 @@
 - type: entity
   parent: [BaseAtmosDistro, GasPipeStraightAlt4]
   id: GasPipeStraightDistro
-  suffix: Distro, Straight
+  suffix: zDistro, Straight
 
 - type: entity
   parent: [BaseAtmosDistro, GasPipeBendAlt4]
   id: GasPipeBendDistro
-  suffix: Distro, Bend
+  suffix: zDistro, Bend
 
 - type: entity
   parent: [BaseAtmosDistro, GasPipeTJunctionAlt4]
   id: GasPipeTJunctionDistro
-  suffix: Distro, TJunction
+  suffix: zDistro, TJunction
 
 - type: entity
   parent: [BaseAtmosDistro, GasPipeFourwayAlt4]
   id: GasPipeFourwayDistro
-  suffix: Distro, Fourway
+  suffix: zDistro, Fourway
 
 - type: entity
   parent: [BaseAtmosDistro, GasPipeManifold]
@@ -87,7 +87,7 @@
 - type: entity
   parent: [BaseAtmosDistro, GasFilterFlippedAlt4]
   id: GasFilterFlippedDistro
-  suffix: Distro, Flipped
+  suffix: Flipped, Distro
   components:
   - type: GasFilter
     enabled: true
@@ -106,7 +106,7 @@
 - type: entity
   parent: [BaseAtmosDistro, GasMixerFlipped]
   id: GasMixerFlippedDistro
-  suffix: Distro, Flipped
+  suffix: Flipped, Distro
   components:
   - type: GasMixer
     enabled: true

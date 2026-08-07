@@ -11,22 +11,27 @@
 - type: entity
   parent: [BaseAtmosNitrogen, GasPipeStraightAlt2]
   id: GasPipeStraightNitrogen
-  suffix: Nitrogen, Straight
+  suffix: zNitrogen, Straight
 
 - type: entity
   parent: [BaseAtmosNitrogen, GasPipeBendAlt2]
   id: GasPipeBendNitrogen
-  suffix: Nitrogen, Bend
+  suffix: zNitrogen, Bend
 
 - type: entity
   parent: [BaseAtmosNitrogen, GasPipeTJunctionAlt2]
   id: GasPipeTJunctionNitrogen
-  suffix: Nitrogen, TJunction
+  suffix: zNitrogen, TJunction
 
 - type: entity
   parent: [BaseAtmosNitrogen, GasPipeFourwayAlt2]
   id: GasPipeFourwayNitrogen
-  suffix: Nitrogen, Fourway
+  suffix: zNitrogen, Fourway
+
+- type: entity
+  parent: [BaseAtmosNitrogen, GasPipeManifold]
+  id: GasPipeManifoldNitrogen
+  suffix: Nitrogen
 
 # Binary
 - type: entity

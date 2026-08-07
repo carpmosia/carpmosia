@@ -11,22 +11,22 @@
 - type: entity
   parent: [BaseAtmosHotLoop, GasPipeStraightAlt1]
   id: GasPipeStraightHotLoop
-  suffix: Hot Loop, Straight
+  suffix: zHot Loop, Straight
 
 - type: entity
   parent: [BaseAtmosHotLoop, GasPipeBendAlt1]
   id: GasPipeBendHotLoop
-  suffix: Hot Loop, Bend
+  suffix: zHot Loop, Bend
 
 - type: entity
   parent: [BaseAtmosHotLoop, GasPipeTJunctionAlt1]
   id: GasPipeTJunctionHotLoop
-  suffix: Hot Loop, TJunction
+  suffix: zHot Loop, TJunction
 
 - type: entity
   parent: [BaseAtmosHotLoop, GasPipeFourwayAlt1]
   id: GasPipeFourwayHotLoop
-  suffix: Hot Loop, Fourway
+  suffix: zHot Loop, Fourway
 
 # Binary
 - type: entity

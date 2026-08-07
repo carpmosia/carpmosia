@@ -38,7 +38,6 @@
   parent: GasBinaryBase
   id: GasPressurePump
   name: gas pump
-  suffix: Basic # Carpmosia-edit - Pipe presets
   description: A pump that moves gas by pressure.
   placement:
     mode: AlignAtmosPipeLayers
@@ -106,7 +105,6 @@
   parent: GasBinaryBase
   id: GasVolumePump
   name: volumetric gas pump
-  suffix: Basic # Carpmosia-edit - Pipe presets
   description: A pump that moves gas by volume.
   placement:
     mode: AlignAtmosPipeLayers
@@ -183,7 +181,6 @@
   parent: GasBinaryBase
   id: GasPressureRegulator
   name: inlet pressure regulator
-  suffix: Basic # Carpmosia-edit - Pipe presets
   description: A valve that releases gas when the inlet pressure exceeds a certain threshold.
   placement:
     mode: AlignAtmosPipeLayers
@@ -248,7 +245,6 @@
   parent: GasBinaryBase
   id: GasPassiveGate
   name: passive gate
-  suffix: Basic # Carpmosia-edit - Pipe presets
   description: A one-way air valve that does not require power.
   placement:
     mode: AlignAtmosPipeLayers
@@ -295,7 +291,6 @@
   parent: GasBinaryBase
   id: GasValve
   name: manual valve
-  suffix: Basic # Carpmosia-edit - Pipe presets
   description: A pipe with a valve that can be used to disable the flow of gas through it.
   placement:
     mode: AlignAtmosPipeLayers
@@ -437,7 +432,6 @@
   parent: GasBinaryBase
   id: GasPort
   name: connector port
-  suffix: Basic # Carpmosia-edit - Pipe presets
   description: For connecting portable devices related to atmospherics control.
   placement:
     mode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
@@ -638,7 +632,6 @@
   parent: GasBinaryBase
   id: HeatExchanger
   name: radiator
-  suffix: Basic # Carpmosia-edit - Pipe presets
   description: Transfers heat between the pipe and its surroundings.
   placement:
     mode: AlignAtmosPipeLayers # Carpmosia-edit - Heat exchanger layers
@@ -697,7 +690,7 @@
 - type: entity
   parent: HeatExchanger
   id: HeatExchangerBend
-  suffix: Basic, Bend # Carpmosia-edit - Pipe presets
+  suffix: Bend
   components:
     - type: SubFloorHide
       visibleLayers:
