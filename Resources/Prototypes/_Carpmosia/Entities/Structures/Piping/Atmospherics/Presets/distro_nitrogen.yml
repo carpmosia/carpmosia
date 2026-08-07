@@ -34,23 +34,6 @@
   id: GasVentPumpNitrogen
   suffix: Nitrogen
 
-- type: entity
-  parent: [BaseAtmosNitrogen, AirSensorVoxBase, GasVentScrubberAlt3]
-  id: GasVentScrubberNitrogen
-  suffix: Nitrogen
-  components:
-  - type: GasVentScrubber
-    wideNet: true # Air alarm with auto mode overrides filters with hardcoded defaults so default to widenet
-    filterGases:
-    - Oxygen # filter out oxygen as well as regular harmful gases
-    - CarbonDioxide
-    - Plasma
-    - Tritium
-    - WaterVapor
-    - Ammonia
-    - NitrousOxide
-    - Frezon
-
 # Binary
 - type: entity
   parent: [BaseAtmosNitrogen, GasPressurePumpAlt2]
