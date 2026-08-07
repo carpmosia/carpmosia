@@ -5,7 +5,7 @@
     mode: SnapgridCenter
   components:
   - type: AtmosPipeColor
-    color: '#FF5722FF'
+    color: '#ff8904ff'
 
 # Pipes
 - type: entity
@@ -34,3 +34,11 @@
   parent: [BaseAtmosFuel, GasPressurePump]
   id: GasPressurePumpFuel
   suffix: Fuel
+
+- type: entity
+  parent: [BaseAtmosFuel, GasPipeSensor]
+  id: GasPipeSensorFuel
+  suffix: Fuel
+  components:
+  - type: Label
+    localizedLabel: gas-pipe-sensor-teg-fuel

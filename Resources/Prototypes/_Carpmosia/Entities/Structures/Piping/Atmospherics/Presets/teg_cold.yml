@@ -5,7 +5,7 @@
     mode: SnapgridCenter
   components:
   - type: AtmosPipeColor
-    color: '#009688FF'
+    color: '#00d5Beff'
 
 # Pipes
 - type: entity
@@ -58,6 +58,11 @@
 - type: entity
   parent: [BaseAtmosColdLoop, HeatExchangerAlt2]
   id: HeatExchangerColdLoop
+  suffix: Cold Loop
+
+- type: entity
+  parent: [BaseAtmosColdLoop, HeatExchangerBendAlt2]
+  id: HeatExchangerBendColdLoop
   suffix: Cold Loop
 
 - type: entity

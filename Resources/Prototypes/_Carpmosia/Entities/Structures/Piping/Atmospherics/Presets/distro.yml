@@ -5,7 +5,7 @@
     mode: SnapgridCenter
   components:
   - type: AtmosPipeColor
-    color: '#0055CCFF'
+    color: '#7ccf00ff'
 
 # Pipes
 - type: entity
@@ -27,6 +27,11 @@
   parent: [BaseAtmosDistro, GasPipeFourwayAlt4]
   id: GasPipeFourwayDistro
   suffix: Distro, Fourway
+
+- type: entity
+  parent: [BaseAtmosDistro, GasPipeManifold]
+  id: GasPipeManifoldDistro
+  suffix: Distro
 
 # Unary
 - type: entity
