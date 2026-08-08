@@ -67,87 +67,69 @@
     - AtmosphericNetworkMonitor
     - DeviceMonitoringAndControl
 
-- type: entity
-  parent: GasPipeSensor
-  id: GasPipeSensorDistribution
-  suffix: Distribution
-  components:
-  - type: Label
-    localizedLabel: gas-pipe-sensor-distribution-loop
-  - type: AtmosPipeLayers
-    alternativePrototypes:
-      Primary: GasPipeSensorDistribution
-      Secondary: GasPipeSensorDistributionAlt1
-      Tertiary: GasPipeSensorDistributionAlt2
-      # Carpmosia-start - 5 pipe layers
-      Quaternary: GasPipeSensorDistributionAlt3
-      Quinary: GasPipeSensorDistributionAlt4
-      # Carpmosia-end - 5 pipe layers
+# Carpmosia-start - Pipe presets
+# - type: entity
+#   parent: GasPipeSensor
+#   id: GasPipeSensorDistribution
+#   suffix: Distribution
+#   components:
+#   - type: Label
+#     localizedLabel: gas-pipe-sensor-distribution-loop
+#   - type: AtmosPipeLayers
+#     alternativePrototypes:
+#       Primary: GasPipeSensorDistribution
+#       Secondary: GasPipeSensorDistributionAlt1
+#       Tertiary: GasPipeSensorDistributionAlt2
 
-- type: entity
-  parent: GasPipeSensor
-  id: GasPipeSensorWaste
-  suffix: Waste
-  components:
-  - type: Label
-    localizedLabel: gas-pipe-sensor-waste-loop
-  - type: AtmosPipeLayers
-    alternativePrototypes:
-      Primary: GasPipeSensorWaste
-      Secondary: GasPipeSensorWasteAlt1
-      Tertiary: GasPipeSensorWasteAlt2
-      # Carpmosia-start - 5 pipe layers
-      Quaternary: GasPipeSensorWasteAlt3
-      Quinary: GasPipeSensorWasteAlt4
-      # Carpmosia-end - 5 pipe layers
+# - type: entity
+#   parent: GasPipeSensor
+#   id: GasPipeSensorWaste
+#   suffix: Waste
+#   components:
+#   - type: Label
+#     localizedLabel: gas-pipe-sensor-waste-loop
+#   - type: AtmosPipeLayers
+#     alternativePrototypes:
+#       Primary: GasPipeSensorWaste
+#       Secondary: GasPipeSensorWasteAlt1
+#       Tertiary: GasPipeSensorWasteAlt2
 
-- type: entity
-  parent: GasPipeSensor
-  id: GasPipeSensorMixedAir
-  suffix: Mixed air
-  components:
-  - type: Label
-    localizedLabel: gas-pipe-sensor-mixed-air
-  - type: AtmosPipeLayers
-    alternativePrototypes:
-      Primary: GasPipeSensorMixedAir
-      Secondary: GasPipeSensorMixedAirAlt1
-      Tertiary: GasPipeSensorMixedAirAlt2
-      # Carpmosia-start - 5 pipe layers
-      Quaternary: GasPipeSensorMixedAirAlt3
-      Quinary: GasPipeSensorMixedAirAlt4
-      # Carpmosia-end - 5 pipe layers
+# - type: entity
+#   parent: GasPipeSensor
+#   id: GasPipeSensorMixedAir
+#   suffix: Mixed air
+#   components:
+#   - type: Label
+#     localizedLabel: gas-pipe-sensor-mixed-air
+#   - type: AtmosPipeLayers
+#     alternativePrototypes:
+#       Primary: GasPipeSensorMixedAir
+#       Secondary: GasPipeSensorMixedAirAlt1
+#       Tertiary: GasPipeSensorMixedAirAlt2
 
-- type: entity
-  parent: GasPipeSensor
-  id: GasPipeSensorTEGHot
-  suffix: TEG hot
-  components:
-  - type: Label
-    localizedLabel: gas-pipe-sensor-teg-hot-loop
-  - type: AtmosPipeLayers
-    alternativePrototypes:
-      Primary: GasPipeSensorTEGHot
-      Secondary: GasPipeSensorTEGHotAlt1
-      Tertiary: GasPipeSensorTEGHotAlt2
-      # Carpmosia-start - 5 pipe layers
-      Quaternary: GasPipeSensorTEGHotAlt3
-      Quinary: GasPipeSensorTEGHotAlt4
-      # Carpmosia-end - 5 pipe layers
+# - type: entity
+#   parent: GasPipeSensor
+#   id: GasPipeSensorTEGHot
+#   suffix: TEG hot
+#   components:
+#   - type: Label
+#     localizedLabel: gas-pipe-sensor-teg-hot-loop
+#   - type: AtmosPipeLayers
+#     alternativePrototypes:
+#       Primary: GasPipeSensorTEGHot
+#       Secondary: GasPipeSensorTEGHotAlt1
+#       Tertiary: GasPipeSensorTEGHotAlt2
 
-- type: entity
-  parent: GasPipeSensor
-  id: GasPipeSensorTEGCold
-  suffix: TEG cold
-  components:
-  - type: Label
-    localizedLabel: gas-pipe-sensor-teg-cold-loop
-  - type: AtmosPipeLayers
-    alternativePrototypes:
-      Primary: GasPipeSensorTEGCold
-      Secondary: GasPipeSensorTEGColdAlt1
-      Tertiary: GasPipeSensorTEGColdAlt2
-      # Carpmosia-start - 5 pipe layers
-      Quaternary: GasPipeSensorTEGColdAlt3
-      Quinary: GasPipeSensorTEGColdAlt4
-      # Carpmosia-end - 5 pipe layers
+# - type: entity
+#   parent: GasPipeSensor
+#   id: GasPipeSensorTEGCold
+#   suffix: TEG cold
+#   components:
+#   - type: Label
+#     localizedLabel: gas-pipe-sensor-teg-cold-loop
+#   - type: AtmosPipeLayers
+#     alternativePrototypes:
+#       Primary: GasPipeSensorTEGCold
+#       Secondary: GasPipeSensorTEGColdAlt1
+#       Tertiary: GasPipeSensorTEGColdAlt2
+# Carpmosia-end - Pipe presets
