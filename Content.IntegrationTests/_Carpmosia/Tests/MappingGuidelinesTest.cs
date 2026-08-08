@@ -15,6 +15,7 @@ using Robust.Shared.Maths;
 using Content.Server.Power.Components;
 using System.Collections.Generic;
 using NUnit.Framework.Internal;
+using Content.Shared.Construction.Components;
 
 namespace Content.IntegrationTests.Tests;
 
@@ -170,11 +171,36 @@ public sealed partial class MappingGuidelinesTest : GameTest
                 if (GetComp(ent, "Label") is { } label && (label.HasNode("currentLabel") || label.HasNode("localizedLabel")))
                     continue;
 
-                errors.Add($"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) that is missing a label");
+                errors.Add($"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) that is missing a label {trans.Item2}");
             }
         }
 
         Assert.That(!errors.Any(), $"Found {errors.Count} power network members missing labels:\n{string.Join("\n", errors)}");
+    }
+
+    [Test]
+    [TestCaseSource(nameof(AllMapFiles))]
+    public async Task TestAnchorableDuplicates(ResPath map)
+    {
+        var resMan = Pair.Server.ResolveDependency<IResourceManager>();
+
+        if (LoadMapYaml(map, resMan) is not { } root)
+            return;
+
+        if (!root.TryGetNode<YamlSequenceNode>("entities", out var entities))
+            return;
+
+        var anchorables = GetPrototypeIds<AnchorableComponent>();
+        var duplicates = GetEntityPositions(entities, anchorables.Contains).GroupBy(x => x).Where(x => x.Count() > 1).Select(x => x.Key).ToList();
+
+        var errors = new List<string>();
+
+        foreach (var (grid, pos) in duplicates)
+        {
+            errors.Add($"Grid {grid} contains a duplicate at {pos}");
+        }
+
+        Assert.That(!errors.Any(), $"Found {errors.Count} anchorable duplicates:\n{string.Join("\n", errors)}");
     }
 
     private static YamlMappingNode? LoadMapYaml(ResPath map, IResourceManager resMan)
