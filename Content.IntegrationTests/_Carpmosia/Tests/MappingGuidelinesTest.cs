@@ -21,8 +21,8 @@ namespace Content.IntegrationTests.Tests;
 [TestFixture]
 public sealed partial class MappingGuidelinesTest : GameTest
 {
-    private static readonly ResPath[] AllMapFiles = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", true).Where(x => !x.ToRelativeSystemPath().StartsWith("Legacy"))];
-    private static readonly ResPath[] StationMaps = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", false).Where(x => !x.ToRelativeSystemPath().Contains("centcomm.yml"))];
+    private static readonly ResPath[] AllMapFiles = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", true).Where(x => !x.ToRelativeSystemPath().StartsWith("/Maps/_Carpmosia/Legacy/"))];
+    private static readonly ResPath[] StationMaps = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", false).Where(x => !x.ToRelativeSystemPath().StartsWith("/Maps/_Carpmosia/centcomm.yml"))];
 
     private static readonly EntProtoId[] WallmountWhitelist = [
         "RandomPosterAny",
