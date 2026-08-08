@@ -22,8 +22,8 @@ namespace Content.IntegrationTests.Tests;
 [TestFixture]
 public sealed partial class MappingGuidelinesTest : GameTest
 {
-    private static readonly ResPath[] AllMapFiles = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", true).Where(x => !x.ToRelativeSystemPath().StartsWith("/Maps/_Carpmosia/Legacy/"))];
-    private static readonly ResPath[] StationMaps = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", false).Where(x => !x.ToRelativeSystemPath().StartsWith("/Maps/_Carpmosia/centcomm.yml"))];
+    private static readonly ResPath[] AllMapFiles = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", true).Where(x => !x.ToString().StartsWith("/Maps/_Carpmosia/Legacy/"))];
+    private static readonly ResPath[] StationMaps = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", false).Where(x => !x.ToString().StartsWith("/Maps/_Carpmosia/centcomm.yml"))];
 
     private static readonly EntProtoId[] WallmountWhitelist = [
         "RandomPosterAny",
@@ -191,13 +191,16 @@ public sealed partial class MappingGuidelinesTest : GameTest
             return;
 
         var anchorables = GetPrototypeIds<AnchorableComponent>();
-        var duplicates = GetEntityPositions(entities, anchorables.Contains).GroupBy(x => x).Where(x => x.Count() > 1).Select(x => x.Key).ToList();
 
         var errors = new List<string>();
 
-        foreach (var (grid, pos) in duplicates)
+        foreach (var proto in anchorables)
         {
-            errors.Add($"Grid {grid} contains a duplicate at {pos}");
+            foreach (var ((grid, pos), count) in GetEntityPositions(entities, x => x == proto)
+                .GroupBy(x => x).Where(x => x.Count() > 1).Select(x => (x.Key, x.Count())))
+            {
+                errors.Add($"Grid {grid} contains {count} duplicate {proto} at {pos}");
+            }
         }
 
         Assert.That(!errors.Any(), $"Found {errors.Count} anchorable duplicates:\n{string.Join("\n", errors)}");
