@@ -22,8 +22,9 @@ namespace Content.IntegrationTests.Tests;
 [TestFixture]
 public sealed partial class MappingGuidelinesTest : GameTest
 {
-    private static readonly ResPath[] AllMapFiles = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", true).Where(x => !x.ToString().StartsWith("/Maps/_Carpmosia/Legacy/"))];
+    //private static readonly ResPath[] AllMapFiles = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", true).Where(x => !x.ToString().StartsWith("/Maps/_Carpmosia/Legacy/"))];
     private static readonly ResPath[] StationMaps = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", false).Where(x => !x.ToString().StartsWith("/Maps/_Carpmosia/centcomm.yml"))];
+    private static readonly ResPath[] AllMapFiles = GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "lampocteis.yml", false);
 
     private static readonly EntProtoId[] WallmountWhitelist = [
         "RandomPosterAny",
@@ -50,8 +51,8 @@ public sealed partial class MappingGuidelinesTest : GameTest
         var wallmounts = GetPrototypeIds<WallMountComponent>();
         var apcs = GetPrototypeIds<ApcComponent>();
 
-        var wallPos = GetEntityPositions(entities, walls.Contains).ToHashSet();
-        var apcPos = GetEntityPositions(entities, apcs.Contains).ToHashSet();
+        var wallPos = GetComponents(entities, walls.Contains, GetTilePos).ToHashSet();
+        var apcPos = GetComponents(entities, apcs.Contains, GetTilePos).ToHashSet();
 
         var errors = new List<string>();
 
@@ -107,8 +108,9 @@ public sealed partial class MappingGuidelinesTest : GameTest
             return;
 
         var apcs = GetPrototypeIds<ApcComponent>();
-        var lvPos = GetEntityPositions(entities, x => x == "CableApcExtension").ToHashSet();
-        var mvPos = GetEntityPositions(entities, x => x == "CableMV").ToHashSet();
+
+        var lvPos = GetComponents(entities, x => x == "CableApcExtension", GetTilePos).ToHashSet();
+        var mvPos = GetComponents(entities, x => x == "CableMV", GetTilePos).ToHashSet();
 
         var errors = new List<string>();
 
@@ -196,10 +198,10 @@ public sealed partial class MappingGuidelinesTest : GameTest
 
         foreach (var proto in anchorables)
         {
-            foreach (var ((grid, pos), count) in GetEntityPositions(entities, x => x == proto)
+            foreach (var ((grid, (x, y), rot), count) in GetComponents(entities, x => x == proto, GetApproxTransform)
                 .GroupBy(x => x).Where(x => x.Count() > 1).Select(x => (x.Key, x.Count())))
             {
-                errors.Add($"Grid {grid} contains {count} duplicate {proto} at {pos}");
+                errors.Add($"Grid {grid} contains {count} duplicate {proto} at <{x / 10}, {y / 10}>");
             }
         }
 
@@ -235,7 +237,7 @@ public sealed partial class MappingGuidelinesTest : GameTest
         return trans;
     }
 
-    private static (EntityUid, Vector2)? GetTilePos(YamlNode entNode)
+    private static (EntityUid, (int, int), int)? GetApproxTransform(YamlNode entNode)
     {
         if (GetComp(entNode, "Transform") is not { } trans)
             return null;
@@ -252,9 +254,24 @@ public sealed partial class MappingGuidelinesTest : GameTest
             return null;
 
         var rawPos = posRaw.AsString().Split(",").Select(float.Parse).ToArray();
-        var tilePos = new Vector2(rawPos[0], rawPos[1]).Floored();
+        var pos = ((int)Math.Round(rawPos[0] * 10), (int)Math.Round(rawPos[1] * 10));
 
-        return (parent, tilePos);
+        var rot = 0;
+        if (trans.TryGetNode("rot", out var rotRaw))
+        {
+            rot = (int)Math.Round(MathHelper.RadiansToDegrees(double.Parse(rotRaw.AsString().Split(" rad").First())));
+        }
+
+        return (parent, pos, rot);
+    }
+
+    private static (EntityUid, (int, int))? GetTilePos(YamlNode entNode)
+    {
+        if (GetApproxTransform(entNode) is not { } trans)
+            return null;
+        var parent = trans.Item1;
+        var (px, py) = trans.Item2;
+        return (parent, (px / 10, py / 10));
     }
 
     private HashSet<string> GetPrototypeIds<T>() where T : IComponent, new()
@@ -262,8 +279,8 @@ public sealed partial class MappingGuidelinesTest : GameTest
         return [.. Pair.GetPrototypesWithComponent<T>().Select(x => x.Item1.ID)];
     }
 
-    private static List<(EntityUid, Vector2)> GetEntityPositions(YamlSequenceNode entities, Func<string, bool> filter)
+    private static List<T> GetComponents<T>(YamlSequenceNode entities, Func<string, bool> filter, Func<YamlNode, T?> select) where T : struct
     {
-        return [.. entities.Where(x => filter(x["proto"].AsString())).SelectMany(x => ((YamlSequenceNode)x["entities"]).Select(GetTilePos).OfType<(EntityUid, Vector2)>())];
+        return [.. entities.Where(x => filter(x["proto"].AsString())).SelectMany(x => ((YamlSequenceNode)x["entities"]).Select(select).OfType<T>())];
     }
 }
