@@ -21,7 +21,8 @@ namespace Content.IntegrationTests.Tests;
 [TestFixture]
 public sealed partial class MappingGuidelinesTest : GameTest
 {
-    private static readonly ResPath[] MapFiles = GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", false);
+    private static readonly ResPath[] AllMapFiles = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", true).Where(x => !x.ToRelativeSystemPath().StartsWith("Legacy"))];
+    private static readonly ResPath[] StationMaps = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", false).Where(x => !x.ToRelativeSystemPath().Contains("centcomm.yml"))];
 
     private static readonly EntProtoId[] WallmountWhitelist = [
         "RandomPosterAny",
@@ -32,7 +33,7 @@ public sealed partial class MappingGuidelinesTest : GameTest
     ];
 
     [Test]
-    [TestCaseSource(nameof(MapFiles))]
+    [TestCaseSource(nameof(AllMapFiles))]
     public async Task TestNonWallmountEntitiesUnderWalls(ResPath map)
     {
         var server = Pair.Server;
@@ -93,7 +94,7 @@ public sealed partial class MappingGuidelinesTest : GameTest
     }
 
     [Test]
-    [TestCaseSource(nameof(MapFiles))]
+    [TestCaseSource(nameof(AllMapFiles))]
     public async Task TestApcMissingConnections(ResPath map)
     {
         var pair = Pair;
@@ -189,7 +190,6 @@ public sealed partial class MappingGuidelinesTest : GameTest
 
     private static List<(EntityUid, Vector2)> GetEntityPositions(YamlSequenceNode entities, Func<string, bool> filter)
     {
-        return entities.Where(x => filter(x["proto"].AsString()))
-            .SelectMany(x => ((YamlSequenceNode)x["entities"]).Select(GetTilePos).OfType<(EntityUid, Vector2)>()).ToList();
+        return [.. entities.Where(x => filter(x["proto"].AsString())).SelectMany(x => ((YamlSequenceNode)x["entities"]).Select(GetTilePos).OfType<(EntityUid, Vector2)>())];
     }
 }
