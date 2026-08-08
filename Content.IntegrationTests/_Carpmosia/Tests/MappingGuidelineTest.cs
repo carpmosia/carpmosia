@@ -138,7 +138,7 @@ public sealed partial class MappingGuidelineTest : GameTest
                 if (isApcCable && apcPos.Contains(trans))
                     continue;
 
-                if (wallPos.Contains(trans))
+                if (!wallPos.Contains(trans))
                     continue;
 
                 errors.Add($"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) mapped under a wall at tile {trans.Item2}");
