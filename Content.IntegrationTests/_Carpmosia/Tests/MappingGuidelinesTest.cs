@@ -36,9 +36,8 @@ public sealed partial class MappingGuidelinesTest : GameTest
     [TestCaseSource(nameof(AllMapFiles))]
     public async Task TestNonWallmountEntitiesUnderWalls(ResPath map)
     {
-        var server = Pair.Server;
-        var resMan = server.ResolveDependency<IResourceManager>();
-        var protoMan = server.ResolveDependency<IPrototypeManager>();
+        var resMan = Pair.Server.ResolveDependency<IResourceManager>();
+        var protoMan = Pair.Server.ResolveDependency<IPrototypeManager>();
 
         if (LoadMapYaml(map, resMan) is not { } root)
             return;
@@ -97,11 +96,8 @@ public sealed partial class MappingGuidelinesTest : GameTest
     [TestCaseSource(nameof(AllMapFiles))]
     public async Task TestApcMissingConnections(ResPath map)
     {
-        var pair = Pair;
-        var server = pair.Server;
-
-        var resMan = server.ResolveDependency<IResourceManager>();
-        var protoMan = server.ResolveDependency<IPrototypeManager>();
+        var resMan = Pair.Server.ResolveDependency<IResourceManager>();
+        var protoMan = Pair.Server.ResolveDependency<IPrototypeManager>();
 
         if (LoadMapYaml(map, resMan) is not { } root)
             return;
@@ -140,6 +136,47 @@ public sealed partial class MappingGuidelinesTest : GameTest
         Assert.That(!errors.Any(), $"Found {errors.Count} apcs missing connections:\n{string.Join("\n", errors)}");
     }
 
+    [Test]
+    [TestCaseSource(nameof(AllMapFiles))]
+    public async Task TestPowerNetworkLabels(ResPath map)
+    {
+        var resMan = Pair.Server.ResolveDependency<IResourceManager>();
+        var protoMan = Pair.Server.ResolveDependency<IPrototypeManager>();
+
+        if (LoadMapYaml(map, resMan) is not { } root)
+            return;
+
+        if (!root.TryGetNode<YamlSequenceNode>("entities", out var entities))
+            return;
+
+        var batteries = GetPrototypeIds<PowerNetworkBatteryComponent>();
+
+        var errors = new List<string>();
+
+        foreach (var proto in entities)
+        {
+            var protoId = proto["proto"].AsString();
+
+            // Skip unrelated entities
+            if (!batteries.Contains(protoId))
+                continue;
+
+            foreach (var ent in (YamlSequenceNode)proto["entities"])
+            {
+                // Skip invalid transforms
+                if (GetTilePos(ent) is not { } trans)
+                    continue;
+
+                if (GetComp(ent, "Label") is { } label && (label.HasNode("currentLabel") || label.HasNode("localizedLabel")))
+                    continue;
+
+                errors.Add($"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) that is missing a label");
+            }
+        }
+
+        Assert.That(!errors.Any(), $"Found {errors.Count} power network members missing labels:\n{string.Join("\n", errors)}");
+    }
+
     private static YamlMappingNode? LoadMapYaml(ResPath map, IResourceManager resMan)
     {
         var rootedPath = map.ToRootedPath();
@@ -156,14 +193,22 @@ public sealed partial class MappingGuidelinesTest : GameTest
         return (YamlMappingNode)yamlStream.Documents[0].RootNode;
     }
 
-    private static (EntityUid, Vector2)? GetTilePos(YamlNode entNode)
+    private static YamlMappingNode? GetComp(YamlNode entNode, string comp)
     {
         var ent = (YamlMappingNode)entNode;
 
         if (!ent.TryGetNode<YamlSequenceNode>("components", out var comps))
             return null;
 
-        if (comps.First(x => x["type"].AsString() == "Transform") is not YamlMappingNode trans)
+        if (comps.First(x => x["type"].AsString() == comp) is not YamlMappingNode trans)
+            return null;
+
+        return trans;
+    }
+
+    private static (EntityUid, Vector2)? GetTilePos(YamlNode entNode)
+    {
+        if (GetComp(entNode, "Transform") is not { } trans)
             return null;
 
         if (!trans.TryGetNode("parent", out var rawParent))
