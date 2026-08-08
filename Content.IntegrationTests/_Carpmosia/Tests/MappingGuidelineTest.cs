@@ -14,6 +14,7 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.Maths;
 using System.Diagnostics.CodeAnalysis;
 using Content.Server.Power.Components;
+using System.Reflection;
 
 namespace Content.IntegrationTests.Tests;
 
@@ -75,7 +76,6 @@ public sealed partial class MappingGuidelineTest : GameTest
 
     [Test]
     [TestCaseSource(nameof(MapFiles))]
-    [SuppressMessage("Assertion", "NUnit2014:Use SomeItemsConstraint for better assertion messages in case of failure")]
     public async Task MappedEntitiesUnderWallsTest(ResPath map)
     {
         var pair = Pair;
@@ -109,46 +109,48 @@ public sealed partial class MappingGuidelineTest : GameTest
             .SelectMany(x => ((YamlSequenceNode)x["entities"]).Select(GetTilePos).OfType<(EntityUid, Vector2)>())
             .ToHashSet();
 
-        using (Assert.EnterMultipleScope())
+        var errors = new List();
+
+        foreach (var proto in entities)
         {
-            foreach (var proto in entities)
+            var protoId = proto["proto"].AsString();
+
+            // Skip the walls themselves
+            if (wallProtos.Contains(protoId))
+                continue;
+
+            // Skip wallmount entities
+            if (wallmountProtos.Contains(protoId))
+                continue;
+
+            // Skip whitelisted entities
+            if (WallmountWhitelist.Contains(protoId))
+                continue;
+
+            var isApcCable = protoId == "CableApcExtension" || protoId == "CableMV";
+
+            foreach (var ent in (YamlSequenceNode)proto["entities"])
             {
-                var protoId = proto["proto"].AsString();
-
-                // Skip the walls themselves
-                if (wallProtos.Contains(protoId))
+                // Skip invalid transforms
+                if (GetTilePos(ent) is not { } trans)
                     continue;
 
-                // Skip wallmount entities
-                if (wallmountProtos.Contains(protoId))
+                // These are allowed to be mapped under a wall when an APC is present
+                if (isApcCable && apcPos.Contains(trans))
                     continue;
 
-                // Skip whitelisted entities
-                if (WallmountWhitelist.Contains(protoId))
+                if (wallPos.Contains(trans))
                     continue;
 
-                var isApcCable = protoId == "CableApcExtension" || protoId == "CableMV";
-
-                foreach (var ent in (YamlSequenceNode)proto["entities"])
-                {
-                    // Skip invalid transforms
-                    if (GetTilePos(ent) is not { } trans)
-                        continue;
-
-                    // These are allowed to be mapped under a wall when an APC is present
-                    if (isApcCable && apcPos.Contains(trans))
-                        continue;
-
-                    Assert.That(!wallPos.Contains(trans),
-                        $"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) mapped under a wall at tile {trans.Item2}");
-                }
+                errors.Insert($"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) mapped under a wall at tile {trans.Item2}");
             }
         }
+
+        Assert.That(!errors.Any(), $"Found {errors.Count} entities mapped under walls:\n{errors.Join("\n")}");
     }
 
     [Test]
     [TestCaseSource(nameof(MapFiles))]
-    [SuppressMessage("Assertion", "NUnit2014:Use SomeItemsConstraint for better assertion messages in case of failure")]
     public async Task MappedUnconnectedApcsTest(ResPath map)
     {
         var pair = Pair;
