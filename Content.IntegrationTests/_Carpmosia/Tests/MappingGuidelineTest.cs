@@ -12,9 +12,8 @@ using Content.Shared.Light.Components;
 using System.Numerics;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Maths;
-using System.Diagnostics.CodeAnalysis;
 using Content.Server.Power.Components;
-using System.Reflection;
+using System.Collections.Generic;
 
 namespace Content.IntegrationTests.Tests;
 
@@ -109,7 +108,7 @@ public sealed partial class MappingGuidelineTest : GameTest
             .SelectMany(x => ((YamlSequenceNode)x["entities"]).Select(GetTilePos).OfType<(EntityUid, Vector2)>())
             .ToHashSet();
 
-        var errors = new List();
+        var errors = new List<string>();
 
         foreach (var proto in entities)
         {
@@ -142,11 +141,11 @@ public sealed partial class MappingGuidelineTest : GameTest
                 if (wallPos.Contains(trans))
                     continue;
 
-                errors.Insert($"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) mapped under a wall at tile {trans.Item2}");
+                errors.Add($"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) mapped under a wall at tile {trans.Item2}");
             }
         }
 
-        Assert.That(!errors.Any(), $"Found {errors.Count} entities mapped under walls:\n{errors.Join("\n")}");
+        Assert.That(!errors.Any(), $"Found {errors.Count} entities mapped under walls:\n{string.Join("\n", errors)}");
     }
 
     [Test]
