@@ -1,21 +1,20 @@
 #nullable enable
+using System.Collections.Generic;
 using System.IO;
-using Content.IntegrationTests.Fixtures;
-using Content.IntegrationTests.Utility;
-using YamlDotNet.RepresentationModel;
-using Robust.Shared.ContentPack;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Utility;
 using System.Linq;
-using Content.Shared.Wall;
+using Content.IntegrationTests.Fixtures.Attributes;
+using Content.IntegrationTests.Fixtures;
+using Content.Server.Atmos.Monitor.Components;
+using Content.Server.Power.Components;
+using Content.Shared.Construction.Components;
 using Content.Shared.Light.Components;
+using Content.Shared.Wall;
+using Robust.Shared.ContentPack;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Maths;
-using Content.Server.Power.Components;
-using System.Collections.Generic;
-using NUnit.Framework.Internal;
-using Content.Shared.Construction.Components;
-using Content.Server.Atmos.Monitor.Components;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
+using YamlDotNet.RepresentationModel;
 
 namespace Content.IntegrationTests.Tests;
 
@@ -24,7 +23,7 @@ public sealed partial class MappingGuidelinesTest : GameTest
 {
     // Temporary override for the time being
     private static readonly ResPath[] AllMapFiles = [
-        // new("/Maps/_Carpmosia/Terminals/donk_rest_stop.yml"),
+        new("/Maps/_Carpmosia/Terminals/donk_rest_stop.yml"),
         // new("/Maps/_Carpmosia/amber.yml"),
         // new("/Maps/_Carpmosia/centcomm.yml"),
         // new("/Maps/_Carpmosia/feint.yml"),
@@ -35,7 +34,7 @@ public sealed partial class MappingGuidelinesTest : GameTest
         // new("/Maps/_Carpmosia/sparks.yml")
     ];
     //private static readonly ResPath[] AllMapFiles = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", true).Where(x => !x.ToString().StartsWith("/Maps/_Carpmosia/Legacy/"))];
-    private static readonly ResPath[] StationMaps = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", false).Where(x => !x.ToString().StartsWith("/Maps/_Carpmosia/centcomm.yml"))];
+    //private static readonly ResPath[] StationMaps = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", false).Where(x => !x.ToString().StartsWith("/Maps/_Carpmosia/centcomm.yml"))];
 
     private static readonly EntProtoId LVCable = "CableApcExtension";
     private static readonly EntProtoId MVCable = "CableMV";
@@ -56,32 +55,44 @@ public sealed partial class MappingGuidelinesTest : GameTest
         "SubstationWallBasic",
     ];
 
+    [SidedDependency(Side.Server)] private readonly IResourceManager _resMan = null!;
+
     [Test]
     [TestCaseSource(nameof(AllMapFiles))]
-    public async Task TestNonWallmountEntitiesUnderWalls(ResPath map)
+    public void TestMappingGuidelines(ResPath map)
     {
-        var resMan = Pair.Server.ResolveDependency<IResourceManager>();
-        var protoMan = Pair.Server.ResolveDependency<IPrototypeManager>();
-
-        if (LoadMapYaml(map, resMan) is not { } root)
+        if (LoadMapYaml(map, _resMan) is not { } root)
             return;
 
-        if (!root.TryGetNode<YamlSequenceNode>("entities", out var entities))
+        if (!root.TryGetNode<YamlSequenceNode>("entities", out var ents))
             return;
 
+        List<string> errors = [
+            ..TestNonWallmountEntitiesUnderWalls(ents),
+            ..TestApcMissingConnections(ents),
+            ..TestPowerNetworkLabels(ents),
+            ..TestAnchorableDuplicates(ents),
+            ..TestUnlinkedAtmosDevices(ents),
+        ];
+
+        Assert.That(errors, Has.Count.EqualTo(0), $"Found {errors.Count} issues:\n{string.Join("\n", errors)}");
+    }
+
+    private List<string> TestNonWallmountEntitiesUnderWalls(YamlSequenceNode entities)
+    {
         var walls = GetPrototypeIds<IsRoofComponent>();
         var wallmounts = GetPrototypeIds<WallMountComponent>();
         var apcs = GetPrototypeIds<ApcComponent>();
 
-        var wallPos = GetComponents(entities, walls.Contains, GetTilePos).ToHashSet();
-        var apcPos = GetComponents(entities, apcs.Contains, GetTilePos).ToHashSet();
-        var subPos = GetComponents(entities, Substations.Contains, GetTilePos).ToHashSet();
+        var wallPos = GetComponents(entities, walls.Contains, GetTilePos);
+        var apcPos = GetComponents(entities, apcs.Contains, GetTilePos);
+        var subPos = GetComponents(entities, Substations.Contains, GetTilePos);
 
         var errors = new List<string>();
 
         foreach (var proto in entities)
         {
-            var protoId = proto["proto"].AsString();
+            EntProtoId protoId = proto["proto"].AsString();
 
             // Skip the walls themselves
             if (walls.Contains(protoId))
@@ -115,32 +126,21 @@ public sealed partial class MappingGuidelinesTest : GameTest
             }
         }
 
-        Assert.That(!errors.Any(), $"Found {errors.Count} entities mapped under walls:\n{string.Join("\n", errors)}");
+        return errors;
     }
 
-    [Test]
-    [TestCaseSource(nameof(AllMapFiles))]
-    public async Task TestApcMissingConnections(ResPath map)
+    private List<string> TestApcMissingConnections(YamlSequenceNode entities)
     {
-        var resMan = Pair.Server.ResolveDependency<IResourceManager>();
-        var protoMan = Pair.Server.ResolveDependency<IPrototypeManager>();
-
-        if (LoadMapYaml(map, resMan) is not { } root)
-            return;
-
-        if (!root.TryGetNode<YamlSequenceNode>("entities", out var entities))
-            return;
-
         var apcs = GetPrototypeIds<ApcComponent>();
 
-        var lvPos = GetComponents(entities, x => x == LVCable, GetTilePos).ToHashSet();
-        var mvPos = GetComponents(entities, x => x == MVCable, GetTilePos).ToHashSet();
+        var lvPos = GetComponents(entities, x => x == LVCable, GetTilePos);
+        var mvPos = GetComponents(entities, x => x == MVCable, GetTilePos);
 
         var errors = new List<string>();
 
         foreach (var proto in entities)
         {
-            var protoId = proto["proto"].AsString();
+            EntProtoId protoId = proto["proto"].AsString();
 
             // Skip unrelated entities
             if (!apcs.Contains(protoId))
@@ -160,29 +160,18 @@ public sealed partial class MappingGuidelinesTest : GameTest
             }
         }
 
-        Assert.That(!errors.Any(), $"Found {errors.Count} apcs missing connections:\n{string.Join("\n", errors)}");
+        return errors;
     }
 
-    [Test]
-    [TestCaseSource(nameof(AllMapFiles))]
-    public async Task TestPowerNetworkLabels(ResPath map)
+    private List<string> TestPowerNetworkLabels(YamlSequenceNode entities)
     {
-        var resMan = Pair.Server.ResolveDependency<IResourceManager>();
-        var protoMan = Pair.Server.ResolveDependency<IPrototypeManager>();
-
-        if (LoadMapYaml(map, resMan) is not { } root)
-            return;
-
-        if (!root.TryGetNode<YamlSequenceNode>("entities", out var entities))
-            return;
-
         var batteries = GetPrototypeIds<PowerNetworkBatteryComponent>();
 
         var errors = new List<string>();
 
         foreach (var proto in entities)
         {
-            var protoId = proto["proto"].AsString();
+            EntProtoId protoId = proto["proto"].AsString();
 
             // Skip unrelated entities
             if (!batteries.Contains(protoId))
@@ -201,49 +190,29 @@ public sealed partial class MappingGuidelinesTest : GameTest
             }
         }
 
-        Assert.That(!errors.Any(), $"Found {errors.Count} power network members missing labels:\n{string.Join("\n", errors)}");
+        return errors;
     }
 
-    [Test]
-    [TestCaseSource(nameof(AllMapFiles))]
-    public async Task TestAnchorableDuplicates(ResPath map)
+    private List<string> TestAnchorableDuplicates(YamlSequenceNode entities)
     {
-        var resMan = Pair.Server.ResolveDependency<IResourceManager>();
-
-        if (LoadMapYaml(map, resMan) is not { } root)
-            return;
-
-        if (!root.TryGetNode<YamlSequenceNode>("entities", out var entities))
-            return;
-
         var anchorables = GetPrototypeIds<AnchorableComponent>();
 
         var errors = new List<string>();
 
         foreach (var proto in anchorables)
         {
-            foreach (var ((grid, (x, y), rot), count) in GetComponents(entities, x => x == proto, GetApproxTransform)
+            foreach (var ((grid, (x, y), _), count) in GetComponents(entities, x => x == proto, GetApproxTransform)
                 .GroupBy(x => x).Where(x => x.Count() > 1).Select(x => (x.Key, x.Count())))
             {
                 errors.Add($"Grid {grid} contains {count} duplicate {proto} at <{x / 10}, {y / 10}>");
             }
         }
 
-        Assert.That(!errors.Any(), $"Found {errors.Count} anchorable duplicates:\n{string.Join("\n", errors)}");
+        return errors;
     }
 
-    [Test]
-    [TestCaseSource(nameof(AllMapFiles))]
-    public async Task TestUnlinkedAtmosDevices(ResPath map)
+    private List<string> TestUnlinkedAtmosDevices(YamlSequenceNode entities)
     {
-        var resMan = Pair.Server.ResolveDependency<IResourceManager>();
-
-        if (LoadMapYaml(map, resMan) is not { } root)
-            return;
-
-        if (!root.TryGetNode<YamlSequenceNode>("entities", out var entities))
-            return;
-
         var airAlarms = GetPrototypeIds<AirAlarmComponent>();
         var atmosMonitors = GetPrototypeIds<AtmosMonitorComponent>();
 
@@ -251,7 +220,7 @@ public sealed partial class MappingGuidelinesTest : GameTest
 
         foreach (var proto in entities)
         {
-            var protoId = proto["proto"].AsString();
+            EntProtoId protoId = proto["proto"].AsString();
 
             var isAirAlarm = airAlarms.Contains(protoId);
             var isAtmosMonitor = atmosMonitors.Contains(protoId);
@@ -276,7 +245,7 @@ public sealed partial class MappingGuidelinesTest : GameTest
             }
         }
 
-        Assert.That(!errors.Any(), $"Found {errors.Count} unlinked atmos devices:\n{string.Join("\n", errors)}");
+        return errors;
     }
 
     private static YamlMappingNode? LoadMapYaml(ResPath map, IResourceManager resMan)
@@ -345,13 +314,19 @@ public sealed partial class MappingGuidelinesTest : GameTest
         return (parent, ((int)Math.Floor(px / 10f), (int)Math.Floor(py / 10f)));
     }
 
-    private HashSet<EntProtoId> GetPrototypeIds<T>() where T : IComponent, new()
+    private List<EntProtoId> GetPrototypeIds<T>() where T : IComponent, new()
     {
         return [.. Pair.GetPrototypesWithComponent<T>().Select(x => x.Item1.ID)];
     }
 
     private static List<T> GetComponents<T>(YamlSequenceNode entities, Func<EntProtoId, bool> filter, Func<YamlNode, T?> select) where T : struct
     {
-        return [.. entities.Where(x => filter(x["proto"].AsString())).SelectMany(x => ((YamlSequenceNode)x["entities"]).Select(select).OfType<T>())];
+        return [..entities
+            .Where(x => filter(x["proto"].AsString()))
+            .SelectMany(x => ((YamlSequenceNode)x["entities"])
+                .Select(select)
+                .OfType<T>()
+            )
+        ];
     }
 }
