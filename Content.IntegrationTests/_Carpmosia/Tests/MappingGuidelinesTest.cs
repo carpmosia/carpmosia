@@ -55,6 +55,9 @@ public sealed partial class MappingGuidelinesTest : GameTest
         "SubstationWallBasic",
     ];
 
+    private const string PROTO = "proto";
+    private const string ENTITIES = "entities";
+
     [SidedDependency(Side.Server)] private readonly IResourceManager _resMan = null!;
 
     [Test]
@@ -64,7 +67,7 @@ public sealed partial class MappingGuidelinesTest : GameTest
         if (LoadMapYaml(map, _resMan) is not { } root)
             return;
 
-        if (!root.TryGetNode<YamlSequenceNode>("entities", out var ents))
+        if (!root.TryGetNode<YamlSequenceNode>(ENTITIES, out var ents))
             return;
 
         List<string> errors = [
@@ -93,7 +96,7 @@ public sealed partial class MappingGuidelinesTest : GameTest
 
         foreach (var proto in entities)
         {
-            EntProtoId protoId = proto["proto"].AsString();
+            EntProtoId protoId = proto[PROTO].AsString();
 
             // Skip the walls themselves
             if (walls.Contains(protoId))
@@ -110,7 +113,7 @@ public sealed partial class MappingGuidelinesTest : GameTest
             var isApcCable = protoId == LVCable || protoId == MVCable;
             var isSubCable = protoId == MVCable || protoId == HVCable;
 
-            foreach (var ent in (YamlSequenceNode)proto["entities"])
+            foreach (var ent in (YamlSequenceNode)proto[ENTITIES])
             {
                 // Skip invalid transforms
                 if (GetTilePos(ent) is not { } trans)
@@ -141,13 +144,13 @@ public sealed partial class MappingGuidelinesTest : GameTest
 
         foreach (var proto in entities)
         {
-            EntProtoId protoId = proto["proto"].AsString();
+            EntProtoId protoId = proto[PROTO].AsString();
 
             // Skip unrelated entities
             if (!apcs.Contains(protoId))
                 continue;
 
-            foreach (var ent in (YamlSequenceNode)proto["entities"])
+            foreach (var ent in (YamlSequenceNode)proto[ENTITIES])
             {
                 // Skip invalid transforms
                 if (GetTilePos(ent) is not { } trans)
@@ -172,13 +175,13 @@ public sealed partial class MappingGuidelinesTest : GameTest
 
         foreach (var proto in entities)
         {
-            EntProtoId protoId = proto["proto"].AsString();
+            EntProtoId protoId = proto[PROTO].AsString();
 
             // Skip unrelated entities
             if (!batteries.Contains(protoId))
                 continue;
 
-            foreach (var ent in (YamlSequenceNode)proto["entities"])
+            foreach (var ent in (YamlSequenceNode)proto[ENTITIES])
             {
                 // Skip invalid transforms
                 if (GetTilePos(ent) is not { } trans)
@@ -221,7 +224,7 @@ public sealed partial class MappingGuidelinesTest : GameTest
 
         foreach (var proto in entities)
         {
-            EntProtoId protoId = proto["proto"].AsString();
+            EntProtoId protoId = proto[PROTO].AsString();
 
             var isAirAlarm = airAlarms.Contains(protoId);
             var isAtmosMonitor = atmosMonitors.Contains(protoId);
@@ -230,7 +233,7 @@ public sealed partial class MappingGuidelinesTest : GameTest
             if (!(isAirAlarm || isAtmosMonitor))
                 continue;
 
-            foreach (var ent in (YamlSequenceNode)proto["entities"])
+            foreach (var ent in (YamlSequenceNode)proto[ENTITIES])
             {
                 // Skip invalid transforms
                 if (GetTilePos(ent) is not { } trans)
@@ -323,8 +326,8 @@ public sealed partial class MappingGuidelinesTest : GameTest
     private static List<T> GetComponents<T>(YamlSequenceNode entities, Func<EntProtoId, bool> filter, Func<YamlNode, T?> select) where T : struct
     {
         return [..entities
-            .Where(x => filter(x["proto"].AsString()))
-            .SelectMany(x => ((YamlSequenceNode)x["entities"])
+            .Where(x => filter(x[PROTO].AsString()))
+            .SelectMany(x => ((YamlSequenceNode)x[ENTITIES])
                 .Select(select)
                 .OfType<T>()
             )
