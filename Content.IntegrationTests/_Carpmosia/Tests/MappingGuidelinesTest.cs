@@ -36,9 +36,9 @@ public sealed partial class MappingGuidelinesTest : GameTest
     //private static readonly ResPath[] AllMapFiles = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", true).Where(x => !x.ToString().StartsWith("/Maps/_Carpmosia/Legacy/"))];
     //private static readonly ResPath[] StationMaps = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", false).Where(x => !x.ToString().StartsWith("/Maps/_Carpmosia/centcomm.yml"))];
 
-    private static readonly EntProtoId LVCable = "CableApcExtension";
-    private static readonly EntProtoId MVCable = "CableMV";
-    private static readonly EntProtoId HVCable = "CableHV";
+    private static readonly EntProtoId[] LVCables = ["CableApcExtension"];
+    private static readonly EntProtoId[] MVCables = ["CableMV"];
+    private static readonly EntProtoId[] HVCables = ["CableHV"];
 
     private static readonly EntProtoId[] WallmountWhitelist = [
         "RandomPosterAny",
@@ -88,9 +88,9 @@ public sealed partial class MappingGuidelinesTest : GameTest
         var wallmounts = GetPrototypeIds<WallMountComponent>();
         var apcs = GetPrototypeIds<ApcComponent>();
 
-        var wallPos = GetComponents(entities, walls.Contains, GetTilePos);
-        var apcPos = GetComponents(entities, apcs.Contains, GetTilePos);
-        var subPos = GetComponents(entities, Substations.Contains, GetTilePos);
+        var wallPos = DeserializeCompNodes(entities, walls, GetTilePos);
+        var apcPos = DeserializeCompNodes(entities, apcs, GetTilePos);
+        var subPos = DeserializeCompNodes(entities, Substations, GetTilePos);
 
         var errors = new List<string>();
 
@@ -110,8 +110,8 @@ public sealed partial class MappingGuidelinesTest : GameTest
             if (WallmountWhitelist.Contains(protoId))
                 continue;
 
-            var isApcCable = protoId == LVCable || protoId == MVCable;
-            var isSubCable = protoId == MVCable || protoId == HVCable;
+            var isApcCable = LVCables.Contains(protoId) || MVCables.Contains(protoId);
+            var isSubCable = MVCables.Contains(protoId) || HVCables.Contains(protoId);
 
             foreach (var ent in (YamlSequenceNode)proto[ENTITIES])
             {
@@ -137,8 +137,8 @@ public sealed partial class MappingGuidelinesTest : GameTest
     {
         var apcs = GetPrototypeIds<ApcComponent>();
 
-        var lvPos = GetComponents(entities, x => x == LVCable, GetTilePos);
-        var mvPos = GetComponents(entities, x => x == MVCable, GetTilePos);
+        var lvPos = DeserializeCompNodes(entities, LVCables, GetTilePos);
+        var mvPos = DeserializeCompNodes(entities, MVCables, GetTilePos);
 
         var errors = new List<string>();
 
@@ -187,7 +187,7 @@ public sealed partial class MappingGuidelinesTest : GameTest
                 if (GetTilePos(ent) is not { } trans)
                     continue;
 
-                if (GetComp(ent, "Label") is { } label && (label.HasNode("currentLabel") || label.HasNode("localizedLabel")))
+                if (GetCompNode(ent, "Label") is { } label && (label.HasNode("currentLabel") || label.HasNode("localizedLabel")))
                     continue;
 
                 errors.Add($"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) that is missing a label at {trans.Item2}");
@@ -205,7 +205,7 @@ public sealed partial class MappingGuidelinesTest : GameTest
 
         foreach (var proto in anchorables)
         {
-            foreach (var ((grid, (x, y), _), count) in GetComponents(entities, x => x == proto, GetApproxTransform)
+            foreach (var ((grid, (x, y), _), count) in DeserializeCompNodes(entities, [proto], GetApproxTransform)
                 .GroupBy(x => x).Where(x => x.Count() > 1).Select(x => (x.Key, x.Count())))
             {
                 errors.Add($"Grid {grid} contains {count} duplicate {proto} at <{x / 10}, {y / 10}>");
@@ -239,10 +239,10 @@ public sealed partial class MappingGuidelinesTest : GameTest
                 if (GetTilePos(ent) is not { } trans)
                     continue;
 
-                if (isAirAlarm && GetComp(ent, "DeviceList") is { })
+                if (isAirAlarm && GetCompNode(ent, "DeviceList") is { })
                     continue;
 
-                if (isAtmosMonitor && GetComp(ent, "DeviceNetwork") is { })
+                if (isAtmosMonitor && GetCompNode(ent, "DeviceNetwork") is { })
                     continue;
 
                 errors.Add($"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) that doesn't have any connections at {trans.Item2}");
@@ -268,7 +268,7 @@ public sealed partial class MappingGuidelinesTest : GameTest
         return (YamlMappingNode)yamlStream.Documents[0].RootNode;
     }
 
-    private static YamlMappingNode? GetComp(YamlNode entNode, string comp)
+    private static YamlMappingNode? GetCompNode(YamlNode entNode, string comp)
     {
         var ent = (YamlMappingNode)entNode;
 
@@ -283,7 +283,7 @@ public sealed partial class MappingGuidelinesTest : GameTest
 
     private static (EntityUid, (int, int), int)? GetApproxTransform(YamlNode entNode)
     {
-        if (GetComp(entNode, "Transform") is not { } trans)
+        if (GetCompNode(entNode, "Transform") is not { } trans)
             return null;
 
         if (!trans.TryGetNode("parent", out var rawParent))
@@ -323,12 +323,12 @@ public sealed partial class MappingGuidelinesTest : GameTest
         return [.. Pair.GetPrototypesWithComponent<T>().Select(x => x.Item1.ID)];
     }
 
-    private static List<T> GetComponents<T>(YamlSequenceNode entities, Func<EntProtoId, bool> filter, Func<YamlNode, T?> select) where T : struct
+    private static List<T> DeserializeCompNodes<T>(YamlSequenceNode entities, IEnumerable<EntProtoId> filter, Func<YamlNode, T?> deserializer) where T : struct
     {
         return [..entities
-            .Where(x => filter(x[PROTO].AsString()))
+            .Where(x => filter.Contains(x[PROTO].AsString()))
             .SelectMany(x => ((YamlSequenceNode)x[ENTITIES])
-                .Select(select)
+                .Select(deserializer)
                 .OfType<T>()
             )
         ];
