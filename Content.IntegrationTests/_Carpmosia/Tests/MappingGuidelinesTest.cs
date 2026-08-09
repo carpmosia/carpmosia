@@ -16,6 +16,7 @@ using Content.Server.Power.Components;
 using System.Collections.Generic;
 using NUnit.Framework.Internal;
 using Content.Shared.Construction.Components;
+using Content.Server.Atmos.Monitor.Components;
 
 namespace Content.IntegrationTests.Tests;
 
@@ -32,6 +33,14 @@ public sealed partial class MappingGuidelinesTest : GameTest
         "RandomPosterLegit",
         "RandomPainting",
         "PlaqueAtmos"
+    ];
+
+    // Substations don't have a unique component sadly
+    private static readonly EntProtoId[] Substations = [
+        "SubstationBasic",
+        "SubstationBasicEmpty",
+        "SubstationWallBasic",
+        "SubstationWallBasicEmpty",
     ];
 
     [Test]
@@ -53,6 +62,7 @@ public sealed partial class MappingGuidelinesTest : GameTest
 
         var wallPos = GetComponents(entities, walls.Contains, GetTilePos).ToHashSet();
         var apcPos = GetComponents(entities, apcs.Contains, GetTilePos).ToHashSet();
+        var subPos = GetComponents(entities, Substations.Contains, GetTilePos).ToHashSet();
 
         var errors = new List<string>();
 
@@ -73,6 +83,7 @@ public sealed partial class MappingGuidelinesTest : GameTest
                 continue;
 
             var isApcCable = protoId == "CableApcExtension" || protoId == "CableMV";
+            var isSubCable = protoId == "CableMV" || protoId == "CableHV";
 
             foreach (var ent in (YamlSequenceNode)proto["entities"])
             {
@@ -81,7 +92,7 @@ public sealed partial class MappingGuidelinesTest : GameTest
                     continue;
 
                 // These are allowed to be mapped under a wall when an APC is present
-                if (isApcCable && apcPos.Contains(trans))
+                if (isApcCable && apcPos.Contains(trans) || isSubCable && subPos.Contains(trans))
                     continue;
 
                 if (!wallPos.Contains(trans))
@@ -173,7 +184,7 @@ public sealed partial class MappingGuidelinesTest : GameTest
                 if (GetComp(ent, "Label") is { } label && (label.HasNode("currentLabel") || label.HasNode("localizedLabel")))
                     continue;
 
-                errors.Add($"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) that is missing a label {trans.Item2}");
+                errors.Add($"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) that is missing a label at {trans.Item2}");
             }
         }
 
@@ -208,6 +219,53 @@ public sealed partial class MappingGuidelinesTest : GameTest
         Assert.That(!errors.Any(), $"Found {errors.Count} anchorable duplicates:\n{string.Join("\n", errors)}");
     }
 
+    [Test]
+    [TestCaseSource(nameof(AllMapFiles))]
+    public async Task TestUnlinkedAtmosDevices(ResPath map)
+    {
+        var resMan = Pair.Server.ResolveDependency<IResourceManager>();
+
+        if (LoadMapYaml(map, resMan) is not { } root)
+            return;
+
+        if (!root.TryGetNode<YamlSequenceNode>("entities", out var entities))
+            return;
+
+        var airAlarms = GetPrototypeIds<AirAlarmComponent>();
+        var atmosMonitors = GetPrototypeIds<AtmosMonitorComponent>();
+
+        var errors = new List<string>();
+
+        foreach (var proto in entities)
+        {
+            var protoId = proto["proto"].AsString();
+
+            var isAirAlarm = airAlarms.Contains(protoId);
+            var isAtmosMonitor = atmosMonitors.Contains(protoId);
+
+            // Skip unrelated entities
+            if (!(isAirAlarm || isAtmosMonitor))
+                continue;
+
+            foreach (var ent in (YamlSequenceNode)proto["entities"])
+            {
+                // Skip invalid transforms
+                if (GetTilePos(ent) is not { } trans)
+                    continue;
+
+                if (isAirAlarm && GetComp(ent, "DeviceList") is { })
+                    continue;
+
+                if (isAtmosMonitor && GetComp(ent, "DeviceNetwork") is { })
+                    continue;
+
+                errors.Add($"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) that doesn't have any connections at {trans.Item2}");
+            }
+        }
+
+        Assert.That(!errors.Any(), $"Found {errors.Count} unlinked atmos devices:\n{string.Join("\n", errors)}");
+    }
+
     private static YamlMappingNode? LoadMapYaml(ResPath map, IResourceManager resMan)
     {
         var rootedPath = map.ToRootedPath();
@@ -231,7 +289,7 @@ public sealed partial class MappingGuidelinesTest : GameTest
         if (!ent.TryGetNode<YamlSequenceNode>("components", out var comps))
             return null;
 
-        if (comps.First(x => x["type"].AsString() == comp) is not YamlMappingNode trans)
+        if (comps.FirstOrDefault(x => x["type"].AsString() == comp) is not YamlMappingNode trans)
             return null;
 
         return trans;
@@ -254,7 +312,7 @@ public sealed partial class MappingGuidelinesTest : GameTest
             return null;
 
         var rawPos = posRaw.AsString().Split(",").Select(float.Parse).ToArray();
-        var pos = ((int)Math.Round(rawPos[0] * 10), (int)Math.Round(rawPos[1] * 10));
+        var pos = ((int)Math.Floor(rawPos[0] * 10), (int)Math.Floor(rawPos[1] * 10));
 
         var rot = 0;
         if (trans.TryGetNode("rot", out var rotRaw))
@@ -271,15 +329,15 @@ public sealed partial class MappingGuidelinesTest : GameTest
             return null;
         var parent = trans.Item1;
         var (px, py) = trans.Item2;
-        return (parent, (px / 10, py / 10));
+        return (parent, ((int)Math.Floor(px / 10f), (int)Math.Floor(py / 10f)));
     }
 
-    private HashSet<string> GetPrototypeIds<T>() where T : IComponent, new()
+    private HashSet<EntProtoId> GetPrototypeIds<T>() where T : IComponent, new()
     {
         return [.. Pair.GetPrototypesWithComponent<T>().Select(x => x.Item1.ID)];
     }
 
-    private static List<T> GetComponents<T>(YamlSequenceNode entities, Func<string, bool> filter, Func<YamlNode, T?> select) where T : struct
+    private static List<T> GetComponents<T>(YamlSequenceNode entities, Func<EntProtoId, bool> filter, Func<YamlNode, T?> select) where T : struct
     {
         return [.. entities.Where(x => filter(x["proto"].AsString())).SelectMany(x => ((YamlSequenceNode)x["entities"]).Select(select).OfType<T>())];
     }
