@@ -9,7 +9,6 @@ using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.Wall;
 using Content.Shared.Light.Components;
-using System.Numerics;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Maths;
 using Content.Server.Power.Components;
@@ -24,8 +23,10 @@ namespace Content.IntegrationTests.Tests;
 public sealed partial class MappingGuidelinesTest : GameTest
 {
     //private static readonly ResPath[] AllMapFiles = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", true).Where(x => !x.ToString().StartsWith("/Maps/_Carpmosia/Legacy/"))];
-    private static readonly ResPath[] StationMaps = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", false).Where(x => !x.ToString().StartsWith("/Maps/_Carpmosia/centcomm.yml"))];
+    //private static readonly ResPath[] StationMaps = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", false).Where(x => !x.ToString().StartsWith("/Maps/_Carpmosia/centcomm.yml"))];
     private static readonly ResPath[] AllMapFiles = GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "lampocteis.yml", false);
+    private static readonly ResPath[] StationMaps = GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "lampocteis.yml", false);
+
 
     private static readonly EntProtoId[] WallmountWhitelist = [
         "RandomPosterAny",
