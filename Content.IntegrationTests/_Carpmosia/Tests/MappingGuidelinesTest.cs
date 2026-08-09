@@ -23,11 +23,11 @@ public sealed partial class MappingGuidelinesTest : GameTest
 {
     // Temporary override for the time being
     private static readonly ResPath[] AllMapFiles = [
-        new("/Maps/_Carpmosia/Terminals/donk_rest_stop.yml"),
+        //new("/Maps/_Carpmosia/Terminals/donk_rest_stop.yml"),
         // new("/Maps/_Carpmosia/amber.yml"),
         // new("/Maps/_Carpmosia/centcomm.yml"),
         // new("/Maps/_Carpmosia/feint.yml"),
-        // new("/Maps/_Carpmosia/lampocteis.yml"),
+         new("/Maps/_Carpmosia/lampocteis.yml"),
         // new("/Maps/_Carpmosia/oasis.yml"),
         // new("/Maps/_Carpmosia/packed.yml"),
         // new("/Maps/_Carpmosia/saltern.yml"),
@@ -75,6 +75,7 @@ public sealed partial class MappingGuidelinesTest : GameTest
             ..TestUnlinkedAtmosDevices(ents),
         ];
 
+        // Assert one large list of errors instead of Assert.Multiple to avoid 5 morbillion stacktraces
         Assert.That(errors, Has.Count.EqualTo(0), $"Found {errors.Count} issues:\n{string.Join("\n", errors)}");
     }
 
@@ -311,7 +312,7 @@ public sealed partial class MappingGuidelinesTest : GameTest
             return null;
         var parent = trans.Item1;
         var (px, py) = trans.Item2;
-        return (parent, ((int)Math.Floor(px / 10f), (int)Math.Floor(py / 10f)));
+        return (parent, ((int)Math.Floor(px / 10m), (int)Math.Floor(py / 10m)));
     }
 
     private List<EntProtoId> GetPrototypeIds<T>() where T : IComponent, new()
