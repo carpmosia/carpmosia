@@ -24,7 +24,7 @@ public sealed partial class MappingGuidelinesTest : GameTest
     // Temporary override until most of the maps are fixed
     private static readonly ResPath[] AllMapFiles = [
         //new("/Maps/_Carpmosia/Terminals/donk_rest_stop.yml"),
-        // new("/Maps/_Carpmosia/amber.yml"),
+        new("/Maps/_Carpmosia/amber.yml"),
         // new("/Maps/_Carpmosia/centcomm.yml"),
         // new("/Maps/_Carpmosia/feint.yml"),
         // new("/Maps/_Carpmosia/lampocteis.yml"),
