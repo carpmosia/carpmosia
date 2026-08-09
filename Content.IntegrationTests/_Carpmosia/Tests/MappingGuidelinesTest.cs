@@ -26,7 +26,7 @@ public sealed partial class MappingGuidelinesTest : GameTest
         //new("/Maps/_Carpmosia/Terminals/donk_rest_stop.yml"),
         // new("/Maps/_Carpmosia/amber.yml"),
         // new("/Maps/_Carpmosia/centcomm.yml"),
-        // new("/Maps/_Carpmosia/feint.yml"),
+        new("/Maps/_Carpmosia/feint.yml"),
         // new("/Maps/_Carpmosia/lampocteis.yml"),
         // new("/Maps/_Carpmosia/oasis.yml"),
         // new("/Maps/_Carpmosia/packed.yml"),
