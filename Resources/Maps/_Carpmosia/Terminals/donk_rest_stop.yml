@@ -4,8 +4,8 @@ meta:
   engineVersion: 283.1.3
   forkId: carpmosia
   forkVersion: ""
-  time: 08/07/2026 23:55:30
-  entityCount: 2062
+  time: 08/12/2026 14:57:20
+  entityCount: 2068
 maps: []
 grids:
 - 1
@@ -771,15 +771,21 @@ entities:
       pos: -18.5,-20.5
     - type: DeviceList
       devices:
-      - 842
-      - 844
+      - 2019
       - 1311
+      - 844
+      - 842
   - uid: 17
     components:
     - type: Transform
       parent: 1
       rot: 3.141592653589793 rad
       pos: 6.5,-32.5
+    - type: DeviceList
+      devices:
+      - 1359
+      - 1331
+      - 845
   - uid: 18
     components:
     - type: Transform
@@ -1154,7 +1160,7 @@ entities:
       pos: 0.5,-23.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -37615.633
+      secondsUntilStateChange: -38133.273
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -1274,21 +1280,39 @@ entities:
   entities:
   - uid: 89
     components:
+    - type: MetaData
+      name: APC (East Docking Arm)
     - type: Transform
       parent: 1
       rot: -1.5707963267948966 rad
       pos: 13.5,-21.5
+    - type: Label
+      currentLabel: East Docking Arm
+    - type: NameModifier
+      baseName: APC
   - uid: 90
     components:
+    - type: MetaData
+      name: APC (Freezer)
     - type: Transform
       parent: 1
       pos: 1.5,-29.5
+    - type: Label
+      currentLabel: Freezer
+    - type: NameModifier
+      baseName: APC
   - uid: 91
     components:
+    - type: MetaData
+      name: APC (West Docking Arm)
     - type: Transform
       parent: 1
       rot: 1.5707963267948966 rad
       pos: -26.5,-25.5
+    - type: Label
+      currentLabel: West Docking Arm
+    - type: NameModifier
+      baseName: APC
   - uid: 92
     components:
     - type: Transform
@@ -1297,39 +1321,75 @@ entities:
       pos: -15.5,-28.5
   - uid: 93
     components:
+    - type: MetaData
+      name: APC (Vox Box)
     - type: Transform
       parent: 1
       rot: 3.141592653589793 rad
       pos: 4.5,-29.5
+    - type: Label
+      currentLabel: Vox Box
+    - type: NameModifier
+      baseName: APC
   - uid: 94
     components:
+    - type: MetaData
+      name: APC (Janitor)
     - type: Transform
       parent: 1
       pos: 7.5,-29.5
+    - type: Label
+      currentLabel: Janitor
+    - type: NameModifier
+      baseName: APC
   - uid: 95
     components:
+    - type: MetaData
+      name: APC (Security)
     - type: Transform
       parent: 1
       rot: 1.5707963267948966 rad
       pos: 5.5,-19.5
+    - type: Label
+      currentLabel: Security
+    - type: NameModifier
+      baseName: APC
   - uid: 96
     components:
+    - type: MetaData
+      name: APC (Engineering)
     - type: Transform
       parent: 1
       rot: 1.5707963267948966 rad
       pos: -22.5,-26.5
+    - type: Label
+      currentLabel: Engineering
+    - type: NameModifier
+      baseName: APC
   - uid: 97
     components:
+    - type: MetaData
+      name: APC (Medbay)
     - type: Transform
       parent: 1
       rot: 3.141592653589793 rad
       pos: -14.5,-21.5
+    - type: Label
+      currentLabel: Medbay
+    - type: NameModifier
+      baseName: APC
   - uid: 98
     components:
+    - type: MetaData
+      name: APC (Kitchen)
     - type: Transform
       parent: 1
       rot: 3.141592653589793 rad
       pos: -4.5,-32.5
+    - type: Label
+      currentLabel: Kitchen
+    - type: NameModifier
+      baseName: APC
   - uid: 99
     components:
     - type: Transform
@@ -1338,15 +1398,27 @@ entities:
       pos: 0.5,-21.5
   - uid: 100
     components:
+    - type: MetaData
+      name: APC (Bar)
     - type: Transform
       parent: 1
       pos: -8.5,-14.5
+    - type: Label
+      currentLabel: Bar
+    - type: NameModifier
+      baseName: APC
   - uid: 101
     components:
+    - type: MetaData
+      name: APC (Shop)
     - type: Transform
       parent: 1
       rot: 3.141592653589793 rad
       pos: 4.5,-21.5
+    - type: Label
+      currentLabel: Shop
+    - type: NameModifier
+      baseName: APC
 - proto: AtmosDeviceFanDirectional
   entities:
   - uid: 102
@@ -3132,6 +3204,21 @@ entities:
     - type: Transform
       parent: 1
       pos: -16.5,-10.5
+  - uid: 1358
+    components:
+    - type: Transform
+      parent: 1
+      pos: -15.5,-28.5
+  - uid: 2067
+    components:
+    - type: Transform
+      parent: 1
+      pos: -15.5,-27.5
+  - uid: 2068
+    components:
+    - type: Transform
+      parent: 1
+      pos: -15.5,-26.5
 - proto: CableHV
   entities:
   - uid: 446
@@ -5675,6 +5762,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 13
+      - 17
   - uid: 846
     components:
     - type: Transform
@@ -6067,19 +6155,14 @@ entities:
     - type: Transform
       parent: 1
       pos: 8.669327,-19.538677
-- proto: GasFilterFlipped
+- proto: GasFilterFlippedCryogenics
   entities:
-  - uid: 1727
+  - uid: 182
     components:
     - type: Transform
       parent: 1
       rot: 1.5707963267948966 rad
       pos: -16.5,-16.5
-    - type: GasFilter
-      filteredGas: CarbonDioxide
-      enabled: True
-    - type: AtmosPipeColor
-      color: '#00B8DBFF'
 - proto: GasMinerNitrogenStation
   entities:
   - uid: 896
@@ -6149,30 +6232,26 @@ entities:
       pos: -19.5,-31.5
     - type: AtmosPipeColor
       color: '#DA1010FF'
-  - uid: 2013
+- proto: GasPipeBendCryogenics
+  entities:
+  - uid: 1144
     components:
     - type: Transform
       parent: 1
       rot: 1.5707963267948966 rad
       pos: -17.5,-16.5
-    - type: AtmosPipeColor
-      color: '#00B8DBFF'
-  - uid: 2014
+  - uid: 1572
     components:
     - type: Transform
       parent: 1
       rot: 3.141592653589793 rad
       pos: -17.5,-17.5
-    - type: AtmosPipeColor
-      color: '#00B8DBFF'
-  - uid: 2017
+  - uid: 1574
     components:
     - type: Transform
       parent: 1
       rot: -1.5707963267948966 rad
       pos: -14.5,-17.5
-    - type: AtmosPipeColor
-      color: '#00B8DBFF'
 - proto: GasPipeBendDistro
   entities:
   - uid: 922
@@ -6300,6 +6379,12 @@ entities:
       parent: 1
       rot: -1.5707963267948966 rad
       pos: -18.5,-29.5
+  - uid: 2064
+    components:
+    - type: Transform
+      parent: 1
+      rot: 3.141592653589793 rad
+      pos: -17.5,-19.5
 - proto: GasPipeBendNitrogen
   entities:
   - uid: 185
@@ -6430,15 +6515,13 @@ entities:
       parent: 1
       rot: 3.141592653589793 rad
       pos: -25.5,-34.5
-- proto: GasPipeFourway
+- proto: GasPipeFourwayCryogenics
   entities:
-  - uid: 1572
+  - uid: 1145
     components:
     - type: Transform
       parent: 1
       pos: -15.5,-16.5
-    - type: AtmosPipeColor
-      color: '#00B8DBFF'
 - proto: GasPipeFourwayDistro
   entities:
   - uid: 944
@@ -6476,12 +6559,12 @@ entities:
       parent: 1
       rot: 3.141592653589793 rad
       pos: -19.5,-28.5
-  - uid: 1145
+  - uid: 2015
     components:
     - type: Transform
       parent: 1
       rot: 3.141592653589793 rad
-      pos: -15.5,-18.5
+      pos: -15.5,-17.5
 - proto: GasPipeManifoldNitrogen
   entities:
   - uid: 976
@@ -6492,12 +6575,12 @@ entities:
       pos: -19.5,-30.5
 - proto: GasPipeManifoldWaste
   entities:
-  - uid: 1028
+  - uid: 1660
     components:
     - type: Transform
       parent: 1
       rot: 3.141592653589793 rad
-      pos: -16.5,-20.5
+      pos: -16.5,-17.5
 - proto: GasPipeStraight
   entities:
   - uid: 901
@@ -6524,46 +6607,6 @@ entities:
       pos: -16.5,-31.5
     - type: AtmosPipeColor
       color: '#DA1010FF'
-  - uid: 1358
-    components:
-    - type: Transform
-      parent: 1
-      rot: 3.141592653589793 rad
-      pos: -16.5,-19.5
-    - type: AtmosPipeColor
-      color: '#AD46FFFF'
-  - uid: 1447
-    components:
-    - type: Transform
-      parent: 1
-      rot: 3.141592653589793 rad
-      pos: -16.5,-18.5
-    - type: AtmosPipeColor
-      color: '#AD46FFFF'
-  - uid: 2015
-    components:
-    - type: Transform
-      parent: 1
-      rot: 1.5707963267948966 rad
-      pos: -16.5,-17.5
-    - type: AtmosPipeColor
-      color: '#00B8DBFF'
-  - uid: 2016
-    components:
-    - type: Transform
-      parent: 1
-      rot: 1.5707963267948966 rad
-      pos: -15.5,-17.5
-    - type: AtmosPipeColor
-      color: '#00B8DBFF'
-  - uid: 2019
-    components:
-    - type: Transform
-      parent: 1
-      rot: 3.141592653589793 rad
-      pos: -16.5,-17.5
-    - type: AtmosPipeColor
-      color: '#AD46FFFF'
   - uid: 2033
     components:
     - type: Transform
@@ -6588,8 +6631,28 @@ entities:
       pos: -15.5,-31.5
     - type: AtmosPipeColor
       color: '#DA1010FF'
+- proto: GasPipeStraightCryogenics
+  entities:
+  - uid: 1147
+    components:
+    - type: Transform
+      parent: 1
+      rot: 1.5707963267948966 rad
+      pos: -15.5,-17.5
+  - uid: 1447
+    components:
+    - type: Transform
+      parent: 1
+      rot: 1.5707963267948966 rad
+      pos: -16.5,-17.5
 - proto: GasPipeStraightDistro
   entities:
+  - uid: 1028
+    components:
+    - type: Transform
+      parent: 1
+      rot: 3.141592653589793 rad
+      pos: -17.5,-18.5
   - uid: 1114
     components:
     - type: Transform
@@ -6766,21 +6829,11 @@ entities:
       parent: 1
       rot: 1.5707963267948966 rad
       pos: -20.5,-22.5
-  - uid: 1144
-    components:
-    - type: Transform
-      parent: 1
-      pos: -15.5,-17.5
   - uid: 1146
     components:
     - type: Transform
       parent: 1
       pos: -15.5,-20.5
-  - uid: 1147
-    components:
-    - type: Transform
-      parent: 1
-      pos: -15.5,-19.5
   - uid: 1148
     components:
     - type: Transform
@@ -7398,6 +7451,18 @@ entities:
       parent: 1
       rot: 1.5707963267948966 rad
       pos: -9.5,-22.5
+  - uid: 2013
+    components:
+    - type: Transform
+      parent: 1
+      rot: 3.141592653589793 rad
+      pos: -17.5,-17.5
+  - uid: 2065
+    components:
+    - type: Transform
+      parent: 1
+      rot: 1.5707963267948966 rad
+      pos: -16.5,-19.5
 - proto: GasPipeStraightNitrogen
   entities:
   - uid: 903
@@ -8377,16 +8442,26 @@ entities:
       parent: 1
       rot: 1.5707963267948966 rad
       pos: -24.5,-12.5
-- proto: GasPipeTJunction
+  - uid: 2017
+    components:
+    - type: Transform
+      parent: 1
+      rot: 3.141592653589793 rad
+      pos: -16.5,-20.5
+  - uid: 2066
+    components:
+    - type: Transform
+      parent: 1
+      rot: 3.141592653589793 rad
+      pos: -16.5,-18.5
+- proto: GasPipeTJunctionCryogenics
   entities:
-  - uid: 1574
+  - uid: 2016
     components:
     - type: Transform
       parent: 1
       rot: -1.5707963267948966 rad
       pos: -14.5,-16.5
-    - type: AtmosPipeColor
-      color: '#00B8DBFF'
 - proto: GasPipeTJunctionDistro
   entities:
   - uid: 1280
@@ -8509,6 +8584,12 @@ entities:
       parent: 1
       rot: -1.5707963267948966 rad
       pos: 8.5,-19.5
+  - uid: 1727
+    components:
+    - type: Transform
+      parent: 1
+      rot: -1.5707963267948966 rad
+      pos: -15.5,-19.5
 - proto: GasPipeTJunctionWaste
   entities:
   - uid: 1159
@@ -8648,6 +8729,12 @@ entities:
       parent: 1
       rot: 3.141592653589793 rad
       pos: 8.5,-24.5
+  - uid: 2063
+    components:
+    - type: Transform
+      parent: 1
+      rot: 1.5707963267948966 rad
+      pos: -16.5,-19.5
 - proto: GasPortDistro
   entities:
   - uid: 1302
@@ -8685,17 +8772,6 @@ entities:
       enabled: True
     - type: AtmosPipeColor
       color: '#2887E8FF'
-  - uid: 1660
-    components:
-    - type: Transform
-      parent: 1
-      rot: 3.141592653589793 rad
-      pos: -15.5,-17.5
-    - type: GasPressurePump
-      targetPressure: 303.9
-      enabled: True
-    - type: AtmosPipeColor
-      color: '#00B8DBFF'
 - proto: GasPressurePumpDistro
   entities:
   - uid: 1306
@@ -8704,6 +8780,12 @@ entities:
       parent: 1
       rot: 3.141592653589793 rad
       pos: -19.5,-26.5
+  - uid: 1307
+    components:
+    - type: Transform
+      parent: 1
+      rot: 3.141592653589793 rad
+      pos: -15.5,-18.5
 - proto: GasPressurePumpNitrogen
   entities:
   - uid: 967
@@ -8719,17 +8801,13 @@ entities:
     - type: Transform
       parent: 1
       pos: -20.5,-26.5
-- proto: GasThermoMachineFreezer
+- proto: GasThermoMachineFreezerCryogenics
   entities:
-  - uid: 182
+  - uid: 2014
     components:
     - type: Transform
       parent: 1
       pos: -14.5,-15.5
-    - type: GasThermoMachine
-      targetTemperature: 73.15
-    - type: AtmosPipeColor
-      color: '#00B8DBFF'
 - proto: GasThermoMachineFreezerEnabled
   entities:
   - uid: 1309
@@ -8751,14 +8829,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 3
-  - uid: 1311
-    components:
-    - type: Transform
-      parent: 1
-      pos: -15.5,-16.5
-    - type: DeviceNetwork
-      deviceLists:
-      - 16
   - uid: 1312
     components:
     - type: Transform
@@ -8935,6 +9005,9 @@ entities:
       parent: 1
       rot: 1.5707963267948966 rad
       pos: 6.5,-30.5
+    - type: DeviceNetwork
+      deviceLists:
+      - 17
   - uid: 1332
     components:
     - type: Transform
@@ -8971,6 +9044,14 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 19
+  - uid: 2019
+    components:
+    - type: Transform
+      parent: 1
+      pos: -17.5,-16.5
+    - type: DeviceNetwork
+      deviceLists:
+      - 16
 - proto: GasVentPumpFreezer
   entities:
   - uid: 1364
@@ -9017,11 +9098,15 @@ entities:
       - 23
 - proto: GasVentScrubberWaste
   entities:
-  - uid: 1307
+  - uid: 1311
     components:
     - type: Transform
       parent: 1
-      pos: -16.5,-19.5
+      rot: -1.5707963267948966 rad
+      pos: -15.5,-19.5
+    - type: DeviceNetwork
+      deviceLists:
+      - 16
   - uid: 1338
     components:
     - type: Transform
@@ -9203,6 +9288,9 @@ entities:
       parent: 1
       rot: 1.5707963267948966 rad
       pos: 8.5,-30.5
+    - type: DeviceNetwork
+      deviceLists:
+      - 17
   - uid: 1360
     components:
     - type: Transform
