@@ -24,11 +24,11 @@ public sealed partial class MappingGuidelinesTest : GameTest
 {
     // Temporary override until most of the maps are fixed
     private static readonly ResPath[] AllMapFiles = [
-        // new("/Maps/_Carpmosia/Terminals/donk_rest_stop.yml"),
+        new("/Maps/_Carpmosia/Terminals/donk_rest_stop.yml"),
         new("/Maps/_Carpmosia/amber.yml"),
         // new("/Maps/_Carpmosia/bagel.yml"),
         // new("/Maps/_Carpmosia/box.yml"),
-        // new("/Maps/_Carpmosia/centcomm.yml"),
+        new("/Maps/_Carpmosia/centcomm.yml"),
         // new("/Maps/_Carpmosia/elkridge.yml"),
         // new("/Maps/_Carpmosia/exo.yml"),
         // new("/Maps/_Carpmosia/feint.yml"),
