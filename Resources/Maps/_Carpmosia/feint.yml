@@ -81,7 +81,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: Map Entity
+      name: Feint
     - type: Transform
     - type: Map
       mapPaused: True
@@ -91,7 +91,7 @@ entities:
   - uid: 2
     components:
     - type: MetaData
-      name: grid
+      name: Feint
     - type: Transform
       parent: 1
     - type: BecomesStation
