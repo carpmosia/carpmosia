@@ -92,7 +92,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: Map Entity
+      name: Plasma
     - type: Transform
     - type: Map
       mapPaused: True
@@ -101,19 +101,10 @@ entities:
     - type: OccluderTree
     - type: Parallax
       parallax: PlasmaStation
-    - type: MapAtmosphere
-      space: False
-      mixture:
-        temperature: 292.3
-        volume: 2500
-        moles:
-          Oxygen: 21.82
-          Nitrogen: 81.1
-        immutable: True
   - uid: 2
     components:
     - type: MetaData
-      name: PlasmaStation
+      name: Plasma
     - type: Transform
       parent: 1
       pos: 61.5,15.5
@@ -14115,12 +14106,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 5.5,-38.5
-    - type: Door
-      state: Opening
-      secondsUntilStateChange: -45498.344
-    - type: DeviceLinkSource
-      lastSignals:
-        DoorStatus: True
   - uid: 329
     components:
     - type: Transform
@@ -15634,12 +15619,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -131.5,-45.5
-    - type: Door
-      state: Opening
-      secondsUntilStateChange: -219076.88
-    - type: DeviceLinkSource
-      lastSignals:
-        DoorStatus: True
   - uid: 567
     components:
     - type: Transform
@@ -174860,14 +174839,6 @@ entities:
       parent: 2
       rot: 3.141592653589793 rad
       pos: -54.5,-25.5
-    - type: DeviceLinkSource
-      lastSignals:
-        DoorStatus: True
-    - type: Door
-      state: Opening
-      secondsUntilStateChange: -419183.66
-    - type: Airlock
-      autoClose: False
   - uid: 27759
     components:
     - type: Transform
