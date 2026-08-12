@@ -24,15 +24,23 @@ public sealed partial class MappingGuidelinesTest : GameTest
 {
     // Temporary override until most of the maps are fixed
     private static readonly ResPath[] AllMapFiles = [
-        //new("/Maps/_Carpmosia/Terminals/donk_rest_stop.yml"),
+        // new("/Maps/_Carpmosia/Terminals/donk_rest_stop.yml"),
         new("/Maps/_Carpmosia/amber.yml"),
+        // new("/Maps/_Carpmosia/bagel.yml"),
+        // new("/Maps/_Carpmosia/box.yml"),
         // new("/Maps/_Carpmosia/centcomm.yml"),
+        // new("/Maps/_Carpmosia/elkridge.yml"),
+        // new("/Maps/_Carpmosia/exo.yml"),
         // new("/Maps/_Carpmosia/feint.yml"),
+        // new("/Maps/_Carpmosia/fland.yml"),
         // new("/Maps/_Carpmosia/lampocteis.yml"),
+        // new("/Maps/_Carpmosia/marathon.yml"),
         // new("/Maps/_Carpmosia/oasis.yml"),
         // new("/Maps/_Carpmosia/packed.yml"),
+        // new("/Maps/_Carpmosia/plasma.yml"),
         // new("/Maps/_Carpmosia/saltern.yml"),
-        // new("/Maps/_Carpmosia/sparks.yml")
+        // new("/Maps/_Carpmosia/snowball.yml"),
+        // new("/Maps/_Carpmosia/sparks.yml"),
     ];
     //private static readonly ResPath[] AllMapFiles = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", true).Where(x => !x.ToString().StartsWith("/Maps/_Carpmosia/Legacy/"))];
     //private static readonly ResPath[] StationMaps = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", false).Where(x => !x.ToString().StartsWith("/Maps/_Carpmosia/centcomm.yml"))];
