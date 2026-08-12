@@ -4,8 +4,8 @@ meta:
   engineVersion: 283.1.3
   forkId: carpmosia
   forkVersion: ""
-  time: 08/12/2026 14:57:20
-  entityCount: 2068
+  time: 08/12/2026 15:15:12
+  entityCount: 2075
 maps: []
 grids:
 - 1
@@ -860,6 +860,7 @@ entities:
       devices:
       - 1365
       - 1337
+      - 87
 - proto: AirCanister
   entities:
   - uid: 24
@@ -1160,7 +1161,7 @@ entities:
       pos: 0.5,-23.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -38133.273
+      secondsUntilStateChange: -39204.793
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -1257,6 +1258,9 @@ entities:
     - type: Transform
       parent: 1
       pos: 3.5,-27.5
+    - type: DeviceNetwork
+      deviceLists:
+      - 23
 - proto: AloxadoneBeakerSmall
   entities:
   - uid: 2012
@@ -1315,10 +1319,16 @@ entities:
       baseName: APC
   - uid: 92
     components:
+    - type: MetaData
+      name: APC (Crysleep)
     - type: Transform
       parent: 1
       rot: 3.141592653589793 rad
       pos: -15.5,-28.5
+    - type: Label
+      currentLabel: Crysleep
+    - type: NameModifier
+      baseName: APC
   - uid: 93
     components:
     - type: MetaData
@@ -1392,10 +1402,16 @@ entities:
       baseName: APC
   - uid: 99
     components:
+    - type: MetaData
+      name: APC (Main Hall)
     - type: Transform
       parent: 1
       rot: -1.5707963267948966 rad
       pos: 0.5,-21.5
+    - type: Label
+      currentLabel: Main Hall
+    - type: NameModifier
+      baseName: APC
   - uid: 100
     components:
     - type: MetaData
@@ -3907,7 +3923,7 @@ entities:
       inSlot: eyes
     - type: Physics
       canCollide: False
-- proto: ClothingHeadHatCatEarsValid
+- proto: ClothingHeadHatCatEars
   entities:
   - uid: 579
     components:
@@ -11109,6 +11125,43 @@ entities:
     - type: Transform
       parent: 1
       pos: -17.74915,-19.10318
+- proto: Screen
+  entities:
+  - uid: 2069
+    components:
+    - type: Transform
+      parent: 1
+      pos: -0.5,-28.5
+  - uid: 2070
+    components:
+    - type: Transform
+      parent: 1
+      pos: -21.5,-21.5
+  - uid: 2071
+    components:
+    - type: Transform
+      parent: 1
+      pos: 8.5,-25.5
+  - uid: 2072
+    components:
+    - type: Transform
+      parent: 1
+      pos: 7.5,-37.5
+  - uid: 2073
+    components:
+    - type: Transform
+      parent: 1
+      pos: 7.5,-9.5
+  - uid: 2074
+    components:
+    - type: Transform
+      parent: 1
+      pos: -20.5,-37.5
+  - uid: 2075
+    components:
+    - type: Transform
+      parent: 1
+      pos: -20.5,-9.5
 - proto: ShelfGlass
   entities:
   - uid: 1485
@@ -11547,9 +11600,15 @@ entities:
   entities:
   - uid: 1689
     components:
+    - type: MetaData
+      name: substation (Terminal)
     - type: Transform
       parent: 1
       pos: -21.5,-27.5
+    - type: Label
+      currentLabel: Terminal
+    - type: NameModifier
+      baseName: substation
 - proto: SyndicateMicrowave
   entities:
   - uid: 1690
