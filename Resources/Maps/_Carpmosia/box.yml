@@ -72,6 +72,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
+      name: Box
     - type: Transform
     - type: Map
       mapPaused: True
@@ -81,9 +82,9 @@ entities:
   - uid: 2
     components:
     - type: MetaData
+      name: Box
     - type: Transform
       parent: 1
-      pos: 0.50032806,0.50115013
     - type: MapGrid
       chunks:
         -1,-1:
