@@ -34,7 +34,7 @@ public sealed partial class AtmosMonitoringConsoleWindow : FancyWindow
     private ProtoId<NavMapBlipPrototype> _navMapConsoleProtoId = "NavMapConsole";
     private ProtoId<NavMapBlipPrototype> _gasPipeSensorProtoId = "GasPipeSensor";
 
-    private readonly Vector2[] _pipeLayerOffsets = { new Vector2(0f, 0f), new Vector2(0.25f, 0.25f), new Vector2(-0.25f, -0.25f) };
+    private readonly Vector2[] _pipeLayerOffsets = { new Vector2(0f, 0f), new Vector2(0.125f, 0.125f), new Vector2(-0.25f, -0.25f), new Vector2(0.25f, 0.25f), new Vector2(-0.25f, -0.25f) }; // Carpmosia-edit - 5 pipe layers
 
     public AtmosMonitoringConsoleWindow(AtmosMonitoringConsoleBoundUserInterface userInterface, EntityUid? owner)
     {
