@@ -48,7 +48,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: Map Entity
+      name: Elkridge
     - type: Transform
     - type: Map
       mapPaused: True
@@ -58,10 +58,9 @@ entities:
   - uid: 2
     components:
     - type: MetaData
-      name: Elkridge Depot
+      name: Elkridge
     - type: Transform
       parent: 1
-      pos: -0.546875,-0.546875
     - type: MapGrid
       chunks:
         0,0:
