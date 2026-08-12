@@ -80,7 +80,7 @@
   parent: [BaseAtmosDistro, GasFilterAlt4]
   id: GasFilterDistro
   suffix: Distro
-  components:
+  components: &GasFilter
   - type: GasFilter
     enabled: true
 
@@ -88,15 +88,13 @@
   parent: [BaseAtmosDistro, GasFilterFlippedAlt4]
   id: GasFilterFlippedDistro
   suffix: Flipped, Distro
-  components:
-  - type: GasFilter
-    enabled: true
+  components: *GasFilter
 
 - type: entity
   parent: [BaseAtmosDistro, GasMixer]
   id: GasMixerDistro
   suffix: Distro
-  components:
+  components: &GasMixer
   - type: GasMixer
     enabled: true
     targetPressure: 4500
@@ -107,9 +105,4 @@
   parent: [BaseAtmosDistro, GasMixerFlipped]
   id: GasMixerFlippedDistro
   suffix: Flipped, Distro
-  components:
-  - type: GasMixer
-    enabled: true
-    targetPressure: 4500
-    inletOneConcentration: 0.78
-    inletTwoConcentration: 0.22
+  components: *GasMixer

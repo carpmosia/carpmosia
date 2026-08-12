@@ -90,7 +90,7 @@
   parent: [BaseAtmosWaste, GasFilterAlt3]
   id: GasFilterWaste
   suffix: Waste
-  components:
+  components: &GasFilter
   - type: GasFilter
     enabled: true
 
@@ -98,6 +98,4 @@
   parent: [BaseAtmosWaste, GasFilterFlippedAlt3]
   id: GasFilterFlippedWaste
   suffix: Flipped, Waste
-  components:
-  - type: GasFilter
-    enabled: true
+  components: *GasFilter
