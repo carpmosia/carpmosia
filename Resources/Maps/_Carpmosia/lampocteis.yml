@@ -67,7 +67,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: Map Entity
+      name: Lampocteis
     - type: Transform
     - type: Map
       mapPaused: True
@@ -77,7 +77,7 @@ entities:
   - uid: 2
     components:
     - type: MetaData
-      name: NT-Jellyfish
+      name: Lampocteis
     - type: Transform
       parent: 1
     - type: MapGrid
@@ -4326,7 +4326,7 @@ entities:
     - type: RadiationGridResistance
     - type: SurveillanceCameraMap
     - type: BecomesStation
-      id: Jelfy
+      id: Lampocteis
   - uid: 4
     mapInit: true
     paused: true
