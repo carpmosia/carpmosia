@@ -15,6 +15,7 @@ using Robust.Shared.Maths;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
+using Content.Shared.Atmos.Components;
 
 namespace Content.IntegrationTests.Tests;
 
@@ -214,6 +215,7 @@ public sealed partial class MappingGuidelinesTest : GameTest
 
     private List<string> TestUnlinkedAtmosDevices(YamlSequenceNode entities)
     {
+        var gasPipeSensors = GetPrototypeIds<GasPipeSensorComponent>();
         var airAlarms = GetPrototypeIds<AirAlarmComponent>();
         var atmosMonitors = GetPrototypeIds<AtmosMonitorComponent>();
 
@@ -222,6 +224,10 @@ public sealed partial class MappingGuidelinesTest : GameTest
         foreach (var proto in entities)
         {
             EntProtoId protoId = proto["proto"].AsString();
+
+            // Gas pipe sensors don't need to be linked
+            if (gasPipeSensors.Contains(protoId))
+                continue;
 
             var isAirAlarm = airAlarms.Contains(protoId);
             var isAtmosMonitor = atmosMonitors.Contains(protoId);
