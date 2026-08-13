@@ -1,0 +1,13 @@
+- type: entity
+  parent: BaseAction
+  id: ActionRatKingSacrifice
+  name: Rat King's Sacrifice
+  description: Sacrifice one of your servants to heal.
+  components:
+  - type: Action
+    useDelay: 45
+    icon:
+      sprite: Interface/Actions/actions_rat_king.rsi
+      state: ratKingDomain
+  - type: InstantAction
+    event: !type:RatKingSacrificeActionEvent

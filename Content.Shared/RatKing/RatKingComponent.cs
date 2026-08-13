@@ -51,6 +51,25 @@ public sealed partial class RatKingComponent : Component
     [DataField("molesAmmoniaPerDomain"), ViewVariables(VVAccess.ReadWrite)]
     public float MolesAmmoniaPerDomain = 200f;
 
+    // Carpmosia-start - Remove and replace Domain
+    /// <summary>
+    ///     The action for the Sacrifice ability.
+    /// </summary>
+    [DataField]
+    public string ActionRatKingSacrifice = "ActionRatKingSacrifice";
+    /// <summary>
+    ///     The action for the Sacrifice entity.
+    /// </summary>
+    [DataField]
+    public EntityUid? ActionRatKingSacrificeEntity;
+
+    /// <summary>
+    ///     How much the Sacrifice ability should heal the Rat King for
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float SacrificeHeal = -40f;
+    // Carpmosia-end - Remove and replace Domain
+
     /// <summary>
     /// The current order that the Rat King assigned.
     /// </summary>
