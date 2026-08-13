@@ -128,3 +128,95 @@
   - trilling.
   - trilling!
   - trilling?
+  
+- type: emote
+  id: Chirp
+  name: chat-emote-name-chirp
+  category: Vocal
+  available: false
+  icon: /Textures/Interface/Emotes/chirp.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-chirp"]
+  chatTriggers:
+  - chirp
+  - chirp.
+  - chirp!
+  - chirp?
+  - chirps
+  - chirps.
+  - chirps!
+  - chirps?
+  
+- type: emote
+  id: Squawk
+  name: chat-emote-name-squawk
+  category: Vocal
+  available: false
+  icon: /Textures/Interface/Emotes/chirp.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-squawk"]
+  chatTriggers:
+  - squawk
+  - squawk.
+  - squawk!
+  - squawk?
+  - squawks
+  - squawks.
+  - squawks!
+  - squawks?
+  
+- type: emote
+  id: Call
+  name: chat-emote-name-call
+  category: Vocal
+  available: false
+  icon: /Textures/Interface/Emotes/chirp.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-call"]
+  chatTriggers:
+  - call
+  - call.
+  - call!
+  - call?
+  - calls
+  - calls.
+  - calls!
+  - calls? 
+  
+- type: emote
+  id: Scree
+  name: chat-emote-name-scree
+  category: Vocal
+  available: false
+  icon: /Textures/Interface/Emotes/chirp.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-scee"]
+  chatTriggers:
+  - scree
+  - scree.
+  - scree!
+  - scree?
+  - screes
+  - screes.
+  - screes!
+  - screes?
