@@ -130,29 +130,6 @@
   - trilling?
 
 - type: emote
-  id: Chirp
-  name: chat-emote-name-chirp
-  category: Vocal
-  available: false
-  icon: /Textures/_Carpmosia/Interface/Emotes/caw.png
-  whitelist:
-    components:
-    - Vocal
-  blacklist:
-    components:
-    - BorgChassis
-  chatMessages: ["chat-emote-msg-chirp"]
-  chatTriggers:
-  - chirp
-  - chirp.
-  - chirp!
-  - chirp?
-  - chirps
-  - chirps.
-  - chirps!
-  - chirps?
-  
-- type: emote
   id: Squawk
   name: chat-emote-name-squawk
   category: Vocal
@@ -174,7 +151,7 @@
   - squawks.
   - squawks!
   - squawks?
-  
+
 - type: emote
   id: Call
   name: chat-emote-name-call
@@ -197,7 +174,7 @@
   - calls.
   - calls!
   - calls? 
-  
+
 - type: emote
   id: Scree
   name: chat-emote-name-scree
