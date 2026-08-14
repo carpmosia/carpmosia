@@ -11,7 +11,7 @@
       components:
       - type: StationNameSetup
         shortName: Compress
-        mapNameTemplate: '{0} Compress {1}'
+        mapNameTemplate: '{0} Compress Station {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: '14'
