@@ -38,6 +38,7 @@ public sealed partial class MappingGuidelinesTest : GameTest
         // new("/Maps/_Carpmosia/oasis.yml"),
         // new("/Maps/_Carpmosia/packed.yml"),
         // new("/Maps/_Carpmosia/plasma.yml"),
+        new("/Maps/_Carpmosia/rail.yml"),
         // new("/Maps/_Carpmosia/saltern.yml"),
         // new("/Maps/_Carpmosia/snowball.yml"),
         // new("/Maps/_Carpmosia/sparks.yml"),
