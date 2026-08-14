@@ -71,14 +71,6 @@ public sealed partial class RoundEndSummaryWindow : DefaultWindow
             Margin = new Thickness(20)
         };
 
-        tab.AddChild(new Label
-        {
-            Text = Loc.GetString("no-eorg-popup-label"),
-            StyleClasses = { "LabelBig" },
-            HorizontalAlignment = HAlignment.Center,
-            Margin = new Thickness(0, 0, 0, 5)
-        });
-
         var box = new BoxContainer()
         {
             Orientation = LayoutOrientation.Vertical,
@@ -109,7 +101,8 @@ public sealed partial class RoundEndSummaryWindow : DefaultWindow
         tab.AddChild(new PanelContainer()
         {
             StyleClasses = { "BackgroundDark" },
-            Children = { box }
+            Children = { box },
+            VerticalExpand = true
         });
 
         return tab;
