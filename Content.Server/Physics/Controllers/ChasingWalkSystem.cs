@@ -73,7 +73,22 @@ public sealed partial class ChasingWalkSystem : VirtualController
 
         //If there are no required components in the radius, don't moving.
         if (_potentialChaseTargets.Count <= 0)
+        // Carpmosia-start - Engine Loose Rework
+        {
+            // Actually, we move walk randomly instead until we find a target
+            if (!TryComp<PhysicsComponent>(uid, out var physics))
+                return;
+            var speed = _random.NextVector2(component.MinSpeed, component.MaxSpeed);
+            _physics.SetLinearVelocity(uid, speed);
+            _physics.SetBodyStatus(uid, physics, BodyStatus.InAir);
+            if (component.RotateWithImpulse)
+            {
+                var ang = speed.ToAngle() + Angle.FromDegrees(90); // we want "Up" to be forward, bullet convention.
+                _transform.SetWorldRotation(uid, ang + component.RotationAngleOffset);
+            }
             return;
+        }
+        // Carpmosia-end - Engine Loose Rework
 
         //In the case of finding required components, we choose a random one of them and remember its uid.
         component.ChasingEntity = _random.Pick(_potentialChaseTargets).Owner;

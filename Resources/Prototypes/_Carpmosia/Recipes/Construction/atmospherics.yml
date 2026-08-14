@@ -1,0 +1,465 @@
+# region Machines
+- type: construction
+  parent: GasPipeSensor
+  id: GasPipeSensorAlt3
+  hide: true
+  targetNode: sensorAlt3
+
+- type: construction
+  parent: GasPipeSensor
+  id: GasPipeSensorAlt4
+  hide: true
+  targetNode: sensorAlt4
+# endregion Machines
+
+# region Pipes
+- type: construction
+  parent: GasPipeHalf
+  id: GasPipeHalfAlt3
+  hide: true
+  targetNode: halfAlt3
+
+- type: construction
+  parent: GasPipeHalf
+  id: GasPipeHalfAlt4
+  hide: true
+  targetNode: halfAlt4
+
+- type: construction
+  parent: GasPipeStraight
+  id: GasPipeStraightAlt3
+  hide: true
+  targetNode: straightAlt3
+
+- type: construction
+  parent: GasPipeStraight
+  id: GasPipeStraightAlt4
+  hide: true
+  targetNode: straightAlt4
+
+- type: construction
+  parent: GasPipeBend
+  id: GasPipeBendAlt3
+  hide: true
+  targetNode: bendAlt3
+
+- type: construction
+  parent: GasPipeBend
+  id: GasPipeBendAlt4
+  hide: true
+  targetNode: bendAlt4
+
+- type: construction
+  parent: GasPipeTJunction
+  id: GasPipeTJunctionAlt3
+  hide: true
+  targetNode: tjunctionAlt3
+
+- type: construction
+  parent: GasPipeTJunction
+  id: GasPipeTJunctionAlt4
+  hide: true
+  targetNode: tjunctionAlt4
+
+- type: construction
+  parent: GasPipeFourway
+  id: GasPipeFourwayAlt3
+  hide: true
+  targetNode: fourwayAlt3
+
+- type: construction
+  parent: GasPipeFourway
+  id: GasPipeFourwayAlt4
+  hide: true
+  targetNode: fourwayAlt4
+# endregion Pipes
+
+# region Unary
+- type: construction
+  parent: GasVentPump
+  id: GasVentPumpAlt1
+  hide: true
+  targetNode: ventpumpAlt1
+
+- type: construction
+  parent: GasVentPump
+  id: GasVentPumpAlt2
+  hide: true
+  targetNode: ventpumpAlt2
+
+- type: construction
+  parent: GasVentPump
+  id: GasVentPumpAlt3
+  hide: true
+  targetNode: ventpumpAlt3
+
+- type: construction
+  parent: GasVentPump
+  id: GasVentPumpAlt4
+  hide: true
+  targetNode: ventpumpAlt4
+
+- type: construction
+  parent: GasPassiveVent
+  id: GasPassiveVentAlt1
+  hide: true
+  targetNode: passiveventAlt1
+
+- type: construction
+  parent: GasPassiveVent
+  id: GasPassiveVentAlt2
+  hide: true
+  targetNode: passiveventAlt2
+
+- type: construction
+  parent: GasPassiveVent
+  id: GasPassiveVentAlt3
+  hide: true
+  targetNode: passiveventAlt3
+
+- type: construction
+  parent: GasPassiveVent
+  id: GasPassiveVentAlt4
+  hide: true
+  targetNode: passiveventAlt4
+
+- type: construction
+  parent: GasVentScrubber
+  id: GasVentScrubberAlt1
+  hide: true
+  targetNode: ventscrubberAlt1
+
+- type: construction
+  parent: GasVentScrubber
+  id: GasVentScrubberAlt2
+  hide: true
+  targetNode: ventscrubberAlt2
+
+- type: construction
+  parent: GasVentScrubber
+  id: GasVentScrubberAlt3
+  hide: true
+  targetNode: ventscrubberAlt3
+
+- type: construction
+  parent: GasVentScrubber
+  id: GasVentScrubberAlt4
+  hide: true
+  targetNode: ventscrubberAlt4
+
+- type: construction
+  parent: GasOutletInjector
+  id: GasOutletInjectorAlt1
+  hide: true
+  targetNode: outletinjectorAlt1
+
+- type: construction
+  parent: GasOutletInjector
+  id: GasOutletInjectorAlt2
+  hide: true
+  targetNode: outletinjectorAlt2
+
+- type: construction
+  parent: GasOutletInjector
+  id: GasOutletInjectorAlt3
+  hide: true
+  targetNode: outletinjectorAlt3
+
+- type: construction
+  parent: GasOutletInjector
+  id: GasOutletInjectorAlt4
+  hide: true
+  targetNode: outletinjectorAlt4
+# endregion Unary
+
+# region Binary
+- type: construction
+  parent: GasPressurePump
+  id: GasPressurePumpAlt3
+  hide: true
+  targetNode: pressurepumpAlt3
+
+- type: construction
+  parent: GasPressurePump
+  id: GasPressurePumpAlt4
+  hide: true
+  targetNode: pressurepumpAlt4
+
+- type: construction
+  parent: GasVolumePump
+  id: GasVolumePumpAlt3
+  hide: true
+  targetNode: volumepumpAlt3
+
+- type: construction
+  parent: GasVolumePump
+  id: GasVolumePumpAlt4
+  hide: true
+  targetNode: volumepumpAlt4
+
+- type: construction
+  parent: GasPassiveGate
+  id: GasPassiveGateAlt3
+  hide: true
+  targetNode: passivegateAlt3
+
+- type: construction
+  parent: GasPassiveGate
+  id: GasPassiveGateAlt4
+  hide: true
+  targetNode: passivegateAlt4
+
+- type: construction
+  parent: GasPressureRegulator
+  id: GasPressureRegulatorAlt3
+  hide: true
+  targetNode: pressureregulatorAlt3
+
+- type: construction
+  parent: GasPressureRegulator
+  id: GasPressureRegulatorAlt4
+  hide: true
+  targetNode: pressureregulatorAlt4
+
+- type: construction
+  parent: GasValve
+  id: GasValveAlt3
+  hide: true
+  targetNode: valveAlt3
+
+- type: construction
+  parent: GasValve
+  id: GasValveAlt4
+  hide: true
+  targetNode: valveAlt4
+
+- type: construction
+  parent: SignalControlledValve
+  id: SignalControlledValveAlt3
+  hide: true
+  targetNode: signalvalveAlt3
+
+- type: construction
+  parent: SignalControlledValve
+  id: SignalControlledValveAlt4
+  hide: true
+  targetNode: signalvalveAlt4
+
+- type: construction
+  parent: GasPort
+  id: GasPortAlt1
+  hide: true
+  targetNode: portAlt1
+
+- type: construction
+  parent: GasPort
+  id: GasPortAlt2
+  hide: true
+  targetNode: portAlt2
+
+- type: construction
+  parent: GasPort
+  id: GasPortAlt3
+  hide: true
+  targetNode: portAlt3
+
+- type: construction
+  parent: GasPort
+  id: GasPortAlt4
+  hide: true
+  targetNode: portAlt4
+
+- type: construction
+  parent: GasDualPortVentPump
+  id: GasDualPortVentPumpAlt1
+  hide: true
+  targetNode: dualportventpumpAlt1
+
+- type: construction
+  parent: GasDualPortVentPump
+  id: GasDualPortVentPumpAlt2
+  hide: true
+  targetNode: dualportventpumpAlt2
+
+- type: construction
+  parent: GasDualPortVentPump
+  id: GasDualPortVentPumpAlt3
+  hide: true
+  targetNode: dualportventpumpAlt3
+
+- type: construction
+  parent: GasDualPortVentPump
+  id: GasDualPortVentPumpAlt4
+  hide: true
+  targetNode: dualportventpumpAlt4
+
+- type: construction
+  parent: HeatExchanger
+  id: HeatExchangerAlt1
+  hide: true
+  targetNode: radiatorAlt1
+
+- type: construction
+  parent: HeatExchanger
+  id: HeatExchangerAlt2
+  hide: true
+  targetNode: radiatorAlt2
+
+- type: construction
+  parent: HeatExchanger
+  id: HeatExchangerAlt3
+  hide: true
+  targetNode: radiatorAlt3
+
+- type: construction
+  parent: HeatExchanger
+  id: HeatExchangerAlt4
+  hide: true
+  targetNode: radiatorAlt4
+
+- type: construction
+  parent: HeatExchangerBend
+  id: HeatExchangerBendAlt1
+  hide: true
+  targetNode: bendradiatorAlt1
+
+- type: construction
+  parent: HeatExchangerBend
+  id: HeatExchangerBendAlt2
+  hide: true
+  targetNode: bendradiatorAlt2
+
+- type: construction
+  parent: HeatExchangerBend
+  id: HeatExchangerBendAlt3
+  hide: true
+  targetNode: bendradiatorAlt3
+
+- type: construction
+  parent: HeatExchangerBend
+  id: HeatExchangerBendAlt4
+  hide: true
+  targetNode: bendradiatorAlt4
+# endregion Binary
+
+# region Trinary
+- type: construction
+  parent: GasFilter
+  id: GasFilterAlt1
+  hide: true
+  targetNode: filterAlt1
+
+- type: construction
+  parent: GasFilter
+  id: GasFilterAlt2
+  hide: true
+  targetNode: filterAlt2
+
+- type: construction
+  parent: GasFilter
+  id: GasFilterAlt3
+  hide: true
+  targetNode: filterAlt3
+
+- type: construction
+  parent: GasFilter
+  id: GasFilterAlt4
+  hide: true
+  targetNode: filterAlt4
+
+- type: construction
+  parent: GasFilterFlipped
+  id: GasFilterFlippedAlt1
+  hide: true
+  targetNode: filterflippedAlt1
+
+- type: construction
+  parent: GasFilterFlipped
+  id: GasFilterFlippedAlt2
+  hide: true
+  targetNode: filterflippedAlt2
+
+- type: construction
+  parent: GasFilterFlipped
+  id: GasFilterFlippedAlt3
+  hide: true
+  targetNode: filterflippedAlt3
+
+- type: construction
+  parent: GasFilterFlipped
+  id: GasFilterFlippedAlt4
+  hide: true
+  targetNode: filterflippedAlt4
+
+- type: construction
+  parent: GasMixer
+  id: GasMixerAlt1
+  hide: true
+  targetNode: mixerAlt1
+
+- type: construction
+  parent: GasMixer
+  id: GasMixerAlt2
+  hide: true
+  targetNode: mixerAlt2
+
+- type: construction
+  parent: GasMixer
+  id: GasMixerAlt3
+  hide: true
+  targetNode: mixerAlt3
+
+- type: construction
+  parent: GasMixer
+  id: GasMixerAlt4
+  hide: true
+  targetNode: mixerAlt4
+
+- type: construction
+  parent: GasMixerFlipped
+  id: GasMixerFlippedAlt1
+  hide: true
+  targetNode: mixerflippedAlt1
+
+- type: construction
+  parent: GasMixerFlipped
+  id: GasMixerFlippedAlt2
+  hide: true
+  targetNode: mixerflippedAlt2
+
+- type: construction
+  parent: GasMixerFlipped
+  id: GasMixerFlippedAlt3
+  hide: true
+  targetNode: mixerflippedAlt3
+
+- type: construction
+  parent: GasMixerFlipped
+  id: GasMixerFlippedAlt4
+  hide: true
+  targetNode: mixerflippedAlt4
+
+- type: construction
+  parent: PressureControlledValve
+  id: PressureControlledValveAlt1
+  hide: true
+  targetNode: pneumaticvalveAlt1
+
+- type: construction
+  parent: PressureControlledValve
+  id: PressureControlledValveAlt2
+  hide: true
+  targetNode: pneumaticvalveAlt2
+
+- type: construction
+  parent: PressureControlledValve
+  id: PressureControlledValveAlt3
+  hide: true
+  targetNode: pneumaticvalveAlt3
+
+- type: construction
+  parent: PressureControlledValve
+  id: PressureControlledValveAlt4
+  hide: true
+  targetNode: pneumaticvalveAlt4
+# endregion Trinary

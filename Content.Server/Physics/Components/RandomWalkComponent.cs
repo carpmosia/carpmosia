@@ -69,7 +69,7 @@ public sealed partial class RandomWalkComponent : Component
     /// The next time this should update its speed.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
-    [Access(typeof(RandomWalkController))]
+    // [Access(typeof(RandomWalkController))] // Carpmosia-edit - Engine Loose Rework
     public TimeSpan NextStepTime { get; internal set; } = default!;
 
     #endregion Update Timing

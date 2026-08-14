@@ -132,9 +132,13 @@ public sealed partial class HumanoidProfileEditor
         var items = new[]
         {
                 ("humanoid-profile-editor-job-priority-never-button", (int) JobPriority.Never),
-                ("humanoid-profile-editor-job-priority-low-button", (int) JobPriority.Low),
-                ("humanoid-profile-editor-job-priority-medium-button", (int) JobPriority.Medium),
-                ("humanoid-profile-editor-job-priority-high-button", (int) JobPriority.High),
+                // Carpmosia-start - More job priorities
+                ("humanoid-profile-editor-job-priority-min-button", (int) JobPriority.Lowest),
+                ("humanoid-profile-editor-job-priority-low-button", (int) JobPriority.Lower),
+                ("humanoid-profile-editor-job-priority-mid-button", (int) JobPriority.Low),
+                ("humanoid-profile-editor-job-priority-high-button", (int) JobPriority.Medium),
+                ("humanoid-profile-editor-job-priority-max-button", (int) JobPriority.High),
+                // Carpmosia-end - More job priorities
             };
 
         foreach (var department in departments)

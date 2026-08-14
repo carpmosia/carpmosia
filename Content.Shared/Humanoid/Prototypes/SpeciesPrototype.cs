@@ -1,4 +1,5 @@
 using Content.Shared.Body;
+using Content.Shared.Chat.Prototypes;
 using Content.Shared.Dataset;
 using Content.Shared.Humanoid.Markings;
 using Robust.Shared.Prototypes;
@@ -82,6 +83,18 @@ public sealed partial class SpeciesPrototype : IPrototype
     public List<Sex> Sexes { get; private set; } = new() { Sex.Male, Sex.Female };
 
     /// <summary>
+    ///     Emote sounds prototype conversion id for every sex. This is ALWAYS in the order: Male; Female; Unsexed.
+    /// </summary>
+    [DataField]
+    public ProtoId<EmoteSoundsPrototype>[] DefaultSoundsBySex = ["MaleHuman", "FemaleHuman", "MaleHuman"];
+
+    /// <summary>
+    ///     List of user selectable voices in the menu. This should at least have the same sound banks as the defaults.
+    /// </summary>
+    [DataField]
+    public HashSet<ProtoId<EmoteSoundsPrototype>> Voices = ["MaleHuman", "FemaleHuman"];
+
+    /// <summary>
     ///     Characters younger than this are too young to be hired by Nanotrasen.
     /// </summary>
     [DataField]
@@ -112,5 +125,6 @@ public enum SpeciesNaming : byte
     First,
     FirstLast,
     FirstDashFirst,
+    FirstFirst, // Carpmosia-edit - Tajaran naming
     TheFirstofLast,
 }

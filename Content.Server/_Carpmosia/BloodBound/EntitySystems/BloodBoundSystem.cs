@@ -14,13 +14,7 @@ public sealed partial class BloodBoundSystem : SharedBloodBoundSystem
     [Dependency] private RoleSystem _roleSystem = default!;
     [Dependency] private TargetObjectiveSystem _targetObjectiveSystem = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<BloodBoundComponent, ComponentShutdown>(OnBloodBoundShutdown);
-    }
-
+    [SubscribeLocalEvent]
     private void OnBloodBoundShutdown(Entity<BloodBoundComponent> entity, ref ComponentShutdown args)
     {
         if (!_mindSystem.TryGetMind(entity, out var mindId, out var mind))

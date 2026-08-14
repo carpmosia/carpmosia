@@ -12,6 +12,7 @@
       stationProto: StandardNanotrasenStation
       components:
       - type: StationNameSetup
+        shortName: Feint
         mapNameTemplate: '{0} Feint Station {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator

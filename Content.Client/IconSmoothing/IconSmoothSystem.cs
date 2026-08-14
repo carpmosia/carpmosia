@@ -88,13 +88,13 @@ namespace Content.Client.IconSmoothing
             _sprite.LayerMapRemove(sprite, CornerLayers.SW);
 
             var state0 = $"{component.StateBase}0";
-            _sprite.LayerMapSet(sprite, CornerLayers.SE, _sprite.AddRsiLayer(sprite, state0));
+            _sprite.LayerMapSet(sprite, CornerLayers.SE, _sprite.AddRsiLayer(sprite, state0, index: component.Index));
             _sprite.LayerSetDirOffset(sprite, CornerLayers.SE, DirectionOffset.None);
-            _sprite.LayerMapSet(sprite, CornerLayers.NE, _sprite.AddRsiLayer(sprite, state0));
+            _sprite.LayerMapSet(sprite, CornerLayers.NE, _sprite.AddRsiLayer(sprite, state0, index: component.Index));
             _sprite.LayerSetDirOffset(sprite, CornerLayers.NE, DirectionOffset.CounterClockwise);
-            _sprite.LayerMapSet(sprite, CornerLayers.NW, _sprite.AddRsiLayer(sprite, state0));
+            _sprite.LayerMapSet(sprite, CornerLayers.NW, _sprite.AddRsiLayer(sprite, state0, index: component.Index));
             _sprite.LayerSetDirOffset(sprite, CornerLayers.NW, DirectionOffset.Flip);
-            _sprite.LayerMapSet(sprite, CornerLayers.SW, _sprite.AddRsiLayer(sprite, state0));
+            _sprite.LayerMapSet(sprite, CornerLayers.SW, _sprite.AddRsiLayer(sprite, state0, index: component.Index));
             _sprite.LayerSetDirOffset(sprite, CornerLayers.SW, DirectionOffset.Clockwise);
         }
 
@@ -281,6 +281,11 @@ namespace Content.Client.IconSmoothing
                 case IconSmoothingMode.Diagonal:
                     CalculateNewSpriteDiagonal(gridEntity, smooth, spriteEnt, xform);
                     break;
+                // Carpmosia-start - Better diagonals
+                case IconSmoothingMode.DiagonalPlus:
+                    CalculateNewSpriteDiagonalPlus(gridEntity, smooth, spriteEnt, xform);
+                    break;
+                // Carpmosia-end - Better diagonals
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -324,6 +329,50 @@ namespace Content.Client.IconSmoothing
                 _sprite.LayerSetRsiState(sprite.AsNullable(), 0, $"{smooth.StateBase}0");
             }
         }
+
+        // Carpmosia-start - Better diagonals
+        private void CalculateNewSpriteDiagonalPlus(Entity<MapGridComponent>? gridEntity, IconSmoothComponent smooth,
+            Entity<SpriteComponent> sprite, TransformComponent xform)
+        {
+            if (gridEntity == null)
+            {
+                _sprite.LayerSetRsiState(sprite.AsNullable(), 0, $"{smooth.StateBase}0");
+                return;
+            }
+
+            var gridUid = gridEntity.Value.Owner;
+            var grid = gridEntity.Value.Comp;
+
+            var pos = _mapSystem.TileIndicesFor(gridUid, grid, xform.Coordinates);
+
+            var eastPos = pos + (Vector2i)xform.LocalRotation.RotateVec(new Vector2(1, 0));
+            var east = MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, eastPos));
+
+            var southPos = pos + (Vector2i)xform.LocalRotation.RotateVec(new Vector2(0, -1));
+            var south = MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, southPos));
+
+            if (!east & !south)
+            {
+                _sprite.LayerSetRsiState(sprite.AsNullable(), 0, $"{smooth.StateBase}0");
+                return;
+            }
+            if (!east & south)
+            {
+                _sprite.LayerSetRsiState(sprite.AsNullable(), 0, $"{smooth.StateBase}1");
+                return;
+            }
+            if (east & !south)
+            {
+                _sprite.LayerSetRsiState(sprite.AsNullable(), 0, $"{smooth.StateBase}2");
+                return;
+            }
+
+            var edgePos = pos + (Vector2i)xform.LocalRotation.RotateVec(new Vector2(1, -1));
+            var edge = MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, edgePos));
+
+            _sprite.LayerSetRsiState(sprite.AsNullable(), 0, edge ? $"{smooth.StateBase}4" : $"{smooth.StateBase}3");
+        }
+        // Carpmosia-end - Better diagonals
 
         private void CalculateNewSpriteCardinal(Entity<MapGridComponent>? gridEntity, IconSmoothComponent smooth, Entity<SpriteComponent> sprite, TransformComponent xform)
         {
@@ -369,7 +418,6 @@ namespace Content.Client.IconSmoothing
             while (candidates.MoveNext(out var entity))
             {
                 if (_iconSmoothQuery.TryGetComponent(entity, out var other) &&
-                    other.SmoothKey != null &&
                     (other.SmoothKey == smooth.SmoothKey || smooth.AdditionalKeys.Contains(other.SmoothKey)) &&
                     other.Enabled)
                 {

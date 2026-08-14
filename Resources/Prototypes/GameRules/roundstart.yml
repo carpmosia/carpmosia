@@ -29,7 +29,7 @@
   - type: SubGamemodes
     rules:
     - id: Thief
-      prob: 0.5
+      prob: 0.75 # Carpmosia-edit - Rework gamerules
     # Carpmosia-start - Harmony Blood Bound
     - id: BloodBound
       prob: 0.5
@@ -46,7 +46,7 @@
   - type: SubGamemodes
     rules:
     - id: Thief
-      prob: 0.5
+      prob: 0.75 # Carpmosia-edit - Rework gamerules
     # Carpmosia-start - Harmony Blood Bound
     - id: BloodBound
       prob: 0.5
@@ -61,7 +61,11 @@
   - type: SubGamemodes
     rules:
     - id: Thief
+      prob: 0.75 # Carpmosia-edit - Rework gamerules
+    # Carpmosia-start - Harmony Blood Bound
+    - id: BloodBound
       prob: 0.5
+    # Carpmosia-end - Harmony Blood Bound
     - id: SubWizard
       prob: 0.05
 
@@ -72,7 +76,11 @@
   - type: SubGamemodes
     rules:
     - id: Thief
+      prob: 0.75 # Carpmosia-edit - Rework gamerules
+    # Carpmosia-start - Harmony Blood Bound
+    - id: BloodBound
       prob: 0.5
+    # Carpmosia-end - Harmony Blood Bound
 
 - type: entity
   parent: BaseGameRule
@@ -88,24 +96,19 @@
   parent: BaseGameRule
   components:
   - type: DeathMatchRule
-    rewardSpawns:
-    - id: HealingToolbox
-    - id: ClothingOuterArmorBasicSlim
-      orGroup: loot
-    - id: ClothingHeadHelmetBasic
-      orGroup: loot
-    - id: SoapNT
-      orGroup: loot
-    - id: Bola
-      orGroup: loot
-    - id: Spear
-      orGroup: loot
-    - id: ClothingShoesGaloshes
-      orGroup: loot
-    - id: FoodPieBananaCream
-      orGroup: loot
-    - id: Stimpack
-      orGroup: loot
+    rewardSpawns: !type:AllSelector
+      children:
+      - id: HealingToolbox
+      - !type:GroupSelector
+        children:
+        - id: ClothingOuterArmorBasicSlim
+        - id: ClothingHeadHelmetBasic
+        - id: SoapNT
+        - id: Bola
+        - id: Spear
+        - id: ClothingShoesGaloshes
+        - id: FoodPieBananaCream
+        - id: Stimpack
   - type: KillCalloutRule
   - type: PointManager
   - type: RespawnDeadRule
@@ -222,6 +225,7 @@
   id: Changeling
   parent: [BaseGameRule, BaseRoundstartAntagRule]
   components:
+  - type: ChangelingRule
   - type: GameRule
     minPlayers: 25
   - type: AntagSelection

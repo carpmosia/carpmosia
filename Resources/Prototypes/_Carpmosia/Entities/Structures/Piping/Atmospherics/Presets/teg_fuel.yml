@@ -1,0 +1,44 @@
+- type: entity
+  abstract: true
+  id: BaseAtmosFuel
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: AtmosPipeColor
+    color: '#ff8904ff'
+
+# Pipes
+- type: entity
+  parent: [BaseAtmosFuel, GasPipeStraight]
+  id: GasPipeStraightFuel
+  suffix: Ḟuel, Straight
+
+- type: entity
+  parent: [BaseAtmosFuel, GasPipeBend]
+  id: GasPipeBendFuel
+  suffix: Ḟuel, Bend
+
+- type: entity
+  parent: [BaseAtmosFuel, GasPipeTJunction]
+  id: GasPipeTJunctionFuel
+  suffix: Ḟuel, TJunction
+
+# Unary
+- type: entity
+  parent: [BaseAtmosFuel, GasOutletInjector]
+  id: GasOutletInjectorFuel
+  suffix: Fuel
+
+# Binary
+- type: entity
+  parent: [BaseAtmosFuel, GasPressurePump]
+  id: GasPressurePumpFuel
+  suffix: Fuel
+
+- type: entity
+  parent: [BaseAtmosFuel, GasPipeSensor]
+  id: GasPipeSensorFuel
+  suffix: Fuel
+  components:
+  - type: Label
+    localizedLabel: gas-pipe-sensor-teg-fuel
