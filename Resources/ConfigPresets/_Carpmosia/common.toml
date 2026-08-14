@@ -1,6 +1,10 @@
 # Robust.Cvars
 net.tickrate = 30
 
+# CCVars.Admin
+admin.admins_count_in_playercount = true
+game.admin_job_tracking = true
+
 # CCVars.Atmos
 atmos.max_explosion_range = 100
 
@@ -31,6 +35,8 @@ ic.punctuation = true
 
 # CCVars.Misc
 procgen.preload = false
+afk.time = 1800
+afk.confirm_timeout = 150
 playtime.save_interval = 300
 
 # CCVars.Server

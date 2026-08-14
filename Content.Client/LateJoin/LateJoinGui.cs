@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Client.Administration.UI.CustomControls; // Carpmosia-edit - Wide latejoin
 using Content.Client.CrewManifest;
 using Content.Client.GameTicking.Managers;
 using Content.Client.Lobby;
@@ -40,13 +41,15 @@ namespace Content.Client.LateJoin
 
         private readonly Dictionary<NetEntity, Dictionary<string, List<JobButton>>> _jobButtons = new();
         private readonly Dictionary<NetEntity, Dictionary<string, BoxContainer>> _jobCategories = new();
-        private readonly List<ScrollContainer> _jobLists = new();
+        // private readonly List<ScrollContainer> _jobLists = new(); // Carpmosia-edit - Wide latejoin
 
         private readonly Control _base;
 
+        private const int ColumnWidth = 320; // Carpmosia-edit - Wide latejoin
+
         public LateJoinGui()
         {
-            MinSize = SetSize = new Vector2(360, 560);
+            MinSize = MaxSize = SetSize = new Vector2(30 + ColumnWidth + 10, 560); // Carpmosia-edit - Wide latejoin
             IoCManager.InjectDependencies(this);
             _sprites = _entitySystem.GetEntitySystem<SpriteSystem>();
             _crewManifest = _entitySystem.GetEntitySystem<CrewManifestSystem>();
@@ -80,9 +83,32 @@ namespace Content.Client.LateJoin
         private void RebuildUI()
         {
             _base.RemoveAllChildren();
-            _jobLists.Clear();
+            // _jobLists.Clear(); // Carpmosia-edit - Wide latejoin
             _jobButtons.Clear();
             _jobCategories.Clear();
+
+            // Carpmosia-start - Wide latejoin
+            var headersBox = new BoxContainer
+            {
+                Orientation = LayoutOrientation.Horizontal,
+                HorizontalExpand = true,
+            };
+            _base.AddChild(headersBox);
+
+            var joblistsBox = new BoxContainer
+            {
+                Orientation = LayoutOrientation.Horizontal,
+                VerticalExpand = true,
+            };
+            _base.AddChild(new ScrollContainer()
+            {
+                VerticalExpand = true,
+                Children = { joblistsBox },
+            });
+
+            if (_gameTicker.StationNames.Count > 0) // Account for padding, separators, and scrollbar
+                MinSize = MaxSize = SetSize = new Vector2(30 + (ColumnWidth + 10) * _gameTicker.StationNames.Count + 2 * (_gameTicker.StationNames.Count - 1), MinSize.Y);
+            // Carpmosia-end - Wide latejoin
 
             if (!_gameTicker.DisallowedLateJoin && _gameTicker.StationNames.Count == 0)
                 _sawmill.Warning("No stations exist, nothing to display in late-join GUI");
@@ -92,26 +118,45 @@ namespace Content.Client.LateJoin
                 var jobList = new BoxContainer
                 {
                     Orientation = LayoutOrientation.Vertical,
-                    Margin = new Thickness(0, 0, 5f, 0),
+                    Margin = new Thickness(5f, 0, 5f, 0f), // Carpmosia-edit - Wide latejoin
+                    SetWidth = ColumnWidth, // Carpmosia-edit - Wide latejoin
                 };
 
-                var collapseButton = new ContainerButton()
+                // Carpmosia-start - Wide latejoin
+                // var collapseButton = new ContainerButton()
+                // {
+                //     HorizontalAlignment = HAlignment.Right,
+                //     ToggleMode = true,
+                //     Children =
+                //     {
+                //         new TextureRect
+                //         {
+                //             StyleClasses = { OptionButton.StyleClassOptionTriangle },
+                //             Margin = new Thickness(8, 0),
+                //             HorizontalAlignment = HAlignment.Center,
+                //             VerticalAlignment = VAlignment.Center,
+                //         }
+                //     }
+                // };
+
+                var headerBox = new BoxContainer
                 {
-                    HorizontalAlignment = HAlignment.Right,
-                    ToggleMode = true,
-                    Children =
-                    {
-                        new TextureRect
-                        {
-                            StyleClasses = { OptionButton.StyleClassOptionTriangle },
-                            Margin = new Thickness(8, 0),
-                            HorizontalAlignment = HAlignment.Center,
-                            VerticalAlignment = VAlignment.Center,
-                        }
-                    }
+                    Orientation = LayoutOrientation.Vertical,
+                    Margin = new Thickness(5f, 0, 5f, 0f),
+                    SetWidth = ColumnWidth,
+                    VerticalExpand = true,
                 };
 
-                _base.AddChild(new StripeBack()
+                if (headersBox.Children.Any())
+                    headersBox.AddChild(new VSeparator());
+                headersBox.AddChild(headerBox);
+
+                if (joblistsBox.Children.Any())
+                    joblistsBox.AddChild(new VSeparator());
+                joblistsBox.AddChild(jobList);
+                // Carpmosia-end - Wide latejoin
+
+                headerBox.AddChild(new StripeBack() // Carpmosia-edit - Wide latejoin
                 {
                     Children =
                     {
@@ -125,7 +170,7 @@ namespace Content.Client.LateJoin
                                     Text = name,
                                     Align = Label.AlignMode.Center,
                                 },
-                                collapseButton
+                                // collapseButton // Carpmosia-edit - Wide latejoin
                             }
                         }
                     }
@@ -139,31 +184,33 @@ namespace Content.Client.LateJoin
                     };
                     crewManifestButton.OnPressed += _ => _crewManifest.RequestCrewManifest(id);
 
-                    _base.AddChild(crewManifestButton);
+                    headerBox.AddChild(crewManifestButton); // Carpmosia-edit - Wide latejoin
                 }
 
-                var jobListScroll = new ScrollContainer()
-                {
-                    VerticalExpand = true,
-                    Children = { jobList },
-                    Visible = false,
-                };
+                // Carpmosia-start - Wide latejoin
+                // var jobListScroll = new ScrollContainer()
+                // {
+                //     VerticalExpand = true,
+                //     Children = { jobList },
+                //     Visible = false,
+                // };
 
-                if (_jobLists.Count == 0)
-                    jobListScroll.Visible = true;
+                // if (_jobLists.Count == 0)
+                //     jobListScroll.Visible = true;
 
-                _jobLists.Add(jobListScroll);
+                // _jobLists.Add(jobListScroll);
 
-                _base.AddChild(jobListScroll);
+                // _base.AddChild(jobListScroll);
 
-                collapseButton.OnToggled += _ =>
-                {
-                    foreach (var section in _jobLists)
-                    {
-                        section.Visible = false;
-                    }
-                    jobListScroll.Visible = true;
-                };
+                // collapseButton.OnToggled += _ =>
+                // {
+                //     foreach (var section in _jobLists)
+                //     {
+                //         section.Visible = false;
+                //     }
+                //     jobListScroll.Visible = true;
+                // };
+                // Carpmosia-end - Wide latejoin
 
                 var firstCategory = true;
                 var departments = _prototypeManager.EnumeratePrototypes<DepartmentPrototype>().ToArray();

@@ -1,0 +1,34 @@
+- type: entity
+  abstract: true
+  id: BaseAtmosFailsafe
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: AtmosPipeColor
+    color: '#00d492ff'
+
+# Pipes
+- type: entity
+  parent: [BaseAtmosFailsafe, GasPipeStraightAlt4]
+  id: GasPipeStraightFailsafe
+  suffix: Ḟailsafe, Straight
+
+- type: entity
+  parent: [BaseAtmosFailsafe, GasPipeBendAlt4]
+  id: GasPipeBendFailsafe
+  suffix: Ḟailsafe, Bend
+
+# Unary
+- type: entity
+  parent: [BaseAtmosFailsafe, GasPassiveVentAlt4]
+  id: GasPassiveVentFailsafe
+  suffix: Failsafe
+
+# Binary
+- type: entity
+  parent: [BaseAtmosFailsafe, GasPressureRegulatorAlt4]
+  id: GasPressureRegulatorFailsafe
+  suffix: Failsafe
+  components:
+  - type: GasPressureRegulator
+    threshold: 40000

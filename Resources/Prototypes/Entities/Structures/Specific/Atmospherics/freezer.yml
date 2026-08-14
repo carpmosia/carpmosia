@@ -2,7 +2,7 @@
   abstract: true
   parent: AirSensorBase
   id: AirSensorFreezerBase
-  suffix: Freezer Atmosphere
+  suffix: Freezer # Carpmosia-edit - Pipe presets
   components:
   - type: AtmosMonitor
     temperatureThresholdId: freezerTemperature
@@ -12,18 +12,18 @@
   id: AirSensorFreezer
 
 - type: entity
-  parent: [AirSensorFreezerBase, GasVentPumpFreezerBase, GasVentPump] # Carpmosia-edit - Atmos Alt Prototypes
+  parent: [BaseAtmosDistro, AirSensorFreezerBase, GasVentPumpAlt4] # Carpmosia-edit - Pipe presets
   id: GasVentPumpFreezer
 
 - type: entity
-  parent: [AirSensorFreezerBase, GasVentScrubberFreezerBase, GasVentScrubber] # Carpmosia-edit - Atmos Alt Prototypes
+  parent: [BaseAtmosWaste, AirSensorFreezerBase, GasVentScrubberAlt3] # Carpmosia-edit - Pipe presets
   id: GasVentScrubberFreezer
 
 # air alarm proto with auto: false to prevent the automatic switching of modes overriding the default values
 - type: entity
   parent: AirAlarm
   id: AirAlarmFreezer
-  suffix: Freezer Atmosphere, auto mode disabled
+  suffix: Freezer, auto mode disabled # Carpmosia-edit - Pipe presets
   components:
   - type: AirAlarm
     autoMode: false
