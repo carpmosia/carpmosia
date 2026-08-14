@@ -98,7 +98,11 @@ public sealed partial class GameMapManager : IGameMapManager
 
     public IEnumerable<GameMapPrototype> CurrentlyEligibleMaps()
     {
-        var maps = AllVotableMaps().Where(IsMapEligible).ToArray();
+        // Carpmosia-start - Better map rotation
+        var maps = AllVotableMaps().Where(IsMapEligible)
+            .OrderByDescending(x => GetMapRotationQueuePriority(x.ID))
+            .ToArray();
+        // Carpmosia-end - Better map rotation
         return maps.Length == 0 ? AllMaps().Where(x => x.Fallback) : maps;
     }
 
@@ -161,6 +165,11 @@ public sealed partial class GameMapManager : IGameMapManager
         if (!TryLookupMap(gameMap, out var map))
             throw new ArgumentException($"The map \"{gameMap}\" is invalid!");
         _selectedMap = [map]; // Carpmosia-edit - Multistation
+
+        // Carpmosia-start - Better map rotation
+        if (_mapRotationEnabled)
+            EnqueueMap(map.ID);
+        // Carpmosia-end - Better map rotation
     }
 
     public void SelectMapRandom()

@@ -2587,4 +2587,84 @@
   id: 385
   time: '2026-08-05T19:16:48.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/565
+- author: Atakku
+  changes:
+  - message: Spray painter color palette has been entirely replaced
+    type: Tweak
+  - message: Added new standardized colors for teg cold and hot loops, as well as
+      fuel and failsafe (small delta p exhaust)
+    type: Add
+  - message: Added a color for each gas to the spray painter (same as in the gas analyzer
+      menu)
+    type: Add
+  id: 386
+  time: '2026-08-07T13:20:51.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/570
+- author: Atakku
+  changes:
+  - message: Temporarily de-rotated all the maps
+    type: Remove
+  id: 387
+  time: '2026-08-07T22:35:28.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/561
+- author: Atakku
+  changes:
+  - message: Atmospheric Network Monitors now work properly again.
+    type: Fix
+  id: 388
+  time: '2026-08-12T02:03:02.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/581
+- author: Atakku
+  changes:
+  - message: Re-rotated Amber
+    type: Add
+  - message: 'On Amber: Rebuilt TEG from scratch'
+    type: Tweak
+  - message: 'On Amber: Touched up atmos gas storage'
+    type: Tweak
+  - message: 'On Amber: Standardized the pipe network (properly layered waste and
+      distro)'
+    type: Tweak
+  id: 389
+  time: '2026-08-12T14:12:34.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/573
+- author: Atakku
+  changes:
+  - message: 'On Donk Terminal: Added screens to show when the Evac shuttles are arriving
+      & when EoR ends'
+    type: Tweak
+  - message: 'On Donk Terminal: Fixed Cryogenics freezer not being on'
+    type: Fix
+  - message: 'On Donk Terminal: Fixed maps not working'
+    type: Fix
+  - message: 'On Donk Terminal: Replaced cat ears on Mannequin in Janitor with ones
+      that don''t give you the angry KILL sign'
+    type: Tweak
+  id: 390
+  time: '2026-08-12T16:16:21.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/575
+- author: Atakku
+  changes:
+  - message: Map vote options count has been reduced to 3
+    type: Tweak
+  - message: Map vote will now try to hide maps previously voted
+    type: Tweak
+  id: 391
+  time: '2026-08-12T22:27:57.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/583
+- author: Atakku
+  changes:
+  - message: 'On Donk Terminal: Removed crematorium from medbay.'
+    type: Remove
+  id: 392
+  time: '2026-08-12T23:53:03.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/584
+- author: Jakeybobble
+  changes:
+  - message: Made monkeys and other ancestors able to wear captain's hardsuit, security
+      hardsuits, bomb suits and radiation suits.
+    type: Add
+  id: 393
+  time: '2026-08-14T11:42:47.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/525
 Order: -1
