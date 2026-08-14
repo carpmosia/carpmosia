@@ -7,7 +7,7 @@
   - type: Action
     useDelay: 45
     icon:
-      sprite: Interface/Actions/actions_rat_king.rsi
-      state: ratKingDomain
+      sprite: _Carpmosia/Interface/Actions/actions_rat_king.rsi
+      state: ratKingSacrifice
   - type: InstantAction
     event: !type:RatKingSacrificeActionEvent
