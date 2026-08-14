@@ -71,7 +71,7 @@ namespace Content.Shared.Voting
             {
                 buffer.Write(votes);
                 buffer.Write(name);
-                // Carpmosia-edit - Better map vote
+                // Carpmosia-start - Better map vote
                 buffer.Write(icon != null);
                 if (icon != null)
                 {
@@ -82,7 +82,7 @@ namespace Content.Shared.Voting
                 {
                   buffer.Write(preview.Value);
                 }
-                // Carpmosia-edit - Better map vote
+                // Carpmosia-end - Better map vote
             }
 
             buffer.Write(IsYourVoteDirty);

@@ -2479,4 +2479,184 @@
   id: 371
   time: '2026-07-26T10:17:18.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/529
+- author: Jakeybobble
+  changes:
+  - message: Fixed Tajaran and Avali voices being shown as unknown.
+    type: Fix
+  id: 372
+  time: '2026-07-29T00:11:01.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/534
+- author: Atakku
+  changes:
+  - message: WizardSpawn has been removed from moderate antag events
+    type: Remove
+  id: 373
+  time: '2026-07-29T00:24:49.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/540
+- author: imatsoup
+  changes:
+  - message: The threshold of votes required for a round restart vote to pass has
+      been reduced.
+    type: Tweak
+  - message: Round restart votes will no longer automatically fail if there is an
+      admin present.
+    type: Tweak
+  id: 374
+  time: '2026-07-29T00:26:37.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/538
+- author: Saver310
+  changes:
+  - message: Removed "Drunkards Spree" lobby art
+    type: Remove
+  - message: Added "Running Late" lobby art
+    type: Add
+  id: 375
+  time: '2026-07-29T14:38:12.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/501
+- author: Atakku
+  changes:
+  - message: Removed command role prioritization when rolling player jobs
+    type: Remove
+  id: 376
+  time: '2026-07-30T01:44:33.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/542
+- author: Atakku
+  changes:
+  - message: Job priorities have been subdivided into 6 total selections.
+    type: Tweak
+  id: 377
+  time: '2026-07-30T01:46:43.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/543
+- author: Atakku
+  changes:
+  - message: Readjusted display order of all jobs
+    type: Tweak
+  id: 378
+  time: '2026-07-30T21:18:24.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/545
+- author: imatsoup
+  changes:
+  - message: The Singularity has been changed to move much more slowly at all levels.
+    type: Tweak
+  - message: The Tesla has new behavior. On breaking containment, the Tesla will now
+      seek out the nearest SMES. On consuming the SMES, the Tesla will undergo a rupture,
+      splitting into timed-life mini-balls
+    type: Tweak
+  id: 379
+  time: '2026-08-01T11:26:35.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/408
+- author: Atakku
+  changes:
+  - message: Added a notice about removed job priority
+    type: Tweak
+  id: 380
+  time: '2026-08-02T00:49:08.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/547
+- author: Atakku
+  changes:
+  - message: Late join menu now orders stations horizontally
+    type: Tweak
+  id: 381
+  time: '2026-08-02T23:26:53.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/468
+- author: Atakku
+  changes:
+  - message: Extended AFK timer to 30 minutes, extended AFK prompt to 2.5 minutes
+    type: Tweak
+  id: 382
+  time: '2026-08-02T23:38:01.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/551
+- author: Atakku
+  changes:
+  - message: Added "Surprise Surgery" lobby art
+    type: Add
+  id: 383
+  time: '2026-08-05T18:02:31.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/562
+- author: Atakku
+  changes:
+  - message: Added "Besties Forever" lobby art
+    type: Add
+  id: 384
+  time: '2026-08-05T18:36:32.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/563
+- author: Atakku
+  changes:
+  - message: 'Removed 3 upstream lobby arts: SSXIV, Susstation, Doomed'
+    type: Remove
+  id: 385
+  time: '2026-08-05T19:16:48.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/565
+- author: Atakku
+  changes:
+  - message: Spray painter color palette has been entirely replaced
+    type: Tweak
+  - message: Added new standardized colors for teg cold and hot loops, as well as
+      fuel and failsafe (small delta p exhaust)
+    type: Add
+  - message: Added a color for each gas to the spray painter (same as in the gas analyzer
+      menu)
+    type: Add
+  id: 386
+  time: '2026-08-07T13:20:51.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/570
+- author: Atakku
+  changes:
+  - message: Temporarily de-rotated all the maps
+    type: Remove
+  id: 387
+  time: '2026-08-07T22:35:28.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/561
+- author: Atakku
+  changes:
+  - message: Atmospheric Network Monitors now work properly again.
+    type: Fix
+  id: 388
+  time: '2026-08-12T02:03:02.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/581
+- author: Atakku
+  changes:
+  - message: Re-rotated Amber
+    type: Add
+  - message: 'On Amber: Rebuilt TEG from scratch'
+    type: Tweak
+  - message: 'On Amber: Touched up atmos gas storage'
+    type: Tweak
+  - message: 'On Amber: Standardized the pipe network (properly layered waste and
+      distro)'
+    type: Tweak
+  id: 389
+  time: '2026-08-12T14:12:34.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/573
+- author: Atakku
+  changes:
+  - message: 'On Donk Terminal: Added screens to show when the Evac shuttles are arriving
+      & when EoR ends'
+    type: Tweak
+  - message: 'On Donk Terminal: Fixed Cryogenics freezer not being on'
+    type: Fix
+  - message: 'On Donk Terminal: Fixed maps not working'
+    type: Fix
+  - message: 'On Donk Terminal: Replaced cat ears on Mannequin in Janitor with ones
+      that don''t give you the angry KILL sign'
+    type: Tweak
+  id: 390
+  time: '2026-08-12T16:16:21.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/575
+- author: Atakku
+  changes:
+  - message: Map vote options count has been reduced to 3
+    type: Tweak
+  - message: Map vote will now try to hide maps previously voted
+    type: Tweak
+  id: 391
+  time: '2026-08-12T22:27:57.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/583
+- author: Atakku
+  changes:
+  - message: 'On Donk Terminal: Removed crematorium from medbay.'
+    type: Remove
+  id: 392
+  time: '2026-08-12T23:53:03.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/584
 Order: -1

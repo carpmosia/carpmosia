@@ -65,7 +65,7 @@ namespace Content.Server.GameTicking
         [ViewVariables] private bool _initialized;
         [ViewVariables] private bool _postInitialized;
 
-        [ViewVariables] public MapId DefaultMap { get; private set; }
+        [ViewVariables] public List<MapId> DefaultMap { get; private set; } = []; // Carpmosia-edit - Multistation
 
         private ISawmill _sawmill = default!;
 

@@ -567,8 +567,8 @@ public sealed partial class ServerApi : IPostInjectInit
             {
                 mapInfo = new InfoResponse.MapInfo
                 {
-                    Id = mapPrototype.ID,
-                    Name = mapPrototype.MapName
+                    Id = string.Join(";", mapPrototype.Select(x => x.ID)), // Carpmosia-edit - Multistation
+                    Name = string.Join(" & ", mapPrototype.Select(x => x.MapName)) // Carpmosia-edit - Multistation
                 };
             }
 

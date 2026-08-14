@@ -1,7 +1,6 @@
 using Content.Server.GameTicking;
 using Content.Server.Voting;
 using Robust.Server;
-using Robust.Shared.Prototypes; // Carpmosia-edit - Better map vote
 using Robust.Shared.Utility;
 using System.Text.Json;
 using System.Text.Json.Nodes;

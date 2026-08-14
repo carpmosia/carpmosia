@@ -1,0 +1,74 @@
+- type: entity
+  abstract: true
+  id: BaseAtmosColdLoop
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: AtmosPipeColor
+    color: '#00d5Beff'
+
+# Pipes
+- type: entity
+  parent: [BaseAtmosColdLoop, GasPipeStraightAlt2]
+  id: GasPipeStraightColdLoop
+  suffix: Ċold Loop, Straight
+
+- type: entity
+  parent: [BaseAtmosColdLoop, GasPipeBendAlt2]
+  id: GasPipeBendColdLoop
+  suffix: Ċold Loop, Bend
+
+- type: entity
+  parent: [BaseAtmosColdLoop, GasPipeTJunctionAlt2]
+  id: GasPipeTJunctionColdLoop
+  suffix: Ċold Loop, TJunction
+
+- type: entity
+  parent: [BaseAtmosColdLoop, GasPipeFourwayAlt2]
+  id: GasPipeFourwayColdLoop
+  suffix: Ċold Loop, Fourway
+
+# Binary
+- type: entity
+  parent: [BaseAtmosColdLoop, GasPressurePumpAlt2]
+  id: GasPressurePumpColdLoop
+  suffix: Cold Loop
+
+- type: entity
+  parent: [BaseAtmosColdLoop, GasVolumePumpAlt2]
+  id: GasVolumePumpColdLoop
+  suffix: Cold Loop
+  components:
+  - type: GasVolumePump
+    enabled: true
+
+- type: entity
+  parent: [BaseAtmosColdLoop, GasValveAlt2]
+  id: GasValveColdLoop
+  suffix: Cold Loop
+  components:
+  - type: GasValve
+    open: false
+
+- type: entity
+  parent: [BaseAtmosColdLoop, GasPortAlt2]
+  id: GasPortColdLoop
+  suffix: Cold Loop
+
+- type: entity
+  parent: [BaseAtmosColdLoop, HeatExchangerAlt2]
+  id: HeatExchangerColdLoop
+  suffix: Cold Loop
+
+- type: entity
+  parent: [BaseAtmosColdLoop, HeatExchangerBendAlt2]
+  id: HeatExchangerBendColdLoop
+  suffix: Cold Loop
+
+- type: entity
+  parent: [BaseAtmosColdLoop, GasPipeSensorAlt2]
+  id: GasPipeSensorColdLoop
+  suffix: Cold Loop
+  components:
+  - type: Label
+    localizedLabel: gas-pipe-sensor-teg-cold-loop

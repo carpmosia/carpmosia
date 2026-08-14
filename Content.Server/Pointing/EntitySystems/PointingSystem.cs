@@ -164,8 +164,8 @@ namespace Content.Server.Pointing.EntitySystems
             _rotateToFaceSystem.TryFaceCoordinates(player, mapCoordsPointed.Position);
 
             // Carpmosia-start - Pointing modifier
-            string phraseSelf = Loc.GetString("pointing-phrase-point-self");
-            string phraseOther = Loc.GetString("pointing-phrase-point-other");
+            var phraseSelf = Loc.GetString("pointing-phrase-point-self");
+            var phraseOther = Loc.GetString("pointing-phrase-point-other");
             EntProtoId pointArrow = "PointerArrow";
             // get held item w/ modifier
             var heldItem = _hands.GetHeldItem(player, _hands.GetActiveHand(player));

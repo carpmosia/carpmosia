@@ -28,10 +28,13 @@ public sealed partial class RandomGiftSystem : EntitySystem
     private readonly List<string> _possibleGiftsSafe = new();
     private readonly List<string> _possibleGiftsUnsafe = new();
     // Carpmosia-start - Carpmas Presents
-    private readonly List<string> _possibleGiftsCurated = new();
-    private readonly List<string> _blacklist = ["Throngler", "WeaponMinigun", "NuclearGrenade",
-     "CartridgeMinigun", "NukeCodePaper", "NukeCodePaperStation", "TraitorCodePaper", "AllTraitorCodesPaper",
-     "BoxFolderNuclearCodes", "ComputerSensorMonitoring", "SensorConsoleCircuitboard"];
+    private readonly List<EntProtoId> _possibleGiftsCurated = new();
+    private readonly List<EntProtoId> _blacklist =
+    [
+     "Throngler", "WeaponMinigun", "NuclearGrenade", "CartridgeMinigun",
+     "NukeCodePaper", "NukeCodePaperStation", "TraitorCodePaper", "AllTraitorCodesPaper",
+     "BoxFolderNuclearCodes", "ComputerSensorMonitoring", "SensorConsoleCircuitboard",
+    ];
     // Carpmosia-end - Carpmas Presents
 
     /// <inheritdoc/>
