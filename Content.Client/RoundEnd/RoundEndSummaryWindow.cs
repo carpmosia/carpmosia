@@ -8,7 +8,7 @@ using Robust.Client.UserInterface.CustomControls;
 using Robust.Shared.Utility;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
 using Robust.Shared.Prototypes; // Carpmosia-edit - No Eorg Popup
-using Content.Client.Guidebook;
+using Content.Client.Guidebook; // Carpmosia-edit - No Eorg Popup
 using Content.Shared.Guidebook; // Carpmosia-edit - No Eorg Popup
 
 namespace Content.Client.RoundEnd;
