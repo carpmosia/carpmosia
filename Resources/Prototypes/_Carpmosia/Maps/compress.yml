@@ -10,6 +10,7 @@
       stationProto: StandardNanotrasenStation
       components:
       - type: StationNameSetup
+        shortName: Compress
         mapNameTemplate: '{0} Compress {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
