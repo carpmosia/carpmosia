@@ -1,0 +1,173 @@
+- type: entity
+  abstract: true
+  parent: MobBaseAncestor
+  id: MobBaseDwoth
+  name: dwoth
+  description: An adorable close relative of moth people, their main survival strategy is a combination of their aposematism and their lack of fear.
+  components:
+  - type: Body
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganAnimalLungs
+        - id: OrganAnimalHeart
+        - id: OrganMothStomach
+        - id: OrganAnimalLiver
+        - id: OrganAnimalKidneys
+  - type: NameIdentifier
+    group: dwoth
+  - type: ReplacementAccent
+    accent: mothroach
+  - type: Speech
+    speechSounds: Moth
+    speechVerb: SmallMob
+  - type: Deathgasp
+    prototype: DefaultDeathgasp
+  - type: Vocal
+    emoteSounds: FemaleMoth
+  - type: TypingIndicator
+    proto: moth
+  - type: InteractionPopup
+    successChance: 0.9
+    interactSuccessString: petting-success-soft-floofy
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Voice/Moth/moth_chitter.ogg
+    interactFailureSound:
+      path: /Audio/Voice/Moth/moth_squeak.ogg
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      60: Critical
+      125: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.5
+    baseSprintSpeed: 5
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    angle: 30
+    animation: WeaponArcBite
+    damage:
+      types:
+        Slash: 3
+        Piercing: 5
+  - type: Temperature
+    currentTemperature: 312.0
+  - type: TemperatureDamage
+    heatDamageThreshold: 322
+    coldDamageThreshold: 245
+    coldDamage:
+      types:
+        Cold: 0.08
+    heatDamage:
+      types:
+        Heat: 2.0
+  - type: ThermalRegulator
+    normalBodyTemperature: 312.0
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      sprite: _Carpmosia/Mobs/Animals/shortwings.rsi
+      state: dwoth
+    - map: ["overlay-none"]
+      sprite: _Carpmosia/Mobs/Animals/shortwings.rsi
+      state: overlay-none
+    - map: ["overlay-eyes"]
+      sprite: _Carpmosia/Mobs/Animals/shortwings.rsi
+      state: overlay-eyes
+    - map: ["overlay-wings"]
+      sprite: _Carpmosia/Mobs/Animals/shortwings.rsi
+      state: overlay-wings
+    - map: ["overlay-floof"]
+      sprite: _Carpmosia/Mobs/Animals/shortwings.rsi
+      state: overlay-floof
+    - map: [ "jumpsuit" ]
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
+      color: "#ffffff"
+      sprite: Objects/Misc/handcuffs.rsi
+    - map: [ "ears" ]
+    - map: [ "id" ]
+    - map: [ "outerClothing" ]
+    - map: [ "mask" ]
+    - map: [ "head" ]
+  - type: RandomSprite
+    getAllGroups: true
+    available:
+    - enum.DamageStateVisualLayers.Base:
+        dwoth: DwothColors
+    - overlay-none:
+        overlay-none: DwothColors
+    - overlay-eyes:
+        overlay-eyes: DwothColors
+    - overlay-wings:
+        overlay-wings: DwothColors
+    - overlay-floof:
+        overlay-floof: DwothColors
+  - type: Butcherable
+    spawned:
+    - id: FoodMeat
+      amount: 2
+    - id: MaterialCotton1
+      amount: 5
+  - type: AlwaysRevolutionaryConvertible
+  - type: GhostTakeoverAvailable
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-feline
+  - type: GhostRole
+    prob: 0.05
+    makeSentient: true
+    name: ghost-role-information-dwoth-name
+    description: ghost-role-information-dwoth-description
+    rules: ghost-role-information-nonantagonist-rules
+
+- type: entity
+  parent: MobBaseDwoth
+  id: MobDwoth
+  components:
+  - type: Clumsy
+    gunShootFailDamage:
+      types:
+        Blunt: 3
+        Piercing: 4
+        Heat: 5
+    catchingFailDamage:
+      types:
+        Blunt: 1
+    clumsySound:
+      path: /Audio/Animals/cat_hiss.ogg
+
+- type: entity
+  parent: MobBaseDwoth
+  id: MobBaseSyndicateDwoth
+  suffix: syndicate base
+  components:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Critical
+      200: Dead
+  - type: NpcFactionMember
+    factions:
+    - Syndicate
+  - type: Loadout
+    prototypes: [SyndicateOperativeGearMonkey]
+
+- type: entity
+  parent: MobBaseSyndicateDwoth
+  id: MobDwothSyndicateAgent
+  suffix: syndicate agent
+  components:
+    # make the player a traitor once its taken
+  - type: AutoTraitor
+    profile: TraitorReinforcement
+
+- type: entity
+  parent: MobBaseSyndicateDwoth
+  id: MobDwothSyndicateAgentNukeops # Reinforcement exclusive to nukeops uplink
+  suffix: NukeOps
+  components:
+  - type: NukeOperative

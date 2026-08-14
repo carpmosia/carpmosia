@@ -7,3 +7,9 @@ ghost-role-information-kitti-description = Where's the meow at?
 
 ghost-role-information-syndicate-kitti-reinforcement-name = Syndicate Kitti Agent
 ghost-role-information-syndicate-kitti-reinforcement-description = Someone needs reinforcements. You, a trained kitti, will help them.
+
+ghost-role-information-dwoth-name = Dwoth
+ghost-role-information-dwoth-description = Clueless fluffy gremlin.
+
+ghost-role-information-syndicate-dwoth-reinforcement-name = Syndicate Dwoth Agent
+ghost-role-information-syndicate-dwoth-reinforcement-description = Someone needs reinforcements. You, a trained dwoth, will help them.

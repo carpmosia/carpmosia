@@ -68,13 +68,17 @@
       storagebase: !type:AllSelector
         children:
         - id: KoboldCubeWrapped
-          amount: 3 # Carpmosia-edit - Kitti
+          amount: 2 # Carpmosia-edit - More Ancestors
         - id: MonkeyCubeWrapped
-          amount: 3 # Carpmosia-edit - Kitti
-        # Carpmosia-start - Kitti
+          amount: 2 # Carpmosia-edit - More Ancestors
+        # Carpmosia-start - More Ancestors
         - id: KittiCubeWrapped
-          amount: 3
-        # Carpmosia-end - Kitti
+          amount: 2
+        - id: DwothCubeWrapped
+          amount: 2
+        # From this point we cant evenly devide until we have 8 or 9 ancestors,
+        # so if we are to add any more this must be randomized
+        # Carpmosia-end - More Ancestors
   - type: Sprite
     sprite: Objects/Misc/monkeycube.rsi
     state: box_variant
