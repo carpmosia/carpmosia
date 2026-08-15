@@ -17,15 +17,14 @@
         - id: OrganAnimalKidneys
   - type: NameIdentifier
     group: dwoth
-  - type: ReplacementAccent
-    accent: mothroach
   - type: Speech
-    speechSounds: Moth
-    speechVerb: SmallMob
+    speechVerb: Moth
+    allowedEmotes: ['Chitter', 'Squeak', 'Flap']
   - type: Deathgasp
     prototype: DefaultDeathgasp
+  - type: MothAccent
   - type: Vocal
-    emoteSounds: FemaleMoth
+    emoteSounds: UnisexMoth
   - type: TypingIndicator
     proto: moth
   - type: InteractionPopup
