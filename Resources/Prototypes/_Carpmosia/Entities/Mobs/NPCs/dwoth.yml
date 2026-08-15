@@ -16,7 +16,7 @@
         - id: OrganAnimalLiver
         - id: OrganAnimalKidneys
   - type: NameIdentifier
-    group: dwoth
+    group: Dwoth
   - type: Speech
     speechVerb: Moth
     allowedEmotes: ['Chitter', 'Squeak', 'Flap']
@@ -137,7 +137,7 @@
       types:
         Blunt: 1
     clumsySound:
-      path: /Audio/Animals/cat_hiss.ogg
+      path: /Audio/Voice/Moth/moth_scream.ogg
 
 - type: entity
   parent: MobBaseDwoth
