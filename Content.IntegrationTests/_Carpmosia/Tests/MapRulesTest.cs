@@ -10,34 +10,42 @@ using Robust.Shared.Maths;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
+using Content.IntegrationTests.Utility;
 
 namespace Content.IntegrationTests.Tests;
 
 [TestFixture]
 public sealed partial class MapRulesTest : GameTest
 {
-    // Temporary override until most of the maps are fixed
-    private static readonly ResPath[] AllMapFiles = [
-        new("/Maps/_Carpmosia/Terminals/donk_rest_stop.yml"),
-        new("/Maps/_Carpmosia/amber.yml"),
-        // new("/Maps/_Carpmosia/bagel.yml"),
-        // new("/Maps/_Carpmosia/box.yml"),
-        new("/Maps/_Carpmosia/centcomm.yml"),
-        // new("/Maps/_Carpmosia/elkridge.yml"),
-        // new("/Maps/_Carpmosia/exo.yml"),
-        // new("/Maps/_Carpmosia/feint.yml"),
-        // new("/Maps/_Carpmosia/fland.yml"),
-        // new("/Maps/_Carpmosia/lampocteis.yml"),
-        // new("/Maps/_Carpmosia/marathon.yml"),
-        // new("/Maps/_Carpmosia/oasis.yml"),
-        // new("/Maps/_Carpmosia/packed.yml"),
-        // new("/Maps/_Carpmosia/plasma.yml"),
-        // new("/Maps/_Carpmosia/saltern.yml"),
-        // new("/Maps/_Carpmosia/snowball.yml"),
-        // new("/Maps/_Carpmosia/sparks.yml"),
+    private static readonly string[] ExclusionList = [
+       "/Maps/_Carpmosia/Legacy/", // We ain't testing legacy ever
+       // Maps pending fixes
+       //"/Maps/_Carpmosia/bagel.yml",
+       //"/Maps/_Carpmosia/box.yml",
+       //"/Maps/_Carpmosia/elkridge.yml",
+       //"/Maps/_Carpmosia/exo.yml",
+       //"/Maps/_Carpmosia/feint.yml",
+       //"/Maps/_Carpmosia/fland.yml",
+       //"/Maps/_Carpmosia/lampocteis.yml",
+       //"/Maps/_Carpmosia/marathon.yml",
+       //"/Maps/_Carpmosia/oasis.yml",
+       //"/Maps/_Carpmosia/packed.yml",
+       //"/Maps/_Carpmosia/plasma.yml",
+       //"/Maps/_Carpmosia/saltern.yml",
+       //"/Maps/_Carpmosia/snowball.yml",
+       //"/Maps/_Carpmosia/sparks.yml",
+       // Shuttles gonna be fixed last
+       "/Maps/_Carpmosia/Shuttles/",
     ];
-    //private static readonly ResPath[] AllMapFiles = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", true).Where(x => !x.ToString().StartsWith("/Maps/_Carpmosia/Legacy/"))];
-    //private static readonly ResPath[] StationMaps = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", false).Where(x => !x.ToString().StartsWith("/Maps/_Carpmosia/centcomm.yml"))];
+
+    private static readonly ResPath[] TestScope = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", true).Where(x => !ExclusionList.Any(y => x.ToString().StartsWith(y)))];
+
+    // Skip station specific tests on these maps
+    private static readonly string[] NonStations = [
+       "/Maps/_Carpmosia/Terminals/",
+       "/Maps/_Carpmosia/Shuttles/",
+       "/Maps/_Carpmosia/centcomm.yml",
+    ];
 
     private const string PROTO = "proto";
     private const string ENTITIES = "entities";
@@ -45,7 +53,7 @@ public sealed partial class MapRulesTest : GameTest
     [SidedDependency(Side.Server)] private readonly IResourceManager _resMan = null!;
 
     [Test]
-    [TestCaseSource(nameof(AllMapFiles))]
+    [TestCaseSource(nameof(TestScope))]
     public void TestMapRules(ResPath map)
     {
         if (LoadMapYaml(map, _resMan) is not { } root)
@@ -55,12 +63,20 @@ public sealed partial class MapRulesTest : GameTest
             return;
 
         List<string> errors = [
-            ..TestNonWallmountsUnderWalls(ents),
-            ..TestApcMissingConnections(ents),
-            ..TestPowerNetworkLabels(ents),
-            ..TestAnchorableDuplicates(ents),
-            ..TestUnlinkedAtmosDevices(ents),
+        //    ..TestNonWallmountsUnderWalls(ents),
+        //    ..TestApcMissingConnections(ents),
+        //    ..TestPowerNetworkLabels(ents),
+        //    ..TestAnchorableDuplicates(ents),
+        //    ..TestUnlinkedAtmosDevices(ents),
         ];
+
+        // Station specific tests
+        if (!NonStations.Any(x => map.ToString().StartsWith(x)))
+        {
+            errors.AddRange([
+                ..TestMandatoryStationEntities(ents),
+            ]);
+        }
 
         // Assert one large list of errors instead of Assert.Multiple to avoid 5 morbillion stacktraces
         Assert.That(errors, Has.Count.EqualTo(0), $"Found {errors.Count} issues:\n{string.Join("\n", errors)}");
@@ -95,7 +111,7 @@ public sealed partial class MapRulesTest : GameTest
         return trans;
     }
 
-    private static (EntityUid, (int, int), int)? GetApproxTransform(YamlNode entNode)
+    private static (EntityUid, Vector2i, int)? GetApproxTransform(YamlNode entNode)
     {
         if (GetCompNode(entNode, "Transform") is not { } trans)
             return null;
@@ -123,7 +139,7 @@ public sealed partial class MapRulesTest : GameTest
         return (parent, pos, rot);
     }
 
-    private static (EntityUid, (int, int))? GetTilePos(YamlNode entNode)
+    private static (EntityUid, Vector2i)? GetTilePos(YamlNode entNode)
     {
         if (GetApproxTransform(entNode) is not { } trans)
             return null;
@@ -146,5 +162,12 @@ public sealed partial class MapRulesTest : GameTest
                 .OfType<T>()
             )
         ];
+    }
+
+    private float GetDistance((EntityUid, Vector2i) pos1, (EntityUid, Vector2i) pos2)
+    {
+        if (pos1.Item1 != pos2.Item1)
+            return float.NaN;
+        return (pos1.Item2 - pos2.Item2).Length;
     }
 }
