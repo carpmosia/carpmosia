@@ -7,6 +7,7 @@ using Content.Shared.StatusIcon.Components;
 using Content.Shared.Damage.Components;
 using Content.Shared._Offbrand.Wounds; // Offbrand
 using Content.Shared.Mobs; // Offbrand
+using Robust.Shared.Prototypes;
 
 namespace Content.Client.Overlays;
 
@@ -15,6 +16,8 @@ namespace Content.Client.Overlays;
 /// </summary>
 public sealed partial class ShowHealthIconsSystem : EquipmentHudSystem<ShowHealthIconsComponent>
 {
+    [Dependency] private IPrototypeManager _prototypeMan = default!;
+
     [ViewVariables]
     public HashSet<string> DamageContainers = new();
 

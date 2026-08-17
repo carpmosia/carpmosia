@@ -161,7 +161,7 @@ public sealed partial class OffbrandHeartOrganSystem : EntitySystem
         RaiseLocalEvent(body, ref stoppedEvt);
     }
 
-    private void TryRestartHeart(Entity<OffbrandHeartOrganComponent?, DamageableOrganComponent?> ent)
+    public void TryRestartHeart(Entity<OffbrandHeartOrganComponent?, DamageableOrganComponent?> ent)
     {
         if (!Resolve(ent, ref ent.Comp1, ref ent.Comp2, false))
             return;

@@ -670,8 +670,8 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
         cloneComp.BleedReductionAmount = source.Comp.BleedReductionAmount;
         cloneComp.MaxBleedAmount = source.Comp.MaxBleedAmount;
         cloneComp.BloodlossThreshold = source.Comp.BloodlossThreshold;
-        cloneComp.BloodlossDamage = new DamageSpecifier(source.Comp.BloodlossDamage);
-        cloneComp.BloodlossHealDamage = new DamageSpecifier(source.Comp.BloodlossHealDamage);
+        cloneComp.BloodlossDamage = source.Comp.BloodlossDamage;
+        cloneComp.BloodlossHealDamage = source.Comp.BloodlossHealDamage;
         cloneComp.BloodRefreshAmount =  source.Comp.BloodRefreshAmount;
         cloneComp.BleedPuddleThreshold = source.Comp.BleedPuddleThreshold;
         cloneComp.DamageBleedModifiers = source.Comp.DamageBleedModifiers;

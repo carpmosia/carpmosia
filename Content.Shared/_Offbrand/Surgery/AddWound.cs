@@ -17,11 +17,10 @@ public sealed partial class AddWound : IGraphAction
 
     public void PerformAction(EntityUid uid, EntityUid? userUid, IEntityManager entityManager)
     {
-        if (entityManager.TryGetComponent<WoundableBodyComponent>(uid, out var woundable))
+        if (entityManager.TryGetComponent<WoundableComponent>(uid, out var woundable))
         {
-            var woundableSystem = entityManager.System<WoundableBodySystem>();
-            // woundableSystem.TryWound((uid, woundable), Wound, Damages);
-            throw new NotImplementedException($"TODO make this organ-aware...");
+            var woundableSystem = entityManager.System<WoundableSystem>();
+            woundableSystem.TryWound((uid, woundable), Wound, Damages, refresh: true);
         }
     }
 }

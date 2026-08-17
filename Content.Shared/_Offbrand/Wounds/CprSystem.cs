@@ -17,7 +17,7 @@ public sealed partial class CprSystem : EntitySystem
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private StatusEffectsSystem _statusEffects = default!;
-    // [Dependency] private readonly WoundableSystem _woundable = default!;
+    [Dependency] private WoundableSystem _woundable = default!;
     [Dependency] private MobStateSystem _mobState = default!;
 
     public override void Initialize()
@@ -31,7 +31,7 @@ public sealed partial class CprSystem : EntitySystem
 
     private void TryStartCpr(Entity<CprTargetComponent> ent, EntityUid user)
     {
-        _popup.PopupPredicted(
+        _popup.PopupEntity(
             Loc.GetString(ent.Comp.UserPopup, ("target", Identity.Entity(ent, EntityManager))),
             Loc.GetString(ent.Comp.OtherPopup, ("user", Identity.Entity(user, EntityManager)), ("target", Identity.Entity(ent, EntityManager))),
             ent,
@@ -57,21 +57,20 @@ public sealed partial class CprSystem : EntitySystem
         var seed = SharedRandomExtensions.HashCodeCombine((int)_timing.CurTick.Value, GetNetEntity(ent).Id);
         var rand = new System.Random(seed);
 
-        if (rand.Prob(ent.Comp.WoundProbability) && TryComp<WoundableBodyComponent>(ent, out var woundable))
+        if (rand.Prob(ent.Comp.WoundProbability) && TryComp<WoundableComponent>(ent, out var woundable))
         {
-            throw new NotImplementedException($"TODO make this organ-aware...");
-            // if (_woundable.TryWound((ent, woundable), ent.Comp.Wound, unique: true))
-            // {
-            //     _popup.PopupClient(
-            //         Loc.GetString(ent.Comp.WoundPopup, ("target", Identity.Entity(ent, EntityManager))),
-            //         ent.Owner,
-            //         args.User,
-            //         PopupType.MediumCaution
-            //     );
-            // }
+            if (_woundable.TryWound((ent, woundable), ent.Comp.Wound, unique: true, refresh: true))
+            {
+                _popup.PopupEntity(
+                    Loc.GetString(ent.Comp.WoundPopup, ("target", Identity.Entity(ent, EntityManager))),
+                    ent.Owner,
+                    args.User,
+                    PopupType.MediumCaution
+                );
+            }
         }
 
-        args.Repeat = TryComp<PerfusionComponent>(ent, out var perfusion) && perfusion.BaseCardiacOutput < 1;
+        args.Repeat = TryComp<HeartrateAlertsComponent>(ent, out var heartrate) && !heartrate.Beating;
     }
 
     private void OnGetVerbs(Entity<CprTargetComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
@@ -79,7 +78,7 @@ public sealed partial class CprSystem : EntitySystem
         if (!args.CanAccess || !args.CanInteract || ent.Owner == args.User)
             return;
 
-        if (!TryComp<PerfusionComponent>(ent, out var perfusion) || perfusion.BaseCardiacOutput >= 1)
+        if (!TryComp<HeartrateAlertsComponent>(ent, out var heartrate) || heartrate.Beating)
             return;
 
         var @event = args;
@@ -95,12 +94,12 @@ public sealed partial class CprSystem : EntitySystem
 
     private void OnExamined(Entity<CprTargetComponent> ent, ref ExaminedEvent args)
     {
-        if (!TryComp<PerfusionComponent>(ent, out var perfusion) || perfusion.BaseCardiacOutput >= 1)
+        if (!TryComp<HeartrateAlertsComponent>(ent, out var heartrate) || heartrate.Beating)
             return;
 
         if (_mobState.IsDead(ent))
             return;
 
-        args.PushMarkup(Loc.GetString("cpr-target-needs-cpr", ("target", Identity.Entity(ent, EntityManager))));
+        args.PushMarkup(Loc.GetString("cpr-target-needs-cpr", ("target", Identity.Entity(ent, EntityManager))), priority: -5);
     }
 }

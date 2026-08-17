@@ -6,6 +6,7 @@ using Content.Shared.FixedPoint;
 using Content.Shared.Random.Helpers;
 using Content.Shared.StatusEffectNew;
 using Robust.Shared.Timing;
+using Robust.Shared.Random;
 
 namespace Content.Shared._Offbrand.Wounds;
 
@@ -13,6 +14,7 @@ public sealed partial class WoundableBodySystem : OffbrandDamageSystem
 {
     [Dependency] private DamageableSystem _damageable = default!;
     [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IRobustRandom _random = default!;
     [Dependency] private StatusEffectsSystem _statusEffects = default!;
     [Dependency] private WoundableOrganSystem _woundableOrgan = default!;
     [Dependency] private WoundableSystem _woundable = default!;
@@ -54,10 +56,10 @@ public sealed partial class WoundableBodySystem : OffbrandDamageSystem
         if (args.Damage.AnyPositive())
         {
             var seed = SharedRandomExtensions.HashCodeCombine((int)_timing.CurTick.Value, GetNetEntity(ent).Id);
-            var rand = new System.Random(seed);
+            _random.SetSeed(seed);
 
             var organs = _woundableOrgan.GetWoundableOrgans(ent);
-            var target = SharedRandomExtensions.Pick(organs, rand);
+            var target = SharedRandomExtensions.Pick(_random, organs);
 
             var organEvt = args with { Damage = DamageSpecifier.GetPositive(args.Damage) };
             RaiseLocalEvent(target, ref organEvt);

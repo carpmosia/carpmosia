@@ -7,7 +7,7 @@ using Content.Shared.IdentityManagement;
 
 namespace Content.Shared._Offbrand.Analyzers;
 
-public sealed class StationaryAnalyzerSystem : EntitySystem
+public sealed partial class StationaryAnalyzerSystem : EntitySystem
 {
     [Dependency] private SharedChatSystem _chat = default!;
     [Dependency] private AnalyzerSystem _analyzer = default!;

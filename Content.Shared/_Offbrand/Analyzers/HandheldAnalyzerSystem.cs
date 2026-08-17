@@ -18,7 +18,6 @@ public sealed partial class HandheldAnalyzerSystem : EntitySystem
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private AnalyzerSystem _analyzer = default!;
     [Dependency] private SharedUserInterfaceSystem _userInterface = default!;
-    [Dependency] private readonly INetManager _net = default!;
 
     public override void Initialize()
     {
