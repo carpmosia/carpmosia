@@ -416,6 +416,7 @@ namespace Content.IntegrationTests.Tests
                 "Actor", // We aren't testing actor components, those need their player session set.
                 "BiomeSelection", // Whaddya know, requires config.
                 "ActivatableUI", // Requires enum key
+                "Woundable", // Offbrand - we're not doing this on its own
             };
 
             var pair = Pair;

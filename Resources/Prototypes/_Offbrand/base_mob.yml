@@ -1,0 +1,190 @@
+- type: entity
+  abstract: true
+  id: BaseMobWoundable
+  components:
+  - type: StatusEffectContainer
+  - type: WoundableBody
+  - type: HealthExaminable
+    examinableTypes:
+    - Asphyxiation
+    - Radiation
+  - type: WoundRegeneration
+    damage:
+      types:
+        Blunt: -0.5
+        Piercing: -0.5
+        Slash: -0.5
+        Heat: -0.5
+        Cold: -0.5
+        Shock: -0.5
+  - type: Deathgasp
+  - type: Damageable
+  - type: RadiationReceiver
+  - type: Stamina
+  - type: MobState
+  - type: DamageOnHighSpeedImpact
+    damage:
+      types:
+        Blunt: 5
+    soundHit:
+      path: /Audio/Effects/hit_kick.ogg
+  - type: Pullable
+  - type: LightningTarget
+    priority: 2
+    lightningExplode: false
+
+- type: entity
+  abstract: true
+  id: BaseMobPain
+  components:
+  - type: StatusEffectContainer
+  - type: WoundableBody
+  - type: HealthExaminable
+    examinableTypes:
+    - Asphyxiation
+    - Radiation
+  - type: Pain
+    painMultiplier: 1.25
+    maxShockIncreasePerSecond: 36
+    maxShockDecreasePerSecond: 12
+    doubleShockRecoveryThreshold: 0.5
+  - type: IntrinsicPain
+    painCoefficients:
+      Poison: 0.7
+      Radiation: 0.7
+      Cellular: 0.7
+  - type: ShockThresholds
+    thresholds:
+      10: StatusEffectMinorPain
+      30: StatusEffectModeratePain
+      60: StatusEffectSeverePain
+      120: StatusEffectBlackoutPain
+    mobThresholds: {}
+  - type: ShockAlerts
+    alertCategory: Pain
+    suppressedAlert: SuppressedPain
+    thresholds:
+      0: NoPain
+      10: MinorPain
+      30: ModeratePain
+      60: SeverePain
+      120: BlackoutPain
+  - type: ShockGaspThresholds
+    messageThresholds:
+      120: DefaultPainslump
+
+- type: entity
+  abstract: true
+  id: BaseMobPerfusion
+  components:
+  - type: Perfusion
+    respiratoryRateCoefficient: -3
+    respiratoryRateConstant: 1.333
+    respiratoryRateNormalBreath: 5
+    bloodPressureDeviation: 5
+    systolicBase: 120
+    diastolicBase: 80
+    heartRateDeviation: 15
+    heartRateFullPerfusion: 75
+    heartRateNoPerfusion: 200
+    etco2Base: 40
+    etco2Deviation: 4
+    etco2Name: etco2-carbon-dioxide
+    etco2GasName: reagent-name-carbon-dioxide
+    spo2Name: spo2-oxygen
+    spo2GasName: reagent-name-oxygen
+    # TODO: heartstop
+    # heartStoppedEffect: StatusEffectHeartStopped
+  - type: HeartDefibrillatable
+  - type: PainMetabolicRate
+    quadraticFactor: 0.00005
+    linearFactor: -0.0025
+    constantFactor: 0
+  - type: HeartrateAlerts
+    strainAlert: HeartRate
+    stoppedAlert: HeartStopped
+    alertCategory: Health
+    maxStrain: 4
+  - type: SolutionContainerManager
+  - type: InjectableSolution
+    solution: bloodstream
+  - type: Bloodstream
+    bleedReductionAmount: 0
+    damageBleedModifiers: null
+    bloodlossDamage: null
+    bloodlossHealDamage: null
+    updateInterval: 1
+  - type: CprTarget
+    effect: StatusEffectActiveCPR
+    effectDuration: 2.1
+    doAfterDuration: 2
+    wound: WoundFracture
+    woundProbability: 0.03
+  - type: IVTarget
+    permissibleContainers:
+      components:
+      - CryoPod
+
+- type: entity
+  abstract: true
+  id: BaseMobBrain
+  components:
+  - type: BrainDamageThresholds
+    damageStateThresholds:
+      70: Critical
+      100: Dead
+    oxygenStateThresholds:
+      0: Critical
+    damageEffectThresholds:
+      30: StatusEffectSevereBrainDamage
+      70: StatusEffectCriticalBrainDamage
+    oxygenEffectThresholds:
+      0: StatusEffectBrainNoOxygen
+    aliveDamageIcons:
+    - HealthIconNormal7
+    - HealthIconNormal6
+    - HealthIconNormal5
+    - HealthIconNormal4
+    - HealthIconNormal3
+    - HealthIconNormal2
+    - HealthIconNormal1
+    criticalDamageIcons:
+    - HealthIconCritical7
+    - HealthIconCritical6
+    - HealthIconCritical5
+    - HealthIconCritical4
+    - HealthIconCritical3
+    - HealthIconCritical2
+    - HealthIconCritical1
+    deadIcon: HealthIconBrainDead
+  # TODO: kill?
+  # - type: BrainGaspThresholds
+  #   messageThresholds:
+  #     70: DefaultBraingasp
+  #   oxygenThresholds:
+  #     0: DefaultBrainslump
+
+- type: entity
+  abstract: true
+  id: BaseMobSurgery
+  components:
+  - type: Construction
+    graph: SurgeryGraph
+    node: Base
+    deconstructionTarget: null
+  - type: SurgeryGuideTarget
+  - type: ContainerContainer
+    containers:
+      cavity_slot: !type:Container
+
+- type: entity
+  abstract: true
+  id: BaseMobCryostasis
+  components:
+  - type: CryostasisFactor
+    temperatureCoefficient: -0.03
+    temperatureConstant: 10
+
+- type: entity
+  abstract: true
+  id: BaseMobLungDamage

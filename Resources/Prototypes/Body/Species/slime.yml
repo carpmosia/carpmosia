@@ -101,6 +101,8 @@
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
+      enum.SurgeryGuideUiKey.Key: # Offbrand
+        type: SurgeryGuideBoundUserInterface
   - type: UseDelay
     delay: 0.5
   - type: Speech
@@ -172,6 +174,13 @@
       types:
         Asphyxiation: -1.0
     maxSaturation: 15
+  # Begin Offbrand Additions
+  - type: Perfusion
+    etco2Name: etco2-nitrous-oxide
+    etco2GasName: reagent-name-nitrous-oxide
+    spo2Name: spo2-nitrogen
+    spo2GasName: reagent-name-nitrogen
+  # End Offbrand Additions
 
 - type: entity
   parent: OrganBaseOrganic
@@ -263,15 +272,7 @@
     stages: [ Digestion, Bloodstream, Metabolites ]
 
 - type: entity
-  parent: [ OrganBaseEyes, OrganSlimePersonInternal, OrganSlimePersonExternal ]
-  id: OrganSlimePersonEyes
-  components:
-  - type: VisualOrgan
-    data:
-      sprite: Mobs/Customization/eyes.rsi
-
-- type: entity
-  parent: [ OrganBaseLungs, OrganSlimePersonInternal, OrganSlimePersonMetabolizer ]
+  parent: [ OrganBaseLungs, OrganBaseHeart, OrganSlimePersonInternal, OrganSlimePersonMetabolizer ]
   id: OrganSlimePersonLungs
   name: gas sacs
   components:

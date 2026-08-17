@@ -15,6 +15,7 @@
     slots:
     - neck
   - type: Stethoscope
+  - type: TargetingHealthDollOnInteract # Offbrand
 
 - type: entity
   parent: BaseAction
@@ -29,6 +30,7 @@
     itemIconStyle: BigAction
     checkCanInteract: false
   - type: TargetAction
+    repeat: true # Offbrand
   - type: EntityTargetAction
     event: !type:StethoscopeActionEvent
 

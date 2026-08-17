@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Shared._Offbrand.EntityEffects;
 using Content.Shared.Body.Events;
 using Content.Shared.Body;
 using Content.Shared.Chemistry.Components;
@@ -28,6 +29,7 @@ public sealed partial class MetabolizerSystem : EntitySystem
     [Dependency] private SharedEntityConditionsSystem _entityConditions = default!;
     [Dependency] private SharedEntityEffectsSystem _entityEffects = default!;
     [Dependency] private SharedSolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] private Content.Shared.StatusEffectNew.StatusEffectsSystem _statusEffects = default!; // Offbrand
 
     [Dependency] private EntityQuery<OrganComponent> _organQuery = default!;
     [Dependency] private EntityQuery<SolutionManagerComponent> _solutionQuery = default!;
@@ -84,7 +86,7 @@ public sealed partial class MetabolizerSystem : EntitySystem
         RaiseLocalEvent(uid, ref applyEv);
     }
 
-    private bool LookupSolution(
+    public bool LookupSolution( // Offbrand - we need this public
         Entity<MetabolizerComponent, OrganComponent?, SolutionManagerComponent?> ent,
         MetabolismSolutionEntry solutionData,
         bool lookupTransfer,
@@ -93,6 +95,8 @@ public sealed partial class MetabolizerSystem : EntitySystem
         [NotNullWhen(true)] out EntityUid? solutionOwner
     )
     {
+        Resolve(ent, ref ent.Comp2, false);
+
         solution = null;
         solutionEntity = null;
         solutionOwner = null;
@@ -148,6 +152,7 @@ public sealed partial class MetabolizerSystem : EntitySystem
 
         var isDead = _mobStateSystem.IsDead(solutionOwner.Value);
 
+        var metabolized = new HashSet<ProtoId<ReagentPrototype>>(); // Offbrand
         int reagents = 0;
         foreach (var (reagent, quantity) in list)
         {
@@ -161,13 +166,15 @@ public sealed partial class MetabolizerSystem : EntitySystem
             if (proto.Metabolisms is null || !proto.Metabolisms.Metabolisms.TryGetValue(stage, out var entry))
             {
                 var mostToTransfer = FixedPoint2.Clamp(solutionData.TransferRate, 0, quantity);
+                var remove = ShouldRemove(ent, solutionData, reagent);
 
                 if (transferSolution is not null)
                 {
-                    solution.RemoveReagent(reagent, mostToTransfer);
+                    if (remove)
+                        solution.RemoveReagent(reagent, mostToTransfer);
                     transferSolution.AddReagent(reagent, mostToTransfer * solutionData.TransferEfficacy);
                 }
-                else
+                else if (remove)
                 {
                     solution.RemoveReagent(reagent, FixedPoint2.New(1));
                 }
@@ -180,9 +187,11 @@ public sealed partial class MetabolizerSystem : EntitySystem
             // Remove $rate, as long as there's enough reagent there to actually remove that much
             var mostToRemove = FixedPoint2.Clamp(rate, 0, quantity);
 
+            // Begin Offbrand Removals - No
             // we're done here entirely if this is true
-            if (reagents >= ent.Comp1.MaxReagentsProcessable)
-                return;
+            // if (reagents >= ent.Comp1.MaxReagentsProcessable)
+            //     return;
+            // End Offbrand Removals - No
 
             var scale = (float) mostToRemove;
             if (!solutionData.MetabolizeAll)
@@ -195,6 +204,16 @@ public sealed partial class MetabolizerSystem : EntitySystem
                 continue;
 
             var actualEntity = ent.Comp2?.Body ?? solutionOwner.Value;
+
+            // Begin Offbrand - status effects
+            foreach (var effect in entry.StatusEffects)
+            {
+                if (!_entityConditions.TryConditions(actualEntity, effect.Conditions))
+                    _statusEffects.TryRemoveStatusEffect(actualEntity, effect.StatusEffect);
+                else
+                    _statusEffects.TryUpdateStatusEffectDuration(actualEntity, effect.StatusEffect, out _);
+            }
+            // End Offbrand - status effects
 
             // do all effects, if conditions apply
             foreach (var effect in entry.Effects)
@@ -233,7 +252,12 @@ public sealed partial class MetabolizerSystem : EntitySystem
             // remove a certain amount of reagent
             if (mostToRemove > FixedPoint2.Zero)
             {
-                solution.RemoveReagent(reagent, mostToRemove);
+                // Begin Offbrand
+                if (ShouldRemove(ent, solutionData, reagent))
+                {
+                    solution.RemoveReagent(reagent, mostToRemove);
+                }
+                // End Offbrand
 
                 // We have processed a reagant, so count it towards the cap
                 reagents += 1;
@@ -245,14 +269,84 @@ public sealed partial class MetabolizerSystem : EntitySystem
                         transferSolution.AddReagent(metabolite, mostToRemove * ratio);
                     }
                 }
+                // Begin Offbrand
+                else if (transferSolution is not null && solutionData.TransferMetabolized)
+                {
+                    transferSolution.AddReagent(reagent, mostToRemove);
+                }
+                // End Offbrand
             }
         }
+
+        // Begin Offbrand
+        var dirtied = false;
+        foreach (var reagent in ent.Comp1.MetabolizingReagents[stage])
+        {
+            if (metabolized.Contains(reagent))
+                continue;
+
+            dirtied = true;
+            var proto = _prototypeManager.Index(reagent);
+            var actualEntity = ent.Comp2?.Body ?? solutionOwner.Value;
+
+            if (proto.Metabolisms is null)
+                continue;
+
+            if (!proto.Metabolisms.Metabolisms.TryGetValue(stage, out var entry))
+                continue;
+
+            foreach (var effect in entry.StatusEffects)
+            {
+                _statusEffects.TryRemoveStatusEffect(actualEntity, effect.StatusEffect);
+            }
+        }
+        if (dirtied)
+        {
+            ent.Comp1.MetabolizingReagents[stage] = metabolized;
+            Dirty(ent, ent.Comp1);
+        }
+        // End Offbrand
 
         _solutionContainerSystem.UpdateChemicals(solutionEntity.Value);
         if (transferSolutionEntity is not null)
         {
             _solutionContainerSystem.UpdateChemicals(transferSolutionEntity.Value);
         }
+    }
+
+    /// <summary>
+    /// Offbrand - Whether the reagent should be removed based on the previous-stage condition
+    /// </summary>
+    private bool ShouldRemove(Entity<MetabolizerComponent, OrganComponent?, SolutionManagerComponent?> ent,
+        MetabolismSolutionEntry solutionData,
+        ReagentId reagent)
+    {
+        if (solutionData.PreviousStage is not { } oldStage ||
+            !ent.Comp1.Solutions.TryGetValue(oldStage, out var oldStageData))
+            return true;
+
+        if (!LookupSolution(ent, oldStageData, false, out var previousSolution, out _, out _))
+            return true;
+
+        foreach (var (oldReagent, _) in previousSolution.Contents)
+        {
+            if (oldReagent == reagent)
+                return false;
+
+            if (!_prototypeManager.TryIndex<ReagentPrototype>(oldReagent.Prototype, out var oldProto))
+                continue;
+
+            if (oldProto.Metabolisms is null || !oldProto.Metabolisms.Metabolisms.TryGetValue(oldStage, out var oldEntry) || oldEntry.Metabolites is null)
+                continue;
+
+            foreach (var (metabolite, ratio) in oldEntry.Metabolites)
+            {
+                if (metabolite == reagent.Prototype)
+                    return false;
+            }
+        }
+
+        return true;
     }
 
     private void TryMetabolize(Entity<MetabolizerComponent, OrganComponent?, SolutionManagerComponent?> ent)
@@ -284,6 +378,7 @@ public sealed partial class MetabolizerSystem : EntitySystem
                 // Need specific handling of specific conditions since Metabolism is funny like that.
                 // TODO: MetabolizerTypes should be handled well before this stage by metabolism itself.
                 case MetabolizerTypeCondition:
+                case MetaboliteThresholdCondition: // Offbrand - this is an organ condition
                     if (_entityConditions.TryCondition(organ, condition))
                         continue;
                     break;

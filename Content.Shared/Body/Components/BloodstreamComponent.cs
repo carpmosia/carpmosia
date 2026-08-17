@@ -84,15 +84,15 @@ public sealed partial class BloodstreamComponent : Component
     /// The base bloodloss damage to be incurred if below <see cref="BloodlossThreshold"/>
     /// The default values are defined per mob/species in YML.
     /// </summary>
-    [DataField(required: true), AutoNetworkedField]
-    public DamageSpecifier BloodlossDamage = new();
+    [DataField(required: true)] // Offbrand: we don't need this
+    public DamageSpecifier? BloodlossDamage; // Offbrand: we don't need this
 
     /// <summary>
     /// The base bloodloss damage to be healed if above <see cref="BloodlossThreshold"/>
     /// The default values are defined per mob/species in YML.
     /// </summary>
-    [DataField(required: true), AutoNetworkedField]
-    public DamageSpecifier BloodlossHealDamage = new();
+    [DataField(required: true)] // Offbrand: we don't need this
+    public DamageSpecifier? BloodlossHealDamage; // Offbrand: we don't need this
 
     // TODO shouldn't be hardcoded, should just use some organ simulation like bone marrow or smth.
     /// <summary>
@@ -115,7 +115,7 @@ public sealed partial class BloodstreamComponent : Component
     /// For example, piercing damage is increased while poison damage is nullified entirely.
     /// </remarks>
     [DataField, AutoNetworkedField]
-    public ProtoId<DamageModifierSetPrototype> DamageBleedModifiers = "BloodlossHuman";
+    public ProtoId<DamageModifierSetPrototype>? DamageBleedModifiers = "BloodlossHuman"; // Offbrand: we don't want this
 
     /// <summary>
     /// The sound to be played when a weapon instantly deals blood loss damage.

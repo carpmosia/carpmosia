@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Numerics;
 using System.Threading;
+using Content.Client._Offbrand.Examine; // Offbrand - BUIs in examine
 using Content.Client.Verbs;
 using Content.Shared.Examine;
 using Content.Shared.IdentityManagement;
@@ -37,10 +38,17 @@ namespace Content.Client.Examine
         public const string StyleClassEntityTooltip = "entity-tooltip";
 
         private EntityUid _examinedEntity;
+        private EntityUid _tooltipFocusEntity; // Offbrand - separate body focus
         private Popup? _examineTooltipOpen;
         private ScreenCoordinates _popupPos;
         private CancellationTokenSource? _requestCancelTokenSource;
         private int _idCounter;
+        private EntityUid? _requestDisplayTarget; // Offbrand - separate body focus
+        // Begin Offbrand - examine elaboration
+        private readonly Dictionary<Enum, RichTextLabel> _elaborateTooltipLabels = new();
+        private BoxContainer? _elaborateTooltipBox;
+        // End Offbrand - examine elaboration
+        private BoxContainer? _embeddedUserInterfaceBox; // Offbrand - BUIs in examine
 
         public override void Initialize()
         {
@@ -51,6 +59,7 @@ namespace Content.Client.Examine
             SubscribeLocalEvent<GetVerbsEvent<ExamineVerb>>(AddExamineVerb);
 
             SubscribeNetworkEvent<ExamineSystemMessages.ExamineInfoResponseMessage>(OnExamineInfoResponse);
+            SubscribeNetworkEvent<ExamineSystemMessages.ElaborateExamineTooltipMessage>(OnElaborateExamineTooltip); // Offbrand - examine elaboration
 
             SubscribeLocalEvent<ItemComponent, DroppedEvent>(OnExaminedItemDropped);
 
@@ -68,17 +77,25 @@ namespace Content.Client.Examine
             if (_examineTooltipOpen == null)
                 return;
 
-            if (item == _examinedEntity && args.User == _playerManager.LocalEntity)
+            // Begin Offbrand - separate body focus
+            if (item == _tooltipFocusEntity && args.User == _playerManager.LocalEntity)
                 CloseTooltip();
+            // End Offbrand - separate body focus
         }
 
         public override void Update(float frameTime)
         {
             if (_examineTooltipOpen is not {Visible: true}) return;
-            if (!_examinedEntity.Valid || _playerManager.LocalEntity is not { } player) return;
 
-            if (!CanExamine(player, _examinedEntity))
+            // Begin Offbrand - separate body focus
+            if (!_tooltipFocusEntity.Valid || _playerManager.LocalEntity is not { } player)
+                return;
+
+            if (!CanExamine(player, _tooltipFocusEntity))
+            {
                 CloseTooltip();
+            }
+            // End Offbrand - separate body focus
         }
 
         public override void Shutdown()
@@ -157,23 +174,59 @@ namespace Content.Client.Examine
             // opening at the old tooltip rather than the cursor/another entity,
             // since there's probably one open already if it's coming in from the server.
             var entity = GetEntity(ev.EntityUid);
+            // Begin Offbrand - separate body focus
+            var displayTarget = ev.Id != 0 && _requestDisplayTarget is { } requestDisplayTarget
+                ? requestDisplayTarget
+                : entity;
+            var showBody = ev.ShowBody ||
+                           displayTarget != entity && HasComp<Content.Shared.Body.BodyComponent>(displayTarget);
 
-            OpenTooltip(player.Value, entity, ev.CenterAtCursor, ev.OpenAtOldTooltip, ev.KnowTarget);
+            _examinedEntity = entity;
+            OpenTooltip(player.Value, displayTarget, ev.CenterAtCursor, ev.OpenAtOldTooltip, ev.KnowTarget, showBody); // Offbrand
+            // End Offbrand - separate body focus
             UpdateTooltipInfo(player.Value, entity, ev.Message, ev.Verbs, getVerbs: false);
         }
 
-        public override void SendExamineTooltip(EntityUid player, EntityUid target, FormattedMessage message, bool getVerbs, bool centerAtCursor)
+        public override void SendExamineTooltip(EntityUid player, EntityUid target, FormattedMessage message, bool getVerbs, bool centerAtCursor, bool showBody) // Offbrand
         {
-            OpenTooltip(player, target, centerAtCursor);
+            _examinedEntity = target; // Offbrand - separate body focus
+            OpenTooltip(player, target, centerAtCursor, showBody: showBody); // Offbrand
             UpdateTooltipInfo(player, target, message, getVerbs: getVerbs);
         }
+
+        // Begin Offbrand - examine elaboration
+        private void OnElaborateExamineTooltip(ExamineSystemMessages.ElaborateExamineTooltipMessage ev)
+        {
+            if (_playerManager.LocalEntity is not { } player)
+                return;
+
+            ElaborateExamineTooltip(player, ev.Key, ev.Message);
+        }
+
+        public override void ElaborateExamineTooltip(EntityUid user, Enum key, FormattedMessage message)
+        {
+            if (_examineTooltipOpen == null || _elaborateTooltipBox == null)
+                return;
+
+            if (_elaborateTooltipLabels.TryGetValue(key, out var existingLabel))
+            {
+                existingLabel.SetMessage(message);
+                return;
+            }
+
+            var label = new RichTextLabel { Margin = new Thickness(4, 4, 0, 4) };
+            label.SetMessage(message);
+            _elaborateTooltipLabels[key] = label;
+            _elaborateTooltipBox.AddChild(label);
+        }
+        // End Offbrand - examine elaboration
 
         /// <summary>
         ///     Opens the tooltip window and sets spriteview/name/etc, but does
         ///     not fill it with information. This is done when the server sends examine info/verbs,
         ///     or immediately if it's entirely clientside.
         /// </summary>
-        public void OpenTooltip(EntityUid player, EntityUid target, bool centeredOnCursor=true, bool openAtOldTooltip=true, bool knowTarget = true)
+        public void OpenTooltip(EntityUid player, EntityUid target, bool centeredOnCursor=true, bool openAtOldTooltip=true, bool knowTarget = true, bool showBody = false) // Offbrand
         {
             // Close any examine tooltip that might already be opened
             // Before we do that, save its position. We'll prioritize opening any new popups there if
@@ -181,8 +234,7 @@ namespace Content.Client.Examine
             ScreenCoordinates? oldTooltipPos = _examineTooltipOpen != null ? _popupPos : null;
             CloseTooltip();
 
-            // cache entity for Update function
-            _examinedEntity = target;
+            _tooltipFocusEntity = target; // Offbrand - separate body focus
 
             const float minWidth = 300;
 
@@ -202,6 +254,7 @@ namespace Content.Client.Examine
 
             // Actually open the tooltip.
             _examineTooltipOpen = new Popup { MaxWidth = 400 };
+            _examineTooltipOpen.OnPopupHide += CloseTooltip; // Offbrand - BUIs in examine
             _userInterfaceManager.ModalRoot.AddChild(_examineTooltipOpen);
             var panel = new PanelContainer() { Name = "ExaminePopupPanel" };
             panel.AddStyleClass(StyleClassEntityTooltip);
@@ -235,6 +288,29 @@ namespace Content.Client.Examine
                 spriteView.SetEntity(target);
                 hBox.AddChild(spriteView);
             }
+
+            if (showBody && HasComp<Content.Shared.Body.BodyComponent>(target))
+            {
+                var doll = new _Offbrand.BodyVisuals.OffbrandHealthDollControl
+                {
+                    OverrideDirection = Direction.South,
+                    SetSize = new Vector2(128, 128),
+                    Scale = new Vector2(4, 4),
+                    HorizontalAlignment = Control.HAlignment.Center,
+                };
+                doll.SetBody(target);
+                vBox.AddChild(doll);
+            }
+
+            // Begin Offbrand - examine elaboration
+            _elaborateTooltipBox = new BoxContainer
+            {
+                Name = "ExamineElaborateVbox",
+                Orientation = LayoutOrientation.Vertical,
+                MaxWidth = _examineTooltipOpen.MaxWidth
+            };
+            vBox.AddChild(_elaborateTooltipBox);
+            // End Offbrand - examine elaboration
 
             if (knowTarget)
             {
@@ -307,6 +383,32 @@ namespace Content.Client.Examine
             {
                 totalVerbs.UnionWith(verbs);
             }
+
+            // Begin Offbrand - BUIs in examine
+            var embeddedUserInterfaceBox = new BoxContainer
+            {
+                Name = "ExamineEmbeddedUserInterfaceVbox",
+                Orientation = LayoutOrientation.Vertical,
+                MaxWidth = _examineTooltipOpen?.MaxWidth ?? 400,
+                Margin = new Thickness(4, 4, 0, 4)
+            };
+
+            _embeddedUserInterfaceBox = embeddedUserInterfaceBox;
+            vBox.AddChild(embeddedUserInterfaceBox);
+
+            var embedEvent = new ExaminableUserInterfaceRequestEvent(
+                player,
+                target,
+                embeddedUserInterfaceBox,
+                IsInDetailsRange(player, target));
+            RaiseLocalEvent(target, ref embedEvent);
+
+            if (!embeddedUserInterfaceBox.Children.Any())
+            {
+                vBox.RemoveChild(embeddedUserInterfaceBox);
+                _embeddedUserInterfaceBox = null;
+            }
+            // End Offbrand - BUIs in examine
 
             AddVerbsToTooltip(totalVerbs);
         }
@@ -400,21 +502,21 @@ namespace Content.Client.Examine
             }
         }
 
-        /// <summary>
-        /// Open and fills by query to server an examine menu with the correct tooltip and menu items.
-        /// </summary>
-        /// <param name="entity">The entity examined.</param>
-        /// <param name="centeredOnCursor">If the popup should be on the cursor or the entity's screen position.</param>
-        /// <param name="userOverride">An optional user object; if null we assume the client's player entity.</param>
-        public void DoExamine(EntityUid entity, bool centeredOnCursor = true, EntityUid? userOverride = null)
+        public void DoExamine(EntityUid entity, bool centeredOnCursor = true, EntityUid? userOverride = null, EntityUid? displayTarget = null)
         {
             var playerEnt = userOverride ?? _playerManager.LocalEntity;
             if (playerEnt == null)
                 return;
 
             FormattedMessage message;
+            var focusTarget = displayTarget ?? entity;
+            var openAtOldTooltip = displayTarget != null;
+            var showBody = displayTarget != null && HasComp<Content.Shared.Body.BodyComponent>(focusTarget);
 
-            OpenTooltip(playerEnt.Value, entity, centeredOnCursor, false);
+            // Begin Offbrand - separate body focus
+            _examinedEntity = entity;
+            OpenTooltip(playerEnt.Value, focusTarget, centeredOnCursor, openAtOldTooltip, showBody: showBody);
+            // End Offbrand - separate body focus
 
             // Always update tooltip info from client first.
             // If we get it wrong, server will correct us later anyway.
@@ -429,7 +531,12 @@ namespace Content.Client.Examine
                 {
                     _idCounter += 1;
                 }
+                _requestDisplayTarget = displayTarget; // Offbrand - separate body focus
                 RaiseNetworkEvent(new ExamineSystemMessages.RequestExamineInfoMessage(GetNetEntity(entity), _idCounter, true));
+            }
+            else
+            {
+                _requestDisplayTarget = null; // Offbrand - separate body focus
             }
 
             RaiseLocalEvent(entity, new ClientExaminedEvent(entity, playerEnt.Value));
@@ -437,6 +544,17 @@ namespace Content.Client.Examine
 
         private void CloseTooltip()
         {
+            // Begin Offbrand - BUIs in examine
+            if (_embeddedUserInterfaceBox != null &&
+                _playerManager.LocalEntity is { } player &&
+                _examinedEntity.Valid)
+            {
+                var embedCloseEvent = new ExaminableUserInterfaceCloseEvent(player);
+                RaiseLocalEvent(_examinedEntity, ref embedCloseEvent);
+                _embeddedUserInterfaceBox = null;
+            }
+            // End Offbrand - BUIs in examine
+
             if (_examineTooltipOpen != null)
             {
                 foreach (var control in _examineTooltipOpen.Children)
@@ -449,6 +567,11 @@ namespace Content.Client.Examine
                 _examineTooltipOpen.Dispose();
                 _examineTooltipOpen = null;
             }
+
+            // Begin Offbrand - examine elaboration
+            _elaborateTooltipLabels.Clear();
+            _elaborateTooltipBox = null;
+            // End Offbrand - examine elaboration
 
             if (_requestCancelTokenSource != null)
             {

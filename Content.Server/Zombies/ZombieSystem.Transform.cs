@@ -46,6 +46,7 @@ using Content.Shared.NPC.Prototypes;
 using Content.Shared.Roles;
 using Content.Shared.Temperature.Components;
 using Robust.Shared.Utility;
+using Content.Shared._Offbrand.Wounds; // Offbrand
 
 namespace Content.Server.Zombies;
 
@@ -80,6 +81,8 @@ public sealed partial class ZombieSystem
     private static readonly string MindRoleZombie = "MindRoleZombie";
     private static readonly List<ProtoId<AntagPrototype>> BannableZombiePrototypes = ["Zombie"];
     internal static readonly HashSet<HumanoidVisualLayers> AdditionalZombieLayers = [HumanoidVisualLayers.Tail, HumanoidVisualLayers.HeadSide, HumanoidVisualLayers.HeadTop, HumanoidVisualLayers.Snout];
+    private static readonly EntProtoId AddOnWoundableZombified = "AddOnWoundableZombified"; // Offbrand
+    private static readonly EntProtoId AddOnAnyZombified = "AddOnAnyZombified"; // Offbrand
 
     /// <summary>
     /// Handles an entity turning into a zombie when they die or go into crit
@@ -146,6 +149,13 @@ public sealed partial class ZombieSystem
         RemComp<LegsParalyzedComponent>(target);
         RemComp<ComplexInteractionComponent>(target);
         RemComp<SentienceTargetComponent>(target);
+
+        // Begin Offbrand
+        if (RemComp<WoundableBodyComponent>(target))
+        {
+            throw new InvalidOperationException("Just don't use zombies with Offmed.");
+        }
+        // End Offbrand
 
         //funny voice
         var accentType = "zombie";
@@ -251,11 +261,18 @@ public sealed partial class ZombieSystem
         //The zombie gets the assigned damage weaknesses and strengths
         _damageable.SetDamageModifierSetId(target, "Zombie");
 
+        // Begin Offbrand
+        var allProto = _protoManager.Index(AddOnAnyZombified);
+        EntityManager.RemoveComponents(target, allProto.Components);
+        EntityManager.AddComponents(target, allProto.Components);
+        // End Offbrand
+
         //This makes it so the zombie doesn't take bloodloss damage.
         //NOTE: they are supposed to bleed, just not take damage
         _bloodstream.SetBloodLossThreshold(target, 0f);
         //Give them zombie blood
         _bloodstream.ChangeBloodReagents(target, zombiecomp.NewBloodReagents);
+        _bloodstream.FlushChemicals(target, 100); // Offbrand
 
         //This is specifically here to combat insuls, because frying zombies on grilles is funny as shit.
         _inventory.TryUnequip(target, "gloves", true, true);
@@ -281,6 +298,11 @@ public sealed partial class ZombieSystem
 
         _faction.ClearFactions(target, dirty: false);
         _faction.AddFaction(target, ZombieFaction);
+
+        // Begin Offbrand
+        var rejuv = new Content.Shared.Rejuvenate.RejuvenateEvent();
+        RaiseLocalEvent(target, rejuv);
+        // End Offbrand
 
         //gives it the funny "Zombie ___" name.
         _nameMod.RefreshNameModifiers(target);

@@ -1,0 +1,452 @@
+- type: entity
+  abstract: true
+  parent:
+  - OffbrandOrganChild
+  - OffbrandOrganChildInternal
+  id: OffbrandOrganBaseHeart
+  components:
+  - type: DamageableOrgan
+    maxDamage: 100
+    damage: 0
+  - type: OffbrandHeartOrgan
+    compensationCoefficient: 0.7
+    compensationConstant: 1
+    compensationStrainCoefficient: 1.42
+    compensationStrainConstant: -1.42
+    strainDamageThresholds:
+      0.25: [0.2, 0.1]
+      0.5: [0.3, 0.1]
+      0.75: [0.4, 0.1]
+      1: [0.5, 2]
+    stethoscopeDamagedAbove: 20
+    stethoscopeStrainThresholds:
+      0: stethoscope-heart-beating.normal
+      0.25: stethoscope-heart-beating.fast
+      0.75: stethoscope-heart-beating.veryfast
+      1: stethoscope-heart-beating.dangerous
+  - type: OrganDamageOnDamage
+    thresholds:
+    - damageTypes: [Slash, Blunt, Piercing]
+      minimumTotalDamage: 200
+      conversionFactor: 0.6
+    - damageTypes: [Heat, Cold, Caustic, Shock]
+      minimumTotalDamage: 200
+      conversionFactor: 0.6
+  - type: HeartStopOnHighStrain
+    chance: 0.05
+    threshold: 0.75
+
+- type: entity
+  abstract: true
+  parent:
+  - OffbrandOrganChild
+  - OffbrandOrganChildInternal
+  id: OffbrandOrganBaseBrain
+  components:
+  - type: OffbrandBrainOrgan
+    vascularToneCurve:
+      !type:LogisticCurve
+      l: 1.1
+      k: -10
+      x0: 6
+  - type: DamageableOrgan
+    maxDamage: 100
+    damage: 0
+  - type: OxygenatableOrgan
+    maxOxygen: 10
+    oxygen: 10
+  - type: OxygenatableDamageableOrgan
+    oxygenationDamageThresholds:
+      0.10: [1.0, [100, 0.75]]
+      0.30: [0.7, [ 90, 0.75]]
+      0.60: [0.6, [ 60, 0.75]]
+      0.70: [0.4, [ 40, 0.75]]
+      0.85: [0.3, [ 20, 0.75]]
+    oxygenDepletionThresholds:
+      0.30: [0.6, 1]
+    oxygenRegeneration: 1
+    maxPassivelyHealableDamage: 30
+    damageHealing: 1
+    damageStageSize: 10
+    damageStageMaximumHealing: 8    
+  - type: OrganDamageOnDamage
+    thresholds:
+    - damageTypes: [Slash, Blunt, Piercing]
+      minimumTotalDamage: 200
+      conversionFactor: 0.1
+    - damageTypes: [Heat, Cold, Caustic, Shock]
+      minimumTotalDamage: 200
+      conversionFactor: 0.01
+  - type: DamageAlertsOrgan
+    alertThresholds:
+      30: SevereBrainDamage
+      70: CriticalBrainDamage
+      100: BrainDead
+    alertCategory: BrainDamage
+  - type: OxygenAlertsOrgan
+    alert: BrainOxygen
+    alertCategory: BrainOxygen
+
+- type: entity
+  abstract: true
+  parent:
+  - OffbrandOrganChild
+  - OffbrandOrganChildInternal
+  id: OffbrandOrganBaseLungs
+  components:
+  - type: DamageableOrgan
+    maxDamage: 100
+    damage: 0
+  - type: OffbrandLungOrgan
+    asphyxiationDamage: Asphyxiation
+    asphyxiationThreshold: 100
+    stethoscopeDepthDescriptions:
+      0: Normal
+      0.5: Shallow
+    stethoscopeRegularityDescriptions:
+      0: Regular
+      20: Irregular
+    stethoscopeSpeedDescriptions:
+      0: Normal
+      0.25: Fast
+      0.50: Faster
+      0.75: Fastest
+    stethoscopeDescription: stethoscope-lung-breathing
+  - type: OffbrandDamageableOrganSounds
+    descriptions:
+      25: OffbrandLungStruggleSounds
+  - type: DamageOnInhaledAirOrgan
+    heatCoefficient: 0.005
+    heatConstant: -1.375
+    coldCoefficient: -0.01
+    coldConstant: 2
+  - type: DamageAlertsOrgan
+    alertThresholds:
+      15: MinorLungDamage
+      40: SevereLungDamage
+      60: CriticalLungDamage
+    alertCategory: LungDamage
+  - type: PassiveOrganDamage
+    damage: -0.05
+    damageCap: 30
+
+- type: localizedDataset
+  id: OffbrandLungStruggleSounds
+  values:
+    prefix: stethoscope-lung-damaged-sounds-
+    count: 5
+
+- type: entity
+  abstract: true
+  id: OffbrandOrganWoundable
+  components:
+  - type: WoundableOrgan
+  - type: Woundable
+    potentialWounds:
+      Blunt:
+        0: WoundBruise
+      Slash:
+        30: WoundCutMassive
+        20: WoundCutSevere
+        10: WoundCutModerate
+        0: WoundCutSmall
+      Piercing:
+        30: WoundPunctureMassive
+        20: WoundPunctureSevere
+        10: WoundPunctureModerate
+        0: WoundPunctureSmall
+      Heat:
+        30: WoundHeatCarbonized
+        20: WoundHeatSevere
+        10: WoundHeatModerate
+        0: WoundHeatSmall
+      Cold:
+        30: WoundColdPetrified
+        20: WoundColdSevere
+        10: WoundColdModerate
+        0: WoundColdSmall
+      Caustic:
+        30: WoundCausticSloughing
+        20: WoundCausticSevere
+        10: WoundCausticModerate
+        0: WoundCausticSmall
+      Shock:
+        30: WoundShockExploded
+        20: WoundShockSevere
+        10: WoundShockModerate
+        0: WoundShockSmall
+  - type: UniqueWoundOnDamage
+    wounds:
+    - damageTypes: [Slash, Piercing]
+      minimumDamage: 10
+      minimumTotalDamage: 25
+      woundPrototype: WoundArterialBleeding
+      woundDamages:
+        types:
+          Slash: 5
+      damageProbabilityCoefficient: 0.01
+      totalProbabilityCoefficient: 0.01
+      damageProbabilityConstant: 0
+    - damageTypes: [Blunt, Piercing]
+      minimumDamage: 10
+      minimumTotalDamage: 30
+      woundPrototype: WoundFracture
+      woundDamages: {}
+      damageProbabilityCoefficient: 0.01
+      totalProbabilityCoefficient: 0.01
+      damageProbabilityConstant: 0
+    - damageTypes: [Slash, Piercing]
+      minimumDamage: 10
+      minimumTotalDamage: 30
+      woundPrototype: WoundCutTendon
+      woundDamages: {}
+      damageProbabilityCoefficient: 0.01
+      totalProbabilityCoefficient: 0.01
+      damageProbabilityConstant: 0
+
+- type: entity
+  abstract: true
+  parent: OffbrandOrganWoundable
+  id: OffbrandOrganWoundableLarge
+  components:
+  - type: StatusEffectContainer
+  - type: WoundableOrgan
+    weight: 150
+  - type: VisualOrganWounds
+    thresholds: [ 10, 20, 30, 50, 70, 100 ]
+    bandageThresholds: [ 10, 50, 100 ]
+
+- type: entity
+  abstract: true
+  parent: OffbrandOrganWoundable
+  id: OffbrandOrganWoundableMedium
+  components:
+  - type: StatusEffectContainer
+  - type: WoundableOrgan
+    weight: 50
+  - type: VisualOrganWounds
+    thresholds: [ 5, 10, 15, 25, 35, 50 ]
+    bandageThresholds: [ 10, 25, 50 ]
+
+- type: entity
+  abstract: true
+  parent: OffbrandOrganWoundable
+  id: OffbrandOrganWoundableSmall
+  components:
+  - type: StatusEffectContainer
+  - type: WoundableOrgan
+    weight: 25
+  - type: VisualOrganWounds
+    thresholds: [ 3, 6, 9, 15, 21, 30 ]
+    bandageThresholds: [ 3, 15, 30 ]
+
+- type: entity
+  abstract: true
+  id: OffbrandOrganWoundableVisuals
+  components:
+  - type: VisualOrganWounds
+    maskPath: /Textures/_Offbrand/damage_masks.rsi
+    bandagesPath: /Textures/_Offbrand/bandage_overlay.rsi
+    damageGroups:
+    - damageGroup: Brute
+      overlayPath: /Textures/_Offbrand/damage_overlays.rsi
+      color: "#FF0000"
+    - damageGroup: Burn
+      overlayPath: /Textures/_Offbrand/damage_overlays.rsi
+
+- type: entity
+  abstract: true
+  parent:
+  - OffbrandOrganWoundableVisuals
+  - OffbrandOrganParent
+  - OffbrandOrganChild
+  - OffbrandOrganPalpatable
+  id: OffbrandOrganWoundableHead
+
+- type: entity
+  abstract: true
+  parent:
+  - OffbrandOrganWoundableVisuals
+  - OffbrandOrganChild
+  - OffbrandOrganParent
+  - OffbrandOrganPalpatable
+  id: OffbrandOrganWoundableArmLeft
+
+- type: entity
+  abstract: true
+  parent:
+  - OffbrandOrganWoundableVisuals
+  - OffbrandOrganChild
+  - OffbrandOrganPalpatable
+  id: OffbrandOrganWoundableFootLeft
+
+- type: entity
+  abstract: true
+  parent:
+  - OffbrandOrganWoundableVisuals
+  - OffbrandOrganChild
+  - OffbrandOrganPalpatable
+  id: OffbrandOrganWoundableHandLeft
+
+- type: entity
+  abstract: true
+  parent:
+  - OffbrandOrganWoundableVisuals
+  - OffbrandOrganChild
+  - OffbrandOrganParent
+  - OffbrandOrganPalpatable
+  id: OffbrandOrganWoundableLegLeft
+
+- type: entity
+  abstract: true
+  parent:
+  - OffbrandOrganWoundableVisuals
+  - OffbrandOrganChild
+  - OffbrandOrganParent
+  - OffbrandOrganPalpatable
+  id: OffbrandOrganWoundableArmRight
+
+- type: entity
+  abstract: true
+  parent:
+  - OffbrandOrganWoundableVisuals
+  - OffbrandOrganChild
+  - OffbrandOrganPalpatable
+  id: OffbrandOrganWoundableFootRight
+
+- type: entity
+  abstract: true
+  parent:
+  - OffbrandOrganWoundableVisuals
+  - OffbrandOrganChild
+  - OffbrandOrganPalpatable
+  id: OffbrandOrganWoundableHandRight
+
+- type: entity
+  abstract: true
+  parent:
+  - OffbrandOrganWoundableVisuals
+  - OffbrandOrganChild
+  - OffbrandOrganParent
+  - OffbrandOrganPalpatable
+  id: OffbrandOrganWoundableLegRight
+
+- type: entity
+  abstract: true
+  parent:
+  - OffbrandOrganWoundableVisuals
+  - OffbrandOrganParent
+  id: OffbrandOrganWoundableTorso
+
+- type: entity
+  abstract: true
+  id: OffbrandOrganPalpatable
+  components:
+  - type: PalpatableOrgan
+    pulseQualities:
+      0.05: Weakest
+      0.25: Weak
+      0.5: SlightlyWeak
+      0.95: Normal
+    pulseSpeeds:
+      0: palpation-pulse.normal
+      0.25: palpation-pulse.fast
+      0.75: palpation-pulse.veryfast
+      1: palpation-pulse.dangerous
+
+- type: entity
+  abstract: true
+  id: OffbrandOrganParent
+  components:
+  - type: ParentOrgan
+  - type: DetachableOrgan
+    detachedBody: OffbrandDetachedBody
+
+- type: entity
+  abstract: true
+  id: OffbrandOrganChild
+  components:
+  - type: ChildOrgan
+  - type: DetachableOrgan
+    detachedBody: OffbrandDetachedBody
+
+- type: entity
+  abstract: true
+  id: OffbrandOrganChildInternal
+  components:
+  - type: InternalChildOrgan
+
+- type: entity
+  abstract: true
+  parent:
+  - OffbrandOrganChild
+  - OffbrandOrganChildInternal
+  id: OffbrandOrganBaseEyes
+
+- type: entity
+  abstract: true
+  parent:
+  - OffbrandOrganChild
+  - OffbrandOrganChildInternal
+  id: OffbrandOrganBaseTongue
+
+- type: entity
+  abstract: true
+  parent:
+  - OffbrandOrganChild
+  - OffbrandOrganChildInternal
+  id: OffbrandOrganBaseAppendix
+
+- type: entity
+  abstract: true
+  parent:
+  - OffbrandOrganChild
+  - OffbrandOrganChildInternal
+  id: OffbrandOrganBaseEars
+
+- type: entity
+  abstract: true
+  parent:
+  - OffbrandOrganChild
+  - OffbrandOrganChildInternal
+  id: OffbrandOrganBaseStomach
+
+- type: entity
+  abstract: true
+  parent:
+  - OffbrandOrganChild
+  - OffbrandOrganChildInternal
+  id: OffbrandOrganBaseLiver
+
+- type: entity
+  abstract: true
+  parent:
+  - OffbrandOrganChild
+  - OffbrandOrganChildInternal
+  id: OffbrandOrganBaseKidneys
+
+- type: entity
+  id: OffbrandDetachedBody
+  parent:
+  - BaseSpeciesLayers
+  save: false
+  components:
+  - type: Body
+  - type: VisualBody
+  - type: ContainerContainer
+  - type: Appearance
+  - type: HideableHumanoidLayers
+  - type: Item
+  - type: InteractionOutline
+  - type: Clickable
+
+- type: entity
+  id: OffbrandHealthDoll
+  parent:
+  - BaseSpeciesLayers
+  components:
+  - type: Body
+  - type: VisualBody
+  - type: ContainerContainer
+  - type: Appearance
+  - type: HideableHumanoidLayers

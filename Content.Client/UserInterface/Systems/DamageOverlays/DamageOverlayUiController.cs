@@ -12,6 +12,8 @@ using Robust.Client.Player;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
 using Robust.Shared.Player;
+using System.Linq; // Offbrand
+using Content.Shared._Offbrand.Wounds; // Offbrand
 
 namespace Content.Client.UserInterface.Systems.DamageOverlays;
 
@@ -24,6 +26,9 @@ public sealed partial class DamageOverlayUiController : UIController
     [UISystemDependency] private readonly MobThresholdSystem _mobThresholdSystem = default!;
     [UISystemDependency] private readonly StatusEffectsSystem _statusEffects = default!;
     [UISystemDependency] private readonly DamageableSystem _damageable = default!;
+    [UISystemDependency] private readonly PerfusionSystem _perfusion = default!; // Offbrand
+    [UISystemDependency] private readonly PainSystem _pain = default!; // Offbrand
+
     private Overlays.DamageOverlay _overlay = default!;
 
     public override void Initialize()
@@ -33,6 +38,7 @@ public sealed partial class DamageOverlayUiController : UIController
         SubscribeLocalEvent<LocalPlayerDetachedEvent>(OnPlayerDetached);
         SubscribeLocalEvent<MobStateChangedEvent>(OnMobStateChanged);
         SubscribeLocalEvent<MobThresholdChecked>(OnThresholdCheck);
+        SubscribeLocalEvent<PotentiallyUpdateDamageOverlayEvent>(OnPotentiallyUpdateDamageOverlay); // Offbrand
     }
 
     private void OnPlayerAttach(LocalPlayerAttachedEvent args)
@@ -74,11 +80,61 @@ public sealed partial class DamageOverlayUiController : UIController
         _overlay.CritLevel = 0f;
         _overlay.PainLevel = 0f;
         _overlay.OxygenLevel = 0f;
+        _overlay.AlwaysRenderAll = false; // Offbrand
     }
 
     //TODO: Jezi: adjust oxygen and hp overlays to use appropriate systems once bodysim is implemented
     private void UpdateOverlays(EntityUid entity, MobStateComponent? mobState, DamageableComponent? damageable = null, MobThresholdsComponent? thresholds = null, InjurableComponent? injurable = null)
     {
+// Begin Offbrand Changes
+        TryUpdateSimpleOverlays(entity, mobState, damageable, thresholds, injurable);
+        TryUpdateWoundableOverlays(entity);
+    }
+
+    private void OnPotentiallyUpdateDamageOverlay(ref PotentiallyUpdateDamageOverlayEvent args)
+    {
+        if (args.Target != _playerManager.LocalEntity)
+            return;
+
+        UpdateOverlays(args.Target, null);
+    }
+
+    private void TryUpdateWoundableOverlays(EntityUid entity)
+    {
+        if (!EntityManager.TryGetComponent<PainComponent>(entity, out var pain) ||
+            !EntityManager.TryGetComponent<ShockThresholdsComponent>(entity, out var shockThresholds) ||
+            !EntityManager.TryGetComponent<BrainDamageThresholdsComponent>(entity, out var brainThresholds) ||
+            !EntityManager.TryGetComponent<PerfusionComponent>(entity, out var perfusion))
+            return;
+
+        _overlay.AlwaysRenderAll = true;
+        var maxBrain = brainThresholds.DamageStateThresholds.Keys.Max();
+        var maxShock = shockThresholds.Thresholds.Keys.Max();
+
+        switch (brainThresholds.CurrentState)
+        {
+            case MobState.Alive or MobState.Critical:
+            {
+                _overlay.CritLevel = FixedPoint2.Clamp(brainThresholds.DisplayDamage / maxBrain, 0, 1).Float();
+                _overlay.PainLevel = FixedPoint2.Clamp(_pain.GetShock((entity, pain)) / maxShock, 0, 1).Float();
+                _overlay.OxygenLevel = FixedPoint2.Clamp(1 - _perfusion.Spo2((entity, perfusion)), 0, 1).Float();
+                _overlay.DeadLevel = 0;
+                break;
+            }
+            case MobState.Dead:
+            {
+                _overlay.CritLevel = 0;
+                _overlay.PainLevel = 0;
+                _overlay.OxygenLevel = 0;
+                break;
+            }
+        }
+
+    }
+
+    private void TryUpdateSimpleOverlays(EntityUid entity, MobStateComponent? mobState, DamageableComponent? damageable = null, MobThresholdsComponent? thresholds = null, InjurableComponent? injurable = null)
+    {
+// End Offbrand Changes
         if (mobState == null && !EntityManager.TryGetComponent(entity, out mobState) ||
             thresholds == null && !EntityManager.TryGetComponent(entity, out thresholds) ||
             damageable == null && !EntityManager.TryGetComponent(entity, out  damageable) ||

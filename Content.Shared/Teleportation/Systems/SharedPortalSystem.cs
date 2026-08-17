@@ -1,4 +1,6 @@
 ﻿using System.Linq;
+using Content.Shared._Offbrand.IV; // Offbrand - IV ripping
+using Content.Shared.Ghost;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Popups;
@@ -36,6 +38,7 @@ public abstract partial class SharedPortalSystem : EntitySystem
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private TagSystem _tag = default!;
+    [Dependency] private IVSystem _iv = default!; // Offbrand - IV ripping
 
     private const string PortalFixture = "portalFixture";
     private const string ProjectileFixture = "projectile";
@@ -123,6 +126,8 @@ public abstract partial class SharedPortalSystem : EntitySystem
         {
             return;
         }
+
+        _iv.RipOutIV(subject); // Offbrand - IV ripping
 
         if (TryComp<LinkedEntityComponent>(ent, out var link))
         {
