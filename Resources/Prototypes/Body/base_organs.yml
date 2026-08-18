@@ -443,6 +443,7 @@
   - type: Metabolizer
     maxReagents: 2
     stages: [ Bloodstream ]
+  - type: HeartDefibrillatable
 
 - type: entity
   parent:
