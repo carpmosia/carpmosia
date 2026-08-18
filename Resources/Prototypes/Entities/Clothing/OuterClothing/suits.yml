@@ -25,6 +25,7 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
+    - MonkeyWearable # Carpmosia-edit - Ancestor suits
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
   - type: HideLayerClothing
@@ -144,6 +145,11 @@
   - type: HideLayerClothing
     slots:
     - Tail
+  # Carpmosia-start - Ancestor suits
+  - type: Tag
+    tags:
+    - MonkeyWearable
+  # Carpmosia-end - Ancestor suits
 
 - type: entity
   parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseToggleClothing, BaseHighlyIllegalContraband]
