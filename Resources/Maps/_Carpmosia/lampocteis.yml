@@ -39877,8 +39877,8 @@ entities:
       pos: -41.5,-17.5
     - type: GasMixer
       targetPressure: 4500
-      inletTwoConcentration: 0.029999971
-      inletOneConcentration: 0.97
+      inletTwoConcentration: 0.97
+      inletOneConcentration: 0.03
     - type: AtmosPipeColor
       color: '#FF8904FF'
 - proto: GasMixerDistro
@@ -49651,8 +49651,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -15.5,-16.5
-    - type: GasThermoMachine
-      targetTemperature: 273.15
 - proto: GasValveColdLoop
   entities:
   - uid: 7435
