@@ -32,20 +32,6 @@ public sealed partial class MapRulesTest : GameTest
 
     private static readonly ResPath[] TestScope = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", true).Where(x => !Exceptions.Any(y => x.ToString().StartsWith(y)))];
 
-    private static readonly EntProtoId LVCable = "CableApcExtension";
-    private static readonly EntProtoId MVCable = "CableMV";
-    private static readonly EntProtoId HVCable = "CableHV";
-
-    private static readonly EntProtoId[] WallmountWhitelist = [
-        "RandomPosterAny",
-        "RandomPosterContraband",
-        "RandomPosterLegit",
-        "RandomPainting",
-        "PlaqueAtmos",
-    ];
-
-    private static readonly ResPath[] TestScope = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", true).Where(x => !Exceptions.Any(y => x.ToString().StartsWith(y)))];
-
     // Skip station specific tests on these maps
     private static readonly string[] NonStations = [
        "/Maps/_Carpmosia/Terminals/",
