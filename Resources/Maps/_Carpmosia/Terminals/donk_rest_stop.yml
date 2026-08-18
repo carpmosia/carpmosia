@@ -4,7 +4,7 @@ meta:
   engineVersion: 283.1.3
   forkId: carpmosia
   forkVersion: ""
-  time: 08/12/2026 22:57:00
+  time: 08/18/2026 10:50:57
   entityCount: 2075
 maps: []
 grids:
@@ -507,6 +507,8 @@ entities:
   entities:
   - uid: 3
     components:
+    - type: MetaData
+      name: air alarm (Cryosleep)
     - type: Transform
       parent: 1
       rot: 1.5707963267948966 rad
@@ -516,8 +518,14 @@ entities:
       - 1338
       - 1310
       - 808
+    - type: Label
+      currentLabel: Cryosleep
+    - type: NameModifier
+      baseName: air alarm
   - uid: 4
     components:
+    - type: MetaData
+      name: air alarm (Red Restroom)
     - type: Transform
       parent: 1
       rot: -1.5707963267948966 rad
@@ -527,8 +535,14 @@ entities:
       - 1312
       - 1341
       - 837
+    - type: Label
+      currentLabel: Red Restroom
+    - type: NameModifier
+      baseName: air alarm
   - uid: 5
     components:
+    - type: MetaData
+      name: air alarm (Blue Restroom)
     - type: Transform
       parent: 1
       rot: 3.141592653589793 rad
@@ -538,8 +552,14 @@ entities:
       - 1340
       - 1313
       - 836
+    - type: Label
+      currentLabel: Blue Restroom
+    - type: NameModifier
+      baseName: air alarm
   - uid: 6
     components:
+    - type: MetaData
+      name: air alarm (Security)
     - type: Transform
       parent: 1
       rot: -1.5707963267948966 rad
@@ -551,8 +571,14 @@ entities:
       - 1356
       - 1329
       - 1330
+    - type: Label
+      currentLabel: Security
+    - type: NameModifier
+      baseName: air alarm
   - uid: 7
     components:
+    - type: MetaData
+      name: air alarm (Main Hall)
     - type: Transform
       parent: 1
       rot: 1.5707963267948966 rad
@@ -589,8 +615,14 @@ entities:
       - 797
       - 798
       - 84
+    - type: Label
+      currentLabel: Main Hall
+    - type: NameModifier
+      baseName: air alarm
   - uid: 8
     components:
+    - type: MetaData
+      name: air alarm (Kitchen)
     - type: Transform
       parent: 1
       rot: 3.141592653589793 rad
@@ -611,8 +643,14 @@ entities:
       - 1314
       - 1343
       - 1315
+    - type: Label
+      currentLabel: Kitchen
+    - type: NameModifier
+      baseName: air alarm
   - uid: 9
     components:
+    - type: MetaData
+      name: air alarm (East Hall)
     - type: Transform
       parent: 1
       rot: 3.141592653589793 rad
@@ -630,8 +668,14 @@ entities:
       - 838
       - 840
       - 841
+    - type: Label
+      currentLabel: East Hall
+    - type: NameModifier
+      baseName: air alarm
   - uid: 10
     components:
+    - type: MetaData
+      name: air alarm (West Hall)
     - type: Transform
       parent: 1
       pos: -18.5,-21.5
@@ -650,8 +694,14 @@ entities:
       - 819
       - 1346
       - 1319
+    - type: Label
+      currentLabel: West Hall
+    - type: NameModifier
+      baseName: air alarm
   - uid: 11
     components:
+    - type: MetaData
+      name: air alarm (Engineering)
     - type: Transform
       parent: 1
       rot: -1.5707963267948966 rad
@@ -662,8 +712,14 @@ entities:
       - 1326
       - 839
       - 843
+    - type: Label
+      currentLabel: Engineering
+    - type: NameModifier
+      baseName: air alarm
   - uid: 12
     components:
+    - type: MetaData
+      name: air alarm (West Docking Arm)
     - type: Transform
       parent: 1
       rot: 1.5707963267948966 rad
@@ -685,8 +741,14 @@ entities:
       - 817
       - 818
       - 819
+    - type: Label
+      currentLabel: West Docking Arm
+    - type: NameModifier
+      baseName: air alarm
   - uid: 13
     components:
+    - type: MetaData
+      name: air alarm (East Docking Arm)
     - type: Transform
       parent: 1
       rot: -1.5707963267948966 rad
@@ -708,8 +770,14 @@ entities:
       - 1322
       - 1350
       - 1323
+    - type: Label
+      currentLabel: East Docking Arm
+    - type: NameModifier
+      baseName: air alarm
   - uid: 14
     components:
+    - type: MetaData
+      name: air alarm (Shop)
     - type: Transform
       parent: 1
       rot: -1.5707963267948966 rad
@@ -722,8 +790,14 @@ entities:
       - 1328
       - 1354
       - 1327
+    - type: Label
+      currentLabel: Shop
+    - type: NameModifier
+      baseName: air alarm
   - uid: 15
     components:
+    - type: MetaData
+      name: air alarm (Bar)
     - type: Transform
       parent: 1
       pos: -4.5,-14.5
@@ -747,8 +821,14 @@ entities:
       - 815
       - 1344
       - 1316
+    - type: Label
+      currentLabel: Bar
+    - type: NameModifier
+      baseName: air alarm
   - uid: 16
     components:
+    - type: MetaData
+      name: air alarm (Medical)
     - type: Transform
       parent: 1
       rot: 1.5707963267948966 rad
@@ -759,8 +839,14 @@ entities:
       - 1311
       - 844
       - 842
+    - type: Label
+      currentLabel: Medical
+    - type: NameModifier
+      baseName: air alarm
   - uid: 17
     components:
+    - type: MetaData
+      name: air alarm (Janitor)
     - type: Transform
       parent: 1
       rot: 3.141592653589793 rad
@@ -770,8 +856,14 @@ entities:
       - 1359
       - 1331
       - 845
+    - type: Label
+      currentLabel: Janitor
+    - type: NameModifier
+      baseName: air alarm
   - uid: 18
     components:
+    - type: MetaData
+      name: air alarm (Dock A)
     - type: Transform
       parent: 1
       rot: 3.141592653589793 rad
@@ -783,8 +875,14 @@ entities:
       - 828
       - 1362
       - 1334
+    - type: Label
+      currentLabel: Dock A
+    - type: NameModifier
+      baseName: air alarm
   - uid: 19
     components:
+    - type: MetaData
+      name: air alarm (Dock B)
     - type: Transform
       parent: 1
       rot: 3.141592653589793 rad
@@ -796,8 +894,14 @@ entities:
       - 834
       - 833
       - 832
+    - type: Label
+      currentLabel: Dock B
+    - type: NameModifier
+      baseName: air alarm
   - uid: 20
     components:
+    - type: MetaData
+      name: air alarm (Dock D)
     - type: Transform
       parent: 1
       pos: -22.5,-32.5
@@ -808,8 +912,14 @@ entities:
       - 825
       - 824
       - 823
+    - type: Label
+      currentLabel: Dock D
+    - type: NameModifier
+      baseName: air alarm
   - uid: 21
     components:
+    - type: MetaData
+      name: air alarm (Dock C)
     - type: Transform
       parent: 1
       pos: 9.5,-32.5
@@ -820,10 +930,16 @@ entities:
       - 829
       - 830
       - 831
+    - type: Label
+      currentLabel: Dock C
+    - type: NameModifier
+      baseName: air alarm
 - proto: AirAlarmFreezer
   entities:
   - uid: 22
     components:
+    - type: MetaData
+      name: air alarm (Freezer)
     - type: Transform
       parent: 1
       rot: 1.5707963267948966 rad
@@ -832,10 +948,16 @@ entities:
       devices:
       - 1336
       - 1364
+    - type: Label
+      currentLabel: Freezer
+    - type: NameModifier
+      baseName: air alarm
 - proto: AirAlarmNitrogen
   entities:
   - uid: 23
     components:
+    - type: MetaData
+      name: air alarm (Vox Box)
     - type: Transform
       parent: 1
       rot: -1.5707963267948966 rad
@@ -845,6 +967,10 @@ entities:
       - 1365
       - 1337
       - 87
+    - type: Label
+      currentLabel: Vox Box
+    - type: NameModifier
+      baseName: air alarm
 - proto: AirCanister
   entities:
   - uid: 24
@@ -1145,7 +1271,7 @@ entities:
       pos: 0.5,-23.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -39286.56
+      secondsUntilStateChange: -39572.633
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -9737,6 +9863,8 @@ entities:
   entities:
   - uid: 1444
     components:
+    - type: MetaData
+      name: lockable button (Shutters)
     - type: Transform
       parent: 1
       rot: 3.141592653589793 rad
@@ -9755,6 +9883,10 @@ entities:
         1640:
         - - Pressed
           - Toggle
+    - type: Label
+      currentLabel: Shutters
+    - type: NameModifier
+      baseName: lockable button
 - proto: LogicGateOr
   entities:
   - uid: 1445
@@ -10988,9 +11120,15 @@ entities:
       pos: -26.5,-22.5
   - uid: 1615
     components:
+    - type: MetaData
+      name: reinforced window (Shutters)
     - type: Transform
       parent: 1
       pos: 3.5,-25.5
+    - type: Label
+      currentLabel: Shutters
+    - type: NameModifier
+      baseName: reinforced window
   - uid: 1616
     components:
     - type: Transform

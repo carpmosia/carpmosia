@@ -4,13 +4,13 @@ using System.IO;
 using System.Linq;
 using Content.IntegrationTests.Fixtures.Attributes;
 using Content.IntegrationTests.Fixtures;
+using Content.IntegrationTests.Utility;
 using Robust.Shared.ContentPack;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Maths;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
-using Content.IntegrationTests.Utility;
 
 namespace Content.IntegrationTests.Tests;
 
@@ -63,11 +63,11 @@ public sealed partial class MapRulesTest : GameTest
             return;
 
         List<string> errors = [
-        //    ..TestNonWallmountsUnderWalls(ents),
-        //    ..TestApcMissingConnections(ents),
-        //    ..TestPowerNetworkLabels(ents),
-        //    ..TestAnchorableDuplicates(ents),
-        //    ..TestUnlinkedAtmosDevices(ents),
+          ..TestNonWallmountsUnderWalls(ents),
+          ..TestApcMissingConnections(ents),
+          ..TestMissingLabels(ents),
+          ..TestAnchorableDuplicates(ents),
+          ..TestUnlinkedAtmosDevices(ents),
         ];
 
         // Station specific tests

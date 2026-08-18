@@ -1,6 +1,8 @@
 #nullable enable
 using System.Collections.Generic;
 using Content.IntegrationTests.Fixtures;
+using Content.Server.Atmos.Monitor.Components;
+using Content.Server.DeviceLinking.Components;
 using Content.Server.Power.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -12,9 +14,13 @@ namespace Content.IntegrationTests.Tests;
 public sealed partial class MapRulesTest : GameTest
 {
 
-    private List<string> TestPowerNetworkLabels(YamlSequenceNode entities)
+    private List<string> TestMissingLabels(YamlSequenceNode entities)
     {
-        var batteries = GetPrototypeIds<PowerNetworkBatteryComponent>();
+        List<EntProtoId> targets = [
+            ..GetPrototypeIds<PowerNetworkBatteryComponent>(),
+            ..GetPrototypeIds<AirAlarmComponent>(),
+            ..GetPrototypeIds<SignalSwitchComponent>()
+        ];
 
         var errors = new List<string>();
 
@@ -23,7 +29,7 @@ public sealed partial class MapRulesTest : GameTest
             EntProtoId protoId = proto[PROTO].AsString();
 
             // Skip unrelated entities
-            if (!batteries.Contains(protoId))
+            if (!targets.Contains(protoId))
                 continue;
 
             foreach (var ent in (YamlSequenceNode)proto[ENTITIES])
