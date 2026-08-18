@@ -105,7 +105,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: map 100
+      name: Oasis
     - type: Transform
     - type: Map
       mapPaused: True
@@ -116,10 +116,8 @@ entities:
     components:
     - type: MetaData
       name: Oasis
-      desc: Oasis
     - type: Transform
       parent: 1
-      pos: -0.5104167,-0.5
     - type: MapGrid
       chunks:
         0,0:
