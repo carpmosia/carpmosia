@@ -4,8 +4,8 @@ meta:
   engineVersion: 283.1.3
   forkId: carpmosia
   forkVersion: ""
-  time: 08/12/2026 15:20:10
-  entityCount: 527
+  time: 08/18/2026 10:38:02
+  entityCount: 528
 maps: []
 grids:
 - 1
@@ -444,6 +444,8 @@ entities:
   entities:
   - uid: 469
     components:
+    - type: MetaData
+      name: air alarm (Centcomm)
     - type: Transform
       parent: 1
       rot: 3.141592653589793 rad
@@ -456,6 +458,10 @@ entities:
       - 334
       - 335
       - 338
+    - type: Label
+      currentLabel: Centcomm
+    - type: NameModifier
+      baseName: air alarm
 - proto: AirlockExternalGlassShuttleLocked
   entities:
   - uid: 2
@@ -3154,7 +3160,7 @@ entities:
   - uid: 465
     components:
     - type: MetaData
-      name: Panic Switch
+      name: signal switch (Shutters)
     - type: Transform
       parent: 1
       pos: 1.5,2.5
@@ -3260,6 +3266,10 @@ entities:
           - Open
         - - Off
           - Close
+    - type: Label
+      currentLabel: Shutters
+    - type: NameModifier
+      baseName: signal switch
 - proto: SignPlaque
   entities:
   - uid: 466
