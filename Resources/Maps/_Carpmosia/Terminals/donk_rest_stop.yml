@@ -4,7 +4,7 @@ meta:
   engineVersion: 283.1.3
   forkId: carpmosia
   forkVersion: ""
-  time: 08/18/2026 10:36:31
+  time: 08/18/2026 10:50:57
   entityCount: 2075
 maps: []
 grids:
@@ -1271,7 +1271,7 @@ entities:
       pos: 0.5,-23.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -39524.11
+      secondsUntilStateChange: -39572.633
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -9863,6 +9863,8 @@ entities:
   entities:
   - uid: 1444
     components:
+    - type: MetaData
+      name: lockable button (Shutters)
     - type: Transform
       parent: 1
       rot: 3.141592653589793 rad
@@ -9881,6 +9883,10 @@ entities:
         1640:
         - - Pressed
           - Toggle
+    - type: Label
+      currentLabel: Shutters
+    - type: NameModifier
+      baseName: lockable button
 - proto: LogicGateOr
   entities:
   - uid: 1445
@@ -11114,9 +11120,15 @@ entities:
       pos: -26.5,-22.5
   - uid: 1615
     components:
+    - type: MetaData
+      name: reinforced window (Shutters)
     - type: Transform
       parent: 1
       pos: 3.5,-25.5
+    - type: Label
+      currentLabel: Shutters
+    - type: NameModifier
+      baseName: reinforced window
   - uid: 1616
     components:
     - type: Transform
