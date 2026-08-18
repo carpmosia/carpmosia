@@ -17,7 +17,7 @@ namespace Content.IntegrationTests.Tests;
 [TestFixture]
 public sealed partial class MapRulesTest : GameTest
 {
-    private static readonly string[] ExclusionList = [
+    private static readonly string[] Exceptions = [
        "/Maps/_Carpmosia/Legacy/", // We ain't testing legacy ever
        // Maps pending fixes
        "/Maps/_Carpmosia/bagel.yml",
@@ -38,7 +38,7 @@ public sealed partial class MapRulesTest : GameTest
        "/Maps/_Carpmosia/Shuttles/",
     ];
 
-    private static readonly ResPath[] TestScope = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", true).Where(x => !ExclusionList.Any(y => x.ToString().StartsWith(y)))];
+    private static readonly ResPath[] TestScope = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", true).Where(x => !Exceptions.Any(y => x.ToString().StartsWith(y)))];
 
     // Skip station specific tests on these maps
     private static readonly string[] NonStations = [
