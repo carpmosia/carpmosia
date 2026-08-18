@@ -1,7 +1,7 @@
 - type: vendingMachineInventory
   id: NanoMedInventory
   startingInventory:
-    HandheldHealthAnalyzer: 1
+    HandheldVitalsMonitor: 1
     Gauze: 3
     Brutepack: 3
     Ointment: 3
@@ -16,7 +16,7 @@
 - type: vendingMachineInventory
   id: NanoMedCivilianWallInventory
   startingInventory:
-    HandheldHealthAnalyzer: 1
+    HandheldVitalsMonitor: 1
     Tourniquet: 3
     Brutepack: 3
     AloeCream: 3 # Currently just a reskin of Ointment but it's something
@@ -33,7 +33,7 @@
   id: NanoMedPlusInventory
   startingInventory:
     # Shared Essential
-    HandheldHealthAnalyzer: 3
+    HandheldVitalsMonitor: 3
     JetInjector: 3
     ClothingBeltMedical: 2 # Carpmosia-edit - Dingus bags
     # Paramed Essential Gear
@@ -71,7 +71,7 @@
 - type: vendingMachineInventory
   id: NanoMedCivilianInventory
   startingInventory:
-    HandheldHealthAnalyzer: 3
+    HandheldVitalsMonitor: 3
     Tourniquet: 5
     Brutepack: 5
     AloeCream: 5

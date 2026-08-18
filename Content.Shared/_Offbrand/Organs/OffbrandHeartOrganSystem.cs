@@ -6,6 +6,7 @@ using Content.Shared.Medical;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Rejuvenate;
 using Content.Shared.StatusEffectNew;
+using Content.Shared.Popups;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
@@ -16,6 +17,7 @@ public sealed partial class OffbrandHeartOrganSystem : EntitySystem
     [Dependency] private DamageableOrganSystem _damageable = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private StatusEffectsSystem _statusEffects = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {
@@ -163,12 +165,13 @@ public sealed partial class OffbrandHeartOrganSystem : EntitySystem
 
     public void TryRestartHeart(Entity<OffbrandHeartOrganComponent?, DamageableOrganComponent?> ent)
     {
+        _popup.PopupEntity("Try Restart Heart", ent.Owner);
         if (!Resolve(ent, ref ent.Comp1, ref ent.Comp2, false))
             return;
 
         if (ent.Comp2.MaxDamage <= ent.Comp2.Damage || ent.Comp1.Beating)
             return;
-
+        _popup.PopupEntity("Start Heart", ent.Owner);
         StartHeart((ent, ent.Comp1));
     }
 

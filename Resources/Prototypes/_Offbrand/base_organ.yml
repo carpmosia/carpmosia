@@ -66,9 +66,9 @@
       0.30: [0.6, 1]
     oxygenRegeneration: 1
     maxPassivelyHealableDamage: 30
-    damageHealing: 1
+    damageHealing: -3
     damageStageSize: 10
-    damageStageMaximumHealing: 8    
+    damageStageMaximumHealing: 8
   - type: OrganDamageOnDamage
     thresholds:
     - damageTypes: [Slash, Blunt, Piercing]

@@ -380,7 +380,7 @@
       - statusEffect: StatusEffectEpinephrine
       effects:
       - !type:StartHeart
-        probability: 0.03
+        probability: 0.25
       # End Offbrand
       - !type:AdjustReagent
         conditions:

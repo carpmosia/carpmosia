@@ -46,7 +46,7 @@
     - id: ClothingEyesHudMedical
     - id: ClothingBeltMedicalFilled
     - id: JetInjector
-    - id: HandheldHealthAnalyzer
+    - id: HandheldVitalsMonitor
     - id: ChemistryBottleLaughter # Widely recognized as the best medicine :o)
       prob: 0.01
     - id: PlushieLizardJobMedicaldoctor
@@ -121,7 +121,7 @@
     - id: ClothingOuterHardsuitVoidParamed
     - id: ClothingBeltMedicalEMTFilled
     - id: JetInjector
-    - id: HandheldHealthAnalyzer
+    - id: HandheldVitalsMonitor
     - id: BoxBodyBag
     - !type:GroupSelector
       children:
