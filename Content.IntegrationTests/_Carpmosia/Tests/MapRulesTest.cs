@@ -30,7 +30,6 @@ public sealed partial class MapRulesTest : GameTest
        "/Maps/_Carpmosia/feint.yml",
        "/Maps/_Carpmosia/lampocteis.yml",
        "/Maps/_Carpmosia/oasis.yml",
-       "/Maps/_Carpmosia/packed.yml",
        "/Maps/_Carpmosia/saltern.yml",
        "/Maps/_Carpmosia/sparks.yml",
        // Shuttles gonna be fixed last
