@@ -1,11 +1,11 @@
 #nullable enable
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using Content.IntegrationTests.Fixtures.Attributes;
 using Content.IntegrationTests.Fixtures;
+using Content.IntegrationTests.Utility;
 using Content.Server.Atmos.Monitor.Components;
+using Content.Server.DeviceLinking.Components;
 using Content.Server.Power.Components;
+using Content.Shared.Atmos.Components;
 using Content.Shared.Construction.Components;
 using Content.Shared.Light.Components;
 using Content.Shared.Wall;
@@ -14,37 +14,30 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.Maths;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using YamlDotNet.RepresentationModel;
-using Content.Shared.Atmos.Components;
-using Content.Server.DeviceLinking.Components;
 
 namespace Content.IntegrationTests.Tests;
 
 [TestFixture]
 public sealed partial class MapRulesTest : GameTest
 {
-    // Temporary override until most of the maps are fixed
-    private static readonly ResPath[] AllMapFiles = [
-        new("/Maps/_Carpmosia/Terminals/donk_rest_stop.yml"),
-        new("/Maps/_Carpmosia/amber.yml"),
-        // new("/Maps/_Carpmosia/bagel.yml"),
-        // new("/Maps/_Carpmosia/box.yml"),
-        new("/Maps/_Carpmosia/centcomm.yml"),
-        // new("/Maps/_Carpmosia/elkridge.yml"),
-        // new("/Maps/_Carpmosia/exo.yml"),
-        // new("/Maps/_Carpmosia/feint.yml"),
-        // new("/Maps/_Carpmosia/fland.yml"),
-        // new("/Maps/_Carpmosia/lampocteis.yml"),
-        // new("/Maps/_Carpmosia/marathon.yml"),
-        // new("/Maps/_Carpmosia/oasis.yml"),
-        // new("/Maps/_Carpmosia/packed.yml"),
-        // new("/Maps/_Carpmosia/plasma.yml"),
-        // new("/Maps/_Carpmosia/saltern.yml"),
-        // new("/Maps/_Carpmosia/snowball.yml"),
-        // new("/Maps/_Carpmosia/sparks.yml"),
+    private static readonly string[] Exceptions = [
+       "/Maps/_Carpmosia/Legacy/", // We ain't testing legacy ever
+       // Maps pending fixes
+       "/Maps/_Carpmosia/feint.yml",
+       "/Maps/_Carpmosia/lampocteis.yml",
+       "/Maps/_Carpmosia/oasis.yml",
+       "/Maps/_Carpmosia/packed.yml",
+       "/Maps/_Carpmosia/saltern.yml",
+       "/Maps/_Carpmosia/sparks.yml",
+       // Shuttles gonna be fixed last
+       "/Maps/_Carpmosia/Shuttles/",
     ];
-    //private static readonly ResPath[] AllMapFiles = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", true).Where(x => !x.ToString().StartsWith("/Maps/_Carpmosia/Legacy/"))];
-    //private static readonly ResPath[] StationMaps = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", false).Where(x => !x.ToString().StartsWith("/Maps/_Carpmosia/centcomm.yml"))];
+
+    private static readonly ResPath[] TestScope = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", true).Where(x => !Exceptions.Any(y => x.ToString().StartsWith(y)))];
 
     private static readonly EntProtoId LVCable = "CableApcExtension";
     private static readonly EntProtoId MVCable = "CableMV";
@@ -68,7 +61,7 @@ public sealed partial class MapRulesTest : GameTest
     [SidedDependency(Side.Server)] private readonly IResourceManager _resMan = null!;
 
     [Test]
-    [TestCaseSource(nameof(AllMapFiles))]
+    [TestCaseSource(nameof(TestScope))]
     public void TestMappingGuidelines(ResPath map)
     {
         if (LoadMapYaml(map, _resMan) is not { } root)
