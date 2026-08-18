@@ -21,7 +21,7 @@ using Content.Server.DeviceLinking.Components;
 namespace Content.IntegrationTests.Tests;
 
 [TestFixture]
-public sealed partial class MappingGuidelinesTest : GameTest
+public sealed partial class MapRulesTest : GameTest
 {
     // Temporary override until most of the maps are fixed
     private static readonly ResPath[] AllMapFiles = [
