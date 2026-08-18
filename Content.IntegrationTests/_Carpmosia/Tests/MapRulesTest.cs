@@ -1,7 +1,4 @@
 #nullable enable
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using Content.IntegrationTests.Fixtures.Attributes;
 using Content.IntegrationTests.Fixtures;
 using Content.IntegrationTests.Utility;
@@ -10,6 +7,9 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.Maths;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using YamlDotNet.RepresentationModel;
 
 namespace Content.IntegrationTests.Tests;
@@ -20,22 +20,28 @@ public sealed partial class MapRulesTest : GameTest
     private static readonly string[] Exceptions = [
        "/Maps/_Carpmosia/Legacy/", // We ain't testing legacy ever
        // Maps pending fixes
-       "/Maps/_Carpmosia/bagel.yml",
-       "/Maps/_Carpmosia/box.yml",
-       "/Maps/_Carpmosia/elkridge.yml",
-       "/Maps/_Carpmosia/exo.yml",
        "/Maps/_Carpmosia/feint.yml",
-       "/Maps/_Carpmosia/fland.yml",
        "/Maps/_Carpmosia/lampocteis.yml",
-       "/Maps/_Carpmosia/marathon.yml",
        "/Maps/_Carpmosia/oasis.yml",
        "/Maps/_Carpmosia/packed.yml",
-       "/Maps/_Carpmosia/plasma.yml",
        "/Maps/_Carpmosia/saltern.yml",
-       "/Maps/_Carpmosia/snowball.yml",
        "/Maps/_Carpmosia/sparks.yml",
        // Shuttles gonna be fixed last
        "/Maps/_Carpmosia/Shuttles/",
+    ];
+
+    private static readonly ResPath[] TestScope = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", true).Where(x => !Exceptions.Any(y => x.ToString().StartsWith(y)))];
+
+    private static readonly EntProtoId LVCable = "CableApcExtension";
+    private static readonly EntProtoId MVCable = "CableMV";
+    private static readonly EntProtoId HVCable = "CableHV";
+
+    private static readonly EntProtoId[] WallmountWhitelist = [
+        "RandomPosterAny",
+        "RandomPosterContraband",
+        "RandomPosterLegit",
+        "RandomPainting",
+        "PlaqueAtmos",
     ];
 
     private static readonly ResPath[] TestScope = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", true).Where(x => !Exceptions.Any(y => x.ToString().StartsWith(y)))];
