@@ -263,7 +263,7 @@ namespace Content.Server.Voting.Managers
 
         private void CreateMapVote(ICommonSession? initiator)
         {
-            var maps = _gameMapManager.CurrentlyEligibleMaps().ToDictionary(map => map.ID, map => map); // Carpmosia-edit - Better map vote
+            var maps = _gameMapManager.CurrentlyEligibleMaps().Take(3).ToDictionary(map => map.ID, map => map); // Carpmosia-edit - Better map vote
 
             var alone = _playerManager.PlayerCount == 1 && initiator != null;
             var options = new VoteOptions
