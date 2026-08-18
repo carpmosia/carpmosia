@@ -16,6 +16,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
 using Content.Shared.Atmos.Components;
+using Content.Server.DeviceLinking.Components;
 
 namespace Content.IntegrationTests.Tests;
 
@@ -79,7 +80,7 @@ public sealed partial class MappingGuidelinesTest : GameTest
         List<string> errors = [
             ..TestNonWallmountEntitiesUnderWalls(ents),
             ..TestApcMissingConnections(ents),
-            ..TestPowerNetworkLabels(ents),
+            ..TestMissingLabels(ents),
             ..TestAnchorableDuplicates(ents),
             ..TestUnlinkedAtmosDevices(ents),
         ];
@@ -173,9 +174,13 @@ public sealed partial class MappingGuidelinesTest : GameTest
         return errors;
     }
 
-    private List<string> TestPowerNetworkLabels(YamlSequenceNode entities)
+    private List<string> TestMissingLabels(YamlSequenceNode entities)
     {
-        var batteries = GetPrototypeIds<PowerNetworkBatteryComponent>();
+        List<EntProtoId> targets = [
+            ..GetPrototypeIds<PowerNetworkBatteryComponent>(),
+            ..GetPrototypeIds<AirAlarmComponent>(),
+            ..GetPrototypeIds<SignalSwitchComponent>()
+        ];
 
         var errors = new List<string>();
 
@@ -184,7 +189,7 @@ public sealed partial class MappingGuidelinesTest : GameTest
             EntProtoId protoId = proto["proto"].AsString();
 
             // Skip unrelated entities
-            if (!batteries.Contains(protoId))
+            if (!targets.Contains(protoId))
                 continue;
 
             foreach (var ent in (YamlSequenceNode)proto["entities"])
