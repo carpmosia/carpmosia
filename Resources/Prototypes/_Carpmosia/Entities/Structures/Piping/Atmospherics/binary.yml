@@ -1,0 +1,47 @@
+- type: entity
+  parent: [GasBinaryBase, GasVentPump]
+  id: GasVentPumpPassthrough
+  components:
+  - type: Sprite
+    drawdepth: FloorObjects
+    sprite: Structures/Piping/Atmospherics/vent.rsi
+    layers:
+      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi
+        state: pipeBinaryConnectors
+        map: [ "enum.PipeVisualLayers.Pipe" ]
+      - state: vent_off
+        map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: GasVentPumpPassthrough
+      Secondary: GasVentPumpPassthroughAlt1
+      Tertiary: GasVentPumpPassthroughAlt2
+      Quaternary: GasVentPumpPassthroughAlt3
+      Quinary: GasVentPumpPassthroughAlt4
+  - type: Construction
+    graph: GasBinary
+    node: ventpumpPassthrough
+
+- type: entity
+  parent: [GasBinaryBase, GasVentScrubber]
+  id: GasVentScrubberPassthrough
+  components:
+  - type: Sprite
+    drawdepth: FloorObjects
+    sprite: Structures/Piping/Atmospherics/scrubber.rsi
+    layers:
+      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi
+        state: pipeBinaryConnectors
+        map: [ "enum.PipeVisualLayers.Pipe" ]
+      - state: scrub_off
+        map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: GasVentScrubberPassthrough
+      Secondary: GasVentScrubberPassthroughAlt1
+      Tertiary: GasVentScrubberPassthroughAlt2
+      Quaternary: GasVentScrubberPassthroughAlt3
+      Quinary: GasVentScrubberPassthroughAlt4
+  - type: Construction
+    graph: GasBinary
+    node: ventscrubberPassthrough
