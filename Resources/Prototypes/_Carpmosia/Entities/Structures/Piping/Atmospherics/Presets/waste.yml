@@ -85,6 +85,11 @@
   - type: Label
     localizedLabel: gas-pipe-sensor-waste-loop
 
+- type: entity
+  parent: [BaseAtmosWaste, GasVentScrubberInlineAlt3]
+  id: GasVentScrubberInlineWaste
+  suffix: Inline, Waste
+
 # Trinary
 - type: entity
   parent: [BaseAtmosWaste, GasFilterAlt3]

@@ -340,6 +340,76 @@
   id: HeatExchangerBendAlt4
   hide: true
   targetNode: bendradiatorAlt4
+
+- type: construction
+  parent: BaseGasBinary
+  id: GasVentPumpInline
+  targetNode: ventpumpInline
+  alternativePrototypes:
+  - GasVentPumpInline
+  - GasVentPumpInlineAlt1
+  - GasVentPumpInlineAlt2
+  - GasVentPumpInlineAlt3
+  - GasVentPumpInlineAlt4
+
+- type: construction
+  parent: GasVentPumpInline
+  id: GasVentPumpInlineAlt1
+  hide: true
+  targetNode: ventpumpInlineAlt1
+
+- type: construction
+  parent: GasVentPumpInline
+  id: GasVentPumpInlineAlt2
+  hide: true
+  targetNode: ventpumpInlineAlt2
+
+- type: construction
+  parent: GasVentPumpInline
+  id: GasVentPumpInlineAlt3
+  hide: true
+  targetNode: ventpumpInlineAlt3
+
+- type: construction
+  parent: GasVentPumpInline
+  id: GasVentPumpInlineAlt4
+  hide: true
+  targetNode: ventpumpInlineAlt4
+
+- type: construction
+  parent: BaseGasBinary
+  id: GasVentScrubberInline
+  targetNode: ventscrubberInline
+  alternativePrototypes:
+  - GasVentScrubberInline
+  - GasVentScrubberInlineAlt1
+  - GasVentScrubberInlineAlt2
+  - GasVentScrubberInlineAlt3
+  - GasVentScrubberInlineAlt4
+
+- type: construction
+  parent: GasVentScrubberInline
+  id: GasVentScrubberInlineAlt1
+  hide: true
+  targetNode: ventscrubberInlineAlt1
+
+- type: construction
+  parent: GasVentScrubberInline
+  id: GasVentScrubberInlineAlt2
+  hide: true
+  targetNode: ventscrubberInlineAlt2
+
+- type: construction
+  parent: GasVentScrubberInline
+  id: GasVentScrubberInlineAlt3
+  hide: true
+  targetNode: ventscrubberInlineAlt3
+
+- type: construction
+  parent: GasVentScrubberInline
+  id: GasVentScrubberInlineAlt4
+  hide: true
+  targetNode: ventscrubberInlineAlt4
 # endregion Binary
 
 # region Trinary
