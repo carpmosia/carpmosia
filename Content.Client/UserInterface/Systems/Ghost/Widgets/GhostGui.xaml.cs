@@ -13,6 +13,7 @@ public sealed partial class GhostGui : UIWidget
 
     public event Action? RequestWarpsPressed;
     public event Action? ReturnToBodyPressed;
+    public event Action? ReturnToLobbyPressed; // Carpmosia-edit - Return to lobby
     public event Action? GhostRolesPressed;
     private int _prevNumberRoles;
 
@@ -26,6 +27,7 @@ public sealed partial class GhostGui : UIWidget
 
         GhostWarpButton.OnPressed += _ => RequestWarpsPressed?.Invoke();
         ReturnToBodyButton.OnPressed += _ => ReturnToBodyPressed?.Invoke();
+        ReturnToLobbyButton.OnPressed += _ => ReturnToLobbyPressed?.Invoke(); // Carpmosia-edit - Return to lobby
         GhostRolesButton.OnPressed += _ => GhostRolesPressed?.Invoke();
         GhostRolesButton.OnPressed += _ => GhostRolesButton.StyleClasses.Remove(StyleClass.Negative);
     }
@@ -36,9 +38,10 @@ public sealed partial class GhostGui : UIWidget
         Visible = false;
     }
 
-    public void Update(int? roles, bool? canReturnToBody)
+    public void Update(int? roles, bool? canReturnToBody, bool? canReturnToLobby) // Carpmosia-edit - Return to lobby
     {
         ReturnToBodyButton.Disabled = !canReturnToBody ?? true;
+        ReturnToLobbyButton.Disabled = !canReturnToLobby ?? true; // Carpmosia-edit - Return to lobby
 
         if (roles != null)
         {

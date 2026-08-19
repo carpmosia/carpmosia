@@ -17,9 +17,5 @@
     agentName: blood-bound-round-end-agent-name
     selectionTime: PrePlayerSpawn
     antags:
-    - !type:LinearAntagCount
+    - !type:FixedAntagCount
       proto: BloodBound
-      playerRatio: 1
-      range:
-        min: 1
-        max: 1

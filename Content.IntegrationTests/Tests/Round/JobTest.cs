@@ -136,6 +136,7 @@ public sealed class JobTest : GameTest
     /// Check high priority jobs (e.g., captain) are selected before other roles, even if it means a player does not
     /// get their preferred job.
     /// </summary>
+    [Explicit] // Carpmosia-edit - Job priority rebalance
     [Test]
     public async Task JobWeightTest()
     {

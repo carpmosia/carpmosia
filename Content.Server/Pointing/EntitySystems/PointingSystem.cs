@@ -35,7 +35,6 @@ namespace Content.Server.Pointing.EntitySystems
     {
         [Dependency] private IConfigurationManager _config = default!;
         [Dependency] private IReplayRecordingManager _replay = default!;
-        [Dependency] private IMapManager _mapManager = default!;
         [Dependency] private IPlayerManager _playerManager = default!;
         [Dependency] private ITileDefinitionManager _tileDefinitionManager = default!;
         [Dependency] private IGameTiming _gameTiming = default!;
@@ -107,10 +106,10 @@ namespace Content.Server.Pointing.EntitySystems
                 // Someone pointing at YOU is slightly more important
                 var popupType = viewerEntity == pointed ? PopupType.Medium : PopupType.Small;
 
-                RaiseNetworkEvent(new PopupEntityEvent(message, popupType, netSource), viewerEntity);
+                RaiseNetworkEvent(new PopupEntityEvent(message, popupType, _gameTiming.CurTick, netSource), viewerEntity); // TODO: Make this use the popup system API
             }
 
-            _replay.RecordServerMessage(new PopupEntityEvent(viewerMessage, PopupType.Small, netSource));
+            _replay.RecordServerMessage(new PopupEntityEvent(viewerMessage, PopupType.Small, _gameTiming.CurTick, netSource));
         }
 
         public bool InRange(EntityUid pointer, EntityCoordinates coordinates)
@@ -165,8 +164,8 @@ namespace Content.Server.Pointing.EntitySystems
             _rotateToFaceSystem.TryFaceCoordinates(player, mapCoordsPointed.Position);
 
             // Carpmosia-start - Pointing modifier
-            string phraseSelf = Loc.GetString("pointing-phrase-point-self");
-            string phraseOther = Loc.GetString("pointing-phrase-point-other");
+            var phraseSelf = Loc.GetString("pointing-phrase-point-self");
+            var phraseOther = Loc.GetString("pointing-phrase-point-other");
             EntProtoId pointArrow = "PointerArrow";
             // get held item w/ modifier
             var heldItem = _hands.GetHeldItem(player, _hands.GetActiveHand(player));
@@ -301,7 +300,7 @@ namespace Content.Server.Pointing.EntitySystems
                 TileRef? tileRef = null;
                 string? position = null;
 
-                if (_mapManager.TryFindGridAt(mapCoordsPointed, out var gridUid, out var grid))
+                if (_map.TryFindGridAt(mapCoordsPointed, out var gridUid, out var grid))
                 {
                     position = $"EntId={gridUid} {_map.WorldToTile(gridUid, grid, mapCoordsPointed.Position)}";
                     tileRef = _map.GetTileRef(gridUid, grid, _map.WorldToTile(gridUid, grid, mapCoordsPointed.Position));

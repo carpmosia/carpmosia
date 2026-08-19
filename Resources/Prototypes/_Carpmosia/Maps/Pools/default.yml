@@ -2,17 +2,22 @@
   id: DefaultMapPool
   maps:
   - CarpAmber
-  - CarpFeint
+  # - CarpBagel
+  # - CarpBox
+  # - CarpElkridge
+  # - CarpExo
+  # - CarpFeint
+  # - CarpFland
   - CarpLampocteis
-  - CarpOasis
-  - CarpPacked
-  - CarpSaltern
-  - CarpSparks
-  - Bagel
-  - Box
-  - Elkridge
-  - Fland
-  - Marathon
-  - Plasma
-  - Exo
-  - Snowball
+  # - CarpMarathon
+  # - CarpOasis
+  # - CarpPacked
+  # - CarpPlasma
+  # - CarpSaltern
+  # - CarpSnowball
+  # - CarpSparks
+
+- type: gameMapPool
+  id: DefaultTerminalPool
+  maps:
+  - TerminalDonkRestStop

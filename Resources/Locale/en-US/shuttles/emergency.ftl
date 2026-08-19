@@ -38,6 +38,8 @@ emergency-shuttle-ui-repeal = REPEAL
 emergency-shuttle-ui-authorizations = Authorizations
 emergency-shuttle-ui-remaining = Remaining: {$remaining}
 
-# Map Misc.
-map-name-centcomm = Central Command
-map-name-terminal = Arrivals Terminal
+## Carpmosia-start - Warp point prefixes
+map-name-centcomm = Centcomm
+map-name-terminal = Terminal
+map-name-arrivals = Arrivals
+## Carpmosia-end - Warp point prefixes

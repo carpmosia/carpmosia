@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Created by github.com/Jakeybobble for Carpmosia",
+  "states": [
+    {
+      "name": "kitti",
+      "directions": 4
+    },
+    {
+      "name": "overlay-both",
+      "directions": 4
+    },
+    {
+      "name": "overlay-belly",
+      "directions": 4
+    },
+    {
+      "name": "overlay-paws",
+      "directions": 4
+    },
+    {
+      "name": "overlay-none",
+      "directions": 4
+    }
+  ]
+}

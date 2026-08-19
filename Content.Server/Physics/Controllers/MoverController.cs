@@ -61,20 +61,6 @@ public sealed partial class MoverController : SharedMoverController
         UpdateMoverStatus((ent, ent.Comp));
     }
 
-    protected override void OnInputMoverCanMoveUpdated(Entity<InputMoverComponent> ent, ref CanMoveUpdatedEvent args)
-    {
-        base.OnInputMoverCanMoveUpdated(ent, ref args);
-
-        if (!args.CanMove)
-        {
-            // Remove from active mover query when entity cannot move
-            RemCompDeferred<ActiveInputMoverComponent>(ent);
-            return;
-        }
-
-        UpdateMoverStatus((ent, ent.Comp));
-    }
-
     protected override void OnMoverStartup(Entity<InputMoverComponent> ent, ref ComponentStartup args)
     {
         base.OnMoverStartup(ent, ref args);
@@ -584,16 +570,16 @@ public sealed partial class MoverController : SharedMoverController
                     if (!torque.Equals(0f))
                     {
                         PhysicsSystem.ApplyTorque(shuttleUid, torque, body: body);
-                        _thruster.SetAngularThrust(shuttle, true);
+                        _thruster.SetAngularThrustVisualState(shuttle, true);
                     }
                 }
                 else
                 {
-                    _thruster.SetAngularThrust(shuttle, false);
+                    _thruster.SetAngularThrustVisualState(shuttle, false);
                 }
             }
 
-            /// Carpmosia-start - rotate shuttle along movement vector
+            // Carpmosia-start - rotate shuttle along movement vector
             if (!alignInput.Equals(0f) && !MathHelper.CloseTo(body.LinearVelocity.Length(), 0f, 0.01f))
             {
                 // Get velocity relative to the shuttle
@@ -601,8 +587,9 @@ public sealed partial class MoverController : SharedMoverController
                 var torqueMul = body.InvI * frameTime;
 
                 //find angle between current orientation and movement vector
-                var targetAngle = alignInput > 0f ?
-                    MathF.Acos(shuttleVelocity.Y / shuttleVelocity.Length()) : MathF.Acos(-shuttleVelocity.Y / shuttleVelocity.Length());
+                var targetAngle = alignInput > 0f
+                    ? MathF.Acos(shuttleVelocity.Y / shuttleVelocity.Length())
+                    : MathF.Acos(-shuttleVelocity.Y / shuttleVelocity.Length());
 
                 targetAngle *= MathF.Sign(shuttleVelocity.X);
 
@@ -628,11 +615,11 @@ public sealed partial class MoverController : SharedMoverController
                 if (!torque.Equals(0f))
                 {
                     PhysicsSystem.ApplyTorque(shuttleUid, torque, body: body);
-                    _thruster.SetAngularThrust(shuttle, true);
+                    _thruster.SetAngularThrustVisualState(shuttle, true);
                 }
                 else
                 {
-                    _thruster.SetAngularThrust(shuttle, false);
+                    _thruster.SetAngularThrustVisualState(shuttle, false);
                 }
 
             }
@@ -650,7 +637,7 @@ public sealed partial class MoverController : SharedMoverController
             {
                 shuttle.AccParams.PrevError = 0f;
             }
-            /// Carpmosia-end - rotate shuttle along movement vector
+            // Carpmosia-end - rotate shuttle along movement vector
 
             if (linearInput.Length().Equals(0f))
             {
@@ -743,7 +730,7 @@ public sealed partial class MoverController : SharedMoverController
                 PhysicsSystem.SetSleepingAllowed(shuttleUid, body, true);
 
                 if (brakeInput <= 0f)
-                    _thruster.SetAngularThrust(shuttle, false);
+                    _thruster.SetAngularThrustVisualState(shuttle, false);
             }
             else
             {
@@ -761,7 +748,7 @@ public sealed partial class MoverController : SharedMoverController
                 if (!torque.Equals(0f))
                 {
                     PhysicsSystem.ApplyTorque(shuttleUid, torque, body: body);
-                    _thruster.SetAngularThrust(shuttle, true);
+                    _thruster.SetAngularThrustVisualState(shuttle, true);
                 }
             }
         }

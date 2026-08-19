@@ -9,13 +9,7 @@ public sealed partial class SelfAndTargetSurviveConditionSystem : EntitySystem
     [Dependency] private SharedMindSystem _mindSystem = default!;
     [Dependency] private TargetObjectiveSystem _targetObjectiveSystem = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<SelfAndTargetSurviveConditionComponent, ObjectiveGetProgressEvent>(OnGetProgress);
-    }
-
+    [SubscribeLocalEvent]
     private void OnGetProgress(Entity<SelfAndTargetSurviveConditionComponent> entity, ref ObjectiveGetProgressEvent args)
     {
         var progress = _mindSystem.IsCharacterDeadIc(args.Mind) ? 0f : 1f;

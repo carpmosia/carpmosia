@@ -14,17 +14,7 @@
     sprite: _Carpmosia/Objects/Specific/Chemistry/beaker.rsi # Carpmosia-edit - chem resprite
     state: beaker
   product: CrateChemistrySupplies
-  cost: 750
-  category: cargoproduct-category-name-medical
-  group: market
-
-- type: cargoProduct
-  id: MedicalChemistryVials
-  icon:
-    sprite: _Carpmosia/Objects/Specific/Chemistry/vial.rsi # Carpmosia-edit - chem resprite
-    state: vial
-  product: CrateChemistryVials
-  cost: 1100
+  cost: 1750
   category: cargoproduct-category-name-medical
   group: market
 

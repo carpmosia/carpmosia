@@ -61,7 +61,7 @@ public abstract partial class SharedEmitSoundSystem : EntitySystem
     // Carpmosia-start - Whistle action
     private void OnSoundAction(Entity<EmitSoundOnActionComponent> ent, ref SoundActionEvent args)
     {
-        TryEmitSound(ent, ent.Comp, args.Performer, true);
+        TryEmitSound(ent, ent.Comp, args.Performer);
 
         if (ent.Comp.Handle)
             args.Handled = true;

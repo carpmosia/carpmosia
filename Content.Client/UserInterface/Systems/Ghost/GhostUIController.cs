@@ -16,6 +16,7 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
     [UISystemDependency] private readonly GhostSystem? _system = default;
 
     private GhostGui? Gui => UIManager.GetActiveUIWidgetOrNull<GhostGui>();
+    private bool _canReturnToLobby; // Carpmosia-edit - Return to lobby
 
     public override void Initialize()
     {
@@ -44,6 +45,7 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         system.PlayerDetached += OnPlayerDetached;
         system.GhostWarpsResponse += OnWarpsResponse;
         system.GhostRoleCountUpdated += OnRoleCountUpdated;
+        system.TickerLateJoinStatus += OnTickerLateJoinStatus; // Carpmosia-edit - Return to lobby
     }
 
     public void OnSystemUnloaded(GhostSystem system)
@@ -54,6 +56,7 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         system.PlayerDetached -= OnPlayerDetached;
         system.GhostWarpsResponse -= OnWarpsResponse;
         system.GhostRoleCountUpdated -= OnRoleCountUpdated;
+        system.TickerLateJoinStatus -= OnTickerLateJoinStatus; // Carpmosia-edit - Return to lobby
     }
 
     public void UpdateGui()
@@ -64,7 +67,7 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         }
 
         Gui.Visible = _system?.IsGhost ?? false;
-        Gui.Update(_system?.AvailableGhostRoleCount, _system?.Player?.CanReturnToBody);
+        Gui.Update(_system?.AvailableGhostRoleCount, _system?.Player?.CanReturnToBody, _canReturnToLobby); // Carpmosia-edit - Return to lobby
     }
 
     private void OnPlayerRemoved(GhostComponent component)
@@ -117,6 +120,18 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         _net.SendSystemNetworkMessage(msg);
     }
 
+    private void OnWarpToRandomFollowedClicked()
+    {
+        var msg = new WarpToRandomFollowedRequestEvent();
+        _net.SendSystemNetworkMessage(msg);
+    }
+
+    private void OnWarpToRandomClicked()
+    {
+        var msg = new WarpToRandomRequestEvent();
+        _net.SendSystemNetworkMessage(msg);
+    }
+
     public void LoadGui()
     {
         if (Gui == null)
@@ -124,9 +139,12 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
 
         Gui.RequestWarpsPressed += RequestWarps;
         Gui.ReturnToBodyPressed += ReturnToBody;
+        Gui.ReturnToLobbyPressed += ReturnToLobby; // Carpmosia-edit - Return to lobby
         Gui.GhostRolesPressed += GhostRolesPressed;
         Gui.TargetWindow.WarpClicked += OnWarpClicked;
         Gui.TargetWindow.OnGhostnadoClicked += OnGhostnadoClicked;
+        Gui.TargetWindow.OnWarpToRandomFollowedClicked += OnWarpToRandomFollowedClicked;
+        Gui.TargetWindow.OnWarpToRandomClicked += OnWarpToRandomClicked;
 
         UpdateGui();
     }
@@ -138,6 +156,7 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
 
         Gui.RequestWarpsPressed -= RequestWarps;
         Gui.ReturnToBodyPressed -= ReturnToBody;
+        Gui.ReturnToLobbyPressed -= ReturnToLobby; // Carpmosia-edit - Return to lobby
         Gui.GhostRolesPressed -= GhostRolesPressed;
         Gui.TargetWindow.WarpClicked -= OnWarpClicked;
 
@@ -148,6 +167,19 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
     {
         _system?.ReturnToBody();
     }
+
+    // Carpmosia-start - Return to lobby
+    private void ReturnToLobby()
+    {
+        _system?.ReturnToLobby();
+    }
+
+    private void OnTickerLateJoinStatus(bool canReturnToLobby)
+    {
+        _canReturnToLobby = canReturnToLobby;
+        UpdateGui();
+    }
+    // Carpmosia-ebd - Return to lobby
 
     private void RequestWarps()
     {
