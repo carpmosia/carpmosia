@@ -1,14 +1,13 @@
 - type: entity
   parent: [GasBinaryBase, GasVentPump]
-  id: GasVentPumpPassthrough
+  id: GasVentPumpInline
   name: air vent
-  suffix: Passthrough
+  suffix: Inline
   description: Has a valve and a pump attached to it.
   placement:
     mode: AlignAtmosPipeLayers
   components:
   - type: Sprite
-    drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/vent.rsi
     layers:
       - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi
@@ -18,27 +17,26 @@
         map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
   - type: AtmosPipeLayers
     alternativePrototypes:
-      Primary: GasVentPumpPassthrough
-      Secondary: GasVentPumpPassthroughAlt1
-      Tertiary: GasVentPumpPassthroughAlt2
-      Quaternary: GasVentPumpPassthroughAlt3
-      Quinary: GasVentPumpPassthroughAlt4
+      Primary: GasVentPumpInline
+      Secondary: GasVentPumpInlineAlt1
+      Tertiary: GasVentPumpInlineAlt2
+      Quaternary: GasVentPumpInlineAlt3
+      Quinary: GasVentPumpInlineAlt4
     spriteRsiPaths: {}
   - type: Construction
     graph: GasBinary
-    node: ventpumpPassthrough
+    node: ventpumpInline
 
 - type: entity
   parent: [GasBinaryBase, GasVentScrubber]
-  id: GasVentScrubberPassthrough
+  id: GasVentScrubberInline
   name: air scrubber
-  suffix: Passthrough
+  suffix: Inline
   description: Has a valve and pump attached to it.
   placement:
     mode: AlignAtmosPipeLayers
   components:
   - type: Sprite
-    drawdepth: FloorObjects
     sprite: Structures/Piping/Atmospherics/scrubber.rsi
     layers:
       - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi
@@ -48,12 +46,12 @@
         map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
   - type: AtmosPipeLayers
     alternativePrototypes:
-      Primary: GasVentScrubberPassthrough
-      Secondary: GasVentScrubberPassthroughAlt1
-      Tertiary: GasVentScrubberPassthroughAlt2
-      Quaternary: GasVentScrubberPassthroughAlt3
-      Quinary: GasVentScrubberPassthroughAlt4
+      Primary: GasVentScrubberInline
+      Secondary: GasVentScrubberInlineAlt1
+      Tertiary: GasVentScrubberInlineAlt2
+      Quaternary: GasVentScrubberInlineAlt3
+      Quinary: GasVentScrubberInlineAlt4
     spriteRsiPaths: {}
   - type: Construction
     graph: GasBinary
-    node: ventscrubberPassthrough
+    node: ventscrubberInline

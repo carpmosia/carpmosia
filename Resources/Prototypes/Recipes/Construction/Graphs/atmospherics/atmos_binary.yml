@@ -730,10 +730,10 @@
     edges: *bendradiator_edges
   # Carpmosia-end - Atmos Alt Prototypes
 
-  # Carpmosia-start - Passthrough Atmos
-  - node: ventpumpPassthrough
-    entity: GasVentPumpPassthrough
-    edges: &ventpumpPassthrough_edges
+  # Carpmosia-start - Inline Atmos
+  - node: ventpumpInline
+    entity: GasVentPumpInline
+    edges: &ventpumpInline_edges
     - to: start
       conditions:
       - !type:EntityAnchored
@@ -749,25 +749,25 @@
       - tool: Welding
         doAfter: 1
 
-  - node: ventpumpPassthroughAlt1
-    entity: GasVentPumpPassthroughAlt1
-    edges: *ventpumpPassthrough_edges
+  - node: ventpumpInlineAlt1
+    entity: GasVentPumpInlineAlt1
+    edges: *ventpumpInline_edges
 
-  - node: ventpumpPassthroughAlt2
-    entity: GasVentPumpPassthroughAlt2
-    edges: *ventpumpPassthrough_edges
+  - node: ventpumpInlineAlt2
+    entity: GasVentPumpInlineAlt2
+    edges: *ventpumpInline_edges
 
-  - node: ventpumpPassthroughAlt3
-    entity: GasVentPumpPassthroughAlt3
-    edges: *ventpumpPassthrough_edges
+  - node: ventpumpInlineAlt3
+    entity: GasVentPumpInlineAlt3
+    edges: *ventpumpInline_edges
 
-  - node: ventpumpPassthroughAlt4
-    entity: GasVentPumpPassthroughAlt4
-    edges: *ventpumpPassthrough_edges
+  - node: ventpumpInlineAlt4
+    entity: GasVentPumpInlineAlt4
+    edges: *ventpumpInline_edges
 
-  - node: ventscrubberPassthrough
-    entity: GasVentScrubberPassthrough
-    edges: &ventscrubberPassthrough_edges
+  - node: ventscrubberInline
+    entity: GasVentScrubberInline
+    edges: &ventscrubberInline_edges
     - to: start
       conditions:
       - !type:EntityAnchored
@@ -783,19 +783,19 @@
       - tool: Welding
         doAfter: 1
 
-  - node: ventscrubberPassthroughAlt1
-    entity: GasVentScrubberPassthroughAlt1
-    edges: *ventscrubberPassthrough_edges
+  - node: ventscrubberInlineAlt1
+    entity: GasVentScrubberInlineAlt1
+    edges: *ventscrubberInline_edges
 
-  - node: ventscrubberPassthroughAlt2
-    entity: GasVentScrubberPassthroughAlt2
-    edges: *ventscrubberPassthrough_edges
+  - node: ventscrubberInlineAlt2
+    entity: GasVentScrubberInlineAlt2
+    edges: *ventscrubberInline_edges
 
-  - node: ventscrubberPassthroughAlt3
-    entity: GasVentScrubberPassthroughAlt3
-    edges: *ventscrubberPassthrough_edges
+  - node: ventscrubberInlineAlt3
+    entity: GasVentScrubberInlineAlt3
+    edges: *ventscrubberInline_edges
 
-  - node: ventscrubberPassthroughAlt4
-    entity: GasVentScrubberPassthroughAlt4
-    edges: *ventscrubberPassthrough_edges
-  # Carpmosia-end - Passthrough Atmos
+  - node: ventscrubberInlineAlt4
+    entity: GasVentScrubberInlineAlt4
+    edges: *ventscrubberInline_edges
+  # Carpmosia-end - Inline Atmos

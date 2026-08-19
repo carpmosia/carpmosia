@@ -343,73 +343,73 @@
 
 - type: construction
   parent: BaseGasBinary
-  id: GasVentPumpPassthrough
-  targetNode: ventpumpPassthrough
+  id: GasVentPumpInline
+  targetNode: ventpumpInline
   alternativePrototypes:
-  - GasVentPumpPassthrough
-  - GasVentPumpPassthroughAlt1
-  - GasVentPumpPassthroughAlt2
-  - GasVentPumpPassthroughAlt3
-  - GasVentPumpPassthroughAlt4
+  - GasVentPumpInline
+  - GasVentPumpInlineAlt1
+  - GasVentPumpInlineAlt2
+  - GasVentPumpInlineAlt3
+  - GasVentPumpInlineAlt4
 
 - type: construction
-  parent: GasVentPumpPassthrough
-  id: GasVentPumpPassthroughAlt1
+  parent: GasVentPumpInline
+  id: GasVentPumpInlineAlt1
   hide: true
-  targetNode: ventpumpPassthroughAlt1
+  targetNode: ventpumpInlineAlt1
 
 - type: construction
-  parent: GasVentPumpPassthrough
-  id: GasVentPumpPassthroughAlt2
+  parent: GasVentPumpInline
+  id: GasVentPumpInlineAlt2
   hide: true
-  targetNode: ventpumpPassthroughAlt2
+  targetNode: ventpumpInlineAlt2
 
 - type: construction
-  parent: GasVentPumpPassthrough
-  id: GasVentPumpPassthroughAlt3
+  parent: GasVentPumpInline
+  id: GasVentPumpInlineAlt3
   hide: true
-  targetNode: ventpumpPassthroughAlt3
+  targetNode: ventpumpInlineAlt3
 
 - type: construction
-  parent: GasVentPumpPassthrough
-  id: GasVentPumpPassthroughAlt4
+  parent: GasVentPumpInline
+  id: GasVentPumpInlineAlt4
   hide: true
-  targetNode: ventpumpPassthroughAlt4
+  targetNode: ventpumpInlineAlt4
 
 - type: construction
   parent: BaseGasBinary
-  id: GasVentScrubberPassthrough
-  targetNode: ventscrubberPassthrough
+  id: GasVentScrubberInline
+  targetNode: ventscrubberInline
   alternativePrototypes:
-  - GasVentScrubberPassthrough
-  - GasVentScrubberPassthroughAlt1
-  - GasVentScrubberPassthroughAlt2
-  - GasVentScrubberPassthroughAlt3
-  - GasVentScrubberPassthroughAlt4
+  - GasVentScrubberInline
+  - GasVentScrubberInlineAlt1
+  - GasVentScrubberInlineAlt2
+  - GasVentScrubberInlineAlt3
+  - GasVentScrubberInlineAlt4
 
 - type: construction
-  parent: GasVentScrubberPassthrough
-  id: GasVentScrubberPassthroughAlt1
+  parent: GasVentScrubberInline
+  id: GasVentScrubberInlineAlt1
   hide: true
-  targetNode: ventscrubberPassthroughAlt1
+  targetNode: ventscrubberInlineAlt1
 
 - type: construction
-  parent: GasVentScrubberPassthrough
-  id: GasVentScrubberPassthroughAlt2
+  parent: GasVentScrubberInline
+  id: GasVentScrubberInlineAlt2
   hide: true
-  targetNode: ventscrubberPassthroughAlt2
+  targetNode: ventscrubberInlineAlt2
 
 - type: construction
-  parent: GasVentScrubberPassthrough
-  id: GasVentScrubberPassthroughAlt3
+  parent: GasVentScrubberInline
+  id: GasVentScrubberInlineAlt3
   hide: true
-  targetNode: ventscrubberPassthroughAlt3
+  targetNode: ventscrubberInlineAlt3
 
 - type: construction
-  parent: GasVentScrubberPassthrough
-  id: GasVentScrubberPassthroughAlt4
+  parent: GasVentScrubberInline
+  id: GasVentScrubberInlineAlt4
   hide: true
-  targetNode: ventscrubberPassthroughAlt4
+  targetNode: ventscrubberInlineAlt4
 # endregion Binary
 
 # region Trinary
