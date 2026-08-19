@@ -340,6 +340,76 @@
   id: HeatExchangerBendAlt4
   hide: true
   targetNode: bendradiatorAlt4
+
+- type: construction
+  parent: BaseGasBinary
+  id: GasVentPumpPassthrough
+  targetNode: ventpumpPassthrough
+  alternativePrototypes:
+  - GasVentPumpPassthrough
+  - GasVentPumpPassthroughAlt1
+  - GasVentPumpPassthroughAlt2
+  - GasVentPumpPassthroughAlt3
+  - GasVentPumpPassthroughAlt4
+
+- type: construction
+  parent: GasVentPumpPassthrough
+  id: GasVentPumpPassthroughAlt1
+  hide: true
+  targetNode: ventpumpPassthroughAlt1
+
+- type: construction
+  parent: GasVentPumpPassthrough
+  id: GasVenPumpPassthroughAlt2
+  hide: true
+  targetNode: ventpumpPassthroughAlt2
+
+- type: construction
+  parent: GasVentPumpPassthrough
+  id: GasVentPumpPassthroughAlt3
+  hide: true
+  targetNode: ventpumpPassthroughAlt3
+
+- type: construction
+  parent: GasVentPumpPassthrough
+  id: GasVentPumpPassthroughAlt4
+  hide: true
+  targetNode: ventpumpPassthroughAlt4
+
+- type: construction
+  parent: BaseGasBinary
+  id: GasVentScrubberPassthrough
+  targetNode: ventscrubberPassthrough
+  alternativePrototypes:
+  - GasVentScrubberPassthrough
+  - GasVentScrubberPassthroughAlt1
+  - GasVentScrubberPassthroughAlt2
+  - GasVentScrubberPassthroughAlt3
+  - GasVentScrubberPassthroughAlt4
+
+- type: construction
+  parent: GasVentScrubberPassthrough
+  id: GasVentScrubberPassthroughAlt1
+  hide: true
+  targetNode: ventscrubberPassthroughAlt1
+
+- type: construction
+  parent: GasVentScrubberPassthrough
+  id: GasVentScrubbePassthroughAlt2
+  hide: true
+  targetNode: ventscrubberPassthroughAlt2
+
+- type: construction
+  parent: GasVentScrubberPassthrough
+  id: GasVentScrubberPassthroughAlt3
+  hide: true
+  targetNode: ventscrubberPassthroughAlt3
+
+- type: construction
+  parent: GasVentScrubberPassthrough
+  id: GasVentScrubberPassthroughAlt4
+  hide: true
+  targetNode: ventscrubberPassthroughAlt4
 # endregion Binary
 
 # region Trinary
