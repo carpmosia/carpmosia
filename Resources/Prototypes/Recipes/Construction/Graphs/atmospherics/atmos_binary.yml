@@ -240,6 +240,44 @@
       steps: *bendradiator_steps
     # Carpmosia-end - Atmos Alt Prototypes
 
+    # Carpmosia-start - Inline Atmos
+    - to: ventpumpInline
+      steps: &ventpumpInline_steps
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: ventpumpInlineAlt1
+      steps: *ventpumpInline_steps
+
+    - to: ventpumpInlineAlt2
+      steps: *ventpumpInline_steps
+
+    - to: ventpumpInlineAlt3
+      steps: *ventpumpInline_steps
+
+    - to: ventpumpInlineAlt4
+      steps: *ventpumpInline_steps
+
+    - to: ventscrubberInline
+      steps: &ventscrubberInline_steps
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: ventscrubberInlineAlt1
+      steps: *ventscrubberInline_steps
+
+    - to: ventscrubberInlineAlt2
+      steps: *ventscrubberInline_steps
+
+    - to: ventscrubberInlineAlt3
+      steps: *ventscrubberInline_steps
+
+    - to: ventscrubberInlineAlt4
+      steps: *ventscrubberInline_steps
+    # Carpmosia-end - Inline Atmos
+
   - node: pressurepump
     entity: GasPressurePump
     edges: &pressurepump_edges # Carpmosia-edit - Cleanup construction graph
