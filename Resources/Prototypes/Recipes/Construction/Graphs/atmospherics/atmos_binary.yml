@@ -732,7 +732,7 @@
 
   # Carpmosia-start - Passthrough Atmos
   - node: ventpumpPassthrough
-    entity: GasVentPassthroughPump
+    entity: GasVentPumpPassthrough
     edges:
     - to: start
       conditions:
