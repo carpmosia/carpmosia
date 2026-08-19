@@ -1,7 +1,11 @@
 - type: entity
   parent: [GasBinaryBase, GasVentPump]
   id: GasVentPumpPassthrough
+  name: air vent
   suffix: Passthrough
+  description: Has a valve and a pump attached to it.
+  placement:
+    mode: AlignAtmosPipeLayers
   components:
   - type: Sprite
     drawdepth: FloorObjects
@@ -19,6 +23,7 @@
       Tertiary: GasVentPumpPassthroughAlt2
       Quaternary: GasVentPumpPassthroughAlt3
       Quinary: GasVentPumpPassthroughAlt4
+    spriteRsiPaths: {}
   - type: Construction
     graph: GasBinary
     node: ventpumpPassthrough
@@ -26,7 +31,11 @@
 - type: entity
   parent: [GasBinaryBase, GasVentScrubber]
   id: GasVentScrubberPassthrough
+  name: air scrubber
   suffix: Passthrough
+  description: Has a valve and pump attached to it.
+  placement:
+    mode: AlignAtmosPipeLayers
   components:
   - type: Sprite
     drawdepth: FloorObjects
@@ -44,6 +53,7 @@
       Tertiary: GasVentScrubberPassthroughAlt2
       Quaternary: GasVentScrubberPassthroughAlt3
       Quinary: GasVentScrubberPassthroughAlt4
+    spriteRsiPaths: {}
   - type: Construction
     graph: GasBinary
     node: ventscrubberPassthrough
