@@ -1,6 +1,7 @@
 - type: entity
   parent: [GasBinaryBase, GasVentPump]
   id: GasVentPumpPassthrough
+  suffix: Passthrough
   components:
   - type: Sprite
     drawdepth: FloorObjects
@@ -25,6 +26,7 @@
 - type: entity
   parent: [GasBinaryBase, GasVentScrubber]
   id: GasVentScrubberPassthrough
+  suffix: Passthrough
   components:
   - type: Sprite
     drawdepth: FloorObjects
