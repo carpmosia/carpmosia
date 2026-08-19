@@ -1,12 +1,14 @@
 - type: entity
-  parent: [GasBinaryBase, GasVentPump]
+  parent: GasVentPump
   id: GasVentPumpInline
-  name: air vent
   suffix: Inline
-  description: Has a valve and a pump attached to it.
-  placement:
-    mode: AlignAtmosPipeLayers
   components:
+  - type: NodeContainer
+    nodes:
+      pipe:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: Longitudinal
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/vent.rsi
     layers:
@@ -28,14 +30,16 @@
     node: ventpumpInline
 
 - type: entity
-  parent: [GasBinaryBase, GasVentScrubber]
+  parent: GasVentScrubber
   id: GasVentScrubberInline
-  name: air scrubber
   suffix: Inline
-  description: Has a valve and pump attached to it.
-  placement:
-    mode: AlignAtmosPipeLayers
   components:
+  - type: NodeContainer
+    nodes:
+      pipe:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: Longitudinal
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/scrubber.rsi
     layers:
