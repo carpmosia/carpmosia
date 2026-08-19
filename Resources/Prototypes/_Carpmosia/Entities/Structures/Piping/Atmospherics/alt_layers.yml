@@ -1357,7 +1357,7 @@
     - state: vent_off
       map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
   - type: Construction
-    node: ventpumPassthroughAlt4
+    node: ventpumpPassthroughAlt4
 
 # GasVentScrubberPassthrough
 - type: entity
