@@ -733,7 +733,7 @@
   # Carpmosia-start - Passthrough Atmos
   - node: ventpumpPassthrough
     entity: GasVentPumpPassthrough
-    edges:
+    edges: &ventpumpPassthrough_edges
     - to: start
       conditions:
       - !type:EntityAnchored
@@ -751,79 +751,23 @@
 
   - node: ventpumpPassthroughAlt1
     entity: GasVentPumpPassthroughAlt1
-    edges:
-    - to: start
-      conditions:
-      - !type:EntityAnchored
-        anchored: false
-      completed:
-      - !type:SpawnPrototype
-        prototype: SheetSteel1
-        amount: 2
-      - !type:DeleteEntity
-      steps:
-      - tool: Screwing
-        doAfter: 1
-      - tool: Welding
-        doAfter: 1
+    edges: *ventpumpPassthrough_edges
 
   - node: ventpumpPassthroughAlt2
     entity: GasVentPumpPassthroughAlt2
-    edges:
-    - to: start
-      conditions:
-      - !type:EntityAnchored
-        anchored: false
-      completed:
-      - !type:SpawnPrototype
-        prototype: SheetSteel1
-        amount: 2
-      - !type:DeleteEntity
-      steps:
-      - tool: Screwing
-        doAfter: 1
-      - tool: Welding
-        doAfter: 1
+    edges: *ventpumpPassthrough_edges
 
   - node: ventpumpPassthroughAlt3
     entity: GasVentPumpPassthroughAlt3
-    edges:
-    - to: start
-      conditions:
-      - !type:EntityAnchored
-        anchored: false
-      completed:
-      - !type:SpawnPrototype
-        prototype: SheetSteel1
-        amount: 2
-      - !type:DeleteEntity
-      steps:
-      - tool: Screwing
-        doAfter: 1
-      - tool: Welding
-        doAfter: 1
+    edges: *ventpumpPassthrough_edges
 
   - node: ventpumpPassthroughAlt4
     entity: GasVentPumpPassthroughAlt4
-    edges:
-    - to: start
-      conditions:
-      - !type:EntityAnchored
-        anchored: false
-      completed:
-      - !type:SpawnPrototype
-        prototype: SheetSteel1
-        amount: 2
-      - !type:DeleteEntity
-      steps:
-      - tool: Screwing
-        doAfter: 1
-      - tool: Welding
-        doAfter: 1
+    edges: *ventpumpPassthrough_edges
 
   - node: ventscrubberPassthrough
     entity: GasVentScrubberPassthrough
-    edges:
+    edges: &ventscrubberPassthrough_edges
     - to: start
       conditions:
       - !type:EntityAnchored
@@ -841,73 +785,17 @@
 
   - node: ventscrubberPassthroughAlt1
     entity: GasVentScrubberPassthroughAlt1
-    edges:
-    - to: start
-      conditions:
-      - !type:EntityAnchored
-        anchored: false
-      completed:
-      - !type:SpawnPrototype
-        prototype: SheetSteel1
-        amount: 2
-      - !type:DeleteEntity
-      steps:
-      - tool: Screwing
-        doAfter: 1
-      - tool: Welding
-        doAfter: 1
+    edges: *ventscrubberPassthrough_edges
 
   - node: ventscrubberPassthroughAlt2
     entity: GasVentScrubberPassthroughAlt2
-    edges:
-    - to: start
-      conditions:
-      - !type:EntityAnchored
-        anchored: false
-      completed:
-      - !type:SpawnPrototype
-        prototype: SheetSteel1
-        amount: 2
-      - !type:DeleteEntity
-      steps:
-      - tool: Screwing
-        doAfter: 1
-      - tool: Welding
-        doAfter: 1
+    edges: *ventscrubberPassthrough_edges
 
   - node: ventscrubberPassthroughAlt3
     entity: GasVentScrubberPassthroughAlt3
-    edges:
-    - to: start
-      conditions:
-      - !type:EntityAnchored
-        anchored: false
-      completed:
-      - !type:SpawnPrototype
-        prototype: SheetSteel1
-        amount: 2
-      - !type:DeleteEntity
-      steps:
-      - tool: Screwing
-        doAfter: 1
-      - tool: Welding
-        doAfter: 1
+    edges: *ventscrubberPassthrough_edges
 
   - node: ventscrubberPassthroughAlt4
     entity: GasVentScrubberPassthroughAlt4
-    edges:
-    - to: start
-      conditions:
-      - !type:EntityAnchored
-        anchored: false
-      completed:
-      - !type:SpawnPrototype
-        prototype: SheetSteel1
-        amount: 2
-      - !type:DeleteEntity
-      steps:
-      - tool: Screwing
-        doAfter: 1
-      - tool: Welding
-        doAfter: 1
+    edges: *ventscrubberPassthrough_edges
   # Carpmosia-end - Passthrough Atmos
