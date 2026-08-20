@@ -50,13 +50,6 @@ public sealed partial class MapRulesTest : GameTest
         "PlaqueAtmos",
     ];
 
-    // Substations don't have a unique component sadly
-    private static readonly EntProtoId[] Substations = [
-        "SubstationBasic",
-        "SubstationBasicEmpty",
-        "SubstationWallBasic",
-    ];
-
     [SidedDependency(Side.Server)] private readonly IResourceManager _resMan = null!;
 
     [Test]
@@ -85,11 +78,7 @@ public sealed partial class MapRulesTest : GameTest
     {
         var walls = GetPrototypeIds<IsRoofComponent>();
         var wallmounts = GetPrototypeIds<WallMountComponent>();
-        var apcs = GetPrototypeIds<ApcComponent>();
-
         var wallPos = GetComponents(entities, walls.Contains, GetTilePos);
-        var apcPos = GetComponents(entities, apcs.Contains, GetTilePos);
-        var subPos = GetComponents(entities, Substations.Contains, GetTilePos);
 
         var errors = new List<string>();
 
@@ -109,17 +98,10 @@ public sealed partial class MapRulesTest : GameTest
             if (WallmountWhitelist.Contains(protoId))
                 continue;
 
-            var isApcCable = protoId == LVCable || protoId == MVCable;
-            var isSubCable = protoId == MVCable || protoId == HVCable;
-
             foreach (var ent in (YamlSequenceNode)proto["entities"])
             {
                 // Skip invalid transforms
                 if (GetTilePos(ent) is not { } trans)
-                    continue;
-
-                // These are allowed to be mapped under a wall when an APC is present
-                if (isApcCable && apcPos.Contains(trans) || isSubCable && subPos.Contains(trans))
                     continue;
 
                 if (!wallPos.Contains(trans))
