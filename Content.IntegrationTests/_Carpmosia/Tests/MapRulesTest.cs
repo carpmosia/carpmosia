@@ -134,14 +134,16 @@ public sealed partial class MapRulesTest : GameTest
             foreach (var ent in (YamlSequenceNode)proto["entities"])
             {
                 // Skip invalid transforms
-                if (GetTilePos(ent) is not { } trans)
+                if (GetTilePosWithRot(ent) is not { } trans)
                     continue;
 
-                if (!lvPos.Contains(trans))
-                    errors.Add($"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) that is missing an LV cable at {trans.Item2}");
+                var connTrans = (trans.Item1, trans.Item2);
 
-                if (!mvPos.Contains(trans))
-                    errors.Add($"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) that is missing an MV cable at {trans.Item2}");
+                if (!lvPos.Contains(connTrans))
+                    errors.Add($"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) that is missing an LV cable at {connTrans.Item2}");
+
+                if (!mvPos.Contains(connTrans))
+                    errors.Add($"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) that is missing an MV cable at {connTrans.Item2}");
             }
         }
 
@@ -299,13 +301,19 @@ public sealed partial class MapRulesTest : GameTest
         return (parent, pos, rot);
     }
 
-    private static (EntityUid, (int, int))? GetTilePos(YamlNode entNode)
+    private static (EntityUid, (int, int), int)? GetTilePosWithRot(YamlNode entNode)
     {
         if (GetApproxTransform(entNode) is not { } trans)
             return null;
-        var parent = trans.Item1;
         var (px, py) = trans.Item2;
-        return (parent, ((int)Math.Floor(px / 10m), (int)Math.Floor(py / 10m)));
+        return (trans.Item1, ((int)Math.Floor(px / 10m), (int)Math.Floor(py / 10m)), trans.Item3);
+    }
+
+    private static (EntityUid, (int, int))? GetTilePos(YamlNode entNode)
+    {
+        if (GetTilePosWithRot(entNode) is not { } trans)
+            return null;
+        return (trans.Item1, trans.Item2);
     }
 
     private List<EntProtoId> GetPrototypeIds<T>() where T : IComponent, new()
