@@ -16,7 +16,7 @@
       - !type:Oxygenate
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Human, Animal, Rat, Plant ]
+          type: [ Human, Animal, Rat, Plant, Avali ]
       # Convert Oxygen into CO2.
       - !type:ModifyLungGas
         conditions:
@@ -47,7 +47,7 @@
       - !type:Oxygenate
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Human, Animal, Rat, Plant, Arachnid, Moth ]
+          type: [ Human, Animal, Rat, Plant, Arachnid, Moth, Avali ] # Carpmosia-edit - Avali port
       # Convert Oxygen into CO2.
       - !type:ModifyLungGas
         conditions:
@@ -237,8 +237,7 @@
       - !type:Oxygenate
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Vox, Slime, Avali ] # Carpmosia-edit - Avali port
-      # Converts Nitrogen into Ammonia
+          type: [ Vox, Slime ] 
       - !type:ModifyLungGas
         conditions:
         - !type:MetabolizerTypeCondition
@@ -253,15 +252,6 @@
         ratios:
           NitrousOxide: 1.0
           Nitrogen: -1.0
-      # Carpmosia-start - Avali port
-      - !type:ModifyLungGas
-        conditions:
-        - !type:MetabolizerTypeCondition
-          type: [ Avali ]
-        ratios:
-          Ammonia: 1.0
-          Nitrogen: -1.0
-      # Carpmosia-end - Avali port
 
 - type: reagent
   id: NitrousOxide

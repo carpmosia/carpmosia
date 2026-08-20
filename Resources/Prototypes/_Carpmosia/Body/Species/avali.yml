@@ -234,7 +234,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Mobs/Species/Human/organs.rsi
+    sprite: _Carpmosia/Mobs/Species/Avali/organs.rsi
 
 - type: entity
   id: OrganAvaliVisual
@@ -242,7 +242,7 @@
   components:
   - type: VisualOrgan
     data:
-      sprite: _Carpmosia/Mobs/Species/Avali/parts.rsi # Starlight sprites
+      sprite: _Carpmosia/Mobs/Species/Avali/organs.rsi # Starlight sprites
   - type: VisualOrganMarkings
     markingData:
       group: Avali
@@ -253,7 +253,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: _Carpmosia/Mobs/Species/Avali/parts.rsi # Starlight sprites
+    sprite: _Carpmosia/Mobs/Species/Avali/organs.rsi # Starlight sprites
 
 - type: entity
   parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganAvaliExternal ]
@@ -323,13 +323,13 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganAvaliInternal, OrganAvaliMetabolizer ]
   id: OrganAvaliLungs
-  description: The nitrogen breathing lungs of an avali. Not hindered by oxygen.
+  description: The oxygen breathing lungs of an avali.
   components:
   - type: Metabolizer
     # not making lungs metabolize faster because that might get janky as fuck
     updateInterval: 0.7
   - type: Lung
-    alert: LowNitrogen
+    alert: LowOxygen
   #- type: Item
   #  size: Small
 
