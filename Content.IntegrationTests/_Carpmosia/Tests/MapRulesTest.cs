@@ -136,14 +136,15 @@ public sealed partial class MapRulesTest : GameTest
                 // Skip invalid transforms
                 if (GetTilePosWithRot(ent) is not { } trans)
                     continue;
+                var (grid, (x, y), rot) = trans;
+                var off = Angle.FromDegrees(rot).GetDir().ToIntVec();
+                var offPos = (x + off.X, y + off.Y);
 
-                var connTrans = (trans.Item1, trans.Item2);
+                if (!lvPos.Contains((grid, offPos)))
+                    errors.Add($"Grid {grid} contains {protoId} ({ent["uid"]}) that is missing an LV cable at {offPos}");
 
-                if (!lvPos.Contains(connTrans))
-                    errors.Add($"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) that is missing an LV cable at {connTrans.Item2}");
-
-                if (!mvPos.Contains(connTrans))
-                    errors.Add($"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) that is missing an MV cable at {connTrans.Item2}");
+                if (!mvPos.Contains((grid, offPos)))
+                    errors.Add($"Grid {grid} contains {protoId} ({ent["uid"]}) that is missing an MV cable at {offPos}");
             }
         }
 
