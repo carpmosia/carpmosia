@@ -103,7 +103,7 @@
     back: ClothingBackpackDuffelMedical
     ears: ClothingHeadsetMedical
     eyes: ClothingEyesHudMedical
-    pocket1: HandheldVitalsMonitor
+    pocket1: HandheldVitalsMonitor # Carpmosia-edit - Offmed port
     pocket2: PillCanisterBicaridine
   inhand:
     - MedkitCombatFilled
@@ -116,7 +116,7 @@
     - WeaponPistolViper
     - Syringe
     - Syringe
-    
+
 - type: startingGear
   id: SyndicateReinforcementSpy
   equipment:

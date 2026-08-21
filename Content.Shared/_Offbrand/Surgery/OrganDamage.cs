@@ -1,4 +1,5 @@
 using Content.Shared._Offbrand.Organs;
+using Content.Shared._Offbrand.Skeletons;
 using Content.Shared._Offbrand.Wounds;
 using Content.Shared.Body;
 using Content.Shared.Construction;
@@ -22,11 +23,21 @@ public sealed partial class OrganDamage : IGraphCondition
 
     public bool Condition(EntityUid uid, IEntityManager entityManager)
     {
-        if (!entityManager.System<BodySystem>()
-                .TryGetOrgansWithCategoryAndComponent<DamageableOrganComponent>(uid, out var organs, Category))
+        if(!entityManager.TryGetComponent<ParentOrganComponent>(uid, out var organ))
             return false;
 
-        return organs[0].Comp2.Damage >= Min && organs[0].Comp2.Damage <= Max;
+        foreach (var child in organ.Children)
+        {
+            if (!entityManager.TryGetComponent<OrganComponent>(child, out var org) || org.Category != Category)
+                continue;
+
+            if (!entityManager.TryGetComponent<DamageableOrganComponent>(child, out var damageable))
+                continue;
+
+            return damageable.Damage >= Min && damageable.Damage <= Max;
+        }
+
+        return false;
     }
 
     public bool DoExamine(ExaminedEvent args)

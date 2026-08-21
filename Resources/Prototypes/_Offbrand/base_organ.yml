@@ -195,14 +195,14 @@
       damageProbabilityCoefficient: 0.01
       totalProbabilityCoefficient: 0.01
       damageProbabilityConstant: 0
-    - damageTypes: [Slash, Piercing]
-      minimumDamage: 10
-      minimumTotalDamage: 30
-      woundPrototype: WoundCutTendon
-      woundDamages: {}
-      damageProbabilityCoefficient: 0.01
-      totalProbabilityCoefficient: 0.01
-      damageProbabilityConstant: 0
+    # - damageTypes: [Slash, Piercing]
+    #   minimumDamage: 10
+    #   minimumTotalDamage: 30
+    #   woundPrototype: WoundCutTendon
+    #   woundDamages: {}
+    #   damageProbabilityCoefficient: 0.01
+    #   totalProbabilityCoefficient: 0.01
+    #   damageProbabilityConstant: 0
 
 - type: entity
   abstract: true

@@ -1,3 +1,4 @@
+using Content.Shared.Body;
 using Content.Shared.Inventory;
 using Content.Shared.Popups;
 using Content.Shared.Standing;
@@ -42,12 +43,20 @@ public sealed partial class SurgeryToolSystem : EntitySystem
             }
         }
 
+        if (TryComp<OrganComponent>(args.Target, out var organ) && organ.Body != null)
+        {
+            if (!_standingState.IsDown(organ.Body.Value))
+            {
+                _popup.PopupCursor(Loc.GetString(ent.Comp.DownDenialPopup, ("target", organ.Body)), args.User);
+                args.Cancel();
+                return;
+            }
+        }
 
-        if (!_standingState.IsDown(target))
+        else if (!_standingState.IsDown(target))
         {
             _popup.PopupCursor(Loc.GetString(ent.Comp.DownDenialPopup, ("target", args.Target)), args.User);
             args.Cancel();
-
             return;
         }
     }

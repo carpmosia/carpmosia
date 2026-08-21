@@ -25,22 +25,22 @@
   - type: PalpationDescription
     description: palpation-broken-bone
 
-- type: entity
-  parent: WoundInternalBase
-  id: WoundCutTendon
-  name: cut tendon
-  components:
-  - type: Wound
-    maximumDamage: 0
-  - type: AnalyzableWound
-    descriptions:
-      0: wound-internal-cut-tendon
-  - type: PopupOnAppliedStatusEffect
-    message: cut-tendon-applied
-    visualType: MediumCaution
-  - type: HandIncapacitationStatusEffect
-  - type: PalpationDescription
-    description: palpation-cut-tendon
+# - type: entity
+#   parent: WoundInternalBase
+#   id: WoundCutTendon
+#   name: cut tendon
+#   components:
+#   - type: Wound
+#     maximumDamage: 0
+#   - type: AnalyzableWound
+#     descriptions:
+#       0: wound-internal-cut-tendon
+#   - type: PopupOnAppliedStatusEffect
+#     message: cut-tendon-applied
+#     visualType: MediumCaution
+#   - type: HandIncapacitationStatusEffect
+#   - type: PalpationDescription
+#     description: palpation-cut-tendon
 
 - type: entity
   parent: WoundInternalBase

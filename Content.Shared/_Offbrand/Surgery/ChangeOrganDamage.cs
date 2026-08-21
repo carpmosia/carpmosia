@@ -1,4 +1,5 @@
 using Content.Shared._Offbrand.Organs;
+using Content.Shared._Offbrand.Skeletons;
 using Content.Shared._Offbrand.Wounds;
 using Content.Shared.Body;
 using Content.Shared.Construction;
@@ -18,15 +19,17 @@ public sealed partial class ChangeOrganDamage : IGraphAction
 
     public void PerformAction(EntityUid uid, EntityUid? userUid, IEntityManager entityManager)
     {
-        entityManager.System<BodySystem>()
-            .TryGetOrgansWithCategoryAndComponent<DamageableOrganComponent>(uid,
-                out var organs,
-                Category);
 
-        foreach (var organ in organs)
+        if(!entityManager.TryGetComponent<ParentOrganComponent>(uid, out var organ))
+            return;
+
+        foreach (var child in organ.Children)
         {
+            if (!entityManager.TryGetComponent<OrganComponent>(child, out var org) || org.Category != Category)
+                continue;
+
             entityManager.System<DamageableOrganSystem>()
-                .ChangeDamage((organ, organ), Amount);
+                .ChangeDamage(child, Amount);
         }
     }
 }

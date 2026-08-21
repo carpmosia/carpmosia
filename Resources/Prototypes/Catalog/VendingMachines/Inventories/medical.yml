@@ -1,7 +1,7 @@
 - type: vendingMachineInventory
   id: NanoMedInventory
   startingInventory:
-    HandheldVitalsMonitor: 1
+    HandheldVitalsMonitor: 1 # Carpmosia-edit - Offmed port
     Gauze: 3
     Brutepack: 3
     Ointment: 3
@@ -16,7 +16,7 @@
 - type: vendingMachineInventory
   id: NanoMedCivilianWallInventory
   startingInventory:
-    HandheldVitalsMonitor: 1
+    HandheldVitalsMonitor: 1 # Carpmosia-edit - Offmed port
     Tourniquet: 3
     Brutepack: 3
     AloeCream: 3 # Currently just a reskin of Ointment but it's something
@@ -33,7 +33,7 @@
   id: NanoMedPlusInventory
   startingInventory:
     # Shared Essential
-    HandheldVitalsMonitor: 3
+    HandheldVitalsMonitor: 3 # Carpmosia-edit - Offmed port
     JetInjector: 3
     ClothingBeltMedical: 2 # Carpmosia-edit - Dingus bags
     # Paramed Essential Gear
@@ -71,7 +71,7 @@
 - type: vendingMachineInventory
   id: NanoMedCivilianInventory
   startingInventory:
-    HandheldVitalsMonitor: 3
+    HandheldVitalsMonitor: 3 # Carpmosia-edit - Offmed port
     Tourniquet: 5
     Brutepack: 5
     AloeCream: 5

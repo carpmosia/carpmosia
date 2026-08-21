@@ -1,3 +1,4 @@
+using Content.Shared.Body;
 using Content.Shared.EntityEffects;
 using Content.Shared.StatusEffectNew.Components;
 using Content.Shared.StatusEffectNew;
@@ -24,6 +25,13 @@ public sealed partial class RemoveStatusEffectEntityEffectSystem : EntityEffectS
 
     protected override void Effect(Entity<StatusEffectContainerComponent> ent, ref EntityEffectEvent<RemoveStatusEffect> args)
     {
-        _statusEffects.TryRemoveStatusEffect(ent, args.Effect.EffectProto);
+        if (!TryComp<BodyComponent>(ent, out var body))
+            return;
+
+        foreach (var organ in body.Organs?.ContainedEntities ?? [])
+        {
+            _statusEffects.TryRemoveStatusEffect(organ, args.Effect.EffectProto);
+        }
+
     }
 }

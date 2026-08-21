@@ -300,6 +300,7 @@ namespace Content.Client.Examine
                 };
                 doll.SetBody(target);
                 vBox.AddChild(doll);
+                _examineTooltipOpen.CloseOnClick = false; // Carpmosia-edit - Offmed port
             }
 
             // Begin Offbrand - examine elaboration

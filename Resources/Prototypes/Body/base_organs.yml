@@ -23,6 +23,10 @@
   - BaseSpeciesLayers # Offbrand - layers
   components:
   - type: Organ
+  - type: Construction
+    graph: SurgeryGraph
+    node: Base
+    deconstructionTarget: null
 
 - type: entity
   id: OrganBaseOrganic
