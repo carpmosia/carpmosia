@@ -111,7 +111,7 @@
     examinable: true
     nodes:
       output:
-        !type:CableDeviceNodeAdjacent # Carpmosia-edit - Wallmount adjacent power
+        !type:CableDeviceNode
         nodeGroupID: HVPower
   - type: PowerMonitoringDevice
     group: Generator
