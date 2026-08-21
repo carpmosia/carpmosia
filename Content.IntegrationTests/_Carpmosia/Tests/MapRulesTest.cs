@@ -55,7 +55,7 @@ public sealed partial class MapRulesTest : GameTest
 
         List<string> errors = [
           ..TestNonWallmountsUnderWalls(ents),
-          ..TestApcMissingConnections(ents),
+          ..TestMissingConnections(ents),
           ..TestMissingLabels(ents),
           ..TestAnchorableDuplicates(ents),
           ..TestUnlinkedAtmosDevices(ents),
@@ -130,13 +130,19 @@ public sealed partial class MapRulesTest : GameTest
         return (parent, pos, rot);
     }
 
-    private static (EntityUid, Vector2i)? GetTilePos(YamlNode entNode)
+    private static (EntityUid, Vector2i, int)? GetTilePosWithRot(YamlNode entNode)
     {
         if (GetApproxTransform(entNode) is not { } trans)
             return null;
-        var parent = trans.Item1;
         var (px, py) = trans.Item2;
-        return (parent, ((int)Math.Floor(px / 10m), (int)Math.Floor(py / 10m)));
+        return (trans.Item1, ((int)Math.Floor(px / 10m), (int)Math.Floor(py / 10m)), trans.Item3);
+    }
+
+    private static (EntityUid, Vector2i)? GetTilePos(YamlNode entNode)
+    {
+        if (GetTilePosWithRot(entNode) is not { } trans)
+            return null;
+        return (trans.Item1, trans.Item2);
     }
 
     private List<EntProtoId> GetPrototypeIds<T>() where T : IComponent, new()
