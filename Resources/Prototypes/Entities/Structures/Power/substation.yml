@@ -155,11 +155,9 @@
   - type: NodeContainer
     examinable: true
     nodes:
-      input:
-        !type:CableDeviceNodeAdjacent
+      input: !type:CableDeviceNodeAdjacent
         nodeGroupID: HVPower
-      output:
-        !type:CableDeviceNodeAdjacent
+      output: !type:CableDeviceNodeAdjacent
         nodeGroupID: MVPower
   # Carpmosia-end - Wallmount adjacent power
   - type: AmbientSound
