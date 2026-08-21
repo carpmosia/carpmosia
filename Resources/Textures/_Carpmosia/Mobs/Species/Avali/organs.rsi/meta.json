@@ -1,8 +1,8 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "DocMoth",
-  "size": {
+  "copyright": "DocMoth, ears eyeball-l, eyeball-r, taken from /tg/station 13 at https://github.com/tgstation/tgstation/commit/c4b7f3c41b6742aca260fe60cc358a778ba9b8c8 modified by RoseMane."
+  ,"size": {
     "x": 32,
     "y": 32
   },
@@ -47,6 +47,20 @@
       "name": "kidney-r"
     },
     {
+      "name": "eyeball-l"
+    },
+    {
+      "name": "eyeball-r"
+    },
+    {
+      "name": "eyeballs-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "eyeballs-inhand-right",
+      "directions": 4
+    },
+    {
       "name": "kidneys-inhand-left",
       "directions": 4
     },
@@ -73,6 +87,9 @@
     },
     {
       "name": "liver"
+    },
+    {
+      "name": "ears"
     },
     {
       "name": "stomach-inhand-left",
