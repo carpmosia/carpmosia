@@ -4,8 +4,8 @@ meta:
   engineVersion: 283.1.3
   forkId: carpmosia
   forkVersion: ""
-  time: 08/18/2026 10:38:02
-  entityCount: 528
+  time: 08/21/2026 09:54:37
+  entityCount: 527
 maps: []
 grids:
 - 1
@@ -862,7 +862,7 @@ entities:
     components:
     - type: Transform
       parent: 1
-      pos: -2.5,2.5
+      pos: -2.5,3.5
   - uid: 47
     components:
     - type: Transform
@@ -1189,7 +1189,7 @@ entities:
     components:
     - type: Transform
       parent: 1
-      pos: -2.5,2.5
+      pos: -2.5,3.5
 - proto: CaptainIDCard
   entities:
   - uid: 182

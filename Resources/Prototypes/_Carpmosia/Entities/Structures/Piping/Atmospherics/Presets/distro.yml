@@ -75,6 +75,11 @@
   - type: Label
     localizedLabel: gas-pipe-sensor-distribution-loop
 
+- type: entity
+  parent: [BaseAtmosDistro, GasVentPumpInlineAlt4]
+  id: GasVentPumpInlineDistro
+  suffix: Inline, Distro
+
 # Trinary
 - type: entity
   parent: [BaseAtmosDistro, GasFilterAlt4]
