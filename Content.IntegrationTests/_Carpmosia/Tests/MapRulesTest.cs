@@ -50,6 +50,11 @@ public sealed partial class MapRulesTest : GameTest
         "PlaqueAtmos",
     ];
 
+    private static readonly EntProtoId[] WallmountSubstations = [
+        "SubstationWallBasic",
+        "BaseSubstationWall"
+    ];
+
     [SidedDependency(Side.Server)] private readonly IResourceManager _resMan = null!;
 
     [Test]
@@ -64,7 +69,7 @@ public sealed partial class MapRulesTest : GameTest
 
         List<string> errors = [
             ..TestNonWallmountEntitiesUnderWalls(ents),
-            ..TestApcMissingConnections(ents),
+            ..TestMissingConnections(ents),
             ..TestMissingLabels(ents),
             ..TestAnchorableDuplicates(ents),
             ..TestUnlinkedAtmosDevices(ents),
@@ -114,12 +119,13 @@ public sealed partial class MapRulesTest : GameTest
         return errors;
     }
 
-    private List<string> TestApcMissingConnections(YamlSequenceNode entities)
+    private List<string> TestMissingConnections(YamlSequenceNode entities)
     {
         var apcs = GetPrototypeIds<ApcComponent>();
 
         var lvPos = GetComponents(entities, x => x == LVCable, GetTilePos);
         var mvPos = GetComponents(entities, x => x == MVCable, GetTilePos);
+        var hvPos = GetComponents(entities, x => x == HVCable, GetTilePos);
 
         var errors = new List<string>();
 
@@ -127,8 +133,11 @@ public sealed partial class MapRulesTest : GameTest
         {
             EntProtoId protoId = proto["proto"].AsString();
 
+            var isApc = apcs.Contains(protoId);
+            var isSub = WallmountSubstations.Contains(protoId);
+
             // Skip unrelated entities
-            if (!apcs.Contains(protoId))
+            if (!isApc && !isSub)
                 continue;
 
             foreach (var ent in (YamlSequenceNode)proto["entities"])
@@ -140,11 +149,14 @@ public sealed partial class MapRulesTest : GameTest
                 var off = Angle.FromDegrees(rot).GetDir().ToIntVec();
                 var offPos = (x + off.X, y + off.Y);
 
-                if (!lvPos.Contains((grid, offPos)))
+                if (isApc && !lvPos.Contains((grid, offPos)))
                     errors.Add($"Grid {grid} contains {protoId} ({ent["uid"]}) that is missing an LV cable at {offPos}");
 
                 if (!mvPos.Contains((grid, offPos)))
                     errors.Add($"Grid {grid} contains {protoId} ({ent["uid"]}) that is missing an MV cable at {offPos}");
+
+                if (isSub && !hvPos.Contains((grid, offPos)))
+                    errors.Add($"Grid {grid} contains {protoId} ({ent["uid"]}) that is missing an HV cable at {offPos}");
             }
         }
 
