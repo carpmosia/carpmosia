@@ -2708,4 +2708,15 @@
   id: 397
   time: '2026-08-19T18:54:41.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/595
+- author: Atakku
+  changes:
+  - message: APC's and other wallmount power sources (generators, substations) can
+      now connect to cables right in front of them
+    type: Tweak
+  - message: 'On Amber, Lampocteis, Donk, Centcomm: Adjusted APC wiring to match new
+      mapping standards'
+    type: Tweak
+  id: 398
+  time: '2026-08-21T11:36:28.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/598
 Order: -1
