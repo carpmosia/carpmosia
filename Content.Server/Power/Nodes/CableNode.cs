@@ -39,7 +39,7 @@ namespace Content.Server.Power.Nodes
                 }
 
                 // Carpmosia-start - Wallmount adjacent power
-                if (node is CableDeviceNodeAdjacent && dir == xformQuery.GetComponent(node.Owner).LocalRotation.GetCardinalDir().GetOpposite())
+                if (node is CableDeviceNodeAdjacent && dir == xformQuery.Comp(node.Owner).LocalRotation.GetCardinalDir().GetOpposite())
                 {
                     nodeDirs.Add((dir, node));
                 }
