@@ -19,7 +19,7 @@ public partial class CableDeviceNodeAdjacent : Node
     /// If you change this,
     /// you must manually call <see cref="NodeGroupSystem.QueueReflood"/> to update the node connections.
     /// </remarks>
-    [DataField("enabled")]
+    [DataField]
     public bool Enabled { get; set; } = true;
 
     public override bool Connectable(IEntityManager entMan, TransformComponent? xform = null)
