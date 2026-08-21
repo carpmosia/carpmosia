@@ -38,8 +38,8 @@ public sealed partial class MapRulesTest : GameTest
        "/Maps/_Carpmosia/centcomm.yml",
     ];
 
-    private const string PROTO = "proto";
-    private const string ENTITIES = "entities";
+    private const string Proto = "proto";
+    private const string Entities = "entities";
 
     [SidedDependency(Side.Server)] private readonly IResourceManager _resMan = null!;
 
@@ -50,7 +50,7 @@ public sealed partial class MapRulesTest : GameTest
         if (LoadMapYaml(map, _resMan) is not { } root)
             return;
 
-        if (!root.TryGetNode<YamlSequenceNode>(ENTITIES, out var ents))
+        if (!root.TryGetNode<YamlSequenceNode>(Entities, out var ents))
             return;
 
         List<string> errors = [
@@ -147,8 +147,8 @@ public sealed partial class MapRulesTest : GameTest
     private static List<T> DeserializeCompNodes<T>(YamlSequenceNode entities, IEnumerable<EntProtoId> filter, Func<YamlNode, T?> deserializer) where T : struct
     {
         return [..entities
-            .Where(x => filter.Contains(x[PROTO].AsString()))
-            .SelectMany(x => ((YamlSequenceNode)x[ENTITIES])
+            .Where(x => filter.Contains(x[Proto].AsString()))
+            .SelectMany(x => ((YamlSequenceNode)x[Entities])
                 .Select(deserializer)
                 .OfType<T>()
             )

@@ -24,13 +24,13 @@ public sealed partial class MapRulesTest
 
         foreach (var proto in entities)
         {
-            EntProtoId protoId = proto[PROTO].AsString();
+            EntProtoId protoId = proto[Proto].AsString();
 
             // Skip unrelated entities
             if (!apcs.Contains(protoId))
                 continue;
 
-            foreach (var ent in (YamlSequenceNode)proto[ENTITIES])
+            foreach (var ent in (YamlSequenceNode)proto[Entities])
             {
                 // Skip invalid transforms
                 if (GetTilePos(ent) is not { } trans)
