@@ -10,26 +10,8 @@ namespace Content.Server.Power.Nodes;
 /// </summary>
 [DataDefinition]
 [Virtual]
-public partial class CableDeviceNodeAdjacent : Node
+public partial class CableDeviceNodeAdjacent : CableDeviceNode
 {
-    /// <summary>
-    /// If disabled, this cable device will never connect.
-    /// </summary>
-    /// <remarks>
-    /// If you change this,
-    /// you must manually call <see cref="NodeGroupSystem.QueueReflood"/> to update the node connections.
-    /// </remarks>
-    [DataField]
-    public bool Enabled { get; set; } = true;
-
-    public override bool Connectable(IEntityManager entMan, TransformComponent? xform = null)
-    {
-        if (!Enabled)
-            return false;
-
-        return base.Connectable(entMan, xform);
-    }
-
     public override IEnumerable<Node> GetReachableNodes(
         Entity<TransformComponent> xform,
         EntityQuery<NodeContainerComponent> nodeQuery,
@@ -43,12 +25,13 @@ public partial class CableDeviceNodeAdjacent : Node
         var mapSystem = entMan.System<SharedMapSystem>();
         var gridIndex = mapSystem.TileIndicesFor(gridEnt, xform.Comp.Coordinates);
 
-        var nodes = NodeHelpers.GetCardinalNeighborNodes(nodeQuery, gridEnt, gridIndex, mapSystem, includeSameTile: false);
-        foreach (var (dir, node) in nodes)
+        var nodes = NodeHelpers.GetCardinalNeighborNodes(nodeQuery, gridEnt, gridIndex, mapSystem);
+        var ownDir = xform.Comp.LocalRotation.GetCardinalDir();
+
+        foreach (var (nodeDir, node) in nodes)
         {
             if (node is CableNode
-                && dir != Direction.Invalid
-                && xformQuery.GetComponent(node.Owner).LocalRotation.GetCardinalDir() == dir)
+                && (nodeDir == ownDir || nodeDir == Direction.Invalid))
                 yield return node;
         }
     }
