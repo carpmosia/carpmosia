@@ -1,15 +1,15 @@
 #nullable enable
-using Content.IntegrationTests.Fixtures.Attributes;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using Content.IntegrationTests.Fixtures;
+using Content.IntegrationTests.Fixtures.Attributes;
 using Content.IntegrationTests.Utility;
 using Robust.Shared.ContentPack;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Maths;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using YamlDotNet.RepresentationModel;
 
 namespace Content.IntegrationTests.Tests;

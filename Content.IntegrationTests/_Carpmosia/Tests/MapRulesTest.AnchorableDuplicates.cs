@@ -1,14 +1,12 @@
-#nullable enable
 using System.Collections.Generic;
 using System.Linq;
-using Content.IntegrationTests.Fixtures;
 using Content.Shared.Construction.Components;
 using YamlDotNet.RepresentationModel;
 
 namespace Content.IntegrationTests.Tests;
 
 [TestFixture]
-public sealed partial class MapRulesTest : GameTest
+public sealed partial class MapRulesTest
 {
     private List<string> TestAnchorableDuplicates(YamlSequenceNode entities)
     {

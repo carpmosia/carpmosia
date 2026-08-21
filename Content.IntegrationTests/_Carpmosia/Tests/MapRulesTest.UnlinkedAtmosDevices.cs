@@ -1,16 +1,14 @@
-#nullable enable
 using System.Collections.Generic;
-using Content.IntegrationTests.Fixtures;
 using Content.Server.Atmos.Monitor.Components;
+using Content.Shared.Atmos.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
-using Content.Shared.Atmos.Components;
 
 namespace Content.IntegrationTests.Tests;
 
 [TestFixture]
-public sealed partial class MapRulesTest : GameTest
+public sealed partial class MapRulesTest
 {
     private List<string> TestUnlinkedAtmosDevices(YamlSequenceNode entities)
     {

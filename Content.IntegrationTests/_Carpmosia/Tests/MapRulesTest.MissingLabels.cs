@@ -1,6 +1,4 @@
-#nullable enable
 using System.Collections.Generic;
-using Content.IntegrationTests.Fixtures;
 using Content.Server.Atmos.Monitor.Components;
 using Content.Server.DeviceLinking.Components;
 using Content.Server.Power.Components;
@@ -11,7 +9,7 @@ using YamlDotNet.RepresentationModel;
 namespace Content.IntegrationTests.Tests;
 
 [TestFixture]
-public sealed partial class MapRulesTest : GameTest
+public sealed partial class MapRulesTest
 {
 
     private List<string> TestMissingLabels(YamlSequenceNode entities)

@@ -1,6 +1,4 @@
-#nullable enable
 using System.Collections.Generic;
-using Content.IntegrationTests.Fixtures;
 using Content.Server.Power.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -9,7 +7,7 @@ using YamlDotNet.RepresentationModel;
 namespace Content.IntegrationTests.Tests;
 
 [TestFixture]
-public sealed partial class MapRulesTest : GameTest
+public sealed partial class MapRulesTest
 {
     private static readonly EntProtoId[] LVCables = ["CableApcExtension"];
     private static readonly EntProtoId[] MVCables = ["CableMV"];

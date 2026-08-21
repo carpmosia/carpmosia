@@ -1,7 +1,4 @@
-#nullable enable
 using System.Collections.Generic;
-using System.Linq;
-using Content.IntegrationTests.Fixtures;
 using Content.Server.Power.Components;
 using Content.Shared.Light.Components;
 using Content.Shared.Wall;
@@ -12,7 +9,7 @@ using YamlDotNet.RepresentationModel;
 namespace Content.IntegrationTests.Tests;
 
 [TestFixture]
-public sealed partial class MapRulesTest : GameTest
+public sealed partial class MapRulesTest
 {
     private static readonly EntProtoId[] WallmountWhitelist = [
         "RandomPosterAny",
