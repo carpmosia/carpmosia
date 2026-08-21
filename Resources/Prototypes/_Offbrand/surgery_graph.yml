@@ -78,6 +78,9 @@
       - tool: Recoupling
         doAfter: 1
     - to: OpenRibCage
+      conditions:
+        - !type:IsOrgan
+          category: Torso
       completed:
       - !type:AddWound
         wound: WoundOpenRibCage
