@@ -2,6 +2,7 @@ using Content.Server.NodeContainer.EntitySystems;
 using Content.Server.NodeContainer.Nodes;
 using Content.Shared.NodeContainer;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Physics.Systems;
 
 namespace Content.Server.Power.Nodes;
 
@@ -44,11 +45,12 @@ public partial class CableDeviceNodeAdjacent : Node
         var gridIndex = mapSystem.TileIndicesFor(gridEnt, xform.Comp.Coordinates);
 
         var nodes = NodeHelpers.GetCardinalNeighborNodes(nodeQuery, gridEnt, gridIndex, mapSystem, includeSameTile: false);
-        foreach (var (dir, node) in nodes)
+        var dir = xformQuery.GetComponent(node.Owner).LocalRotation.GetCardinalDir();
+        foreach (var (nodeDir, node) in nodes)
         {
             if (node is CableNode
-                && dir != Direction.Invalid
-                && xformQuery.GetComponent(node.Owner).LocalRotation.GetCardinalDir() == dir)
+                && nodeDir != Direction.Invalid
+                && nodeDir == dir)
                 yield return node;
         }
     }
