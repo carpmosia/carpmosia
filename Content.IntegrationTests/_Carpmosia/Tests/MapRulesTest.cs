@@ -50,11 +50,9 @@ public sealed partial class MapRulesTest : GameTest
         "PlaqueAtmos",
     ];
 
-    // Substations don't have a unique component sadly
-    private static readonly EntProtoId[] Substations = [
-        "SubstationBasic",
-        "SubstationBasicEmpty",
+    private static readonly EntProtoId[] WallmountSubstations = [
         "SubstationWallBasic",
+        "BaseSubstationWall"
     ];
 
     [SidedDependency(Side.Server)] private readonly IResourceManager _resMan = null!;
@@ -71,7 +69,7 @@ public sealed partial class MapRulesTest : GameTest
 
         List<string> errors = [
             ..TestNonWallmountEntitiesUnderWalls(ents),
-            ..TestApcMissingConnections(ents),
+            ..TestMissingConnections(ents),
             ..TestMissingLabels(ents),
             ..TestAnchorableDuplicates(ents),
             ..TestUnlinkedAtmosDevices(ents),
@@ -85,11 +83,7 @@ public sealed partial class MapRulesTest : GameTest
     {
         var walls = GetPrototypeIds<IsRoofComponent>();
         var wallmounts = GetPrototypeIds<WallMountComponent>();
-        var apcs = GetPrototypeIds<ApcComponent>();
-
         var wallPos = GetComponents(entities, walls.Contains, GetTilePos);
-        var apcPos = GetComponents(entities, apcs.Contains, GetTilePos);
-        var subPos = GetComponents(entities, Substations.Contains, GetTilePos);
 
         var errors = new List<string>();
 
@@ -109,17 +103,10 @@ public sealed partial class MapRulesTest : GameTest
             if (WallmountWhitelist.Contains(protoId))
                 continue;
 
-            var isApcCable = protoId == LVCable || protoId == MVCable;
-            var isSubCable = protoId == MVCable || protoId == HVCable;
-
             foreach (var ent in (YamlSequenceNode)proto["entities"])
             {
                 // Skip invalid transforms
                 if (GetTilePos(ent) is not { } trans)
-                    continue;
-
-                // These are allowed to be mapped under a wall when an APC is present
-                if (isApcCable && apcPos.Contains(trans) || isSubCable && subPos.Contains(trans))
                     continue;
 
                 if (!wallPos.Contains(trans))
@@ -132,12 +119,13 @@ public sealed partial class MapRulesTest : GameTest
         return errors;
     }
 
-    private List<string> TestApcMissingConnections(YamlSequenceNode entities)
+    private List<string> TestMissingConnections(YamlSequenceNode entities)
     {
         var apcs = GetPrototypeIds<ApcComponent>();
 
         var lvPos = GetComponents(entities, x => x == LVCable, GetTilePos);
         var mvPos = GetComponents(entities, x => x == MVCable, GetTilePos);
+        var hvPos = GetComponents(entities, x => x == HVCable, GetTilePos);
 
         var errors = new List<string>();
 
@@ -145,21 +133,30 @@ public sealed partial class MapRulesTest : GameTest
         {
             EntProtoId protoId = proto["proto"].AsString();
 
+            var isApc = apcs.Contains(protoId);
+            var isSub = WallmountSubstations.Contains(protoId);
+
             // Skip unrelated entities
-            if (!apcs.Contains(protoId))
+            if (!isApc && !isSub)
                 continue;
 
             foreach (var ent in (YamlSequenceNode)proto["entities"])
             {
                 // Skip invalid transforms
-                if (GetTilePos(ent) is not { } trans)
+                if (GetTilePosWithRot(ent) is not { } trans)
                     continue;
+                var (grid, (x, y), rot) = trans;
+                var off = Angle.FromDegrees(rot).GetDir().ToIntVec();
+                var offPos = (x + off.X, y + off.Y);
 
-                if (!lvPos.Contains(trans))
-                    errors.Add($"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) that is missing an LV cable at {trans.Item2}");
+                if (isApc && !lvPos.Contains((grid, offPos)))
+                    errors.Add($"Grid {grid} contains {protoId} ({ent["uid"]}) that is missing an LV cable at {offPos}");
 
-                if (!mvPos.Contains(trans))
-                    errors.Add($"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) that is missing an MV cable at {trans.Item2}");
+                if (!mvPos.Contains((grid, offPos)))
+                    errors.Add($"Grid {grid} contains {protoId} ({ent["uid"]}) that is missing an MV cable at {offPos}");
+
+                if (isSub && !hvPos.Contains((grid, offPos)))
+                    errors.Add($"Grid {grid} contains {protoId} ({ent["uid"]}) that is missing an HV cable at {offPos}");
             }
         }
 
@@ -317,13 +314,19 @@ public sealed partial class MapRulesTest : GameTest
         return (parent, pos, rot);
     }
 
-    private static (EntityUid, (int, int))? GetTilePos(YamlNode entNode)
+    private static (EntityUid, (int, int), int)? GetTilePosWithRot(YamlNode entNode)
     {
         if (GetApproxTransform(entNode) is not { } trans)
             return null;
-        var parent = trans.Item1;
         var (px, py) = trans.Item2;
-        return (parent, ((int)Math.Floor(px / 10m), (int)Math.Floor(py / 10m)));
+        return (trans.Item1, ((int)Math.Floor(px / 10m), (int)Math.Floor(py / 10m)), trans.Item3);
+    }
+
+    private static (EntityUid, (int, int))? GetTilePos(YamlNode entNode)
+    {
+        if (GetTilePosWithRot(entNode) is not { } trans)
+            return null;
+        return (trans.Item1, trans.Item2);
     }
 
     private List<EntProtoId> GetPrototypeIds<T>() where T : IComponent, new()
