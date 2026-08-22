@@ -1,10 +1,10 @@
 - type: entity
+  parent: BaseChemistryBottleFilled
   id: ChemistryBottleTramadol
   suffix: tramadol
-  parent: BaseChemistryBottleFilled
   components:
   - type: Label
-    currentLabel: tramadol
+    localizedLabel: reagent-name-tramadol
   - type: Solution
     solution:
       reagents:
@@ -12,12 +12,12 @@
         Quantity: 30
 
 - type: entity
+  parent: BaseChemistryBottleFilled
   id: ChemistryBottleParacetamol
   suffix: paracetamol
-  parent: BaseChemistryBottleFilled
   components:
   - type: Label
-    currentLabel: paracetamol
+    localizedLabel: reagent-name-paracetamol
   - type: Solution
     solution:
       reagents:
