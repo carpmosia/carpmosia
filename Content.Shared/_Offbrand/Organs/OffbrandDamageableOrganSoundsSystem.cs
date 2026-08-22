@@ -1,7 +1,6 @@
 using Content.Shared.Random.Helpers;
 using Content.Shared._Offbrand.Medical;
 using Content.Shared._Offbrand.Wounds;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
@@ -9,8 +8,6 @@ namespace Content.Shared._Offbrand.Organs;
 
 public sealed partial class OffbrandDamageableOrganSoundsSystem : EntitySystem
 {
-    [Dependency] private IRobustRandom _random = default!;
-    [Dependency] private IPrototypeManager _prototype = default!;
     [Dependency] private IGameTiming _timing = default!;
 
     public override void Initialize()
@@ -30,7 +27,7 @@ public sealed partial class OffbrandDamageableOrganSoundsSystem : EntitySystem
         var rand = new RobustRandom();
         rand.SetSeed(seed);
 
-        var line = rand.Pick(_prototype.Index(match));
+        var line = rand.Pick(ProtoMan.Index(match));
         args.Messages.Add(line);
     }
 }

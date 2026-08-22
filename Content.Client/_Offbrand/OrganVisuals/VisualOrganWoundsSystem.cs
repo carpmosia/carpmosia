@@ -1,6 +1,5 @@
 using Content.Client._Offbrand.BodyVisuals;
 using Content.Client.Body;
-using Content.Shared._Offbrand.Organs;
 using Content.Shared._Offbrand.OrganVisuals;
 using Content.Shared._Offbrand.Wounds;
 using Content.Shared.Body;
@@ -16,7 +15,6 @@ public sealed partial class VisualOrganWoundsSystem : EntitySystem
     private static readonly ProtoId<ShaderPrototype> Shader = "Masked";
 
     [Dependency] private SpriteSystem _sprite = default!;
-    [Dependency] private IPrototypeManager _prototype = default!;
     [Dependency] private BodyAppearanceRelaySystem _relay = default!;
     [Dependency] private VisualBodySystem _visualBody = default!;
 
@@ -147,7 +145,7 @@ public sealed partial class VisualOrganWoundsSystem : EntitySystem
         {
             var overlayLayerKey = $"{visualOrgan.Layer}-{group.DamageGroup}-layer";
 
-            woundable.Damage.TryGetDamageInGroup(_prototype.Index(group.DamageGroup), out var total);
+            woundable.Damage.TryGetDamageInGroup(ProtoMan.Index(group.DamageGroup), out var total);
             var thresholdIndex = ent.Comp.Thresholds.BinarySearch(total);
 
             if (thresholdIndex < -1)

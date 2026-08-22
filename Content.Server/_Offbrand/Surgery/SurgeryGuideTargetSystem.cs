@@ -1,18 +1,16 @@
 using Content.Server.Construction;
 using Content.Shared._Offbrand.Surgery;
-using Robust.Shared.Prototypes;
 
 namespace Content.Server._Offbrand.Surgery;
 
 public sealed partial class SurgeryGuideTargetSystem : SharedSurgeryGuideTargetSystem
 {
     [Dependency] private ConstructionSystem _construction = default!;
-    [Dependency] private IPrototypeManager _prototype = default!;
 
     protected override void OnStartSurgery(Entity<SurgeryGuideTargetComponent> ent, ref SurgeryGuideStartSurgeryMessage args)
     {
         base.OnStartSurgery(ent, ref args);
-        if (!_prototype.Resolve(args.Prototype, out var construction))
+        if (!ProtoMan.Resolve(args.Prototype, out var construction))
             return;
 
         _construction.SetPathfindingTarget(ent, construction.TargetNode);

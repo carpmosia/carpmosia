@@ -15,7 +15,6 @@ public sealed partial class VitalsAnalyzerSystem : EntitySystem
     [Dependency] private PerfusionSystem _perfusion = default!;
     [Dependency] private BodySystem _body = default!;
     [Dependency] private SharedSolutionContainerSystem _solutionContainer = default!;
-    [Dependency] private IPrototypeManager _prototype = default!;
     [Dependency] private MetabolizerSystem _metabolizer = default!;
     [Dependency] private SharedBloodstreamSystem _bloodstream = default!;
 
@@ -54,7 +53,7 @@ public sealed partial class VitalsAnalyzerSystem : EntitySystem
 
             ProtoId<ReagentPrototype> reagent = reagentId.Prototype;
 
-            if (_prototype.Index(reagent).Group != MedicineGroup)
+            if (ProtoMan.Index(reagent).Group != MedicineGroup)
             {
                 hasNonMedical = true;
                 continue;
@@ -79,7 +78,7 @@ public sealed partial class VitalsAnalyzerSystem : EntitySystem
 
             foreach (var (reagent, quantity) in metabolitesSolution.Contents)
             {
-                if (_prototype.Index<ReagentPrototype>(reagent.Prototype).Group != MedicineGroup)
+                if (ProtoMan.Index<ReagentPrototype>(reagent.Prototype).Group != MedicineGroup)
                 {
                     hasNonMedical = true;
                     continue;
