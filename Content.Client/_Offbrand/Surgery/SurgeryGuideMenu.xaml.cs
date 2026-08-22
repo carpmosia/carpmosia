@@ -1,3 +1,4 @@
+using System.Numerics;
 using Content.Client.Construction;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Construction.Prototypes;
@@ -22,8 +23,8 @@ public sealed partial class SurgeryGuideMenu : FancyWindow
     private readonly ConstructionSystem _construction = default!;
     private readonly SpriteSystem _sprite = default!;
 
-    public event Action<ProtoId<ConstructionPrototype>>? OnSurgerySelected;
-    public event Action? OnCleanUp;
+    // public event Action<ProtoId<ConstructionPrototype>>? OnSurgerySelected;
+    // public event Action? OnCleanUp;
 
     private ConstructionPrototype? _selectedSurgery;
     public string Category = string.Empty;
@@ -43,14 +44,14 @@ public sealed partial class SurgeryGuideMenu : FancyWindow
             SurgeriesContainer.Visible = true;
             StepsContainer.Visible = false;
         };
-        PerformButton.OnPressed += _ =>
-        {
-            if (_selectedSurgery is not { } surgery)
-                return;
+        // PerformButton.OnPressed += _ =>
+        // {
+        //     if (_selectedSurgery is not { } surgery)
+        //         return;
 
-            OnSurgerySelected?.Invoke(surgery.ID);
-        };
-        CleanUp.OnPressed += _ => OnCleanUp?.Invoke();
+        //     OnSurgerySelected?.Invoke(surgery.ID);
+        // };
+        // CleanUp.OnPressed += _ => OnCleanUp?.Invoke();
 
         PossibleSurgeries.GenerateItem += GenerateButton;
         PossibleSurgeries.ItemKeyBindDown += OnSelectSurgery;
@@ -119,7 +120,8 @@ public sealed partial class SurgeryGuideMenu : FancyWindow
 
         button.AddChild(new Label() { Text = Loc.GetString(entry.Construction.SetName!.Value) });
         button.ToolTip = Loc.GetString(entry.Construction.SetDescription!.Value);
-        button.AddStyleClass("ButtonSquare");
+        button.AddStyleClass("OpenRight");
+        button.HorizontalExpand = true;
     }
 
     public void Populate()
@@ -146,6 +148,21 @@ public sealed partial class SurgeryGuideMenu : FancyWindow
         });
 
         PossibleSurgeries.PopulateList(listData);
+    }
+
+    public void Update(EntityUid? target)
+    {
+
+        var doll = new _Offbrand.BodyVisuals.OffbrandHealthDollControl
+            {
+                OverrideDirection = Direction.South,
+                SetSize = new Vector2(128, 128),
+                Scale = new Vector2(4, 4),
+                HorizontalAlignment = HAlignment.Center,
+            };
+
+        doll.SetBody(target);
+        PatientView.AddChild(doll);
     }
 
 

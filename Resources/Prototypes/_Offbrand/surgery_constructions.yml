@@ -1,13 +1,13 @@
-- type: construction
-  hide: true
-  id: BoneDeathTreatment
-  name: surgery-bone-death-treatment-name
-  description: surgery-bone-death-treatment-desc
-  graph: SurgeryGraph
-  startNode: Base
-  targetNode: BoneDeathTreatment
-  category: Surgery
-  objectType: NodeToNode
+# - type: construction
+#   hide: true
+#   id: BoneDeathTreatment
+#   name: surgery-bone-death-treatment-name
+#   description: surgery-bone-death-treatment-desc
+#   graph: SurgeryGraph
+#   startNode: Base
+#   targetNode: BoneDeathTreatment
+#   category: Surgery
+#   objectType: NodeToNode
 
 - type: construction
   hide: true
@@ -53,16 +53,16 @@
   category: Surgery
   objectType: NodeToNode
 
-- type: construction
-  hide: true
-  id: HuskingTreatment
-  name: surgery-husking-treatment-name
-  description: surgery-husking-treatment-desc
-  graph: SurgeryGraph
-  startNode: Base
-  targetNode: HuskingTreatment
-  category: Surgery
-  objectType: NodeToNode
+# - type: construction
+#   hide: true
+#   id: HuskingTreatment
+#   name: surgery-husking-treatment-name
+#   description: surgery-husking-treatment-desc
+#   graph: SurgeryGraph
+#   startNode: Base
+#   targetNode: HuskingTreatment
+#   category: Surgery
+#   objectType: NodeToNode
 
 - type: construction
   hide: true
