@@ -167,10 +167,10 @@
   abstract: true
   id: BaseMobSurgery
   components:
-  - type: Construction
-    graph: SurgeryGraph
-    node: Base
-    deconstructionTarget: null
+  # - type: Construction
+  #   graph: SurgeryGraph
+  #   node: Base
+  #   deconstructionTarget: null
   - type: SurgeryGuideTarget
   - type: ContainerContainer
     containers:
