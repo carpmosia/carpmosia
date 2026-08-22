@@ -75,6 +75,9 @@
       - UndergarmentTop
       - UndergarmentBottom
       - Special
+  - type: ContainerContainer
+    containers:
+      cavity_slot: !type:Container
 
 - type: entity
   parent:
