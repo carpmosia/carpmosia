@@ -32,6 +32,7 @@ public sealed partial class UniqueWoundOnDamageSystem : OffbrandDamageSystem
                 continue;
 
             var probability = wound.DamageProbabilityCoefficient * incomingAmount.Float() + wound.TotalProbabilityCoefficient * totalAmount.Float() + wound.DamageProbabilityConstant;
+            probability = Math.Clamp(probability, 0f, 1f); // Floating point errors <3
             if (!rand.Prob(probability))
                 continue;
 
