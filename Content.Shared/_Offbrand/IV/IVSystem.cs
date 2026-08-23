@@ -15,7 +15,6 @@ using Content.Shared.Whitelist;
 using Robust.Shared.Containers;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
-using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._Offbrand.IV;
@@ -34,6 +33,12 @@ public sealed partial class IVSystem : EntitySystem
     [Dependency] private WoundableOrganSystem _woundableOrgan = default!;
     [Dependency] private WoundableSystem _woundable = default!;
 
+    [Dependency] private EntityQuery<IVTargetComponent> _ivTargetQuery;
+    [Dependency] private EntityQuery<IVSourceComponent> _ivSourceQuery;
+    [Dependency] private EntityQuery<WoundableComponent> _woundableQuery;
+    [Dependency] private EntityQuery<PhysicsComponent> _physicsQuery;
+    [Dependency] private EntityQuery<BloodstreamComponent> _bloodstreamQuery;
+
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -49,10 +54,7 @@ public sealed partial class IVSystem : EntitySystem
             sourceComp.NextUpdate = _timing.CurTime + sourceComp.UpdateInterval;
             Dirty(sourceUid, sourceComp);
 
-            if (!TryComp<BloodstreamComponent>(target, out var bloodstream) || !TryComp<IVTargetComponent>(target, out var targetComp))
-                continue;
-
-            TickIV((sourceUid, sourceComp), (target, targetComp, bloodstream));
+            TickIV((sourceUid, sourceComp), target);
         }
     }
 
@@ -65,7 +67,7 @@ public sealed partial class IVSystem : EntitySystem
     [SubscribeLocalEvent]
     private void OnCanDropDragged(Entity<IVSourceComponent> ent, ref CanDropDraggedEvent args)
     {
-        if (!TryComp<IVTargetComponent>(args.Target, out var target))
+        if (!_ivTargetQuery.TryComp(args.Target, out var target))
             return;
 
         args.Handled = true;
@@ -75,7 +77,7 @@ public sealed partial class IVSystem : EntitySystem
     [SubscribeLocalEvent]
     private void OnDragDropDragged(Entity<IVSourceComponent> ent, ref DragDropDraggedEvent args)
     {
-        if (!TryComp<IVTargetComponent>(args.Target, out var target) || target.IVSource is not null)
+        if (!_ivTargetQuery.TryComp(args.Target, out var target) || target.IVSource is not null)
             return;
 
         args.Handled = true;
@@ -106,7 +108,8 @@ public sealed partial class IVSystem : EntitySystem
         if (_timing.ApplyingState)
             return;
 
-        RipOutIV(ent);
+        if (ent.Comp.IVTarget is { } target)
+            RipOutIV(ent.AsNullable(), target);
     }
 
     [SubscribeLocalEvent]
@@ -118,25 +121,26 @@ public sealed partial class IVSystem : EntitySystem
         if (_entityWhitelist.IsWhitelistPass(ent.Comp.PermissibleContainers, args.Container.Owner))
             return;
 
-        RipOutIV(ent);
+        if (ent.Comp.IVSource is { } source)
+            RipOutIV(source, ent.AsNullable());
     }
 
     [SubscribeLocalEvent]
     private void OnSourceShutdown(Entity<IVSourceComponent> ent, ref ComponentShutdown args)
     {
-        if (ent.Comp.IVTarget is not { } target || !TryComp<IVTargetComponent>(target, out var targetComp))
+        if (ent.Comp.IVTarget is not { } target)
             return;
 
-        RipOutIV(ent.AsNullable(), (target, targetComp));
+        RipOutIV(ent.AsNullable(), target);
     }
 
     [SubscribeLocalEvent]
     private void OnTargetShutdown(Entity<IVTargetComponent> ent, ref ComponentShutdown args)
     {
-        if (ent.Comp.IVSource is not { } source || !TryComp<IVSourceComponent>(source, out var sourceComp))
+        if (ent.Comp.IVSource is not { } source)
             return;
 
-        RipOutIV((source, sourceComp), ent.AsNullable());
+        RipOutIV(source, ent.AsNullable());
     }
 
     [SubscribeLocalEvent]
@@ -171,8 +175,12 @@ public sealed partial class IVSystem : EntitySystem
         args.Verbs.Add(verb);
     }
 
-    private void TickIV(Entity<IVSourceComponent> source, Entity<IVTargetComponent, BloodstreamComponent> target)
+    private void TickIV(Entity<IVSourceComponent> source, Entity<IVTargetComponent?, BloodstreamComponent?> target)
     {
+        if (!_ivTargetQuery.Resolve(target, ref target.Comp1)
+            || !_bloodstreamQuery.Resolve(target, ref target.Comp2))
+            return;
+
         if (_itemSlots.GetItemOrNull(source, source.Comp.SlotName) is not { } contained)
             return;
 
@@ -202,11 +210,10 @@ public sealed partial class IVSystem : EntitySystem
 
     private void StartIV(Entity<IVSourceComponent?> source, Entity<IVTargetComponent?> target, EntityUid user)
     {
-        if (!Resolve(source, ref source.Comp) || !Resolve(target, ref target.Comp))
-            return;
-        if (!TryComp<PhysicsComponent>(source, out var sourcePhysics))
-            return;
-        if (!TryComp<PhysicsComponent>(target, out var targetPhysics))
+        if (!_ivSourceQuery.Resolve(source, ref source.Comp)
+            || !_ivTargetQuery.Resolve(target, ref target.Comp)
+            || !_physicsQuery.TryComp(source, out var sourcePhysics)
+            || !_physicsQuery.TryComp(target, out var targetPhysics))
             return;
 
         _popup.PopupEntity(
@@ -239,7 +246,7 @@ public sealed partial class IVSystem : EntitySystem
 
     private void StopIV(Entity<IVSourceComponent?> source, Entity<IVTargetComponent?> target, EntityUid user)
     {
-        if (!Resolve(source, ref source.Comp) || !Resolve(target, ref target.Comp))
+        if (!_ivSourceQuery.Resolve(source, ref source.Comp) || !_ivTargetQuery.Resolve(target, ref target.Comp))
             return;
 
         _popup.PopupEntity(
@@ -268,10 +275,10 @@ public sealed partial class IVSystem : EntitySystem
 
     public bool RipOutIV(EntityUid ent)
     {
-        if (TryComp<IVTargetComponent>(ent, out var targetComp) && targetComp.IVSource is { } source)
+        if (_ivTargetQuery.TryComp(ent, out var targetComp) && targetComp.IVSource is { } source)
             return RipOutIV(source, (ent, targetComp));
 
-        if (TryComp<IVSourceComponent>(ent, out var sourceComp) && sourceComp.IVTarget is { } target)
+        if (_ivSourceQuery.TryComp(ent, out var sourceComp) && sourceComp.IVTarget is { } target)
             return RipOutIV((ent, sourceComp), target);
 
         return false;
@@ -279,7 +286,7 @@ public sealed partial class IVSystem : EntitySystem
 
     public bool RipOutIV(Entity<IVSourceComponent?> source, Entity<IVTargetComponent?> target)
     {
-        if (!Resolve(source, ref source.Comp) || !Resolve(target, ref target.Comp))
+        if (!_ivSourceQuery.Resolve(source, ref source.Comp) || !_ivTargetQuery.Resolve(target, ref target.Comp))
             return false;
 
         if (source.Comp.IVTarget != target.Owner || target.Comp.IVSource != source.Owner)
@@ -299,7 +306,7 @@ public sealed partial class IVSystem : EntitySystem
         var rand = SharedRandomExtensions.PredictedRandom(_timing, GetNetEntity(target));
 
         var organ = rand.Pick(organs);
-        if (!TryComp<WoundableComponent>(organ, out var woundable))
+        if (!_woundableQuery.TryComp(organ, out var woundable))
             return;
 
         _woundable.TryWound((organ, woundable), target.Comp.RipOutWound, unique: true);
@@ -307,7 +314,10 @@ public sealed partial class IVSystem : EntitySystem
 
     private void TryStartIV(Entity<IVSourceComponent?> source, Entity<IVTargetComponent?> target, EntityUid user)
     {
-        if (!Resolve(source, ref source.Comp) || !Resolve(target, ref target.Comp) || source.Comp.IVTarget is not null || target.Comp.IVSource is not null)
+        if (!_ivSourceQuery.Resolve(source, ref source.Comp)
+            || !_ivTargetQuery.Resolve(target, ref target.Comp)
+            || source.Comp.IVTarget is not null
+            || target.Comp.IVSource is not null)
             return;
 
         if (_itemSlots.GetItemOrNull(source, source.Comp.SlotName) is null)
@@ -336,7 +346,12 @@ public sealed partial class IVSystem : EntitySystem
 
     private void TryStopIV(Entity<IVSourceComponent?> source, Entity<IVTargetComponent?> target, EntityUid user)
     {
-        if (!Resolve(source, ref source.Comp) || !Resolve(target, ref target.Comp) || source.Comp.IVTarget is null || target.Comp.IVSource is null || source.Comp.IVTarget != target || target.Comp.IVSource != source)
+        if (!_ivSourceQuery.Resolve(source, ref source.Comp)
+            || !_ivTargetQuery.Resolve(target, ref target.Comp)
+            || source.Comp.IVTarget is null
+            || target.Comp.IVSource is null
+            || source.Comp.IVTarget != target
+            || target.Comp.IVSource != source) // ?? This shouldn't be allowed?? Ever?? Why is checking both??
             return;
 
         _popup.PopupEntity(

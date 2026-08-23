@@ -6,7 +6,6 @@ using Content.Shared.Popups;
 using Content.Shared.Random.Helpers;
 using Content.Shared.StatusEffectNew;
 using Content.Shared.Verbs;
-using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._Offbrand.Wounds;
@@ -19,6 +18,9 @@ public sealed partial class CprSystem : EntitySystem
     [Dependency] private StatusEffectsSystem _statusEffects = default!;
     [Dependency] private WoundableSystem _woundable = default!;
     [Dependency] private MobStateSystem _mobState = default!;
+
+    [Dependency] private EntityQuery<WoundableComponent> _woundableQuery;
+    [Dependency] private EntityQuery<HeartrateAlertsComponent> _heartrateQuery;
 
     public override void Initialize()
     {
@@ -55,20 +57,18 @@ public sealed partial class CprSystem : EntitySystem
         _statusEffects.TryAddStatusEffectDuration(ent, ent.Comp.Effect, ent.Comp.EffectDuration);
 
         if (SharedRandomExtensions.PredictedProb(_timing, ent.Comp.WoundProbability, GetNetEntity(ent))
-            && TryComp<WoundableComponent>(ent, out var woundable))
+            && _woundableQuery.TryComp(ent, out var woundable)
+            && _woundable.TryWound((ent, woundable), ent.Comp.Wound, unique: true, refresh: true))
         {
-            if (_woundable.TryWound((ent, woundable), ent.Comp.Wound, unique: true, refresh: true))
-            {
-                _popup.PopupEntity(
-                    Loc.GetString(ent.Comp.WoundPopup, ("target", Identity.Entity(ent, EntityManager))),
-                    ent.Owner,
-                    args.User,
-                    PopupType.MediumCaution
-                );
-            }
+            _popup.PopupEntity(
+                Loc.GetString(ent.Comp.WoundPopup, ("target", Identity.Entity(ent, EntityManager))),
+                ent.Owner,
+                args.User,
+                PopupType.MediumCaution
+            );
         }
 
-        args.Repeat = TryComp<HeartrateAlertsComponent>(ent, out var heartrate) && !heartrate.Beating;
+        args.Repeat = _heartrateQuery.TryComp(ent, out var heartrate) && !heartrate.Beating;
     }
 
     private void OnGetVerbs(Entity<CprTargetComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
@@ -76,7 +76,7 @@ public sealed partial class CprSystem : EntitySystem
         if (!args.CanAccess || !args.CanInteract || ent.Owner == args.User)
             return;
 
-        if (!TryComp<HeartrateAlertsComponent>(ent, out var heartrate) || heartrate.Beating)
+        if (!_heartrateQuery.TryComp(ent, out var heartrate) || heartrate.Beating)
             return;
 
         var @event = args;
@@ -92,7 +92,7 @@ public sealed partial class CprSystem : EntitySystem
 
     private void OnExamined(Entity<CprTargetComponent> ent, ref ExaminedEvent args)
     {
-        if (!TryComp<HeartrateAlertsComponent>(ent, out var heartrate) || heartrate.Beating)
+        if (!_heartrateQuery.TryComp(ent, out var heartrate) || heartrate.Beating)
             return;
 
         if (_mobState.IsDead(ent))

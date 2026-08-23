@@ -21,6 +21,8 @@ public sealed partial class TriggerOnDoAfterSystem : EntitySystem
     [Dependency] private TriggerSystem _trigger = default!;
     [Dependency] private EntityWhitelistSystem _entityWhitelist = default!;
 
+    [Dependency] private EntityQuery<StackComponent> _stackQuery;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -86,7 +88,7 @@ public sealed partial class TriggerOnDoAfterSystem : EntitySystem
         var hasMoreItems = true;
         if (trigger.Comp.Consume)
         {
-            if (TryComp<StackComponent>(used, out var stackComp))
+            if (_stackQuery.TryComp(used, out var stackComp))
             {
                 _stack.ReduceCount((used, stackComp), 1);
 
@@ -145,7 +147,7 @@ public sealed partial class TriggerOnDoAfterSystem : EntitySystem
         if (user != target && !_interaction.InRangeUnobstructed(user, target, popup: true))
             return false;
 
-        if (TryComp<StackComponent>(trigger, out var stack) && stack.Count < 1)
+        if (_stackQuery.TryComp(trigger, out var stack) && stack.Count < 1)
             return false;
 
         if (trigger.Comp.BeginSound is { } beginSound)

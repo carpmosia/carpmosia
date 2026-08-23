@@ -6,6 +6,8 @@ public sealed partial class BodyAppearanceRelaySystem : EntitySystem
 {
     [Dependency] private BodySystem _body = default!;
 
+    [Dependency] private EntityQuery<BodyAppearanceRelayComponent> _appearnceRelayQuery;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -63,7 +65,7 @@ public sealed partial class BodyAppearanceRelaySystem : EntitySystem
     {
         yield return body;
 
-        if (!TryComp<BodyAppearanceRelayComponent>(body, out var relay))
+        if (!_appearnceRelayQuery.TryComp(body, out var relay))
             yield break;
 
         foreach (var target in relay.Targets)
