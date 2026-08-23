@@ -37,7 +37,7 @@ public sealed partial class CprTargetComponent : Component
     /// How likely is the wound to happen when CPR happens?
     /// </summary>
     [DataField(required: true)]
-    public double WoundProbability;
+    public float WoundProbability;
 
     [DataField]
     public LocId WoundPopup = "cpr-wound-caused";

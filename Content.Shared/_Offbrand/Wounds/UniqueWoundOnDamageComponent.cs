@@ -52,17 +52,17 @@ public sealed partial class UniqueWoundSpecifier
     /// The probability coefficient of the amount of incoming damage
     /// </summary>
     [DataField(required: true)]
-    public double DamageProbabilityCoefficient;
+    public float DamageProbabilityCoefficient;
 
     /// <summary>
     /// The probability coefficient of the amount of total damage
     /// </summary>
     [DataField(required: true)]
-    public double TotalProbabilityCoefficient;
+    public float TotalProbabilityCoefficient;
 
     /// <summary>
     /// The probability constant of the amount of incoming damage
     /// </summary>
     [DataField(required: true)]
-    public double DamageProbabilityConstant;
+    public float DamageProbabilityConstant;
 }

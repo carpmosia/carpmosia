@@ -31,8 +31,8 @@ public sealed partial class UniqueWoundOnDamageSystem : OffbrandDamageSystem
             if (incomingAmount < wound.MinimumDamage || totalAmount < wound.MinimumTotalDamage)
                 continue;
 
-            var probability = wound.DamageProbabilityCoefficient * incomingAmount.Double() + wound.TotalProbabilityCoefficient * totalAmount.Double() + wound.DamageProbabilityConstant;
-            if (!rand.Prob((float)probability))
+            var probability = wound.DamageProbabilityCoefficient * incomingAmount.Float() + wound.TotalProbabilityCoefficient * totalAmount.Float() + wound.DamageProbabilityConstant;
+            if (!rand.Prob(probability))
                 continue;
 
             _woundable.TryWound((ent.Owner, woundable), wound.WoundPrototype, wound.WoundDamages, unique: true);
