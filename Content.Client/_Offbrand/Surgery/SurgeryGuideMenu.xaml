@@ -2,6 +2,7 @@
     xmlns="https://spacestation14.io"
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
     xmlns:ui="clr-namespace:Content.Client._Offbrand.Surgery"
+    xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     MinHeight="525"
     MinWidth="400"
     Title="{Loc 'surgery-guide-title'}">
@@ -11,15 +12,25 @@
                   Margin="10"
                   SeparationOverride="16">
         <BoxContainer Name="SurgicalDollSection"
-                        VerticalExpand="True"
-                        MinHeight="130"
-                        MinWidth="130"
-                        Orientation="Vertical"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center">
-        <PanelContainer SetSize="128 128" Name="PatientView"/>
+                VerticalExpand="True"
+                MinHeight="130"
+                MinWidth="130"
+                Orientation="Vertical"
+                HorizontalAlignment="Center">
+            <Label Text="Patient" HorizontalAlignment="Center"/>
+            <PanelContainer VerticalExpand="True">
+                <PanelContainer.PanelOverride>
+                        <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" BorderThickness="1" BorderColor="#3B3E56" />
+                </PanelContainer.PanelOverride>
+            <PanelContainer Name="PatientView" VerticalExpand="True" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <PanelContainer.PanelOverride>
+                        <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" BorderThickness="1" BorderColor="#3B3E56" />
+                </PanelContainer.PanelOverride>
+             </PanelContainer>
+            <Label Text="Use your surgical tools on the doll above, following the steps of your chosen procedure." FontColorOverride="Red" StyleClasses="WindowFooterText"/>
         </BoxContainer>
         <BoxContainer Name="SurgeriesContainer" Orientation="Vertical">
+            <Label Name="Surgeries" Text="Surgical procedures"/>
             <controls:ListContainer Name="PossibleSurgeries" VerticalExpand="True" Margin="4 4"/>
             <Button Name="CleanUp" Text="{Loc 'surgery-guide-clean-up'}" StyleClasses="OpenBoth" />
         </BoxContainer>

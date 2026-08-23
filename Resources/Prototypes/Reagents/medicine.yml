@@ -729,17 +729,17 @@
   physicalDesc: reagent-physical-desc-crisp
   flavor: medicine
   color: "#86caf7"
-  metabolisms:
-    Bloodstream:
-      effects:
-      - !type:AdjustReagent
-        reagent: Romerol
-        amount: -0.5
-    Digestion:
-      effects:
-      - !type:AdjustReagent
-        reagent: Romerol
-        amount: -0.5
+  # metabolisms:
+  #   Bloodstream:
+  #     effects:
+  #     - !type:AdjustReagent
+  #       reagent: Romerol
+  #       amount: -0.5
+  #   Digestion:
+  #     effects:
+  #     - !type:AdjustReagent
+  #       reagent: Romerol
+  #       amount: -0.5
     # Begin Offbrand Removals
     #     - !type:CureZombieInfection
     #       conditions:
@@ -773,9 +773,9 @@
               reagent: AmbuzolPlus
               min: 5
           # Begin Offbrand Additions
-        - !type:AdjustReagent
-          reagent: Romerol
-          amount: -5
+        # - !type:AdjustReagent
+        #   reagent: Romerol
+        #   amount: -5
           # End Offbrand Additions
     Digestion:
       effects:
@@ -786,9 +786,9 @@
           reagent: AmbuzolPlus
           min: 5
         # Begin Offbrand Additions
-      - !type:AdjustReagent
-        reagent: Romerol
-        amount: -5
+      # - !type:AdjustReagent
+      #   reagent: Romerol
+      #   amount: -5
         # End Offbrand Additions
 
 - type: reagent

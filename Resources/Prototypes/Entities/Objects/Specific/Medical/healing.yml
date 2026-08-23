@@ -875,16 +875,16 @@
         id: PillCharcoal
         amount: 3
 
-- type: entity
-  name: romerol pill
-  parent: Pill
-  id: PillRomerol
-  components:
-  - type: Solution
-    solution:
-      reagents:
-      - ReagentId: Romerol
-        Quantity: 20
+# - type: entity
+#   name: romerol pill
+#   parent: Pill
+#   id: PillRomerol
+#   components:
+#   - type: Solution
+#     solution:
+#       reagents:
+#       - ReagentId: Romerol
+#         Quantity: 20
 
 - type: entity
   name: ambuzol pill
@@ -1108,18 +1108,18 @@
         Quantity: 15
 
 #this is where all the syringes are so i didn't know where to put it
-- type: entity
-  suffix: romerol
-  parent: PrefilledSyringe
-  id: SyringeRomerol
-  components:
-  - type: Label
-    localizedLabel: reagent-name-romerol
-  - type: Solution
-    solution:
-      reagents:
-      - ReagentId: Romerol
-        Quantity: 15
+# - type: entity
+#   suffix: romerol
+#   parent: PrefilledSyringe
+#   id: SyringeRomerol
+#   components:
+#   - type: Label
+#     localizedLabel: reagent-name-romerol
+#   - type: Solution
+#     solution:
+#       reagents:
+#       - ReagentId: Romerol
+#         Quantity: 15
 
 - type: entity
   suffix: hyperzine
