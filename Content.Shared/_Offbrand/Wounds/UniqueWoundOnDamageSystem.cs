@@ -19,8 +19,7 @@ public sealed partial class UniqueWoundOnDamageSystem : OffbrandDamageSystem
 
     private void OnDamageDealt(Entity<UniqueWoundOnDamageComponent> ent, ref DamageDealtEvent args)
     {
-        var seed = SharedRandomExtensions.HashCodeCombine((int)_timing.CurTick.Value, GetNetEntity(ent).Id);
-        var rand = new System.Random(seed);
+        var rand = SharedRandomExtensions.PredictedRandom(_timing, GetNetEntity(ent));
 
         var woundable = Comp<WoundableComponent>(ent);
 
@@ -33,7 +32,7 @@ public sealed partial class UniqueWoundOnDamageSystem : OffbrandDamageSystem
                 continue;
 
             var probability = wound.DamageProbabilityCoefficient * incomingAmount.Double() + wound.TotalProbabilityCoefficient * totalAmount.Double() + wound.DamageProbabilityConstant;
-            if (!rand.Prob(probability))
+            if (!rand.Prob((float)probability))
                 continue;
 
             _woundable.TryWound((ent.Owner, woundable), wound.WoundPrototype, wound.WoundDamages, unique: true);

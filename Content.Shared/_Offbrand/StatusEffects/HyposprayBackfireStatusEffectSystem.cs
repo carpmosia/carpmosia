@@ -32,9 +32,7 @@ public sealed partial class HyposprayBackfireStatusEffectSystem : EntitySystem
         if (args.Args.TargetGettingInjected == args.Args.EntityUsingInjector)
             return;
 
-        var seed = SharedRandomExtensions.HashCodeCombine((int)_timing.CurTick.Value, GetNetEntity(ent).Id);
-        var rand = new System.Random(seed);
-        if (!rand.Prob(ent.Comp.Probability))
+        if (!SharedRandomExtensions.PredictedProb(_timing, ent.Comp.Probability, GetNetEntity(ent)))
             return;
 
         args.Args.TargetGettingInjected = args.Args.EntityUsingInjector;

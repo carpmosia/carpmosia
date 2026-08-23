@@ -260,9 +260,7 @@ public sealed partial class IVSystem : EntitySystem
         if (organs.Count == 0)
             return;
 
-        var seed = SharedRandomExtensions.HashCodeCombine((int)_timing.CurTick.Value, GetNetEntity(target).Id);
-        var rand = new RobustRandom();
-        rand.SetSeed(seed);
+        var rand = SharedRandomExtensions.PredictedRandom(_timing, GetNetEntity(target));
 
         var organ = rand.Pick(organs);
         if (!TryComp<WoundableComponent>(organ, out var woundable))

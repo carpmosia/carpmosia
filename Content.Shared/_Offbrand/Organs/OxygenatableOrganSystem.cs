@@ -107,7 +107,7 @@ public sealed partial class OxygenatableOrganSystem : EntitySystem
         _damageableOrgan.ChangeDamage((ent, ent), ent.Comp3.DamageHealing);
     }
 
-    private void DoDamage(Entity<OrganComponent, OxygenatableOrganComponent, OxygenatableDamageableOrganComponent, DamageableOrganComponent> ent, FixedPoint2 oxygenation, System.Random rand)
+    private void DoDamage(Entity<OrganComponent, OxygenatableOrganComponent, OxygenatableDamageableOrganComponent, DamageableOrganComponent> ent, FixedPoint2 oxygenation, IRobustRandom rand)
     {
         var damageThreshold = ent.Comp3.OxygenationDamageThresholds.LowestMatch(oxygenation);
 
@@ -121,13 +121,13 @@ public sealed partial class OxygenatableOrganSystem : EntitySystem
         if (ent.Comp1.Body is { } body)
             RaiseLocalEvent(body, ref evt);
 
-        if (!rand.Prob(evt.Chance))
+        if (!rand.Prob((float)evt.Chance))
             return;
 
         _damageableOrgan.ChangeDamage((ent, ent), amount);
     }
 
-    private void DoOxygen(Entity<OrganComponent, OxygenatableOrganComponent, OxygenatableDamageableOrganComponent, DamageableOrganComponent> ent, FixedPoint2 oxygenation, System.Random rand)
+    private void DoOxygen(Entity<OrganComponent, OxygenatableOrganComponent, OxygenatableDamageableOrganComponent, DamageableOrganComponent> ent, FixedPoint2 oxygenation, IRobustRandom rand)
     {
         var depletionThreshold = ent.Comp3.OxygenDepletionThresholds.LowestMatch(oxygenation);
 
@@ -143,7 +143,7 @@ public sealed partial class OxygenatableOrganSystem : EntitySystem
         if (ent.Comp1.Body is { } body)
             RaiseLocalEvent(body, ref evt);
 
-        if (!rand.Prob(evt.Chance))
+        if (!rand.Prob((float)evt.Chance))
             return;
 
         ChangeOxygenation((ent, ent), -amount);
@@ -160,8 +160,7 @@ public sealed partial class OxygenatableOrganSystem : EntitySystem
                 : 1
             : FixedPoint2.Zero;
 
-        var seed = SharedRandomExtensions.HashCodeCombine((int)_timing.CurTick.Value, GetNetEntity(ent).Id);
-        var rand = new System.Random(seed);
+        var rand = SharedRandomExtensions.PredictedRandom(_timing, GetNetEntity(ent));
 
         DoOxygen(ent, oxygenation, rand);
         DoDamage(ent, oxygenation, rand);

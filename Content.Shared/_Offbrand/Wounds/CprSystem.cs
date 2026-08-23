@@ -54,10 +54,8 @@ public sealed partial class CprSystem : EntitySystem
     {
         _statusEffects.TryAddStatusEffectDuration(ent, ent.Comp.Effect, ent.Comp.EffectDuration);
 
-        var seed = SharedRandomExtensions.HashCodeCombine((int)_timing.CurTick.Value, GetNetEntity(ent).Id);
-        var rand = new System.Random(seed);
-
-        if (rand.Prob(ent.Comp.WoundProbability) && TryComp<WoundableComponent>(ent, out var woundable))
+        if (SharedRandomExtensions.PredictedProb(_timing, (float)ent.Comp.WoundProbability, GetNetEntity(ent))
+            && TryComp<WoundableComponent>(ent, out var woundable))
         {
             if (_woundable.TryWound((ent, woundable), ent.Comp.Wound, unique: true, refresh: true))
             {

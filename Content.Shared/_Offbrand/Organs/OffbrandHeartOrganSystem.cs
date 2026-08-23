@@ -102,13 +102,10 @@ public sealed partial class OffbrandHeartOrganSystem : EntitySystem
         }
 
         var threshold = ent.Comp.StrainDamageThresholds.HighestMatch(Strain(ent));
-        if (threshold is (var chance, var amount))
+        if (threshold is var (chance, amount)
+            && SharedRandomExtensions.PredictedProb(_timing, (float)chance, GetNetEntity(ent)))
         {
-            var seed = SharedRandomExtensions.HashCodeCombine((int)_timing.CurTick.Value, GetNetEntity(ent).Id);
-            var rand = new System.Random(seed);
-
-            if (rand.Prob(chance))
-                _damageable.ChangeDamage(ent.Owner, amount);
+            _damageable.ChangeDamage(ent.Owner, amount);
         }
     }
 
@@ -141,8 +138,7 @@ public sealed partial class OffbrandHeartOrganSystem : EntitySystem
 
     private void OnHeartBeatStrain(Entity<HeartStopOnHighStrainComponent> ent, ref PotentialHeartStopEvent args)
     {
-        var seed = SharedRandomExtensions.HashCodeCombine((int)_timing.CurTick.Value, GetNetEntity(ent).Id);
-        var rand = new System.Random(seed);
+        var rand = SharedRandomExtensions.PredictedRandom(_timing, GetNetEntity(ent));
 
         if (_statusEffects.HasEffectComp<PreventHeartStopFromStrainStatusEffectComponent>(args.Body))
             return;

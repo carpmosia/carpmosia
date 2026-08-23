@@ -38,9 +38,7 @@ public sealed partial class GunBackfireStatusEffectSystem : EntitySystem
         if (args.Args.Cancelled)
             return;
 
-        var seed = SharedRandomExtensions.HashCodeCombine((int)_timing.CurTick.Value, GetNetEntity(args.Args.Gun).Id);
-        var rand = new System.Random(seed);
-        if (!rand.Prob(ent.Comp.Probability))
+        if (!SharedRandomExtensions.PredictedProb(_timing, ent.Comp.Probability, GetNetEntity(args.Args.Gun)))
             return;
 
         QueueLocalEvent(new GunBackfireStunEvent(target, ent.Comp.BackfireStunTime));

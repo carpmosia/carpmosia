@@ -143,10 +143,7 @@ public sealed partial class WoundableSystem : EntitySystem
         if (ent.Comp.Clamped)
             return;
 
-        var seed = SharedRandomExtensions.HashCodeCombine((int)_timing.CurTick.Value, GetNetEntity(ent).Id);
-        var rand = new System.Random(seed);
-
-        if (!rand.Prob(args.Args.Probability))
+        if (!SharedRandomExtensions.PredictedProb(_timing, args.Args.Probability, GetNetEntity(ent)))
             return;
 
         ent.Comp.Clamped = true;

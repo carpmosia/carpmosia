@@ -40,8 +40,7 @@ public sealed partial class AdjustReagentGaussianEntityEffectSystem : EntityEffe
 
     protected override void Effect(Entity<SolutionComponent> ent, ref EntityEffectEvent<AdjustReagentGaussian> args)
     {
-        var seed = SharedRandomExtensions.HashCodeCombine((int)_timing.CurTick.Value, GetNetEntity(ent).Id);
-        var rand = new System.Random(seed);
+        var rand = SharedRandomExtensions.PredictedRandom(_timing, GetNetEntity(ent));
 
         var amount = rand.NextGaussian(args.Effect.μ, args.Effect.σ);
         amount *= args.Scale;

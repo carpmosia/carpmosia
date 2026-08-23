@@ -168,8 +168,7 @@ public sealed partial class PerfusionSystem : EntitySystem
         if (ent.Comp.BaseCardiacOutput is null)
             return 0;
 
-        var seed = SharedRandomExtensions.HashCodeCombine((int)_timing.CurTick.Value, GetNetEntity(ent).Id);
-        var rand = new System.Random(seed);
+        var rand = SharedRandomExtensions.PredictedRandom(_timing, GetNetEntity(ent));
 
         var deviation = rand.Next(-ent.Comp.HeartRateDeviation, ent.Comp.HeartRateDeviation);
 
@@ -178,8 +177,7 @@ public sealed partial class PerfusionSystem : EntitySystem
 
     public (int, int) BloodPressure(Entity<PerfusionComponent> ent)
     {
-        var seed = SharedRandomExtensions.HashCodeCombine((int)_timing.CurTick.Value, GetNetEntity(ent).Id);
-        var rand = new System.Random(seed);
+        var rand = SharedRandomExtensions.PredictedRandom(_timing, GetNetEntity(ent));
 
         var deviationA = rand.Next(-ent.Comp.BloodPressureDeviation, ent.Comp.BloodPressureDeviation);
         var deviationB = rand.Next(-ent.Comp.BloodPressureDeviation, ent.Comp.BloodPressureDeviation);
@@ -192,8 +190,7 @@ public sealed partial class PerfusionSystem : EntitySystem
 
     public int Etco2(Entity<PerfusionComponent> ent)
     {
-        var seed = SharedRandomExtensions.HashCodeCombine((int)_timing.CurTick.Value, GetNetEntity(ent).Id);
-        var rand = new System.Random(seed);
+        var rand = SharedRandomExtensions.PredictedRandom(_timing, GetNetEntity(ent));
 
         var deviation = rand.Next(-ent.Comp.Etco2Deviation, ent.Comp.Etco2Deviation);
 

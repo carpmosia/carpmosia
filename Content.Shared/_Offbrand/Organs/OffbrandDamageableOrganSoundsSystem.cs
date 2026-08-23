@@ -1,7 +1,6 @@
 using Content.Shared.Random.Helpers;
 using Content.Shared._Offbrand.Medical;
 using Content.Shared._Offbrand.Wounds;
-using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._Offbrand.Organs;
@@ -23,9 +22,7 @@ public sealed partial class OffbrandDamageableOrganSoundsSystem : EntitySystem
         if (ent.Comp.Descriptions.HighestMatch(damage.Damage) is not { } match)
             return;
 
-        var seed = SharedRandomExtensions.HashCodeCombine((int)_timing.CurTick.Value, GetNetEntity(ent).Id);
-        var rand = new RobustRandom();
-        rand.SetSeed(seed);
+        var rand = SharedRandomExtensions.PredictedRandom(_timing, GetNetEntity(ent));
 
         var line = rand.Pick(ProtoMan.Index(match));
         args.Messages.Add(line);

@@ -27,10 +27,7 @@ public sealed partial class CauseStatusEffectRandomlyStatusEffectSystem : Entity
             randomEffects.NextUpdate = _timing.CurTime + randomEffects.UpdateInterval;
             Dirty(uid, randomEffects);
 
-            var seed = SharedRandomExtensions.HashCodeCombine((int)_timing.CurTick.Value, GetNetEntity(uid).Id);
-            var rand = new System.Random(seed);
-
-            if (!rand.Prob(randomEffects.Probability))
+            if (!SharedRandomExtensions.PredictedProb(_timing, randomEffects.Probability, GetNetEntity(uid)))
                 continue;
 
             foreach (var (proto, duration) in randomEffects.Effects)
