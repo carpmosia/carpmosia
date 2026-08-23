@@ -207,7 +207,7 @@ namespace Content.Shared.FixedPoint
         public static implicit operator FixedPoint4(int n) => New(n);
         public static implicit operator FixedPoint4(long n) => New(n);
 
-        public static explicit operator FixedPoint2(FixedPoint4 n) => FixedPoint2.FromRaw((int)(n.Value / 100)); // Offbrand
+        public static explicit operator FixedPoint2(FixedPoint4 n) => FixedPoint2.FromCents((int)(n.Value / 100)); // Offbrand
         public static explicit operator float(FixedPoint4 n) => n.Float();
         public static explicit operator double(FixedPoint4 n) => n.Double();
         public static explicit operator int(FixedPoint4 n) => n.Int();
