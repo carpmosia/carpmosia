@@ -1,5 +1,4 @@
 using Content.Shared._Offbrand.Examine;
-using Robust.Client.UserInterface;
 using Robust.Shared.Reflection;
 
 namespace Content.Client._Offbrand.Examine;
@@ -13,14 +12,7 @@ public sealed partial class ExaminableUserInterfaceSystem : EntitySystem
     private readonly HashSet<(EntityUid Entity, Enum UiKey)> _openingByExamine = new();
     private readonly HashSet<(EntityUid Entity, Enum UiKey)> _openByExamine = new();
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<ExaminableUserInterfaceComponent, ExaminableUserInterfaceRequestEvent>(OnRequest);
-        SubscribeLocalEvent<ExaminableUserInterfaceComponent, ExaminableUserInterfaceCloseEvent>(OnClose);
-    }
-
+    [SubscribeLocalEvent]
     private void OnRequest(Entity<ExaminableUserInterfaceComponent> ent, ref ExaminableUserInterfaceRequestEvent args)
     {
         if (ent.Comp.RequiresDetailsRange && !args.IsInDetailsRange)
@@ -77,6 +69,12 @@ public sealed partial class ExaminableUserInterfaceSystem : EntitySystem
         args.Container.AddChild(control);
     }
 
+    [SubscribeLocalEvent]
+    private void OnClose(Entity<ExaminableUserInterfaceComponent> ent, ref ExaminableUserInterfaceCloseEvent args)
+    {
+        CloseExamineUi(ent.Owner, ent.Comp.UiKey, args.Examiner);
+    }
+
     public bool IsOpeningForExamine(EntityUid entity, Enum uiKey)
     {
         return _openingByExamine.Contains((entity, uiKey));
@@ -85,11 +83,6 @@ public sealed partial class ExaminableUserInterfaceSystem : EntitySystem
     public bool IsOpenForExamine(EntityUid entity, Enum uiKey)
     {
         return _openByExamine.Contains((entity, uiKey));
-    }
-
-    private void OnClose(Entity<ExaminableUserInterfaceComponent> ent, ref ExaminableUserInterfaceCloseEvent args)
-    {
-        CloseExamineUi(ent.Owner, ent.Comp.UiKey, args.Examiner);
     }
 
     private void CloseExamineUi(EntityUid entity, Enum uiKey, EntityUid actor)

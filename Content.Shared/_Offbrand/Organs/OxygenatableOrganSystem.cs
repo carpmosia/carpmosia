@@ -16,24 +16,49 @@ public sealed partial class OxygenatableOrganSystem : EntitySystem
     [Dependency] private PerfusionSystem _perfusion = default!;
     [Dependency] private DamageableOrganSystem _damageableOrgan = default!;
 
-    public override void Initialize()
+    public override void Update(float frameTime)
     {
-        base.Initialize();
+        base.Update(frameTime);
 
-        SubscribeLocalEvent<OxygenatableOrganComponent, BodyRelayedEvent<SuicideEvent>>(OnSuicide);
-        SubscribeLocalEvent<OxygenatableOrganComponent, BodyRelayedEvent<RejuvenateEvent>>(OnRejuvenate);
-        SubscribeLocalEvent<OxygenatableDamageableOrganComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<OxygenatableDamageableOrganComponent, BodyRelayedEvent<ApplyMetabolicMultiplierEvent>>(OnApplyMetabolicMultiplier);
+        var enumerator =
+            EntityQueryEnumerator<OrganComponent, OxygenatableOrganComponent, OxygenatableDamageableOrganComponent,
+                DamageableOrganComponent>();
+        while (enumerator.MoveNext(out var uid, out var organ, out var oxy, out var oxyDamage, out var damage))
+        {
+            if (oxyDamage.LastUpdate is not { } last || last + oxyDamage.AdjustedUpdateInterval >= _timing.CurTime ||
+                damage.Damage >= damage.MaxDamage)
+                continue;
+
+            oxyDamage.LastUpdate = _timing.CurTime;
+            DoUpdate((uid, organ, oxy, oxyDamage, damage));
+            Dirty(uid, oxyDamage);
+        }
     }
 
+    [SubscribeLocalEvent]
     private void OnRejuvenate(Entity<OxygenatableOrganComponent> ent, ref BodyRelayedEvent<RejuvenateEvent> args)
     {
         ChangeOxygenation(ent.AsNullable(), ent.Comp.MaxOxygen - ent.Comp.Oxygen);
     }
 
+    [SubscribeLocalEvent]
     private void OnSuicide(Entity<OxygenatableOrganComponent> ent, ref BodyRelayedEvent<SuicideEvent> args)
     {
         ChangeOxygenation(ent.AsNullable(), -ent.Comp.Oxygen);
+    }
+
+    [SubscribeLocalEvent]
+    private void OnMapInit(Entity<OxygenatableDamageableOrganComponent> ent, ref MapInitEvent args)
+    {
+        ent.Comp.LastUpdate = _timing.CurTime;
+        Dirty(ent);
+    }
+
+    [SubscribeLocalEvent]
+    private void OnApplyMetabolicMultiplier(Entity<OxygenatableDamageableOrganComponent> ent, ref BodyRelayedEvent<ApplyMetabolicMultiplierEvent> args)
+    {
+        ent.Comp.UpdateIntervalMultiplier = args.Args.Multiplier;
+        Dirty(ent);
     }
 
     /// <summary>
@@ -58,34 +83,6 @@ public sealed partial class OxygenatableOrganSystem : EntitySystem
         }
 
         return delta;
-    }
-
-    private void OnApplyMetabolicMultiplier(Entity<OxygenatableDamageableOrganComponent> ent, ref BodyRelayedEvent<ApplyMetabolicMultiplierEvent> args)
-    {
-        ent.Comp.UpdateIntervalMultiplier = args.Args.Multiplier;
-        Dirty(ent);
-    }
-
-    private void OnMapInit(Entity<OxygenatableDamageableOrganComponent> ent, ref MapInitEvent args)
-    {
-        ent.Comp.LastUpdate = _timing.CurTime;
-        Dirty(ent);
-    }
-
-    public override void Update(float frameTime)
-    {
-        base.Update(frameTime);
-
-        var enumerator = EntityQueryEnumerator<OrganComponent, OxygenatableOrganComponent, OxygenatableDamageableOrganComponent, DamageableOrganComponent>();
-        while (enumerator.MoveNext(out var uid, out var organ, out var oxy, out var oxyDamage, out var damage))
-        {
-            if (oxyDamage.LastUpdate is not { } last || last + oxyDamage.AdjustedUpdateInterval >= _timing.CurTime || damage.Damage >= damage.MaxDamage)
-                continue;
-
-            oxyDamage.LastUpdate = _timing.CurTime;
-            DoUpdate((uid, organ, oxy, oxyDamage, damage));
-            Dirty(uid, oxyDamage);
-        }
     }
 
     private void DoHeal(Entity<OrganComponent, OxygenatableOrganComponent, OxygenatableDamageableOrganComponent, DamageableOrganComponent> ent)

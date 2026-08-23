@@ -1,4 +1,3 @@
-using Content.Shared._Offbrand.Wounds;
 using Content.Shared.Body;
 using Content.Shared.Temperature.Components;
 
@@ -8,13 +7,7 @@ public sealed partial class DamageOnInhaledAirOrganSystem : EntitySystem
 {
     [Dependency] private DamageableOrganSystem _damageable = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<DamageOnInhaledAirOrganComponent, BodyRelayedEvent<BeforeInhaledGasEvent>>(OnBeforeInhaledGas);
-    }
-
+    [SubscribeLocalEvent]
     private void OnBeforeInhaledGas(Entity<DamageOnInhaledAirOrganComponent> ent, ref BodyRelayedEvent<BeforeInhaledGasEvent> args)
     {
         if (!TryComp<TemperatureDamageComponent>(args.Body, out var temperature))

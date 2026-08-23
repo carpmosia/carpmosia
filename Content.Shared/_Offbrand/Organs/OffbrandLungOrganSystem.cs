@@ -9,26 +9,13 @@ public sealed partial class OffbrandLungOrganSystem : EntitySystem
 {
     [Dependency] private PerfusionSystem _perfusion = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<OffbrandLungOrganComponent, BodyRelayedEvent<BeforeBreathEvent>>(OnBeforeBreath);
-        SubscribeLocalEvent<OffbrandLungOrganComponent, BodyRelayedEvent<BaseLungFunctionEvent>>(OnBaseLungFunction);
-        SubscribeLocalEvent<OffbrandLungOrganComponent, StethoscopeExamineEvent>(OnStethoscopeExamine);
-    }
-
-    private float BreathVolumeModifier(Entity<OffbrandLungOrganComponent> ent)
-    {
-        var damage = Comp<DamageableOrganComponent>(ent);
-        return 1f - MathF.Pow(damage.Damage.Float() / damage.MaxDamage.Float(), 3f);
-    }
-
+    [SubscribeLocalEvent]
     private void OnBeforeBreath(Entity<OffbrandLungOrganComponent> ent, ref BodyRelayedEvent<BeforeBreathEvent> args)
     {
         args.Args = args.Args with { BreathVolume = args.Args.BreathVolume * BreathVolumeModifier(ent) };
     }
 
+    [SubscribeLocalEvent]
     private void OnBaseLungFunction(Entity<OffbrandLungOrganComponent> ent, ref BodyRelayedEvent<BaseLungFunctionEvent> args)
     {
         var damageComp = Comp<DamageableOrganComponent>(ent);
@@ -47,6 +34,7 @@ public sealed partial class OffbrandLungOrganSystem : EntitySystem
         args.Args = args.Args with { Function = health * airSupply };
     }
 
+    [SubscribeLocalEvent]
     private void OnStethoscopeExamine(Entity<OffbrandLungOrganComponent> ent, ref StethoscopeExamineEvent args)
     {
         var organ = Comp<OrganComponent>(ent);
@@ -72,5 +60,11 @@ public sealed partial class OffbrandLungOrganSystem : EntitySystem
             ("speed", speed));
 
         args.Messages.Add(message);
+    }
+
+    private float BreathVolumeModifier(Entity<OffbrandLungOrganComponent> ent)
+    {
+        var damage = Comp<DamageableOrganComponent>(ent);
+        return 1f - MathF.Pow(damage.Damage.Float() / damage.MaxDamage.Float(), 3f);
     }
 }

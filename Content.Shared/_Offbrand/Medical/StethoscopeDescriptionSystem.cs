@@ -1,4 +1,3 @@
-using Content.Shared.Body;
 using Content.Shared.StatusEffectNew;
 using Content.Shared.StatusEffectNew.Components;
 
@@ -13,15 +12,15 @@ public sealed partial class StethoscopeDescriptionSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<StatusEffectContainerComponent, StethoscopeExamineEvent>(_statusEffects.RelayEvent);
-        SubscribeLocalEvent<StethoscopeDescriptionComponent, StethoscopeExamineEvent>(OnStethoscopeExamine);
-        SubscribeLocalEvent<StethoscopeDescriptionComponent, StatusEffectRelayedEvent<StethoscopeExamineEvent>>(OnRelayedStethoscopeExamine);
     }
 
+    [SubscribeLocalEvent]
     private void OnStethoscopeExamine(Entity<StethoscopeDescriptionComponent> ent, ref StethoscopeExamineEvent args)
     {
         AddDescription(ent, ref args);
     }
 
+    [SubscribeLocalEvent]
     private void OnRelayedStethoscopeExamine(Entity<StethoscopeDescriptionComponent> ent,
         ref StatusEffectRelayedEvent<StethoscopeExamineEvent> args)
     {

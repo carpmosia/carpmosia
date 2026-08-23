@@ -9,13 +9,7 @@ public sealed partial class ShockGaspThresholdsSystem : EntitySystem
     [Dependency] private ChatSystem _chat = default!;
     [Dependency] private PainSystem _pain = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<ShockGaspThresholdsComponent, AfterShockChangeEvent>(OnAfterShockChange);
-    }
-
+    [SubscribeLocalEvent]
     private void OnAfterShockChange(Entity<ShockGaspThresholdsComponent> ent, ref AfterShockChangeEvent args)
     {
         var shock = _pain.GetShock(ent.Owner);

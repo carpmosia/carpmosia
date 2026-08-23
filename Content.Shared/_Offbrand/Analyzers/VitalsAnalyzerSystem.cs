@@ -21,13 +21,7 @@ public sealed partial class VitalsAnalyzerSystem : EntitySystem
     private const string MedicineGroup = "Medicine";
     private static readonly ProtoId<MetabolismStagePrototype> MetabolitesStage = "Metabolites";
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<VitalsAnalyzerComponent, AnalyzerUpdatedEvent>(OnAnalyzerUpdated);
-    }
-
+    [SubscribeLocalEvent]
     private void OnAnalyzerUpdated(Entity<VitalsAnalyzerComponent> ent, ref AnalyzerUpdatedEvent args)
     {
         ent.Comp.Data = TakeSample(args.Target);

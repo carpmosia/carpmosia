@@ -9,14 +9,7 @@ public sealed partial class OffbrandOrganSystem : EntitySystem
 {
     [Dependency] private SharedContainerSystem _container = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<OrganComponent, AccessibleOverrideEvent>(OnAccessibleOverride);
-        SubscribeLocalEvent<OrganComponent, BeforeGettingEquippedHandEvent>(OnBeforeGettingEquippedHand);
-    }
-
+    [SubscribeLocalEvent]
     private void OnBeforeGettingEquippedHand(Entity<OrganComponent> ent, ref BeforeGettingEquippedHandEvent args)
     {
         if (ent.Comp.Body is null)
@@ -25,6 +18,7 @@ public sealed partial class OffbrandOrganSystem : EntitySystem
         args.Cancelled = true;
     }
 
+    [SubscribeLocalEvent]
     private void OnAccessibleOverride(Entity<OrganComponent> ent, ref AccessibleOverrideEvent args)
     {
         if (args.Handled || ent.Comp.Body is not { } body)

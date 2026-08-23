@@ -10,19 +10,13 @@ public sealed partial class DamageableOrganSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<DamageableOrganComponent, BodyRelayedEvent<SuicideEvent>>(OnSuicide);
-        SubscribeLocalEvent<DamageableOrganComponent, BodyRelayedEvent<RejuvenateEvent>>(OnRejuvenate);
-    }
-
+    [SubscribeLocalEvent]
     private void OnRejuvenate(Entity<DamageableOrganComponent> ent, ref BodyRelayedEvent<RejuvenateEvent> args)
     {
         ChangeDamage(ent.AsNullable(), -ent.Comp.Damage);
     }
 
+    [SubscribeLocalEvent]
     private void OnSuicide(Entity<DamageableOrganComponent> ent, ref BodyRelayedEvent<SuicideEvent> args)
     {
         ChangeDamage(ent.AsNullable(), ent.Comp.MaxDamage - ent.Comp.Damage);

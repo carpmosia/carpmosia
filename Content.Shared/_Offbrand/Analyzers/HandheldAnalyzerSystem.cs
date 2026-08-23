@@ -5,7 +5,6 @@ using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Network;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._Offbrand.Analyzers;
@@ -19,22 +18,13 @@ public sealed partial class HandheldAnalyzerSystem : EntitySystem
     [Dependency] private AnalyzerSystem _analyzer = default!;
     [Dependency] private SharedUserInterfaceSystem _userInterface = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<HandheldAnalyzerComponent, AfterInteractEvent>(OnAfterInteract);
-        SubscribeLocalEvent<HandheldAnalyzerComponent, AfterAnalyzerUpdatedEvent>(OnAfterUpdated);
-        SubscribeLocalEvent<HandheldAnalyzerComponent, HandheldAnalyzerDoAfterEvent>(OnDoAfter);
-        SubscribeLocalEvent<HandheldAnalyzerComponent, OpenBoundInterfaceMessage>(OnOpenBui);
-        SubscribeLocalEvent<HandheldAnalyzerComponent, CloseBoundInterfaceMessage>(OnCloseBui);
-    }
-
+    [SubscribeLocalEvent]
     private void OnAfterUpdated(Entity<HandheldAnalyzerComponent> ent, ref AfterAnalyzerUpdatedEvent args)
     {
         _userInterface.SetUiState(ent.Owner, ent.Comp.UiKey, new DummyBoundUserInterfaceState());
     }
 
+    [SubscribeLocalEvent]
     private void OnAfterInteract(Entity<HandheldAnalyzerComponent> analyzer, ref AfterInteractEvent args)
     {
         if (!args.CanReach)
@@ -65,6 +55,7 @@ public sealed partial class HandheldAnalyzerSystem : EntitySystem
         _popup.PopupEntity(msg, args.Target.Value, args.Target.Value, PopupType.Medium);
     }
 
+    [SubscribeLocalEvent]
     private void OnDoAfter(Entity<HandheldAnalyzerComponent> analyzer, ref HandheldAnalyzerDoAfterEvent args)
     {
         if (args.Handled || args.Cancelled || args.Target == null)
@@ -77,6 +68,7 @@ public sealed partial class HandheldAnalyzerSystem : EntitySystem
         _userInterface.OpenUi(analyzer.Owner, analyzer.Comp.UiKey, args.User);
     }
 
+    [SubscribeLocalEvent]
     private void OnOpenBui(Entity<HandheldAnalyzerComponent> analyzer, ref OpenBoundInterfaceMessage args)
     {
         if (!args.UiKey.Equals(analyzer.Comp.UiKey))
@@ -85,6 +77,7 @@ public sealed partial class HandheldAnalyzerSystem : EntitySystem
         _analyzer.SetShouldUpdate(analyzer.Owner, true);
     }
 
+    [SubscribeLocalEvent]
     private void OnCloseBui(Entity<HandheldAnalyzerComponent> analyzer, ref CloseBoundInterfaceMessage args)
     {
         if (!args.UiKey.Equals(analyzer.Comp.UiKey))

@@ -13,14 +13,7 @@ public sealed partial class StationaryVitalsAnalyzerSystem : EntitySystem
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedUserInterfaceSystem _userInterface = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<StationaryVitalsAnalyzerComponent, AfterAnalyzerUpdatedEvent>(OnAfterUpdated);
-        SubscribeLocalEvent<StationaryVitalsAnalyzerComponent, AnalyzerActualTargetUpdatedEvent>(OnTargetUpdated);
-    }
-
+    [SubscribeLocalEvent]
     private void OnAfterUpdated(Entity<StationaryVitalsAnalyzerComponent> ent, ref AfterAnalyzerUpdatedEvent args)
     {
         _userInterface.SetUiState(ent.Owner, ent.Comp.UiKey, new DummyBoundUserInterfaceState());
@@ -31,6 +24,7 @@ public sealed partial class StationaryVitalsAnalyzerSystem : EntitySystem
             ClearAppearance(ent);
     }
 
+    [SubscribeLocalEvent]
     private void OnTargetUpdated(Entity<StationaryVitalsAnalyzerComponent> ent, ref AnalyzerActualTargetUpdatedEvent args)
     {
         if (Comp<AnalyzerComponent>(ent).ActualTarget is null)
@@ -38,7 +32,7 @@ public sealed partial class StationaryVitalsAnalyzerSystem : EntitySystem
     }
 
     // TODO: this should be defined in RT
-    private bool AudioEquals(SoundSpecifier? a, SoundSpecifier? b)
+    private static bool AudioEquals(SoundSpecifier? a, SoundSpecifier? b)
     {
         return (a, b) switch {
             (SoundPathSpecifier pa, SoundPathSpecifier pb) => pa.Path == pb.Path,

@@ -16,13 +16,10 @@ public sealed partial class StationaryAnalyzerSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<StationaryAnalyzerComponent, AnalyzerActualTargetEvent>(OnActualTarget);
-        SubscribeLocalEvent<StationaryAnalyzerComponent, CanDragEvent>(OnCanDrag);
-        SubscribeLocalEvent<StationaryAnalyzerComponent, CanDropDraggedEvent>(OnCanDropDragged);
-        SubscribeLocalEvent<StationaryAnalyzerComponent, DragDropDraggedEvent>(OnDragDropDragged);
-        SubscribeLocalEvent<StationaryAnalyzerStrapComponent, CanDropTargetEvent>(OnCanDropTarget, after: [typeof(SharedBuckleSystem)]);
+        SubscribeLocalEvent<StationaryAnalyzerStrapComponent, CanDropTargetEvent>(OnCanDropTarget, after: [typeof(SharedBuckleSystem)]); // Needs engine 287+ to be an attribute
     }
 
+    [SubscribeLocalEvent]
     private void OnActualTarget(Entity<StationaryAnalyzerComponent> ent, ref AnalyzerActualTargetEvent args)
     {
         args.ActualTarget = null;
@@ -44,11 +41,13 @@ public sealed partial class StationaryAnalyzerSystem : EntitySystem
         }
     }
 
+    [SubscribeLocalEvent]
     private void OnCanDrag(Entity<StationaryAnalyzerComponent> ent, ref CanDragEvent args)
     {
         args.Handled = true;
     }
 
+    [SubscribeLocalEvent]
     private void OnCanDropDragged(Entity<StationaryAnalyzerComponent> ent, ref CanDropDraggedEvent args)
     {
         if (!(HasComp<PerfusionComponent>(args.Target) || HasComp<StrapComponent>(args.Target)))
@@ -58,6 +57,7 @@ public sealed partial class StationaryAnalyzerSystem : EntitySystem
         args.CanDrop = true;
     }
 
+    [SubscribeLocalEvent]
     private void OnDragDropDragged(Entity<StationaryAnalyzerComponent> ent, ref DragDropDraggedEvent args)
     {
         if (!(HasComp<PerfusionComponent>(args.Target) || HasComp<StrapComponent>(args.Target)) || !TryComp<AnalyzerComponent>(ent, out var analyzer))

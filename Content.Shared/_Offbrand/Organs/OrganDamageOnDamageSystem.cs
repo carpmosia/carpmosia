@@ -10,13 +10,7 @@ public sealed partial class OrganDamageOnDamageSystem : OffbrandDamageSystem
 {
     [Dependency] private DamageableOrganSystem _damageable = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<OrganDamageOnDamageComponent, BodyRelayedEvent<DamageChangedEvent>>(OnDamageChanged);
-    }
-
+    [SubscribeLocalEvent]
     private void OnDamageChanged(Entity<OrganDamageOnDamageComponent> ent, ref BodyRelayedEvent<DamageChangedEvent> args)
     {
         if (!args.Args.DamageIncreased || args.Args.DamageDelta is not { } delta)

@@ -1,8 +1,6 @@
 using Content.Server.EUI;
 using Content.Shared._Offbrand.MMI;
-using Content.Shared._Offbrand.Wounds;
 using Content.Shared.Body.Components;
-using Content.Shared.Body.Systems;
 using Content.Shared.Body;
 using Content.Shared.Chat;
 using Content.Shared.Containers.ItemSlots;
@@ -26,14 +24,7 @@ public sealed partial class MMIExtractorSystem : EntitySystem
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private SharedMindSystem _mind = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<MMIExtractorComponent, AfterInteractEvent>(OnAfterInteract);
-        SubscribeLocalEvent<BrainComponent, MMIExtractorDoAfterEvent>(OnDoAfter);
-    }
-
+    [SubscribeLocalEvent]
     private void OnAfterInteract(Entity<MMIExtractorComponent> ent, ref AfterInteractEvent args)
     {
         if (args.Handled || !args.CanReach || args.Target == null)
@@ -41,6 +32,31 @@ public sealed partial class MMIExtractorSystem : EntitySystem
 
         if (TryExtract(ent, args.Target.Value, args.User))
             args.Handled = true;
+    }
+
+    [SubscribeLocalEvent]
+    private void OnDoAfter(Entity<BrainComponent> ent, ref MMIExtractorDoAfterEvent evt)
+    {
+        if (evt.Handled || evt.Cancelled)
+            return;
+
+        if (evt.Args.Used is not { } mmi || !TryComp<MMIExtractorComponent>(mmi, out var mmiComp))
+            return;
+
+        if (!TryComp<MMIComponent>(mmi, out var insertionComp))
+            return;
+
+        if (!evt.Accepted)
+        {
+            _chat.TrySendInGameICMessage(mmi,
+                Loc.GetString(mmiComp.NoResponse),
+                InGameICChatType.Speak,
+                true);
+
+            return;
+        }
+
+        _slots.TryInsert(mmi, insertionComp.BrainSlotId, ent, null);
     }
 
     private bool TryExtract(Entity<MMIExtractorComponent> ent, EntityUid target, EntityUid user)
@@ -139,30 +155,5 @@ public sealed partial class MMIExtractorSystem : EntitySystem
             Loc.GetString(mmiComp.Accepted),
             InGameICChatType.Speak,
             true);
-    }
-
-    private void OnDoAfter(Entity<BrainComponent> ent, ref MMIExtractorDoAfterEvent evt)
-    {
-        if (evt.Handled || evt.Cancelled)
-            return;
-
-        if (evt.Args.Used is not { } mmi || !TryComp<MMIExtractorComponent>(mmi, out var mmiComp))
-            return;
-
-        if (!TryComp<MMIComponent>(mmi, out var insertionComp))
-            return;
-
-        if (!evt.Accepted)
-        {
-            _chat.TrySendInGameICMessage(mmi,
-                Loc.GetString(mmiComp.NoResponse),
-                InGameICChatType.Speak,
-                true);
-
-            return;
-        }
-
-        if (!_slots.TryInsert(mmi, insertionComp.BrainSlotId, ent, null))
-            return;
     }
 }

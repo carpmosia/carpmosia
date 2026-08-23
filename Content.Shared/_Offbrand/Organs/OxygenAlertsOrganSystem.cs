@@ -1,4 +1,3 @@
-using Content.Shared._Offbrand.Wounds;
 using Content.Shared.Alert;
 using Content.Shared.Body;
 
@@ -8,21 +7,25 @@ public sealed partial class OxygenAlertsOrganSystem : EntitySystem
 {
     [Dependency] private AlertsSystem _alerts = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<OxygenAlertsOrganComponent, OrganOxygenChangedEvent>(OnOxygenChanged);
-        SubscribeLocalEvent<OxygenAlertsOrganComponent, OrganGotInsertedEvent>(OnGotInserted);
-        SubscribeLocalEvent<OxygenAlertsOrganComponent, OrganGotRemovedEvent>(OnGotRemoved);
-    }
-
+    [SubscribeLocalEvent]
     private void OnOxygenChanged(Entity<OxygenAlertsOrganComponent> ent, ref OrganOxygenChangedEvent args)
     {
         if (Comp<OrganComponent>(ent).Body is not { } body)
             return;
 
         UpdateAlert(ent, body);
+    }
+
+    [SubscribeLocalEvent]
+    private void OnGotInserted(Entity<OxygenAlertsOrganComponent> ent, ref OrganGotInsertedEvent args)
+    {
+        UpdateAlert(ent, args.Target);
+    }
+
+    [SubscribeLocalEvent]
+    private void OnGotRemoved(Entity<OxygenAlertsOrganComponent> ent, ref OrganGotRemovedEvent args)
+    {
+        _alerts.ClearAlertCategory(args.Target, ent.Comp.AlertCategory);
     }
 
     private void UpdateAlert(Entity<OxygenAlertsOrganComponent> ent, EntityUid target)
@@ -36,15 +39,5 @@ public sealed partial class OxygenAlertsOrganSystem : EntitySystem
         }
 
         _alerts.ShowAlert(target, ent.Comp.Alert, severity: (short)oxygen.Oxygen.Int());
-    }
-
-    private void OnGotInserted(Entity<OxygenAlertsOrganComponent> ent, ref OrganGotInsertedEvent args)
-    {
-        UpdateAlert(ent, args.Target);
-    }
-
-    private void OnGotRemoved(Entity<OxygenAlertsOrganComponent> ent, ref OrganGotRemovedEvent args)
-    {
-        _alerts.ClearAlertCategory(args.Target, ent.Comp.AlertCategory);
     }
 }

@@ -34,27 +34,6 @@ public sealed partial class IVSystem : EntitySystem
     [Dependency] private WoundableOrganSystem _woundableOrgan = default!;
     [Dependency] private WoundableSystem _woundable = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<IVSourceComponent, CanDragEvent>(OnCanDrag);
-        SubscribeLocalEvent<IVSourceComponent, CanDropDraggedEvent>(OnCanDropDragged);
-        SubscribeLocalEvent<IVSourceComponent, DragDropDraggedEvent>(OnDragDropDragged);
-
-        SubscribeLocalEvent<IVSourceComponent, IVConnectDoAfterEvent>(OnConnectDoAfter);
-        SubscribeLocalEvent<IVSourceComponent, IVDisconnectDoAfterEvent>(OnDisconnectDoAfter);
-
-        SubscribeLocalEvent<IVSourceComponent, EntGotInsertedIntoContainerMessage>(OnSourceInsertedIntoContainer);
-        SubscribeLocalEvent<IVTargetComponent, EntGotInsertedIntoContainerMessage>(OnTargetInsertedIntoContainer);
-
-        SubscribeLocalEvent<IVSourceComponent, GetVerbsEvent<Verb>>(OnSourceGetVerbs);
-        SubscribeLocalEvent<IVTargetComponent, GetVerbsEvent<Verb>>(OnTargetGetVerbs);
-
-        SubscribeLocalEvent<IVSourceComponent, ComponentShutdown>(OnSourceShutdown);
-        SubscribeLocalEvent<IVTargetComponent, ComponentShutdown>(OnTargetShutdown);
-    }
-
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -77,11 +56,13 @@ public sealed partial class IVSystem : EntitySystem
         }
     }
 
-    private void OnCanDrag(Entity<IVSourceComponent> ent, ref CanDragEvent args)
+    [SubscribeLocalEvent]
+    private static void OnCanDrag(Entity<IVSourceComponent> ent, ref CanDragEvent args)
     {
         args.Handled = ent.Comp.IVTarget is null;
     }
 
+    [SubscribeLocalEvent]
     private void OnCanDropDragged(Entity<IVSourceComponent> ent, ref CanDropDraggedEvent args)
     {
         if (!TryComp<IVTargetComponent>(args.Target, out var target))
@@ -91,6 +72,7 @@ public sealed partial class IVSystem : EntitySystem
         args.CanDrop = target.IVSource is null;
     }
 
+    [SubscribeLocalEvent]
     private void OnDragDropDragged(Entity<IVSourceComponent> ent, ref DragDropDraggedEvent args)
     {
         if (!TryComp<IVTargetComponent>(args.Target, out var target) || target.IVSource is not null)
@@ -100,6 +82,7 @@ public sealed partial class IVSystem : EntitySystem
         TryStartIV(ent.AsNullable(), (args.Target, target), args.User);
     }
 
+    [SubscribeLocalEvent]
     private void OnConnectDoAfter(Entity<IVSourceComponent> ent, ref IVConnectDoAfterEvent args)
     {
         if (args.Handled || args.Cancelled || args.Args.Target is not { } target)
@@ -108,6 +91,7 @@ public sealed partial class IVSystem : EntitySystem
         StartIV(ent.AsNullable(), target, args.Args.User);
     }
 
+    [SubscribeLocalEvent]
     private void OnDisconnectDoAfter(Entity<IVSourceComponent> ent, ref IVDisconnectDoAfterEvent args)
     {
         if (args.Handled || args.Cancelled || args.Args.Target is not { } target)
@@ -116,6 +100,7 @@ public sealed partial class IVSystem : EntitySystem
         StopIV(ent.AsNullable(), target, args.Args.User);
     }
 
+    [SubscribeLocalEvent]
     private void OnSourceInsertedIntoContainer(Entity<IVSourceComponent> ent, ref EntGotInsertedIntoContainerMessage args)
     {
         if (_timing.ApplyingState)
@@ -124,6 +109,7 @@ public sealed partial class IVSystem : EntitySystem
         RipOutIV(ent);
     }
 
+    [SubscribeLocalEvent]
     private void OnTargetInsertedIntoContainer(Entity<IVTargetComponent> ent, ref EntGotInsertedIntoContainerMessage args)
     {
         if (_timing.ApplyingState)
@@ -133,6 +119,56 @@ public sealed partial class IVSystem : EntitySystem
             return;
 
         RipOutIV(ent);
+    }
+
+    [SubscribeLocalEvent]
+    private void OnSourceShutdown(Entity<IVSourceComponent> ent, ref ComponentShutdown args)
+    {
+        if (ent.Comp.IVTarget is not { } target || !TryComp<IVTargetComponent>(target, out var targetComp))
+            return;
+
+        RipOutIV(ent.AsNullable(), (target, targetComp));
+    }
+
+    [SubscribeLocalEvent]
+    private void OnTargetShutdown(Entity<IVTargetComponent> ent, ref ComponentShutdown args)
+    {
+        if (ent.Comp.IVSource is not { } source || !TryComp<IVSourceComponent>(source, out var sourceComp))
+            return;
+
+        RipOutIV((source, sourceComp), ent.AsNullable());
+    }
+
+    [SubscribeLocalEvent]
+    private void OnSourceGetVerbs(Entity<IVSourceComponent> ent, ref GetVerbsEvent<Verb> args)
+    {
+        if (!args.CanAccess || !args.CanInteract || ent.Comp.IVTarget is not { } target)
+            return;
+
+        var user = args.User;
+        Verb verb = new()
+        {
+            Text = Loc.GetString("verb-remove-iv"),
+            Act = () => TryStopIV(ent.AsNullable(), target, user)
+        };
+
+        args.Verbs.Add(verb);
+    }
+
+    [SubscribeLocalEvent]
+    private void OnTargetGetVerbs(Entity<IVTargetComponent> ent, ref GetVerbsEvent<Verb> args)
+    {
+        if (!args.CanAccess || !args.CanInteract || ent.Comp.IVSource is not { } source)
+            return;
+
+        var user = args.User;
+        Verb verb = new()
+        {
+            Text = Loc.GetString("verb-remove-iv"),
+            Act = () => TryStopIV(source, ent.AsNullable(), user)
+        };
+
+        args.Verbs.Add(verb);
     }
 
     private void TickIV(Entity<IVSourceComponent> source, Entity<IVTargetComponent, BloodstreamComponent> target)
@@ -319,51 +355,5 @@ public sealed partial class IVSystem : EntitySystem
             };
 
         _doAfter.TryStartDoAfter(args);
-    }
-
-    private void OnSourceShutdown(Entity<IVSourceComponent> ent, ref ComponentShutdown args)
-    {
-        if (ent.Comp.IVTarget is not { } target || !TryComp<IVTargetComponent>(target, out var targetComp))
-            return;
-
-        RipOutIV(ent.AsNullable(), (target, targetComp));
-    }
-
-    private void OnTargetShutdown(Entity<IVTargetComponent> ent, ref ComponentShutdown args)
-    {
-        if (ent.Comp.IVSource is not { } source || !TryComp<IVSourceComponent>(source, out var sourceComp))
-            return;
-
-        RipOutIV((source, sourceComp), ent.AsNullable());
-    }
-
-    private void OnSourceGetVerbs(Entity<IVSourceComponent> ent, ref GetVerbsEvent<Verb> args)
-    {
-        if (!args.CanAccess || !args.CanInteract || ent.Comp.IVTarget is not { } target)
-            return;
-
-        var user = args.User;
-        Verb verb = new()
-        {
-            Text = Loc.GetString("verb-remove-iv"),
-            Act = () => TryStopIV(ent.AsNullable(), target, user)
-        };
-
-        args.Verbs.Add(verb);
-    }
-
-    private void OnTargetGetVerbs(Entity<IVTargetComponent> ent, ref GetVerbsEvent<Verb> args)
-    {
-        if (!args.CanAccess || !args.CanInteract || ent.Comp.IVSource is not { } source)
-            return;
-
-        var user = args.User;
-        Verb verb = new()
-        {
-            Text = Loc.GetString("verb-remove-iv"),
-            Act = () => TryStopIV(source, ent.AsNullable(), user)
-        };
-
-        args.Verbs.Add(verb);
     }
 }

@@ -9,13 +9,7 @@ public sealed partial class OffbrandDamageableOrganSoundsSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<OffbrandDamageableOrganSoundsComponent, StethoscopeExamineEvent>(OnStethoscopeExamine);
-    }
-
+    [SubscribeLocalEvent]
     private void OnStethoscopeExamine(Entity<OffbrandDamageableOrganSoundsComponent> ent, ref StethoscopeExamineEvent args)
     {
         var damage = Comp<DamageableOrganComponent>(ent);

@@ -8,15 +8,7 @@ public sealed partial class DamageAlertsOrganSystem : EntitySystem
 {
     [Dependency] private AlertsSystem _alerts = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<DamageAlertsOrganComponent, OrganDamageChangedEvent>(OnDamageChanged);
-        SubscribeLocalEvent<DamageAlertsOrganComponent, OrganGotInsertedEvent>(OnGotInserted);
-        SubscribeLocalEvent<DamageAlertsOrganComponent, OrganGotRemovedEvent>(OnGotRemoved);
-    }
-
+    [SubscribeLocalEvent]
     private void OnDamageChanged(Entity<DamageAlertsOrganComponent> ent, ref OrganDamageChangedEvent args)
     {
         var lungDamage = Comp<DamageableOrganComponent>(ent);
@@ -39,12 +31,14 @@ public sealed partial class DamageAlertsOrganSystem : EntitySystem
         }
     }
 
+    [SubscribeLocalEvent]
     private void OnGotInserted(Entity<DamageAlertsOrganComponent> ent, ref OrganGotInsertedEvent args)
     {
         if (ent.Comp.CurrentAlertThresholdState is { } alert)
             _alerts.ShowAlert(args.Target, alert);
     }
 
+    [SubscribeLocalEvent]
     private void OnGotRemoved(Entity<DamageAlertsOrganComponent> ent, ref OrganGotRemovedEvent args)
     {
         _alerts.ClearAlertCategory(args.Target, ent.Comp.AlertCategory);

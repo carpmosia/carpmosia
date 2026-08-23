@@ -10,9 +10,20 @@ public sealed partial class BodyAppearanceRelaySystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<BodyAppearanceRelayComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<BodyComponent, BodyAppearanceRelayTargetAddedEvent>(_body.RelayEvent);
         SubscribeLocalEvent<BodyComponent, BodyAppearanceRelayTargetRemovedEvent>(_body.RelayEvent);
+    }
+
+    [SubscribeLocalEvent]
+    private void OnShutdown(Entity<BodyAppearanceRelayComponent> ent, ref ComponentShutdown args)
+    {
+        foreach (var target in ent.Comp.Targets)
+        {
+            var ev = new BodyAppearanceRelayTargetRemovedEvent(target);
+            RaiseLocalEvent(ent, ref ev);
+        }
+
+        ent.Comp.Targets.Clear();
     }
 
     /// <summary>
@@ -60,16 +71,5 @@ public sealed partial class BodyAppearanceRelaySystem : EntitySystem
             if (Exists(target))
                 yield return target;
         }
-    }
-
-    private void OnShutdown(Entity<BodyAppearanceRelayComponent> ent, ref ComponentShutdown args)
-    {
-        foreach (var target in ent.Comp.Targets)
-        {
-            var ev = new BodyAppearanceRelayTargetRemovedEvent(target);
-            RaiseLocalEvent(ent, ref ev);
-        }
-
-        ent.Comp.Targets.Clear();
     }
 }

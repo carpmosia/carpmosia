@@ -10,13 +10,26 @@ public sealed partial class StatusEffectOnStrapSystem : EntitySystem
     [Dependency] private StatusEffectsSystem _statusEffects = default!;
     [Dependency] private SharedPowerReceiverSystem _powerReceiver = default!;
 
-    public override void Initialize()
+    [SubscribeLocalEvent]
+    private void OnStrapped(Entity<StatusEffectOnStrapComponent> ent, ref StrappedEvent args)
     {
-        base.Initialize();
+        UpdateStatus((ent.Owner, Comp<StrapComponent>(ent), ent.Comp), args.Buckle);
+    }
 
-        SubscribeLocalEvent<StatusEffectOnStrapComponent, StrappedEvent>(OnStrapped);
-        SubscribeLocalEvent<StatusEffectOnStrapComponent, UnstrappedEvent>(OnUnstrapped);
-        SubscribeLocalEvent<StatusEffectOnStrapComponent, PowerChangedEvent>(OnPowerChanged);
+    [SubscribeLocalEvent]
+    private void OnUnstrapped(Entity<StatusEffectOnStrapComponent> ent, ref UnstrappedEvent args)
+    {
+        UpdateStatus((ent.Owner, Comp<StrapComponent>(ent), ent.Comp), args.Buckle);
+    }
+
+    [SubscribeLocalEvent]
+    private void OnPowerChanged(Entity<StatusEffectOnStrapComponent> ent, ref PowerChangedEvent args)
+    {
+        var strap = Comp<StrapComponent>(ent);
+        foreach (var entity in strap.BuckledEntities)
+        {
+            UpdateStatus((ent.Owner, strap, ent.Comp), entity);
+        }
     }
 
     private void UpdateStatus(Entity<StrapComponent, StatusEffectOnStrapComponent> ent, EntityUid buckled)
@@ -32,25 +45,6 @@ public sealed partial class StatusEffectOnStrapSystem : EntitySystem
         else
         {
             _statusEffects.TryRemoveStatusEffect(buckled, ent.Comp2.StatusEffect);
-        }
-    }
-
-    private void OnStrapped(Entity<StatusEffectOnStrapComponent> ent, ref StrappedEvent args)
-    {
-        UpdateStatus((ent.Owner, Comp<StrapComponent>(ent), ent.Comp), args.Buckle);
-    }
-
-    private void OnUnstrapped(Entity<StatusEffectOnStrapComponent> ent, ref UnstrappedEvent args)
-    {
-        UpdateStatus((ent.Owner, Comp<StrapComponent>(ent), ent.Comp), args.Buckle);
-    }
-
-    private void OnPowerChanged(Entity<StatusEffectOnStrapComponent> ent, ref PowerChangedEvent args)
-    {
-        var strap = Comp<StrapComponent>(ent);
-        foreach (var entity in strap.BuckledEntities)
-        {
-            UpdateStatus((ent.Owner, strap, ent.Comp), entity);
         }
     }
 }

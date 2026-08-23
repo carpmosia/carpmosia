@@ -24,14 +24,9 @@ public sealed partial class PalpatableOrganSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<StatusEffectContainerComponent, PalpationEvent>(_statusEffects.RelayEvent);
-
-        SubscribeLocalEvent<PalpationDescriptionComponent, PalpationEvent>(OnPalpation);
-        SubscribeLocalEvent<PalpationDescriptionComponent, StatusEffectRelayedEvent<PalpationEvent>>(OnRelayedPalpation);
-
-        SubscribeLocalEvent<PalpatableOrganComponent, ActivateInWorldEvent>(OnActivateInWorld);
-        SubscribeLocalEvent<PalpatableOrganComponent, PalpationDoAfterEvent>(OnDoAfter);
     }
 
+    [SubscribeLocalEvent]
     private void OnActivateInWorld(Entity<PalpatableOrganComponent> ent, ref ActivateInWorldEvent args)
     {
         _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, args.User, ent.Comp.Delay, new PalpationDoAfterEvent(), ent, target: ent, used: ent)
@@ -42,11 +37,13 @@ public sealed partial class PalpatableOrganSystem : EntitySystem
         });
     }
 
+    [SubscribeLocalEvent]
     private void OnPalpation(Entity<PalpationDescriptionComponent> ent, ref PalpationEvent args)
     {
         AddDescription(ent, ent, ref args);
     }
 
+    [SubscribeLocalEvent]
     private void OnRelayedPalpation(Entity<PalpationDescriptionComponent> ent,
         ref StatusEffectRelayedEvent<PalpationEvent> args)
     {
@@ -58,11 +55,12 @@ public sealed partial class PalpatableOrganSystem : EntitySystem
         args.Args = ev;
     }
 
-    private void AddDescription(Entity<PalpationDescriptionComponent> ent, EntityUid organ, ref PalpationEvent args)
+    private void AddDescription(Entity<PalpationDescriptionComponent> ent, EntityUid organ, ref PalpationEvent args) // TODO: see if this can be replaced by having OnRelayedPalpation call OnPalpation
     {
         args.Messages.Add(Loc.GetString(ent.Comp.Description, ("organ", organ)));
     }
 
+    [SubscribeLocalEvent]
     private void OnDoAfter(Entity<PalpatableOrganComponent> ent, ref PalpationDoAfterEvent args)
     {
         if (args.Handled || args.Target is null || args.Cancelled || Comp<OrganComponent>(ent).Body is not { } body)
