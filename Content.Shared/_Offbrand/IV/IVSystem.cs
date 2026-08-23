@@ -173,7 +173,7 @@ public sealed partial class IVSystem : EntitySystem
         if (!TryComp<PhysicsComponent>(target, out var targetPhysics))
             return;
 
-        _popup.PopupPredicted(
+        _popup.PopupEntity(
             Loc.GetString(source.Comp.ConnectedUser, ("target", Identity.Entity(target, EntityManager)), ("source", Identity.Entity(source, EntityManager)), ("user", Identity.Entity(user, EntityManager))),
             Loc.GetString(source.Comp.ConnectedOthers, ("target", Identity.Entity(target, EntityManager)), ("source", Identity.Entity(source, EntityManager)), ("user", Identity.Entity(user, EntityManager))),
             target,
@@ -206,7 +206,7 @@ public sealed partial class IVSystem : EntitySystem
         if (!Resolve(source, ref source.Comp) || !Resolve(target, ref target.Comp))
             return;
 
-        _popup.PopupPredicted(
+        _popup.PopupEntity(
             Loc.GetString(source.Comp.DisconnectedUser, ("target", Identity.Entity(target, EntityManager)), ("source", Identity.Entity(source, EntityManager)), ("user", Identity.Entity(user, EntityManager))),
             Loc.GetString(source.Comp.DisconnectedOthers, ("target", Identity.Entity(target, EntityManager)), ("source", Identity.Entity(source, EntityManager)), ("user", Identity.Entity(user, EntityManager))),
             target,
@@ -274,13 +274,13 @@ public sealed partial class IVSystem : EntitySystem
         if (!Resolve(source, ref source.Comp) || !Resolve(target, ref target.Comp) || source.Comp.IVTarget is not null || target.Comp.IVSource is not null)
             return;
 
-        if (_itemSlots.GetItemOrNull(source, source.Comp.SlotName) is not { } contained)
+        if (_itemSlots.GetItemOrNull(source, source.Comp.SlotName) is null)
         {
-            _popup.PopupPredictedCursor(Loc.GetString(source.Comp.NoBagInserted), user);
+            _popup.PopupCursor(Loc.GetString(source.Comp.NoBagInserted), user);
             return;
         }
 
-        _popup.PopupPredicted(
+        _popup.PopupEntity(
             Loc.GetString(source.Comp.StartConnectionUser, ("target", Identity.Entity(target, EntityManager)), ("source", Identity.Entity(source, EntityManager)), ("user", Identity.Entity(user, EntityManager))),
             Loc.GetString(source.Comp.StartConnectionOthers, ("target", Identity.Entity(target, EntityManager)), ("source", Identity.Entity(source, EntityManager)), ("user", Identity.Entity(user, EntityManager))),
             target,
@@ -303,7 +303,7 @@ public sealed partial class IVSystem : EntitySystem
         if (!Resolve(source, ref source.Comp) || !Resolve(target, ref target.Comp) || source.Comp.IVTarget is null || target.Comp.IVSource is null || source.Comp.IVTarget != target || target.Comp.IVSource != source)
             return;
 
-        _popup.PopupPredicted(
+        _popup.PopupEntity(
             Loc.GetString(source.Comp.StartDisconnectionUser, ("target", Identity.Entity(target, EntityManager)), ("source", Identity.Entity(source, EntityManager)), ("user", Identity.Entity(user, EntityManager))),
             Loc.GetString(source.Comp.StartDisconnectionOthers, ("target", Identity.Entity(target, EntityManager)), ("source", Identity.Entity(source, EntityManager)), ("user", Identity.Entity(user, EntityManager))),
             target,

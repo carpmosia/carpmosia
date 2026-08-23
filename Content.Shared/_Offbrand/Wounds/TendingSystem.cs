@@ -85,9 +85,9 @@ public sealed partial class TendingSystem : EntitySystem
         if (woundToTend is not { } foundWound)
         {
             if (isRepeat)
-                _popup.PopupClient(Loc.GetString(ent.Comp.NothingToTendRepeat, ("target", Identity.Entity(target, EntityManager)), ("tending", ent)), user);
+                _popup.PopupEntity(Loc.GetString(ent.Comp.NothingToTendRepeat, ("target", Identity.Entity(target, EntityManager)), ("tending", ent)), user, user);
             else
-                _popup.PopupClient(Loc.GetString(ent.Comp.NothingToTend, ("target", Identity.Entity(target, EntityManager)), ("tending", ent)), user);
+                _popup.PopupEntity(Loc.GetString(ent.Comp.NothingToTend, ("target", Identity.Entity(target, EntityManager)), ("tending", ent)), user, user);
 
             return true;
         }
@@ -108,7 +108,7 @@ public sealed partial class TendingSystem : EntitySystem
 
         if (differentTarget)
         {
-            _popup.PopupPredicted(
+            _popup.PopupEntity(
                 Loc.GetString(ent.Comp.UserPopup, ("target", Identity.Entity(target, EntityManager)), ("tending", ent), ("wound", foundWound)),
                 Loc.GetString(ent.Comp.OtherPopup, ("user", Identity.Entity(user, EntityManager)), ("target", Identity.Entity(target, EntityManager)), ("tending", ent), ("wound", foundWound)),
                 target,
@@ -117,7 +117,7 @@ public sealed partial class TendingSystem : EntitySystem
         }
         else
         {
-            _popup.PopupClient(Loc.GetString(ent.Comp.SelfPopup, ("tending", ent), ("wound", foundWound)), user);
+            _popup.PopupEntity(Loc.GetString(ent.Comp.SelfPopup, ("tending", ent), ("wound", foundWound)), user, user);
         }
 
         var args =
@@ -164,7 +164,7 @@ public sealed partial class TendingSystem : EntitySystem
         }
         else
         {
-            _popup.PopupClient(Loc.GetString(tending.UsedUp, ("tending", args.Used.Value)), args.Args.User);
+            _popup.PopupEntity(Loc.GetString(tending.UsedUp, ("tending", args.Used.Value)), args.Args.User, args.Args.User);
         }
     }
 }

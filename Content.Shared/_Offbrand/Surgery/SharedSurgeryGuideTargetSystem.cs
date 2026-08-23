@@ -1,6 +1,5 @@
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
-using Robust.Shared.GameObjects;
 
 namespace Content.Shared._Offbrand.Surgery;
 
@@ -42,12 +41,12 @@ public abstract partial class SharedSurgeryGuideTargetSystem : EntitySystem
     protected virtual void OnStartSurgery(Entity<SurgeryGuideTargetComponent> ent, ref SurgeryGuideStartSurgeryMessage args)
     {
         _userInterface.CloseUi(ent.Owner, SurgeryGuideUiKey.Key, args.Actor);
-        _popup.PopupPredictedCursor(Loc.GetString("surgery-examine-for-instructions"), args.Actor);
+        _popup.PopupCursor(Loc.GetString("surgery-examine-for-instructions"), args.Actor);
     }
 
     protected virtual void OnStartCleanup(Entity<SurgeryGuideTargetComponent> ent, ref SurgeryGuideStartCleanupMessage args)
     {
         _userInterface.CloseUi(ent.Owner, SurgeryGuideUiKey.Key, args.Actor);
-        _popup.PopupPredictedCursor(Loc.GetString("surgery-examine-for-instructions"), args.Actor);
+        _popup.PopupCursor(Loc.GetString("surgery-examine-for-instructions"), args.Actor);
     }
 }
