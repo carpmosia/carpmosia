@@ -41,11 +41,11 @@ public sealed partial class MapRulesTest
                     continue;
 
                 if (isAirAlarm && GetCompNode(ent, "DeviceList") is { } deviceList
-                    && deviceList.TryGetNode<YamlSequenceNode>("devices", out var devices) && devices.Any())
+                    && deviceList.TryGetNode<YamlSequenceNode>("devices", out var devices) && devices.Children.Count != 0)
                     continue;
 
                 if (isAtmosMonitor && GetCompNode(ent, "DeviceNetwork") is { } deviceNet
-                    && deviceNet.TryGetNode<YamlSequenceNode>("deviceLists", out var lists) && lists.Any())
+                    && deviceNet.TryGetNode<YamlSequenceNode>("deviceLists", out var lists) && lists.Children.Count != 0)
                     continue;
 
                 errors.Add($"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) that doesn't have any connections at {trans.Item2}");
