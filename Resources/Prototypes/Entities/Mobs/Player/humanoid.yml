@@ -28,44 +28,45 @@
     - DeathRattleImplantCentcomm
 
 ## Death Squad
+# Carpmosia-start - Remove Deathsquad
+# - type: entity
+#   id: RandomHumanoidSpawnerDeathSquad
+#   name: Death Squad Agent
+#   suffix: ERTRole, Death Squad
+#   components:
+#     - type: Sprite
+#       sprite: Clothing/OuterClothing/Hardsuits/deathsquad.rsi
+#       state: icon
+#     - type: RandomMetadata
+#       nameSegments:
+#         - NamesMilitaryFirstLeader
+#         - NamesMilitaryLast
+#       nameFormat: name-format-ert
+#     - type: RandomHumanoidSpawner
+#       settings: DeathSquad
 
-- type: entity
-  id: RandomHumanoidSpawnerDeathSquad
-  name: Death Squad Agent
-  suffix: ERTRole, Death Squad
-  components:
-    - type: Sprite
-      sprite: Clothing/OuterClothing/Hardsuits/deathsquad.rsi
-      state: icon
-    - type: RandomMetadata
-      nameSegments:
-        - NamesMilitaryFirstLeader
-        - NamesMilitaryLast
-      nameFormat: name-format-ert
-    - type: RandomHumanoidSpawner
-      settings: DeathSquad
-
-- type: randomHumanoidSettings
-  id: DeathSquad
-  parent: EventHumanoidCentcomm
-  components:
-    - type: GhostRole
-      name: ghost-role-information-Death-Squad-name
-      description: ghost-role-information-Death-Squad-description
-      rules: ghost-role-information-Death-Squad-rules
-      raffle:
-        settings: short
-      mindRoles:
-      - MindRoleGhostRoleFamiliar
-      job: DeathSquad
-    - type: Loadout
-      prototypes: [ DeathSquadGear ]
-      roleLoadout: [ RoleSurvivalEVA ]
-    - type: RandomMetadata
-      nameSegments:
-        - NamesMilitaryFirstLeader
-        - NamesMilitaryLast
-      nameFormat: name-format-ert
+# - type: randomHumanoidSettings
+#   id: DeathSquad
+#   parent: EventHumanoidCentcomm
+#   components:
+#     - type: GhostRole
+#       name: ghost-role-information-Death-Squad-name
+#       description: ghost-role-information-Death-Squad-description
+#       rules: ghost-role-information-Death-Squad-rules
+#       raffle:
+#         settings: short
+#       mindRoles:
+#       - MindRoleGhostRoleFamiliar
+#       job: DeathSquad
+#     - type: Loadout
+#       prototypes: [ DeathSquadGear ]
+#       roleLoadout: [ RoleSurvivalEVA ]
+#     - type: RandomMetadata
+#       nameSegments:
+#         - NamesMilitaryFirstLeader
+#         - NamesMilitaryLast
+#       nameFormat: name-format-ert
+# Carpmosia-end - Remove Deathsquad
 
 
 ## ERT Leader
