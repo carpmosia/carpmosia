@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Content.Server.Atmos.Monitor.Components;
 using Content.Shared.Atmos.Components;
 using Robust.Shared.Prototypes;
@@ -39,10 +40,12 @@ public sealed partial class MapRulesTest
                 if (GetTilePos(ent) is not { } trans)
                     continue;
 
-                if (isAirAlarm && HasCompNode(ent, "DeviceList"))
+                if (isAirAlarm && GetCompNode(ent, "DeviceList") is { } deviceList
+                    && deviceList.TryGetNode<YamlSequenceNode>("devices", out var devices) && devices.Any())
                     continue;
 
-                if (isAtmosMonitor && HasCompNode(ent, "DeviceNetwork"))
+                if (isAtmosMonitor && GetCompNode(ent, "DeviceNetwork") is { } deviceNet
+                    && deviceNet.TryGetNode<YamlSequenceNode>("deviceLists", out var lists) && lists.Any())
                     continue;
 
                 errors.Add($"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) that doesn't have any connections at {trans.Item2}");
