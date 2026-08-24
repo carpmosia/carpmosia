@@ -39,10 +39,10 @@ public sealed partial class MapRulesTest
                 if (GetTilePos(ent) is not { } trans)
                     continue;
 
-                if (isAirAlarm && GetCompNode(ent, "DeviceList") is { })
+                if (isAirAlarm && HasCompNode(ent, "DeviceList"))
                     continue;
 
-                if (isAtmosMonitor && GetCompNode(ent, "DeviceNetwork") is { })
+                if (isAtmosMonitor && HasCompNode(ent, "DeviceNetwork"))
                     continue;
 
                 errors.Add($"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) that doesn't have any connections at {trans.Item2}");

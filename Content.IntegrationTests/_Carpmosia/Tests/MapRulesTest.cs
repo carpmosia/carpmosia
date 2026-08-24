@@ -89,6 +89,16 @@ public sealed partial class MapRulesTest : GameTest
         return (YamlMappingNode)yamlStream.Documents[0].RootNode;
     }
 
+    private static bool HasCompNode(YamlNode entNode, string comp)
+    {
+        var ent = (YamlMappingNode)entNode;
+
+        if (!ent.TryGetNode<YamlSequenceNode>("components", out var comps))
+            return false;
+
+        return comps.Any(x => x["type"].AsString() == comp)
+    }
+
     private static YamlMappingNode? GetCompNode(YamlNode entNode, string comp)
     {
         var ent = (YamlMappingNode)entNode;
