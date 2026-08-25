@@ -1,0 +1,56 @@
+# PoI's and ents are treated as list of OR groups
+checks:
+- pois:
+  - DefaultStationBeaconHOPOffice
+  - HolopadCommandHop
+  ents:
+  - BrbSign
+  - ComputerFundingAllocation
+  - ComputerId
+  - DogBed
+  - DresserHeadOfPersonnelFilled
+  - LockerHeadOfPersonnelFilled
+  - MaterialCloth
+  - MaterialDurathread
+  - SpawnMobCorgi
+  - SpawnPointHeadOfPersonnel
+  - UniformPrinter
+  - VendingMachineCart
+  - WindoorSecureHeadOfPersonnelLocked
+- pois:
+  - DefaultStationBeaconVault
+  - HolopadCommandVault
+  ents:
+  - NuclearBomb
+  - WeaponEnergyTurretCommand
+  - HighSecCommandLocked
+  - WeaponEnergyTurretCommandControlPanel
+  - ToolboxGoldFilled
+- pois:
+  - - DefaultStationBeaconCaptainOffice
+    - DefaultStationBeaconCaptainsQuarters
+  ents:
+  - ToiletGoldenDirtyWater
+  - CaptainIDCard
+  - AirlockCaptainLocked
+  - DogBed
+  - SpawnMobFoxRenault
+  - HolopadCommandCaptain
+- pois:
+  - DefaultStationBeaconAIUpload
+  - HolopadAiUpload
+  ents:
+  - StationAiUploadComputer
+  - WeaponEnergyTurretAIControlPanel
+  - WeaponEnergyTurretAI
+- pois:
+  - DefaultStationBeaconEVAStorage
+  - HolopadGeneralEVAStorage
+  ents:
+  - SuitStorageEVA
+  - VendingMachineTankDispenserEVA
+  - NitrogenCanister
+  - OxygenCanister
+  - JetpackMiniFilled
+  - - ClothingShoesBootsMag
+    - ClothingShoesBootsMagSci

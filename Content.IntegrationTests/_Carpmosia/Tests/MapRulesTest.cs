@@ -51,7 +51,7 @@ public sealed partial class MapRulesTest : GameTest
     [TestCaseSource(nameof(TestScope))]
     public void TestMapRules(ResPath map)
     {
-        if (LoadMapYaml(map, _resMan) is not { } root)
+        if (LoadYaml(map, _resMan) is not { } root)
             return;
         if (!root.TryGetNode<YamlSequenceNode>(Entities, out var ents))
             return;
@@ -69,22 +69,20 @@ public sealed partial class MapRulesTest : GameTest
 
         // Station specific tests
         if (!NonStations.Any(x => map.ToString().StartsWith(x)))
-        {
             errors.AddRange([
-                //..TestMandatoryStationEntities(ents),
+                ..TestMandatoryStationEntities(root),
             ]);
-        }
 
         // Assert one large list of errors instead of Assert.Multiple to avoid 5 morbillion stacktraces
         Assert.That(errors, Has.Count.EqualTo(0), $"Found {errors.Count} issues:\n{string.Join("\n", errors)}");
     }
 
-    private static YamlMappingNode? LoadMapYaml(ResPath map, IResourceManager resMan)
+    private static YamlMappingNode? LoadYaml(ResPath map, IResourceManager resMan)
     {
         var rootedPath = map.ToRootedPath();
         if (!resMan.TryContentFileRead(rootedPath, out var fileStream))
         {
-            Assert.Fail($"Map not found: {rootedPath}");
+            Assert.Fail($"File not found: {rootedPath}");
             return null;
         }
 
