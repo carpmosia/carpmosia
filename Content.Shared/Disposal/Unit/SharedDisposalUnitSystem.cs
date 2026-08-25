@@ -291,6 +291,11 @@ public abstract partial class SharedDisposalUnitSystem : EntitySystem
             return false;
         }
 
+        // Carpmosia-start - Better disposals
+        if (TryComp(ent, out DisposalTaggerComponent? tagger))
+            beforeFlushArgs.Tags.Add(tagger.Tag);
+        // Carpmosia-end - Better disposals
+
         var xform = Transform(ent);
 
         if (!TryComp(xform.GridUid, out MapGridComponent? grid))

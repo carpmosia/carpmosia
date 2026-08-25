@@ -137,6 +137,10 @@
     table: !type:NestedSelector
       tableId: RatKingLoot
   - type: RequireProjectileTarget
+  # Carpmosia-start - Better disposals
+  - type: DisposalTagger
+    tag: trash
+  # Carpmosia-end - Better disposals
 
 - type: entity
   id: MailingUnit
