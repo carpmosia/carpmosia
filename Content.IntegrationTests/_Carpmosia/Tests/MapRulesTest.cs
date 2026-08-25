@@ -38,6 +38,7 @@ public sealed partial class MapRulesTest : GameTest
        "/Maps/_Carpmosia/centcomm.yml",
     ];
 
+    private const string Grids = "grids";
     private const string Proto = "proto";
     private const string Entities = "entities";
 
@@ -50,6 +51,9 @@ public sealed partial class MapRulesTest : GameTest
         if (LoadMapYaml(map, _resMan) is not { } root)
             return;
 
+        if (!root.TryGetNode<YamlSequenceNode>(Grids, out var grids))
+            return;
+
         if (!root.TryGetNode<YamlSequenceNode>(Entities, out var ents))
             return;
 
@@ -59,6 +63,7 @@ public sealed partial class MapRulesTest : GameTest
           ..TestMissingLabels(ents),
           ..TestAnchorableDuplicates(ents),
           ..TestUnlinkedAtmosDevices(ents),
+          ..TestNoCenteredGrid(grids, ents),
         ];
 
         // Station specific tests
