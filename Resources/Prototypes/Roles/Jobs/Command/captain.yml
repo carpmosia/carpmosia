@@ -19,7 +19,6 @@
     - !type:DepartmentTimeRequirement
       department: Command
       time: 4h
-  # weight: 20 # Carpmosia-edit - Job priority rebalance
   displayWeight: 99 # Carpmosia-edit - Reorder jobs
   startingGear: CaptainGear
   icon: "JobIconCaptain"

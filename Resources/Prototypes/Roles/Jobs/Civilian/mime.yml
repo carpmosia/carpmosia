@@ -41,9 +41,10 @@
   - type: Action
     priority: -1
     useDelay: 30
-    icon:
-      sprite: _Carpmosia/Structures/Walls/solid.rsi # Carpmosia-edit - Wall resprite
-      state: full
+  - type: Sprite
+    sprite: Structures/Walls/solid.rsi
+    layers:
+    - state: full
   - type: InstantAction
     event: !type:InvisibleWallActionEvent
 

@@ -71,7 +71,6 @@
   abstract: true
   parent: [ MindshieldRestrictedAntag, CyborgBlacklistedAntag, InternBlacklistedAntag ]
   id: RestrictedAntag
-  # Carpmosia-start - No more salvage antags
   jobBlacklist:
-  - SalvageSpecialist
-  # Carpmosia-end - No more salvage antags
+  - SalvageSpecialist # Carpmosia-edit - No more salvage antags
+  - TramDriver

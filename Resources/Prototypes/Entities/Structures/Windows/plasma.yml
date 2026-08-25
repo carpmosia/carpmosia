@@ -1,22 +1,20 @@
 - type: entity
   id: PlasmaWindow
   name: plasma window
-  parent: [BaseDeltaPressurePlasma, WindowRCDResistant]
+  parent: [BaseDeltaPressurePlasma, BaseWindowStructure, BaseRCDResistant, StructureHealthBarrier]
   components:
   - type: Sprite
-    drawdepth: WallTops
-    sprite: _Carpmosia/Structures/Windows/plasma.rsi # Carpmosia-edit - Window resprite
+    sprite: Structures/Windows/window-plasma.rsi
   - type: Icon
-    sprite: _Carpmosia/Structures/Windows/plasma.rsi # Carpmosia-edit - Window resprite
+    sprite: Structures/Windows/window-plasma.rsi
+    state: full
   - type: Damageable
-    damageModifierSet: Glass
-  - type: Injurable
-    damageContainer: StructuralInorganic
+    damageModifierSet: GlassPlasmaMod
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 75
+        damage: 80
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -26,8 +24,6 @@
           ShardGlassPlasma:
             min: 1
             max: 2
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
   - type: IconSmooth
     key: windows_plasma # Carpmosia-edit - Window resprite
     base: full # Carpmosia-edit - Window resprite
@@ -48,13 +44,9 @@
 
 - type: entity
   id: PlasmaWindowDirectional
-  parent: [BaseDeltaPressurePlasmaQuarter, WindowDirectionalRCDResistant]
+  parent: [BaseDeltaPressurePlasmaQuarter, BaseWindowStructureDirectional, BaseRCDResistant, StructureHealthBarrierWeak]
   name: directional plasma window
   description: Don't smudge up the glass down there.
-  placement:
-    mode: SnapgridCenter
-    snap:
-    - Window
   components:
   - type: Sprite
     sprite: _Carpmosia/Structures/Windows/plasma.rsi # Carpmosia-edit - Window resprite
@@ -72,11 +64,13 @@
     trackAllDamage: true
     damageOverlay:
       sprite: Structures/Windows/cracks_directional.rsi
+  - type: Damageable
+    damageModifierSet: GlassPlasmaMod
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 37
+        damage: 30
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -86,12 +80,41 @@
           ShardGlassPlasma:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
   - type: StaticPrice
     price: 50
   - type: RadiationBlocker
     resistance: 1
+
+- type: entity
+  parent: PlasmaWindowDirectional
+  id: PlasmaWindowDirectionalCorner
+  suffix: Corner
+  components:
+  - type: Sprite
+    sprite: Structures/Windows/directional.rsi
+    state: plasma_window_corner
+  - type: Icon
+    sprite: Structures/Windows/directional.rsi
+    state: plasma_window_corner
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,-0.28125,-0.28125"
+        density: 1500
+        mask:
+        - FullTileMask
+        layer:
+        - GlassLayer
+  - type: Construction
+    graph: WindowDirectionalCorner
+    node: plasmaWindowDirectionalCorner
+  - type: DamageVisuals
+    thresholds: [5, 10, 20]
+    trackAllDamage: true
+    damageOverlay:
+      sprite: Structures/Windows/cracks_directional_corner.rsi
 
 - type: entity
   parent: PlasmaWindow
@@ -104,21 +127,19 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: _Carpmosia/Structures/Windows/plasma.rsi # Carpmosia-edit - Window resprite
-    state: diagonal0 # Carpmosia-edit - Window resprite
+    sprite: Structures/Windows/window-diagonal-plasma.rsi
+    state: state0
   - type: Tag
     tags:
     - Diagonal
     - Window
   - type: IconSmooth
-    # Carpmosia-start - Window resprite
-    mode: DiagonalPlus
-    key: windows_plasma
-    base: diagonal
-    # Carpmosia-end - Window resprite
+    mode: Diagonal
+    key: walls
+    base: state
   - type: Icon
-    sprite: _Carpmosia/Structures/Windows/plasma.rsi # Carpmosia-edit - Window resprite
-    state: diagonal0 # Carpmosia-edit - Window resprite
+    sprite: Structures/Windows/window-diagonal-plasma.rsi
+    state: state0
   - type: Fixtures
     fixtures:
       fix1:
@@ -139,7 +160,7 @@
     - East
   - type: DamageVisuals
     damageOverlay:
-      sprite: Structures/Windows/cracks_diagonal.rsi
+      sprite: Structures/Windows/cracks-diagonal.rsi
   - type: Construction
     graph: WindowDiagonal
     node: plasmaWindowDiagonal

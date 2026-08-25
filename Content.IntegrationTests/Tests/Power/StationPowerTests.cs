@@ -23,18 +23,6 @@ public sealed class StationPowerTests : GameTest
 
     private static readonly string[] GameMaps =
     [
-        "Bagel",
-        "Box",
-        "Elkridge",
-        "Fland",
-        "Marathon",
-        "Oasis",
-        "Packed",
-        "Plasma",
-        "Relic",
-        "Snowball",
-        "Reach",
-        "Exo",
         // Carpmosia-start - Carpmaps
         "CarpAmber",
         "CarpFeint",
@@ -43,6 +31,17 @@ public sealed class StationPowerTests : GameTest
         "CarpSaltern",
         "CarpSparks",
         // Carpmosia-end - Carpmaps
+        "Bagel",
+        "Box",
+        "Elkridge",
+        "Exo",
+        "Marathon",
+        "Packed",
+        "Plasma",
+        "Relic",
+        "Snowball",
+        "Sushi",
+        "Tram2"
     ];
 
     public override PoolSettings PoolSettings => new ()
