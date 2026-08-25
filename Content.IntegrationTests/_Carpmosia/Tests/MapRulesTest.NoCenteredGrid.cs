@@ -18,13 +18,13 @@ public sealed partial class MapRulesTest
 
         if (!root.TryGetNode<YamlSequenceNode>(Entities, out var entities))
             return ["No entities found"];
-        var gridIds = grids.Select(node => node.AsInt()).ToArray();
+        var targets = grids.Select(node => node.AsInt()).ToArray();
 
         // I don't think there is a good way to discern a "primary" grid, so actually we just ensure that at least one grid is at 0,0 (doesn't have pos)
         if (entities
             .Where(x => string.IsNullOrEmpty(x[Proto].ToString()))
             .SelectMany(x => ((YamlSequenceNode)x[Entities])
-                .Where(x => gridIds.Contains(x[Uid].AsInt()))
+                .Where(x => targets.Contains(x[Uid].AsInt()))
             ).Any(x => GetCompNode(x, "Transform") is { } trans && !trans.HasNode("pos")))
             return [];
 

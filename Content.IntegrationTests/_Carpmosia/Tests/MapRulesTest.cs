@@ -40,6 +40,7 @@ public sealed partial class MapRulesTest : GameTest
 
     private const string Maps = "maps";
     private const string Grids = "grids";
+    private const string Tilemap = "tilemap";
     private const string Proto = "proto";
     private const string Entities = "entities";
     private const string Uid = "uid";

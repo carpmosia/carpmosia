@@ -27,7 +27,7 @@ public sealed partial class MapRulesTest
         if (!root.TryGetNode<YamlSequenceNode>(Entities, out var entities))
             return ["No 'entities' entry found"];
 
-        int[] targetIds = [
+        int[] targets = [
             ..maps.Select(node => node.AsInt()),
             ..grids.Select(node => node.AsInt())
         ];
@@ -42,7 +42,7 @@ public sealed partial class MapRulesTest
             foreach (var ent in (YamlSequenceNode)proto[Entities])
             {
                 // Skip unrelated entities
-                if (!targetIds.Contains(ent[Uid].AsInt()))
+                if (!targets.Contains(ent[Uid].AsInt()))
                     continue;
 
                 if (GetCompNode(ent, "Metadata") is not { } meta
