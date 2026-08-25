@@ -19,8 +19,11 @@ public sealed partial class MapRulesTest
         "BaseSubstationWall"
     ];
 
-    private List<string> TestMissingConnections(YamlSequenceNode entities)
+    private List<string> TestMissingConnections(YamlMappingNode root)
     {
+        if (!root.TryGetNode<YamlSequenceNode>(Entities, out var entities))
+            return ["No entities found"];
+
         var apcs = GetPrototypeIds<ApcComponent>();
 
         var lvPos = DeserializeCompNodes(entities, LVCables, GetTilePos);

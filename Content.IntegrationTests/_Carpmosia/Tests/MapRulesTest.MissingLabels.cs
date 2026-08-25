@@ -11,9 +11,11 @@ namespace Content.IntegrationTests.Tests;
 [TestFixture]
 public sealed partial class MapRulesTest
 {
-
-    private List<string> TestMissingLabels(YamlSequenceNode entities)
+    private List<string> TestMissingLabels(YamlMappingNode root)
     {
+        if (!root.TryGetNode<YamlSequenceNode>(Entities, out var entities))
+            return ["No entities found"];
+
         List<EntProtoId> targets = [
             ..GetPrototypeIds<PowerNetworkBatteryComponent>(),
             ..GetPrototypeIds<AirAlarmComponent>(),

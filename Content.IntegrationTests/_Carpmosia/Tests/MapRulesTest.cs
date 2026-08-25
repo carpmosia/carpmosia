@@ -41,6 +41,7 @@ public sealed partial class MapRulesTest : GameTest
     private const string Grids = "grids";
     private const string Proto = "proto";
     private const string Entities = "entities";
+    private const string Uid = "uid";
 
     [SidedDependency(Side.Server)] private readonly IResourceManager _resMan = null!;
 
@@ -50,20 +51,16 @@ public sealed partial class MapRulesTest : GameTest
     {
         if (LoadMapYaml(map, _resMan) is not { } root)
             return;
-
-        if (!root.TryGetNode<YamlSequenceNode>(Grids, out var grids))
-            return;
-
         if (!root.TryGetNode<YamlSequenceNode>(Entities, out var ents))
             return;
 
         List<string> errors = [
-          ..TestNonWallmountsUnderWalls(ents),
-          ..TestMissingConnections(ents),
-          ..TestMissingLabels(ents),
-          ..TestAnchorableDuplicates(ents),
-          ..TestUnlinkedAtmosDevices(ents),
-          ..TestNoCenteredGrid(grids, ents),
+          ..TestNonWallmountsUnderWalls(root),
+          ..TestMissingConnections(root),
+          ..TestMissingLabels(root),
+          ..TestAnchorableDuplicates(root),
+          ..TestUnlinkedAtmosDevices(root),
+          ..TestNoCenteredGrid(root),
         ];
 
         // Station specific tests

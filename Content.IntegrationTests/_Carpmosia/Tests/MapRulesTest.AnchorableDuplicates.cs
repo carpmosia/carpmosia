@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Content.Shared.Construction.Components;
+using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
 
 namespace Content.IntegrationTests.Tests;
@@ -8,8 +9,11 @@ namespace Content.IntegrationTests.Tests;
 [TestFixture]
 public sealed partial class MapRulesTest
 {
-    private List<string> TestAnchorableDuplicates(YamlSequenceNode entities)
+    private List<string> TestAnchorableDuplicates(YamlMappingNode root)
     {
+        if (!root.TryGetNode<YamlSequenceNode>(Entities, out var entities))
+            return ["No entities found"];
+
         var anchorables = GetPrototypeIds<AnchorableComponent>();
 
         var errors = new List<string>();

@@ -26,8 +26,11 @@ public sealed partial class MapRulesTest
         "SubstationWallBasic",
     ];
 
-    private List<string> TestNonWallmountsUnderWalls(YamlSequenceNode entities)
+    private List<string> TestNonWallmountsUnderWalls(YamlMappingNode root)
     {
+        if (!root.TryGetNode<YamlSequenceNode>(Entities, out var entities))
+            return [];
+
         var walls = GetPrototypeIds<IsRoofComponent>();
         var wallmounts = GetPrototypeIds<WallMountComponent>();
         var apcs = GetPrototypeIds<ApcComponent>();

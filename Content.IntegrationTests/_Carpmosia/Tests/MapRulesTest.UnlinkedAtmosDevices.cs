@@ -11,8 +11,11 @@ namespace Content.IntegrationTests.Tests;
 [TestFixture]
 public sealed partial class MapRulesTest
 {
-    private List<string> TestUnlinkedAtmosDevices(YamlSequenceNode entities)
+    private List<string> TestUnlinkedAtmosDevices(YamlMappingNode root)
     {
+        if (!root.TryGetNode<YamlSequenceNode>(Entities, out var entities))
+            return [];
+
         var gasPipeSensors = GetPrototypeIds<GasPipeSensorComponent>();
         var airAlarms = GetPrototypeIds<AirAlarmComponent>();
         var atmosMonitors = GetPrototypeIds<AtmosMonitorComponent>();
