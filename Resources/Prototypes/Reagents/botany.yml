@@ -126,12 +126,14 @@
     Bloodstream:
       # Begin Offbrand
       metabolismRate: 0.2
-      statusEffects:
-      - statusEffect: StatusEffectPainkillersNegligibleRobustHarvest
+      effects:
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectPainkillersNegligibleRobustHarvest
+        time: 1
+        type: Add
         conditions:
         - !type:MetabolizerTypeCondition
           type: [Plant]
-      effects:
       - !type:HealthChange
         damage:
           types:
@@ -183,9 +185,11 @@
   metabolisms:
     Bloodstream:
       metabolismRate: 1
-      statusEffects:
-      - statusEffect: StatusEffectHeartStrainSedin
       effects:
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectHeartStrainSedin
+        time: 1
+        type: Add
       - !type:HealthChange
         damage:
           types:

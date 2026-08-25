@@ -327,16 +327,10 @@
         time: 3
         type: Update
       - !type:ModifyStatusEffect # Offbrand
-        conditions:
-        - !type:ReagentCondition
-          reagent: NitrousOxide
-          min: 1.8
-        - !type:MetabolizerTypeCondition
-          type: [ Slime ]
-          inverted: false
         effectProto: StatusEffectPainSuppressionNitrousOxide
         time: 3
-        type: Add
+        type: Update
+        minScale: 1.8
       - !type:HealthChange
         minScale: 3.5
         conditions:

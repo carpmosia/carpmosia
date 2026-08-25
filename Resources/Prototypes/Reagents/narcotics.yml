@@ -11,10 +11,11 @@
   meltingPoint: 170.0
   metabolisms:
     Bloodstream:
-      statusEffects: # Offbrand
-      - statusEffect: StatusEffectHeartStrainDesoxyephedrine
       # Main effects
       effects:
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectHeartStrainDesoxyephedrine
+        time: 1
       - !type:HealthChange
         damage:
           types:
@@ -78,10 +79,11 @@
   meltingPoint: 36.0
   metabolisms:
     Bloodstream:
-      statusEffects: # Offbrand
-      - statusEffect: StatusEffectHeartStrainEphedrine
       effects:
       # Main effects
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectHeartStrainEphedrine
+        time: 1
       - !type:MovementSpeedModifier
         walkSpeedModifier: 1.15
         sprintSpeedModifier: 1.15
@@ -138,8 +140,6 @@
   meltingPoint: 170.0
   metabolisms:
     Bloodstream:
-      statusEffects: # Offbrand
-      - statusEffect: StatusEffectHeartStrainHyperzine
       metabolismRate: 1.0
       effects:
       # Main effects
@@ -164,6 +164,9 @@
         key: Adrenaline
         component: IgnoreSlowOnDamage
         time: 3
+      - !type:ModifyStatusEffect # Offbrand
+        effectProto: StatusEffectHeartStrainHyperzine
+        time: 3.5
       # Side effects
       - !type:Jitter
       # OD
@@ -231,9 +234,11 @@
     amount: -1
   metabolisms:
     Bloodstream:
-      statusEffects: # Offbrand
-      - statusEffect: StatusEffectHeartStabilizationTHC
       effects:
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectHeartStabilizationTHC
+        time: 16
+        type: Add
       - !type:ModifyStatusEffect
         effectProto: StatusEffectSeeingRainbow
         time: 16
@@ -252,9 +257,11 @@
     amount: -5
   metabolisms: # Offbrand
     Bloodstream:
-      statusEffects:
-      - statusEffect: StatusEffectHeartStrainNicotine
       effects:
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectHeartStrainNicotine
+        time: 1
+        type: Add
       - !type:ModifyOrganDamage
         category: Lungs
         amount: 0.25
@@ -333,8 +340,6 @@
   meltingPoint: 128.0
   metabolisms:
     Bloodstream:
-      statusEffects: # Offbrand
-      - statusEffect: StatusEffectPainSuppressionNocturine
       effects: # It would be nice to have speech slurred or mumbly, but accents are a bit iffy atm. Same for distortion effects.
       - !type:MovementSpeedModifier
         walkSpeedModifier: 0.65
@@ -347,6 +352,9 @@
         effectProto: StatusEffectForcedSleeping
         time: 9
         delay: 5
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectPainSuppressionNocturine
+        time: 4
 
 - type: reagent
   id: MuteToxin

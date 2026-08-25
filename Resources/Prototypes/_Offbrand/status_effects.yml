@@ -115,7 +115,7 @@
     delta: 0.1
 
 - type: entity
-  parent: MobStatusEffectBase
+  parent: MobStatusEffectDebuff
   id: StatusEffectHeartStrainSedin
   name: severely increased metabolic rate
   components:
@@ -123,7 +123,7 @@
     delta: 0.25
 
 - type: entity
-  parent: MobStatusEffectBase
+  parent: MobStatusEffectDebuff
   id: StatusEffectHeartStrainRomerol
   name: increased metabolic rate
   components:
@@ -141,7 +141,7 @@
     rate: 0.8
 
 - type: entity
-  parent: MobStatusEffectBase
+  parent: MobStatusEffectDebuff
   id: StatusEffectHeartStrainDesoxyephedrine
   name: increased metabolic rate
   components:
@@ -153,7 +153,7 @@
   id: StatusEffectHeartStrainEphedrine
 
 - type: entity
-  parent: MobStatusEffectBase
+  parent: MobStatusEffectDebuff
   id: StatusEffectHeartStrainNicotine
   name: slightly increased metabolic rate
   components:
@@ -161,7 +161,7 @@
     delta: 0.1
 
 - type: entity
-  parent: MobStatusEffectBase
+  parent: MobStatusEffectDebuff
   id: StatusEffectHeartStrainHyperzine
   name: severely increased metabolic rate & forced heartbeat
   components:
@@ -241,7 +241,7 @@
   id: StatusEffectMajorOxygenationCloneoxadone
 
 - type: entity
-  parent: MobStatusEffectBase
+  parent: MobStatusEffectDebuff
   id: StatusEffectMinorPain
   name: minor pain
   components:
@@ -249,14 +249,14 @@
     message: minor-pain-applied
 
 - type: entity
-  parent: MobStatusEffectBase
+  parent: MobStatusEffectDebuff
   id: StatusEffectPainStuttering
   name: pain stuttering
   components:
   - type: StutteringAccent
 
 - type: entity
-  parent: MobStatusEffectBase
+  parent: MobStatusEffectDebuff
   id: StatusEffectModeratePain
   name: moderate pain
   components:
@@ -275,7 +275,7 @@
     - [StatusEffectPainStuttering, 5]
 
 - type: entity
-  parent: MobStatusEffectBase
+  parent: MobStatusEffectDebuff
   id: StatusEffectSeverePain
   name: severe pain
   components:
@@ -292,7 +292,7 @@
     angleRangeModifier: 6
 
 - type: entity
-  parent: MobStatusEffectBase
+  parent: MobStatusEffectDebuff
   id: StatusEffectBlackoutPain
   name: blackout pain
   components:
@@ -320,7 +320,7 @@
   - type: DisruptOnAttackStatusEffect
 
 - type: entity
-  parent: MobStatusEffectBase
+  parent: MobStatusEffectDebuff
   id: StatusEffectHeartStopped
   name: stopped heart
   components:
@@ -351,7 +351,7 @@
   - type: BlindnessStatusEffect
 
 - type: entity
-  parent: MobStatusEffectBase
+  parent: MobStatusEffectDebuff
   id: StatusEffectSevereBrainDamage
   name: severe brain damage
   components:
@@ -372,7 +372,7 @@
   - type: DisruptOnAttackStatusEffect
 
 - type: entity
-  parent: MobStatusEffectBase
+  parent: MobStatusEffectDebuff
   id: StatusEffectBrainNoOxygen
   name: no brain oxygen
   components:

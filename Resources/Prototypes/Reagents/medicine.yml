@@ -147,10 +147,12 @@
     Bloodstream:
       # Begin Offbrand
       metabolismRate: 0.1
-      statusEffects:
-      - statusEffect: StatusEffectPainkillersNegligibleBicaridine
-      # End Offbrand
       effects:
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectPainkillersNegligibleBicaridine
+        time: 1
+        type: Add
+      # End Offbrand
       - !type:EvenHealthChange
         damage:
           Brute: -0.75 # Offbrand
@@ -194,16 +196,21 @@
   metabolisms:
     Bloodstream:
       # Begin Offbrand
-      statusEffects:
-      - statusEffect: StatusEffectMinorOxygenationCryoxadone
-        conditions:
-        - !type:TemperatureCondition
-          max: 213.0
-      - statusEffect: StatusEffectHeartStabilizationCryoxadone
-        conditions:
-        - !type:TemperatureCondition
-          max: 213.0
       effects:
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectMinorOxygenationCryoxadone
+        time: 1
+        type: Add
+        conditions:
+        - !type:TemperatureCondition
+          max: 213.0
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectHeartStabilizationCryoxadone
+        time: 1
+        type: Add
+        conditions:
+        - !type:TemperatureCondition
+          max: 213.0
       - !type:ModifyOrganDamage
         category: Heart
         amount: -0.3
@@ -306,10 +313,12 @@
     Bloodstream:
       # Begin Offbrand
       metabolismRate: 0.1
-      statusEffects:
-      - statusEffect: StatusEffectMinorOxygenationDexalin
-      # End Offbrand
       effects:
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectMinorOxygenationDexalin
+        time: 1
+        type: Add
+      # End Offbrand
       - !type:HealthChange
         damage:
           types:
@@ -337,10 +346,12 @@
     Bloodstream:
       # Begin Offbrand
       metabolismRate: 0.1
-      statusEffects:
-      - statusEffect: StatusEffectMajorOxygenationDexalinPlus
-      # End Offbrand
       effects:
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectMajorOxygenationDexalinPlus
+        time: 1
+        type: Add
+      # End Offbrand
       - !type:HealthChange
         damage:
           types:
@@ -376,9 +387,11 @@
     Bloodstream:
       # Begin Offbrand
       metabolismRate: 0.25
-      statusEffects:
-      - statusEffect: StatusEffectEpinephrine
       effects:
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectEpinephrine
+        time: 1
+        type: Add
       - !type:StartHeart
         probability: 0.25
       # End Offbrand
@@ -514,11 +527,16 @@
     Bloodstream:
       # Begin Offbrand
       metabolismRate: 0.05
-      statusEffects:
-      - statusEffect: StatusEffectHeartStabilizationInaprovaline
-      - statusEffect: StatusEffectBrainStabilizationInaprovaline
-      # End Offbrand
       effects:
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectHeartStabilizationInaprovaline
+        time: 1
+        type: Add
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectBrainStabilizationInaprovaline
+        time: 1
+        type: Add
+      # End Offbrand
       - !type:HealthChange
         conditions:
           # they gotta be in crit first
@@ -702,10 +720,12 @@
     Bloodstream:
       # Begin Offbrand
       metabolismRate: 0.2
-      statusEffects:
-      - statusEffect: StatusEffectMinorOxygenationPolypyryliumOligomers
-      # End Offbrand
       effects:
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectMinorOxygenationPolypyryliumOligomers
+        time: 1
+        type: Add
+      # End Offbrand
       - !type:EvenHealthChange
         damage:
           Brute: -1.75
@@ -1484,9 +1504,11 @@
     Bloodstream:
       # Begin Offbrand
       metabolismRate: 0.05
-      statusEffects:
-      - statusEffect: StatusEffectBrainHealingMannitol
       effects:
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectBrainHealingMannitol
+        time: 1
+        type: Add
       - !type:Drunk
         boozePower: 1
       - !type:Jitter

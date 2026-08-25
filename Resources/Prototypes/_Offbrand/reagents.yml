@@ -9,20 +9,6 @@
   metabolisms:
     Bloodstream:
       metabolismRate: 0.05
-      statusEffects:
-      - statusEffect: StatusEffectPainkillersMildParacetamol
-        conditions:
-        - !type:ReagentCondition
-          reagent: Tramadol
-          max: 1
-        - !type:ReagentCondition
-          reagent: Oxycodone
-          max: 1
-      - statusEffect: StatusEffectPainkillersMildParacetamolOverdose
-        conditions:
-        - !type:ReagentCondition
-          reagent: Paracetamol
-          min: 10
       effects:
       - !type:HealthChange
         conditions:
@@ -32,6 +18,25 @@
         damage:
           types:
             Poison: 0.05
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectPainkillersMildParacetamol
+        time: 1
+        type: Add
+        conditions:
+        - !type:ReagentCondition
+          reagent: Tramadol
+          max: 1
+        - !type:ReagentCondition
+          reagent: Oxycodone
+          max: 1
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectPainkillersMildParacetamolOverdose
+        time: 1
+        type: Add
+        conditions:
+        - !type:ReagentCondition
+          reagent: Paracetamol
+          min: 10
 
 - type: reagent
   id: Tramadol
@@ -44,22 +49,26 @@
   metabolisms:
     Bloodstream:
       metabolismRate: 0.05
-      statusEffects:
-      - statusEffect: StatusEffectPainkillersTramadol
-      - statusEffect: StatusEffectPainkillersTramadolOverdose
+      effects:
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectPainkillersTramadolOverdose
+        time: 1
+        type: Add
         conditions:
-        - !type:ReagentCondition
-          reagent: Tramadol
-          min: 15
-        - !type:ReagentCondition
-          reagent: Oxycodone
-          max: 1
-      - statusEffect: StatusEffectHeartStrainTramadolAlcohol
+          - !type:ReagentCondition
+            reagent: Tramadol
+            min: 15
+          - !type:ReagentCondition
+            reagent: Oxycodone
+            max: 1
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectHeartStrainTramadolAlcohol
+        time: 1
+        type: Add
         conditions:
         - !type:ReagentCondition
           reagent: Ethanol
           min: 1
-      effects:
       - !type:Drunk
         boozePower: 1
         conditions:
@@ -82,6 +91,10 @@
         damage:
           types:
             Asphyxiation: 0.75
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectPainkillersTramadol
+        time: 1
+        type: Add
 
 - type: reagent
   id: Oxycodone
@@ -94,19 +107,27 @@
   metabolisms:
     Bloodstream:
       metabolismRate: 0.15
-      statusEffects:
-      - statusEffect: StatusEffectPainkillersStrongOxycodone
-      - statusEffect: StatusEffectPainkillersStrongOxycodoneOverdose
+      effects:
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectPainkillersStrongOxycodone
+        time: 1
+        type: Add
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectPainkillersStrongOxycodoneOverdose
+        time: 1
+        type: Add
         conditions:
         - !type:ReagentCondition
           reagent: Oxycodone
           min: 10
-      - statusEffect: StatusEffectHeartStrainOxycodoneAlcohol
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectHeartStrainOxycodoneAlcohol
+        time: 1
+        type: Add
         conditions:
         - !type:ReagentCondition
           reagent: Ethanol
           min: 1
-      effects:
       - !type:Drunk
         boozePower: 2
         conditions:
@@ -209,16 +230,21 @@
   color: "#4053b0"
   metabolisms:
     Bloodstream:
-      statusEffects:
-      - statusEffect: StatusEffectMajorOxygenationCloneoxadone
-        conditions:
-        - !type:TemperatureCondition
-          max: 170.0
-      - statusEffect: StatusEffectHeartStabilizationCloneoxadone
-        conditions:
-        - !type:TemperatureCondition
-          max: 170.0
       effects:
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectMajorOxygenationCloneoxadone
+        conditions:
+        - !type:TemperatureCondition
+          max: 170.0
+        time: 1
+        type: Add
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectHeartStabilizationCloneoxadone
+        conditions:
+        - !type:TemperatureCondition
+          max: 170.0
+        time: 1
+        type: Add
       - !type:ModifyOrganDamage
         category: Heart
         amount: -0.6
