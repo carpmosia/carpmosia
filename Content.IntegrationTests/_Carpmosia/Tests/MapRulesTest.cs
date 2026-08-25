@@ -51,7 +51,7 @@ public sealed partial class MapRulesTest : GameTest
     [TestCaseSource(nameof(TestScope))]
     public void TestMapRules(ResPath map)
     {
-        if (LoadYaml(map, _resMan) is not { } root)
+        if (LoadYaml(map, _resMan) is not YamlMappingNode root)
             return;
         if (!root.TryGetNode<YamlSequenceNode>(Entities, out var ents))
             return;
@@ -77,7 +77,7 @@ public sealed partial class MapRulesTest : GameTest
         Assert.That(errors, Has.Count.EqualTo(0), $"Found {errors.Count} issues:\n{string.Join("\n", errors)}");
     }
 
-    private static YamlMappingNode? LoadYaml(ResPath map, IResourceManager resMan)
+    private static YamlNode? LoadYaml(ResPath map, IResourceManager resMan)
     {
         var rootedPath = map.ToRootedPath();
         if (!resMan.TryContentFileRead(rootedPath, out var fileStream))
@@ -90,7 +90,7 @@ public sealed partial class MapRulesTest : GameTest
         var yamlStream = new YamlStream();
         yamlStream.Load(reader);
 
-        return (YamlMappingNode)yamlStream.Documents[0].RootNode;
+        return yamlStream.Documents[0].RootNode;
     }
 
     private static YamlMappingNode? GetCompNode(YamlNode entNode, string comp)

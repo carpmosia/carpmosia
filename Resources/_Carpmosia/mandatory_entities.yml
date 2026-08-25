@@ -1,5 +1,4 @@
 # PoI's and ents are treated as list of OR groups
-checks:
 - pois:
   - DefaultStationBeaconHOPOffice
   - HolopadCommandHop
@@ -17,6 +16,7 @@ checks:
   - UniformPrinter
   - VendingMachineCart
   - WindoorSecureHeadOfPersonnelLocked
+
 - pois:
   - DefaultStationBeaconVault
   - HolopadCommandVault
@@ -26,6 +26,7 @@ checks:
   - HighSecCommandLocked
   - WeaponEnergyTurretCommandControlPanel
   - ToolboxGoldFilled
+
 - pois:
   - - DefaultStationBeaconCaptainOffice
     - DefaultStationBeaconCaptainsQuarters
@@ -36,6 +37,7 @@ checks:
   - DogBed
   - SpawnMobFoxRenault
   - HolopadCommandCaptain
+
 - pois:
   - DefaultStationBeaconAIUpload
   - HolopadAiUpload
@@ -43,6 +45,7 @@ checks:
   - StationAiUploadComputer
   - WeaponEnergyTurretAIControlPanel
   - WeaponEnergyTurretAI
+
 - pois:
   - DefaultStationBeaconEVAStorage
   - HolopadGeneralEVAStorage

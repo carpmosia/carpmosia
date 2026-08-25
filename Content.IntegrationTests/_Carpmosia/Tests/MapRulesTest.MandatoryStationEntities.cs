@@ -17,12 +17,12 @@ public sealed partial class MapRulesTest
         if (!root.TryGetNode<YamlSequenceNode>(Entities, out var entities))
             return ["No entities found"];
 
-        if (LoadYaml(MandatoryEntities, _resMan) is not { } rules)
+        if (LoadYaml(MandatoryEntities, _resMan) is not YamlSequenceNode rules)
             return [$"Could not load '{MandatoryEntities}'"];
 
         var errors = new List<string>();
 
-        foreach (var test in ((YamlSequenceNode)rules["checks"]).Cast<YamlMappingNode>())
+        foreach (var test in rules.Cast<YamlMappingNode>())
         {
             var poiGroups = test.GetNode<YamlSequenceNode>("pois")
                 .Select(x => x is YamlSequenceNode seq ? seq.Select(x => (EntProtoId)x.AsString()) : [(EntProtoId)x.AsString()]);
