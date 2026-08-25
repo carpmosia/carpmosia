@@ -1,7 +1,6 @@
 using Content.Shared._Offbrand.Wounds;
 using Content.Shared.Construction;
 using Content.Shared.Damage;
-using Content.Shared.StatusEffectNew;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Offbrand.Surgery;

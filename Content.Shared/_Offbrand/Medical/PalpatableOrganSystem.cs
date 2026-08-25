@@ -71,7 +71,7 @@ public sealed partial class PalpatableOrganSystem : EntitySystem
         RaiseLocalEvent(ent, ref ev);
         CheckPulse(ent, ref ev); // not a subscription to avoid child organs double-reporting pulse
 
-        if (_parentOrganQuery.TryGetComponent(ent, out var parent))
+        if (_parentOrganQuery.TryComp(ent, out var parent))
         {
             foreach (var child in parent.Children)
             {

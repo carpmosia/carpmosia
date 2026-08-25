@@ -1,6 +1,5 @@
 using Content.Shared._Offbrand.Organs;
 using Content.Shared._Offbrand.Skeletons;
-using Content.Shared._Offbrand.Wounds;
 using Content.Shared.Body;
 using Content.Shared.Construction;
 using Content.Shared.Examine;
@@ -59,7 +58,7 @@ public sealed partial class OrganDamage : IGraphCondition
         {
             Localization = "construction-step-lung-damage-range",
             Arguments =
-                [ ("min", Min.Float()), ("max", Max == FixedPoint2.MaxValue ? (float) int.MaxValue : Max.Float()) ],
+                [ ("min", Min.Float()), ("max", Max == FixedPoint2.MaxValue ? int.MaxValue : Max.Float()) ],
         };
     }
 }

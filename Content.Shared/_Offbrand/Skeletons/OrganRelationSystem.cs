@@ -72,7 +72,7 @@ public sealed partial class OrganRelationSystem : EntitySystem
         {
             yield return (parent, _parent.Comp(parent));
 
-            if (!_child.TryGetComponent(parent, out var parentChild))
+            if (!_child.TryComp(parent, out var parentChild))
                 yield break;
 
             child = (parent, parentChild);
