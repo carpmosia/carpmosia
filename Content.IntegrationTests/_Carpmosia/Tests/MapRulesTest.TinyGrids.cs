@@ -43,12 +43,12 @@ public sealed partial class MapRulesTest
                 if (GetCompNode(ent, "MapGrid") is not { } mapGrid || !mapGrid.TryGetNode<YamlMappingNode>("chunks", out var chunks))
                     continue;
 
-                var count = chunks.SelectMany(x =>
+                var count = chunks.Sum(x =>
                     Convert.FromBase64String(x.Value["tiles"].AsString())
                         .Chunk(7)
                         .Select(x => BinaryPrimitives.ReadUInt32LittleEndian(x.Take(4).ToArray()))
-                        .Where(x => x != space)
-                ).Count();
+                        .Count(x => x != space)
+                );
 
                 if (count <= TinyGridThreshold)
                     errors.Add($"Grid {ent[Uid]} only has {count} tiles, which is very likely an accident.");
