@@ -8,6 +8,9 @@ namespace Content.IntegrationTests.Tests;
 [TestFixture]
 public sealed partial class MapRulesTest
 {
+    /// <summary>
+    /// Ensures that there is at least one grid at world center
+    /// </summary>
     private List<string> TestNoCenteredGrid(YamlMappingNode root)
     {
         if (!root.TryGetNode<YamlSequenceNode>(Grids, out var grids))

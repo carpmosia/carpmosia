@@ -38,6 +38,7 @@ public sealed partial class MapRulesTest : GameTest
        "/Maps/_Carpmosia/centcomm.yml",
     ];
 
+    private const string Maps = "maps";
     private const string Grids = "grids";
     private const string Proto = "proto";
     private const string Entities = "entities";
@@ -55,12 +56,14 @@ public sealed partial class MapRulesTest : GameTest
             return;
 
         List<string> errors = [
-          ..TestNonWallmountsUnderWalls(root),
+          ..TestAnchorableDuplicates(root),
           ..TestMissingConnections(root),
           ..TestMissingLabels(root),
-          ..TestAnchorableDuplicates(root),
-          ..TestUnlinkedAtmosDevices(root),
           ..TestNoCenteredGrid(root),
+          ..TestNonWallmountsUnderWalls(root),
+          ..TestMissingMapGridMetadata(root),
+          ..TestTinyGrids(root),
+          ..TestUnlinkedAtmosDevices(root),
         ];
 
         // Station specific tests

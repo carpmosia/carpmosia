@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using Content.Server.Atmos.Monitor.Components;
 using Content.Shared.Atmos.Components;
 using Robust.Shared.Prototypes;
@@ -11,6 +10,9 @@ namespace Content.IntegrationTests.Tests;
 [TestFixture]
 public sealed partial class MapRulesTest
 {
+    /// <summary>
+    /// Checks for any unlinked atmospheric devices except gas pipe sensors
+    /// </summary>
     private List<string> TestUnlinkedAtmosDevices(YamlMappingNode root)
     {
         if (!root.TryGetNode<YamlSequenceNode>(Entities, out var entities))

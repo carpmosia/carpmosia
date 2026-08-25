@@ -26,6 +26,9 @@ public sealed partial class MapRulesTest
         "SubstationWallBasic",
     ];
 
+    /// <summary>
+    /// Checks for any non-wallmount or not whitelisted entities under walls
+    /// </summary>
     private List<string> TestNonWallmountsUnderWalls(YamlMappingNode root)
     {
         if (!root.TryGetNode<YamlSequenceNode>(Entities, out var entities))

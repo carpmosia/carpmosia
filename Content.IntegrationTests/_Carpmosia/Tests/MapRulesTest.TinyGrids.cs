@@ -12,9 +12,9 @@ namespace Content.IntegrationTests.Tests;
 public sealed partial class MapRulesTest
 {
     /// <summary>
-    /// Ensures that all power network related, air alarm, and switch entities are labelled
+    /// Checks for presence of any extremely tiny grids, as those are 99.9% accidental.
     /// </summary>
-    private List<string> TestMissingLabels(YamlMappingNode root)
+    private List<string> TestTinyGrids(YamlMappingNode root)
     {
         if (!root.TryGetNode<YamlSequenceNode>(Entities, out var entities))
             return ["No entities found"];

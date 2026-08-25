@@ -15,15 +15,22 @@ public sealed partial class MapRulesTest
       "map ",
     ];
 
-    private List<string> TestNoGridMetadata(YamlMappingNode root)
+    /// <summary>
+    /// Ensures that all grids have a name
+    /// </summary>
+    private List<string> TestMissingMapGridMetadata(YamlMappingNode root)
     {
+        if (!root.TryGetNode<YamlSequenceNode>(Maps, out var maps))
+            return ["No 'maps' entry found"];
         if (!root.TryGetNode<YamlSequenceNode>(Grids, out var grids))
-            return ["No grids found"];
-
+            return ["No 'grids' entry found"];
         if (!root.TryGetNode<YamlSequenceNode>(Entities, out var entities))
-            return ["No entities found"];
+            return ["No 'entities' entry found"];
 
-        var gridIds = grids.Select(node => node.AsInt()).ToArray();
+        int[] targetIds = [
+            ..maps.Select(node => node.AsInt()),
+            ..grids.Select(node => node.AsInt())
+        ];
         var errors = new List<string>();
 
         foreach (var proto in entities)
@@ -35,20 +42,20 @@ public sealed partial class MapRulesTest
             foreach (var ent in (YamlSequenceNode)proto[Entities])
             {
                 // Skip unrelated entities
-                if (gridIds.Contains(ent[Uid].AsInt()))
+                if (!targetIds.Contains(ent[Uid].AsInt()))
                     continue;
 
                 if (GetCompNode(ent, "Metadata") is not { } meta
                     || !meta.TryGetNode("name", out var name))
                 {
-                    errors.Add($"Grid {ent[Uid]} is missing a name");
+                    errors.Add($"Map or Grid {ent[Uid]} is missing a name");
                     continue;
                 }
 
                 if (!DisallowedMetadata.Any(x => name.ToString().StartsWith(x)))
                     continue;
 
-                errors.Add($"Grid {ent[Uid]} has an improper name {name}");
+                errors.Add($"Map or Grid {ent[Uid]} has an improper name {name}");
             }
         }
 

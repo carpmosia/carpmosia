@@ -19,6 +19,9 @@ public sealed partial class MapRulesTest
         "BaseSubstationWall"
     ];
 
+    /// <summary>
+    /// Ensures that all APC's and wallmount substations are properly connected
+    /// </summary>
     private List<string> TestMissingConnections(YamlMappingNode root)
     {
         if (!root.TryGetNode<YamlSequenceNode>(Entities, out var entities))
