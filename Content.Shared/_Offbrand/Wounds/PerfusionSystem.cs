@@ -12,14 +12,6 @@ public sealed partial class PerfusionSystem : EntitySystem
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedSolutionContainerSystem _solutionContainer = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<PerfusionComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<PerfusionComponent, ApplyMetabolicMultiplierEvent>(OnApplyMetabolicMultiplier);
-    }
-
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -30,7 +22,6 @@ public sealed partial class PerfusionSystem : EntitySystem
             if (perfusion.LastUpdate is not { } last || last + perfusion.AdjustedUpdateInterval >= _timing.CurTime)
                 continue;
 
-            var delta = _timing.CurTime - last;
             perfusion.LastUpdate = _timing.CurTime;
             Dirty(uid, perfusion);
 
@@ -48,11 +39,13 @@ public sealed partial class PerfusionSystem : EntitySystem
         }
     }
 
+    [SubscribeLocalEvent]
     private void OnMapInit(Entity<PerfusionComponent> ent, ref MapInitEvent args)
     {
         ent.Comp.LastUpdate = _timing.CurTime;
     }
 
+    [SubscribeLocalEvent]
     private void OnApplyMetabolicMultiplier(Entity<PerfusionComponent> ent, ref ApplyMetabolicMultiplierEvent args)
     {
         ent.Comp.UpdateIntervalMultiplier = args.Multiplier;
@@ -158,7 +151,7 @@ public sealed partial class PerfusionSystem : EntitySystem
         Dirty(ent);
     }
 
-    private float OxygenBalance(Entity<PerfusionComponent> ent)
+    private static float OxygenBalance(Entity<PerfusionComponent> ent)
     {
         return ent.Comp.OxygenSupply / ent.Comp.OxygenDemand;
     }

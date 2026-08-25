@@ -23,15 +23,7 @@ public sealed partial class TriggerOnDoAfterSystem : EntitySystem
 
     [Dependency] private EntityQuery<StackComponent> _stackQuery;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<TriggerOnDoAfterComponent, UseInHandEvent>(OnUseInHand);
-        SubscribeLocalEvent<TriggerOnDoAfterComponent, AfterInteractEvent>(OnAfterInteract);
-        SubscribeLocalEvent<TriggerOnDoAfterComponent, TriggerOnDoAfterDoAfterEvent>(OnDoAfter);
-    }
-
+    [SubscribeLocalEvent]
     private void OnUseInHand(Entity<TriggerOnDoAfterComponent> trigger, ref UseInHandEvent args)
     {
         if (args.Handled)
@@ -41,6 +33,7 @@ public sealed partial class TriggerOnDoAfterSystem : EntitySystem
             args.Handled = true;
     }
 
+    [SubscribeLocalEvent]
     private void OnAfterInteract(Entity<TriggerOnDoAfterComponent> trigger, ref AfterInteractEvent args)
     {
         if (args.Handled || !args.CanReach || args.Target == null)
@@ -50,6 +43,7 @@ public sealed partial class TriggerOnDoAfterSystem : EntitySystem
             args.Handled = true;
     }
 
+    [SubscribeLocalEvent]
     private void OnDoAfter(Entity<TriggerOnDoAfterComponent> trigger, ref TriggerOnDoAfterDoAfterEvent args)
     {
         if (args.Handled || args.Cancelled || args.Args.Target is not { } target || args.Used is not { } used)

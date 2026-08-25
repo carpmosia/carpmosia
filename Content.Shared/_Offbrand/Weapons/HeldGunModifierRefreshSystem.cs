@@ -9,19 +9,13 @@ public sealed partial class HeldGunModifierRefreshSystem : EntitySystem
 {
     [Dependency] private SharedGunSystem _gun = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<GunComponent, GotEquippedHandEvent>(OnGotEquippedHand);
-        SubscribeLocalEvent<GunComponent, GotUnequippedHandEvent>(OnGotUnequippedHand);
-    }
-
+    [SubscribeLocalEvent]
     private void OnGotEquippedHand(Entity<GunComponent> ent, ref GotEquippedHandEvent args)
     {
         _gun.RefreshModifiers(ent.AsNullable());
     }
 
+    [SubscribeLocalEvent]
     private void OnGotUnequippedHand(Entity<GunComponent> ent, ref GotUnequippedHandEvent args)
     {
         _gun.RefreshModifiers(ent.AsNullable());

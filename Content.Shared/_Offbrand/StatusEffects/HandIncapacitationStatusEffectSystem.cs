@@ -16,10 +16,9 @@ public sealed partial class HandIncapacitationStatusEffectSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<BodyComponent, BeforeEquippingHandEvent>(_body.RelayEvent);
-        SubscribeLocalEvent<HandIncapacitationStatusEffectComponent, StatusEffectAppliedEvent>(OnStatusEffectApplied);
-        SubscribeLocalEvent<HandIncapacitationStatusEffectComponent, StatusEffectRelayedEvent<BeforeEquippingHandEvent>>(OnBeforeEquippingHand);
     }
 
+    [SubscribeLocalEvent]
     private void OnStatusEffectApplied(Entity<HandIncapacitationStatusEffectComponent> ent, ref StatusEffectAppliedEvent args)
     {
         if (!TryComp<StatusEffectComponent>(ent, out var status) || status.AppliedTo is not { } organ)
@@ -34,6 +33,7 @@ public sealed partial class HandIncapacitationStatusEffectSystem : EntitySystem
         _hands.TryDrop((body, null), handOrgan.HandID);
     }
 
+    [SubscribeLocalEvent]
     private void OnBeforeEquippingHand(Entity<HandIncapacitationStatusEffectComponent> ent, ref StatusEffectRelayedEvent<BeforeEquippingHandEvent> args)
     {
         if (!TryComp<StatusEffectComponent>(ent, out var status) || status.AppliedTo is not { } organ)

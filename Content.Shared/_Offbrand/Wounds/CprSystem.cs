@@ -22,36 +22,7 @@ public sealed partial class CprSystem : EntitySystem
     [Dependency] private EntityQuery<WoundableComponent> _woundableQuery;
     [Dependency] private EntityQuery<HeartrateAlertsComponent> _heartrateQuery;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<CprTargetComponent, GetVerbsEvent<AlternativeVerb>>(OnGetVerbs);
-        SubscribeLocalEvent<CprTargetComponent, ExaminedEvent>(OnExamined);
-        SubscribeLocalEvent<CprTargetComponent, CprDoAfterEvent>(OnCprDoAfter);
-    }
-
-    private void TryStartCpr(Entity<CprTargetComponent> ent, EntityUid user)
-    {
-        _popup.PopupEntity(
-            Loc.GetString(ent.Comp.UserPopup, ("target", Identity.Entity(ent, EntityManager))),
-            Loc.GetString(ent.Comp.OtherPopup, ("user", Identity.Entity(user, EntityManager)), ("target", Identity.Entity(ent, EntityManager))),
-            ent,
-            user
-        );
-
-        var args =
-            new DoAfterArgs(EntityManager, user, ent.Comp.DoAfterDuration, new CprDoAfterEvent(), ent, target: ent, used: ent)
-            {
-                NeedHand = true,
-                BreakOnDamage = true,
-                BreakOnMove = true,
-                BreakOnWeightlessMove = true,
-            };
-
-        _doAfter.TryStartDoAfter(args);
-    }
-
+    [SubscribeLocalEvent]
     private void OnCprDoAfter(Entity<CprTargetComponent> ent, ref CprDoAfterEvent args)
     {
         _statusEffects.TryAddStatusEffectDuration(ent, ent.Comp.Effect, ent.Comp.EffectDuration);
@@ -71,6 +42,7 @@ public sealed partial class CprSystem : EntitySystem
         args.Repeat = _heartrateQuery.TryComp(ent, out var heartrate) && !heartrate.Beating;
     }
 
+    [SubscribeLocalEvent]
     private void OnGetVerbs(Entity<CprTargetComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
     {
         if (!args.CanAccess || !args.CanInteract || ent.Owner == args.User)
@@ -90,6 +62,7 @@ public sealed partial class CprSystem : EntitySystem
         });
     }
 
+    [SubscribeLocalEvent]
     private void OnExamined(Entity<CprTargetComponent> ent, ref ExaminedEvent args)
     {
         if (!_heartrateQuery.TryComp(ent, out var heartrate) || heartrate.Beating)
@@ -99,5 +72,32 @@ public sealed partial class CprSystem : EntitySystem
             return;
 
         args.PushMarkup(Loc.GetString("cpr-target-needs-cpr", ("target", Identity.Entity(ent, EntityManager))), priority: -5);
+    }
+
+    private void TryStartCpr(Entity<CprTargetComponent> ent, EntityUid user)
+    {
+        _popup.PopupEntity(
+            Loc.GetString(ent.Comp.UserPopup, ("target", Identity.Entity(ent, EntityManager))),
+            Loc.GetString(ent.Comp.OtherPopup, ("user", Identity.Entity(user, EntityManager)), ("target", Identity.Entity(ent, EntityManager))),
+            ent,
+            user
+        );
+
+        var args =
+            new DoAfterArgs(EntityManager,
+                user,
+                ent.Comp.DoAfterDuration,
+                new CprDoAfterEvent(),
+                ent,
+                target: ent,
+                used: ent)
+            {
+                NeedHand = true,
+                BreakOnDamage = true,
+                BreakOnMove = true,
+                BreakOnWeightlessMove = true,
+            };
+
+        _doAfter.TryStartDoAfter(args);
     }
 }

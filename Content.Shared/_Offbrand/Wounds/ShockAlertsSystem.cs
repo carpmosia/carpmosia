@@ -1,4 +1,3 @@
-using System.Linq;
 using Content.Shared.Alert;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
@@ -10,13 +9,22 @@ public sealed partial class ShockAlertsSystem : EntitySystem
     [Dependency] private AlertsSystem _alerts = default!;
     [Dependency] private PainSystem _pain = default!;
 
-    public override void Initialize()
+    [SubscribeLocalEvent]
+    private void OnMapInit(Entity<ShockAlertsComponent> ent, ref MapInitEvent args)
     {
-        base.Initialize();
+        UpdateAlert(ent);
+    }
 
-        SubscribeLocalEvent<ShockAlertsComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<ShockAlertsComponent, ComponentShutdown>(OnComponentShutdown);
-        SubscribeLocalEvent<ShockAlertsComponent, AfterShockChangeEvent>(OnAfterShockChange);
+    [SubscribeLocalEvent]
+    private void OnComponentShutdown(Entity<ShockAlertsComponent> ent, ref ComponentShutdown args)
+    {
+        _alerts.ClearAlertCategory(ent.Owner, ent.Comp.AlertCategory);
+    }
+
+    [SubscribeLocalEvent]
+    private void OnAfterShockChange(Entity<ShockAlertsComponent> ent, ref AfterShockChangeEvent args)
+    {
+        UpdateAlert(ent);
     }
 
     private ProtoId<AlertPrototype>? DetermineThreshold(Entity<ShockAlertsComponent> ent)
@@ -45,20 +53,5 @@ public sealed partial class ShockAlertsSystem : EntitySystem
         {
             _alerts.ClearAlertCategory(ent.Owner, ent.Comp.AlertCategory);
         }
-    }
-
-    private void OnMapInit(Entity<ShockAlertsComponent> ent, ref MapInitEvent args)
-    {
-        UpdateAlert(ent);
-    }
-
-    private void OnComponentShutdown(Entity<ShockAlertsComponent> ent, ref ComponentShutdown args)
-    {
-        _alerts.ClearAlertCategory(ent.Owner, ent.Comp.AlertCategory);
-    }
-
-    private void OnAfterShockChange(Entity<ShockAlertsComponent> ent, ref AfterShockChangeEvent args)
-    {
-        UpdateAlert(ent);
     }
 }

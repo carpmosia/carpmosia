@@ -15,18 +15,17 @@ public sealed partial class BlockMovementWhenPulledStatusEffectSystem : EntitySy
     {
         base.Initialize();
 
-        SubscribeLocalEvent<BlockMovementWhenPulledStatusEffectComponent, StatusEffectAppliedEvent>(OnStatusEffectApplied);
-        SubscribeLocalEvent<BlockMovementWhenPulledStatusEffectComponent, StatusEffectRemovedEvent>(OnStatusEffectRemoved);
-        SubscribeLocalEvent<BlockMovementWhenPulledStatusEffectComponent, StatusEffectRelayedEvent<UpdateCanMoveEvent>>(OnUpdateCanMove);
         SubscribeLocalEvent<BlockMovementWhenPulledStatusEffectComponent, StatusEffectRelayedEvent<PullStartedMessage>>(OnPullMessage);
         SubscribeLocalEvent<BlockMovementWhenPulledStatusEffectComponent, StatusEffectRelayedEvent<PullStoppedMessage>>(OnPullMessage);
     }
 
+    [SubscribeLocalEvent]
     private void OnStatusEffectApplied(Entity<BlockMovementWhenPulledStatusEffectComponent> ent, ref StatusEffectAppliedEvent args)
     {
         _actionBlocker.UpdateCanMove(args.Target);
     }
 
+    [SubscribeLocalEvent]
     private void OnStatusEffectRemoved(Entity<BlockMovementWhenPulledStatusEffectComponent> ent, ref StatusEffectRemovedEvent args)
     {
         _actionBlocker.UpdateCanMove(args.Target);
@@ -40,6 +39,7 @@ public sealed partial class BlockMovementWhenPulledStatusEffectSystem : EntitySy
         _actionBlocker.UpdateCanMove(target);
     }
 
+    [SubscribeLocalEvent]
     private void OnUpdateCanMove(Entity<BlockMovementWhenPulledStatusEffectComponent> ent, ref StatusEffectRelayedEvent<UpdateCanMoveEvent> args)
     {
         if (Comp<StatusEffectComponent>(ent).AppliedTo is not { } target)

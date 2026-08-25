@@ -7,13 +7,7 @@ public sealed partial class StatusEffectTriggerConditionSystem : EntitySystem
 {
     [Dependency] private StatusEffectsSystem _statusEffects = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<StatusEffectTriggerConditionComponent, AttemptTriggerEvent>(OnAttemptTrigger);
-    }
-
+    [SubscribeLocalEvent]
     private void OnAttemptTrigger(Entity<StatusEffectTriggerConditionComponent> trigger, ref AttemptTriggerEvent args)
     {
         if ((trigger.Comp.TargetUser ? args.User : trigger.Owner) is not { } target)

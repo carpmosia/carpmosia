@@ -13,12 +13,14 @@ public sealed partial class WoundableOrganSystem : EntitySystem
     [Dependency] private StatusEffectsSystem _statusEffects = default!;
     [Dependency] private WoundableSystem _woundable = default!;
 
+    private static readonly LocId WoundCountModifier = "wound-count-modifier";
+    private static readonly LocId WoundCountModifierExterior = "wound-count-modifier-exterior";
+    private static readonly LocId WoundCountNone = "wound-count-none";
+
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<WoundableOrganComponent, ExaminedEvent>(OnBeingExamined);
-        SubscribeLocalEvent<WoundableOrganComponent, BodyRelayedEvent<WoundableOrganWeightsEvent>>(OnGetWeights);
         SubscribeLocalEvent<WoundableOrganComponent, BodyRelayedEvent<GetWoundsWithSpaceEvent>>(UnwrapRelay);
         SubscribeLocalEvent<WoundableOrganComponent, BodyRelayedEvent<GetPainEvent>>(UnwrapRelay);
         SubscribeLocalEvent<WoundableOrganComponent, BodyRelayedEvent<HealWoundsEvent>>(UnwrapRelay);
@@ -27,29 +29,13 @@ public sealed partial class WoundableOrganSystem : EntitySystem
         SubscribeLocalEvent<WoundableOrganComponent, BodyRelayedEvent<BeforeEquippingHandEvent>>(UnwrapRelay);
     }
 
-    private void OnGetWeights(Entity<WoundableOrganComponent> ent, ref BodyRelayedEvent<WoundableOrganWeightsEvent> args)
+    [SubscribeLocalEvent]
+    private static void OnGetWeights(Entity<WoundableOrganComponent> ent, ref BodyRelayedEvent<WoundableOrganWeightsEvent> args)
     {
         args.Args.Weights[ent] = ent.Comp.Weight;
     }
 
-    public Dictionary<Entity<WoundableOrganComponent>, float> GetWoundableOrgans(EntityUid body)
-    {
-        var organs = new WoundableOrganWeightsEvent(new());
-        RaiseLocalEvent(body, ref organs);
-        return organs.Weights;
-    }
-
-    private void UnwrapRelay<TEvent>(Entity<WoundableOrganComponent> ent, ref BodyRelayedEvent<TEvent> args) where TEvent : struct
-    {
-        var evt = args.Args;
-        RaiseLocalEvent(ent, ref evt);
-        args.Args = evt;
-    }
-
-    private static readonly LocId WoundCountModifier = "wound-count-modifier";
-    private static readonly LocId WoundCountModifierExterior = "wound-count-modifier-exterior";
-    private static readonly LocId WoundCountNone = "wound-count-none";
-
+    [SubscribeLocalEvent]
     private void OnBeingExamined(Entity<WoundableOrganComponent> organ, ref ExaminedEvent args)
     {
         if (!_statusEffects.TryEffectsWithComp<WoundDescriptionComponent>(organ, out var wounds))
@@ -102,5 +88,20 @@ public sealed partial class WoundableOrganSystem : EntitySystem
         {
             args.PushMarkup(Loc.GetString(WoundCountNone, ("target", Identity.Entity(organBody, EntityManager)), ("organ", organ)));
         }
+    }
+
+    private void UnwrapRelay<TEvent>(Entity<WoundableOrganComponent> ent, ref BodyRelayedEvent<TEvent> args)
+        where TEvent : struct
+    {
+        var evt = args.Args;
+        RaiseLocalEvent(ent, ref evt);
+        args.Args = evt;
+    }
+
+    public Dictionary<Entity<WoundableOrganComponent>, float> GetWoundableOrgans(EntityUid body)
+    {
+        var organs = new WoundableOrganWeightsEvent(new());
+        RaiseLocalEvent(body, ref organs);
+        return organs.Weights;
     }
 }

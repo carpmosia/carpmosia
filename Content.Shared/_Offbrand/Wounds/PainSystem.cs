@@ -9,23 +9,6 @@ public sealed partial class PainSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<PainComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<PainComponent, RejuvenateEvent>(OnRejuvenate);
-        SubscribeLocalEvent<PainComponent, ApplyMetabolicMultiplierEvent>(OnApplyMetabolicMultiplier);
-
-        SubscribeLocalEvent<PainMetabolicRateComponent, BaseMetabolicRateEvent>(OnBaseMetabolicRate);
-    }
-
-    private void OnApplyMetabolicMultiplier(Entity<PainComponent> ent, ref ApplyMetabolicMultiplierEvent args)
-    {
-        ent.Comp.UpdateIntervalMultiplier = args.Multiplier;
-        Dirty(ent);
-    }
-
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -51,9 +34,9 @@ public sealed partial class PainSystem : EntitySystem
             {
                 var difference = FixedPoint2.Abs(pain.Shock - currentPain);
                 var maxDecrease =
-                    currentPain < pain.DoubleShockRecoveryThreshold * pain.Shock ?
-                        delta.TotalSeconds * pain.MaxShockDecreasePerSecond * 2 :
-                        delta.TotalSeconds * pain.MaxShockDecreasePerSecond;
+                    currentPain < pain.DoubleShockRecoveryThreshold * pain.Shock
+                        ? delta.TotalSeconds * pain.MaxShockDecreasePerSecond * 2
+                        : delta.TotalSeconds * pain.MaxShockDecreasePerSecond;
 
                 pain.Shock -= FixedPoint2.Min(difference, maxDecrease);
             }
@@ -76,6 +59,20 @@ public sealed partial class PainSystem : EntitySystem
         }
     }
 
+    [SubscribeLocalEvent]
+    private void OnMapInit(Entity<PainComponent> ent, ref MapInitEvent args)
+    {
+        ent.Comp.LastUpdate = _timing.CurTime;
+    }
+
+    [SubscribeLocalEvent]
+    private void OnApplyMetabolicMultiplier(Entity<PainComponent> ent, ref ApplyMetabolicMultiplierEvent args)
+    {
+        ent.Comp.UpdateIntervalMultiplier = args.Multiplier;
+        Dirty(ent);
+    }
+
+    [SubscribeLocalEvent]
     private void OnRejuvenate(Entity<PainComponent> ent, ref RejuvenateEvent args)
     {
         ent.Comp.Shock = 0;
@@ -88,23 +85,21 @@ public sealed partial class PainSystem : EntitySystem
         RaiseLocalEvent(ent, ref overlays, true);
     }
 
+    [SubscribeLocalEvent]
+    private void OnBaseMetabolicRate(Entity<PainMetabolicRateComponent> ent, ref BaseMetabolicRateEvent args)
+    {
+        var shock = GetShock(ent.Owner).Float();
+        args.Rate += MathF.Max(ent.Comp.QuadraticFactor * (shock * shock) + ent.Comp.LinearFactor * shock +
+                               ent.Comp.ConstantFactor,
+            0f);
+    }
+
     private FixedPoint2 GetPain(EntityUid ent)
     {
         var evt = new GetPainEvent(FixedPoint2.Zero);
         RaiseLocalEvent(ent, ref evt);
 
         return evt.Pain;
-    }
-
-    private void OnMapInit(Entity<PainComponent> ent, ref MapInitEvent args)
-    {
-        ent.Comp.LastUpdate = _timing.CurTime;
-    }
-
-    private void OnBaseMetabolicRate(Entity<PainMetabolicRateComponent> ent, ref BaseMetabolicRateEvent args)
-    {
-        var shock = GetShock(ent.Owner).Float();
-        args.Rate += MathF.Max(ent.Comp.QuadraticFactor * (shock * shock) + ent.Comp.LinearFactor * shock + ent.Comp.ConstantFactor, 0f);
     }
 
     public FixedPoint2 GetShock(Entity<PainComponent?> ent)

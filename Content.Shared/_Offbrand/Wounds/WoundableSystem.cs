@@ -9,7 +9,6 @@ using Content.Shared.StatusEffectNew.Components;
 using JetBrains.Annotations;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
@@ -19,29 +18,9 @@ public sealed partial class WoundableSystem : EntitySystem
 {
     [Dependency] private INetManager _net = default!;
     [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private WoundableBodySystem _woundableBody = default!;
     [Dependency] private StatusEffectsSystem _statusEffects = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<WoundableComponent, AfterAutoHandleStateEvent>(OnAfterAutoHandleState);
-        SubscribeLocalEvent<WoundableComponent, RefreshWoundsEvent>(OnWoundableRefreshWounds);
-        SubscribeLocalEvent<WoundableComponent, DamageDealtEvent>(OnDamageDealt);
-        SubscribeLocalEvent<WoundableComponent, BodyRelayedEvent<WoundGetDamageEvent>>(OnGetWoundDamages);
-
-        SubscribeLocalEvent<WoundComponent, StatusEffectRelayedEvent<WoundGetDamageEvent>>(OnWoundGetDamage);
-        SubscribeLocalEvent<WoundComponent, StatusEffectRelayedEvent<GetWoundsWithSpaceEvent>>(OnGetWoundsWithSpace);
-        SubscribeLocalEvent<WoundComponent, RefreshWoundsEvent>(OnWoundRefreshWounds);
-        SubscribeLocalEvent<WoundComponent, StatusEffectRemovedEvent>(OnWoundRemoved);
-
-        SubscribeLocalEvent<PainfulWoundComponent, StatusEffectRelayedEvent<GetPainEvent>>(OnGetPain);
-        SubscribeLocalEvent<HealableWoundComponent, StatusEffectRelayedEvent<HealWoundsEvent>>(OnHealHealableWounds);
-        SubscribeLocalEvent<BleedingWoundComponent, StatusEffectRelayedEvent<GetBleedLevelEvent>>(OnGetBleedLevel);
-        SubscribeLocalEvent<ClampableWoundComponent, StatusEffectRelayedEvent<ClampWoundsEvent>>(OnClampWounds);
-    }
-
+    [SubscribeLocalEvent]
     private void OnGetWoundDamages(Entity<WoundableComponent> ent, ref BodyRelayedEvent<WoundGetDamageEvent> args)
     {
         var evt = new WoundGetDamageEvent(new(), new());
@@ -63,28 +42,7 @@ public sealed partial class WoundableSystem : EntitySystem
         }
     }
 
-    private void OnWoundableRefreshWounds(Entity<WoundableComponent> ent, ref RefreshWoundsEvent args)
-    {
-        if (!TryComp<OrganComponent>(ent, out var organ) || organ.Body is not { } body)
-            return;
-
-        RaiseLocalEvent(body, ref args);
-    }
-
-    private void OnWoundRefreshWounds(Entity<WoundComponent> ent, ref RefreshWoundsEvent args)
-    {
-        if (!TryComp<StatusEffectComponent>(ent, out var status) || status.AppliedTo is not { } woundable)
-            return;
-
-        RaiseLocalEvent(woundable, ref args);
-    }
-
-    private void OnAfterAutoHandleState(Entity<WoundableComponent> ent, ref AfterAutoHandleStateEvent args)
-    {
-        var notif = new WoundableDamageChanged();
-        RaiseLocalEvent(ent, ref notif);
-    }
-
+    [SubscribeLocalEvent]
     private void OnWoundGetDamage(Entity<WoundComponent> ent, ref StatusEffectRelayedEvent<WoundGetDamageEvent> args)
     {
         var accumulator = args.Args.Accumulator;
@@ -107,7 +65,59 @@ public sealed partial class WoundableSystem : EntitySystem
         }
     }
 
-    private void OnGetWoundsWithSpace(Entity<WoundComponent> ent, ref StatusEffectRelayedEvent<GetWoundsWithSpaceEvent> args)
+    [SubscribeLocalEvent]
+    private void OnWoundableRefreshWounds(Entity<WoundableComponent> ent, ref RefreshWoundsEvent args)
+    {
+        if (!TryComp<OrganComponent>(ent, out var organ) || organ.Body is not { } body)
+            return;
+
+        RaiseLocalEvent(body, ref args);
+    }
+
+    [SubscribeLocalEvent]
+    private void OnWoundRefreshWounds(Entity<WoundComponent> ent, ref RefreshWoundsEvent args)
+    {
+        if (!TryComp<StatusEffectComponent>(ent, out var status) || status.AppliedTo is not { } woundable)
+            return;
+
+        RaiseLocalEvent(woundable, ref args);
+    }
+
+    [SubscribeLocalEvent]
+    private void OnDamageDealt(Entity<WoundableComponent> ent, ref DamageDealtEvent args)
+    {
+        foreach (var (type, damage) in args.Damage.DamageDict)
+        {
+            if (damage <= FixedPoint2.Zero)
+                continue;
+
+            var incoming = new DamageSpecifier() { DamageDict = new() { { type, damage } } };
+
+            var evt = new GetWoundsWithSpaceEvent(new(), incoming);
+            RaiseLocalEvent(ent, ref evt);
+
+            if (evt.Wounds.Count > 0)
+            {
+                AddWoundDamage(evt.Wounds[0], incoming);
+                continue;
+            }
+
+            if (DecideOnWoundType(ent, incoming) is not { } woundToSpawn)
+                continue;
+
+            TryWound(ent, woundToSpawn, damage: new(incoming), refresh: false);
+        }
+    }
+
+    [SubscribeLocalEvent]
+    private void OnAfterAutoHandleState(Entity<WoundableComponent> ent, ref AfterAutoHandleStateEvent args)
+    {
+        var notif = new WoundableDamageChanged();
+        RaiseLocalEvent(ent, ref notif);
+    }
+
+    [SubscribeLocalEvent]
+    private static void OnGetWoundsWithSpace(Entity<WoundComponent> ent, ref StatusEffectRelayedEvent<GetWoundsWithSpaceEvent> args)
     {
         if (ent.Comp.Damage.GetTotal() + args.Args.Damage.GetTotal() > ent.Comp.MaximumDamage)
             return;
@@ -123,6 +133,7 @@ public sealed partial class WoundableSystem : EntitySystem
         args.Args.Wounds.Add(ent);
     }
 
+    [SubscribeLocalEvent]
     private void OnWoundRemoved(Entity<WoundComponent> ent, ref StatusEffectRemovedEvent args)
     {
         if (_timing.ApplyingState)
@@ -138,6 +149,7 @@ public sealed partial class WoundableSystem : EntitySystem
             RefreshWounds(body, false, null);
     }
 
+    [SubscribeLocalEvent]
     private void OnClampWounds(Entity<ClampableWoundComponent> ent, ref StatusEffectRelayedEvent<ClampWoundsEvent> args)
     {
         if (ent.Comp.Clamped)
@@ -148,6 +160,69 @@ public sealed partial class WoundableSystem : EntitySystem
 
         ent.Comp.Clamped = true;
         Dirty(ent);
+    }
+
+    [SubscribeLocalEvent]
+    private void OnGetPain(Entity<PainfulWoundComponent> ent, ref StatusEffectRelayedEvent<GetPainEvent> args)
+    {
+        var wound = Comp<WoundComponent>(ent);
+        var damage = wound.Damage.DamageDict;
+        var lastingPain = FixedPoint2.Zero;
+        var freshPain = FixedPoint2.Zero;
+
+        foreach (var (type, value) in damage)
+        {
+            if (ent.Comp.PainCoefficients.TryGetValue(type, out var coefficient))
+                lastingPain += coefficient * value;
+            if (ent.Comp.FreshPainCoefficients.TryGetValue(type, out var freshCoefficient))
+                freshPain += freshCoefficient * value;
+        }
+
+        var delta = _timing.CurTime - wound.WoundedAt;
+
+        freshPain = FixedPoint2.Max(0, freshPain - (delta.TotalSeconds * ent.Comp.FreshPainDecreasePerSecond));
+
+        args.Args = args.Args with { Pain = args.Args.Pain + lastingPain + freshPain };
+    }
+
+    [SubscribeLocalEvent]
+    private void OnHealHealableWounds(Entity<HealableWoundComponent> ent,
+        ref StatusEffectRelayedEvent<HealWoundsEvent> args)
+    {
+        if (!ent.Comp.CanHeal)
+            return;
+
+        var comp = Comp<WoundComponent>(ent);
+
+        if (args.Args.Passive)
+        {
+            if (comp.Damage.GetTotal() >= ent.Comp.RequiresTendingAbove &&
+                !(TryComp<TendableWoundComponent>(ent, out var tendable) && tendable.Tended))
+            {
+                return;
+            }
+        }
+
+        args.Args = args.Args with { Damage = comp.Damage.Heal(args.Args.Damage) };
+
+        comp.Damage.TrimZeros();
+        args.Args.Damage.TrimZeros();
+
+        Dirty(ent.Owner, comp);
+
+        if (comp.Damage.Empty)
+        {
+            // use PredictedQueueDel when https://github.com/space-wizards/RobustToolbox/issues/6153 is fixed
+            if (_net.IsServer)
+                QueueDel(ent.Owner);
+        }
+    }
+
+    [SubscribeLocalEvent]
+    private void OnGetBleedLevel(Entity<BleedingWoundComponent> ent,
+        ref StatusEffectRelayedEvent<GetBleedLevelEvent> args)
+    {
+        args.Args = args.Args with { BleedLevel = args.Args.BleedLevel + BleedLevel(ent) };
     }
 
     /// <summary>
@@ -195,64 +270,6 @@ public sealed partial class WoundableSystem : EntitySystem
         }
 
         return bleedAddition * ratio;
-    }
-
-    private void OnGetBleedLevel(Entity<BleedingWoundComponent> ent, ref StatusEffectRelayedEvent<GetBleedLevelEvent> args)
-    {
-        args.Args = args.Args with { BleedLevel = args.Args.BleedLevel + BleedLevel(ent) };
-    }
-
-    private void OnGetPain(Entity<PainfulWoundComponent> ent, ref StatusEffectRelayedEvent<GetPainEvent> args)
-    {
-        var wound = Comp<WoundComponent>(ent);
-        var damage = wound.Damage.DamageDict;
-        var lastingPain = FixedPoint2.Zero;
-        var freshPain = FixedPoint2.Zero;
-
-        foreach (var (type, value) in damage)
-        {
-            if (ent.Comp.PainCoefficients.TryGetValue(type, out var coefficient))
-                lastingPain += coefficient * value;
-            if (ent.Comp.FreshPainCoefficients.TryGetValue(type, out var freshCoefficient))
-                freshPain += freshCoefficient * value;
-        }
-
-        var delta = _timing.CurTime - wound.WoundedAt;
-
-        freshPain = FixedPoint2.Max(0, freshPain - (delta.TotalSeconds * ent.Comp.FreshPainDecreasePerSecond));
-
-        args.Args = args.Args with { Pain = args.Args.Pain + lastingPain + freshPain };
-    }
-
-    private void OnHealHealableWounds(Entity<HealableWoundComponent> ent, ref StatusEffectRelayedEvent<HealWoundsEvent> args)
-    {
-        if (!ent.Comp.CanHeal)
-            return;
-
-        var comp = Comp<WoundComponent>(ent);
-
-        if (args.Args.Passive)
-        {
-            if (comp.Damage.GetTotal() >= ent.Comp.RequiresTendingAbove &&
-                !(TryComp<TendableWoundComponent>(ent, out var tendable) && tendable.Tended))
-            {
-                return;
-            }
-        }
-
-        args.Args = args.Args with { Damage = comp.Damage.Heal(args.Args.Damage) };
-
-        comp.Damage.TrimZeros();
-        args.Args.Damage.TrimZeros();
-
-        Dirty(ent.Owner, comp);
-
-        if (comp.Damage.Empty)
-        {
-            // use PredictedQueueDel when https://github.com/space-wizards/RobustToolbox/issues/6153 is fixed
-            if (_net.IsServer)
-                QueueDel(ent.Owner);
-        }
     }
 
     /// <summary>
@@ -317,31 +334,6 @@ public sealed partial class WoundableSystem : EntitySystem
     {
         var evt = new RefreshWoundsEvent(interruptsDoAfters, origin);
         RaiseLocalEvent(target, ref evt);
-    }
-
-    private void OnDamageDealt(Entity<WoundableComponent> ent, ref DamageDealtEvent args)
-    {
-        foreach (var (type, damage) in args.Damage.DamageDict)
-        {
-            if (damage <= FixedPoint2.Zero)
-                continue;
-
-            var incoming = new DamageSpecifier() { DamageDict = new() { { type, damage } } };
-
-            var evt = new GetWoundsWithSpaceEvent(new(), incoming);
-            RaiseLocalEvent(ent, ref evt);
-
-            if (evt.Wounds.Count > 0)
-            {
-                AddWoundDamage(evt.Wounds[0], incoming);
-                continue;
-            }
-
-            if (DecideOnWoundType(ent, incoming) is not { } woundToSpawn)
-                continue;
-
-            TryWound(ent, woundToSpawn, damage: new(incoming), refresh: false);
-        }
     }
 
     private EntProtoId? DecideOnWoundType(Entity<WoundableComponent> ent, DamageSpecifier damage)

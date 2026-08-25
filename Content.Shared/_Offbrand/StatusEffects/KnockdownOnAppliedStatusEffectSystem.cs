@@ -7,15 +7,9 @@ public sealed partial class KnockdownOnAppliedStatusEffectSystem : EntitySystem
 {
     [Dependency] private SharedStunSystem _stun = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<KnockdownOnAppliedStatusEffectComponent, StatusEffectAppliedEvent>(OnStatusEffectApplied);
-    }
-
+    [SubscribeLocalEvent]
     private void OnStatusEffectApplied(Entity<KnockdownOnAppliedStatusEffectComponent> ent, ref StatusEffectAppliedEvent args)
     {
-        _stun.TryKnockdown(args.Target, ent.Comp.Duration, true, force: true);
+        _stun.TryKnockdown(args.Target, ent.Comp.Duration, force: true);
     }
 }

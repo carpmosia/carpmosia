@@ -14,14 +14,7 @@ public sealed partial class RemovableStatusEffectSystem : EntitySystem
     [Dependency] private SharedHandsSystem _hands = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<RemovableStatusEffectComponent, StatusEffectRelayedEvent<GetVerbsEvent<AlternativeVerb>>>(OnGetVerbs);
-        SubscribeLocalEvent<RemovableStatusEffectComponent, RemoveStatusEffectEvent>(OnRemoveStatusEffect);
-    }
-
+    [SubscribeLocalEvent]
     private void OnGetVerbs(Entity<RemovableStatusEffectComponent> ent, ref StatusEffectRelayedEvent<GetVerbsEvent<AlternativeVerb>> args)
     {
         if (!args.Args.CanAccess || !args.Args.CanInteract)
@@ -39,6 +32,62 @@ public sealed partial class RemovableStatusEffectSystem : EntitySystem
             },
             Text = Loc.GetString(ent.Comp.Verb),
         });
+    }
+
+    [SubscribeLocalEvent]
+    private void OnRemoveStatusEffect(Entity<RemovableStatusEffectComponent> ent, ref RemoveStatusEffectEvent args)
+    {
+        if (args.Cancelled)
+            return;
+
+        if (Comp<StatusEffectComponent>(ent).AppliedTo is not { } target)
+            return;
+
+        var user = args.User;
+        var differentTarget = user != target;
+
+        if (differentTarget)
+        {
+            if (ent.Comp.UserCompleted is { } userCompleted && ent.Comp.OtherCompleted is { } otherCompleted)
+            {
+                _popup.PopupEntity(
+                    Loc.GetString(userCompleted, ("target", Identity.Entity(target, EntityManager)), ("effect", ent)),
+                    Loc.GetString(otherCompleted,
+                        ("user", Identity.Entity(user, EntityManager)),
+                        ("target", Identity.Entity(target, EntityManager)),
+                        ("effect", ent)),
+                    target,
+                    user
+                );
+            }
+        }
+        else
+        {
+            if (ent.Comp.SelfUserCompleted is { } selfUserCompleted &&
+                ent.Comp.SelfOtherCompleted is { } selfOtherCompleted)
+            {
+                _popup.PopupEntity(
+                    Loc.GetString(selfUserCompleted,
+                        ("target", Identity.Entity(target, EntityManager)),
+                        ("effect", ent)),
+                    Loc.GetString(selfOtherCompleted,
+                        ("user", Identity.Entity(user, EntityManager)),
+                        ("target", Identity.Entity(target, EntityManager)),
+                        ("effect", ent)),
+                    target,
+                    user
+                );
+            }
+        }
+
+        if (ent.Comp.SpawnOnRemove is { } proto)
+        {
+            var uid = PredictedSpawnNextToOrDrop(proto, target);
+
+            _hands.TryPickupAnyHand(args.User, uid);
+        }
+
+        PredictedQueueDel(ent.Owner);
     }
 
     private void RemoveStatusEffect(Entity<RemovableStatusEffectComponent> ent, EntityUid target, EntityUid user)
@@ -76,51 +125,5 @@ public sealed partial class RemovableStatusEffectSystem : EntitySystem
             BreakOnMove = true,
             NeedHand = true,
         });
-    }
-
-    private void OnRemoveStatusEffect(Entity<RemovableStatusEffectComponent> ent, ref RemoveStatusEffectEvent args)
-    {
-        if (args.Cancelled)
-            return;
-
-        if (Comp<StatusEffectComponent>(ent).AppliedTo is not { } target)
-            return;
-
-        var user = args.User;
-        var differentTarget = user != target;
-
-        if (differentTarget)
-        {
-            if (ent.Comp.UserCompleted is { } userCompleted && ent.Comp.OtherCompleted is { } otherCompleted)
-            {
-                _popup.PopupEntity(
-                    Loc.GetString(userCompleted, ("target", Identity.Entity(target, EntityManager)), ("effect", ent)),
-                    Loc.GetString(otherCompleted, ("user", Identity.Entity(user, EntityManager)), ("target", Identity.Entity(target, EntityManager)), ("effect", ent)),
-                    target,
-                    user
-                );
-            }
-        }
-        else
-        {
-            if (ent.Comp.SelfUserCompleted is { } selfUserCompleted && ent.Comp.SelfOtherCompleted is { } selfOtherCompleted)
-            {
-                _popup.PopupEntity(
-                    Loc.GetString(selfUserCompleted, ("target", Identity.Entity(target, EntityManager)), ("effect", ent)),
-                    Loc.GetString(selfOtherCompleted, ("user", Identity.Entity(user, EntityManager)), ("target", Identity.Entity(target, EntityManager)), ("effect", ent)),
-                    target,
-                    user
-                );
-            }
-        }
-
-        if (ent.Comp.SpawnOnRemove is { } proto)
-        {
-            var uid = PredictedSpawnNextToOrDrop(proto, target);
-
-            _hands.TryPickupAnyHand(args.User, uid);
-        }
-
-        PredictedQueueDel(ent.Owner);
     }
 }

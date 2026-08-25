@@ -5,7 +5,6 @@ using Content.Shared.StatusEffectNew;
 using Content.Shared.Stunnable;
 using Content.Shared.Weapons.Ranged.Events;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._Offbrand.StatusEffects;
@@ -17,19 +16,13 @@ public sealed partial class GunBackfireStatusEffectSystem : EntitySystem
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedStunSystem _stun = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<GunBackfireStunEvent>(OnGunBackfireStun);
-        SubscribeLocalEvent<GunBackfireStatusEffectComponent, StatusEffectRelayedEvent<SelfBeforeGunShotEvent>>(OnSelfBeforeGunShot);
-    }
-
+    [SubscribeLocalEvent]
     private void OnGunBackfireStun(GunBackfireStunEvent args)
     {
         _stun.TryUpdateParalyzeDuration(args.Target, args.Duration);
     }
 
+    [SubscribeLocalEvent]
     private void OnSelfBeforeGunShot(Entity<GunBackfireStatusEffectComponent> ent, ref StatusEffectRelayedEvent<SelfBeforeGunShotEvent> args)
     {
         if (Comp<StatusEffectComponent>(ent).AppliedTo is not { } target)

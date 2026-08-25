@@ -17,15 +17,7 @@ public sealed partial class WoundableBodySystem : OffbrandDamageSystem
     [Dependency] private WoundableOrganSystem _woundableOrgan = default!;
     [Dependency] private WoundableSystem _woundable = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<WoundableBodyComponent, ComponentShutdown>(OnShutdown);
-        SubscribeLocalEvent<WoundableBodyComponent, DamageDealtEvent>(OnDamageDealt);
-        SubscribeLocalEvent<WoundableBodyComponent, RefreshWoundsEvent>(OnRefreshWounds);
-    }
-
+    [SubscribeLocalEvent]
     private void OnShutdown(Entity<WoundableBodyComponent> ent, ref ComponentShutdown args)
     {
         if (!_statusEffects.TryEffectsWithComp<WoundComponent>(ent, out var wounds))
@@ -37,15 +29,7 @@ public sealed partial class WoundableBodySystem : OffbrandDamageSystem
         }
     }
 
-    public void HealWounds(Entity<WoundableBodyComponent> ent, DamageSpecifier incoming, bool passive, bool refresh)
-    {
-        var evt = new HealWoundsEvent(incoming, passive);
-        RaiseLocalEvent(ent, ref evt);
-
-        if (refresh)
-            _woundable.RefreshWounds(ent, false, null);
-    }
-
+    [SubscribeLocalEvent]
     private void OnDamageDealt(Entity<WoundableBodyComponent> ent, ref DamageDealtEvent args)
     {
         if (_timing.ApplyingState || !TryComp<DamageableComponent>(ent, out _))
@@ -68,6 +52,7 @@ public sealed partial class WoundableBodySystem : OffbrandDamageSystem
         _woundable.RefreshWounds(ent, args.InterruptsDoAfters, args.Origin);
     }
 
+    [SubscribeLocalEvent]
     private void OnRefreshWounds(Entity<WoundableBodyComponent> ent, ref RefreshWoundsEvent args)
     {
         var damageable = Comp<DamageableComponent>(ent);
@@ -87,6 +72,15 @@ public sealed partial class WoundableBodySystem : OffbrandDamageSystem
 
         damageable.Damage = evt.Accumulator;
         _damageable.OnEntityDamageChanged((ent, damageable), damageDone, args.InterruptsDoAfters, args.Origin);
+    }
+
+    public void HealWounds(Entity<WoundableBodyComponent> ent, DamageSpecifier incoming, bool passive, bool refresh)
+    {
+        var evt = new HealWoundsEvent(incoming, passive);
+        RaiseLocalEvent(ent, ref evt);
+
+        if (refresh)
+            _woundable.RefreshWounds(ent, false, null);
     }
 
     public void ClampWounds(Entity<WoundableBodyComponent> ent, float probability)

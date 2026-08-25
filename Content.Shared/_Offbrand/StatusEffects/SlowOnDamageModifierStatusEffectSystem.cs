@@ -8,25 +8,19 @@ public sealed partial class SlowOnDamageModifierStatusEffectSystem : EntitySyste
 {
     [Dependency] private MovementSpeedModifierSystem _movementSpeedModifier = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<SlowOnDamageModifierStatusEffectComponent, StatusEffectAppliedEvent>(OnStatusEffectApplied);
-        SubscribeLocalEvent<SlowOnDamageModifierStatusEffectComponent, StatusEffectRemovedEvent>(OnStatusEffectRemoved);
-        SubscribeLocalEvent<SlowOnDamageModifierStatusEffectComponent, StatusEffectRelayedEvent<ModifySlowOnDamageSpeedEvent>>(OnModifySlowOnDamageSpeed);
-    }
-
+    [SubscribeLocalEvent]
     private void OnStatusEffectApplied(Entity<SlowOnDamageModifierStatusEffectComponent> ent, ref StatusEffectAppliedEvent args)
     {
         _movementSpeedModifier.RefreshMovementSpeedModifiers(args.Target);
     }
 
+    [SubscribeLocalEvent]
     private void OnStatusEffectRemoved(Entity<SlowOnDamageModifierStatusEffectComponent> ent, ref StatusEffectRemovedEvent args)
     {
         _movementSpeedModifier.RefreshMovementSpeedModifiers(args.Target);
     }
 
+    [SubscribeLocalEvent]
     private void OnModifySlowOnDamageSpeed(Entity<SlowOnDamageModifierStatusEffectComponent> ent, ref StatusEffectRelayedEvent<ModifySlowOnDamageSpeedEvent> args)
     {
         var delta = 1f - args.Args.Speed;

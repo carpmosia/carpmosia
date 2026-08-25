@@ -7,13 +7,7 @@ public sealed partial class UnvisitOnAliveSystem : EntitySystem
 {
     [Dependency] private SharedMindSystem _mind = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<WoundableBodyComponent, MobStateChangedEvent>(OnMobStateChanged);
-    }
-
+    [SubscribeLocalEvent]
     private void OnMobStateChanged(Entity<WoundableBodyComponent> ent, ref MobStateChangedEvent args)
     {
         if (args.NewMobState != MobState.Alive)

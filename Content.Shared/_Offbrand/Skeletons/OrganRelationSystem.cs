@@ -7,14 +7,7 @@ public sealed partial class OrganRelationSystem : EntitySystem
     [Dependency] private EntityQuery<ChildOrganComponent> _child = default!;
     [Dependency] private EntityQuery<ParentOrganComponent> _parent = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<ParentOrganComponent, ComponentShutdown>(OnParentShutdown);
-        SubscribeLocalEvent<ChildOrganComponent, ComponentShutdown>(OnChildShutdown);
-    }
-
+    [SubscribeLocalEvent]
     private void OnChildShutdown(Entity<ChildOrganComponent> ent, ref ComponentShutdown args)
     {
         if (ent.Comp.Parent is not { } parentUid)
@@ -25,6 +18,7 @@ public sealed partial class OrganRelationSystem : EntitySystem
         Dirty(parentUid, parentComp);
     }
 
+    [SubscribeLocalEvent]
     private void OnParentShutdown(Entity<ParentOrganComponent> ent, ref ComponentShutdown args)
     {
         if (ent.Comp.Children.Count == 0)
@@ -95,7 +89,9 @@ public sealed partial class OrganRelationSystem : EntitySystem
             yield return (child, _child.Comp(child));
 
             foreach (var childChild in AllChildren(child))
+            {
                 yield return childChild;
+            }
         }
     }
 }

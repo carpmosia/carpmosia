@@ -1,6 +1,4 @@
-using Content.Shared._Offbrand.Wounds;
 using Content.Shared.Body.Events;
-using Content.Shared.Medical.Cryogenics;
 using Content.Shared.Metabolism;
 using Content.Shared.Temperature.Components;
 using Content.Shared.Temperature;
@@ -11,19 +9,13 @@ public sealed partial class CryostasisFactorSystem : EntitySystem
 {
     [Dependency] private MetabolizerSystem _metabolizer = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<CryostasisFactorComponent, OnTemperatureChangeEvent>(OnTemperatureChange);
-        SubscribeLocalEvent<CryostasisFactorComponent, GetMetabolicMultiplierEvent>(OnGetMetabolicMultiplier);
-    }
-
+    [SubscribeLocalEvent]
     private void OnTemperatureChange(Entity<CryostasisFactorComponent> ent, ref OnTemperatureChangeEvent args)
     {
         _metabolizer.UpdateMetabolicMultiplier(ent);
     }
 
+    [SubscribeLocalEvent]
     private void OnGetMetabolicMultiplier(Entity<CryostasisFactorComponent> ent, ref GetMetabolicMultiplierEvent args)
     {
         if (!TryComp<TemperatureComponent>(ent, out var temp))

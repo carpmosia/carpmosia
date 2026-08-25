@@ -9,13 +9,7 @@ public sealed partial class TargetingHealthDollOnInteractSystem : EntitySystem
 {
     [Dependency] private ExamineSystemShared _examine = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<TargetingHealthDollOnInteractComponent, AfterInteractEvent>(OnAfterInteract);
-    }
-
+    [SubscribeLocalEvent]
     private void OnAfterInteract(Entity<TargetingHealthDollOnInteractComponent> ent, ref AfterInteractEvent args)
     {
         if (!args.CanReach || args.Target is not { } target || !HasComp<BodyComponent>(target))

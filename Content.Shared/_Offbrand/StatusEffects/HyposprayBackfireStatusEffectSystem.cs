@@ -5,7 +5,6 @@ using Content.Shared.StatusEffectNew.Components;
 using Content.Shared.StatusEffectNew;
 using Content.Shared.Stunnable;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._Offbrand.StatusEffects;
@@ -17,13 +16,7 @@ public sealed partial class HyposprayBackfireStatusEffectSystem : EntitySystem
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedStunSystem _stun = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<HyposprayBackfireStatusEffectComponent, StatusEffectRelayedEvent<SelfBeforeInjectEvent>>(OnSelfBeforeInjects);
-    }
-
+    [SubscribeLocalEvent]
     private void OnSelfBeforeInjects(Entity<HyposprayBackfireStatusEffectComponent> ent, ref StatusEffectRelayedEvent<SelfBeforeInjectEvent> args)
     {
         if (Comp<StatusEffectComponent>(ent).AppliedTo is not { } target)

@@ -6,19 +6,14 @@ namespace Content.Shared._Offbrand.Skeletons;
 
 public sealed partial class DetachableOrganSystem : EntitySystem
 {
-    [Dependency] private EntityQuery<DetachableOrganComponent> _detachableOrgan = default!;
     [Dependency] private INetManager _net = default!;
     [Dependency] private OrganRelationSystem _organRelation = default!;
     [Dependency] private SharedContainerSystem _container = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<DetachableOrganComponent, OrganGotRemovedEvent>(OnDetachableRemoved);
-    }
+    [Dependency] private EntityQuery<DetachableOrganComponent> _detachableOrgan;
 
     // placeholder to test this until it's wired to delimbing
+    [SubscribeLocalEvent]
     private void OnDetachableRemoved(Entity<DetachableOrganComponent> ent, ref OrganGotRemovedEvent args)
     {
         if (!_net.IsServer)
@@ -29,7 +24,7 @@ public sealed partial class DetachableOrganSystem : EntitySystem
 
         foreach (var parent in _organRelation.AllParents(ent.Owner))
         {
-            if (_detachableOrgan.TryGetComponent(parent, out var detachableParent) && detachableParent.Detaching)
+            if (_detachableOrgan.TryComp(parent, out var detachableParent) && detachableParent.Detaching)
                 return;
         }
 

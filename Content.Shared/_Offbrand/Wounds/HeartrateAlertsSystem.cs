@@ -1,6 +1,5 @@
 using Content.Shared._Offbrand.Organs;
 using Content.Shared.Alert;
-using Content.Shared.FixedPoint;
 
 namespace Content.Shared._Offbrand.Wounds;
 
@@ -8,15 +7,38 @@ public sealed partial class HeartrateAlertsSystem : EntitySystem
 {
     [Dependency] private AlertsSystem _alerts = default!;
 
-    public override void Initialize()
+    [SubscribeLocalEvent]
+    private void OnMapInit(Entity<HeartrateAlertsComponent> ent, ref MapInitEvent args)
     {
-        base.Initialize();
+        UpdateAlert(ent);
+    }
 
-        SubscribeLocalEvent<HeartrateAlertsComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<HeartrateAlertsComponent, ComponentShutdown>(OnComponentShutdown);
-        SubscribeLocalEvent<HeartrateAlertsComponent, AfterStrainChangedEvent>(OnAfterStrainChanged);
-        SubscribeLocalEvent<HeartrateAlertsComponent, HeartStoppedEvent>(OnHeartStopped);
-        SubscribeLocalEvent<HeartrateAlertsComponent, HeartStartedEvent>(OnHeartStarted);
+    [SubscribeLocalEvent]
+    private void OnAfterStrainChanged(Entity<HeartrateAlertsComponent> ent, ref AfterStrainChangedEvent args)
+    {
+        UpdateAlert(ent);
+    }
+
+    [SubscribeLocalEvent]
+    private void OnComponentShutdown(Entity<HeartrateAlertsComponent> ent, ref ComponentShutdown args)
+    {
+        _alerts.ClearAlertCategory(ent.Owner, ent.Comp.AlertCategory);
+    }
+
+    [SubscribeLocalEvent]
+    private void OnHeartStopped(Entity<HeartrateAlertsComponent> ent, ref HeartStoppedEvent args)
+    {
+        ent.Comp.Beating = false;
+        Dirty(ent);
+        UpdateAlert(ent);
+    }
+
+    [SubscribeLocalEvent]
+    private void OnHeartStarted(Entity<HeartrateAlertsComponent> ent, ref HeartStartedEvent args)
+    {
+        ent.Comp.Beating = true;
+        Dirty(ent);
+        UpdateAlert(ent);
     }
 
     private void UpdateAlert(Entity<HeartrateAlertsComponent> ent)
@@ -35,34 +57,5 @@ public sealed partial class HeartrateAlertsSystem : EntitySystem
         {
             _alerts.ShowAlert(ent.Owner, ent.Comp.StoppedAlert);
         }
-    }
-
-    private void OnMapInit(Entity<HeartrateAlertsComponent> ent, ref MapInitEvent args)
-    {
-        UpdateAlert(ent);
-    }
-
-    private void OnAfterStrainChanged(Entity<HeartrateAlertsComponent> ent, ref AfterStrainChangedEvent args)
-    {
-        UpdateAlert(ent);
-    }
-
-    private void OnComponentShutdown(Entity<HeartrateAlertsComponent> ent, ref ComponentShutdown args)
-    {
-        _alerts.ClearAlertCategory(ent.Owner, ent.Comp.AlertCategory);
-    }
-
-    private void OnHeartStopped(Entity<HeartrateAlertsComponent> ent, ref HeartStoppedEvent args)
-    {
-        ent.Comp.Beating = false;
-        Dirty(ent);
-        UpdateAlert(ent);
-    }
-
-    private void OnHeartStarted(Entity<HeartrateAlertsComponent> ent, ref HeartStartedEvent args)
-    {
-        ent.Comp.Beating = true;
-        Dirty(ent);
-        UpdateAlert(ent);
     }
 }

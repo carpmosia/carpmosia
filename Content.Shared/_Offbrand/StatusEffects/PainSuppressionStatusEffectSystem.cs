@@ -7,25 +7,19 @@ public sealed partial class PainSuppressionStatusEffectSystem : EntitySystem
 {
     [Dependency] private PainSystem _pain = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<PainSuppressionStatusEffectComponent, StatusEffectAppliedEvent>(OnStatusEffectApplied);
-        SubscribeLocalEvent<PainSuppressionStatusEffectComponent, StatusEffectRemovedEvent>(OnStatusEffectRemoved);
-        SubscribeLocalEvent<PainSuppressionStatusEffectComponent, StatusEffectRelayedEvent<PainSuppressionEvent>>(OnPainSuppression);
-    }
-
-    private void OnPainSuppression(Entity<PainSuppressionStatusEffectComponent> ent, ref StatusEffectRelayedEvent<PainSuppressionEvent> args)
+    [SubscribeLocalEvent]
+    private static void OnPainSuppression(Entity<PainSuppressionStatusEffectComponent> ent, ref StatusEffectRelayedEvent<PainSuppressionEvent> args)
     {
         args.Args = args.Args with { Suppressed = true };
     }
 
+    [SubscribeLocalEvent]
     private void OnStatusEffectApplied(Entity<PainSuppressionStatusEffectComponent> ent, ref StatusEffectAppliedEvent args)
     {
         _pain.UpdateSuppression(args.Target);
     }
 
+    [SubscribeLocalEvent]
     private void OnStatusEffectRemoved(Entity<PainSuppressionStatusEffectComponent> ent, ref StatusEffectRemovedEvent args)
     {
         _pain.UpdateSuppression(args.Target);

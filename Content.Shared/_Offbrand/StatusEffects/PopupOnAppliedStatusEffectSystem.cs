@@ -7,13 +7,7 @@ public sealed partial class PopupOnAppliedStatusEffectSystem : EntitySystem
 {
     [Dependency] private SharedPopupSystem _popup = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<PopupOnAppliedStatusEffectComponent, StatusEffectAppliedEvent>(OnStatusEffectApplied);
-    }
-
+    [SubscribeLocalEvent]
     private void OnStatusEffectApplied(Entity<PopupOnAppliedStatusEffectComponent> ent, ref StatusEffectAppliedEvent args)
     {
         _popup.PopupEntity(Loc.GetString(ent.Comp.Message), args.Target, args.Target, ent.Comp.VisualType);

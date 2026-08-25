@@ -29,7 +29,6 @@ public sealed partial class TendingSystem : EntitySystem
 
         SubscribeLocalEvent<TendingComponent, UseInHandEvent>(OnUseInHand, before: new[] { typeof(HealingSystem) });
         SubscribeLocalEvent<TendingComponent, AfterInteractEvent>(OnAfterInteract, before: new[] { typeof(HealingSystem) });
-        SubscribeLocalEvent<TendableWoundComponent, TendingDoAfterEvent>(OnTendingDoAfter);
     }
 
     private void OnUseInHand(Entity<TendingComponent> ent, ref UseInHandEvent args)
@@ -48,6 +47,43 @@ public sealed partial class TendingSystem : EntitySystem
 
         if (TryTend(ent, args.Target.Value, args.User))
             args.Handled = true;
+    }
+
+    [SubscribeLocalEvent]
+    private void OnTendingDoAfter(Entity<TendableWoundComponent> ent, ref TendingDoAfterEvent args)
+    {
+        if (args.Handled || args.Cancelled || args.Args.Target is not { } target)
+            return;
+
+        if (!TryComp<TendingComponent>(args.Used, out var tending))
+            return;
+
+        _woundable.TendWound(ent, tending.Damage);
+
+        var hasMoreItems = true;
+        if (TryComp<StackComponent>(args.Used.Value, out var stackComp))
+        {
+            _stack.ReduceCount((args.Used.Value, stackComp), 1);
+
+            if (_stack.GetCount((args.Used.Value, stackComp)) <= 0)
+                hasMoreItems = false;
+        }
+        else
+        {
+            hasMoreItems = false;
+            PredictedQueueDel(args.Used.Value);
+        }
+
+        _audio.PlayPredicted(tending.TendingEndSound, target, args.User);
+
+        if (hasMoreItems)
+        {
+            TryTend((args.Used.Value, tending), target, args.Args.User, true);
+        }
+        else
+        {
+            _popup.PopupEntity(Loc.GetString(tending.UsedUp, ("tending", args.Used.Value)), args.Args.User, args.Args.User);
+        }
     }
 
     private Entity<TendableWoundComponent, WoundComponent>? GetWoundToTend(Entity<TendingComponent> ent, Entity<WoundableBodyComponent?> target)
@@ -130,41 +166,5 @@ public sealed partial class TendingSystem : EntitySystem
 
         _doAfter.TryStartDoAfter(args);
         return true;
-    }
-
-    private void OnTendingDoAfter(Entity<TendableWoundComponent> ent, ref TendingDoAfterEvent args)
-    {
-        if (args.Handled || args.Cancelled || args.Args.Target is not { } target)
-            return;
-
-        if (!TryComp<TendingComponent>(args.Used, out var tending))
-            return;
-
-        _woundable.TendWound(ent, tending.Damage);
-
-        var hasMoreItems = true;
-        if (TryComp<StackComponent>(args.Used.Value, out var stackComp))
-        {
-            _stack.ReduceCount((args.Used.Value, stackComp), 1);
-
-            if (_stack.GetCount((args.Used.Value, stackComp)) <= 0)
-                hasMoreItems = false;
-        }
-        else
-        {
-            hasMoreItems = false;
-            PredictedQueueDel(args.Used.Value);
-        }
-
-        _audio.PlayPredicted(tending.TendingEndSound, target, args.User);
-
-        if (hasMoreItems)
-        {
-            TryTend((args.Used.Value, tending), target, args.Args.User, true);
-        }
-        else
-        {
-            _popup.PopupEntity(Loc.GetString(tending.UsedUp, ("tending", args.Used.Value)), args.Args.User, args.Args.User);
-        }
     }
 }

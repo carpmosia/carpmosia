@@ -7,13 +7,7 @@ public sealed partial class StaminaDamageOnAppliedStatusEffectSystem : EntitySys
 {
     [Dependency] private SharedStaminaSystem _stamina = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<StaminaDamageOnAppliedStatusEffectComponent, StatusEffectAppliedEvent>(OnStatusEffectApplied);
-    }
-
+    [SubscribeLocalEvent]
     private void OnStatusEffectApplied(Entity<StaminaDamageOnAppliedStatusEffectComponent> ent, ref StatusEffectAppliedEvent args)
     {
         _stamina.TakeStaminaDamage(args.Target, ent.Comp.Damage);

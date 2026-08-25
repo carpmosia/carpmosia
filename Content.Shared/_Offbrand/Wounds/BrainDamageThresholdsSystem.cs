@@ -10,14 +10,7 @@ public sealed partial class BrainDamageThresholdsSystem : EntitySystem
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private StatusEffectsSystem _statusEffects = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<BrainDamageThresholdsComponent, UpdateMobStateEvent>(OnUpdateMobState);
-        SubscribeLocalEvent<BrainDamageThresholdsComponent, ComponentShutdown>(OnShutdown);
-    }
-
+    [SubscribeLocalEvent]
     private void OnShutdown(Entity<BrainDamageThresholdsComponent> ent, ref ComponentShutdown args)
     {
         if (ent.Comp.CurrentDamageEffect is { } dEffect)
@@ -25,6 +18,15 @@ public sealed partial class BrainDamageThresholdsSystem : EntitySystem
 
         if (ent.Comp.CurrentOxygenEffect is { } oEffect)
             _statusEffects.TryRemoveStatusEffect(ent, oEffect);
+    }
+
+    [SubscribeLocalEvent]
+    private void OnUpdateMobState(Entity<BrainDamageThresholdsComponent> ent, ref UpdateMobStateEvent args)
+    {
+        args.State = ThresholdHelpers.Max(ent.Comp.CurrentState, args.State);
+
+        var overlays = new PotentiallyUpdateDamageOverlayEvent(ent);
+        RaiseLocalEvent(ent, ref overlays, true);
     }
 
     public void UpdateState(Entity<BrainDamageThresholdsComponent?> ent, Entity<DamageableOrganComponent, OxygenatableOrganComponent>? organ)
@@ -100,14 +102,6 @@ public sealed partial class BrainDamageThresholdsSystem : EntitySystem
 
         ent.Comp.CurrentOxygenEffect = oxygenEffect;
         Dirty(ent);
-
-        var overlays = new PotentiallyUpdateDamageOverlayEvent(ent);
-        RaiseLocalEvent(ent, ref overlays, true);
-    }
-
-    private void OnUpdateMobState(Entity<BrainDamageThresholdsComponent> ent, ref UpdateMobStateEvent args)
-    {
-        args.State = ThresholdHelpers.Max(ent.Comp.CurrentState, args.State);
 
         var overlays = new PotentiallyUpdateDamageOverlayEvent(ent);
         RaiseLocalEvent(ent, ref overlays, true);

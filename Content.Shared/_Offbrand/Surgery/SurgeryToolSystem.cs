@@ -7,7 +7,6 @@ using Content.Shared.Whitelist;
 
 namespace Content.Shared._Offbrand.Surgery;
 
-// this code needs to use predicted popups when construction gets predicted
 public sealed partial class SurgeryToolSystem : EntitySystem
 {
     [Dependency] private EntityWhitelistSystem _entityWhitelist = default!;
@@ -15,13 +14,7 @@ public sealed partial class SurgeryToolSystem : EntitySystem
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private StandingStateSystem _standingState = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<SurgeryToolComponent, ToolUseAttemptEvent>(OnToolAttemptUse);
-    }
-
+    [SubscribeLocalEvent]
     private void OnToolAttemptUse(Entity<SurgeryToolComponent> ent, ref ToolUseAttemptEvent args)
     {
         if (args.Target is not { } target)
@@ -49,7 +42,6 @@ public sealed partial class SurgeryToolSystem : EntitySystem
             {
                 _popup.PopupCursor(Loc.GetString(ent.Comp.DownDenialPopup, ("target", organ.Body)), args.User);
                 args.Cancel();
-                return;
             }
         }
 
@@ -57,7 +49,6 @@ public sealed partial class SurgeryToolSystem : EntitySystem
         {
             _popup.PopupCursor(Loc.GetString(ent.Comp.DownDenialPopup, ("target", args.Target)), args.User);
             args.Cancel();
-            return;
         }
     }
 }

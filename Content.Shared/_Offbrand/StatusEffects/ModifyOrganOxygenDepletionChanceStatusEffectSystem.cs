@@ -9,13 +9,7 @@ public sealed partial class ModifyOrganOxygenDepletionChanceStatusEffectSystem :
 {
     [Dependency] private PerfusionSystem _perfusion = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<ModifyOrganOxygenDepletionChanceStatusEffectComponent, StatusEffectRelayedEvent<BeforeDepleteOrganOxygen>>(OnBeforeDepleteOrganOxygen);
-    }
-
+    [SubscribeLocalEvent]
     private void OnBeforeDepleteOrganOxygen(Entity<ModifyOrganOxygenDepletionChanceStatusEffectComponent> ent, ref StatusEffectRelayedEvent<BeforeDepleteOrganOxygen> args)
     {
         if (Comp<StatusEffectComponent>(ent).AppliedTo is not { } target)

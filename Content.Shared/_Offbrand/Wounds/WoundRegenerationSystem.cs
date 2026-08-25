@@ -8,14 +8,6 @@ public sealed partial class WoundRegenerationSystem : EntitySystem
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private WoundableBodySystem _woundableBody = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<WoundRegenerationComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<WoundRegenerationComponent, ApplyMetabolicMultiplierEvent>(OnApplyMetabolicMultiplier);
-    }
-
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -27,25 +19,22 @@ public sealed partial class WoundRegenerationSystem : EntitySystem
                 continue;
 
             regeneration.LastUpdate = _timing.CurTime;
-            DoUpdate((uid, regeneration, woundable));
+            _woundableBody.HealWounds((uid, woundable), regeneration.Damage, true, true);
             Dirty(uid, regeneration);
         }
     }
 
+    [SubscribeLocalEvent]
     private void OnMapInit(Entity<WoundRegenerationComponent> ent, ref MapInitEvent args)
     {
         ent.Comp.LastUpdate ??= _timing.CurTime;
         Dirty(ent);
     }
 
+    [SubscribeLocalEvent]
     private void OnApplyMetabolicMultiplier(Entity<WoundRegenerationComponent> ent, ref ApplyMetabolicMultiplierEvent args)
     {
         ent.Comp.UpdateIntervalMultiplier = args.Multiplier;
         Dirty(ent);
-    }
-
-    private void DoUpdate(Entity<WoundRegenerationComponent, WoundableBodyComponent> ent)
-    {
-        _woundableBody.HealWounds((ent, ent), ent.Comp1.Damage, true, true);
     }
 }

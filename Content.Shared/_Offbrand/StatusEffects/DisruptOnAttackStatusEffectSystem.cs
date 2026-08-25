@@ -3,7 +3,6 @@ using Content.Shared.Damage.Systems;
 using Content.Shared.Mobs.Components;
 using Content.Shared.StatusEffectNew.Components;
 using Content.Shared.StatusEffectNew;
-using Robust.Shared.GameObjects;
 
 namespace Content.Shared._Offbrand.StatusEffects;
 
@@ -11,14 +10,7 @@ public sealed partial class DisruptOnAttackStatusEffectSystem : EntitySystem
 {
     [Dependency] private SharedUserInterfaceSystem _userInterface = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<DisruptOnAttackEvent>(OnDisruptOnAttack);
-        SubscribeLocalEvent<DisruptOnAttackStatusEffectComponent, StatusEffectRelayedEvent<DamageChangedEvent>>(OnDamageChanged);
-    }
-
+    [SubscribeLocalEvent]
     private void OnDisruptOnAttack(DisruptOnAttackEvent args)
     {
         var disarm = new DisarmedEvent(args.Damaged, args.Origin, 1f);
@@ -27,6 +19,7 @@ public sealed partial class DisruptOnAttackStatusEffectSystem : EntitySystem
         _userInterface.CloseUserUis(args.Damaged);
     }
 
+    [SubscribeLocalEvent]
     private void OnDamageChanged(Entity<DisruptOnAttackStatusEffectComponent> ent, ref StatusEffectRelayedEvent<DamageChangedEvent> args)
     {
         if (!args.Args.DamageIncreased)

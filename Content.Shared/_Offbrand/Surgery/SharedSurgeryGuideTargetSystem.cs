@@ -12,8 +12,6 @@ public abstract partial class SharedSurgeryGuideTargetSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<SurgeryToolComponent, GetVerbsEvent<UtilityVerb>>(OnGetVerbs);
-
         Subs.BuiEvents<SurgeryGuideTargetComponent>(SurgeryGuideUiKey.Key,
                 sub =>
                 {
@@ -22,6 +20,7 @@ public abstract partial class SharedSurgeryGuideTargetSystem : EntitySystem
                 });
     }
 
+    [SubscribeLocalEvent]
     private void OnGetVerbs(Entity<SurgeryToolComponent> ent, ref GetVerbsEvent<UtilityVerb> args)
     {
         if (!args.CanAccess || !args.CanInteract || !HasComp<SurgeryGuideTargetComponent>(args.Target))
