@@ -17,7 +17,11 @@ public sealed partial class PalpatableOrganSystem : EntitySystem
     [Dependency] private ExamineSystemShared _examine = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private StatusEffectsSystem _statusEffects = default!;
+
     [Dependency] private EntityQuery<ParentOrganComponent> _parentOrganQuery;
+    [Dependency] private EntityQuery<OrganComponent> _organQuery;
+    [Dependency] private EntityQuery<PerfusionComponent> _perfusionQuery;
+    [Dependency] private EntityQuery<StatusEffectComponent> _statusEffectQuery;
 
     public override void Initialize()
     {
@@ -47,7 +51,7 @@ public sealed partial class PalpatableOrganSystem : EntitySystem
     private void OnRelayedPalpation(Entity<PalpationDescriptionComponent> ent,
         ref StatusEffectRelayedEvent<PalpationEvent> args)
     {
-        if (Comp<StatusEffectComponent>(ent).AppliedTo is not { } appliedTo)
+        if (_statusEffectQuery.Comp(ent).AppliedTo is not { } appliedTo)
             return;
 
         var ev = args.Args;
@@ -63,7 +67,7 @@ public sealed partial class PalpatableOrganSystem : EntitySystem
     [SubscribeLocalEvent]
     private void OnDoAfter(Entity<PalpatableOrganComponent> ent, ref PalpationDoAfterEvent args)
     {
-        if (args.Handled || args.Target is null || args.Cancelled || Comp<OrganComponent>(ent).Body is not { } body)
+        if (args.Handled || args.Target is null || args.Cancelled || _organQuery.Comp(ent).Body is not { } body)
             return;
 
         var ev = new PalpationEvent(new());
@@ -88,10 +92,10 @@ public sealed partial class PalpatableOrganSystem : EntitySystem
 
     private void CheckPulse(Entity<PalpatableOrganComponent> ent, ref PalpationEvent args)
     {
-        if (Comp<OrganComponent>(ent).Body is not { } body)
+        if (_organQuery.Comp(ent).Body is not { } body)
             return;
 
-        if (!TryComp<PerfusionComponent>(body, out var perfusion))
+        if (!_perfusionQuery.TryComp(body, out var perfusion))
             return;
 
         if (ent.Comp.PulseQualities.HighestMatch(perfusion.Perfusion) is not { } quality)

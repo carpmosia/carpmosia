@@ -10,13 +10,16 @@ public sealed partial class HealthRankingSystem : EntitySystem
     [Dependency] private PainSystem _pain = default!;
     [Dependency] private ShockThresholdsSystem _shockThresholds = default!;
 
+    [Dependency] private EntityQuery<ShockThresholdsComponent> _shockThresholdsQuery;
+    [Dependency] private EntityQuery<WoundableBodyComponent> _woundableBodyQuery;
+
     private const float PainDeathRatio = 0.5f;
     private const float BrainDeathRatio = 0.3f;
     private const float HeartDeathRatio = 0.2f;
 
     public float? RankHealth(EntityUid entity, MobState targetMobState)
     {
-        if (!HasComp<WoundableBodyComponent>(entity))
+        if (!_woundableBodyQuery.HasComp(entity))
             return null;
 
         if (targetMobState == MobState.Invalid)
@@ -28,10 +31,10 @@ public sealed partial class HealthRankingSystem : EntitySystem
         if (_shockThresholds.IsCritical(entity))
             return 0f;
 
-        if (!TryComp<ShockThresholdsComponent>(entity, out var shockThresholds))
+        if (!_shockThresholdsQuery.TryComp(entity, out var shockThresholds))
             return 1f;
 
-        var dict = shockThresholds.Thresholds;
+        var dict = shockThresholds.Thresholds; // TODO: just move this to a ShockThresholds method, like TryGetHealthRanking or something
         var percentageToPainCrit = _pain.GetShock(entity).Float() / dict.Keys.Last().Float();
         return 1f - (Math.Clamp(percentageToPainCrit, 0f, 1f));
     }

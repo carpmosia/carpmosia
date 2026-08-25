@@ -20,6 +20,12 @@ public sealed partial class WoundableSystem : EntitySystem
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private StatusEffectsSystem _statusEffects = default!;
 
+    [Dependency] private EntityQuery<OrganComponent> _organQuery;
+    [Dependency] private EntityQuery<WoundComponent> _woundQuery;
+    [Dependency] private EntityQuery<TendableWoundComponent> _tendableQuery;
+    [Dependency] private EntityQuery<StatusEffectComponent> _statusEffectQuery;
+    [Dependency] private EntityQuery<ClampableWoundComponent> _clampableQuery;
+
     [SubscribeLocalEvent]
     private void OnGetWoundDamages(Entity<WoundableComponent> ent, ref BodyRelayedEvent<WoundGetDamageEvent> args)
     {
@@ -68,7 +74,7 @@ public sealed partial class WoundableSystem : EntitySystem
     [SubscribeLocalEvent]
     private void OnWoundableRefreshWounds(Entity<WoundableComponent> ent, ref RefreshWoundsEvent args)
     {
-        if (!TryComp<OrganComponent>(ent, out var organ) || organ.Body is not { } body)
+        if (!_organQuery.TryComp(ent, out var organ) || organ.Body is not { } body)
             return;
 
         RaiseLocalEvent(body, ref args);
@@ -77,7 +83,7 @@ public sealed partial class WoundableSystem : EntitySystem
     [SubscribeLocalEvent]
     private void OnWoundRefreshWounds(Entity<WoundComponent> ent, ref RefreshWoundsEvent args)
     {
-        if (!TryComp<StatusEffectComponent>(ent, out var status) || status.AppliedTo is not { } woundable)
+        if (!_statusEffectQuery.TryComp(ent, out var status) || status.AppliedTo is not { } woundable)
             return;
 
         RaiseLocalEvent(woundable, ref args);
@@ -142,7 +148,7 @@ public sealed partial class WoundableSystem : EntitySystem
         if (ent.Comp.Damage.Empty)
             return;
 
-        if (!TryComp<OrganComponent>(args.Target, out var organ))
+        if (!_organQuery.TryComp(args.Target, out var organ))
             return;
 
         if (organ.Body is { } body)
@@ -165,7 +171,7 @@ public sealed partial class WoundableSystem : EntitySystem
     [SubscribeLocalEvent]
     private void OnGetPain(Entity<PainfulWoundComponent> ent, ref StatusEffectRelayedEvent<GetPainEvent> args)
     {
-        var wound = Comp<WoundComponent>(ent);
+        var wound = _woundQuery.Comp(ent);
         var damage = wound.Damage.DamageDict;
         var lastingPain = FixedPoint2.Zero;
         var freshPain = FixedPoint2.Zero;
@@ -192,12 +198,12 @@ public sealed partial class WoundableSystem : EntitySystem
         if (!ent.Comp.CanHeal)
             return;
 
-        var comp = Comp<WoundComponent>(ent);
+        var comp = _woundQuery.Comp(ent);
 
         if (args.Args.Passive)
         {
             if (comp.Damage.GetTotal() >= ent.Comp.RequiresTendingAbove &&
-                !(TryComp<TendableWoundComponent>(ent, out var tendable) && tendable.Tended))
+                !(_tendableQuery.TryComp(ent, out var tendable) && tendable.Tended))
             {
                 return;
             }
@@ -232,12 +238,12 @@ public sealed partial class WoundableSystem : EntitySystem
     [PublicAPI]
     public float BleedLevel(Entity<BleedingWoundComponent> ent)
     {
-        var wound = Comp<WoundComponent>(ent);
+        var wound = _woundQuery.Comp(ent);
 
-        if (TryComp<TendableWoundComponent>(ent, out var tendable) && tendable.Tended)
+        if (_tendableQuery.TryComp(ent, out var tendable) && tendable.Tended)
             return 0f;
 
-        if (TryComp<ClampableWoundComponent>(ent, out var clampable) && clampable.Clamped)
+        if (_clampableQuery.TryComp(ent, out var clampable) && clampable.Clamped)
             return 0f;
 
         if (wound.Damage.GetTotal() < ent.Comp.StartsBleedingAbove)
@@ -295,7 +301,7 @@ public sealed partial class WoundableSystem : EntitySystem
     /// <param name="specifier">The amount of damage to heal when tending, if any.</param>
     public void TendWound(Entity<TendableWoundComponent> ent, DamageSpecifier? specifier)
     {
-        var wound = Comp<WoundComponent>(ent);
+        var wound = _woundQuery.Comp(ent);
 
         ent.Comp.Tended = true;
         if (specifier is { } damage)
@@ -359,7 +365,7 @@ public sealed partial class WoundableSystem : EntitySystem
         if (wound is null)
             return false;
 
-        var comp = Comp<WoundComponent>(wound.Value);
+        var comp = _woundQuery.Comp(wound.Value);
 
         if (damage is not null)
             comp.Damage = damage.Clone();

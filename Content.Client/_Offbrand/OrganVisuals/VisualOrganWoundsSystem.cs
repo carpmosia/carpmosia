@@ -18,6 +18,11 @@ public sealed partial class VisualOrganWoundsSystem : EntitySystem
     [Dependency] private BodyAppearanceRelaySystem _relay = default!;
     [Dependency] private VisualBodySystem _visualBody = default!;
 
+    [Dependency] private EntityQuery<VisualOrganComponent> _visualOrganQuery;
+    [Dependency] private EntityQuery<OrganComponent> _organQuery;
+    [Dependency] private EntityQuery<WoundableComponent> _woundableQuery;
+    [Dependency] private EntityQuery<SpriteComponent> _spriteQuery;
+
     [SubscribeLocalEvent]
     private void OnOrganGotInserted(Entity<VisualOrganWoundsComponent> ent, ref OrganGotInsertedEvent args)
     {
@@ -44,7 +49,7 @@ public sealed partial class VisualOrganWoundsSystem : EntitySystem
     {
         UpdateOrganOverlay(ent);
 
-        if (Comp<OrganComponent>(ent).Body is not { } body)
+        if (_organQuery.Comp(ent).Body is not { } body)
             return;
 
         foreach (var target in _relay.GetTargets(body))
@@ -68,7 +73,7 @@ public sealed partial class VisualOrganWoundsSystem : EntitySystem
 
     private bool SetupLayers(Entity<VisualOrganWoundsComponent> ent, Entity<SpriteComponent?> target)
     {
-        if (!Resolve(target, ref target.Comp))
+        if (!_spriteQuery.Resolve(target, ref target.Comp))
             return false;
 
         if (ent.Comp.LayersInitialized.Contains(target.Owner))
@@ -76,7 +81,7 @@ public sealed partial class VisualOrganWoundsSystem : EntitySystem
 
         var targetSprite = new Entity<SpriteComponent>(target, target.Comp);
 
-        var visualOrgan = Comp<VisualOrganComponent>(ent);
+        var visualOrgan = _visualOrganQuery.Comp(ent);
         var organLayer = visualOrgan.Layer;
         if (!_sprite.LayerMapTryGet(target, organLayer, out var baseIndex, false))
         {
@@ -124,13 +129,13 @@ public sealed partial class VisualOrganWoundsSystem : EntitySystem
 
     private void RemoveLayers(Entity<VisualOrganWoundsComponent> ent, Entity<SpriteComponent?> target)
     {
-        if (!Resolve(target, ref target.Comp))
+        if (!_spriteQuery.Resolve(target, ref target.Comp))
             return;
 
         if (!ent.Comp.LayersInitialized.Remove(target.Owner))
             return;
 
-        var visualOrgan = Comp<VisualOrganComponent>(ent);
+        var visualOrgan = _visualOrganQuery.Comp(ent);
 
         foreach (var group in ent.Comp.DamageGroups)
         {
@@ -147,16 +152,16 @@ public sealed partial class VisualOrganWoundsSystem : EntitySystem
 
     private void UpdateOverlay(Entity<VisualOrganWoundsComponent> ent, Entity<SpriteComponent?> target)
     {
-        if (!Resolve(target, ref target.Comp))
+        if (!_spriteQuery.Resolve(target, ref target.Comp))
             return;
 
-        if (!TryComp<WoundableComponent>(ent, out var woundable))
+        if (!_woundableQuery.TryComp(ent, out var woundable))
             return;
 
         if (!ent.Comp.LayersInitialized.Contains(target.Owner) && !SetupLayers(ent, target))
             return;
 
-        var visualOrgan = Comp<VisualOrganComponent>(ent);
+        var visualOrgan = _visualOrganQuery.Comp(ent);
 
         foreach (var group in ent.Comp.DamageGroups)
         {
@@ -201,7 +206,7 @@ public sealed partial class VisualOrganWoundsSystem : EntitySystem
 
     private void UpdateOrganOverlay(Entity<VisualOrganWoundsComponent> ent)
     {
-        if (!TryComp<SpriteComponent>(ent, out var sprite))
+        if (!_spriteQuery.TryComp(ent, out var sprite))
             return;
 
         UpdateOverlay(ent, (ent.Owner, sprite));

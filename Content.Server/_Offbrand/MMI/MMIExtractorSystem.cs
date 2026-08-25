@@ -24,6 +24,10 @@ public sealed partial class MMIExtractorSystem : EntitySystem
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private SharedMindSystem _mind = default!;
 
+    [Dependency] private EntityQuery<MMIExtractorComponent> _extractorQuery;
+    [Dependency] private EntityQuery<MMIComponent> _mmiQuery;
+    [Dependency] private EntityQuery<DoAfterComponent> _doAfterQuery;
+
     [SubscribeLocalEvent]
     private void OnAfterInteract(Entity<MMIExtractorComponent> ent, ref AfterInteractEvent args)
     {
@@ -40,10 +44,10 @@ public sealed partial class MMIExtractorSystem : EntitySystem
         if (evt.Handled || evt.Cancelled)
             return;
 
-        if (evt.Args.Used is not { } mmi || !TryComp<MMIExtractorComponent>(mmi, out var mmiComp))
+        if (evt.Args.Used is not { } mmi || !_extractorQuery.TryComp(mmi, out var mmiComp))
             return;
 
-        if (!TryComp<MMIComponent>(mmi, out var insertionComp))
+        if (!_mmiQuery.TryComp(mmi, out var insertionComp))
             return;
 
         if (!evt.Accepted)
@@ -119,14 +123,14 @@ public sealed partial class MMIExtractorSystem : EntitySystem
     {
         _doAfter.Cancel(id);
 
-        if (!TryComp<DoAfterComponent>(id.Uid, out var doAfters))
+        if (!_doAfterQuery.TryComp(id.Uid, out var doAfters))
             return;
 
         var dict = doAfters.DoAfters; // i love access workarounds
         if (!dict.TryGetValue(id.Index, out var doAfter))
             return;
 
-        if (doAfter.Args.Used is not { } mmi || !TryComp<MMIExtractorComponent>(mmi, out var mmiComp))
+        if (doAfter.Args.Used is not { } mmi || !_extractorQuery.TryComp(mmi, out var mmiComp))
             return;
 
         _chat.TrySendInGameICMessage(mmi,
@@ -137,14 +141,14 @@ public sealed partial class MMIExtractorSystem : EntitySystem
 
     public void Accept(DoAfterId id)
     {
-        if (!TryComp<DoAfterComponent>(id.Uid, out var doAfters))
+        if (!_doAfterQuery.TryComp(id.Uid, out var doAfters))
             return;
 
         var dict = doAfters.DoAfters; // i love access workarounds
         if (!dict.TryGetValue(id.Index, out var doAfter))
             return;
 
-        if (doAfter.Args.Used is not { } mmi || !TryComp<MMIExtractorComponent>(mmi, out var mmiComp))
+        if (doAfter.Args.Used is not { } mmi || !_extractorQuery.TryComp(mmi, out var mmiComp))
             return;
 
         if (doAfter.Args.Event is not MMIExtractorDoAfterEvent evt)

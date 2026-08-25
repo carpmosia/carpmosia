@@ -23,6 +23,12 @@ public sealed partial class TendingSystem : EntitySystem
     [Dependency] private StatusEffectsSystem _statusEffects = default!;
     [Dependency] private WoundableSystem _woundable = default!;
 
+    [Dependency] private EntityQuery<StackComponent> _stackQuery;
+    [Dependency] private EntityQuery<BodyComponent> _bodyQuery;
+    [Dependency] private EntityQuery<TendingComponent> _tendingQuery;
+    [Dependency] private EntityQuery<WoundComponent> _woundQuery;
+    [Dependency] private EntityQuery<WoundableBodyComponent> _woundableBodyQuery;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -55,13 +61,13 @@ public sealed partial class TendingSystem : EntitySystem
         if (args.Handled || args.Cancelled || args.Args.Target is not { } target)
             return;
 
-        if (!TryComp<TendingComponent>(args.Used, out var tending))
+        if (!_tendingQuery.TryComp(args.Used, out var tending))
             return;
 
         _woundable.TendWound(ent, tending.Damage);
 
         var hasMoreItems = true;
-        if (TryComp<StackComponent>(args.Used.Value, out var stackComp))
+        if (_stackQuery.TryComp(args.Used.Value, out var stackComp))
         {
             _stack.ReduceCount((args.Used.Value, stackComp), 1);
 
@@ -88,7 +94,7 @@ public sealed partial class TendingSystem : EntitySystem
 
     private Entity<TendableWoundComponent, WoundComponent>? GetWoundToTend(Entity<TendingComponent> ent, Entity<WoundableBodyComponent?> target)
     {
-        if (!TryComp<BodyComponent>(target, out var body))
+        if (!_bodyQuery.TryComp(target, out var body))
             return null;
 
         foreach (var organ in body.Organs?.ContainedEntities ?? [])
@@ -104,17 +110,16 @@ public sealed partial class TendingSystem : EntitySystem
                 if (!_entityWhitelist.CheckBoth(wound, ent.Comp.WoundBlacklist, ent.Comp.WoundWhitelist))
                     continue;
 
-                return (wound.Owner, wound.Comp1, Comp<WoundComponent>(wound));
+                return (wound.Owner, wound.Comp1, _woundQuery.Comp(wound));
             }
         }
 
         return null;
-
     }
 
-    private bool TryTend(Entity<TendingComponent> ent, Entity<WoundableBodyComponent?> target, EntityUid user, bool isRepeat = false)
+    private bool TryTend(Entity<TendingComponent> ent, EntityUid target, EntityUid user, bool isRepeat = false)
     {
-        if (!Resolve(target, ref target.Comp, false))
+        if (!_woundableBodyQuery.HasComp(target))
             return false;
 
         var woundToTend = GetWoundToTend(ent, target);
@@ -128,15 +133,15 @@ public sealed partial class TendingSystem : EntitySystem
             return true;
         }
 
-        if (user != target.Owner && !_interaction.InRangeUnobstructed(user, target.Owner, popup: true))
+        if (user != target && !_interaction.InRangeUnobstructed(user, target, popup: true))
             return false;
 
-        if (TryComp<StackComponent>(ent, out var stack) && stack.Count < 1)
+        if (_stackQuery.TryComp(ent, out var stack) && stack.Count < 1)
             return false;
 
         _audio.PlayPredicted(ent.Comp.TendingBeginSound, ent, user);
 
-        var differentTarget = user != target.Owner;
+        var differentTarget = user != target;
 
         var delay = ent.Comp.Delay;
         if (!differentTarget)

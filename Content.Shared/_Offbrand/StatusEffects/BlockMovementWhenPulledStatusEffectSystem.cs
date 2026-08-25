@@ -11,6 +11,9 @@ public sealed partial class BlockMovementWhenPulledStatusEffectSystem : EntitySy
 {
     [Dependency] private ActionBlockerSystem _actionBlocker = default!;
 
+    [Dependency] private EntityQuery<StatusEffectComponent> _statusEffectQuery;
+    [Dependency] private EntityQuery<PullableComponent> _pullableQuery;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -33,7 +36,7 @@ public sealed partial class BlockMovementWhenPulledStatusEffectSystem : EntitySy
 
     private void OnPullMessage<T>(Entity<BlockMovementWhenPulledStatusEffectComponent> ent, ref StatusEffectRelayedEvent<T> args)
     {
-        if (Comp<StatusEffectComponent>(ent).AppliedTo is not { } target)
+        if (_statusEffectQuery.Comp(ent).AppliedTo is not { } target)
             return;
 
         _actionBlocker.UpdateCanMove(target);
@@ -42,10 +45,10 @@ public sealed partial class BlockMovementWhenPulledStatusEffectSystem : EntitySy
     [SubscribeLocalEvent]
     private void OnUpdateCanMove(Entity<BlockMovementWhenPulledStatusEffectComponent> ent, ref StatusEffectRelayedEvent<UpdateCanMoveEvent> args)
     {
-        if (Comp<StatusEffectComponent>(ent).AppliedTo is not { } target)
+        if (_statusEffectQuery.Comp(ent).AppliedTo is not { } target)
             return;
 
-        if (!TryComp<PullableComponent>(target, out var pullable) || !pullable.BeingPulled)
+        if (!_pullableQuery.TryComp(target, out var pullable) || !pullable.BeingPulled)
             return;
 
         args.Args.Cancel();
