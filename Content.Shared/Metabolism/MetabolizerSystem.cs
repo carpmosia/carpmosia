@@ -30,7 +30,7 @@ public sealed partial class MetabolizerSystem : EntitySystem
     [Dependency] private SharedEntityConditionsSystem _entityConditions = default!;
     [Dependency] private SharedEntityEffectsSystem _entityEffects = default!;
     [Dependency] private SharedSolutionContainerSystem _solutionContainerSystem = default!;
-    [Dependency] private Content.Shared.StatusEffectNew.StatusEffectsSystem _statusEffects = default!; // Offbrand
+    [Dependency] private StatusEffectNew.StatusEffectsSystem _statusEffects = default!; // Offbrand
 
     [Dependency] private EntityQuery<OrganComponent> _organQuery = default!;
     [Dependency] private EntityQuery<SolutionManagerComponent> _solutionQuery = default!;
@@ -287,7 +287,7 @@ public sealed partial class MetabolizerSystem : EntitySystem
                 continue;
 
             dirtied = true;
-            var proto = _prototypeManager.Index(reagent);
+            var proto = ProtoMan.Index(reagent);
             var actualEntity = ent.Comp2?.Body ?? solutionOwner.Value;
 
             if (proto.Metabolisms is null)
@@ -334,13 +334,13 @@ public sealed partial class MetabolizerSystem : EntitySystem
             if (oldReagent == reagent)
                 return false;
 
-            if (!_prototypeManager.TryIndex<ReagentPrototype>(oldReagent.Prototype, out var oldProto))
+            if (!ProtoMan.Resolve<ReagentPrototype>(oldReagent.Prototype, out var oldProto))
                 continue;
 
             if (oldProto.Metabolisms is null || !oldProto.Metabolisms.Metabolisms.TryGetValue(oldStage, out var oldEntry) || oldEntry.Metabolites is null)
                 continue;
 
-            foreach (var (metabolite, ratio) in oldEntry.Metabolites)
+            foreach (var (metabolite, _) in oldEntry.Metabolites)
             {
                 if (metabolite == reagent.Prototype)
                     return false;

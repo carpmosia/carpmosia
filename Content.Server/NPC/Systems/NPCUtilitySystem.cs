@@ -60,8 +60,8 @@ public sealed partial class NPCUtilitySystem : EntitySystem
     [Dependency] private TurretTargetSettingsSystem _turretTargetSettings = default!;
     [Dependency] private DamageableSystem _damageable = default!;
     [Dependency] private SharedStealthSystem _stealth = default!;
-    [Dependency] private EntityQuery<PuddleComponent> _puddleQuery = default!;
     [Dependency] private HealthRankingSystem _healthRanking = default!; // Offbrand
+    [Dependency] private EntityQuery<PuddleComponent> _puddleQuery = default!;
 
     private ObjectPool<HashSet<EntityUid>> _entPool =
         new DefaultObjectPool<HashSet<EntityUid>>(new SetPolicy<EntityUid>(), 256);

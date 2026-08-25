@@ -49,7 +49,7 @@ namespace Content.Shared.Construction.Steps
             // Begin Offbrand
             if (node.Has("whitelist") || node.Has("blacklist"))
             {
-                return typeof(Content.Shared._Offbrand.Surgery.WhitelistConstructionGraphStep);
+                return typeof(_Offbrand.Surgery.WhitelistConstructionGraphStep);
             }
             // End Offbrand
 

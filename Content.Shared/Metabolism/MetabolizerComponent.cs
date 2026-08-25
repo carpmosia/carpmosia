@@ -107,7 +107,7 @@ public sealed partial class MetabolizerComponent : Component
     /// Offbrand: Set of reagents that are currently being metabolized
     /// </summary>
     [DataField, AutoNetworkedField]
-    public Dictionary<ProtoId<MetabolismStagePrototype>, HashSet<ProtoId<Content.Shared.Chemistry.Reagent.ReagentPrototype>>> MetabolizingReagents = new()
+    public Dictionary<ProtoId<MetabolismStagePrototype>, HashSet<ProtoId<Chemistry.Reagent.ReagentPrototype>>> MetabolizingReagents = new()
     {
         ["Respiration"] = new(),
         ["Digestion"] = new(),
@@ -174,5 +174,5 @@ public sealed partial class MetabolismSolutionEntry
     /// Offbrand: If set, metabolized reagents will also be transferred
     /// </summary>
     [DataField]
-    public bool TransferMetabolized = false;
+    public bool TransferMetabolized;
 }

@@ -34,13 +34,6 @@ public sealed partial class VisualBodySystem : SharedVisualBodySystem
 
         SubscribeLocalEvent<VisualOrganMarkingsComponent, BodyRelayedEvent<HumanoidLayerVisibilityChangedEvent>>(OnMarkingsChangedVisibility);
 
-        // Begin Offbrand
-        SubscribeLocalEvent<VisualOrganComponent, BodyRelayedEvent<BodyAppearanceRelayTargetAddedEvent>>(OnVisualRelayTargetAdded);
-        SubscribeLocalEvent<VisualOrganComponent, BodyRelayedEvent<BodyAppearanceRelayTargetRemovedEvent>>(OnVisualRelayTargetRemoved);
-        SubscribeLocalEvent<VisualOrganMarkingsComponent, BodyRelayedEvent<BodyAppearanceRelayTargetAddedEvent>>(OnMarkingsRelayTargetAdded);
-        SubscribeLocalEvent<VisualOrganMarkingsComponent, BodyRelayedEvent<BodyAppearanceRelayTargetRemovedEvent>>(OnMarkingsRelayTargetRemoved);
-        // End Offbrand
-
         Subs.CVar(_cfg, CCVars.AccessibilityClientCensorNudity, OnCensorshipChanged, true);
         Subs.CVar(_cfg, CCVars.AccessibilityServerCensorNudity, OnCensorshipChanged, true);
     }
@@ -454,21 +447,25 @@ public sealed partial class VisualBodySystem : SharedVisualBodySystem
     }
 
     // Begin Offbrand
+    [SubscribeLocalEvent]
     private void OnVisualRelayTargetAdded(Entity<VisualOrganComponent> ent, ref BodyRelayedEvent<BodyAppearanceRelayTargetAddedEvent> args)
     {
         ApplyVisual(ent.AsNullable(), args.Args.Target);
     }
 
+    [SubscribeLocalEvent]
     private void OnVisualRelayTargetRemoved(Entity<VisualOrganComponent> ent, ref BodyRelayedEvent<BodyAppearanceRelayTargetRemovedEvent> args)
     {
         RemoveVisual(ent, args.Args.Target);
     }
 
+    [SubscribeLocalEvent]
     private void OnMarkingsRelayTargetAdded(Entity<VisualOrganMarkingsComponent> ent, ref BodyRelayedEvent<BodyAppearanceRelayTargetAddedEvent> args)
     {
         ApplyMarkings(ent, args.Args.Target);
     }
 
+    [SubscribeLocalEvent]
     private void OnMarkingsRelayTargetRemoved(Entity<VisualOrganMarkingsComponent> ent, ref BodyRelayedEvent<BodyAppearanceRelayTargetRemovedEvent> args)
     {
         RemoveMarkings(ent, args.Args.Target);

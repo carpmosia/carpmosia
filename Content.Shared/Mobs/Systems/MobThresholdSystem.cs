@@ -21,7 +21,6 @@ public sealed partial class MobThresholdSystem : EntitySystem
     {
         SubscribeLocalEvent<MobThresholdsComponent, ComponentGetState>(OnGetState);
         SubscribeLocalEvent<MobThresholdsComponent, ComponentHandleState>(OnHandleState);
-        SubscribeLocalEvent<MobThresholdsComponent, MapInitEvent>(MobThresholdMapInit); // Offbrand
 
         SubscribeLocalEvent<MobThresholdsComponent, ComponentShutdown>(MobThresholdShutdown);
         SubscribeLocalEvent<MobThresholdsComponent, ComponentStartup>(MobThresholdStartup);
@@ -444,9 +443,10 @@ public sealed partial class MobThresholdSystem : EntitySystem
     }
 
     // Begin Offbrand
+    [SubscribeLocalEvent]
     private void MobThresholdMapInit(Entity<MobThresholdsComponent> ent, ref MapInitEvent args)
     {
-        var overlayUpdate = new Content.Shared._Offbrand.Wounds.PotentiallyUpdateDamageOverlayEvent(ent);
+        var overlayUpdate = new _Offbrand.Wounds.PotentiallyUpdateDamageOverlayEvent(ent);
         RaiseLocalEvent(ent, ref overlayUpdate);
     }
     // End Offbrand

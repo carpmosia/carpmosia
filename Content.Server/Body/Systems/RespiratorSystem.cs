@@ -53,7 +53,6 @@ public sealed partial class RespiratorSystem : EntitySystem
         UpdatesAfter.Add(typeof(MetabolizerSystem));
         SubscribeLocalEvent<RespiratorComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<RespiratorComponent, ApplyMetabolicMultiplierEvent>(OnApplyMetabolicMultiplier);
-        SubscribeLocalEvent<RespiratorComponent, ApplyRespiratoryRateModifiersEvent>(OnApplyRespiratoryRateModifiers);
 
         // BodyComp stuff
         SubscribeLocalEvent<BodyComponent, InhaledGasEvent>(_body.RelayEvent);
@@ -386,6 +385,7 @@ public sealed partial class RespiratorSystem : EntitySystem
     }
 
     // Begin Offbrand
+    [SubscribeLocalEvent]
     private void OnApplyRespiratoryRateModifiers(Entity<RespiratorComponent> ent, ref ApplyRespiratoryRateModifiersEvent args)
     {
         ent.Comp.BreathRateMultiplier = args.BreathRate;

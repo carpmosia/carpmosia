@@ -59,7 +59,6 @@ namespace Content.Client.Examine
             SubscribeLocalEvent<GetVerbsEvent<ExamineVerb>>(AddExamineVerb);
 
             SubscribeNetworkEvent<ExamineSystemMessages.ExamineInfoResponseMessage>(OnExamineInfoResponse);
-            SubscribeNetworkEvent<ExamineSystemMessages.ElaborateExamineTooltipMessage>(OnElaborateExamineTooltip); // Offbrand - examine elaboration
 
             SubscribeLocalEvent<ItemComponent, DroppedEvent>(OnExaminedItemDropped);
 
@@ -195,6 +194,7 @@ namespace Content.Client.Examine
         }
 
         // Begin Offbrand - examine elaboration
+        [SubscribeNetworkEvent]
         private void OnElaborateExamineTooltip(ExamineSystemMessages.ElaborateExamineTooltipMessage ev)
         {
             if (_playerManager.LocalEntity is not { } player)

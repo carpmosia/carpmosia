@@ -12,7 +12,7 @@ public sealed partial class HeadsetSystem : SharedHeadsetSystem
 {
     [Dependency] private INetManager _netMan = default!;
     [Dependency] private RadioSystem _radio = default!;
-    [Dependency] private Content.Shared.StatusEffectNew.StatusEffectsSystem _statusEffects = default!; // Offbrand
+    [Dependency] private Shared.StatusEffectNew.StatusEffectsSystem _statusEffects = default!; // Offbrand
 
     public override void Initialize()
     {

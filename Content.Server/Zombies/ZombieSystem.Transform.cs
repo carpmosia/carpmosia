@@ -73,7 +73,6 @@ public sealed partial class ZombieSystem
     [Dependency] private NameModifierSystem _nameMod = default!;
     [Dependency] private NPCSystem _npc = default!;
     [Dependency] private TagSystem _tag = default!;
-    [Dependency] private IPrototypeManager _protoManager = default!;
     [Dependency] private ISharedPlayerManager _player = default!;
 
     private static readonly ProtoId<TagPrototype> InvalidForGlobalSpawnSpellTag = "InvalidForGlobalSpawnSpell";
@@ -263,7 +262,7 @@ public sealed partial class ZombieSystem
         _damageable.SetDamageModifierSetId(target, "Zombie");
 
         // Begin Offbrand
-        var allProto = _protoManager.Index(AddOnAnyZombified);
+        var allProto = ProtoMan.Index(AddOnAnyZombified);
         EntityManager.RemoveComponents(target, allProto.Components);
         EntityManager.AddComponents(target, allProto.Components);
         // End Offbrand
@@ -301,7 +300,7 @@ public sealed partial class ZombieSystem
         _faction.AddFaction(target, ZombieFaction);
 
         // Begin Offbrand
-        var rejuv = new Content.Shared.Rejuvenate.RejuvenateEvent();
+        var rejuv = new Shared.Rejuvenate.RejuvenateEvent();
         RaiseLocalEvent(target, rejuv);
         // End Offbrand
 

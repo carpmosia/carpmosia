@@ -511,10 +511,10 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
     // Begin Offbrand
     public float EffectiveBleedLevel(Entity<BloodstreamComponent> ent)
     {
-        var evt = new Content.Shared._Offbrand.Wounds.GetBleedLevelEvent(ent.Comp.BleedAmount);
+        var evt = new _Offbrand.Wounds.GetBleedLevelEvent(ent.Comp.BleedAmount);
         RaiseLocalEvent(ent, ref evt);
 
-        var modifiers = new Content.Shared._Offbrand.Wounds.ModifyBleedLevelEvent(evt.BleedLevel);
+        var modifiers = new _Offbrand.Wounds.ModifyBleedLevelEvent(evt.BleedLevel);
         RaiseLocalEvent(ent, ref modifiers);
 
         return modifiers.BleedLevel;

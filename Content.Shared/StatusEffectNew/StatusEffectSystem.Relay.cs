@@ -46,34 +46,34 @@ public sealed partial class StatusEffectsSystem
         SubscribeLocalEvent<StatusEffectContainerComponent, BleedModifierEvent>(RefRelayStatusEffectEvent);
         SubscribeLocalEvent<StatusEffectContainerComponent, DamageModifyEvent>(RelayStatusEffectEvent);
 
-        SubscribeLocalEvent<StatusEffectContainerComponent, Content.Shared._Offbrand.Wounds.WoundGetDamageEvent>(RefRelayStatusEffectEvent); // Offbrand
-        SubscribeLocalEvent<StatusEffectContainerComponent, Content.Shared._Offbrand.Wounds.GetWoundsWithSpaceEvent>(RefRelayStatusEffectEvent); // Offbrand
-        SubscribeLocalEvent<StatusEffectContainerComponent, Content.Shared._Offbrand.Wounds.GetPainEvent>(RefRelayStatusEffectEvent); // Offbrand
-        SubscribeLocalEvent<StatusEffectContainerComponent, Content.Shared._Offbrand.Wounds.HealWoundsEvent>(RefRelayStatusEffectEvent); // Offbrand
-        SubscribeLocalEvent<StatusEffectContainerComponent, Content.Shared._Offbrand.Wounds.GetBleedLevelEvent>(RefRelayStatusEffectEvent); // Offbrand
-        SubscribeLocalEvent<StatusEffectContainerComponent, Content.Shared._Offbrand.Wounds.PainSuppressionEvent>(RefRelayStatusEffectEvent); // Offbrand
-        SubscribeLocalEvent<StatusEffectContainerComponent, Content.Shared._Offbrand.Organs.BeforeDealOrganOxygenDamage>(RefRelayStatusEffectEvent); // Offbrand
-        SubscribeLocalEvent<StatusEffectContainerComponent, Content.Shared._Offbrand.Organs.BeforeDepleteOrganOxygen>(RefRelayStatusEffectEvent); // Offbrand
-        SubscribeLocalEvent<StatusEffectContainerComponent, Content.Shared._Offbrand.Organs.BeforeHealOrganOxygenDamage>(RefRelayStatusEffectEvent); // Offbrand
-        SubscribeLocalEvent<StatusEffectContainerComponent, Content.Shared._Offbrand.Wounds.ModifiedVascularToneEvent>(RefRelayStatusEffectEvent); // Offbrand
-        SubscribeLocalEvent<StatusEffectContainerComponent, Content.Shared._Offbrand.Wounds.ModifiedLungFunctionEvent>(RefRelayStatusEffectEvent); // Offbrand
-        SubscribeLocalEvent<StatusEffectContainerComponent, Content.Shared._Offbrand.Wounds.ModifiedMetabolicRateEvent>(RefRelayStatusEffectEvent); // Offbrand
-        SubscribeLocalEvent<StatusEffectContainerComponent, Content.Shared._Offbrand.Wounds.ModifiedCardiacOutputEvent>(RefRelayStatusEffectEvent); // Offbrand
-        SubscribeLocalEvent<StatusEffectContainerComponent, Content.Shared._Offbrand.Wounds.ModifiedRespiratoryRateEvent>(RefRelayStatusEffectEvent); // Offbrand
+        SubscribeLocalEvent<StatusEffectContainerComponent, _Offbrand.Wounds.WoundGetDamageEvent>(RefRelayStatusEffectEvent); // Offbrand
+        SubscribeLocalEvent<StatusEffectContainerComponent, _Offbrand.Wounds.GetWoundsWithSpaceEvent>(RefRelayStatusEffectEvent); // Offbrand
+        SubscribeLocalEvent<StatusEffectContainerComponent, _Offbrand.Wounds.GetPainEvent>(RefRelayStatusEffectEvent); // Offbrand
+        SubscribeLocalEvent<StatusEffectContainerComponent, _Offbrand.Wounds.HealWoundsEvent>(RefRelayStatusEffectEvent); // Offbrand
+        SubscribeLocalEvent<StatusEffectContainerComponent, _Offbrand.Wounds.GetBleedLevelEvent>(RefRelayStatusEffectEvent); // Offbrand
+        SubscribeLocalEvent<StatusEffectContainerComponent, _Offbrand.Wounds.PainSuppressionEvent>(RefRelayStatusEffectEvent); // Offbrand
+        SubscribeLocalEvent<StatusEffectContainerComponent, _Offbrand.Organs.BeforeDealOrganOxygenDamage>(RefRelayStatusEffectEvent); // Offbrand
+        SubscribeLocalEvent<StatusEffectContainerComponent, _Offbrand.Organs.BeforeDepleteOrganOxygen>(RefRelayStatusEffectEvent); // Offbrand
+        SubscribeLocalEvent<StatusEffectContainerComponent, _Offbrand.Organs.BeforeHealOrganOxygenDamage>(RefRelayStatusEffectEvent); // Offbrand
+        SubscribeLocalEvent<StatusEffectContainerComponent, _Offbrand.Wounds.ModifiedVascularToneEvent>(RefRelayStatusEffectEvent); // Offbrand
+        SubscribeLocalEvent<StatusEffectContainerComponent, _Offbrand.Wounds.ModifiedLungFunctionEvent>(RefRelayStatusEffectEvent); // Offbrand
+        SubscribeLocalEvent<StatusEffectContainerComponent, _Offbrand.Wounds.ModifiedMetabolicRateEvent>(RefRelayStatusEffectEvent); // Offbrand
+        SubscribeLocalEvent<StatusEffectContainerComponent, _Offbrand.Wounds.ModifiedCardiacOutputEvent>(RefRelayStatusEffectEvent); // Offbrand
+        SubscribeLocalEvent<StatusEffectContainerComponent, _Offbrand.Wounds.ModifiedRespiratoryRateEvent>(RefRelayStatusEffectEvent); // Offbrand
         SubscribeLocalEvent<StatusEffectContainerComponent, Content.Shared._Offbrand.Weapons.RelayedGetMeleeDamageEvent>(RefRelayStatusEffectEvent); // Offbrand
         SubscribeLocalEvent<StatusEffectContainerComponent, Content.Shared._Offbrand.Weapons.RelayedGetMeleeAttackRateEvent>(RefRelayStatusEffectEvent); // Offbrand
         SubscribeLocalEvent<StatusEffectContainerComponent, Content.Shared._Offbrand.Weapons.RelayedGunRefreshModifiersEvent>(RefRelayStatusEffectEvent); // Offbrand
-        SubscribeLocalEvent<StatusEffectContainerComponent, Content.Shared.Damage.Systems.ModifySlowOnDamageSpeedEvent>(RefRelayStatusEffectEvent); // Offbrand
-        SubscribeLocalEvent<StatusEffectContainerComponent, Content.Shared.Eye.Blinding.Systems.GetBlurEvent>(RelayStatusEffectEvent); // Offbrand
+        SubscribeLocalEvent<StatusEffectContainerComponent, ModifySlowOnDamageSpeedEvent>(RefRelayStatusEffectEvent); // Offbrand
+        SubscribeLocalEvent<StatusEffectContainerComponent, GetBlurEvent>(RelayStatusEffectEvent); // Offbrand
         SubscribeLocalEvent<StatusEffectContainerComponent, Content.Shared.IdentityManagement.Components.SeeIdentityAttemptEvent>(RelayStatusEffectEvent); // Offbrand
         SubscribeLocalEvent<StatusEffectContainerComponent, Content.Shared.Movement.Pulling.Events.PullStartedMessage>(RelayStatusEffectEvent); // Offbrand
         SubscribeLocalEvent<StatusEffectContainerComponent, Content.Shared.Movement.Pulling.Events.PullStoppedMessage>(RelayStatusEffectEvent); // Offbrand
-        SubscribeLocalEvent<StatusEffectContainerComponent, Content.Shared.Weapons.Ranged.Events.SelfBeforeGunShotEvent>(RelayStatusEffectEvent); // Offbrand
-        SubscribeLocalEvent<StatusEffectContainerComponent, Content.Shared.Chemistry.Events.SelfBeforeInjectEvent>(RelayStatusEffectEvent); // Offbrand
+        SubscribeLocalEvent<StatusEffectContainerComponent, Weapons.Ranged.Events.SelfBeforeGunShotEvent>(RelayStatusEffectEvent); // Offbrand
+        SubscribeLocalEvent<StatusEffectContainerComponent, Chemistry.Events.SelfBeforeInjectEvent>(RelayStatusEffectEvent); // Offbrand
         SubscribeLocalEvent<StatusEffectContainerComponent, DamageChangedEvent>(RelayStatusEffectEvent); // Offbrand
-        SubscribeLocalEvent<StatusEffectContainerComponent, Content.Shared.Examine.ExaminedEvent>(RelayStatusEffectEvent); // Offbrand
-        SubscribeLocalEvent<StatusEffectContainerComponent, Content.Shared.Verbs.GetVerbsEvent<Content.Shared.Verbs.AlternativeVerb>>(RelayStatusEffectEvent); // Offbrand
-        SubscribeLocalEvent<StatusEffectContainerComponent, Content.Shared.Hands.BeforeEquippingHandEvent>(RefRelayStatusEffectEvent); // Offbrand
+        SubscribeLocalEvent<StatusEffectContainerComponent, Examine.ExaminedEvent>(RelayStatusEffectEvent); // Offbrand
+        SubscribeLocalEvent<StatusEffectContainerComponent, Verbs.GetVerbsEvent<Verbs.AlternativeVerb>>(RelayStatusEffectEvent); // Offbrand
+        SubscribeLocalEvent<StatusEffectContainerComponent, Hands.BeforeEquippingHandEvent>(RefRelayStatusEffectEvent); // Offbrand
     }
 
     private void RefRelayStatusEffectEvent<T>(EntityUid uid, StatusEffectContainerComponent component, ref T args) where T : struct
