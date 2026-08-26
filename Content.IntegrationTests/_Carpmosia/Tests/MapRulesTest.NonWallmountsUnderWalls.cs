@@ -1,10 +1,9 @@
 using System.Collections.Generic;
+using System.Linq;
 using Content.Server.Power.Components;
 using Content.Shared.Light.Components;
 using Content.Shared.Wall;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Utility;
-using YamlDotNet.RepresentationModel;
 
 namespace Content.IntegrationTests.Tests;
 
@@ -29,25 +28,20 @@ public sealed partial class MapRulesTest
     /// <summary>
     /// Checks for any non-wallmount or not whitelisted entities under walls
     /// </summary>
-    private List<string> TestNonWallmountsUnderWalls(YamlMappingNode root)
+    private List<string> TestNonWallmountsUnderWalls(ParsedRoot root)
     {
-        if (!root.TryGetNode<YamlSequenceNode>(Entities, out var entities))
-            return [];
-
         var walls = GetPrototypeIds<IsRoofComponent>();
         var wallmounts = GetPrototypeIds<WallMountComponent>();
         var apcs = GetPrototypeIds<ApcComponent>();
 
-        var wallPos = DeserializeCompNodes(entities, walls, GetTilePos);
-        var apcPos = DeserializeCompNodes(entities, apcs, GetTilePos);
-        var subPos = DeserializeCompNodes(entities, Substations, GetTilePos);
+        var wallPos = DeserializeCompNodes(root.Entities, walls, GetTilePos);
+        var apcPos = DeserializeCompNodes(root.Entities, apcs, GetTilePos);
+        var subPos = DeserializeCompNodes(root.Entities, Substations, GetTilePos);
 
         var errors = new List<string>();
 
-        foreach (var proto in entities)
+        foreach (var (protoId, entities) in root.Entities)
         {
-            EntProtoId protoId = proto[Proto].AsString();
-
             // Skip the walls themselves
             if (walls.Contains(protoId))
                 continue;
@@ -63,20 +57,20 @@ public sealed partial class MapRulesTest
             var isApcCable = LVCables.Contains(protoId) || MVCables.Contains(protoId);
             var isSubCable = MVCables.Contains(protoId) || HVCables.Contains(protoId);
 
-            foreach (var ent in (YamlSequenceNode)proto[Entities])
+            foreach (var (uid, ent) in entities)
             {
                 // Skip invalid transforms
                 if (GetTilePos(ent) is not { } trans)
                     continue;
 
                 // These are allowed to be mapped under a wall when an APC is present
-                if (isApcCable && apcPos.Contains(trans) || isSubCable && subPos.Contains(trans))
+                if (isApcCable && apcPos.ContainsValue(trans) || isSubCable && subPos.ContainsValue(trans))
                     continue;
 
-                if (!wallPos.Contains(trans))
+                if (!wallPos.ContainsValue(trans))
                     continue;
 
-                errors.Add($"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) mapped under a wall at tile {trans.Item2}");
+                errors.Add($"Grid {trans.Item1} contains {protoId} ({uid}) mapped under a wall at tile {trans.Item2}");
             }
         }
 

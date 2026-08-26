@@ -12,11 +12,8 @@ public sealed partial class MapRulesTest
     private static readonly ResPath MandatoryEntities = new("_Carpmosia/mandatory_entities.yml");
     private const float Threshold = 10f;
 
-    private List<string> TestMandatoryStationEntities(YamlMappingNode root)
+    private List<string> TestMandatoryStationEntities(ParsedRoot root)
     {
-        if (!root.TryGetNode<YamlSequenceNode>(Entities, out var entities))
-            return ["No entities found"];
-
         if (LoadYaml(MandatoryEntities, _resMan) is not YamlSequenceNode rules)
             return [$"Could not load '{MandatoryEntities}'"];
 
@@ -31,11 +28,11 @@ public sealed partial class MapRulesTest
 
             var poiIds = poiGroups.SelectMany(x => x);
 
-            var poi = DeserializeCompNodes(entities, poiIds, GetTilePos);
+            var poi = DeserializeCompNodes(root.Entities, poiIds, GetTilePos).Values;
 
             foreach (var poiGroup in poiGroups)
             {
-                if (entities.Any(x => poiGroup.Contains(x[Proto].AsString())))
+                if (root.Entities.Any(x => poiGroup.Contains(x.Key)))
                     continue;
 
                 errors.Add($"Could not find any of [{string.Join(", ", poiGroup)}] on the map");
@@ -43,7 +40,7 @@ public sealed partial class MapRulesTest
 
             foreach (var entGroup in entGroups)
             {
-                var eoi = DeserializeCompNodes(entities, entGroup, GetTilePos);
+                var eoi = DeserializeCompNodes(root.Entities, entGroup, GetTilePos).Values;
                 if (poi.Any(pos1 => eoi.Any(pos2 => GetDistance(pos1, pos2) <= Threshold)))
                     continue;
 

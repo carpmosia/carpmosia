@@ -4,7 +4,6 @@ using Content.Server.DeviceLinking.Components;
 using Content.Server.Power.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
-using YamlDotNet.RepresentationModel;
 
 namespace Content.IntegrationTests.Tests;
 
@@ -14,11 +13,8 @@ public sealed partial class MapRulesTest
     /// <summary>
     /// Ensures that all power network related, air alarm, and switch entities are labelled
     /// </summary>
-    private List<string> TestMissingLabels(YamlMappingNode root)
+    private List<string> TestMissingLabels(ParsedRoot root)
     {
-        if (!root.TryGetNode<YamlSequenceNode>(Entities, out var entities))
-            return ["No entities found"];
-
         List<EntProtoId> targets = [
             ..GetPrototypeIds<PowerNetworkBatteryComponent>(),
             ..GetPrototypeIds<AirAlarmComponent>(),
@@ -27,15 +23,13 @@ public sealed partial class MapRulesTest
 
         var errors = new List<string>();
 
-        foreach (var proto in entities)
+        foreach (var (protoId, entities) in root.Entities)
         {
-            EntProtoId protoId = proto[Proto].AsString();
-
             // Skip unrelated entities
             if (!targets.Contains(protoId))
                 continue;
 
-            foreach (var ent in (YamlSequenceNode)proto[Entities])
+            foreach (var (uid, ent) in entities)
             {
                 // Skip invalid transforms
                 if (GetTilePos(ent) is not { } trans)
@@ -44,7 +38,7 @@ public sealed partial class MapRulesTest
                 if (GetCompNode(ent, "Label") is { } label && (label.HasNode("currentLabel") || label.HasNode("localizedLabel")))
                     continue;
 
-                errors.Add($"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) that is missing a label at {trans.Item2}");
+                errors.Add($"Grid {trans.Item1} contains {protoId} ({uid}) that is missing a label at {trans.Item2}");
             }
         }
 
