@@ -23,7 +23,7 @@ public sealed class SurgeryGuideBoundUserInterface : BoundUserInterface
         _menu = this.CreateWindow<SurgeryGuideMenu>();
         _menu.Category = comp.Category;
         // _menu.OnSurgerySelected += OnSurgerySelected;
-        // _menu.OnCleanUp += OnCleanUp;
+        _menu.OnCleanUp += OnCleanUp;
         _menu.Update(Owner);
         _menu.Populate();
     }
@@ -33,8 +33,8 @@ public sealed class SurgeryGuideBoundUserInterface : BoundUserInterface
     //     SendPredictedMessage(new SurgeryGuideStartSurgeryMessage(surgery));
     // }
 
-    // private void OnCleanUp()
-    // {
-    //     SendPredictedMessage(new SurgeryGuideStartCleanupMessage());
-    // }
+    private void OnCleanUp()
+    {
+        SendPredictedMessage(new SurgeryGuideStartCleanupMessage());
+    }
 }

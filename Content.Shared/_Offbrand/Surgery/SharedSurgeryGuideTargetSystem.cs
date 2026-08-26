@@ -45,7 +45,7 @@ public abstract partial class SharedSurgeryGuideTargetSystem : EntitySystem
 
     protected virtual void OnStartCleanup(Entity<SurgeryGuideTargetComponent> ent, ref SurgeryGuideStartCleanupMessage args)
     {
-        _userInterface.CloseUi(ent.Owner, SurgeryGuideUiKey.Key, args.Actor);
-        _popup.PopupCursor(Loc.GetString("surgery-examine-for-instructions"), args.Actor);
+        // _userInterface.CloseUi(ent.Owner, SurgeryGuideUiKey.Key, args.Actor);
+        _popup.PopupCursor(Loc.GetString("surgery-examine-for-instructions"), args.Actor, PopupType.Large);
     }
 }

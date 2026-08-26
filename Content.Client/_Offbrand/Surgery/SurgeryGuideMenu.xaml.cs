@@ -24,7 +24,7 @@ public sealed partial class SurgeryGuideMenu : FancyWindow
     private readonly SpriteSystem _sprite = default!;
 
     // public event Action<ProtoId<ConstructionPrototype>>? OnSurgerySelected;
-    // public event Action? OnCleanUp;
+    public event Action? OnCleanUp;
 
     private ConstructionPrototype? _selectedSurgery;
     public string Category = string.Empty;
@@ -51,7 +51,7 @@ public sealed partial class SurgeryGuideMenu : FancyWindow
 
         //     OnSurgerySelected?.Invoke(surgery.ID);
         // };
-        // CleanUp.OnPressed += _ => OnCleanUp?.Invoke();
+        CleanUp.OnPressed += _ => OnCleanUp?.Invoke();
 
         PossibleSurgeries.GenerateItem += GenerateButton;
         PossibleSurgeries.ItemKeyBindDown += OnSelectSurgery;
