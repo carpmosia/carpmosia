@@ -258,9 +258,11 @@ public sealed partial class HealthAnalyzerSystem : EntitySystem
             bloodAmount,
             null,
             bleeding,
+            // Carpmosia-start - Health analyzer bloodstream reagents
             unrevivable,
-            bloodType, // Carpmosia-edit - Health analyzer bloodstream reagents
-            bloodSolution // Carpmosia-edit - Health analyzer bloodstream reagents
+            bloodType,
+            bloodSolution
+            // Carpmosia-end - Health analyzer bloodstream reagents
         );
     }
 }

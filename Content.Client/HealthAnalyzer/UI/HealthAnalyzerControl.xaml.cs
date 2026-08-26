@@ -180,7 +180,7 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
             ( "amount", totalDamage.ToString() )
         )}";
 
-        NoDamage.Visible = ( totalDamage == 0 );
+        NoDamage.Visible = totalDamage == FixedPoint2.Zero;
         // Carpmosia-end - Health analyzer bloodstream reagents
 
         foreach (var (damageGroupId, damageAmount) in groups)
@@ -224,46 +224,48 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
     }
 
     // Carpmosia-start - Health analyzer bloodstream reagents
-    private void DrawBloodstreamInfo( float bloodLevel, Solution? bloodType, Solution? bloodSolution )
+    private void DrawBloodstreamInfo(float bloodLevel, Solution? bloodType, Solution? bloodSolution)
     {
         BloodstreamReagentsContainer.RemoveAllChildren();
 
         List<ReagentQuantity> bloodstream = new();
-        FixedPoint2 bloodlevelAmount = FixedPoint2.Zero;
-        FixedPoint2 bloodstreamReagentAmount = FixedPoint2.Zero;
+        var bloodlevelAmount = FixedPoint2.Zero;
+        var bloodstreamReagentAmount = FixedPoint2.Zero;
 
-        if ( bloodType is not null && bloodSolution is not null )
+        if (bloodType is not null && bloodSolution is not null)
         {
             // Build out the bloodstream, ignoring the target's blood reagent(s)
-            foreach ( var reagent in bloodSolution!.Contents )
+            foreach ( var reagent in bloodSolution.Contents )
             {
-                bool is_blood = false;
-                foreach ( var blood in bloodType!.Contents )
-                    if ( reagent.Reagent == blood.Reagent )
-                        is_blood = true;
+                var isBlood = false;
+                foreach (var blood in bloodType.Contents)
+                {
+                    if (reagent.Reagent == blood.Reagent)
+                        isBlood = true;
+                }
 
                 // If this reagent is the species' blood, add it to the blood level
                 // Otherwise add it to the bloodstream reagent list
-                if ( is_blood )
+                if (isBlood)
                 {
                     bloodlevelAmount += reagent.Quantity;
                 }
                 else
                 {
-                    bloodstream.Add( reagent );
+                    bloodstream.Add(reagent);
                     bloodstreamReagentAmount += reagent.Quantity;
                 }
             }
         }
 
-        string bloodlevelPercent = !float.IsNaN(bloodLevel)
+        var bloodlevelPercent = !float.IsNaN(bloodLevel)
             ? $"{bloodLevel * 100:F1} %"
             : Loc.GetString("health-analyzer-window-entity-unknown-value-text");
 
         BloodLevelLabel.Text = Loc.GetString(
             "health-analyzer-window-entity-blood-level-numbers-text",
             ( "amount", bloodlevelAmount.ToString() ),
-            ( "percent", bloodlevelPercent.ToString() )
+            ( "percent", bloodlevelPercent )
         );
 
         BloodstreamLabel.Text = Loc.GetString(
@@ -273,9 +275,9 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
 
         NoReagents.Visible = bloodstream.Count == 0;
 
-        foreach ( var ( reagentID, reagentQuantity ) in bloodstream )
+        foreach ( var ( reagentId, reagentQuantity ) in bloodstream )
         {
-            var reagentProto = _prototypes.Index<ReagentPrototype>( reagentID.Prototype );
+            var reagentProto = _prototypes.Index<ReagentPrototype>( reagentId.Prototype );
 
             var reagentContainer = new BoxContainer
             {
