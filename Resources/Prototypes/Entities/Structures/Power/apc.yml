@@ -76,10 +76,10 @@
     examinable: true
     nodes:
       input:
-        !type:CableDeviceNode
+        !type:CableDeviceNodeAdjacent # Carpmosia-edit - Wallmount adjacent power
         nodeGroupID: MVPower
       output:
-        !type:CableDeviceNode
+        !type:CableDeviceNodeAdjacent # Carpmosia-edit - Wallmount adjacent power
         nodeGroupID: Apc
   - type: PowerMonitoringDevice
     group: APC

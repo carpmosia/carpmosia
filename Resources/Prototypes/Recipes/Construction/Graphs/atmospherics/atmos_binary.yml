@@ -240,6 +240,44 @@
       steps: *bendradiator_steps
     # Carpmosia-end - Atmos Alt Prototypes
 
+    # Carpmosia-start - Inline Atmos
+    - to: ventpumpInline
+      steps: &ventpumpInline_steps
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: ventpumpInlineAlt1
+      steps: *ventpumpInline_steps
+
+    - to: ventpumpInlineAlt2
+      steps: *ventpumpInline_steps
+
+    - to: ventpumpInlineAlt3
+      steps: *ventpumpInline_steps
+
+    - to: ventpumpInlineAlt4
+      steps: *ventpumpInline_steps
+
+    - to: ventscrubberInline
+      steps: &ventscrubberInline_steps
+      - material: Steel
+        amount: 2
+        doAfter: 1
+
+    - to: ventscrubberInlineAlt1
+      steps: *ventscrubberInline_steps
+
+    - to: ventscrubberInlineAlt2
+      steps: *ventscrubberInline_steps
+
+    - to: ventscrubberInlineAlt3
+      steps: *ventscrubberInline_steps
+
+    - to: ventscrubberInlineAlt4
+      steps: *ventscrubberInline_steps
+    # Carpmosia-end - Inline Atmos
+
   - node: pressurepump
     entity: GasPressurePump
     edges: &pressurepump_edges # Carpmosia-edit - Cleanup construction graph
@@ -729,3 +767,73 @@
     entity: HeatExchangerBendAlt4
     edges: *bendradiator_edges
   # Carpmosia-end - Atmos Alt Prototypes
+
+  # Carpmosia-start - Inline Atmos
+  - node: ventpumpInline
+    entity: GasVentPumpInline
+    edges: &ventpumpInline_edges
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+
+  - node: ventpumpInlineAlt1
+    entity: GasVentPumpInlineAlt1
+    edges: *ventpumpInline_edges
+
+  - node: ventpumpInlineAlt2
+    entity: GasVentPumpInlineAlt2
+    edges: *ventpumpInline_edges
+
+  - node: ventpumpInlineAlt3
+    entity: GasVentPumpInlineAlt3
+    edges: *ventpumpInline_edges
+
+  - node: ventpumpInlineAlt4
+    entity: GasVentPumpInlineAlt4
+    edges: *ventpumpInline_edges
+
+  - node: ventscrubberInline
+    entity: GasVentScrubberInline
+    edges: &ventscrubberInline_edges
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity
+      steps:
+      - tool: Screwing
+        doAfter: 1
+      - tool: Welding
+        doAfter: 1
+
+  - node: ventscrubberInlineAlt1
+    entity: GasVentScrubberInlineAlt1
+    edges: *ventscrubberInline_edges
+
+  - node: ventscrubberInlineAlt2
+    entity: GasVentScrubberInlineAlt2
+    edges: *ventscrubberInline_edges
+
+  - node: ventscrubberInlineAlt3
+    entity: GasVentScrubberInlineAlt3
+    edges: *ventscrubberInline_edges
+
+  - node: ventscrubberInlineAlt4
+    entity: GasVentScrubberInlineAlt4
+    edges: *ventscrubberInline_edges
+  # Carpmosia-end - Inline Atmos

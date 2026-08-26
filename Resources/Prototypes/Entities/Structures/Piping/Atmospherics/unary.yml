@@ -349,6 +349,7 @@
   suffix: Enabled
   components:
   - type: GasThermoMachine
+    targetTemperature: 235 # Carpmosia-edit - Freezer atmos
   - type: ApcPowerReceiver
     powerDisabled: false
 

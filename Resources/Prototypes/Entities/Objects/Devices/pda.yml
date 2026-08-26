@@ -998,16 +998,18 @@
     tags:
     - DoorBumpOpener
 
-- type: entity
-  parent: CentcomPDA
-  id: DeathsquadPDA
-  suffix: Death Squad
-  components:
-  - type: Pda
-    id: CentcomIDCardDeathsquad
-  - type: Tag #  Ignore Chameleon tags
-    tags:
-    - DoorBumpOpener
+# Carpmosia-start - Remove Deathsquad
+# - type: entity
+#   parent: CentcomPDA
+#   id: DeathsquadPDA
+#   suffix: Death Squad
+#   components:
+#   - type: Pda
+#     id: CentcomIDCardDeathsquad
+#   - type: Tag #  Ignore Chameleon tags
+#     tags:
+#     - DoorBumpOpener
+# Carpmosia-end - Remove Deathsquad
 
 - type: entity
   parent: BasePDA
