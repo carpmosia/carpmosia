@@ -56,6 +56,8 @@ public abstract partial class SharedDisposalUnitSystem : EntitySystem
     [Dependency] private SharedTransformSystem _xform = default!;
     [Dependency] private INetManager _net = default!;
 
+    [Dependency] private EntityQuery<DisposalTaggerComponent> _query = default!; // Carpmosia-edit - Better disposals
+
     public override void Initialize()
     {
         base.Initialize();
@@ -292,7 +294,7 @@ public abstract partial class SharedDisposalUnitSystem : EntitySystem
         }
 
         // Carpmosia-start - Better disposals
-        if (TryComp(ent, out DisposalTaggerComponent? tagger))
+        if (_query.TryComp(ent, out var tagger))
             beforeFlushArgs.Tags.Add(tagger.Tag);
         // Carpmosia-end - Better disposals
 
