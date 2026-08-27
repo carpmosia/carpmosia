@@ -35,22 +35,22 @@
   products:
     Oxycodone: 2
 
-- type: reaction
-  id: Synthflesh
-  reactants:
-    SulfuricAcid:
-      amount: 1
-    Oxygen:
-      amount: 1
-    Acetone:
-      amount: 1
-  products:
-    Synthflesh: 4
+# - type: reaction
+#   id: Synthflesh
+#   reactants:
+#     SulfuricAcid:
+#       amount: 1
+#     Oxygen:
+#       amount: 1
+#     Acetone:
+#       amount: 1
+#   products:
+#     Synthflesh: 4
 
 - type: reaction
   id: Sanguine
   reactants:
-    Synthflesh:
+    SulfuricAcid:
       amount: 1
     DexalinPlus:
       amount: 1

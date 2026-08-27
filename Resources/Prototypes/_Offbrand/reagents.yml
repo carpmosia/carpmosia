@@ -172,10 +172,10 @@
   physicalDesc: reagent-physical-desc-oily
   metabolisms:
     Metabolites:
-      metabolismRate: 1
+      metabolismRate: 0.5
       effects:
       - !type:ModifyBloodLevel
-        amount: 6
+        amount: 8
         conditions:
         - !type:ReagentCondition
           reagent: Sanguine
