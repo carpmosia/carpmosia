@@ -69,14 +69,14 @@
     damageHealing: -1
     damageStageSize: 10
     damageStageMaximumHealing: 8
-  - type: OrganDamageOnDamage
-    thresholds:
-    - damageTypes: [Slash, Blunt, Piercing]
-      minimumTotalDamage: 200
-      conversionFactor: 0.1
-    - damageTypes: [Heat, Cold, Caustic, Shock]
-      minimumTotalDamage: 200
-      conversionFactor: 0.01
+  # - type: OrganDamageOnDamage
+  #   thresholds:
+  #   - damageTypes: [Slash, Blunt, Piercing]
+  #     minimumTotalDamage: 1000
+  #     conversionFactor: 0.1
+  #   - damageTypes: [Heat, Cold, Caustic, Shock]
+  #     minimumTotalDamage: 1000
+  #     conversionFactor: 0.01
   - type: DamageAlertsOrgan
     alertThresholds:
       30: SevereBrainDamage
