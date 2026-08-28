@@ -56,7 +56,7 @@ public abstract partial class SharedDisposalUnitSystem : EntitySystem
     [Dependency] private SharedTransformSystem _xform = default!;
     [Dependency] private INetManager _net = default!;
 
-    [Dependency] private EntityQuery<DisposalTaggerComponent> _query = default!; // Carpmosia-edit - Better disposals
+    [Dependency] private EntityQuery<DisposalTaggerComponent> _taggerQuery = default!; // Carpmosia-edit - Better disposals
 
     public override void Initialize()
     {
