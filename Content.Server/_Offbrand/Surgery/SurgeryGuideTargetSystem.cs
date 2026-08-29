@@ -26,8 +26,6 @@ public sealed partial class SurgeryGuideTargetSystem : SharedSurgeryGuideTargetS
 
         foreach(var organ in body.Organs?.ContainedEntities ?? [])
         {
-            if (organ == null)
-                continue;
             var construction = _construction.GetCurrentNode(organ);
             if (construction != null && construction.Name != "Base")
                 _construction.SetPathfindingTarget(organ, "Base");
