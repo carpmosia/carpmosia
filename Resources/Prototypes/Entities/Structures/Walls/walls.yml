@@ -74,7 +74,7 @@
     tags:
     - Diagonal
   - type: IconSmooth
-    mode: DiagonalPlus # Carpmosia-edit - Better diagonals
+    mode: Diagonal
     key: walls
     base: state
   - type: Airtight
@@ -465,6 +465,7 @@
     state: state0
   # Carpmosia-start - Respritening
   - type: IconSmooth
+    mode: DiagonalPlus
     key: basic_wall
   # Carpmosia-end - Respritening
   - type: Damageable
@@ -716,6 +717,7 @@
     state: state0
   # Carpmosia-start - Respritening
   - type: IconSmooth
+    mode: DiagonalPlus
     key: basic_wall
   # Carpmosia-end - Respritening
   - type: Destructible
