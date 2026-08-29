@@ -136,7 +136,7 @@
     - Diagonal
     - Window
   - type: IconSmooth
-    mode: Diagonal
+    mode: DiagonalPlus # Carpmosia-edit - Better diagonals
     key: walls
     base: state
   - type: Icon

@@ -28,8 +28,8 @@
     drawdepth: Walls
   - type: Icon
     state: full
-  - type: PlacementReplacement
-    key: walls
+  # - type: PlacementReplacement # Carpmosia-edit - Better diagonals
+  #   key: walls # Carpmosia-edit - Better diagonals
   - type: Physics
     bodyType: Static
   - type: Fixtures
@@ -74,7 +74,7 @@
     tags:
     - Diagonal
   - type: IconSmooth
-    mode: Diagonal
+    mode: DiagonalPlus # Carpmosia-edit - Better diagonals
     key: walls
     base: state
   - type: Airtight

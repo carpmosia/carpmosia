@@ -50,8 +50,8 @@
   - type: IconSmooth
     key: walls
     base: window
-  - type: PlacementReplacement
-    key: walls
+  # - type: PlacementReplacement # Carpmosia-edit - Better diagonals
+  #   key: walls # Carpmosia-edit - Better diagonals
   - type: InteractionPopup
     interactSuccessString: comp-window-knock
     messagePerceivedByOthers: comp-window-knock
@@ -320,7 +320,7 @@
     - Diagonal
     - Window
   - type: IconSmooth
-    mode: Diagonal
+    mode: DiagonalPlus # Carpmosia-edit - Better diagonals
     key: walls
     base: state
   - type: Icon
