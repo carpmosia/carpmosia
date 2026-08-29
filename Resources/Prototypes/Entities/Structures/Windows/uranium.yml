@@ -25,8 +25,7 @@
             min: 1
             max: 2
   - type: IconSmooth
-    key: windows_uranium # Carpmosia-edit - Window resprite
-    base: full # Carpmosia-edit - Window resprite
+    base: uwindow
   - type: Construction
     graph: Window
     node: uraniumWindow
@@ -48,11 +47,11 @@
   name: directional uranium window
   components:
   - type: Sprite
-    sprite: _Carpmosia/Structures/Windows/uranium.rsi # Carpmosia-edit - Window resprite
-    state: directional # Carpmosia-edit - Window resprite
+    sprite: Structures/Windows/directional.rsi
+    state: uranium_window
   - type: Icon
-    sprite: _Carpmosia/Structures/Windows/uranium.rsi # Carpmosia-edit - Window resprite
-    state: directional # Carpmosia-edit - Window resprite
+    sprite: Structures/Windows/directional.rsi
+    state: uranium_window
   - type: Construction
     graph: WindowDirectional
     node: uraniumWindowDirectional

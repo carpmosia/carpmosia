@@ -25,8 +25,7 @@
             min: 1
             max: 2
   - type: IconSmooth
-    key: windows_plasma # Carpmosia-edit - Window resprite
-    base: full # Carpmosia-edit - Window resprite
+    base: pwindow
   - type: Construction
     graph: Window
     node: plasmaWindow
@@ -49,11 +48,11 @@
   description: Don't smudge up the glass down there.
   components:
   - type: Sprite
-    sprite: _Carpmosia/Structures/Windows/plasma.rsi # Carpmosia-edit - Window resprite
-    state: directional # Carpmosia-edit - Window resprite
+    sprite: Structures/Windows/directional.rsi
+    state: plasma_window
   - type: Icon
-    sprite: _Carpmosia/Structures/Windows/plasma.rsi # Carpmosia-edit - Window resprite
-    state: directional # Carpmosia-edit - Window resprite
+    sprite: Structures/Windows/directional.rsi
+    state: plasma_window
   - type: Construction
     graph: WindowDirectional
     node: plasmaWindowDirectional

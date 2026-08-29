@@ -32,8 +32,7 @@
             min: 1
             max: 2
   - type: IconSmooth
-    key: windows_glass # Carpmosia-edit - Window resprite
-    base: full # Carpmosia-edit - Window resprite
+    base: rwindow
   - type: Construction
     graph: Window
     node: reinforcedWindow
@@ -51,11 +50,11 @@
   name: directional reinforced window
   components:
   - type: Sprite
-    sprite: _Carpmosia/Structures/Windows/glass_reinforced.rsi # Carpmosia-edit - Window resprite
-    state: directional # Carpmosia-edit - Window resprite
+    sprite: Structures/Windows/directional.rsi
+    state: reinforced_window
   - type: Icon
-    sprite: _Carpmosia/Structures/Windows/glass_reinforced.rsi # Carpmosia-edit - Window resprite
-    state: directional # Carpmosia-edit - Window resprite
+    sprite: Structures/Windows/directional.rsi
+    state: reinforced_window
   - type: Construction
     graph: WindowDirectional
     node: windowReinforcedDirectional

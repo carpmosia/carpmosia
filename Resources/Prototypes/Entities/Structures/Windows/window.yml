@@ -111,8 +111,7 @@
   - type: Icon
     sprite: Structures/Windows/window-tinted.rsi
   - type: IconSmooth
-    key: windows_tinted # Carpmosia-edit - Window resprite
-    base: full # Carpmosia-edit - Window resprite
+    base: twindow
   - type: Construction
     graph: Window
     node: tintedWindow
@@ -199,11 +198,11 @@
   id: WindowDirectional
   components:
   - type: Sprite
-    sprite: _Carpmosia/Structures/Windows/glass.rsi # Carpmosia-edit - Window resprite
-    state: directional # Carpmosia-edit - Window resprite
+    sprite: Structures/Windows/directional.rsi
+    state: window
   - type: Icon
-    sprite: _Carpmosia/Structures/Windows/glass.rsi # Carpmosia-edit - Window resprite
-    state: directional # Carpmosia-edit - Window resprite
+    sprite: Structures/Windows/directional.rsi
+    state: window
   - type: Damageable
     damageModifierSet: GlassMod
   - type: Destructible
@@ -268,11 +267,11 @@
     - Window
   components:
   - type: Sprite
-    sprite: _Carpmosia/Structures/Windows/tinted.rsi # Carpmosia-edit - Window resprite
-    state: directional # Carpmosia-edit - Window resprite
+    sprite: Structures/Windows/directional.rsi
+    state: frosted_window
   - type: Icon
-    sprite: _Carpmosia/Structures/Windows/tinted.rsi # Carpmosia-edit - Window resprite
-    state: directional # Carpmosia-edit - Window resprite
+    sprite: Structures/Windows/directional.rsi
+    state: frosted_window
   - type: StaticPrice
     price: 35
 
