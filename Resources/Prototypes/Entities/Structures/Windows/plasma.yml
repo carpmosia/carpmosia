@@ -133,8 +133,8 @@
     - Diagonal
     - Window
   - type: IconSmooth
-    mode: Diagonal
-    key: walls
+    mode: DiagonalPlus # Carpmosia-edit - Better diagonals
+    key: plasma # Carpmosia-edit - Respritening
     base: state
   - type: Icon
     sprite: Structures/Windows/window-diagonal-plasma.rsi

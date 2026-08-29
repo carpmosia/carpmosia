@@ -138,8 +138,8 @@
     - Diagonal
     - Window
   - type: IconSmooth
-    mode: Diagonal
-    key: walls
+    mode: DiagonalPlus # Carpmosia-edit - Better diagonals
+    key: uranium # Carpmosia-edit - Respritening
     base: state
   - type: Icon
     sprite: Structures/Windows/window-diagonal-uranium-reinf.rsi

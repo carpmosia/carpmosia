@@ -3,11 +3,11 @@
   id: WallReinforcedDiagonalRust
   suffix: rusted
 # MERGETODO
-#   components:
-#   - type: Sprite
-#     sprite: _Carpmosia/Structures/Walls/reinforced_rust.rsi
-#   - type: Icon
-#     sprite: _Carpmosia/Structures/Walls/reinforced_rust.rsi
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Walls/reinforced-rust-diagonal.rsi
+  - type: Icon
+    sprite: _Carpmosia/Structures/Walls/reinforced-rust-diagonal.rsi
 #   - type: Destructible
 #     thresholds:
 #     - trigger:
@@ -36,11 +36,11 @@
   id: WallSolidDiagonalRust
   suffix: rusted
 # MERGETODO
-#   components:
-#   - type: Sprite
-#     sprite: _Carpmosia/Structures/Walls/solid_rust.rsi
-#   - type: Icon
-#     sprite: _Carpmosia/Structures/Walls/solid_rust.rsi
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Walls/solid-rust-diagonal.rsi
+  - type: Icon
+    sprite: _Carpmosia/Structures/Walls/solid-rust-diagonal.rsi
 #   - type: Destructible
 #     thresholds:
 #     - trigger:
