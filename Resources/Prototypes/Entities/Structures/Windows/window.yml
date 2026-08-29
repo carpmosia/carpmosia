@@ -48,7 +48,7 @@
     fx: EffectRCDDeconstruct4
   - type: Airtight
   - type: IconSmooth
-    key: walls
+    key: glass # Carpmosia-edit - Respritening
     base: window
   # - type: PlacementReplacement # Carpmosia-edit - Better diagonals
   #   key: walls # Carpmosia-edit - Better diagonals
@@ -321,7 +321,7 @@
     - Window
   - type: IconSmooth
     mode: DiagonalPlus # Carpmosia-edit - Better diagonals
-    key: walls
+    key: glass # Carpmosia-edit - Respritening
     base: state
   - type: Icon
     sprite: Structures/Windows/window-base-diagonal.rsi

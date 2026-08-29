@@ -402,7 +402,7 @@
         spawn:
           SheetPlasteel1: *BaseWallSpawn
   - type: IconSmooth
-    key: walls
+    key: basic_wall # Carpmosia-edit - Respritening
     base: reinf_over
   - type: Appearance
   - type: GenericVisualizer
@@ -447,7 +447,7 @@
     graph: Girder
     node: reinforcedWallRust
   - type: IconSmooth
-    key: walls
+    key: basic_wall # Carpmosia-edit - Respritening
     base: reinf_over
   # Rusted walls should be made weaker through a damage mod status effect.
 
@@ -463,6 +463,10 @@
   - type: Icon
     sprite: Structures/Walls/reinforced-diagonal.rsi
     state: state0
+  # Carpmosia-start - Respritening
+  - type: IconSmooth
+    key: basic_wall
+  # Carpmosia-end - Respritening
   - type: Damageable
     damageModifierSet: PlasteelStaticMod
   - type: Destructible
@@ -695,7 +699,7 @@
         spawn:
           SheetSteel1: *BaseWallSpawn
   - type: IconSmooth
-    key: walls
+    key: basic_wall # Carpmosia-edit - Respritening
     base: solid
 
 - type: entity
@@ -710,6 +714,10 @@
   - type: Icon
     sprite: Structures/Walls/solid-diagonal.rsi
     state: state0
+  # Carpmosia-start - Respritening
+  - type: IconSmooth
+    key: basic_wall
+  # Carpmosia-end - Respritening
   - type: Destructible
     thresholds:
     - trigger: *DamageWallNormal
@@ -732,7 +740,7 @@
     graph: Girder
     node: wallrust
   - type: IconSmooth
-    key: walls
+    key: basic_wall # Carpmosia-edit - Respritening
     base: solid
   # Rusted walls should be made weaker through a damage mod status effect.
 
