@@ -5,7 +5,6 @@ using Content.Shared.Access.Systems;
 using Content.Shared.Emag.Components;
 using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Set;
 using Content.Server.Mind;
 using Content.Shared.Mind;
 

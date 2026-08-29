@@ -145,8 +145,6 @@
     spawned:
     - id: FoodMeatChicken
       amount: 3
-  - type: Hunger
-    baseDecayRate: 0.03 # Slightly lower decay-rate than scurrets
   - type: Fixtures
     fixtures:
       fix1:
@@ -176,9 +174,6 @@
     damage:
       types:
         Slash: 5
-  - type: Temperature
-    currentTemperature: 296.15
-    specificHeat: 48
   - type: TemperatureDamage
     heatDamageThreshold: 310
     coldDamageThreshold: 223

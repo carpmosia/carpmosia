@@ -219,7 +219,7 @@ public sealed partial class ApcSystem : EntitySystem
 
                 // Carpmosia-start - APC/Alarm resprite
                 if (newState == ApcChargeState.Emag)
-                    _appearance.SetData(uid, ApcVisuals.EmagVarient, _random.Next(0, 1048576), appearance);
+                    _appearance.SetData(uid, ApcVisuals.EmagVarient, _random.Next(0, 1048576));
                 // Carpmosia-end - APC/Alarm resprite
                 _appearance.SetData(uid, ApcVisuals.ChargeState, newState);
             }

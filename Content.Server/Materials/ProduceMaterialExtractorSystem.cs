@@ -98,7 +98,7 @@ public sealed partial class ProduceMaterialExtractorSystem : EntitySystem
             if (!TryComp<ProduceComponent>(item, out var produce))
                 continue;
 
-            if (!_solutionContainer.TryGetSolution(item, produce.SolutionName, out var solution))
+            if (!_solutionContainer.TryGetSolution(item, produce.TargetSolution, out var solution))
                 continue;
 
             var matAmount = solution.Value.Comp.Solution.Contents

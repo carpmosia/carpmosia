@@ -22,7 +22,7 @@ public sealed partial class AntagPrototype : IPrototype
     public string ID { get; private set; } = default!;
 
     // Carpmosia-start - Antag playtimes
-    [DataField("playTimeTracker", customTypeSerializer: typeof(PrototypeIdSerializer<PlayTimeTrackerPrototype>))]
+    [DataField("playTimeTracker", customTypeSerializer: typeof(ProtoId<PlayTimeTrackerPrototype>))]
     public string? PlayTimeTracker { get; private set; }
 
     [DataField("color")]

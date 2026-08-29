@@ -1,0 +1,64 @@
+- type: loadoutGroup
+  parent: [ CivilianHead, CommonHead ]
+  id: TramDriverHead
+  loadouts:
+  - TramDriverHat
+
+- type: loadoutGroup
+  parent: [ CivilianGlasses, CommonGlasses ]
+  id: TramDriverGlasses
+
+# - type: loadoutGroup
+#   parent: [ CivilianMask, CommonMask ]
+#   id: TramDriverMask
+
+- type: loadoutGroup
+  parent: [ CivilianNeck, CommonNeck ]
+  id: TramDriverNeck
+
+- type: loadoutGroup
+  parent: [ CivilianGloves, CommonGloves ]
+  id: TramDriverGloves
+  loadouts:
+  - TramDriverGlovesWhite
+  - TramDriverGlovesBlack
+
+- type: loadoutGroup
+  parent: [ CivilianJumpsuit, CommonJumpsuit ]
+  id: TramDriverJumpsuit
+  loadouts:
+  - TramDriverJumpsuit
+
+- type: loadoutGroup
+  parent: [ CivilianBackpack, CommonBackpack ]
+  id: TramDriverBackpack
+
+# - type: loadoutGroup
+#   parent: [ CivilianPDA, CommonPDA ]
+#   id: TramDriverPDA
+
+# - type: loadoutGroup
+#   parent: [ CivilianBelt, CommonBelt ]
+#   id: TramDriverBelt
+
+- type: loadoutGroup
+  parent: [ CivilianOuterClothing, CommonOuterClothing ]
+  id: TramDriverOuterClothing
+  loadouts:
+  - TramDriverSuit
+
+- type: loadoutGroup
+  parent: [ CommonShoes, CivilianShoes ]
+  id: TramDriverShoes
+
+# - type: loadoutGroup
+#   parent: BaseSpecial
+#   id: TramDriverSpecial
+
+- type: loadoutGroup
+  parent: [ CivilianTrinkets, CommonTrinkets ]
+  id: TramDriverTrinkets
+
+- type: loadoutGroup
+  parent: [ CivilianPets, CommonPets ]
+  id: TramDriverPets
