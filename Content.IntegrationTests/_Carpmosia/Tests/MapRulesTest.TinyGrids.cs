@@ -1,6 +1,7 @@
 using System.Buffers.Binary;
 using System.Collections.Generic;
 using System.Linq;
+using Robust.Shared.Map.Components;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
 
@@ -22,7 +23,7 @@ public sealed partial class MapRulesTest
 
         foreach (var (uid, ent) in root.Entities[""].Where(x => root.GridIds.Contains(x.Key)))
         {
-            if (GetCompNode(ent, "MapGrid") is not { } mapGrid || !mapGrid.TryGetNode<YamlMappingNode>("chunks", out var chunks))
+            if (GetCompNode<MapGridComponent>(ent) is not { } mapGrid || !mapGrid.TryGetNode<YamlMappingNode>("chunks", out var chunks))
                 continue;
 
             var count = chunks.Sum(x =>

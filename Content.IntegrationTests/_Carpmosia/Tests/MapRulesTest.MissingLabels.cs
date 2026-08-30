@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Content.Server.Atmos.Monitor.Components;
 using Content.Server.DeviceLinking.Components;
 using Content.Server.Power.Components;
+using Content.Shared.Labels.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -35,7 +36,7 @@ public sealed partial class MapRulesTest
                 if (GetTilePos(ent) is not { } trans)
                     continue;
 
-                if (GetCompNode(ent, "Label") is { } label && (label.HasNode("currentLabel") || label.HasNode("localizedLabel")))
+                if (GetCompNode<LabelComponent>(ent) is { } label && (label.HasNode("currentLabel") || label.HasNode("localizedLabel")))
                     continue;
 
                 errors.Add($"Grid {trans.Item1} contains {protoId} ({uid}) that is missing a label at {trans.Item2}");

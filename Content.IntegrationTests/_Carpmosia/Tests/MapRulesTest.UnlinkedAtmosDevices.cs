@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Content.Server.Atmos.Monitor.Components;
 using Content.Shared.Atmos.Components;
+using Content.Shared.DeviceNetwork.Components;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
 
@@ -39,11 +40,11 @@ public sealed partial class MapRulesTest
                 if (GetTilePos(ent) is not { } trans)
                     continue;
 
-                if (isAirAlarm && GetCompNode(ent, "DeviceList") is { } deviceList
+                if (isAirAlarm && GetCompNode<DeviceListComponent>(ent) is { } deviceList
                     && deviceList.TryGetNode<YamlSequenceNode>("devices", out var devices) && devices.Children.Count != 0)
                     continue;
 
-                if (isAtmosMonitor && GetCompNode(ent, "DeviceNetwork") is { } deviceNet
+                if (isAtmosMonitor && GetCompNode<DeviceNetworkComponent>(ent) is { } deviceNet
                     && deviceNet.TryGetNode<YamlSequenceNode>("deviceLists", out var lists) && lists.Children.Count != 0)
                     continue;
 
