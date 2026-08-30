@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using Content.Server.Power.Components;
 using Robust.Shared.Maths;
 using Robust.Shared.Prototypes;
