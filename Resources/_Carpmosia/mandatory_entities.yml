@@ -27,16 +27,27 @@
   - WeaponEnergyTurretCommandControlPanel
   - ToolboxGoldFilled
 
+# Maps don't always have space for captain's bathrooms so vault is an acceptable alternative for the golden toilet
 - pois:
   - - DefaultStationBeaconCaptainOffice
     - DefaultStationBeaconCaptainsQuarters
+    - DefaultStationBeaconVault
+    - HolopadCommandVault
   ents:
   - ToiletGoldenDirtyWater
+
+- pois:
+  - - DefaultStationBeaconCaptainOffice
+    - DefaultStationBeaconCaptainsQuarters
+  - HolopadCommandCaptain
+  ents:
   - CaptainIDCard
-  - AirlockCaptainLocked
   - DogBed
   - SpawnMobFoxRenault
-  - HolopadCommandCaptain
+  - FaxMachineCaptain
+  - - LockerCaptainFilled
+    - LockerCaptainFilledNoLaser
+    - LockerCaptainFilledHardsuit
 
 - pois:
   - DefaultStationBeaconAIUpload

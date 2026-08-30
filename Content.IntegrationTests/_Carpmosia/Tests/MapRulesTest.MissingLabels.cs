@@ -19,6 +19,7 @@ public sealed partial class MapRulesTest
         List<EntProtoId> targets = [
             ..GetPrototypeIds<PowerNetworkBatteryComponent>(),
             ..GetPrototypeIds<AirAlarmComponent>(),
+            ..GetPrototypeIds<FireAlarmComponent>(),
             ..GetPrototypeIds<SignalSwitchComponent>()
         ];
 
