@@ -61,7 +61,8 @@
   - DefaultStationBeaconEVAStorage
   - HolopadGeneralEVAStorage
   ents:
-  - SuitStorageEVA
+  - - SuitStorageEVA
+    - SuitStorageEVAAlternate
   - VendingMachineTankDispenserEVA
   - NitrogenCanister
   - OxygenCanister
