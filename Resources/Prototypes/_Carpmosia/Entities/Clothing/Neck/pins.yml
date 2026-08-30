@@ -1,0 +1,14 @@
+
+#Dyslexia Awareness Pin by miku2020
+- type: entity
+  parent: ClothingNeckPinBase
+  id: ClothingNeckDyslexiaPin
+  name: dyslexia pin
+  description: slow reader, be merciful to yourself.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Clothing/Neck/Misc/pins.rsi
+    state: pqbd
+  - type: Clothing
+    sprite: _Carpmosia/Clothing/Neck/Misc/pins.rsi
+    equippedPrefix: pqbd
