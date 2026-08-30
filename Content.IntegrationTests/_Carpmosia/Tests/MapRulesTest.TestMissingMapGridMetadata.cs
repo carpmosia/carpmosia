@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Robust.Shared.GameObjects;
 using Robust.Shared.Utility;
 
 namespace Content.IntegrationTests.Tests;
@@ -22,7 +23,7 @@ public sealed partial class MapRulesTest
 
         foreach (var (uid, ent) in root.Entities[""].Where(x => root.MapIds.Contains(x.Key) || root.GridIds.Contains(x.Key)))
         {
-            if (GetCompNode(ent, "MetaData") is not { } meta
+            if (GetCompNode<MetaDataComponent>(ent) is not { } meta
                 || !meta.TryGetNode("name", out var name))
             {
                 errors.Add($"Map or Grid {uid} is missing a name");

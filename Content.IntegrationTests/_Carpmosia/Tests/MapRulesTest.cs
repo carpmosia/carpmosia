@@ -39,6 +39,7 @@ public sealed partial class MapRulesTest : GameTest
     ];
 
     [SidedDependency(Side.Server)] private readonly IResourceManager _resMan = null!;
+    [SidedDependency(Side.Server)] private readonly IComponentFactory _compFact = null!;
 
     private readonly record struct ParsedRoot(
         uint[] MapIds,
@@ -89,9 +90,11 @@ public sealed partial class MapRulesTest : GameTest
 
         // Station specific tests
         if (!NonStations.Any(x => map.ToString().StartsWith(x)))
+        {
             errors.AddRange([
                 ..TestMandatoryStationEntities(root),
             ]);
+        }
 
         // Assert one large list of errors instead of Assert.Multiple to avoid 5 morbillion stacktraces
         Assert.That(errors, Has.Count.EqualTo(0), $"Found {errors.Count} issues:\n{string.Join("\n", errors)}");
@@ -113,17 +116,17 @@ public sealed partial class MapRulesTest : GameTest
         return yamlStream.Documents[0].RootNode;
     }
 
-    private static YamlMappingNode? GetCompNode(YamlSequenceNode comps, string comp)
+    private YamlMappingNode? GetCompNode<T>(YamlSequenceNode comps) where T : IComponent, new()
     {
-        if (comps.FirstOrDefault(x => x["type"].AsString() == comp) is not YamlMappingNode trans)
+        if (comps.FirstOrDefault(x => x["type"].AsString() == _compFact.CompName<T>()) is not YamlMappingNode trans)
             return null;
 
         return trans;
     }
 
-    private static (EntityUid, Vector2i, int)? GetApproxTransform(YamlSequenceNode comps)
+    private (EntityUid, Vector2i, int)? GetApproxTransform(YamlSequenceNode comps)
     {
-        if (GetCompNode(comps, "Transform") is not { } trans)
+        if (GetCompNode<TransformComponent>(comps) is not { } trans)
             return null;
 
         if (!trans.TryGetNode("parent", out var rawParent))
@@ -149,7 +152,7 @@ public sealed partial class MapRulesTest : GameTest
         return (parent, pos, rot);
     }
 
-    private static (EntityUid, Vector2i, int)? GetTilePosWithRot(YamlSequenceNode comps)
+    private (EntityUid, Vector2i, int)? GetTilePosWithRot(YamlSequenceNode comps)
     {
         if (GetApproxTransform(comps) is not { } trans)
             return null;
@@ -157,7 +160,7 @@ public sealed partial class MapRulesTest : GameTest
         return (trans.Item1, ((int)Math.Floor(px / 10m), (int)Math.Floor(py / 10m)), trans.Item3);
     }
 
-    private static (EntityUid, Vector2i)? GetTilePos(YamlSequenceNode comps)
+    private (EntityUid, Vector2i)? GetTilePos(YamlSequenceNode comps)
     {
         if (GetTilePosWithRot(comps) is not { } trans)
             return null;

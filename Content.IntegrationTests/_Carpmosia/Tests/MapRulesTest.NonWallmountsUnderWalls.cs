@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using Content.Server.Power.Components;
 using Content.Shared.Light.Components;
 using Content.Shared.Wall;
