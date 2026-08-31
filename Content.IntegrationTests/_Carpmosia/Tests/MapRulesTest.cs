@@ -32,7 +32,6 @@ public sealed partial class MapRulesTest : GameTest
        "/Maps/_Carpmosia/Shuttles/Emergency/compact.yml",
        "/Maps/_Carpmosia/Shuttles/Emergency/crimson.yml",
        "/Maps/_Carpmosia/Shuttles/Emergency/ghoti.yml",
-       "/Maps/_Carpmosia/Shuttles/Emergency/rome.yml",
        "/Maps/_Carpmosia/Shuttles/Event/ert_mixed.yml",
     ];
 

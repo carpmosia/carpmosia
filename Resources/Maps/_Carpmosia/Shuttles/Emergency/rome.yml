@@ -4,8 +4,8 @@ meta:
   engineVersion: 283.1.3
   forkId: carpmosia
   forkVersion: ""
-  time: 08/31/2026 16:29:41
-  entityCount: 597
+  time: 08/31/2026 22:07:07
+  entityCount: 594
 maps: []
 grids:
 - 18697
@@ -193,6 +193,38 @@ entities:
     - type: TileHistory
       chunkHistory: {}
     - type: ExplosionAirtightGrid
+- proto: AirAlarm
+  entities:
+  - uid: 131
+    components:
+    - type: MetaData
+      name: air alarm (Shuttle)
+    - type: Transform
+      parent: 18697
+      rot: 3.141592653589793 rad
+      pos: -4.5,5.5
+    - type: DeviceList
+      devices:
+      - 18998
+      - 19002
+      - 150
+      - 201
+      - 149
+      - 169
+      - 199
+      - 18956
+      - 173
+      - 217
+      - 203
+      - 171
+      - 165
+      - 164
+      - 202
+      - 172
+    - type: Label
+      currentLabel: Shuttle
+    - type: NameModifier
+      baseName: air alarm
 - proto: AirCanister
   entities:
   - uid: 18951
@@ -375,23 +407,23 @@ entities:
   - uid: 19081
     components:
     - type: MetaData
-      name: APC (Docking North West)
+      name: APC (South West Area)
     - type: Transform
       parent: 18697
       pos: -7.5,-3.5
     - type: Label
-      currentLabel: Docking North West
+      currentLabel: South West Area
     - type: NameModifier
       baseName: APC
   - uid: 19092
     components:
     - type: MetaData
-      name: APC (Docking North East)
+      name: APC (South East Area)
     - type: Transform
       parent: 18697
       pos: 2.5,-3.5
     - type: Label
-      currentLabel: Docking North East
+      currentLabel: South East Area
     - type: NameModifier
       baseName: APC
 - proto: APCHighCapacity
@@ -410,10 +442,16 @@ entities:
       baseName: APC
   - uid: 114
     components:
+    - type: MetaData
+      name: APC (North Area)
     - type: Transform
       parent: 18697
       rot: 3.141592653589793 rad
       pos: -4.5,1.5
+    - type: Label
+      currentLabel: North Area
+    - type: NameModifier
+      baseName: APC
   - uid: 19011
     components:
     - type: MetaData
@@ -960,17 +998,7 @@ entities:
       pos: -4.5,10.5
 - proto: CableHV
   entities:
-  - uid: 131
-    components:
-    - type: Transform
-      parent: 18697
-      pos: -5.5,10.5
   - uid: 132
-    components:
-    - type: Transform
-      parent: 18697
-      pos: -6.5,9.5
-  - uid: 18933
     components:
     - type: Transform
       parent: 18697
@@ -1850,13 +1878,6 @@ entities:
     - type: Transform
       parent: 18697
       pos: -3.5,6.5
-- proto: GasPipeFourwayDistro
-  entities:
-  - uid: 18967
-    components:
-    - type: Transform
-      parent: 18697
-      pos: -3.5,3.5
 - proto: GasPipeStraightDistro
   entities:
   - uid: 151
@@ -1981,7 +2002,7 @@ entities:
     - type: Transform
       parent: 18697
       rot: 3.141592653589793 rad
-      pos: 1.5,-1.5
+      pos: -6.5,-1.5
   - uid: 221
     components:
     - type: Transform
@@ -2011,7 +2032,7 @@ entities:
     - type: Transform
       parent: 18697
       rot: 3.141592653589793 rad
-      pos: -6.5,-1.5
+      pos: 1.5,-1.5
   - uid: 226
     components:
     - type: Transform
@@ -2280,6 +2301,12 @@ entities:
       pos: -1.5,6.5
 - proto: GasPipeTJunctionDistro
   entities:
+  - uid: 21
+    components:
+    - type: Transform
+      parent: 18697
+      rot: 3.141592653589793 rad
+      pos: -3.5,3.5
   - uid: 148
     components:
     - type: Transform
@@ -2312,12 +2339,6 @@ entities:
       pos: -3.5,7.5
 - proto: GasPipeTJunctionWaste
   entities:
-  - uid: 73
-    components:
-    - type: Transform
-      parent: 18697
-      rot: -1.5707963267948966 rad
-      pos: -1.5,-1.5
   - uid: 154
     components:
     - type: Transform
@@ -2358,7 +2379,7 @@ entities:
       pos: -6.5,7.5
 - proto: GasPressurePumpDistro
   entities:
-  - uid: 18957
+  - uid: 23
     components:
     - type: Transform
       parent: 18697
@@ -2376,24 +2397,28 @@ entities:
       open: False
 - proto: GasVentPumpDistro
   entities:
-  - uid: 21
-    components:
-    - type: Transform
-      parent: 18697
-      rot: -1.5707963267948966 rad
-      pos: -2.5,-0.5
   - uid: 18956
     components:
     - type: Transform
       parent: 18697
       rot: 1.5707963267948966 rad
       pos: -4.5,8.5
+    - type: DeviceNetwork
+      deviceLists:
+      - 131
+      configurators:
+      - invalid
   - uid: 18998
     components:
     - type: Transform
       parent: 18697
       rot: -1.5707963267948966 rad
       pos: -0.5,7.5
+    - type: DeviceNetwork
+      deviceLists:
+      - 131
+      configurators:
+      - invalid
 - proto: GasVentPumpInlineDistro
   entities:
   - uid: 149
@@ -2402,36 +2427,66 @@ entities:
       parent: 18697
       rot: -1.5707963267948966 rad
       pos: -5.5,3.5
+    - type: DeviceNetwork
+      deviceLists:
+      - 131
+      configurators:
+      - invalid
   - uid: 150
     components:
     - type: Transform
       parent: 18697
       rot: -1.5707963267948966 rad
       pos: 0.5,3.5
+    - type: DeviceNetwork
+      deviceLists:
+      - 131
+      configurators:
+      - invalid
   - uid: 165
     components:
     - type: Transform
       parent: 18697
       rot: -1.5707963267948966 rad
       pos: -1.5,-6.5
+    - type: DeviceNetwork
+      deviceLists:
+      - 131
+      configurators:
+      - invalid
   - uid: 171
     components:
     - type: Transform
       parent: 18697
       rot: -1.5707963267948966 rad
       pos: 0.5,-6.5
+    - type: DeviceNetwork
+      deviceLists:
+      - 131
+      configurators:
+      - invalid
   - uid: 202
     components:
     - type: Transform
       parent: 18697
       rot: -1.5707963267948966 rad
       pos: -5.5,-6.5
+    - type: DeviceNetwork
+      deviceLists:
+      - 131
+      configurators:
+      - invalid
   - uid: 217
     components:
     - type: Transform
       parent: 18697
       rot: -1.5707963267948966 rad
       pos: -3.5,-2.5
+    - type: DeviceNetwork
+      deviceLists:
+      - 131
+      configurators:
+      - invalid
 - proto: GasVentScrubberInlineWaste
   entities:
   - uid: 164
@@ -2440,55 +2495,89 @@ entities:
       parent: 18697
       rot: -1.5707963267948966 rad
       pos: -3.5,-6.5
+    - type: DeviceNetwork
+      deviceLists:
+      - 131
+      configurators:
+      - invalid
   - uid: 169
     components:
     - type: Transform
       parent: 18697
       rot: 3.141592653589793 rad
       pos: -6.5,2.5
+    - type: DeviceNetwork
+      deviceLists:
+      - 131
+      configurators:
+      - invalid
   - uid: 172
     components:
     - type: Transform
       parent: 18697
       rot: 3.141592653589793 rad
       pos: -6.5,-5.5
+    - type: DeviceNetwork
+      deviceLists:
+      - 131
+      configurators:
+      - invalid
   - uid: 173
     components:
     - type: Transform
       parent: 18697
       rot: -1.5707963267948966 rad
       pos: -1.5,-2.5
+    - type: DeviceNetwork
+      deviceLists:
+      - 131
+      configurators:
+      - invalid
   - uid: 199
     components:
     - type: Transform
       parent: 18697
       rot: 1.5707963267948966 rad
       pos: -4.5,6.5
+    - type: DeviceNetwork
+      deviceLists:
+      - 131
+      configurators:
+      - invalid
   - uid: 201
     components:
     - type: Transform
       parent: 18697
       rot: 3.141592653589793 rad
       pos: 1.5,2.5
+    - type: DeviceNetwork
+      deviceLists:
+      - 131
+      configurators:
+      - invalid
   - uid: 203
     components:
     - type: Transform
       parent: 18697
       rot: 3.141592653589793 rad
       pos: 1.5,-5.5
+    - type: DeviceNetwork
+      deviceLists:
+      - 131
+      configurators:
+      - invalid
 - proto: GasVentScrubberWaste
   entities:
-  - uid: 28
-    components:
-    - type: Transform
-      parent: 18697
-      rot: 1.5707963267948966 rad
-      pos: -2.5,-1.5
   - uid: 19002
     components:
     - type: Transform
       parent: 18697
       pos: -1.5,7.5
+    - type: DeviceNetwork
+      deviceLists:
+      - 131
+      configurators:
+      - invalid
 - proto: GeneratorWallmountAPU
   entities:
   - uid: 129
@@ -2503,6 +2592,7 @@ entities:
     components:
     - type: Transform
       parent: 18697
+      rot: -4.71238898038469 rad
       pos: -6.5,9.5
     - type: PowerSupplier
       supplyRampRate: 5000
@@ -2693,10 +2783,21 @@ entities:
     - type: Transform
       parent: 18697
       pos: 0.64719963,6.487446
+- proto: HandLabeler
+  entities:
+  - uid: 73
+    components:
+    - type: Transform
+      parent: 18697
+      pos: -0.87446433,2.7568684
+    - type: HandLabeler
+      assignedLabel: North Area
 - proto: LockableButtonCommand
   entities:
   - uid: 102
     components:
+    - type: MetaData
+      name: lockable button (Shutters)
     - type: Transform
       parent: 18697
       rot: -1.5707963267948966 rad
@@ -2721,6 +2822,10 @@ entities:
         108:
         - - Pressed
           - Toggle
+    - type: Label
+      currentLabel: Shutters
+    - type: NameModifier
+      baseName: lockable button
 - proto: LockerWallEvacRepairFilled
   entities:
   - uid: 18937
@@ -3640,7 +3745,7 @@ entities:
       pos: 2.5,10.5
 - proto: WallWeaponCapacitorRecharger
   entities:
-  - uid: 23
+  - uid: 28
     components:
     - type: Transform
       parent: 18697
