@@ -276,15 +276,17 @@
   - type: Sprite
     sprite: Clothing/Back/Backpacks/ertchaplain.rsi
 
-- type: entity
-  parent: ClothingBackpackERTSecurity
-  id: ClothingBackpackDeathSquad
-  name: death squad backpack
-  description: Holds the kit of CentComm's most feared agents.
-  components:
-    - type: Storage
-      grid:
-      - 0,0,7,6
+# Carpmosia-start - Remove Deathsquad
+# - type: entity
+#   parent: ClothingBackpackERTSecurity
+#   id: ClothingBackpackDeathSquad
+#   name: death squad backpack
+#   description: Holds the kit of CentComm's most feared agents.
+#   components:
+#     - type: Storage
+#       grid:
+#       - 0,0,7,6
+# Carpmosia-end - Remove Deathsquad
 
 #Syndicate
 - type: entity

@@ -1282,23 +1282,25 @@
   - type: PresetIdCard
     job: ERTSecurity
 
-- type: entity
-  parent: IDCardStandard
-  id: CentcomIDCardDeathsquad
-  name: death squad ID card
-  components:
-  - type: Sprite
-    layers:
-    - state: centcom
-    - state: stripe_top
-      color: *color-centcomm-top
-    - state: stripe_bottom
-      color: *color-centcomm-bottom
-    - sprite: *icon-rsi
-      offset: *icon-offset
-      state: DeathSquad
-  - type: PresetIdCard
-    job: DeathSquad
+# Carpmosia-start - Remove Deathsquad
+# - type: entity
+#   parent: IDCardStandard
+#   id: CentcomIDCardDeathsquad
+#   name: death squad ID card
+#   components:
+#   - type: Sprite
+#     layers:
+#     - state: centcom
+#     - state: stripe_top
+#       color: *color-centcomm-top
+#     - state: stripe_bottom
+#       color: *color-centcomm-bottom
+#     - sprite: *icon-rsi
+#       offset: *icon-offset
+#       state: DeathSquad
+#   - type: PresetIdCard
+#     job: DeathSquad
+# Carpmosia-end - Remove Deathsquad
 
 - type: entity
   parent: IDCardStandard

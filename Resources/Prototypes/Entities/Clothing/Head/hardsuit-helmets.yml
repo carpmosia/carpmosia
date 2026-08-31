@@ -933,31 +933,33 @@
     zombificationResistanceCoefficient: 0.75
 
 #Deathsquad Hardsuit
-- type: entity
-  parent: [ BaseCentcommContraband, ClothingHeadHardsuitBase ]
-  id: ClothingHeadHelmetHardsuitDeathsquad
-  name: deathsquad hardsuit helmet
-  description: A robust helmet for special operations.
-  components:
-  - type: BreathMask
-  - type: Sprite
-    sprite: Clothing/Head/Hardsuits/deathsquad.rsi
-  - type: Clothing
-    sprite: Clothing/Head/Hardsuits/deathsquad.rsi
-  - type: PressureProtection
-    highPressureMultiplier: 0.08
-    lowPressureMultiplier: 1000
-  - type: FireProtection
-    reduction: 0.2
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.80
-        Slash: 0.80
-        Piercing: 0.80
-        Heat: 0.80
-        Radiation: 0.80
-        Caustic: 0.95
+# Carpmosia-start - Remove Deathsquad
+# - type: entity
+#   parent: [ BaseCentcommContraband, ClothingHeadHardsuitBase ]
+#   id: ClothingHeadHelmetHardsuitDeathsquad
+#   name: deathsquad hardsuit helmet
+#   description: A robust helmet for special operations.
+#   components:
+#   - type: BreathMask
+#   - type: Sprite
+#     sprite: Clothing/Head/Hardsuits/deathsquad.rsi
+#   - type: Clothing
+#     sprite: Clothing/Head/Hardsuits/deathsquad.rsi
+#   - type: PressureProtection
+#     highPressureMultiplier: 0.08
+#     lowPressureMultiplier: 1000
+#   - type: FireProtection
+#     reduction: 0.2
+#   - type: Armor
+#     modifiers:
+#       coefficients:
+#         Blunt: 0.80
+#         Slash: 0.80
+#         Piercing: 0.80
+#         Heat: 0.80
+#         Radiation: 0.80
+#         Caustic: 0.95
+# Carpmosia-end - Remove Deathsquad
 
 #MISC. HARDSUITS
 #Clown Hardsuit

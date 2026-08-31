@@ -489,13 +489,15 @@
     state: CBURN
   jobName: job-name-cburn
 
-- type: jobIcon
-  parent: JobIcon
-  id: JobIconDeathSquad
-  icon:
-    sprite: *icon-rsi
-    state: DeathSquad
-  jobName: job-name-deathsquad
+# Carpmosia-start - Remove Deathsquad
+# - type: jobIcon
+#   parent: JobIcon
+#   id: JobIconDeathSquad
+#   icon:
+#     sprite: *icon-rsi
+#     state: DeathSquad
+#   jobName: job-name-deathsquad
+# Carpmosia-end - Remove Deathsquad
 
 - type: jobIcon
   parent: JobIcon
