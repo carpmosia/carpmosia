@@ -51,14 +51,3 @@
     startAnnouncement: station-event-ERT-sent-chap
   - type: LoadMapRule
     gridPath: /Maps/_Carpmosia/Shuttles/ShuttleEvent/ERTchap.yml
-
-- type: entity
-  id: AdmemeERTDeathsquad
-  parent: BaseUnknownShuttleRule
-  components:
-  - type: StationEvent
-    startAnnouncement: null #Not needed, epsilon is enough #TODO: reparent to unnanounced shuttle rule and remove this when that's added
-  - type: LoadMapRule
-    gridPath: /Maps/_Carpmosia/Shuttles/ShuttleEvent/ERTdeathsquad.yml
-  - type: AlertLevelInterceptionRule
-    alertLevel: epsilon

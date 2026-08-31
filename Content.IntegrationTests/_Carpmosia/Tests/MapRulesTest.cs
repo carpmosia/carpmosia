@@ -1,22 +1,15 @@
 #nullable enable
-using Content.IntegrationTests.Fixtures.Attributes;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using Content.IntegrationTests.Fixtures;
+using Content.IntegrationTests.Fixtures.Attributes;
 using Content.IntegrationTests.Utility;
-using Content.Server.Atmos.Monitor.Components;
-using Content.Server.DeviceLinking.Components;
-using Content.Server.Power.Components;
-using Content.Shared.Atmos.Components;
-using Content.Shared.Construction.Components;
-using Content.Shared.Light.Components;
-using Content.Shared.Wall;
 using Robust.Shared.ContentPack;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Maths;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using YamlDotNet.RepresentationModel;
 
 namespace Content.IntegrationTests.Tests;
@@ -27,6 +20,7 @@ public sealed partial class MapRulesTest : GameTest
     private static readonly string[] Exceptions = [
        "/Maps/_Carpmosia/Legacy/", // We ain't testing legacy ever
        // Maps pending fixes
+       "/Maps/_Carpmosia/lampocteis.yml", // https://github.com/carpmosia/carpmosia/pull/603
        "/Maps/_Carpmosia/feint.yml",
        "/Maps/_Carpmosia/oasis.yml",
        "/Maps/_Carpmosia/packed.yml",
@@ -38,231 +32,81 @@ public sealed partial class MapRulesTest : GameTest
 
     private static readonly ResPath[] TestScope = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", true).Where(x => !Exceptions.Any(y => x.ToString().StartsWith(y)))];
 
-    private static readonly EntProtoId LVCable = "CableApcExtension";
-    private static readonly EntProtoId MVCable = "CableMV";
-    private static readonly EntProtoId HVCable = "CableHV";
-
-    private static readonly EntProtoId[] WallmountWhitelist = [
-        "RandomPosterAny",
-        "RandomPosterContraband",
-        "RandomPosterLegit",
-        "RandomPainting",
-        "PlaqueAtmos",
-    ];
-
-    private static readonly EntProtoId[] WallmountSubstations = [
-        "SubstationWallBasic",
-        "BaseSubstationWall"
+    // Skip station specific tests on these maps
+    private static readonly string[] NonStations = [
+       "/Maps/_Carpmosia/Terminals/",
+       "/Maps/_Carpmosia/Shuttles/",
+       "/Maps/_Carpmosia/centcomm.yml",
     ];
 
     [SidedDependency(Side.Server)] private readonly IResourceManager _resMan = null!;
+    [SidedDependency(Side.Server)] private readonly IComponentFactory _compFact = null!;
+
+    private readonly record struct ParsedRoot(
+        uint[] MapIds,
+        uint[] GridIds,
+        Dictionary<uint, EntProtoId> Tilemap,
+        Dictionary<EntProtoId, Dictionary<uint, YamlSequenceNode>> Entities
+    );
 
     [Test]
     [TestCaseSource(nameof(TestScope))]
-    public void TestMappingGuidelines(ResPath map)
+    public void TestMapRules(ResPath map)
     {
-        if (LoadMapYaml(map, _resMan) is not { } root)
+        if (LoadYaml(map, _resMan) is not YamlMappingNode yamlRoot)
             return;
 
-        if (!root.TryGetNode<YamlSequenceNode>("entities", out var ents))
-            return;
+        // If any of these fail, you have a malformed map file
+        // meta
+        Assert.That(yamlRoot.TryGetNode<YamlSequenceNode>("maps", out var yamlMaps));
+        Assert.That(yamlRoot.TryGetNode<YamlSequenceNode>("grids", out var yamlGrids));
+        // orphans
+        // nullspace
+        Assert.That(yamlRoot.TryGetNode<YamlMappingNode>("tilemap", out var yamlTilemap));
+        Assert.That(yamlRoot.TryGetNode<YamlSequenceNode>("entities", out var yamlEntities));
+
+        var mapIds = yamlMaps!.Select(x => (uint)x.AsInt()).ToArray();
+        var gridIds = yamlGrids!.Select(x => (uint)x.AsInt()).ToArray();
+        var tilemap = yamlTilemap!.Select(x => ((uint)x.Key.AsInt(), (EntProtoId)x.Value.AsString())).ToDictionary();
+        var entities = yamlEntities!
+            .Select(x => ((EntProtoId)x["proto"].AsString(), (YamlSequenceNode)x["entities"]))
+            .GroupBy(x => x.Item1)
+            .ToDictionary(
+                g => g.Key,
+                g => g.SelectMany(x => x.Item2.ToDictionary(x => (uint)x["uid"].AsInt(), x => (YamlSequenceNode)x["components"])).ToDictionary()
+            );
+
+        ParsedRoot root = new(mapIds, gridIds, tilemap, entities);
 
         List<string> errors = [
-            ..TestNonWallmountEntitiesUnderWalls(ents),
-            ..TestMissingConnections(ents),
-            ..TestMissingLabels(ents),
-            ..TestAnchorableDuplicates(ents),
-            ..TestUnlinkedAtmosDevices(ents),
+          ..TestAnchorableDuplicates(root),
+          ..TestMissingConnections(root),
+          ..TestMissingLabels(root),
+          ..TestNoCenteredGrid(root),
+          ..TestNonWallmountsUnderWalls(root),
+          ..TestMissingMapGridMetadata(root),
+          ..TestTinyGrids(root),
+          ..TestUnlinkedAtmosDevices(root),
         ];
+
+        // Station specific tests
+        if (!NonStations.Any(x => map.ToString().StartsWith(x)))
+        {
+            errors.AddRange([
+                ..TestMandatoryStationEntities(root),
+            ]);
+        }
 
         // Assert one large list of errors instead of Assert.Multiple to avoid 5 morbillion stacktraces
         Assert.That(errors, Has.Count.EqualTo(0), $"Found {errors.Count} issues:\n{string.Join("\n", errors)}");
     }
 
-    private List<string> TestNonWallmountEntitiesUnderWalls(YamlSequenceNode entities)
-    {
-        var walls = GetPrototypeIds<IsRoofComponent>();
-        var wallmounts = GetPrototypeIds<WallMountComponent>();
-        var wallPos = GetComponents(entities, walls.Contains, GetTilePos);
-
-        var errors = new List<string>();
-
-        foreach (var proto in entities)
-        {
-            EntProtoId protoId = proto["proto"].AsString();
-
-            // Skip the walls themselves
-            if (walls.Contains(protoId))
-                continue;
-
-            // Skip wallmount entities
-            if (wallmounts.Contains(protoId))
-                continue;
-
-            // Skip whitelisted entities
-            if (WallmountWhitelist.Contains(protoId))
-                continue;
-
-            foreach (var ent in (YamlSequenceNode)proto["entities"])
-            {
-                // Skip invalid transforms
-                if (GetTilePos(ent) is not { } trans)
-                    continue;
-
-                if (!wallPos.Contains(trans))
-                    continue;
-
-                errors.Add($"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) mapped under a wall at tile {trans.Item2}");
-            }
-        }
-
-        return errors;
-    }
-
-    private List<string> TestMissingConnections(YamlSequenceNode entities)
-    {
-        var apcs = GetPrototypeIds<ApcComponent>();
-
-        var lvPos = GetComponents(entities, x => x == LVCable, GetTilePos);
-        var mvPos = GetComponents(entities, x => x == MVCable, GetTilePos);
-        var hvPos = GetComponents(entities, x => x == HVCable, GetTilePos);
-
-        var errors = new List<string>();
-
-        foreach (var proto in entities)
-        {
-            EntProtoId protoId = proto["proto"].AsString();
-
-            var isApc = apcs.Contains(protoId);
-            var isSub = WallmountSubstations.Contains(protoId);
-
-            // Skip unrelated entities
-            if (!isApc && !isSub)
-                continue;
-
-            foreach (var ent in (YamlSequenceNode)proto["entities"])
-            {
-                // Skip invalid transforms
-                if (GetTilePosWithRot(ent) is not { } trans)
-                    continue;
-                var (grid, (x, y), rot) = trans;
-                var off = Angle.FromDegrees(rot).GetDir().ToIntVec();
-                var offPos = (x + off.X, y + off.Y);
-
-                if (isApc && !lvPos.Contains((grid, offPos)))
-                    errors.Add($"Grid {grid} contains {protoId} ({ent["uid"]}) that is missing an LV cable at {offPos}");
-
-                if (!mvPos.Contains((grid, offPos)))
-                    errors.Add($"Grid {grid} contains {protoId} ({ent["uid"]}) that is missing an MV cable at {offPos}");
-
-                if (isSub && !hvPos.Contains((grid, offPos)))
-                    errors.Add($"Grid {grid} contains {protoId} ({ent["uid"]}) that is missing an HV cable at {offPos}");
-            }
-        }
-
-        return errors;
-    }
-
-    private List<string> TestMissingLabels(YamlSequenceNode entities)
-    {
-        List<EntProtoId> targets = [
-            ..GetPrototypeIds<PowerNetworkBatteryComponent>(),
-            ..GetPrototypeIds<AirAlarmComponent>(),
-            ..GetPrototypeIds<SignalSwitchComponent>()
-        ];
-
-        var errors = new List<string>();
-
-        foreach (var proto in entities)
-        {
-            EntProtoId protoId = proto["proto"].AsString();
-
-            // Skip unrelated entities
-            if (!targets.Contains(protoId))
-                continue;
-
-            foreach (var ent in (YamlSequenceNode)proto["entities"])
-            {
-                // Skip invalid transforms
-                if (GetTilePos(ent) is not { } trans)
-                    continue;
-
-                if (GetComp(ent, "Label") is { } label && (label.HasNode("currentLabel") || label.HasNode("localizedLabel")))
-                    continue;
-
-                errors.Add($"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) that is missing a label at {trans.Item2}");
-            }
-        }
-
-        return errors;
-    }
-
-    private List<string> TestAnchorableDuplicates(YamlSequenceNode entities)
-    {
-        var anchorables = GetPrototypeIds<AnchorableComponent>();
-
-        var errors = new List<string>();
-
-        foreach (var proto in anchorables)
-        {
-            foreach (var ((grid, (x, y), _), count) in GetComponents(entities, x => x == proto, GetApproxTransform)
-                .GroupBy(x => x).Where(x => x.Count() > 1).Select(x => (x.Key, x.Count())))
-            {
-                errors.Add($"Grid {grid} contains {count} duplicate {proto} at <{x / 10}, {y / 10}>");
-            }
-        }
-
-        return errors;
-    }
-
-    private List<string> TestUnlinkedAtmosDevices(YamlSequenceNode entities)
-    {
-        var gasPipeSensors = GetPrototypeIds<GasPipeSensorComponent>();
-        var airAlarms = GetPrototypeIds<AirAlarmComponent>();
-        var atmosMonitors = GetPrototypeIds<AtmosMonitorComponent>();
-
-        var errors = new List<string>();
-
-        foreach (var proto in entities)
-        {
-            EntProtoId protoId = proto["proto"].AsString();
-
-            // Gas pipe sensors don't need to be linked
-            if (gasPipeSensors.Contains(protoId))
-                continue;
-
-            var isAirAlarm = airAlarms.Contains(protoId);
-            var isAtmosMonitor = atmosMonitors.Contains(protoId);
-
-            // Skip unrelated entities
-            if (!(isAirAlarm || isAtmosMonitor))
-                continue;
-
-            foreach (var ent in (YamlSequenceNode)proto["entities"])
-            {
-                // Skip invalid transforms
-                if (GetTilePos(ent) is not { } trans)
-                    continue;
-
-                if (isAirAlarm && GetComp(ent, "DeviceList") is { })
-                    continue;
-
-                if (isAtmosMonitor && GetComp(ent, "DeviceNetwork") is { })
-                    continue;
-
-                errors.Add($"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) that doesn't have any connections at {trans.Item2}");
-            }
-        }
-
-        return errors;
-    }
-
-    private static YamlMappingNode? LoadMapYaml(ResPath map, IResourceManager resMan)
+    private static YamlNode? LoadYaml(ResPath map, IResourceManager resMan)
     {
         var rootedPath = map.ToRootedPath();
         if (!resMan.TryContentFileRead(rootedPath, out var fileStream))
         {
-            Assert.Fail($"Map not found: {rootedPath}");
+            Assert.Fail($"File not found: {rootedPath}");
             return null;
         }
 
@@ -270,25 +114,20 @@ public sealed partial class MapRulesTest : GameTest
         var yamlStream = new YamlStream();
         yamlStream.Load(reader);
 
-        return (YamlMappingNode)yamlStream.Documents[0].RootNode;
+        return yamlStream.Documents[0].RootNode;
     }
 
-    private static YamlMappingNode? GetComp(YamlNode entNode, string comp)
+    private YamlMappingNode? GetCompNode<T>(YamlSequenceNode comps) where T : IComponent, new()
     {
-        var ent = (YamlMappingNode)entNode;
-
-        if (!ent.TryGetNode<YamlSequenceNode>("components", out var comps))
-            return null;
-
-        if (comps.FirstOrDefault(x => x["type"].AsString() == comp) is not YamlMappingNode trans)
+        if (comps.FirstOrDefault(x => x["type"].AsString() == _compFact.CompName<T>()) is not YamlMappingNode trans)
             return null;
 
         return trans;
     }
 
-    private static (EntityUid, (int, int), int)? GetApproxTransform(YamlNode entNode)
+    private (EntityUid, Vector2i, int)? GetApproxTransform(YamlSequenceNode comps)
     {
-        if (GetComp(entNode, "Transform") is not { } trans)
+        if (GetCompNode<TransformComponent>(comps) is not { } trans)
             return null;
 
         if (!trans.TryGetNode("parent", out var rawParent))
@@ -314,17 +153,17 @@ public sealed partial class MapRulesTest : GameTest
         return (parent, pos, rot);
     }
 
-    private static (EntityUid, (int, int), int)? GetTilePosWithRot(YamlNode entNode)
+    private (EntityUid, Vector2i, int)? GetTilePosWithRot(YamlSequenceNode comps)
     {
-        if (GetApproxTransform(entNode) is not { } trans)
+        if (GetApproxTransform(comps) is not { } trans)
             return null;
         var (px, py) = trans.Item2;
         return (trans.Item1, ((int)Math.Floor(px / 10m), (int)Math.Floor(py / 10m)), trans.Item3);
     }
 
-    private static (EntityUid, (int, int))? GetTilePos(YamlNode entNode)
+    private (EntityUid, Vector2i)? GetTilePos(YamlSequenceNode comps)
     {
-        if (GetTilePosWithRot(entNode) is not { } trans)
+        if (GetTilePosWithRot(comps) is not { } trans)
             return null;
         return (trans.Item1, trans.Item2);
     }
@@ -334,14 +173,17 @@ public sealed partial class MapRulesTest : GameTest
         return [.. Pair.GetPrototypesWithComponent<T>().Select(x => x.Item1.ID)];
     }
 
-    private static List<T> GetComponents<T>(YamlSequenceNode entities, Func<EntProtoId, bool> filter, Func<YamlNode, T?> select) where T : struct
+    private static Dictionary<uint, T> DeserializeCompNodes<T>(Dictionary<EntProtoId, Dictionary<uint, YamlSequenceNode>> entities, IEnumerable<EntProtoId> filter, Func<YamlSequenceNode, T?> deserializer) where T : struct
     {
-        return [..entities
-            .Where(x => filter(x["proto"].AsString()))
-            .SelectMany(x => ((YamlSequenceNode)x["entities"])
-                .Select(select)
-                .OfType<T>()
-            )
-        ];
+        return entities
+            .Where(x => filter.Contains(x.Key))
+            .SelectMany(x => x.Value.Select(x => (x.Key, (T)deserializer(x.Value)!))).ToDictionary();
+    }
+
+    private float GetDistance((EntityUid, Vector2i) pos1, (EntityUid, Vector2i) pos2)
+    {
+        if (pos1.Item1 != pos2.Item1)
+            return float.NaN;
+        return (pos1.Item2 - pos2.Item2).Length;
     }
 }
