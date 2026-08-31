@@ -1,0 +1,61 @@
+- type: entity
+  parent: GasVentPump
+  id: GasVentPumpInline
+  suffix: Inline
+  components:
+  - type: NodeContainer
+    nodes:
+      pipe:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: Longitudinal
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/vent.rsi
+    layers:
+      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi
+        state: pipeBinaryConnectors
+        map: [ "enum.PipeVisualLayers.Pipe" ]
+      - state: vent_off
+        map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: GasVentPumpInline
+      Secondary: GasVentPumpInlineAlt1
+      Tertiary: GasVentPumpInlineAlt2
+      Quaternary: GasVentPumpInlineAlt3
+      Quinary: GasVentPumpInlineAlt4
+    spriteRsiPaths: {}
+  - type: Construction
+    graph: GasBinary
+    node: ventpumpInline
+
+- type: entity
+  parent: GasVentScrubber
+  id: GasVentScrubberInline
+  suffix: Inline
+  components:
+  - type: NodeContainer
+    nodes:
+      pipe:
+        !type:PipeNode
+        nodeGroupID: Pipe
+        pipeDirection: Longitudinal
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/scrubber.rsi
+    layers:
+      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi
+        state: pipeBinaryConnectors
+        map: [ "enum.PipeVisualLayers.Pipe" ]
+      - state: scrub_off
+        map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
+  - type: AtmosPipeLayers
+    alternativePrototypes:
+      Primary: GasVentScrubberInline
+      Secondary: GasVentScrubberInlineAlt1
+      Tertiary: GasVentScrubberInlineAlt2
+      Quaternary: GasVentScrubberInlineAlt3
+      Quinary: GasVentScrubberInlineAlt4
+    spriteRsiPaths: {}
+  - type: Construction
+    graph: GasBinary
+    node: ventscrubberInline

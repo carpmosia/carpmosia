@@ -1,13 +1,15 @@
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitDeathSquad
-  name: death squad uniform
-  description: Advanced armored jumpsuit used by special forces in special operations.
-  components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/deathsquad.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/deathsquad.rsi
+# Carpmosia-start - Remove Deathsquad
+# - type: entity
+#   parent: ClothingUniformBase
+#   id: ClothingUniformJumpsuitDeathSquad
+#   name: death squad uniform
+#   description: Advanced armored jumpsuit used by special forces in special operations.
+#   components:
+#   - type: Sprite
+#     sprite: Clothing/Uniforms/Jumpsuit/deathsquad.rsi
+#   - type: Clothing
+#     sprite: Clothing/Uniforms/Jumpsuit/deathsquad.rsi
+# Carpmosia-end - Remove Deathsquad
 
 - type: entity
   parent: ClothingUniformBase
