@@ -56,8 +56,6 @@ public abstract partial class SharedDisposalUnitSystem : EntitySystem
     [Dependency] private SharedTransformSystem _xform = default!;
     [Dependency] private INetManager _net = default!;
 
-    [Dependency] private EntityQuery<DisposalTaggerComponent> _taggerQuery = default!; // Carpmosia-edit - Better disposals
-
     public override void Initialize()
     {
         base.Initialize();
@@ -274,6 +272,18 @@ public abstract partial class SharedDisposalUnitSystem : EntitySystem
         UpdateVisualState(ent);
     }
 
+    // Carpmosia-start - Better disposals
+    /// <summary>
+    /// Auto tags any items sent if there is a DisposalTaggerComponent
+    /// </summary>
+    [SubscribeLocalEvent]
+    private void OnBeforeFlush(Entity<DisposalTaggerComponent> ent, ref BeforeDisposalFlushEvent args)
+    {
+        Dirty(ent);
+        args.Tags.Add(ent.Comp.Tag);
+    }
+    // Carpmosia-end - Better disposals
+
     /// <summary>
     /// Try to flush a disposal unit.
     /// </summary>
@@ -292,11 +302,6 @@ public abstract partial class SharedDisposalUnitSystem : EntitySystem
             SetEngage(ent, false);
             return false;
         }
-
-        // Carpmosia-start - Better disposals
-        if (_query.TryComp(ent, out var tagger))
-            beforeFlushArgs.Tags.Add(tagger.Tag);
-        // Carpmosia-end - Better disposals
 
         var xform = Transform(ent);
 
