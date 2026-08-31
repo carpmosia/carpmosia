@@ -5,7 +5,7 @@
   - type: StationEvent
     startAnnouncement: station-event-ERT-sent
   - type: LoadMapRule
-    gridPath: /Maps/_Carpmosia/Shuttles/ShuttleEvent/ERTmixed.yml
+    gridPath: /Maps/_Carpmosia/Shuttles/Event/ert_mixed.yml
 
 - type: entity
   id: AdmemeERTSec
@@ -14,7 +14,7 @@
   - type: StationEvent
     startAnnouncement: station-event-ERT-sent-sec
   - type: LoadMapRule
-    gridPath: /Maps/_Carpmosia/Shuttles/ShuttleEvent/ERTsec.yml
+    gridPath: /Maps/_Carpmosia/Shuttles/Event/ert_sec.yml
 
 - type: entity
   id: AdmemeERTMed
@@ -23,7 +23,7 @@
   - type: StationEvent
     startAnnouncement: station-event-ERT-sent-med
   - type: LoadMapRule
-    gridPath: /Maps/_Carpmosia/Shuttles/ShuttleEvent/ERTmed.yml
+    gridPath: /Maps/_Carpmosia/Shuttles/Event/ert_med.yml
 
 - type: entity
   id: AdmemeERTCburn
@@ -32,7 +32,7 @@
   - type: StationEvent
     startAnnouncement: station-event-ERT-sent-cburn
   - type: LoadMapRule
-    gridPath: /Maps/_Carpmosia/Shuttles/ShuttleEvent/ERTcburn.yml
+    gridPath: /Maps/_Carpmosia/Shuttles/Event/ert_cburn.yml
 
 - type: entity
   id: AdmemeERTEngi
@@ -41,7 +41,7 @@
   - type: StationEvent
     startAnnouncement: station-event-ERT-sent-engi
   - type: LoadMapRule
-    gridPath: /Maps/_Carpmosia/Shuttles/ShuttleEvent/ERTengi.yml
+    gridPath: /Maps/_Carpmosia/Shuttles/Event/ert_engi.yml
 
 - type: entity
   id: AdmemeERTChap
@@ -50,4 +50,4 @@
   - type: StationEvent
     startAnnouncement: station-event-ERT-sent-chap
   - type: LoadMapRule
-    gridPath: /Maps/_Carpmosia/Shuttles/ShuttleEvent/ERTchap.yml
+    gridPath: /Maps/_Carpmosia/Shuttles/Event/ert_chap.yml
