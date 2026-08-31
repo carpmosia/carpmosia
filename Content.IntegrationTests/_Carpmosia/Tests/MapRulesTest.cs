@@ -20,6 +20,7 @@ public sealed partial class MapRulesTest : GameTest
     private static readonly string[] Exceptions = [
        "/Maps/_Carpmosia/Legacy/", // We ain't testing legacy ever
        // Maps pending fixes
+       "/Maps/_Carpmosia/lampocteis.yml", // https://github.com/carpmosia/carpmosia/pull/603
        "/Maps/_Carpmosia/feint.yml",
        "/Maps/_Carpmosia/oasis.yml",
        "/Maps/_Carpmosia/packed.yml",
@@ -38,34 +39,61 @@ public sealed partial class MapRulesTest : GameTest
        "/Maps/_Carpmosia/centcomm.yml",
     ];
 
-    private const string Proto = "proto";
-    private const string Entities = "entities";
-
     [SidedDependency(Side.Server)] private readonly IResourceManager _resMan = null!;
+    [SidedDependency(Side.Server)] private readonly IComponentFactory _compFact = null!;
+
+    private readonly record struct ParsedRoot(
+        uint[] MapIds,
+        uint[] GridIds,
+        Dictionary<uint, EntProtoId> Tilemap,
+        Dictionary<EntProtoId, Dictionary<uint, YamlSequenceNode>> Entities
+    );
 
     [Test]
     [TestCaseSource(nameof(TestScope))]
     public void TestMapRules(ResPath map)
     {
-        if (LoadMapYaml(map, _resMan) is not { } root)
+        if (LoadYaml(map, _resMan) is not YamlMappingNode yamlRoot)
             return;
 
-        if (!root.TryGetNode<YamlSequenceNode>(Entities, out var ents))
-            return;
+        // If any of these fail, you have a malformed map file
+        // meta
+        Assert.That(yamlRoot.TryGetNode<YamlSequenceNode>("maps", out var yamlMaps));
+        Assert.That(yamlRoot.TryGetNode<YamlSequenceNode>("grids", out var yamlGrids));
+        // orphans
+        // nullspace
+        Assert.That(yamlRoot.TryGetNode<YamlMappingNode>("tilemap", out var yamlTilemap));
+        Assert.That(yamlRoot.TryGetNode<YamlSequenceNode>("entities", out var yamlEntities));
+
+        var mapIds = yamlMaps!.Select(x => (uint)x.AsInt()).ToArray();
+        var gridIds = yamlGrids!.Select(x => (uint)x.AsInt()).ToArray();
+        var tilemap = yamlTilemap!.Select(x => ((uint)x.Key.AsInt(), (EntProtoId)x.Value.AsString())).ToDictionary();
+        var entities = yamlEntities!
+            .Select(x => ((EntProtoId)x["proto"].AsString(), (YamlSequenceNode)x["entities"]))
+            .GroupBy(x => x.Item1)
+            .ToDictionary(
+                g => g.Key,
+                g => g.SelectMany(x => x.Item2.ToDictionary(x => (uint)x["uid"].AsInt(), x => (YamlSequenceNode)x["components"])).ToDictionary()
+            );
+
+        ParsedRoot root = new(mapIds, gridIds, tilemap, entities);
 
         List<string> errors = [
-          ..TestNonWallmountsUnderWalls(ents),
-          ..TestMissingConnections(ents),
-          ..TestMissingLabels(ents),
-          ..TestAnchorableDuplicates(ents),
-          ..TestUnlinkedAtmosDevices(ents),
+          ..TestAnchorableDuplicates(root),
+          ..TestMissingConnections(root),
+          ..TestMissingLabels(root),
+          ..TestNoCenteredGrid(root),
+          ..TestNonWallmountsUnderWalls(root),
+          ..TestMissingMapGridMetadata(root),
+          ..TestTinyGrids(root),
+          ..TestUnlinkedAtmosDevices(root),
         ];
 
         // Station specific tests
         if (!NonStations.Any(x => map.ToString().StartsWith(x)))
         {
             errors.AddRange([
-                //..TestMandatoryStationEntities(ents),
+                ..TestMandatoryStationEntities(root),
             ]);
         }
 
@@ -73,12 +101,12 @@ public sealed partial class MapRulesTest : GameTest
         Assert.That(errors, Has.Count.EqualTo(0), $"Found {errors.Count} issues:\n{string.Join("\n", errors)}");
     }
 
-    private static YamlMappingNode? LoadMapYaml(ResPath map, IResourceManager resMan)
+    private static YamlNode? LoadYaml(ResPath map, IResourceManager resMan)
     {
         var rootedPath = map.ToRootedPath();
         if (!resMan.TryContentFileRead(rootedPath, out var fileStream))
         {
-            Assert.Fail($"Map not found: {rootedPath}");
+            Assert.Fail($"File not found: {rootedPath}");
             return null;
         }
 
@@ -86,25 +114,20 @@ public sealed partial class MapRulesTest : GameTest
         var yamlStream = new YamlStream();
         yamlStream.Load(reader);
 
-        return (YamlMappingNode)yamlStream.Documents[0].RootNode;
+        return yamlStream.Documents[0].RootNode;
     }
 
-    private static YamlMappingNode? GetCompNode(YamlNode entNode, string comp)
+    private YamlMappingNode? GetCompNode<T>(YamlSequenceNode comps) where T : IComponent, new()
     {
-        var ent = (YamlMappingNode)entNode;
-
-        if (!ent.TryGetNode<YamlSequenceNode>("components", out var comps))
-            return null;
-
-        if (comps.FirstOrDefault(x => x["type"].AsString() == comp) is not YamlMappingNode trans)
+        if (comps.FirstOrDefault(x => x["type"].AsString() == _compFact.CompName<T>()) is not YamlMappingNode trans)
             return null;
 
         return trans;
     }
 
-    private static (EntityUid, Vector2i, int)? GetApproxTransform(YamlNode entNode)
+    private (EntityUid, Vector2i, int)? GetApproxTransform(YamlSequenceNode comps)
     {
-        if (GetCompNode(entNode, "Transform") is not { } trans)
+        if (GetCompNode<TransformComponent>(comps) is not { } trans)
             return null;
 
         if (!trans.TryGetNode("parent", out var rawParent))
@@ -130,17 +153,17 @@ public sealed partial class MapRulesTest : GameTest
         return (parent, pos, rot);
     }
 
-    private static (EntityUid, Vector2i, int)? GetTilePosWithRot(YamlNode entNode)
+    private (EntityUid, Vector2i, int)? GetTilePosWithRot(YamlSequenceNode comps)
     {
-        if (GetApproxTransform(entNode) is not { } trans)
+        if (GetApproxTransform(comps) is not { } trans)
             return null;
         var (px, py) = trans.Item2;
         return (trans.Item1, ((int)Math.Floor(px / 10m), (int)Math.Floor(py / 10m)), trans.Item3);
     }
 
-    private static (EntityUid, Vector2i)? GetTilePos(YamlNode entNode)
+    private (EntityUid, Vector2i)? GetTilePos(YamlSequenceNode comps)
     {
-        if (GetTilePosWithRot(entNode) is not { } trans)
+        if (GetTilePosWithRot(comps) is not { } trans)
             return null;
         return (trans.Item1, trans.Item2);
     }
@@ -150,15 +173,11 @@ public sealed partial class MapRulesTest : GameTest
         return [.. Pair.GetPrototypesWithComponent<T>().Select(x => x.Item1.ID)];
     }
 
-    private static List<T> DeserializeCompNodes<T>(YamlSequenceNode entities, IEnumerable<EntProtoId> filter, Func<YamlNode, T?> deserializer) where T : struct
+    private static Dictionary<uint, T> DeserializeCompNodes<T>(Dictionary<EntProtoId, Dictionary<uint, YamlSequenceNode>> entities, IEnumerable<EntProtoId> filter, Func<YamlSequenceNode, T?> deserializer) where T : struct
     {
-        return [..entities
-            .Where(x => filter.Contains(x[Proto].AsString()))
-            .SelectMany(x => ((YamlSequenceNode)x[Entities])
-                .Select(deserializer)
-                .OfType<T>()
-            )
-        ];
+        return entities
+            .Where(x => filter.Contains(x.Key))
+            .SelectMany(x => x.Value.Select(x => (x.Key, (T)deserializer(x.Value)!))).ToDictionary();
     }
 
     private float GetDistance((EntityUid, Vector2i) pos1, (EntityUid, Vector2i) pos2)
