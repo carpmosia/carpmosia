@@ -1,6 +1,7 @@
 - type: entity
   parent: BaseItem
   id: HandheldVitalsMonitor
+  suffix: health analyzer
   name: vitals monitor
   description: A hand-held scanner capable reading the subject's core vitals.
   components:
@@ -35,6 +36,7 @@
 - type: entity
   parent: [BaseMachinePowered, SmallConstructibleMachine, StructureWheeled]
   id: VitalsMonitor
+  suffix: health analyzer
   name: vitals monitor
   description: Keeps an eye on your patients' vitals. Drag and drop onto a patient to monitor them.
   components:
