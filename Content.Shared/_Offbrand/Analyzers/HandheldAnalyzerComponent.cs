@@ -1,3 +1,4 @@
+using Content.Shared.MedicalScanner;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
@@ -27,5 +28,5 @@ public sealed partial class HandheldAnalyzerComponent : Component
     public EntityWhitelist? Blacklist;
 
     [DataField(required: true)]
-    public Enum UiKey;
+    public Enum UiKey = HealthAnalyzerUiKey.Key;
 }

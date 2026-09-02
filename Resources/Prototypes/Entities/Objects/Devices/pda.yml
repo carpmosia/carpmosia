@@ -110,7 +110,7 @@
       enum.InstrumentUiKey.Key:
         type: InstrumentBoundUserInterface
       enum.HealthAnalyzerUiKey.Key:
-        type: HealthAnalyzerBoundUserInterface
+        type: HandheldVitalsAnalyzerBoundUserInterface # Carpmosia-edit - Offmed Port
   - type: RemoteStore # PDAs can access uplinks so they need this component.
   - type: Tag
     tags:
