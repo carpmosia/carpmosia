@@ -4,8 +4,8 @@ meta:
   engineVersion: 283.1.3
   forkId: carpmosia
   forkVersion: ""
-  time: 09/03/2026 12:00:08
-  entityCount: 466
+  time: 09/03/2026 12:26:22
+  entityCount: 473
 maps: []
 grids:
 - 1
@@ -413,6 +413,49 @@ entities:
     - type: ExplosionAirtightGrid
     - type: TileHistory
       chunkHistory: {}
+- proto: AirAlarm
+  entities:
+  - uid: 467
+    components:
+    - type: Transform
+      parent: 1
+      rot: -1.5707963267948966 rad
+      pos: 1.5,5.5
+  - uid: 468
+    components:
+    - type: Transform
+      parent: 1
+      pos: 2.5,9.5
+  - uid: 469
+    components:
+    - type: Transform
+      parent: 1
+      rot: -1.5707963267948966 rad
+      pos: 7.5,8.5
+  - uid: 470
+    components:
+    - type: Transform
+      parent: 1
+      rot: 1.5707963267948966 rad
+      pos: 4.5,-0.5
+  - uid: 471
+    components:
+    - type: Transform
+      parent: 1
+      rot: -1.5707963267948966 rad
+      pos: -0.5,-1.5
+  - uid: 472
+    components:
+    - type: Transform
+      parent: 1
+      rot: 3.141592653589793 rad
+      pos: 0.5,-4.5
+  - uid: 473
+    components:
+    - type: Transform
+      parent: 1
+      rot: 3.141592653589793 rad
+      pos: 2.5,2.5
 - proto: AirCanister
   entities:
   - uid: 2
