@@ -4,8 +4,8 @@ meta:
   engineVersion: 283.1.3
   forkId: carpmosia
   forkVersion: ""
-  time: 08/03/2026 15:52:36
-  entityCount: 441
+  time: 09/03/2026 11:16:23
+  entityCount: 436
 maps: []
 grids:
 - 1
@@ -647,7 +647,7 @@ entities:
     components:
     - type: Transform
       parent: 1
-      pos: 7.5,9.5
+      pos: 3.5,-1.5
   - uid: 38
     components:
     - type: Transform
@@ -673,21 +673,11 @@ entities:
     - type: Transform
       parent: 1
       pos: 5.5,10.5
-  - uid: 43
-    components:
-    - type: Transform
-      parent: 1
-      pos: -0.5,11.5
   - uid: 44
     components:
     - type: Transform
       parent: 1
       pos: 0.5,11.5
-  - uid: 45
-    components:
-    - type: Transform
-      parent: 1
-      pos: -0.5,-0.5
   - uid: 46
     components:
     - type: Transform
@@ -797,7 +787,7 @@ entities:
     components:
     - type: Transform
       parent: 1
-      pos: 5.5,6.5
+      pos: 2.5,-3.5
   - uid: 68
     components:
     - type: Transform
@@ -822,7 +812,7 @@ entities:
     components:
     - type: Transform
       parent: 1
-      pos: 1.5,-0.5
+      pos: 3.5,-3.5
   - uid: 73
     components:
     - type: Transform
@@ -918,6 +908,11 @@ entities:
     - type: Transform
       parent: 1
       pos: 5.5,4.5
+  - uid: 93
+    components:
+    - type: Transform
+      parent: 1
+      pos: 3.5,-2.5
 - proto: CableHV
   entities:
   - uid: 92
@@ -925,11 +920,6 @@ entities:
     - type: Transform
       parent: 1
       pos: 2.5,-1.5
-  - uid: 93
-    components:
-    - type: Transform
-      parent: 1
-      pos: 2.5,-0.5
   - uid: 94
     components:
     - type: Transform
@@ -957,6 +947,16 @@ entities:
       pos: 5.5,-3.5
 - proto: CableMV
   entities:
+  - uid: 43
+    components:
+    - type: Transform
+      parent: 1
+      pos: 2.5,-1.5
+  - uid: 45
+    components:
+    - type: Transform
+      parent: 1
+      pos: 3.5,-1.5
   - uid: 99
     components:
     - type: Transform
@@ -971,12 +971,7 @@ entities:
     components:
     - type: Transform
       parent: 1
-      pos: 2.5,-0.5
-  - uid: 102
-    components:
-    - type: Transform
-      parent: 1
-      pos: 3.5,-0.5
+      pos: 1.5,-1.5
   - uid: 103
     components:
     - type: Transform
@@ -987,11 +982,6 @@ entities:
     - type: Transform
       parent: 1
       pos: 2.5,1.5
-  - uid: 105
-    components:
-    - type: Transform
-      parent: 1
-      pos: -0.5,-0.5
   - uid: 106
     components:
     - type: Transform
@@ -1052,11 +1042,6 @@ entities:
     - type: Transform
       parent: 1
       pos: 2.5,8.5
-  - uid: 118
-    components:
-    - type: Transform
-      parent: 1
-      pos: 5.5,6.5
   - uid: 119
     components:
     - type: Transform
@@ -1072,11 +1057,6 @@ entities:
     - type: Transform
       parent: 1
       pos: 0.5,11.5
-  - uid: 122
-    components:
-    - type: Transform
-      parent: 1
-      pos: -0.5,11.5
   - uid: 123
     components:
     - type: Transform
@@ -1137,11 +1117,6 @@ entities:
     - type: Transform
       parent: 1
       pos: 6.5,9.5
-  - uid: 135
-    components:
-    - type: Transform
-      parent: 1
-      pos: 7.5,9.5
   - uid: 136
     components:
     - type: Transform
