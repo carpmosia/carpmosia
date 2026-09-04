@@ -63,3 +63,51 @@
     amount: 0.25
     categories: ["Heart"]
 
+# Carpmed Rad Sickness Status Effects
+
+- type: entity
+  parent: MobStatusEffectDebuff
+  id: StatusEffectMinorRadSickness
+  name: minor rad poisoning
+  components:
+  - type: MetabolicRateModifierStatusEffect
+    delta: 0.25
+
+- type: entity
+  parent: [ StatusEffectMinorRadSickness, StatusEffectWoozy ]
+  id: StatusEffectModerateRadSickness
+  name: moderate rad poisoning
+  components:
+  - type: MetabolicRateModifierStatusEffect
+    delta: 0.5
+  - type: DamageOverTimeStatusEffect
+    damages:
+      types:
+        Heat: 1
+
+- type: entity
+  parent: [ StatusEffectModerateRadSickness, StatusEffectSlowdown ]
+  id: StatusEffectSevereRadSickness
+  name: Severe rad poisoning
+  components:
+  - type: OrganDamageOverTimeStatusEffect
+    amount: 0.5
+    categories: ["Heart"]
+
+- type: entity
+  parent: MobStatusEffectBase
+  id: RadFlush
+  name: radiation treatment
+  components:
+  - type: RadiationFlushEffect
+    amount: 10
+
+
+- type: entity
+  parent: MobStatusEffectBase
+  id: RadFlushArith
+  name: arithrazine radiation treatment
+  components:
+  - type: RadiationFlushEffect
+    amount: 20
+

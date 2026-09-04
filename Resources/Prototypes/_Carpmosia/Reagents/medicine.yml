@@ -194,6 +194,10 @@
           types:
             Radiation: -3
             Blunt: 1.5
+      - !type:ModifyStatusEffect
+        effectProto: RadFlushArith
+        time: 0.5
+        type: Add
 
 - type: reagent
   id: Bicaridine
@@ -595,6 +599,10 @@
         - !type:ReagentCondition
           reagent: Hyronalin
           min: 30
+      - !type:ModifyStatusEffect
+        effectProto: RadFlush
+        time: 0.5
+        type: Add
 
 - type: reagent
   id: Ipecac

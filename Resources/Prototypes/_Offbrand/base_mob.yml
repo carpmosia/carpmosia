@@ -60,6 +60,11 @@
       60: StatusEffectSeverePain
       120: StatusEffectBlackoutPain
     mobThresholds: {}
+  - type: RadiationThresholds
+    thresholds:
+      25: StatusEffectMinorRadSickness
+      50: StatusEffectModerateRadSickness
+      75: StatusEffectSevereRadSickness
   - type: ShockAlerts
     alertCategory: Pain
     suppressedAlert: SuppressedPain
