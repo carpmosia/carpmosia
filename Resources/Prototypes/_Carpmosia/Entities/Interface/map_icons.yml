@@ -55,6 +55,15 @@
 - type: entity
   parent: BaseMapPreview
   categories: [ HideSpawnMenu ]
+  id: MapPreviewRail
+  name: Rail
+  components:
+  - type: Sprite
+    state: rail
+
+- type: entity
+  parent: BaseMapPreview
+  categories: [ HideSpawnMenu ]
   id: MapPreviewSaltern
   name: Saltern
   components:
