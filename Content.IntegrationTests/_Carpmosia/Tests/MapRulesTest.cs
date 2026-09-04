@@ -102,7 +102,7 @@ public sealed partial class MapRulesTest : GameTest
         ];
 
         // Temporarily excepted
-        if (TemporaryException.Any(y => map.ToString().StartsWith(y)))
+        if (!TemporaryException.Any(y => map.ToString().StartsWith(y)))
         {
             errors.AddRange([
                 ..TestNonWallmountsUnderWalls(root),
