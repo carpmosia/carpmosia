@@ -1,0 +1,280 @@
+- type: entity #whoopie component. adding this as additional parent and then we have haha-fartbuckle.
+  abstract: true
+  id: WhoopieBase
+  suffix: whoopie
+  components:
+  - type: Strap
+    buckleSound:
+      collection: Parp
+      params:
+        variation: 0.125
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          WhoopieCushion:
+            min: 1
+            max: 1
+
+#beds
+- type: entity
+  parent: [WhoopieBase, Bed]
+  id: WhoopieBed
+  components:
+  - type: Construction
+    graph: bed
+    node: bedWhoopie
+
+- type: entity
+  parent: [WhoopieBase, MedicalBed]
+  id: WhoopieMedicalBed
+  components:
+  - type: Construction
+    graph: bed
+    node: medicalbedWhoopie
+  - type: PlaceableSurface # has to be redefined here after Construction or constructing wont work (dang.)
+    placeCentered: true
+
+- type: entity
+  parent: [DogBed, WhoopieBase]
+  id: WhoopieDogBed
+  components:
+  - type: Construction
+    graph: bed
+    node: dogbedWhoopie
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank:
+            min: 1
+            max: 5
+          WhoopieCushion:
+            min: 1
+            max: 1
+
+- type: entity
+  parent: [WhoopieBase, Mattress]
+  id: WhoopieMattress
+  components:
+  - type: Construction
+    graph: bed
+    node: mattressWhoopie
+  - type: PlaceableSurface # has to be redefined here after Construction or constructing wont work (dang.)
+    placeCentered: true
+
+- type: entity
+  parent: [PsychBed, WhoopieBase]
+  id: WhoopiePsychBed
+  components:
+  - type: Construction
+    graph: bed
+    node: psychbedWhoopie
+  - type: PlaceableSurface # same here
+    placeCentered: true
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank:
+            min: 2
+            max: 2
+          WhoopieCushion:
+            min: 1
+            max: 1
+
+#seats/chairs
+- type: entity
+  parent: [WhoopieBase, Chair]
+  id: WhoopieChair
+  components:
+  - type: Construction
+    graph: Seat
+    node: chairWhoopie
+
+- type: entity 
+  parent: [WhoopieBase, ChairGreyscale]
+  id: WhoopieChairGreyscale
+  suffix: White, whoopie
+  components:
+  - type: Construction
+    graph: Seat
+    node: chairGreyscaleWhoopie
+
+- type: entity 
+  parent: [WhoopieBase, Stool]
+  id: WhoopieStool
+  components:
+  - type: Construction
+    graph: Seat
+    node: stoolWhoopie
+
+- type: entity
+  parent: [WhoopieBase, StoolBar]
+  id: WhoopieBarStool
+  components:
+  - type: Construction
+    graph: Seat
+    node: stoolBarWhoopie
+
+- type: entity
+  parent: [WhoopieBase, ChairBrass]
+  id: WhoopieChairBrass
+  components:
+  - type: Construction
+    graph: Seat
+    node: chairBrassWhoopie
+
+- type: entity
+  parent: [WhoopieBase, OfficeChairBase]
+  id: WhoopieChairOfficeLight
+  components:
+  - type: Construction
+    graph: Seat
+    node: chairOfficeWhoopie
+  - type: Sprite
+    state: office-white
+
+- type: entity 
+  parent: [WhoopieBase, ChairOfficeDark]
+  id: WhoopieChairOfficeDark
+  components:
+  - type: Construction
+    graph: Seat
+    node: chairOfficeDarkWhoopie
+
+- type: entity
+  parent: [WhoopieBase, ComfyChair]
+  id: WhoopieComfyChair
+  components:
+  - type: Construction
+    graph: Seat
+    node: chairComfyWhoopie
+
+- type: entity
+  parent: [WhoopieBase, ChairPilotSeat]
+  id: WhoopieChairPilotSeat
+  components:
+  - type: Construction
+    graph: Seat
+    node: chairPilotSeatWhoopie
+
+- type: entity
+  parent: [ChairWood, WhoopieBase]
+  id: WhoopieChairWood
+  components:
+  - type: Construction
+    graph: Seat
+    node: chairWoodWhoopie
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank:
+            min: 1
+            max: 1
+          WhoopieCushion:
+            min: 1
+            max: 1
+
+- type: entity
+  parent: [WhoopieBase, ChairMeat]
+  id: WhoopieChairMeat
+  components:
+  - type: Construction
+    graph: Seat
+    node: chairMeatWhoopie
+
+- type: entity
+  parent: [WhoopieBase, SteelBench]
+  id: WhoopieSteelBench
+  components:
+  - type: Construction
+    graph: Seat
+    node: chairSteelBenchWhoopie
+
+- type: entity
+  parent: [CardStool, WhoopieBase]
+  id: WhoopieCardStool
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialCardboard:
+            min: 1
+            max: 2
+          WhoopieCushion:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Construction
+    graph: Seat
+    node: stoolCardWhoopie
+
+- type: entity
+  parent: [WoodenBench, WhoopieBase]
+  id: WhoopieWoodenBench
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank:
+            min: 2
+            max: 4
+          WhoopieCushion:
+            min: 1
+            max: 1
+  - type: Construction
+    graph: Seat
+    node: chairWoodBenchWhoopie
+
+- type: entity
+  parent: [WhoopieBase, ChairXeno]
+  id: WhoopieChairXeno
+  components:
+  - type: Construction
+    graph: Seat
+    node: chairXenoWhoopie
