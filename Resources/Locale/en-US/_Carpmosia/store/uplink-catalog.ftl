@@ -3,3 +3,6 @@ uplink-mobsyndimothroach-desc = Call in a genetically engineered attack mothroac
 
 uplink-energysabre-name = Energy Sabre
 uplink-energysabre-desc = A stylish blade issued to the elite members of Syndicate High Command. Cuts through anything like butter!
+
+uplink-phototherapylaser-name = PhotoTherapy Laser
+uplink-phototherapylaser-desc = A HeavyDuty medication device that uses concentrated light capable of highly increasing cell division and regeneration of the target over multiple types of damage without needing to use any chemicals.
