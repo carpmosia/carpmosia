@@ -17,6 +17,11 @@ public sealed partial class MapRulesTest
         "BaseSubstationWall"
     ];
 
+    private static readonly EntProtoId[] WallmountGenerators = [
+        "GeneratorWallmountBasic",
+        "GeneratorWallmountAPU"
+    ];
+
     /// <summary>
     /// Ensures that all APC's and wallmount substations are properly connected
     /// </summary>
@@ -34,6 +39,7 @@ public sealed partial class MapRulesTest
         {
             var isApc = apcs.Contains(protoId);
             var isSub = WallmountSubstations.Contains(protoId);
+            var isGen = WallmountGenerators.Contains(protoId);
 
             // Skip unrelated entities
             if (!isApc && !isSub)
@@ -49,10 +55,10 @@ public sealed partial class MapRulesTest
                 if (isApc && !lvPos.ContainsValue(trans))
                     errors.Add($"Grid {trans.Item1} contains {protoId} ({uid}) that is missing an LV cable at {trans.Item2}");
 
-                if (!mvPos.ContainsValue(trans))
+                if ((isApc || isSub) && !mvPos.ContainsValue(trans))
                     errors.Add($"Grid {trans.Item1} contains {protoId} ({uid}) that is missing an MV cable at {trans.Item2}");
 
-                if (isSub && !hvPos.ContainsValue(trans))
+                if ((isSub || isGen) && !hvPos.ContainsValue(trans))
                     errors.Add($"Grid {trans.Item1} contains {protoId} ({uid}) that is missing an HV cable at {trans.Item2}");
             }
         }
