@@ -7,13 +7,19 @@ using Content.Server.NPC.Systems;
 using Content.Server.Popups;
 using Content.Shared.Atmos;
 using Content.Shared.Chat;
+using Content.Shared.Damage.Components; // Carpmosia-edit - Remove and replace Domain
+using Content.Shared.Damage.Systems; // Carpmosia-edit - Remove and replace Domain
 using Content.Shared.Dataset;
+using Content.Shared.FixedPoint; // Carpmosia-edit - Remove and replace Domain
+using Content.Shared.Gibbing; // Carpmosia-edit - Remove and replace Domain
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Pointing;
+using Content.Shared.Popups; // Carpmosia-edit - Remove and replace Domain
 using Content.Shared.Random.Helpers;
 using Content.Shared.RatKing;
 using Robust.Shared.Map;
+using Robust.Shared.Random; // Carpmosia-edit - Remove and replace Domain
 
 namespace Content.Server.RatKing
 {
@@ -22,8 +28,13 @@ namespace Content.Server.RatKing
     {
         [Dependency] private AtmosphereSystem _atmos = default!;
         [Dependency] private ChatSystem _chat = default!;
+        // Carpmosia-start - Remove and replace Domain
+        [Dependency] private DamageableSystem _damageableSystem = default!;
+        [Dependency] private GibbingSystem _gibbingSystem = default!;
+        // Carpmosia-end - Remove and replace Domain
         [Dependency] private HTNSystem _htn = default!;
         [Dependency] private HungerSystem _hunger = default!;
+        [Dependency] private IRobustRandom _random = default!; // Carpmosia-edit - Remove and replace Domain
         [Dependency] private NPCSystem _npc = default!;
         [Dependency] private PopupSystem _popup = default!;
 
@@ -34,6 +45,7 @@ namespace Content.Server.RatKing
             SubscribeLocalEvent<RatKingComponent, RatKingRaiseArmyActionEvent>(OnRaiseArmy);
             SubscribeLocalEvent<RatKingComponent, RatKingDomainActionEvent>(OnDomain);
             SubscribeLocalEvent<RatKingComponent, AfterPointedAtEvent>(OnPointedAt);
+            SubscribeLocalEvent<RatKingComponent, RatKingSacrificeActionEvent>(OnSacrifice); // Carpmosia-edit - Remove and replace Domain
         }
 
         /// <summary>
@@ -101,6 +113,27 @@ namespace Content.Server.RatKing
                 _npc.SetBlackboard(servant, NPCBlackboard.CurrentOrderedTarget, args.Pointed);
             }
         }
+
+        // Carpmosia-start - Remove and replace Domain
+        private void OnSacrifice(Entity<RatKingComponent> ent, ref RatKingSacrificeActionEvent args)
+        {
+            if (args.Handled)
+                return;
+
+            if (ent.Comp.Servants.Count <= 0)
+            {
+                _popup.PopupEntity(Loc.GetString("rat-king-sacrifice-fail-servants"), ent, ent);
+                return;
+            }
+
+            _gibbingSystem.Gib(_random.Pick(ent.Comp.Servants), false);
+            _damageableSystem.HealDistributed(ent.Owner, ent.Comp.SacrificeHeal);
+
+            _popup.PopupEntity(Loc.GetString("rat-king-sacrifice-succeeds"), ent, ent, PopupType.Large);
+
+            args.Handled = true;
+        }
+        // Carpmosia-end - Remove and replace Domain
 
         public override void UpdateServantNpc(EntityUid uid, RatKingOrderType orderType)
         {
