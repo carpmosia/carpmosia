@@ -28,7 +28,7 @@
   id: BasicAntagEventsTable
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
-    - id: ClosetSkeleton
+    # - id: ClosetSkeleton
     - id: KingRatMigration
     - id: RevenantSpawn
     - !type:NestedSelector
@@ -180,17 +180,17 @@
     duration: 1
   - type: ClericalErrorRule
 
-- type: entity
-  parent: BaseGameRule
-  id: ClosetSkeleton
-  components:
-  - type: StationEvent
-    weight: 5
-    duration: 1
-    occursDuringRoundEnd: false
-    minimumPlayers: 10
-  - type: RandomEntityStorageSpawnRule
-    prototype: MobSkeletonCloset
+# - type: entity
+#   parent: BaseGameRule
+#   id: ClosetSkeleton
+#   components:
+#   - type: StationEvent
+#     weight: 5
+#     duration: 1
+#     occursDuringRoundEnd: false
+#     minimumPlayers: 10
+#   - type: RandomEntityStorageSpawnRule
+#     prototype: MobSkeletonCloset
 
 - type: entity
   parent: BaseAntagGhostRoleRule

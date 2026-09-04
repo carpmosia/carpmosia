@@ -874,7 +874,7 @@
     - state: icon-diagnosis
   - type: ItemBorgModule
     hands:
-    - item: HandheldHealthAnalyzer
+    - item: HandheldVitalsMonitor # Carpmosia-edit - Offmed port
     - item: ClothingNeckStethoscope
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: diagnosis-module }
@@ -890,7 +890,7 @@
     - state: icon-treatment
   - type: ItemBorgModule
     hands:
-    - item: HandheldHealthAnalyzer
+    - item: HandheldVitalsMonitor # Carpmosia-edit - Offmed port
     - item: AdvancedJetInjector
     - item: Gauze
       hand:
@@ -927,7 +927,7 @@
     - state: icon-defib
   - type: ItemBorgModule
     hands:
-    - item: HandheldHealthAnalyzer
+    - item: HandheldVitalsMonitor # Carpmosia-edit - Offmed port
     - item: DefibrillatorOneHandedUnpowered
     - item: Crowbar
     - item: BorgFireExtinguisher
@@ -982,6 +982,15 @@
           - FitsInDispenser
           tags:
           - ChemDispensable
+    # Begin Offbrand
+    - item: IVBag
+      hand:
+        emptyLabel: borg-slot-iv-bag-empty
+        emptyRepresentative: IVBag
+        whitelist:
+          tags:
+          - IVBag
+    # End Offbrand
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: chem-module }
 
@@ -997,7 +1006,7 @@
     - state: icon-chem
   - type: ItemBorgModule
     hands:
-    - item: HandheldHealthAnalyzer
+    - item: HandheldVitalsMonitor # Carpmosia-edit - Offmed port
     - item: BorgHypo
     - item: Gauze
       hand:

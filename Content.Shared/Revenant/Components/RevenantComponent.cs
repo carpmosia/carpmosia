@@ -216,6 +216,17 @@ public sealed partial class RevenantComponent : Component
     #endregion
 
     /// <summary>
+    /// Offbrand - how much cold damage to deal on harvest
+    /// </summary>
+    [DataField]
+    public Content.Shared.Damage.DamageSpecifier HarvestDamage = new()
+    {
+        DamageDict = new()
+        {
+            { "Cold", 200 },
+        }
+    };
+    
     /// The scaling for passively chilling surroundings.
     /// </summary>
     [DataField]

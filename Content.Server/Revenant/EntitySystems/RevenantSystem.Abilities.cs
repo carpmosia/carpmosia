@@ -31,6 +31,7 @@ using Robust.Shared.Map.Components;
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
 using Content.Shared.IdentityManagement;
+using Content.Shared._Offbrand.Wounds; // Offbrand
 
 namespace Content.Server.Revenant.EntitySystems;
 
@@ -40,12 +41,13 @@ public sealed partial class RevenantSystem
     [Dependency] private ThrowingSystem _throwing = default!;
     [Dependency] private EntityStorageSystem _entityStorage = default!;
     [Dependency] private SharedAppearanceSystem _appearance = default!;
-    [Dependency] private MobThresholdSystem _mobThresholdSystem = default!;
+    // [Dependency] private MobThresholdSystem _mobThresholdSystem = default!; // Offbrand - unused
     [Dependency] private GhostSystem _ghost = default!;
     [Dependency] private TileSystem _tile = default!;
     [Dependency] private EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private SharedTransformSystem _transformSystem = default!;
     [Dependency] private SharedMapSystem _mapSystem = default!;
+    [Dependency] private HealthRankingSystem _healthRanking = default!; // Offbrand
 
     [Dependency] private EntityQuery<TagComponent> _tagQuery = default!;
     [Dependency] private EntityQuery<ItemComponent> _itemQuery = default!;
@@ -156,7 +158,7 @@ public sealed partial class RevenantSystem
             return;
         }
 
-        if (_mobStateQuery.TryComp(target, out var mobstate) && mobstate.CurrentState == MobState.Alive && !HasComp<SleepingComponent>(target))
+        if (!_healthRanking.IsCritical(target) && !HasComp<SleepingComponent>(target)) // Offbrand
         {
             _popup.PopupEntity(Loc.GetString("revenant-soul-too-powerful"), target, uid);
             return;
@@ -218,7 +220,7 @@ public sealed partial class RevenantSystem
         if (!_mobStateQuery.HasComp(args.Args.Target))
             return;
 
-        if (_mobState.IsAlive(args.Args.Target.Value) || _mobState.IsCritical(args.Args.Target.Value))
+        if (_mobState.IsAlive(args.Args.Target.Value) || _healthRanking.IsCritical(args.Args.Target.Value)) // Offbrand
         {
             _popup.PopupEntity(Loc.GetString("revenant-max-essence-increased"), uid, uid);
             component.EssenceRegenCap += component.MaxEssenceUpgradeAmount;
@@ -226,11 +228,7 @@ public sealed partial class RevenantSystem
 
         //KILL THEMMMM
 
-        if (!_mobThresholdSystem.TryGetThresholdForState(args.Args.Target.Value, MobState.Dead, out var damage))
-            return;
-        DamageSpecifier dspec = new();
-        dspec.DamageDict.Add("Cold", damage.Value);
-        _damage.ChangeDamage(args.Args.Target.Value, dspec, true, origin: uid);
+        _damage.ChangeDamage(args.Args.Target.Value, component.HarvestDamage, true, origin: uid);
 
         args.Handled = true;
     }

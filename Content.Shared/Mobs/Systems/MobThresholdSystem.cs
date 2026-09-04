@@ -442,6 +442,15 @@ public sealed partial class MobThresholdSystem : EntitySystem
         UpdateAllEffects((target, thresholds, mobState, damageable), mobState.CurrentState);
     }
 
+    // Begin Offbrand
+    [SubscribeLocalEvent]
+    private void MobThresholdMapInit(Entity<MobThresholdsComponent> ent, ref MapInitEvent args)
+    {
+        var overlayUpdate = new _Offbrand.Wounds.PotentiallyUpdateDamageOverlayEvent(ent);
+        RaiseLocalEvent(ent, ref overlayUpdate);
+    }
+    // End Offbrand
+
     private void MobThresholdShutdown(EntityUid target, MobThresholdsComponent component, ComponentShutdown args)
     {
         if (component.TriggersAlerts)

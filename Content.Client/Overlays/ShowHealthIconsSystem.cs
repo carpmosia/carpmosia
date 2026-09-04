@@ -5,6 +5,8 @@ using Content.Shared.Overlays;
 using Content.Shared.StatusIcon;
 using Content.Shared.StatusIcon.Components;
 using Content.Shared.Damage.Components;
+using Content.Shared._Offbrand.Wounds; // Offbrand
+using Content.Shared.Mobs; // Offbrand
 
 namespace Content.Client.Overlays;
 
@@ -59,6 +61,42 @@ public sealed partial class ShowHealthIconsSystem : EquipmentHudSystem<ShowHealt
 
         args.StatusIcons.AddRange(healthIcons);
     }
+
+    // Begin Offbrand
+    [SubscribeLocalEvent]
+    private void OnGetStatusIconsEvent(Entity<BrainDamageThresholdsComponent> ent, ref GetStatusIconsEvent args)
+    {
+        if (!IsActive)
+            return;
+
+        var healthIcons = DecideBrainHealthIcons(ent);
+        args.StatusIcons.AddRange(healthIcons);
+    }
+
+    private List<HealthIconPrototype> DecideBrainHealthIcons(Entity<BrainDamageThresholdsComponent> ent)
+    {
+        if (ent.Comp.CurrentState == MobState.Dead)
+        {
+            return new() { ProtoMan.Index(ent.Comp.DeadIcon) };
+        }
+
+        var current = ent.Comp.DisplayDamage;
+        var max = ent.Comp.DisplayMaxDamage;
+
+        if (ent.Comp.CurrentState == MobState.Critical || ent.Comp.DisplayOxygen == 0)
+        {
+            var amount = ent.Comp.CriticalDamageIcons.Count;
+            var idx = Math.Clamp((int)Math.Floor(amount - (amount / max.Double()) * current.Double()), 0, amount-1);
+            return new() { ProtoMan.Index(ent.Comp.CriticalDamageIcons[idx]) };
+        }
+        else
+        {
+            var amount = ent.Comp.AliveDamageIcons.Count;
+            var idx = Math.Clamp((int)Math.Floor(amount - (amount / max.Double()) * current.Double()), 0, amount-1);
+            return new() { ProtoMan.Index(ent.Comp.AliveDamageIcons[idx]) };
+        }
+    }
+    // End Offbrand
 
     private IReadOnlyList<HealthIconPrototype> DecideHealthIcons(Entity<InjurableComponent> entity)
     {

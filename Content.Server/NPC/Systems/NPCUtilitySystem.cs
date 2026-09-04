@@ -34,6 +34,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Temperature.Components;
 using Content.Shared.Stealth;
 using Content.Shared.Stealth.Components;
+using Content.Shared._Offbrand.Wounds; // Offbrand
 
 namespace Content.Server.NPC.Systems;
 
@@ -59,6 +60,7 @@ public sealed partial class NPCUtilitySystem : EntitySystem
     [Dependency] private TurretTargetSettingsSystem _turretTargetSettings = default!;
     [Dependency] private DamageableSystem _damageable = default!;
     [Dependency] private SharedStealthSystem _stealth = default!;
+    [Dependency] private HealthRankingSystem _healthRanking = default!; // Offbrand
     [Dependency] private EntityQuery<PuddleComponent> _puddleQuery = default!;
 
     private ObjectPool<HashSet<EntityUid>> _entPool =
@@ -309,7 +311,8 @@ public sealed partial class NPCUtilitySystem : EntitySystem
             {
                 if (!TryComp(targetUid, out DamageableComponent? damage) || !TryComp(targetUid, out MobThresholdsComponent? threshold))
                     return 0f;
-
+                if (_healthRanking.RankHealth(targetUid, con.TargetState) is { } ranking) // Offbrand
+                    return ranking; // Offbrand
                 var totalDamage = _damageable.GetTotalDamage((targetUid, damage));
                 if (con.TargetState != MobState.Invalid && _thresholdSystem.TryGetPercentageForState(targetUid, con.TargetState, totalDamage, out var percentage, threshold))
                     return Math.Clamp((float)(1 - percentage), 0f, 1f);
@@ -342,11 +345,11 @@ public sealed partial class NPCUtilitySystem : EntitySystem
             }
             case TargetIsAliveCon:
             {
-                return _mobState.IsAlive(targetUid) ? 1f : 0f;
+                return _mobState.IsAlive(targetUid) && !_healthRanking.IsCritical(targetUid) ? 1f : 0f; // Offbrand
             }
             case TargetIsCritCon:
             {
-                return _mobState.IsCritical(targetUid) ? 1f : 0f;
+                return _healthRanking.IsCritical(targetUid) ? 1f : 0f; // Offbrand
             }
             case TargetIsDeadCon:
             {
