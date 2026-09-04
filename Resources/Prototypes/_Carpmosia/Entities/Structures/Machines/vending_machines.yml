@@ -12,6 +12,8 @@
   - type: ActivatableUI
     key: enum.StoreUiKey.Key
 
+# Vending stores
+
 - type: entity
   parent: VendingStore
   id: VendingStoreSalvage
@@ -37,3 +39,26 @@
     - SalvageStoreFun
     currencyWhitelist:
     - SalvageTicket
+
+
+- type: entity
+  parent: VendingStore
+  id: VendingStoreBeer
+  name: Beer 4 Cash
+  description: You got dough, we got beer.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Structures/Machines/VendingMachines/beer.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: normal-unshaded
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+  - type: Store
+    name: store-preset-name-vendor-beer
+    categories:
+    - BeerStoreDrinks
+    - BeerStoreSnacks
+    currencyWhitelist:
+    - SpaceCash
