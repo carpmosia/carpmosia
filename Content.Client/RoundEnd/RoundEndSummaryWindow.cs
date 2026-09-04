@@ -7,6 +7,9 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Shared.Utility;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
+using Robust.Shared.Prototypes; // Carpmosia-edit - No Eorg Popup
+using Content.Client.Guidebook; // Carpmosia-edit - No Eorg Popup
+using Content.Shared.Guidebook; // Carpmosia-edit - No Eorg Popup
 
 namespace Content.Client.RoundEnd;
 
@@ -16,6 +19,8 @@ namespace Content.Client.RoundEnd;
 public sealed partial class RoundEndSummaryWindow : DefaultWindow
 {
     [Dependency] private IEntityManager _entityManager = default!;
+    [Dependency] private IPrototypeManager _protoMan = default!; // Carpmosia-edit - No Eorg Popup
+    [Dependency] private DocumentParsingManager _parsingMan = default!; // Carpmosia-edit - No Eorg Popup
 
     public int RoundId;
     private readonly RoundEndPlayerInfo[] _playersInfo;
@@ -51,6 +56,7 @@ public sealed partial class RoundEndSummaryWindow : DefaultWindow
 
         RoundId = roundId;
         var roundEndTabs = new TabContainer();
+        roundEndTabs.AddChild(MakeEorgTab()); // Carpmosia-edit - No Eorg Popup
         roundEndTabs.AddChild(MakeRoundEndSummaryTab(gm, roundEnd, roundTimeSpan, roundId));
         roundEndTabs.AddChild(MakePlayerManifestTab());
 
@@ -59,6 +65,28 @@ public sealed partial class RoundEndSummaryWindow : DefaultWindow
         OpenCenteredRight();
         MoveToFront();
     }
+
+    // Carpmosia-start - No Eorg Popup
+    private static readonly ProtoId<GuideEntryPrototype> EoRGNotice = "EoRGNotice";
+
+    private BoxContainer MakeEorgTab()
+    {
+        var tab = new BoxContainer
+        {
+            Orientation = LayoutOrientation.Vertical,
+            Name = Loc.GetString("guide-entry-carpmosia-eorg"),
+            Margin = new Thickness(10),
+        };
+
+        if (!_protoMan.HasIndex(EoRGNotice) || !_parsingMan.TryAddMarkup(tab, EoRGNotice))
+        {
+            Log.Error($"Couldn't find the following prototype: {EoRGNotice}");
+            return tab;
+        }
+
+        return tab;
+    }
+    // Carpmosia-end - No Eorg Popup
 
     private static BoxContainer MakeRoundEndSummaryTab(string gamemode, string roundEnd, TimeSpan roundDuration, int roundId)
     {
