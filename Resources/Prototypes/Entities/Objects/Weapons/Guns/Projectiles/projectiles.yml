@@ -643,8 +643,13 @@
   - type: PointLight
     enabled: true
     color: "#c2385d"
-    radius: 2.0
+  #Carpmosia-start - makes it spin
+    radius: 3.0
     energy: 7.0
+    mask: /Textures/_Carpmosia/Effects/LightMasks/triple_cone.png
+  - type: RotatingLight
+    speed: 720
+  #Carpmosia-end - makes it spin
   - type: AnomalousParticle
     particleType: Delta
   - type: Sprite
@@ -697,7 +702,7 @@
   - type: PointLight
     enabled: true
     color: "#38c296"
-    radius: 2.0
+    radius: 3.0 #Carpmosia-edit - makes it spin
     energy: 7.0
   - type: Sprite
     layers:
@@ -727,7 +732,7 @@
   - type: PointLight
     enabled: true
     color: "#b9c238"
-    radius: 2.0
+    radius: 3.0 #Carpmosia-edit - makes it spin
     energy: 7.0
   - type: Sprite
     layers:
@@ -757,8 +762,8 @@
   - type: PointLight
     enabled: true
     color: "#38c24f"
-    radius: 2.0
-    energy: 7.0
+    radius: 3.0 #Carpmosia-edit - makes it spin
+    energy: 14.0 #Carpmosia-edit - makes it spin
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
     layers:
@@ -786,7 +791,7 @@
   - type: PointLight
     enabled: true
     color: "#8d38c2"
-    radius: 2.0
+    radius: 3.0 #Carpmosia-edit - makes it spin
     energy: 7.0
   - type: Sprite
     layers:
