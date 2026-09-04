@@ -1,0 +1,26 @@
+- type: dungeonRoom
+  id: PrefabEngineeringRight1
+  size: 57,57
+  atlas: /Maps/_Carpmosia/Procedural/prefab.yml
+  offset: 117,59
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PrefabEngineeringRight
+
+- type: Tag
+  id: PrefabEngineeringRight
+
+- type: entity
+  id: PrefabEngineeringRightMarker
+  parent: BasePrefabRightMarker
+  suffix: Engineering, Right
+  components:
+  - type: RoomFill
+    roomWhitelist:
+      tags:
+      - PrefabEngineeringRight
+  - type: Sprite
+    layers:
+      - state: arrow
+      - state: right
+      - state: engineering

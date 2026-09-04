@@ -1,0 +1,26 @@
+- type: dungeonRoom
+  id: PrefabCommandRight1
+  size: 57,57
+  atlas: /Maps/_Carpmosia/Procedural/prefab.yml
+  offset: 59,59
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PrefabCommandRight
+
+- type: Tag
+  id: PrefabCommandRight
+
+- type: entity
+  id: PrefabCommandRightMarker
+  parent: BasePrefabRightMarker
+  suffix: Command, Right
+  components:
+  - type: RoomFill
+    roomWhitelist:
+      tags:
+      - PrefabCommandRight
+  - type: Sprite
+    layers:
+      - state: arrow
+      - state: right
+      - state: command
