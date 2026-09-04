@@ -5,6 +5,8 @@ using Content.Shared.Mobs;
 using Content.Shared.Radiation.Events;
 using Content.Shared.StatusEffectNew;
 using Content.Shared._Offbrand.Wounds;
+using Robust.Shared.Prototypes;
+using Content.Shared._Offbrand.StatusEffects;
 
 namespace Content.Shared.Medical;
 
@@ -17,6 +19,9 @@ public sealed partial class RadiationSicknessSystem : EntitySystem
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private StatusEffectsSystem _statusEffects = default!;
 
+    [Dependency] private EntityQuery<RadProtectionStatusEffectComponent> _protQuery = default!;
+
+     EntProtoId RadProtection = "RadProtection";
 
     private void OnShutdown(Entity<RadiationThresholdsComponent> ent, ref ComponentShutdown args)
     {
@@ -31,7 +36,12 @@ public sealed partial class RadiationSicknessSystem : EntitySystem
         if (!_mobState.IsAlive(ent))
             return;
 
-        ent.Comp.Rads += args.TotalRads;
+        var radsToAdd = args.TotalRads;
+
+        if (_statusEffects.TryGetStatusEffect(ent, RadProtection, out var protection) && _protQuery.TryComp(protection, out var comp))
+            radsToAdd = radsToAdd * comp.Modifier;
+
+        ent.Comp.Rads += radsToAdd;
 
         UpdateEffects(ent);
     }

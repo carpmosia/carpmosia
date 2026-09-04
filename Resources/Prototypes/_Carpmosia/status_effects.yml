@@ -111,3 +111,11 @@
   - type: RadiationFlushEffect
     amount: 20
 
+- type: entity
+  parent: MobStatusEffectBase
+  id: RadProtection
+  name: radiation protection
+  components:
+  - type: RadProtectionStatusEffect
+    modifier: 0.5
+

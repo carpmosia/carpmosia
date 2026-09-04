@@ -1696,7 +1696,7 @@
     Bloodstream:
       effects:
       - !type:ModifyStatusEffect
-        effectProto: StatusEffectRadiationProtection
+        effectProto: RadProtection
         time: 2
         type: Add
       - !type:ModifyStatusEffect
