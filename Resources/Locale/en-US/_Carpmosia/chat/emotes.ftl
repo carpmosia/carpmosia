@@ -1,13 +1,21 @@
-# Emote Names
+# Tajaran
+## Emote Names
 chat-emote-name-mew = Mew
 chat-emote-name-hiss = Hiss
 chat-emote-name-meow = Meow
 chat-emote-name-purr = Purr
 chat-emote-name-trill = Trill
 
-# Emote Messages
+## Emote Messages
 chat-emote-msg-mew = mews.
 chat-emote-msg-hiss = hisses.
 chat-emote-msg-meow = meows.
 chat-emote-msg-purr = purrs.
 chat-emote-msg-trill = trills.
+
+# Phones
+## Emote Names
+chat-emote-name-phone-ring = Ring
+
+## Emote Messages
+chat-emote-msg-phone-ring = rings!

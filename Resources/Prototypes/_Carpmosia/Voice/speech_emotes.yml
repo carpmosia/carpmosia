@@ -128,3 +128,24 @@
   - trilling.
   - trilling!
   - trilling?
+
+- type: emote
+  id: PhoneRing
+  name: chat-emote-name-phone-ring
+  category: Vocal
+  available: false
+  icon: Interface/Emotes/chime.png
+  chatMessages: ["chat-emote-msg-phone-ring"]
+  chatTriggers:
+  - ring
+  - ring.
+  - ring!
+  - ring?
+  - rings
+  - rings.
+  - rings!
+  - rings?
+  - ringing
+  - ringing.
+  - ringing!
+  - ringing?
