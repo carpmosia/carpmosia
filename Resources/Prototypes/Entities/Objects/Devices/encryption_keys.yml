@@ -14,8 +14,10 @@
 - type: entity
   parent: EncryptionKey
   id: EncryptionKeyCommon
-  name: common encryption key
-  description: An encryption key used by anyone.
+# Carpmosia-start - Common to Intercom
+  name: intercom encryption key
+  description: An encryption key used by Intercoms. When inserted into a headset, will only allow it to receive messages from the public Intercom channel.
+# Carpmosia-end - Common to Intercom
   components:
   - type: EncryptionKey
     channels:
