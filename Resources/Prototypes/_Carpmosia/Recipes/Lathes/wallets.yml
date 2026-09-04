@@ -1,0 +1,28 @@
+- type: latheRecipe
+  id: WalletRecipe
+  result: Wallet
+  completetime: 3
+  categories:
+  - Wallets
+  materials:
+    Cloth: 200
+
+- type: latheRecipe
+  parent: WalletRecipe
+  id: WalletCaptainRecipe
+  result: WalletCaptain
+
+- type: latheRecipe
+  parent: WalletRecipe
+  id: WalletCentCommRecipe
+  result: WalletCentComm
+
+- type: latheRecipe
+  parent: WalletRecipe
+  id: WalletSyndicateRecipe
+  result: WalletSyndicate
+
+- type: latheRecipe
+  parent: WalletRecipe
+  id: WalletClownRecipe
+  result: WalletClown

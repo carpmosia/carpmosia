@@ -4,3 +4,10 @@
   cash:
     1: SalvageTicket
   canWithdraw: true
+
+- type: currency
+  id: SpaceCash
+  displayName: store-currency-display-space-cash
+  cash:
+    1: SpaceCash
+  canWithdraw: true

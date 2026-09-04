@@ -3,3 +3,17 @@
   recipes:
   - ClothingUniformJumpskirtJanimaid
   - ClothingUniformJumpskirtJanimaidmini
+
+- type: latheRecipePack
+  id: Wallets
+  recipes:
+  - WalletRecipe
+  - WalletCaptainRecipe
+  - WalletClownRecipe
+  - WalletCentCommRecipe
+
+# requires emag:
+- type: latheRecipePack
+  id: WalletsSyndicate
+  recipes:
+  - WalletSyndicateRecipe
