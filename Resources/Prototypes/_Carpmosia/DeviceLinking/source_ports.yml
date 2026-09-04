@@ -1,0 +1,5 @@
+- type: sourcePort
+  id: SupermatterData
+  name: signal-port-name-supermatterdata
+  description: signal-port-description-supermatterdata
+  defaultLinks: [ SupermatterDataReceiver ]

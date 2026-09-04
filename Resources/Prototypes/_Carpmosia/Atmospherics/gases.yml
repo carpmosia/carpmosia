@@ -1,0 +1,21 @@
+- type: gas
+  id: Hydrogen
+  name: gas-hydrogen
+  abbreviation: gas-hydrogen-abbreviation
+  molarHeatCapacity: 7.5
+  heatCapacityRatio: 1.3
+  molarMass: 2
+  color: '#6f8c8b'
+  reagent: Hydrogen
+  pricePerMole: 0
+
+- type: gas
+  id: Helium
+  name: gas-helium
+  abbreviation: gas-helium-abbreviation
+  molarHeatCapacity: 15
+  heatCapacityRatio: 1.3
+  molarMass: 4
+  color: '#ff94bd'
+  reagent: Helium
+  pricePerMole: 0
