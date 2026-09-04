@@ -19,6 +19,9 @@
   - type: Currency
     price:
       SalvageTicket: 1
+  - type: Tag
+    tags:
+    - SalvageTicket
 
 - type: entity
   parent: SalvageTicket
