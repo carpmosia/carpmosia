@@ -20,3 +20,17 @@
     containers:
       item:
       - EnergySabre
+
+- type: entity
+  parent: ClothingBeltBandolier
+  id: ClothingBeltBandolierFilledIncendiary
+  name: bandolier
+  suffix: CBURN
+  description: A bandolier for holding shotgun ammunition. This one bears the insignia of CBURN, and is standard issue for squad leaders. It can hold slightly more, and comes loaded with incendiary shells.
+  components:
+  - type: BallisticAmmoProvider
+    proto: ShellShotgunIncendiary
+    whitelist:
+      tags:
+      - ShellShotgun
+    capacity: 16

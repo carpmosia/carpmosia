@@ -261,6 +261,10 @@
   name: CBURN duffel bag
   description: A duffel bag containing a variety of biological containment equipment.
   components:
+  ## Carpmosia-start - CBURN rework
+  - type: Sprite
+    sprite: _Carpmosia/Clothing/Back/Duffels/cburn.rsi
+  ## Carpmosia-end - CBURN rework
   - type: Storage
     maxItemSize: Huge
   - type: ClothingSpeedModifier
