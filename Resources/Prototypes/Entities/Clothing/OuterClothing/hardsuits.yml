@@ -162,7 +162,7 @@
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.5
+    damageCoefficient: 0.3
   - type: Armor
     modifiers:
       coefficients:
@@ -234,7 +234,7 @@
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.5
+    damageCoefficient: 0.4
   - type: Armor
     modifiers:
       coefficients:
@@ -253,6 +253,7 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
+    - MonkeyWearable # Carpmosia-edit - Ancestor suits
 
 #Brigmedic Hardsuit
 - type: entity
@@ -296,7 +297,7 @@
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.5
+    damageCoefficient: 0.4
   - type: Armor
     modifiers:
       coefficients:
@@ -327,7 +328,7 @@
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.7
+    damageCoefficient: 0.5
   - type: Armor
     modifiers:
       coefficients:
@@ -347,6 +348,7 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
+    - MonkeyWearable # Carpmosia-edit - Ancestor suits
 
 #Chief Engineer's Hardsuit
 - type: entity
@@ -608,7 +610,7 @@
     heatingCoefficient: 0.001
     coolingCoefficient: 0.001
   - type: ExplosionResistance
-    damageCoefficient: 0.3
+    damageCoefficient: 0.2
   - type: FireProtection
     reduction: 0.8
   - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
@@ -688,6 +690,8 @@
   - type: PressureProtection
     highPressureMultiplier: 0.2
     lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
   # - type: StaminaResistance # Should not have stamina resistance, this is purely so people know it was not forgotten.
   - type: Armor
     modifiers:
@@ -937,43 +941,45 @@
     clothingPrototype: ClothingHeadHelmetHardsuitERTJanitor
 
 #Deathsquad
-- type: entity
-  parent: [ BaseCentcommContraband, ClothingOuterHardsuitBase ]
-  id: ClothingOuterHardsuitDeathsquad
-  name: death squad hardsuit
-  description: An advanced hardsuit favored by commandos for use in special operations.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/deathsquad.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/deathsquad.rsi
-  - type: PressureProtection
-    highPressureMultiplier: 0.02
-    lowPressureMultiplier: 1000
-  - type: TemperatureProtection
-    heatingCoefficient: 0.001
-    coolingCoefficient: 0.001
-  - type: ExplosionResistance
-    damageCoefficient: 0.2
-  - type: FireProtection
-    reduction: 0.8
-  - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
-    damageCoefficient: 0.15 # Needs 21 hits with a disabler to stun :godo:
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.1 #best armor in the game
-        Slash: 0.1
-        Piercing: 0.1
-        Heat: 0.1
-        Radiation: 0.1
-        Caustic: 0.1
-  - type: ClothingSpeedModifier
-    walkModifier: 1.0
-    sprintModifier: 1.0
-  - type: HeldSpeedModifier
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetHardsuitDeathsquad
+# Carpmosia-start - Remove Deathsquad
+# - type: entity
+#   parent: [ BaseCentcommContraband, ClothingOuterHardsuitBase ]
+#   id: ClothingOuterHardsuitDeathsquad
+#   name: death squad hardsuit
+#   description: An advanced hardsuit favored by commandos for use in special operations.
+#   components:
+#   - type: Sprite
+#     sprite: Clothing/OuterClothing/Hardsuits/deathsquad.rsi
+#   - type: Clothing
+#     sprite: Clothing/OuterClothing/Hardsuits/deathsquad.rsi
+#   - type: PressureProtection
+#     highPressureMultiplier: 0.02
+#     lowPressureMultiplier: 1000
+#   - type: TemperatureProtection
+#     heatingCoefficient: 0.001
+#     coolingCoefficient: 0.001
+#   - type: ExplosionResistance
+#     damageCoefficient: 0.2
+#   - type: FireProtection
+#     reduction: 0.8
+#   - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
+#     damageCoefficient: 0.15 # Needs 21 hits with a disabler to stun :godo:
+#   - type: Armor
+#     modifiers:
+#       coefficients:
+#         Blunt: 0.1 #best armor in the game
+#         Slash: 0.1
+#         Piercing: 0.1
+#         Heat: 0.1
+#         Radiation: 0.1
+#         Caustic: 0.1
+#   - type: ClothingSpeedModifier
+#     walkModifier: 1.0
+#     sprintModifier: 1.0
+#   - type: HeldSpeedModifier
+#   - type: ToggleableClothing
+#     clothingPrototype: ClothingHeadHelmetHardsuitDeathsquad
+# Carpmosia-end - Remove Deathsquad
 
 #CBURN Hardsuit
 - type: entity

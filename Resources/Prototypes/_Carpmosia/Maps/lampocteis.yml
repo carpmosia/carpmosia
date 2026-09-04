@@ -2,20 +2,20 @@
   id: CarpLampocteis
   mapName: 'Lampocteis'
   mapPath: /Maps/_Carpmosia/lampocteis.yml
-  mapIcon: /Textures/_Carpmosia/Interface/MapVote/carp.png
   mapPreview: MapPreviewLampocteis
   minPlayers: 0
   maxPlayers: 10
   # fallback
   stations:
-    Jelfy:
+    Lampocteis:
       stationProto: StandardNanotrasenStation
       components:
       - type: StationNameSetup
+        shortName: Lampocteis
         mapNameTemplate: '{0} Lampocteis Carrier {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
-          prefixCreator: 'JLF'
+          prefixCreator: 'JF'
       - type: StationEmergencyShuttle
         emergencyShuttlePath: /Maps/_Carpmosia/Shuttles/emergency_ghoti.yml
       - type: StationJobs

@@ -1,0 +1,84 @@
+- type: entity
+  abstract: true
+  id: BaseAtmosCryogenics
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: AtmosPipeColor
+    color: '#00b8dbff'
+
+# Pipes
+- type: entity
+  parent: [BaseAtmosCryogenics, GasPipeStraight]
+  id: GasPipeStraightCryogenics
+  suffix: Ċryogenics, Straight
+
+- type: entity
+  parent: [BaseAtmosCryogenics, GasPipeBend]
+  id: GasPipeBendCryogenics
+  suffix: Ċryogenics, Bend
+
+- type: entity
+  parent: [BaseAtmosCryogenics, GasPipeTJunction]
+  id: GasPipeTJunctionCryogenics
+  suffix: Ċryogenics, TJunction
+
+- type: entity
+  parent: [BaseAtmosCryogenics, GasPipeFourway]
+  id: GasPipeFourwayCryogenics
+  suffix: Ċryogenics, Fourway
+
+# Unary
+- type: entity
+  parent: [BaseAtmosCryogenics, GasThermoMachineFreezerEnabled]
+  id: GasThermoMachineFreezerCryogenics
+  suffix: Cryogenics
+  components:
+  - type: GasThermoMachine
+    targetTemperature: 203.15
+
+# Binary
+- type: entity
+  parent: [BaseAtmosCryogenics, GasPort]
+  id: GasPortCryogenics
+  suffix: Cryogenics
+
+- type: entity
+  parent: [BaseAtmosCryogenics, GasPipeSensor]
+  id: GasPipeSensorCryogenics
+  suffix: Cryogenics
+  components:
+  - type: Label
+    localizedLabel: gas-pipe-sensor-cryogenics
+
+# Trinary
+- type: entity
+  parent: [BaseAtmosCryogenics, GasFilter]
+  id: GasFilterCryogenics
+  suffix: Cryogenics
+  components: &GasFilter
+  - type: GasFilter
+    filteredGas: CarbonDioxide
+    enabled: true
+
+- type: entity
+  parent: [BaseAtmosCryogenics, GasFilterFlipped]
+  id: GasFilterFlippedCryogenics
+  suffix: Flipped, Cryogenics
+  components: *GasFilter
+
+- type: entity
+  parent: [BaseAtmosCryogenics, GasMixer]
+  id: GasMixerCryogenics
+  suffix: Cryogenics
+  components: &GasMixer
+  - type: GasMixer
+    targetPressure: 303.9
+    inletOneConcentration: 0.78
+    inletTwoConcentration: 0.22
+
+- type: entity
+  parent: [BaseAtmosCryogenics, GasMixerFlipped]
+  id: GasMixerFlippedCryogenics
+  suffix: Flipped, Cryogenics
+  components: *GasMixer

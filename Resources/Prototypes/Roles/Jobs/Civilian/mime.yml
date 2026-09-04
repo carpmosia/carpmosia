@@ -6,6 +6,7 @@
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 4h
+  displayWeight: 5 # Carpmosia-edit - Reorder jobs
   startingGear: MimeGear
   icon: "JobIconMime"
   supervisors: job-supervisors-hop

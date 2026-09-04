@@ -96,7 +96,7 @@ namespace Content.Server.GameTicking
         /// </remarks>
         private void LoadMaps()
         {
-            if (_map.MapExists(DefaultMap))
+            if (DefaultMap.Any(x => _map.MapExists(x))) // Carpmosia-edit - Multistation
                 return;
 
             AddGamePresetRules();
@@ -117,7 +117,7 @@ namespace Content.Server.GameTicking
             // ideally SelectMapByConfigRules will always find a valid map
             if (mainStationMap != null)
             {
-                maps.Add(mainStationMap);
+                maps.AddRange(mainStationMap); // Carpmosia-edit - Multistation
             }
             else
             {
@@ -125,11 +125,11 @@ namespace Content.Server.GameTicking
             }
 
             if (CurrentPreset?.MapPool != null &&
-                _prototypeManager.TryIndex<GameMapPoolPrototype>(CurrentPreset.MapPool, out var pool) &&
-                !pool.Maps.Contains(mainStationMap.ID))
+                ProtoMan.TryIndex<GameMapPoolPrototype>(CurrentPreset.MapPool, out var pool) &&
+                !mainStationMap.Any(x => pool.Maps.Contains(x.ID))) // Carpmosia-edit - Multistation
             {
                 var msg = Loc.GetString("game-ticker-start-round-invalid-map",
-                    ("map", mainStationMap.MapName),
+                    ("map", string.Join(" & ", mainStationMap.Select(x => x.MapName))), // Carpmosia-edit - Multistation
                     ("mode", Loc.GetString(CurrentPreset.ModeTitle)));
                 Log.Debug(msg);
                 SendServerMessage(msg);
@@ -141,17 +141,17 @@ namespace Content.Server.GameTicking
             if (maps.Count == 0)
             {
                 _map.CreateMap(out var mapId, runMapInit: false);
-                DefaultMap = mapId;
+                DefaultMap = [mapId]; // Carpmosia-edit - Multistation
                 return;
             }
 
+            DefaultMap = []; // Carpmosia-edit - Multistation
             for (var i = 0; i < maps.Count; i++)
             {
                 LoadGameMap(maps[i], out var mapId);
                 DebugTools.Assert(!_map.IsInitialized(mapId));
 
-                if (i == 0)
-                    DefaultMap = mapId;
+                DefaultMap.Add(mapId); // Carpmosia-edit - Multistation
             }
         }
 
@@ -432,7 +432,12 @@ namespace Content.Server.GameTicking
             }
 
             // MapInitialize *before* spawning players, our codebase is too shit to do it afterwards...
-            _map.InitializeMap(DefaultMap);
+            // Carpmosia-start - Multistation
+            foreach (var map in DefaultMap)
+            {
+                _map.InitializeMap(map);
+            }
+            // Carpmosia-end - Multistation
 
             SpawnPlayers(readyPlayers, readyPlayerProfiles, force);
 
@@ -747,8 +752,6 @@ namespace Content.Server.GameTicking
 
             EntityManager.FlushEntities();
 
-            _mapManager.Restart();
-
             _banManager.Restart();
 
             _gameMapManager.ClearSelectedMap();
@@ -814,7 +817,7 @@ namespace Content.Server.GameTicking
         {
             if (CurrentPreset == null) return;
 
-            var options = _prototypeManager.EnumeratePrototypes<RoundAnnouncementPrototype>().ToList();
+            var options = ProtoMan.EnumeratePrototypes<RoundAnnouncementPrototype>().ToList();
 
             if (options.Count == 0)
                 return;
@@ -835,7 +838,7 @@ namespace Content.Server.GameTicking
                 if (_webhookIdentifier == null)
                     return;
 
-                var mapName = _gameMapManager.GetSelectedMap()?.MapName ?? Loc.GetString("discord-round-notifications-unknown-map");
+                var mapName = _gameMapManager.GetSelectedMapName() ?? Loc.GetString("discord-round-notifications-unknown-map"); // Carpmosia-edit - Multistation
                 var content = Loc.GetString("discord-round-notifications-started", ("id", RoundId), ("map", mapName));
 
                 var payload = new WebhookPayload { Content = content };

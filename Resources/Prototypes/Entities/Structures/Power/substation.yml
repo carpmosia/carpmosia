@@ -151,6 +151,15 @@
   placement:
     mode: SnapgridCenter
   components:
+  # Carpmosia-start - Wallmount adjacent power
+  - type: NodeContainer
+    examinable: true
+    nodes:
+      input: !type:CableDeviceNodeAdjacent
+        nodeGroupID: HVPower
+      output: !type:CableDeviceNodeAdjacent
+        nodeGroupID: MVPower
+  # Carpmosia-end - Wallmount adjacent power
   - type: AmbientSound
     range: 2
   - type: PointLight

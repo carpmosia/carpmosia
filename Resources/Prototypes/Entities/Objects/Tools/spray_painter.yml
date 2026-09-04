@@ -17,19 +17,33 @@
         type: SprayPainterBoundUserInterface
   - type: SprayPainter
     colorPalette:
-      red: '#FF1212FF'
-      yellow: '#B3A234FF'
-      brown: '#947507FF'
-      green: '#3AB334FF'
-      cyan: '#03FCD3FF'
-      blue: '#0335FCFF'
-      white: '#FFFFFFFF'
-      black: '#333333FF'
-      # standard atmos pipes
-      waste: '#990000'
-      distro: '#0055cc'
-      air: '#03fcd3'
-      mix: '#947507'
+      # Carpmosia-start - Better pipe palette
+      red: '#fb2c36'
+      yellow: '#efb100'
+      green: '#00c950'
+      cyan: '#00b8db'
+      indigo: '#615fff'
+      fuchsia: '#e12afb'
+      white: '#ffffff'
+      black: '#333333'
+      # standard colors
+      waste: '#ad46ff'
+      distro: '#7ccf00'
+      teg-hot: '#ff637e'
+      teg-cold: '#00d5Be'
+      teg-fuel: '#ff8904'
+      teg-failsafe: '#00d492'
+      # gas colors
+      oxygen: '#2887e8'
+      nitrogen: '#da1010'
+      carbon-dioxide: '#4e4e4e'
+      plasma: '#ff3300'
+      tritium: '#13ff4b'
+      water-vapour: '#bffffd'
+      ammonia: '#56941e'
+      nitrous-oxide: '#8F00ff'
+      frezon: '#3a758c'
+      # Carpmosia-end - Better pipe palette
   - type: StaticPrice
     price: 40
   - type: LimitedCharges

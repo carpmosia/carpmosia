@@ -1,0 +1,14 @@
+# Silently spawns a sleeper agent, useful to reroll antag
+- type: entity
+  parent: BaseTraitorRule
+  id: AdmemeSleepyAgent
+  components:
+  - type: StationEvent
+    earliestStart: 0
+    minimumPlayers: 1
+    duration: null
+    occursDuringRoundEnd: false
+  - type: AntagSelection
+    antags:
+    - !type:FixedAntagCount
+      proto: TraitorSleeper

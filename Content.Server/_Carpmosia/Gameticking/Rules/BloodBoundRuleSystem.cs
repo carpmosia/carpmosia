@@ -42,15 +42,7 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
     [Dependency] private StunSystem _stunSystem = default!;
     [Dependency] private TargetObjectiveSystem _targetObjectiveSystem = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<BloodBoundRuleComponent, ObjectivesTextPrependEvent>(OnObjectivesTextPrepend);
-        SubscribeLocalEvent<InitialBloodBoundComponent, BloodBoundConvertActionEvent>(OnBloodBoundConvert);
-        SubscribeLocalEvent<InitialBloodBoundComponent, BloodBoundCheckConvertActionEvent>(OnBloodBoundCheckConvert);
-    }
-
+    [SubscribeLocalEvent]
     private void OnObjectivesTextPrepend(Entity<BloodBoundRuleComponent> entity, ref ObjectivesTextPrependEvent args)
     {
         var antags = _antagSystem.GetAntagIdentifiers(entity.Owner).ToList();
@@ -86,6 +78,7 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
         }
     }
 
+    [SubscribeLocalEvent]
     private void OnBloodBoundConvert(Entity<InitialBloodBoundComponent> entity,
         ref BloodBoundConvertActionEvent args)
     {
@@ -113,7 +106,7 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
 
         // Actual conversion logic
 
-        if (!Proto.Resolve(entity.Comp.ConvertPrototype, out var def))
+        if (!ProtoMan.Resolve(entity.Comp.ConvertPrototype, out var def))
             return;
 
         EntityManager.AddComponents(args.Target, def.Components);
@@ -194,6 +187,7 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
         Dirty(args.Target, convertedComp);
     }
 
+    [SubscribeLocalEvent]
     private void OnBloodBoundCheckConvert(Entity<InitialBloodBoundComponent> entity,
         ref BloodBoundCheckConvertActionEvent args)
     {
@@ -247,7 +241,7 @@ public sealed partial class BloodBoundRuleSystem : GameRuleSystem<BloodBoundRule
         }
 
         // Get convert proto, error if we cant find it
-        if (!Proto.Resolve(entity.Comp.ConvertPrototype, out var def))
+        if (!ProtoMan.Resolve(entity.Comp.ConvertPrototype, out var def))
         {
             DebugTools.Assert("Blood bound tried to convert but the convert proto failed to resolve.");
             errorMessage = "uhoh";

@@ -2,7 +2,6 @@
   id: CarpAmber
   mapName: 'Amber'
   mapPath: /Maps/_Carpmosia/amber.yml
-  mapIcon: /Textures/_Carpmosia/Interface/MapVote/carp.png
   mapPreview: MapPreviewAmber
   minPlayers: 15
   maxPlayers: 60
@@ -12,6 +11,7 @@
       stationProto: StandardNanotrasenStation
       components:
       - type: StationNameSetup
+        shortName: Amber
         mapNameTemplate: '{0} Amber Station {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator

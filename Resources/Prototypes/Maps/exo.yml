@@ -2,7 +2,7 @@
   id: Exo
   mapName: 'Exo'
   mapPath: /Maps/exo.yml
-  mapPreview: MapPreviewExo # Carpmosia - Map previews
+  mapPreview: MapPreviewExo # Carpmosia-edit - Map previews
   minPlayers: 40
   maxPlayers: 80
   stations:
@@ -10,6 +10,7 @@
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
+          shortName: Exo # Carpmosia-edit - Warp point prefixes
           mapNameTemplate: 'Exomorph Vessel "Conquest" EXO-{1}'
           nameGenerator:
             !type:NanotrasenNameGenerator

@@ -9,7 +9,6 @@ using Content.Shared.Materials; // Carpmosia-edit - Insert storage contents into
 using Content.Shared.Popups;
 using Content.Shared.Storage; // Carpmosia-edit - Insert storage contents into biogenerator
 using Robust.Server.Audio;
-using Robust.Shared.Containers; // Carpmosia-edit - Insert storage contents into biogenerator
 
 namespace Content.Server.Materials;
 
@@ -25,7 +24,6 @@ public sealed partial class ProduceMaterialExtractorSystem : EntitySystem
     public override void Initialize()
     {
         SubscribeLocalEvent<ProduceMaterialExtractorComponent, AfterInteractUsingEvent>(OnInteractUsing);
-        SubscribeLocalEvent<ProduceMaterialExtractorComponent, BiogenDoAfterEvent>(OnBiogenDoAfter); // Carpmosia-edit - Insert storage contents into biogenerator
     }
 
     private void OnInteractUsing(Entity<ProduceMaterialExtractorComponent> ent, ref AfterInteractUsingEvent args)
@@ -80,14 +78,8 @@ public sealed partial class ProduceMaterialExtractorSystem : EntitySystem
     }
 
     // Carpmosia-start - Insert storage contents into biogenerator
-    /// <summary>
-    /// DoAfter function for interacting with the biogenerator with an item with a storage component.
-    /// Converts any valid items in the storage into biomass for the biogenerator.
-    /// </summary>
-    /// <param name="uid">The biogen uid</param>
-    /// <param name="comp">The material extractor component</param>
-    /// <param name="args">DoAfter args</param>
-    private void OnBiogenDoAfter(EntityUid uid, ProduceMaterialExtractorComponent comp, BiogenDoAfterEvent args)
+    [SubscribeLocalEvent]
+    private void OnBiogenDoAfter(Entity<ProduceMaterialExtractorComponent> ent, ref BiogenDoAfterEvent args)
     {
         if (args.Cancelled || args.Handled || args.Target == null)
             return;
@@ -101,7 +93,7 @@ public sealed partial class ProduceMaterialExtractorSystem : EntitySystem
             return;
 
         // Find every valid item and convert it to biomass
-        foreach (var (item, _location) in storage.StoredItems)
+        foreach (var item in storage.StoredItems.Keys)
         {
             if (!TryComp<ProduceComponent>(item, out var produce))
                 continue;
@@ -110,16 +102,16 @@ public sealed partial class ProduceMaterialExtractorSystem : EntitySystem
                 continue;
 
             var matAmount = solution.Value.Comp.Solution.Contents
-                .Where(r => comp.ExtractionReagents.Contains(r.Reagent.Prototype))
+                .Where(r => ent.Comp.ExtractionReagents.Contains(r.Reagent.Prototype))
                 .Sum(r => r.Quantity.Float());
 
             var changed = (int)matAmount;
 
-            _materialStorage.TryChangeMaterialAmount(comp.Owner, comp.ExtractedMaterial, changed);
+            _materialStorage.TryChangeMaterialAmount(ent, ent.Comp.ExtractedMaterial, changed);
             QueueDel(item);
         }
 
-        _audio.PlayPvs(comp.ExtractSound, comp.Owner);
+        _audio.PlayPvs(ent.Comp.ExtractSound, ent);
         args.Handled = true;
     }
     // Carpmosia-end - Insert storage contents into biogenerator

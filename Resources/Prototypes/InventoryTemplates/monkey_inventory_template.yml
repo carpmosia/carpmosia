@@ -7,6 +7,19 @@
     uiWindowPos: 1,2
     strippingWindowPos: 0,0
     displayName: Head
+  # Carpmosia-start - Giving them pockets
+  - name: pocket1
+    slotTexture: pocket
+    fullTextureName: template_small
+    slotFlags: POCKET
+    slotGroup: MainHotbar
+    stripTime: 3
+    uiWindowPos: 0,3
+    strippingWindowPos: 0,4
+    dependsOn: jumpsuit
+    displayName: Pocket 1
+    stripHidden: true
+  # Carpmosia-end - Giving them pockets
   - name: ears
     slotTexture: ears
     slotFlags: EARS

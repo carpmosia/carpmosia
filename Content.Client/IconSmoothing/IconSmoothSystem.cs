@@ -20,7 +20,6 @@ namespace Content.Client.IconSmoothing
         [Dependency] private SpriteSystem _sprite = default!;
         [Dependency] private EntityQuery<IconSmoothComponent> _iconSmoothQuery = default!;
         [Dependency] private EntityQuery<SpriteComponent> _spriteQuery = default!;
-        [Dependency] private EntityQuery<TransformComponent> _xformQuery = default!; // Carpmosia-start - Better diagonals
 
         private readonly Queue<EntityUid> _dirtyEntities = new();
         private readonly Queue<EntityUid> _anchorChangedEntities = new();
@@ -89,13 +88,13 @@ namespace Content.Client.IconSmoothing
             _sprite.LayerMapRemove(sprite, CornerLayers.SW);
 
             var state0 = $"{component.StateBase}0";
-            _sprite.LayerMapSet(sprite, CornerLayers.SE, _sprite.AddRsiLayer(sprite, state0));
+            _sprite.LayerMapSet(sprite, CornerLayers.SE, _sprite.AddRsiLayer(sprite, state0, index: component.Index));
             _sprite.LayerSetDirOffset(sprite, CornerLayers.SE, DirectionOffset.None);
-            _sprite.LayerMapSet(sprite, CornerLayers.NE, _sprite.AddRsiLayer(sprite, state0));
+            _sprite.LayerMapSet(sprite, CornerLayers.NE, _sprite.AddRsiLayer(sprite, state0, index: component.Index));
             _sprite.LayerSetDirOffset(sprite, CornerLayers.NE, DirectionOffset.CounterClockwise);
-            _sprite.LayerMapSet(sprite, CornerLayers.NW, _sprite.AddRsiLayer(sprite, state0));
+            _sprite.LayerMapSet(sprite, CornerLayers.NW, _sprite.AddRsiLayer(sprite, state0, index: component.Index));
             _sprite.LayerSetDirOffset(sprite, CornerLayers.NW, DirectionOffset.Flip);
-            _sprite.LayerMapSet(sprite, CornerLayers.SW, _sprite.AddRsiLayer(sprite, state0));
+            _sprite.LayerMapSet(sprite, CornerLayers.SW, _sprite.AddRsiLayer(sprite, state0, index: component.Index));
             _sprite.LayerSetDirOffset(sprite, CornerLayers.SW, DirectionOffset.Clockwise);
         }
 
@@ -346,11 +345,11 @@ namespace Content.Client.IconSmoothing
 
             var pos = _mapSystem.TileIndicesFor(gridUid, grid, xform.Coordinates);
 
-            var east_pos = pos + (Vector2i)xform.LocalRotation.RotateVec(new(1, 0));
-            var east = MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, east_pos));
+            var eastPos = pos + (Vector2i)xform.LocalRotation.RotateVec(new Vector2(1, 0));
+            var east = MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, eastPos));
 
-            var south_pos = pos + (Vector2i)xform.LocalRotation.RotateVec(new(0, -1));
-            var south = MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, south_pos));
+            var southPos = pos + (Vector2i)xform.LocalRotation.RotateVec(new Vector2(0, -1));
+            var south = MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, southPos));
 
             if (!east & !south)
             {
@@ -368,17 +367,10 @@ namespace Content.Client.IconSmoothing
                 return;
             }
 
-            var edge_pos = pos + (Vector2i)xform.LocalRotation.RotateVec(new(1, -1));
-            var edge = MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, edge_pos));
+            var edgePos = pos + (Vector2i)xform.LocalRotation.RotateVec(new Vector2(1, -1));
+            var edge = MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, edgePos));
 
-            if (!edge)
-            {
-                _sprite.LayerSetRsiState(sprite.AsNullable(), 0, $"{smooth.StateBase}3");
-            }
-            else
-            {
-                _sprite.LayerSetRsiState(sprite.AsNullable(), 0, $"{smooth.StateBase}4");
-            }
+            _sprite.LayerSetRsiState(sprite.AsNullable(), 0, edge ? $"{smooth.StateBase}4" : $"{smooth.StateBase}3");
         }
         // Carpmosia-end - Better diagonals
 
@@ -426,7 +418,6 @@ namespace Content.Client.IconSmoothing
             while (candidates.MoveNext(out var entity))
             {
                 if (_iconSmoothQuery.TryGetComponent(entity, out var other) &&
-                    other.SmoothKey != null &&
                     (other.SmoothKey == smooth.SmoothKey || smooth.AdditionalKeys.Contains(other.SmoothKey)) &&
                     other.Enabled)
                 {

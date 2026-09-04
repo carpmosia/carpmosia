@@ -272,6 +272,18 @@ public abstract partial class SharedDisposalUnitSystem : EntitySystem
         UpdateVisualState(ent);
     }
 
+    // Carpmosia-start - Better disposals
+    /// <summary>
+    /// Auto tags any items sent if there is a DisposalTaggerComponent
+    /// </summary>
+    [SubscribeLocalEvent]
+    private void OnBeforeFlush(Entity<DisposalTaggerComponent> ent, ref BeforeDisposalFlushEvent args)
+    {
+        Dirty(ent);
+        args.Tags.Add(ent.Comp.Tag);
+    }
+    // Carpmosia-end - Better disposals
+
     /// <summary>
     /// Try to flush a disposal unit.
     /// </summary>

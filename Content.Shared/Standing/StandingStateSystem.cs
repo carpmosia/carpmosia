@@ -29,7 +29,6 @@ public sealed partial class StandingStateSystem : EntitySystem
         SubscribeLocalEvent<StandingStateComponent, RefreshFrictionModifiersEvent>(OnRefreshFrictionModifiers);
         SubscribeLocalEvent<StandingStateComponent, TileFrictionEvent>(OnTileFriction);
         SubscribeLocalEvent<StandingStateComponent, EndClimbEvent>(OnEndClimb);
-        SubscribeLocalEvent<StandingStateComponent, MobStateChangedEvent>(OnMobStateChanged); // Carpmosia-edit - dead/crit friction changes
     }
 
     private void OnMobTargetCollide(Entity<StandingStateComponent> ent, ref AttemptMobTargetCollideEvent args)
@@ -73,7 +72,8 @@ public sealed partial class StandingStateSystem : EntitySystem
     }
 
     // Carpmosia-start - dead/crit friction changes
-    private void OnMobStateChanged(Entity<StandingStateComponent> entity, ref MobStateChangedEvent args)
+    [SubscribeLocalEvent]
+    private static void OnMobStateChanged(Entity<StandingStateComponent> entity, ref MobStateChangedEvent args)
     {
         entity.Comp.DownFrictionMod = entity.Comp.DownFrictionModDict[args.NewMobState];
     }
