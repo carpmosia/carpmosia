@@ -94,6 +94,7 @@
     tags:
     - PetWearable
     - WhitelistChameleon
+    - HudCommand  # Carpmosia-edit - crafting component
 
 - type: entity
   parent: ClothingEyesHudBase
@@ -185,6 +186,11 @@
   - type: Construction
     graph: HudMedSec
     node: medsecHud
+  # Carpmosia-start - crafting component
+  - type: Tag
+    tags:
+    - HudMedSec
+  # Carpmosia-end - crafting component
 
 - type: entity
   parent: [ClothingEyesHudBase, ShowSecurityIcons, ShowMedicalIcons]
