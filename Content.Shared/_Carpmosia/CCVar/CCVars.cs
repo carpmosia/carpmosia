@@ -27,4 +27,10 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> GameLobbyAutoVote =
         CVarDef.Create("game.lobby_auto_vote", false, CVar.SERVERONLY);
+
+    /// <summary>
+    /// if true, the player count check for rules will be based on the number of players readied, versus the total number in the lobby.
+    /// </summary>
+    public static readonly CVarDef<float> GameRulesUnreadiedPlayerWeight =
+        CVarDef.Create("game.unreadied_player_weight", 0.5f, CVar.SERVERONLY);
 }

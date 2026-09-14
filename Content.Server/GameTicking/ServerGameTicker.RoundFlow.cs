@@ -319,6 +319,21 @@ public sealed partial class ServerGameTicker
         return total;
     }
 
+    public int DynamicPlayerCount()
+    {
+    	// Carpmosia-start - Dynamic player count
+        var unreadiedPlayerWeight = Cfg.GetCVar(CCVars.GameRulesUnreadiedPlayerWeight);
+        if (unreadiedPlayerWeight == 0.0f)
+            return _playerManager.PlayerCount;
+
+        var readied = ReadyPlayerCount();
+        var unreadied = _playerManager.PlayerCount - readied;
+        var unreadiedWeighted = (int) Math.Ceiling(unreadied * unreadiedPlayerWeight);
+
+        return readied + unreadiedWeighted;
+        // Carpmosia-end - Dynamic player count
+    }
+
     public void StartRound(bool force = false)
     {
 #if EXCEPTION_TOLERANCE
