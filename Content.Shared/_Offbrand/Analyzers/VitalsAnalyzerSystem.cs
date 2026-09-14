@@ -105,6 +105,11 @@ public sealed partial class VitalsAnalyzerSystem : EntitySystem
         var hasNonMedical = false;
         var reagents = withWounds ? SampleReagents(uid, out hasNonMedical) : null;
 
+        var radThresholdState = "";
+
+        if (radThresholds.CurrentThresholdState != null)
+            radThresholdState = radThresholds.CurrentThresholdState;
+
         return new VitalsData()
         {
             BrainHealth = 1f - brainDamageThresholds.DisplayDamage.Float() / brainDamageThresholds.DisplayMaxDamage.Float(),
@@ -123,6 +128,7 @@ public sealed partial class VitalsAnalyzerSystem : EntitySystem
             NonMedicalReagents = hasNonMedical,
             BloodLevel = _bloodstream.GetBloodLevel(uid),
             Rads = radThresholds.Rads.Float(),
+            RadThreshold = radThresholdState,
         };
     }
 }

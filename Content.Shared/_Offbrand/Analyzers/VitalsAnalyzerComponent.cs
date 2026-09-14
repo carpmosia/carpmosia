@@ -64,4 +64,6 @@ public sealed partial class VitalsData
 
     [DataField]
     public float Rads;
+    [DataField]
+    public string RadThreshold;
 }

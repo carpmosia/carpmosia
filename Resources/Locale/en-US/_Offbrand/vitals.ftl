@@ -34,3 +34,4 @@ offbrand-vitals-heart-rate-value = [color=white]{$value}[/color]{-offbrand-unit(
 
 offbrand-vitals-rads = Rads
 offbrand-vitals-rads-value = [color=white]{$value}[/color][color=darkgray]rads[/color]
+offbrand-vitals-rads-state = {$state}
