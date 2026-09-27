@@ -1,0 +1,12 @@
+- type: entity
+  parent: SoakedCigarette
+  id: CigaretteCarpotoxin
+  name: Cigarette
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Nicotine
+        Quantity: 10
+      - ReagentId: CarpoToxin
+        Quantity: 1
