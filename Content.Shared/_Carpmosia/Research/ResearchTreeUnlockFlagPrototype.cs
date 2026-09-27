@@ -1,6 +1,6 @@
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.Carpmosia.Research;
+namespace Content.Shared._Carpmosia.Research;
 
 [Prototype]
 public sealed partial class ResearchTreeUnlockFlagPrototype : IPrototype

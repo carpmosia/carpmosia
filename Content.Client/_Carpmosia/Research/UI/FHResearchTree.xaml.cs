@@ -6,15 +6,15 @@ using Robust.Client.UserInterface;
 using Robust.Shared.Input;
 using System.Numerics;
 using Robust.Shared.Prototypes;
-using Content.Shared.Carpmosia.Research;
+using Content.Shared._Carpmosia.Research;
 using Robust.Client.ResourceManagement;
-using Content.Client.Carpmosia.Research.UI.Helpers;
-using Content.Client.Carpmosia.Research.UI.Helpers.Search;
+using Content.Client._Carpmosia.Research.UI.Helpers;
+using Content.Client._Carpmosia.Research.UI.Helpers.Search;
 using System.Linq;
 using Robust.Shared.Timing;
 using Content.Shared.Input;
 
-namespace Content.Client.Carpmosia.Research.UI;
+namespace Content.Client._Carpmosia.Research.UI;
 
 [GenerateTypedNameReferences]
 public sealed partial class FHResearchTree : BoxContainer

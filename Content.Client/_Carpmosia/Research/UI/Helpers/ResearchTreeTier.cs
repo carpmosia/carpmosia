@@ -1,7 +1,7 @@
 using System.Numerics;
 using Robust.Client.Graphics;
 
-namespace Content.Client.Carpmosia.Research.UI.Helpers;
+namespace Content.Client._Carpmosia.Research.UI.Helpers;
 
 public struct DrawResearchTier(string name, Font? font, int? left, int? right, Vector2 spacing, Vector2 margin, Vector2 size, Color bgColor, Vector2? offset = null)
 {

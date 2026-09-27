@@ -1,9 +1,9 @@
 using System.Linq;
 using System.Text.RegularExpressions;
-using Content.Shared.Carpmosia.Research;
+using Content.Shared._Carpmosia.Research;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client.Carpmosia.Research.UI.Helpers.Search;
+namespace Content.Client._Carpmosia.Research.UI.Helpers.Search;
 
 public sealed partial class SearchDatabase
 {

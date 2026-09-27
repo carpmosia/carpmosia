@@ -1,12 +1,12 @@
 using System.Linq;
-using Content.Shared.Carpmosia.Research;
-using Content.Shared.Carpmosia.Research.Components;
+using Content.Shared._Carpmosia.Research;
+using Content.Shared._Carpmosia.Research.Components;
 using Content.Shared.Research.Components;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client.Carpmosia.Research.UI;
+namespace Content.Client._Carpmosia.Research.UI;
 
 [UsedImplicitly]
 public sealed partial class FHResearchConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : BoundUserInterface(owner, uiKey)

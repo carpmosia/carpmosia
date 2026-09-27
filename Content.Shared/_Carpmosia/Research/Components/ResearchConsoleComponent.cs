@@ -2,7 +2,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.Carpmosia.Research.Components;
+namespace Content.Shared._Carpmosia.Research.Components;
 
 [RegisterComponent]
 public sealed partial class FHResearchConsoleComponent : Component

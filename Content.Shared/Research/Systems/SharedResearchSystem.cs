@@ -303,4 +303,21 @@ public abstract partial class SharedResearchSystem : EntitySystem
         var ev = new TechnologyDatabaseModifiedEvent(new List<string> { recipe });
         RaiseLocalEvent(uid, ref ev);
     }
+
+    // Carpmosia-start - FH research tree
+    public void RemoveLatheRecipe(EntityUid uid, ProtoId<LatheRecipePrototype> recipe, TechnologyDatabaseComponent? component = null)
+    {
+        if (!Resolve(uid, ref component))
+            return;
+
+        if (!component.UnlockedRecipes.Contains(recipe))
+            return;
+
+        component.UnlockedRecipes.Remove(recipe);
+        Dirty(uid, component);
+
+        var ev = new TechnologyDatabaseModifiedEvent();
+        RaiseLocalEvent(uid, ref ev);
+    }
+    // Carpmosia-end - FH research tree
 }

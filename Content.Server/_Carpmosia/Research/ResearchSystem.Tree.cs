@@ -1,11 +1,11 @@
 using System.Linq;
-using Content.Shared.Carpmosia.Research;
-using Content.Shared.Carpmosia.Research.Components;
+using Content.Shared._Carpmosia.Research;
+using Content.Shared._Carpmosia.Research.Components;
 using Content.Shared.Radio;
 using Content.Shared.Research.Components;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.Carpmosia.Research;
+namespace Content.Server._Carpmosia.Research;
 
 public sealed partial class FHResearchSystem
 {
@@ -28,7 +28,7 @@ public sealed partial class FHResearchSystem
         var query = EntityQueryEnumerator<FHResearchTreeComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
-            if(_timing.CurTime < comp.NextUpdate)
+            if (_timing.CurTime < comp.NextUpdate)
                 continue;
 
             var bankCap = GetCurrentBankCapacity((uid, comp));
@@ -67,7 +67,9 @@ public sealed partial class FHResearchSystem
         {
             UnlockNode(ent, nextNode);
             points -= pointsRemaining;
-        } else {
+        }
+        else
+        {
             ent.Comp.Progress[nextNode] += points;
             points = 0;
         }
@@ -112,7 +114,7 @@ public sealed partial class FHResearchSystem
 
         var nodeProto = _protoMan.Index(node);
 
-        foreach(var recipe in nodeProto.Unlocks)
+        foreach (var recipe in nodeProto.Unlocks)
             _research.AddLatheRecipe(ent, recipe, techDb);
 
         List<ProtoId<ResearchTreeUnlockFlagPrototype>> add = [];
@@ -177,9 +179,12 @@ public sealed partial class FHResearchSystem
                 var points = ent.Comp.BankedPoints;
                 ent.Comp.BankedPoints = 0;
                 HandleResearch(ent, points);
-            } else
+            }
+            else
                 RefreshUIOnClients(ent);
-        } else {
+        }
+        else
+        {
             SendErrorToClients(ent, Loc.GetString("research-tree-console-error-queue-full"));
             return false;
         }
@@ -214,7 +219,7 @@ public sealed partial class FHResearchSystem
             return;
 
         foreach (var client in serverComp.Clients)
-            if(TryComp(client, out FHResearchConsoleComponent? console))
+            if (TryComp(client, out FHResearchConsoleComponent? console))
                 ShowError((client, console), message);
     }
 
@@ -224,7 +229,7 @@ public sealed partial class FHResearchSystem
             return;
 
         foreach (var client in serverComp.Clients)
-            if(TryComp(client, out FHResearchConsoleComponent? console))
+            if (TryComp(client, out FHResearchConsoleComponent? console))
                 UpdateUI((client, console));
 
     }

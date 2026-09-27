@@ -3,8 +3,8 @@ using System.Linq;
 using Content.Server.Chat.Systems;
 using Content.Server.Radio.EntitySystems;
 using Content.Server.Research.Systems;
-using Content.Shared.Carpmosia.Research;
-using Content.Shared.Carpmosia.Research.Components;
+using Content.Shared._Carpmosia.Research;
+using Content.Shared._Carpmosia.Research.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.Emag.Systems;
 using Content.Shared.Research.Components;
@@ -13,7 +13,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
-namespace Content.Server.Carpmosia.Research;
+namespace Content.Server._Carpmosia.Research;
 
 public sealed partial class FHResearchSystem : EntitySystem
 {

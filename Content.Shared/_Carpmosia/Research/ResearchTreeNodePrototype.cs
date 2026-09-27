@@ -3,13 +3,13 @@ using Content.Shared.Radio;
 using Content.Shared.Research.Prototypes;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.Carpmosia.Research;
+namespace Content.Shared._Carpmosia.Research;
 
 [DataDefinition]
 public sealed partial class ResearchTreeNodeIcon
 {
     [DataField]
-    public string Path = "/Textures/_FarHorizons/Interface/Research/icons.rsi";
+    public string Path = "/Textures/_Carpmosia/Interface/Research/icons.rsi";
     [DataField]
     public string State = "science";
     [DataField]

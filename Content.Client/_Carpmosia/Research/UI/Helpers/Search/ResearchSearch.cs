@@ -1,11 +1,11 @@
 using System.Linq;
 using System.Numerics;
-using Content.Shared.Carpmosia.Research;
+using Content.Shared._Carpmosia.Research;
 using Robust.Client.Graphics;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
-namespace Content.Client.Carpmosia.Research.UI.Helpers.Search;
+namespace Content.Client._Carpmosia.Research.UI.Helpers.Search;
 
 public sealed class ResearchSearch(IGameTiming timing, IPrototypeManager protoMan, Font font, Texture texture)
 {
@@ -119,8 +119,10 @@ public sealed class ResearchSearch(IGameTiming timing, IPrototypeManager protoMa
         _searchResults = cards;
     }
 
-    public void SetDb(SearchDatabase db) =>
+    public void SetDb(SearchDatabase db)
+    {
         _searchDb = db;
+    }
 
     public void Update(DrawingHandleScreen handle, Vector2 viewportSize, Vector2 mousePos)
     {
@@ -130,13 +132,13 @@ public sealed class ResearchSearch(IGameTiming timing, IPrototypeManager protoMa
         if (_searchDb?.Unread ?? false)
             AddSearchResults(handle, _searchDb!.SearchResult);
 
-        foreach(var card in _searchResults)
+        foreach (var card in _searchResults)
             card.Update(mousePos);
     }
 
     public void Draw(DrawingHandleScreen handle)
     {
-        foreach(var card in _searchResults)
+        foreach (var card in _searchResults)
             card.Draw(handle);
 
         handle.DrawRect(_button, FGColor, true);

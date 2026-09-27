@@ -1,6 +1,6 @@
 using System.Linq;
-using Content.Shared.Carpmosia.Research;
-using Content.Shared.Carpmosia.Research.Components;
+using Content.Shared._Carpmosia.Research;
+using Content.Shared._Carpmosia.Research.Components;
 using Content.Shared.Chat;
 using Content.Shared.Research.Components;
 using Content.Shared.UserInterface;
@@ -10,7 +10,7 @@ using Content.Shared.Access.Components;
 using Content.Shared.Emag.Systems;
 using Content.Shared.IdentityManagement;
 
-namespace Content.Server.Carpmosia.Research;
+namespace Content.Server._Carpmosia.Research;
 
 public sealed partial class FHResearchSystem
 {
@@ -42,7 +42,7 @@ public sealed partial class FHResearchSystem
 
         if (!_emag.CheckFlag(ent, EmagType.Interaction))
         {
-            var getIdentityEvent = new TryGetIdentityShortInfoEvent(ent, args.Actor);
+            var getIdentityEvent = new TryGetIdentityShortInfoEvent(ent, args.Actor, true);
             RaiseLocalEvent(getIdentityEvent);
 
             var message = Loc.GetString(
@@ -75,7 +75,7 @@ public sealed partial class FHResearchSystem
 
         if (!_emag.CheckFlag(ent, EmagType.Interaction))
         {
-            var getIdentityEvent = new TryGetIdentityShortInfoEvent(ent, args.Actor);
+            var getIdentityEvent = new TryGetIdentityShortInfoEvent(ent, args.Actor, true);
             RaiseLocalEvent(getIdentityEvent);
 
             var message = Loc.GetString(

@@ -1,10 +1,10 @@
 using System.Linq;
 using System.Numerics;
-using Content.Shared.Carpmosia.Research;
+using Content.Shared._Carpmosia.Research;
 using Robust.Client.Graphics;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client.Carpmosia.Research.UI.Helpers;
+namespace Content.Client._Carpmosia.Research.UI.Helpers;
 
 public struct DrawResearchEdge((int, int) indA, (int, int) indB, Vector2 spacing, Vector2 margin, Vector2 size, bool highlight = false, List<ProtoId<ResearchTreeNodePrototype>>? linked = null, bool researched = false, Vector2? offset = null)
 {
@@ -49,7 +49,8 @@ public struct DrawResearchEdge((int, int) indA, (int, int) indB, Vector2 spacing
             other.Highlight,
             other.Linked,
             other.Researched,
-            other.Offset){}
+            other.Offset)
+    { }
 
     public DrawResearchEdge Zoom(float zoom)
     {

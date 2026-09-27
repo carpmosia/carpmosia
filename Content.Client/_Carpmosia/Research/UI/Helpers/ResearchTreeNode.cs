@@ -1,9 +1,9 @@
 using System.Numerics;
-using Content.Shared.Carpmosia.Research;
+using Content.Shared._Carpmosia.Research;
 using Robust.Client.Graphics;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client.Carpmosia.Research.UI.Helpers;
+namespace Content.Client._Carpmosia.Research.UI.Helpers;
 
 public struct DrawResearchNode
     (
