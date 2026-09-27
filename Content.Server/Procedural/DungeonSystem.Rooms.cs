@@ -186,11 +186,11 @@ public sealed partial class DungeonSystem
             var protoId = _metaQuery.GetComponent(templateEnt).EntityPrototype?.ID;
 
             // TODO: Copy the templated entity as is with serv
-            var ent = Spawn(protoId, new EntityCoordinates(gridUid, childPos));
+            var ent = SpawnAttachedTo(protoId, new EntityCoordinates(gridUid, childPos), null, childRot); // Carpmosia-edit - Fix nested marker rotations
 
             var childXform = _xformQuery.GetComponent(ent);
             var anchored = templateXform.Anchored;
-            _transform.SetLocalRotation(ent, childRot, childXform);
+            //_transform.SetLocalRotation(ent, childRot, childXform); // Carpmosia-edit - Fix nested marker rotations
 
             // If the templated entity was anchored then anchor us too.
             if (anchored && !childXform.Anchored)

@@ -1,0 +1,26 @@
+- type: dungeonRoom
+  id: PrefabEvacLeft1
+  size: 57,57
+  atlas: /Maps/_Carpmosia/Procedural/prefab.yml
+  offset: 175,117
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PrefabEvacLeft
+
+- type: Tag
+  id: PrefabEvacLeft
+
+- type: entity
+  id: PrefabEvacLeftMarker
+  parent: BasePrefabLeftMarker
+  suffix: Evac, Left
+  components:
+  - type: RoomFill
+    roomWhitelist:
+      tags:
+      - PrefabEvacLeft
+  - type: Sprite
+    layers:
+      - state: arrow
+      - state: left
+      - state: evac
