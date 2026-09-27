@@ -76,6 +76,10 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
+  # Carpmosia-start - Offmed Port
+  - type: RadProtectionArmor
+    modifier: 0.2
+  # Carpmosia-end - Offmed Port
 
 #Spationaut Hardsuit
 - type: entity
@@ -110,6 +114,10 @@
     - Hardsuit
     - WhitelistChameleon
     - HardsuitSpatio
+  # Carpmosia-start - Offmed Port
+  - type: RadProtectionArmor
+    modifier: 0.3
+  # Carpmosia-end - Offmed Port
 
 #Salvage Hardsuit
 - type: entity
@@ -146,6 +154,10 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
+  # Carpmosia-start - Offmed Port
+  - type: RadProtectionArmor
+    modifier: 0.3
+  # Carpmosia-end - Offmed Port
 
 #Goliath Hardsuit
 - type: entity
@@ -185,6 +197,10 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
+  # Carpmosia-start - Offmed Port
+  - type: RadProtectionArmor
+    modifier: 0.3
+  # Carpmosia-end - Offmed Port
 
 #Maxim Hardsuit
 - type: entity
@@ -349,6 +365,10 @@
     - Hardsuit
     - WhitelistChameleon
     - MonkeyWearable # Carpmosia-edit - Ancestor suits
+  # Carpmosia-start - Offmed Port
+  - type: RadProtectionArmor
+    modifier: 0.5
+  # Carpmosia-end - Offmed Port
 
 #Chief Engineer's Hardsuit
 - type: entity
@@ -387,6 +407,10 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
+  # Carpmosia-start - Offmed Port
+  - type: RadProtectionArmor
+    modifier: 0
+  # Carpmosia-end - Offmed Port
 
 #Chief Medical Officer's Hardsuit
 - type: entity
@@ -463,6 +487,10 @@
     price: 750
   - type: StealTarget
     stealGroup: ClothingOuterHardsuitRd
+  # Carpmosia-start - Offmed Port
+  - type: RadProtectionArmor
+    modifier: 0.1
+  # Carpmosia-end - Offmed Port
 
 #Head of Security's Hardsuit
 - type: entity
