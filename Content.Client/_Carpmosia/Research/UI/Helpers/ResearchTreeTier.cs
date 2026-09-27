@@ -1,9 +1,9 @@
 using System.Numerics;
 using Robust.Client.Graphics;
 
-namespace Content.Client._FarHorizons.Research.UI.Helpers;
+namespace Content.Client.Carpmosia.Research.UI.Helpers;
 
-public struct DrawResearchTier (string name, Font? font, int? left, int? right, Vector2 spacing, Vector2 margin, Vector2 size, Color bgColor, Vector2? offset = null)
+public struct DrawResearchTier(string name, Font? font, int? left, int? right, Vector2 spacing, Vector2 margin, Vector2 size, Color bgColor, Vector2? offset = null)
 {
     public string Name = name;
     public Font? Font = font;
@@ -16,9 +16,9 @@ public struct DrawResearchTier (string name, Font? font, int? left, int? right, 
 
     public Color BgColor = bgColor;
 
-    public readonly Vector2 LeftPos => 
+    public readonly Vector2 LeftPos =>
         new(Left == null ? 0 : Offset.X + Margin.X - (Spacing.X / 2) + (Left!.Value * (Size.X + Size.Y + Spacing.X)), 0);
-    public readonly Vector2 RightPos => 
+    public readonly Vector2 RightPos =>
         new(Right == null ? 3000 : Offset.X + Margin.X - (Spacing.X / 2) + (Right!.Value * (Size.X + Size.Y + Spacing.X)), 3000);
     public readonly UIBox2 Box =>
         new(
@@ -27,23 +27,25 @@ public struct DrawResearchTier (string name, Font? font, int? left, int? right, 
         );
 
     private Vector2? _offset = offset;
-    public Vector2 Offset {
+    public Vector2 Offset
+    {
         readonly get => _offset ?? Vector2.Zero;
         set => _offset = value;
     }
 
-    public DrawResearchTier (DrawResearchTier other) 
+    public DrawResearchTier(DrawResearchTier other)
         : this(
-            other.Name, 
-            other.Font, 
-            other.Left, 
-            other.Right, 
+            other.Name,
+            other.Font,
+            other.Left,
+            other.Right,
             other.Spacing,
             other.Margin,
             other.Size,
             other.BgColor,
             other.Offset
-        ){}
+        )
+    { }
 
     public DrawResearchTier Zoom(float zoom) =>
         new(this)
@@ -64,7 +66,7 @@ public struct DrawResearchTier (string name, Font? font, int? left, int? right, 
             Right = null,
         };
 
-    public void DrawBg(DrawingHandleScreen handle) => 
+    public void DrawBg(DrawingHandleScreen handle) =>
         handle.DrawRect(Box, BgColor, true);
 
     public void DrawHeader(DrawingHandleScreen handle)

@@ -3,7 +3,7 @@ using Content.Shared.Radio;
 using Content.Shared.Research.Prototypes;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._FarHorizons.Research;
+namespace Content.Shared.Carpmosia.Research;
 
 [DataDefinition]
 public sealed partial class ResearchTreeNodeIcon
@@ -47,7 +47,7 @@ public sealed partial class ResearchTreeNodePrototype : IPrototype
         List<int> parentDepths = [];
         foreach (var parent in Requires)
             parentDepths.Add(protoMan.Index(parent).GetDepth(protoMan));
-        
+
         return parentDepths.Count == 0 ? 0 : parentDepths.OrderDescending().First() + 1;
     }
 
@@ -59,13 +59,13 @@ public sealed partial class ResearchTreeNodePrototype : IPrototype
             if (!protoMan.HasIndex<ResearchTreeNodePrototype>(parent))
             {
                 Logger.Error($"Research node '{ID}' references unknown parent node '{parent}'");
-                continue; 
+                continue;
             }
-            
+
             var parentProto = protoMan.Index(parent);
             if (parentProto.Tier != Tier)
                 continue;
-            
+
             parentDepths.Add(parentProto.GetTieredDepth(protoMan));
         }
         return parentDepths.Count == 0 ? 0 : parentDepths.OrderDescending().First() + 1;

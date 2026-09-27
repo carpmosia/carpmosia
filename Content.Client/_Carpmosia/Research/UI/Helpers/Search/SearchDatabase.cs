@@ -1,9 +1,9 @@
 using System.Linq;
 using System.Text.RegularExpressions;
-using Content.Shared._FarHorizons.Research;
+using Content.Shared.Carpmosia.Research;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client._FarHorizons.Research.UI.Helpers.Search;
+namespace Content.Client.Carpmosia.Research.UI.Helpers.Search;
 
 public sealed partial class SearchDatabase
 {
@@ -25,7 +25,8 @@ public sealed partial class SearchDatabase
     private bool _unread = false;
     public bool Unread
     {
-        get {
+        get
+        {
             if (_unread)
             {
                 _unread = false;
@@ -66,7 +67,7 @@ public sealed partial class SearchDatabase
     {
         if (_finishedIndexing || SearchTerm == "" || Data.Count == 0)
             return;
-        
+
         for (var i = 0; i < BatchSize; i++)
         {
             var (id, tags) = Data.ElementAt(_step);
@@ -76,7 +77,7 @@ public sealed partial class SearchDatabase
                 var score = SearchScore(SearchTerm, tag);
                 if (score > _movingIndex[id])
                     _movingIndex[id] = score;
-                
+
                 if (score > 0.9)
                     break;
             }
@@ -86,7 +87,8 @@ public sealed partial class SearchDatabase
                 SearchResult = [.. _movingIndex.Where(p => p.Value > 0).OrderByDescending(p => p.Value).Select(p => p.Key).Take(NumSearchResults)];
                 _unread = true;
                 break;
-            } else
+            }
+            else
                 _step++;
         }
     }
@@ -94,7 +96,7 @@ public sealed partial class SearchDatabase
     public void Search(string search)
     {
         var normSearch = Pattern.Replace(search.ToLower(), "");
-        
+
         SearchTerm = normSearch;
         _step = 0;
         _unread = false;

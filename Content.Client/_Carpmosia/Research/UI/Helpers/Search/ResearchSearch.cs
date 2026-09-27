@@ -1,11 +1,11 @@
 using System.Linq;
 using System.Numerics;
-using Content.Shared._FarHorizons.Research;
+using Content.Shared.Carpmosia.Research;
 using Robust.Client.Graphics;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
-namespace Content.Client._FarHorizons.Research.UI.Helpers.Search;
+namespace Content.Client.Carpmosia.Research.UI.Helpers.Search;
 
 public sealed class ResearchSearch(IGameTiming timing, IPrototypeManager protoMan, Font font, Texture texture)
 {
@@ -34,7 +34,7 @@ public sealed class ResearchSearch(IGameTiming timing, IPrototypeManager protoMa
     private TimeSpan _animSpeed = TimeSpan.FromSeconds(0.1);
     public Vector2 ButtonSize => Vector2.Lerp(_sizeAnimFrom, _sizeAnimTo, _animProgress);
 
-    private UIBox2 _button => 
+    private UIBox2 _button =>
         new(_viewportSize - _buttonMargin - ButtonSize, _viewportSize - _buttonMargin);
 
     private Texture _texture = texture;
@@ -44,7 +44,7 @@ public sealed class ResearchSearch(IGameTiming timing, IPrototypeManager protoMa
     private string _placeholderText = "Search...";
 
     private Color FGColor = Color.White;
-    
+
     private Color BGColor => Color.Black;
 
     private TimeSpan _backspaceFrequency = TimeSpan.FromSeconds(0.1);
@@ -57,7 +57,7 @@ public sealed class ResearchSearch(IGameTiming timing, IPrototypeManager protoMa
     public Action<ProtoId<ResearchTreeNodePrototype>>? OnSearchSelected;
 
     public void OnClicked()
-    {   
+    {
         if (!MouseOver)
             foreach (var result in _searchResults)
                 if (result.MouseOver)
@@ -65,7 +65,7 @@ public sealed class ResearchSearch(IGameTiming timing, IPrototypeManager protoMa
                     OnSearchSelected?.Invoke(result.Node);
                     break;
                 }
-        
+
         Active = !Active;
         _sizeAnimFrom = ButtonSize;
         _sizeAnimTo = Active ? _activeSize : _inactiveSize;
@@ -82,7 +82,7 @@ public sealed class ResearchSearch(IGameTiming timing, IPrototypeManager protoMa
 
         if (SearchText.Length < _textMaxSize)
             SearchText += text;
-        
+
         _searchDb?.Search(SearchText);
         _searchResults = [];
     }
@@ -129,7 +129,7 @@ public sealed class ResearchSearch(IGameTiming timing, IPrototypeManager protoMa
         _searchDb?.Update();
         if (_searchDb?.Unread ?? false)
             AddSearchResults(handle, _searchDb!.SearchResult);
-        
+
         foreach(var card in _searchResults)
             card.Update(mousePos);
     }
@@ -143,7 +143,7 @@ public sealed class ResearchSearch(IGameTiming timing, IPrototypeManager protoMa
 
         if (!MouseOver)
             handle.DrawRect(new(_button.TopLeft + (Vector2.One * borderMargin), _button.BottomRight - (Vector2.One * borderMargin)), BGColor, true);
-        
+
         handle.DrawTextureRect(_texture, new(_button.BottomRight - _inactiveSize, _button.BottomRight), MouseOver ? BGColor : FGColor);
 
         if (Active && _animProgress == 1)

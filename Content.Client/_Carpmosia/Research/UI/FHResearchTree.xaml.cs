@@ -6,15 +6,15 @@ using Robust.Client.UserInterface;
 using Robust.Shared.Input;
 using System.Numerics;
 using Robust.Shared.Prototypes;
-using Content.Shared._FarHorizons.Research;
+using Content.Shared.Carpmosia.Research;
 using Robust.Client.ResourceManagement;
-using Content.Client._FarHorizons.Research.UI.Helpers;
-using Content.Client._FarHorizons.Research.UI.Helpers.Search;
+using Content.Client.Carpmosia.Research.UI.Helpers;
+using Content.Client.Carpmosia.Research.UI.Helpers.Search;
 using System.Linq;
 using Robust.Shared.Timing;
 using Content.Shared.Input;
 
-namespace Content.Client._FarHorizons.Research.UI;
+namespace Content.Client.Carpmosia.Research.UI;
 
 [GenerateTypedNameReferences]
 public sealed partial class FHResearchTree : BoxContainer
@@ -50,14 +50,14 @@ public sealed partial class FHResearchTree : BoxContainer
     private Dictionary<ProtoId<ResearchTreeNodePrototype>, (float from, float to, TimeSpan fromTime, TimeSpan toTime)> _lingeringResearchingAnim = [];
     private List<ProtoId<ResearchTreeNodePrototype>> _queuedNodes = [];
 
-    private Vector2 _currentMousePosition => 
+    private Vector2 _currentMousePosition =>
         (UserInterfaceManager.MousePositionScaled.Position * UIScale) - GlobalPixelPosition;
-    
+
     private Vector2 _viewportSize =>
         new(Width * UIScale, Height * UIScale);
-    
+
     private readonly ResearchSearch _search;
-    
+
     private const float MaxZoom = 1.5f;
     private const float MinZoom = 0.3f;
     private const float ZoomSpeed = 0.2f;
@@ -92,7 +92,7 @@ public sealed partial class FHResearchTree : BoxContainer
 
     private readonly SearchDatabase _searchDb = new();
     private readonly IconCache _icons;
-    
+
     public FHResearchTree()
     {
         IoCManager.InjectDependencies(this);
@@ -111,7 +111,7 @@ public sealed partial class FHResearchTree : BoxContainer
 
         _viewportReady = false;
     }
-    
+
     public void BuildTree(
         HashSet<ResearchTreeNodePrototype> nodes,
         HashSet<ProtoId<ResearchTreeTierPrototype>> unlockedTiers,
@@ -120,7 +120,7 @@ public sealed partial class FHResearchTree : BoxContainer
         Dictionary<ProtoId<ResearchTreeNodePrototype>, float> progress,
         List<ProtoId<ResearchTreeNodePrototype>> queued
     )
-    {   
+    {
         var grid = new ResearchTreeGrid(_prototypeManager, nodes);
 
         (_tiers, _nodes, _edges) = grid.GetDrawable((NodeWidth, NodeHeight), (NodeSpacingHorizontal, NodeSpacingVertical), (NodeMarginHorizontal, NodeMarginVertical), _font);
@@ -166,10 +166,10 @@ public sealed partial class FHResearchTree : BoxContainer
 
         if (args.Handled || args.Function != EngineKeyFunctions.UIClick)
             return;
-        
+
         if (_search.AnyMouseOver)
             return;
-        
+
         _lastViewportPosition = _viewportPosition;
         if (_nodes.Any(p => p.Proto == _hovered && p.Zoom(_zoom).Translate(_pseudoViewport).IsHovering(_currentMousePosition)))
         {
@@ -189,7 +189,7 @@ public sealed partial class FHResearchTree : BoxContainer
 
         if (args.Handled)
             return;
-        
+
         if (args.Function == ContentKeyFunctions.AltActivateItemInWorld && _hovered != null)
         {
             OnQuickResearch?.Invoke(_hovered.Value);
@@ -201,7 +201,7 @@ public sealed partial class FHResearchTree : BoxContainer
 
         if (_search.AnyMouseOver)
             _search.OnClicked();
-        
+
         if (_search.Active)
             GrabKeyboardFocus();
         else
@@ -219,14 +219,14 @@ public sealed partial class FHResearchTree : BoxContainer
         if (lastSelection != _selected)
             OnSelectionChanged?.Invoke(_selected);
     }
-    
+
     protected override void MouseWheel(GUIMouseWheelEventArgs args)
     {
         base.MouseWheel(args);
 
         if (args.Handled)
             return;
-        
+
         _zoomFrom = _zoom;
         _zoomTo = Math.Clamp(_zoom + (args.Delta.Y * ZoomSpeed), MinZoom, MaxZoom);
         _zoomAnimFrom = _timing.CurTime;
@@ -253,7 +253,7 @@ public sealed partial class FHResearchTree : BoxContainer
     {
         if (!_search.Active)
             return;
-        
+
         _search.UpdateText(args.Text);
     }
 
@@ -312,7 +312,7 @@ public sealed partial class FHResearchTree : BoxContainer
             .Zoom(_zoom)
             .Translate(_pseudoViewport)
             .DrawHeader(handle);
-        
+
         _search.Draw(handle);
     }
 
@@ -340,7 +340,7 @@ public sealed partial class FHResearchTree : BoxContainer
     {
         Dictionary<ProtoId<ResearchTreeNodePrototype>, (float, float, TimeSpan, TimeSpan)> anim = [];
         var current = GetAnimatedProgress();
-        foreach(var nodeProgress in progress)
+        foreach (var nodeProgress in progress)
         {
             anim[nodeProgress.Key] = (
                 current.TryGetValue(nodeProgress.Key, out var val) ? val : 0,
@@ -355,7 +355,7 @@ public sealed partial class FHResearchTree : BoxContainer
     private void AnimateLingering(HashSet<ProtoId<ResearchTreeNodePrototype>> nodes)
     {
         var current = GetAnimatedProgress();
-        foreach(var node in nodes)
+        foreach (var node in nodes)
         {
             _lingeringResearchingAnim[node] = (
                 current.TryGetValue(node, out var val) ? val : 0,
@@ -369,7 +369,7 @@ public sealed partial class FHResearchTree : BoxContainer
     private Dictionary<ProtoId<ResearchTreeNodePrototype>, float> GetAnimatedProgress()
     {
         Dictionary<ProtoId<ResearchTreeNodePrototype>, float> progress = [];
-        foreach(var nodeAnim in _researchingAnim)
+        foreach (var nodeAnim in _researchingAnim)
         {
             var animProgress = Math.Clamp((float)(_timing.CurTime - nodeAnim.Value.fromTime).TotalSeconds / (float)(nodeAnim.Value.toTime - nodeAnim.Value.fromTime).TotalSeconds, 0f, 1f);
             progress[nodeAnim.Key] = float.Lerp(nodeAnim.Value.from, nodeAnim.Value.to, animProgress);

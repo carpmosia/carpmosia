@@ -2,7 +2,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._FarHorizons.Research.Components;
+namespace Content.Shared.Carpmosia.Research.Components;
 
 [RegisterComponent]
 public sealed partial class FHResearchConsoleComponent : Component
@@ -22,7 +22,7 @@ public enum FHResearchConsoleUiKey
 
 [NetSerializable, Serializable]
 public sealed class FHResearchConsoleBUIFullState(
-    HashSet<ProtoId<ResearchTreeNodePrototype>> nodes, 
+    HashSet<ProtoId<ResearchTreeNodePrototype>> nodes,
     HashSet<ProtoId<ResearchTreeTierPrototype>> unlockedTiers,
     HashSet<ProtoId<ResearchTreeNodePrototype>> unlockedNodes,
     HashSet<ProtoId<ResearchTreeNodePrototype>> researchedNodes,

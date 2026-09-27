@@ -1,12 +1,12 @@
 using System.Linq;
-using Content.Shared._FarHorizons.Research;
-using Content.Shared._FarHorizons.Research.Components;
+using Content.Shared.Carpmosia.Research;
+using Content.Shared.Carpmosia.Research.Components;
 using Content.Shared.Research.Components;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client._FarHorizons.Research.UI;
+namespace Content.Client.Carpmosia.Research.UI;
 
 [UsedImplicitly]
 public sealed partial class FHResearchConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : BoundUserInterface(owner, uiKey)
@@ -26,7 +26,7 @@ public sealed partial class FHResearchConsoleBoundUserInterface(EntityUid owner,
     protected override void Open()
     {
         base.Open();
-        
+
         _nodeProtos = [.. _protoMan.EnumeratePrototypes<ResearchTreeNodePrototype>()];
         _window = this.CreateWindow<FHResearchConsoleWindow>();
         _window.Title = EntMan.GetComponent<MetaDataComponent>(Owner).EntityName;
@@ -60,7 +60,7 @@ public sealed partial class FHResearchConsoleBoundUserInterface(EntityUid owner,
                 _window.OnRemoveQueueButtonPressed -= SendRemoveFromQueueRequest;
                 _window.OnQuickResearch -= QuickResearchRequest;
             }
-            
+
             _window?.SetupUI(_nodeProtos, _unlockedTiers, _unlockedNodes, _researchedNodes, _queuedNodes, fullState.ResearchProgress, fullState.BankedPoints, fullState.Readonly);
         } else if (state is FHResearchConsoleBUIPartialState partialState)
         {
@@ -68,7 +68,7 @@ public sealed partial class FHResearchConsoleBoundUserInterface(EntityUid owner,
             _unlockedTiers = partialState.UnlockedTiers;
             _unlockedNodes = partialState.UnlockedNodes;
             _queuedNodes = partialState.QueuedNodes;
-            
+
             _window?.RefreshUI(_unlockedTiers, _unlockedNodes, _researchedNodes, _queuedNodes, partialState.ResearchProgress, partialState.BankedPoints);
         }
     }

@@ -21,7 +21,7 @@ public sealed class ResearchTreeGrid
 
         List<ProtoId<ResearchTreeTierPrototype>> tiers = [.. _allNodes.Select(p => p.Tier).Distinct().OrderBy(p => _prototypeManager.Index(p).Position)];
         TierWidths = tiers.ToDictionary(
-                            p => p, 
+                            p => p,
                             p => _allNodes
                                     .Where(e => e.Tier == p)
                                     .Select(e => e.GetTieredDepth(_prototypeManager))
@@ -46,7 +46,7 @@ public sealed class ResearchTreeGrid
             {
                 if (Grid[i][j] == null)
                     continue;
-                
+
                 var posX = (nodeSize.w + spacing.x) * i;
                 var posY = (nodeSize.h + spacing.y) * j;
 
@@ -55,7 +55,9 @@ public sealed class ResearchTreeGrid
                 if (nodeSpace.IsNode)
                 {
                     nodes.Add(new(nodeSpace.Node!, nodeSpace.Node!.Tier, Loc.GetString(nodeSpace.Node!.Name), (i, j), vSpacing, vMargin, vSize, font));
-                } else {
+                }
+                else
+                {
                     DrawResearchEdge edge = new((i, j), (i, j), vSpacing, vMargin, vSize);
                     edge.Linked.AddRange(nodeSpace.LineFor.Select(p => (ProtoId<ResearchTreeNodePrototype>)p.Node!.ID));
                     edges.Add(edge);
@@ -112,7 +114,7 @@ public sealed class ResearchTreeGrid
             if (!ParentsPresent(reqProto))
                 return false;
         }
-        
+
         return true;
     }
 
@@ -133,7 +135,7 @@ public sealed class ResearchTreeGrid
         foreach (var tier in tiers)
         {
             var startingNodes = tierNodes[tier].Where(p => p.Requires.Count == 0);
-            
+
             foreach (var node in startingNodes)
             {
                 if (handledNodes.Contains(node))
@@ -153,7 +155,7 @@ public sealed class ResearchTreeGrid
         return result;
     }
 
-    private int ApproxBranchHeight(ResearchTreeNodePrototype node, 
+    private int ApproxBranchHeight(ResearchTreeNodePrototype node,
                          Dictionary<ProtoId<ResearchTreeTierPrototype>, List<ResearchTreeNodePrototype>> tierNodes)
     {
         var height = 1;
@@ -165,7 +167,7 @@ public sealed class ResearchTreeGrid
         foreach (var child in children)
             if (tierNodes[node.Tier].Contains(child))
                 childrenSum += ApproxBranchHeight(child, tierNodes);
-        
+
         return Math.Max(children.Count, childrenSum);
     }
 
@@ -185,9 +187,9 @@ public sealed class ResearchTreeGrid
         return true;
     }
 
-    private int NodePosX(ResearchTreeNodePrototype node, 
-                         Dictionary<ProtoId<ResearchTreeTierPrototype>, List<ResearchTreeNodePrototype>> tierNodes, 
-                         Dictionary<ProtoId<ResearchTreeTierPrototype>, int> tierWidths, 
+    private int NodePosX(ResearchTreeNodePrototype node,
+                         Dictionary<ProtoId<ResearchTreeTierPrototype>, List<ResearchTreeNodePrototype>> tierNodes,
+                         Dictionary<ProtoId<ResearchTreeTierPrototype>, int> tierWidths,
                          Dictionary<ProtoId<ResearchTreeTierPrototype>, int> tierStartingColumns)
     {
         var children = node.Children(_prototypeManager);
@@ -197,16 +199,16 @@ public sealed class ResearchTreeGrid
         var parents = node.Requires.Select(_prototypeManager.Index).ToList();
         var parentsInTier = parents.Where(tierNodes[node.Tier].Contains).ToList();
 
-        var x = children.Count == 0 ? 
-                    parentsInTier.Count == 0 ? 
-                        tierStartingColumns[node.Tier] : 
-                        tierStartingColumns[node.Tier] + tierWidths[node.Tier] : 
-                    childrenInTier.Count == 0 ? 
-                        parentsInTier.Count == 0 ? 
+        var x = children.Count == 0 ?
+                    parentsInTier.Count == 0 ?
+                        tierStartingColumns[node.Tier] :
+                        tierStartingColumns[node.Tier] + tierWidths[node.Tier] :
+                    childrenInTier.Count == 0 ?
+                        parentsInTier.Count == 0 ?
                             tierStartingColumns[node.Tier] :
-                            tierStartingColumns[node.Tier] + tierWidths[node.Tier] : 
+                            tierStartingColumns[node.Tier] + tierWidths[node.Tier] :
                         childrenPos.Order().First() - 1;
-        
+
         return Math.Clamp(x, tierStartingColumns[node.Tier], tierStartingColumns[node.Tier] + tierWidths[node.Tier]);
     }
 
@@ -229,10 +231,10 @@ public sealed class ResearchTreeGrid
     {
         if (FindInColumn(grid, nodeSpace, position, 1) is ((int, int), NodeSpace) existing)
             return (existing.position, existing.nodeSpace, false);
-        
+
         if (offset > grid[0].Count - 1)
             throw new Exception("Error generating ResearchTreeGrid: Ran out of space");
-        
+
         var order = rev ? -1 : 1;
         var verticalOffset = (offset + 1) / 2 * (offset % 2 == 0 ? order : -order);
         var posY = Math.Clamp(position.y + verticalOffset, 0, grid[0].Count - 1);
@@ -248,7 +250,7 @@ public sealed class ResearchTreeGrid
     private static ((int x, int y) position, NodeSpace nodeSpace)? FindInColumn(List<List<NodeSpace?>> grid, NodeSpace nodeSpace, (int x, int y) position, int lineMergeDistance = -1)
     {
         List<NodeSpace> matching = [];
-        if (nodeSpace.IsNode) 
+        if (nodeSpace.IsNode)
             matching = [.. grid[position.x]
                         .Where(p => p != null && p.IsNode && p.Node == nodeSpace.Node)
                         .Select(p => p!)];
@@ -257,7 +259,7 @@ public sealed class ResearchTreeGrid
                         .Take((lineMergeDistance * 2) + 1)
                         .Where(p => p != null && !p.IsNode && p.LineFor.Intersect(nodeSpace.LineFor).Any())
                         .Select(p => p!)];
-        
+
         return matching.Count == 0 ? null : ((position.x, grid[position.x].IndexOf(matching.First())), matching.First());
     }
 
@@ -270,7 +272,7 @@ public sealed class ResearchTreeGrid
         return null;
     }
 
-    private List<((int x, int y) position, NodeSpace nodeSpace)> Backfill(ref List<List<NodeSpace?>> grid, 
+    private List<((int x, int y) position, NodeSpace nodeSpace)> Backfill(ref List<List<NodeSpace?>> grid,
                                                                           List<((int x, int y) position, NodeSpace nodeSpace)> tree,
                                                                           Dictionary<ProtoId<ResearchTreeTierPrototype>, List<ResearchTreeNodePrototype>> tierNodes,
                                                                           Dictionary<ProtoId<ResearchTreeTierPrototype>, int> tierWidths,
@@ -291,7 +293,7 @@ public sealed class ResearchTreeGrid
                         ConnectNodes(ref grid, parentPos.Value, node, true);
                     continue;
                 }
-                
+
                 var subTree = WalkBackward(ref grid, parent, node.position.y, tierNodes, tierWidths, tierStartingColumns, ref excludedNodes);
                 ConnectNodes(ref grid, subTree[0], node, true);
 
@@ -300,7 +302,7 @@ public sealed class ResearchTreeGrid
                 {
                     if (!nodeSpace.IsNode)
                         continue;
-                    
+
                     List<ResearchTreeNodePrototype> remainingNodes = [.. nodeSpace.Node!
                                                                             .Children(_prototypeManager)
                                                                             .Except(excludedNodes)];
@@ -320,9 +322,9 @@ public sealed class ResearchTreeGrid
         return fullTree;
     }
 
-    private List<((int x, int y) position, NodeSpace nodeSpace)> WalkBackward(ref List<List<NodeSpace?>> grid, 
+    private List<((int x, int y) position, NodeSpace nodeSpace)> WalkBackward(ref List<List<NodeSpace?>> grid,
                                                                              ResearchTreeNodePrototype node,
-                                                                             int startY, 
+                                                                             int startY,
                                                                              Dictionary<ProtoId<ResearchTreeTierPrototype>, List<ResearchTreeNodePrototype>> tierNodes,
                                                                              Dictionary<ProtoId<ResearchTreeTierPrototype>, int> tierWidths,
                                                                              Dictionary<ProtoId<ResearchTreeTierPrototype>, int> tierStartingColumns,
@@ -335,7 +337,7 @@ public sealed class ResearchTreeGrid
         (var newPos, newNodeSpace, _) = PlaceAtCoords(ref grid, newNodeSpace, startPosition, true);
         subTree.Add((newPos, newNodeSpace));
         excludedNodes.Add(node);
-        
+
         foreach (var parentId in node.Requires)
         {
             var parent = _prototypeManager.Index(parentId);
@@ -349,9 +351,9 @@ public sealed class ResearchTreeGrid
         return subTree;
     }
 
-    private List<((int x, int y) position, NodeSpace nodeSpace)> WalkForward(ref List<List<NodeSpace?>> grid, 
-                                                                             ResearchTreeNodePrototype node, 
-                                                                             int startY, 
+    private List<((int x, int y) position, NodeSpace nodeSpace)> WalkForward(ref List<List<NodeSpace?>> grid,
+                                                                             ResearchTreeNodePrototype node,
+                                                                             int startY,
                                                                              Dictionary<ProtoId<ResearchTreeTierPrototype>, List<ResearchTreeNodePrototype>> tierNodes,
                                                                              Dictionary<ProtoId<ResearchTreeTierPrototype>, int> tierWidths,
                                                                              Dictionary<ProtoId<ResearchTreeTierPrototype>, int> tierStartingColumns,
@@ -388,7 +390,8 @@ public sealed class ResearchTreeGrid
 
         if (to.position.x <= from.position.x + 2 && (to.position.x != from.position.x + 2 || to.position.y != from.position.y))
             from.nodeSpace.LinksTo.Add((to.position, from.nodeSpace, to.nodeSpace));
-        else {
+        else
+        {
             var previous = from.nodeSpace;
             var nextPos = (from.position.x + 1, to.position.y);
             for (var i = from.position.x + 1; i < to.position.x; i++)
@@ -416,12 +419,12 @@ public sealed class NodeSpace
 
     public List<NodeSpace> LineFor = [];
 
-    public bool IsNode => 
+    public bool IsNode =>
         Node != null;
 
-    public NodeSpace() => 
+    public NodeSpace() =>
         Node = null;
 
-    public NodeSpace(ResearchTreeNodePrototype node) => 
+    public NodeSpace(ResearchTreeNodePrototype node) =>
         Node = node;
 }

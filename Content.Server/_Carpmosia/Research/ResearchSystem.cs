@@ -3,8 +3,8 @@ using System.Linq;
 using Content.Server.Chat.Systems;
 using Content.Server.Radio.EntitySystems;
 using Content.Server.Research.Systems;
-using Content.Shared._FarHorizons.Research;
-using Content.Shared._FarHorizons.Research.Components;
+using Content.Shared.Carpmosia.Research;
+using Content.Shared.Carpmosia.Research.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.Emag.Systems;
 using Content.Shared.Research.Components;
@@ -13,7 +13,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
-namespace Content.Server._FarHorizons.Research;
+namespace Content.Server.Carpmosia.Research;
 
 public sealed partial class FHResearchSystem : EntitySystem
 {
@@ -34,10 +34,10 @@ public sealed partial class FHResearchSystem : EntitySystem
     }
 
     public bool TryGetServerWithTree(Entity<ResearchClientComponent?> ent, [NotNullWhen(true)] out Entity<FHResearchTreeComponent>? server)
-    {   
+    {
         server = null;
-        if (Resolve(ent, ref ent.Comp) && 
-            _research.TryGetClientServer(ent, out var serverEnt, out _) && 
+        if (Resolve(ent, ref ent.Comp) &&
+            _research.TryGetClientServer(ent, out var serverEnt, out _) &&
             TryComp(serverEnt, out FHResearchTreeComponent? treeComp))
         {
             server = (serverEnt.Value, treeComp);

@@ -1,9 +1,9 @@
-using Content.Shared._FarHorizons.Research;
+using Content.Shared.Carpmosia.Research;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client._FarHorizons.Research.UI.Helpers;
+namespace Content.Client.Carpmosia.Research.UI.Helpers;
 
 public sealed class IconCache
 {
@@ -19,7 +19,7 @@ public sealed class IconCache
             var texture = GetTexture(resourceCache, icon.Path, icon.State);
             if (texture == null)
                 continue;
-            
+
             _iconCache[node.ID] = ((icon.Path, icon.State), Color.TryFromHex(icon.Color, out var color) ? color : null);
         }
     }
@@ -29,7 +29,7 @@ public sealed class IconCache
         if (!_iconCache.TryGetValue(node, out var cache) ||
             !_textureCache.TryGetValue(cache.texture, out var texture))
             return (null, null);
-        
+
         return (texture, cache.iconColor);
     }
 
@@ -37,7 +37,7 @@ public sealed class IconCache
     {
         if (!_rsiCache.ContainsKey(path))
             _rsiCache[path] = resourceCache.GetResource<RSIResource>(path).RSI;
-        
+
         return _rsiCache[path];
     }
 

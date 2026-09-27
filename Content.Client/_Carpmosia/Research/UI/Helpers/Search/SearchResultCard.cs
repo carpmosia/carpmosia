@@ -1,9 +1,9 @@
 using System.Numerics;
-using Content.Shared._FarHorizons.Research;
+using Content.Shared.Carpmosia.Research;
 using Robust.Client.Graphics;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client._FarHorizons.Research.UI.Helpers.Search;
+namespace Content.Client.Carpmosia.Research.UI.Helpers.Search;
 
 public sealed class SearchResultCard
 {
@@ -24,16 +24,16 @@ public sealed class SearchResultCard
     private Vector2 _mousePos = Vector2.Zero;
 
     private Color FGColor;
-    
+
     private Color BGColor;
 
     public Vector2 Pos;
     private Vector2 _size;
     public Vector2 Size => _size + new Vector2(0, TextSize);
 
-    private UIBox2 _box => 
+    private UIBox2 _box =>
         new(Pos, Pos + Size);
-    
+
     public bool MouseOver =>
         _mousePos.X >= _box.Left && _mousePos.X <= _box.Right && _mousePos.Y >= _box.Top && _mousePos.Y <= _box.Bottom;
 
@@ -53,12 +53,13 @@ public sealed class SearchResultCard
     {
         if (_name == "")
             return;
-        
+
         List<string> text = [];
         var dimensions = handle.GetDimensions(_font, _name, fontScale);
         if (dimensions.X < Size.X - (borderMargin * 2))
             text.Add(_name);
-        else {
+        else
+        {
             var line = "";
             foreach (var word in _name.Split(' '))
             {
@@ -68,7 +69,9 @@ public sealed class SearchResultCard
                 {
                     text.Add(line);
                     line = word;
-                } else {
+                }
+                else
+                {
                     line = newLine;
                 }
             }
@@ -90,7 +93,7 @@ public sealed class SearchResultCard
 
         if (!MouseOver)
             handle.DrawRect(new(_box.TopLeft + (Vector2.One * borderMargin), _box.BottomRight - (Vector2.One * borderMargin)), BGColor, true);
-        
+
         for (var i = 0; i < _text.Count; i++)
         {
             var dimensions = handle.GetDimensions(_font, _text[i], fontScale);

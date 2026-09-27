@@ -1,11 +1,11 @@
 using System.Linq;
-using Content.Shared._FarHorizons.Research;
-using Content.Shared._FarHorizons.Research.Components;
+using Content.Shared.Carpmosia.Research;
+using Content.Shared.Carpmosia.Research.Components;
 using Content.Shared.Radio;
 using Content.Shared.Research.Components;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._FarHorizons.Research;
+namespace Content.Server.Carpmosia.Research;
 
 public sealed partial class FHResearchSystem
 {
@@ -30,7 +30,7 @@ public sealed partial class FHResearchSystem
         {
             if(_timing.CurTime < comp.NextUpdate)
                 continue;
-            
+
             var bankCap = GetCurrentBankCapacity((uid, comp));
 
             if (comp.BankedPoints <= bankCap)
@@ -60,9 +60,9 @@ public sealed partial class FHResearchSystem
 
         if (!ent.Comp.Progress.ContainsKey(nextNode))
             ent.Comp.Progress[nextNode] = 0;
-        
+
         var pointsRemaining = nextNodeProto.Cost - ent.Comp.Progress[nextNode];
-        
+
         if (points >= pointsRemaining)
         {
             UnlockNode(ent, nextNode);
@@ -73,7 +73,7 @@ public sealed partial class FHResearchSystem
         }
     }
 
-    public void AddBankedPoints(Entity<FHResearchTreeComponent> ent, int points) => 
+    public void AddBankedPoints(Entity<FHResearchTreeComponent> ent, int points) =>
         AddBankedPoints(ent, ref points);
 
     public void AddBankedPoints(Entity<FHResearchTreeComponent> ent, ref int points)
@@ -109,12 +109,12 @@ public sealed partial class FHResearchSystem
 
         if (!TryComp(ent, out TechnologyDatabaseComponent? techDb))
             return;
-        
+
         var nodeProto = _protoMan.Index(node);
 
         foreach(var recipe in nodeProto.Unlocks)
             _research.AddLatheRecipe(ent, recipe, techDb);
-        
+
         List<ProtoId<ResearchTreeUnlockFlagPrototype>> add = [];
         foreach (var unlockFlag in nodeProto.UnlockFlags)
         {
@@ -134,7 +134,7 @@ public sealed partial class FHResearchSystem
     {
         if (!GetRemovableReseach(ent).Contains(node) || !TryComp(ent, out TechnologyDatabaseComponent? techDb))
             return false;
-        
+
         var nodeProto = _protoMan.Index(node);
 
         ent.Comp.Researched.Remove(node);
@@ -155,7 +155,7 @@ public sealed partial class FHResearchSystem
         ent.Comp.Queue = [];
 
         RefreshUIOnClients((ent, ent.Comp));
-        
+
         return true;
     }
 
@@ -194,7 +194,7 @@ public sealed partial class FHResearchSystem
 
         if (!ent.Comp.Queue.Remove(node))
             return false;
-        
+
         List<ProtoId<ResearchTreeNodePrototype>> toRemove = [];
         foreach (var queuedNode in ent.Comp.Queue)
         {
@@ -212,7 +212,7 @@ public sealed partial class FHResearchSystem
     {
         if (!Resolve(ent, ref ent.Comp) || !TryComp(ent, out ResearchServerComponent? serverComp))
             return;
-        
+
         foreach (var client in serverComp.Clients)
             if(TryComp(client, out FHResearchConsoleComponent? console))
                 ShowError((client, console), message);
@@ -222,7 +222,7 @@ public sealed partial class FHResearchSystem
     {
         if (!Resolve(ent, ref ent.Comp) || !TryComp(ent, out ResearchServerComponent? serverComp))
             return;
-        
+
         foreach (var client in serverComp.Clients)
             if(TryComp(client, out FHResearchConsoleComponent? console))
                 UpdateUI((client, console));
@@ -234,7 +234,7 @@ public sealed partial class FHResearchSystem
     public HashSet<ProtoId<ResearchTreeNodePrototype>> GetUnlockedNodes(Entity<FHResearchTreeComponent> ent, bool withQueue = true)
     {
         HashSet<ProtoId<ResearchTreeNodePrototype>> result = [];
-        
+
         var unlockedTiers = GetUnlockedTiers(ent);
 
         foreach (var node in GetTreeNodes(ent))
@@ -304,7 +304,7 @@ public sealed partial class FHResearchSystem
 
     public HashSet<ResearchTreeNodePrototype> GetTreeNodes(Entity<FHResearchTreeComponent> ent) =>
         _protoMan.Index(ent.Comp.Tree).Nodes.Select(p => _protoMan.Index(p)).ToHashSet();
-    
+
     public List<ProtoId<ResearchTreeNodePrototype>> GetRemovableReseach(Entity<FHResearchTreeComponent> ent) =>
         [.. ent.Comp.Researched.Where(p => !_protoMan.Index(p).Children(_protoMan).Any(e => ent.Comp.Researched.Contains(e.ID)))];
 }

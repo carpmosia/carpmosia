@@ -1,9 +1,9 @@
 using System.Numerics;
-using Content.Shared._FarHorizons.Research;
+using Content.Shared.Carpmosia.Research;
 using Robust.Client.Graphics;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client._FarHorizons.Research.UI.Helpers;
+namespace Content.Client.Carpmosia.Research.UI.Helpers;
 
 public struct DrawResearchNode
     (
@@ -45,10 +45,11 @@ public struct DrawResearchNode
     public (int x, int y) Index = index;
     public Vector2 Spacing = spacing;
     public Vector2 Margin = margin;
-    public readonly Vector2 Position => 
+    public readonly Vector2 Position =>
         Offset + new Vector2(Margin.X + (Index.x * (_size.X + _size.Y + Spacing.X)), Margin.Y + (Index.y * (_size.Y + Spacing.Y)));
     private Vector2? _offset = offset;
-    public Vector2 Offset {
+    public Vector2 Offset
+    {
         readonly get => _offset ?? Vector2.Zero;
         set => _offset = value;
     }
@@ -66,9 +67,9 @@ public struct DrawResearchNode
             return new(width, height);
         }
     }
-    public UIBox2 Box => 
+    public UIBox2 Box =>
         new(Position, Position + Size);
-    public Vector2 Center => 
+    public Vector2 Center =>
         Position + new Vector2(_size.Y, 0) + (new Vector2(_size.X, Size.Y) / 2);
     public Font? Font = font;
     public float FontScale = fontScale;
@@ -87,9 +88,9 @@ public struct DrawResearchNode
         }
     }
 
-    public readonly Color IconColor => 
-        _iconColor == null || !Unlocked || Completed ? 
-            ForegroundColor : 
+    public readonly Color IconColor =>
+        _iconColor == null || !Unlocked || Completed ?
+            ForegroundColor :
             _iconColor.Value;
 
     private Texture? _iconTexture = iconTexture;
@@ -106,9 +107,9 @@ public struct DrawResearchNode
     private readonly Color QueuedColor = Color.Orange;
     private readonly Color SelectionColor = Color.Yellow;
 
-    public DrawResearchNode(DrawResearchNode other) 
+    public DrawResearchNode(DrawResearchNode other)
         : this(
-            other.Proto, 
+            other.Proto,
             other.Tier,
             other.Name,
             other.Index,
@@ -128,13 +129,14 @@ public struct DrawResearchNode
             other.Completed,
             other.Queued,
             other.QueueOrder,
-            other.Offset){}
+            other.Offset)
+    { }
 
     public DrawResearchNode WrapName(DrawingHandleScreen handle)
     {
         if (Text.Count != 0 || Font == null)
             return this;
-        
+
         List<string> text = [];
 
         var dimensions = handle.GetDimensions(Font!, Name, FontScale);
@@ -151,7 +153,9 @@ public struct DrawResearchNode
                 {
                     text.Add(line);
                     line = word;
-                } else {
+                }
+                else
+                {
                     line = newLine;
                 }
             }
@@ -175,9 +179,9 @@ public struct DrawResearchNode
             TextSize = (int)(TextSize * zoom),
         };
 
-    public DrawResearchNode Icon((Texture? texture, Color? color) icon) => 
-        icon.texture == null ? 
-            this : 
+    public DrawResearchNode Icon((Texture? texture, Color? color) icon) =>
+        icon.texture == null ?
+            this :
             new(this)
             {
                 _iconTexture = icon.texture,
@@ -207,20 +211,20 @@ public struct DrawResearchNode
         {
             Progress = researching.TryGetValue(Proto, out var value) ? value : null,
         };
-    
+
     public DrawResearchNode Unlock(HashSet<ProtoId<ResearchTreeTierPrototype>> unlockedTiers, HashSet<ProtoId<ResearchTreeNodePrototype>> unlockedNodes) =>
         new(this)
         {
             Unlocked = unlockedTiers.Contains(Tier) && unlockedNodes.Contains(Proto),
         };
-    
-    public DrawResearchNode Queue(List<ProtoId<ResearchTreeNodePrototype>> queuedNodes) => 
+
+    public DrawResearchNode Queue(List<ProtoId<ResearchTreeNodePrototype>> queuedNodes) =>
         new(this)
         {
             Queued = queuedNodes.Contains(Proto),
             QueueOrder = !queuedNodes.Contains(Proto) ? -1 : queuedNodes.IndexOf(Proto) + 1,
         };
-        
+
 
     public DrawResearchNode Research(HashSet<ProtoId<ResearchTreeNodePrototype>> allResearched) =>
         new(this)

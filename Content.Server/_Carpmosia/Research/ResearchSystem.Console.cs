@@ -1,6 +1,6 @@
 using System.Linq;
-using Content.Shared._FarHorizons.Research;
-using Content.Shared._FarHorizons.Research.Components;
+using Content.Shared.Carpmosia.Research;
+using Content.Shared.Carpmosia.Research.Components;
 using Content.Shared.Chat;
 using Content.Shared.Research.Components;
 using Content.Shared.UserInterface;
@@ -10,7 +10,7 @@ using Content.Shared.Access.Components;
 using Content.Shared.Emag.Systems;
 using Content.Shared.IdentityManagement;
 
-namespace Content.Server._FarHorizons.Research;
+namespace Content.Server.Carpmosia.Research;
 
 public sealed partial class FHResearchSystem
 {
@@ -33,13 +33,13 @@ public sealed partial class FHResearchSystem
             ShowError((ent, ent.Comp), Loc.GetString("research-console-no-access-popup"));
             return;
         }
-        
+
         if (ent.Comp.Readonly || !TryGetServerWithTree(ent.Owner, out var server))
             return;
 
         if (!RemoveResearchFromQueue((server.Value, server.Value.Comp), args.Node))
             return;
-        
+
         if (!_emag.CheckFlag(ent, EmagType.Interaction))
         {
             var getIdentityEvent = new TryGetIdentityShortInfoEvent(ent, args.Actor);
@@ -69,10 +69,10 @@ public sealed partial class FHResearchSystem
 
         if (ent.Comp.Readonly || !TryGetServerWithTree(ent.Owner, out var server))
             return;
-        
+
         if (!AddResearchToQueue((server.Value, server.Value.Comp), args.Node))
             return;
-        
+
         if (!_emag.CheckFlag(ent, EmagType.Interaction))
         {
             var getIdentityEvent = new TryGetIdentityShortInfoEvent(ent, args.Actor);
@@ -125,7 +125,7 @@ public sealed partial class FHResearchSystem
         {
             if (build)
                 nodes = [.. GetTreeNodes(server.Value).Select(p => (ProtoId<ResearchTreeNodePrototype>)p.ID)];
-            
+
             unlockedTiers = GetUnlockedTiers(server.Value);
             unlockedNodes = GetUnlockedNodes(server.Value);
             researchedNodes = server!.Value.Comp.Researched;
