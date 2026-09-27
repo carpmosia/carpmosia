@@ -128,7 +128,7 @@
     emagType: Interaction
 
 - type: entity
-  parent: FaxMachineBase
+  parent: [FaxMachineBase, BaseCommandContraband] # Carpmosia-edit - fax machines
   id: FaxMachineCaptain
   name: captain long range fax machine
   suffix: NukeCodes
@@ -138,3 +138,15 @@
       receiveNukeCodes: true
     - type: StealTarget
       stealGroup: FaxMachineCaptain
+    # Carpmosia-start - fax machines
+    - type: Sprite 
+      layers:      
+      - state: icon_captain
+      - state: idle
+        map: [ "faxEyes" ]
+      - state: printing
+        map: [ "printing" ]
+        visible: false
+      - state: 
+        map: [ "enum.FaxMachineVisuals.VisualState" ]
+    # Carpmosia-end - fax machines
