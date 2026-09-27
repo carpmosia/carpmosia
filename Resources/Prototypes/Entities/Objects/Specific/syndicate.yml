@@ -22,6 +22,11 @@
   - type: Currency
     price:
       Telecrystal: 1
+  # Carpmosia-start - Telecrystal tag
+  - type: Tag
+    tags:
+    - Telecrystal
+  # Carpmosia-end - Telecrystal tag
 
 - type: entity
   parent: Telecrystal
