@@ -1,0 +1,125 @@
+- type: entity
+  parent: BaseWallmountMetallic
+  id: ResearchTreeMapBroken
+  name: Research Tree Map
+  description: A virtual map of current station research progress.
+  suffix: Wall broken
+  components:
+    - type: Sprite
+      sprite: _FarHorizons/Structures/Wallmounts/research_tree_map.rsi
+      drawdepth: WallMountedItems
+      layers:
+        - state: research_tree_map_broken
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 100
+          behaviors:
+            - !type:PlaySoundBehavior
+              sound:
+                collection: GlassBreak
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+
+- type: entity
+  parent: BaseWallmountMachine
+  id: ResearchTreeMap
+  name: Research Tree Map
+  description: A virtual map of current station research progress.
+  suffix: Wall
+  components:
+    - type: WallMount
+      arc: 360
+    - type: Appearance
+    - type: Sprite
+      sprite: _FarHorizons/Structures/Wallmounts/research_tree_map.rsi
+      layers:
+      - state: research_tree_map0
+      - state: unshaded
+        shader: unshaded
+    - type: Icon
+      sprite: _FarHorizons/Structures/Wallmounts/research_tree_map.rsi
+      state: research_tree_map0
+    - type: ContainerFill
+      containers:
+        board: [ ResearchTreeMapCircuitboard ]
+    - type: ContainerContainer
+      containers:
+        board: !type:Container
+    - type: ApcPowerReceiver
+      powerLoad: 200
+    - type: Construction
+      graph: ResearchTreeMap
+      node: research_tree_map
+    - type: ActivatableUIRequiresPower
+    - type: ActivatableUI
+      key: enum.FHResearchConsoleUiKey.Key
+    - type: UserInterface
+      interfaces:
+        enum.FHResearchConsoleUiKey.Key:
+          type: FHResearchConsoleBoundUserInterface
+        enum.ResearchClientUiKey.Key:
+          type: ResearchClientBoundUserInterface
+    - type: ResearchClient
+    - type: FHResearchConsole
+      readonly: true
+    - type: EmitSoundOnUIOpen
+      sound:
+        collection: Keyboard
+        params:
+          volume: -1
+          variation: 0.10
+          pitch: 1.10  # low pitch keyboard sounds feel kinda weird
+      blacklist:
+        tags:
+        - NoConsoleSound
+    - type: Destructible
+      thresholds:
+      - trigger: # Excess damage, don't spawn entities
+          !type:DamageTrigger
+          damage: 200
+        behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            collection: GlassBreak
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            collection: GlassBreak
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            ResearchTreeMapBroken:
+              min: 1
+              max: 1
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+
+- type: entity
+  parent: BaseWallmountMetallic
+  id: ResearchTreeMapAssembly
+  name: Research Tree Map Assembly
+  description: A research tree map assembly.
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Sprite
+    sprite: _FarHorizons/Structures/Wallmounts/research_tree_map.rsi
+    layers:
+    - state: research_tree_map_frame1
+      map: [ "enum.ConstructionVisuals.Layer" ]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ConstructionVisuals.Key:
+        enum.ConstructionVisuals.Layer:
+          assembly: { state: research_tree_map_frame0 }
+          electronics: { state: research_tree_map_frame2 }
+  - type: Construction
+    graph: ResearchTreeMap
+    node: assembly

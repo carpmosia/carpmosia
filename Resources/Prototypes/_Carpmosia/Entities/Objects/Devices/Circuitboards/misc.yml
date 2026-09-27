@@ -1,0 +1,17 @@
+- type: entity
+  parent: BaseElectronics
+  id: ResearchTreeMapCircuitboard
+  name: Research Tree Map Electronics
+  description: An electronics board used in research tree maps.
+  components:
+  - type: Item
+    storedRotation: 0
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: science
+  - type: Tag
+    tags:
+      - ResearchTreeMapElectronics
+      - RamChip #Protogen joke, makes them able to eat them. - FH
+  - type: StaticPrice
+    price: 30
