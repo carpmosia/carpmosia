@@ -1,0 +1,38 @@
+- type: reagent
+  id: Helium
+  name: reagent-name-helium
+  desc: reagent-desc-helium
+  physicalDesc: reagent-physical-desc-gaseous
+  allowedDepartments:
+  - Engineering
+  allowedJobs:
+  - Chemist
+  flavor: bitter
+  color: "#dec3cf"
+  boilingPoint: -269.0
+  meltingPoint: -274.0 # Helium is always in it's liquid form
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        ignoreResistances: true
+        damage:
+          types:
+            Poison: 0.5
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectSeeingRainbow
+        type: Add
+        time: 5
+    Respiration:
+      effects:
+      - !type:HealthChange
+        minScale: 0.5
+        ignoreResistances: true
+        damage:
+          types:
+            Poison: 0.05
+      - !type:ModifyStatusEffect
+        minScale: 1
+        effectProto: StatusEffectSeeingRainbow
+        type: Add
+        time: 10

@@ -1,0 +1,76 @@
+# Gas ID and effect ID should be the same
+# ><>
+
+# If there's no effect, it'll fallback to this
+- type: supermatterGasEffect
+  id: Default
+  wasteMultiplier: 0.0
+  heatProductionMultiplier: 0.0
+  heatPowerGainMultiplier: 0.0
+  heatProtectionMultiplier: 0.0
+  integrityEffectMultiplier: 0.0
+  powerTransmissionMultiplier:  0.0
+  powerDecayMultiplier: 0.0
+
+- type: supermatterGasEffect
+  id: Hydrogen
+  wasteMultiplier: 3.0
+  heatPowerGainMultiplier: 1.0
+  heatProtectionMultiplier: 0.5
+  powerTransmissionMultiplier: 1.0
+
+# Noble gas, duh
+- type: supermatterGasEffect
+  id: Helium
+
+- type: supermatterGasEffect
+  id: Oxygen
+  powerTransmissionMultiplier: 0.2
+  heatPowerGainMultiplier: 1.0
+
+- type: supermatterGasEffect
+  id: Nitrogen
+  wasteMultiplier: -0.5
+  heatPowerGainMultiplier: -0.7
+
+- type: supermatterGasEffect
+  id: CarbonDioxide
+  wasteMultiplier: 1.0
+  heatPowerGainMultiplier: 1.0
+  powerDecayMultiplier: -0.5
+
+- type: supermatterGasEffect
+  id: Plasma
+  powerTransmissionMultiplier: 0.4
+  wasteMultiplier: 13.0
+  heatPowerGainMultiplier: 1.0
+
+# Elephant foot simulator
+- type: supermatterGasEffect
+  id: Tritium
+  wasteMultiplier: 6.0
+  powerTransmissionMultiplier: 2.0
+  heatPowerGainMultiplier: 1.0
+  powerDecayMultiplier: 7.0
+
+- type: supermatterGasEffect
+  id: WaterVapor
+  powerTransmissionMultiplier: -0.25
+  wasteMultiplier: 9.0
+  heatPowerGainMultiplier: 1.0
+
+- type: supermatterGasEffect
+  id: Ammonia # Bring back miasma pls
+  heatPowerGainMultiplier: 0.5
+
+- type: supermatterGasEffect
+  id: NitrousOxide
+  heatProtectionMultiplier: 4.0
+
+# GOD BLESS FREZON
+# Kills the SM reaction entirely
+- type: supermatterGasEffect
+  id: Frezon
+  wasteMultiplier: -0.9
+  heatPowerGainMultiplier: -0.9
+  powerTransmissionMultiplier: -0.9
