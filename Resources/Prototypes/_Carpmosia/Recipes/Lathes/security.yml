@@ -1,0 +1,22 @@
+# Melee
+- type: latheRecipe
+  parent: BaseWeaponRecipeSidearm
+  id: WeaponBeamBlade
+  result: BeamBlade
+  materials:
+    Steel: 400
+    Glass: 150
+    Plastic: 200
+    Plasma: 100
+    Silver: 50
+
+# Practice weapons
+- type: latheRecipe
+  parent: BaseWeaponRecipePractice
+  id: WeaponBeamBladePractice
+  result: BeamBladePractice
+  materials:
+    Steel: 400
+    Glass: 150
+    Plastic: 200
+    Silver: 50

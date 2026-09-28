@@ -1,0 +1,336 @@
+- type: entity
+  abstract: true
+  parent: [ BaseItem, BasePointerDagger ]
+  id: BaseBeamBladeWeapon
+  components:
+  - type: ItemToggle
+    soundActivate:
+      path: /Audio/Weapons/ebladeon.ogg #remind make custom
+    soundDeactivate:
+      path: /Audio/Weapons/ebladeoff.ogg #remind make custom
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/Weapons/ebladehum.ogg #remind make custom
+  - type: ComponentToggler
+    components:
+    - type: Tool
+      qualities:
+      - Slicing
+    - type: DisarmMalus
+      malus: 0.6
+    - type: Execution
+      doAfterDuration: 4.0
+  - type: ItemToggleHot
+  - type: ItemToggleSize
+    activatedSize: Huge
+  - type: ItemTogglePointLight
+    toggleableVisualsColorModulatesLights: true
+  - type: ItemToggleMeleeWeapon
+    activatedSoundOnHit:
+      path: /Audio/Weapons/eblade1.ogg #remind make custom
+      params:
+        variation: 0.250
+    activatedSoundOnHitNoDamage:
+      path: /Audio/Weapons/eblade1.ogg #remind make custom
+      params:
+        variation: 0.250
+        volume: -10
+    activatedSoundOnSwing:
+      path: /Audio/Weapons/eblademiss.ogg #remind make custom
+      params:
+        variation: 0.125
+    activatedDamage:
+      types:
+        Slash: 10
+        Heat: 10
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 4.5
+  - type: Item
+    size: Small
+  - type: UseDelay
+    delay: 1.0
+  - type: Appearance
+  - type: ToggleableVisuals
+    spriteLayer: blade
+    inhandVisuals:
+      left:
+      - state: inhand-left-glow
+        shader: unshaded
+        map: [ "inhand-glow-left" ]
+      - state: inhand-left-core
+        shader: unshaded
+      right:
+      - state: inhand-right-glow
+        shader: unshaded
+        map: [ "inhand-glow-right" ]
+      - state: inhand-right-core
+        shader: unshaded
+  - type: Reflect
+  - type: IgnitionSource
+    temperature: 1200
+
+# There are some stuff bellow that have been purposefuly disabled cause i currently dont have the skill required to make it work.
+# Basically, the core part is a solid white part that renders on top of the glow part to make the beam blade look awesome.
+# However after 5 weeks of trying it just doesnt wanna work, i have no clue why so i have officially given up on trying.
+# I just hope someone with C# skills reads this and makes it work.
+
+# Tier 0
+- type: entity
+  parent: [BaseBeamBladeWeapon]
+  id: BeamBladePractice
+  name: beam blade practice
+  description: An early prototype for the beam blades, now reduced and used for training purposes.
+  components:
+  - type: EnergySword
+    colorOptions:
+    - "#FFBBBB"
+    - "#FFDDBB"
+    - "#FFFFBB"
+    - "#DDFFBB"
+    - "#BBFFBB"
+    - "#BBFFDD"
+    - "#BBFFFF"
+    - "#BBDDFF"
+    - "#BBBBFF"
+    - "#DDBBFF"
+    - "#FFBBFF"
+    - "#FFBBDD"
+    - "#FFFFFF"
+    - "#eeeeee"
+    - "#dddddd"
+    - "#cccccc"
+    - "#bbbbbb"
+    - "#aaaaaa"
+    - "#000000" #Rare Shiny you use to aura farm on others
+  - type: PointLight
+    enabled: false
+    radius: 4
+    energy: 4
+    color: "#FFFFFF"
+    netsync: false
+  - type: ItemToggleVisuals
+    visuals:
+      glow:
+        visible: true
+      inhand-glow:
+        visible: true
+  - type: ToggleableVisuals
+    sprite: _Carpmosia/Objects/Weapons/Melee/beam_blade_practice.rsi
+    spriteLayer: blade
+    inhandVisuals:
+      left:
+      - state: inhand-left-glow
+        color: "#FFFFFF"
+        shader: unshaded
+        map: [ "inhand-glow-left" ]
+#      - state: inhand-left-core
+#        shader: unshaded
+      right:
+      - state: inhand-right-glow
+        color: "#FFFFFF"
+        shader: unshaded
+        map: [ "inhand-glow-right" ]
+#      - state: inhand-right-core
+#        shader: unshaded
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Weapons/Melee/beam_blade_practice.rsi
+    layers:
+    - state: b_blade_handle
+    - state: b_blade_glow
+      color: "#FFFFFF"
+      visible: false
+      shader: unshaded
+      map: [ "blade" ]
+#    - state: b_blade_core
+#      color: "#FFFFFF"
+#      visible: false
+#      shader: unshaded
+#      map: [ "blade" ]
+  - type: Item
+    sprite: _Carpmosia/Objects/Weapons/Melee/beam_blade_practice.rsi
+  - type: ItemToggleMeleeWeapon
+    activatedDamage:
+      types:
+        Heat: 1
+#  - type: StaminaDamageOnHit # the employer didnt like my work around by using this comp to trigger battery draining
+#    damage: 1                # so either leave this section disabled or make a component that does causes drainage on hit
+#    sound: /Audio/Weapons/egloves.ogg
+#  - type: MeleeWeapon
+#    attackRate: 1.25
+#    damage:
+#      types:
+#        Blunt: 1
+#  - type: Battery
+#    maxCharge: 1000
+#    startingCharge: 1000
+#  - type: Stunbaton
+#    energyPerUse: 50
+  - type: StaticPrice
+    price: 500
+
+# Tier 1
+
+- type: entity
+  parent: [BaseBeamBladeWeapon, BaseSecurityContraband]
+  id: BeamBlade
+  name: beam blade
+  description: A piece of equipment for the officers who have practiced sword fighting skills.
+  components:
+  - type: EnergySword
+    colorOptions:
+    - "#FF0000"
+    - "#FF8800"
+    - "#FFFF00"
+    - "#88FF00"
+    - "#00FF00"
+    - "#00FF88"
+    - "#00FFFF"
+    - "#0088FF"
+    - "#0000FF"
+    - "#8800FF"
+    - "#FF00FF"
+    - "#FF0088"
+    - "#FFFFFF"
+  - type: PointLight
+    enabled: false
+    radius: 4
+    energy: 4
+    color: "#FFFFFF"
+    netsync: false
+  - type: ItemToggleVisuals
+    visuals:
+      glow:
+        visible: true
+      inhand-glow:
+        visible: true
+  - type: ToggleableVisuals
+    sprite: _Carpmosia/Objects/Weapons/Melee/beam_blade.rsi
+    spriteLayer: blade
+    inhandVisuals:
+      left:
+      - state: inhand-left-glow
+        color: "#FFFFFF"
+        shader: unshaded
+        map: [ "inhand-glow-left" ]
+#      - state: inhand-left-core
+#        shader: unshaded
+      right:
+      - state: inhand-right-glow
+        color: "#FFFFFF"
+        shader: unshaded
+        map: [ "inhand-glow-right" ]
+#      - state: inhand-right-core
+#        shader: unshaded
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Weapons/Melee/beam_blade.rsi
+    layers:
+    - state: b_blade_handle
+    - state: b_blade_glow
+      color: "#FFFFFF"
+      visible: false
+      shader: unshaded
+      map: [ "blade" ]
+#    - state: b_blade_core
+#      color: "#FFFFFF"
+#      visible: false
+#      shader: unshaded
+#      map: [ "blade" ]
+  - type: Item
+    sprite: _Carpmosia/Objects/Weapons/Melee/beam_blade.rsi
+  - type: ItemToggleMeleeWeapon
+    activatedDamage:
+      types:
+        Slash: 10
+        Heat: 10
+#  - type: StaminaDamageOnHit # the employer didnt like my work around by using this comp to trigger battery draining
+#    damage: 1                # so either leave this section disabled or make a component that does causes drainage on hit
+#  - type: MeleeWeapon
+#    attackRate: 1.25
+#    damage:
+#      types:
+#        Blunt: 1
+#  - type: Battery
+#    maxCharge: 1000
+#    startingCharge: 1000
+#  - type: Stunbaton
+#    energyPerUse: 50
+  - type: StaticPrice
+    price: 1000
+
+# Tier 2
+
+# Tier 3
+
+# The beam blade bellow is roughly what i wanted it to look like, but couldnt cause the EnergySword component is a bitch
+
+- type: entity
+  parent: [BaseBeamBladeWeapon, BaseCentcommContraband]
+  id: BeamBladeCentCommm
+  name: centcomm beam blade
+  suffix: Admeme
+  description: A highly experimental device that weaponizes cold plasma, Prefered for the most chunibyo of CentComm officials.
+  components:
+#  - type: EnergySword  # Not needed cause their blades are hard set to blue for... uhh... standard???
+  - type: PointLight
+    enabled: false
+    radius: 4
+    energy: 4
+    color: "#00AAFF"
+    netsync: false
+  - type: ItemToggleVisuals
+    visuals:
+      glow:
+        visible: true
+      inhand-glow:
+        visible: true
+  - type: ToggleableVisuals
+    sprite: _Carpmosia/Objects/Weapons/Melee/beam_blade_cc.rsi
+    spriteLayer: blade
+    inhandVisuals:
+      left:
+      - state: inhand-left-glow
+        color: "#FFFFFF"
+        shader: unshaded
+        map: [ "inhand-glow-left" ]
+#      - state: inhand-left-core
+#        shader: unshaded
+      right:
+      - state: inhand-right-glow
+        color: "#FFFFFF"
+        shader: unshaded
+        map: [ "inhand-glow-right" ]
+#      - state: inhand-right-core
+#        shader: unshaded
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Weapons/Melee/beam_blade_cc.rsi
+    layers:
+    - state: b_blade_handle
+    - state: b_blade_glow
+      color: "#FFFFFF"
+      visible: false
+      shader: unshaded
+      map: [ "blade" ]
+#    - state: b_blade_core
+#      color: "#FFFFFF"
+#      visible: false
+#      shader: unshaded
+#      map: [ "blade" ]
+  - type: Item
+    sprite: _Carpmosia/Objects/Weapons/Melee/beam_blade_cc.rsi
+  - type: ItemToggleMeleeWeapon
+    activatedDamage:
+      types:
+        Cold: 10
+  - type: MeleeWeapon
+    attackRate: 1.25
+    damage:
+      types:
+        Blunt: 1
+  - type: IgnitionSource
+    temperature: -200
+  - type: StaticPrice
+    price: 10000
