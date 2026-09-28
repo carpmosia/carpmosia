@@ -35,3 +35,22 @@
   - !type:BuyerAntagCondition
     whitelist:
     - NukeopsCommander
+
+- type: listing
+  id: UplinkPhotoTherapyLaser
+  name: uplink-phototherapylaser-name
+  description: uplink-phototherapylaser-desc
+  productEntity: PhotoTherapyLaser
+  icon: { sprite: _Carpmosia/Objects/Weapons/Guns/Battery/phototherapy_laser.rsi, state: icon }
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 35
+  cost:
+    Telecrystal: 40
+  categories:
+  - UplinkChemicals
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - NukeOpsUplink

@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken and modified from cev-eris at https://github.com/discordia-space/CEV-Eris/tree/7ff8f28ea4de734f3cc3cb70f2d4e4b4263a988d, xeno_laser was modified by P3tux0(GitHub), retro sprites made by P3tux0(GitHub)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "muzzle_rejuvenation",
+      "delays": [
+        [
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05
+        ]
+      ]
+    },
+    {
+      "name": "rejuvenation",
+      "delays": [
+        [
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05
+        ]
+      ]
+    },
+    {
+      "name": "impact_rejuvenation",
+      "delays": [
+        [
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05
+        ]
+      ]
+    }
+  ]
+}

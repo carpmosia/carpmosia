@@ -1,0 +1,31 @@
+- type: entity
+  parent: RedMediumLaser
+  id: RejuvenationLaser
+  name: beam made for healing
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HitscanBasicDamage
+    damage:
+      types:
+        Blunt: -5
+        Slash: -5
+        Piercing: -5
+        Heat: -5
+        Shock: -5
+        Cold: -5
+        Caustic: -5
+        Poison: -5
+        Radiation: -5
+        Asphyxiation: -5
+        Bloodloss: -5
+        Cellular: 0.1
+  - type: HitscanBasicVisuals
+    muzzleFlash:
+      sprite: _Carpmosia/Objects/Weapons/Guns/Projectiles/projectiles.rsi
+      state: muzzle_rejuvenation
+    travelFlash:
+      sprite: _Carpmosia/Objects/Weapons/Guns/Projectiles/projectiles.rsi
+      state: rejuvenation
+    impactFlash:
+      sprite: _Carpmosia/Objects/Weapons/Guns/Projectiles/projectiles.rsi
+      state: impact_rejuvenation
