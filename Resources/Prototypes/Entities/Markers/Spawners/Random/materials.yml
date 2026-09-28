@@ -8,7 +8,7 @@
     - type: Sprite
       layers:
         - state: red
-        - sprite: Objects/Materials/Sheets/metal.rsi
+        - sprite: _Carpmosia/Objects/Materials/Sheets/metal.rsi # Carpmosia-edit - Material resprite
           state: steel_3
     - type: EntityTableSpawner
       table: !type:NestedSelector
@@ -42,7 +42,7 @@
     - type: Sprite
       layers:
         - state: red
-        - sprite: Objects/Materials/Sheets/metal.rsi
+        - sprite: _Carpmosia/Objects/Materials/Sheets/metal.rsi # Carpmosia-edit - Material resprite
           state: plasteel_2
     - type: EntityTableSpawner
       table: !type:NestedSelector
@@ -57,7 +57,7 @@
     - type: Sprite
       layers:
         - state: red
-        - sprite: Objects/Materials/Sheets/other.rsi
+        - sprite: _Carpmosia/Objects/Materials/Sheets/other.rsi # Carpmosia-edit - Material resprite
           state: plasma_2
     - type: EntityTableSpawner
       table: !type:NestedSelector
@@ -75,7 +75,7 @@
     - type: Sprite
       layers:
         - state: red
-        - sprite: Objects/Materials/Sheets/metal.rsi
+        - sprite: _Carpmosia/Objects/Materials/Sheets/metal.rsi # Carpmosia-edit - Material resprite
           state: steel_3
     - type: EntityTableSpawner
       table: !type:NestedSelector

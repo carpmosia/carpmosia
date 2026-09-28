@@ -5,9 +5,9 @@
   description: A heavy metal ingot stamped with the Nanotrasen logo.
   components:
   - type: Sprite
-    sprite: Objects/Materials/ingots.rsi
+    sprite: _Carpmosia/Objects/Materials/ingots.rsi # Carpmosia-edit - Material resprite
   - type: Item
-    sprite: Objects/Materials/ingots.rsi
+    sprite: _Carpmosia/Objects/Materials/ingots.rsi # Carpmosia-edit - Material resprite
   - type: Tag
     tags:
     - Ingot
