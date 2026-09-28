@@ -17,3 +17,23 @@
   id: CommandHud
   equipment:
     eyes: ClothingEyesHudCommand
+
+- type: loadoutEffectGroup
+  id: EyepatchTimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement: !type:RoleTimeRequirement
+      role: JobSalvageSpecialist
+      time: 10h
+  - !type:JobRequirementLoadoutEffect
+    requirement: !type:DepartmentTimeRequirement
+      department: Security
+      time: 10h
+
+- type: loadout
+  id: Eyepatch
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EyepatchTimer
+  equipment:
+    eyes: ClothingEyesEyepatch
