@@ -112,6 +112,11 @@
   components:
   - type: Sprite
     state: chair-greyscale
+  # Carpmosia-start - Whoopie Furniture, needed to upgrade into whoopie version
+  - type: Construction
+    graph: Seat
+    node: chairGreyscale
+  # Carpmosia-end - Whoopie Furniture
 
 - type: entity
   name: stool
@@ -434,3 +439,8 @@
   components:
   - type: Sprite
     state: xeno-chair
+  # Carpmosia-start - Whoopie Furniture, needed to upgrade into whoopie version
+  - type: Construction
+    graph: Seat
+    node: chairXeno
+  # Carpmosia-end - Whoopie Furniture
