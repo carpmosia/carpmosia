@@ -37,8 +37,8 @@
 - type: entity
   parent: [BaseTraitorObjective, BaseLivingObjective]
   id: EscapeShuttleObjective
-  name: Escape to CentComm via the emergency shuttle. # Carpmosia-edit - escape restrained
-  description: Make it out alive to CentComm on the emergency shuttle. Our lawyers can get you out of cuffs, an undercover agent will debrief you when you're there. # Carpmosia-edit - escape restrained
+  name: Escape to terminal via the emergency shuttle. # Carpmosia-edit - escape restrained
+  description: Make it out alive to a terminal on the emergency shuttle. Our lawyers can get you out of cuffs, and another agent will debrief you when you're there. # Carpmosia-edit - escape restrained
   components:
   - type: Objective
     difficulty: 1.3
