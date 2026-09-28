@@ -11,3 +11,17 @@
   description: ghost-role-information-syndicate-kitti-reinforcement-description
   rules: ghost-role-information-nukeop-reinforcement-rules
   entityPrototype: MobKittiSyndicateAgentNukeops
+
+- type: ghostRole
+  id: SyndicateDwoth
+  name: ghost-role-information-syndicate-dwoth-reinforcement-name
+  description: ghost-role-information-syndicate-dwoth-reinforcement-description
+  rules: ghost-role-information-syndicate-reinforcement-rules
+  entityPrototype: MobDwothSyndicateAgent
+
+- type: ghostRole
+  id: SyndicateDwothNukeops
+  name: ghost-role-information-syndicate-dwoth-reinforcement-name
+  description: ghost-role-information-syndicate-dwoth-reinforcement-description
+  rules: ghost-role-information-nukeop-reinforcement-rules
+  entityPrototype: MobDwothSyndicateAgentNukeops
