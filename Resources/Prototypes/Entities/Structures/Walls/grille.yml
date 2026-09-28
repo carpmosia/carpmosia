@@ -25,6 +25,7 @@
     drawdepth: Walls
     sprite: Structures/Walls/grille.rsi
     layers:
+    - state: full # Carpmosia-edit - Respritening
     - state: electrified
       sprite: Effects/electricity.rsi
       map: ["enum.ElectrifiedLayers.Sparks"]
@@ -33,12 +34,14 @@
   - type: Icon
     sprite: Structures/Walls/grille.rsi
     state: full
-  - type: PlacementReplacement
-    key: grilles
-  - type: IconSmooth
-    index: 0
-    key: walls
-    base: grille
+  # Carpmosia-start - Respritening
+  # - type: PlacementReplacement
+  #   key: grilles
+  # - type: IconSmooth
+  #   index: 0
+  #   key: walls
+  #   base: grille
+  # Carpmosia-end - Respritening
   - type: Electrified
     requirePower: true
     noWindowInTile: true
@@ -116,11 +119,13 @@
   - type: Icon
     sprite: Structures/Walls/grille-diagonal.rsi
     state: state0
-  - type: IconSmooth
-    index: 0
-    mode: Diagonal
-    key: grilles
-    base: state
+  # Carpmosia-start - Respritening
+  # - type: IconSmooth
+  #   index: 0
+  #   mode: Diagonal
+  #   key: grilles
+  #   base: state
+  # Carpmosia-end - Respritening
   - type: Fixtures
     fixtures:
       fix1:

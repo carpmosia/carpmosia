@@ -48,10 +48,10 @@
     fx: EffectRCDDeconstruct4
   - type: Airtight
   - type: IconSmooth
-    key: walls
+    key: glass # Carpmosia-edit - Respritening
     base: window
-  - type: PlacementReplacement
-    key: walls
+  # - type: PlacementReplacement # Carpmosia-edit - Better diagonals
+  #   key: walls # Carpmosia-edit - Better diagonals
   - type: InteractionPopup
     interactSuccessString: comp-window-knock
     messagePerceivedByOthers: comp-window-knock
@@ -320,8 +320,8 @@
     - Diagonal
     - Window
   - type: IconSmooth
-    mode: Diagonal
-    key: walls
+    mode: DiagonalPlus # Carpmosia-edit - Better diagonals
+    key: glass # Carpmosia-edit - Respritening
     base: state
   - type: Icon
     sprite: Structures/Windows/window-base-diagonal.rsi
