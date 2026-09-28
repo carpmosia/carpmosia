@@ -47,6 +47,9 @@ server.rules_file = "CarpmosiaRules"
 # CCVars.Shuttle
 shuttle.arrivals_returns = true
 
+# CCVars.Tips
+tips.dataset = "CarpmosiaTips"
+
 # CCVars.Vote
 vote.preset_enabled = false
 vote.map_enabled = false
