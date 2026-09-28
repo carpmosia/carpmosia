@@ -5,11 +5,19 @@
     variation: 0.125
   sounds:
     Scream:
-      path: /Audio/_Carpmosia/Voice/Avali/avali_scream.ogg
+      collection: AvaliScream
     Laugh:
-      path: /Audio/_Carpmosia/Voice/Avali/avali_laugh.ogg
+      collection: AvaliLaugh
     Sneeze:
       collection: MaleSneezes
+    Squawk:
+      collection: AvaliSquawk
+    Chirp:
+      collection: AvaliChirps
+    Call:
+      collection: AvaliCalls
+    Scree:
+      collection: AvaliScrees
     Cough:
       collection: MaleCoughs
     CatMeow:
@@ -29,9 +37,9 @@
     Sigh:
       collection: MaleSigh
     Crying:
-      collection: MaleCry
+      collection: AvaliCry
     Whistle:
-      collection: Whistles
+      collection: AvaliWhistle
     Weh:
       collection: Weh
     Hew:
@@ -48,11 +56,19 @@
     variation: 0.125
   sounds:
     Scream:
-      path: /Audio/_Carpmosia/Voice/Avali/avali_scream.ogg
+      collection: AvaliScream
     Laugh:
-      path: /Audio/_Carpmosia/Voice/Avali/avali_laugh.ogg
+      collection: AvaliLaugh
     Sneeze:
       collection: FemaleSneezes
+    Squawk:
+      collection: AvaliSquawk
+    Chirp:
+      collection: AvaliChirps
+    Call:
+      collection: AvaliCalls
+    Scree:
+      collection: AvaliScrees
     Cough:
       collection: FemaleCoughs
     CatMeow:
@@ -68,13 +84,13 @@
     Snore:
       collection: Snores
     Honk:
-      collection: CluwneHorn
+      collection: BikeHorn
     Sigh:
       collection: FemaleSigh
     Crying:
-      collection: FemaleCry
+      collection: AvaliCry
     Whistle:
-      collection: Whistles
+      collection: AvaliWhistle
     Weh:
       collection: Weh
     Hew:
