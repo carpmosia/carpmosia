@@ -1,3 +1,4 @@
+using Content.Shared._Carpmosia.Research.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Ninja.Systems;
@@ -30,14 +31,13 @@ public abstract partial class SharedResearchStealerSystem : EntitySystem
         if (args.Handled || !_gloves.AbilityCheck(uid, args, out var target))
             return;
 
-        // can only hack the server, not a random console
-        if (!TryComp<TechnologyDatabaseComponent>(target, out var database) || HasComp<ResearchClientComponent>(target))
+        if (!TryComp<FHResearchTreeComponent>(target, out var tree)) // Carpmosia-edit - FH research tree
             return;
 
         args.Handled = true;
 
         // fail fast if theres no techs to steal right now
-        if (database.UnlockedTechnologies.Count == 0)
+        if (tree.Researched.Count == 0) // Carpmosia-edit - FH research tree
         {
             _popup.PopupEntity(Loc.GetString("ninja-download-fail"), uid, uid);
             return;

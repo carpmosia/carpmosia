@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Server._Carpmosia.Research;
 using Content.Server.Administration.Logs;
 using Content.Server.Radio.EntitySystems;
 using Content.Shared.Access.Systems;
@@ -22,6 +23,7 @@ namespace Content.Server.Research.Systems
         [Dependency] private UserInterfaceSystem _uiSystem = default!;
         [Dependency] private SharedPopupSystem _popup = default!;
         [Dependency] private RadioSystem _radio = default!;
+        [Dependency] private readonly FHResearchSystem _fhResearch = default!; // Carpmosia-edit - FH research tree
 
         public override void Initialize()
         {
@@ -97,7 +99,7 @@ namespace Content.Server.Research.Systems
                     continue;
                 server.NextUpdateTime = _timing.CurTime + server.ResearchConsoleUpdateTime;
 
-                UpdateServer(uid, (int) server.ResearchConsoleUpdateTime.TotalSeconds, server);
+                UpdateServer(uid, (int)server.ResearchConsoleUpdateTime.TotalSeconds, server);
             }
         }
     }

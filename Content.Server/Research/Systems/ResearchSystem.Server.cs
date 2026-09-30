@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Server.Power.EntitySystems;
+using Content.Shared._Carpmosia.Research.Components;
 using Content.Shared.Research.Components;
 
 namespace Content.Server.Research.Systems;
@@ -161,6 +162,14 @@ public sealed partial class ResearchSystem
 
         if (!Resolve(uid, ref component))
             return;
+
+        // Carpmosia-start - FH research tree
+        // Take all of the points for FHResearchSystem, if any left over, continue as normal
+        points = _fhResearch.HandleResearch(uid, points);
+        if (points == 0)
+            return;
+        // Carpmosia-end - FH research tree
+
         component.Points += points;
         var ev = new ResearchServerPointsChangedEvent(uid, component.Points, points);
         foreach (var client in component.Clients)
