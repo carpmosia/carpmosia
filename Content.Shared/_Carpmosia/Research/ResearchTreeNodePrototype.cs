@@ -51,14 +51,14 @@ public sealed partial class ResearchTreeNodePrototype : IPrototype
         return parentDepths.Count == 0 ? 0 : parentDepths.OrderDescending().First() + 1;
     }
 
-    public int GetTieredDepth(IPrototypeManager protoMan)
+    public int GetTieredDepth(IPrototypeManager protoMan, ISawmill sawmill)
     {
         List<int> parentDepths = [];
         foreach (var parent in Requires)
         {
-            if (!protoMan.HasIndex<ResearchTreeNodePrototype>(parent))
+            if (!protoMan.HasIndex(parent))
             {
-                Logger.Error($"Research node '{ID}' references unknown parent node '{parent}'");
+                sawmill.Error($"Research node '{ID}' references unknown parent node '{parent}'");
                 continue;
             }
 
@@ -66,7 +66,7 @@ public sealed partial class ResearchTreeNodePrototype : IPrototype
             if (parentProto.Tier != Tier)
                 continue;
 
-            parentDepths.Add(parentProto.GetTieredDepth(protoMan));
+            parentDepths.Add(parentProto.GetTieredDepth(protoMan, sawmill));
         }
         return parentDepths.Count == 0 ? 0 : parentDepths.OrderDescending().First() + 1;
     }

@@ -10,22 +10,23 @@ public sealed class ResearchTreeGrid
 {
     private readonly IPrototypeManager _prototypeManager;
     private readonly HashSet<ResearchTreeNodePrototype> _allNodes;
+    private ISawmill _sawmill;
 
     public List<List<NodeSpace?>> Grid;
     public Dictionary<ProtoId<ResearchTreeTierPrototype>, int> TierWidths;
 
-    public ResearchTreeGrid(IPrototypeManager protoMan, HashSet<ResearchTreeNodePrototype> nodes)
+    public ResearchTreeGrid(IPrototypeManager protoMan, HashSet<ResearchTreeNodePrototype> nodes, ISawmill sawmill)
     {
         _prototypeManager = protoMan;
         _allNodes = nodes;
+        _sawmill = sawmill;
 
         List<ProtoId<ResearchTreeTierPrototype>> tiers = [.. _allNodes.Select(p => p.Tier).Distinct().OrderBy(p => _prototypeManager.Index(p).Position)];
         TierWidths = tiers.ToDictionary(
                             p => p,
                             p => _allNodes
                                     .Where(e => e.Tier == p)
-                                    .Select(e => e.GetTieredDepth(_prototypeManager))
-                                    .Max()
+                                    .Max(e => e.GetTieredDepth(_prototypeManager, _sawmill))
                         );
 
         Grid = GetGrid(tiers);

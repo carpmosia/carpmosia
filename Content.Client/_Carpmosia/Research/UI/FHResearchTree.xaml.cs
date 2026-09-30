@@ -21,6 +21,7 @@ public sealed partial class FHResearchTree : BoxContainer
 {
     [Dependency] private IPrototypeManager _prototypeManager = default!;
     [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private ISawmill _sawmill = default!;
 
     public Action<ProtoId<ResearchTreeNodePrototype>?>? OnSelectionChanged;
     public Action<ProtoId<ResearchTreeNodePrototype>>? OnQuickResearch;
@@ -121,7 +122,7 @@ public sealed partial class FHResearchTree : BoxContainer
         List<ProtoId<ResearchTreeNodePrototype>> queued
     )
     {
-        var grid = new ResearchTreeGrid(_prototypeManager, nodes);
+        var grid = new ResearchTreeGrid(_prototypeManager, nodes, _sawmill);
 
         (_tiers, _nodes, _edges) = grid.GetDrawable((NodeWidth, NodeHeight), (NodeSpacingHorizontal, NodeSpacingVertical), (NodeMarginHorizontal, NodeMarginVertical), _font);
         _draw = true;
