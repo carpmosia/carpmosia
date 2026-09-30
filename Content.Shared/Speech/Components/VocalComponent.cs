@@ -3,6 +3,7 @@ using Content.Shared.Humanoid;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom; // Carpmosia-edit - Emote delay
 
 namespace Content.Shared.Speech.Components;
 
@@ -11,6 +12,7 @@ namespace Content.Shared.Speech.Components;
 /// </summary>
 [RegisterComponent, NetworkedComponent]
 [AutoGenerateComponentState]
+[AutoGenerateComponentPause] // Carpmosia-edit - Emote delay
 public sealed partial class VocalComponent : Component
 {
     //TODO: Wilhelm scream logic needs to be more generic
@@ -54,4 +56,12 @@ public sealed partial class VocalComponent : Component
     [DataField]
     [AutoNetworkedField]
     public ProtoId<EmoteSoundsPrototype>? EmoteSounds = null;
+    // Carpmosia-start - Emote delay
+    [DataField("lastEmoteTime", customTypeSerializer: typeof(TimeOffsetSerializer)), ViewVariables(VVAccess.ReadWrite)]
+    [AutoPausedField]
+    public TimeSpan LastEmoteTime = TimeSpan.Zero;
+
+    [DataField("emoteCooldown"), ViewVariables(VVAccess.ReadWrite)]
+    public TimeSpan EmoteCooldown = TimeSpan.FromSeconds(3);
+    // Carpmosia-end - Emote delay
 }

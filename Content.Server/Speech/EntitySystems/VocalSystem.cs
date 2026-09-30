@@ -7,6 +7,7 @@ using Content.Shared.Speech;
 using Content.Shared.Speech.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
+using Robust.Shared.Timing; // Carpmosia-edit - Emote delay
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Speech.EntitySystems;
@@ -17,6 +18,7 @@ public sealed partial class VocalSystem : EntitySystem
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private ChatSystem _chat = default!;
     [Dependency] private ActionsSystem _actions = default!;
+    [Dependency] private IGameTiming _gameTiming = default!; // Carpmosia-edit - Emote delay
 
     public override void Initialize()
     {
@@ -72,6 +74,14 @@ public sealed partial class VocalSystem : EntitySystem
         if (args.Handled || !args.Emote.Category.HasFlag(EmoteCategory.Vocal))
             return;
 
+        // Carpmosia-start - Emote delay
+        var currentTime = _gameTiming.CurTime;
+        var cooldown = component.EmoteCooldown;
+
+        // Ensure more than the cooldown time has passed since last emote
+        if (currentTime - component.LastEmoteTime < cooldown)
+            return;
+        // Carpmosia-end - Emote delay
         // snowflake case for wilhelm scream easter egg
         if (args.Emote == component.ScreamId)
         {
@@ -82,6 +92,7 @@ public sealed partial class VocalSystem : EntitySystem
         if (component.EmoteSounds is not { } sounds)
             return;
 
+        component.LastEmoteTime = currentTime; // Carpmosia-edit - Emote delay
         // just play regular sound based on emote proto
         args.Handled = _chat.TryPlayEmoteSound(uid, ProtoMan.Index(sounds), args.Emote);
     }
@@ -97,8 +108,10 @@ public sealed partial class VocalSystem : EntitySystem
 
     private bool TryPlayScreamSound(EntityUid uid, VocalComponent component)
     {
+        var currentTime = _gameTiming.CurTime; // Carpmosia-edit - Emote delay
         if (_random.Prob(component.WilhelmProbability))
         {
+            component.LastEmoteTime = currentTime; // Carpmosia-edit - Emote delay
             _audio.PlayPvs(component.Wilhelm, uid, component.Wilhelm.Params);
             return true;
         }
@@ -106,6 +119,7 @@ public sealed partial class VocalSystem : EntitySystem
         if (component.EmoteSounds is not { } sounds)
             return false;
 
+        component.LastEmoteTime = currentTime; // Carpmosia-edit - Emote delay
         return _chat.TryPlayEmoteSound(uid, ProtoMan.Index(sounds), component.ScreamId);
     }
 
