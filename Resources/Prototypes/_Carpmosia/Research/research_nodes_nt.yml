@@ -24,7 +24,7 @@
     - HandHeldMassScanner
     - WeaponHoloflarePistolSci
   announceTo:
-    - GSL # Far Horizons
+    - Supply
 
 # Industry
 
@@ -50,7 +50,7 @@
     state: industry
     color: "#A46106"
   tier: Tier1
-  requires: 
+  requires:
     - IndustrialEng
   unlocks:
     - FlatpackerMachineCircuitboard
@@ -63,7 +63,7 @@
     state: mechanical
     color: "#A46106"
   tier: Tier1
-  requires: 
+  requires:
     - MechanicalCompress
   unlocks:
     - RipleyHarness
@@ -76,7 +76,7 @@
     - MechEquipmentGrabber
     - BorgModuleAdvancedLoading
   announceTo:
-    - GSL # Far Horizons
+    - Supply
 
 # Sec
 
@@ -210,7 +210,7 @@
     state: engineering
     color: "#EFB341"
   tier: Tier1
-  requires: 
+  requires:
     - Atmospherics
   unlocks:
     - HellfireFreezerMachineCircuitBoard
@@ -618,7 +618,7 @@
     state: mechanical
     color: "#A46106"
   tier: Tier2
-  requires: 
+  requires:
     - SalvEquip
     - MechanicalCompress
   unlocks:
@@ -627,7 +627,7 @@
     - MechEquipmentDrillDiamond
     - BorgModuleAdvancedMining
   announceTo:
-    - GSL # Far Horizons
+    - Supply
 
 - type: researchTreeNode
   id: RecreationalMech
@@ -637,7 +637,7 @@
     state: mechanical
     color: "#9FED58"
   tier: Tier2
-  requires: 
+  requires:
     - RipleyMech
   unlocks:
     - HonkerHarness
@@ -669,7 +669,7 @@
     state: mechanical
     color: "#A46106"
   tier: Tier2
-  requires: 
+  requires:
     - MassExcav
     - RecreationalMech
   unlocks:
@@ -683,7 +683,7 @@
     - RipleyMKIIHarness
     - RipleyUpgradeKit
   announceTo:
-    - GSL # Far Horizons
+    - Supply
 
 # Sec
 
@@ -695,7 +695,7 @@
     state: kinetic
     color: "#A46106"
   tier: Tier2
-  requires: 
+  requires:
     - SpecialAmmo
   unlocks:
     - PKAUpgradeDamage
@@ -703,7 +703,7 @@
     - PKAUpgradeFireRate
   announceTo:
     - Security
-    - GSL # Far Horizons
+    - Supply
 
 - type: researchTreeNode
   id: APAmmo
@@ -713,7 +713,7 @@
     state: kinetic
     color: "#003860"
   tier: Tier2
-  requires: 
+  requires:
     - SpecialAmmo
   unlocks:
 #SpeedLoader
@@ -764,7 +764,7 @@
     state: engineering
     color: "#EFB341"
   tier: Tier2
-  requires: 
+  requires:
     - AdvAtmospherics
   unlocks:
     - ShuttleConsoleCircuitboard
@@ -778,7 +778,7 @@
     - SubstationShipMachineCircuitboard
     - SubstationShuttleMachineCircuitboard
   announceTo:
-    - GSL
+    - Supply
     - Engineering
 
 - type: researchTreeNode
@@ -789,13 +789,13 @@
     state: kinetic
     color: "#EFB341"
   tier: Tier2
-  requires: 
+  requires:
     - Shuttlecraft
   unlocks:
     - WeaponTurretPointDefenseMachineCircuitboard
   announceTo:
     - Security
-    - GSL # Far Horizons
+    - Supply
     - Engineering
 
 - type: researchTreeNode
@@ -806,7 +806,7 @@
     state: kinetic
     color: "#003860"
   tier: Tier2
-  requires: 
+  requires:
     - PointDefense
   unlocks:
     - PowerCageRechargerCircuitboard
@@ -820,7 +820,7 @@
     - ShuttleGunFriendshipCircuitboard
   announceTo:
     - Security
-    - GSL # Far Horizons
+    - Supply
     - Engineering
 
 # Lasers
@@ -833,7 +833,7 @@
     state: laser
     color: "#003860"
   tier: Tier2
-  requires: 
+  requires:
     - LaserGun
   unlocks:
     - WeaponLaserCannon
@@ -850,7 +850,7 @@
     state: laser
     color: "#003860"
   tier: Tier2
-  requires: 
+  requires:
     - LaserGun2
     - EnergyBarriers
   unlocks:
@@ -867,7 +867,7 @@
     state: laser
     color: "#003860"
   tier: Tier2
-  requires: 
+  requires:
     - LaserGun2
   unlocks:
     - WeaponXrayCannon
@@ -1190,7 +1190,7 @@
   - RightArmCyberPersephone
   - LeftArmCyberGorilla
   - RightArmCyberGorilla
-  - LeftArmCyberResearcher 
+  - LeftArmCyberResearcher
   - RightArmCyberResearcher
   - LeftArmCyberMechwright
   - RightArmCyberMechwright
@@ -1212,7 +1212,7 @@
     - Medical
     - Engineering
     - Service
-    - GSL
+    - Supply
 
 - type: researchTreeNode
   id: Harmpack
@@ -1363,7 +1363,7 @@
     state: kinetic
     color: "#006020"
   tier: Tier2
-  requires: 
+  requires:
     - VehicleBasicParts
   unlocks:
   - HeadlightLED
@@ -1411,7 +1411,7 @@
     state: mechanical
     color: "#003860"
   tier: Tier3
-  requires: 
+  requires:
     - GygaxMech
   unlocks:
     - DurandHarness
@@ -1439,7 +1439,7 @@
     state: laser
     color: "#003860"
   tier: Tier3
-  requires: 
+  requires:
     - ShuttleArmament
     - ExplosiveMechAmmo
   unlocks:
@@ -1448,7 +1448,7 @@
     - ShuttleGunDusterCircuitboard
   announceTo:
     - Security
-    - GSL # Far Horizons
+    - Supply
     - Engineering
 
 # Power
@@ -1586,7 +1586,7 @@
     - OreBagOfHolding
     - DeviceDesynchronizer
   announceTo:
-    - GSL # Far Horizons
+    - Supply
     - Medical
     - Service
 
@@ -1652,7 +1652,7 @@
     - Security
     - Medical
     - Engineering
-    - GSL
+    - Supply
 
 - type: researchTreeNode
   id: NVEyes
@@ -1767,8 +1767,8 @@
     - StasisBed
     - SyringeGun
   unlocks:
-    - CloningConsoleComputerCircuitboard 
-    - CloningPodMachineCircuitboard 
+    - CloningConsoleComputerCircuitboard
+    - CloningPodMachineCircuitboard
     - MedicalScannerMachineCircuitboard
   announceTo:
     - Medical
