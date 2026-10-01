@@ -36,9 +36,14 @@ public sealed partial class VocalSystem : EntitySystem
 
     // Carpmosia-start - Emote delay
     [SubscribeLocalEvent]
+    private void OnRelayedEmoteEvent(EntityUid uid, VocalComponent component, ref InventoryRelayedEvent<BeforeEmoteEvent> args)
+    {
+        OnBeforeEmoteEvent(uid, component, ref args.Args);
+    }
+
+    [SubscribeLocalEvent]
     private void OnBeforeEmoteEvent(EntityUid uid, VocalComponent component, ref BeforeEmoteEvent args)
     {
-        var currentTime = _gameTiming.CurTime;
 
         // Ensure more than the cooldown time has passed since last emote
         if (component.LastEmoteTime + component.EmoteCooldown > _gameTiming.CurTime)
