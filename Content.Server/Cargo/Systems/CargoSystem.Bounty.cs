@@ -3,6 +3,7 @@ using System.Linq;
 using Content.Server.Cargo.Components;
 using Content.Server.NameIdentifier;
 using Content.Shared.Access.Components;
+using Content.Shared.Access.Systems; // Carpmosia-edit - Cargo bookkeeping
 using Content.Shared.Cargo;
 using Content.Shared.Cargo.Components;
 using Content.Shared.Cargo.Prototypes;
@@ -26,6 +27,7 @@ public sealed partial class CargoSystem
     [Dependency] private ContainerSystem _container = default!;
     [Dependency] private NameIdentifierSystem _nameIdentifier = default!;
     [Dependency] private EntityWhitelistSystem _whitelistSys = default!;
+    [Dependency] private SharedIdCardSystem _idCardSystem = default!; // Carpmosia-edit - Cargo bookkeeping
 
     [Dependency] private EntityQuery<StackComponent> _stackQuery = default!;
     [Dependency] private EntityQuery<ContainerManagerComponent> _containerManagerQuery = default!;
@@ -38,6 +40,10 @@ public sealed partial class CargoSystem
         SubscribeLocalEvent<CargoBountyConsoleComponent, BoundUIOpenedEvent>(OnBountyConsoleOpened);
         SubscribeLocalEvent<CargoBountyConsoleComponent, BountyPrintLabelMessage>(OnPrintLabelMessage);
         SubscribeLocalEvent<CargoBountyConsoleComponent, BountySkipMessage>(OnSkipBountyMessage);
+        // Carpmosia-start - Cargo bookkeeping
+        SubscribeLocalEvent<CargoBountyConsoleComponent, BountyClaimMessage>(OnClaimBountyMessage);
+        SubscribeLocalEvent<CargoBountyConsoleComponent, BountyDeliveryStatusMessage>(OnDeliveryStatusBountyMessage);
+        // Carpmosia-end - Cargo bookkeeping
         SubscribeLocalEvent<CargoBountyLabelComponent, PriceCalculationEvent>(OnGetBountyPrice);
         SubscribeLocalEvent<EntitySoldEvent>(OnSold);
         SubscribeLocalEvent<StationCargoBountyDatabaseComponent, MapInitEvent>(OnMapInit);
@@ -66,7 +72,7 @@ public sealed partial class CargoSystem
 
         var label = Spawn(component.BountyLabelId, Transform(uid).Coordinates);
         component.NextPrintTime = Timing.CurTime + component.PrintDelay;
-        SetupBountyLabel(label, station, bounty.Value);
+        SetupBountyLabel(label, station, bounty); // Carpmosia-edit - Cargo bookkeeping
         _audio.PlayPvs(component.PrintSound, uid);
     }
 
@@ -95,7 +101,7 @@ public sealed partial class CargoSystem
             return;
         }
 
-        if (!TryRemoveBounty(station, bounty.Value, true, args.Actor))
+        if (!TryRemoveBounty(station, bounty, true, args.Actor)) // Carpmosia-edit - Cargo bookkeeping
             return;
 
         FillBountyDatabase(station);
@@ -104,6 +110,99 @@ public sealed partial class CargoSystem
         _uiSystem.SetUiState(uid, CargoConsoleUiKey.Bounty, new CargoBountyConsoleState(db.Bounties, db.History, untilNextSkip));
         _audio.PlayPvs(component.SkipSound, uid);
     }
+
+    // Carpmosia-start - Cargo bookkeeping
+    private void BountyDenyAccess(EntityUid actor, Entity<CargoBountyConsoleComponent> ent, string locKey = "bounty-console-access-denied")
+    {
+        _popup.PopupCursor(Loc.GetString(locKey), actor);
+        if (Timing.CurTime >= ent.Comp.NextDenySoundTime)
+        {
+            ent.Comp.NextDenySoundTime = Timing.CurTime + ent.Comp.DenySoundDelay;
+            _audio.PlayPvs(ent.Comp.DenySound, ent.Owner);
+        }
+    }
+
+    private void OnClaimBountyMessage(EntityUid uid, CargoBountyConsoleComponent component, BountyClaimMessage args)
+    {
+        if(_station.GetOwningStation(uid) is not { } station || !TryComp<StationCargoBountyDatabaseComponent>(station, out var db))
+            return;
+
+        if (!TryGetBountyFromId(station, args.BountyId, out var bounty))
+            return;
+
+        if (args.Actor is not { Valid: true } mob)
+            return;
+
+        if (!_idCardSystem.TryFindIdCard(mob, out var card))
+        {
+            BountyDenyAccess(mob, (uid, component), "bounty-console-id-required-claim");
+            return;
+        }
+
+        if (bounty.ClaimedBy != null &&
+            bounty.ClaimedBy != GetNetEntity(card.Owner) &&
+            TryComp<AccessReaderComponent>(uid, out var accessReaderComponent) &&
+            !_accessReaderSystem.IsAllowed(mob, uid, accessReaderComponent))
+        {
+            BountyDenyAccess(mob, (uid, component));
+            return;
+        }
+
+        if (bounty.ClaimedBy == null)
+        {
+            // Only claiming requires access. Unclaiming should always be possible
+            if (component.ClaimAccess != null &&
+                !_accessReaderSystem.FindAccessTags(mob).Contains(component.ClaimAccess.Value))
+            {
+                BountyDenyAccess(mob, (uid, component));
+                return;
+            }
+
+            bounty.ClaimedBy = GetNetEntity(card.Owner);
+            bounty.ClaimedByName = card.Comp.FullName;
+        }
+        else
+        {
+            bounty.ClaimedBy = null;
+            bounty.ClaimedByName = null;
+        }
+
+        UpdateBountyConsoles();
+    }
+
+    private void OnDeliveryStatusBountyMessage(EntityUid uid,
+        CargoBountyConsoleComponent component,
+        BountyDeliveryStatusMessage args)
+    {
+        if(_station.GetOwningStation(uid) is not { } station || !TryComp<StationCargoBountyDatabaseComponent>(station, out var db))
+            return;
+
+        if (!TryGetBountyFromId(station, args.BountyId, out var bounty))
+            return;
+
+        if (args.Actor is not { Valid: true } mob)
+            return;
+
+        if (!_idCardSystem.TryFindIdCard(mob, out var card))
+        {
+            BountyDenyAccess(mob, (uid, component), "bounty-console-id-required-status");
+            _uiSystem.SetUiState(uid, CargoConsoleUiKey.Bounty, new CargoBountyConsoleState(db.Bounties, db.History, db.NextSkipTime - Timing.CurTime));
+            return;
+        }
+
+        if (bounty.ClaimedBy != GetNetEntity(card.Owner) &&
+            TryComp<AccessReaderComponent>(uid, out var accessReaderComponent) &&
+            !_accessReaderSystem.IsAllowed(mob, uid, accessReaderComponent))
+        {
+            BountyDenyAccess(mob, (uid, component));
+            _uiSystem.SetUiState(uid, CargoConsoleUiKey.Bounty, new CargoBountyConsoleState(db.Bounties, db.History, db.NextSkipTime - Timing.CurTime));
+            return;
+        }
+
+        bounty.Status = args.Status;
+        UpdateBountyConsoles();
+    }
+    // Carpmosia-end - Cargo bookkeeping
 
     public void SetupBountyLabel(EntityUid uid, EntityUid stationId, CargoBountyData bounty, PaperComponent? paper = null, CargoBountyLabelComponent? label = null)
     {
@@ -150,7 +249,7 @@ public sealed partial class CargoSystem
         if (!TryGetBountyFromId(station, component.Id, out var bounty, database))
             return;
 
-        if (!ProtoMan.Resolve(bounty.Value.Bounty, out var bountyPrototype) ||
+        if (!ProtoMan.Resolve(bounty.Bounty, out var bountyPrototype) || // Carpmosia-edit - Cargo bookkeeping
             !IsBountyComplete(container.Owner, bountyPrototype))
             return;
 
@@ -173,15 +272,16 @@ public sealed partial class CargoSystem
             {
                 continue;
             }
-
-            if (!IsBountyComplete(sold, bounty.Value))
+            // Carpmosia-start - Cargo bookkeeping
+            if (!IsBountyComplete(sold, bounty))
             {
                 continue;
             }
 
-            TryRemoveBounty(station, bounty.Value, false);
+            TryRemoveBounty(station, bounty, false);
             FillBountyDatabase(station);
-            _adminLogger.Add(LogType.Action, LogImpact.Low, $"Bounty \"{bounty.Value.Bounty}\" (id:{bounty.Value.Id}) was fulfilled");
+            _adminLogger.Add(LogType.Action, LogImpact.Low, $"Bounty \"{bounty.Bounty}\" (id:{bounty.Id}) was fulfilled");
+            // Carpmosia-end - Cargo bookkeeping
         }
     }
 
@@ -259,7 +359,7 @@ public sealed partial class CargoSystem
             return false;
         }
 
-        return IsBountyComplete(container, bounty.Value, out bountyEntities);
+        return IsBountyComplete(container, bounty, out bountyEntities); // Carpmosia-edit - Cargo bookkeeping
     }
 
     public bool IsBountyComplete(EntityUid container, CargoBountyData data)
@@ -451,7 +551,7 @@ public sealed partial class CargoSystem
         if (!TryGetBountyFromId(ent.Owner, dataId, out var data, ent.Comp))
             return false;
 
-        return TryRemoveBounty(ent, data.Value, skipped, actor);
+        return TryRemoveBounty(ent, data, skipped, actor); // Carpmosia-edit - Cargo bookkeeping
     }
 
     public bool TryRemoveBounty(Entity<StationCargoBountyDatabaseComponent?> ent,
