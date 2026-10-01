@@ -93,15 +93,16 @@ public sealed partial class VocalSystem : EntitySystem
         if (args.Emote == component.ScreamId)
         {
             args.Handled = TryPlayScreamSound(uid, component);
+            if (args.Handled) component.LastEmoteTime = _gameTiming.CurTime; // Carpmosia-edit - Emote delay
             return;
         }
 
         if (component.EmoteSounds is not { } sounds)
             return;
 
-        component.LastEmoteTime = _gameTiming.CurTime; // Carpmosia-edit - Emote delay
         // just play regular sound based on emote proto
         args.Handled = _chat.TryPlayEmoteSound(uid, ProtoMan.Index(sounds), args.Emote);
+        if (args.Handled) component.LastEmoteTime = _gameTiming.CurTime; // Carpmosia-edit - Emote delay
     }
 
     private void OnEmoteAction(EntityUid uid, VocalComponent component, EmoteActionEvent args)
@@ -117,7 +118,6 @@ public sealed partial class VocalSystem : EntitySystem
     {
         if (_random.Prob(component.WilhelmProbability))
         {
-            component.LastEmoteTime = _gameTiming.CurTime; // Carpmosia-edit - Emote delay
             _audio.PlayPvs(component.Wilhelm, uid, component.Wilhelm.Params);
             return true;
         }
@@ -125,7 +125,6 @@ public sealed partial class VocalSystem : EntitySystem
         if (component.EmoteSounds is not { } sounds)
             return false;
 
-        component.LastEmoteTime = _gameTiming.CurTime; // Carpmosia-edit - Emote delay
         return _chat.TryPlayEmoteSound(uid, ProtoMan.Index(sounds), component.ScreamId);
     }
 
