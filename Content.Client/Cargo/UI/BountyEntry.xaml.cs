@@ -25,6 +25,7 @@ public sealed partial class BountyEntry : BoxContainer
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
+        InitializeCargoBookkeeping(bounty);
 
         UntilNextSkip = untilNextSkip;
 
@@ -41,7 +42,6 @@ public sealed partial class BountyEntry : BoxContainer
         ManifestLabel.SetMarkup(Loc.GetString("bounty-console-manifest-label", ("item", string.Join(", ", items))));
         RewardLabel.SetMarkup(Loc.GetString("bounty-console-reward-label", ("reward", bountyPrototype.Reward)));
         DescriptionLabel.SetMarkup(Loc.GetString("bounty-console-description-label", ("description", Loc.GetString(bountyPrototype.Description))));
-        IdLabel.SetMarkup(Loc.GetString("bounty-console-id-label", ("id", bounty.Id)));
 
         PrintButton.OnPressed += _ => OnLabelButtonPressed?.Invoke();
         SkipButton.OnPressed += _ => OnSkipButtonPressed?.Invoke();
