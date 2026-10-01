@@ -7,7 +7,10 @@ using Content.Shared.Speech;
 using Content.Shared.Speech.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
-using Robust.Shared.Timing; // Carpmosia-edit - Emote delay
+// Carpmosia-start - Emote delay
+using Robust.Shared.Timing;
+using Content.Shared.Inventory;
+// Carpmosia-end - Emote delay
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Speech.EntitySystems;
@@ -24,12 +27,35 @@ public sealed partial class VocalSystem : EntitySystem
     {
         base.Initialize();
 
+        // Carpmosia-start - Emote delay
+        SubscribeLocalEvent<VocalComponent, BeforeEmoteEvent>(OnBeforeEmoteEvent);
+        SubscribeLocalEvent<VocalComponent, InventoryRelayedEvent<BeforeEmoteEvent>>(OnRelayedEmoteEvent);
+        // Carpmosia-end - Emote delay
         SubscribeLocalEvent<VocalComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<VocalComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<VocalComponent, VoiceChangedEvent>(OnVoiceChanged);
         SubscribeLocalEvent<VocalComponent, EmoteEvent>(OnEmote);
         SubscribeLocalEvent<VocalComponent, EmoteActionEvent>(OnEmoteAction);
     }
+
+    // Carpmosia-start - Emote delay
+    private void OnRelayedEmoteEvent(EntityUid uid, VocalComponent component, ref InventoryRelayedEvent<BeforeEmoteEvent> args)
+    {
+        OnBeforeEmoteEvent(uid, component, ref args.Args);
+    }
+
+    private void OnBeforeEmoteEvent(EntityUid uid, VocalComponent component, ref BeforeEmoteEvent args)
+    {
+        var currentTime = _gameTiming.CurTime;
+        var cooldown = component.EmoteCooldown;
+
+        // Ensure more than the cooldown time has passed since last emote
+        if (component.LastEmoteTime + component.EmoteCooldown > _gameTiming.CurTime) {
+            args.Cancel();
+            return;
+        }
+    }
+    // Carpmosia-end - Emote delay
 
     /// <summary>
     /// Copy this component's datafields from one entity to another.
@@ -74,14 +100,6 @@ public sealed partial class VocalSystem : EntitySystem
         if (args.Handled || !args.Emote.Category.HasFlag(EmoteCategory.Vocal))
             return;
 
-        // Carpmosia-start - Emote delay
-        var currentTime = _gameTiming.CurTime;
-        var cooldown = component.EmoteCooldown;
-
-        // Ensure more than the cooldown time has passed since last emote
-        if (currentTime - component.LastEmoteTime < cooldown)
-            return;
-        // Carpmosia-end - Emote delay
         // snowflake case for wilhelm scream easter egg
         if (args.Emote == component.ScreamId)
         {
@@ -92,7 +110,7 @@ public sealed partial class VocalSystem : EntitySystem
         if (component.EmoteSounds is not { } sounds)
             return;
 
-        component.LastEmoteTime = currentTime; // Carpmosia-edit - Emote delay
+        component.LastEmoteTime = _gameTiming.CurTime; // Carpmosia-edit - Emote delay
         // just play regular sound based on emote proto
         args.Handled = _chat.TryPlayEmoteSound(uid, ProtoMan.Index(sounds), args.Emote);
     }
@@ -108,10 +126,9 @@ public sealed partial class VocalSystem : EntitySystem
 
     private bool TryPlayScreamSound(EntityUid uid, VocalComponent component)
     {
-        var currentTime = _gameTiming.CurTime; // Carpmosia-edit - Emote delay
         if (_random.Prob(component.WilhelmProbability))
         {
-            component.LastEmoteTime = currentTime; // Carpmosia-edit - Emote delay
+            component.LastEmoteTime = _gameTiming.CurTime; // Carpmosia-edit - Emote delay
             _audio.PlayPvs(component.Wilhelm, uid, component.Wilhelm.Params);
             return true;
         }
@@ -119,7 +136,7 @@ public sealed partial class VocalSystem : EntitySystem
         if (component.EmoteSounds is not { } sounds)
             return false;
 
-        component.LastEmoteTime = currentTime; // Carpmosia-edit - Emote delay
+        component.LastEmoteTime = _gameTiming.CurTime; // Carpmosia-edit - Emote delay
         return _chat.TryPlayEmoteSound(uid, ProtoMan.Index(sounds), component.ScreamId);
     }
 
