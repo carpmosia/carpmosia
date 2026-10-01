@@ -47,13 +47,10 @@ public sealed partial class VocalSystem : EntitySystem
     private void OnBeforeEmoteEvent(EntityUid uid, VocalComponent component, ref BeforeEmoteEvent args)
     {
         var currentTime = _gameTiming.CurTime;
-        var cooldown = component.EmoteCooldown;
 
         // Ensure more than the cooldown time has passed since last emote
-        if (component.LastEmoteTime + component.EmoteCooldown > _gameTiming.CurTime) {
+        if (component.LastEmoteTime + component.EmoteCooldown > _gameTiming.CurTime)
             args.Cancel();
-            return;
-        }
     }
     // Carpmosia-end - Emote delay
     /// <summary>
