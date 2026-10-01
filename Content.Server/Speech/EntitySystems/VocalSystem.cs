@@ -27,10 +27,6 @@ public sealed partial class VocalSystem : EntitySystem
     {
         base.Initialize();
 
-        // Carpmosia-start - Emote delay
-        SubscribeLocalEvent<VocalComponent, BeforeEmoteEvent>(OnBeforeEmoteEvent);
-        SubscribeLocalEvent<VocalComponent, InventoryRelayedEvent<BeforeEmoteEvent>>(OnRelayedEmoteEvent);
-        // Carpmosia-end - Emote delay
         SubscribeLocalEvent<VocalComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<VocalComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<VocalComponent, VoiceChangedEvent>(OnVoiceChanged);
@@ -39,11 +35,7 @@ public sealed partial class VocalSystem : EntitySystem
     }
 
     // Carpmosia-start - Emote delay
-    private void OnRelayedEmoteEvent(EntityUid uid, VocalComponent component, ref InventoryRelayedEvent<BeforeEmoteEvent> args)
-    {
-        OnBeforeEmoteEvent(uid, component, ref args.Args);
-    }
-
+    [SubscribeLocalEvent]
     private void OnBeforeEmoteEvent(EntityUid uid, VocalComponent component, ref BeforeEmoteEvent args)
     {
         var currentTime = _gameTiming.CurTime;
@@ -53,6 +45,7 @@ public sealed partial class VocalSystem : EntitySystem
             args.Cancel();
     }
     // Carpmosia-end - Emote delay
+
     /// <summary>
     /// Copy this component's datafields from one entity to another.
     /// This can't use CopyComp because of the ScreamActionEntity DataField, which should not be copied.
