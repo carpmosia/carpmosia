@@ -56,7 +56,6 @@ public sealed partial class VocalSystem : EntitySystem
         }
     }
     // Carpmosia-end - Emote delay
-
     /// <summary>
     /// Copy this component's datafields from one entity to another.
     /// This can't use CopyComp because of the ScreamActionEntity DataField, which should not be copied.
