@@ -44,7 +44,6 @@ public sealed partial class VocalSystem : EntitySystem
     [SubscribeLocalEvent]
     private void OnBeforeEmoteEvent(EntityUid uid, VocalComponent component, ref BeforeEmoteEvent args)
     {
-
         // Ensure more than the cooldown time has passed since last emote
         if (component.LastEmoteTime + component.EmoteCooldown > _gameTiming.CurTime)
             args.Cancel();
