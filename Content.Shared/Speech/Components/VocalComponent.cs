@@ -58,9 +58,9 @@ public sealed partial class VocalComponent : Component
     public ProtoId<EmoteSoundsPrototype>? EmoteSounds = null;
 
     // Carpmosia-start - Emote delay
-    [DataField]
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
     [AutoPausedField]
-    public TimeSpan LastEmoteTime = TimeSpan.Zero;
+    public TimeSpan LastEmoteTime;
 
     [DataField]
     public TimeSpan EmoteCooldown = TimeSpan.FromSeconds(3);
