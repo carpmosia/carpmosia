@@ -97,7 +97,10 @@ public sealed partial class VocalSystem : EntitySystem
         if (args.Emote == component.ScreamId)
         {
             args.Handled = TryPlayScreamSound(uid, component);
-            if (args.Handled) component.LastEmoteTime = _gameTiming.CurTime; // Carpmosia-edit - Emote delay
+            // Carpmosia-start - Emote delay
+            if (args.Handled)
+                component.LastEmoteTime = _gameTiming.CurTime;
+            // Carpmosia-end - Emote delay
             return;
         }
 
@@ -106,7 +109,10 @@ public sealed partial class VocalSystem : EntitySystem
 
         // just play regular sound based on emote proto
         args.Handled = _chat.TryPlayEmoteSound(uid, ProtoMan.Index(sounds), args.Emote);
-        if (args.Handled) component.LastEmoteTime = _gameTiming.CurTime; // Carpmosia-edit - Emote delay
+        // Carpmosia-start - Emote delay
+        if (args.Handled)
+            component.LastEmoteTime = _gameTiming.CurTime;
+        // Carpmosia-end - Emote delay
     }
 
     private void OnEmoteAction(EntityUid uid, VocalComponent component, EmoteActionEvent args)
