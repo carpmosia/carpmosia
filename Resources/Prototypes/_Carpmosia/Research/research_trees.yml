@@ -1,4 +1,4 @@
-# For future reference, editing these prototypes manually will be a parin 
+# For future reference, editing these prototypes manually will be a parin
 # just copy output of
 # cat research_nodes_nt.yml | yq -r '.[].id' | sed 's|^|- |g'
 
@@ -10,16 +10,13 @@
     - MechanicalCompress
     - RipleyMech
     - RiotControl
-    - SecVehicleParts
     - SpecialAmmo
-    - LaserGun
     - Atmospherics
     - AdvAtmospherics
-    - AstroTiles
+    - LaserGun
     - PowerGeneration
     - AdvPowerCells
     - ExplosiveTech
-    - NuclearPowerGeneration
     - MagBoot
     - AnomResearch
     - AnomCoreHarvesting
@@ -28,28 +25,18 @@
     - AdvEntertainment
     - AVComms
     - Robotics
-    - Cyberlimbs
-    - BudgetCyberorgans
-    - AutomatedInjection
+    - AdvSpray
     - Surgery
     - MeatManipulation
     - Hydroponics
     - MassExcav
-    - AdvancedTools
-    - NuclearPowerRecycling
     - RecreationalMech
-    - IndustialMech
     - KineticModifications
-    - APAmmo
-    - PaddyMech
     - Shuttlecraft
-    - PointDefense
     - ShuttleArmament
-    - IonGun
-    - RayGun
     - LaserGun2
-    - BlastproofContainers
-    - EnergyBarriers
+    - RayGun
+    - AdvancedTools
     - AdvAnomResearch
     - ArtiRecycle
     - GravManipulation
@@ -58,40 +45,21 @@
     - AdvDataCompression
     - SapientResearchAlgorithms
     - ResearchUplink
-    - BananiumWeapons
-    - AILawboards
+    - AstroTiles
     - ClowningTech
     - AdvMedBorg
     - Harmpack
-    - EyeImplants
     - AdvCleaning
-    - AdvSpray
     - AdvSurgery
     - StasisBed
-    - GygaxMech
-    - DurandMech
     - AdvShuttleWeapons
-    - ExplosiveMechAmmo
     - Microreactor
     - ThermalGun
     - AdvLaserPistol
-    - Declone
     - QuantumLeaping
     - BluespaceMastery
-    - ScanGates
     - QuantumDataManagement
-    - FunctionalCyberlimbsMKII
-    - NVEyes
-    - ThermalEyes
     - BorgPlaceholder1
     - BorgPlaceholder2
     - BorgPlaceholder3
-    - SecBorg
     - SyringeGun
-    - Cloning
-    - VehicleBasicParts
-    - VehicleAdvancedParts
-    - BrainImplants
-    - HandImplants
-    - FunctionalCyberlimbsMKI
-    - CyberSpeedLegs

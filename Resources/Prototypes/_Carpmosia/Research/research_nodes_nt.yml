@@ -16,13 +16,13 @@
     - OreProcessorIndustrialMachineCircuitboard
     - ClothingMaskWeldingGas
     - ClothingShoesBootsJump
-    - MechEquipmentDrill
+    # - MechEquipmentDrill
     - WeaponProtoKineticAccelerator
     - ShuttleGunKineticCircuitboard
-    - MechEquipmentKineticAccelerator
+    # - MechEquipmentKineticAccelerator
     - RadarConsoleCircuitboard
     - HandHeldMassScanner
-    - WeaponHoloflarePistolSci
+    # - WeaponHoloflarePistolSci
   announceTo:
     - Supply
 
@@ -74,7 +74,7 @@
     - RipleyCentralElectronics
     - RipleyPeripheralsElectronics
     - MechEquipmentGrabber
-    - BorgModuleAdvancedLoading
+    # - BorgModuleAdvancedLoading
   announceTo:
     - Supply
 
@@ -93,28 +93,29 @@
     - TelescopicShield
     - HoloprojectorSecurity
     - ClothingBackpackElectropack
-    - WeaponLaserShotgun
-    - GrenadeFlashBang
-    - ClusterBangFull
-    - SmokeGrenade
-    - TearGasGrenade
-    - GrenadeStinger
+    - WeaponDisablerSMG
+    # - WeaponLaserShotgun
+    # - GrenadeFlashBang
+    # - ClusterBangFull
+    # - SmokeGrenade
+    # - TearGasGrenade
+    # - GrenadeStinger
   announceTo:
     - Security
 
-- type: researchTreeNode
-  id: SecVehicleParts
-  name: research-tree-node-vehicle-security-parts
-  cost: 8000
-  icon:
-    state: kinetic
-    color: "#003860"
-  tier: Tier1
-  unlocks:
-    - LightArmorKit
-    - SecSiren
-  announceTo:
-    - Security
+# - type: researchTreeNode
+#   id: SecVehicleParts
+#   name: research-tree-node-vehicle-security-parts
+#   cost: 8000
+#   icon:
+#     state: kinetic
+#     color: "#003860"
+#   tier: Tier1
+#   unlocks:
+#     - LightArmorKit
+#     - SecSiren
+#   announceTo:
+#     - Security
 
 - type: researchTreeNode
   id: SpecialAmmo
@@ -129,31 +130,31 @@
   unlocks:
 #Speedloader
     - SpeedLoaderMagnumIncendiary
-    - SpeedLoaderShotgunIncendiary
-    - SpeedLoaderRevolver38Uranium
-    - SpeedLoaderShotgunUranium
-    - SpeedLoaderShotgunUraniumFlechette
+    # - SpeedLoaderShotgunIncendiary
+    # - SpeedLoaderRevolver38Uranium
+    # - SpeedLoaderShotgunUranium
+    # - SpeedLoaderShotgunUraniumFlechette
     - SpeedLoaderMagnumUranium
-    - SpeedLoaderRevolver38Incendiary
+    # - SpeedLoaderRevolver38Incendiary
 #Magazine
-    - MagazineRifle556Incendiary
+    # - MagazineRifle556Incendiary
     - MagazinePistolIncendiary
     - MagazinePistolSubMachineGunIncendiary
     - MagazineLightRifleIncendiary
     - MagazineShotgunIncendiary
-    - MagazineShotgunUranium
-    - MagazineShotgunUraniumFlechette
-    - Rifle556HeavyMagazineIncendiary
+    # - MagazineShotgunUranium
+    # - MagazineShotgunUraniumFlechette
+    # - Rifle556HeavyMagazineIncendiary
     - MagazinePistolSubMachineGunIncendiary
-    - MagazineMagnumIncendiary
-    - MagazinePistol38Incendiary
-    - MagazineRifle38Incendiary
-    - MagazineRifle38Uranium
-    - MagazineMagnumUranium
-    - MagazinePistol38Uranium
-    - Rifle556HeavyMagazineUranium
+    # - MagazineMagnumIncendiary
+    # - MagazinePistol38Incendiary
+    # - MagazineRifle38Incendiary
+    # - MagazineRifle38Uranium
+    # - MagazineMagnumUranium
+    # - MagazinePistol38Uranium
+    # - Rifle556HeavyMagazineUranium
     - MagazinePistolSubMachineGunUranium
-    - MagazineRifle556Uranium
+    # - MagazineRifle556Uranium
     - MagazinePistolUranium
     - MagazinePistolSubMachineGunUranium
     - MagazineLightRifleUranium
@@ -162,27 +163,27 @@
     - MagazineBoxPistolIncendiary
     - MagazineBoxMagnumIncendiary
     - MagazineBoxLightRifleIncendiary
-    - MagazineBoxRifle556Incendiary
-    - MagazineBoxRevolver38Incendiary
-    - MagazineBoxRevolver38Uranium
+    # - MagazineBoxRifle556Incendiary
+    # - MagazineBoxRevolver38Incendiary
+    # - MagazineBoxRevolver38Uranium
     - MagazineBoxPistolUranium
     - MagazineBoxMagnumUranium
     - MagazineBoxLightRifleUranium
-    - MagazineBoxRifle556Uranium
+    # - MagazineBoxRifle556Uranium
     - BoxShotgunUranium
-    - BoxShotgunUraniumFlechette
+    # - BoxShotgunUraniumFlechette
 #Canister
-    - MagazineCanisterPistolIncendiary
-    - MagazineCanisterPistolUranium
-    - MagazineCanisterRifle556Incendiary
-    - MagazineCanisterRifle556Uranium
-    - MagazineCanisterMagnumIncendiary
-    - MagazineCanisterMagnumUranium
-    - MagazineCanisterRevolver38Incendiary
-    - MagazineCanisterRevolver38Uranium
-    - MagazineCanisterShotgun12GIncendiary
-    - MagazineCanisterShotgun12GUranium
-    - MagazineCanisterShotgun12GUraniumFlechette
+    # - MagazineCanisterPistolIncendiary
+    # - MagazineCanisterPistolUranium
+    # - MagazineCanisterRifle556Incendiary
+    # - MagazineCanisterRifle556Uranium
+    # - MagazineCanisterMagnumIncendiary
+    # - MagazineCanisterMagnumUranium
+    # - MagazineCanisterRevolver38Incendiary
+    # - MagazineCanisterRevolver38Uranium
+    # - MagazineCanisterShotgun12GIncendiary
+    # - MagazineCanisterShotgun12GUranium
+    # - MagazineCanisterShotgun12GUraniumFlechette
   announceTo:
     - Security
 
@@ -231,8 +232,8 @@
   tier: Tier1
   unlocks:
     - WeaponLaserCarbine
-    - WeaponMechCombatFiredartLaser
-    - WeaponLaserPistol
+    # - WeaponMechCombatFiredartLaser
+    # - WeaponLaserPistol
   announceTo:
     - Security
 
@@ -250,7 +251,7 @@
     - PortableGeneratorPacmanMachineCircuitboard
     - PortableGeneratorSuperPacmanMachineCircuitboard
     - PortableGeneratorJrPacmanMachineCircuitboard
-    - GeneratorAcmanMachineCircuitboard
+    # - GeneratorAcmanMachineCircuitboard
     - SolarControlComputerCircuitboard
     - SolarTrackerElectronics
     - EmitterCircuitboard
@@ -292,41 +293,41 @@
     - FlashPayload
     - ExplosivePayload
     - ChemicalPayload
-    - ExGrenade
-    - EmpGrenade
-    - GrenadeShrapnel
+    # - ExGrenade
+    # - EmpGrenade
+    # - GrenadeShrapnel
   announceTo:
     - Security
 
-- type: researchTreeNode
-  id: NuclearPowerGeneration
-  name: research-tree-node-nuclear-reactor
-  cost: 7500
-  icon:
-    state: power
-    color: "#EFB341"
-  tier: Tier1
-  requires:
-    - PowerGeneration
-  unlocks:
-    - NuclearFabricatorMachineCircuitboard
-    - NuclearReactorMonitorComputerCircuitboard
-    - GasTurbineMonitorComputerCircuitboard
-    - UraniumReactorFuelRod
-    - PlasmaReactorFuelRod
-    - UraniumGlassReactorFuelRod
-    - SilverReactorControlRod
-    - PlasteelReactorControlRod
-    - PlasmaGlassReactorControlRod
-    - SilverReactorGasChannel
-    - PlasteelReactorGasChannel
-    - PlasmaGlassReactorGasChannel
-    - SilverReactorHeatExchanger
-    - PlasteelReactorHeatExchanger
-    - PlasmaGlassReactorHeatExchanger
-    - PlasteelGasTurbineBlade
-    - BrassGasTurbineBlade
-    - SilverGasTurbineStator
+# - type: researchTreeNode
+#   id: NuclearPowerGeneration
+#   name: research-tree-node-nuclear-reactor
+#   cost: 7500
+#   icon:
+#     state: power
+#     color: "#EFB341"
+#   tier: Tier1
+#   requires:
+#     - PowerGeneration
+#   unlocks:
+#     # - NuclearFabricatorMachineCircuitboard
+#     # - NuclearReactorMonitorComputerCircuitboard
+#     # - GasTurbineMonitorComputerCircuitboard
+#     # - UraniumReactorFuelRod
+#     - PlasmaReactorFuelRod
+#     - UraniumGlassReactorFuelRod
+#     - SilverReactorControlRod
+#     - PlasteelReactorControlRod
+#     - PlasmaGlassReactorControlRod
+#     - SilverReactorGasChannel
+#     - PlasteelReactorGasChannel
+#     - PlasmaGlassReactorGasChannel
+#     - SilverReactorHeatExchanger
+#     - PlasteelReactorHeatExchanger
+#     - PlasmaGlassReactorHeatExchanger
+#     - PlasteelGasTurbineBlade
+#     - BrassGasTurbineBlade
+#     - SilverGasTurbineStator
 
 # Research
 
@@ -459,63 +460,63 @@
 
 # Cybernetics
 
-- type: researchTreeNode
-  id: Cyberlimbs
-  name: research-tree-node-cyberlimbs
-  cost: 4000
-  icon:
-    state: medical
-    color: "#52B4E9"
-  tier: Tier1
-  requires:
-    - Robotics
-  unlocks:
-    - LeftArmCyber
-    - RightArmCyber
-    - LeftHandCyber
-    - RightHandCyber
-    - LeftLegCyber
-    - RightLegCyber
-    - LeftFootCyber
-    - RightFootCyber
-    - LeftLegCyberHydraulic
-    - RightLegCyberHydraulic
-  announceTo:
-    - Medical
+# - type: researchTreeNode
+#   id: Cyberlimbs
+#   name: research-tree-node-cyberlimbs
+#   cost: 4000
+#   icon:
+#     state: medical
+#     color: "#52B4E9"
+#   tier: Tier1
+#   requires:
+#     - Robotics
+#   unlocks:
+#     - LeftArmCyber
+#     - RightArmCyber
+#     - LeftHandCyber
+#     - RightHandCyber
+#     - LeftLegCyber
+#     - RightLegCyber
+#     - LeftFootCyber
+#     - RightFootCyber
+#     - LeftLegCyberHydraulic
+#     - RightLegCyberHydraulic
+#   announceTo:
+#     - Medical
 
-- type: researchTreeNode
-  id: BudgetCyberorgans
-  name: research-tree-node-cyberorgans
-  cost: 4000
-  icon:
-    state: medical
-    color: "#52B4E9"
-  tier: Tier1
-  requires:
-    - Robotics
-  unlocks:
-    - BudgetCyberEyes
-    - BudgetCyberTongue
-    - BudgetCyberLiver
-    - BudgetCyberStomach
-    - BudgetCyberKidneys
-  announceTo:
-    - Medical
+# - type: researchTreeNode
+#   id: BudgetCyberorgans
+#   name: research-tree-node-cyberorgans
+#   cost: 4000
+#   icon:
+#     state: medical
+#     color: "#52B4E9"
+#   tier: Tier1
+#   requires:
+#     - Robotics
+#   unlocks:
+#     - BudgetCyberEyes
+#     - BudgetCyberTongue
+#     - BudgetCyberLiver
+#     - BudgetCyberStomach
+#     - BudgetCyberKidneys
+#   announceTo:
+#     - Medical
 
 # Chem
 
-- type: researchTreeNode
-  id: AutomatedInjection
-  name: research-tree-node-injection
-  cost: 4000
-  icon:
-    state: medical
-    color: "#D381C9"
-  tier: Tier1
-  unlocks:
-    - SlowAutoinjector
-  announceTo:
-    - Medical
+# - type: researchTreeNode
+#   id: AutomatedInjection
+#   name: research-tree-node-injection
+#   cost: 4000
+#   icon:
+#     state: medical
+#     color: "#D381C9"
+#   tier: Tier1
+#   unlocks:
+#     - SlowAutoinjector
+#   announceTo:
+#     - Medical
 
 - type: researchTreeNode
   id: AdvSpray
@@ -525,8 +526,8 @@
     state: medical
     color: "#D381C9"
   tier: Tier1
-  requires:
-    - AutomatedInjection
+  # requires:
+  #   - AutomatedInjection
   unlocks:
     - WeaponSprayNozzle
     - ClothingBackpackWaterTank
@@ -544,17 +545,17 @@
     color: "#D381C9"
   tier: Tier1
   unlocks:
-    - BoneSetter
-    - BoneGel
+    # - BoneSetter
+    # - BoneGel
     - Scalpel
     - Retractor
     - Cautery
     - Saw
     - Hemostat
-    - BorgModuleSurgical
-  unlockFlags:
-    - UnlockFlagSurgeryPlastic
-    - UnlockFlagSurgerySpeed1
+    # - BorgModuleSurgical
+  # unlockFlags:
+    # - UnlockFlagSurgeryPlastic
+    # - UnlockFlagSurgerySpeed1
   announceTo:
     - Medical
 
@@ -591,19 +592,19 @@
     - Service
 
 #Vehicles
-- type: researchTreeNode
-  id: VehicleBasicParts
-  name: research-tree-node-vehicle-basic-parts
-  cost: 8000
-  icon:
-    state: kinetic
-    color: "#006020"
-  tier: Tier1
-  unlocks:
-    - BasicHeadlight
-    - BasicTires
-    - BasicEngine
-    - ElectricEngine
+# - type: researchTreeNode
+#   id: VehicleBasicParts
+#   name: research-tree-node-vehicle-basic-parts
+#   cost: 8000
+#   icon:
+#     state: kinetic
+#     color: "#006020"
+#   tier: Tier1
+#   unlocks:
+#     - BasicHeadlight
+#     - BasicTires
+#     - BasicEngine
+#     - ElectricEngine
 ---
 
 # Tier 2
@@ -624,7 +625,7 @@
   unlocks:
     - MiningDrillDiamond
     - AdvancedMineralScannerEmpty
-    - MechEquipmentDrillDiamond
+    # - MechEquipmentDrillDiamond
     - BorgModuleAdvancedMining
   announceTo:
     - Supply
@@ -661,29 +662,29 @@
   announceTo:
     - Service
 
-- type: researchTreeNode
-  id: IndustialMech
-  name: research-tree-node-industrial-mech
-  cost: 11050
-  icon:
-    state: mechanical
-    color: "#A46106"
-  tier: Tier2
-  requires:
-    - MassExcav
-    - RecreationalMech
-  unlocks:
-    - ClarkeHarness
-    - ClarkeHead
-    - ClarkeLArm
-    - ClarkeRArm
-    - ClarkeTreads
-    - ClarkeCentralElectronics
-    - ClarkePeripheralsElectronics
-    - RipleyMKIIHarness
-    - RipleyUpgradeKit
-  announceTo:
-    - Supply
+# - type: researchTreeNode
+#   id: IndustialMech
+#   name: research-tree-node-industrial-mech
+#   cost: 11050
+#   icon:
+#     state: mechanical
+#     color: "#A46106"
+#   tier: Tier2
+#   requires:
+#     - MassExcav
+#     - RecreationalMech
+#   unlocks:
+#     - ClarkeHarness
+#     - ClarkeHead
+#     - ClarkeLArm
+#     - ClarkeRArm
+#     - ClarkeTreads
+#     - ClarkeCentralElectronics
+#     - ClarkePeripheralsElectronics
+#     - RipleyMKIIHarness
+#     - RipleyUpgradeKit
+#   announceTo:
+#     - Supply
 
 # Sec
 
@@ -705,54 +706,54 @@
     - Security
     - Supply
 
-- type: researchTreeNode
-  id: APAmmo
-  name: research-tree-node-ap-ammo
-  cost: 11500
-  icon:
-    state: kinetic
-    color: "#003860"
-  tier: Tier2
-  requires:
-    - SpecialAmmo
-  unlocks:
-#SpeedLoader
-    - SpeedLoaderMagnumAP
-#Magazine
-    - MagazinePistolAP
-    - MagazinePistol38AP
-    - MagazineRifle556AP
-    - MagazineLightRifleAP
-    - Rifle556HeavyMagazineAP
-    - MagazinePistolSubMachineGunAP
-#Box
-    - MagazineBoxMagnumAP
-    - MagazineBoxPistolAP
-    - MagazineBoxRevolver38AP
-    - MagazineBoxRifle556AP
-    - MagazineBoxLightRifleAP
-#Canister
-    - MagazineCanisterPistolAP
-    - MagazineCanisterRifle556AP
-    - MagazineCanisterMagnumAP
-    - MagazineCanisterRevolver38AP
-  announceTo:
-    - Security
+# - type: researchTreeNode
+#   id: APAmmo
+#   name: research-tree-node-ap-ammo
+#   cost: 11500
+#   icon:
+#     state: kinetic
+#     color: "#003860"
+#   tier: Tier2
+#   requires:
+#     - SpecialAmmo
+#   unlocks:
+# #SpeedLoader
+#     # - SpeedLoaderMagnumAP
+# #Magazine
+#     # - MagazinePistolAP
+#     # - MagazinePistol38AP
+#     # - MagazineRifle556AP
+#     # - MagazineLightRifleAP
+#     # - Rifle556HeavyMagazineAP
+#     # - MagazinePistolSubMachineGunAP
+# #Box
+#     - MagazineBoxMagnumAP
+#     - MagazineBoxPistolAP
+#     - MagazineBoxRevolver38AP
+#     - MagazineBoxRifle556AP
+#     - MagazineBoxLightRifleAP
+# #Canister
+#     - MagazineCanisterPistolAP
+#     - MagazineCanisterRifle556AP
+#     - MagazineCanisterMagnumAP
+#     - MagazineCanisterRevolver38AP
+#   announceTo:
+#     - Security
 
-- type: researchTreeNode
-  id: PaddyMech
-  name: research-tree-node-paddy
-  cost: 8500
-  icon:
-    state: mechanical
-    color: "#003860"
-  tier: Tier2
-  requires:
-    - KineticModifications
-  unlocks:
-    - PaddyUpgradeKit
-  announceTo:
-    - Security
+# - type: researchTreeNode
+#   id: PaddyMech
+#   name: research-tree-node-paddy
+#   cost: 8500
+#   icon:
+#     state: mechanical
+#     color: "#003860"
+#   tier: Tier2
+#   requires:
+#     - KineticModifications
+#   unlocks:
+#     - PaddyUpgradeKit
+#   announceTo:
+#     - Security
 
 # Space
 
@@ -771,32 +772,32 @@
     - ThrusterMachineCircuitboard
     - GyroscopeMachineCircuitboard
     - MiniGravityGeneratorCircuitboard
-    - SMESShipMachineCircuitboard
-    - SMESShuttleMachineCircuitboard
-    - WallmountSubstationElectronicsShip
-    - WallmountSubstationElectronicsShuttle
-    - SubstationShipMachineCircuitboard
-    - SubstationShuttleMachineCircuitboard
+    # - SMESShipMachineCircuitboard
+    # - SMESShuttleMachineCircuitboard
+    # - WallmountSubstationElectronicsShip
+    # - WallmountSubstationElectronicsShuttle
+    # - SubstationShipMachineCircuitboard
+    # - SubstationShuttleMachineCircuitboard
   announceTo:
     - Supply
     - Engineering
 
-- type: researchTreeNode
-  id: PointDefense
-  name: research-tree-node-point-defense
-  cost: 10000
-  icon:
-    state: kinetic
-    color: "#EFB341"
-  tier: Tier2
-  requires:
-    - Shuttlecraft
-  unlocks:
-    - WeaponTurretPointDefenseMachineCircuitboard
-  announceTo:
-    - Security
-    - Supply
-    - Engineering
+# - type: researchTreeNode
+#   id: PointDefense
+#   name: research-tree-node-point-defense
+#   cost: 10000
+#   icon:
+#     state: kinetic
+#     color: "#EFB341"
+#   tier: Tier2
+#   requires:
+#     - Shuttlecraft
+#   unlocks:
+#     - WeaponTurretPointDefenseMachineCircuitboard
+#   announceTo:
+#     - Security
+#     - Supply
+#     - Engineering
 
 - type: researchTreeNode
   id: ShuttleArmament
@@ -806,8 +807,8 @@
     state: kinetic
     color: "#003860"
   tier: Tier2
-  requires:
-    - PointDefense
+  # requires:
+  #   - PointDefense
   unlocks:
     - PowerCageRechargerCircuitboard
     - PowerCageSmall
@@ -837,27 +838,27 @@
     - LaserGun
   unlocks:
     - WeaponLaserCannon
-    - WeaponMechCombatSolarisLaser
-    - WeaponLaserImmolator
+    # - WeaponMechCombatSolarisLaser
+    # - WeaponLaserImmolator
   announceTo:
     - Security
 
-- type: researchTreeNode
-  id: IonGun
-  name: research-tree-node-ion
-  cost: 8200
-  icon:
-    state: laser
-    color: "#003860"
-  tier: Tier2
-  requires:
-    - LaserGun2
-    - EnergyBarriers
-  unlocks:
-    - WeaponIonRifle
-    - WeaponIonCarbine
-  announceTo:
-    - Security
+# - type: researchTreeNode
+#   id: IonGun
+#   name: research-tree-node-ion
+#   cost: 8200
+#   icon:
+#     state: laser
+#     color: "#003860"
+#   tier: Tier2
+#   requires:
+#     - LaserGun2
+#     - EnergyBarriers
+#   unlocks:
+#     - WeaponIonRifle
+#     - WeaponIonCarbine
+#   announceTo:
+#     - Security
 
 - type: researchTreeNode
   id: RayGun
@@ -874,44 +875,44 @@
   announceTo:
     - Security
 
-- type: researchTreeNode
-  id: EnergyBarriers
-  name: research-tree-node-ebarrier
-  cost: 5400
-  icon:
-    state: power
-    color: "#003860"
-  tier: Tier2
-  unlocks:
-    - EnergyDomeTurtle
-    - HolographicFieldGeneratorCircuitboard
-    - HolographicBarrierGeneratorCircuitboard
-  announceTo:
-    - Engineering
-    - Security
+# - type: researchTreeNode
+#   id: EnergyBarriers
+#   name: research-tree-node-ebarrier
+#   cost: 5400
+#   icon:
+#     state: power
+#     color: "#003860"
+#   tier: Tier2
+#   unlocks:
+#     - EnergyDomeTurtle
+#     - HolographicFieldGeneratorCircuitboard
+#     - HolographicBarrierGeneratorCircuitboard
+#   announceTo:
+#     - Engineering
+#     - Security
 
 # Power
 
-- type: researchTreeNode
-  id: BlastproofContainers
-  name: research-tree-node-blast-proof-containers
-  cost: 9000
-  icon:
-    state: science
-    color: "#52B4E9"
-  tier: Tier2
-  requires:
-    - ExplosiveTech
-  unlocks:
-    - LargeBeakerReinforced
-    - BeakerReinforced
-    - ChemistryVialReinforced
-    - EmptyBottleReinforced
-    - JugReinforced
-    - ReinforcedMiniatureEmptyChemistryVial
-  announceTo:
-    - Security
-    - Medical
+# - type: researchTreeNode
+#   id: BlastproofContainers
+#   name: research-tree-node-blast-proof-containers
+#   cost: 9000
+#   icon:
+#     state: science
+#     color: "#52B4E9"
+#   tier: Tier2
+#   requires:
+#     - ExplosiveTech
+#   unlocks:
+#     - LargeBeakerReinforced
+#     - BeakerReinforced
+#     - ChemistryVialReinforced
+#     - EmptyBottleReinforced
+#     - JugReinforced
+#     - ReinforcedMiniatureEmptyChemistryVial
+#   announceTo:
+#     - Security
+#     - Medical
 
 - type: researchTreeNode
   id: AdvancedTools
@@ -933,31 +934,31 @@
   announceTo:
     - Engineering
 
-- type: researchTreeNode
-  id: NuclearPowerRecycling
-  name: research-tree-node-nuclear-2
-  cost: 12500
-  icon:
-    state: power
-    color: "#EFB341"
-  tier: Tier2
-  requires:
-    - NuclearPowerGeneration
-  unlocks:
-    - NuclearCentrifugeMachineCircuitboard
-    - PlutoniumReactorFuelRod
-    - BananiumReactorFuelRod
-    - GoldReactorControlRod
-    - DiamondReactorControlRod
-    - GoldReactorGasChannel
-    - DiamondReactorGasChannel
-    - GoldReactorHeatExchanger
-    - DiamondReactorHeatExchanger
-    - GoldGasTurbineBlade
-    - DiamondGasTurbineBlade
-    - GoldGasTurbineStator
-  announceTo:
-    - Engineering
+# - type: researchTreeNode
+#   id: NuclearPowerRecycling
+#   name: research-tree-node-nuclear-2
+#   cost: 12500
+#   icon:
+#     state: power
+#     color: "#EFB341"
+#   tier: Tier2
+#   requires:
+#     - NuclearPowerGeneration
+#   unlocks:
+#     - NuclearCentrifugeMachineCircuitboard
+#     - PlutoniumReactorFuelRod
+#     - BananiumReactorFuelRod
+#     - GoldReactorControlRod
+#     - DiamondReactorControlRod
+#     - GoldReactorGasChannel
+#     - DiamondReactorGasChannel
+#     - GoldReactorHeatExchanger
+#     - DiamondReactorHeatExchanger
+#     - GoldGasTurbineBlade
+#     - DiamondGasTurbineBlade
+#     - GoldGasTurbineStator
+#   announceTo:
+#     - Engineering
 
 # Research
 
@@ -1096,50 +1097,50 @@
     - Service
     - Engineering
 
-- type: researchTreeNode
-  id: BananiumWeapons
-  name: research-tree-node-bananium-weapons
-  cost: 6000
-  icon:
-    state: mechanical
-    color: "#9FED58"
-  tier: Tier2
-  requires:
-    - AstroTiles
-  unlocks:
-    - MechEquipmentHonkerBananaMortar
-    - MechEquipmentHonkerMousetrapMortar
-  announceTo:
-    - Service
+# - type: researchTreeNode
+#   id: BananiumWeapons
+#   name: research-tree-node-bananium-weapons
+#   cost: 6000
+#   icon:
+#     state: mechanical
+#     color: "#9FED58"
+#   tier: Tier2
+#   requires:
+#     - AstroTiles
+#   unlocks:
+#     - MechEquipmentHonkerBananaMortar
+#     - MechEquipmentHonkerMousetrapMortar
+#   announceTo:
+#     - Service
 
 # Robotics
 
-- type: researchTreeNode
-  id: AILawboards
-  name: research-tree-node-ai-lawboard
-  cost: 7000
-  icon:
-    state: electronics
-    color: "#D381C9"
-  tier: Tier2
-  requires:
-    - Robotics
-  unlocks:
-    - NTDefaultCircuitBoard
-    - AsimovCircuitBoard
-    - CorporateCircuitBoard
-    - CommandmentCircuitBoard
-    - PaladinCircuitBoard
-    - PanicmovCircuitBoard
-    - GenieCircuitBoard
-    - ReporterCircuitBoard
-    - LiveLetLiveCircuitBoard
-    - StationEfficiencyCircuitBoard
-    - RobocopCircuitBoard
-    - GameMasterCircuitBoard
-    - ArtistCircuitBoard
-    - NutimovCircuitBoard
-    - JermovCircuitBoard
+# - type: researchTreeNode
+#   id: AILawboards
+#   name: research-tree-node-ai-lawboard
+#   cost: 7000
+#   icon:
+#     state: electronics
+#     color: "#D381C9"
+#   tier: Tier2
+#   requires:
+#     - Robotics
+#   unlocks:
+#     - NTDefaultCircuitBoard
+#     - AsimovCircuitBoard
+#     - CorporateCircuitBoard
+#     - CommandmentCircuitBoard
+#     - PaladinCircuitBoard
+#     - PanicmovCircuitBoard
+#     - GenieCircuitBoard
+#     - ReporterCircuitBoard
+#     - LiveLetLiveCircuitBoard
+#     - StationEfficiencyCircuitBoard
+#     - RobocopCircuitBoard
+#     - GameMasterCircuitBoard
+#     - ArtistCircuitBoard
+#     - NutimovCircuitBoard
+#     - JermovCircuitBoard
 
 - type: researchTreeNode
   id: ClowningTech
@@ -1149,9 +1150,6 @@
     state: mechanical
     color: "#9FED58"
   tier: Tier2
-  requires:
-    - BananiumWeapons
-    - AILawboards
   unlocks:
     - PushHorn
     - BorgModuleAdvancedClowning
@@ -1166,8 +1164,8 @@
     state: medical
     color: "#D381C9"
   tier: Tier2
-  requires:
-    - AILawboards
+  # requires:
+  #   - AILawboards
   unlocks:
     - BorgModuleAdvancedTopical
   announceTo:
@@ -1175,44 +1173,44 @@
 
 # Cybernetics
 
-- type: researchTreeNode
-  id: FunctionalCyberlimbsMKI
-  name: research-tree-node-functional-cyberlimb-mki
-  cost: 10000
-  icon:
-    state: medical
-    color: "#52B4E9"
-  tier: Tier2
-  requires:
-    - Cyberlimbs
-  unlocks:
-  - LeftArmCyberPersephone
-  - RightArmCyberPersephone
-  - LeftArmCyberGorilla
-  - RightArmCyberGorilla
-  - LeftArmCyberResearcher
-  - RightArmCyberResearcher
-  - LeftArmCyberMechwright
-  - RightArmCyberMechwright
-  - LeftArmCyberScribe
-  - RightArmCyberScribe
-  - LeftArmCyberSpacer
-  - RightArmCyberSpacer
-  - LeftArmCyberRiplet
-  - RightArmCyberRiplet
-  - LeftArmCyberHerakles
-  - RightArmCyberHerakles
-  - LeftArmCyberRipper
-  - RightArmCyberRipper
-  - LeftLegCyberCargo
-  - RightLegCyberCargo
+# - type: researchTreeNode
+#   id: FunctionalCyberlimbsMKI
+#   name: research-tree-node-functional-cyberlimb-mki
+#   cost: 10000
+#   icon:
+#     state: medical
+#     color: "#52B4E9"
+#   tier: Tier2
+#   requires:
+#     - Cyberlimbs
+#   unlocks:
+#   - LeftArmCyberPersephone
+#   - RightArmCyberPersephone
+#   - LeftArmCyberGorilla
+#   - RightArmCyberGorilla
+#   - LeftArmCyberResearcher
+#   - RightArmCyberResearcher
+#   - LeftArmCyberMechwright
+#   - RightArmCyberMechwright
+#   - LeftArmCyberScribe
+#   - RightArmCyberScribe
+#   - LeftArmCyberSpacer
+#   - RightArmCyberSpacer
+#   - LeftArmCyberRiplet
+#   - RightArmCyberRiplet
+#   - LeftArmCyberHerakles
+#   - RightArmCyberHerakles
+#   - LeftArmCyberRipper
+#   - RightArmCyberRipper
+#   - LeftLegCyberCargo
+#   - RightLegCyberCargo
 
-  announceTo:
-    - Security
-    - Medical
-    - Engineering
-    - Service
-    - Supply
+#   announceTo:
+#     - Security
+#     - Medical
+#     - Engineering
+#     - Service
+#     - Supply
 
 - type: researchTreeNode
   id: Harmpack
@@ -1222,73 +1220,73 @@
     state: mechanical
     color: "#003860"
   tier: Tier2
-  requires:
-    - FunctionalCyberlimbsMKI
+  # requires:
+  #   - FunctionalCyberlimbsMKI
   unlocks:
     - ClothingBackpackHarmpack
   announceTo:
     - Security
 
-- type: researchTreeNode
-  id: EyeImplants
-  name: research-tree-node-eye-implants
-  cost: 10000
-  icon:
-    state: medical
-    color: "#52B4E9"
-  tier: Tier2
-  requires:
-    - BudgetCyberorgans
-  unlocks:
-    - EyeImplantWelding
-    - EyeImplantMedical
-    - EyeImplantSecurity
-    - EyeImplantChemistry
-    - EyeImplantDiagnostic
-  announceTo:
-    - Security
-    - Medical
-    - Engineering
+# - type: researchTreeNode
+#   id: EyeImplants
+#   name: research-tree-node-eye-implants
+#   cost: 10000
+#   icon:
+#     state: medical
+#     color: "#52B4E9"
+#   tier: Tier2
+#   requires:
+#     - BudgetCyberorgans
+#   unlocks:
+#     - EyeImplantWelding
+#     - EyeImplantMedical
+#     - EyeImplantSecurity
+#     - EyeImplantChemistry
+#     - EyeImplantDiagnostic
+#   announceTo:
+#     - Security
+#     - Medical
+#     - Engineering
 
-- type: researchTreeNode
-  id: BrainImplants
-  name: research-tree-node-brain-implants
-  cost: 10000
-  icon:
-    state: medical
-    color: "#52B4E9"
-  tier: Tier2
-  requires:
-    - BudgetCyberorgans
-    - EyeImplants
-  unlocks:
-    - BrainImplantComms
-    - BrainImplantTranslator
-  announceTo:
-    - Medical
+# - type: researchTreeNode
+#   id: BrainImplants
+#   name: research-tree-node-brain-implants
+#   cost: 10000
+#   icon:
+#     state: medical
+#     color: "#52B4E9"
+#   tier: Tier2
+#   requires:
+#     - BudgetCyberorgans
+#     - EyeImplants
+#   unlocks:
+#     - BrainImplantComms
+#     - BrainImplantTranslator
+#   announceTo:
+#     - Medical
 
-- type: researchTreeNode
-  id: HandImplants
-  name: research-tree-node-hand-implants
-  cost: 10000
-  icon:
-    state: medical
-    color: "#52B4E9"
-  tier: Tier2
-  requires:
-    - BudgetCyberorgans
-  unlocks:
-    - LeftHandImplantInsulated
-    - RightHandImplantInsulated
-    - LeftHandImplantThrusters
-    - RightHandImplantThrusters
-    - LeftHandImplantForensics
-    - RightHandImplantForensics
-    - LeftHandImplantClaws
-    - RightHandImplantClaws
-  announceTo:
-    - Medical
-    - Security
+# - type: researchTreeNode
+#   id: HandImplants
+#   name: research-tree-node-hand-implants
+#   cost: 10000
+#   icon:
+#     state: medical
+#     color: "#52B4E9"
+#   tier: Tier2
+#   requires:
+#     - BudgetCyberorgans
+#   unlocks:
+#     - LeftHandImplantInsulated
+#     - RightHandImplantInsulated
+#     - LeftHandImplantThrusters
+#     - RightHandImplantThrusters
+#     - LeftHandImplantForensics
+#     - RightHandImplantForensics
+#     - LeftHandImplantClaws
+#     - RightHandImplantClaws
+#   announceTo:
+#     - Medical
+#     - Security
 
 # Chem
 
@@ -1306,8 +1304,8 @@
     - AdvMopItem
     - MegaSprayBottle
     - BorgModuleAdvancedCleaning
-    - BorgModuleAdvancedJanitorMisc
-    - JanitorRCD
+    # - BorgModuleAdvancedJanitorMisc
+    # - JanitorRCD
   announceTo:
     - Service
 
@@ -1325,13 +1323,13 @@
     - Surgery
   unlocks:
     - Drill
-    - SawAdvanced
-    - ScalpelAdvanced
-    - BoneSetterAdvanced
-    - RetractorAdvanced
-    - HemostatAdvanced
-  unlockFlags:
-    - UnlockFlagSurgerySpeed2
+    # - SawAdvanced
+    # - ScalpelAdvanced
+    # - BoneSetterAdvanced
+    # - RetractorAdvanced
+    # - HemostatAdvanced
+  # unlockFlags:
+    # - UnlockFlagSurgerySpeed2
   announceTo:
     - Medical
 
@@ -1355,21 +1353,36 @@
     - Medical
 
 #Vehicles
+# - type: researchTreeNode
+#   id: VehicleAdvancedParts
+#   name: research-tree-node-vehicle-advanced-parts
+#   cost: 10000
+#   icon:
+#     state: kinetic
+#     color: "#006020"
+#   tier: Tier2
+#   requires:
+#     - VehicleBasicParts
+#   unlocks:
+#   - HeadlightLED
+#   - AdvancedEngine
+#   - ElectricTurboEngine
+#   - BasicArmorKit
+
 - type: researchTreeNode
-  id: VehicleAdvancedParts
-  name: research-tree-node-vehicle-advanced-parts
-  cost: 10000
+  id: CompactDefib
+  name: research-technology-portable-resuscitation
   icon:
-    state: kinetic
-    color: "#006020"
+    state: medical
+    color: "#52B4E9"
   tier: Tier2
-  requires:
-    - VehicleBasicParts
+  cost: 5000
   unlocks:
-  - HeadlightLED
-  - AdvancedEngine
-  - ElectricTurboEngine
-  - BasicArmorKit
+    - CompactDefibrillator
+  announceTo:
+    - Medical
+
+
 
 ---
 
@@ -1377,57 +1390,57 @@
 
 # Mechs
 
-- type: researchTreeNode
-  id: GygaxMech
-  name: research-tree-node-gygax
-  cost: 11600
-  icon:
-    state: mechanical
-    color: "#003860"
-  tier: Tier3
-  requires:
-    - IndustialMech
-    - PaddyMech
-  unlocks:
-    - GygaxHarness
-    - GygaxArmor
-    - GygaxHead
-    - GygaxLArm
-    - GygaxLLeg
-    - GygaxRArm
-    - GygaxRLeg
-    - GygaxCentralElectronics
-    - GygaxPeripheralsElectronics
-    - GygaxTargetingElectronics
-    - WeaponMechCombatUltraRifle
-  announceTo:
-    - Security
+# - type: researchTreeNode
+#   id: GygaxMech
+#   name: research-tree-node-gygax
+#   cost: 11600
+#   icon:
+#     state: mechanical
+#     color: "#003860"
+#   tier: Tier3
+#   requires:
+#     - IndustialMech
+#     - PaddyMech
+#   unlocks:
+#     - GygaxHarness
+#     - GygaxArmor
+#     - GygaxHead
+#     - GygaxLArm
+#     - GygaxLLeg
+#     - GygaxRArm
+#     - GygaxRLeg
+#     - GygaxCentralElectronics
+#     - GygaxPeripheralsElectronics
+#     - GygaxTargetingElectronics
+#     - WeaponMechCombatUltraRifle
+#   announceTo:
+#     - Security
 
-- type: researchTreeNode
-  id: DurandMech
-  name: research-tree-node-durand
-  cost: 16600
-  icon:
-    state: mechanical
-    color: "#003860"
-  tier: Tier3
-  requires:
-    - GygaxMech
-  unlocks:
-    - DurandHarness
-    - DurandArmor
-    - DurandHead
-    - DurandLArm
-    - DurandLLeg
-    - DurandRArm
-    - DurandRLeg
-    - DurandCentralElectronics
-    - DurandPeripheralsElectronics
-    - DurandTargetingElectronics
-    - WeaponMechCombatShotgun
-    - WeaponMechCombatShotgunIncendiary
-  announceTo:
-    - Security
+# - type: researchTreeNode
+#   id: DurandMech
+#   name: research-tree-node-durand
+#   cost: 16600
+#   icon:
+#     state: mechanical
+#     color: "#003860"
+#   tier: Tier3
+#   requires:
+#     - GygaxMech
+#   unlocks:
+#     - DurandHarness
+#     - DurandArmor
+#     - DurandHead
+#     - DurandLArm
+#     - DurandLLeg
+#     - DurandRArm
+#     - DurandRLeg
+#     - DurandCentralElectronics
+#     - DurandPeripheralsElectronics
+#     - DurandTargetingElectronics
+#     - WeaponMechCombatShotgun
+#     - WeaponMechCombatShotgunIncendiary
+#   announceTo:
+#     - Security
 
 # Space
 
@@ -1441,7 +1454,7 @@
   tier: Tier3
   requires:
     - ShuttleArmament
-    - ExplosiveMechAmmo
+    # - ExplosiveMechAmmo
   unlocks:
     - GrenadeEMP
     - PowerCageHigh
@@ -1453,20 +1466,20 @@
 
 # Power
 
-- type: researchTreeNode
-  id: ExplosiveMechAmmo
-  name: research-tree-node-mech-explosives
-  cost: 15400
-  icon:
-    state: kinetic
-    color: "#003860"
-  tier: Tier3
-  requires:
-    - BlastproofContainers
-  unlocks:
-    - WeaponMechCombatMissileRack8
-  announceTo:
-    - Security
+# - type: researchTreeNode
+#   id: ExplosiveMechAmmo
+#   name: research-tree-node-mech-explosives
+#   cost: 15400
+#   icon:
+#     state: kinetic
+#     color: "#003860"
+#   tier: Tier3
+#   requires:
+#     - BlastproofContainers
+#   unlocks:
+#     - WeaponMechCombatMissileRack8
+#   announceTo:
+#     - Security
 
 - type: researchTreeNode
   id: Microreactor
@@ -1478,7 +1491,7 @@
   tier: Tier3
   requires:
     - AdvancedTools
-    - NuclearPowerRecycling
+    # - NuclearPowerRecycling
   unlocks:
     - PowerCellMicroreactor
     - PowerCellHyper
@@ -1513,28 +1526,28 @@
   tier: Tier3
   requires:
     - Microreactor
-    - IonGun
+    # - IonGun
   unlocks:
     - WeaponAdvancedLaser
     - PortableRecharger
-    - WeaponMechCombatImmolationGun
+    # - WeaponMechCombatImmolationGun
   announceTo:
     - Security
 
-- type: researchTreeNode
-  id: Declone
-  name: research-tree-node-declone
-  cost: 30000
-  icon:
-    state: laser
-    color: "#003860"
-  tier: Tier3
-  requires:
-    - AdvLaserPistol
-  unlocks:
-    - WeaponDecloner
-  announceTo:
-    - Security
+# - type: researchTreeNode
+#   id: Declone
+#   name: research-tree-node-declone
+#   cost: 30000
+#   icon:
+#     state: laser
+#     color: "#003860"
+#   tier: Tier3
+#   requires:
+#     - AdvLaserPistol
+#   unlocks:
+#     - WeaponDecloner
+#   announceTo:
+#     - Security
 
 # Physics / bluespace
 
@@ -1551,19 +1564,19 @@
   unlocks:
     - DeviceQuantumSpinInverter
 
-- type: researchTreeNode
-  id: CyberSpeedLegs
-  name: research-tree-node-quantum-fiber
-  cost: 10000
-  icon:
-    state: science
-    color: "#D381C9"
-  tier: Tier3
-  requires:
-    - DeterrenceTech
-  unlocks:
-    - LeftLegCyberSpeed
-    - RightLegCyberSpeed
+# - type: researchTreeNode
+#   id: CyberSpeedLegs
+#   name: research-tree-node-quantum-fiber
+#   cost: 10000
+#   icon:
+#     state: science
+#     color: "#D381C9"
+#   tier: Tier3
+#   requires:
+#     - DeterrenceTech
+#   unlocks:
+#     - LeftLegCyberSpeed
+#     - RightLegCyberSpeed
 
 - type: researchTreeNode
   id: BluespaceMastery
@@ -1592,20 +1605,20 @@
 
 # Computing
 
-- type: researchTreeNode
-  id: ScanGates
-  name: research-tree-node-scan-gate
-  cost: 5000
-  icon:
-    state: electronics
-    color: "#003860"
-  tier: Tier3
-  requires:
-    - SapientResearchAlgorithms
-  unlocks:
-    - ScanGateMachineCircuitboard
-  announceTo:
-    - Security
+# - type: researchTreeNode
+#   id: ScanGates
+#   name: research-tree-node-scan-gate
+#   cost: 5000
+#   icon:
+#     state: electronics
+#     color: "#003860"
+#   tier: Tier3
+#   requires:
+#     - SapientResearchAlgorithms
+#   unlocks:
+#     - ScanGateMachineCircuitboard
+#   announceTo:
+#     - Security
 
 - type: researchTreeNode
   id: QuantumDataManagement #increase queue size to 10 and buffer size to 100k
@@ -1624,65 +1637,65 @@
 
 # Cybernetics
 
-- type: researchTreeNode
-  id: FunctionalCyberlimbsMKII
-  name: research-tree-node-functional-cyberlimb-mkii
-  cost: 10000
-  icon:
-    state: medical
-    color: "#52B4E9"
-  tier: Tier3
-  requires:
-    - FunctionalCyberlimbsMKI
-    - Harmpack
-  unlocks:
-    - LeftArmCyberAngel
-    - RightArmCyberAngel
-    - LeftArmCyberReaper
-    - RightArmCyberReaper
-    - LeftArmCyberEngineer
-    - RightArmCyberEngineer
-    - LeftArmCyberBulwark
-    - RightArmCyberBulwark
-    - LeftArmCyberZeus
-    - RightArmCyberZeus
-    - LeftLegCyberPilebunker
-    - RightLegCyberPilebunker
-  announceTo:
-    - Security
-    - Medical
-    - Engineering
-    - Supply
+# - type: researchTreeNode
+#   id: FunctionalCyberlimbsMKII
+#   name: research-tree-node-functional-cyberlimb-mkii
+#   cost: 10000
+#   icon:
+#     state: medical
+#     color: "#52B4E9"
+#   tier: Tier3
+#   requires:
+#     - FunctionalCyberlimbsMKI
+#     - Harmpack
+#   unlocks:
+#     - LeftArmCyberAngel
+#     - RightArmCyberAngel
+#     - LeftArmCyberReaper
+#     - RightArmCyberReaper
+#     - LeftArmCyberEngineer
+#     - RightArmCyberEngineer
+#     - LeftArmCyberBulwark
+#     - RightArmCyberBulwark
+#     - LeftArmCyberZeus
+#     - RightArmCyberZeus
+#     - LeftLegCyberPilebunker
+#     - RightLegCyberPilebunker
+#   announceTo:
+#     - Security
+#     - Medical
+#     - Engineering
+#     - Supply
 
-- type: researchTreeNode
-  id: NVEyes
-  name: research-tree-node-nv-eyes
-  cost: 7680
-  icon:
-    state: medical
-    color: "#52B4E9"
-  tier: Tier3
-  requires:
-    - EyeImplants
-  unlocks:
-    - CyberEyeNightVision
-  announceTo:
-    - Medical
+# - type: researchTreeNode
+#   id: NVEyes
+#   name: research-tree-node-nv-eyes
+#   cost: 7680
+#   icon:
+#     state: medical
+#     color: "#52B4E9"
+#   tier: Tier3
+#   requires:
+#     - EyeImplants
+#   unlocks:
+#     - CyberEyeNightVision
+#   announceTo:
+#     - Medical
 
-- type: researchTreeNode
-  id: ThermalEyes
-  name: research-tree-node-tv-eyes
-  cost: 9320
-  icon:
-    state: medical
-    color: "#52B4E9"
-  tier: Tier3
-  requires:
-    - EyeImplants
-  unlocks:
-    - CyberEyeThermal
-  announceTo:
-    - Medical
+# - type: researchTreeNode
+#   id: ThermalEyes
+#   name: research-tree-node-tv-eyes
+#   cost: 9320
+#   icon:
+#     state: medical
+#     color: "#52B4E9"
+#   tier: Tier3
+#   requires:
+#     - EyeImplants
+#   unlocks:
+#     - CyberEyeThermal
+#   announceTo:
+#     - Medical
 
 # Cyborgs
 
@@ -1720,22 +1733,22 @@
     - BorgPlaceholder1
     - BorgPlaceholder2
 
-- type: researchTreeNode
-  id: SecBorg
-  name: research-tree-node-mech-security
-  cost: 35000
-  icon:
-    state: electronics
-    color: "#003860"
-  tier: Tier3
-  requires:
-    - BorgPlaceholder3
-    - FunctionalCyberlimbsMKII
-  unlocks:
-    - SecborgEndoskeleton
-    - BorgModuleLaserCarbine
-  announceTo:
-    - Security
+# - type: researchTreeNode
+#   id: SecBorg
+#   name: research-tree-node-mech-security
+#   cost: 35000
+#   icon:
+#     state: electronics
+#     color: "#003860"
+#   tier: Tier3
+#   requires:
+#     - BorgPlaceholder3
+#     - FunctionalCyberlimbsMKII
+#   unlocks:
+#     - SecborgEndoskeleton
+#     - BorgModuleLaserCarbine
+#   announceTo:
+#     - Security
 
 # Chem
 
@@ -1755,20 +1768,20 @@
   announceTo:
     - Medical
 
-- type: researchTreeNode
-  id: Cloning
-  name: research-tree-node-cloning
-  cost: 25000
-  icon:
-    state: biology
-    color: "#52B4E9"
-  tier: Tier3
-  requires:
-    - StasisBed
-    - SyringeGun
-  unlocks:
-    - CloningConsoleComputerCircuitboard
-    - CloningPodMachineCircuitboard
-    - MedicalScannerMachineCircuitboard
-  announceTo:
-    - Medical
+# - type: researchTreeNode
+#   id: Cloning
+#   name: research-tree-node-cloning
+#   cost: 25000
+#   icon:
+#     state: biology
+#     color: "#52B4E9"
+#   tier: Tier3
+#   requires:
+#     - StasisBed
+#     - SyringeGun
+#   unlocks:
+#     - CloningConsoleComputerCircuitboard
+#     - CloningPodMachineCircuitboard
+#     - MedicalScannerMachineCircuitboard
+#   announceTo:
+#     - Medical
