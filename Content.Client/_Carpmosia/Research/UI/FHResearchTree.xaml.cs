@@ -21,7 +21,7 @@ public sealed partial class FHResearchTree : BoxContainer
 {
     [Dependency] private IPrototypeManager _prototypeManager = default!;
     [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private ISawmill _sawmill = default!;
+    private ISawmill _sawmill = default!;
 
     public Action<ProtoId<ResearchTreeNodePrototype>?>? OnSelectionChanged;
     public Action<ProtoId<ResearchTreeNodePrototype>>? OnQuickResearch;

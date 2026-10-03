@@ -488,17 +488,23 @@
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
   - type: ResearchClient
-  - type: ResearchConsole
+  # Carpmosia-start - FH research tree
+  - type: FHResearchConsole
+  - type: Speech
+    speechVerb: Robotic
+  # Carpmosia-end - FH research tree
   - type: ActiveRadio
     channels:
     - Science
-  - type: TechnologyDatabase
+  # - type: TechnologyDatabase # Carpmosia-edit - FH research tree
   - type: ActivatableUI
-    key: enum.ResearchConsoleUiKey.Key
+    key: enum.FHResearchConsoleUiKey.Key # Carpmosia-edit - FH research tree
   - type: UserInterface
     interfaces:
-      enum.ResearchConsoleUiKey.Key:
-        type: ResearchConsoleBoundUserInterface
+      # Carpmosia-start - FH research tree
+      enum.FHResearchConsoleUiKey.Key:
+        type: FHResearchConsoleBoundUserInterface
+      # Carpmosia-end - FH research tree
       enum.ResearchClientUiKey.Key:
         type: ResearchClientBoundUserInterface
       enum.WiresUiKey.Key:

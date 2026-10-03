@@ -7,7 +7,7 @@ namespace Content.Client._Carpmosia.Research.UI.Helpers.Search;
 
 public sealed partial class SearchDatabase
 {
-    private static readonly Regex Pattern = new("[^a-z]");
+    private static readonly Regex Pattern = new("[^a-z]", RegexOptions.Compiled);
 
     public Dictionary<ProtoId<ResearchTreeNodePrototype>, List<string>> Data = [];
 
