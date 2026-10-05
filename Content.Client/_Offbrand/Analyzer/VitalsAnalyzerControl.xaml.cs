@@ -51,19 +51,7 @@ public sealed partial class VitalsAnalyzerControl : BoxContainer
         SpO2Label.Text = Loc.GetString(data.Spo2Name);
         SpO2Value.Text = Loc.GetString("offbrand-vitals-spo2-value", ("value", $"{data.Spo2 * 100:F0}"));
 
-        if (data.Spo2 < 0.95)
-            SpO2Value.FontColorOverride = Color.Yellow;
-
-        if (data.Spo2 <= 0.5)
-            SpO2Value.FontColorOverride = Color.Red;
-
         BrainActivityValue.Text = Loc.GetString("offbrand-vitals-brain-activity-value", ("value", $"{data.BrainHealth * 100:F0}"));
-
-        if (data.BrainHealth < 0.95)
-            BrainActivityValue.FontColorOverride = Color.Yellow;
-
-        if (data.BrainHealth <= 0.5)
-            BrainActivityValue.FontColorOverride = Color.Red;
 
         RespiratoryRateValue.Text = Loc.GetString("offbrand-vitals-respiratory-rate-value", ("value", data.RespiratoryRate));
 
@@ -75,30 +63,5 @@ public sealed partial class VitalsAnalyzerControl : BoxContainer
         BloodVolumeValue.Text = Loc.GetString("offbrand-vitals-blood-volume-value", ("value", $"{data.BloodLevel * 100:F0}"));
 
         HeartRateValue.Text = Loc.GetString("offbrand-vitals-heart-rate-value", ("value", data.HeartRate));
-        RadThresholdState.Text = GetThresholdText(data.RadThreshold);
-        RadValue.Text = Loc.GetString("offbrand-vitals-rads-value", ("value", $"{Math.Round(data.Rads, 1)}"));
-    }
-
-    private string GetThresholdText(string threshold)
-    {
-        var state = "Normal";
-        switch (threshold)
-        {
-            case "StatusEffectMinorRadSickness":
-                state = "Minor Radiation Sickness";
-                break;
-            case "StatusEffectModerateRadSickness":
-                RadThresholdState.FontColorOverride = Color.Yellow;
-                state = "Moderate Radiation Sickness";
-                break;
-            case "StatusEffectSevereRadSickness":
-                RadThresholdState.FontColorOverride = Color.Red;
-                state = "Severe Radiation Sickness";
-                break;
-            default:
-                break;
-        }
-
-        return Loc.GetString("offbrand-vitals-rads-state", ("state", state));
     }
 }
