@@ -124,6 +124,11 @@
     state: mattress
   - type: Damageable
     damageModifierSet: Inflatable
+  # Carpmosia-start - Whoopie Furniture, needed to upgrade into whoopie version
+  - type: Construction
+    graph: bed
+    node: mattress
+  # Carpmosia-end - Whoopie Furniture
 
 - type: entity
   parent: Bed
@@ -181,3 +186,8 @@
           MaterialWoodPlank:
             min: 2
             max: 2
+  # Carpmosia-start - Whoopie Furniture, needed to upgrade into whoopie version
+  - type: Construction
+    graph: bed
+    node: psychbed
+  # Carpmosia-end - Whoopie Furniture
