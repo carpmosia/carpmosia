@@ -1,0 +1,41 @@
+# Drinks
+- type: listing
+  id: BeerStoreBeer
+  productEntity: DrinkBeerBottleFull
+  cost:
+    SpaceCash: 200
+  categories:
+  - BeerStoreDrinks
+  # conditions:
+  # - !type:BuyerAccessCondition
+
+- type: listing
+  id: BeerStoreCan
+  productEntity: DrinkBeerCan
+  cost:
+    SpaceCash: 180
+  categories:
+  - BeerStoreDrinks
+  # conditions:
+  # - !type:BuyerAccessCondition
+
+# Snacks
+- type: listing
+  id: BeerStorePistachios
+  productEntity: FoodSnackPistachios
+  cost:
+    SpaceCash: 150
+  categories:
+  - BeerStoreSnacks
+  # conditions:
+  # - !type:BuyerAccessCondition
+
+- type: listing
+  id: BeerStoreBoritos
+  productEntity: FoodSnackBoritos
+  cost:
+    SpaceCash: 130
+  categories:
+  - BeerStoreSnacks
+  # conditions:
+  # - !type:BuyerAccessCondition
