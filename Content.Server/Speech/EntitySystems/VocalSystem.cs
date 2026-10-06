@@ -7,6 +7,10 @@ using Content.Shared.Speech;
 using Content.Shared.Speech.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
+// Carpmosia-start - Emote delay
+using Robust.Shared.Timing;
+using Content.Shared.Inventory;
+// Carpmosia-end - Emote delay
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Speech.EntitySystems;
@@ -17,6 +21,7 @@ public sealed partial class VocalSystem : EntitySystem
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private ChatSystem _chat = default!;
     [Dependency] private ActionsSystem _actions = default!;
+    [Dependency] private IGameTiming _gameTiming = default!; // Carpmosia-edit - Emote delay
 
     public override void Initialize()
     {
@@ -28,6 +33,22 @@ public sealed partial class VocalSystem : EntitySystem
         SubscribeLocalEvent<VocalComponent, EmoteEvent>(OnEmote);
         SubscribeLocalEvent<VocalComponent, EmoteActionEvent>(OnEmoteAction);
     }
+
+    // Carpmosia-start - Emote delay
+    [SubscribeLocalEvent]
+    private void OnRelayedEmoteEvent(EntityUid uid, VocalComponent component, ref InventoryRelayedEvent<BeforeEmoteEvent> args)
+    {
+        OnBeforeEmoteEvent(uid, component, ref args.Args);
+    }
+
+    [SubscribeLocalEvent]
+    private void OnBeforeEmoteEvent(EntityUid uid, VocalComponent component, ref BeforeEmoteEvent args)
+    {
+        // Ensure more than the cooldown time has passed since last emote
+        if (component.LastEmoteTime + component.EmoteCooldown > _gameTiming.CurTime)
+            args.Cancel();
+    }
+    // Carpmosia-end - Emote delay
 
     /// <summary>
     /// Copy this component's datafields from one entity to another.
@@ -76,6 +97,10 @@ public sealed partial class VocalSystem : EntitySystem
         if (args.Emote == component.ScreamId)
         {
             args.Handled = TryPlayScreamSound(uid, component);
+            // Carpmosia-start - Emote delay
+            if (args.Handled)
+                component.LastEmoteTime = _gameTiming.CurTime;
+            // Carpmosia-end - Emote delay
             return;
         }
 
@@ -84,6 +109,10 @@ public sealed partial class VocalSystem : EntitySystem
 
         // just play regular sound based on emote proto
         args.Handled = _chat.TryPlayEmoteSound(uid, ProtoMan.Index(sounds), args.Emote);
+        // Carpmosia-start - Emote delay
+        if (args.Handled)
+            component.LastEmoteTime = _gameTiming.CurTime;
+        // Carpmosia-end - Emote delay
     }
 
     private void OnEmoteAction(EntityUid uid, VocalComponent component, EmoteActionEvent args)
