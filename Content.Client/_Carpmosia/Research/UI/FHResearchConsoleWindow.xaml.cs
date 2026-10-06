@@ -239,7 +239,7 @@ public sealed partial class FHResearchConsoleWindow : FancyWindow
                 continue;
 
             var unlockName = _protoMan.Index<EntityPrototype>(unlockProto.Result).Name;
-            var unlockLabel = new RichTextLabel() { Text = "- " + Loc.GetString(unlockName) };
+            var unlockLabel = new RichTextLabel() { Text = "- " + unlockName };
             UnlocksBox.AddChild(unlockLabel);
         }
 
