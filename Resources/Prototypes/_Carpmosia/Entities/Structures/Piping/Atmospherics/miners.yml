@@ -1,0 +1,15 @@
+- type: entity
+  name: hydrogen gas miner
+  parent: GasMinerBase
+  id: GasMinerHydrogen
+  components:
+    - type: GasMiner
+      spawnGas: Hydrogen
+
+- type: entity
+  name: helium gas miner
+  parent: GasMinerBase
+  id: GasMinerHelium
+  components:
+    - type: GasMiner
+      spawnGas: Helium

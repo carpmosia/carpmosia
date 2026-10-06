@@ -10,3 +10,14 @@
     prototype: ComputerShuttleSalvage
   - type: StealTarget
     stealGroup: SalvageShuttleConsoleCircuitboard
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: SupermatterMonitorCircuitboard
+  name: supermatter monitor computer board
+  description: A computer printed circuit board for the supermatter monitor.
+  components:
+    - type: Sprite
+      state: engineering
+    - type: ComputerBoard
+      prototype: ComputerSupermatterMonitor
