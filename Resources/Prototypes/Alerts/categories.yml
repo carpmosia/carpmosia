@@ -1,6 +1,11 @@
 - type: alertCategory
   id: Pressure
 
+# Carpmosia-start - InternalTemp insulation
+- type: alertCategory
+  id: InternalTemperature
+# Carpmosia-end - InternalTemp insulation
+
 - type: alertCategory
   id: Temperature
 
