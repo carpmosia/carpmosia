@@ -1,8 +1,7 @@
 using System.Collections.Generic;
-using System.Linq;
 using Content.Server.Atmos.Monitor.Components;
 using Content.Shared.Atmos.Components;
-using Robust.Shared.Prototypes;
+using Content.Shared.DeviceNetwork.Components;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
 
@@ -11,7 +10,10 @@ namespace Content.IntegrationTests.Tests;
 [TestFixture]
 public sealed partial class MapRulesTest
 {
-    private List<string> TestUnlinkedAtmosDevices(YamlSequenceNode entities)
+    /// <summary>
+    /// Checks for any unlinked atmospheric devices except gas pipe sensors
+    /// </summary>
+    private List<string> TestUnlinkedAtmosDevices(ParsedRoot root)
     {
         var gasPipeSensors = GetPrototypeIds<GasPipeSensorComponent>();
         var airAlarms = GetPrototypeIds<AirAlarmComponent>();
@@ -19,10 +21,8 @@ public sealed partial class MapRulesTest
 
         var errors = new List<string>();
 
-        foreach (var proto in entities)
+        foreach (var (protoId, entities) in root.Entities)
         {
-            EntProtoId protoId = proto[Proto].AsString();
-
             // Gas pipe sensors don't need to be linked
             if (gasPipeSensors.Contains(protoId))
                 continue;
@@ -34,21 +34,21 @@ public sealed partial class MapRulesTest
             if (!(isAirAlarm || isAtmosMonitor))
                 continue;
 
-            foreach (var ent in (YamlSequenceNode)proto[Entities])
+            foreach (var (uid, ent) in entities)
             {
                 // Skip invalid transforms
                 if (GetTilePos(ent) is not { } trans)
                     continue;
 
-                if (isAirAlarm && GetCompNode(ent, "DeviceList") is { } deviceList
+                if (isAirAlarm && GetCompNode<DeviceListComponent>(ent) is { } deviceList
                     && deviceList.TryGetNode<YamlSequenceNode>("devices", out var devices) && devices.Children.Count != 0)
                     continue;
 
-                if (isAtmosMonitor && GetCompNode(ent, "DeviceNetwork") is { } deviceNet
+                if (isAtmosMonitor && GetCompNode<DeviceNetworkComponent>(ent) is { } deviceNet
                     && deviceNet.TryGetNode<YamlSequenceNode>("deviceLists", out var lists) && lists.Children.Count != 0)
                     continue;
 
-                errors.Add($"Grid {trans.Item1} contains {protoId} ({ent["uid"]}) that doesn't have any connections at {trans.Item2}");
+                errors.Add($"Grid {trans.Item1} contains {protoId} ({uid}) that doesn't have any connections at {trans.Item2}");
             }
         }
 
