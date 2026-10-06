@@ -1,0 +1,26 @@
+﻿#CBURN Hardsuit
+- type: entity
+  parent: ClothingOuterHardsuitCBURN
+  id: ClothingOuterHardsuitCBURNPointman
+  name: CBURN pointman exosuit
+  description: A more thoughtfully padded exosuit used for special cleanup operations, with a custom helmet intended for Pointman specialists.
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.5
+        Heat: 0.1
+        Cold: 0.1
+        Shock: 0.1
+        Radiation: 0.1
+        Caustic: 0.1
+  - type: ZombificationResistance
+    zombificationResistanceCoefficient: 0.25
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetCBURNPointman
