@@ -44,6 +44,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private ReplacementAccentSystem _wordreplacement = default!;
     [Dependency] private ExamineSystemShared _examineSystem = default!;
+    [Dependency] private Shared.StatusEffectNew.StatusEffectsSystem _statusEffects = default!; // Offbrand
     [Dependency] private EntityQuery<GhostHearingComponent> _ghostHearingQuery = default!;
 
     private bool _loocEnabled = true;
@@ -189,6 +190,13 @@ public sealed partial class ChatSystem : SharedChatSystem
             checkRadioPrefix = false;
             message = message[1..];
         }
+
+        // Begin Offbrand
+        if (desiredType == InGameICChatType.Speak && _statusEffects.HasEffectComp<Content.Shared._Offbrand.StatusEffects.SilencedStatusEffectComponent>(source))
+        {
+            desiredType = InGameICChatType.Whisper;
+        }
+        // End Offbrand
 
         bool shouldCapitalize = (desiredType != InGameICChatType.Emote);
         bool shouldPunctuate = _configurationManager.GetCVar(CCVars.ChatPunctuation);

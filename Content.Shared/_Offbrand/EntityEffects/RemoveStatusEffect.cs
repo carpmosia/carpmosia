@@ -1,0 +1,39 @@
+using Content.Shared.Body;
+using Content.Shared.EntityEffects;
+using Content.Shared.StatusEffectNew.Components;
+using Content.Shared.StatusEffectNew;
+using Robust.Shared.Prototypes;
+
+namespace Content.Shared._Offbrand.EntityEffects;
+
+public sealed partial class RemoveStatusEffect : EntityEffectBase<RemoveStatusEffect>
+{
+    [DataField(required: true)]
+    public EntProtoId EffectProto;
+
+    /// <inheritdoc />
+    public override string EntityEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys) =>
+        Loc.GetString(
+            "entity-effect-guidebook-status-effect-remove",
+            ("chance", Probability),
+            ("key", prototype.Index(EffectProto).Name));
+}
+
+public sealed partial class RemoveStatusEffectEntityEffectSystem : EntityEffectSystem<StatusEffectContainerComponent, RemoveStatusEffect>
+{
+    [Dependency] private StatusEffectsSystem _statusEffects = default!;
+
+    [Dependency] private EntityQuery<BodyComponent> _bodyQuery;
+
+    protected override void Effect(Entity<StatusEffectContainerComponent> ent, ref EntityEffectEvent<RemoveStatusEffect> args)
+    {
+        if (!_bodyQuery.TryComp(ent, out var body))
+            return;
+
+        foreach (var organ in body.Organs?.ContainedEntities ?? [])
+        {
+            _statusEffects.TryRemoveStatusEffect(organ, args.Effect.EffectProto);
+        }
+
+    }
+}

@@ -14,6 +14,10 @@
         - id: Cautery
         - id: Retractor
         - id: Scalpel
+        - id: BoneGel # Offbrand
+        - id: BoneSetter # Offbrand
+        - id: VascularRecoupler # Offbrand
+        - id: MedicatedSuture # Offbrand
 
 - type: entity
   parent: ClothingBackpackDuffelSyndicateMedicalBundle
@@ -33,6 +37,10 @@
         - id: ScalpelAdvanced
         - id: ClothingHandsGlovesNitrile
         - id: EmergencyRollerBedSpawnFolded
+        - id: BoneGel # Offbrand
+        - id: BoneSetter # Offbrand
+        - id: VascularRecoupler # Offbrand
+        - id: MedicatedSuture # Offbrand
 
 - type: entity
   parent: ClothingBackpackDuffelSyndicateMedicalBundle
@@ -336,22 +344,22 @@
     - id: DoubleEmergencyOxygenTankFilled
     - id: DoubleEmergencyNitrogenTankFilled
 
-- type: entity
-  parent: ClothingBackpackDuffelSyndicateBundle
-  id: ClothingBackpackDuffelZombieBundle
-  name: syndicate zombie bundle
-  description: "An all-in-one kit for unleashing the undead upon a station."
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      storagebase: !type:AllSelector
-        children:
-        - id: SyringeRomerol
-        - id: WeaponRevolverPython
-        - id: MagazineBoxMagnumIncendiary
-        - id: PillAmbuzolPlus
-        - id: PillAmbuzol
-          amount: 3
+# - type: entity
+#   parent: ClothingBackpackDuffelSyndicateBundle
+#   id: ClothingBackpackDuffelZombieBundle
+#   name: syndicate zombie bundle
+#   description: "An all-in-one kit for unleashing the undead upon a station."
+#   components:
+#   - type: EntityTableContainerFill
+#     containers:
+#       storagebase: !type:AllSelector
+#         children:
+#         - id: SyringeRomerol
+#         - id: WeaponRevolverPython
+#         - id: MagazineBoxMagnumIncendiary
+#         - id: PillAmbuzolPlus
+#         - id: PillAmbuzol
+#           amount: 3
 
 - type: entity
   parent: ClothingBackpackDuffelSyndicateMedicalBundle
@@ -366,7 +374,7 @@
         - id: DefibrillatorSyndicate
         - id: MedkitCombatFilled
           amount: 4
-        - id: Tourniquet
+        - id: TourniquetOffbrand # Offbrand
           amount: 4
         - id: CombatMedipen
           amount: 4

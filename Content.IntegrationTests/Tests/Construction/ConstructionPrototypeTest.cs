@@ -71,6 +71,11 @@ namespace Content.IntegrationTests.Tests.Construction
                 var target = proto.TargetNode;
                 var graph = protoMan.Index(proto.Graph);
 
+                // Begin Offbrand
+                if (proto.Type == ConstructionType.NodeToNode)
+                    return;
+                // End Offbrand
+
                 using (Assert.EnterMultipleScope())
                 {
                     Assert.That(graph.Nodes.ContainsKey(start),

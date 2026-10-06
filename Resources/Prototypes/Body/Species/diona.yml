@@ -61,6 +61,7 @@
       Brain: OrganDionaBrainNymphing
       Eyes: OrganDionaEyes
       Lungs: OrganDionaLungsNymphing
+      Heart: OrganDionaHeartNymphing
       Stomach: OrganDionaStomachNymphing
   - type: HumanoidProfile
     species: Diona
@@ -270,6 +271,14 @@
     - state: lungs
 
 - type: entity
+  parent: [ OrganBaseHeart, OrganDionaInternal, OrganDionaMetabolizer ]
+  id: OrganDionaHeart
+  components:
+  - type: Metabolizer
+    maxReagents: 6
+    stages: [ Digestion, Bloodstream, Metabolites ]
+
+- type: entity
   parent: [ OrganBaseStomach, OrganDionaInternal, OrganDionaMetabolizer ]
   id: OrganDionaStomach
   components:
@@ -302,6 +311,14 @@
   components:
   - type: Nymph
     entityPrototype: OrganDionaNymphLungs
+
+- type: entity
+  parent: [ OrganDionaHeart, BaseNymphingOrgan ]
+  suffix: "Diona, Nymphing"
+  id: OrganDionaHeartNymphing
+  components:
+  - type: Nymph
+    entityPrototype: OrganDionaNymphHeart
 
 - type: entity
   parent: [ OrganDionaStomach, BaseNymphingOrgan ]
@@ -348,6 +365,22 @@
   parent: MobDionaNymph
   id: OrganDionaNymphLungs
   suffix: lungs
+  components:
+  - type: IsDeadIC
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganAnimalLungs
+        - id: OrganDionaStomach
+        - id: OrganAnimalLiver
+        - id: OrganAnimalHeart
+        - id: OrganAnimalKidneys
+
+- type: entity
+  parent: MobDionaNymph
+  id: OrganDionaNymphHeart
+  suffix: heart
   components:
   - type: IsDeadIC
   - type: EntityTableContainerFill

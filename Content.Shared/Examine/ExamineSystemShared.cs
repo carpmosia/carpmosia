@@ -48,11 +48,13 @@ namespace Content.Shared.Examine
         /// <summary>
         ///     Creates a new examine tooltip with arbitrary info.
         /// </summary>
-        public abstract void SendExamineTooltip(EntityUid player,
-            EntityUid target,
-            FormattedMessage message,
-            bool getVerbs,
-            bool centerAtCursor);
+        public abstract void SendExamineTooltip(EntityUid player, EntityUid target, FormattedMessage message, bool getVerbs, bool centerAtCursor, bool showBody = false); // Offbrand
+
+        /// <summary>
+        ///     Offbrand - Updates an already-open examine tooltip with an additional message.
+        ///     Setting the same key multiple times will overwrite previous messages with that key.
+        /// </summary>
+        public abstract void ElaborateExamineTooltip(EntityUid user, Enum key, FormattedMessage message);
 
         /// <summary>
         /// Checks if an entity is close enough to an examiner to show information classified as details.

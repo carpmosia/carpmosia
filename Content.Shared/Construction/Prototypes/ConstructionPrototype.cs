@@ -104,4 +104,5 @@ public enum ConstructionType
 {
     Structure,
     Item,
+    NodeToNode, // Offbrand
 }
