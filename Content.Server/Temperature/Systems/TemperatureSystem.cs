@@ -67,6 +67,16 @@ public sealed partial class TemperatureSystem : SharedTemperatureSystem
 
         // TODO ATMOS: Atmos heat containers!!!
         var atmosContainer = new HeatContainer(_atmosphere.GetHeatCapacity(args.GasMixture, false), args.GasMixture.Temperature);
+
+        // Carpmosia-start - InternalTemp insulation
+        if (InternalTemperatureQuery.TryComp(entity, out var internalTempComp) && internalTempComp.ConductAmbient)
+        {
+            ConductHeat((entity.Owner, internalTempComp), ref atmosContainer, args.DeltaTime, args.ConductivityMod);
+            args.GasMixture.Temperature = atmosContainer.Temperature;
+            return;
+        }
+        // Carpmosia-end - InternalTemp insulation
+
         ConductHeat(entity.AsNullable(), ref atmosContainer, args.DeltaTime, args.ConductivityMod);
         args.GasMixture.Temperature = atmosContainer.Temperature;
     }

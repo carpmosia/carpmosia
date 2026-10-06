@@ -18,6 +18,7 @@ public abstract partial class SharedTemperatureSystem : EntitySystem
     [Dependency] private MovementSpeedModifierSystem _movementSpeedModifier = default!;
 
     [Dependency] protected EntityQuery<TemperatureComponent> TemperatureQuery = default!;
+    [Dependency] protected EntityQuery<InternalTemperatureComponent> InternalTemperatureQuery = default!; // Carpmosia-edit - InternalTemp insulation
 
     /// <summary>
     /// Band-aid for unpredicted atmos. Delays the application for a short period so that laggy clients can get the replicated temperature.
@@ -135,6 +136,41 @@ public abstract partial class SharedTemperatureSystem : EntitySystem
         RaiseLocalEvent(entity, ref changeEv, broadcast: true);
         return heatEx;
     }
+
+    // Carpmosia-start - InternalTemp insulation
+    /// <summary>
+    /// Conducts heat between an entity with InternalTemperatureComponent and another <see cref="HeatContainer"/> based on
+    /// the entity's TemperatureComponent.ThermalConductivity (this is used for ambient conduction). Does not raise events.
+    /// </summary>
+    /// <param name="entity">Entity we're conducting heat with</param>
+    /// <param name="heatContainer">Heat container which is conducting heat with our entity</param>
+    /// <param name="deltaT">The amount of time that the heat is allowed to conduct, in seconds. This value should be small.</param>
+    /// <param name="heatTransferMod">An optional heat transfer modifier for this exchange</param>
+    /// <param name="ignoreHeatResistance">Whether we should avoid raising an event which checks for conduction modifiers on our entity.</param>
+    /// <returns>Returns the amount of heat exchanged, in Joules. A positive value means the entity lost heat energy.</returns>
+    public float ConductHeat<T>(Entity<InternalTemperatureComponent?> entity, ref T heatContainer, float deltaT, float heatTransferMod = 1f, bool ignoreHeatResistance = false) where T : IHeatContainer
+    {
+        if (!TemperatureQuery.TryComp(entity, out var tempComp)
+            || !InternalTemperatureQuery.Resolve(entity, ref entity.Comp, false)
+            || MathHelper.CloseTo(entity.Comp.Temperature, heatContainer.Temperature))
+            return 0f;
+
+        var conductance = tempComp.ThermalConductivity * heatTransferMod;
+        if (!ignoreHeatResistance)
+        {
+            var ev = new BeforeHeatExchangeEvent();
+            RaiseLocalEvent(entity, ref ev);
+            conductance *= ev.HeatTransferModifier;
+        }
+
+        //var lastTemp = entity.Comp.Temperature;
+        var heatEx = HeatContainerHelpers.ConductHeat(ref entity.Comp, ref heatContainer, deltaT, conductance);
+
+        //var changeEv = new TemperatureChangedEvent(entity.Comp.Temperature, lastTemp);
+        //RaiseLocalEvent(entity, ref changeEv, broadcast: true);
+        return heatEx;
+    }
+    // Carpmosia-end - InternalTemp insulation
 
     /// <summary>
     /// Conducts heat for an entity with a TemperatureComponent to a source at a fixed temperature.
