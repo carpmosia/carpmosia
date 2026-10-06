@@ -95,15 +95,16 @@
   name: alerts-on-fire-name
   description: alerts-on-fire-desc
 
+# Carpmosia-start - InternalTemp insulation
 - type: alert
   id: InternalCold
   category: InternalTemperature
   icons:
-  - sprite: /Textures/Interface/Alerts/temperature.rsi
+  - sprite: /Textures/_Carpmosia/Interface/Alerts/sheep_temperature.rsi
     state: cold1
-  - sprite: /Textures/Interface/Alerts/temperature.rsi
+  - sprite: /Textures/_Carpmosia/Interface/Alerts/sheep_temperature.rsi
     state: cold2
-  - sprite: /Textures/Interface/Alerts/temperature.rsi
+  - sprite: /Textures/_Carpmosia/Interface/Alerts/sheep_temperature.rsi
     state: cold3
   maxSeverity: 3
   name: alerts-too-cold-name
@@ -113,15 +114,16 @@
   id: InternalHot
   category: InternalTemperature
   icons:
-  - sprite: /Textures/Interface/Alerts/temperature.rsi
+  - sprite: /Textures/_Carpmosia/Interface/Alerts/sheep_temperature.rsi
     state: hot1
-  - sprite: /Textures/Interface/Alerts/temperature.rsi
+  - sprite: /Textures/_Carpmosia/Interface/Alerts/sheep_temperature.rsi
     state: hot2
-  - sprite: /Textures/Interface/Alerts/temperature.rsi
+  - sprite: /Textures/_Carpmosia/Interface/Alerts/sheep_temperature.rsi
     state: hot3
   maxSeverity: 3
   name: alerts-too-hot-name
   description: alerts-too-hot-desc
+# Carpmosia-end - InternalTemp insulation
 
 - type: alert
   id: Cold
