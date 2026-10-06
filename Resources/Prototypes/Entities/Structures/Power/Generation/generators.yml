@@ -107,11 +107,16 @@
     - state: panel
     - state: on
       shader: unshaded
+  # Carpmosia-start - Wallmount adjacent power
+    snapCardinals: false # Carpmosia-edit - Wallmount adjacent power
+  - type: Transform
+    noRot: false
+  # Carpmosia-end - Wallmount adjacent power
   - type: NodeContainer
     examinable: true
     nodes:
       output:
-        !type:CableDeviceNode
+        !type:CableDeviceNodeAdjacent # Carpmosia-edit - Wallmount adjacent power
         nodeGroupID: HVPower
   - type: PowerMonitoringDevice
     group: Generator

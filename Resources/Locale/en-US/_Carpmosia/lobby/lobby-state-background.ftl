@@ -21,3 +21,6 @@ lobby-state-background-surprisesurgery-artist = Skwovet/DaisyLynn
 
 lobby-state-background-bestiesforever-title = Besties Forever
 lobby-state-background-bestiesforever-artist = inari6666
+
+lobby-state-background-lexorin-title = Lexorin
+lobby-state-background-lexorin-artist = Safireeye
