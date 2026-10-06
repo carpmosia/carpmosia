@@ -23,7 +23,7 @@ namespace Content.Server.Research.Systems
         [Dependency] private UserInterfaceSystem _uiSystem = default!;
         [Dependency] private SharedPopupSystem _popup = default!;
         [Dependency] private RadioSystem _radio = default!;
-        [Dependency] private readonly FHResearchSystem _fhResearch = default!; // Carpmosia-edit - FH research tree
+        [Dependency] private FHResearchSystem _fhResearch = default!; // Carpmosia-edit - FH research tree
 
         public override void Initialize()
         {
