@@ -221,6 +221,16 @@ public abstract partial class SharedTemperatureSystem : EntitySystem
             heatAmount *= ev.HeatTransferModifier;
         }
 
+        // Carpmosia-start - InternalTemp insulation
+        if (InternalTemperatureQuery.TryComp(entity, out var internalTempComp) && internalTempComp.ConductAmbient)
+        {
+            HeatContainerHelpers.AddHeat(ref internalTempComp, heatAmount);
+            var internalChangeEv = new InternalTemperatureChangedEvent(internalTempComp.Temperature, true);
+            RaiseLocalEvent(entity, ref internalChangeEv, broadcast: true);
+            return heatAmount;
+        }
+        // Carpmosia-end - InternalTemp insulation
+
         var lastTemp = entity.Comp.Temperature;
         HeatContainerHelpers.AddHeat(ref entity.Comp, heatAmount);
 

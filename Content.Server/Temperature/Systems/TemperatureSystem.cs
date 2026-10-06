@@ -53,6 +53,10 @@ public sealed partial class TemperatureSystem : SharedTemperatureSystem
                 continue;
 
             ConductHeat((uid, temp), ref comp, frameTime, comp.Conductance, true);
+            // Carpmosia-start - InternalTemp insulation
+            var changeEv = new InternalTemperatureChangedEvent(comp.Temperature, comp.ConductAmbient);
+            RaiseLocalEvent(uid, ref changeEv, broadcast: true);
+            // Carpmosia-end - InternalTemp insulation
         }
 
         UpdateDamage();
