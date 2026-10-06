@@ -36,8 +36,9 @@ public record struct TemperatureChangedEvent(float CurrentTemperature, float Las
 /// </summary>
 /// <param name="CurrentTemperature">Current internal temperature of this entity.</param>
 [ByRefEvent]
-public record struct InternalTemperatureChangedEvent(float CurrentTemperature)
+public record struct InternalTemperatureChangedEvent(float CurrentTemperature, bool ConductAmbient)
 {
     public readonly float CurrentTemperature = CurrentTemperature;
+    public readonly bool ConductAmbient = ConductAmbient;
 }
 // Carpmosia-end - InternalTemp insulation

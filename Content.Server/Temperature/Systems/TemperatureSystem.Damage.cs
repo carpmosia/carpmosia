@@ -157,7 +157,8 @@ public sealed partial class TemperatureSystem
     [SubscribeLocalEvent]
     private void ServerAlert(Entity<AlertsComponent> entity, ref InternalTemperatureChangedEvent args)
     {
-        if (!_tempDamageQuery.TryComp(entity, out var thresholds))
+        if (!_tempDamageQuery.TryComp(entity, out var thresholds)
+            || !args.ConductAmbient)
         {
             _alerts.ClearAlertCategory(entity.Owner, InternalTemperatureAlertCategory);
             return;

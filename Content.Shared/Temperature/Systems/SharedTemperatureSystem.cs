@@ -165,7 +165,7 @@ public abstract partial class SharedTemperatureSystem : EntitySystem
 
         var heatEx = HeatContainerHelpers.ConductHeat(ref entity.Comp, ref heatContainer, deltaT, conductance);
 
-        var changeEv = new InternalTemperatureChangedEvent(entity.Comp.Temperature);
+        var changeEv = new InternalTemperatureChangedEvent(entity.Comp.Temperature, entity.Comp.ConductAmbient);
         RaiseLocalEvent(entity, ref changeEv, broadcast: true);
         return heatEx;
     }
