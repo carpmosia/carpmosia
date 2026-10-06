@@ -83,41 +83,46 @@
   - type: Inventory
     speciesId: avali
     displacements:
-#      jumpsuit:
-#        sizeMaps:
-#          32:
-#            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Starlight sprites
-#            state: jumpsuit
-#      back:
-#        sizeMaps:
-#          32:
-#            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Starlight sprites
-#            state: back
-#      outerClothing:
-#        sizeMaps:
-#          32:
-#            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Starlight sprites
-#            state: outerwear
-#      gloves:
-#        sizeMaps:
-#          32:
-#            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Starlight sprites
-#            state: hand
-#      shoes:
-#        sizeMaps:
-#          32:
-#            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Starlight sprites
-#            state: shoes
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Starlight sprites
+            state: jumpsuit
+      back:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Starlight sprites
+            state: back
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Starlight sprites
+            state: outerclothing
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Starlight sprites
+            state: gloves
+      hand:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi #Starlight sprites
+            state: hand
+      shoes:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Starlight sprites
+            state: shoes
       head:
         sizeMaps:
           32:
-            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Starlight sprites
+            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Starlight Sprites
             state: head
-      mask:
-        sizeMaps:
-          32:
-            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Starlight sprites
-            state: mask
+#      mask:
+#        sizeMaps:
+#          32:
+#            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Starlight sprites
+#            state: mask
 #      neck:
 #        sizeMaps:
 #          32:
@@ -234,7 +239,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Mobs/Species/Human/organs.rsi
+    sprite: _Carpmosia/Mobs/Species/Avali/organs.rsi
 
 - type: entity
   id: OrganAvaliVisual
@@ -301,7 +306,7 @@
   id: OrganAvaliFootRight
 
 - type: entity
-  parent: [ OrganBaseBrain, OrganSpriteHumanInternal, OrganAvaliInternal ]
+  parent: [ OrganBaseBrain, OrganAvaliInternal ]
   id: OrganAvaliBrain
 
 - type: entity
@@ -323,13 +328,13 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganAvaliInternal, OrganAvaliMetabolizer ]
   id: OrganAvaliLungs
-  description: The nitrogen breathing lungs of an avali. Not hindered by oxygen.
+  description: The oxygen breathing lungs of an avali.
   components:
   - type: Metabolizer
     # not making lungs metabolize faster because that might get janky as fuck
     updateInterval: 0.7
   - type: Lung
-    alert: LowNitrogen
+    alert: LowOxygen
   #- type: Item
   #  size: Small
 
