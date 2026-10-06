@@ -163,11 +163,10 @@ public abstract partial class SharedTemperatureSystem : EntitySystem
             conductance *= ev.HeatTransferModifier;
         }
 
-        //var lastTemp = entity.Comp.Temperature;
         var heatEx = HeatContainerHelpers.ConductHeat(ref entity.Comp, ref heatContainer, deltaT, conductance);
 
-        //var changeEv = new TemperatureChangedEvent(entity.Comp.Temperature, lastTemp);
-        //RaiseLocalEvent(entity, ref changeEv, broadcast: true);
+        var changeEv = new InternalTemperatureChangedEvent(entity.Comp.Temperature);
+        RaiseLocalEvent(entity, ref changeEv, broadcast: true);
         return heatEx;
     }
     // Carpmosia-end - InternalTemp insulation

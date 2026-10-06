@@ -80,6 +80,20 @@ public sealed partial class TemperatureDamageComponent : Component
     [DataField]
     public ProtoId<AlertPrototype> ColdAlert = "Cold";
 
+    // Carpmosia-start - InternalTemp insulation
+    /// <summary>
+    /// The id of the alert thrown when the entity's internal temp is too hot.
+    /// </summary>
+    [DataField]
+    public ProtoId<AlertPrototype>? InternalHotAlert = "InternalHot";
+
+    /// <summary>
+    /// The id of the alert thrown when the entity's internal temp is too cold.
+    /// </summary>
+    [DataField]
+    public ProtoId<AlertPrototype>? InternalColdAlert = "InternalCold";
+    // Carpmosia-end - InternalTemp insulation
+
     /// <summary>
     /// The last time this entity processed temperature damage.
     /// </summary>

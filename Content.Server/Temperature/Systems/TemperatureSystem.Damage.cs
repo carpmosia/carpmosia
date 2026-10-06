@@ -40,6 +40,13 @@ public sealed partial class TemperatureSystem
     /// </summary>
     public static readonly ProtoId<AlertCategoryPrototype> TemperatureAlertCategory = "Temperature";
 
+    // Carpmosia-start - InternalTemp insulation
+    /// <summary>
+    /// Alert prototype for Internal Temperature.
+    /// </summary>
+    public static readonly ProtoId<AlertCategoryPrototype> InternalTemperatureAlertCategory = "InternalTemperature";
+    // Carpmosia-end - InternalTemp insulation
+
     /// <summary>
     /// The maximum severity applicable to temperature alerts.
     /// </summary>
@@ -52,8 +59,6 @@ public sealed partial class TemperatureSystem
 
     private void InitializeDamage()
     {
-        SubscribeLocalEvent<AlertsComponent, TemperatureChangedEvent>(ServerAlert);
-
         SubscribeLocalEvent<TemperatureDamageComponent, TemperatureChangedEvent>(EnqueueDamage);
         SubscribeLocalEvent<TemperatureDamageComponent, EntityUnpausedEvent>(OnUnpaused);
 
@@ -130,17 +135,54 @@ public sealed partial class TemperatureSystem
         }
     }
 
+    // Carpmosia-start - InternalTemp insulation
+    [SubscribeLocalEvent]
     private void ServerAlert(Entity<AlertsComponent> entity, ref TemperatureChangedEvent args)
     {
-        ProtoId<AlertPrototype> type;
-        float threshold;
-        float idealTemp;
-
         if (!_tempDamageQuery.TryComp(entity, out var thresholds))
         {
             _alerts.ClearAlertCategory(entity.Owner, TemperatureAlertCategory);
             return;
         }
+
+        UpdateAlert(
+            entity,
+            thresholds,
+            args.CurrentTemperature,
+            thresholds.ColdAlert,
+            thresholds.HotAlert,
+            TemperatureAlertCategory);
+    }
+
+    [SubscribeLocalEvent]
+    private void ServerAlert(Entity<AlertsComponent> entity, ref InternalTemperatureChangedEvent args)
+    {
+        if (!_tempDamageQuery.TryComp(entity, out var thresholds))
+        {
+            _alerts.ClearAlertCategory(entity.Owner, InternalTemperatureAlertCategory);
+            return;
+        }
+
+        UpdateAlert(
+            entity,
+            thresholds,
+            args.CurrentTemperature,
+            thresholds.InternalColdAlert,
+            thresholds.InternalHotAlert,
+            InternalTemperatureAlertCategory);
+    }
+
+    private void UpdateAlert(
+        Entity<AlertsComponent> entity,
+        TemperatureDamageComponent thresholds,
+        float currentTemperature,
+        ProtoId<AlertPrototype>? coldAlert,
+        ProtoId<AlertPrototype>? hotAlert,
+        ProtoId<AlertCategoryPrototype> category)
+    {
+        ProtoId<AlertPrototype>? type;
+        float threshold;
+        float idealTemp;
 
         if (_thermalRegulatorQuery.TryComp(entity, out var regulator) &&
             regulator.NormalBodyTemperature > thresholds.ColdDamageThreshold &&
@@ -153,27 +195,32 @@ public sealed partial class TemperatureSystem
             idealTemp = (thresholds.ColdDamageThreshold + thresholds.HeatDamageThreshold) / 2;
         }
 
-        if (args.CurrentTemperature <= idealTemp)
+        if (currentTemperature <= idealTemp)
         {
-            type = thresholds.ColdAlert;
+            type = coldAlert;
             threshold = thresholds.ColdDamageThreshold;
         }
         else
         {
-            type = thresholds.HotAlert;
+            type = hotAlert;
             threshold = thresholds.HeatDamageThreshold;
         }
 
+        if (!type.HasValue)
+            return;
+
         // Calculates a scale where 0.0 is the ideal temperature and 1.0 is where temperature damage begins
         // The cold and hot scales will differ in their range if the ideal temperature is not exactly halfway between the thresholds
-        var tempScale = (args.CurrentTemperature - idealTemp) / (threshold - idealTemp);
+        var tempScale = (currentTemperature - idealTemp) / (threshold - idealTemp);
         var alertLevel = (short)ContentHelpers.RoundToLevels(tempScale - MinAlertTemperatureScale, 1.00f - MinAlertTemperatureScale, MaxTemperatureAlertSeverity + 1);
 
         if (alertLevel > 0)
-            _alerts.ShowAlert(entity.AsNullable(), type, alertLevel);
+            _alerts.ShowAlert(entity.AsNullable(), type.Value, alertLevel);
         else
-            _alerts.ClearAlertCategory(entity.AsNullable(), TemperatureAlertCategory);
+            _alerts.ClearAlertCategory(entity.AsNullable(), category);
+
     }
+    // Carpmosia-end - InternalTemp insulation
 
     private void EnqueueDamage(Entity<TemperatureDamageComponent> ent, ref TemperatureChangedEvent args)
     {

@@ -20,6 +20,7 @@
     - category: Breathing # Vox gang not calling this oxygen
     - category: Pressure
     - alertType: Bleed
+    - category: InternalTemperature # Carpmosia-edit - InternalTemp insulation
     - category: Temperature
     - category: Hunger
     - category: Thirst
@@ -94,6 +95,33 @@
   name: alerts-on-fire-name
   description: alerts-on-fire-desc
 
+- type: alert
+  id: InternalCold
+  category: InternalTemperature
+  icons:
+  - sprite: /Textures/Interface/Alerts/temperature.rsi
+    state: cold1
+  - sprite: /Textures/Interface/Alerts/temperature.rsi
+    state: cold2
+  - sprite: /Textures/Interface/Alerts/temperature.rsi
+    state: cold3
+  maxSeverity: 3
+  name: alerts-too-cold-name
+  description: alerts-too-cold-desc
+
+- type: alert
+  id: InternalHot
+  category: InternalTemperature
+  icons:
+  - sprite: /Textures/Interface/Alerts/temperature.rsi
+    state: hot1
+  - sprite: /Textures/Interface/Alerts/temperature.rsi
+    state: hot2
+  - sprite: /Textures/Interface/Alerts/temperature.rsi
+    state: hot3
+  maxSeverity: 3
+  name: alerts-too-hot-name
+  description: alerts-too-hot-desc
 
 - type: alert
   id: Cold

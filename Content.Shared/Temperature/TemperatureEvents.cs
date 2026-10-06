@@ -28,3 +28,16 @@ public record struct TemperatureChangedEvent(float CurrentTemperature, float Las
     public readonly float LastTemperature = LastTemperature;
     public readonly float TemperatureDelta = CurrentTemperature - LastTemperature;
 }
+
+// Carpmosia-start - InternalTemp insulation
+/// <summary>
+/// This event is raised after heat is exchanged to inform other systems that the internal temperature has changed.
+/// Only used for alerts.
+/// </summary>
+/// <param name="CurrentTemperature">Current internal temperature of this entity.</param>
+[ByRefEvent]
+public record struct InternalTemperatureChangedEvent(float CurrentTemperature)
+{
+    public readonly float CurrentTemperature = CurrentTemperature;
+}
+// Carpmosia-end - InternalTemp insulation
