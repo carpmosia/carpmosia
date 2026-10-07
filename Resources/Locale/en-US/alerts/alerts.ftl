@@ -22,6 +22,14 @@ alerts-too-cold-desc = You're [color=cyan]freezing cold![/color] Get somewhere w
 alerts-too-hot-name = [color=red]Too Hot[/color]
 alerts-too-hot-desc = It's [color=red]too hot![/color] Get somewhere colder, take off any insulating clothing like a space suit, or at least get away from the flames.
 
+# Carpmosia-start - InternalTemp insulation
+alerts-internal-too-cold-name = [color=cyan]Fleece Too Cold[/color]
+alerts-internal-too-cold-desc = Your fleece is [color=cyan]freezing cold![/color] Get somewhere warmer and take off any insulating clothing like a space suit.
+
+alerts-internal-too-hot-name = [color=red]Fleece Too Hot[/color]
+alerts-internal-too-hot-desc = Your fleece is [color=red]too hot![/color] Get somewhere colder, take off any insulating clothing like a space suit, or at least get away from the flames.
+# Carpmosia-end - InternalTemp insulation
+
 alerts-weightless-name = Weightless
 alerts-weightless-desc =
     Gravity has ceased affecting you, and you're floating around aimlessly. Find something sturdy to hold onto, or throw or shoot something in a direction opposite of you.

@@ -107,8 +107,8 @@
   - sprite: /Textures/_Carpmosia/Interface/Alerts/sheep_temperature.rsi
     state: cold3
   maxSeverity: 3
-  name: alerts-too-cold-name
-  description: alerts-too-cold-desc
+  name: alerts-internal-too-cold-name
+  description: alerts-internal-too-cold-desc
 
 - type: alert
   id: InternalHot
@@ -121,8 +121,8 @@
   - sprite: /Textures/_Carpmosia/Interface/Alerts/sheep_temperature.rsi
     state: hot3
   maxSeverity: 3
-  name: alerts-too-hot-name
-  description: alerts-too-hot-desc
+  name: alerts-internal-too-hot-name
+  description: alerts-internal-too-hot-desc
 # Carpmosia-end - InternalTemp insulation
 
 - type: alert
