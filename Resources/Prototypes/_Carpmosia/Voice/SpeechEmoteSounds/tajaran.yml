@@ -1,5 +1,6 @@
 - type: emoteSounds
   id: MaleTajaran
+  voiceSelectorName: humanoid-profile-editor-voice-masculine
   params:
     variation: 0.125
   sounds:
@@ -55,6 +56,7 @@
 
 - type: emoteSounds
   id: FemaleTajaran
+  voiceSelectorName: humanoid-profile-editor-voice-feminine
   params:
     variation: 0.125
   sounds:

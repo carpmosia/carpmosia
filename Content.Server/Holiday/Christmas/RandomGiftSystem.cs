@@ -28,10 +28,13 @@ public sealed partial class RandomGiftSystem : EntitySystem
     private readonly List<string> _possibleGiftsSafe = new();
     private readonly List<string> _possibleGiftsUnsafe = new();
     // Carpmosia-start - Carpmas Presents
-    private readonly List<string> _possibleGiftsCurated = new();
-    private readonly List<string> _blacklist = ["Throngler", "WeaponMinigun", "NuclearGrenade",
-     "CartridgeMinigun", "NukeCodePaper", "NukeCodePaperStation", "TraitorCodePaper", "AllTraitorCodesPaper",
-     "BoxFolderNuclearCodes", "ComputerSensorMonitoring", "SensorConsoleCircuitboard"];
+    private readonly List<EntProtoId> _possibleGiftsCurated = new();
+    private readonly List<EntProtoId> _blacklist =
+    [
+     "Throngler", "WeaponMinigun", "NuclearGrenade", "CartridgeMinigun",
+     "NukeCodePaper", "NukeCodePaperStation", "TraitorCodePaper", "AllTraitorCodesPaper",
+     "BoxFolderNuclearCodes", "ComputerSensorMonitoring", "SensorConsoleCircuitboard",
+    ];
     // Carpmosia-end - Carpmas Presents
 
     /// <inheritdoc/>
@@ -64,8 +67,7 @@ public sealed partial class RandomGiftSystem : EntitySystem
         var coords = Transform(args.User).Coordinates;
         var handsEnt = Spawn(component.SelectedEntity, coords);
         _adminLogger.Add(LogType.EntitySpawn, LogImpact.Low, $"{ToPrettyString(args.User)} used {ToPrettyString(uid)} which spawned {ToPrettyString(handsEnt)}");
-        if (component.Wrapper is not null)
-            Spawn(component.Wrapper, coords);
+        Spawn(component.Wrapper, coords);
 
         _audio.PlayPvs(component.Sound, args.User);
 

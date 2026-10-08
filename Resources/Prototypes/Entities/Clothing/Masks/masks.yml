@@ -444,9 +444,9 @@
         Heat: 0.95
 
 - type: entity
-  parent: [ ClothingMaskGas, BaseCentcommContraband ]
+  parent: [ ClothingMaskGas, BaseTaskForceContraband ]
   id: ClothingMaskGasERT
-  name: ert gas mask
+  name: ERT gas mask
   description: The gas mask of the elite squad of the ERT.
   components:
   - type: Sprite
@@ -471,28 +471,30 @@
         Piercing: 0.95
         Heat: 0.95
 
-- type: entity
-  parent: ClothingMaskGasERT
-  id: ClothingMaskGasDeathSquad
-  name: death squad gas mask
-  description: A unique gas mask for the NT's most elite squad.
-  components:
-  - type: Sprite
-    sprite: Clothing/Mask/squadron.rsi
-  - type: Clothing
-    sprite: Clothing/Mask/squadron.rsi
-  - type: HideLayerClothing
-    slots:
-    - Hair
-    - HeadTop
-    - HeadSide
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.80
-        Slash: 0.80
-        Piercing: 0.90
-        Heat: 0.90
+# Carpmosia-start - Remove Deathsquad
+# - type: entity
+#   parent: ClothingMaskGasERT
+#   id: ClothingMaskGasDeathSquad
+#   name: death squad gas mask
+#   description: A unique gas mask for the NT's most elite squad.
+#   components:
+#   - type: Sprite
+#     sprite: Clothing/Mask/squadron.rsi
+#   - type: Clothing
+#     sprite: Clothing/Mask/squadron.rsi
+#   - type: HideLayerClothing
+#     slots:
+#     - Hair
+#     - HeadTop
+#     - HeadSide
+#   - type: Armor
+#     modifiers:
+#       coefficients:
+#         Blunt: 0.80
+#         Slash: 0.80
+#         Piercing: 0.90
+#         Heat: 0.90
+# Carpmosia-end - Remove Deathsquad
 
 - type: entity
   parent: ClothingMaskBase
@@ -728,7 +730,7 @@
   - type: IdentityBlocker
 
 - type: entity
-  parent: ClothingMaskGas
+  parent: [ClothingMaskGas, WeldingMaskBase]
   id: ClothingMaskWeldingGas
   name: welding gas mask
   description: A gas mask with built in welding goggles and face shield. Looks like a skull, clearly designed by a nerd.
@@ -738,17 +740,14 @@
     state: icon
   - type: Clothing
     sprite: Clothing/Mask/welding-gas.rsi
-  - type: FlashImmunity
-  - type: EyeProtection
-  - type: PhysicalComposition
-    materialComposition:
-      Steel: 200
-      Glass: 100
   - type: StaticPrice
     price: 100
   - type: Tag
     tags:
     - WhitelistChameleon
+  - type: ImageOverlay
+    pathToOverlayImage: "/Textures/Clothing/Head/Welding/weldingTexture.png"
+    additionalColorOverlay: "#00000050"
 
 # Entity tables
 - type: entityTable

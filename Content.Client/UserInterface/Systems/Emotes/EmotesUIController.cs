@@ -142,7 +142,7 @@ public sealed partial class EmotesUIController : UIController, IOnStateChanged<G
         Dictionary<EmoteCategory, List<EmotePrototype>> emotesByCategory = new(); // Carpmosia-edit - alt emotes menu
         foreach (var emote in emotePrototypes)
         {
-            if(emote.Category == EmoteCategory.Invalid)
+            if (emote.Category == EmoteCategory.Invalid)
                 continue;
 
             // only valid emotes that have ways to be triggered by chat and player have access / no restriction on

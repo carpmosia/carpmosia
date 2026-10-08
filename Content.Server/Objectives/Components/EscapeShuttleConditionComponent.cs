@@ -13,6 +13,6 @@ public sealed partial class EscapeShuttleConditionComponent : Component
     /// Count as full completion if you're handcuffed on evac
     /// </summary>
     [DataField]
-    public bool AllowRestrained = false;
+    public bool AllowRestrained;
     // Carpmosia-end - escape restrained
 }

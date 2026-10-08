@@ -9,7 +9,7 @@
   - !type:RoleTimeRequirement
     role: JobBorg
     time: 5h
-  weight: 10
+  displayWeight: 96 # Carpmosia-edit - Reorder jobs
   icon: JobIconStationAi
   supervisors: job-supervisors-rd
   jobEntity: StationAiBrain
@@ -26,5 +26,6 @@
       time: 10h
   icon: JobIconBorg
   supervisors: job-supervisors-rd
+  guides: [ Cyborgs ]
   jobEntity: PlayerBorgBattery
   applyTraits: false

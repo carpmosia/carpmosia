@@ -1,0 +1,14 @@
+- type: entity
+  parent: BaseAction
+  id: ActionRatKingSacrifice
+  name: Rat King's Sacrifice
+  description: Sacrifice one of your servants to heal.
+  components:
+  - type: Action
+    useDelay: 45
+  - type: Sprite
+    sprite: _Carpmosia/Interface/Actions/actions_rat_king.rsi
+    layers:
+    - state: ratKingSacrifice
+  - type: InstantAction
+    event: !type:RatKingSacrificeActionEvent

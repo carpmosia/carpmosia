@@ -61,7 +61,7 @@ public abstract partial class SharedEmitSoundSystem : EntitySystem
     // Carpmosia-start - Whistle action
     private void OnSoundAction(Entity<EmitSoundOnActionComponent> ent, ref SoundActionEvent args)
     {
-        TryEmitSound(ent, ent.Comp, args.Performer, true);
+        TryEmitSound(ent, ent.Comp, args.Performer);
 
         if (ent.Comp.Handle)
             args.Handled = true;
@@ -199,7 +199,9 @@ public abstract partial class SharedEmitSoundSystem : EntitySystem
 
         if (_netMan.IsServer && sound != null)
         {
-            _audioSystem.PlayPvs(_audioSystem.ResolveSound(sound), uid, AudioParams.Default.WithVolume(volume));
+            var audioParams = component.Sound?.Params ?? AudioParams.Default;
+            audioParams = audioParams.AddVolume(volume);
+            _audioSystem.PlayPvs(_audioSystem.ResolveSound(sound), uid, audioParams);
         }
     }
 

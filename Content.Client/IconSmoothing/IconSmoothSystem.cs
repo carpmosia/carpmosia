@@ -20,7 +20,6 @@ namespace Content.Client.IconSmoothing
         [Dependency] private SpriteSystem _sprite = default!;
         [Dependency] private EntityQuery<IconSmoothComponent> _iconSmoothQuery = default!;
         [Dependency] private EntityQuery<SpriteComponent> _spriteQuery = default!;
-        [Dependency] private EntityQuery<TransformComponent> _xformQuery = default!; // Carpmosia-start - Better diagonals
 
         private readonly Queue<EntityUid> _dirtyEntities = new();
         private readonly Queue<EntityUid> _anchorChangedEntities = new();
@@ -172,17 +171,17 @@ namespace Content.Client.IconSmoothing
             }
 
             // Yes, we updates ALL smoothing entities surrounding us even if they would never smooth with us.
-            DirtyEntities(_mapSystem.GetAnchoredEntitiesEnumerator(entityUid, grid, pos + new Vector2i(1, 0)));
-            DirtyEntities(_mapSystem.GetAnchoredEntitiesEnumerator(entityUid, grid, pos + new Vector2i(-1, 0)));
-            DirtyEntities(_mapSystem.GetAnchoredEntitiesEnumerator(entityUid, grid, pos + new Vector2i(0, 1)));
-            DirtyEntities(_mapSystem.GetAnchoredEntitiesEnumerator(entityUid, grid, pos + new Vector2i(0, -1)));
+            DirtyEntities(_mapSystem.GetAnchoredEntities(entityUid, grid, pos + Vector2i.Right));
+            DirtyEntities(_mapSystem.GetAnchoredEntities(entityUid, grid, pos + Vector2i.Left));
+            DirtyEntities(_mapSystem.GetAnchoredEntities(entityUid, grid, pos + Vector2i.Up));
+            DirtyEntities(_mapSystem.GetAnchoredEntities(entityUid, grid, pos + Vector2i.Down));
 
             if (comp.Mode is IconSmoothingMode.Corners or IconSmoothingMode.NoSprite or IconSmoothingMode.Diagonal)
             {
-                DirtyEntities(_mapSystem.GetAnchoredEntitiesEnumerator(entityUid, grid, pos + new Vector2i(1, 1)));
-                DirtyEntities(_mapSystem.GetAnchoredEntitiesEnumerator(entityUid, grid, pos + new Vector2i(-1, -1)));
-                DirtyEntities(_mapSystem.GetAnchoredEntitiesEnumerator(entityUid, grid, pos + new Vector2i(-1, 1)));
-                DirtyEntities(_mapSystem.GetAnchoredEntitiesEnumerator(entityUid, grid, pos + new Vector2i(1, -1)));
+                DirtyEntities(_mapSystem.GetAnchoredEntities(entityUid, grid, pos + Vector2i.UpRight));
+                DirtyEntities(_mapSystem.GetAnchoredEntities(entityUid, grid, pos + Vector2i.DownLeft));
+                DirtyEntities(_mapSystem.GetAnchoredEntities(entityUid, grid, pos + Vector2i.UpLeft));
+                DirtyEntities(_mapSystem.GetAnchoredEntities(entityUid, grid, pos + Vector2i.DownRight));
             }
         }
 
@@ -230,13 +229,13 @@ namespace Content.Client.IconSmoothing
 
                         gridEntity = (gridUid, grid);
 
-                        if (MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, pos.Offset(Direction.North))))
+                        if (MatchingEntity(smooth, _mapSystem.GetAnchoredEntities(gridUid, grid, pos.Offset(Direction.North))))
                             directions |= DirectionFlag.North;
-                        if (MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, pos.Offset(Direction.South))))
+                        if (MatchingEntity(smooth, _mapSystem.GetAnchoredEntities(gridUid, grid, pos.Offset(Direction.South))))
                             directions |= DirectionFlag.South;
-                        if (MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, pos.Offset(Direction.East))))
+                        if (MatchingEntity(smooth, _mapSystem.GetAnchoredEntities(gridUid, grid, pos.Offset(Direction.East))))
                             directions |= DirectionFlag.East;
-                        if (MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, pos.Offset(Direction.West))))
+                        if (MatchingEntity(smooth, _mapSystem.GetAnchoredEntities(gridUid, grid, pos.Offset(Direction.West))))
                             directions |= DirectionFlag.West;
                     }
 
@@ -318,7 +317,7 @@ namespace Content.Client.IconSmoothing
             for (var i = 0; i < neighbors.Length; i++)
             {
                 var neighbor = (Vector2i)rotation.RotateVec(neighbors[i]);
-                matching = matching && MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, pos + neighbor));
+                matching = matching && MatchingEntity(smooth, _mapSystem.GetAnchoredEntities(gridUid, grid, pos + neighbor));
             }
 
             if (matching)
@@ -346,11 +345,11 @@ namespace Content.Client.IconSmoothing
 
             var pos = _mapSystem.TileIndicesFor(gridUid, grid, xform.Coordinates);
 
-            var east_pos = pos + (Vector2i)xform.LocalRotation.RotateVec(new(1, 0));
-            var east = MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, east_pos));
+            var eastPos = pos + (Vector2i)xform.LocalRotation.RotateVec(new Vector2(1, 0));
+            var east = MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, eastPos));
 
-            var south_pos = pos + (Vector2i)xform.LocalRotation.RotateVec(new(0, -1));
-            var south = MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, south_pos));
+            var southPos = pos + (Vector2i)xform.LocalRotation.RotateVec(new Vector2(0, -1));
+            var south = MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, southPos));
 
             if (!east & !south)
             {
@@ -368,17 +367,10 @@ namespace Content.Client.IconSmoothing
                 return;
             }
 
-            var edge_pos = pos + (Vector2i)xform.LocalRotation.RotateVec(new(1, -1));
-            var edge = MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, edge_pos));
+            var edgePos = pos + (Vector2i)xform.LocalRotation.RotateVec(new Vector2(1, -1));
+            var edge = MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, edgePos));
 
-            if (!edge)
-            {
-                _sprite.LayerSetRsiState(sprite.AsNullable(), 0, $"{smooth.StateBase}3");
-            }
-            else
-            {
-                _sprite.LayerSetRsiState(sprite.AsNullable(), 0, $"{smooth.StateBase}4");
-            }
+            _sprite.LayerSetRsiState(sprite.AsNullable(), 0, edge ? $"{smooth.StateBase}4" : $"{smooth.StateBase}3");
         }
         // Carpmosia-end - Better diagonals
 
@@ -396,13 +388,13 @@ namespace Content.Client.IconSmoothing
             var grid = gridEntity.Value.Comp;
 
             var pos = _mapSystem.TileIndicesFor(gridUid, grid, xform.Coordinates);
-            if (MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, pos.Offset(Direction.North))))
+            if (MatchingEntity(smooth, _mapSystem.GetAnchoredEntities(gridUid, grid, pos.Offset(Direction.North))))
                 dirs |= CardinalConnectDirs.North;
-            if (MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, pos.Offset(Direction.South))))
+            if (MatchingEntity(smooth, _mapSystem.GetAnchoredEntities(gridUid, grid, pos.Offset(Direction.South))))
                 dirs |= CardinalConnectDirs.South;
-            if (MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, pos.Offset(Direction.East))))
+            if (MatchingEntity(smooth, _mapSystem.GetAnchoredEntities(gridUid, grid, pos.Offset(Direction.East))))
                 dirs |= CardinalConnectDirs.East;
-            if (MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, pos.Offset(Direction.West))))
+            if (MatchingEntity(smooth, _mapSystem.GetAnchoredEntities(gridUid, grid, pos.Offset(Direction.West))))
                 dirs |= CardinalConnectDirs.West;
 
             _sprite.LayerSetRsiState(sprite.AsNullable(), 0, $"{smooth.StateBase}{(int)dirs}");
@@ -476,14 +468,14 @@ namespace Content.Client.IconSmoothing
             var grid = gridEntity.Comp;
 
             var pos = _mapSystem.TileIndicesFor(gridUid, grid, xform.Coordinates);
-            var n = MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, pos.Offset(Direction.North)));
-            var ne = MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, pos.Offset(Direction.NorthEast)));
-            var e = MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, pos.Offset(Direction.East)));
-            var se = MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, pos.Offset(Direction.SouthEast)));
-            var s = MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, pos.Offset(Direction.South)));
-            var sw = MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, pos.Offset(Direction.SouthWest)));
-            var w = MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, pos.Offset(Direction.West)));
-            var nw = MatchingEntity(smooth, _mapSystem.GetAnchoredEntitiesEnumerator(gridUid, grid, pos.Offset(Direction.NorthWest)));
+            var n = MatchingEntity(smooth, _mapSystem.GetAnchoredEntities(gridUid, grid, pos.Offset(Direction.North)));
+            var ne = MatchingEntity(smooth, _mapSystem.GetAnchoredEntities(gridUid, grid, pos.Offset(Direction.NorthEast)));
+            var e = MatchingEntity(smooth, _mapSystem.GetAnchoredEntities(gridUid, grid, pos.Offset(Direction.East)));
+            var se = MatchingEntity(smooth, _mapSystem.GetAnchoredEntities(gridUid, grid, pos.Offset(Direction.SouthEast)));
+            var s = MatchingEntity(smooth, _mapSystem.GetAnchoredEntities(gridUid, grid, pos.Offset(Direction.South)));
+            var sw = MatchingEntity(smooth, _mapSystem.GetAnchoredEntities(gridUid, grid, pos.Offset(Direction.SouthWest)));
+            var w = MatchingEntity(smooth, _mapSystem.GetAnchoredEntities(gridUid, grid, pos.Offset(Direction.West)));
+            var nw = MatchingEntity(smooth, _mapSystem.GetAnchoredEntities(gridUid, grid, pos.Offset(Direction.NorthWest)));
 
             // ReSharper disable InconsistentNaming
             var cornerNE = CornerFill.None;

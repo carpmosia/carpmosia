@@ -1,0 +1,71 @@
+# PoI's and ents are treated as list of OR groups
+- pois:
+  - DefaultStationBeaconHOPOffice
+  - HolopadCommandHop
+  ents:
+  - BrbSign
+  - ComputerFundingAllocation
+  - ComputerId
+  - DogBed
+  - DresserHeadOfPersonnelFilled
+  - LockerHeadOfPersonnelFilled
+  - MaterialCloth
+  - MaterialDurathread
+  - SpawnMobCorgi
+  - SpawnPointHeadOfPersonnel
+  - UniformPrinter
+  - VendingMachineCart
+  - WindoorSecureHeadOfPersonnelLocked
+
+- pois:
+  - DefaultStationBeaconVault
+  - HolopadCommandVault
+  ents:
+  - NuclearBomb
+  - WeaponEnergyTurretCommand
+  - HighSecCommandLocked
+  - WeaponEnergyTurretCommandControlPanel
+  - ToolboxGoldFilled
+
+# Maps don't always have space for captain's bathrooms so vault is an acceptable alternative for the golden toilet
+- pois:
+  - - DefaultStationBeaconCaptainOffice
+    - DefaultStationBeaconCaptainsQuarters
+    - DefaultStationBeaconVault
+    - HolopadCommandVault
+  ents:
+  - ToiletGoldenDirtyWater
+
+- pois:
+  - - DefaultStationBeaconCaptainOffice
+    - DefaultStationBeaconCaptainsQuarters
+  - HolopadCommandCaptain
+  ents:
+  - CaptainIDCard
+  - DogBed
+  - SpawnMobFoxRenault
+  - FaxMachineCaptain
+  - - LockerCaptainFilled
+    - LockerCaptainFilledNoLaser
+    - LockerCaptainFilledHardsuit
+
+- pois:
+  - DefaultStationBeaconAIUpload
+  - HolopadAiUpload
+  ents:
+  - StationAiUploadComputer
+  - WeaponEnergyTurretAIControlPanel
+  - WeaponEnergyTurretAI
+
+- pois:
+  - DefaultStationBeaconEVAStorage
+  - HolopadGeneralEVAStorage
+  ents:
+  - - SuitStorageEVA
+    - SuitStorageEVAAlternate
+  - VendingMachineTankDispenserEVA
+  - NitrogenCanister
+  - OxygenCanister
+  - JetpackMiniFilled
+  - - ClothingShoesBootsMag
+    - ClothingShoesBootsMagSci

@@ -1,0 +1,15 @@
+- type: entity
+  parent: [ StatusEffectClumsyAll, MobStatusEffectBase ]
+  id: StatusEffectClumsyKitti
+  components:
+  - type: ClumsyCatchStatusEffect
+    clumsySound: &SoundKittiScream
+      path: /Audio/Animals/cat_hiss.ogg
+  - type: ClumsyDefibStatusEffect
+    clumsySound: *SoundKittiScream
+  - type: ClumsyGunStatusEffect
+    clumsySound: *SoundKittiScream
+  - type: ClumsyInjectorStatusEffect
+    clumsySound: *SoundKittiScream
+  - type: ClumsyVaultStatusEffect
+    clumsySound: *SoundKittiScream

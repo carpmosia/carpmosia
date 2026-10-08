@@ -1,0 +1,101 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Created by GlupiyBrush (Github) for general use in Space Station 14.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "alarm0",
+            "directions": 4,
+            "delays": [
+                [
+                    0.4,
+                    0.4,
+                    0.4,
+                    0.4
+                ],
+                [
+                    0.4,
+                    0.4,
+                    0.4,
+                    0.4
+                ],
+                [
+                    0.4,
+                    0.4,
+                    0.4,
+                    0.4
+                ],
+                [
+                    0.4,
+                    0.4,
+                    0.4,
+                    0.4
+                ]
+            ]
+        },
+        {
+            "name": "alarm1",
+            "directions": 4,
+            "delays": [
+                [
+                    0.4,
+                    0.4,
+                    0.4,
+                    0.4
+                ],
+                [
+                    0.4,
+                    0.4,
+                    0.4,
+                    0.4
+                ],
+                [
+                    0.4,
+                    0.4,
+                    0.4,
+                    0.4
+                ],
+                [
+                    0.4,
+                    0.4,
+                    0.4,
+                    0.4
+                ]
+            ]
+        },
+        {
+            "name": "alarm2",
+            "directions": 4,
+            "delays": [
+                [
+                    0.5,
+                    0.5
+                ],
+                [
+                    0.5,
+                    0.5
+                ],
+                [
+                    0.5,
+                    0.5
+                ],
+                [
+                    0.5,
+                    0.5
+                ]
+            ]
+        },
+        {
+            "name": "base",
+            "directions": 4
+        },
+        {
+            "name": "panel",
+            "directions": 4
+        }
+    ]
+}

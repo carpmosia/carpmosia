@@ -16,3 +16,8 @@ ghost-role-information-pet-description = A cute little pocket pet. Follow and ob
 
 ghost-role-information-jorge-name = Jorge
 ghost-role-information-jorge-description = A sentient plant kept in the science department. Originally confused for an anomaly, it is now moreso treated as a pet. While able to speak, it can be rather difficult to understand.
+
+ghost-role-information-freeagent-rules-roleplay-encouraged-carpmosia =
+    You are a [color={role-type-free-agent-color}][bold]{role-type-free-agent-name}[/bold][/color]. You needn't have any loyalty to the station, but [bold]antagonistic actions should be justified through roleplay[/bold].
+    You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
+    You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.

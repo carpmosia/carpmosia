@@ -370,9 +370,13 @@ namespace Content.Server.Database
     {
         // These enum values HAVE to match the ones in JobPriority in Content.Shared
         Never = 0,
-        Low = 1,
-        Medium = 2,
-        High = 3
+        // Carpmosia-start - More job priorities
+        Lowest = 1,
+        Lower = 2,
+        Low = 3,
+        Medium = 4,
+        High = 5
+        // Carpmosia-end - More job priorities
     }
 
     public class Antag

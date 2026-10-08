@@ -45,8 +45,6 @@
         Slash: 3
         Piercing: 5
   # Tajaran body temperature/thresholds
-  - type: Temperature
-    currentTemperature: 312.0
   - type: TemperatureDamage
     heatDamageThreshold: 322
     coldDamageThreshold: 245
@@ -105,17 +103,9 @@
   parent: MobBaseKitti
   id: MobKitti
   components:
-  - type: Clumsy
-    gunShootFailDamage:
-      types:
-        Blunt: 3
-        Piercing: 4
-        Heat: 5
-    catchingFailDamage:
-      types:
-        Blunt: 1
-    clumsySound:
-      path: /Audio/Animals/cat_hiss.ogg
+  - type: PermanentStatusEffects
+    statusEffects:
+    - StatusEffectClumsyKitti
 
 - type: entity
   parent: MobBaseKitti

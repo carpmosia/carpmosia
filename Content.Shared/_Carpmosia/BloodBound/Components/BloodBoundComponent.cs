@@ -12,7 +12,7 @@ public sealed partial class BloodBoundComponent : Component
     public EntityUid? Bound;
 
     [DataField]
-    public ProtoId<FactionIconPrototype> BloodBoundIcon = "BloodBoundFaction";
+    public ProtoId<StatusIconPrototype> BloodBoundIcon = "BloodBoundFaction";
 
     [DataField]
     public TimeSpan? DeconversionStunTime = TimeSpan.FromSeconds(3);

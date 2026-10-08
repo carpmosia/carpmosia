@@ -34,6 +34,38 @@ public sealed partial class TeslaEnergyBallComponent : Component
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public float EnergyToDespawn = -100f;
 
+    // Carpmosia-start - Engine Loose Rework
+    /// <summary>
+    /// Played when the entity ruptures
+    /// </summary>
+    [DataField]
+    public SoundSpecifier? SoundExplosion = new SoundCollectionSpecifier("Explosion");
+
+    /// <summary>
+    /// Range of the EMP in tiles.
+    /// </summary>
+    [DataField]
+    public float EmpRange = 20f;
+
+    /// <summary>
+    /// Power consumed from batteries by the EMP.
+    /// </summary>
+    [DataField]
+    public float EmpConsumption = 100000f;
+
+    /// <summary>
+    /// How long the EMP effects last for.
+    /// </summary>
+    [DataField]
+    public TimeSpan EmpDuration = TimeSpan.FromSeconds(60);
+
+    /// <summary>
+    /// How many miniballs are spawned when the tesla ruptures.
+    /// </summary>
+    [DataField]
+    public int SpawnAmount = 4;
+    // Carpmosia-end - Engine Loose Rework
+
     /// <summary>
     /// Played when energy reaches the lower limit (and entity destroyed)
     /// </summary>
@@ -45,6 +77,14 @@ public sealed partial class TeslaEnergyBallComponent : Component
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public EntProtoId SpawnProto = "TeslaMiniEnergyBall";
+
+    // Carpmosia-start - Engine Loose Rework
+    /// <summary>
+    /// Entities that spawn when the tesla ruptures. Alt proto to prevent minis from being stuck in place
+    /// </summary>
+    [DataField]
+    public EntProtoId EmpSpawnProto = "TeslaMiniEnergyBallHunter";
+    // Carpmosia-end - Engine Loose Rework
 
     /// <summary>
     /// Entity, spun when tesla gobbles with touch.

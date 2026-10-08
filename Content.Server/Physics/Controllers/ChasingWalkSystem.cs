@@ -73,7 +73,22 @@ public sealed partial class ChasingWalkSystem : VirtualController
 
         //If there are no required components in the radius, don't moving.
         if (_potentialChaseTargets.Count <= 0)
+        // Carpmosia-start - Engine Loose Rework
+        {
+            // Actually, we move walk randomly instead until we find a target
+            if (!TryComp<PhysicsComponent>(uid, out var physics))
+                return;
+            var speed = _random.NextVector2(component.MinSpeed, component.MaxSpeed);
+            _physics.SetLinearVelocity(uid, speed);
+            _physics.SetBodyStatus(uid, physics, BodyStatus.InAir);
+            if (component.RotateWithImpulse)
+            {
+                var ang = speed.ToAngle() + Angle.FromDegrees(90); // we want "Up" to be forward, bullet convention.
+                _transform.SetWorldRotation(uid, ang + component.RotationAngleOffset);
+            }
             return;
+        }
+        // Carpmosia-end - Engine Loose Rework
 
         //In the case of finding required components, we choose a random one of them and remember its uid.
         component.ChasingEntity = _random.Pick(_potentialChaseTargets).Owner;
@@ -96,8 +111,27 @@ public sealed partial class ChasingWalkSystem : VirtualController
         var pos1 = _transform.GetWorldPosition(uid);
         var pos2 = _transform.GetWorldPosition(component.ChasingEntity.Value);
 
-        var delta = pos2 - pos1;
-        var speed = delta.Length() > 0 ? delta.Normalized() * component.Speed : Vector2.Zero;
+        var currentDirection = _physics.GetLinearVelocity(uid, Vector2.Zero);
+
+        var targetVector = pos2 - pos1;
+
+        var angleToChange = targetVector.ToAngle() - currentDirection.ToAngle();
+
+        // Make sure we rotate to the smallest direction
+        if (angleToChange > Angle.FromDegrees(180))
+            angleToChange -= Angle.FromDegrees(360);
+        else if (angleToChange < Angle.FromDegrees(-180))
+            angleToChange += Angle.FromDegrees(360);
+
+        angleToChange = Math.Clamp(angleToChange,
+            -component.MaxAngleVectorChangePerImpulse,
+            component.MaxAngleVectorChangePerImpulse);
+
+        var newDirection = currentDirection.ToAngle() + angleToChange;
+
+        var speed = !component.StopAtTarget || targetVector.Length() > 0
+            ? newDirection.ToVec() * component.Speed
+            : Vector2.Zero;
 
         _physics.SetLinearVelocity(uid, speed);
         _physics.SetBodyStatus(uid, physics, BodyStatus.InAir); //If this is not done, from the explosion up close, the tesla will "Fall" to the ground, and almost stop moving.

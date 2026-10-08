@@ -5,6 +5,13 @@
   - type: GameRule
 
 - type: entity
+  id: BaseSilentGameRule
+  abstract: true
+  components:
+  - type: GameRule
+    silent: true
+
+- type: entity
   parent: BaseGameRule
   id: BaseRoundstartAntagRule
   abstract: true
@@ -38,6 +45,8 @@
       prob: 0.05
     - id: SubXenoborgs
       prob: 0.05
+    - id: Changeling
+      prob: 0.25
 
 - type: entity
   parent: BaseGameRule
@@ -53,6 +62,8 @@
     # Carpmosia-end - Harmony Blood Bound
     - id: SubXenoborgs
       prob: 0.05
+    - id: Changeling
+      prob: 0.25
 
 - type: entity
   parent: BaseGameRule
@@ -68,6 +79,8 @@
     # Carpmosia-end - Harmony Blood Bound
     - id: SubWizard
       prob: 0.05
+    - id: Changeling
+      prob: 0.25
 
 - type: entity
   parent: BaseGameRule
@@ -81,6 +94,8 @@
     - id: BloodBound
       prob: 0.5
     # Carpmosia-end - Harmony Blood Bound
+    - id: Changeling
+      prob: 0.25
 
 - type: entity
   parent: BaseGameRule
@@ -227,7 +242,11 @@
   components:
   - type: ChangelingRule
   - type: GameRule
-    minPlayers: 25
+    minPlayers: 20
+    delay:
+      min: 240
+      max: 420
+    cancelPresetOnTooFewPlayers: false
   - type: AntagSelection
     agentName: changeling-round-end-agent-name
     antags:
@@ -246,6 +265,8 @@
     - groups: ChangelingObjectiveGroupKillDummy
       maxPicks: 1
     maxDifficulty: 8
+  - type: DynamicRuleCost
+    cost: 75
 
 - type: entity
   id: Revolutionary
@@ -467,7 +488,7 @@
 # variation passes
 - type: entity
   id: BasicRoundstartVariation
-  parent: BaseGameRule
+  parent: BaseSilentGameRule
   components:
   - type: RoundstartStationVariationRule
     rules:

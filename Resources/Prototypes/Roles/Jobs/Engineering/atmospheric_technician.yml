@@ -9,9 +9,11 @@
     role: JobStationEngineer
     time: 5h
   # Carpmosia-stop - Job Requirement Revamp
+  displayWeight: 60 # Carpmosia-edit - Reorder jobs
   startingGear: AtmosphericTechnicianGear
   icon: "JobIconAtmosphericTechnician"
   supervisors: job-supervisors-ce
+  guides: [ Atmospherics ]
   access:
   - Maintenance
   - Engineering

@@ -1,0 +1,15 @@
+- type: entity
+  parent: CigPackBase
+  id: CigPackCarp
+  name: Carp Sticks packet
+  description: Just like carp sashimi, but with 100% more tumors.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Consumable/Smokeables/Cigarettes/Packs/carp.rsi
+  - type: Item
+    sprite: _Carpmosia/Objects/Consumable/Smokeables/Cigarettes/Packs/carp.rsi
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: CigaretteCarpotoxin
+        amount: 10

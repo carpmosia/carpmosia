@@ -2,10 +2,12 @@
   id: Psychologist
   name: job-name-psychologist
   description: job-description-psychologist
+  displayWeight: 20 # Carpmosia-edit - Reorder jobs
   playTimeTracker: JobPsychologist
   startingGear: PsychologistGear
   icon: "JobIconPsychologist"
   supervisors: job-supervisors-cmo
+  guides: [ Medical ] # TODO: should have a more specific guidebook page instead of using the department itself
   access:
   - Medical
   - Maintenance

@@ -3,9 +3,11 @@
   name: job-name-reporter
   description: job-description-reporter
   playTimeTracker: JobReporter
+  displayWeight: 20 # Carpmosia-edit - Reorder jobs
   startingGear: ReporterGear
   icon: "JobIconReporter"
   supervisors: job-supervisors-hop
+  guides: [ Service ] # TODO: should have a more specific guidebook page instead of using the department itself
   access:
   - Service
   - Maintenance

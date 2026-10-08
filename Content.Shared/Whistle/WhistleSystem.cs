@@ -1,7 +1,8 @@
 // Carpmosia-start - Whistle action
 using Content.Shared.Actions;
 using Content.Shared.Inventory;
-using Content.Shared.Timing;
+using Content.Shared.Timing.Systems;
+using Content.Shared.Timing.Components;
 // Carpmosia-end - Whistle action
 using Content.Shared.Coordinates;
 using Content.Shared.Humanoid;
@@ -25,12 +26,11 @@ public sealed partial class WhistleSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<WhistleComponent, UseInHandEvent>(OnUseInHand);
-        SubscribeLocalEvent<WhistleComponent, GetItemActionsEvent>(OnGetItemActions); // Carpmosia-edit - Whistle action
-        SubscribeLocalEvent<WhistleComponent, SoundActionEvent>(OnWhistleAction); // Carpmosia-edit - Whistle action
     }
 
     // Carpmosia-start - Whistle action
-    private void OnGetItemActions(Entity<WhistleComponent> ent, ref GetItemActionsEvent args)
+    [SubscribeLocalEvent]
+    private static void OnGetItemActions(Entity<WhistleComponent> ent, ref GetItemActionsEvent args)
     {
         if (args.SlotFlags == SlotFlags.POCKET)
             return;
@@ -38,7 +38,8 @@ public sealed partial class WhistleSystem : EntitySystem
         args.AddAction(ref ent.Comp.Action, ent.Comp.ActionId);
     }
 
-    public void OnWhistleAction(Entity<WhistleComponent> ent, ref SoundActionEvent args)
+    [SubscribeLocalEvent]
+    private void OnWhistleAction(Entity<WhistleComponent> ent, ref SoundActionEvent args)
     {
         if (!_timing.IsFirstTimePredicted)
             return;

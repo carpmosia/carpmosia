@@ -45,6 +45,20 @@ public sealed partial class SingularityComponent : Component
     [ViewVariables(VVAccess.ReadWrite)]
     public float EnergyDrain;
 
+    // Carpmosia-start - Engine Loose Rework
+    /// <summary>
+    /// Constant value used to scale minimum speed
+    /// </summary>
+    [DataField]
+    public float BaseMin = 7.5f;
+
+    /// <summary>
+    /// Constant value used to scale maximum speed
+    /// </summary>
+    [DataField]
+    public float BaseMax = 10f;
+    // Carpmosia-end - Engine Loose Rework
+
     #region Audio
 
     /// <summary>
@@ -54,7 +68,7 @@ public sealed partial class SingularityComponent : Component
     [ViewVariables(VVAccess.ReadOnly)]
     public SoundSpecifier? AmbientSound = new SoundPathSpecifier(
         "/Audio/Effects/singularity_form.ogg",
-        AudioParams.Default.WithVolume(5).WithLoop(true).WithMaxDistance(20f)
+        AudioParams.Default.AddVolume(5).WithLoop(true).WithMaxDistance(20f)
     );
 
     /// <summary>

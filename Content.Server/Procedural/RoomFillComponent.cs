@@ -44,7 +44,7 @@ public sealed partial class RoomFillComponent : Component
     /// Inherit rotation of the marker
     /// </summary>
     [DataField]
-    public bool InheritRotation = false;
+    public bool InheritRotation;
 
     /// <summary>
     /// Tile offset from marker to fill the room at

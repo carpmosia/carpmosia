@@ -1,0 +1,57 @@
+- type: entity
+  abstract: true
+  id: BaseAtmosNitrogen
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: AtmosPipeColor
+    color: '#da1010ff'
+
+# Pipes
+- type: entity
+  parent: [BaseAtmosNitrogen, GasPipeStraightAlt2]
+  id: GasPipeStraightNitrogen
+  suffix: Ṅitrogen, Straight
+
+- type: entity
+  parent: [BaseAtmosNitrogen, GasPipeBendAlt2]
+  id: GasPipeBendNitrogen
+  suffix: Ṅitrogen, Bend
+
+- type: entity
+  parent: [BaseAtmosNitrogen, GasPipeTJunctionAlt2]
+  id: GasPipeTJunctionNitrogen
+  suffix: Ṅitrogen, TJunction
+
+- type: entity
+  parent: [BaseAtmosNitrogen, GasPipeFourwayAlt2]
+  id: GasPipeFourwayNitrogen
+  suffix: Ṅitrogen, Fourway
+
+- type: entity
+  parent: [BaseAtmosNitrogen, GasPipeManifold]
+  id: GasPipeManifoldNitrogen
+  suffix: Nitrogen
+
+# Binary
+- type: entity
+  parent: [BaseAtmosNitrogen, GasPressurePumpAlt2]
+  id: GasPressurePumpNitrogen
+  suffix: Nitrogen
+  components:
+  - type: GasPressurePump
+    enabled: true
+    targetPressure: 303.9
+
+- type: entity
+  parent: [BaseAtmosNitrogen, GasValveAlt2]
+  id: GasValveNitrogen
+  suffix: Nitrogen
+  components:
+  - type: GasValve
+    open: true
+
+- type: entity
+  parent: [BaseAtmosNitrogen, GasPortAlt2]
+  id: GasPortNitrogen
+  suffix: Nitrogen

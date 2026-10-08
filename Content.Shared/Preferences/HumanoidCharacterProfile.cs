@@ -45,7 +45,7 @@ namespace Content.Shared.Preferences
         private Dictionary<ProtoId<JobPrototype>, JobPriority> _jobPriorities = new()
         {
             {
-                SharedGameTicker.FallbackOverflowJob, JobPriority.High
+                GameTicker.FallbackOverflowJob, JobPriority.High
             }
         };
 
@@ -332,6 +332,7 @@ namespace Content.Shared.Preferences
             if (ignoredSpecies != null)
             {
                 baseProfile.Species = RandomSpecies(ignoredSpecies);
+                config ^= RandomizeCfg.Species;
             }
             var profile = Random(config, baseProfile);
             return profile;
@@ -731,6 +732,10 @@ namespace Content.Shared.Preferences
                 .Where(p => prototypeManager.TryIndex<JobPrototype>(p.Key, out var job) && job.SetPreference && p.Value switch
                 {
                     JobPriority.Never => false, // Drop never since that's assumed default.
+                    // Carpmosia-start - More job priorities
+                    JobPriority.Lowest => true,
+                    JobPriority.Lower => true,
+                    // Carpmosia-end - More job priorities
                     JobPriority.Low => true,
                     JobPriority.Medium => true,
                     JobPriority.High => true,

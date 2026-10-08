@@ -1,0 +1,53 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Taken from CEV-Eris at commit https://github.com/discordia-space/CEV-Eris/commit/14517938186858388656a6aee14bf47af9e9649f - then modified by 20kdc & AJCM-git. docking-clamp by AftrLite",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "assembly"
+        },
+        {
+            "name": "closed"
+        },
+        {
+            "name": "closing",
+            "delays": [
+                [
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2
+                ]
+            ]
+        },
+        {
+            "name": "docking-clamp"
+        },
+        {
+            "name": "open"
+        },
+        {
+            "name": "opening",
+            "delays": [
+                [
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2
+                ]
+            ]
+        }
+    ]
+}

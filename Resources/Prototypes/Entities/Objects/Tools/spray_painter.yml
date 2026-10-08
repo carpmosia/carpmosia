@@ -1,7 +1,8 @@
 - type: entity
   parent: BaseItem
-  id: SprayPainter
+  id: SprayPainterRecharging
   name: spray painter
+  suffix: Admeme
   description: A spray painter for painting airlocks, pipes, and other items.
   components:
   - type: Sprite
@@ -17,35 +18,48 @@
         type: SprayPainterBoundUserInterface
   - type: SprayPainter
     colorPalette:
-      red: '#FF1212FF'
-      yellow: '#B3A234FF'
-      brown: '#947507FF'
-      green: '#3AB334FF'
-      cyan: '#03FCD3FF'
-      blue: '#0335FCFF'
-      white: '#FFFFFFFF'
-      black: '#333333FF'
-      # standard atmos pipes
-      waste: '#990000'
-      distro: '#0055cc'
-      air: '#03fcd3'
-      mix: '#947507'
+      # Carpmosia-start - Better pipe palette
+      red: '#fb2c36'
+      yellow: '#efb100'
+      green: '#00c950'
+      cyan: '#00b8db'
+      indigo: '#615fff'
+      fuchsia: '#e12afb'
+      white: '#ffffff'
+      black: '#333333'
+      # standard colors
+      waste: '#e69f00'
+      distro: '#56b4e9'
+      teg-hot: '#cc79a7'
+      teg-cold: '#009e73'
+      teg-fuel: '#d55e00'
+      teg-failsafe: '#f0e442'
+      cryogenics: '#0072b2'
+      # gas colors
+      oxygen: '#2887e8'
+      nitrogen: '#da1010'
+      carbon-dioxide: '#4e4e4e'
+      plasma: '#ff3300'
+      tritium: '#13ff4b'
+      water-vapour: '#bffffd'
+      ammonia: '#56941e'
+      nitrous-oxide: '#8F00ff'
+      frezon: '#3a758c'
+      # Carpmosia-end - Better pipe palette
   - type: StaticPrice
     price: 40
-  - type: LimitedCharges
-    maxCharges: 15
-    lastCharges: 15
   - type: PhysicalComposition
     materialComposition:
       Steel: 100
 
 - type: entity
-  parent: SprayPainter
-  id: SprayPainterRecharging
-  suffix: Admeme
+  parent: SprayPainterRecharging
+  id: SprayPainter
+  suffix: ""
   components:
-  - type: AutoRecharge
-    rechargeDuration: 1
+  - type: LimitedCharges
+    maxCharges: 15
+    lastCharges: 15
 
 - type: entity
   parent: SprayPainter
@@ -64,6 +78,8 @@
   components:
   - type: LimitedCharges
     lastCharges: -1
+
+# Ammo
 
 - type: entity
   parent: BaseItem

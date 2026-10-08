@@ -10,10 +10,11 @@
   - !type:DepartmentTimeRequirement
     department: Science
     time: 10h
-  weight: 10
+  displayWeight: 95 # Carpmosia-edit - Reorder jobs
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"
   supervisors: job-supervisors-captain
+  guides: [ Command ] # TODO: should have a more specific guidebook page instead of using the department itself
   access:
   - Research
   - Command

@@ -318,7 +318,7 @@
 
 - type: entity
   name: bluespace beaker
-  parent: [SolutionGinormous, BaseBeakerMetallic]
+  parent: [SolutionGinormous, BaseBeakerMetallic] # Bluespace items hold 8x the solution of regular items (240u a tile)
   description: Powered by experimental bluespace technology.
   id: BluespaceBeaker
   components:
@@ -334,6 +334,7 @@
         visible: false
       - state: bluespace-overlay
   - type: Item
+    size: Normal
     sprite: _Carpmosia/Objects/Specific/Chemistry/beaker_bluespace.rsi
   - type: SolutionContainerVisuals
     maxFillLevels: 9

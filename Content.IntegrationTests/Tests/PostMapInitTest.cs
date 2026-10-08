@@ -10,11 +10,11 @@ using Content.Server.Administration.Systems;
 using Content.Server.GameTicking;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
-using Content.Server.Spawners.Components;
-using Content.Server.Station.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Maps;
 using Content.Shared.Roles;
+using Content.Shared.Shuttles.Components;
+using Content.Shared.Spawners.Components;
 using Content.Shared.Station.Components;
 using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
@@ -96,7 +96,7 @@ namespace Content.IntegrationTests.Tests
 
         private static readonly string[] GameMaps = GameDataScrounger.PrototypesOfKind<GameMapPrototype>().Where(x => x != PoolManager.TestMap).Where(x => !x.StartsWith("Legacy")).ToArray(); // Carpmosia-edit - Legacy maps
         private static readonly ResPath[] AllMapFiles = GameDataScrounger.FilesInDirectoryInVfs("/Maps", "*.yml");
-        private static readonly ResPath[] ShuttleMapFiles = GameDataScrounger.FilesInDirectoryInVfs("/Maps/Shuttles", "*.yml");
+        private static readonly ResPath[] ShuttleMapFiles = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/Shuttles", "*.yml"), .. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia/Shuttles", "*.yml")]; // Carpmosia-edit - Carpmaps
 
         private static readonly ProtoId<EntityCategoryPrototype> DoNotMapCategory = "DoNotMap";
 
@@ -336,7 +336,7 @@ namespace Content.IntegrationTests.Tests
             var mapLoader = entManager.System<MapLoaderSystem>();
             var mapSystem = entManager.System<SharedMapSystem>();
             var protoManager = server.ResolveDependency<IPrototypeManager>();
-            var ticker = entManager.EntitySysManager.GetEntitySystem<GameTicker>();
+            var ticker = entManager.EntitySysManager.GetEntitySystem<ServerGameTicker>();
             var shuttleSystem = entManager.EntitySysManager.GetEntitySystem<ShuttleSystem>();
             var cfg = server.ResolveDependency<IConfigurationManager>();
 

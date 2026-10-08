@@ -76,7 +76,7 @@
   </Box>
 
   Grounding rods do not take damage from lightning strikes.
-  This makes them beneficial for forming a saftey net of grounding rods to rely on in case the tesla coils are damaged or destroyed.
+  This makes them beneficial for forming a safety net of grounding rods to rely on in case the tesla coils are damaged or destroyed.
 
   Engineers should use grounding rods to protect sensitive equipment from lightning strikes, such as the Emitters powering the containment field generators.
 
@@ -96,6 +96,8 @@
   A group of people using decelerators is recommended to destroy a tesloose.
 
   Portable Particle Decelerators can be either researched and made by the Research Department, or they can be bought from Cargo.
+
+  Freed teslas will seek out the nearest SMES. A tesla that has absorbs the energy within an SMES will rupture into mini-balls. <!-- Carpmosia-edit - Engine Loose Rework -->
 
   <Box>
     <GuideEntityEmbed Entity="WeaponParticleDecelerator"/>

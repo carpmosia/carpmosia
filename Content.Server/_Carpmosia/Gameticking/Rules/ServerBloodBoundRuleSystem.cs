@@ -1,0 +1,299 @@
+using System.Linq;
+using Content.Server.Actions;
+using Content.Server.Administration.Logs;
+using Content.Server.Mind;
+using Content.Server.Objectives.Components;
+using Content.Server.Objectives.Systems;
+using Content.Server.Objectives;
+using Content.Server.Popups;
+using Content.Server.Roles;
+using Content.Server.Stunnable;
+using Content.Shared.Antag;
+using Content.Shared.BloodBound.Components;
+using Content.Shared.Database;
+using Content.Shared.Humanoid;
+using Content.Shared.IdentityManagement;
+using Content.Shared.GameTicking.Rules;
+using Content.Shared.Mindshield.Components;
+using Content.Shared.Mobs.Systems;
+using Content.Shared.NPC.Systems;
+using Content.Shared.Popups;
+using Content.Shared.Roles.Components;
+using Content.Shared.Zombies;
+using Robust.Server.Player;
+using Robust.Shared.Utility;
+using System.Diagnostics.CodeAnalysis;
+using Content.Shared.GameTicking.Rules.Components;
+
+namespace Content.Server.GameTicking.Rules;
+
+public sealed partial class ServerBloodBoundRuleSystem : BloodBoundRuleSystem
+{
+    [Dependency] private IAdminLogManager _adminLogManager = default!;
+    [Dependency] private IEntityManager _entityManager = default!;
+    [Dependency] private IPlayerManager _playerManager = default!;
+    [Dependency] private ActionsSystem _actionsSystem = default!;
+    [Dependency] private AntagSelectionSystem _antagSystem = default!;
+    [Dependency] private MindSystem _mindSystem = default!;
+    [Dependency] private MobStateSystem _mobStateSystem = default!;
+    [Dependency] private NpcFactionSystem _npcFactionSystem = default!;
+    [Dependency] private ObjectivesSystem _objectivesSystem = default!;
+    [Dependency] private PopupSystem _popupSystem = default!;
+    [Dependency] private RoleSystem _roleSystem = default!;
+    [Dependency] private StunSystem _stunSystem = default!;
+    [Dependency] private TargetObjectiveSystem _targetObjectiveSystem = default!;
+
+    [SubscribeLocalEvent]
+    private void OnObjectivesTextPrepend(Entity<BloodBoundRuleComponent> entity, ref ObjectivesTextPrependEvent args)
+    {
+        var antags = _antagSystem.GetAntagIdentifiers(entity.Owner).ToList();
+
+        foreach (var (mind, sessionData, name) in antags)
+        {
+            if (!_roleSystem.MindHasRole<BloodBoundRoleComponent>(mind, out var role))
+                continue;
+
+            var boundRole = role.Value.Comp2;
+
+            if (boundRole.Bound == null)
+                continue;
+
+            if (!_mindSystem.TryGetMind(boundRole.Bound.Value, out _, out var boundMind)
+                || boundMind.UserId == null)
+            {
+                args.Text += "\n" + Loc.GetString("blood-bound-round-end-no-mind",
+                    ("name", name),
+                    ("username", sessionData.UserName),
+                    ("boundName", MetaData(role.Value).EntityName));
+
+                continue;
+            }
+
+            var boundUsername = _playerManager.GetPlayerData(boundMind.UserId.Value).UserName;
+
+            args.Text += "\n" + Loc.GetString("blood-bound-round-end",
+                ("name", name),
+                ("username", sessionData.UserName),
+                ("boundName", MetaData(boundRole.Bound.Value).EntityName),
+                ("boundUsername", boundUsername));
+        }
+    }
+
+    [SubscribeLocalEvent]
+    private void OnBloodBoundConvert(Entity<InitialBloodBoundComponent> entity,
+        ref BloodBoundConvertActionEvent args)
+    {
+        // Check if convertible
+        if (!TryComp<BloodBoundComponent>(entity, out var originalComponent))
+            return;
+
+        if (!CanConvert(entity, args.Target, out var failureMessage))
+        {
+            _popupSystem.PopupEntity(
+                Loc.GetString(failureMessage,
+                    ("converter", Identity.Entity(entity, _entityManager)),
+                    ("converted", Identity.Entity(args.Target, _entityManager))),
+                args.Target,
+                entity,
+                PopupType.MediumCaution);
+            return;
+        }
+
+        if (!_mindSystem.TryGetMind(entity, out var mindId, out var mind))
+            return;
+
+        if (!_mindSystem.TryGetMind(args.Target, out var targetMindId, out var targetMind))
+            return;
+
+        // Actual conversion logic
+
+        if (!ProtoMan.Resolve(entity.Comp.ConvertPrototype, out var def))
+            return;
+
+        EntityManager.AddComponents(args.Target, def.Components);
+
+        if (!TryComp<BloodBoundComponent>(args.Target, out var convertedComp))
+            return;
+
+        _npcFactionSystem.AddFaction(args.Target, entity.Comp.BloodBoundFaction);
+
+        _adminLogManager.Add(LogType.Mind,
+            LogImpact.Medium,
+            $"{ToPrettyString(entity)} converted {ToPrettyString(args.Target)} into their Blood Bound");
+
+        originalComponent.Bound = args.Target;
+        if (_roleSystem.MindHasRole<BloodBoundRoleComponent>(mindId, out var role))
+        {
+            role.Value.Comp2.Bound = args.Target;
+            Dirty(role.Value);
+        }
+
+        if (!_roleSystem.MindHasRole(targetMindId, out Entity<MindRoleComponent, BloodBoundRoleComponent>? targetRole))
+        {
+            _roleSystem.MindAddRoles(targetMindId, def.MindRoles, targetMind);
+            _roleSystem.MindHasRole(targetMindId, out targetRole);
+        }
+
+        convertedComp.Bound = entity;
+        targetRole!.Value.Comp2.Bound = entity;
+        Dirty(targetRole.Value);
+
+        foreach(var objective in mind.Objectives)
+        {
+            targetMind.Objectives.Add(objective);
+        }
+
+        if (!_objectivesSystem.TryCreateObjective((targetMindId, targetMind),
+                entity.Comp.ConvertedBoundObjective,
+                out var newObjective))
+            return;
+
+        var targetObjective = EnsureComp<TargetObjectiveComponent>(newObjective.Value);
+
+        _targetObjectiveSystem.SetTarget(newObjective.Value, mindId, targetObjective);
+
+        _mindSystem.AddObjective(targetMindId, targetMind, newObjective.Value);
+
+        foreach (var objective in mind.Objectives)
+        {
+            if (!HasComp<BloodBoundTargetComponent>(objective))
+                continue;
+
+            _targetObjectiveSystem.SetTarget(objective, args.Target);
+        }
+
+        if (def.Briefing?.Text != null)
+            _antagSystem.SendBriefing(args.Target,
+                Loc.GetString(def.Briefing.Value.Text),
+                def.Briefing.Value.Color,
+                def.Briefing.Value.Sound);
+
+        _popupSystem.PopupEntity(
+            Loc.GetString(
+                entity.Comp.ConvertPopupText,
+                ("converter", Identity.Entity(entity, _entityManager)),
+                ("converted", Identity.Entity(args.Target, _entityManager))),
+            args.Target,
+            PopupType.LargeCaution);
+
+        if (entity.Comp.ConvertStunTime != null)
+            _stunSystem.TryUpdateParalyzeDuration(args.Target, entity.Comp.ConvertStunTime);
+
+        // Remove the conversion actions
+        _actionsSystem.RemoveAction(entity.Comp.ConvertActionEntity);
+        _actionsSystem.RemoveAction(entity.Comp.CheckConvertActionEntity);
+
+        // Make sure the components are sent correctly
+        Dirty(entity, originalComponent);
+        Dirty(args.Target, convertedComp);
+    }
+
+    [SubscribeLocalEvent]
+    private void OnBloodBoundCheckConvert(Entity<InitialBloodBoundComponent> entity,
+        ref BloodBoundCheckConvertActionEvent args)
+    {
+        if (!CanConvert(entity, args.Target, out var failureMessage))
+        {
+            _popupSystem.PopupEntity(
+                Loc.GetString(failureMessage,
+                    ("converter", Identity.Entity(entity, _entityManager)),
+                    ("converted", Identity.Entity(args.Target, _entityManager))),
+                args.Target,
+                entity,
+                PopupType.MediumCaution);
+            return;
+        }
+
+        _popupSystem.PopupEntity(
+            Loc.GetString("blood-bound-convert-convertible",
+                ("converter", Identity.Entity(entity, _entityManager)),
+                ("converted", Identity.Entity(args.Target, _entityManager))),
+            args.Target,
+            entity,
+            PopupType.Medium);
+    }
+
+    private bool CanConvert(
+        Entity<InitialBloodBoundComponent> entity,
+        EntityUid target,
+        [NotNullWhen(false)] out string? errorMessage)
+    {
+        errorMessage = null;
+
+        if (!_mindSystem.TryGetMind(entity, out _, out var converterMind))
+        {
+            DebugTools.Assert("Blood bound tried to convert but had no mind.");
+            Log.Error("Blood bound tried to convert but had no mind.");
+            errorMessage = "guh";
+            return false; // How would this even happen
+        }
+
+        if (!_mindSystem.TryGetMind(target, out var targetMindId, out var targetMind))
+        {
+            errorMessage = "blood-bound-convert-failed-no-mind";
+            return false;
+        }
+
+        // Target is already a blood bound
+        if (HasComp<BloodBoundComponent>(target))
+        {
+            errorMessage = "blood-bound-convert-failed-already-bound";
+            return false;
+        }
+
+        // Get convert proto, error if we cant find it
+        if (!ProtoMan.Resolve(entity.Comp.ConvertPrototype, out var def))
+        {
+            DebugTools.Assert("Blood bound tried to convert but the convert proto failed to resolve.");
+            errorMessage = "uhoh";
+            return false;
+        }
+
+
+        // Stop the blood bound from converting a target.
+        foreach (var objective in converterMind.Objectives)
+        {
+            if (!TryComp<TargetObjectiveComponent>(objective, out var targetObjective))
+                continue;
+
+            if (targetObjective.Target != targetMindId)
+                continue;
+
+            errorMessage = "blood-bound-convert-failed-target";
+            return false;
+        }
+
+        if (targetMind.UserId == null || !HasComp<HumanoidProfileComponent>(target))
+        {
+            errorMessage = "blood-bound-convert-failed-no-mind";
+            return false;
+        }
+
+        if (HasComp<ZombieComponent>(target))
+        {
+            errorMessage = "blood-bound-convert-failed-zombie";
+            return false;
+        }
+
+        if (!_mobStateSystem.IsAlive(target))
+        {
+            errorMessage = "blood-bound-convert-failed-dead";
+            return false;
+        }
+
+        if (HasComp<MindShieldComponent>(target))
+        {
+            errorMessage = "blood-bound-convert-failed-shielded";
+            return false;
+        }
+
+        // Check antag preference
+        if(_playerManager.TryGetSessionById(targetMind.UserId, out var session)
+         && _antagSystem.TryGetValidAntagPreferences(session, def.PrefRoles))
+            return true;
+
+        // If we somehow get here, its because we failed to find the preferences
+        errorMessage = "blood-bound-convert-failed-preference";
+        return false;
+    }
+}

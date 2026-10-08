@@ -7,9 +7,11 @@
     - !type:DepartmentTimeRequirement
       department: Medical
       time: 2.5h
+  displayWeight: 50 # Carpmosia-edit - Reorder jobs
   startingGear: DoctorGear
   icon: "JobIconMedicalDoctor"
   supervisors: job-supervisors-cmo
+  guides: [ Medical ] # TODO: should have a more specific guidebook page instead of using the department itself
   access:
   - Medical
   - Maintenance

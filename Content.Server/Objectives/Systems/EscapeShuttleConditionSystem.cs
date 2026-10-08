@@ -24,16 +24,15 @@ public sealed partial class EscapeShuttleConditionSystem : EntitySystem
         args.Progress = GetProgress(args.MindId, args.Mind, entity.Comp.AllowRestrained); // Carpmosia-edit - escape restrained
     }
 
-    public float GetProgress(EntityUid mindId, MindComponent mind, bool AllowRestrained = false) // Carpmosia-edit - Harmony Blood Bound / escape restrained
+    public float GetProgress(EntityUid mindId, MindComponent mind, bool allowRestrained = false) // Carpmosia-edit - Harmony Blood Bound / escape restrained
     {
         // not escaping alive if you're deleted/dead
         if (mind.OwnedEntity == null || _mind.IsCharacterDeadIc(mind))
             return 0f;
 
         // Carpmosia-start - escape restrained
-        if (!AllowRestrained)
-            if (_cuffable.IsCuffed(mind.OwnedEntity.Value))
-                return _emergencyShuttle.IsTargetEscaping(mind.OwnedEntity.Value) ? 0.5f : 0f;
+        if (!allowRestrained && _cuffable.IsCuffed(mind.OwnedEntity.Value))
+            return _emergencyShuttle.IsTargetEscaping(mind.OwnedEntity.Value) ? 0.5f : 0f;
         // Carpmosia-end - escape restrained
 
         // Any emergency shuttle counts for this objective, but not pods.

@@ -1,6 +1,7 @@
 using Content.Shared.ActionBlocker;
 using Content.Shared.Input;
 using Content.Shared.Interaction;
+using Content.Shared.Interaction.Components; // Carpmosia-edit - Bypass checks for aghosts
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
 using Robust.Shared.Input.Binding;
@@ -42,7 +43,8 @@ public sealed partial class RotatableSystem : EntitySystem
             return;
 
         // Check if the object is anchored.
-        if (TryComp<PhysicsComponent>(uid, out var physics) && physics.BodyType == BodyType.Static)
+        if (TryComp<PhysicsComponent>(uid, out var physics) && physics.BodyType == BodyType.Static // Carpmosia-edit - Bypass checks for aghosts
+            && !HasComp<BypassInteractionChecksComponent>(args.User)) // Carpmosia-edit - Bypass checks for aghosts
             return;
 
         Verb verb = new()
@@ -67,6 +69,7 @@ public sealed partial class RotatableSystem : EntitySystem
 
         // Check if the object is anchored, and whether we are still allowed to rotate it.
         if (!component.RotateWhileAnchored &&
+            !HasComp<BypassInteractionChecksComponent>(args.User) && // Carpmosia-edit - Bypass checks for aghosts
             TryComp<PhysicsComponent>(uid, out var physics) &&
             physics.BodyType == BodyType.Static)
             return;
@@ -136,6 +139,7 @@ public sealed partial class RotatableSystem : EntitySystem
 
         // Check if the object is anchored, and whether we are still allowed to rotate it.
         if (!rotatableComp.RotateWhileAnchored && TryComp<PhysicsComponent>(entity, out var physics) &&
+            !HasComp<BypassInteractionChecksComponent>(entity) && // Carpmosia-edit - Bypass checks for aghosts
             physics.BodyType == BodyType.Static)
         {
             _popup.PopupEntity(Loc.GetString("rotatable-component-try-rotate-stuck"), entity, player);
@@ -161,6 +165,7 @@ public sealed partial class RotatableSystem : EntitySystem
 
         // Check if the object is anchored, and whether we are still allowed to rotate it.
         if (!rotatableComp.RotateWhileAnchored && TryComp<PhysicsComponent>(entity, out var physics) &&
+            !HasComp<BypassInteractionChecksComponent>(entity) && // Carpmosia-edit - Bypass checks for aghosts
             physics.BodyType == BodyType.Static)
         {
             _popup.PopupEntity(Loc.GetString("rotatable-component-try-rotate-stuck"), entity, player);
@@ -185,7 +190,8 @@ public sealed partial class RotatableSystem : EntitySystem
             return false;
 
         // Check if the object is anchored.
-        if (TryComp<PhysicsComponent>(entity, out var physics) && physics.BodyType == BodyType.Static)
+        if (TryComp<PhysicsComponent>(entity, out var physics) && physics.BodyType == BodyType.Static // Carpmosia-edit - Bypass checks for aghosts
+            && !HasComp<BypassInteractionChecksComponent>(entity)) // Carpmosia-edit - Bypass checks for aghosts
         {
             _popup.PopupEntity(Loc.GetString("flippable-component-try-flip-is-stuck"), entity, player);
             return false;
