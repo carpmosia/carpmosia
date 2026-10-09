@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from BayStation12 at https://github.com/Baystation12/Baystation12/blob/0404a67862b7a32a4ac1017ad27c38e243f0057f/icons/obj/machines/power/teg.dmi and Modified by GlupiyBrush (Github).",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+	{
+      "name": "icon"
+    },
+	{
+      "name": "active",
+      "directions": 4
+    },
+	{
+      "name": "passive",
+      "directions": 4
+    },
+    {
+      "name": "light",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.1,
+          0.1,
+          0.1,
+          0.2,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.2,
+          0.1,
+          0.1,
+          0.1,
+          0.2,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.2,
+          0.1,
+          0.1,
+          0.1,
+          0.2,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.2,
+          0.1,
+          0.1,
+          0.1,
+          0.2,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    }
+  ]
+}

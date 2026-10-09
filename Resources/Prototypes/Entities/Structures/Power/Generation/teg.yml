@@ -9,36 +9,28 @@
     - type: Transform
       noRot: false
     - type: Sprite
-      sprite: Structures/Power/Generation/teg.rsi
+      # Carpmosia-start - TEG resprite
+      sprite: _Carpmosia/Structures/Power/Generation/teg_center.rsi
       layers:
-        - state: teg
-        - state: teg_mid
+        - state: active
+          map: [ "enum.TegVisualLayers.CirculatorBase" ]
+        - state: light
+      # Carpmosia-end - TEG resprite
           shader: unshaded
           map: [ "enum.PowerDeviceVisualLayers.Powered" ]
-        - state: teg-op1
-          shader: unshaded
           visible: false
-          map: [ "enum.TegVisualLayers.PowerOutput" ]
     - type: GenericVisualizer
       visuals:
+        # Carpmosia-start - TEG resprite
+        enum.AnchorVisuals.Anchored:
+          enum.TegVisualLayers.CirculatorBase:
+            False: { state: passive }
+            True: { state: active }
+        # Carpmosia-end - TEG resprite
         enum.PowerDeviceVisuals.Powered:
           enum.PowerDeviceVisualLayers.Powered:
             True: { visible: true }
             False: { visible: false }
-        enum.TegVisuals.PowerOutput:
-          enum.TegVisualLayers.PowerOutput:
-            0: { visible: false }
-            1: { visible: true, state: teg-op1 }
-            2: { visible: true, state: teg-op2 }
-            3: { visible: true, state: teg-op3 }
-            4: { visible: true, state: teg-op4 }
-            5: { visible: true, state: teg-op5 }
-            6: { visible: true, state: teg-op6 }
-            7: { visible: true, state: teg-op7 }
-            8: { visible: true, state: teg-op8 }
-            9: { visible: true, state: teg-op9 }
-            10: { visible: true, state: teg-op10 }
-            11: { visible: true, state: teg-op11 }
 
     - type: Anchorable
     - type: Pullable
@@ -54,8 +46,10 @@
     - type: PowerMonitoringDevice
       group: Generator
       loadNode: output
-      sprite: Structures/Power/Generation/teg.rsi
-      state: static
+      # Carpmosia-start - TEG resprite
+      sprite: _Carpmosia/Structures/Power/Generation/teg_center.rsi
+      state: icon
+      # Carpmosia-end - TEG resprite
     - type: Rotatable
 
     # Note that only the TEG center is an AtmosDevice.
@@ -118,45 +112,53 @@
 
     # visuals
     - type: Sprite
-      sprite: _Carpmosia/Structures/Power/Generation/teg.rsi # Carpmosia-edit - 5 pipe layers
+      # Carpmosia-start - TEG resprite
+      sprite: _Carpmosia/Structures/Power/Generation/teg_circ.rsi # Carpmosia-edit - 5 pipe layers
       layers:
-        - state: circ-0
+        - state: passive
           map: [ "enum.TegVisualLayers.CirculatorBase" ]
-        - state: circ-0-light
+        - state: light
           shader: unshaded
           map: [ "enum.TegVisualLayers.CirculatorLight" ]
+          visible: false
+        - state: light-pulse1
+          shader: unshaded
+          map: [ "pulseLight" ]
+          visible: false
+      # Carpmosia-end - TEG resprite
     # Carpmosia-start - 5 pipe layers
     - type: AtmosPipeLayers
       spriteLayersRsiPaths:
+        # Carpmosia-start - TEG resprite
         enum.TegVisualLayers.CirculatorBase:
-          Primary: _Carpmosia/Structures/Power/Generation/teg.rsi
-          Secondary: _Carpmosia/Structures/Power/Generation/teg_alt1.rsi
-          Tertiary: _Carpmosia/Structures/Power/Generation/teg_alt2.rsi
-          Quaternary: _Carpmosia/Structures/Power/Generation/teg_alt3.rsi
-          Quinary: _Carpmosia/Structures/Power/Generation/teg_alt4.rsi
-        enum.TegVisualLayers.CirculatorLight:
-          Primary: _Carpmosia/Structures/Power/Generation/teg.rsi
-          Secondary: _Carpmosia/Structures/Power/Generation/teg_alt1.rsi
-          Tertiary: _Carpmosia/Structures/Power/Generation/teg_alt2.rsi
-          Quaternary: _Carpmosia/Structures/Power/Generation/teg_alt3.rsi
-          Quinary: _Carpmosia/Structures/Power/Generation/teg_alt4.rsi
+          Primary: _Carpmosia/Structures/Power/Generation/teg_circ.rsi
+          Secondary: _Carpmosia/Structures/Power/Generation/teg_circ_alt1.rsi
+          Tertiary: _Carpmosia/Structures/Power/Generation/teg_circ_alt2.rsi
+          Quaternary: _Carpmosia/Structures/Power/Generation/teg_circ_alt3.rsi
+          Quinary: _Carpmosia/Structures/Power/Generation/teg_circ_alt4.rsi
+        # Carpmosia-end - TEG resprite
     # Carpmosia-end - 5 pipe layers
 
     - type: GenericVisualizer
       visuals:
+        # Carpmosia-start - TEG resprite
+        enum.AnchorVisuals.Anchored:
+          enum.TegVisualLayers.CirculatorBase:
+            False: { state: passive }
+            True: { state: active }
         enum.TegVisuals.CirculatorPower:
           enum.TegVisualLayers.CirculatorLight:
             True: { visible: true }
             False: { visible: false }
+          pulseLight:
+            True: { visible: true }
+            False: { visible: false }
         enum.TegVisuals.CirculatorSpeed:
-          enum.TegVisualLayers.CirculatorBase:
-            SpeedStill: { state: circ-0 }
-            SpeedSlow: { state: circ-1 }
-            SpeedFast: { state: circ-2 }
-          enum.TegVisualLayers.CirculatorLight:
-            SpeedStill: { state: circ-0-light }
-            SpeedSlow: { state: circ-1-light }
-            SpeedFast: { state: circ-2-light }
+          pulseLight:
+            SpeedStill: { state: light-pulse1 }
+            SpeedSlow: { state: light-pulse2 }
+            SpeedFast: { state: light-pulse3 }
+        # Carpmosia-end - TEG resprite
 
     - type: Appearance
     - type: PointLight
