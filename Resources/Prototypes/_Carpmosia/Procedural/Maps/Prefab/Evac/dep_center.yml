@@ -1,0 +1,25 @@
+- type: dungeonRoom
+  id: PrefabEvacCenter1
+  size: 57,57
+  atlas: /Maps/_Carpmosia/Procedural/prefab.yml
+  offset: 175,1
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PrefabEvacCenter
+
+- type: Tag
+  id: PrefabEvacCenter
+
+- type: entity
+  id: PrefabEvacCenterMarker
+  parent: BasePrefabCenterMarker
+  suffix: Evac, Center
+  components:
+  - type: RoomFill
+    roomWhitelist:
+      tags:
+      - PrefabEvacCenter
+  - type: Sprite
+    layers:
+      - state: center
+      - state: evac

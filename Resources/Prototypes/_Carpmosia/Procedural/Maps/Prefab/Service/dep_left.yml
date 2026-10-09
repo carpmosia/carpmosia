@@ -1,0 +1,26 @@
+- type: dungeonRoom
+  id: PrefabServiceLeft1
+  size: 57,57
+  atlas: /Maps/_Carpmosia/Procedural/prefab.yml
+  offset: 407,117
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PrefabServiceLeft
+
+- type: Tag
+  id: PrefabServiceLeft
+
+- type: entity
+  id: PrefabServiceLeftMarker
+  parent: BasePrefabLeftMarker
+  suffix: Service, Left
+  components:
+  - type: RoomFill
+    roomWhitelist:
+      tags:
+      - PrefabServiceLeft
+  - type: Sprite
+    layers:
+      - state: arrow
+      - state: left
+      - state: service

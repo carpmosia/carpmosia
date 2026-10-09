@@ -1,0 +1,25 @@
+- type: dungeonRoom
+  id: PrefabScienceCenter1
+  size: 57,57
+  atlas: /Maps/_Carpmosia/Procedural/prefab.yml
+  offset: 291,1
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PrefabScienceCenter
+
+- type: Tag
+  id: PrefabScienceCenter
+
+- type: entity
+  id: PrefabScienceCenterMarker
+  parent: BasePrefabCenterMarker
+  suffix: Science, Center
+  components:
+  - type: RoomFill
+    roomWhitelist:
+      tags:
+      - PrefabScienceCenter
+  - type: Sprite
+    layers:
+      - state: center
+      - state: science
