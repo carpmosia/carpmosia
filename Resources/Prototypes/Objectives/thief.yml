@@ -556,7 +556,7 @@
 - type: entity
   parent: [BaseThiefObjective, BaseLivingObjective]
   id: EscapeThiefShuttleObjective
-  name: Escape to CentComm alive and unrestrained via the escape shuttle.
+  name: Escape to a terminal alive and unrestrained via the escape shuttle. # Carpmosia-edit - Replaced CC with Terminals
   description: You don't want your illegal activities to be discovered by anyone, do you?
   components:
   - type: Objective
