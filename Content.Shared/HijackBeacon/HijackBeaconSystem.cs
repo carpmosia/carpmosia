@@ -2,13 +2,16 @@ using Content.Shared.Cargo.Components;
 using Content.Shared.Chat;
 using Content.Shared.Construction.Components;
 using Content.Shared.Construction.EntitySystems;
+using Content.Shared.Coordinates;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio;
+using Robust.Shared.Physics.Components;
 using Robust.Shared.Serialization;
+using Robust.Shared.Serialization.TypeSerializers.Implementations;
 using Robust.Shared.Timing;
 
 namespace Content.Shared.HijackBeacon;
@@ -21,10 +24,10 @@ public sealed partial class HijackBeaconSystem : EntitySystem
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
 
     public readonly SoundSpecifier AnnounceSound = new SoundPathSpecifier("/Audio/Misc/notice1.ogg");
     public readonly SoundSpecifier DeactivateSound = new SoundPathSpecifier("/Audio/Misc/notice2.ogg");
-
     public override void Initialize()
     {
         base.Initialize();
@@ -46,6 +49,34 @@ public sealed partial class HijackBeaconSystem : EntitySystem
             switch (comp.Status)
             {
                 case HijackBeaconStatus.Armed:
+                    HashSet<Entity<PhysicsComponent>> nearestEnts = new();
+                    _lookup.GetEntitiesInRange<PhysicsComponent>(uid.ToCoordinates(), 1f, nearestEnts);
+                    double newEfficiency = 1;
+                    foreach (var ent in nearestEnts)
+                    {
+                        if (newEfficiency <= 0.125)
+                        {
+                            break;
+                        }
+                        if (!ent.Comp.CanCollide)
+                        {
+                            continue;
+                        }
+                        if (ent.Owner == uid)
+                        {
+                            continue;
+                        }
+                        newEfficiency -= 0.125;
+                    }
+                    if (active.Efficiency != newEfficiency)
+                    {
+                        TimeSpan timeLeft = active.CompletionTime - _gameTiming.CurTime;
+                        double timeLeftUnaffected = timeLeft.TotalSeconds * active.Efficiency;
+                        active.CompletionTime = _gameTiming.CurTime + TimeSpan.FromSeconds(timeLeftUnaffected / newEfficiency);
+
+                    }
+                    active.Efficiency = newEfficiency;
+
                     if (_gameTiming.CurTime < active.CompletionTime)
                         return;
 
@@ -141,6 +172,9 @@ public sealed partial class HijackBeaconSystem : EntitySystem
                args.PushMarkup(Loc.GetString("defusable-examine-live",
                    ("name", ent),
                    ("time", GetRemainingTime(ent.Owner))));
+                args.PushMarkup(Loc.GetString("defusable-examine-efficiency-live",
+                   ("name", ent),
+                   ("efficiency", GetEfficiency(ent.Owner))));
                break;
            case HijackBeaconStatus.Cooldown:
                args.PushMarkup(Loc.GetString("hijack-beacon-examine-await-cooldown"));
@@ -324,6 +358,14 @@ public sealed partial class HijackBeaconSystem : EntitySystem
             return 69420; // Mature error code
 
         return (int) (ent.Comp.CompletionTime - _gameTiming.CurTime).TotalSeconds;
+    }
+
+    private int GetEfficiency(Entity<ActiveHijackBeaconComponent?> ent)
+    {
+        if (!Resolve(ent, ref ent.Comp))
+            return 69420;
+        
+        return (int) (ent.Comp.Efficiency * 100);
     }
 
     #endregion
