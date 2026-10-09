@@ -32,7 +32,7 @@ public sealed partial class HijackBeaconComponent : Component
     /// </summary>
     [DataField, Access(typeof(HijackBeaconSystem))]
     // # Carpmosia-edit - ATS hijack rework
-    public TimeSpan RemainingTime = TimeSpan.FromSeconds(420); // trust me this wasnt intentional i really wanted 7 minutes
+    public TimeSpan RemainingTime = TimeSpan.FromSeconds(300);
 
     /// <summary>
     ///     Default amount of time before the beacon can be re-activated, if it is disarmed.
