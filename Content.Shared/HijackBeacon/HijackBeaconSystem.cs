@@ -11,7 +11,6 @@ using Content.Shared.Verbs;
 using Robust.Shared.Audio;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Serialization;
-using Robust.Shared.Serialization.TypeSerializers.Implementations;
 using Robust.Shared.Timing;
 
 namespace Content.Shared.HijackBeacon;
@@ -49,6 +48,7 @@ public sealed partial class HijackBeaconSystem : EntitySystem
             switch (comp.Status)
             {
                 case HijackBeaconStatus.Armed:
+                    // # Carpmosia-rework - ATS hijack rework
                     HashSet<Entity<PhysicsComponent>> nearestEnts = new();
                     _lookup.GetEntitiesInRange<PhysicsComponent>(uid.ToCoordinates(), 1f, nearestEnts);
                     double newEfficiency = 1;
@@ -76,7 +76,7 @@ public sealed partial class HijackBeaconSystem : EntitySystem
 
                     }
                     active.Efficiency = newEfficiency;
-
+                    // # Carpmosia-end - ATS hijack rework
                     if (_gameTiming.CurTime < active.CompletionTime)
                         return;
 
@@ -172,9 +172,11 @@ public sealed partial class HijackBeaconSystem : EntitySystem
                args.PushMarkup(Loc.GetString("defusable-examine-live",
                    ("name", ent),
                    ("time", GetRemainingTime(ent.Owner))));
+                // # Carpmosia-start - ATS hijack rework
                 args.PushMarkup(Loc.GetString("defusable-examine-efficiency-live",
                    ("name", ent),
                    ("efficiency", GetEfficiency(ent.Owner))));
+                // # Carpmosia-end - ATS hijack rework
                break;
            case HijackBeaconStatus.Cooldown:
                args.PushMarkup(Loc.GetString("hijack-beacon-examine-await-cooldown"));
@@ -359,7 +361,7 @@ public sealed partial class HijackBeaconSystem : EntitySystem
 
         return (int) (ent.Comp.CompletionTime - _gameTiming.CurTime).TotalSeconds;
     }
-
+    // # Carpmosia-start - ATS hijack rework
     private int GetEfficiency(Entity<ActiveHijackBeaconComponent?> ent)
     {
         if (!Resolve(ent, ref ent.Comp))
@@ -367,6 +369,7 @@ public sealed partial class HijackBeaconSystem : EntitySystem
         
         return (int) (ent.Comp.Efficiency * 100);
     }
+    // # Carpmosia-end - ATS hijack rework
 
     #endregion
 }
