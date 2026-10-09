@@ -1,0 +1,12 @@
+- type: construction
+  id: ResearchTreeMap
+  graph: ResearchTreeMap
+  startNode: start
+  targetNode: research_tree_map
+  category: construction-category-structures
+  placementMode: SnapgridCenter
+  objectType: Structure
+  canRotate: true
+  canBuildInImpassable: true
+  conditions:
+  - !type:WallmountCondition {}

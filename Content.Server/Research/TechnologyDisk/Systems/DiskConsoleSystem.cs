@@ -1,4 +1,4 @@
-using Content.Server.Research.Systems;
+using Content.Server._Carpmosia.Research;
 using Content.Server.Research.TechnologyDisk.Components;
 using Content.Shared.UserInterface;
 using Content.Shared.Research;
@@ -13,7 +13,7 @@ public sealed partial class DiskConsoleSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private AudioSystem _audio = default!;
-    [Dependency] private ResearchSystem _research = default!;
+    [Dependency] private FHResearchSystem _fhResearch = default!; // Carpmosia-edit - FH research tree
     [Dependency] private UserInterfaceSystem _ui = default!;
 
     /// <inheritdoc/>
@@ -47,13 +47,13 @@ public sealed partial class DiskConsoleSystem : EntitySystem
         if (HasComp<DiskConsolePrintingComponent>(uid))
             return;
 
-        if (!_research.TryGetClientServer(uid, out var server, out var serverComp))
+        if (!_fhResearch.TryGetServerWithTree(uid, out var server)) // Carpmosia-edit - FH research tree
             return;
 
-        if (serverComp.Points < component.PricePerDisk)
+        if (server.Value.Comp.BankedPoints < component.PricePerDisk) // Carpmosia-edit - FH research tree
             return;
 
-        _research.ModifyServerPoints(server.Value, -component.PricePerDisk, serverComp);
+        _fhResearch.AddBankedPoints(server.Value, -component.PricePerDisk); // Carpmosia-edit - FH research tree
         _audio.PlayPvs(component.PrintSound, uid);
 
         var printing = EnsureComp<DiskConsolePrintingComponent>(uid);
@@ -82,10 +82,10 @@ public sealed partial class DiskConsoleSystem : EntitySystem
             return;
 
         var totalPoints = 0;
-        if (_research.TryGetClientServer(uid, out _, out var server))
-        {
-            totalPoints = server.Points;
-        }
+        // Carpmosia-start - FH research tree
+        if (_fhResearch.TryGetServerWithTree(uid, out var server))
+            totalPoints = server.Value.Comp.BankedPoints;
+        // Carpmosia-end - FH research tree
 
         var canPrint = !(TryComp<DiskConsolePrintingComponent>(uid, out var printing) && printing.FinishTime >= _timing.CurTime) &&
                        totalPoints >= component.PricePerDisk;

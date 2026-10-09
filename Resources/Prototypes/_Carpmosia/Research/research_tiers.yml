@@ -1,0 +1,19 @@
+- type: researchTreeTier
+  id: Tier1
+  name: "Tier 1"
+  position: 0
+  color: "#001900"
+
+- type: researchTreeTier
+  id: Tier2
+  name: "Tier 2"
+  position: 1
+  color: "#001919"
+  unlocksAt: 85000
+
+- type: researchTreeTier
+  id: Tier3
+  name: "Tier 3"
+  position: 2
+  color: "#190019"
+  unlocksAt: 300000

@@ -1,3 +1,5 @@
+using Content.Server._Carpmosia.Research;
+using Content.Shared._Carpmosia.Research.Components;
 using Content.Shared.Research.Components;
 using Content.Shared.Research.Systems;
 using Robust.Shared.Random;
@@ -6,7 +8,7 @@ namespace Content.Server.Research.Systems;
 
 public sealed partial class ResearchStealerSystem : SharedResearchStealerSystem
 {
-    [Dependency] private SharedResearchSystem _research = default!;
+    [Dependency] private FHResearchSystem _fhResearch = default!; // Carpmosia-edit - FH research tree
     [Dependency] private IRobustRandom _random = default!;
 
     public override void Initialize()
@@ -23,18 +25,18 @@ public sealed partial class ResearchStealerSystem : SharedResearchStealerSystem
 
         var target = args.Target.Value;
 
-        if (!TryComp<TechnologyDatabaseComponent>(target, out var database))
+        if (!TryComp<FHResearchTreeComponent>(target, out var tree)) // Carpmosia-edit - FH research tree
             return;
 
         var ev = new ResearchStolenEvent(uid, target, new());
         var count = _random.Next(comp.MinToSteal, comp.MaxToSteal + 1);
         for (var i = 0; i < count; i++)
         {
-            if (database.UnlockedTechnologies.Count == 0)
+            if (tree.Researched.Count == 0) // Carpmosia-edit - FH research tree
                 break;
 
-            var toRemove = _random.Pick(database.UnlockedTechnologies);
-            if (_research.TryRemoveTechnology((target, database), toRemove))
+            var toRemove = _random.Pick(_fhResearch.GetRemovableReseach((target, tree))); // Carpmosia-edit - FH research tree
+            if (_fhResearch.TryRemoveResearchedNode((target, tree), toRemove)) // Carpmosia-edit - FH research tree
                 ev.Techs.Add(toRemove);
         }
         RaiseLocalEvent(uid, ref ev);

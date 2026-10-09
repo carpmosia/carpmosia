@@ -1,0 +1,64 @@
+- type: constructionGraph
+  id: ResearchTreeMap
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: assembly
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 2.0
+
+  - node: assembly
+    entity: ResearchTreeMapAssembly
+    actions:
+    - !type:AppearanceChange
+    edges:
+    - to: research_tree_map
+      steps:
+      - tag: ResearchTreeMapElectronics
+        store: board
+        name: research-tree-map-electronics
+        icon:
+          sprite: "Objects/Misc/module.rsi"
+          state: "science"
+        doAfter: 1
+    - to: start
+      completed:
+      - !type:GivePrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:DeleteEntity {}
+      steps:
+      - tool: Screwing
+        doAfter: 2
+
+  - node: electronics
+    entity: ResearchTreeMapAssembly
+    actions:
+    - !type:AppearanceChange
+    edges:
+    - to: assembly
+      conditions:
+      - !type:ContainerNotEmpty
+        container: board
+      completed:
+      - !type:EmptyAllContainers
+        pickup: true
+        emptyAtUser: true
+      steps:
+      - tool: Prying
+        doAfter: 3
+    - to: research_tree_map
+      steps:
+      - tool: Screwing
+        doAfter: 1
+
+  - node: research_tree_map
+    entity: ResearchTreeMap
+    edges:
+    - to: electronics
+      steps:
+      - tool: Screwing
+        doAfter: 1
