@@ -63,6 +63,14 @@
     notificationPrefix: prayer-chat-notify-centcom
     verb: prayer-verbs-call
     verbImage: null
+  # Carpmosia-start - Phones have ring emote/action
+  - type: Vocal
+    emoteSounds: PhoneRing
+    screamId: PhoneRing  # why does this exist
+    emoteAction: ActionPhoneRing
+  - type: Speech  # this is the best way I can think to make only phones be allowed to ring (alongside `allowed: false` on emote)
+    allowedEmotes: ['PhoneRing']
+  # Carpmosia-end - Phones have ring emote/action
 
 - type: entity
   parent: PhoneInstrument
@@ -76,6 +84,14 @@
   - type: Prayable
     sentMessage: prayer-popup-notify-syndicate-sent
     notificationPrefix: prayer-chat-notify-syndicate
+  # Carpmosia-start - Phones have ring emote/action
+  - type: Vocal
+    emoteSounds: PhoneRing
+    screamId: PhoneRing
+    emoteAction: ActionPhoneRing
+  - type: Speech
+    allowedEmotes: ['PhoneRing']
+  # Carpmosia-end - Phones have ring emote/action
 
 - type: entity
   parent: BaseHandheldInstrument
@@ -181,3 +197,11 @@
     notificationPrefix: prayer-chat-notify-honkmother
     verb: prayer-verbs-call
     verbImage: null
+  # Carpmosia-start - Phones have ring emote/action
+  - type: Vocal
+    emoteSounds: PhoneRing
+    screamId: PhoneRing
+    emoteAction: ActionPhoneRing
+  - type: Speech
+    allowedEmotes: ['PhoneRing']
+  # Carpmosia-end - Phones have ring emote/action
