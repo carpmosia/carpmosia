@@ -13,4 +13,10 @@ public sealed partial class ActiveHijackBeaconComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField, Access(typeof(HijackBeaconSystem))]
     public TimeSpan CompletionTime = TimeSpan.Zero;
+
+    /// <summary>
+    ///     Efficiency of the hijack beacon, more adjacent objects reduces its efficiency.
+    /// </summary>
+    [DataField, AutoNetworkedField, Access(typeof(HijackBeaconSystem))]
+    public double Efficiency = 1;
 }
