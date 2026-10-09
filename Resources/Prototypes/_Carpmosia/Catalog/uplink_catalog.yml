@@ -35,3 +35,22 @@
   - !type:BuyerAntagCondition
     whitelist:
     - NukeopsCommander
+
+- type: listing
+  id: uplinkHijackKit
+  name: uplink-hijack-kit-name
+  description: uplink-hijack-kit-desc
+  productEntity: ClothingBackpackSyndicateATSHijackBundle
+  categories:
+    - UplinkObjective
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  - !type:BuyerObjectiveWhitelistCondition
+    whitelist:
+      components:
+      - HijackTradeStationCondition
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
