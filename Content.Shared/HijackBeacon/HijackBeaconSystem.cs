@@ -54,7 +54,7 @@ public sealed partial class HijackBeaconSystem : EntitySystem
                     double newEfficiency = 1;
                     foreach (var ent in nearestEnts)
                     {
-                        if (newEfficiency <= 0.125)
+                        if (newEfficiency <= 0.3)
                         {
                             break;
                         }
