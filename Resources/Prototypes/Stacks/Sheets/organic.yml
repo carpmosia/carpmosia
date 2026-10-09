@@ -2,12 +2,12 @@
   parent: BaseSheetStack
   id: Paper
   name: stack-paper
-  icon: { sprite: /Textures/Objects/Materials/Sheets/other.rsi, state: paper }
+  icon: { sprite: /Textures/_Carpmosia/Objects/Materials/Sheets/other.rsi, state: paper } # Carpmosia-edit - Material resprite
   spawn: SheetPaper1
 
 - type: stack
   parent: BaseSheetStack
   id: MeatSheets
   name: stack-meat-sheet
-  icon: { sprite: /Textures/Objects/Materials/Sheets/meaterial.rsi, state: meat }
+  icon: { sprite: /Textures/_Carpmosia/Objects/Materials/Sheets/meaterial.rsi, state: meat } # Carpmosia-edit - Material resprite
   spawn: MaterialSheetMeat1
