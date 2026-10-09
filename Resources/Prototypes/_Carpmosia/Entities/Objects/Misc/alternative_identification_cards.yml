@@ -1,0 +1,76 @@
+# Supply
+- type: entity
+  parent: CargoIDCard
+  id: PostmanIDCard
+  name: postman ID card
+  components:
+  - type: PresetIdCard
+    customTitle: "alt-job-title-postman"
+
+- type: entity
+  parent: CargoIDCard
+  id: LogisticsAccountantIDCard
+  name: logistics accountant ID card
+  components:
+  - type: PresetIdCard
+    customTitle: "alt-job-title-logistics-accountant"
+
+#Engineering
+- type: entity
+  parent: EngineeringIDCard
+  id: CommunicationsOperatorIDCard
+  name: communications operator id card
+  components:
+  - type: PresetIdCard
+    customTitle: "alt-job-title-communications-operator"
+
+- type: entity
+  parent: EngineeringIDCard
+  id: StationArchitectIDCard
+  name: station architect id card
+  components:
+  - type: PresetIdCard
+    customTitle: "alt-job-title-station-architect"
+
+#Medical
+- type: entity
+  parent: MedicalIDCard
+  id: NurseIDCard
+  name: nurse id card
+  components:
+  - type: PresetIdCard
+    customTitle: "alt-job-title-nurse"
+
+#Science
+- type: entity
+  parent: ResearchIDCard
+  id: RoboticistIDCard
+  name: roboticist id card
+  components:
+  - type: PresetIdCard
+    customTitle: "alt-job-title-roboticist"
+
+- type: entity
+  parent: ResearchIDCard
+  id: XenoarcheologistIDCard
+  name: xenoarcheologist id card
+  components:
+  - type: PresetIdCard
+    customTitle: "alt-job-title-xenoarcheologist"
+
+#Misc
+- type: entity
+  parent: PassengerIDCard
+  id: AssistantIDCard
+  name: assistant id card
+  components:
+  - type: PresetIdCard
+    customTitle: "alt-job-title-assistant"
+
+- type: entity
+  parent: ReporterIDCard
+  id: JournalistIDCard
+  name: journalist id card
+  components:
+  - type: PresetIdCard
+    customTitle: "alt-job-title-journalist"
