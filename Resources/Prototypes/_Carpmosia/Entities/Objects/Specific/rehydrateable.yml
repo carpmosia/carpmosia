@@ -6,3 +6,12 @@
   - type: Rehydratable
     possibleSpawns:
     - MobKitti
+
+- type: entity
+  parent: RehydratableAnimalCube
+  id: DwothCube
+  name: dwoth cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobDwoth
