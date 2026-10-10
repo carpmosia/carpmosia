@@ -31,7 +31,7 @@ public sealed partial class HijackBeaconComponent : Component
     ///     Remaining time until the hijack is completed.
     /// </summary>
     [DataField, Access(typeof(HijackBeaconSystem))]
-    // # Carpmosia-edit - ATS hijack rework
+    // Carpmosia-edit - ATS hijack rework
     public TimeSpan RemainingTime = TimeSpan.FromSeconds(300);
 
     /// <summary>
