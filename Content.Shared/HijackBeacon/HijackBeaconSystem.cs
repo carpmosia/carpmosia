@@ -48,7 +48,7 @@ public sealed partial class HijackBeaconSystem : EntitySystem
             switch (comp.Status)
             {
                 case HijackBeaconStatus.Armed:
-                    // # Carpmosia-start - ATS hijack rework
+                    // Carpmosia-start - ATS hijack rework
                     HashSet<Entity<PhysicsComponent>> nearestEnts = new();
                     _lookup.GetEntitiesInRange<PhysicsComponent>(uid.ToCoordinates(), 1f, nearestEnts);
                     double newEfficiency = 1;
@@ -76,7 +76,7 @@ public sealed partial class HijackBeaconSystem : EntitySystem
 
                     }
                     active.Efficiency = newEfficiency;
-                    // # Carpmosia-end - ATS hijack rework
+                    // Carpmosia-end - ATS hijack rework
                     if (_gameTiming.CurTime < active.CompletionTime)
                         return;
 
