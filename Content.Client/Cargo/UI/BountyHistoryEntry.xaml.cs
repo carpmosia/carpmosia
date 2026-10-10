@@ -25,9 +25,7 @@ public sealed partial class BountyHistoryEntry : BoxContainer
         var items = new List<string>();
         foreach (var entry in bountyPrototype.Entries)
         {
-            items.Add(Loc.GetString("bounty-console-manifest-entry",
-                ("amount", entry.Amount),
-                ("item", Loc.GetString(entry.Name))));
+            items.Add(CargoBountyLocalisationHelpers.GetManifestText(entry)); // Carpmosia-edit - Cargo reagent bounties
         }
 
         ManifestLabel.SetMarkup(Loc.GetString("bounty-console-manifest-label", ("item", string.Join(", ", items))));

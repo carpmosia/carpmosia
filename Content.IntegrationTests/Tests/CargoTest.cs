@@ -159,7 +159,7 @@ public sealed class CargoTest : GameTest
                     foreach (var entry in bounty.Entries)
                     {
                         // See if the entity counts as part of this bounty entry
-                        if (!_sCargo.IsValidBountyEntry(ent, entry))
+                        if (entry is not CargoBountyItemEntry itemEntry || !_sCargo.IsValidBountyEntry(ent, itemEntry)) // Carpmosia-edit - Cargo reagent bounties
                             continue;
 
                         // Spawn a slice
@@ -174,7 +174,7 @@ public sealed class CargoTest : GameTest
                             var slice = SSpawnAtPosition(sliceProtoId, coordinates);
 
                             // See if the slice also counts for this bounty entry
-                            if (!_sCargo.IsValidBountyEntry(slice, entry))
+                            if (!_sCargo.IsValidBountyEntry(slice, itemEntry)) // Carpmosia-edit - Cargo reagent bounties
                             {
                                 SDeleteNow(slice);
                                 continue;
