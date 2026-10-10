@@ -36,7 +36,7 @@ namespace Content.Server.Power.EntitySystems
 
             foreach (var reachable in node.ReachableNodes)
             {
-                if (reachable is not CableNode)
+                if (reachable is not (CableNode or CableDeviceNodeAdjacent)) // Carpmosia-edit - Wallmount adjacent power
                     continue;
 
                 var otherTransform = Transform(reachable.Owner);

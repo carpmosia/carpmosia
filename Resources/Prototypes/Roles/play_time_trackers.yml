@@ -64,8 +64,10 @@
 - type: playTimeTracker
   id: JobERTSecurity
 
-- type: playTimeTracker
-  id: JobDeathSquad
+# Carpmosia-start - Remove Deathsquad
+# - type: playTimeTracker
+#   id: JobDeathSquad
+# Carpmosia-end - Remove Deathsquad
 
 - type: playTimeTracker
   id: JobCBURN
@@ -141,6 +143,9 @@
 
 - type: playTimeTracker
   id: JobTechnicalAssistant
+
+- type: playTimeTracker
+  id: JobTramDriver
 
 - type: playTimeTracker
   id: JobVisitor

@@ -2,13 +2,12 @@
   id: CarpLampocteis
   mapName: 'Lampocteis'
   mapPath: /Maps/_Carpmosia/lampocteis.yml
-  mapIcon: /Textures/_Carpmosia/Interface/MapVote/carp.png
   mapPreview: MapPreviewLampocteis
   minPlayers: 0
-  maxPlayers: 10
+  maxPlayers: 20
   # fallback
   stations:
-    Jelfy:
+    Lampocteis:
       stationProto: StandardNanotrasenStation
       components:
       - type: StationNameSetup
@@ -18,7 +17,7 @@
           !type:NanotrasenNameGenerator
           prefixCreator: 'JF'
       - type: StationEmergencyShuttle
-        emergencyShuttlePath: /Maps/_Carpmosia/Shuttles/emergency_ghoti.yml
+        emergencyShuttlePath: /Maps/_Carpmosia/Shuttles/Emergency/ghoti.yml
       - type: StationJobs
         availableJobs: # 49 jobs total w/o latejoins & interns, 58 jobs total w/ latejoins & interns
         # Command (7)

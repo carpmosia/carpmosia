@@ -2,7 +2,6 @@ using Content.Server.Administration.Logs;
 using Content.Server.Power.SMES; // Carpmosia-edit - Engine Loose Rework
 using Content.Server.Singularity.Components;
 using Content.Server.Tesla.Components;
-using Content.Shared.Emp; // Carpmosia-edit - Engine Loose Rework
 using Content.Shared.Database;
 using Content.Shared.Singularity.Components;
 using Content.Shared.Mind.Components;
@@ -22,7 +21,6 @@ public sealed partial class TeslaEnergyBallSystem : EntitySystem
 {
     [Dependency] private AudioSystem _audio = default!;
     // Carpmosia-start - Engine Loose Rework
-    [Dependency] private SharedEmpSystem _emp = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private LightningSystem _lightning = default!;
     // Carpmosia-end - Engine Loose Rework
@@ -79,8 +77,7 @@ public sealed partial class TeslaEnergyBallSystem : EntitySystem
         }
 
         _audio.PlayPvs(ent.Comp.SoundExplosion, coords);
-        _emp.EmpPulse(coords, ent.Comp.EmpRange, ent.Comp.EmpConsumption, ent.Comp.EmpDuration);
-        _lightning.ShootRandomLightnings(ent, ent.Comp.EmpRange, ent.Comp.SpawnAmount * 4, arcDepth: 3);
+        _lightning.ShootRandomLightnings(ent, ent.Comp.EmpRange, ent.Comp.SpawnAmount * 2, arcDepth: 3);
 
         QueueDel(ent);
     }

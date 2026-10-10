@@ -2,7 +2,7 @@
   abstract: true
   parent: AirSensorBase
   id: AirSensorVoxBase
-  suffix: Vox Atmosphere
+  suffix: Nitrogen # Carpmosia-edit - Pipe presets
   components:
   - type: AtmosMonitor
     gasThresholdPrototypes:
@@ -18,35 +18,33 @@
 
 - type: entity
   parent: [AirSensorVoxBase, AirSensor]
-  id: AirSensorVox
+  id: AirSensorNitrogen # Carpmosia-edit - Pipe presets
 
 - type: entity
-  parent: [AirSensorVoxBase, GasVentPumpVoxBase, GasVentPump] # Carpmosia-edit - Atmos Alt Prototypes
-  id: GasVentPumpVox
+  parent: [BaseAtmosNitrogen, AirSensorVoxBase, GasVentPumpAlt2] # Carpmosia-edit - Pipe presets
+  id: GasVentPumpNitrogen # Carpmosia-edit - Pipe presets
 
 - type: entity
-  parent: [AirSensorVoxBase, GasVentScrubberVoxBase, GasVentScrubber] # Carpmosia-edit - Atmos Alt Prototypes
-  id: GasVentScrubberVox
-# Carpmosia-start - Atmos Alt Prototypes
-#  components:
-#  - type: GasVentScrubber
-#    wideNet: true # Air alarm with auto mode overrides filters with hardcoded defaults so default to widenet
-#    filterGases:
-#    - Oxygen # filter out oxygen as well as regular harmful gases
-#    - CarbonDioxide
-#    - Plasma
-#    - Tritium
-#    - WaterVapor
-#    - Ammonia
-#    - NitrousOxide
-#    - Frezon
-# Carpmosia-end - Atmos Alt Prototypes
+  parent: [BaseAtmosWaste, AirSensorVoxBase, GasVentScrubberAlt3] # Carpmosia-edit - Pipe presets
+  id: GasVentScrubberNitrogen # Carpmosia-edit - Pipe presets
+  components:
+  - type: GasVentScrubber
+    wideNet: true # Air alarm with auto mode overrides filters with hardcoded defaults so default to widenet
+    filterGases:
+    - Oxygen # filter out oxygen as well as regular harmful gases
+    - CarbonDioxide
+    - Plasma
+    - Tritium
+    - WaterVapor
+    - Ammonia
+    - NitrousOxide
+    - Frezon
 
 # use this to prevent overriding filters with hardcoded defaults
 - type: entity
   parent: AirAlarm
-  id: AirAlarmVox
-  suffix: Vox Atmosphere, auto mode disabled
+  id: AirAlarmNitrogen # Carpmosia-edit - Pipe presets
+  suffix: Nitrogen, auto mode disabled # Carpmosia-edit - Pipe presets
   components:
   - type: AirAlarm
     autoMode: false

@@ -1,4 +1,4 @@
-﻿- type: constructionGraph
+- type: constructionGraph
   id: BananiumHorn
   start: start
   graph:
@@ -9,7 +9,7 @@
             - tag: Pipe
               name: construction-graph-tag-pipe
               icon:
-                sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Carpmosia-edit - 5 pipe layers
+                sprite: Structures/Piping/Atmospherics/pipe.rsi
                 state: pipeStraight
               doAfter: 2
             - material: Bananium

@@ -98,20 +98,24 @@ public sealed partial class GameMapManager : IGameMapManager
 
     public IEnumerable<GameMapPrototype> CurrentlyEligibleMaps()
     {
-        var maps = AllVotableMaps().Where(IsMapEligible).ToArray();
+        // Carpmosia-start - Better map rotation
+        var maps = AllVotableMaps().Where(IsMapEligible)
+            .OrderByDescending(x => GetMapRotationQueuePriority(x.ID))
+            .ToArray();
+        // Carpmosia-end - Better map rotation
         return maps.Length == 0 ? AllMaps().Where(x => x.Fallback) : maps;
     }
 
     public IEnumerable<GameMapPrototype> AllVotableMaps()
     {
-        var poolPrototype = _entityManager.System<GameTicker>().Preset?.MapPool ??
+        var poolPrototype = _entityManager.System<ServerGameTicker>().Preset?.MapPool ??
                    _configurationManager.GetCVar(CCVars.GameMapPool);
 
-        if (_prototypeManager.TryIndex<GameMapPoolPrototype>(poolPrototype, out var pool))
+        if (_prototypeManager.TryIndex(poolPrototype, out var pool))
         {
             foreach (var map in pool.Maps)
             {
-                if (!_prototypeManager.TryIndex<GameMapPrototype>(map, out var mapProto))
+                if (!_prototypeManager.TryIndex(map, out var mapProto))
                 {
                     _log.Error($"Couldn't index map {map} in pool {poolPrototype}");
                     continue;
@@ -161,6 +165,11 @@ public sealed partial class GameMapManager : IGameMapManager
         if (!TryLookupMap(gameMap, out var map))
             throw new ArgumentException($"The map \"{gameMap}\" is invalid!");
         _selectedMap = [map]; // Carpmosia-edit - Multistation
+
+        // Carpmosia-start - Better map rotation
+        if (_mapRotationEnabled)
+            EnqueueMap(map.ID);
+        // Carpmosia-end - Better map rotation
     }
 
     public void SelectMapRandom()
@@ -203,7 +212,7 @@ public sealed partial class GameMapManager : IGameMapManager
         return map.MaxPlayers >= _playerManager.PlayerCount &&
                map.MinPlayers <= _playerManager.PlayerCount &&
                map.Conditions.All(x => x.Check(map)) &&
-               _entityManager.System<GameTicker>().IsMapEligible(map);
+               _entityManager.System<ServerGameTicker>().IsMapEligible(map);
     }
 
     private bool TryLookupMap(string gameMap, [NotNullWhen(true)] out GameMapPrototype? map)

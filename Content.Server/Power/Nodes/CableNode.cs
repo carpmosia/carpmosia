@@ -38,6 +38,13 @@ namespace Content.Server.Power.Nodes
                     nodeDirs.Add((Direction.Invalid, node));
                 }
 
+                // Carpmosia-start - Wallmount adjacent power
+                if (node is CableDeviceNodeAdjacent && dir == xformQuery.Comp(node.Owner).LocalRotation.GetCardinalDir().GetOpposite())
+                {
+                    nodeDirs.Add((dir, node));
+                }
+                // Carpmosia-end - Wallmount adjacent power
+
                 if (node is CableTerminalNode)
                 {
                     if (dir == Direction.Invalid)
