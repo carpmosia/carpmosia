@@ -1,4 +1,5 @@
 using Robust.Shared.GameStates;
+using Robust.Shared.Physics.Components;
 
 namespace Content.Shared.HijackBeacon;
 
@@ -21,5 +22,9 @@ public sealed partial class ActiveHijackBeaconComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField, Access(typeof(HijackBeaconSystem))]
     public double Efficiency = 1;
+
+
+    [DataField, AutoNetworkedField, Access(typeof(HijackBeaconSystem))]
+    public HashSet<Entity<PhysicsComponent>> NearestEntities = [];
     // Carpmosia-end - ATS hijack rework
 }

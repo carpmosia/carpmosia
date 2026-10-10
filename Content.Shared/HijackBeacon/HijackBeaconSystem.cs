@@ -52,10 +52,10 @@ public sealed partial class HijackBeaconSystem : EntitySystem
             {
                 case HijackBeaconStatus.Armed:
                     // Carpmosia-start - ATS hijack rework
-                    HashSet<Entity<PhysicsComponent>> nearestEnts = new();
-                    _lookup.GetEntitiesInRange<PhysicsComponent>(uid.ToCoordinates(), 1f, nearestEnts);
+                    active.NearestEntities.Clear();
+                    _lookup.GetEntitiesInRange<PhysicsComponent>(uid.ToCoordinates(), 1f, active.NearestEntities);
                     double newEfficiency = 1;
-                    foreach (var ent in nearestEnts)
+                    foreach (var ent in active.NearestEntities)
                     {
                         if (newEfficiency <= 0.3)
                         {
