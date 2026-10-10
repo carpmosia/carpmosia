@@ -15,11 +15,11 @@ public sealed partial class ActiveHijackBeaconComponent : Component
     public TimeSpan CompletionTime = TimeSpan.Zero;
 
 
-    // # Carpmosia-start - ATS hijack rework
+    // Carpmosia-start - ATS hijack rework
     /// <summary>
     ///     Efficiency of the hijack beacon, more adjacent objects reduces its efficiency.
     /// </summary>
     [DataField, AutoNetworkedField, Access(typeof(HijackBeaconSystem))]
     public double Efficiency = 1;
-    // # Carpmosia-end - ATS hijack rework
+    // Carpmosia-end - ATS hijack rework
 }
