@@ -1,20 +1,32 @@
 - files:
-  - gray.png
-  - gray-herringbone.png
+  - gray-damaged.png
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from /tg/station at commit 6665eec76c98a4f3f89bebcd10b34b47dcc0b8ae"
+  source: "https://github.com/tgstation/tgstation/"
+
+- files:
+  - gray-vertical-slats.png
   - gray-horizontal-slats.png
-  - gray-maint.png
-  - gray-mini.png
-  - gray-mono.png
+  license: "CC0-1.0"
+  copyright: "created by SeaWyrm (github Aearo-Deepwater)"
+  source: "https://github.com/space-wizards/space-station-14/pull/37832"
+
+- files:
+  - gray.png
+  # - gray-diagonal.png
+  - white-mini.png
+  # - gray-offset.png
   - gray-pavement.png
   - gray-pavement-vertical.png
   - gray-plastic.png
-  - gray-vertical-slats.png
-  license: "CC0-1.0"
-  copyright: "By AftrLite (GitHub)"
-  source: "https://github.com/space-wizards/space-station-14"
+  - gray-herringbone.png
+  - gray-mono.png
+  license: "CC-BY-SA-3.0"
+  copyright: "Created by github user @Flareguy, original, unedited base tiles modified from /tg/station at commit 6665eec76c98a4f3f89bebcd10b34b47dcc0b8ae and github user @moonheart08"
+  source: "https://github.com/space-wizards/space-station-14/"
 
 - files:
-  - gray-damaged.png
+  - gray-maint.png
   license: "CC-BY-SA-3.0"
-  copyright: "Damage overlays by WJohn (GitHub). Gray tile by AftrLite (GitHub)."
-  source: "https://github.com/wall-nerds/wallening/blob/9428d97a4fadf8a486b0c6fbe2ee345a2780e687/icons/turf/damaged.dmi"
+  copyright: "by brainfood for space-station-14, ."
+  source: "https://github.com/space-wizards/space-station-14/pull/12193"
