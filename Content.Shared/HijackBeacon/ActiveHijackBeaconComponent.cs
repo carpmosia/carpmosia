@@ -1,4 +1,5 @@
 using Robust.Shared.GameStates;
+using Robust.Shared.Physics.Components;
 
 namespace Content.Shared.HijackBeacon;
 
@@ -13,4 +14,13 @@ public sealed partial class ActiveHijackBeaconComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField, Access(typeof(HijackBeaconSystem))]
     public TimeSpan CompletionTime = TimeSpan.Zero;
+
+
+    // Carpmosia-start - ATS hijack rework
+    /// <summary>
+    ///     Efficiency of the hijack beacon, more adjacent objects reduces its efficiency.
+    /// </summary>
+    [DataField, AutoNetworkedField, Access(typeof(HijackBeaconSystem))]
+    public double Efficiency = 1;
+    // Carpmosia-end - ATS hijack rework
 }
