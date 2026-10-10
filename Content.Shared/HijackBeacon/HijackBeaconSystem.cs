@@ -28,6 +28,7 @@ public sealed partial class HijackBeaconSystem : EntitySystem
     // Carpmosia-edit - ATS hijack rework
     [Dependency] private EntityLookupSystem _lookup = default!;
 
+    public HashSet<Entity<PhysicsComponent>> NearestEntities = [];
     public readonly SoundSpecifier AnnounceSound = new SoundPathSpecifier("/Audio/Misc/notice1.ogg");
     public readonly SoundSpecifier DeactivateSound = new SoundPathSpecifier("/Audio/Misc/notice2.ogg");
     public override void Initialize()
@@ -52,10 +53,10 @@ public sealed partial class HijackBeaconSystem : EntitySystem
             {
                 case HijackBeaconStatus.Armed:
                     // Carpmosia-start - ATS hijack rework
-                    active.NearestEntities.Clear();
-                    _lookup.GetEntitiesInRange<PhysicsComponent>(uid.ToCoordinates(), 1f, active.NearestEntities);
+                    NearestEntities.Clear();
+                    _lookup.GetEntitiesInRange<PhysicsComponent>(uid.ToCoordinates(), 1f, NearestEntities);
                     double newEfficiency = 1;
-                    foreach (var ent in active.NearestEntities)
+                    foreach (var ent in NearestEntities)
                     {
                         if (newEfficiency <= 0.3)
                         {
