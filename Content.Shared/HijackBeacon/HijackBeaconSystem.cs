@@ -365,10 +365,13 @@ public sealed partial class HijackBeaconSystem : EntitySystem
         return (int) (ent.Comp.CompletionTime - _gameTiming.CurTime).TotalSeconds;
     }
     // # Carpmosia-start - ATS hijack rework
+    /// <summary>
+    ///     Returns a percentage of the efficiency of the beacon.
+    /// </summary>
     private int GetEfficiency(Entity<ActiveHijackBeaconComponent?> ent)
     {
         if (!Resolve(ent, ref ent.Comp))
-            return 69420;
+            return 100;
         
         return (int) (ent.Comp.Efficiency * 100);
     }
