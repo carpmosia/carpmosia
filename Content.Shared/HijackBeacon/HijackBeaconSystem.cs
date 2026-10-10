@@ -2,6 +2,7 @@ using Content.Shared.Cargo.Components;
 using Content.Shared.Chat;
 using Content.Shared.Construction.Components;
 using Content.Shared.Construction.EntitySystems;
+// Carpmosia-edit - ATS hijack rework
 using Content.Shared.Coordinates;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
@@ -9,6 +10,7 @@ using Content.Shared.Examine;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio;
+// Carpmosia-edit - ATS hijack rework
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
@@ -23,6 +25,7 @@ public sealed partial class HijackBeaconSystem : EntitySystem
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
+    // Carpmosia-edit - ATS hijack rework
     [Dependency] private EntityLookupSystem _lookup = default!;
 
     public readonly SoundSpecifier AnnounceSound = new SoundPathSpecifier("/Audio/Misc/notice1.ogg");
