@@ -1,0 +1,138 @@
+- type: entity
+  parent: [ BaseStructure, StructureHealthDoor ]
+  id: Turnstile # Carpmosia-edit - Respritening
+  name: turnstile # Carpmosia-edit - Respritening
+  description: A mechanical door that permits one-way access and prevents tailgating. # Carpmosia-edit - Respritening
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Misc/energy-gate.rsi
+    snapCardinals: true # Carpmosia-edit - Respritening
+    drawdepth: Doors
+    layers:
+    - state: security
+    # Carpmosia-start - Respritening
+      map: [ "enum.TurnstileVisualLayers.Base" ]
+    # - state: idle-security
+    #   shader: unshaded
+    #   map: [ "barrier" ]
+    # - state: direction
+    #   shader: unshaded
+    # Carpmosia-end - Respritening
+  - type: Appearance
+  # Carpmosia-start - Respritening
+  # - type: GenericVisualizer
+  #   visuals:
+  #     enum.TurnstileVisualLayers.Base:
+  #       barrier:
+  #         Idle: { state: idle-security }
+  #         Spin: { state: operate }
+  #         Deny: { state: deny }
+  # Carpmosia-end - Respritening
+  - type: AnimationPlayer
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,0.49" # same dimensions as a door for tall turnstile, prevents objects being thrown through
+        density: 100
+        mask:
+        - FullTileMask
+        layer:
+        - GlassAirlockLayer
+      fix2:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.50,-0.50,0.50,0.50" # same dimensions as a door for tall turnstile, prevents objects being thrown through
+        hard: false
+        mask:
+        - FullTileMask
+        layer:
+        - GlassAirlockLayer
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path:
+          "/Audio/Weapons/smash.ogg"
+  - type: InteractionOutline
+  - type: Turnstile
+    processWhitelist:
+      components:
+      - MobState # no mobs
+      - Pullable # no dragging things in
+  - type: Damageable
+    damageModifierSet: SteelStaticMod
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+  - type: AccessReader
+  - type: Construction
+    graph: EnergyGate
+    node: energyGate
+  - type: DirectionalArrowIndicator
+  # Carpmosia-start - Respritening
+  # - type: IconSmooth
+  #   key: walls
+  #   mode: NoSprite
+  # - type: PointLight
+  #   energy: 2.2
+  #   color: "#cc3a41"
+  #   radius: 2.2
+  # Carpmosia-end - Respritening
+  - type: PlacementReplacement
+    key: wall_basic # Carpmosia-edit - Respritening
+
+# Genpop
+- type: entity
+  id: TurnstileGenpopEnter # Carpmosia-edit - Respritening
+  parent: Turnstile # Carpmosia-edit - Respritening
+  suffix: Genpop Enter
+  components:
+  - type: AccessReader
+    access: [["GenpopEnter"], ["Security"]]
+
+- type: entity
+  id: TurnstileGenpopLeave # Carpmosia-edit - Respritening
+  parent: Turnstile # Carpmosia-edit - Respritening
+  suffix: Genpop Leave
+  components:
+  - type: AccessReader
+    access: [["GenpopLeave"], ["Security"]]
+
+# Airtight
+# Carpmosia-start - Respritening
+# - type: entity
+#   parent: EnergyGate
+#   id: EnergyGateAirtight
+#   name: airtight energy gate
+#   suffix: Airtight
+#   components:
+#   - type: Airtight
+#   - type: RadiationBlocker
+#     resistance: 4
+#   - type: Sprite
+#     layers:
+#     - state: regular
+#     - state: idle
+#       shader: unshaded
+#       map: [ "barrier" ]
+#     - state: direction
+#       shader: unshaded
+#   - type: GenericVisualizer
+#     visuals:
+#       enum.TurnstileVisualLayers.Base:
+#         barrier:
+#           Idle: { state: idle }
+#           Spin: { state: operate }
+#           Deny: { state: deny }
+#   - type: PointLight
+#     energy: 2.2
+#     color: "#50abff"
+#     radius: 2.2
+# Carpmosia-end - Respritening

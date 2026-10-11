@@ -10,11 +10,11 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 10h
-  # weight: 5 # Carpmosia-edit - Job priority rebalance
   displayWeight: 75 # Carpmosia-edit - Reorder jobs
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos
+  guides: [ Security ] # TODO: should have a more specific guidebook page instead of using the department itself
   access:
   - Security
   - Brig

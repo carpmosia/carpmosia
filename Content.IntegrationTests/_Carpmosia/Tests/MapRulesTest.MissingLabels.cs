@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Content.Server.Atmos.Monitor.Components;
-using Content.Server.DeviceLinking.Components;
 using Content.Server.Power.Components;
+using Content.Shared.DeviceLinking.Components;
 using Content.Shared.Labels.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;

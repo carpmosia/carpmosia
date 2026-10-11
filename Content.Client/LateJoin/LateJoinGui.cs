@@ -2,14 +2,13 @@ using System.Linq;
 using System.Numerics;
 using Content.Client.Administration.UI.CustomControls; // Carpmosia-edit - Wide latejoin
 using Content.Client.CrewManifest;
-using Content.Client.GameTicking.Managers;
+using Content.Client.GameTicking;
 using Content.Client.Lobby;
 using Content.Client.UserInterface.Controls;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Shared.CCVar;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
-using Content.Shared.StatusIcon;
 using Robust.Client.Console;
 using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
@@ -148,11 +147,21 @@ namespace Content.Client.LateJoin
                 };
 
                 if (headersBox.Children.Any())
-                    headersBox.AddChild(new VSeparator());
+                    headersBox.AddChild(new Separator()
+                    {
+                        StyleClasses = { "LowDivider" },
+                        Orientation = Separator.OrientationMode.Vertical,
+                        MinHeight = 5,
+                    });
                 headersBox.AddChild(headerBox);
 
                 if (joblistsBox.Children.Any())
-                    joblistsBox.AddChild(new VSeparator());
+                    joblistsBox.AddChild(new Separator()
+                    {
+                        StyleClasses = { "LowDivider" },
+                        Orientation = Separator.OrientationMode.Vertical,
+                        MinHeight = 5,
+                    });
                 joblistsBox.AddChild(jobList);
                 // Carpmosia-end - Wide latejoin
 
@@ -233,7 +242,13 @@ namespace Content.Client.LateJoin
                         jobsAvailable.Add(_prototypeManager.Index<JobPrototype>(jobId));
                     }
 
-                    jobsAvailable.Sort(JobUIComparer.Instance);
+                    if (JobUIComparer.TryCreate(
+                            _prototypeManager,
+                            _gameTicker.JobWeightsByStation.GetValueOrDefault(id),
+                            out var comparer))
+                    {
+                        jobsAvailable.Sort(comparer);
+                    }
 
                     // Do not display departments with no jobs available.
                     if (jobsAvailable.Count == 0)
@@ -322,7 +337,7 @@ namespace Content.Client.LateJoin
                             {
                                 TextureScale = new Vector2(0.4f, 0.4f),
                                 Stretch = TextureRect.StretchMode.KeepCentered,
-                                Texture = _sprites.Frame0(new SpriteSpecifier.Texture(new ("/Textures/Interface/Nano/lock.svg.192dpi.png"))),
+                                Texture = _sprites.Frame0(new SpriteSpecifier.Texture(new("/Textures/Interface/Nano/lock.svg.192dpi.png"))),
                                 HorizontalExpand = true,
                                 HorizontalAlignment = HAlignment.Right,
                             });

@@ -82,3 +82,12 @@ ClothingUniformJumpsuitDeathSquad: ClothingUniformJumpsuitERTSecurity
 RandomHumanoidSpawnerDeathSquad: RandomHumanoidSpawnerERTSecurity
 DeathsquadPDA: ERTSecurityPDA
 CentcomIDCardDeathsquad: ERTSecurityIDCard
+
+# 2026-08-29 - Upstream migration fixes
+LightReplacerEmpty: LightReplacer
+
+# 2026-10-10 - (Un)Respritening
+EnergyGateGenpopEnter: TurnstileGenpopEnter
+EnergyGateGenpopLeave: TurnstileGenpopLeave
+EnergyGate: Turnstile
+EnergyGateAirtight: Turnstile

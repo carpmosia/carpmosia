@@ -8,24 +8,19 @@
     },
     "states": [
         {
-            "name": "frame",
-            "directions": 1
+            "name": "assembly"
         },
         {
-            "name": "open",
-            "directions": 1
+            "name": "open"
         },
         {
-            "name": "closed",
-            "directions": 1
+            "name": "closed"
         },
         {
-            "name": "welded",
-            "directions": 1
+            "name": "welded"
         },
         {
             "name": "closing",
-            "directions": 1,
             "delays": [
                 [
                     0.05,
@@ -60,7 +55,6 @@
         },
         {
             "name": "opening",
-            "directions": 1,
             "delays": [
                 [
                     0.05,

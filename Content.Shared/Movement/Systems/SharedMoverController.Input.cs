@@ -51,10 +51,10 @@ namespace Content.Shared.Movement.Systems
                 .Bind(ContentKeyFunctions.ShuttleRotateLeft, new ShuttleInputCmdHandler(this, ShuttleButtons.RotateLeft))
                 .Bind(ContentKeyFunctions.ShuttleRotateRight, new ShuttleInputCmdHandler(this, ShuttleButtons.RotateRight))
                 .Bind(ContentKeyFunctions.ShuttleBrake, new ShuttleInputCmdHandler(this, ShuttleButtons.Brake))
-                // Carpmosia-start - rotate shuttle along movement vector
+                // Carpmosia-start - Shuttle PID Steering
                 .Bind(ContentKeyFunctions.ShuttleTowardsVector, new ShuttleInputCmdHandler(this, ShuttleButtons.TowardVector))
                 .Bind(ContentKeyFunctions.ShuttleAgainstVector, new ShuttleInputCmdHandler(this, ShuttleButtons.AgainstVector))
-                // Carpmosia-end - rotate shuttle along movement vector
+                // Carpmosia-end - Shuttle PID Steering
                 .Register<SharedMoverController>();
 
             SubscribeLocalEvent<InputMoverComponent, ComponentInit>(OnInputInit);
@@ -310,8 +310,9 @@ namespace Content.Shared.Movement.Systems
         private void HandleDirChange(Entity<InputMoverComponent?> entity, Direction dir, ushort subTick, bool state)
         {
             // Relayed movement just uses the same keybinds given we're moving the relayed entity
-            // the same as us.
-            if (!MoverQuery.Resolve(entity, ref entity.Comp))
+            // the same as us. InputMoverComponent may not exist for entities which can't move
+            // (e.g. a brain in an mmi), so early-out and don't generate a missing log.
+            if (!MoverQuery.Resolve(entity, ref entity.Comp, logMissing: false))
                 return;
 
             // TODO: Should move this into HandleMobMovement itself.
@@ -638,7 +639,7 @@ namespace Content.Shared.Movement.Systems
     }
 
     [Flags]
-    public enum ShuttleButtons : short // Carpmosia-edit - rotate shuttle along movement vector
+    public enum ShuttleButtons : short // Carpmosia-edit - Shuttle PID Steering
     {
         None = 0,
         StrafeUp = 1 << 0,
@@ -648,10 +649,10 @@ namespace Content.Shared.Movement.Systems
         RotateLeft = 1 << 4,
         RotateRight = 1 << 5,
         Brake = 1 << 6,
-        // Carpmosia-start - rotate shuttle along movement vector
+        // Carpmosia-start - Shuttle PID Steering
         TowardVector = 1 << 7,
         AgainstVector = 1 << 8,
-        // Carpmosia-end - rotate shuttle along movement vector
+        // Carpmosia-end - Shuttle PID Steering
 
     }
 
