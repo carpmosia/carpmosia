@@ -1,5 +1,5 @@
 using Robust.Shared.GameStates;
-using Robust.Shared.Physics.Components;
+using Robust.Shared.Physics.Components; // Carpmosia-edit - ATS hijack rework
 
 namespace Content.Shared.HijackBeacon;
 

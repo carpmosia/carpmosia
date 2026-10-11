@@ -2,16 +2,14 @@ using Content.Shared.Cargo.Components;
 using Content.Shared.Chat;
 using Content.Shared.Construction.Components;
 using Content.Shared.Construction.EntitySystems;
-// Carpmosia-edit - ATS hijack rework
-using Content.Shared.Coordinates;
+using Content.Shared.Coordinates; // Carpmosia-edit - ATS hijack rework
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio;
-// Carpmosia-edit - ATS hijack rework
-using Robust.Shared.Physics.Components;
+using Robust.Shared.Physics.Components; // Carpmosia-edit - ATS hijack rework
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 
@@ -25,12 +23,12 @@ public sealed partial class HijackBeaconSystem : EntitySystem
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
-    // Carpmosia-edit - ATS hijack rework
-    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!; // Carpmosia-edit - ATS hijack rework
 
-    public HashSet<Entity<PhysicsComponent>> NearestEntities = [];
+    public HashSet<Entity<PhysicsComponent>> NearestEntities = [];  // Carpmosia-edit - ATS hijack rework
     public readonly SoundSpecifier AnnounceSound = new SoundPathSpecifier("/Audio/Misc/notice1.ogg");
     public readonly SoundSpecifier DeactivateSound = new SoundPathSpecifier("/Audio/Misc/notice2.ogg");
+
     public override void Initialize()
     {
         base.Initialize();
@@ -176,11 +174,11 @@ public sealed partial class HijackBeaconSystem : EntitySystem
                args.PushMarkup(Loc.GetString("defusable-examine-live",
                    ("name", ent),
                    ("time", GetRemainingTime(ent.Owner))));
-                // # Carpmosia-start - ATS hijack rework
+                // Carpmosia-start - ATS hijack rework
                 args.PushMarkup(Loc.GetString("defusable-examine-efficiency-live",
                    ("name", ent),
                    ("efficiency", GetEfficiency(ent.Owner))));
-                // # Carpmosia-end - ATS hijack rework
+                // Carpmosia-end - ATS hijack rework
                break;
            case HijackBeaconStatus.Cooldown:
                args.PushMarkup(Loc.GetString("hijack-beacon-examine-await-cooldown"));
@@ -365,7 +363,7 @@ public sealed partial class HijackBeaconSystem : EntitySystem
 
         return (int) (ent.Comp.CompletionTime - _gameTiming.CurTime).TotalSeconds;
     }
-    // # Carpmosia-start - ATS hijack rework
+    // Carpmosia-start - ATS hijack rework
     /// <summary>
     ///     Returns a percentage of the efficiency of the beacon.
     /// </summary>
@@ -376,7 +374,7 @@ public sealed partial class HijackBeaconSystem : EntitySystem
         
         return (int) (ent.Comp.Efficiency * 100);
     }
-    // # Carpmosia-end - ATS hijack rework
+    // Carpmosia-end - ATS hijack rework
 
     #endregion
 }
