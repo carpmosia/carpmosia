@@ -33,9 +33,9 @@ public struct DrawResearchEdge((int, int) indA, (int, int) indB, Vector2 spacing
         Researched ? ResearchedColor :
         NotReserachedColor;
 
-    private readonly Color NotReserachedColor = Color.Gray;
-    private readonly Color ResearchedColor = Color.DarkGreen;
-    private readonly Color HighlightColor = Color.White;
+    private static readonly Color NotReserachedColor = Color.Gray;
+    private static readonly Color ResearchedColor = Color.DarkGreen;
+    private static readonly Color HighlightColor = Color.White;
 
     public List<ProtoId<ResearchTreeNodePrototype>> Linked = linked ?? [];
 

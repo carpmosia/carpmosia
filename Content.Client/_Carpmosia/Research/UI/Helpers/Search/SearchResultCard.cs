@@ -23,9 +23,9 @@ public sealed class SearchResultCard
 
     private Vector2 _mousePos = Vector2.Zero;
 
-    private Color _fGColor;
+    private Color _foregroundColor;
 
-    private Color _bGColor;
+    private Color _backgroundColor;
 
     public Vector2 Pos;
     private Vector2 _size;
@@ -40,10 +40,10 @@ public sealed class SearchResultCard
     public SearchResultCard(IPrototypeManager protoMan, ProtoId<ResearchTreeNodePrototype> node, Font font, Vector2 size, Color fgColor, Color bgColor)
     {
         Font = font;
-        _protoMan = protoMan;
         Node = node;
-        _fGColor = fgColor;
-        _bGColor = bgColor;
+        _protoMan = protoMan;
+        _foregroundColor = fgColor;
+        _backgroundColor = bgColor;
         _size = size;
 
         _name = Loc.GetString(_protoMan.Index(Node).Name);
@@ -56,16 +56,17 @@ public sealed class SearchResultCard
 
         List<string> text = [];
         var dimensions = handle.GetDimensions(Font, _name, FontScale);
-        if (dimensions.X < Size.X - (BorderMargin * 2))
+        if (dimensions.X < Size.X - BorderMargin * 2)
             text.Add(_name);
         else
         {
             var line = "";
+            var doubleMargin = BorderMargin * 2;
             foreach (var word in _name.Split(' '))
             {
                 var newLine = line == "" ? word : line + " " + word;
                 var newDimensions = handle.GetDimensions(Font, newLine, FontScale);
-                if (newDimensions.X >= Size.X - (BorderMargin * 2))
+                if (newDimensions.X >= Size.X - doubleMargin)
                 {
                     text.Add(line);
                     line = word;
@@ -89,18 +90,19 @@ public sealed class SearchResultCard
 
     public void Draw(DrawingHandleScreen handle)
     {
-        handle.DrawRect(Box, _fGColor);
-
-        var marginVector = Vector2.One * BorderMargin;
+        handle.DrawRect(Box, _foregroundColor);
 
         if (!MouseOver)
-            handle.DrawRect(new(Box.TopLeft + marginVector, Box.BottomRight - marginVector), _bGColor);
+        {
+            var marginVector = Vector2.One * BorderMargin;
+            handle.DrawRect(new(Box.TopLeft + marginVector, Box.BottomRight - marginVector), _backgroundColor);
+        }
 
         for (var i = 0; i < _text.Count; i++)
         {
             var dimensions = handle.GetDimensions(Font, _text[i], FontScale);
             Vector2 pos = new(Box.Left + BorderMargin, Box.Top + BorderMargin + (dimensions.Y * i));
-            handle.DrawString(Font, pos, _text[i], FontScale, MouseOver ? _bGColor : _fGColor);
+            handle.DrawString(Font, pos, _text[i], FontScale, MouseOver ? _backgroundColor : _foregroundColor);
         }
     }
 }

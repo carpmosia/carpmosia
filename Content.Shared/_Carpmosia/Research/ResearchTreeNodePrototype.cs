@@ -2,6 +2,7 @@ using System.Linq;
 using Content.Shared.Radio;
 using Content.Shared.Research.Prototypes;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Shared.ResearchTree;
 
@@ -9,7 +10,7 @@ namespace Content.Shared.ResearchTree;
 public sealed partial class ResearchTreeNodeIcon
 {
     [DataField]
-    public string Path = "/Textures/_Carpmosia/Interface/Research/icons.rsi";
+    public ResPath Path = new("/Textures/_Carpmosia/Interface/Research/icons.rsi");
     [DataField]
     public string State = "science";
     [DataField]

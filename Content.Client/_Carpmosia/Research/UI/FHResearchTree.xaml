@@ -1,5 +1,7 @@
 <controls:FHResearchTree
     xmlns="https://spacestation14.io"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Content.Client.ResearchTree.UI.FHResearchTree"
     xmlns:controls="clr-namespace:Content.Client.ResearchTree.UI"
     HorizontalExpand="True"
     VerticalExpand="True"

@@ -2,14 +2,15 @@ using Content.Shared.ResearchTree;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Client.ResearchTree.UI.Helpers;
 
 public sealed class IconCache
 {
-    private readonly Dictionary<ProtoId<ResearchTreeNodePrototype>, ((string, string) texture, Color? iconColor)> _iconCache = [];
-    private readonly Dictionary<string, RSI> _rsiCache = [];
-    private readonly Dictionary<(string, string), Texture> _textureCache = [];
+    private readonly Dictionary<ProtoId<ResearchTreeNodePrototype>, ((ResPath, string) texture, Color? iconColor)> _iconCache = [];
+    private readonly Dictionary<ResPath, RSI> _rsiCache = [];
+    private readonly Dictionary<(ResPath, string), Texture> _textureCache = [];
 
     public IconCache(IPrototypeManager protoMan, IResourceCache resourceCache)
     {
@@ -33,7 +34,7 @@ public sealed class IconCache
         return (texture, cache.iconColor);
     }
 
-    private RSI GetRSI(IResourceCache resourceCache, string path)
+    private RSI GetRSI(IResourceCache resourceCache, ResPath path)
     {
         if (!_rsiCache.ContainsKey(path))
             _rsiCache[path] = resourceCache.GetResource<RSIResource>(path).RSI;
@@ -41,15 +42,17 @@ public sealed class IconCache
         return _rsiCache[path];
     }
 
-    private Texture? GetTexture(IResourceCache resourceCache, string path, string state)
+    private Texture? GetTexture(IResourceCache resourceCache, ResPath path, string state)
     {
         var cacheKey = (path, state);
-        if (!_textureCache.ContainsKey(cacheKey))
-        {
-            var rsi = GetRSI(resourceCache, path);
-            if (rsi.TryGetState(state, out var rsiState))
-                _textureCache[cacheKey] = rsiState.Frame0;
-        }
-        return _textureCache.TryGetValue(cacheKey, out var cache) ? cache : null;
+        if (_textureCache.TryGetValue(cacheKey, out var cache))
+            return cache;
+
+        var rsi = GetRSI(resourceCache, path);
+        if (!rsi.TryGetState(state, out var rsiState))
+            return null;
+        _textureCache[cacheKey] = rsiState.Frame0;
+        return rsiState.Frame0;
+
     }
 }

@@ -40,9 +40,9 @@ public sealed class ResearchSearch(IGameTiming timing, IPrototypeManager protoMa
     private readonly int _textMaxSize = 12;
     private readonly string _placeholderText = Loc.GetString("research-tree-map-search-placeholder");
 
-    private Color _fGColor = Color.White;
+    private Color _foregroundColor = Color.White;
 
-    private Color _bGColor = Color.Black;
+    private Color _backgroundColor = Color.Black;
 
     private readonly TimeSpan _backspaceFrequency = TimeSpan.FromSeconds(0.1);
     private TimeSpan _nextBackspace = TimeSpan.Zero;
@@ -108,7 +108,7 @@ public sealed class ResearchSearch(IGameTiming timing, IPrototypeManager protoMa
         var postion = Button.TopLeft;
         foreach (var result in results)
         {
-            SearchResultCard card = new(protoMan, result, font, size, _fGColor, _bGColor);
+            SearchResultCard card = new(protoMan, result, font, size, _foregroundColor, _backgroundColor);
             card.WrapName(handle);
             var adjustedOffset = new Vector2(0, card.Size.Y + _searchResultMargin);
             postion -= adjustedOffset;
@@ -146,16 +146,16 @@ public sealed class ResearchSearch(IGameTiming timing, IPrototypeManager protoMa
             card.Draw(handle);
         }
 
-        handle.DrawRect(Button, _fGColor);
+        handle.DrawRect(Button, _foregroundColor);
 
         if (!MouseOver)
-            handle.DrawRect(new(Button.TopLeft + (Vector2.One * BorderMargin), Button.BottomRight - (Vector2.One * BorderMargin)), _bGColor, true);
+            handle.DrawRect(new(Button.TopLeft + (Vector2.One * BorderMargin), Button.BottomRight - (Vector2.One * BorderMargin)), _backgroundColor, true);
 
-        handle.DrawTextureRect(texture, new(Button.BottomRight - _inactiveSize, Button.BottomRight), MouseOver ? _bGColor : _fGColor);
+        handle.DrawTextureRect(texture, new(Button.BottomRight - _inactiveSize, Button.BottomRight), MouseOver ? _backgroundColor : _foregroundColor);
 
         if (Active && AnimProgress == 1)
         {
-            handle.DrawString(font, new(Button.Left + 3, Button.Top + 3), SearchText, 0.8f, MouseOver ? _bGColor : _fGColor);
+            handle.DrawString(font, new(Button.Left + 3, Button.Top + 3), SearchText, 0.8f, MouseOver ? _backgroundColor : _foregroundColor);
         }
     }
 }
