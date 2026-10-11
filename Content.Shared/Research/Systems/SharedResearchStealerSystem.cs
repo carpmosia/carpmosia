@@ -1,4 +1,4 @@
-using Content.Shared._Carpmosia.Research.Components;
+using Content.Shared.ResearchTree.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Ninja.Systems;

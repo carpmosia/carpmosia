@@ -1,49 +1,49 @@
 using System.Numerics;
-using Content.Shared._Carpmosia.Research;
+using Content.Shared.ResearchTree;
 using Robust.Client.Graphics;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client._Carpmosia.Research.UI.Helpers.Search;
+namespace Content.Client.ResearchTree.UI.Helpers.Search;
 
 public sealed class SearchResultCard
 {
-    const int borderMargin = 2;
-    const float fontScale = 0.8f;
+    private const int BorderMargin = 2;
+    private const float FontScale = 0.8f;
 
-    public Font _font;
+    public Font Font;
 
-    private IPrototypeManager _protoMan;
+    private readonly IPrototypeManager _protoMan;
     public ProtoId<ResearchTreeNodePrototype> Node;
 
-    private string _name = "";
+    private readonly string _name;
 
     private List<string> _text = [];
 
-    public float TextSize = 0;
+    public float TextSize;
 
     private Vector2 _mousePos = Vector2.Zero;
 
-    private Color FGColor;
+    private Color _fGColor;
 
-    private Color BGColor;
+    private Color _bGColor;
 
     public Vector2 Pos;
     private Vector2 _size;
     public Vector2 Size => _size + new Vector2(0, TextSize);
 
-    private UIBox2 _box =>
+    private UIBox2 Box =>
         new(Pos, Pos + Size);
 
     public bool MouseOver =>
-        _mousePos.X >= _box.Left && _mousePos.X <= _box.Right && _mousePos.Y >= _box.Top && _mousePos.Y <= _box.Bottom;
+        _mousePos.X >= Box.Left && _mousePos.X <= Box.Right && _mousePos.Y >= Box.Top && _mousePos.Y <= Box.Bottom;
 
     public SearchResultCard(IPrototypeManager protoMan, ProtoId<ResearchTreeNodePrototype> node, Font font, Vector2 size, Color fgColor, Color bgColor)
     {
-        _font = font;
+        Font = font;
         _protoMan = protoMan;
         Node = node;
-        FGColor = fgColor;
-        BGColor = bgColor;
+        _fGColor = fgColor;
+        _bGColor = bgColor;
         _size = size;
 
         _name = Loc.GetString(_protoMan.Index(Node).Name);
@@ -55,8 +55,8 @@ public sealed class SearchResultCard
             return;
 
         List<string> text = [];
-        var dimensions = handle.GetDimensions(_font, _name, fontScale);
-        if (dimensions.X < Size.X - (borderMargin * 2))
+        var dimensions = handle.GetDimensions(Font, _name, FontScale);
+        if (dimensions.X < Size.X - (BorderMargin * 2))
             text.Add(_name);
         else
         {
@@ -64,8 +64,8 @@ public sealed class SearchResultCard
             foreach (var word in _name.Split(' '))
             {
                 var newLine = line == "" ? word : line + " " + word;
-                var newDimensions = handle.GetDimensions(_font, newLine, fontScale);
-                if (newDimensions.X >= Size.X - (borderMargin * 2))
+                var newDimensions = handle.GetDimensions(Font, newLine, FontScale);
+                if (newDimensions.X >= Size.X - (BorderMargin * 2))
                 {
                     text.Add(line);
                     line = word;
@@ -89,16 +89,18 @@ public sealed class SearchResultCard
 
     public void Draw(DrawingHandleScreen handle)
     {
-        handle.DrawRect(_box, FGColor, true);
+        handle.DrawRect(Box, _fGColor);
+
+        var marginVector = Vector2.One * BorderMargin;
 
         if (!MouseOver)
-            handle.DrawRect(new(_box.TopLeft + (Vector2.One * borderMargin), _box.BottomRight - (Vector2.One * borderMargin)), BGColor, true);
+            handle.DrawRect(new(Box.TopLeft + marginVector, Box.BottomRight - marginVector), _bGColor);
 
         for (var i = 0; i < _text.Count; i++)
         {
-            var dimensions = handle.GetDimensions(_font, _text[i], fontScale);
-            Vector2 pos = new(_box.Left + borderMargin, _box.Top + borderMargin + (dimensions.Y * i));
-            handle.DrawString(_font, pos, _text[i], fontScale, MouseOver ? BGColor : FGColor);
+            var dimensions = handle.GetDimensions(Font, _text[i], FontScale);
+            Vector2 pos = new(Box.Left + BorderMargin, Box.Top + BorderMargin + (dimensions.Y * i));
+            handle.DrawString(Font, pos, _text[i], FontScale, MouseOver ? _bGColor : _fGColor);
         }
     }
 }

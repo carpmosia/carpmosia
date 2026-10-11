@@ -1,5 +1,5 @@
-using Content.Server._Carpmosia.Research;
-using Content.Shared._Carpmosia.Research.Components;
+using Content.Server.ResearchTree;
+using Content.Shared.ResearchTree.Components;
 using Content.Shared.Research.Components;
 using Content.Shared.Research.Systems;
 using Robust.Shared.Random;

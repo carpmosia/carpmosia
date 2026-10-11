@@ -1,7 +1,7 @@
 using System.Linq;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Carpmosia.Research;
+namespace Content.Shared.ResearchTree;
 
 [Prototype]
 public sealed partial class ResearchTreePrototype : IPrototype

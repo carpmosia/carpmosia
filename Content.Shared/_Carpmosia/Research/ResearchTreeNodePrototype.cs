@@ -3,7 +3,7 @@ using Content.Shared.Radio;
 using Content.Shared.Research.Prototypes;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Carpmosia.Research;
+namespace Content.Shared.ResearchTree;
 
 [DataDefinition]
 public sealed partial class ResearchTreeNodeIcon

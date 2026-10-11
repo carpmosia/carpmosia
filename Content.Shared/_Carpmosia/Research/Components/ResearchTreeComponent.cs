@@ -1,7 +1,7 @@
 using Content.Shared.Radio;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Carpmosia.Research.Components;
+namespace Content.Shared.ResearchTree.Components;
 
 [RegisterComponent]
 public sealed partial class FHResearchTreeComponent : Component

@@ -1,6 +1,6 @@
 using System.Linq;
-using Content.Shared._Carpmosia.Research;
-using Content.Shared._Carpmosia.Research.Components;
+using Content.Shared.ResearchTree;
+using Content.Shared.ResearchTree.Components;
 using Content.Shared.Chat;
 using Content.Shared.Research.Components;
 using Content.Shared.UserInterface;
@@ -10,7 +10,7 @@ using Content.Shared.Access.Components;
 using Content.Shared.Emag.Systems;
 using Content.Shared.IdentityManagement;
 
-namespace Content.Server._Carpmosia.Research;
+namespace Content.Server.ResearchTree;
 
 public sealed partial class FHResearchSystem
 {

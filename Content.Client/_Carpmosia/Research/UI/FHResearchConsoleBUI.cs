@@ -1,12 +1,12 @@
 using System.Linq;
-using Content.Shared._Carpmosia.Research;
-using Content.Shared._Carpmosia.Research.Components;
+using Content.Shared.ResearchTree;
+using Content.Shared.ResearchTree.Components;
 using Content.Shared.Research.Components;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client._Carpmosia.Research.UI;
+namespace Content.Client.ResearchTree.UI;
 
 [UsedImplicitly]
 public sealed partial class FHResearchConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : BoundUserInterface(owner, uiKey)
@@ -62,7 +62,8 @@ public sealed partial class FHResearchConsoleBoundUserInterface(EntityUid owner,
             }
 
             _window?.SetupUI(_nodeProtos, _unlockedTiers, _unlockedNodes, _researchedNodes, _queuedNodes, fullState.ResearchProgress, fullState.BankedPoints, fullState.Readonly);
-        } else if (state is FHResearchConsoleBUIPartialState partialState)
+        }
+        else if (state is FHResearchConsoleBUIPartialState partialState)
         {
             _researchedNodes = partialState.ResearchedNodes;
             _unlockedTiers = partialState.UnlockedTiers;

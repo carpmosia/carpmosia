@@ -1,11 +1,11 @@
 using System.Linq;
-using Content.Shared._Carpmosia.Research;
-using Content.Shared._Carpmosia.Research.Components;
+using Content.Shared.ResearchTree;
+using Content.Shared.ResearchTree.Components;
 using Content.Shared.Radio;
 using Content.Shared.Research.Components;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._Carpmosia.Research;
+namespace Content.Server.ResearchTree;
 
 public sealed partial class FHResearchSystem
 {

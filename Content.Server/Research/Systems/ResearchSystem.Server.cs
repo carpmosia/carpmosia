@@ -1,6 +1,6 @@
 using System.Linq;
 using Content.Server.Power.EntitySystems;
-using Content.Shared._Carpmosia.Research.Components;
+using Content.Shared.ResearchTree.Components;
 using Content.Shared.Research.Components;
 
 namespace Content.Server.Research.Systems;

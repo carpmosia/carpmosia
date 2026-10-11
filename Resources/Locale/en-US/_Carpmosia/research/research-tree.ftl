@@ -17,3 +17,5 @@ research-tree-console-add-queue-radio-broadcast = [bold]{$technology}[/bold] add
 research-tree-console-remove-queue-radio-broadcast = [bold]{$technology}[/bold] removed from research queue by [bold]{$approver}[/bold].
 
 research-tree-map-electronics = Research Tree Map Electronics
+
+research-tree-map-search-placeholder = Search...

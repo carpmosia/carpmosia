@@ -1,9 +1,9 @@
 using System.Linq;
 using System.Text.RegularExpressions;
-using Content.Shared._Carpmosia.Research;
+using Content.Shared.ResearchTree;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client._Carpmosia.Research.UI.Helpers.Search;
+namespace Content.Client.ResearchTree.UI.Helpers.Search;
 
 public sealed partial class SearchDatabase
 {
@@ -14,15 +14,15 @@ public sealed partial class SearchDatabase
     public string SearchTerm = "";
 
     public int BatchSize = 20;
-    private int _step = 0;
+    private int _step;
 
-    public Dictionary<ProtoId<ResearchTreeNodePrototype>, float> _movingIndex = [];
+    public Dictionary<ProtoId<ResearchTreeNodePrototype>, float> MovingIndex = [];
 
     public int NumSearchResults = 5;
     public List<ProtoId<ResearchTreeNodePrototype>> SearchResult = [];
 
-    private bool _finishedIndexing => _movingIndex.Count == Data.Count;
-    private bool _unread = false;
+    private bool FinishedIndexing => MovingIndex.Count == Data.Count;
+    private bool _unread;
     public bool Unread
     {
         get
@@ -35,6 +35,7 @@ public sealed partial class SearchDatabase
             return false;
         }
     }
+
     public bool HasNewResult = false;
 
     public void Build(IPrototypeManager protoMan, HashSet<ProtoId<ResearchTreeNodePrototype>> nodes)
@@ -65,31 +66,31 @@ public sealed partial class SearchDatabase
 
     public void Update()
     {
-        if (_finishedIndexing || SearchTerm == "" || Data.Count == 0)
+        if (FinishedIndexing || SearchTerm == "" || Data.Count == 0)
             return;
 
         for (var i = 0; i < BatchSize; i++)
         {
             var (id, tags) = Data.ElementAt(_step);
-            _movingIndex[id] = 0;
+            MovingIndex[id] = 0;
             foreach (var tag in tags)
             {
                 var score = SearchScore(SearchTerm, tag);
-                if (score > _movingIndex[id])
-                    _movingIndex[id] = score;
+                if (score > MovingIndex[id])
+                    MovingIndex[id] = score;
 
                 if (score > 0.9)
                     break;
             }
 
-            if (_finishedIndexing)
+            if (FinishedIndexing)
             {
-                SearchResult = [.. _movingIndex.Where(p => p.Value > 0).OrderByDescending(p => p.Value).Select(p => p.Key).Take(NumSearchResults)];
+                SearchResult = [.. MovingIndex.Where(p => p.Value > 0).OrderByDescending(p => p.Value).Select(p => p.Key).Take(NumSearchResults)];
                 _unread = true;
                 break;
             }
-            else
-                _step++;
+
+            _step++;
         }
     }
 
@@ -101,7 +102,7 @@ public sealed partial class SearchDatabase
         _step = 0;
         _unread = false;
         SearchResult = [];
-        _movingIndex = [];
+        MovingIndex = [];
 
     }
 
@@ -109,10 +110,13 @@ public sealed partial class SearchDatabase
     {
         if (search == target)
             return 1;
-        else if (target.StartsWith(search))
+
+        if (target.StartsWith(search))
             return 0.9f;
-        else if (target.Contains(search))
+
+        if (target.Contains(search))
             return 0.7f;
+
         return 0;
     }
 }

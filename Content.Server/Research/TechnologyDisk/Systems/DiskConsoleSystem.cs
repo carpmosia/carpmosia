@@ -1,4 +1,4 @@
-using Content.Server._Carpmosia.Research;
+using Content.Server.ResearchTree;
 using Content.Server.Research.TechnologyDisk.Components;
 using Content.Shared.UserInterface;
 using Content.Shared.Research;

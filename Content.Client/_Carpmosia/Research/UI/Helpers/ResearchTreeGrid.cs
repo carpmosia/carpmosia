@@ -1,10 +1,10 @@
 using System.Linq;
 using System.Numerics;
-using Content.Shared._Carpmosia.Research;
+using Content.Shared.ResearchTree;
 using Robust.Client.Graphics;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client._Carpmosia.Research.UI.Helpers;
+namespace Content.Client.ResearchTree.UI.Helpers;
 
 public sealed class ResearchTreeGrid
 {
