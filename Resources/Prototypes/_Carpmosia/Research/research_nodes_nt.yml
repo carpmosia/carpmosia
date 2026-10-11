@@ -4,7 +4,7 @@
 
 - type: researchTreeNode
   id: SalvageWeapons
-  name: research-technology-salvage-weapons
+  name: research-tree-node-salvage-weapons
   icon:
     state: kinetic
     color: "#A46106"
@@ -21,7 +21,7 @@
 
 - type: researchTreeNode
   id: DraconicMunitions
-  name: research-technology-draconic-munitions
+  name: research-tree-node-draconic-munitions
   icon:
     state: kinetic
     color: "#003860"
@@ -46,7 +46,7 @@
 
 - type: researchTreeNode
   id: WeaponizedLaserManipulation
-  name: research-technology-weaponized-laser-manipulation
+  name: research-tree-node-laser
   icon:
     state: laser
     color: "#003860"
@@ -59,7 +59,7 @@
 
 - type: researchTreeNode
   id: NonlethalAmmunition
-  name: research-technology-nonlethal-ammunition
+  name: research-tree-node-nonlethal-ammo
   icon:
     state: kinetic
     color: "#003860"
@@ -75,7 +75,7 @@
 
 - type: researchTreeNode
   id: UraniumMunitions
-  name: research-technology-uranium-munitions
+  name: research-tree-node-uranium-munitions
   icon:
     state: kinetic
     color: "#009220"
@@ -99,7 +99,7 @@
 
 - type: researchTreeNode
   id: AdvancedRiotControl
-  name: research-technology-advanced-riot-control
+  name: research-tree-node-riot-control
   icon:
     state: kinetic
     color: "#003860"
@@ -117,7 +117,7 @@
 
 - type: researchTreeNode
   id: ExplosiveTechnology
-  name: research-technology-explosive-technology
+  name: research-tree-node-explosives
   icon:
     state: kinetic
     color: "#7e0606"
@@ -140,7 +140,7 @@
 
 - type: researchTreeNode
   id: SpecialMeans
-  name: research-technology-special-means
+  name: research-tree-node-special-means
   icon:
     state: kinetic
     color: "#003860"
@@ -155,7 +155,7 @@
 
 - type: researchTreeNode
   id: Hydroponics
-  name: research-technology-basic-hydroponics
+  name: research-tree-node-hydroponics
   icon:
     state: biology
     color: "#9FED58"
@@ -170,7 +170,7 @@
 
 - type: researchTreeNode
   id: CritterMechs
-  name: research-technology-critter-mechs
+  name: research-tree-node-critter-mechs
   icon:
     state: mechanical
     color: "#9FED58"
@@ -193,7 +193,7 @@
 
 - type: researchTreeNode
   id: AudioVisualCommunication
-  name: research-technology-audio-visual-communication
+  name: research-tree-node-av-comms
   icon:
     state: electronics
     color: "#9FED58"
@@ -213,7 +213,7 @@
 
 - type: researchTreeNode
   id: AdvancedEntertainment
-  name: research-technology-advanced-entertainment
+  name: research-tree-node-adv-entertainment
   icon:
     state: computing
     color: "#9FED58"
@@ -232,7 +232,7 @@
 
 - type: researchTreeNode
   id: MeatManipulation
-  name: research-technology-meat-manipulation
+  name: research-tree-node-meat
   icon:
     state: biology
     color: "#9FED58"
@@ -249,7 +249,7 @@
 
 - type: researchTreeNode
   id: BiochemicalStasis
-  name: research-technology-biochemical-stasis
+  name: research-tree-node-stasis
   icon:
     state: biology
     color: "#52B4E9"
@@ -269,7 +269,7 @@
 
 - type: researchTreeNode
   id: BasicRobotics
-  name: research-technology-basic-robotics
+  name: research-tree-node-robotics
   icon:
     state: computing
     color: "#D381C9"
@@ -284,7 +284,7 @@
 
 - type: researchTreeNode
   id: BasicAnomalousResearch
-  name: research-technology-basic-anomalous-research
+  name: research-tree-node-anom
   icon:
     state: electronics
     color: "#D381C9"
@@ -299,7 +299,7 @@
 
 - type: researchTreeNode
   id: BasicXenoArcheology
-  name: research-technology-basic-xenoarcheology
+  name: research-tree-node-arti
   icon:
     state: electronics
     color: "#D381C9"
@@ -312,7 +312,7 @@
 
 - type: researchTreeNode
   id: AlternativeResearch
-  name: research-technology-alternative-research
+  name: research-tree-node-alt-research
   icon:
     state: computing
     color: "#D381C9"
@@ -326,7 +326,7 @@
 
 - type: researchTreeNode
   id: MagnetsTech
-  name: research-technology-magnets-tech
+  name: research-tree-node-magnet
   icon:
     state: mechanical
     color: "#EFB341"
@@ -341,7 +341,7 @@
 
 - type: researchTreeNode
   id: AnomalyCoreHarnessing
-  name: research-technology-anomaly-harnessing
+  name: research-tree-node-anom-core
   icon:
     state: science
     color: "#D381C9"
@@ -356,7 +356,7 @@
 
 - type: researchTreeNode
   id: SalvageEquipment
-  name: research-technology-salvage-equipment
+  name: research-tree-node-salvage-equipment
   icon:
     state: mechanical
     color: "#A46106"
@@ -373,7 +373,7 @@
 
 - type: researchTreeNode
   id: SpaceScanning
-  name: research-technology-space-scanning
+  name: research-tree-node-space-scanning
   icon:
     state: mechanical
     color: "#A46106"
@@ -387,7 +387,7 @@
 
 - type: researchTreeNode
   id: AdvancedPowercells
-  name: research-technology-advanced-powercells
+  name: research-tree-node-adv-powercells
   icon:
     state: power
     color: "#EFB341"
@@ -404,7 +404,7 @@
 
 - type: researchTreeNode
   id: MechanicalCompression
-  name: research-technology-mechanical-compression
+  name: research-tree-node-mechanical-compression
   icon:
     state: industry
     color: "#A46106"
@@ -419,7 +419,7 @@
 
 - type: researchTreeNode
   id: IndustrialEngineering
-  name: research-technology-industrial-engineering
+  name: research-tree-node-industrial-engineering
   icon:
     state: industry
     color: "#A46106"
@@ -433,7 +433,7 @@
 
 - type: researchTreeNode
   id: PowerGeneration
-  name: research-technology-power-generation
+  name: research-tree-node-generators
   icon:
     state: power
     color: "#EFB341"
@@ -451,7 +451,7 @@
 
 - type: researchTreeNode
   id: AtmosphericTech
-  name: research-technology-atmospheric-tech
+  name: research-tree-node-atmos
   icon:
     state: engineering
     color: "#EFB341"
@@ -465,7 +465,7 @@
 
 - type: researchTreeNode
   id: RipleyAPLU
-  name: research-technology-ripley-aplu
+  name: research-tree-node-ripley
   icon:
     state: mechanical
     color: "#A46106"
@@ -491,7 +491,7 @@
 
 - type: researchTreeNode
   id: ConcentratedLaserWeaponry
-  name: research-technology-concentrated-laser-weaponry
+  name: research-tree-node-concentrated-laser
   icon:
     state: laser
     color: "#003860"
@@ -506,7 +506,7 @@
 
 - type: researchTreeNode
   id: WaveParticleHarnessing
-  name: research-technology-wave-particle-harnessing
+  name: research-tree-node-wave-particle
   icon:
     state: laser
     color: "#003860"
@@ -521,7 +521,7 @@
 
 - type: researchTreeNode
   id: KineticModifications
-  name: research-technology-kinetic-modifications
+  name: research-tree-node-kinetic-mods
   icon:
     state: kinetic
     color: "#A46106"
@@ -539,7 +539,7 @@
 
 - type: researchTreeNode
   id: BasicShuttleArmament
-  name: research-technology-basic-shuttle-armament
+  name: research-tree-node-shuttle-armament
   icon:
     state: kinetic
     color: "#003860"
@@ -565,7 +565,7 @@
 
 - type: researchTreeNode
   id: DualWieldingTechnology
-  name: research-technology-dual-wielding-technology
+  name: research-tree-node-dual-wield
   icon:
     state: mechanical
     color: "#003860"
@@ -582,7 +582,7 @@
 
 - type: researchTreeNode
   id: FauxAstroTiles
-  name: research-technology-faux-astro-tiles
+  name: research-tree-node-astro-tiles
   icon:
     state: engineering
     color: "#9FED58"
@@ -609,7 +609,7 @@
 
 - type: researchTreeNode # Merge with other T2 medical research if possible!
   id: MechanizedTreatment
-  name: research-technology-mechanized-treatment
+  name: research-tree-node-mech-treatment
   icon:
     state: medical
     color: "#D381C9"
@@ -625,7 +625,7 @@
 
 - type: researchTreeNode
   id: AdvancedCleaning
-  name: research-technology-advanced-cleaning
+  name: research-tree-node-adv-cleaning
   icon:
     state: mechanical
     color: "#9FED58"
@@ -643,7 +643,7 @@
 
 - type: researchTreeNode
   id: HONKMech
-  name: research-technology-honk-mech
+  name: research-tree-node-honk-mech
   icon:
     state: mechanical
     color: "#9FED58"
@@ -666,7 +666,7 @@
 
 - type: researchTreeNode
   id: AdvancedSpray
-  name: research-technology-advanced-spray
+  name: research-tree-node-adv-spray
   icon:
     state: medical
     color: "#D381C9"
@@ -682,7 +682,7 @@
 
 - type: researchTreeNode
   id: BluespaceCargoTransport
-  name: research-technology-bluespace-cargo-transport
+  name: research-tree-node-bluespace-cargo-transport
   icon:
     state: industry
     color: "#A46106"
@@ -697,7 +697,7 @@
 
 - type: researchTreeNode
   id: PushHorn
-  name: research-technology-clowning-utilities
+  name: research-tree-node-clown-tech
   icon:
     state: mechanical
     color: "#9FED58"
@@ -713,7 +713,7 @@
 
 - type: researchTreeNode
   id: CompactDefib
-  name: research-technology-portable-resuscitation
+  name: research-tree-node-portable-resuscitation
   icon:
     state: medical
     color: "#D381C9"
@@ -728,7 +728,7 @@
 
 - type: researchTreeNode
   id: BluespaceChemistry
-  name: research-technology-bluespace-chemistry
+  name: research-tree-node-bluespace-chemistry
   icon:
     state: science
     color: "#D381C9"
@@ -746,7 +746,7 @@
 
 - type: researchTreeNode
   id: AbnormalArtifactManipulation
-  name: research-technology-abnormal-artifact-manipulation
+  name: research-tree-node-arti-recycle
   icon:
     state: industry
     color: "#D381C9"
@@ -759,7 +759,7 @@
 
 - type: researchTreeNode
   id: AdvancedAnomalyResearch
-  name: research-technology-advanced-anomaly-research
+  name: research-tree-node-adv-anom
   icon:
     state: electronics
     color: "#D381C9"
@@ -774,7 +774,7 @@
 
 - type: researchTreeNode
   id: DeterrenceTechnologies
-  name: research-technology-deterrence
+  name: research-tree-node-detterence
   icon:
     state: science
     color: "#D381C9"
@@ -788,7 +788,7 @@
 
 - type: researchTreeNode
   id: GravityManipulation
-  name: research-technology-gravity-manipulation
+  name: research-tree-node-grav-manipulation
   icon:
     state: science
     color: "#D381C9"
@@ -829,7 +829,7 @@
 
 - type: researchTreeNode
   id: Shuttlecraft
-  name: research-technology-shuttlecraft
+  name: research-tree-node-shuttlecraft
   icon:
     state: engineering
     color: "#EFB341"
@@ -848,7 +848,7 @@
 
 - type: researchTreeNode
   id: AdvancedAtmospherics
-  name: research-technology-advanced-atmospherics
+  name: research-tree-node-adv-atmos
   icon:
     state: engineering
     color: "#EFB341"
@@ -865,7 +865,7 @@
 
 - type: researchTreeNode
   id: AdvancedToolsTechnology
-  name: research-technology-advanced-tools
+  name: research-tree-node-adv-tools
   icon:
     state: engineering
     color: "#EFB341"
@@ -886,7 +886,7 @@
 
 - type: researchTreeNode
   id: MassExcavation
-  name: research-technology-excavation
+  name: research-tree-node-excav
   icon:
     state: mechanical
     color: "#A46106"
@@ -908,7 +908,7 @@
 
 - type: researchTreeNode
   id: PortableMicrofusionWeaponry
-  name: research-technology-portable-microfusion-weaponry
+  name: research-tree-node-microfusion-weaponry
   icon:
     state: laser
     color: "#003860"
@@ -924,7 +924,7 @@
 
 - type: researchTreeNode
   id: ThermalWeaponry
-  name: research-technology-thermal-weaponry
+  name: research-tree-node-thermal-gun
   icon:
     state: laser
     color: "#003860"
@@ -939,7 +939,7 @@
 
 - type: researchTreeNode
   id: AdvancedShuttleWeapon
-  name: research-technology-advanced-shuttle-weapon
+  name: research-tree-node-adv-shuttle-weapons
   icon:
     state: laser
     color: "#003860"
@@ -960,7 +960,7 @@
 
 - type: researchTreeNode
   id: QuantumFiberWeaving
-  name: research-technology-quantum-fiber-weaving
+  name: research-tree-node-quantum-fiber
   icon:
     state: mechanical
     color: "#9FED58"
@@ -973,7 +973,7 @@
 
 - type: researchTreeNode
   id: LauncherSyringe
-  name: research-technology-launcher-syringe
+  name: research-tree-node-syringe-gun
   icon:
     state: medical
     color: "#52B4E9"
@@ -991,7 +991,7 @@
 
 - type: researchTreeNode
   id: QuantumLeaping
-  name: research-technology-quantum-leaping
+  name: research-tree-node-quantum-leaping
   icon:
     state: science
     color: "#D381C9"
@@ -1005,7 +1005,7 @@
 
 - type: researchTreeNode
   id: BluespaceTimeManipulation
-  name: research-technology-bluespace-time-manipulation
+  name: research-tree-node-bluespace-time-manipulation
   icon:
     state: science
     color: "#D381C9"
@@ -1035,7 +1035,7 @@
 
 - type: researchTreeNode
   id: BluespaceStorage
-  name: research-technology-bluespace-storage
+  name: research-tree-node-bluespace-storage
   icon:
     state: science
     color: "#D381C9"
@@ -1050,7 +1050,7 @@
 
 - type: researchTreeNode
   id: OptimizedMicrogalvanism
-  name: research-technology-optimized-microgalvanism
+  name: research-tree-node-microreactor
   icon:
     state: power
     color: "#EFB341"
