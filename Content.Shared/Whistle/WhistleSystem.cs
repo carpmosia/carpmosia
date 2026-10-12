@@ -71,8 +71,8 @@ public sealed partial class WhistleSystem : EntitySystem
         if (TryComp<UseDelayComponent>(uid, out var useDelay))
         {
             _actions.SetCooldown(component.Action, useDelay.Delay); // i'd like this to use ent.Comp.Action instead but i cba to convert the whole file to use Entity<T>
-            _useDelay.SetLength(owner, useDelay.Delay);
-            _useDelay.TryResetDelay((owner, useDelay));
+            _useDelay.SetLength((uid, useDelay), useDelay.Delay);
+            _useDelay.TryResetDelay((uid, useDelay));
         }
         // Carpmosia-end - Whistle action
 
