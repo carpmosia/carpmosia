@@ -58,16 +58,16 @@ public sealed partial class HijackBeaconSystem : EntitySystem
                     {
                         if (newEfficiency <= 0.3)
                         {
+                            newEfficiency = 0.3;
                             break;
                         }
+
                         if (!ent.Comp.CanCollide)
-                        {
                             continue;
-                        }
+
                         if (ent.Owner == uid)
-                        {
                             continue;
-                        }
+
                         newEfficiency -= 0.125;
                     }
                     if (active.Efficiency != newEfficiency)
@@ -363,6 +363,7 @@ public sealed partial class HijackBeaconSystem : EntitySystem
 
         return (int) (ent.Comp.CompletionTime - _gameTiming.CurTime).TotalSeconds;
     }
+
     // Carpmosia-start - ATS hijack rework
     /// <summary>
     ///     Returns a percentage of the efficiency of the beacon.
