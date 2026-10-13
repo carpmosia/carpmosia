@@ -86,6 +86,7 @@
     tags:
     - HamsterWearable
     - WhitelistChameleon
+    - GlassesPrescription # Carpmosia-edit - crafting component
 
 - type: entity
   parent: ClothingEyesBase
@@ -269,6 +270,7 @@
       tags:
       - PetWearable
       - WhitelistChameleon
+      - ChemicalGoggles # Carpmosia-edit - crafting component
 
 - type: entity
   parent: [ClothingEyesBase, BaseHighlyIllegalContraband]
