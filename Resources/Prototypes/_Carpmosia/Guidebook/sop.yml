@@ -1,0 +1,48 @@
+- type: guideEntry
+  id: SOPIndex
+  name: guide-entry-sop
+  text: "/ServerInfo/_Carpmosia/Guidebook/SOP/Index.xml"
+  priority: 15
+  children:
+  - SOPCaptain
+  - SOPChiefEngineer
+  - SOPChiefMedicalOfficer
+  - SOPHeadOfPersonnel
+  - SOPHeadOfSecurity
+  - SOPQuartermaster
+  - SOPResearchDirector
+
+- type: guideEntry
+  id: SOPCaptain
+  name: guide-entry-sop-captain
+  text: "/ServerInfo/_Carpmosia/Guidebook/SOP/Captain.xml"
+
+- type: guideEntry
+  id: SOPChiefEngineer
+  name: guide-entry-sop-ce
+  text: "/ServerInfo/_Carpmosia/Guidebook/SOP/ChiefEngineer.xml"
+
+- type: guideEntry
+  id: SOPChiefMedicalOfficer
+  name: guide-entry-sop-cmo
+  text: "/ServerInfo/_Carpmosia/Guidebook/SOP/ChiefMedicalOfficer.xml"
+
+- type: guideEntry
+  id: SOPHeadOfPersonnel
+  name: guide-entry-sop-hop
+  text: "/ServerInfo/_Carpmosia/Guidebook/SOP/HeadOfPersonnel.xml"
+
+- type: guideEntry
+  id: SOPHeadOfSecurity
+  name: guide-entry-sop-hos
+  text: "/ServerInfo/_Carpmosia/Guidebook/SOP/HeadOfSecurity.xml"
+
+- type: guideEntry
+  id: SOPQuartermaster
+  name: guide-entry-sop-qm
+  text: "/ServerInfo/_Carpmosia/Guidebook/SOP/Quartermaster.xml"
+
+- type: guideEntry
+  id: SOPResearchDirector
+  name: guide-entry-sop-rd
+  text: "/ServerInfo/_Carpmosia/Guidebook/SOP/ResearchDirector.xml"
