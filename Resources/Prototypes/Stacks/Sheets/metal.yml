@@ -2,19 +2,19 @@
   parent: BaseSheetStack
   id: Steel
   name: stack-steel
-  icon: { sprite: /Textures/Objects/Materials/Sheets/metal.rsi, state: steel }
+  icon: { sprite: /Textures/_Carpmosia/Objects/Materials/Sheets/metal.rsi, state: steel } # Carpmosia-edit - Material resprite
   spawn: SheetSteel1
 
 - type: stack
   parent: BaseSheetStack
   id: Plasteel
   name: stack-plasteel
-  icon: { sprite: /Textures/Objects/Materials/Sheets/metal.rsi, state: plasteel }
+  icon: { sprite: /Textures/_Carpmosia/Objects/Materials/Sheets/metal.rsi, state: plasteel } # Carpmosia-edit - Material resprite
   spawn: SheetPlasteel1
 
 - type: stack
   parent: BaseSheetStack
   id: Brass
   name: stack-brass
-  icon: { sprite: /Textures/Objects/Materials/Sheets/metal.rsi, state: brass }
+  icon: { sprite: /Textures/_Carpmosia/Objects/Materials/Sheets/metal.rsi, state: brass } # Carpmosia-edit - Material resprite
   spawn: SheetBrass1
