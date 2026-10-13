@@ -54,6 +54,16 @@
       uiWindowPos: 1,3
       strippingWindowPos: 1,0
       displayName: Head
+      # Carpmosia-start - wallet
+    - name: wallet
+      slotTexture: wallet
+      slotFlags: WALLET
+      stripTime: 3
+      uiWindowPos: 2,0
+      strippingWindowPos: 3,5
+      displayName: Wallet
+      dependsOn: jumpsuit  # same as id and pockets
+      # Carpmosia-end - wallet
     - name: pocket1
       slotTexture: pocket
       fullTextureName: template_small

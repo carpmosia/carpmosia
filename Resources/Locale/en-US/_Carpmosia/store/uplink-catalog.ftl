@@ -3,3 +3,6 @@ uplink-mobsyndimothroach-desc = Call in a genetically engineered attack mothroac
 
 uplink-energysabre-name = Energy Sabre
 uplink-energysabre-desc = A stylish blade issued to the elite members of Syndicate High Command. Cuts through anything like butter!
+
+uplink-syndicate-wallet-name = Syndicate Wallet
+uplink-syndicate-wallet-desc = Because even hardened corporate criminals need to put their cash somewhere. Actually they REALLY need to put their cash somewhere.
