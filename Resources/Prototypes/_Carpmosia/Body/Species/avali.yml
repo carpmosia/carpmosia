@@ -160,6 +160,7 @@
   - type: Speech
     speechVerb: Parrot # RMC did it right.
     speechSounds: MaleAvali
+    allowedEmotes: ['Call', 'Squawk', 'Scree', 'Chirp', 'Trill', 'Hiss', 'Purr']
   - type: Vocal
     emoteSounds: MaleAvali
   - type: Damageable
