@@ -1,0 +1,41 @@
+- type: entity
+  parent: MobXenoLonePraetorianNoGhost
+  id: MobXenoDaleJunior
+  name: '"Dale" Jr.'
+  description: Son of Dale! Son of Dale!
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Carpmosia/Mobs/Aliens/Xenos/young_praetorian.rsi
+    offset: 0,0
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeCircle
+          radius: 0.45
+        density: 100
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Critical:
+        Base: crit
+      Dead:
+        Base: dead
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: FluorosulfuricAcid
+        Quantity: 170
+      - ReagentId: Happiness
+        Quantity: 30
+  - type: HTN
+    rootTask:
+      task: IdleCompound
