@@ -20,6 +20,7 @@ public sealed partial class WhistleSystem : EntitySystem
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private SharedActionsSystem _actions = default!; // Carpmosia-edit - Whistle action
     [Dependency] private UseDelaySystem _useDelay = default!; // Carpmosia-edit - Whistle action
+    [Dependency] private EntityQuery<UseDelayComponent> _useDelayQuery; // Carpmosia-edit - Whistle action
 
     public override void Initialize()
     {
@@ -68,7 +69,7 @@ public sealed partial class WhistleSystem : EntitySystem
             return false;
 
         // Carpmosia-start - Whistle action
-        if (TryComp<UseDelayComponent>(uid, out var useDelay))
+        if (_useDelayQuery.TryComp(uid, out var useDelay))
         {
             _actions.SetCooldown(component.Action, useDelay.Delay); // i'd like this to use ent.Comp.Action instead but i cba to convert the whole file to use Entity<T>
             _useDelay.SetLength((uid, useDelay), useDelay.Delay);
