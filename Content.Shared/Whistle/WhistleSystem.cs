@@ -20,6 +20,7 @@ public sealed partial class WhistleSystem : EntitySystem
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private SharedActionsSystem _actions = default!; // Carpmosia-edit - Whistle action
     [Dependency] private UseDelaySystem _useDelay = default!; // Carpmosia-edit - Whistle action
+
     [Dependency] private EntityQuery<UseDelayComponent> _useDelayQuery; // Carpmosia-edit - Whistle action
 
     public override void Initialize()
