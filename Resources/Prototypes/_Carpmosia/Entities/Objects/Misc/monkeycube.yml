@@ -25,3 +25,31 @@
   - type: SpawnItemsOnUse
     items:
     - id: KittiCube
+
+- type: entity
+  parent: BoxCardboard
+  id: DwothCubeBox
+  name: dwoth cube box
+  description: Drymate brand dwoth cubes. Just add water!
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: DwothCubeWrapped
+        amount: 8
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Misc/monkeycube.rsi
+    state: box_dwoth
+
+- type: entity
+  parent: BaseWrappedCube
+  id: DwothCubeWrapped
+  name: dwoth cube
+  description: Unwrap this to get a dwoth cube.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Misc/monkeycube.rsi
+    state: wrapper_dwoth
+  - type: SpawnItemsOnUse
+    items:
+    - id: DwothCube

@@ -644,10 +644,12 @@
     - id: KoboldCube
       amount: !type:RangeNumberSelector
         range: 1, 10
-    # Carpmosia-start - Kitti
+    # Carpmosia-start - More Ancestors
     - id: KittiCube
       amount: 1, 10
-    # Carpmosia-end - Kitti
+    - id: DwothCube
+      amount: 1, 10
+    # Carpmosia-end - More Ancestors
     - id: CowCube
       amount: !type:RangeNumberSelector
         range: 1, 10
