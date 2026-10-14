@@ -21,6 +21,7 @@
           "/Audio/Weapons/smash.ogg"
   - type: InteractionOutline
   - type: Sprite
+    snapCardinals: true # Carpmosia-edit - Respritening
     sprite: Structures/Doors/Airlocks/Standard/airlock-base.rsi
     layers:
     - state: closed

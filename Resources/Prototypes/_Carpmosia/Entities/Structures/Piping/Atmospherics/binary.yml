@@ -1,9 +1,10 @@
 - type: entity
-  parent: GasVentPump
+  parent: !type:CreateVariants
+    values: [ GasVentPump, GasVentPumpAlt1, GasVentPumpAlt2, GasVentPumpAlt3, GasVentPumpAlt4 ]
   id: !type:CreateVariants
     values: [ GasVentPumpInline, GasVentPumpInlineAlt1, GasVentPumpInlineAlt2, GasVentPumpInlineAlt3, GasVentPumpInlineAlt4 ]
   categories: !type:CreateVariants
-    sequences: [ [ ], [ HideSpawnMenu ], [ HideSpawnMenu ], [ HideSpawnMenu ], [ HideSpawnMenu ] ] # Carpmosia-edit - 5 pipe layers
+    sequences: [ [ ], [ HideSpawnMenu ], [ HideSpawnMenu ], [ HideSpawnMenu ], [ HideSpawnMenu ] ]
   suffix: Inline
   components:
   - type: NodeContainer
@@ -26,7 +27,8 @@
     node: ventpumpInline
 
 - type: entity
-  parent: GasVentScrubber
+  parent: !type:CreateVariants
+    values: [ GasVentScrubber, GasVentScrubberAlt1, GasVentScrubberAlt2, GasVentScrubberAlt3, GasVentScrubberAlt4 ]
   id: !type:CreateVariants
     values: [ GasVentScrubberInline, GasVentScrubberInlineAlt1, GasVentScrubberInlineAlt2, GasVentScrubberInlineAlt3, GasVentScrubberInlineAlt4 ]
   categories: !type:CreateVariants

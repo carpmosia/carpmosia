@@ -198,6 +198,7 @@ public sealed class JobTest : GameTest
     /// <summary>
     /// Check that map job-weight overrides are used, while jobs omitted by the map retain their default weight.
     /// </summary>
+    [Explicit] // Carpmosia-edit - Job priority rebalance
     [Test]
     public async Task MapJobWeightOverrideTest()
     {

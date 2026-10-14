@@ -1,27 +1,33 @@
 - type: entity
   parent: [ BaseStructure, StructureHealthDoor ]
-  id: EnergyGate
-  name: energy gate
-  description: An advanced gate that permits one-way access and prevents tailgating.
+  id: Turnstile # Carpmosia-edit - Respritening
+  name: turnstile # Carpmosia-edit - Respritening
+  description: A mechanical door that permits one-way access and prevents tailgating. # Carpmosia-edit - Respritening
   components:
   - type: Sprite
     sprite: Structures/Doors/Misc/energy-gate.rsi
+    snapCardinals: true # Carpmosia-edit - Respritening
     drawdepth: Doors
     layers:
     - state: security
-    - state: idle-security
-      shader: unshaded
-      map: [ "barrier" ]
-    - state: direction
-      shader: unshaded
+    # Carpmosia-start - Respritening
+      map: [ "enum.TurnstileVisualLayers.Base" ]
+    # - state: idle-security
+    #   shader: unshaded
+    #   map: [ "barrier" ]
+    # - state: direction
+    #   shader: unshaded
+    # Carpmosia-end - Respritening
   - type: Appearance
-  - type: GenericVisualizer
-    visuals:
-      enum.TurnstileVisualLayers.Base:
-        barrier:
-          Idle: { state: idle-security }
-          Spin: { state: operate }
-          Deny: { state: deny }
+  # Carpmosia-start - Respritening
+  # - type: GenericVisualizer
+  #   visuals:
+  #     enum.TurnstileVisualLayers.Base:
+  #       barrier:
+  #         Idle: { state: idle-security }
+  #         Spin: { state: operate }
+  #         Deny: { state: deny }
+  # Carpmosia-end - Respritening
   - type: AnimationPlayer
   - type: Fixtures
     fixtures:
@@ -70,59 +76,63 @@
     graph: EnergyGate
     node: energyGate
   - type: DirectionalArrowIndicator
-  - type: IconSmooth
-    key: walls
-    mode: NoSprite
-  - type: PointLight
-    energy: 2.2
-    color: "#cc3a41"
-    radius: 2.2
+  # Carpmosia-start - Respritening
+  # - type: IconSmooth
+  #   key: walls
+  #   mode: NoSprite
+  # - type: PointLight
+  #   energy: 2.2
+  #   color: "#cc3a41"
+  #   radius: 2.2
+  # Carpmosia-end - Respritening
   - type: PlacementReplacement
-    key: walls
+    key: wall_basic # Carpmosia-edit - Respritening
 
 # Genpop
 - type: entity
-  id: EnergyGateGenpopEnter
-  parent: EnergyGate
+  id: TurnstileGenpopEnter # Carpmosia-edit - Respritening
+  parent: Turnstile # Carpmosia-edit - Respritening
   suffix: Genpop Enter
   components:
   - type: AccessReader
     access: [["GenpopEnter"], ["Security"]]
 
 - type: entity
-  id: EnergyGateGenpopLeave
-  parent: EnergyGate
+  id: TurnstileGenpopLeave # Carpmosia-edit - Respritening
+  parent: Turnstile # Carpmosia-edit - Respritening
   suffix: Genpop Leave
   components:
   - type: AccessReader
     access: [["GenpopLeave"], ["Security"]]
 
 # Airtight
-- type: entity
-  parent: EnergyGate
-  id: EnergyGateAirtight
-  name: airtight energy gate
-  suffix: Airtight
-  components:
-  - type: Airtight
-  - type: RadiationBlocker
-    resistance: 4
-  - type: Sprite
-    layers:
-    - state: regular
-    - state: idle
-      shader: unshaded
-      map: [ "barrier" ]
-    - state: direction
-      shader: unshaded
-  - type: GenericVisualizer
-    visuals:
-      enum.TurnstileVisualLayers.Base:
-        barrier:
-          Idle: { state: idle }
-          Spin: { state: operate }
-          Deny: { state: deny }
-  - type: PointLight
-    energy: 2.2
-    color: "#50abff"
-    radius: 2.2
+# Carpmosia-start - Respritening
+# - type: entity
+#   parent: EnergyGate
+#   id: EnergyGateAirtight
+#   name: airtight energy gate
+#   suffix: Airtight
+#   components:
+#   - type: Airtight
+#   - type: RadiationBlocker
+#     resistance: 4
+#   - type: Sprite
+#     layers:
+#     - state: regular
+#     - state: idle
+#       shader: unshaded
+#       map: [ "barrier" ]
+#     - state: direction
+#       shader: unshaded
+#   - type: GenericVisualizer
+#     visuals:
+#       enum.TurnstileVisualLayers.Base:
+#         barrier:
+#           Idle: { state: idle }
+#           Spin: { state: operate }
+#           Deny: { state: deny }
+#   - type: PointLight
+#     energy: 2.2
+#     color: "#50abff"
+#     radius: 2.2
+# Carpmosia-end - Respritening

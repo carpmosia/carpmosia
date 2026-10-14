@@ -2,7 +2,6 @@
 # Finding individual authors is an unfeasible task. If you can reference the author please do so.
 
 - files:
-  - plating.png
   - meat.png
   - lime.png
   - silver.png
@@ -13,7 +12,6 @@
   - super_reinforced.png
   - lattice.png
   - metaldiamond.png
-  - grating-maint.png
   - web.png
   license: "CC0-1.0"
   copyright: "By AftrLite (GitHub)."
@@ -22,12 +20,12 @@
 - files:
   - plating-damaged.png
   license: "CC-BY-SA-3.0"
-  copyright: "Damage overlays by WJohn (GitHub). Plating tile by AftrLite (GitHub)."
-  source: "https://github.com/wall-nerds/wallening/blob/9428d97a4fadf8a486b0c6fbe2ee345a2780e687/icons/turf/damaged.dmi"
+  copyright: "Modified by github user @Flareguy from plating.png, using damaged plating sprites from /tg/station at commit https://github.com/tgstation/tgstation/blob/6665eec76c98a4f3f89bebcd10b34b47dcc0b8ae/icons/turf/floors.dmi"
+  source: "https://github.com/space-wizards/space-station-14/pull/21711"
 
-- files: ["lino.png"]
+- files: [ "foammetal.png", "lino.png" ]
   license: "CC-BY-SA-3.0"
-  copyright: "vgstation13 at roughly commit e4d3ea7f69d21c3667be12b114fa935c4640cb05. Modified by AftrLite (GitHub)."
+  copyright: "vgstation13 at roughly commit e4d3ea7f69d21c3667be12b114fa935c4640cb05. lino.png modified by AftrLite (GitHub)."
   source: "https://github.com/vgstation-coders/vgstation13"
 
 - files: ["arcadeblue.png", "arcadered.png"]
@@ -35,7 +33,7 @@
   copyright: "arcadered renamed from eightiesred, arcadeblue by Peptide90 modified from arcadered.png, tgstation commit 8abb19545828230d92ba18827feeb42a67a55d49"
   source: "https://github.com/tgstation/tgstation/"
 
-- files: ["cropped_parallax.png", "eighties.png"]
+- files: ["cropped_parallax.png", "eighties.png", "plating.png"]
   license: "CC-BY-SA-3.0"
   copyright: "tgstation commit 8abb19545828230d92ba18827feeb42a67a55d49, cropped_parallax modified from parallax."
   source: "https://github.com/tgstation/tgstation/"

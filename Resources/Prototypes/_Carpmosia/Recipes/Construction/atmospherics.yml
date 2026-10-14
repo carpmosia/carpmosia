@@ -6,7 +6,7 @@
   hide: !type:CreateVariants
     values: [ false, true, true, true, true ]
   graph: !type:CreateVariants
-    values: [ GasBinary, GasBinaryAlt1, GasBinaryAlt2, GasBinaryAlt3, GasBinaryAlt4 ] # Carpmosia-edit - 5 pipe layers
+    values: [ GasBinary, GasBinaryAlt1, GasBinaryAlt2, GasBinaryAlt3, GasBinaryAlt4 ]
   targetNode: ventpumpInline
 
 - type: construction
@@ -16,6 +16,6 @@
   hide: !type:CreateVariants
     values: [ false, true, true, true, true ]
   graph: !type:CreateVariants
-    values: [ GasBinary, GasBinaryAlt1, GasBinaryAlt2, GasBinaryAlt3, GasBinaryAlt4 ] # Carpmosia-edit - 5 pipe layers
+    values: [ GasBinary, GasBinaryAlt1, GasBinaryAlt2, GasBinaryAlt3, GasBinaryAlt4 ]
   targetNode: ventscrubberInline
 # endregion Binary

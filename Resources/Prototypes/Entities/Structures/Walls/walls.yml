@@ -75,7 +75,7 @@
     - Diagonal
   - type: IconSmooth
     mode: Diagonal
-    key: walls
+    key: wall_basic # Carpmosia-edit - Respritening
     base: state
   - type: Airtight
     noAirWhenFullyAirBlocked: false
@@ -132,7 +132,7 @@
             min: 1
             max: 1
   - type: IconSmooth
-    key: walls
+    key: wall_material # Carpmosia-edit - Respritening
     base: brick
 
 - type: entity
@@ -161,7 +161,7 @@
       - &ChangeNodeGirder !type:ChangeConstructionNodeBehavior
         node: girder
   - type: IconSmooth
-    key: walls
+    key: wall_material # Carpmosia-edit - Respritening
     base: brass
 
 - type: entity
@@ -196,7 +196,7 @@
         sound:
           collection: gib
   - type: IconSmooth
-    key: meatwalls
+    key: wall_meat # Carpmosia-edit - Respritening
     base: meat
 
 - type: entity
@@ -217,7 +217,7 @@
       behaviors:
       - *SpawnGirder
   - type: IconSmooth
-    key: walls
+    key: wall_debug # Carpmosia-edit - Respritening
     base: debug
 
 - type: entity
@@ -259,7 +259,7 @@
         - WallLayer
         density: 4000
   - type: IconSmooth
-    key: walls
+    key: wall_material # Carpmosia-edit - Respritening
     base: gold
 
 - type: entity
@@ -290,7 +290,7 @@
         spawn:
           SheetPlasma1: *BaseWallSpawn
   - type: IconSmooth
-    key: walls
+    key: wall_material # Carpmosia-edit - Respritening
     base: plasma
   - type: RadiationBlocker
     resistance: 5
@@ -306,7 +306,7 @@
   - type: Icon
     sprite: Structures/Walls/plastitanium.rsi
   - type: IconSmooth
-    key: walls
+    key: wall_plastitanium # Carpmosia-edit - Respritening
     base: plastitanium
   - type: Fixtures
     fixtures:
@@ -360,6 +360,10 @@
     tags:
     - Diagonal
     - SmeltingImmune
+  # Carpmosia-start - Respritening
+  - type: IconSmooth
+    key: wall_plastitanium
+  # Carpmosia-end - Respritening
 
 - type: entity
   parent: [ WallPlastitaniumDiagonalIndestructible, StructureHealthWallStrong ]
@@ -506,7 +510,7 @@
       - *SpawnGirder
       - *SpawnPlasteel
   - type: IconSmooth
-    key: walls
+    key: wall_material # Carpmosia-edit - Respritening
     base: wall
   - type: StaticPrice
     price: 150
@@ -522,7 +526,7 @@
   - type: Icon
     sprite: Structures/Walls/marble.rsi
   - type: IconSmooth
-    key: walls
+    key: wall_material # Carpmosia-edit - Respritening
     base: wall
   - type: Fixtures
     fixtures:
@@ -566,7 +570,7 @@
         spawn:
           IngotSilver1: *BaseWallSpawn
   - type: IconSmooth
-    key: walls
+    key: wall_material # Carpmosia-edit - Respritening
     base: silver
 
 #shuttle walls
@@ -613,6 +617,10 @@
       - *ChangeNodeReinforcedGirder
       - *SoundMetalSlam
       - *SpawnPlasteel
+  # Carpmosia-start - Respritening
+  - type: IconSmooth
+    key: wall_shuttle
+  # Carpmosia-end - Respritening
   - type: Construction
     graph: Girder
     node: diagonalshuttleWall
@@ -648,7 +656,7 @@
     graph: Girder
     node: shuttleWall
   - type: IconSmooth
-    key: walls
+    key: wall_shuttle # Carpmosia-edit - Respritening
     base: state
   - type: Appearance
   - type: GenericVisualizer
@@ -772,7 +780,7 @@
   - type: Icon
     sprite: Structures/Walls/exo.rsi
   - type: IconSmooth
-    key: walls
+    key: wall_chitin # Carpmosia-edit - Respritening
     base: solid
   - type: Construction
     graph: Girder
@@ -818,7 +826,7 @@
   - type: RadiationBlocker
     resistance: 5
   - type: IconSmooth
-    key: walls
+    key: wall_chitin # Carpmosia-edit - Respritening
     base: reinf_over
   - type: Construction
     graph: Girder
@@ -834,7 +842,7 @@
   - type: Icon
     sprite: Structures/Walls/exo-borg.rsi
   - type: IconSmooth
-    key: walls
+    key: wall_xenoborg # Carpmosia-edit - Respritening
     base: xenoborg
 
 - type: entity
@@ -850,6 +858,10 @@
   - type: Icon
     sprite: Structures/Walls/exo-borg-diagonal.rsi
     state: state0
+  # Carpmosia-start - Respritening
+  - type: IconSmooth
+    key: wall_xenoborg
+  # Carpmosia-end - Respritening
 
 - type: entity
   parent: [ BaseWall, StructureHealthWallWeak ]
@@ -886,7 +898,7 @@
         - WallLayer
         density: 6000
   - type: IconSmooth
-    key: walls
+    key: wall_material # Carpmosia-edit - Respritening
     base: uranium
   - type: RadiationBlocker
     resistance: 6
@@ -921,7 +933,7 @@
         spawn:
           MaterialWoodPlank1: *BaseWallSpawn
   - type: IconSmooth
-    key: walls
+    key: wall_material # Carpmosia-edit - Respritening
     base: wood
 
 - type: entity
@@ -954,7 +966,7 @@
         spawn:
           MaterialWebSilk1: *BaseWallSpawn
   - type: IconSmooth
-    key: webs
+    key: wall_web # Carpmosia-edit - Respritening
     base: wall
   - type: Construction
     graph: WebStructures
@@ -978,8 +990,14 @@
       - *SoundMetalSlam
       - *SpawnGirder
   - type: IconSmooth
-    key: walls
+    key: wall_shuttle # Carpmosia-edit - Respritening
     base: mining
+  # Carpmosia-start - Respritening
+  - type: RandomIconSmooth
+    randomStates:
+    - mining
+    - miningB
+  # Carpmosia-end - Respritening
   - type: Appearance
 
 - type: entity
@@ -1002,6 +1020,10 @@
       behaviors:
       - *SpawnGirder
       - *SoundMetalSlam
+  # Carpmosia-edit - Respritening
+  - type: IconSmooth
+    key: wall_shuttle
+  # Carpmosia-end - Respritening
 
 # Mime
 
@@ -1074,7 +1096,7 @@
       behaviors:
       - *SoundBreakStone
   - type: IconSmooth
-    key: walls
+    key: wall_material # Carpmosia-edit - Respritening
     base: concrete
 
 # Cardboard
@@ -1132,7 +1154,7 @@
         sound:
           path: /Audio/Effects/poster_broken.ogg
   - type: IconSmooth
-    key: cards
+    key: wall_cardboard # Carpmosia-edit - Respritening
     base: card
   - type: Occluder
   - type: BlockWeather

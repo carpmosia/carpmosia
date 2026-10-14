@@ -184,6 +184,7 @@
   components:
     - type: Sprite
       sprite: Structures/Doors/Airlocks/Glass/firelock-base.rsi
+      snapCardinals: false # Carpmosia-edit - Respritening
     - type: Occluder
       enabled: false
     - type: Fixtures

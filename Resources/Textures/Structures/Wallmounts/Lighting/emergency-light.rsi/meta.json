@@ -1,11 +1,11 @@
 {
     "version": 1,
-    "license": "CC-BY-SA-3.0",
-    "copyright": "By AftrLite (GitHub)",
     "size": {
         "x": 32,
         "y": 32
     },
+    "license": "CC-BY-SA-3.0",
+    "copyright": "juliang, modified by mirrorcult",
     "states": [
         {
             "name": "base",
@@ -13,11 +13,59 @@
         },
         {
             "name": "emergency_light_off",
-            "directions": 4
+            "directions": 4,
+            "delays": [
+                [
+                    1.0
+                ],
+                [
+                    1.0
+                ],
+                [
+                    1.0
+                ],
+                [
+                    1.0
+                ]
+            ]
         },
         {
             "name": "emergency_light_on",
-            "directions": 4
+            "directions": 4,
+            "delays": [
+                [
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3
+                ],
+                [
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3
+                ],
+                [
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3
+                ],
+                [
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3
+                ]
+            ]
         }
     ]
 }

@@ -23,7 +23,7 @@
   - type: InteractionOutline
   - type: Sprite
     drawdepth: WallMountedItems
-    offset: 0, 1
+    # offset: 0, 1 # Carpmosia-edit - Respritening
     layers:
     - map: ["enum.PoweredLightLayers.Base"]
       state: base
@@ -35,7 +35,7 @@
     energy: 0.8
     radius: 10
     softness: 1
-#    offset: "0, 0.25"
+    offset: "0, -0.5" # Carpmosia-edit - Respritening
   - type: RCDDeconstructable
     cost: 4
     delay: 2
@@ -111,7 +111,7 @@
   components:
   - type: Sprite
     sprite: Structures/Wallmounts/Lighting/light-tube.rsi
-    offset: 0, 1
+    # offset: 0, 1 # Carpmosia-edit - Respritening
     state: empty
   - type: PointLight
     enabled: false
@@ -312,7 +312,7 @@
     enabled: false
   - type: PointLight
     enabled: false
-#    offset: "0, 0.25"
+    offset: "0, -0.5" # Carpmosia-edit - Respritening
   - type: ContainerContainer
     containers:
       light_bulb: !type:ContainerSlot
@@ -426,7 +426,7 @@
     enabled: false
     radius: 5
     energy: 0.6
-    offset: "0, 0.25"
+    offset: "0, 0.4" # Carpmosia-edit - Respritening
     color: "#7CFC00"
     lightMask: ConeDouble
   - type: ApcPowerReceiver
@@ -444,7 +444,7 @@
     speed: 40
   - type: Sprite
     sprite: Structures/Wallmounts/Lighting/emergency-light.rsi
-    offset: 0, 1
+    # offset: 0, 1 # Carpmosia-edit - Respritening
     layers:
     - state: base
       map: [ "enum.EmergencyLightVisualLayers.Base" ]

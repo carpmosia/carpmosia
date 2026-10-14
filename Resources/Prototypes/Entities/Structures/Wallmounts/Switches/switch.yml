@@ -10,7 +10,7 @@
     arc: 175
   - type: StationAiWhitelist
   - type: Sprite
-    offset: 0, -0.25
+    # offset: 0, -0.25 # Carpmosia-edit - Respritening
     drawdepth: WallMountedItems
     sprite: Structures/Wallmounts/switch.rsi
     layers:
@@ -72,7 +72,7 @@
     arc: 175
   - type: StationAiWhitelist
   - type: Sprite
-    offset: 0, -0.25
+    # offset: 0, -0.25 # Carpmosia-edit - Respritening
     drawdepth: WallMountedItems
     sprite: Structures/Wallmounts/switch.rsi
     layers:
@@ -110,7 +110,7 @@
   description: It's a switch for toggling lights that are connected to the same apc.
   components:
   - type: Sprite
-    offset: 0, -0.25
+    # offset: 0, -0.25 # Carpmosia-edit - Respritening
     drawdepth: WallMountedItems
     sprite: Structures/Wallmounts/switch.rsi
     layers:
@@ -197,7 +197,7 @@
   - type: Lock
   - type: AccessReader
   - type: Sprite
-    offset: 0, -0.25
+    # offset: 0, -0.25 # Carpmosia-edit - Respritening
     drawdepth: WallMountedItems
     sprite: Structures/Wallmounts/switch-lockable.rsi
     layers:
@@ -486,7 +486,7 @@
   - type: Physics
     canCollide: false
   - type: Sprite
-    offset: 0, -0.25
+    # offset: 0, -0.25 # Carpmosia-edit - Respritening
     drawdepth: SmallObjects
     sprite: Structures/Wallmounts/switch-frame.rsi
     state: grey

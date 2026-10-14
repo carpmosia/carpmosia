@@ -30,6 +30,7 @@
   parent: BaseStationTile
   name: tiles-steel-floor-checker-light
   sprite: /Textures/Tiles/Checker/checker-light.png
+  variants: 4 # Carpmosia-edit - Respritening
   itemDrop: FloorTileItemSteelCheckerLight
 
 - type: tile
@@ -37,6 +38,7 @@
   parent: BaseStationTile
   name: tiles-steel-floor-checker-dark
   sprite: /Textures/Tiles/Checker/checker-dark.png
+  variants: 4 # Carpmosia-edit - Resprite
   itemDrop: FloorTileItemSteelCheckerDark
 
 - type: tile
@@ -108,6 +110,7 @@
   parent: BaseStationTile
   name: tiles-bar-floor
   sprite: /Textures/Tiles/Checker/checker-bar.png
+  variants: 4 # Carpmosia-edit - Respritening
   itemDrop: FloorTileItemBar
 
 - type: tile

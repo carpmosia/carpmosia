@@ -8,7 +8,7 @@
   components:
   - type: InteractionOutline
   - type: Sprite
-    sprite: _Carpmosia/Structures/Doors/Windoors/windoor.rsi # Carpmosia-edit - Windoor resprite
+    sprite: Structures/Doors/Windoors/windoor.rsi
     layers:
     - state: assembly
   - type: Physics
@@ -54,7 +54,7 @@
   description: It opens, it closes, and you can see through it! This one looks purp-, no, pink. Wait...
   components:
   - type: Sprite
-    sprite: _Carpmosia/Structures/Doors/Windoors/plasma.rsi # Carpmosia-edit - Windoor resprite
+    sprite: Structures/Doors/Windoors/plasma.rsi
     layers:
     - state: assembly
   - type: Destructible
@@ -76,7 +76,7 @@
   description: It opens, it closes, and you can see through it! This one looks sickly green...
   components:
   - type: Sprite
-    sprite: _Carpmosia/Structures/Doors/Windoors/uranium.rsi # Carpmosia-edit - Windoor resprite
+    sprite: Structures/Doors/Windoors/uranium.rsi
     layers:
     - state: assembly
   - type: Destructible
