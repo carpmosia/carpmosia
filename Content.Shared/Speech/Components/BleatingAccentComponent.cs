@@ -1,6 +1,5 @@
 // using Content.Shared.Speech.EntitySystems; Carpmosia-edit - configurable bleating
 // using Robust.Shared.GameStates; Carpmosia-edit - configurable bleating
-using Content.Shared.Speech.Components;
 
 namespace Content.Shared.Speech.Components;
 
