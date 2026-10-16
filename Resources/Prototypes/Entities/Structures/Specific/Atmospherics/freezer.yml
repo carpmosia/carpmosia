@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   abstract: true
   parent: AirSensorBase
   id: AirSensorFreezerBase
@@ -11,13 +11,19 @@
   parent: [AirSensorFreezerBase, AirSensor]
   id: AirSensorFreezer
 
+# Carpmosia-start - Pipe presets
 - type: entity
-  parent: [BaseAtmosDistro, AirSensorFreezerBase, GasVentPumpAlt4] # Carpmosia-edit - Pipe presets
+  parent: [BaseAtmosDistro, AirSensorFreezerBase, GasVentPumpAlt4]
   id: GasVentPumpFreezer
+  # categories: !type:CreateVariants
+  #   sequences: [ [ ], [ HideSpawnMenu ], [ HideSpawnMenu ] ]
 
 - type: entity
-  parent: [BaseAtmosWaste, AirSensorFreezerBase, GasVentScrubberAlt3] # Carpmosia-edit - Pipe presets
+  parent: [BaseAtmosWaste, AirSensorFreezerBase, GasVentScrubberAlt3]
   id: GasVentScrubberFreezer
+  # categories: !type:CreateVariants
+  #   sequences: [ [ ], [ HideSpawnMenu ], [ HideSpawnMenu ] ]
+# Carpmosia-end - Pipe presets
 
 # air alarm proto with auto: false to prevent the automatic switching of modes overriding the default values
 - type: entity

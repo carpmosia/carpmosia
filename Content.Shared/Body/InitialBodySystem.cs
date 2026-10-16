@@ -2,6 +2,7 @@ using System.Numerics;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes; // Offbrand
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Body;
 

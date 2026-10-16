@@ -3,11 +3,13 @@ using Content.Client._Offbrand.BodyVisuals; // Offbrand
 using Content.Client.DisplacementMap;
 using Content.Shared.Body;
 using Content.Shared.CCVar;
+using Content.Shared.DisplacementMap;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Configuration;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Client.Body;
@@ -117,6 +119,11 @@ public sealed partial class VisualBodySystem : SharedVisualBodySystem
                 ent.Comp.Layer,
                 out _);
         }
+
+        if (displacement == null)
+        {
+            _displacement.EnsureDisplacementIsNotOnSprite((target, Comp<SpriteComponent>(target)), ent.Comp.Layer);
+        }
     }
 
     // Begin Offbrand
@@ -206,9 +213,9 @@ public sealed partial class VisualBodySystem : SharedVisualBodySystem
         // End Offbrand
     }
 
-    protected override void SetOrganMarkings(Entity<VisualOrganMarkingsComponent> ent, Dictionary<HumanoidVisualLayers, List<Marking>> markings)
+    protected override void SetOrganMarkings(Entity<VisualOrganMarkingsComponent> ent, Dictionary<HumanoidVisualLayers, List<Marking>> markings, Dictionary<HumanoidVisualLayers, DisplacementData> displacement)
     {
-        base.SetOrganMarkings(ent, markings);
+        base.SetOrganMarkings(ent, markings, displacement);
 
         // Begin Offbrand
         RemoveOrganMarkings(ent);
@@ -227,9 +234,9 @@ public sealed partial class VisualBodySystem : SharedVisualBodySystem
         // End Offbrand
     }
 
-    protected override void SetOrganAppearance(Entity<VisualOrganComponent> ent, PrototypeLayerData data)
+    protected override void SetOrganAppearance(Entity<VisualOrganComponent> ent, PrototypeLayerData data, ProtoId<DisplacementDataPrototype>? displacement)
     {
-        base.SetOrganAppearance(ent, data);
+        base.SetOrganAppearance(ent, data, displacement);
 
         ApplyOrganVisual(ent); // Offbrand
 
@@ -307,7 +314,8 @@ public sealed partial class VisualBodySystem : SharedVisualBodySystem
             if (!_marking.TryGetMarking(marking, out var proto))
                 continue;
 
-            if (!_sprite.LayerMapTryGet(target, proto.BodyPart, out var index, true))
+            if (!_sprite.LayerMapTryGet(target, proto.BodyPart, out var index, true)
+                || !_sprite.TryGetLayer(target, index, out var bodypartLayer, true))
                 continue;
 
             ent.Comp.MarkingsDisplacement.TryGetValue(proto.BodyPart, out var displacement);
@@ -323,7 +331,7 @@ public sealed partial class VisualBodySystem : SharedVisualBodySystem
 
                 var layerId = $"{proto.ID}-{rsi.RsiState}";
 
-                if (!_sprite.LayerMapTryGet(target, layerId, out _, false))
+                if (!_sprite.LayerMapTryGet(target, layerId, out var spriteLayer, false))
                 {
                     // Having three separate indices and a magic +1 is cursed, but:
                     // - index refers to the index of the organ the marking is applied to
@@ -332,15 +340,16 @@ public sealed partial class VisualBodySystem : SharedVisualBodySystem
                     //   an additional offset to ensure that the order of the base sprites is correct
                     //   after inserting a displacement layer
                     // - The +1 ensures that markings render on top of the base organ
-                    var spriteLayer = _sprite.AddLayer(target, sprite, index + i + numDisplacements + 1);
+                    spriteLayer = _sprite.AddLayer(target, sprite, index + i + numDisplacements + 1);
                     _sprite.LayerMapSet(target, layerId, spriteLayer);
-                    _sprite.LayerSetSprite(target, layerId, rsi);
+                    _sprite.LayerSetSprite(target, spriteLayer, rsi);
+                    _sprite.LayerSetVisible(target, spriteLayer, bodypartLayer.Visible);
                 }
 
                 if (marking.MarkingColors is not null && i < marking.MarkingColors.Count)
-                    _sprite.LayerSetColor(target, layerId, marking.MarkingColors[i]);
+                    _sprite.LayerSetColor(target, spriteLayer, marking.MarkingColors[i]);
                 else
-                    _sprite.LayerSetColor(target, layerId, Color.White);
+                    _sprite.LayerSetColor(target, spriteLayer, Color.White);
 
                 if (displacement != null && proto.CanBeDisplaced)
                 {
@@ -413,6 +422,9 @@ public sealed partial class VisualBodySystem : SharedVisualBodySystem
     {
         if (!ent.Comp.HideableLayers.Contains(args.Args.Layer))
             return;
+
+        // This hurts.
+        args.Args = args.Args with { ShouldHide = true };
 
         foreach (var markings in ent.Comp.Markings.Values)
         {

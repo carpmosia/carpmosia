@@ -1,16 +1,16 @@
 {
-    "version":1,
-    "license":"CC-BY-SA-3.0",
-    "copyright":"Taken from tgstation at https://github.com/tgstation/tgstation/blob/3681006d7102045e334e8eddb23a8685fcdb258a/icons/obj/doors/windoor.dmi, edited by SphiraI(github)",
-    "size":{
-        "x":32,
-        "y":32
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Sprited by Atakku based on https://github.com/Skyrat-SS13/Skyrat-tg/commit/639e77f6e957bce88d9734b4b97b249738af42b1 and https://github.com/space-syndicate/space-station-14/commit/645d9d883ec88fcaec49e301ff30119eeba2cb1c and https://github.com/tgstation/tgstation/blob/3681006d7102045e334e8eddb23a8685fcdb258a/icons/obj/doors/windoor.dmi",
+    "size": {
+        "x": 32,
+        "y": 32
     },
-    "states":[
+    "states": [
         {
-            "name":"assembly",
-            "directions":4,
-            "delays":[
+            "name": "assembly",
+            "directions": 4,
+            "delays": [
                 [
                     0.3,
                     0.3
@@ -30,17 +30,21 @@
             ]
         },
         {
-            "name":"closed",
-            "directions":4
+            "name": "bolted_unlit",
+            "directions": 4
         },
         {
-            "name":"closed_unlit",
-            "directions":4
+            "name": "closed_unlit",
+            "directions": 4
         },
         {
-            "name":"closing",
-            "directions":4,
-            "delays":[
+            "name": "closed",
+            "directions": 4
+        },
+        {
+            "name": "closing_unlit",
+            "directions": 4,
+            "delays": [
                 [
                     0.1,
                     0.1,
@@ -80,9 +84,9 @@
             ]
         },
         {
-            "name":"closing_unlit",
-            "directions":4,
-            "delays":[
+            "name": "closing",
+            "directions": 4,
+            "delays": [
                 [
                     0.1,
                     0.1,
@@ -122,17 +126,65 @@
             ]
         },
         {
-            "name":"open",
-            "directions":4
+            "name": "deny_unlit",
+            "directions": 4,
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1
+                ],
+                [
+                    0.1,
+                    0.1,
+                    0.1
+                ],
+                [
+                    0.1,
+                    0.1,
+                    0.1
+                ],
+                [
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
         },
         {
-            "name":"open_unlit",
-            "directions":4
+            "name": "emergency_unlit",
+            "directions": 4,
+            "delays": [
+                [
+                    0.4,
+                    0.4
+                ],
+                [
+                    0.4,
+                    0.4
+                ],
+                [
+                    0.4,
+                    0.4
+                ],
+                [
+                    0.4,
+                    0.4
+                ]
+            ]
         },
         {
-            "name":"opening",
-            "directions":4,
-            "delays":[
+            "name": "open_unlit",
+            "directions": 4
+        },
+        {
+            "name": "open",
+            "directions": 4
+        },
+        {
+            "name": "opening_unlit",
+            "directions": 4,
+            "delays": [
                 [
                     0.1,
                     0.1,
@@ -172,9 +224,9 @@
             ]
         },
         {
-            "name":"opening_unlit",
-            "directions":4,
-            "delays":[
+            "name": "opening",
+            "directions": 4,
+            "delays": [
                 [
                     0.1,
                     0.1,
@@ -214,35 +266,17 @@
             ]
         },
         {
-            "name":"deny_unlit",
-            "directions":4,
-            "delays":[
-                [
-                    0.1,
-                    0.2,
-                    0.1
-                ],
-                [
-                    0.1,
-                    0.2,
-                    0.1
-                ],
-                [
-                    0.1,
-                    0.2,
-                    0.1
-                ],
-                [
-                    0.1,
-                    0.2,
-                    0.1
-                ]
-            ]
+            "name": "panel_open",
+            "directions": 4
         },
         {
-            "name":"sparks",
-            "directions":4,
-            "delays":[
+            "name": "secure_underlay",
+            "directions": 4
+        },
+        {
+            "name": "sparks",
+            "directions": 4,
+            "delays": [
                 [
                     0.1,
                     0.1,
@@ -278,22 +312,7 @@
             ]
         },
         {
-            "name":"panel_open",
-            "directions":4
-        },
-        {
-            "name":"bolted_unlit",
-            "directions":4
-        },
-        {
-            "name":"welded"
-        },
-        {
-            "name":"secure_underlay"
-        },
-        {
-            "name":"emergency_unlit",
-            "directions":4
+            "name": "welded"
         }
     ]
 }

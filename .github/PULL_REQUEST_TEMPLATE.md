@@ -31,7 +31,7 @@
 ## Changelog
 :cl: <!-- DO NOT REMOVE THIS LINE UNLESS THERE IS NO CHANGELOG -->
 <!-- Edit these as you may need, remove/add as many as you want -->
-- add: Added fun!
-- remove: Removed fun!
-- tweak: Changed fun!
-- fix: Fixed fun!
+- add: Crowbars now randomly spawn in maintenance lockers.
+- remove: Crowbars no longer spawn in maintenance crates.
+- tweak: Crowbar spawn rates have been increased for tool lockers.
+- fix: Crowbars no longer accidentally spawn in microwaves.

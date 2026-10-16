@@ -20,22 +20,17 @@ public sealed partial class MapRulesTest : GameTest
     private static readonly string[] Exceptions = [
        "/Maps/_Carpmosia/Legacy/", // We ain't testing legacy ever
        // Maps pending fixes
-       "/Maps/_Carpmosia/lampocteis.yml", // https://github.com/carpmosia/carpmosia/pull/603
        "/Maps/_Carpmosia/feint.yml",
        "/Maps/_Carpmosia/oasis.yml",
        "/Maps/_Carpmosia/packed.yml",
        "/Maps/_Carpmosia/saltern.yml",
        "/Maps/_Carpmosia/sparks.yml",
-    ];
-
-    private static readonly string[] TemporaryException = [
-       // Maps pending fixes
-       "/Maps/_Carpmosia/lampocteis.yml", // https://github.com/carpmosia/carpmosia/pull/603
-       "/Maps/_Carpmosia/feint.yml",
-       "/Maps/_Carpmosia/oasis.yml",
-       "/Maps/_Carpmosia/packed.yml",
-       "/Maps/_Carpmosia/saltern.yml",
-       "/Maps/_Carpmosia/sparks.yml",
+       // Temporarily disabled until the next resave
+       "/Maps/_Carpmosia/Terminals/",
+       "/Maps/_Carpmosia/Shuttles/",
+       "/Maps/_Carpmosia/centcomm.yml",
+       "/Maps/_Carpmosia/lampocteis.yml",
+       "/Maps/_Carpmosia/amber.yml",
     ];
 
     private static readonly ResPath[] TestScope = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", true).Where(x => !Exceptions.Any(y => x.ToString().StartsWith(y)))];
@@ -91,19 +86,11 @@ public sealed partial class MapRulesTest : GameTest
           ..TestMissingConnections(root),
           ..TestMissingLabels(root),
           ..TestNoCenteredGrid(root),
-          //..TestNonWallmountsUnderWalls(root),
+          ..TestNonWallmountsUnderWalls(root),
           ..TestMissingMapGridMetadata(root),
           ..TestTinyGrids(root),
           ..TestUnlinkedAtmosDevices(root),
         ];
-
-        // Temporarily excepted
-        if (!TemporaryException.Any(y => map.ToString().StartsWith(y)))
-        {
-            errors.AddRange([
-                ..TestNonWallmountsUnderWalls(root),
-            ]);
-        }
 
         // Station specific tests
         if (!NonStations.Any(x => map.ToString().StartsWith(x)))

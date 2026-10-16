@@ -24,11 +24,12 @@ public abstract partial class SharedRatKingSystem : EntitySystem
             return;
 
         _action.AddAction(uid, ref component.ActionRaiseArmyEntity, component.ActionRaiseArmy, component: comp);
-        _action.AddAction(uid, ref component.ActionDomainEntity, component.ActionDomain, component: comp);
+        // _action.AddAction(uid, ref component.ActionDomainEntity, component.ActionDomain, component: comp); // Carpmosia-edit - Remove and replace Domain
         _action.AddAction(uid, ref component.ActionOrderStayEntity, component.ActionOrderStay, component: comp);
         _action.AddAction(uid, ref component.ActionOrderFollowEntity, component.ActionOrderFollow, component: comp);
         _action.AddAction(uid, ref component.ActionOrderCheeseEmEntity, component.ActionOrderCheeseEm, component: comp);
         _action.AddAction(uid, ref component.ActionOrderLooseEntity, component.ActionOrderLoose, component: comp);
+        _action.AddAction(uid, ref component.ActionRatKingSacrificeEntity, component.ActionRatKingSacrifice, component: comp); // Carpmosia-edit - Remove and replace Domain
 
         UpdateActions(uid, component);
     }
@@ -46,7 +47,7 @@ public abstract partial class SharedRatKingSystem : EntitySystem
 
         var actions = new Entity<ActionsComponent?>(uid, comp);
         _action.RemoveAction(actions, component.ActionRaiseArmyEntity);
-        _action.RemoveAction(actions, component.ActionDomainEntity);
+        // _action.RemoveAction(actions, component.ActionDomainEntity); // Carpmosia-edit - Remove and replace Domain
         _action.RemoveAction(actions, component.ActionOrderStayEntity);
         _action.RemoveAction(actions, component.ActionOrderFollowEntity);
         _action.RemoveAction(actions, component.ActionOrderCheeseEmEntity);

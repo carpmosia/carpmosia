@@ -105,10 +105,10 @@ public sealed partial class ShowHealthIconsSystem : EquipmentHudSystem<ShowHealt
         if (injurableComp.DamageContainer == null ||
             !DamageContainers.Contains(injurableComp.DamageContainer))
         {
-            return Array.Empty<HealthIconPrototype>();
+            return Array.Empty<StatusIconPrototype>();
         }
 
-        var result = new List<HealthIconPrototype>();
+        var result = new List<StatusIconPrototype>();
 
         // Here you could check health status, diseases, mind status, etc. and pick a good icon, or multiple depending on whatever.
         if (injurableComp?.DamageContainer == "Biological")

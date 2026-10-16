@@ -43,7 +43,7 @@ public abstract partial class SharedCryoPodSystem : EntitySystem
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private ReactiveSystem _reactive = default!;
     [Dependency] protected SharedAppearanceSystem Appearance = default!;
-    [Dependency] private SharedBloodstreamSystem _bloodstream = default!;
+    [Dependency] private BloodstreamSystem _bloodstream = default!;
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private SharedHandsSystem _hands = default!;
@@ -344,7 +344,7 @@ public abstract partial class SharedCryoPodSystem : EntitySystem
         if (patient == null)
             return; // Refuse to inject if there is no patient.
 
-        var beaker = _itemSlots.GetItemOrNull(cryoPod, cryoPod.Comp.SolutionContainerName);
+        var beaker = _itemSlots.GetItemOrNull(cryoPod.Owner, cryoPod.Comp.SolutionContainerName);
 
         if (beaker == null
             || !beaker.Value.Valid
@@ -388,9 +388,8 @@ public abstract partial class SharedCryoPodSystem : EntitySystem
             return (null, null);
 
         var beaker = _itemSlots.GetItemOrNull(
-            entity.Owner,
-            entity.Comp.SolutionContainerName,
-            itemSlotsComponent
+            (entity.Owner, itemSlotsComponent),
+            entity.Comp.SolutionContainerName
         );
 
         if (beaker == null
@@ -442,11 +441,8 @@ public abstract partial class SharedCryoPodSystem : EntitySystem
         }
     }
 
-    protected void OnEmagged(EntityUid uid, CryoPodComponent? cryoPodComponent, ref GotEmaggedEvent args)
+    protected void OnEmagged(EntityUid uid, CryoPodComponent cryoPodComponent, ref GotEmaggedEvent args)
     {
-        if (!Resolve(uid, ref cryoPodComponent))
-            return;
-
         if (!_emag.CompareFlag(args.Type, EmagType.Interaction))
             return;
 
