@@ -1,0 +1,23 @@
+- type: researchTreeUnlockFlag
+  id: UnlockFlagBankSize
+  text: research-tree-unlock-flag-bank-size
+  data: !type:ResearchTreeUnlockFlagBankSizeBonus
+    bonus: 15000
+
+- type: researchTreeUnlockFlag
+  id: UnlockFlagBankSize2
+  text: research-tree-unlock-flag-bank-size-2
+  data: !type:ResearchTreeUnlockFlagBankSizeBonus
+    bonus: 70000
+
+- type: researchTreeUnlockFlag
+  id: UnlockFlagQueueSize
+  text: research-tree-unlock-flag-queue-size
+  data: !type:ResearchTreeUnlockFlagQueueSizeBonus
+    bonus: 2
+
+- type: researchTreeUnlockFlag
+  id: UnlockFlagQueueSize2
+  text: research-tree-unlock-flag-queue-size-2
+  data: !type:ResearchTreeUnlockFlagQueueSizeBonus
+    bonus: 5
