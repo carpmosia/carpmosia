@@ -46,7 +46,13 @@ namespace Content.Shared.Construction.Steps
                 return typeof(PartAssemblyConstructionGraphStep);
             }
 
-            // See Read below if you are adding new types
+            // Begin Offbrand
+            if (node.Has("whitelist") || node.Has("blacklist"))
+            {
+                return typeof(_Offbrand.Surgery.WhitelistConstructionGraphStep);
+            }
+            // End Offbrand
+
             return null;
         }
 

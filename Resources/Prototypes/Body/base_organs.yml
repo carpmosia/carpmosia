@@ -18,9 +18,15 @@
   id: OrganBase
   name: organ
   abstract: true
-  parent: BaseItem
+  parent:
+  - BaseItem
+  - BaseSpeciesLayers # Offbrand - layers
   components:
   - type: Organ
+  - type: Construction
+    graph: SurgeryGraph
+    node: Base
+    deconstructionTarget: null
 
 - type: entity
   id: OrganBaseOrganic
@@ -31,7 +37,7 @@
   - type: FlavorProfile
     flavors:
     - chicken # INTRODUCING OUR NEW EVERY-MEAT BURRITO, IT'S GOT EVERY MEAT!
-  - type: Edible
+  # - type: Edible # Carpmosia-edit - Offbrand port # Please stop cannibalizing the patients doctor this is a hospital
   - type: Solution
     solution:
       reagents:
@@ -45,8 +51,8 @@
 - type: entity
   parent:
   - OrganBase
-  - OrganBaseParent
-  - OrganBaseChildExternal
+  - OffbrandOrganWoundableLarge # Offbrand
+  - OffbrandOrganWoundableTorso # Offbrand
   id: OrganBaseTorso
   name: torso
   abstract: true
@@ -69,12 +75,15 @@
       - UndergarmentTop
       - UndergarmentBottom
       - Special
+  - type: ContainerContainer
+    containers:
+      cavity_slot: !type:Container
 
 - type: entity
   parent:
   - OrganBase
-  - OrganBaseParent
-  - OrganBaseChildExternal
+  - OffbrandOrganWoundableMedium # Offbrand
+  - OffbrandOrganWoundableHead # Offbrand
   id: OrganBaseHead
   name: head
   abstract: true
@@ -99,15 +108,12 @@
       - SnoutCover
       - HeadSide
       - HeadTop
-  - type: Tag
-    tags:
-    - Head
 
 - type: entity
   parent:
   - OrganBase
-  - OrganBaseParent
-  - OrganBaseChildExternal
+  - OffbrandOrganWoundableMedium # Offbrand
+  - OffbrandOrganWoundableArmLeft # Offbrand
   id: OrganBaseArmLeft
   name: left arm
   abstract: true
@@ -128,8 +134,8 @@
 - type: entity
   parent:
   - OrganBase
-  - OrganBaseParent
-  - OrganBaseChildExternal
+  - OffbrandOrganWoundableMedium # Offbrand
+  - OffbrandOrganWoundableArmRight # Offbrand
   id: OrganBaseArmRight
   name: right arm
   abstract: true
@@ -150,7 +156,8 @@
 - type: entity
   parent:
   - OrganBase
-  - OrganBaseChildExternal
+  - OffbrandOrganWoundableSmall # Offbrand
+  - OffbrandOrganWoundableHandLeft
   id: OrganBaseHandLeft
   name: left hand
   abstract: true
@@ -175,7 +182,8 @@
 - type: entity
   parent:
   - OrganBase
-  - OrganBaseChildExternal
+  - OffbrandOrganWoundableSmall # Offbrand
+  - OffbrandOrganWoundableHandRight
   id: OrganBaseHandRight
   name: right hand
   abstract: true
@@ -200,8 +208,8 @@
 - type: entity
   parent:
   - OrganBase
-  - OrganBaseParent
-  - OrganBaseChildExternal
+  - OffbrandOrganWoundableMedium # Offbrand
+  - OffbrandOrganWoundableLegLeft
   id: OrganBaseLegLeft
   name: left leg
   abstract: true
@@ -222,8 +230,8 @@
 - type: entity
   parent:
   - OrganBase
-  - OrganBaseParent
-  - OrganBaseChildExternal
+  - OffbrandOrganWoundableMedium # Offbrand
+  - OffbrandOrganWoundableLegRight
   id: OrganBaseLegRight
   name: right leg
   abstract: true
@@ -244,7 +252,8 @@
 - type: entity
   parent:
   - OrganBase
-  - OrganBaseChildExternal
+  - OffbrandOrganWoundableSmall # Offbrand
+  - OffbrandOrganWoundableFootLeft
   id: OrganBaseFootLeft
   name: left foot
   abstract: true
@@ -265,7 +274,8 @@
 - type: entity
   parent:
   - OrganBase
-  - OrganBaseChildExternal
+  - OffbrandOrganWoundableSmall # Offbrand
+  - OffbrandOrganWoundableFootRight
   id: OrganBaseFootRight
   name: right foot
   abstract: true
@@ -286,7 +296,7 @@
 - type: entity
   parent:
   - OrganBase
-  - OrganBaseChildInternal
+  - OffbrandOrganBaseBrain
   id: OrganBaseBrain
   name: brain
   abstract: true
@@ -321,7 +331,7 @@
 - type: entity
   parent:
   - OrganBase
-  - OrganBaseChildInternal
+  - OffbrandOrganBaseEyes
   id: OrganBaseEyes
   name: eyes
   abstract: true
@@ -346,7 +356,7 @@
 - type: entity
   parent:
   - OrganBase
-  - OrganBaseChildInternal
+  - OffbrandOrganBaseTongue
   id: OrganBaseTongue
   name: tongue
   abstract: true
@@ -361,7 +371,7 @@
 - type: entity
   parent:
   - OrganBase
-  - OrganBaseChildInternal
+  - OffbrandOrganBaseAppendix
   id: OrganBaseAppendix
   name: appendix
   abstract: true
@@ -376,7 +386,7 @@
 - type: entity
   parent:
   - OrganBase
-  - OrganBaseChildInternal
+  - OffbrandOrganBaseEars
   id: OrganBaseEars
   name: ears
   abstract: true
@@ -391,7 +401,7 @@
 - type: entity
   parent:
   - OrganBase
-  - OrganBaseChildInternal
+  - OffbrandOrganBaseLungs
   id: OrganBaseLungs
   name: lungs
   abstract: true
@@ -426,7 +436,7 @@
 - type: entity
   parent:
   - OrganBase
-  - OrganBaseChildInternal
+  - OffbrandOrganBaseHeart
   id: OrganBaseHeart
   name: heart
   abstract: true
@@ -440,11 +450,12 @@
   - type: Metabolizer
     maxReagents: 2
     stages: [ Bloodstream ]
+  - type: HeartDefibrillatable
 
 - type: entity
   parent:
   - OrganBase
-  - OrganBaseChildInternal
+  - OffbrandOrganBaseStomach
   id: OrganBaseStomach
   name: stomach
   abstract: true
@@ -478,7 +489,7 @@
 - type: entity
   parent:
   - OrganBase
-  - OrganBaseChildInternal
+  - OffbrandOrganBaseLiver
   id: OrganBaseLiver
   name: liver
   abstract: true
@@ -498,7 +509,7 @@
 - type: entity
   parent:
   - OrganBase
-  - OrganBaseChildInternal
+  - OffbrandOrganBaseKidneys
   id: OrganBaseKidneys
   name: kidneys
   abstract: true
@@ -547,26 +558,3 @@
     sexStateOverrides:
       Male: torso_m
       Female: torso_f
-
-- type: entity
-  abstract: true
-  id: OrganBaseParent
-  components:
-  - type: ParentOrgan
-  - type: DetachableOrgan
-    detachedBody: DetachedBody
-
-- type: entity
-  abstract: true
-  id: OrganBaseChildExternal
-  components:
-  - type: ChildOrgan
-  - type: DetachableOrgan
-    detachedBody: DetachedBody
-
-- type: entity
-  abstract: true
-  id: OrganBaseChildInternal
-  components:
-  - type: ChildOrgan
-  - type: InternalChildOrgan

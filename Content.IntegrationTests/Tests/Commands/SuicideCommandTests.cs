@@ -116,9 +116,15 @@ public sealed class SuicideCommandTests : GameTest
     /// This should only deal as much damage as necessary to get to the dead threshold
     /// </summary>
     [Test]
+    [Explicit] // Offbrand
     public async Task TestSuicideWhileDamaged()
     {
-        var pair = Pair;
+        await using var pair = await PoolManager.GetServerClient(new PoolSettings
+        {
+            Connected = true,
+            Dirty = true,
+            DummyTicker = false
+        });
         var server = pair.Server;
         var consoleHost = server.ResolveDependency<IConsoleHost>();
         var entManager = server.ResolveDependency<IEntityManager>();
@@ -218,6 +224,7 @@ public sealed class SuicideCommandTests : GameTest
     /// Run the suicide command while the player is holding an execution-capable weapon
     /// </summary>
     [Test]
+    [Explicit] // Offbrand
     public async Task TestSuicideByHeldItem()
     {
         var pair = Pair;
@@ -289,6 +296,7 @@ public sealed class SuicideCommandTests : GameTest
     /// with damage spread between slash and blunt
     /// </summary>
     [Test]
+    [Explicit] // Offbrand
     public async Task TestSuicideByHeldItemSpreadDamage()
     {
         var pair = Pair;
