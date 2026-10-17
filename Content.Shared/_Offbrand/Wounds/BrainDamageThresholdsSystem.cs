@@ -20,15 +20,6 @@ public sealed partial class BrainDamageThresholdsSystem : EntitySystem
             _statusEffects.TryRemoveStatusEffect(ent, oEffect);
     }
 
-    [SubscribeLocalEvent]
-    private void OnUpdateMobState(Entity<BrainDamageThresholdsComponent> ent, ref UpdateMobStateEvent args)
-    {
-        args.State = ThresholdHelpers.Max(ent.Comp.CurrentState, args.State);
-
-        var overlays = new PotentiallyUpdateDamageOverlayEvent(ent);
-        RaiseLocalEvent(ent, ref overlays, true);
-    }
-
     public void UpdateState(Entity<BrainDamageThresholdsComponent?> ent, Entity<DamageableOrganComponent, OxygenatableOrganComponent>? organ)
     {
         if (!Resolve(ent, ref ent.Comp, false))
@@ -54,9 +45,12 @@ public sealed partial class BrainDamageThresholdsSystem : EntitySystem
         if (state == ent.Comp.CurrentState)
             return;
 
+
+        var overlays = new PotentiallyUpdateDamageOverlayEvent(ent);
+        RaiseLocalEvent(ent, ref overlays, true);
+
         ent.Comp.CurrentState = state;
         Dirty(ent);
-        _mobState.UpdateMobState(ent);
     }
 
     public void OnAfterBrainDamageChanged(Entity<BrainDamageThresholdsComponent?> ent, Entity<DamageableOrganComponent, OxygenatableOrganComponent> organ)

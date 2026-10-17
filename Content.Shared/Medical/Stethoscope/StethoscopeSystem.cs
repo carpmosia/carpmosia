@@ -1,7 +1,6 @@
 using Content.Shared.Actions;
 // Begin Offbrand - part-aware stethoscope
 using Content.Shared._Offbrand.Medical;
-using Content.Shared._Offbrand.Skeletons;
 using Content.Shared.Body;
 using Content.Shared.Examine;
 // End Offbrand - part-aware stethoscope

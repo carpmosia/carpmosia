@@ -27,15 +27,6 @@ public sealed partial class ShockThresholdsSystem : EntitySystem
         UpdateState(ent, shock);
     }
 
-    [SubscribeLocalEvent]
-    private void OnUpdateMobState(Entity<ShockThresholdsComponent> ent, ref UpdateMobStateEvent args)
-    {
-        args.State = ThresholdHelpers.Max(ent.Comp.CurrentMobState, args.State);
-
-        var overlays = new PotentiallyUpdateDamageOverlayEvent(ent);
-        RaiseLocalEvent(ent, ref overlays, true);
-    }
-
     private void UpdateEffects(Entity<ShockThresholdsComponent> ent, FixedPoint2 shock)
     {
         var targetEffect = ent.Comp.Thresholds.HighestMatch(shock);
@@ -48,6 +39,9 @@ public sealed partial class ShockThresholdsSystem : EntitySystem
 
         if (targetEffect is { } effect)
             _statusEffects.TryUpdateStatusEffectDuration(ent, effect, out _);
+
+        var overlays = new PotentiallyUpdateDamageOverlayEvent(ent);
+        RaiseLocalEvent(ent, ref overlays, true);
 
         ent.Comp.CurrentThresholdState = targetEffect;
         Dirty(ent);
@@ -62,7 +56,6 @@ public sealed partial class ShockThresholdsSystem : EntitySystem
 
         ent.Comp.CurrentMobState = state;
         Dirty(ent);
-        _mobState.UpdateMobState(ent);
     }
 
     public bool IsCritical(Entity<ShockThresholdsComponent?> ent)

@@ -48,19 +48,19 @@ public sealed partial class BrainDamageThresholdsComponent : Component
     /// Damage icons to show on medical HUDs when the brain is alive and non-critical.
     /// </summary>
     [DataField(required: true)]
-    public List<ProtoId<HealthIconPrototype>> AliveDamageIcons;
+    public List<ProtoId<StatusIconPrototype>> AliveDamageIcons;
 
     /// <summary>
     /// Damage icons to show on medical HUDs when the brain is critical.
     /// </summary>
     [DataField(required: true)]
-    public List<ProtoId<HealthIconPrototype>> CriticalDamageIcons;
+    public List<ProtoId<StatusIconPrototype>> CriticalDamageIcons;
 
     /// <summary>
     /// Damage icons to show on medical HUDs when the brain is dead.
     /// </summary>
     [DataField(required: true)]
-    public ProtoId<HealthIconPrototype> DeadIcon;
+    public ProtoId<StatusIconPrototype> DeadIcon;
 
     [DataField, AutoNetworkedField]
     public FixedPoint2 DisplayOxygen;

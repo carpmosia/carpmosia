@@ -25,7 +25,7 @@ public sealed partial class HeartrateOverlay : Overlay
 
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowFOV;
 
-    public ProtoId<HealthIconPrototype>? StatusIcon;
+    public ProtoId<StatusIconPrototype>? StatusIcon;
 
     private static readonly SpriteSpecifier HudStopped = new SpriteSpecifier.Rsi(new("/Textures/_Offbrand/heart_rate_hud.rsi"), "hud_stopped");
     private static readonly SpriteSpecifier HudGood = new SpriteSpecifier.Rsi(new("/Textures/_Offbrand/heart_rate_hud.rsi"), "hud_normal");

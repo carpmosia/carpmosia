@@ -97,17 +97,6 @@ public abstract partial class SharedDefibrillatorSystem : EntitySystem
         if (!_powerCell.HasActivatableCharge(ent.Owner, user: user, predicted: true))
             return false;
 
-        // Begin Offbrand
-        if (HasComp<PerfusionComponent>(target))
-            return true;
-        // End Offbrand
-
-        if (!targetCanBeAlive && _mobState.IsAlive(target, mobState))
-            return false;
-
-        if (!targetCanBeAlive && !ent.Comp.CanDefibCrit && _mobState.IsCritical(target, mobState))
-            return false;
-
         return true;
     }
 
@@ -179,8 +168,8 @@ public abstract partial class SharedDefibrillatorSystem : EntitySystem
         _audio.PlayPredicted(ent.Comp.ZapSound, ent.Owner, user);
         _electrocution.TryDoElectrocution(target, ent.Owner, ent.Comp.ZapDamage, ent.Comp.WritheDuration, true, ignoreInsulation: true);
 
-        _interactionSystem.GetEntitiesInteractingWithTarget(target, _interacters);
-        foreach (var other in _interacters)
+        _interaction.GetEntitiesInteractingWithTarget(target, _interactors);
+        foreach (var other in _interactors)
         {
             if (other == user)
                 continue;
@@ -222,6 +211,12 @@ public abstract partial class SharedDefibrillatorSystem : EntitySystem
     {
         bool failedRevive = true;
         string? message = null;
+
+
+        if (!TryComp<MobStateComponent>(target, out var targetMobState))
+            return false;
+
+        TryComp<HeartDefibrillatableComponent>(target, out var heartDefibrillatable); // Offbrand
         if (_rotting.IsRotten(target))
         {
             message = Loc.GetString("defibrillator-rotten");
@@ -241,15 +236,15 @@ public abstract partial class SharedDefibrillatorSystem : EntitySystem
             var before = new BeforeTargetDefibrillatedEvent(new());
             RaiseLocalEvent(target, ref before);
 
-            foreach (var message in before.Messages)
+            foreach (var befMessage in before.Messages)
             {
-                _chat.TrySendInGameICMessage(ent.Owner, Loc.GetString(message), InGameICChatType.Speak, true);
+                _chat.TrySendInGameICMessage(ent.Owner, Loc.GetString(befMessage), InGameICChatType.Speak, true);
             }
         }
         // End Offbrand
         else
         {
-            TryComp<MobStateComponent>(target, out var targetMobState);
+            // TryComp<MobStateComponent>(target, out var targetMobState);
 
             _damageable.TryChangeDamage(target, ent.Comp.ZapHeal, true, origin: user);
 

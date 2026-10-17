@@ -73,7 +73,7 @@ public sealed partial class ShowHealthIconsSystem : EquipmentHudSystem<ShowHealt
         args.StatusIcons.AddRange(healthIcons);
     }
 
-    private List<HealthIconPrototype> DecideBrainHealthIcons(Entity<BrainDamageThresholdsComponent> ent)
+    private List<StatusIconPrototype> DecideBrainHealthIcons(Entity<BrainDamageThresholdsComponent> ent)
     {
         if (ent.Comp.CurrentState == MobState.Dead)
         {
@@ -98,7 +98,7 @@ public sealed partial class ShowHealthIconsSystem : EquipmentHudSystem<ShowHealt
     }
     // End Offbrand
 
-    private IReadOnlyList<HealthIconPrototype> DecideHealthIcons(Entity<InjurableComponent> entity)
+    private IReadOnlyList<StatusIconPrototype> DecideHealthIcons(Entity<InjurableComponent> entity)
     {
         var injurableComp = entity.Comp;
 

@@ -6,6 +6,8 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.StatusEffectNew;
 using Content.Shared.Traits.Assorted;
+using System.Linq; // Offbrand
+using Content.Shared._Offbrand.Wounds; // Offbrand
 
 namespace Content.Shared.DamageOverlay;
 
@@ -17,11 +19,18 @@ public abstract partial class SharedDamageOverlaySystem : EntitySystem
     [Dependency] private MobThresholdSystem _mobThresholdSystem = default!;
     [Dependency] private DamageableSystem _damageable = default!;
     [Dependency] private StatusEffectsSystem _statusEffects = default!;
+    [Dependency] private PerfusionSystem _perfusion = default!; // Offbrand
+    [Dependency] private PainSystem _pain = default!; // Offbrand
 
     [Dependency] private EntityQuery<InjurableComponent> _injurableQuery = default!;
     [Dependency] private EntityQuery<DamageableComponent> _damageableQuery = default!;
     [Dependency] private EntityQuery<MobStateComponent> _mobStateQuery = default!;
     [Dependency] private EntityQuery<MobThresholdsComponent> _thresholdsQuery = default!;
+    [Dependency] private EntityQuery<PainComponent> _painQuery = default!;  // Offbrand
+    [Dependency] private EntityQuery<ShockThresholdsComponent> _shockQuery = default!;  // Offbrand
+    [Dependency] private EntityQuery<BrainDamageThresholdsComponent> _brainDamageQuery = default!;  // Offbrand
+    [Dependency] private EntityQuery<PerfusionComponent> _perfusionQuery = default!;  // Offbrand
+
 
     [SubscribeLocalEvent]
     protected virtual void OnStartup(Entity<DamageOverlayComponent> entity, ref ComponentStartup args)
@@ -57,6 +66,38 @@ public abstract partial class SharedDamageOverlaySystem : EntitySystem
         DirtyField(entity, entity.Comp, nameof(DamageOverlayComponent.DeadLevel));
     }
 
+    private void TryUpdateWoundableOverlays(Entity<DamageOverlayComponent> entity)
+    {
+        if (!_painQuery.TryComp(entity, out var pain) ||
+            !_shockQuery.TryComp(entity, out var shockThresholds) ||
+            !_brainDamageQuery.TryComp(entity, out var brainThresholds) ||
+            !_perfusionQuery.TryComp(entity, out var perfusion))
+            return;
+            
+        var maxBrain = brainThresholds.DamageStateThresholds.Keys.Max();
+        var maxShock = shockThresholds.Thresholds.Keys.Max();
+
+        switch (brainThresholds.CurrentState)
+        {
+            case MobState.Alive or MobState.Critical:
+            {
+                entity.Comp.CritLevel = FixedPoint2.Clamp(brainThresholds.DisplayDamage / maxBrain, 0, 1).Float();
+                entity.Comp.PainLevel = FixedPoint2.Clamp(_pain.GetShock((entity, pain)) / maxShock, 0, 1).Float();
+                entity.Comp.OxygenLevel = FixedPoint2.Clamp(1 - _perfusion.Spo2((entity, perfusion)), 0, 1).Float();
+                entity.Comp.DeadLevel = 0;
+                break;
+            }
+            case MobState.Dead:
+            {
+                entity.Comp.CritLevel = 0;
+                entity.Comp.PainLevel = 0;
+                entity.Comp.OxygenLevel = 0;
+                break;
+            }
+        }
+
+    }
+
     //TODO: Jezi: adjust oxygen and hp overlays to use appropriate systems once bodysim is implemented
     protected void UpdateOverlays(Entity<DamageOverlayComponent> entity,
         MobStateComponent? mobState = null,
@@ -64,6 +105,9 @@ public abstract partial class SharedDamageOverlaySystem : EntitySystem
         MobThresholdsComponent? thresholds = null,
         InjurableComponent? injurable = null)
     {
+
+        TryUpdateWoundableOverlays(entity);
+
         if (mobState == null && !_mobStateQuery.TryComp(entity, out mobState) ||
             thresholds == null && !_thresholdsQuery.TryComp(entity, out thresholds) ||
             damageable == null && !_damageableQuery.TryComp(entity, out damageable) ||

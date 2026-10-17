@@ -25,7 +25,7 @@ public sealed partial class IVSystem : EntitySystem
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private ItemSlotsSystem _itemSlots = default!;
     [Dependency] private SharedAppearanceSystem _appearance = default!;
-    [Dependency] private SharedBloodstreamSystem _bloodstream = default!;
+    [Dependency] private BloodstreamSystem _bloodstream = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private SharedJointSystem _joint = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
@@ -181,7 +181,7 @@ public sealed partial class IVSystem : EntitySystem
             || !_bloodstreamQuery.Resolve(target, ref target.Comp2))
             return;
 
-        if (_itemSlots.GetItemOrNull(source, source.Comp.SlotName) is not { } contained)
+        if (_itemSlots.GetItemOrNull(source.Owner, source.Comp.SlotName) is not { } contained)
             return;
 
         if (!_solutionContainer.TryGetDrawableSolution(contained, out var solutionEntity, out var solution))
@@ -204,7 +204,7 @@ public sealed partial class IVSystem : EntitySystem
 
     private void SetLock(Entity<IVSourceComponent> ent, bool locked)
     {
-        _itemSlots.SetLock(ent, ent.Comp.SlotName, locked);
+        _itemSlots.SetLock(ent.Owner, ent.Comp.SlotName, locked);
         _appearance.SetData(ent.Owner, IVSourceVisuals.HasTarget, locked);
     }
 
@@ -320,7 +320,7 @@ public sealed partial class IVSystem : EntitySystem
             || target.Comp.IVSource is not null)
             return;
 
-        if (_itemSlots.GetItemOrNull(source, source.Comp.SlotName) is null)
+        if (_itemSlots.GetItemOrNull(source.Owner, source.Comp.SlotName) is null)
         {
             _popup.PopupCursor(Loc.GetString(source.Comp.NoBagInserted), user);
             return;

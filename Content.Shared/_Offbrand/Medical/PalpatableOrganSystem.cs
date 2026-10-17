@@ -1,4 +1,3 @@
-using Content.Shared._Offbrand.Skeletons;
 using Content.Shared._Offbrand.Wounds;
 using Content.Shared.Body;
 using Content.Shared.DoAfter;

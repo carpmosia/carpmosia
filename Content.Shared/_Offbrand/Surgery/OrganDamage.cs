@@ -1,5 +1,4 @@
 using Content.Shared._Offbrand.Organs;
-using Content.Shared._Offbrand.Skeletons;
 using Content.Shared.Body;
 using Content.Shared.Construction;
 using Content.Shared.Examine;

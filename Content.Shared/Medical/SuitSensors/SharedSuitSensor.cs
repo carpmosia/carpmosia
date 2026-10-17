@@ -53,8 +53,8 @@ public partial struct SuitSensorStatus : IEquatable<SuitSensorStatus>
                && Job == other.Job
                && JobIcon == other.JobIcon
                && IsAlive == other.IsAlive
-               && TotalDamage == other.TotalDamage
-               && TotalDamageThreshold == other.TotalDamageThreshold
+            //    && TotalDamage == other.TotalDamage
+            //    && TotalDamageThreshold == other.TotalDamageThreshold
                && Nullable.Equals(Coordinates, other.Coordinates);
     }
 
@@ -73,8 +73,8 @@ public partial struct SuitSensorStatus : IEquatable<SuitSensorStatus>
         hashCode.Add(Job);
         hashCode.Add(JobIcon);
         hashCode.Add(IsAlive);
-        hashCode.Add(TotalDamage);
-        hashCode.Add(TotalDamageThreshold);
+        // hashCode.Add(TotalDamage);
+        // hashCode.Add(TotalDamageThreshold);
         hashCode.Add(Coordinates);
         return hashCode.ToHashCode();
     }

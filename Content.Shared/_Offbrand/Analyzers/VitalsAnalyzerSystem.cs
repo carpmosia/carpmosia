@@ -16,7 +16,7 @@ public sealed partial class VitalsAnalyzerSystem : EntitySystem
     [Dependency] private BodySystem _body = default!;
     [Dependency] private SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private MetabolizerSystem _metabolizer = default!;
-    [Dependency] private SharedBloodstreamSystem _bloodstream = default!;
+    [Dependency] private BloodstreamSystem _bloodstream = default!;
 
     private const string MedicineGroup = "Medicine";
     private static readonly ProtoId<MetabolismStagePrototype> MetabolitesStage = "Metabolites";

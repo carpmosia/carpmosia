@@ -1,7 +1,6 @@
 using System.Numerics;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
-using Robust.Shared.Prototypes; // Offbrand
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Body;
@@ -9,7 +8,7 @@ namespace Content.Shared.Body;
 public sealed partial class InitialBodySystem : EntitySystem
 {
     [Dependency] private SharedContainerSystem _container = default!;
-    [Dependency] private _Offbrand.Skeletons.OrganRelationSystem _organRelation = default!; // Offbrand
+    [Dependency] private OrganRelationSystem _organRelation = default!; // Offbrand
 
     public override void Initialize()
     {
