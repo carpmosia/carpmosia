@@ -6,7 +6,7 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 4h
+      time: 1h # Carpmosia-edit - New time requirements
   displayWeight: 25 # Carpmosia-edit - Reorder jobs
   startingGear: SecurityOfficerGear
   icon: "JobIconSecurityOfficer"
