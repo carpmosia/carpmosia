@@ -4,11 +4,11 @@
   description: job-description-ce
   playTimeTracker: JobChiefEngineer
   requirements:
-    # Carpmosia-start - Job Requirement Revamp
-    - !type:RoleTimeRequirement
-      role: JobAtmosphericTechnician
-      time: 5h
-    # Carpmosia-end - Job Requirement Revamp
+    # Carpmosia-start - New time requirements
+    - !type:DepartmentTimeRequirement
+      role: Engineering
+      time: 6h
+    # Carpmosia-end - New time requirements
   displayWeight: 95 # Carpmosia-edit - Reorder jobs
   startingGear: ChiefEngineerGear
   icon: "JobIconChiefEngineer"

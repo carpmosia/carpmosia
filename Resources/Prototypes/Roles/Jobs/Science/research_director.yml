@@ -4,12 +4,11 @@
   description: job-description-rd
   playTimeTracker: JobResearchDirector
   requirements:
-  - !type:RoleTimeRequirement
-    role: JobScientist
-    time: 5h
-  - !type:DepartmentTimeRequirement
-    department: Science
-    time: 10h
+    # Carpmosia-start - New time requirements
+    - !type:DepartmentTimeRequirement
+      department: Science
+      time: 6h
+    # Carpmosia-end - New time requirements
   displayWeight: 95 # Carpmosia-edit - Reorder jobs
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"

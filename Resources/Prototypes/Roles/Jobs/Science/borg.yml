@@ -8,7 +8,7 @@
   requirements:
   - !type:RoleTimeRequirement
     role: JobBorg
-    time: 5h
+    time: 6h # Carpmosia-edit - New time requirements
   displayWeight: 96 # Carpmosia-edit - Reorder jobs
   icon: JobIconStationAi
   supervisors: job-supervisors-rd
@@ -23,7 +23,7 @@
   playTimeTracker: JobBorg
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 10h
+      time: 2h # Carpmosia-edit - New time requirements
   icon: JobIconBorg
   supervisors: job-supervisors-rd
   guides: [ Cyborgs ]

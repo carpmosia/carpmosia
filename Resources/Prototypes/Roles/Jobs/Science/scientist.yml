@@ -3,10 +3,12 @@
   name: job-name-scientist
   description: job-description-scientist
   playTimeTracker: JobScientist
-  requirements:
-    - !type:DepartmentTimeRequirement
-      department: Science
-      time: 2.5h
+  # Carpmosia-start - New time requirements
+  #requirements:
+  #  - !type:DepartmentTimeRequirement
+  #    department: Science
+  #    time: 2.5h
+  # Carpmosia-end - New time requirements
   displayWeight: 50 # Carpmosia-edit - Reorder jobs
   startingGear: ScientistGear
   icon: "JobIconScientist"

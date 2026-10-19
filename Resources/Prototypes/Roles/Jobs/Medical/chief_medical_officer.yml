@@ -1,20 +1,14 @@
-# Best job.
-
 - type: job
   id: ChiefMedicalOfficer
   name: job-name-cmo
   description: job-description-cmo
   playTimeTracker: JobChiefMedicalOfficer
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobChemist
-      time: 2.5h
-    - !type:RoleTimeRequirement
-      role: JobMedicalDoctor
-      time: 5h
+    # Carpmosia-start - New time requirements
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 10h
+      time: 6h
+    # Carpmosia-end - New time requirements
   displayWeight: 95 # Carpmosia-edit - Reorder jobs
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"
