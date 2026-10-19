@@ -5,9 +5,9 @@
   playTimeTracker: JobStationEngineer
   requirements:
     # Carpmosia-start - New time requirements
-    - !type:DepartmentTimeRequirement
-      department: Engineering
-      time: 2.5h
+    #- !type:DepartmentTimeRequirement
+    #  department: Engineering
+    #  time: 2.5h
     - !type:OverallPlaytimeRequirement
       time: 1h
     # Carpmosia-end - New time requirements
