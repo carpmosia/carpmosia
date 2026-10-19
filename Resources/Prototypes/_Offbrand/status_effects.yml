@@ -422,7 +422,7 @@
   name: tourniquet
   components:
   - type: ExaminableStatusEffect
-    message: tourniquet-applied-examine
+    messageId: tourniquet-applied-examine
   - type: RemovableStatusEffect
     verb: verb-remove-tourniquet
     spawnOnRemove: TourniquetOffbrand
@@ -439,7 +439,7 @@
   name: splints
   components:
   - type: ExaminableStatusEffect
-    message: splints-applied-examine
+    messageId: splints-applied-examine
   - type: RemovableStatusEffect
     verb: verb-remove-splints
     spawnOnRemove: Splints

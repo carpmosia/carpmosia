@@ -186,7 +186,8 @@
   metabolisms:
     Bloodstream:
       effects:
-      - !type:SatiateThirst
+      - !type:Satiate
+        satiationType: Thirst
         factor: -1.5
       - !type:HealthChange
         ignoreResistances: true
@@ -300,6 +301,7 @@
   plantMetabolism:
   - !type:PlantAdjustMutationLevel
     amount: 1
+    mutationTable: RandomPlantMutations
   metabolisms:
     Bloodstream:
       effects:
@@ -740,24 +742,6 @@
           type: [Animal]
 
 - type: reagent
-  id: Pax
-  name: reagent-name-pax
-  group: Narcotics
-  desc: reagent-desc-pax
-  physicalDesc: reagent-physical-desc-soothing
-  allowedDepartments:
-  - Security
-  - Medical
-  color: "#AAAAAA"
-  metabolisms:
-    Bloodstream:
-      effects:
-      - !type:GenericStatusEffect
-        key: Pacified
-        component: Pacified
-        time: 4
-
-- type: reagent
   id: Honk
   name: reagent-name-honk
   group: Toxins
@@ -831,8 +815,9 @@
   flavor: medicine
   color: "#435166"
   plantMetabolism:
-  - !type:PlantMutateChemicals
-    randomPickBotanyReagent: EvilRandomFillSolution
+  - !type:PlantAdjustMutationLevel
+    amount: 1
+    mutationTable: EvilPlantMutations
   - !type:PlantAdjustToxins
     amount: 10
   metabolisms:
@@ -887,16 +872,19 @@
         time: 1
         type: Add
         conditions:
-        - !type:HungerCondition
+        - !type:SatiationCondition
+          satiationType: Hunger
           max: 50
       - !type:HealthChange
         damage:
           types:
             Blunt: 0.5
         conditions:
-        - !type:HungerCondition
+        - !type:SatiationCondition
+          satiationType: Hunger
           max: 50
-      - !type:SatiateHunger
+      - !type:Satiate
+        satiationType: Hunger
         factor: -6
 
 # inspired by the spider neurotoxin GsMtx-4
@@ -952,7 +940,8 @@
   metabolisms:
     Digestion:
       effects:
-      - !type:SatiateHunger
+      - !type:Satiate
+        satiationType: Hunger
         factor: 1
         conditions:
         - !type:MetabolizerTypeCondition

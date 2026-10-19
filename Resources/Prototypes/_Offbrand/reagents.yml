@@ -280,7 +280,8 @@
     Bloodstream:
       metabolismRate: 1
       effects:
-      - !type:SatiateThirst
+      - !type:Satiate
+        satiationType: Thirst
         factor: 3
         conditions:
         - !type:ReagentCondition
@@ -292,7 +293,8 @@
         - !type:ReagentCondition
           reagent: SalineGlucose
           max: 1
-      - !type:SatiateHunger
+      - !type:Satiate
+        satiationType: Hunger
         factor: 0.5
         conditions:
         - !type:ReagentCondition
