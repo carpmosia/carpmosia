@@ -6,7 +6,7 @@
   requirements:
     # Carpmosia-start - New time requirements
     - !type:DepartmentTimeRequirement
-      role: Engineering
+      department: Engineering
       time: 6h
     # Carpmosia-end - New time requirements
   displayWeight: 95 # Carpmosia-edit - Reorder jobs
