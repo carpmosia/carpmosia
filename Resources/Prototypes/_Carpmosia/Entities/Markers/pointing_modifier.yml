@@ -14,15 +14,20 @@
   components:
   - type: PointingModifier
     pointer: PointerDagger
+    phraseSelf: "pointing-phrase-brandish-self"
+    phraseOther: "pointing-phrase-brandish-other"
     # if you can come up with something other than "point at" for melee phrases be my guest
+    # okay :D
 
 - type: entity
   abstract: true
   parent: BasePointerArrow
-  id: BasePointerHammer
+  id: BasePointerCrowbar
   components:
   - type: PointingModifier
-    pointer: PointerHammer
+    pointer: PointerCrowbar
+    phraseSelf: "pointing-phrase-brandish-self"
+    phraseOther: "pointing-phrase-brandish-other"
 
 - type: entity
   abstract: true
@@ -37,9 +42,9 @@
 - type: entity
   abstract: true
   parent: BasePointerArrow
-  id: BasePointerMicrophone
+  id: BasePointerNote
   components:
   - type: PointingModifier
-    pointer: PointerMicrophone
+    pointer: PointerNote
     phraseSelf: "pointing-phrase-gesture-self"
     phraseOther: "pointing-phrase-gesture-other"

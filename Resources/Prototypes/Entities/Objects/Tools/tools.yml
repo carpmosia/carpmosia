@@ -474,7 +474,7 @@
 #Other
 - type: entity
   name: shovel
-  parent: [ BaseItem, BasePointerHammer ] # Carpmosia-edit - Pointing modifier
+  parent: [ BaseItem, BasePointerCrowbar ] # Carpmosia-edit - Pointing modifier
   id: Shovel
   description: A large tool for digging and moving dirt.
   components:
@@ -500,7 +500,7 @@
   - type: Shovel
 
 - type: entity
-  parent: [ BaseItem, BasePointerHammer ] # Carpmosia-edit - Pointing modifier
+  parent: [ BaseItem, BasePointerCrowbar ] # Carpmosia-edit - Pointing modifier
   id: RollingPin
   name: rolling pin
   description: A tool used to shape and flatten dough.

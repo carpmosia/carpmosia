@@ -30,10 +30,10 @@
 
 - type: entity
   parent: PointerBase
-  id: PointerHammer
+  id: PointerCrowbar
   components:
   - type: Sprite
-    state: hammer
+    state: crowbar
 
 - type: entity
   parent: PointerBase
@@ -44,7 +44,7 @@
 
 - type: entity
   parent: PointerBase
-  id: PointerMicrophone
+  id: PointerNote
   components:
   - type: Sprite
-    state: microphone
+    state: note
