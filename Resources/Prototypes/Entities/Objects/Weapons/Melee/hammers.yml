@@ -1,6 +1,6 @@
 - type: entity
   name: sledgehammer
-  parent: [ BaseItem, BasePointerCrowbar ] # Carpmosia-edit - Pointing modifier
+  parent: [ BaseItem, BasePointerBlunt ] # Carpmosia-edit - Pointing modifier
   id: Sledgehammer
   description: The perfect tool for wanton carnage.
   components:
@@ -26,7 +26,7 @@
 
 - type: entity
   id: Mjollnir
-  parent: [ BaseItem, BaseMagicalContraband, BasePointerCrowbar ] # Carpmosia-edit - Pointing modifier
+  parent: [ BaseItem, BaseMagicalContraband, BasePointerBlunt ] # Carpmosia-edit - Pointing modifier
   name: Mjollnir
   description: A weapon worthy of a god, able to strike with the force of a lightning bolt. It crackles with barely contained energy.
   components:
@@ -73,7 +73,7 @@
 
 - type: entity
   id: SingularityHammer
-  parent: [ BaseItem, BaseMagicalContraband, BasePointerCrowbar ] # Carpmosia-edit - Pointing modifier
+  parent: [ BaseItem, BaseMagicalContraband, BasePointerBlunt ] # Carpmosia-edit - Pointing modifier
   name: Singularity Hammer
   description: The pinnacle of close combat technology, the hammer harnesses the power of a miniaturized singularity to deal crushing blows.
   components:

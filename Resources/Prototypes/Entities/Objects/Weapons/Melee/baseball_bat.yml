@@ -1,6 +1,6 @@
 - type: entity
   name: baseball bat
-  parent: [ BaseItem, BaseMinorContraband, BasePointerCrowbar ] # Carpmosia-edit - Pointing modifier
+  parent: [ BaseItem, BaseMinorContraband, BasePointerBlunt ] # Carpmosia-edit - Pointing modifier
   id: BaseBallBat
   description: A robust baseball bat.
   components:
