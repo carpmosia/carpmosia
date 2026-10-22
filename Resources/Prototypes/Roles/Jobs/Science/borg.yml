@@ -8,7 +8,7 @@
   requirements:
   - !type:RoleTimeRequirement
     role: JobBorg
-    time: 6h # Carpmosia-edit - New time requirements
+    time: 4h # Carpmosia-edit - New time requirements
   displayWeight: 96 # Carpmosia-edit - Reorder jobs
   icon: JobIconStationAi
   supervisors: job-supervisors-rd
