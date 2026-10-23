@@ -65,3 +65,11 @@
     back:
     - Cane
   groupBy: "canes"
+  
+# Carpmosia-start - wheelchair loadout
+- type: loadout
+  id: VehicleWheelchair
+  storage:
+    back:
+    - VehicleWheelchair
+# Carpmosia-end - wheelchair loadout
