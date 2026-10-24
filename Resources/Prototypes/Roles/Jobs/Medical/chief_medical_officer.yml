@@ -6,11 +6,11 @@
   description: job-description-cmo
   playTimeTracker: JobChiefMedicalOfficer
   requirements:
-    # Carpmosia-start - New time requirements
-    - !type:DepartmentTimeRequirement
-      department: Medical
-      time: 6h
-    # Carpmosia-end - New time requirements
+  # Carpmosia-start - New time requirements
+  - !type:DepartmentTimeRequirement
+    department: Medical
+    time: 6h
+  # Carpmosia-end - New time requirements
   displayWeight: 95 # Carpmosia-edit - Reorder jobs
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"

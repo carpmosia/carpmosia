@@ -4,23 +4,23 @@
   description: job-description-captain
   playTimeTracker: JobCaptain
   requirements:
-    # Carpmosia-start - New time requirements
-    #- !type:DepartmentTimeRequirement
-    #  department: Engineering
-    #  time: 4h
-    #- !type:DepartmentTimeRequirement
-    #  department: Medical
-    #  time: 4h
-    #- !type:DepartmentTimeRequirement
-    #  department: Science
-    #  time: 4h
-    # Carpmosia-end - New time requirements
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 4h
-    - !type:DepartmentTimeRequirement
-      department: Command
-      time: 4h
+  # Carpmosia-start - New time requirements
+  # - !type:DepartmentTimeRequirement
+  #   department: Engineering
+  #   time: 4h
+  # - !type:DepartmentTimeRequirement
+  #   department: Medical
+  #   time: 4h
+  # - !type:DepartmentTimeRequirement
+  #   department: Science
+  #   time: 4h
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 4h
+  - !type:DepartmentTimeRequirement
+    department: Command
+    time: 4h
+  # Carpmosia-end - New time requirements
   displayWeight: 99 # Carpmosia-edit - Reorder jobs
   startingGear: CaptainGear
   icon: "JobIconCaptain"

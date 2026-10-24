@@ -22,8 +22,10 @@
   description: job-description-borg
   playTimeTracker: JobBorg
   requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 2h # Carpmosia-edit - New time requirements
+  # Carpmosia-start - New time requirements
+  - !type:OverallPlaytimeRequirement
+    time: 2h
+  # Carpmosia-end - New time requirements
   icon: JobIconBorg
   supervisors: job-supervisors-rd
   guides: [ Cyborgs ]

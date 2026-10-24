@@ -4,11 +4,11 @@
   description: job-description-qm
   playTimeTracker: JobQuartermaster
   requirements:
-    # Carpmosia-start - New time requirements
-    - !type:DepartmentTimeRequirement
-      department: Cargo
-      time: 6h
-    # Carpmosia-end - New time requirements
+  # Carpmosia-start - New time requirements
+  - !type:DepartmentTimeRequirement
+    department: Cargo
+    time: 6h
+  # Carpmosia-end - New time requirements
   displayWeight: 95 # Carpmosia-edit - Reorder jobs
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"

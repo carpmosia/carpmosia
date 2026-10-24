@@ -4,9 +4,11 @@
   description: job-description-security
   playTimeTracker: JobSecurityOfficer
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 1h # Carpmosia-edit - New time requirements
+  # Carpmosia-start - New time requirements
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 1h
+  # Carpmosia-end - New time requirements
   displayWeight: 25 # Carpmosia-edit - Reorder jobs
   startingGear: SecurityOfficerGear
   icon: "JobIconSecurityOfficer"
