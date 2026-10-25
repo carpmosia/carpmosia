@@ -1,0 +1,25 @@
+- type: dungeonRoom
+  id: PrefabMedicalCenter1
+  size: 57,57
+  atlas: /Maps/_Carpmosia/Procedural/prefab.yml
+  offset: 233,1
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PrefabMedicalCenter
+
+- type: Tag
+  id: PrefabMedicalCenter
+
+- type: entity
+  id: PrefabMedicalCenterMarker
+  parent: BasePrefabCenterMarker
+  suffix: Medical, Center
+  components:
+  - type: RoomFill
+    roomWhitelist:
+      tags:
+      - PrefabMedicalCenter
+  - type: Sprite
+    layers:
+      - state: center
+      - state: medical

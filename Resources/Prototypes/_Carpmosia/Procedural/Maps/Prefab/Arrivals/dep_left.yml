@@ -1,0 +1,26 @@
+- type: dungeonRoom
+  id: PrefabArrivalsLeft1
+  size: 57,57
+  atlas: /Maps/_Carpmosia/Procedural/prefab.yml
+  offset: 1,117
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PrefabArrivalsLeft
+
+- type: Tag
+  id: PrefabArrivalsLeft
+
+- type: entity
+  id: PrefabArrivalsLeftMarker
+  parent: BasePrefabLeftMarker
+  suffix: Arrivals, Left
+  components:
+  - type: RoomFill
+    roomWhitelist:
+      tags:
+      - PrefabArrivalsLeft
+  - type: Sprite
+    layers:
+      - state: arrow
+      - state: left
+      - state: arrivals

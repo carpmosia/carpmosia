@@ -1,0 +1,25 @@
+- type: dungeonRoom
+  id: PrefabArrivalsCenter1
+  size: 57,57
+  atlas: /Maps/_Carpmosia/Procedural/prefab.yml
+  offset: 1,1
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PrefabArrivalsCenter
+
+- type: Tag
+  id: PrefabArrivalsCenter
+
+- type: entity
+  id: PrefabArrivalsCenterMarker
+  parent: BasePrefabCenterMarker
+  suffix: Arrivals, Center
+  components:
+  - type: RoomFill
+    roomWhitelist:
+      tags:
+      - PrefabArrivalsCenter
+  - type: Sprite
+    layers:
+      - state: center
+      - state: arrivals

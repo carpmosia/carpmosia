@@ -1,0 +1,25 @@
+- type: dungeonRoom
+  id: PrefabEngineeringCenter1
+  size: 57,57
+  atlas: /Maps/_Carpmosia/Procedural/prefab.yml
+  offset: 117,1
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PrefabEngineeringCenter
+
+- type: Tag
+  id: PrefabEngineeringCenter
+
+- type: entity
+  id: PrefabEngineeringCenterMarker
+  parent: BasePrefabCenterMarker
+  suffix: Engineering, Center
+  components:
+  - type: RoomFill
+    roomWhitelist:
+      tags:
+      - PrefabEngineeringCenter
+  - type: Sprite
+    layers:
+      - state: center
+      - state: engineering
