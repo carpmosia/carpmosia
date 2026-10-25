@@ -3,3 +3,6 @@ uplink-mobsyndimothroach-desc = Call in a genetically engineered attack mothroac
 
 uplink-energysabre-name = Energy Sabre
 uplink-energysabre-desc = A stylish blade issued to the elite members of Syndicate High Command. Cuts through anything like butter!
+
+uplink-nekrometamorpho-implanter-name = Nekrometamorpho Implanter
+uplink-nekrometamorpho-implanter-desc = This implant either on command or after death will morph your body into a swarm of bees. No more revivals, just one chance.
