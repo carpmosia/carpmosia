@@ -1203,6 +1203,7 @@
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
   - type: CargoBountyConsole
+    claimAccess: Cargo # Carpmosia-edit - Cargo bookkeeping
   - type: ActivatableUI
     key: enum.CargoConsoleUiKey.Bounty
   - type: UserInterface

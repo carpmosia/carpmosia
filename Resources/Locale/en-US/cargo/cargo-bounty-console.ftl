@@ -1,6 +1,31 @@
 bounty-console-menu-title = Cargo bounty console
 bounty-console-label-button-text = Print label
 bounty-console-skip-button-text = Skip
+# Carpmosia-start - Cargo bookkeeping
+bounty-console-access-denied = Insufficient access!
+bounty-console-id-required-claim = ID required to claim a bounty!
+bounty-console-id-required-status = ID required to change delivery status!
+bounty-console-claim-button-claim = Claim
+bounty-console-claim-button-unclaim = Unclaim
+
+bounty-console-delivery-status-button-tooltip = Set the current status
+bounty-console-delivery-status-undelivered = Undelivered
+bounty-console-delivery-status-delivered = Delivered
+bounty-console-delivery-status-ready = Ready
+bounty-console-delivery-status-label = Status: { $status ->
+    *[undelivered] [color=gray]{bounty-console-delivery-status-undelivered}[/color]
+    [delivered] [color=orange]{bounty-console-delivery-status-delivered}[/color]
+    [ready] [color=limegreen]{bounty-console-delivery-status-ready}[/color]
+}
+
+bounty-console-claimed-none = None
+bounty-console-claimed-unknown = Unknown
+bounty-console-claimed-label = Claimed by: { $claimState ->
+    [unclaimed] [color=gray]{bounty-console-claimed-none}[/color]
+    [unknown] [color=red]{bounty-console-claimed-unknown}[/color]
+    *[claimed] [color=orange]{$crew}[/color]
+}
+# Carpmosia-end - Cargo bookkeeping
 bounty-console-time-label = Time: [color=orange]{$time}[/color]
 bounty-console-reward-label = Reward: [color=limegreen]${$reward}[/color]
 bounty-console-manifest-label = Manifest: [color=orange]{$item}[/color]
