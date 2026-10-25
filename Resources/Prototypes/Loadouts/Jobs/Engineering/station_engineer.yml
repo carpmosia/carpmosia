@@ -122,6 +122,18 @@
   equipment:
     id: EngineerPDA
 
+  # Carpmosia-start - alternative-job-titles
+- type: loadout
+  id: CommunicationsOperatorPDA
+  equipment:
+    id: CommunicationsOperatorPDA
+
+- type: loadout
+  id: StationArchitectPDA
+  equipment:
+    id: StationArchitectPDA
+  # Carpmosia-end - alternative-job-titles
+
 - type: loadout
   id: SeniorEngineerPDA
   effects:
