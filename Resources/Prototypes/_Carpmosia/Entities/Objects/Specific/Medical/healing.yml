@@ -52,13 +52,14 @@
   # Begin Offbrand
   - type: Tending
     woundWhitelist:
-      tags: [WoundHeat, WoundCold, WoundShock, WoundCaustic]
+      tags: [WoundHeat, WoundCold, WoundShock, WoundCaustic, WoundRadiation]
     damage:
       types:
         Heat: -5
         Cold: -5
         Shock: -5
         Caustic: -1.5
+        Radiation: -5
     tendingBeginSound:
       path: "/Audio/Items/Medical/ointment_begin.ogg"
       params:
@@ -128,6 +129,7 @@
         Cold: -10
         Shock: -10
         Caustic: -10
+        Radiation: -10
     tendingBeginSound:
       path: "/Audio/Items/Medical/ointment_begin.ogg"
       params:

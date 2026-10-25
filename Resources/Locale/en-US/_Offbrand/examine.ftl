@@ -148,22 +148,22 @@ wound-caustic-sloughing-45 = [color=yellowgreen]necrotic, melting caustic burn{-
 wound-caustic-sloughing-35 = [color=yellowgreen]blistering, melting caustic burn{-wound-plural-modifier-s(count: $count)}[/color]
 wound-caustic-sloughing-25 = [color=yellowgreen]sloughing caustic burn{-wound-plural-modifier-s(count: $count)}[/color]
 wound-caustic-sloughing-10 = [color=yellowgreen]shedding caustic burn{-wound-plural-modifier-s(count: $count)}[/color]
-wound-caustic-sloughing-0 = [color=yellowgreen]massive blistered scar{-wound-plural-modifier-s(count: $count)}[/color]
+wound-caustic-sloughing-0 = [color=yellowgreen]massive blistered caustic scar{-wound-plural-modifier-s(count: $count)}[/color]
 
 wound-caustic-severe-25 = [color=yellowgreen]blistering, severe caustic burn{-wound-plural-modifier-s(count: $count)}[/color]
 wound-caustic-severe-15 = [color=yellowgreen]severe caustic burn{-wound-plural-modifier-s(count: $count)}[/color]
 wound-caustic-severe-10 = [color=yellowgreen]healing caustic burn{-wound-plural-modifier-s(count: $count)}[/color]
 wound-caustic-severe-5 = [color=yellowgreen]{-wound-plural-modifier-patch(count: $count)} bleached, inflamed skin[/color]
-wound-caustic-severe-0 = [color=yellowgreen]blistered scar{-wound-plural-modifier-s(count: $count)}[/color]
+wound-caustic-severe-0 = [color=yellowgreen]blistered caustic scar{-wound-plural-modifier-s(count: $count)}[/color]
 
 wound-caustic-moderate-15 = [color=yellowgreen]blistering, moderate caustic burn{-wound-plural-modifier-s(count: $count)}[/color]
 wound-caustic-moderate-10 = [color=yellowgreen]moderate caustic burn{-wound-plural-modifier-s(count: $count)}[/color]
 wound-caustic-moderate-5 = [color=yellowgreen]{-wound-plural-modifier-patch(count: $count)} inflamed skin[/color]
-wound-caustic-moderate-0 = [color=yellowgreen]irritated scar{-wound-plural-modifier-s(count: $count)}[/color]
+wound-caustic-moderate-0 = [color=yellowgreen]irritated caustic scar{-wound-plural-modifier-s(count: $count)}[/color]
 
 wound-caustic-small-7 = [color=yellowgreen]blistered caustic burn{-wound-plural-modifier-s(count: $count)}[/color]
 wound-caustic-small-3 = [color=yellowgreen]small caustic burn{-wound-plural-modifier-s(count: $count)}[/color]
-wound-caustic-small-0 = [color=yellowgreen]discolored burn{-wound-plural-modifier-s(count: $count)}[/color]
+wound-caustic-small-0 = [color=yellowgreen]discolored caustic burn{-wound-plural-modifier-s(count: $count)}[/color]
 
 wound-shock-exploded-45 = [color=lightgoldenrodyellow]carbonized, exploded shock burn{-wound-plural-modifier-s(count: $count)}[/color]
 wound-shock-exploded-35 = [color=lightgoldenrodyellow]charred, exploded shock burn{-wound-plural-modifier-s(count: $count)}[/color]
@@ -185,3 +185,24 @@ wound-shock-moderate-0 = [color=lightgoldenrodyellow]small blister{-wound-plural
 wound-shock-small-7 = [color=lightgoldenrodyellow]shock burn{-wound-plural-modifier-s(count: $count)}[/color]
 wound-shock-small-3 = [color=lightgoldenrodyellow]small shock burn{-wound-plural-modifier-s(count: $count)}[/color]
 wound-shock-small-0 = [color=lightgoldenrodyellow]fading shock burn{-wound-plural-modifier-s(count: $count)}[/color]
+
+wound-radiation-sloughing-45 = [color=yellowgreen]necrotic, melting radiation burn{-wound-plural-modifier-s(count: $count)}[/color]
+wound-radiation-sloughing-35 = [color=yellowgreen]blistering, melting radiation burn{-wound-plural-modifier-s(count: $count)}[/color]
+wound-radiation-sloughing-25 = [color=yellowgreen]sloughing radiation burn{-wound-plural-modifier-s(count: $count)}[/color]
+wound-radiation-sloughing-10 = [color=yellowgreen]shedding radiation burn{-wound-plural-modifier-s(count: $count)}[/color]
+wound-radiation-sloughing-0 = [color=yellowgreen]massive blistered radiation scar{-wound-plural-modifier-s(count: $count)}[/color]
+
+wound-radiation-severe-25 = [color=yellowgreen]blistering, severe radiation burn{-wound-plural-modifier-s(count: $count)}[/color]
+wound-radiation-severe-15 = [color=yellowgreen]severe radiation burn{-wound-plural-modifier-s(count: $count)}[/color]
+wound-radiation-severe-10 = [color=yellowgreen]healing radiation burn{-wound-plural-modifier-s(count: $count)}[/color]
+wound-radiation-severe-5 = [color=yellowgreen]{-wound-plural-modifier-patch(count: $count)} bleached, inflamed skin[/color]
+wound-radiation-severe-0 = [color=yellowgreen]blistered radiation scar{-wound-plural-modifier-s(count: $count)}[/color]
+
+wound-radiation-moderate-15 = [color=yellowgreen]blistering, moderate radiation burn{-wound-plural-modifier-s(count: $count)}[/color]
+wound-radiation-moderate-10 = [color=yellowgreen]moderate radiation burn{-wound-plural-modifier-s(count: $count)}[/color]
+wound-radiation-moderate-5 = [color=yellowgreen]{-wound-plural-modifier-patch(count: $count)} inflamed skin[/color]
+wound-radiation-moderate-0 = [color=yellowgreen]irritated radiation scar{-wound-plural-modifier-s(count: $count)}[/color]
+
+wound-radiation-small-7 = [color=yellowgreen]blistered radiation burn{-wound-plural-modifier-s(count: $count)}[/color]
+wound-radiation-small-3 = [color=yellowgreen]small radiation burn{-wound-plural-modifier-s(count: $count)}[/color]
+wound-radiation-small-0 = [color=yellowgreen]discolored radiation burn{-wound-plural-modifier-s(count: $count)}[/color]

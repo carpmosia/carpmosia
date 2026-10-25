@@ -175,6 +175,11 @@
         20: WoundShockSevere
         10: WoundShockModerate
         0: WoundShockSmall
+      Radiation:
+        30: WoundRadiationSloughing
+        20: WoundRadiationSevere
+        10: WoundRadiationModerate
+        0: WoundRadiationSmall
   - type: UniqueWoundOnDamage
     wounds:
     - damageTypes: [Slash, Piercing]
