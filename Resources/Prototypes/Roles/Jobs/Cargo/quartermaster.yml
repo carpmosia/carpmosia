@@ -4,15 +4,11 @@
   description: job-description-qm
   playTimeTracker: JobQuartermaster
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobCargoTechnician
-      time: 5h
-    - !type:RoleTimeRequirement
-      role: JobSalvageSpecialist
-      time: 2.5h
-    - !type:DepartmentTimeRequirement
-      department: Cargo
-      time: 10h
+  # Carpmosia-start - New time requirements
+  - !type:DepartmentTimeRequirement
+    department: Cargo
+    time: 6h
+  # Carpmosia-end - New time requirements
   displayWeight: 95 # Carpmosia-edit - Reorder jobs
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"

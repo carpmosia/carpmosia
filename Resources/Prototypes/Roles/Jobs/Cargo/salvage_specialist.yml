@@ -3,10 +3,12 @@
   name: job-name-salvagespec
   description: job-description-salvagespec
   playTimeTracker: JobSalvageSpecialist
-  requirements:
-    - !type:DepartmentTimeRequirement
-      department: Cargo
-      time: 2.5h
+  # Carpmosia-start - New time requirements
+  # requirements:
+  #   - !type:DepartmentTimeRequirement
+  #     department: Cargo
+  #     time: 2.5h
+  # Carpmosia-end - New time requirements
   displayWeight: 60 # Carpmosia-edit - Reorder jobs
   icon: "JobIconShaftMiner"
   startingGear: SalvageSpecialistGear

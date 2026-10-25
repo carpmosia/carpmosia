@@ -4,21 +4,23 @@
   description: job-description-hop
   playTimeTracker: JobHeadOfPersonnel
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Engineering
-      time: 2.5h
-    - !type:DepartmentTimeRequirement
-      department: Medical
-      time: 2.5h
-    - !type:DepartmentTimeRequirement
-      department: Science
-      time: 2.5h
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 2.5h
-    - !type:DepartmentTimeRequirement
-      department: Command
-      time: 2.5h
+  # Carpmosia-start - New time requirements
+  # - !type:DepartmentTimeRequirement
+  #   department: Engineering
+  #   time: 2.5h
+  # - !type:DepartmentTimeRequirement
+  #   department: Medical
+  #   time: 2.5h
+  # - !type:DepartmentTimeRequirement
+  #   department: Science
+  #   time: 2.5h
+  # - !type:DepartmentTimeRequirement
+  #   department: Security
+  #   time: 2.5h
+  - !type:DepartmentTimeRequirement
+    department: Command
+    time: 2.5h
+  # Carpmosia-end - New time requirements
   displayWeight: 98 # Carpmosia-edit - Reorder jobs
   startingGear: HoPGear
   icon: "JobIconHeadOfPersonnel"
