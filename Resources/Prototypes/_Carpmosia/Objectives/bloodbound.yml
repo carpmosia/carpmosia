@@ -32,8 +32,8 @@
 - type: entity
   parent: BaseBloodBoundObjective
   id: BloodBoundEscapeShuttleObjective
-  name: Escape to centcomm alive and unrestrained.
-  description: You must escape to Central Command alive and unrestrained with your blood bound.
+  name: Escape to a terminal alive and unrestrained. # Carpmosia-edit - Replaced CC with Terminals
+  description: You must escape to a terminal alive and unrestrained with your blood bound. # Carpmosia-edit - Replaced CC with Terminals
   components:
   - type: Objective
     difficulty: 1.5
