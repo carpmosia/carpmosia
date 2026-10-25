@@ -1,0 +1,31 @@
+- type: entity
+  parent: BaseBrandedLighter
+  id: CarpLighter
+  name: carp lighter
+  description: For the carp that wishes to be a dragon when it grows up. Click the fin in to light the flame.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Tools/Lighters/carp.rsi
+    layers:
+    - state: icon
+      map: ["base"]
+    # - state: top
+    #   map: ["top"]
+    #   visible: false
+    - state: open
+      map: ["open"]
+      visible: false
+    - state: flame
+      map: ["flame"]
+      visible: false
+      shader: unshaded
+  - type: Item
+    sprite: _Carpmosia/Objects/Tools/Lighters/carp.rsi
+  - type: ToggleableVisuals
+    inhandVisuals:
+      left:
+      - state: inhand-left-flame
+        shader: unshaded
+      right:
+      - state: inhand-right-flame
+        shader: unshaded
