@@ -42,3 +42,13 @@
   equipment:
     shoes: ClothingShoesColorWhite
   groupBy: "basicShoes" # Carpmosia-edit - Loadout Rework 2
+
+# Carpmosia-start - Atmospherics Beret
+- type: loadout
+  id: AtmosphericTechnicianBeret
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorEngineering
+  equipment:
+    head: ClothingHeadHatBeretAtmospherics
+# Carmosia-end - Atmospherics Beret

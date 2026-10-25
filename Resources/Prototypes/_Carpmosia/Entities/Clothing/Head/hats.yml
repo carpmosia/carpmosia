@@ -1,0 +1,18 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretAtmospherics
+  name: atmos beret
+  description: A beret with the atmospherics emblem. Does not protect you from hot plasma.
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Clothing/Head/Hats/beret_atmospherics.rsi
+  - type: Clothing
+    sprite: _Carpmosia/Clothing/Head/Hats/beret_atmospherics.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
