@@ -1,0 +1,13 @@
+- type: entity
+  parent: BaseAction
+  id: ActionPhoneRing
+  name: Ring
+  description: Ring ring! Hello?
+  components:
+  - type: Action
+    useDelay: 2
+    icon: Interface/Emotes/chime.png
+    checkCanInteract: false
+  - type: InstantAction
+    event: !type:EmoteActionEvent
+      emote: PhoneRing
