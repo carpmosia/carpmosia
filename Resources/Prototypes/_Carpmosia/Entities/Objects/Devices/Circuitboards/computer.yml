@@ -9,4 +9,5 @@
   - type: ComputerBoard
     prototype: ComputerShuttleSalvage
   - type: StealTarget
-    stealGroup: SalvageShuttleConsoleCircuitboard
+    stealGroup:
+    - SalvageShuttleConsoleCircuitboard

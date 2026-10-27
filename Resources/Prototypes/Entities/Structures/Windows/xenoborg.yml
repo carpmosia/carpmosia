@@ -11,4 +11,7 @@
     state: full
   - type: IconSmooth
     key: window_xenoborg # Carpmosia-edit - Respritening
-    base: xenoborg
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ window_xenoborg ] # Carpmosia-edit - Respritening
+      base: xenoborg

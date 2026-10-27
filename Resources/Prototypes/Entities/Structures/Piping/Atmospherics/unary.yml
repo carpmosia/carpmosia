@@ -19,6 +19,7 @@
           nodeGroupID: Pipe
           pipeDirection: South
     - type: CollideOnAnchor
+    - type: SandboxCopyable
 
 - type: entity
   parent: [GasUnaryBase, AirSensorBase]
@@ -285,7 +286,7 @@
       transmitFrequencyId: AtmosMonitor
       sendBroadcastAttemptEvent: true
       examinableAddress: true
-    - type: WiredNetworkConnection
+    - type: WiredNetwork
     - type: PowerSwitch
     - type: AtmosMonitoringConsoleDevice
       navMapBlip: Thermoregulator
@@ -313,7 +314,7 @@
         - state: freezerPanelOpen
           map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
         - sprite: !type:CreateVariants
-            values: 
+            values:
             - Structures/Piping/Atmospherics/thermomachine.rsi
             - Structures/Piping/Atmospherics/thermomachine_alt1.rsi
             - Structures/Piping/Atmospherics/thermomachine_alt2.rsi
@@ -351,7 +352,8 @@
     - type: DeviceNetwork
       prefix: device-address-prefix-freezer
     - type: StealTarget
-      stealGroup: FreezerHeater
+      stealGroup:
+      - FreezerHeater
 
 - type: entity
   parent: !type:CreateVariants
@@ -387,7 +389,7 @@
         - state: heaterPanelOpen
           map: ["enum.WiresVisualLayers.MaintenancePanel"]
         - sprite: !type:CreateVariants
-            values: 
+            values:
             - Structures/Piping/Atmospherics/thermomachine.rsi
             - Structures/Piping/Atmospherics/thermomachine_alt1.rsi
             - Structures/Piping/Atmospherics/thermomachine_alt2.rsi
@@ -425,7 +427,8 @@
     - type: DeviceNetwork
       prefix: device-address-prefix-heater
     - type: StealTarget
-      stealGroup: FreezerHeater
+      stealGroup:
+      - FreezerHeater
 
 - type: entity
   parent: !type:CreateVariants
@@ -572,4 +575,3 @@
   - type: GuideHelp
     guides:
     - GasCondensing
-

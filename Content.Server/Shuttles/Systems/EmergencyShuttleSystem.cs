@@ -6,10 +6,9 @@ using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Systems;
 using Content.Server.Communications;
-using Content.Server.DeviceNetwork.Systems;
+using Content.Shared.DeviceNetwork.Systems;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Events;
-using Content.Server.Maps; // Carpmosia-edit - Replaced CC with Terminals
 using Content.Server.Pinpointer;
 using Content.Server.ReturnToLobby; // Carpmosia-edit - Return to lobby
 using Content.Server.RoundEnd;
@@ -26,6 +25,7 @@ using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Events;
 using Content.Shared.Localizations;
 using Content.Shared.Maps; // Carpmosia-edit - Replaced CC with Terminals
+using Content.Shared.Pinpointer;
 using Content.Shared.RoundEnd;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Events;

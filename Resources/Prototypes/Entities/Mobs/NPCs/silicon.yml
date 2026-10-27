@@ -471,6 +471,9 @@
       flatReductions:
         Heat: 10 # capable of touching light bulbs and stoves without feeling pain!
   # Carpmosia-end - handy supplybot
+  - type: Strap
+    position: Down
+    rotation: -90
 
 - type: entity
   parent: [ MobSiliconBase, MobCombat ]

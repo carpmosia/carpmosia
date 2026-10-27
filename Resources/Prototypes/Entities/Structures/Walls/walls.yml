@@ -50,6 +50,7 @@
     resistance: 2
   - type: BlockWeather
   - type: SunShadowCast
+  - type: TrayScanReveal
 
 - type: entity
   abstract: true
@@ -74,9 +75,11 @@
     tags:
     - Diagonal
   - type: IconSmooth
-    mode: Diagonal
     key: wall_basic # Carpmosia-edit - Respritening
-    base: state
+    states:
+    - !type:DiagonalSpriteSmoothing
+      mask: [ wall_basic ] # Carpmosia-edit - Respritening
+      base: state
   - type: Airtight
     noAirWhenFullyAirBlocked: false
     airBlockedDirection:
@@ -133,7 +136,10 @@
             max: 1
   - type: IconSmooth
     key: wall_material # Carpmosia-edit - Respritening
-    base: brick
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ wall_material ] # Carpmosia-edit - Respritening
+      base: brick
 
 - type: entity
   parent: [ BaseWall, StructureHealthWallWeak ]
@@ -162,7 +168,10 @@
         node: girder
   - type: IconSmooth
     key: wall_material # Carpmosia-edit - Respritening
-    base: brass
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ wall_material ] # Carpmosia-edit - Respritening
+      base: brass
 
 - type: entity
   parent: [ BaseWall, StructureHealthWallWeak ]
@@ -197,7 +206,10 @@
           collection: gib
   - type: IconSmooth
     key: wall_meat # Carpmosia-edit - Respritening
-    base: meat
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ wall_meat ] # Carpmosia-edit - Respritening
+      base: meat
 
 - type: entity
   parent: [ BaseWall, BaseStructureHealth ]
@@ -217,8 +229,43 @@
       behaviors:
       - *SpawnGirder
   - type: IconSmooth
-    key: wall_debug # Carpmosia-edit - Respritening
-    base: debug
+    key: walls
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ walls, windows, grilles, marble, doors ]
+      base: debug
+
+- type: entity
+  parent: WallDebug
+  id: WallDebugA
+  name: debug wall
+  suffix: DEBUG, AltA
+  components:
+  - type: Sprite
+    sprite: Structures/Walls/debugalt.rsi
+  - type: Icon
+    sprite: Structures/Walls/debugalt.rsi
+  - type: IconSmooth
+    key: walls
+    states:
+    - !type:CardinalCornerSpriteSmoothing
+      mask: [ walls ]
+      altMask: [ windows, grilles, marble, doors ]
+      base: debug
+
+- type: entity
+  parent: WallDebugA
+  id: WallDebugB
+  name: debug wall
+  suffix: DEBUG, AltB
+  components:
+  - type: IconSmooth
+    key: marble
+    states:
+    - !type:CardinalCornerSpriteSmoothing
+      mask: [ marble ]
+      altMask: [ windows, grilles, walls, doors ]
+      base: debug
 
 - type: entity
   parent: [ BaseWall, StructureHealthWallWeak ]
@@ -260,7 +307,10 @@
         density: 4000
   - type: IconSmooth
     key: wall_material # Carpmosia-edit - Respritening
-    base: gold
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ wall_material ] # Carpmosia-edit - Respritening
+      base: gold
 
 - type: entity
   parent: [ BaseWall, StructureHealthWallWeak ]
@@ -291,7 +341,10 @@
           SheetPlasma1: *BaseWallSpawn
   - type: IconSmooth
     key: wall_material # Carpmosia-edit - Respritening
-    base: plasma
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ wall_material ] # Carpmosia-edit - Respritening
+      base: plasma
   - type: RadiationBlocker
     resistance: 5
 
@@ -306,8 +359,11 @@
   - type: Icon
     sprite: Structures/Walls/plastitanium.rsi
   - type: IconSmooth
-    key: wall_plastitanium # Carpmosia-edit - Respritening
-    base: plastitanium
+    key: wawall_plastitanium # Carpmosia-edit - Respriteninglls
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ wall_plastitanium ] # Carpmosia-edit - Respritening
+      base: plastitanium
   - type: Fixtures
     fixtures:
       fix1:
@@ -350,7 +406,6 @@
   - type: Sprite
     drawdepth: Walls
     sprite: Structures/Walls/plastitanium-diagonal.rsi
-    state: state0
   - type: Icon
     sprite: Structures/Walls/plastitanium-diagonal.rsi
     state: state0
@@ -414,7 +469,10 @@
           SheetPlasteel1: *BaseWallSpawn
   - type: IconSmooth
     key: wall_basic # Carpmosia-edit - Respritening
-    base: reinf_over
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ wall_basic ] # Carpmosia-edit - Respritening
+      base: reinf_over
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -459,8 +517,11 @@
     node: reinforcedWallRust
   - type: IconSmooth
     key: wall_basic # Carpmosia-edit - Respritening
-    base: reinf_over
-  # Rusted walls should be made weaker through a damage mod status effect.
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ wall_basic ] # Carpmosia-edit - Respritening
+      base: reinf_over
+    # Rusted walls should be made weaker through a damage mod status effect.
 
 - type: entity
   parent: [ WallDiagonalBase, StructureHealthWallStrong ]
@@ -470,7 +531,6 @@
   - type: Sprite
     drawdepth: Walls
     sprite: Structures/Walls/reinforced-diagonal.rsi
-    state: state0
   - type: Icon
     sprite: Structures/Walls/reinforced-diagonal.rsi
     state: state0
@@ -492,30 +552,6 @@
     resistance: 5
 
 - type: entity
-  parent: [ BaseWall, StructureHealthWallStrong ]
-  id: WallMarble
-  name: marble wall
-  components:
-  - type: Sprite
-    sprite: Structures/Walls/marble.rsi
-  - type: Icon
-    sprite: Structures/Walls/marble.rsi
-  - type: Damageable
-    damageModifierSet: RockMod
-  - type: Destructible
-    thresholds:
-    - trigger: *DamageWallStrong
-      behaviors:
-      - *SoundMetalSlam
-      - *SpawnGirder
-      - *SpawnPlasteel
-  - type: IconSmooth
-    key: wall_material # Carpmosia-edit - Respritening
-    base: wall
-  - type: StaticPrice
-    price: 150
-
-- type: entity
   parent: BaseWall
   id: WallMarbleIndestructible
   name: marble wall
@@ -527,7 +563,11 @@
     sprite: Structures/Walls/marble.rsi
   - type: IconSmooth
     key: wall_material # Carpmosia-edit - Respritening
-    base: wall
+    states:
+    - !type:CardinalCornerSpriteSmoothing
+      mask: [ wall_material ] # Carpmosia-edit - Respritening
+      # altMask: [ walls, windows, grilles, doors ] # Carpmosia-edit - Respritening
+      base: wall
   - type: Fixtures
     fixtures:
       fix1:
@@ -541,6 +581,26 @@
         density: 4000
   - type: RadiationBlocker
     resistance: 5
+
+- type: entity
+  parent: [ WallMarbleIndestructible, StructureHealthWallStrong ]
+  id: WallMarble
+  name: marble wall
+  suffix: ""
+  components:
+  - type: Injurable
+    damageContainer: StructuralInorganic
+  - type: Damageable
+    damageModifierSet: RockMod
+  - type: Destructible
+    thresholds:
+    - trigger: *DamageWallStrong
+      behaviors:
+      - *SoundMetalSlam
+      - *SpawnGirder
+      - *SpawnPlasteel
+  - type: StaticPrice
+    price: 150
 
 - type: entity
   parent: [ BaseWall, StructureHealthWallWeak ]
@@ -571,7 +631,10 @@
           IngotSilver1: *BaseWallSpawn
   - type: IconSmooth
     key: wall_material # Carpmosia-edit - Respritening
-    base: silver
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ wall_material ] # Carpmosia-edit - Respritening
+      base: silver
 
 #shuttle walls
 - type: entity
@@ -582,7 +645,6 @@
   - type: Sprite
     drawdepth: Walls
     sprite: Structures/Walls/shuttle-diagonal.rsi
-    state: state0
   - type: Icon
     sprite: Structures/Walls/shuttle-diagonal.rsi
     state: state0
@@ -657,7 +719,10 @@
     node: shuttleWall
   - type: IconSmooth
     key: wall_shuttle # Carpmosia-edit - Respritening
-    base: state
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ wall_shuttle ] # Carpmosia-edit - Respritening
+      base: state
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -716,7 +781,10 @@
           SheetSteel1: *BaseWallSpawn
   - type: IconSmooth
     key: wall_basic # Carpmosia-edit - Respritening
-    base: solid
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ wall_basic ] # Carpmosia-edit - Respritening
+      base: solid
 
 - type: entity
   parent: [ WallDiagonalBase, StructureHealthWall ]
@@ -726,7 +794,6 @@
   - type: Sprite
     drawdepth: Walls
     sprite: Structures/Walls/solid-diagonal.rsi
-    state: state0
   - type: Icon
     sprite: Structures/Walls/solid-diagonal.rsi
     state: state0
@@ -758,7 +825,10 @@
     node: wallrust
   - type: IconSmooth
     key: wall_basic # Carpmosia-edit - Respritening
-    base: solid
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ wall_basic ] # Carpmosia-edit - Respritening
+      base: solid
   # Rusted walls should be made weaker through a damage mod status effect.
 
 - type: entity
@@ -781,7 +851,10 @@
     sprite: Structures/Walls/exo.rsi
   - type: IconSmooth
     key: wall_chitin # Carpmosia-edit - Respritening
-    base: solid
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ wall_chitin ] # Carpmosia-edit - Respritening
+      base: solid
   - type: Construction
     graph: Girder
     node: wallChitin
@@ -827,7 +900,10 @@
     resistance: 5
   - type: IconSmooth
     key: wall_chitin # Carpmosia-edit - Respritening
-    base: reinf_over
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ wall_chitin ] # Carpmosia-edit - Respritening
+      base: reinf_over
   - type: Construction
     graph: Girder
     node: reinforcedWallChitin
@@ -843,7 +919,10 @@
     sprite: Structures/Walls/exo-borg.rsi
   - type: IconSmooth
     key: wall_xenoborg # Carpmosia-edit - Respritening
-    base: xenoborg
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ wall_xenoborg ] # Carpmosia-edit - Respritening
+      base: xenoborg
 
 - type: entity
   parent: WallPlastitaniumDiagonal
@@ -899,7 +978,10 @@
         density: 6000
   - type: IconSmooth
     key: wall_material # Carpmosia-edit - Respritening
-    base: uranium
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ wall_material ] # Carpmosia-edit - Respritening
+      base: uranium
   - type: RadiationBlocker
     resistance: 6
 
@@ -934,7 +1016,10 @@
           MaterialWoodPlank1: *BaseWallSpawn
   - type: IconSmooth
     key: wall_material # Carpmosia-edit - Respritening
-    base: wood
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ wall_material ] # Carpmosia-edit - Respritening
+      base: wood
 
 - type: entity
   parent: [ BaseWall, StructureHealthBarrier ]
@@ -967,7 +1052,10 @@
           MaterialWebSilk1: *BaseWallSpawn
   - type: IconSmooth
     key: wall_web # Carpmosia-edit - Respritening
-    base: wall
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ wall_web ] # Carpmosia-edit - Respritening
+      base: wall
   - type: Construction
     graph: WebStructures
     node: wall
@@ -991,9 +1079,13 @@
       - *SpawnGirder
   - type: IconSmooth
     key: wall_shuttle # Carpmosia-edit - Respritening
-    base: mining
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ wall_shuttle ] # Carpmosia-edit - Respritening
+      base: mining
   # Carpmosia-start - Respritening
   - type: RandomIconSmooth
+    index: 0
     randomStates:
     - mining
     - miningB
@@ -1008,7 +1100,6 @@
   - type: Sprite
     drawdepth: Walls
     sprite: Structures/Walls/mining-diagonal.rsi
-    state: state0
   - type: Icon
     sprite: Structures/Walls/mining-diagonal.rsi
     state: state0
@@ -1097,7 +1188,10 @@
       - *SoundBreakStone
   - type: IconSmooth
     key: wall_material # Carpmosia-edit - Respritening
-    base: concrete
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ wall_material ] # Carpmosia-edit - Respritening
+      base: concrete
 
 # Cardboard
 
@@ -1155,7 +1249,10 @@
           path: /Audio/Effects/poster_broken.ogg
   - type: IconSmooth
     key: wall_cardboard # Carpmosia-edit - Respritening
-    base: card
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ wall_cardboard ] # Carpmosia-edit - Respritening
+      base: card
   - type: Occluder
   - type: BlockWeather
   - type: SunShadowCast

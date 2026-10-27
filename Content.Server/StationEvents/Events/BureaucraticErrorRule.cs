@@ -33,14 +33,14 @@ public sealed partial class BureaucraticErrorRule : StationEventSystem<Bureaucra
             return;
 
         // Carpmosia-start - Less annoying bureaucratic error
-        var lower = (int)(jobList.Count * 0.20f);
-        var upper = (int)(jobList.Count * 0.30f);
+        var lower = (int)(jobList.Count * ent.Comp1.ProportionOfJobsToAdjust.Min);
+        var upper = (int)(jobList.Count * ent.Comp1.ProportionOfJobsToAdjust.Max);
         // Changing every role is maybe a bit too chaotic so instead change 20-30% of them.
         var num = RobustRandom.Next(lower, upper);
 
         // Low chance to completely change up the late-join landscape by closing all positions except infinite slots.
         // Lower chance than the /tg/ equivalent of this event.
-        if (RobustRandom.Prob(0.25f))
+        if (RobustRandom.Prob(ent.Comp1.CloseAllButOneChance))
         {
             for (var i = 0; i < num; i++)
             {
@@ -62,7 +62,7 @@ public sealed partial class BureaucraticErrorRule : StationEventSystem<Bureaucra
                 if (_stationJobs.IsJobUnlimited(chosenStation.Value, chosenJob))
                     continue;
 
-                _stationJobs.TryAdjustJobSlot(chosenStation.Value, chosenJob, RobustRandom.Next(-3, 6), clamp: true);
+                _stationJobs.TryAdjustJobSlot(chosenStation.Value, chosenJob, ent.Comp1.JobSlotAdjustment.Next(RobustRandom), clamp: true);
             }
         }
     }

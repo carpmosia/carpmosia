@@ -32,7 +32,10 @@
             max: 2
   - type: IconSmooth
     key: window_shuttle # Carpmosia-edit - Respritening
-    base: swindow
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ window_shuttle ] # Carpmosia-edit - Respritening
+      base: swindow
   - type: Construction
     graph: Window
     node: shuttleWindow
@@ -58,15 +61,15 @@
   - type: Sprite
     drawdepth: WallTops
     sprite: Structures/Windows/window-diagonal-shuttle.rsi
-    state: state0
   - type: Tag
     tags:
     - Diagonal
     - Window
   - type: IconSmooth
-    mode: Diagonal
-    key: window_shuttle # Carpmosia-edit - Respritening
-    base: state
+    states:
+    - !type:DiagonalSpriteSmoothing
+      mask: [ window_shuttle ] # Carpmosia-edit - Respritening
+      base: state
   - type: Icon
     sprite: Structures/Windows/window-diagonal-shuttle.rsi
     state: state0

@@ -26,7 +26,8 @@
     - type: Computer
       board: SalvageShuttleConsoleCircuitboard
     - type: StealTarget
-      stealGroup: SalvageShuttleConsoleCircuitboard
+      stealGroup:
+      - SalvageShuttleConsoleCircuitboard
 
 # Used for event spawned Shuttles that spawn off the station map
 - type: entity

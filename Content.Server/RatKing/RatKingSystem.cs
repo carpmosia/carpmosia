@@ -36,6 +36,7 @@ namespace Content.Server.RatKing
         [Dependency] private SatiationSystem _satiation = default!;
         [Dependency] private IRobustRandom _random = default!; // Carpmosia-edit - Remove and replace Domain
         [Dependency] private NPCSystem _npc = default!;
+        [Dependency] private NPCPointCommandSystem _pointCommands = default!;
         [Dependency] private PopupSystem _popup = default!;
 
         public override void Initialize()
@@ -108,10 +109,7 @@ namespace Content.Server.RatKing
             if (component.CurrentOrder != RatKingOrderType.CheeseEm)
                 return;
 
-            foreach (var servant in component.Servants)
-            {
-                _npc.SetBlackboard(servant, NPCBlackboard.CurrentOrderedTarget, args.Pointed);
-            }
+            _pointCommands.CommandFollowers(component.Servants, args.Pointed);
         }
 
         // Carpmosia-start - Remove and replace Domain

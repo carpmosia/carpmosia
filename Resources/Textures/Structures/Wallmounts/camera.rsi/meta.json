@@ -8,6 +8,17 @@
   },
   "states": [
     {
+      "name": "cameracase"
+    },
+    {
+      "name": "camera_off",
+      "directions": 4
+    },
+    {
+      "name": "camera_assembly",
+      "directions": 4
+    },
+    {
       "name": "camera",
       "directions": 4,
       "delays": [
@@ -16,10 +27,6 @@
         [ 0.7, 0.3, 0.3, 0.3, 0.3, 0.3, 0.7 ],
         [ 0.7, 0.3, 0.3, 0.3, 0.3, 0.3, 0.7 ]
       ]
-    },
-    {
-      "name": "camera_assembly",
-      "directions": 4
     },
     {
       "name": "camera_emp",
@@ -40,13 +47,6 @@
         [ 0.7, 0.3, 0.3, 0.3, 0.3, 0.3, 0.7 ],
         [ 0.7, 0.3, 0.3, 0.3, 0.3, 0.3, 0.7 ]
       ]
-    },
-    {
-      "name": "camera_off",
-      "directions": 4
-    },
-    {
-      "name": "cameracase"
     }
   ]
 }

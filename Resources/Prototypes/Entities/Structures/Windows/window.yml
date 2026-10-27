@@ -49,7 +49,10 @@
   - type: Airtight
   - type: IconSmooth
     key: window_glass # Carpmosia-edit - Respritening
-    base: window
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ window_glass ] # Carpmosia-edit - Respritening
+      base: window
   # - type: PlacementReplacement # Carpmosia-edit - Better diagonals
   #   key: walls # Carpmosia-edit - Better diagonals
   - type: InteractionPopup
@@ -111,7 +114,11 @@
   - type: Icon
     sprite: Structures/Windows/window-tinted.rsi
   - type: IconSmooth
-    base: twindow
+    key: window_tinted # Carpmosia-edit - Respritening
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ window_tinted ] # Carpmosia-edit - Respritening
+      base: twindow
   - type: Construction
     graph: Window
     node: tintedWindow
@@ -314,15 +321,15 @@
   components:
   - type: Sprite
     sprite: Structures/Windows/window-base-diagonal.rsi
-    state: state0
   - type: Tag
     tags:
     - Diagonal
     - Window
   - type: IconSmooth
-    mode: DiagonalPlus # Carpmosia-edit - Better diagonals
-    key: window_glass # Carpmosia-edit - Respritening
-    base: state
+    states:
+    - !type:DiagonalPlusSpriteSmoothing # Carpmosia-edit - Respritening
+      mask: [ window_glass ] # Carpmosia-edit - Respritening
+      base: state
   - type: Icon
     sprite: Structures/Windows/window-base-diagonal.rsi
     state: state0

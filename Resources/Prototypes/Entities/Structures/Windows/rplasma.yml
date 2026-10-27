@@ -31,7 +31,10 @@
             max: 2
   - type: IconSmooth
     key: window_plasma # Carpmosia-edit - Respritening
-    base: rpwindow
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ window_plasma ] # Carpmosia-edit - Respritening
+      base: rpwindow
   - type: Construction
     graph: Window
     node: reinforcedPlasmaWindow
@@ -133,15 +136,15 @@
   - type: Sprite
     drawdepth: WallTops
     sprite: Structures/Windows/window-diagonal-plasma-reinf.rsi
-    state: state0
   - type: Tag
     tags:
     - Diagonal
     - Window
   - type: IconSmooth
-    mode: DiagonalPlus # Carpmosia-edit - Better diagonals
-    key: window_plasma # Carpmosia-edit - Respritening
-    base: state
+    states:
+    - !type:DiagonalPlusSpriteSmoothing # Carpmosia-edit - Respritening
+      mask: [ window_plasma ] # Carpmosia-edit - Respritening
+      base: state
   - type: Icon
     sprite: Structures/Windows/window-diagonal-plasma-reinf.rsi
     state: state0

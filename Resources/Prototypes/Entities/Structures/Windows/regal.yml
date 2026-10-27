@@ -27,9 +27,14 @@
           collection: WindowShatter
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  # Carmosia-start - Respritening
   - type: IconSmooth
-    key: window_regal # Carpmosia-edit - Respritening
-    base: window
+    key: window_regal
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ window_regal ]
+      base: window
+  # Carmosia-end - Respritening
   - type: Appearance
   - type: DamageVisuals
     thresholds: [5, 10, 20]

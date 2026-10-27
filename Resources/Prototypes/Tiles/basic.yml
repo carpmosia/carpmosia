@@ -8,16 +8,6 @@
   itemDrop: FloorTileItemSteel
 
 - type: tile
-  id: FloorSteelMono
-  parent: BaseStationTile
-  name: tiles-steel-floor-mono
-  sprite: /Textures/Tiles/Basic/Gray/gray-mono.png
-  variants: 4 # Carpmosia-edit - Respritening
-  footstepSounds:
-    collection: FootstepTile
-  itemDrop: FloorTileItemSteelMono
-
-- type: tile
   id: FloorSteelMini
   parent: BaseStationTile
   name: tiles-steel-floor-mini
@@ -32,6 +22,16 @@
   sprite: /Textures/Tiles/Basic/Gray/gray-pavement.png
   variants: 4 # Carpmosia-edit - Respritening
   itemDrop: FloorTileItemSteelPavement
+
+- type: tile
+  id: FloorSteelMono
+  parent: BaseStationTile
+  name: tiles-steel-floor-mono
+  sprite: /Textures/Tiles/Basic/Gray/gray-mono.png
+  variants: 4 # Carpmosia-edit - Respritening
+  footstepSounds:
+    collection: FootstepTile
+  itemDrop: FloorTileItemSteelMono
 
 - type: tile
   id: FloorSteelPavementVertical

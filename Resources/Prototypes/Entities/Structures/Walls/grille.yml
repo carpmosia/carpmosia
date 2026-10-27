@@ -38,9 +38,12 @@
   # - type: PlacementReplacement
   #   key: grilles
   # - type: IconSmooth
-  #   index: 0
-  #   key: walls
-  #   base: grille
+  #   key: grilles
+  #   states:
+  #   - !type:CornerSpriteSmoothing
+  #     mask: [ walls, grilles, doors, marble ]
+  #     base: grille
+  #     index: 0
   # Carpmosia-end - Respritening
   - type: Electrified
     requirePower: true
@@ -79,6 +82,7 @@
           True: { visible: True }
           False: { visible: False }
   - type: AnimationPlayer
+  - type: TrayScanReveal
   - type: Damageable
     damageModifierSet: RodMetalMod
   - type: Destructible
@@ -101,7 +105,7 @@
     graph: Grille
     node: grille
 
-### DIAGONAL
+### Diagonal
 - type: entity
   parent: Grille
   id: GrilleDiagonal
@@ -110,7 +114,6 @@
   - type: Sprite
     sprite: Structures/Walls/grille-diagonal.rsi
     layers:
-    - state: state0
     - state: electrified_diagonal
       sprite: Effects/electricity.rsi
       map: ["enum.ElectrifiedLayers.Sparks"]
@@ -121,10 +124,12 @@
     state: state0
   # Carpmosia-start - Respritening
   # - type: IconSmooth
-  #   index: 0
-  #   mode: Diagonal
   #   key: grilles
-  #   base: state
+  #   states:
+  #   - !type:DiagonalSpriteSmoothing
+  #     mask: [ walls, windows, grilles, marble, doors ]
+  #     base: state
+  #     index: 0
   # Carpmosia-end - Respritening
   - type: Fixtures
     fixtures:
@@ -143,7 +148,7 @@
     graph: GrilleDiagonal
     node: grilleDiagonal
 
-### BROKEN
+### Broken state
 - type: entity
   parent: [ BaseStructure, StructureHealthFurnitureWeak ]
   id: GrilleBroken
