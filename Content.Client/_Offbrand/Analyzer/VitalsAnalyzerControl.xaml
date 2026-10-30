@@ -6,61 +6,78 @@
         VerticalExpand="True"
         Align="Center"/>
 
-    <BoxContainer Name="MainContent" Orientation="Vertical" SeparationOverride="9">
-        <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" SeparationOverride="8">
-            <PanelContainer SetSize="32 32">
-                <SpriteView OverrideDirection="South" Scale="2 2" Name="PatientView" SetSize="32 32" />
-                <TextureRect Name="OutOfRange" Access="Public" SetSize="32 32" Visible="false" Stretch="KeepAspectCentered" TexturePath="/Textures/Interface/Misc/health_analyzer_out_of_range.png"/>
-            </PanelContainer>
-            <BoxContainer Orientation="Vertical" VerticalAlignment="Center">
-                <Label Name="NameLabel" />
-                <Label Name="SpeciesLabel" VerticalAlignment="Top" StyleClasses="LabelSubText" />
-            </BoxContainer>
-        </BoxContainer>
+    <BoxContainer Name="Sections"
+                  Orientation="Horizontal"
+                  Visible="False"
+                  Margin="10"
+                  SeparationOverride="16">
+        <BoxContainer Name="VitalSection"
+                      VerticalExpand="True"
+                      Orientation="Vertical"
+                      MinWidth="250"
+                      MaxWidth="400">
 
-        <BoxContainer Orientation="Horizontal">
-            <BoxContainer Orientation="Vertical" HorizontalExpand="True">
-                <Label Name="SpO2Label" StyleClasses="field-label-large" />
-                <Label Name="SpO2Value" StyleClasses="field-value-large" />
+            <BoxContainer Orientation="Horizontal"
+                          SeparationOverride="10"
+                          Margin="8 0 0 8">
+                <BoxContainer Orientation="Vertical" VerticalAlignment="Center">
+                    <PanelContainer SetSize="32 32">
+                        <SpriteView OverrideDirection="South" Scale="2 2" Name="PatientView" SetSize="32 32" />
+                        <TextureRect Name="OutOfRange" Access="Public" SetSize="32 32" Visible="false" Stretch="KeepAspectCentered" TexturePath="/Textures/Interface/Misc/health_analyzer_out_of_range.png"/>
+                    </PanelContainer>
+                 </BoxContainer>
+                <BoxContainer Orientation="Vertical" VerticalAlignment="Center">
+                    <Label Name="NameLabel" />
+                    <Label Name="SpeciesLabel" VerticalAlignment="Top" StyleClasses="LabelSubText" />
+                </BoxContainer>
+
+
             </BoxContainer>
-            <BoxContainer Orientation="Vertical" HorizontalExpand="True">
-                <Label StyleClasses="field-label-large" Text="{Loc 'offbrand-vitals-brain-activity'}" />
-                <Label Name="BrainActivityValue" StyleClasses="field-value-large" />
-            </BoxContainer>
-        </BoxContainer>
-        <BoxContainer Orientation="Vertical">
-            <Label StyleClasses="field-air" Text="{Loc 'offbrand-vitals-air'}" />
-            <BoxContainer Orientation="Horizontal">
-                <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+
+            <BoxContainer Orientation="Horizontal" SeparationOverride="20" Margin="0 0 0 4">
+
+                <BoxContainer Orientation="Vertical" >
+                    <Label StyleClasses="field-label-large" Text="{Loc 'offbrand-vitals-brain-activity'}" />
+                    <Label Name="BrainActivityValue" StyleClasses="field-value-large" />
+                    <Label Name="SpO2Label" StyleClasses="field-label-large" />
+                    <Label Name="SpO2Value" StyleClasses="field-value-large" />
+                </BoxContainer>
+
+                <BoxContainer Orientation="Vertical" >
+                    <Label StyleClasses="field-air" Text="{Loc 'offbrand-vitals-air'}" />
                     <Label StyleClasses="field-label" Text="{Loc 'offbrand-vitals-respiratory-rate'}" />
                     <RichTextLabel Name="RespiratoryRateValue" StyleClasses="field-value" />
-                </BoxContainer>
-                <BoxContainer Orientation="Vertical" HorizontalExpand="True">
                     <Label Name="EtCO2Label" StyleClasses="field-label" />
                     <RichTextLabel Name="EtCO2Value" StyleClasses="field-value" />
                 </BoxContainer>
-            </BoxContainer>
-        </BoxContainer>
-        <BoxContainer Orientation="Vertical">
-            <Label StyleClasses="field-blood" Text="{Loc 'offbrand-vitals-blood'}" />
-            <BoxContainer Orientation="Horizontal">
-                <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+
+                <BoxContainer Orientation="Vertical" >
+                    <Label StyleClasses="field-blood" Text="{Loc 'offbrand-vitals-blood'}" />
                     <Label StyleClasses="field-label" Text="{Loc 'offbrand-vitals-blood-pressure'}" />
                     <RichTextLabel Name="BloodPressureValue" StyleClasses="field-value" />
-                </BoxContainer>
-                <BoxContainer Orientation="Vertical" HorizontalExpand="True">
                     <Label StyleClasses="field-label" Text="{Loc 'offbrand-vitals-blood-volume'}" />
                     <RichTextLabel Name="BloodVolumeValue" StyleClasses="field-value" />
+                    <Label StyleClasses="field-heart" Text="{Loc 'offbrand-vitals-heart'}" />
+                    <Label StyleClasses="field-label" Text="{Loc 'offbrand-vitals-heart-rate'}" />
+                    <RichTextLabel Name="HeartRateValue" StyleClasses="field-value" />
                 </BoxContainer>
+
+            </BoxContainer>
+
+        </BoxContainer>
+        <BoxContainer Name="WoundSection"
+                      VerticalExpand="True"
+                      Orientation="Vertical"
+                      MinWidth="250"
+                      MaxWidth="400">
+            <BoxContainer Orientation="Horizontal">
+                <BoxContainer Name="AlertsContainer"
+                                Visible="False"
+                                Orientation="Vertical"
+                                VerticalExpand="True"
+                                HorizontalExpand="True"
+                                />
             </BoxContainer>
         </BoxContainer>
-        <BoxContainer Orientation="Vertical">
-            <Label StyleClasses="field-heart" Text="{Loc 'offbrand-vitals-heart'}" />
-            <BoxContainer Orientation="Vertical">
-                <Label StyleClasses="field-label" Text="{Loc 'offbrand-vitals-heart-rate'}" />
-                <RichTextLabel Name="HeartRateValue" StyleClasses="field-value" />
-            </BoxContainer>
-        </BoxContainer>
-        <BoxContainer Name="AlertsContainer" Visible="False" Orientation="Vertical" VerticalExpand="True" HorizontalAlignment="Center" />
     </BoxContainer>
 </BoxContainer>

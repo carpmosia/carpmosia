@@ -25,18 +25,18 @@ public sealed partial class VitalsAnalyzerControl : BoxContainer
         if (scan is not var (data, target, updating))
         {
             NoPatientPlaceholder.Visible = true;
-            MainContent.Visible = false;
+            Sections.Visible = false;
             return;
         }
 
         NoPatientPlaceholder.Visible = false;
-        MainContent.Visible = true;
+        Sections.Visible = true;
 
         PatientView.SetEntity(target);
         PatientView.Visible = updating;
         OutOfRange.Visible = !updating;
 
-        MainContent.Modulate =
+        Sections.Modulate =
             updating
                 ? Color.White
                 : Color.White.WithAlpha(0.4f);
