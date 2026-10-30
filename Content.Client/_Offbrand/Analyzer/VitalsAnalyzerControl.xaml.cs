@@ -63,5 +63,21 @@ public sealed partial class VitalsAnalyzerControl : BoxContainer
         BloodVolumeValue.Text = Loc.GetString("offbrand-vitals-blood-volume-value", ("value", $"{data.BloodLevel * 100:F0}"));
 
         HeartRateValue.Text = Loc.GetString("offbrand-vitals-heart-rate-value", ("value", data.HeartRate));
+
+        if (data.Wounds is not null)
+        {
+            AlertsContainer.RemoveAllChildren();
+            foreach (var wound in data.Wounds)
+            {
+                AlertsContainer.AddChild(new RichTextLabel
+                {
+                    Text = Loc.GetString(wound),
+                    Margin = new Thickness(0, 4),
+                    MaxWidth = 300
+                });
+            }
+
+            AlertsContainer.Visible = data.Wounds.Count > 0 ? true : false;
+        }
     }
 }

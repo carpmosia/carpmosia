@@ -54,6 +54,9 @@ public sealed partial class VitalsData
     public LocId Spo2GasName;
 
     [DataField]
+    public List<string>? Wounds;
+
+    [DataField]
     public Dictionary<ProtoId<ReagentPrototype>, (FixedPoint2 InBloodstream, FixedPoint2 Metabolites)>? Reagents;
 
     [DataField]

@@ -6,6 +6,7 @@ using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.FixedPoint;
 using Content.Shared.Metabolism;
+using Content.Shared.StatusEffectNew;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Offbrand.Analyzers;
@@ -17,6 +18,7 @@ public sealed partial class VitalsAnalyzerSystem : EntitySystem
     [Dependency] private SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private MetabolizerSystem _metabolizer = default!;
     [Dependency] private BloodstreamSystem _bloodstream = default!;
+    [Dependency] private StatusEffectsSystem _statusEffects = default!;
 
     private const string MedicineGroup = "Medicine";
     private static readonly ProtoId<MetabolismStagePrototype> MetabolitesStage = "Metabolites";
@@ -115,9 +117,34 @@ public sealed partial class VitalsAnalyzerSystem : EntitySystem
                 Etco2GasName = heartrate.Etco2GasName,
                 Spo2Name = heartrate.Spo2Name,
                 Spo2GasName = heartrate.Spo2GasName,
+                Wounds = SampleWounds(uid),
                 Reagents = reagents,
                 NonMedicalReagents = hasNonMedical,
                 BloodLevel = _bloodstream.GetBloodLevel(uid),
             };
+    }
+    public List<string>? SampleWounds(EntityUid uid)
+    {
+        var described = new List<string>();
+
+        if(!_body.TryGetOrgansWithComponent<UniqueWoundOnDamageComponent>(uid, out var woundable))
+            return null;
+
+        foreach(var organ in woundable)
+        {
+            if(!_statusEffects.TryEffectsWithComp<AnalyzableWoundComponent>(organ, out var wounds))
+                continue;
+
+            foreach (var analyzable in wounds)
+            {
+                var wound = Comp<WoundComponent>(analyzable);
+                var damage = wound.Damage;
+
+                if (analyzable.Comp1.Descriptions.HighestMatch(damage.GetTotal()) is { } message)
+                    described.Add(Loc.GetString(message, ("target", organ.Owner)));
+            }
+        }
+
+        return described;
     }
 }

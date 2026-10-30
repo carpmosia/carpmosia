@@ -1,4 +1,4 @@
-<BoxContainer xmlns="https://spacestation14.io" Orientation="Vertical" SeparationOverride="10">
+<BoxContainer xmlns="https://spacestation14.io" Orientation="Vertical" SeparationOverride="9">
     <Label
         Name="NoPatientPlaceholder"
         Text="{Loc health-analyzer-window-no-patient-data-text}"
@@ -6,11 +6,11 @@
         VerticalExpand="True"
         Align="Center"/>
 
-    <BoxContainer Name="MainContent" Orientation="Vertical" SeparationOverride="10">
+    <BoxContainer Name="MainContent" Orientation="Vertical" SeparationOverride="9">
         <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" SeparationOverride="8">
-            <PanelContainer SetSize="64 64">
-                <SpriteView OverrideDirection="South" Scale="2 2" Name="PatientView" SetSize="64 64" />
-                <TextureRect Name="OutOfRange" Access="Public" SetSize="64 64" Visible="false" Stretch="KeepAspectCentered" TexturePath="/Textures/Interface/Misc/health_analyzer_out_of_range.png"/>
+            <PanelContainer SetSize="32 32">
+                <SpriteView OverrideDirection="South" Scale="2 2" Name="PatientView" SetSize="32 32" />
+                <TextureRect Name="OutOfRange" Access="Public" SetSize="32 32" Visible="false" Stretch="KeepAspectCentered" TexturePath="/Textures/Interface/Misc/health_analyzer_out_of_range.png"/>
             </PanelContainer>
             <BoxContainer Orientation="Vertical" VerticalAlignment="Center">
                 <Label Name="NameLabel" />
@@ -61,5 +61,6 @@
                 <RichTextLabel Name="HeartRateValue" StyleClasses="field-value" />
             </BoxContainer>
         </BoxContainer>
+        <BoxContainer Name="AlertsContainer" Visible="False" Orientation="Vertical" VerticalExpand="True" HorizontalAlignment="Center" />
     </BoxContainer>
 </BoxContainer>
