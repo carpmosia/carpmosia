@@ -1,3 +1,4 @@
+using Content.Shared._Offbrand.Organs;
 using Content.Shared.Atmos.Rotting;
 using Content.Shared.Chat;
 using Content.Shared.Damage.Systems;
@@ -18,6 +19,7 @@ using Content.Shared.Timing.Systems;
 using Content.Shared.Traits.Assorted;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
+using Content.Shared._Offbrand.Wounds; // Offbrand
 
 namespace Content.Shared.Medical;
 
@@ -158,6 +160,24 @@ public abstract partial class SharedDefibrillatorSystem : EntitySystem
         if (targetEvent.Cancelled || !CanZap(ent, target, user))
             return;
 
+        if (!TryComp<MobStateComponent>(target, out var targetMobState))
+            return;
+
+        TryComp<HeartDefibrillatableComponent>(target, out var heartDefibrillatable); // Offbrand
+
+        _audio.PlayPredicted(ent.Comp.ZapSound, ent.Owner, user);
+        _electrocution.TryDoElectrocution(target, ent.Owner, ent.Comp.ZapDamage, ent.Comp.WritheDuration, true, ignoreInsulation: true);
+
+        _interaction.GetEntitiesInteractingWithTarget(target, _interactors);
+        foreach (var other in _interactors)
+        {
+            if (other == user)
+                continue;
+
+            // Anyone else still operating on the target gets zapped too
+            _electrocution.TryDoElectrocution(other, null, ent.Comp.ZapDamage, ent.Comp.WritheDuration, true);
+        }
+
         if (TryComp<UseDelayComponent>(ent, out var useDelay))
         {
             _useDelay.SetLength((ent.Owner, useDelay), ent.Comp.ZapDelay, id: ent.Comp.DelayId);
@@ -191,17 +211,40 @@ public abstract partial class SharedDefibrillatorSystem : EntitySystem
     {
         bool failedRevive = true;
         string? message = null;
+
+
+        if (!TryComp<MobStateComponent>(target, out var targetMobState))
+            return false;
+
+        TryComp<HeartDefibrillatableComponent>(target, out var heartDefibrillatable); // Offbrand
         if (_rotting.IsRotten(target))
         {
             message = Loc.GetString("defibrillator-rotten");
         }
-        else if (TryComp<UnrevivableComponent>(target, out var unrevivable))
+        else if (heartDefibrillatable is null && TryComp<UnrevivableComponent>(target, out var unrevivable))
         {
             message = Loc.GetString(unrevivable.ReasonMessage);
         }
+        // Begin offbrand
+        else if (heartDefibrillatable is not null && _mobState.IsDead(target, targetMobState))
+        {
+            _chat.TrySendInGameICMessage(ent.Owner, Loc.GetString(heartDefibrillatable.TargetIsDead),
+                InGameICChatType.Speak, true);
+        }
+        else if (heartDefibrillatable is not null)
+        {
+            var before = new BeforeTargetDefibrillatedEvent(new());
+            RaiseLocalEvent(target, ref before);
+
+            foreach (var befMessage in before.Messages)
+            {
+                _chat.TrySendInGameICMessage(ent.Owner, Loc.GetString(befMessage), InGameICChatType.Speak, true);
+            }
+        }
+        // End Offbrand
         else
         {
-            TryComp<MobStateComponent>(target, out var targetMobState);
+            // TryComp<MobStateComponent>(target, out var targetMobState);
 
             _damageable.TryChangeDamage(target, ent.Comp.ZapHeal, true, origin: user);
 

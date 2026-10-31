@@ -24,6 +24,7 @@ using Content.Shared.Mobs.Systems;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Content.Shared._Offbrand.Wounds; // Offbrand
 
 namespace Content.Server.Body.Systems;
 
@@ -69,7 +70,7 @@ public sealed partial class RespiratorSystem : EntitySystem
 
     private void OnMapInit(Entity<RespiratorComponent> ent, ref MapInitEvent args)
     {
-        ent.Comp.NextUpdate = _gameTiming.CurTime + ent.Comp.AdjustedUpdateInterval;
+        ent.Comp.NextUpdate = _gameTiming.CurTime + ent.Comp.OverallAdjustedUpdateInterval;
     }
 
     public override void Update(float frameTime)
@@ -82,14 +83,14 @@ public sealed partial class RespiratorSystem : EntitySystem
             if (_gameTiming.CurTime < respirator.NextUpdate)
                 continue;
 
-            respirator.NextUpdate += respirator.AdjustedUpdateInterval;
+            respirator.NextUpdate += respirator.OverallAdjustedUpdateInterval; // Offbrand
 
             if (_mobState.IsDead(uid))
                 continue;
 
-            UpdateSaturation(uid, -(float)respirator.UpdateInterval.TotalSeconds, respirator);
+            UpdateSaturation(uid, -(float)respirator.BodyAdjustedUpdateInterval.TotalSeconds, respirator); // Offbrand
 
-            if (!_mobState.IsIncapacitated(uid)) // cannot breathe in crit.
+            if (!_mobState.IsIncapacitated(uid) || HasComp<PerfusionComponent>(uid)) // Offbrand - simplemobs get crit behaviour, heartmobs get hyperventilation
             {
                 switch (respirator.Status)
                 {
@@ -104,7 +105,10 @@ public sealed partial class RespiratorSystem : EntitySystem
                 }
             }
 
-            if (respirator.Saturation < respirator.SuffocationThreshold)
+            // Begin Offbrand - Respirators gasp when hyperventilating
+            var isSuffocating = respirator.Saturation < respirator.SuffocationThreshold;
+            var hyperventilation = respirator.BreathRateMultiplier <= respirator.HyperventilationThreshold;
+            if (isSuffocating || hyperventilation)
             {
                 if (_gameTiming.CurTime >= respirator.LastGaspEmoteTime + respirator.GaspEmoteCooldown)
                 {
@@ -115,10 +119,14 @@ public sealed partial class RespiratorSystem : EntitySystem
                         ignoreActionBlocker: true);
                 }
 
-                TakeSuffocationDamage((uid, respirator));
-                respirator.SuffocationCycles += 1;
-                continue;
+                if (isSuffocating)
+                {
+                    TakeSuffocationDamage((uid, respirator));
+                    respirator.SuffocationCycles += 1;
+                    continue;
+                }
             }
+            // End Offbrand - Respirators gasp when hyperventilating
 
             StopSuffocation((uid, respirator));
             respirator.SuffocationCycles = 0;
@@ -142,7 +150,15 @@ public sealed partial class RespiratorSystem : EntitySystem
         if (ev.Gas is null)
             return;
 
-        var gas = ev.Gas.RemoveVolume(entity.Comp.BreathVolume);
+        // Begin Offbrand
+        var breathEv = new Content.Shared._Offbrand.Organs.BeforeBreathEvent(entity.Comp.AdjustedBreathVolume); // Offbrand - modify breath volume
+        RaiseLocalEvent(entity, ref breathEv);
+
+        var gas = ev.Gas.RemoveVolume(breathEv.BreathVolume);
+
+        var beforeEv = new Content.Shared._Offbrand.Organs.BeforeInhaledGasEvent(gas);
+        RaiseLocalEvent(entity, ref beforeEv);
+        // End Offbrand
 
         var inhaleEv = new InhaledGasEvent(gas);
         RaiseLocalEvent(entity, ref inhaleEv);
@@ -367,6 +383,14 @@ public sealed partial class RespiratorSystem : EntitySystem
     {
         ent.Comp.UpdateIntervalMultiplier = args.Multiplier;
     }
+
+    // Begin Offbrand
+    [SubscribeLocalEvent]
+    private void OnApplyRespiratoryRateModifiers(Entity<RespiratorComponent> ent, ref ApplyRespiratoryRateModifiersEvent args)
+    {
+        ent.Comp.BreathRateMultiplier = args.BreathRate;
+    }
+    // End Offbrand
 
     private void OnGasInhaled(Entity<LungComponent> ent, ref BodyRelayedEvent<InhaledGasEvent> args)
     {

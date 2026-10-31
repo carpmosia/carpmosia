@@ -1,0 +1,56 @@
+using Content.Shared.ActionBlocker;
+using Content.Shared.Movement.Events;
+using Content.Shared.Movement.Pulling.Components;
+using Content.Shared.Movement.Pulling.Events;
+using Content.Shared.StatusEffectNew.Components;
+using Content.Shared.StatusEffectNew;
+
+namespace Content.Shared._Offbrand.StatusEffects;
+
+public sealed partial class BlockMovementWhenPulledStatusEffectSystem : EntitySystem
+{
+    [Dependency] private ActionBlockerSystem _actionBlocker = default!;
+
+    [Dependency] private EntityQuery<StatusEffectComponent> _statusEffectQuery;
+    [Dependency] private EntityQuery<PullableComponent> _pullableQuery;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<BlockMovementWhenPulledStatusEffectComponent, StatusEffectRelayedEvent<PullStartedMessage>>(OnPullMessage);
+        SubscribeLocalEvent<BlockMovementWhenPulledStatusEffectComponent, StatusEffectRelayedEvent<PullStoppedMessage>>(OnPullMessage);
+    }
+
+    [SubscribeLocalEvent]
+    private void OnStatusEffectApplied(Entity<BlockMovementWhenPulledStatusEffectComponent> ent, ref StatusEffectAppliedEvent args)
+    {
+        _actionBlocker.UpdateCanMove(args.Target);
+    }
+
+    [SubscribeLocalEvent]
+    private void OnStatusEffectRemoved(Entity<BlockMovementWhenPulledStatusEffectComponent> ent, ref StatusEffectRemovedEvent args)
+    {
+        _actionBlocker.UpdateCanMove(args.Target);
+    }
+
+    private void OnPullMessage<T>(Entity<BlockMovementWhenPulledStatusEffectComponent> ent, ref StatusEffectRelayedEvent<T> args)
+    {
+        if (_statusEffectQuery.Comp(ent).AppliedTo is not { } target)
+            return;
+
+        _actionBlocker.UpdateCanMove(target);
+    }
+
+    [SubscribeLocalEvent]
+    private void OnUpdateCanMove(Entity<BlockMovementWhenPulledStatusEffectComponent> ent, ref StatusEffectRelayedEvent<UpdateCanMoveEvent> args)
+    {
+        if (_statusEffectQuery.Comp(ent).AppliedTo is not { } target)
+            return;
+
+        if (!_pullableQuery.TryComp(target, out var pullable) || !pullable.BeingPulled)
+            return;
+
+        args.Args.Cancel();
+    }
+}
