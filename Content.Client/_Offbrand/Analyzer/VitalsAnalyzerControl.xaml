@@ -1,4 +1,4 @@
-<BoxContainer xmlns="https://spacestation14.io" Orientation="Vertical" SeparationOverride="9">
+<BoxContainer xmlns="https://spacestation14.io" xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls" Orientation="Vertical" SeparationOverride="9">
     <Label
         Name="NoPatientPlaceholder"
         Text="{Loc health-analyzer-window-no-patient-data-text}"
@@ -37,14 +37,16 @@
             <BoxContainer Orientation="Horizontal" SeparationOverride="20" Margin="0 0 0 4">
 
                 <BoxContainer Orientation="Vertical" >
-                    <Label StyleClasses="field-label-large" Text="{Loc 'offbrand-vitals-brain-activity'}" />
-                    <Label Name="BrainActivityValue" StyleClasses="field-value-large" />
-                    <Label Name="SpO2Label" StyleClasses="field-label-large" />
-                    <Label Name="SpO2Value" StyleClasses="field-value-large" />
+                    <Label StyleClasses="field-label" Text="{Loc 'offbrand-vitals-brain-activity'}" />
+                    <Label Name="BrainActivityValue" StyleClasses="field-value" />
+                    <Label Name="SpO2Label" StyleClasses="field-label" />
+                    <Label Name="SpO2Value" StyleClasses="field-value" />
+                    <Label StyleClasses="field-label" Text="{Loc 'offbrand-vitals-blood-volume'}" />
+                    <RichTextLabel Name="BloodVolumeValue" StyleClasses="field-value" />
                 </BoxContainer>
 
                 <BoxContainer Orientation="Vertical" >
-                    <Label StyleClasses="field-air" Text="{Loc 'offbrand-vitals-air'}" />
+
                     <Label StyleClasses="field-label" Text="{Loc 'offbrand-vitals-respiratory-rate'}" />
                     <RichTextLabel Name="RespiratoryRateValue" StyleClasses="field-value" />
                     <Label Name="EtCO2Label" StyleClasses="field-label" />
@@ -52,14 +54,10 @@
                 </BoxContainer>
 
                 <BoxContainer Orientation="Vertical" >
-                    <Label StyleClasses="field-blood" Text="{Loc 'offbrand-vitals-blood'}" />
-                    <Label StyleClasses="field-label" Text="{Loc 'offbrand-vitals-blood-pressure'}" />
-                    <RichTextLabel Name="BloodPressureValue" StyleClasses="field-value" />
-                    <Label StyleClasses="field-label" Text="{Loc 'offbrand-vitals-blood-volume'}" />
-                    <RichTextLabel Name="BloodVolumeValue" StyleClasses="field-value" />
-                    <Label StyleClasses="field-heart" Text="{Loc 'offbrand-vitals-heart'}" />
                     <Label StyleClasses="field-label" Text="{Loc 'offbrand-vitals-heart-rate'}" />
                     <RichTextLabel Name="HeartRateValue" StyleClasses="field-value" />
+                    <Label StyleClasses="field-label" Text="{Loc 'offbrand-vitals-blood-pressure'}" />
+                    <RichTextLabel Name="BloodPressureValue" StyleClasses="field-value" />
                 </BoxContainer>
 
             </BoxContainer>
