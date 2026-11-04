@@ -35,67 +35,23 @@ health-analyzer-status-tooltip =
 health-analyzer-blood-pressure-tooltip =
     A measure of how much blood is making it throughout the body.
 
-    IV stands can be used to replenish blood volume.
-
-    Relevant metrics:
-    {"[color=#7af396]"}Blood Volume[/color]:
-        Low blood volume can result in reduced blood pressure.
-
-    {"[color=#7af396]"}Brain Activity[/color]:
-        Low brain activity can result in reduced blood pressure.
-
-    {"[color=#7af396]"}Heart Rate and Heart Health[/color]:
-        Damage to the heart or a stopped heart can result in reduced blood pressure.
-
 health-analyzer-spo2-tooltip =
-    A measure of how much {LOC($gas)} is making it to the patient's body, compared to what the patient needs.
-
-    Relevant metrics:
-    {"[color=#7af396]"}Metabolic Rate[/color]:
-        Physical trauma and pain can cause the body's {LOC($gas)} demand to increase.
-
-    {"[color=#7af396]"}Blood Pressure[/color]:
-        Low blood pressure can result in reduced {LOC($spo2)}.
-
-    {"[color=#7af396]"}Lung Health[/color]:
-        Low lung health can result in reduced {LOC($spo2)}.
-
-    {"[color=#7af396]"}Asphyxiation[/color]:
-        Asphyxiation can result in reduced {LOC($spo2)}.
-
-    {"[color=#7af396]"}Respiratory Rate[/color]:
-        Hyperventilation can result in the patient breathing less air per breath.
+    A measure of how much oxygen or nitrogen is making it to the patient's body, compared to what the patient needs.
 
 health-analyzer-heart-rate-tooltip =
     A measure of how fast the patient's heart is beating.
 
-    The heartrate increases in response to inadequate {LOC($spo2)}.
+    The heartrate increases in response to inadequate Oxygen or Nitrogen.
 
 health-analyzer-respiratory-rate-tooltip =
     A measure of how fast the patient is breathing.
 
     Breathing too fast can result in less air per breath, causing asphyxiation.
 
-    Inaprovaline can encourage healthy breathing.
-
-    Relevant metrics:
-    {"[color=#7af396]"}{LOC($spo2)}[/color]:
-        Inadequate access to {LOC($spo2gas)} can result in faster breathing.
-
-    {"[color=#7af396]"}Metabolic Rate[/color]:
-        Physical trauma and pain can cause the body to breathe faster.
-
 health-analyzer-etco2-tooltip =
-    A measure of how much {LOC($gas)} is being exhaled with each breath.
+    A measure of how much waste gas is being exhaled with each breath.
 
-    Low {LOC($etco2)} can result in toxic {LOC($gas)} buildup.
-
-    Relevant metrics:
-    {"[color=#7af396]"}Respiratory Rate[/color]:
-        Irregular breathing can cause the patient to not fully exhale all {LOC($gas)}.
-
-    {"[color=#7af396]"}Blood Pressure[/color]:
-        Low Blood Pressure can cause the patient to hold onto more {LOC($gas)}.
+    Low ETCO2 can result in toxic waste gas buildup.
 
 health-analyzer-heart-health-tooltip =
     A measure of the heart's integrity.
@@ -132,10 +88,7 @@ health-analyzer-brain-health-tooltip = { $dead ->
     }
 
 -health-analyzer-brain-health-tooltip-alive =
-    {"[color=#fedb79]"}Mannitol[/color] can be administered to heal brain damage if the [color=#7af396]SpO2[/color] permits.
-
-    Relevant metrics:
-    {"[color=#7af396]"}SpO2[/color]: {$spo2}%
+   Overall measure of brain health. Total brain death cannot be recovered from.
 
 -health-analyzer-brain-health-tooltip-dead =
     The patient has 0% brain activity and is dead.
