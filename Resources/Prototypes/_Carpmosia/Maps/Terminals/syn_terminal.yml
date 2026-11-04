@@ -10,6 +10,5 @@
       components:
       - type: StationNameSetup
         mapNameTemplate: '{0} Syndicate Terminal {1}'
-        nameGenerator:
-          !type:NanotrasenNameGenerator
+        nameGenerator: !type:NanotrasenNameGenerator
           prefixCreator: 'TG'
