@@ -19,12 +19,14 @@ using Content.Shared.EntityConditions.Conditions.Body;
 using Content.Shared.EntityEffects;
 using Content.Shared.EntityEffects.Effects.Body;
 using Content.Shared.EntityEffects.Effects.Damage;
+using Content.Shared.FixedPoint; // Carpmosia-edit - Offmed Port
 using Content.Shared.Metabolism;
 using Content.Shared.Mobs.Systems;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Content.Shared._Offbrand.Wounds; // Offbrand
+using Content.Shared._Offbrand.Organs; // Carpmosia-edit - Offmed Port
 
 namespace Content.Server.Body.Systems;
 
@@ -42,6 +44,7 @@ public sealed partial class RespiratorSystem : EntitySystem
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private SharedEntityConditionsSystem _entityConditions = default!;
     [Dependency] private SharedSolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] private DamageableOrganSystem _organSystem = default!; // Carpmosia-edit - Offmed Port
 
     private static readonly ProtoId<MetabolismStagePrototype> RespirationStage = new("Respiration");
 
@@ -339,6 +342,17 @@ public sealed partial class RespiratorSystem : EntitySystem
         if (ent.Comp.SuffocationCycles == 2)
             _adminLogger.Add(LogType.Asphyxiation, $"{ToPrettyString(ent):entity} started suffocating");
 
+        // Carpmosia-start - Offmed Port
+        // If offmed enabled entity, we want to hurt the lungs
+        if (HasComp<PainComponent>(ent))
+        {
+            if(!_body.TryGetOrgansWithComponent<OffbrandLungOrganComponent>(ent.Owner, out var lung))
+                return;
+
+            DamageLungs(lung[0].Owner, ent.Comp.Damage.GetTotal());
+        }
+        // Carpmosia-end - Offmed Port
+
         _damageableSys.ChangeDamage(ent.Owner, ent.Comp.Damage, interruptsDoAfters: false, ignoreResistances: true);
 
         if (ent.Comp.SuffocationCycles < ent.Comp.SuffocationCycleThreshold)
@@ -347,6 +361,16 @@ public sealed partial class RespiratorSystem : EntitySystem
         var ev = new SuffocationEvent();
         RaiseLocalEvent(ent, ref ev);
     }
+
+    // Carpmosia-start - Offmed Port
+    private void DamageLungs(Entity<DamageableOrganComponent?> ent, FixedPoint2 damage)
+    {
+        if(!Resolve(ent, ref ent.Comp))
+            return;
+
+        _organSystem.ChangeDamage(ent, damage);
+    }
+    // Carpmosia-end - Offmed Port
 
     private void StopSuffocation(Entity<RespiratorComponent> ent)
     {
