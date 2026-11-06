@@ -32,9 +32,6 @@ public sealed partial class StatusEffectsSystem : EntitySystem
         SubscribeLocalEvent<StatusEffectContainerComponent, ComponentShutdown>(OnStatusContainerShutdown);
         SubscribeLocalEvent<StatusEffectContainerComponent, EntInsertedIntoContainerMessage>(OnEntityInserted);
         SubscribeLocalEvent<StatusEffectContainerComponent, EntRemovedFromContainerMessage>(OnEntityRemoved);
-
-        SubscribeLocalEvent<StatusEffectContainerComponent, RejuvenateEvent>(OnRejuvenate); // Offbrand
-        SubscribeLocalEvent<StatusEffectContainerComponent, BodyRelayedEvent<RejuvenateEvent>>(OnRejuvenateRelayed); // Offbrand
     }
 
     public override void Update(float frameTime)
@@ -116,6 +113,7 @@ public sealed partial class StatusEffectsSystem : EntitySystem
     }
 
     // Begin Offbrand Changes
+    [SubscribeLocalEvent]
     private void OnRejuvenate(Entity<StatusEffectContainerComponent> ent,
         ref RejuvenateEvent args)
     {
@@ -128,6 +126,7 @@ public sealed partial class StatusEffectsSystem : EntitySystem
         }
     }
 
+    [SubscribeLocalEvent]
     private void OnRejuvenateRelayed(Entity<StatusEffectContainerComponent> ent,
         ref BodyRelayedEvent<RejuvenateEvent> args)
     {
