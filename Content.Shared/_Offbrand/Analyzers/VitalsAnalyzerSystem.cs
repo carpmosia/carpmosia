@@ -121,6 +121,7 @@ public sealed partial class VitalsAnalyzerSystem : EntitySystem
                 Reagents = reagents,
                 NonMedicalReagents = hasNonMedical,
                 BloodLevel = _bloodstream.GetBloodLevel(uid),
+                CanScanWounds = withWounds,
             };
     }
     public List<string>? SampleWounds(EntityUid uid)
