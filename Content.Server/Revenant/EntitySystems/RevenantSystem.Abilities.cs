@@ -30,7 +30,6 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
-using Content.Shared.IdentityManagement;
 using Content.Shared._Offbrand.Wounds; // Offbrand
 
 namespace Content.Server.Revenant.EntitySystems;

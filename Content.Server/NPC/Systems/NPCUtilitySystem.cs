@@ -34,14 +34,6 @@ using Microsoft.Extensions.ObjectPool;
 using Robust.Server.Containers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
-using Content.Shared.Atmos.Components;
-using System.Linq;
-using Content.Shared.Damage.Components;
-using Content.Shared.Damage.Systems;
-using Content.Shared.Mobs.Components;
-using Content.Shared.Temperature.Components;
-using Content.Shared.Stealth;
-using Content.Shared.Stealth.Components;
 using Content.Shared._Offbrand.Wounds; // Offbrand
 
 namespace Content.Server.NPC.Systems;
