@@ -942,7 +942,7 @@
         satiationType: Thirst
         factor: 6
       - !type:ModifyBloodLevel
-        amount: 0.25 # Offbrand
+        amount: 1 # Offbrand
 
 - type: reagent
   id: Siderlac

@@ -208,82 +208,95 @@
       - !type:EmptyAllContainers
       - !type:DeleteEntity
 
-- type: entity
-  parent: IVBag
-  id: IVBagAmmoniaBlood
-  suffix: anaerobic blood
-  components:
-  - type: Label
-    localizedLabel: reagent-name-ammonia-blood
-  - type: Solution
-    solution:
-      reagents:
-      - ReagentId: AmmoniaBlood
-        Quantity: 400
+#- type: entity
+#  parent: IVBag
+#  id: IVBagAmmoniaBlood
+#  suffix: anaerobic blood
+#  components:
+#  - type: Label
+#    localizedLabel: reagent-name-ammonia-blood
+#  - type: Solution
+#    solution:
+#      reagents:
+#      - ReagentId: AmmoniaBlood
+#        Quantity: 400
+#
+#- type: entity
+#  parent: IVBag
+#  id: IVBagBlood
+#  suffix: blood
+#  components:
+#  - type: Label
+#    localizedLabel: reagent-name-blood
+#  - type: Solution
+#    solution:
+#      reagents:
+#      - ReagentId: Blood
+#        Quantity: 400
+#
+#- type: entity
+#  parent: IVBag
+#  id: IVBagCopperBlood
+#  suffix: blue blood
+#  components:
+#  - type: Label
+#    localizedLabel: reagent-name-hemocyanin-blood
+#  - type: Solution
+#    solution:
+#      reagents:
+#      - ReagentId: CopperBlood
+#        Quantity: 400
+#
+#- type: entity
+#  parent: IVBag
+#  id: IVBagInsectBlood
+#  suffix: insect blood
+#  components:
+#  - type: Label
+#    localizedLabel: reagent-name-insect-blood
+#  - type: Solution
+#    solution:
+#      reagents:
+#      - ReagentId: InsectBlood
+#        Quantity: 400
+#
+#- type: entity
+#  parent: IVBag
+#  id: IVBagSap
+#  suffix: sap
+#  components:
+#  - type: Label
+#    localizedLabel: reagent-name-sap
+#  - type: Solution
+#    solution:
+#      reagents:
+#      - ReagentId: Sap
+#        Quantity: 400
+#
+#- type: entity
+#  parent: IVBag
+#  id: IVBagSlime
+#  suffix: slime
+#  components:
+#  - type: Label
+#    localizedLabel: reagent-name-slime
+#  - type: Solution
+#    solution:
+#      reagents:
+#      - ReagentId: Slime
+#        Quantity: 400
 
 - type: entity
   parent: IVBag
-  id: IVBagBlood
-  suffix: blood
+  id: IVBagSaline
+  suffix: saline
   components:
   - type: Label
-    localizedLabel: reagent-name-blood
+    localizedLabel: reagent-name-saline
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Blood
-        Quantity: 400
-
-- type: entity
-  parent: IVBag
-  id: IVBagCopperBlood
-  suffix: blue blood
-  components:
-  - type: Label
-    localizedLabel: reagent-name-hemocyanin-blood
-  - type: Solution
-    solution:
-      reagents:
-      - ReagentId: CopperBlood
-        Quantity: 400
-
-- type: entity
-  parent: IVBag
-  id: IVBagInsectBlood
-  suffix: insect blood
-  components:
-  - type: Label
-    localizedLabel: reagent-name-insect-blood
-  - type: Solution
-    solution:
-      reagents:
-      - ReagentId: InsectBlood
-        Quantity: 400
-
-- type: entity
-  parent: IVBag
-  id: IVBagSap
-  suffix: sap
-  components:
-  - type: Label
-    localizedLabel: reagent-name-sap
-  - type: Solution
-    solution:
-      reagents:
-      - ReagentId: Sap
-        Quantity: 400
-
-- type: entity
-  parent: IVBag
-  id: IVBagSlime
-  suffix: slime
-  components:
-  - type: Label
-    localizedLabel: reagent-name-slime
-  - type: Solution
-    solution:
-      reagents:
-      - ReagentId: Slime
+      - ReagentId: Saline
         Quantity: 400
 
 - type: entityTable
@@ -292,12 +305,12 @@
     children:
     - id: IVBag
     - id: IVBag
-    - id: IVBagAmmoniaBlood
-    - id: IVBagBlood
-    - id: IVBagCopperBlood
-    - id: IVBagInsectBlood
-    - id: IVBagSap
-    - id: IVBagSlime
+    - id: IVBagSaline
+    - id: IVBagSaline
+    - id: IVBagSaline
+    - id: IVBagSaline
+    - id: IVBagSaline
+    - id: IVBagSaline
 
 - type: entity
   id: CrateFreezerIVBag
