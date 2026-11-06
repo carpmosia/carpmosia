@@ -61,7 +61,7 @@ public sealed partial class CryoPodSystem : SharedCryoPodSystem
         var health = _healthAnalyzerSystem.GetHealthAnalyzerUiState(patient);
         health.ScanMode = true;
         var hasDamage = patient is null ? false : _damageable.GetTotalDamage(patient.Value) > 0;
-        var vitals = patient is null ? null : _vitalsAnalyzer.TakeSample(patient.Value); // Offbrand
+        var vitals = patient is null ? null : _vitalsAnalyzer.TakeSample(patient.Value, false); // Offbrand
 
         UI.ServerSendUiMessage(
             entity.Owner,
