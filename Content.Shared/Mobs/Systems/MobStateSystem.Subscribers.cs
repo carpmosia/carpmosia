@@ -21,6 +21,7 @@ using Content.Shared.Strip.Components;
 using Content.Shared.Throwing;
 using Content.Shared.Tools.Systems;
 using System.Linq;
+using Content.Shared._Offbrand.Wounds;
 using Content.Shared.Popups;
 
 namespace Content.Shared.Mobs.Systems;
@@ -227,6 +228,13 @@ public partial class MobStateSystem
     {
         if (IsIncapacitated(ent, ent.Comp))
             args.Incapacitated = true;
+    }
+
+    [SubscribeLocalEvent]
+    private void OnShockStateChanged(Entity<MobStateComponent> ent,
+        ref ShockThresholdsSystem.ShockStateChangedEvent args)
+    {
+        ChangeState(ent.Owner, ent.Comp, args.NewMobState, args.Origin);
     }
 
     #endregion
