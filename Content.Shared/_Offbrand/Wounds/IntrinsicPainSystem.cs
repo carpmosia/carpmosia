@@ -23,5 +23,6 @@ public sealed class IntrinsicPainSystem : OffbrandDamageSystem
                 args.Pain += coefficient * damage;
             }
         }
+        args.Pain += ent.Comp.FlatPainModifier;
     }
 }

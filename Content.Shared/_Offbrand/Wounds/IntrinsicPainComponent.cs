@@ -14,4 +14,10 @@ public sealed partial class IntrinsicPainComponent : Component
     /// </summary>
     [DataField(required: true)]
     public Dictionary<ProtoId<DamageTypePrototype>, FixedPoint2> PainCoefficients;
+
+    /// <summary>
+    /// Used for things like status effects or other non-damage and indirect sources of pain.
+    /// </summary>
+    [DataField]
+    public FixedPoint2 FlatPainModifier = FixedPoint2.Zero;
 }
