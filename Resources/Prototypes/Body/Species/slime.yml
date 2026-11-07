@@ -72,6 +72,7 @@
       Brain: OrganSlimePersonCore
       Eyes: OrganSlimePersonEyes
       Lungs: OrganSlimePersonLungs
+      Heart: OrganSlimePersonHeart
   - type: HumanoidProfile
     species: SlimePerson
 
@@ -281,9 +282,14 @@
       sprite: Mobs/Customization/eyes.rsi
 
 - type: entity
-  parent: [ OrganBaseLungs, OrganBaseHeart, OrganSlimePersonInternal, OrganSlimePersonMetabolizer ]
+  parent: [ OrganBaseLungs, OrganSlimePersonInternal, OrganSlimePersonMetabolizer ]
   id: OrganSlimePersonLungs
   name: gas sacs
   components:
   - type: Lung
     alert: LowNitrogen
+
+- type: entity
+  parent: [ OrganBaseHeart, OrganSlimePersonInternal, OrganSlimePersonMetabolizer ]
+  id: OrganSlimePersonHeart
+  name: fluid sacs
