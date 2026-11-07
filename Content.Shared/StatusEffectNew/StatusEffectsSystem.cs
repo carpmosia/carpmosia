@@ -5,6 +5,7 @@ using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using System.Diagnostics.CodeAnalysis;
+using Content.Shared.Body;
 
 namespace Content.Shared.StatusEffectNew;
 
@@ -31,8 +32,6 @@ public sealed partial class StatusEffectsSystem : EntitySystem
         SubscribeLocalEvent<StatusEffectContainerComponent, ComponentShutdown>(OnStatusContainerShutdown);
         SubscribeLocalEvent<StatusEffectContainerComponent, EntInsertedIntoContainerMessage>(OnEntityInserted);
         SubscribeLocalEvent<StatusEffectContainerComponent, EntRemovedFromContainerMessage>(OnEntityRemoved);
-
-        SubscribeLocalEvent<StatusEffectContainerComponent, RejuvenateEvent>(OnRejuvenate); // Offbrand
     }
 
     public override void Update(float frameTime)
@@ -114,6 +113,7 @@ public sealed partial class StatusEffectsSystem : EntitySystem
     }
 
     // Begin Offbrand Changes
+    [SubscribeLocalEvent]
     private void OnRejuvenate(Entity<StatusEffectContainerComponent> ent,
         ref RejuvenateEvent args)
     {
@@ -123,6 +123,25 @@ public sealed partial class StatusEffectsSystem : EntitySystem
         foreach (var effect in effects)
         {
             Del(effect);
+        }
+    }
+
+    [SubscribeLocalEvent]
+    private void OnRejuvenateRelayed(Entity<StatusEffectContainerComponent> ent,
+        ref BodyRelayedEvent<RejuvenateEvent> args)
+    {
+        if (args.Body.Comp.Organs is not { } containerOrgans)
+            return;
+
+        foreach (var organ in containerOrgans.ContainedEntities)
+        {
+            if (!TryEffectsWithComp<RejuvenateRemovedStatusEffectComponent>(organ, out var effects))
+                continue;
+
+            foreach (var effect in effects)
+            {
+                Del(effect);
+            }
         }
     }
     // End Offbrand Changes
