@@ -231,6 +231,7 @@ public partial class MobStateSystem
             args.Incapacitated = true;
     }
 
+    // Start Offmed: Wiring pain & brain to MobState
     [SubscribeLocalEvent]
     private void OnShockStateChanged(Entity<MobStateComponent> ent,
         ref ShockThresholdsSystem.ShockStateChangedEvent args)
@@ -244,19 +245,7 @@ public partial class MobStateSystem
     {
         ChangeState(ent.Owner, ent.Comp, args.NewMobState, args.Origin);
     }
-
-    [SubscribeLocalEvent]
-    private void OnHeartStarted(Entity<MobStateComponent> ent, ref HeartStartedEvent args)
-    {
-        ChangeState(ent.Owner, ent.Comp, MobState.Alive);
-    }
-
-    [SubscribeLocalEvent]
-    private void OnHeartStopped(Entity<MobStateComponent> ent, ref HeartStoppedEvent args)
-    {
-        if (ent.Comp.CurrentState != MobState.Dead)
-            ChangeState(ent.Owner, ent.Comp, MobState.Critical);
-    }
+    // End Offmed
 
     #endregion
 }
