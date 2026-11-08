@@ -61,9 +61,8 @@
       60: StatusEffectSeverePain
       120: StatusEffectBlackoutPain
     mobThresholds:
-      150: Alive
-      200: Critical
-      300: Dead
+      0: Alive
+      300: Critical
   - type: ShockAlerts
     alertCategory: Pain
     suppressedAlert: SuppressedPain

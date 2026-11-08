@@ -76,7 +76,7 @@ public sealed partial class ShockThresholdsSystem : EntitySystem
     }
 
     /// <summary>
-    /// Event that is raised whenever a MobState changes on an entity
+    /// Event that is raised whenever a ShockThresholds MobState changes on an entity
     /// </summary>
     /// <param name="Target">The Entity whose MobState is changing</param>
     /// <param name="Component">The MobState Component owned by the Target entity</param>

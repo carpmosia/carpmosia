@@ -21,6 +21,7 @@ using Content.Shared.Strip.Components;
 using Content.Shared.Throwing;
 using Content.Shared.Tools.Systems;
 using System.Linq;
+using Content.Shared._Offbrand.Organs;
 using Content.Shared._Offbrand.Wounds;
 using Content.Shared.Popups;
 
@@ -235,6 +236,26 @@ public partial class MobStateSystem
         ref ShockThresholdsSystem.ShockStateChangedEvent args)
     {
         ChangeState(ent.Owner, ent.Comp, args.NewMobState, args.Origin);
+    }
+
+    [SubscribeLocalEvent]
+    private void OnBrainStateChanged(Entity<MobStateComponent> ent,
+        ref BrainDamageThresholdsSystem.BrainStateChangedEvent args)
+    {
+        ChangeState(ent.Owner, ent.Comp, args.NewMobState, args.Origin);
+    }
+
+    [SubscribeLocalEvent]
+    private void OnHeartStarted(Entity<MobStateComponent> ent, ref HeartStartedEvent args)
+    {
+        ChangeState(ent.Owner, ent.Comp, MobState.Alive);
+    }
+
+    [SubscribeLocalEvent]
+    private void OnHeartStopped(Entity<MobStateComponent> ent, ref HeartStoppedEvent args)
+    {
+        if (ent.Comp.CurrentState != MobState.Dead)
+            ChangeState(ent.Owner, ent.Comp, MobState.Critical);
     }
 
     #endregion
