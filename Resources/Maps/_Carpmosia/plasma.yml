@@ -2,9 +2,9 @@ meta:
   format: 7
   category: Map
   engineVersion: 290.0.0
-  forkId: ""
+  forkId: carpmosia
   forkVersion: ""
-  time: 09/22/2026 17:10:03
+  time: 11/08/2026 21:58:15
   entityCount: 27223
 maps:
 - 1
@@ -2909,6 +2909,7 @@ entities:
       - 27221
       - 27222
       - 27223
+    - type: GridSplitNode
 - proto: AccordionInstrument
   entities:
   - uid: 25884
@@ -72695,13 +72696,6 @@ entities:
       parent: 2
       rot: 3.141592653589793 rad
       pos: -45.5,-5.5
-- proto: CommandmentCircuitBoard
-  entities:
-  - uid: 24950
-    components:
-    - type: Transform
-      parent: 2
-      pos: -118.489746,-74.612564
 - proto: CommsComputerCircuitboard
   entities:
   - uid: 4263
@@ -73285,14 +73279,6 @@ entities:
       parent: 2
       rot: -1.5707963267948966 rad
       pos: -96.5,33.5
-- proto: ComputerSalvageJobBoard
-  entities:
-  - uid: 16998
-    components:
-    - type: Transform
-      parent: 2
-      rot: -1.5707963267948966 rad
-      pos: -96.5,35.5
 - proto: ComputerShuttleCargo
   entities:
   - uid: 2711
@@ -73311,6 +73297,14 @@ entities:
     - type: Transform
       parent: 2
       pos: -91.5,25.5
+- proto: ComputerShuttleSalvage
+  entities:
+  - uid: 16998
+    components:
+    - type: Transform
+      parent: 2
+      rot: -1.5707963267948966 rad
+      pos: -96.5,35.5
 - proto: ComputerSolarControl
   entities:
   - uid: 5889
@@ -84822,42 +84816,6 @@ entities:
       parent: 2
       rot: 3.141592653589793 rad
       pos: -112.5,34.5
-- proto: EnergyGateAirtight
-  entities:
-  - uid: 968
-    components:
-    - type: Transform
-      parent: 2
-      rot: 1.5707963267948966 rad
-      pos: -36.5,19.5
-  - uid: 984
-    components:
-    - type: Transform
-      parent: 2
-      rot: 1.5707963267948966 rad
-      pos: -36.5,12.5
-- proto: EnergyGateGenpopEnter
-  entities:
-  - uid: 159
-    components:
-    - type: Transform
-      parent: 2
-      rot: 1.5707963267948966 rad
-      pos: -89.5,-42.5
-- proto: EnergyGateGenpopLeave
-  entities:
-  - uid: 3173
-    components:
-    - type: Transform
-      parent: 2
-      rot: -1.5707963267948966 rad
-      pos: -89.5,-44.5
-  - uid: 20806
-    components:
-    - type: Transform
-      parent: 2
-      rot: -1.5707963267948966 rad
-      pos: -97.5,-43.5
 - proto: ExosuitFabricator
   entities:
   - uid: 20469
@@ -94064,7 +94022,15 @@ entities:
       currentLabel: TEG Burn Chamber
     - type: NameModifier
       baseName: gas pipe sensor
-- proto: GasPipeSensorDistribution
+- proto: GasPipeSensorColdLoop
+  entities:
+  - uid: 22954
+    components:
+    - type: Transform
+      parent: 2
+      rot: 1.5707963267948966 rad
+      pos: -146.5,-8.5
+- proto: GasPipeSensorDistro
   entities:
   - uid: 5095
     components:
@@ -94073,7 +94039,7 @@ entities:
       pos: -118.5,17.5
     - type: AtmosPipeColor
       color: '#0055CCFF'
-- proto: GasPipeSensorMixedAir
+- proto: GasPipeSensorFuel
   entities:
   - uid: 16494
     components:
@@ -94083,15 +94049,7 @@ entities:
       pos: -125.5,14.5
     - type: AtmosPipeColor
       color: '#03FCD3FF'
-- proto: GasPipeSensorTEGCold
-  entities:
-  - uid: 22954
-    components:
-    - type: Transform
-      parent: 2
-      rot: 1.5707963267948966 rad
-      pos: -146.5,-8.5
-- proto: GasPipeSensorTEGHot
+- proto: GasPipeSensorHotLoop
   entities:
   - uid: 22953
     components:
@@ -135025,6 +134983,13 @@ entities:
     - type: Transform
       parent: 2
       pos: -116.494,27.485348
+- proto: LawbringerCircuitBoard
+  entities:
+  - uid: 24948
+    components:
+    - type: Transform
+      parent: 2
+      pos: -118.270996,-74.35101
 - proto: LedLightBulb
   entities:
   - uid: 22441
@@ -146843,13 +146808,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -80.42829,-23.28112
-- proto: RobocopCircuitBoard
-  entities:
-  - uid: 24948
-    components:
-    - type: Transform
-      parent: 2
-      pos: -118.270996,-74.35101
 - proto: RockGuitarInstrument
   entities:
   - uid: 22281
@@ -151066,6 +151024,13 @@ entities:
       parent: 2
       rot: 1.5707963267948966 rad
       pos: -19.5,-3.5
+- proto: SixCommandmentsCircuitBoard
+  entities:
+  - uid: 24950
+    components:
+    - type: Transform
+      parent: 2
+      pos: -118.489746,-74.612564
 - proto: Skub
   entities:
   - uid: 2403
@@ -160133,6 +160098,42 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+- proto: Turnstile
+  entities:
+  - uid: 968
+    components:
+    - type: Transform
+      parent: 2
+      rot: 1.5707963267948966 rad
+      pos: -36.5,19.5
+  - uid: 984
+    components:
+    - type: Transform
+      parent: 2
+      rot: 1.5707963267948966 rad
+      pos: -36.5,12.5
+- proto: TurnstileGenpopEnter
+  entities:
+  - uid: 159
+    components:
+    - type: Transform
+      parent: 2
+      rot: 1.5707963267948966 rad
+      pos: -89.5,-42.5
+- proto: TurnstileGenpopLeave
+  entities:
+  - uid: 3173
+    components:
+    - type: Transform
+      parent: 2
+      rot: -1.5707963267948966 rad
+      pos: -89.5,-44.5
+  - uid: 20806
+    components:
+    - type: Transform
+      parent: 2
+      rot: -1.5707963267948966 rad
+      pos: -97.5,-43.5
 - proto: TwoWayLever
   entities:
   - uid: 4622

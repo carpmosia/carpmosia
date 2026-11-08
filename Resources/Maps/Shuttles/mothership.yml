@@ -1,10 +1,10 @@
 meta:
   format: 7
   category: Grid
-  engineVersion: 289.0.0
-  forkId: ""
+  engineVersion: 290.0.0
+  forkId: carpmosia
   forkVersion: ""
-  time: 08/22/2026 21:42:03
+  time: 11/08/2026 21:58:59
   entityCount: 595
 maps: []
 grids:
@@ -81,6 +81,7 @@ entities:
       - 596
     - type: TileHistory
       chunkHistory: {}
+    - type: GridSplitNode
 - proto: AirlockGlassShuttleXenoborgLocked
   entities:
   - uid: 107
@@ -920,6 +921,13 @@ entities:
       parent: 1
       rot: 3.141592653589793 rad
       pos: -10.5,-0.5
+- proto: BaseRecycler
+  entities:
+  - uid: 111
+    components:
+    - type: Transform
+      parent: 1
+      pos: 0.5,-5.5
 - proto: BlastDoorXenoOpen
   entities:
   - uid: 5
@@ -2062,7 +2070,7 @@ entities:
     - type: Transform
       parent: 1
       pos: 0.5,5.5
-- proto: ComputerShuttleEvent # Carpmosia-edit - Fix Mothership FTL
+- proto: ComputerShuttleEvent
   entities:
   - uid: 291
     components:
@@ -2582,13 +2590,6 @@ entities:
       parent: 1
       rot: -1.5707963267948966 rad
       pos: -6.5,-0.5
-- proto: BaseRecycler # Carpmosia-edit - Fix Xenoborgs Getting Tickets
-  entities:
-  - uid: 111
-    components:
-    - type: Transform
-      parent: 1
-      pos: 0.5,-5.5
 - proto: SheetGlass
   entities:
   - uid: 586
@@ -2726,7 +2727,7 @@ entities:
     - type: Transform
       parent: 1
       rot: 1.5707963267948966 rad
-      pos: -2.5139039,1.3665509
+      pos: -2.5,1.5
     - type: DeviceLinkSource
       linkedPorts:
         367:
@@ -2745,7 +2746,7 @@ entities:
     - type: Transform
       parent: 1
       rot: 1.5707963267948966 rad
-      pos: -2.5139039,1.5795138
+      pos: -2.5,1.5
     - type: DeviceLinkSource
       linkedPorts:
         445:

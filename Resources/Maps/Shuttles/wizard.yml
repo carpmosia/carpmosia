@@ -1,10 +1,10 @@
 meta:
   format: 7
   category: Grid
-  engineVersion: 289.0.0
-  forkId: ""
+  engineVersion: 290.0.0
+  forkId: carpmosia
   forkVersion: ""
-  time: 08/23/2026 11:51:29
+  time: 11/08/2026 21:58:57
   entityCount: 796
 maps: []
 grids:
@@ -198,6 +198,7 @@ entities:
       - 795
       - 796
       - 797
+    - type: GridSplitNode
 - proto: AirlockExternalGlass
   entities:
   - uid: 344
@@ -2154,7 +2155,7 @@ entities:
     - type: Transform
       parent: 768
       pos: -9.537922,-3.3987489
-- proto: ClothingShoesWizard
+- proto: ClothingShoesSandalsBrown
   entities:
   - uid: 574
     components:

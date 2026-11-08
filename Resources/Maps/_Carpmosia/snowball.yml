@@ -2,9 +2,9 @@ meta:
   format: 7
   category: Map
   engineVersion: 290.0.0
-  forkId: ""
+  forkId: carpmosia
   forkVersion: ""
-  time: 09/22/2026 17:17:10
+  time: 11/08/2026 21:58:40
   entityCount: 19008
 maps:
 - 1793
@@ -1799,6 +1799,7 @@ entities:
       - 19006
       - 19007
       - 19008
+    - type: GridSplitNode
   - uid: 1793
     components:
     - type: MetaData
@@ -48937,13 +48938,6 @@ entities:
       parent: 1
       rot: 3.141592653589793 rad
       pos: 17.5,43.5
-- proto: CommandmentCircuitBoard
-  entities:
-  - uid: 11225
-    components:
-    - type: Transform
-      parent: 1
-      pos: 67.6038,17.560425
 - proto: CommsComputerCircuitboard
   entities:
   - uid: 9851
@@ -49351,14 +49345,6 @@ entities:
       parent: 1
       rot: -1.5707963267948966 rad
       pos: 90.5,94.5
-- proto: ComputerSalvageJobBoard
-  entities:
-  - uid: 7835
-    components:
-    - type: Transform
-      parent: 1
-      rot: -1.5707963267948966 rad
-      pos: 90.5,95.5
 - proto: ComputerShuttleCargo
   entities:
   - uid: 8075
@@ -49373,6 +49359,14 @@ entities:
       parent: 1
       rot: -1.5707963267948966 rad
       pos: 87.5,77.5
+- proto: ComputerShuttleSalvage
+  entities:
+  - uid: 7835
+    components:
+    - type: Transform
+      parent: 1
+      rot: -1.5707963267948966 rad
+      pos: 90.5,95.5
 - proto: ComputerSolarControl
   entities:
   - uid: 18387
@@ -57757,48 +57751,6 @@ entities:
       parent: 1
       rot: -1.5707963267948966 rad
       pos: 42.5,109.5
-- proto: EnergyGateAirtight
-  entities:
-  - uid: 10
-    components:
-    - type: Transform
-      parent: 1
-      rot: 1.5707963267948966 rad
-      pos: 3.5,67.5
-  - uid: 12
-    components:
-    - type: Transform
-      parent: 1
-      rot: 1.5707963267948966 rad
-      pos: 3.5,74.5
-  - uid: 103
-    components:
-    - type: Transform
-      parent: 1
-      rot: 1.5707963267948966 rad
-      pos: 3.5,60.5
-- proto: EnergyGateGenpopEnter
-  entities:
-  - uid: 13972
-    components:
-    - type: Transform
-      parent: 1
-      rot: 1.5707963267948966 rad
-      pos: 32.5,50.5
-- proto: EnergyGateGenpopLeave
-  entities:
-  - uid: 14381
-    components:
-    - type: Transform
-      parent: 1
-      rot: -1.5707963267948966 rad
-      pos: 32.5,52.5
-  - uid: 14476
-    components:
-    - type: Transform
-      parent: 1
-      rot: -1.5707963267948966 rad
-      pos: 28.5,52.5
 - proto: ExosuitFabricator
   entities:
   - uid: 3806
@@ -64576,7 +64528,7 @@ entities:
       pos: 32.5,94.5
     - type: AtmosPipeColor
       color: '#0055CCFF'
-- proto: GasPipeSensorDistribution
+- proto: GasPipeSensorDistro
   entities:
   - uid: 5224
     components:
@@ -90228,6 +90180,13 @@ entities:
     - type: Transform
       parent: 1
       pos: 60.5,49.5
+- proto: LawbringerCircuitBoard
+  entities:
+  - uid: 11223
+    components:
+    - type: Transform
+      parent: 1
+      pos: 67.36305,17.690056
 - proto: LightReplacerFilled
   entities:
   - uid: 9360
@@ -97785,13 +97744,6 @@ entities:
     - type: Transform
       parent: 1
       pos: 37.20666,28.371834
-- proto: RobocopCircuitBoard
-  entities:
-  - uid: 11223
-    components:
-    - type: Transform
-      parent: 1
-      pos: 67.36305,17.690056
 - proto: SalvageMagnet
   entities:
   - uid: 7362
@@ -99920,6 +99872,13 @@ entities:
       parent: 1
       rot: 1.5707963267948966 rad
       pos: 21.5,90.5
+- proto: SixCommandmentsCircuitBoard
+  entities:
+  - uid: 11225
+    components:
+    - type: Transform
+      parent: 1
+      pos: 67.6038,17.560425
 - proto: SmartFridge
   entities:
   - uid: 12257
@@ -105440,6 +105399,48 @@ entities:
     - type: Transform
       parent: 1
       pos: 42.5,64.5
+- proto: Turnstile
+  entities:
+  - uid: 10
+    components:
+    - type: Transform
+      parent: 1
+      rot: 1.5707963267948966 rad
+      pos: 3.5,67.5
+  - uid: 12
+    components:
+    - type: Transform
+      parent: 1
+      rot: 1.5707963267948966 rad
+      pos: 3.5,74.5
+  - uid: 103
+    components:
+    - type: Transform
+      parent: 1
+      rot: 1.5707963267948966 rad
+      pos: 3.5,60.5
+- proto: TurnstileGenpopEnter
+  entities:
+  - uid: 13972
+    components:
+    - type: Transform
+      parent: 1
+      rot: 1.5707963267948966 rad
+      pos: 32.5,50.5
+- proto: TurnstileGenpopLeave
+  entities:
+  - uid: 14381
+    components:
+    - type: Transform
+      parent: 1
+      rot: -1.5707963267948966 rad
+      pos: 32.5,52.5
+  - uid: 14476
+    components:
+    - type: Transform
+      parent: 1
+      rot: -1.5707963267948966 rad
+      pos: 28.5,52.5
 - proto: TwoWayLever
   entities:
   - uid: 1369

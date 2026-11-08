@@ -1,10 +1,10 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 288.1.0
-  forkId: ""
+  engineVersion: 290.0.0
+  forkId: carpmosia
   forkVersion: ""
-  time: 08/13/2026 13:53:47
+  time: 11/08/2026 21:59:03
   entityCount: 2227
 maps:
 - 1653
@@ -15305,6 +15305,17 @@ entities:
       parent: 1653
       rot: 1.5707963267948966 rad
       pos: 6.5,36.5
+  - uid: 691
+    components:
+    - type: Transform
+      parent: 1653
+      pos: 32.5,2.5
+  - uid: 809
+    components:
+    - type: Transform
+      parent: 1653
+      rot: -1.5707963267948966 rad
+      pos: 9.5,42.5
   - uid: 1083
     components:
     - type: Transform
@@ -15327,30 +15338,6 @@ entities:
     - type: Transform
       parent: 1653
       pos: 9.5,28.5
-  - uid: 2017
-    components:
-    - type: Transform
-      parent: 1653
-      pos: 29.5,25.5
-  - uid: 2018
-    components:
-    - type: Transform
-      parent: 1653
-      rot: 3.141592653589793 rad
-      pos: 29.5,27.5
-- proto: WindoorSecure
-  entities:
-  - uid: 691
-    components:
-    - type: Transform
-      parent: 1653
-      pos: 32.5,2.5
-  - uid: 809
-    components:
-    - type: Transform
-      parent: 1653
-      rot: -1.5707963267948966 rad
-      pos: 9.5,42.5
   - uid: 1175
     components:
     - type: Transform
@@ -15429,6 +15416,17 @@ entities:
       parent: 1653
       rot: 3.141592653589793 rad
       pos: 45.5,13.5
+  - uid: 2017
+    components:
+    - type: Transform
+      parent: 1653
+      pos: 29.5,25.5
+  - uid: 2018
+    components:
+    - type: Transform
+      parent: 1653
+      rot: 3.141592653589793 rad
+      pos: 29.5,27.5
   - uid: 2126
     components:
     - type: Transform

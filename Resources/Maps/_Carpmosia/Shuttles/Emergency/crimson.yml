@@ -1,17 +1,21 @@
 meta:
   format: 7
   category: Grid
-  engineVersion: 283.1.3
+  engineVersion: 290.0.0
   forkId: carpmosia
   forkVersion: ""
-  time: 09/03/2026 11:08:04
-  entityCount: 501
+  time: 11/08/2026 22:01:11
+  entityCount: 505
 maps: []
 grids:
 - 1
 orphans:
 - 1
-nullspace: []
+nullspace:
+- 502
+- 503
+- 504
+- 505
 tilemap:
   0: Space
   31: FloorDark
@@ -19,7 +23,7 @@ tilemap:
   3: FloorGrass
   79: FloorReinforced
   93: FloorSteel
-  108: FloorTechMaint
+  108: FloorTechMaint2
   112: FloorWhite
   2: FloorWhiteMono
   125: Lattice
@@ -68,409 +72,6 @@ entities:
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
         path: /Audio/Effects/alert.ogg
-    - type: DecalGrid
-      chunkCollection:
-        version: 2
-        nodes:
-        - node:
-            id: Bot
-            color: '#FFFFFFFF'
-          decals:
-            543: -6,2
-            544: -4,2
-            546: 0,2
-            563: -2,2
-        - node:
-            zIndex: 3
-            id: Bot
-            color: '#FFFFFFFF'
-          decals:
-            344: 0,0
-            345: 0,1
-            347: 0,3
-            348: 0,4
-            349: -2,4
-            350: -2,3
-            352: -2,1
-            353: -2,0
-            354: -4,0
-            355: -4,1
-            357: -4,3
-            358: -4,4
-            359: -6,4
-            360: -6,3
-            362: -6,1
-            363: -6,0
-        - node:
-            id: BrickTileWhiteCornerNe
-            color: '#334E6DC8'
-          decals:
-            399: -3,13
-        - node:
-            id: BrickTileWhiteCornerNe
-            color: '#52B4E996'
-          decals:
-            88: 0,13
-            89: 1,11
-        - node:
-            id: BrickTileWhiteCornerNe
-            color: '#DE3A3A96'
-          decals:
-            443: -3,9
-            444: -2,8
-        - node:
-            id: BrickTileWhiteCornerNw
-            color: '#334E6DC8'
-          decals:
-            397: -6,13
-            398: -7,11
-        - node:
-            id: BrickTileWhiteCornerNw
-            color: '#52B4E996'
-          decals:
-            87: -1,13
-        - node:
-            id: BrickTileWhiteCornerNw
-            color: '#DE3A3A96'
-          decals:
-            442: -4,9
-        - node:
-            id: BrickTileWhiteCornerSe
-            color: '#334E6DC8'
-          decals:
-            401: -6,9
-            449: -3,11
-        - node:
-            id: BrickTileWhiteCornerSe
-            color: '#52B4E996'
-          decals:
-            84: 1,9
-        - node:
-            id: BrickTileWhiteCornerSe
-            color: '#DE3A3A96'
-          decals:
-            440: -2,7
-        - node:
-            id: BrickTileWhiteCornerSw
-            color: '#334E6DC8'
-          decals:
-            402: -7,9
-        - node:
-            id: BrickTileWhiteCornerSw
-            color: '#52B4E996'
-          decals:
-            85: 0,9
-            448: -1,10
-        - node:
-            id: BrickTileWhiteCornerSw
-            color: '#DE3A3A96'
-          decals:
-            79: -4,7
-        - node:
-            id: BrickTileWhiteInnerNe
-            color: '#52B4E996'
-          decals:
-            95: 0,11
-        - node:
-            id: BrickTileWhiteInnerNe
-            color: '#DE3A3A96'
-          decals:
-            445: -3,8
-        - node:
-            id: BrickTileWhiteInnerNw
-            color: '#334E6DC8'
-          decals:
-            412: -6,11
-        - node:
-            id: BrickTileWhiteInnerSe
-            color: '#334E6DC8'
-          decals:
-            454: -6,11
-        - node:
-            id: BrickTileWhiteInnerSw
-            color: '#52B4E996'
-          decals:
-            94: 0,10
-        - node:
-            id: BrickTileWhiteLineE
-            color: '#334E6DC8'
-          decals:
-            450: -3,12
-            453: -6,10
-        - node:
-            id: BrickTileWhiteLineE
-            color: '#52B4E996'
-          decals:
-            90: 1,10
-            91: 0,12
-        - node:
-            id: BrickTileWhiteLineN
-            color: '#334E6DC8'
-          decals:
-            405: -5,13
-            406: -4,13
-        - node:
-            id: BrickTileWhiteLineS
-            color: '#334E6DC8'
-          decals:
-            451: -4,11
-            452: -5,11
-        - node:
-            id: BrickTileWhiteLineW
-            color: '#334E6DC8'
-          decals:
-            403: -7,10
-            404: -6,12
-        - node:
-            id: BrickTileWhiteLineW
-            color: '#52B4E996'
-          decals:
-            93: -1,12
-            447: -1,11
-        - node:
-            id: BrickTileWhiteLineW
-            color: '#DE3A3A96'
-          decals:
-            446: -4,8
-        - node:
-            id: Caution
-            color: '#FFFFFFFF'
-            angle: 1.5707963267948966 rad
-          decals:
-            186: 1.5347023,-1.9726338
-            187: 1.5347023,6.027366
-        - node:
-            id: Caution
-            color: '#FFFFFFFF'
-            angle: 4.71238898038469 rad
-          decals:
-            470: -7.5562744,-2.0020132
-            471: -7.537044,6.0062428
-        - node:
-            id: Delivery
-            color: '#FFFFFFFF'
-          decals:
-            570: -5,5
-            571: -1,5
-            572: -1,-1
-            573: -5,-1
-        - node:
-            id: FlowersBROne
-            color: '#FFFFFFFF'
-          decals:
-            557: -5,3
-        - node:
-            id: FlowersBRThree
-            color: '#FFFFFFFF'
-          decals:
-            559: -1,2
-        - node:
-            id: Flowersbr2
-            color: '#FFFFFFFF'
-          decals:
-            556: -5,1
-        - node:
-            id: Flowerspv2
-            color: '#FFFFFFFF'
-          decals:
-            562: -1,3
-        - node:
-            id: Flowerspv3
-            color: '#FFFFFFFF'
-          decals:
-            561: -5,2
-        - node:
-            id: Flowersy3
-            color: '#FFFFFFFF'
-          decals:
-            560: -1,1
-        - node:
-            id: FullTileOverlayGreyscale
-            color: '#334E6DC8'
-          decals:
-            413: -6,8
-        - node:
-            id: Grassc1
-            color: '#FFFFFFFF'
-          decals:
-            552: -5,2
-        - node:
-            id: Grassc2
-            color: '#FFFFFFFF'
-          decals:
-            553: -1,1
-        - node:
-            id: Grassd3
-            color: '#FFFFFFFF'
-          decals:
-            551: -5,3
-        - node:
-            id: Grasse1
-            color: '#FFFFFFFF'
-          decals:
-            550: -5,1
-        - node:
-            id: Grasse2
-            color: '#FFFFFFFF'
-          decals:
-            555: -1,3
-        - node:
-            id: Grasse3
-            color: '#FFFFFFFF'
-          decals:
-            554: -1,2
-        - node:
-            id: LoadingArea
-            color: '#FFFFFFFF'
-            angle: 1.5707963267948966 rad
-          decals:
-            174: -7,-3
-            463: -7,7
-        - node:
-            zIndex: 3
-            id: LoadingArea
-            color: '#FFFFFFFF'
-            angle: 1.5707963267948966 rad
-          decals:
-            197: -7,5
-            198: -7,-1
-        - node:
-            id: LoadingArea
-            color: '#FFFFFFFF'
-            angle: 4.71238898038469 rad
-          decals:
-            182: 1,-3
-        - node:
-            zIndex: 3
-            id: LoadingArea
-            color: '#FFFFFFFF'
-            angle: 4.71238898038469 rad
-          decals:
-            194: 1,7
-            195: 1,-1
-            196: 1,5
-        - node:
-            id: MonoOverlay
-            color: '#52B4E996'
-          decals:
-            419: 0,8
-        - node:
-            id: QuarterTileOverlayGreyscale
-            color: '#52B4E996'
-          decals:
-            457: 0,7
-        - node:
-            zIndex: 2
-            id: QuarterTileOverlayGreyscale
-            color: '#52B4E996'
-          decals:
-            192: 1,7
-        - node:
-            id: QuarterTileOverlayGreyscale
-            color: '#D4D4D428'
-          decals:
-            504: -7,0
-            505: -7,1
-            506: -7,2
-            507: -7,3
-        - node:
-            id: QuarterTileOverlayGreyscale
-            color: '#DE3A3A96'
-          decals:
-            441: -2,5
-        - node:
-            id: QuarterTileOverlayGreyscale180
-            color: '#D4D4D428'
-          decals:
-            508: 1,1
-            509: 1,2
-            510: 1,3
-            511: 1,4
-        - node:
-            id: QuarterTileOverlayGreyscale180
-            color: '#EFB34196'
-          decals:
-            523: -4,-1
-        - node:
-            id: QuarterTileOverlayGreyscale270
-            color: '#D4D4D496'
-          decals:
-            500: -7,4
-            501: -7,3
-            502: -7,2
-            503: -7,1
-        - node:
-            id: QuarterTileOverlayGreyscale270
-            color: '#EFB34196'
-          decals:
-            436: -2,-1
-        - node:
-            id: QuarterTileOverlayGreyscale90
-            color: '#334E6DC8'
-          decals:
-            461: -7,7
-            462: -6,7
-        - node:
-            id: QuarterTileOverlayGreyscale90
-            color: '#D4D4D496'
-          decals:
-            496: 1,0
-            497: 1,1
-            498: 1,2
-            499: 1,3
-        - node:
-            id: QuarterTileOverlayGreyscale90
-            color: '#DE3A3A96'
-          decals:
-            423: -4,5
-        - node:
-            id: WarnCornerSmallNE
-            color: '#FFFFFFFF'
-          decals:
-            569: -4,-5
-        - node:
-            id: WarnLineE
-            color: '#FFFFFFFF'
-          decals:
-            565: -4,-3
-            566: -4,-4
-        - node:
-            id: WarnLineGreyscaleE
-            color: '#FFFFFFFF'
-          decals:
-            578: -6,-1
-            579: -6,5
-            580: -2,5
-            581: -2,-1
-        - node:
-            id: WarnLineGreyscaleN
-            color: '#DE3A3A96'
-          decals:
-            437: -3,5
-        - node:
-            id: WarnLineGreyscaleS
-            color: '#DE3A3A96'
-          decals:
-            438: -3,7
-        - node:
-            id: WarnLineGreyscaleS
-            color: '#FFFFFFFF'
-          decals:
-            525: -3,-1
-        - node:
-            id: WarnLineGreyscaleW
-            color: '#FFFFFFFF'
-          decals:
-            574: -4,5
-            575: -4,-1
-            576: 0,-1
-            577: 0,5
-        - node:
-            id: WarnLineW
-            color: '#FFFFFFFF'
-          decals:
-            567: -3,-5
-            568: -2,-5
     - type: GridAtmosphere
       version: 2
       data:
@@ -545,6 +146,13 @@ entities:
     - type: TileHistory
       chunkHistory: {}
     - type: ExplosionAirtightGrid
+    - type: GridSplitNode
+    - type: ChunkContainer
+      chunkEntities:
+      - 502
+      - 503
+      - 504
+      - 505
 - proto: AirAlarm
   entities:
   - uid: 2
@@ -1651,6 +1259,506 @@ entities:
       parent: 1
       rot: -1.5707963267948966 rad
       pos: -5.5,3.5
+- proto: ChunkEntity
+  entities:
+  - uid: 502
+    components:
+    - type: ChunkEntity
+      root: 1
+      chunk: -1,0
+    - type: DecalChunk
+      maxDecalId: 580
+      decals:
+        version: 1
+        nodes:
+        - node:
+            id: Bot
+            color: '#FFFFFFFF'
+          decals:
+            543: -6,2
+            544: -4,2
+            563: -2,2
+        - node:
+            zIndex: 3
+            id: Bot
+            color: '#FFFFFFFF'
+          decals:
+            349: -2,4
+            350: -2,3
+            352: -2,1
+            353: -2,0
+            354: -4,0
+            355: -4,1
+            357: -4,3
+            358: -4,4
+            359: -6,4
+            360: -6,3
+            362: -6,1
+            363: -6,0
+        - node:
+            id: BrickTileWhiteCornerNe
+            color: '#334E6DC8'
+          decals:
+            399: -3,13
+        - node:
+            id: BrickTileWhiteCornerNe
+            color: '#DE3A3A96'
+          decals:
+            443: -3,9
+            444: -2,8
+        - node:
+            id: BrickTileWhiteCornerNw
+            color: '#334E6DC8'
+          decals:
+            397: -6,13
+            398: -7,11
+        - node:
+            id: BrickTileWhiteCornerNw
+            color: '#52B4E996'
+          decals:
+            87: -1,13
+        - node:
+            id: BrickTileWhiteCornerNw
+            color: '#DE3A3A96'
+          decals:
+            442: -4,9
+        - node:
+            id: BrickTileWhiteCornerSe
+            color: '#334E6DC8'
+          decals:
+            401: -6,9
+            449: -3,11
+        - node:
+            id: BrickTileWhiteCornerSe
+            color: '#DE3A3A96'
+          decals:
+            440: -2,7
+        - node:
+            id: BrickTileWhiteCornerSw
+            color: '#334E6DC8'
+          decals:
+            402: -7,9
+        - node:
+            id: BrickTileWhiteCornerSw
+            color: '#52B4E996'
+          decals:
+            448: -1,10
+        - node:
+            id: BrickTileWhiteCornerSw
+            color: '#DE3A3A96'
+          decals:
+            79: -4,7
+        - node:
+            id: BrickTileWhiteInnerNe
+            color: '#DE3A3A96'
+          decals:
+            445: -3,8
+        - node:
+            id: BrickTileWhiteInnerNw
+            color: '#334E6DC8'
+          decals:
+            412: -6,11
+        - node:
+            id: BrickTileWhiteInnerSe
+            color: '#334E6DC8'
+          decals:
+            454: -6,11
+        - node:
+            id: BrickTileWhiteLineE
+            color: '#334E6DC8'
+          decals:
+            450: -3,12
+            453: -6,10
+        - node:
+            id: BrickTileWhiteLineN
+            color: '#334E6DC8'
+          decals:
+            405: -5,13
+            406: -4,13
+        - node:
+            id: BrickTileWhiteLineS
+            color: '#334E6DC8'
+          decals:
+            451: -4,11
+            452: -5,11
+        - node:
+            id: BrickTileWhiteLineW
+            color: '#334E6DC8'
+          decals:
+            403: -7,10
+            404: -6,12
+        - node:
+            id: BrickTileWhiteLineW
+            color: '#52B4E996'
+          decals:
+            93: -1,12
+            447: -1,11
+        - node:
+            id: BrickTileWhiteLineW
+            color: '#DE3A3A96'
+          decals:
+            446: -4,8
+        - node:
+            id: Caution
+            color: '#FFFFFFFF'
+            angle: 4.71238898038469 rad
+          decals:
+            471: -7.537044,6.0062428
+        - node:
+            id: Delivery
+            color: '#FFFFFFFF'
+          decals:
+            570: -5,5
+            571: -1,5
+        - node:
+            id: FlowersBROne
+            color: '#FFFFFFFF'
+          decals:
+            557: -5,3
+        - node:
+            id: FlowersBRThree
+            color: '#FFFFFFFF'
+          decals:
+            559: -1,2
+        - node:
+            id: Flowersbr2
+            color: '#FFFFFFFF'
+          decals:
+            556: -5,1
+        - node:
+            id: Flowerspv2
+            color: '#FFFFFFFF'
+          decals:
+            562: -1,3
+        - node:
+            id: Flowerspv3
+            color: '#FFFFFFFF'
+          decals:
+            561: -5,2
+        - node:
+            id: Flowersy3
+            color: '#FFFFFFFF'
+          decals:
+            560: -1,1
+        - node:
+            id: FullTileOverlayGreyscale
+            color: '#334E6DC8'
+          decals:
+            413: -6,8
+        - node:
+            id: Grassc1
+            color: '#FFFFFFFF'
+          decals:
+            552: -5,2
+        - node:
+            id: Grassc2
+            color: '#FFFFFFFF'
+          decals:
+            553: -1,1
+        - node:
+            id: Grassd3
+            color: '#FFFFFFFF'
+          decals:
+            551: -5,3
+        - node:
+            id: Grasse1
+            color: '#FFFFFFFF'
+          decals:
+            550: -5,1
+        - node:
+            id: Grasse2
+            color: '#FFFFFFFF'
+          decals:
+            555: -1,3
+        - node:
+            id: Grasse3
+            color: '#FFFFFFFF'
+          decals:
+            554: -1,2
+        - node:
+            id: LoadingArea
+            color: '#FFFFFFFF'
+            angle: 1.5707963267948966 rad
+          decals:
+            463: -7,7
+        - node:
+            zIndex: 3
+            id: LoadingArea
+            color: '#FFFFFFFF'
+            angle: 1.5707963267948966 rad
+          decals:
+            197: -7,5
+        - node:
+            id: QuarterTileOverlayGreyscale
+            color: '#D4D4D428'
+          decals:
+            504: -7,0
+            505: -7,1
+            506: -7,2
+            507: -7,3
+        - node:
+            id: QuarterTileOverlayGreyscale
+            color: '#DE3A3A96'
+          decals:
+            441: -2,5
+        - node:
+            id: QuarterTileOverlayGreyscale270
+            color: '#D4D4D496'
+          decals:
+            500: -7,4
+            501: -7,3
+            502: -7,2
+            503: -7,1
+        - node:
+            id: QuarterTileOverlayGreyscale90
+            color: '#334E6DC8'
+          decals:
+            461: -7,7
+            462: -6,7
+        - node:
+            id: QuarterTileOverlayGreyscale90
+            color: '#DE3A3A96'
+          decals:
+            423: -4,5
+        - node:
+            id: WarnLineGreyscaleE
+            color: '#FFFFFFFF'
+          decals:
+            579: -6,5
+            580: -2,5
+        - node:
+            id: WarnLineGreyscaleN
+            color: '#DE3A3A96'
+          decals:
+            437: -3,5
+        - node:
+            id: WarnLineGreyscaleS
+            color: '#DE3A3A96'
+          decals:
+            438: -3,7
+        - node:
+            id: WarnLineGreyscaleW
+            color: '#FFFFFFFF'
+          decals:
+            574: -4,5
+  - uid: 503
+    components:
+    - type: ChunkEntity
+      root: 1
+    - type: DecalChunk
+      maxDecalId: 577
+      decals:
+        version: 1
+        nodes:
+        - node:
+            id: Bot
+            color: '#FFFFFFFF'
+          decals:
+            546: 0,2
+        - node:
+            zIndex: 3
+            id: Bot
+            color: '#FFFFFFFF'
+          decals:
+            344: 0,0
+            345: 0,1
+            347: 0,3
+            348: 0,4
+        - node:
+            id: BrickTileWhiteCornerNe
+            color: '#52B4E996'
+          decals:
+            88: 0,13
+            89: 1,11
+        - node:
+            id: BrickTileWhiteCornerSe
+            color: '#52B4E996'
+          decals:
+            84: 1,9
+        - node:
+            id: BrickTileWhiteCornerSw
+            color: '#52B4E996'
+          decals:
+            85: 0,9
+        - node:
+            id: BrickTileWhiteInnerNe
+            color: '#52B4E996'
+          decals:
+            95: 0,11
+        - node:
+            id: BrickTileWhiteInnerSw
+            color: '#52B4E996'
+          decals:
+            94: 0,10
+        - node:
+            id: BrickTileWhiteLineE
+            color: '#52B4E996'
+          decals:
+            90: 1,10
+            91: 0,12
+        - node:
+            id: Caution
+            color: '#FFFFFFFF'
+            angle: 1.5707963267948966 rad
+          decals:
+            187: 1.5347023,6.027366
+        - node:
+            zIndex: 3
+            id: LoadingArea
+            color: '#FFFFFFFF'
+            angle: 4.71238898038469 rad
+          decals:
+            194: 1,7
+            196: 1,5
+        - node:
+            id: MonoOverlay
+            color: '#52B4E996'
+          decals:
+            419: 0,8
+        - node:
+            id: QuarterTileOverlayGreyscale
+            color: '#52B4E996'
+          decals:
+            457: 0,7
+        - node:
+            zIndex: 2
+            id: QuarterTileOverlayGreyscale
+            color: '#52B4E996'
+          decals:
+            192: 1,7
+        - node:
+            id: QuarterTileOverlayGreyscale180
+            color: '#D4D4D428'
+          decals:
+            508: 1,1
+            509: 1,2
+            510: 1,3
+            511: 1,4
+        - node:
+            id: QuarterTileOverlayGreyscale90
+            color: '#D4D4D496'
+          decals:
+            496: 1,0
+            497: 1,1
+            498: 1,2
+            499: 1,3
+        - node:
+            id: WarnLineGreyscaleW
+            color: '#FFFFFFFF'
+          decals:
+            577: 0,5
+  - uid: 504
+    components:
+    - type: ChunkEntity
+      root: 1
+      chunk: 0,-1
+    - type: DecalChunk
+      maxDecalId: 576
+      decals:
+        version: 1
+        nodes:
+        - node:
+            id: Caution
+            color: '#FFFFFFFF'
+            angle: 1.5707963267948966 rad
+          decals:
+            186: 1.5347023,-1.9726338
+        - node:
+            id: LoadingArea
+            color: '#FFFFFFFF'
+            angle: 4.71238898038469 rad
+          decals:
+            182: 1,-3
+        - node:
+            zIndex: 3
+            id: LoadingArea
+            color: '#FFFFFFFF'
+            angle: 4.71238898038469 rad
+          decals:
+            195: 1,-1
+        - node:
+            id: WarnLineGreyscaleW
+            color: '#FFFFFFFF'
+          decals:
+            576: 0,-1
+  - uid: 505
+    components:
+    - type: ChunkEntity
+      root: 1
+      chunk: -1,-1
+    - type: DecalChunk
+      maxDecalId: 581
+      decals:
+        version: 1
+        nodes:
+        - node:
+            id: Caution
+            color: '#FFFFFFFF'
+            angle: 4.71238898038469 rad
+          decals:
+            470: -7.5562744,-2.0020132
+        - node:
+            id: Delivery
+            color: '#FFFFFFFF'
+          decals:
+            572: -1,-1
+            573: -5,-1
+        - node:
+            id: LoadingArea
+            color: '#FFFFFFFF'
+            angle: 1.5707963267948966 rad
+          decals:
+            174: -7,-3
+        - node:
+            zIndex: 3
+            id: LoadingArea
+            color: '#FFFFFFFF'
+            angle: 1.5707963267948966 rad
+          decals:
+            198: -7,-1
+        - node:
+            id: QuarterTileOverlayGreyscale180
+            color: '#EFB34196'
+          decals:
+            523: -4,-1
+        - node:
+            id: QuarterTileOverlayGreyscale270
+            color: '#EFB34196'
+          decals:
+            436: -2,-1
+        - node:
+            id: WarnCornerSmallNE
+            color: '#FFFFFFFF'
+          decals:
+            569: -4,-5
+        - node:
+            id: WarnLineE
+            color: '#FFFFFFFF'
+          decals:
+            565: -4,-3
+            566: -4,-4
+        - node:
+            id: WarnLineGreyscaleE
+            color: '#FFFFFFFF'
+          decals:
+            578: -6,-1
+            581: -2,-1
+        - node:
+            id: WarnLineGreyscaleS
+            color: '#FFFFFFFF'
+          decals:
+            525: -3,-1
+        - node:
+            id: WarnLineGreyscaleW
+            color: '#FFFFFFFF'
+          decals:
+            575: -4,-1
+        - node:
+            id: WarnLineW
+            color: '#FFFFFFFF'
+          decals:
+            567: -3,-5
+            568: -2,-5
 - proto: CigarGold
   entities:
   - uid: 194
@@ -3539,7 +3647,7 @@ entities:
     - type: Transform
       parent: 1
       pos: -2.5,12.5
-- proto: WindoorSecureSecurityLocked
+- proto: WindoorSecurityLocked
   entities:
   - uid: 487
     components:

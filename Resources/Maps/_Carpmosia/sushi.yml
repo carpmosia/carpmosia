@@ -2,9 +2,9 @@ meta:
   format: 7
   category: Map
   engineVersion: 290.0.0
-  forkId: ""
+  forkId: carpmosia
   forkVersion: ""
-  time: 09/22/2026 18:12:21
+  time: 11/08/2026 21:57:55
   entityCount: 25498
 maps:
 - 1
@@ -5357,7 +5357,7 @@ entities:
       - 15312
       - 15136
       - 723
-- proto: AirAlarmVox
+- proto: AirAlarmNitrogen
   entities:
   - uid: 139
     components:
@@ -9611,7 +9611,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 138
-- proto: AirSensorVox
+- proto: AirSensorNitrogen
   entities:
   - uid: 725
     components:
@@ -65982,21 +65982,14 @@ entities:
     - type: Transform
       parent: 2
       pos: 95.613655,117.80266
-- proto: ClothingShoesSlippers
-  entities:
-  - uid: 9187
-    components:
-    - type: Transform
-      parent: 2
-      pos: 57.39895,55.59581
-- proto: ClothingShoesTourist
+- proto: ClothingShoesSandalsBlack
   entities:
   - uid: 9188
     components:
     - type: Transform
       parent: 2
       pos: 17.526558,96.43257
-- proto: ClothingShoesWizard
+- proto: ClothingShoesSandalsBrown
   entities:
   - uid: 9189
     components:
@@ -66014,6 +66007,13 @@ entities:
     - type: Transform
       parent: 2
       pos: 135.6214,44.321377
+- proto: ClothingShoesSlippers
+  entities:
+  - uid: 9187
+    components:
+    - type: Transform
+      parent: 2
+      pos: 57.39895,55.59581
 - proto: ClothingUnderSocksBee
   entities:
   - uid: 9191
@@ -66319,13 +66319,6 @@ entities:
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 60.5,24.5
-- proto: CommandmentCircuitBoard
-  entities:
-  - uid: 9238
-    components:
-    - type: Transform
-      parent: 2
-      pos: 87.416664,72.57882
 - proto: CommsComputerCircuitboard
   entities:
   - uid: 9239
@@ -66736,14 +66729,6 @@ entities:
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 92.5,24.5
-- proto: ComputerSalvageJobBoard
-  entities:
-  - uid: 11095
-    components:
-    - type: Transform
-      parent: 2
-      rot: -1.5707963267948966 rad
-      pos: 97.5,36.5
 - proto: ComputerShuttleCargo
   entities:
   - uid: 9290
@@ -66752,6 +66737,14 @@ entities:
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 79.5,31.5
+- proto: ComputerShuttleSalvage
+  entities:
+  - uid: 11095
+    components:
+    - type: Transform
+      parent: 2
+      rot: -1.5707963267948966 rad
+      pos: 97.5,36.5
 - proto: ComputerSolarControl
   entities:
   - uid: 9291
@@ -79598,82 +79591,6 @@ entities:
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 31.5,33.5
-- proto: EnergyGateAirtight
-  entities:
-  - uid: 3136
-    components:
-    - type: Transform
-      parent: 2
-      rot: 1.5707963267948966 rad
-      pos: 84.5,118.5
-  - uid: 3171
-    components:
-    - type: Transform
-      parent: 2
-      pos: 68.5,124.5
-  - uid: 15330
-    components:
-    - type: Transform
-      parent: 2
-      pos: 85.5,124.5
-  - uid: 15868
-    components:
-    - type: Transform
-      parent: 2
-      rot: -1.5707963267948966 rad
-      pos: 70.5,118.5
-  - uid: 15871
-    components:
-    - type: Transform
-      parent: 2
-      pos: 69.5,124.5
-  - uid: 19112
-    components:
-    - type: Transform
-      parent: 2
-      pos: 86.5,124.5
-- proto: EnergyGateGenpopEnter
-  entities:
-  - uid: 21241
-    components:
-    - type: Transform
-      parent: 2
-      rot: 1.5707963267948966 rad
-      pos: 113.5,96.5
-    - type: AccessReader
-      accessListsOriginal:
-      - - GenpopEnter
-      - - Security
-- proto: EnergyGateGenpopLeave
-  entities:
-  - uid: 21242
-    components:
-    - type: Transform
-      parent: 2
-      rot: -1.5707963267948966 rad
-      pos: 113.5,92.5
-    - type: AccessReader
-      accessListsOriginal:
-      - - GenpopLeave
-      - - Security
-  - uid: 21243
-    components:
-    - type: Transform
-      parent: 2
-      pos: 111.5,89.5
-    - type: AccessReader
-      accessListsOriginal:
-      - - GenpopLeave
-      - - Security
-  - uid: 21244
-    components:
-    - type: Transform
-      parent: 2
-      pos: 110.5,89.5
-    - type: AccessReader
-      accessListsOriginal:
-      - - GenpopLeave
-      - - Security
 - proto: ExosuitFabricator
   entities:
   - uid: 11383
@@ -88736,7 +88653,16 @@ entities:
       pos: 16.5,65.5
     - type: AtmosPipeColor
       color: '#03FCD3FF'
-- proto: GasPipeSensorDistribution
+- proto: GasPipeSensorColdLoop
+  entities:
+  - uid: 12364
+    components:
+    - type: Transform
+      parent: 2
+      pos: 26.5,42.5
+    - type: AtmosPipeColor
+      color: '#0099FFFF'
+- proto: GasPipeSensorDistro
   entities:
   - uid: 12363
     components:
@@ -88746,16 +88672,7 @@ entities:
       pos: 41.5,45.5
     - type: AtmosPipeColor
       color: '#0055CCFF'
-- proto: GasPipeSensorTEGCold
-  entities:
-  - uid: 12364
-    components:
-    - type: Transform
-      parent: 2
-      pos: 26.5,42.5
-    - type: AtmosPipeColor
-      color: '#0099FFFF'
-- proto: GasPipeSensorTEGHot
+- proto: GasPipeSensorHotLoop
   entities:
   - uid: 12365
     components:
@@ -110738,7 +110655,7 @@ entities:
       - 138
     - type: AtmosPipeColor
       color: '#03FCD3FF'
-- proto: GasVentPumpVox
+- proto: GasVentPumpNitrogen
   entities:
   - uid: 15138
     components:
@@ -112729,7 +112646,7 @@ entities:
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#990000FF'
-- proto: GasVentScrubberVox
+- proto: GasVentScrubberNitrogen
   entities:
   - uid: 15314
     components:
@@ -120817,6 +120734,13 @@ entities:
     - type: Transform
       parent: 2
       pos: 65.5,105.5
+- proto: LawbringerCircuitBoard
+  entities:
+  - uid: 19317
+    components:
+    - type: Transform
+      parent: 2
+      pos: 86.96225,66.63487
 - proto: LeavesTea
   entities:
   - uid: 16913
@@ -134501,13 +134425,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 117.40576,102.61636
-- proto: RobocopCircuitBoard
-  entities:
-  - uid: 19317
-    components:
-    - type: Transform
-      parent: 2
-      pos: 86.96225,66.63487
 - proto: RockGuitarInstrument
   entities:
   - uid: 19318
@@ -138285,6 +138202,13 @@ entities:
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 121.5,91.5
+- proto: SixCommandmentsCircuitBoard
+  entities:
+  - uid: 9238
+    components:
+    - type: Transform
+      parent: 2
+      pos: 87.416664,72.57882
 - proto: Skub
   entities:
   - uid: 19833
@@ -146875,6 +146799,82 @@ entities:
     - type: Transform
       parent: 2
       pos: 15.503731,66.57938
+- proto: Turnstile
+  entities:
+  - uid: 3136
+    components:
+    - type: Transform
+      parent: 2
+      rot: 1.5707963267948966 rad
+      pos: 84.5,118.5
+  - uid: 3171
+    components:
+    - type: Transform
+      parent: 2
+      pos: 68.5,124.5
+  - uid: 15330
+    components:
+    - type: Transform
+      parent: 2
+      pos: 85.5,124.5
+  - uid: 15868
+    components:
+    - type: Transform
+      parent: 2
+      rot: -1.5707963267948966 rad
+      pos: 70.5,118.5
+  - uid: 15871
+    components:
+    - type: Transform
+      parent: 2
+      pos: 69.5,124.5
+  - uid: 19112
+    components:
+    - type: Transform
+      parent: 2
+      pos: 86.5,124.5
+- proto: TurnstileGenpopEnter
+  entities:
+  - uid: 21241
+    components:
+    - type: Transform
+      parent: 2
+      rot: 1.5707963267948966 rad
+      pos: 113.5,96.5
+    - type: AccessReader
+      accessListsOriginal:
+      - - GenpopEnter
+      - - Security
+- proto: TurnstileGenpopLeave
+  entities:
+  - uid: 21242
+    components:
+    - type: Transform
+      parent: 2
+      rot: -1.5707963267948966 rad
+      pos: 113.5,92.5
+    - type: AccessReader
+      accessListsOriginal:
+      - - GenpopLeave
+      - - Security
+  - uid: 21243
+    components:
+    - type: Transform
+      parent: 2
+      pos: 111.5,89.5
+    - type: AccessReader
+      accessListsOriginal:
+      - - GenpopLeave
+      - - Security
+  - uid: 21244
+    components:
+    - type: Transform
+      parent: 2
+      pos: 110.5,89.5
+    - type: AccessReader
+      accessListsOriginal:
+      - - GenpopLeave
+      - - Security
 - proto: TwoWayLever
   entities:
   - uid: 16254

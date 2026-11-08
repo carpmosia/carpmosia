@@ -1,10 +1,10 @@
 meta:
   format: 7
   category: Grid
-  engineVersion: 289.0.0
-  forkId: ""
+  engineVersion: 290.0.0
+  forkId: carpmosia
   forkVersion: ""
-  time: 08/23/2026 12:46:55
+  time: 11/08/2026 21:58:50
   entityCount: 303
 maps: []
 grids:
@@ -168,6 +168,7 @@ entities:
       chunkHistory: {}
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
+    - type: GridSplitNode
 - proto: AirlockFreezer
   entities:
   - uid: 220
@@ -464,6 +465,13 @@ entities:
     - type: Transform
       parent: 2
       pos: -5.5,0.5
+- proto: MaterialBananium
+  entities:
+  - uid: 292
+    components:
+    - type: Transform
+      parent: 2
+      pos: 9.5,0.5
 - proto: MedkitFilled
   entities:
   - uid: 282
@@ -1730,13 +1738,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -3.5,-8.5
-- proto: MaterialBananium # Carpmosia-edit - Decontraing salv
-  entities:
-  - uid: 292
-    components:
-    - type: Transform
-      parent: 2
-      pos: 9.5,0.5
 - proto: WindowReinforcedDirectional
   entities:
   - uid: 211

@@ -1,10 +1,10 @@
 meta:
   format: 7
   category: Grid
-  engineVersion: 289.0.0
-  forkId: ""
+  engineVersion: 290.0.0
+  forkId: carpmosia
   forkVersion: ""
-  time: 08/23/2026 12:38:31
+  time: 11/08/2026 21:58:50
   entityCount: 2280
 maps: []
 grids:
@@ -731,6 +731,7 @@ entities:
       chunkHistory: {}
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
+    - type: GridSplitNode
 - proto: AirCanister
   entities:
   - uid: 933
@@ -6121,6 +6122,25 @@ entities:
     - type: Transform
       parent: 1
       pos: 38.345383,-13.221157
+- proto: IngotGold
+  entities:
+  - uid: 1698
+    components:
+    - type: Transform
+      parent: 1
+      pos: 14.469492,4.7017136
+  - uid: 1700
+    components:
+    - type: Transform
+      parent: 1
+      pos: 120.48175,-7.394827
+- proto: IngotSilver
+  entities:
+  - uid: 1242
+    components:
+    - type: Transform
+      parent: 1
+      pos: 56.248035,-14.895625
 - proto: KitchenMicrowave
   entities:
   - uid: 141
@@ -6442,25 +6462,6 @@ entities:
     - type: Transform
       parent: 1
       pos: 4.945919,4.3761344
-- proto: IngotGold # Carpmosia-edit - Decontraing salv
-  entities:
-  - uid: 1698
-    components:
-    - type: Transform
-      parent: 1
-      pos: 14.469492,4.7017136
-  - uid: 1700
-    components:
-    - type: Transform
-      parent: 1
-      pos: 120.48175,-7.394827
-- proto: IngotSilver # Carpmosia-edit - Decontraing salv
-  entities:
-  - uid: 1242
-    components:
-    - type: Transform
-      parent: 1
-      pos: 56.248035,-14.895625
 - proto: MaintenanceToolSpawner
   entities:
   - uid: 1460
@@ -6495,6 +6496,13 @@ entities:
     - type: Transform
       parent: 1
       pos: 98.5,-18.5
+- proto: MaterialBananium
+  entities:
+  - uid: 1699
+    components:
+    - type: Transform
+      parent: 1
+      pos: 112.5164,-0.47590828
 - proto: MedkitOxygenFilled
   entities:
   - uid: 668
@@ -12298,13 +12306,6 @@ entities:
     - type: Transform
       parent: 1
       pos: 28.5,-4.5
-- proto: MaterialBananium # Carpmosia-edit - Decontraing salv
-  entities:
-  - uid: 1699
-    components:
-    - type: Transform
-      parent: 1
-      pos: 112.5164,-0.47590828
 - proto: WeaponTurretHostile
   entities:
   - uid: 992

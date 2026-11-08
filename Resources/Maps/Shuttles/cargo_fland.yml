@@ -1,10 +1,10 @@
 meta:
   format: 7
   category: Grid
-  engineVersion: 289.0.0
-  forkId: ""
+  engineVersion: 290.0.0
+  forkId: carpmosia
   forkVersion: ""
-  time: 08/23/2026 11:28:42
+  time: 11/08/2026 21:58:57
   entityCount: 187
 maps: []
 grids:
@@ -101,6 +101,7 @@ entities:
       chunkEntities:
       - 187
       - 188
+    - type: GridSplitNode
 - proto: AirCanister
   entities:
   - uid: 119

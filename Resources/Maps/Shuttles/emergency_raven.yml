@@ -1,10 +1,10 @@
 meta:
   format: 7
   category: Grid
-  engineVersion: 289.0.0
-  forkId: ""
+  engineVersion: 290.0.0
+  forkId: carpmosia
   forkVersion: ""
-  time: 08/23/2026 08:58:30
+  time: 11/08/2026 21:58:56
   entityCount: 2517
 maps: []
 grids:
@@ -318,6 +318,7 @@ entities:
       - 2515
       - 2516
       - 2517
+    - type: GridSplitNode
 - proto: AcousticGuitarInstrument
   entities:
   - uid: 2124

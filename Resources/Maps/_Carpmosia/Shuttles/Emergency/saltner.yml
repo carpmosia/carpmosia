@@ -1,17 +1,21 @@
 meta:
   format: 7
   category: Grid
-  engineVersion: 283.1.3
+  engineVersion: 290.0.0
   forkId: carpmosia
   forkVersion: ""
-  time: 10/05/2026 19:20:33
-  entityCount: 722
+  time: 11/08/2026 22:01:14
+  entityCount: 726
 maps: []
 grids:
 - 2
 orphans:
 - 2
-nullspace: []
+nullspace:
+- 723
+- 724
+- 725
+- 726
 tilemap:
   0: Space
   7: FloorBar
@@ -78,619 +82,6 @@ entities:
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
         path: /Audio/Effects/alert.ogg
-    - type: DecalGrid
-      chunkCollection:
-        version: 2
-        nodes:
-        - node:
-            id: MiniTileCornerOverlayNE
-            color: '#52B4E996'
-          decals:
-            205: 1,5
-        - node:
-            id: MiniTileCornerOverlayNE
-            color: '#999999B4'
-          decals:
-            573: 4,10
-        - node:
-            id: MiniTileCornerOverlayNE
-            color: '#DE3A3A96'
-          decals:
-            445: 1,10
-        - node:
-            id: MiniTileCornerOverlayNW
-            color: '#334E6DC8'
-          decals:
-            434: -3,10
-        - node:
-            id: MiniTileCornerOverlayNW
-            color: '#52B4E996'
-          decals:
-            206: -3,5
-        - node:
-            id: MiniTileCornerOverlayNW
-            color: '#999999B4'
-          decals:
-            574: -6,10
-        - node:
-            id: MiniTileCornerOverlaySE
-            color: '#52B4E996'
-          decals:
-            208: 1,3
-        - node:
-            id: MiniTileCornerOverlaySW
-            color: '#52B4E996'
-          decals:
-            207: -3,3
-        - node:
-            id: MiniTileInnerOverlayNE
-            color: '#334E6DC8'
-          decals:
-            459: -4,11
-            460: -4.2505107,11.000321
-            461: -4.5005107,11.000321
-        - node:
-            id: MiniTileInnerOverlayNE
-            color: '#52B4E996'
-          decals:
-            214: -2.4993806,3.2539835
-            215: -2.2493806,3.2539835
-            216: -2.2493806,3.5039835
-            217: -2.4993806,3.5039835
-            218: -2.4993806,3.7539835
-            219: -2.2493806,3.7539835
-            220: -2.2493806,4.0039835
-            221: -2.4993806,4.0039835
-            222: -1.9993806,3.7539835
-            223: -2.7493806,3.7539835
-            224: -2.7493806,3.5039835
-            225: -1.9993806,3.5039835
-            226: -2.4993806,3.0039835
-            227: -2.2493806,3.0039835
-            228: -2.9993806,3.5039835
-            229: -2.9993806,3.7539835
-            230: -2.4993806,4.2539835
-            231: -2.2493806,4.2539835
-            232: -1.7493806,3.7539835
-            233: -1.7493806,3.5039835
-            234: -0.9993806,3.7539835
-            235: -0.9993806,3.5039835
-            236: -0.7493806,3.5039835
-            237: -0.7493806,3.7539835
-            238: -0.4993806,3.7539835
-            239: -0.24938059,3.7539835
-            240: 0.00061941147,3.7539835
-            241: 0.2506194,3.7539835
-            242: -0.4993806,3.5039835
-            243: -0.24938059,3.5039835
-            244: 0.00061941147,3.5039835
-            245: 0.2506194,3.5039835
-            246: -0.4993806,3.2539835
-            247: -0.4993806,3.0039835
-            248: -0.24938059,3.2539835
-            249: -0.256117,3.0039835
-            250: -0.506117,4.0039835
-            251: -0.256117,4.0039835
-            252: -0.256117,4.2539835
-            253: -0.506117,4.2539835
-            372: -5,1
-            471: -4,1
-            472: -4.249687,1.0004967
-            473: -4.499687,1.0004967
-            500: -0.00048553944,-0.25051874
-        - node:
-            id: MiniTileInnerOverlayNE
-            color: '#999999B4'
-          decals:
-            576: 3,10
-        - node:
-            id: MiniTileInnerOverlayNE
-            color: '#DE3A3A96'
-          decals:
-            463: -1,11
-            464: -1.249911,10.999671
-            484: -1,10
-            485: -1.2505481,9.99999
-        - node:
-            id: MiniTileInnerOverlayNW
-            color: '#334E6DC8'
-          decals:
-            458: -0.7494291,11.000321
-            462: -1,11
-            486: -1,10
-            487: -0.7505481,9.99999
-        - node:
-            id: MiniTileInnerOverlayNW
-            color: '#52B4E996'
-          decals:
-            501: -2.0000787,-0.25051874
-            502: 2,1
-            503: 2.2496552,0.9996364
-            504: 2.5006952,0.9996364
-            511: 3,1
-        - node:
-            id: MiniTileInnerOverlayNW
-            color: '#999999B4'
-          decals:
-            575: -5,10
-        - node:
-            id: MiniTileInnerOverlayNW
-            color: '#DE3A3A96'
-          decals:
-            465: 2,11
-            466: 2.249641,10.999686
-            467: 2.499641,10.999686
-        - node:
-            id: MiniTileInnerOverlaySE
-            color: '#79150096'
-          decals:
-            536: -5,10
-            539: -4,10
-            540: -4.24977,10.0002365
-            541: -4.49977,10.0002365
-        - node:
-            id: MiniTileInnerOverlaySE
-            color: '#999999B4'
-          decals:
-            594: 3,11
-            595: 3.000729,11.250142
-            596: 3.000729,11.499672
-        - node:
-            id: MiniTileInnerOverlaySE
-            color: '#EFB34196'
-          decals:
-            325: -6,-1
-            499: -0.00048553944,0.24948132
-            508: -4,-1
-            509: -4.249493,-1.0001624
-            510: -4.499493,-1.0001624
-        - node:
-            id: MiniTileInnerOverlaySW
-            color: '#79150096'
-          decals:
-            537: 3,10
-            538: 2,10
-            542: 2.2496536,10.000128
-            543: 2.4996536,10.000128
-        - node:
-            id: MiniTileInnerOverlaySW
-            color: '#999999B4'
-          decals:
-            591: -5,11
-            592: -4.9993505,11.250142
-            593: -4.9993505,11.500142
-        - node:
-            id: MiniTileInnerOverlaySW
-            color: '#EFB34196'
-          decals:
-            335: 4,-1
-            498: -2.0004134,0.24948132
-            505: 2,-1
-            506: 2.2498593,-0.9993701
-            507: 2.500152,-0.9993701
-        - node:
-            id: MiniTileLineOverlayE
-            color: '#52B4E996'
-          decals:
-            210: 1,4
-            320: -5,3
-            321: -5,4
-            322: -5,5
-        - node:
-            id: MiniTileLineOverlayE
-            color: '#79150096'
-          decals:
-            534: -5,7
-            535: -5,9
-        - node:
-            id: MiniTileLineOverlayE
-            color: '#999999B4'
-          decals:
-            521: 2,0
-            522: 2,1
-            523: 2,-1
-            524: 2,11
-            565: 4,-3
-            566: 4,-4
-            567: 4,-5
-            568: 4,0
-            569: 4,8
-            570: 4,5
-            571: 4,4
-            572: 4,3
-        - node:
-            id: MiniTileLineOverlayE
-            color: '#999999C0'
-          decals:
-            366: 2,10
-        - node:
-            id: MiniTileLineOverlayE
-            color: '#EFB34196'
-          decals:
-            323: -6,-3
-            577: -6,-5
-        - node:
-            id: MiniTileLineOverlayN
-            color: '#334E6DC8'
-          decals:
-            393: -2,11
-            433: -2,10
-            440: -5,11
-        - node:
-            id: MiniTileLineOverlayN
-            color: '#52B4E996'
-          decals:
-            211: -2,5
-            212: -1,5
-            213: 0,5
-            488: -1,0
-            489: 0,0
-            490: -2,0
-            512: -3,1
-            513: -1,1
-            514: 1,1
-        - node:
-            id: MiniTileLineOverlayN
-            color: '#79150096'
-          decals:
-            544: -3,9
-            545: -2,9
-            546: -1,9
-            547: 0,9
-            548: 1,9
-        - node:
-            id: MiniTileLineOverlayN
-            color: '#DE3A3A96'
-          decals:
-            392: 0,11
-            443: 0,10
-            444: 3,11
-        - node:
-            id: MiniTileLineOverlayS
-            color: '#52B4E996'
-          decals:
-            209: -1,3
-        - node:
-            id: MiniTileLineOverlayS
-            color: '#EFB34196'
-          decals:
-            324: -5,-1
-            330: 3,-1
-            491: -2,0
-            492: -1,0
-            493: 0,0
-            494: 1,-1
-            495: 0,-1
-            496: -3,-1
-            497: -2,-1
-        - node:
-            id: MiniTileLineOverlayW
-            color: '#52B4E996'
-          decals:
-            204: -3,4
-            317: 3,3
-            318: 3,4
-            319: 3,5
-        - node:
-            id: MiniTileLineOverlayW
-            color: '#79150096'
-          decals:
-            532: 3,9
-            533: 3,7
-        - node:
-            id: MiniTileLineOverlayW
-            color: '#999999B4'
-          decals:
-            518: -4,0
-            519: -4,1
-            520: -4,-1
-            525: -4,11
-            557: -6,4
-            558: -6,5
-            559: -6,3
-            560: -6,8
-            561: -6,0
-            562: -6,-3
-            563: -6,-4
-            564: -6,-5
-        - node:
-            id: MiniTileLineOverlayW
-            color: '#999999C0'
-          decals:
-            370: -4,10
-        - node:
-            id: MiniTileLineOverlayW
-            color: '#EFB34196'
-          decals:
-            331: 4,-3
-            332: 4,-4
-            578: 4,-5
-        - node:
-            id: MiniTileWhiteCornerNe
-            color: '#DCE1E1FF'
-          decals:
-            420: 1,10
-        - node:
-            id: MiniTileWhiteCornerNw
-            color: '#DCE1E1FF'
-          decals:
-            419: -3,10
-        - node:
-            id: MiniTileWhiteEndE
-            color: '#DCE1E1FF'
-          decals:
-            480: 0,0
-        - node:
-            id: MiniTileWhiteEndW
-            color: '#DCE1E1FF'
-          decals:
-            479: -2,0
-        - node:
-            id: MiniTileWhiteLineN
-            color: '#D2D7D7FF'
-          decals:
-            406: -3,9
-            408: -1,9
-            410: 0,9
-            421: 1,9
-            422: -2,9
-            424: -2,10
-            426: 0,10
-            481: -1,10
-            482: -1,0
-        - node:
-            id: MiniTileWhiteLineS
-            color: '#D2D7D7FF'
-          decals:
-            483: -1,0
-        - node:
-            id: WarnBoxGreyscale
-            color: '#8080807F'
-          decals:
-            123: 2,-6
-        - node:
-            id: WarnCornerGreyscaleNE
-            color: '#DE3A3A96'
-          decals:
-            166: 2,15
-        - node:
-            id: WarnCornerGreyscaleNW
-            color: '#DE3A3A96'
-          decals:
-            165: 0,15
-        - node:
-            id: WarnCornerGreyscaleSE
-            color: '#79150096'
-          decals:
-            172: 3,13
-        - node:
-            id: WarnCornerGreyscaleSE
-            color: '#DE3A3A96'
-          decals:
-            167: 2,14
-        - node:
-            id: WarnCornerGreyscaleSW
-            color: '#DE3A3A96'
-          decals:
-            164: 0,14
-        - node:
-            id: WarnCornerSmallGreyscaleNW
-            color: '#79150096'
-          decals:
-            173: 3,13
-        - node:
-            id: WarnEndGreyscaleN
-            color: '#79150096'
-          decals:
-            170: 3,14
-        - node:
-            id: WarnEndGreyscaleW
-            color: '#79150096'
-          decals:
-            171: 0,13
-        - node:
-            id: WarnFullGreyscale
-            color: '#A4610696'
-          decals:
-            142: 1,12
-            143: -3,12
-            144: -1,13
-            151: -5,-4
-            152: 5,7
-            153: 5,9
-            154: 5,1
-            155: 5,-1
-            156: -7,-1
-            157: -7,1
-            158: -7,7
-            159: -7,9
-            161: -2,2
-            257: -4,8
-            258: 2,8
-            526: -1,-2
-            527: 0,2
-        - node:
-            id: WarnFullGreyscale
-            color: '#AE67167F'
-          decals:
-            108: -5,-5
-            111: -1,6
-            118: 2,-5
-            119: 2,-7
-        - node:
-            id: WarnLineE
-            color: '#FFFFFFFF'
-          decals:
-            580: -5,2
-            581: -5,6
-            582: 4,2
-            583: 4,6
-            584: -6,-2
-            588: 4,-2
-        - node:
-            id: WarnLineGreyscaleE
-            color: '#79150096'
-          decals:
-            530: -5,8
-        - node:
-            id: WarnLineGreyscaleE
-            color: '#8080807F'
-          decals:
-            89: -3,2
-            90: -3,6
-            91: 4,6
-        - node:
-            id: WarnLineGreyscaleE
-            color: '#999999B4'
-          decals:
-            553: 4,-1
-            554: 4,1
-            555: 4,7
-            556: 4,9
-        - node:
-            id: WarnLineGreyscaleE
-            color: '#EFB34196'
-          decals:
-            387: -6,-4
-        - node:
-            id: WarnLineGreyscaleN
-            color: '#334E6DC8'
-          decals:
-            529: -3,11
-        - node:
-            id: WarnLineGreyscaleN
-            color: '#52B4E996'
-          decals:
-            515: -2,1
-            516: 0,1
-        - node:
-            id: WarnLineGreyscaleN
-            color: '#79150096'
-          decals:
-            174: 2,13
-            175: 1,13
-        - node:
-            id: WarnLineGreyscaleN
-            color: '#DE3A3A96'
-          decals:
-            168: 1,15
-            528: 1,11
-        - node:
-            id: WarnLineGreyscaleS
-            color: '#52B4E996'
-          decals:
-            200: -2,3
-            201: 0,3
-        - node:
-            id: WarnLineGreyscaleS
-            color: '#79150096'
-          decals:
-            176: 1,13
-            177: 2,13
-        - node:
-            id: WarnLineGreyscaleS
-            color: '#EFB34196'
-          decals:
-            517: -1,-1
-        - node:
-            id: WarnLineGreyscaleW
-            color: '#79150096'
-          decals:
-            531: 3,8
-        - node:
-            id: WarnLineGreyscaleW
-            color: '#8080807F'
-          decals:
-            85: -4,2
-            86: -4,6
-            94: 3,6
-        - node:
-            id: WarnLineGreyscaleW
-            color: '#999999B4'
-          decals:
-            549: -6,9
-            550: -6,7
-            551: -6,1
-            552: -6,-1
-        - node:
-            id: WarnLineGreyscaleW
-            color: '#D4D4D496'
-          decals:
-            59: -4,5
-            60: -4,4
-        - node:
-            id: WarnLineN
-            color: '#FFFFFFFF'
-          decals:
-            169: 1,14
-        - node:
-            id: WarnLineS
-            color: '#FFFFFFFF'
-          decals:
-            579: -6,2
-            585: -6,-2
-            586: 4,-2
-            587: 3,2
-            589: 3,6
-            590: -6,6
-        - node:
-            id: WoodTrimThinCornerNw
-            color: '#FFFFFFFF'
-          decals:
-            255: -5,14
-        - node:
-            id: WoodTrimThinCornerSe
-            color: '#FFFFFFFF'
-          decals:
-            277: 1,7
-        - node:
-            id: WoodTrimThinCornerSw
-            color: '#FFFFFFFF'
-          decals:
-            256: -5,13
-            272: -3,9
-            281: -3,7
-        - node:
-            id: WoodTrimThinInnerNe
-            color: '#FFFFFFFF'
-          decals:
-            291: -3,8
-        - node:
-            id: WoodTrimThinInnerNw
-            color: '#FFFFFFFF'
-          decals:
-            431: 1,8
-        - node:
-            id: WoodTrimThinLineE
-            color: '#FFFFFFFF'
-          decals:
-            427: 1,9
-            432: 1,8
-        - node:
-            id: WoodTrimThinLineN
-            color: '#FFFFFFFF'
-          decals:
-            287: -2,8
-            288: 0,8
-            293: -1,8
-        - node:
-            id: WoodTrimThinLineS
-            color: '#FFFFFFFF'
-          decals:
-            275: -1,9
-            276: 0,9
-            284: -2,7
-            285: -1,7
-            286: 0,7
-            428: -2,9
-            429: 1,9
-            430: -3,9
-        - node:
-            id: WoodTrimThinLineW
-            color: '#FFFFFFFF'
-          decals:
-            283: -3,8
-            423: -3,9
     - type: GridAtmosphere
       version: 2
       data:
@@ -782,6 +173,13 @@ entities:
     - type: TileHistory
       chunkHistory: {}
     - type: ExplosionAirtightGrid
+    - type: GridSplitNode
+    - type: ChunkContainer
+      chunkEntities:
+      - 723
+      - 724
+      - 725
+      - 726
 - proto: AirAlarm
   entities:
   - uid: 62
@@ -2305,6 +1703,792 @@ entities:
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 4.5,0.5
+- proto: ChunkEntity
+  entities:
+  - uid: 723
+    components:
+    - type: ChunkEntity
+      root: 2
+    - type: DecalChunk
+      maxDecalId: 596
+      decals:
+        version: 1
+        nodes:
+        - node:
+            id: MiniTileCornerOverlayNE
+            color: '#52B4E996'
+          decals:
+            205: 1,5
+        - node:
+            id: MiniTileCornerOverlayNE
+            color: '#999999B4'
+          decals:
+            573: 4,10
+        - node:
+            id: MiniTileCornerOverlayNE
+            color: '#DE3A3A96'
+          decals:
+            445: 1,10
+        - node:
+            id: MiniTileCornerOverlaySE
+            color: '#52B4E996'
+          decals:
+            208: 1,3
+        - node:
+            id: MiniTileInnerOverlayNE
+            color: '#52B4E996'
+          decals:
+            240: 0.00061941147,3.7539835
+            241: 0.2506194,3.7539835
+            244: 0.00061941147,3.5039835
+            245: 0.2506194,3.5039835
+        - node:
+            id: MiniTileInnerOverlayNE
+            color: '#999999B4'
+          decals:
+            576: 3,10
+        - node:
+            id: MiniTileInnerOverlayNW
+            color: '#52B4E996'
+          decals:
+            502: 2,1
+            503: 2.2496552,0.9996364
+            504: 2.5006952,0.9996364
+            511: 3,1
+        - node:
+            id: MiniTileInnerOverlayNW
+            color: '#DE3A3A96'
+          decals:
+            465: 2,11
+            466: 2.249641,10.999686
+            467: 2.499641,10.999686
+        - node:
+            id: MiniTileInnerOverlaySE
+            color: '#999999B4'
+          decals:
+            594: 3,11
+            595: 3.000729,11.250142
+            596: 3.000729,11.499672
+        - node:
+            id: MiniTileInnerOverlaySW
+            color: '#79150096'
+          decals:
+            537: 3,10
+            538: 2,10
+            542: 2.2496536,10.000128
+            543: 2.4996536,10.000128
+        - node:
+            id: MiniTileLineOverlayE
+            color: '#52B4E996'
+          decals:
+            210: 1,4
+        - node:
+            id: MiniTileLineOverlayE
+            color: '#999999B4'
+          decals:
+            521: 2,0
+            522: 2,1
+            524: 2,11
+            568: 4,0
+            569: 4,8
+            570: 4,5
+            571: 4,4
+            572: 4,3
+        - node:
+            id: MiniTileLineOverlayE
+            color: '#999999C0'
+          decals:
+            366: 2,10
+        - node:
+            id: MiniTileLineOverlayN
+            color: '#52B4E996'
+          decals:
+            213: 0,5
+            489: 0,0
+            514: 1,1
+        - node:
+            id: MiniTileLineOverlayN
+            color: '#79150096'
+          decals:
+            547: 0,9
+            548: 1,9
+        - node:
+            id: MiniTileLineOverlayN
+            color: '#DE3A3A96'
+          decals:
+            392: 0,11
+            443: 0,10
+            444: 3,11
+        - node:
+            id: MiniTileLineOverlayS
+            color: '#EFB34196'
+          decals:
+            493: 0,0
+        - node:
+            id: MiniTileLineOverlayW
+            color: '#52B4E996'
+          decals:
+            317: 3,3
+            318: 3,4
+            319: 3,5
+        - node:
+            id: MiniTileLineOverlayW
+            color: '#79150096'
+          decals:
+            532: 3,9
+            533: 3,7
+        - node:
+            id: MiniTileWhiteCornerNe
+            color: '#DCE1E1FF'
+          decals:
+            420: 1,10
+        - node:
+            id: MiniTileWhiteEndE
+            color: '#DCE1E1FF'
+          decals:
+            480: 0,0
+        - node:
+            id: MiniTileWhiteLineN
+            color: '#D2D7D7FF'
+          decals:
+            410: 0,9
+            421: 1,9
+            426: 0,10
+        - node:
+            id: WarnCornerGreyscaleNE
+            color: '#DE3A3A96'
+          decals:
+            166: 2,15
+        - node:
+            id: WarnCornerGreyscaleNW
+            color: '#DE3A3A96'
+          decals:
+            165: 0,15
+        - node:
+            id: WarnCornerGreyscaleSE
+            color: '#79150096'
+          decals:
+            172: 3,13
+        - node:
+            id: WarnCornerGreyscaleSE
+            color: '#DE3A3A96'
+          decals:
+            167: 2,14
+        - node:
+            id: WarnCornerGreyscaleSW
+            color: '#DE3A3A96'
+          decals:
+            164: 0,14
+        - node:
+            id: WarnCornerSmallGreyscaleNW
+            color: '#79150096'
+          decals:
+            173: 3,13
+        - node:
+            id: WarnEndGreyscaleN
+            color: '#79150096'
+          decals:
+            170: 3,14
+        - node:
+            id: WarnEndGreyscaleW
+            color: '#79150096'
+          decals:
+            171: 0,13
+        - node:
+            id: WarnFullGreyscale
+            color: '#A4610696'
+          decals:
+            142: 1,12
+            152: 5,7
+            153: 5,9
+            154: 5,1
+            258: 2,8
+            527: 0,2
+        - node:
+            id: WarnLineE
+            color: '#FFFFFFFF'
+          decals:
+            582: 4,2
+            583: 4,6
+        - node:
+            id: WarnLineGreyscaleE
+            color: '#8080807F'
+          decals:
+            91: 4,6
+        - node:
+            id: WarnLineGreyscaleE
+            color: '#999999B4'
+          decals:
+            554: 4,1
+            555: 4,7
+            556: 4,9
+        - node:
+            id: WarnLineGreyscaleN
+            color: '#52B4E996'
+          decals:
+            516: 0,1
+        - node:
+            id: WarnLineGreyscaleN
+            color: '#79150096'
+          decals:
+            174: 2,13
+            175: 1,13
+        - node:
+            id: WarnLineGreyscaleN
+            color: '#DE3A3A96'
+          decals:
+            168: 1,15
+            528: 1,11
+        - node:
+            id: WarnLineGreyscaleS
+            color: '#52B4E996'
+          decals:
+            201: 0,3
+        - node:
+            id: WarnLineGreyscaleS
+            color: '#79150096'
+          decals:
+            176: 1,13
+            177: 2,13
+        - node:
+            id: WarnLineGreyscaleW
+            color: '#79150096'
+          decals:
+            531: 3,8
+        - node:
+            id: WarnLineGreyscaleW
+            color: '#8080807F'
+          decals:
+            94: 3,6
+        - node:
+            id: WarnLineN
+            color: '#FFFFFFFF'
+          decals:
+            169: 1,14
+        - node:
+            id: WarnLineS
+            color: '#FFFFFFFF'
+          decals:
+            587: 3,2
+            589: 3,6
+        - node:
+            id: WoodTrimThinCornerSe
+            color: '#FFFFFFFF'
+          decals:
+            277: 1,7
+        - node:
+            id: WoodTrimThinInnerNw
+            color: '#FFFFFFFF'
+          decals:
+            431: 1,8
+        - node:
+            id: WoodTrimThinLineE
+            color: '#FFFFFFFF'
+          decals:
+            427: 1,9
+            432: 1,8
+        - node:
+            id: WoodTrimThinLineN
+            color: '#FFFFFFFF'
+          decals:
+            288: 0,8
+        - node:
+            id: WoodTrimThinLineS
+            color: '#FFFFFFFF'
+          decals:
+            276: 0,9
+            286: 0,7
+            429: 1,9
+  - uid: 724
+    components:
+    - type: ChunkEntity
+      root: 2
+      chunk: -1,0
+    - type: DecalChunk
+      maxDecalId: 593
+      decals:
+        version: 1
+        nodes:
+        - node:
+            id: MiniTileCornerOverlayNW
+            color: '#334E6DC8'
+          decals:
+            434: -3,10
+        - node:
+            id: MiniTileCornerOverlayNW
+            color: '#52B4E996'
+          decals:
+            206: -3,5
+        - node:
+            id: MiniTileCornerOverlayNW
+            color: '#999999B4'
+          decals:
+            574: -6,10
+        - node:
+            id: MiniTileCornerOverlaySW
+            color: '#52B4E996'
+          decals:
+            207: -3,3
+        - node:
+            id: MiniTileInnerOverlayNE
+            color: '#334E6DC8'
+          decals:
+            459: -4,11
+            460: -4.2505107,11.000321
+            461: -4.5005107,11.000321
+        - node:
+            id: MiniTileInnerOverlayNE
+            color: '#52B4E996'
+          decals:
+            214: -2.4993806,3.2539835
+            215: -2.2493806,3.2539835
+            216: -2.2493806,3.5039835
+            217: -2.4993806,3.5039835
+            218: -2.4993806,3.7539835
+            219: -2.2493806,3.7539835
+            220: -2.2493806,4.0039835
+            221: -2.4993806,4.0039835
+            222: -1.9993806,3.7539835
+            223: -2.7493806,3.7539835
+            224: -2.7493806,3.5039835
+            225: -1.9993806,3.5039835
+            226: -2.4993806,3.0039835
+            227: -2.2493806,3.0039835
+            228: -2.9993806,3.5039835
+            229: -2.9993806,3.7539835
+            230: -2.4993806,4.2539835
+            231: -2.2493806,4.2539835
+            232: -1.7493806,3.7539835
+            233: -1.7493806,3.5039835
+            234: -0.9993806,3.7539835
+            235: -0.9993806,3.5039835
+            236: -0.7493806,3.5039835
+            237: -0.7493806,3.7539835
+            238: -0.4993806,3.7539835
+            239: -0.24938059,3.7539835
+            242: -0.4993806,3.5039835
+            243: -0.24938059,3.5039835
+            246: -0.4993806,3.2539835
+            247: -0.4993806,3.0039835
+            248: -0.24938059,3.2539835
+            249: -0.256117,3.0039835
+            250: -0.506117,4.0039835
+            251: -0.256117,4.0039835
+            252: -0.256117,4.2539835
+            253: -0.506117,4.2539835
+            372: -5,1
+            471: -4,1
+            472: -4.249687,1.0004967
+            473: -4.499687,1.0004967
+        - node:
+            id: MiniTileInnerOverlayNE
+            color: '#DE3A3A96'
+          decals:
+            463: -1,11
+            464: -1.249911,10.999671
+            484: -1,10
+            485: -1.2505481,9.99999
+        - node:
+            id: MiniTileInnerOverlayNW
+            color: '#334E6DC8'
+          decals:
+            458: -0.7494291,11.000321
+            462: -1,11
+            486: -1,10
+            487: -0.7505481,9.99999
+        - node:
+            id: MiniTileInnerOverlayNW
+            color: '#999999B4'
+          decals:
+            575: -5,10
+        - node:
+            id: MiniTileInnerOverlaySE
+            color: '#79150096'
+          decals:
+            536: -5,10
+            539: -4,10
+            540: -4.24977,10.0002365
+            541: -4.49977,10.0002365
+        - node:
+            id: MiniTileInnerOverlaySE
+            color: '#EFB34196'
+          decals:
+            499: -0.00048553944,0.24948132
+        - node:
+            id: MiniTileInnerOverlaySW
+            color: '#999999B4'
+          decals:
+            591: -5,11
+            592: -4.9993505,11.250142
+            593: -4.9993505,11.500142
+        - node:
+            id: MiniTileInnerOverlaySW
+            color: '#EFB34196'
+          decals:
+            498: -2.0004134,0.24948132
+        - node:
+            id: MiniTileLineOverlayE
+            color: '#52B4E996'
+          decals:
+            320: -5,3
+            321: -5,4
+            322: -5,5
+        - node:
+            id: MiniTileLineOverlayE
+            color: '#79150096'
+          decals:
+            534: -5,7
+            535: -5,9
+        - node:
+            id: MiniTileLineOverlayN
+            color: '#334E6DC8'
+          decals:
+            393: -2,11
+            433: -2,10
+            440: -5,11
+        - node:
+            id: MiniTileLineOverlayN
+            color: '#52B4E996'
+          decals:
+            211: -2,5
+            212: -1,5
+            488: -1,0
+            490: -2,0
+            512: -3,1
+            513: -1,1
+        - node:
+            id: MiniTileLineOverlayN
+            color: '#79150096'
+          decals:
+            544: -3,9
+            545: -2,9
+            546: -1,9
+        - node:
+            id: MiniTileLineOverlayS
+            color: '#52B4E996'
+          decals:
+            209: -1,3
+        - node:
+            id: MiniTileLineOverlayS
+            color: '#EFB34196'
+          decals:
+            491: -2,0
+            492: -1,0
+        - node:
+            id: MiniTileLineOverlayW
+            color: '#52B4E996'
+          decals:
+            204: -3,4
+        - node:
+            id: MiniTileLineOverlayW
+            color: '#999999B4'
+          decals:
+            518: -4,0
+            519: -4,1
+            525: -4,11
+            557: -6,4
+            558: -6,5
+            559: -6,3
+            560: -6,8
+            561: -6,0
+        - node:
+            id: MiniTileLineOverlayW
+            color: '#999999C0'
+          decals:
+            370: -4,10
+        - node:
+            id: MiniTileWhiteCornerNw
+            color: '#DCE1E1FF'
+          decals:
+            419: -3,10
+        - node:
+            id: MiniTileWhiteEndW
+            color: '#DCE1E1FF'
+          decals:
+            479: -2,0
+        - node:
+            id: MiniTileWhiteLineN
+            color: '#D2D7D7FF'
+          decals:
+            406: -3,9
+            408: -1,9
+            422: -2,9
+            424: -2,10
+            481: -1,10
+            482: -1,0
+        - node:
+            id: MiniTileWhiteLineS
+            color: '#D2D7D7FF'
+          decals:
+            483: -1,0
+        - node:
+            id: WarnFullGreyscale
+            color: '#A4610696'
+          decals:
+            143: -3,12
+            144: -1,13
+            157: -7,1
+            158: -7,7
+            159: -7,9
+            161: -2,2
+            257: -4,8
+        - node:
+            id: WarnFullGreyscale
+            color: '#AE67167F'
+          decals:
+            111: -1,6
+        - node:
+            id: WarnLineE
+            color: '#FFFFFFFF'
+          decals:
+            580: -5,2
+            581: -5,6
+        - node:
+            id: WarnLineGreyscaleE
+            color: '#79150096'
+          decals:
+            530: -5,8
+        - node:
+            id: WarnLineGreyscaleE
+            color: '#8080807F'
+          decals:
+            89: -3,2
+            90: -3,6
+        - node:
+            id: WarnLineGreyscaleN
+            color: '#334E6DC8'
+          decals:
+            529: -3,11
+        - node:
+            id: WarnLineGreyscaleN
+            color: '#52B4E996'
+          decals:
+            515: -2,1
+        - node:
+            id: WarnLineGreyscaleS
+            color: '#52B4E996'
+          decals:
+            200: -2,3
+        - node:
+            id: WarnLineGreyscaleW
+            color: '#8080807F'
+          decals:
+            85: -4,2
+            86: -4,6
+        - node:
+            id: WarnLineGreyscaleW
+            color: '#999999B4'
+          decals:
+            549: -6,9
+            550: -6,7
+            551: -6,1
+        - node:
+            id: WarnLineGreyscaleW
+            color: '#D4D4D496'
+          decals:
+            59: -4,5
+            60: -4,4
+        - node:
+            id: WarnLineS
+            color: '#FFFFFFFF'
+          decals:
+            579: -6,2
+            590: -6,6
+        - node:
+            id: WoodTrimThinCornerNw
+            color: '#FFFFFFFF'
+          decals:
+            255: -5,14
+        - node:
+            id: WoodTrimThinCornerSw
+            color: '#FFFFFFFF'
+          decals:
+            256: -5,13
+            272: -3,9
+            281: -3,7
+        - node:
+            id: WoodTrimThinInnerNe
+            color: '#FFFFFFFF'
+          decals:
+            291: -3,8
+        - node:
+            id: WoodTrimThinLineN
+            color: '#FFFFFFFF'
+          decals:
+            287: -2,8
+            293: -1,8
+        - node:
+            id: WoodTrimThinLineS
+            color: '#FFFFFFFF'
+          decals:
+            275: -1,9
+            284: -2,7
+            285: -1,7
+            428: -2,9
+            430: -3,9
+        - node:
+            id: WoodTrimThinLineW
+            color: '#FFFFFFFF'
+          decals:
+            283: -3,8
+            423: -3,9
+  - uid: 725
+    components:
+    - type: ChunkEntity
+      root: 2
+      chunk: -1,-1
+    - type: DecalChunk
+      maxDecalId: 585
+      decals:
+        version: 1
+        nodes:
+        - node:
+            id: MiniTileInnerOverlayNE
+            color: '#52B4E996'
+          decals:
+            500: -0.00048553944,-0.25051874
+        - node:
+            id: MiniTileInnerOverlayNW
+            color: '#52B4E996'
+          decals:
+            501: -2.0000787,-0.25051874
+        - node:
+            id: MiniTileInnerOverlaySE
+            color: '#EFB34196'
+          decals:
+            325: -6,-1
+            508: -4,-1
+            509: -4.249493,-1.0001624
+            510: -4.499493,-1.0001624
+        - node:
+            id: MiniTileLineOverlayE
+            color: '#EFB34196'
+          decals:
+            323: -6,-3
+            577: -6,-5
+        - node:
+            id: MiniTileLineOverlayS
+            color: '#EFB34196'
+          decals:
+            324: -5,-1
+            496: -3,-1
+            497: -2,-1
+        - node:
+            id: MiniTileLineOverlayW
+            color: '#999999B4'
+          decals:
+            520: -4,-1
+            562: -6,-3
+            563: -6,-4
+            564: -6,-5
+        - node:
+            id: WarnFullGreyscale
+            color: '#A4610696'
+          decals:
+            151: -5,-4
+            156: -7,-1
+            526: -1,-2
+        - node:
+            id: WarnFullGreyscale
+            color: '#AE67167F'
+          decals:
+            108: -5,-5
+        - node:
+            id: WarnLineE
+            color: '#FFFFFFFF'
+          decals:
+            584: -6,-2
+        - node:
+            id: WarnLineGreyscaleE
+            color: '#EFB34196'
+          decals:
+            387: -6,-4
+        - node:
+            id: WarnLineGreyscaleS
+            color: '#EFB34196'
+          decals:
+            517: -1,-1
+        - node:
+            id: WarnLineGreyscaleW
+            color: '#999999B4'
+          decals:
+            552: -6,-1
+        - node:
+            id: WarnLineS
+            color: '#FFFFFFFF'
+          decals:
+            585: -6,-2
+  - uid: 726
+    components:
+    - type: ChunkEntity
+      root: 2
+      chunk: 0,-1
+    - type: DecalChunk
+      maxDecalId: 588
+      decals:
+        version: 1
+        nodes:
+        - node:
+            id: MiniTileInnerOverlaySW
+            color: '#EFB34196'
+          decals:
+            335: 4,-1
+            505: 2,-1
+            506: 2.2498593,-0.9993701
+            507: 2.500152,-0.9993701
+        - node:
+            id: MiniTileLineOverlayE
+            color: '#999999B4'
+          decals:
+            523: 2,-1
+            565: 4,-3
+            566: 4,-4
+            567: 4,-5
+        - node:
+            id: MiniTileLineOverlayS
+            color: '#EFB34196'
+          decals:
+            330: 3,-1
+            494: 1,-1
+            495: 0,-1
+        - node:
+            id: MiniTileLineOverlayW
+            color: '#EFB34196'
+          decals:
+            331: 4,-3
+            332: 4,-4
+            578: 4,-5
+        - node:
+            id: WarnBoxGreyscale
+            color: '#8080807F'
+          decals:
+            123: 2,-6
+        - node:
+            id: WarnFullGreyscale
+            color: '#A4610696'
+          decals:
+            155: 5,-1
+        - node:
+            id: WarnFullGreyscale
+            color: '#AE67167F'
+          decals:
+            118: 2,-5
+            119: 2,-7
+        - node:
+            id: WarnLineE
+            color: '#FFFFFFFF'
+          decals:
+            588: 4,-2
+        - node:
+            id: WarnLineGreyscaleE
+            color: '#999999B4'
+          decals:
+            553: 4,-1
+        - node:
+            id: WarnLineS
+            color: '#FFFFFFFF'
+          decals:
+            586: 4,-2
 - proto: Cigar
   entities:
   - uid: 649
@@ -5225,7 +5409,7 @@ entities:
     - type: Transform
       parent: 2
       pos: 4.5,12.5
-- proto: WindoorSecureSecurityLocked
+- proto: WindoorSecurityLocked
   entities:
   - uid: 313
     components:

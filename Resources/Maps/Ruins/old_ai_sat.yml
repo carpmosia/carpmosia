@@ -1,10 +1,10 @@
 meta:
   format: 7
   category: Grid
-  engineVersion: 289.0.0
-  forkId: ""
+  engineVersion: 290.0.0
+  forkId: carpmosia
   forkVersion: ""
-  time: 08/23/2026 12:41:41
+  time: 11/08/2026 21:58:49
   entityCount: 715
 maps: []
 grids:
@@ -334,6 +334,7 @@ entities:
       chunkHistory: {}
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
+    - type: GridSplitNode
 - proto: AirCanister
   entities:
   - uid: 616
@@ -2156,7 +2157,7 @@ entities:
     - type: Transform
       parent: 1
       pos: 7.640723,-1.3639133
-- proto: ToolboxMechanical # Carpmosia-edit - Decontraing salv
+- proto: ToolboxMechanical
   entities:
   - uid: 599
     components:

@@ -2,9 +2,9 @@ meta:
   format: 7
   category: Map
   engineVersion: 290.0.0
-  forkId: ""
+  forkId: carpmosia
   forkVersion: ""
-  time: 09/22/2026 16:05:44
+  time: 11/08/2026 21:58:45
   entityCount: 26325
 maps:
 - 1
@@ -61028,14 +61028,6 @@ entities:
       parent: 15
       rot: 3.141592653589793 rad
       pos: -16.5,2.5
-- proto: CommandmentCircuitBoard
-  entities:
-  - uid: 3859
-    components:
-    - type: Transform
-      parent: 15
-      rot: 3.141592653589793 rad
-      pos: 28.458546,-11.664001
 - proto: CommsComputerCircuitboard
   entities:
   - uid: 25084
@@ -61581,13 +61573,6 @@ entities:
       parent: 15
       rot: -1.5707963267948966 rad
       pos: 76.5,-6.5
-- proto: ComputerSalvageJobBoard
-  entities:
-  - uid: 24234
-    components:
-    - type: Transform
-      parent: 15
-      pos: 71.5,-3.5
 - proto: ComputerShuttle
   entities:
   - uid: 24077
@@ -61609,6 +61594,13 @@ entities:
     - type: Transform
       parent: 15
       pos: 60.5,6.5
+- proto: ComputerShuttleSalvage
+  entities:
+  - uid: 24234
+    components:
+    - type: Transform
+      parent: 15
+      pos: 71.5,-3.5
 - proto: ComputerSolarControl
   entities:
   - uid: 108
@@ -74266,72 +74258,6 @@ entities:
     - type: AccessReader
       accessListsOriginal:
       - - Engineering
-- proto: EnergyGate
-  entities:
-  - uid: 24133
-    components:
-    - type: Transform
-      parent: 15
-      rot: 1.5707963267948966 rad
-      pos: -54.5,-20.5
-  - uid: 24134
-    components:
-    - type: Transform
-      parent: 15
-      rot: 3.141592653589793 rad
-      pos: -55.5,-23.5
-- proto: EnergyGateAirtight
-  entities:
-  - uid: 60
-    components:
-    - type: Transform
-      parent: 15
-      pos: -81.5,-24.5
-  - uid: 250
-    components:
-    - type: Transform
-      parent: 15
-      rot: 3.141592653589793 rad
-      pos: -88.5,-10.5
-  - uid: 1171
-    components:
-    - type: Transform
-      parent: 15
-      rot: 3.141592653589793 rad
-      pos: -81.5,-10.5
-  - uid: 9910
-    components:
-    - type: Transform
-      parent: 15
-      pos: -88.5,-24.5
-- proto: EnergyGateGenpopEnter
-  entities:
-  - uid: 3743
-    components:
-    - type: Transform
-      parent: 15
-      rot: 3.141592653589793 rad
-      pos: -52.5,15.5
-    - type: AccessReader
-      accessListsOriginal:
-      - - GenpopEnter
-      - - Security
-- proto: EnergyGateGenpopLeave
-  entities:
-  - uid: 5560
-    components:
-    - type: Transform
-      parent: 15
-      pos: -53.5,5.5
-  - uid: 10717
-    components:
-    - type: Transform
-      parent: 15
-      pos: -54.5,15.5
-    - type: AccessReader
-      accessListsOriginal:
-      - - GenpopLeave
-      - - Security
 - proto: ExosuitFabricator
   entities:
   - uid: 3669
@@ -81118,17 +81044,7 @@ entities:
       pos: 6.5,-49.5
     - type: AtmosPipeColor
       color: '#03FCD3FF'
-- proto: GasPipeSensorDistribution
-  entities:
-  - uid: 2662
-    components:
-    - type: Transform
-      parent: 15
-      rot: 3.141592653589793 rad
-      pos: -34.5,-59.5
-    - type: AtmosPipeColor
-      color: '#0055CCFF'
-- proto: GasPipeSensorTEGCold
+- proto: GasPipeSensorColdLoop
   entities:
   - uid: 7459
     components:
@@ -81138,7 +81054,17 @@ entities:
       pos: -53.5,-66.5
     - type: AtmosPipeColor
       color: '#03FCD3FF'
-- proto: GasPipeSensorTEGHot
+- proto: GasPipeSensorDistro
+  entities:
+  - uid: 2662
+    components:
+    - type: Transform
+      parent: 15
+      rot: 3.141592653589793 rad
+      pos: -34.5,-59.5
+    - type: AtmosPipeColor
+      color: '#0055CCFF'
+- proto: GasPipeSensorHotLoop
   entities:
   - uid: 25108
     components:
@@ -115744,6 +115670,14 @@ entities:
     - type: Transform
       parent: 15
       pos: 39.697094,-45.91188
+- proto: LawbringerCircuitBoard
+  entities:
+  - uid: 7663
+    components:
+    - type: Transform
+      parent: 15
+      rot: 3.141592653589793 rad
+      pos: 31.491734,-13.181648
 - proto: LiveLetLiveCircuitBoard
   entities:
   - uid: 7662
@@ -129816,14 +129750,6 @@ entities:
     - type: Transform
       parent: 15
       pos: -47.612236,7.582792
-- proto: RobocopCircuitBoard
-  entities:
-  - uid: 7663
-    components:
-    - type: Transform
-      parent: 15
-      rot: 3.141592653589793 rad
-      pos: 31.491734,-13.181648
 - proto: RollerBed
   entities:
   - uid: 4793
@@ -132076,6 +132002,14 @@ entities:
       parent: 15
       rot: 3.141592653589793 rad
       pos: -1.5,-9.5
+- proto: SixCommandmentsCircuitBoard
+  entities:
+  - uid: 3859
+    components:
+    - type: Transform
+      parent: 15
+      rot: 3.141592653589793 rad
+      pos: 28.458546,-11.664001
 - proto: SmartFridge
   entities:
   - uid: 4799
@@ -140646,6 +140580,70 @@ entities:
     - type: Transform
       parent: 15
       pos: -41.101177,-2.3181767
+- proto: Turnstile
+  entities:
+  - uid: 60
+    components:
+    - type: Transform
+      parent: 15
+      pos: -81.5,-24.5
+  - uid: 250
+    components:
+    - type: Transform
+      parent: 15
+      rot: 3.141592653589793 rad
+      pos: -88.5,-10.5
+  - uid: 1171
+    components:
+    - type: Transform
+      parent: 15
+      rot: 3.141592653589793 rad
+      pos: -81.5,-10.5
+  - uid: 9910
+    components:
+    - type: Transform
+      parent: 15
+      pos: -88.5,-24.5
+  - uid: 24133
+    components:
+    - type: Transform
+      parent: 15
+      rot: 1.5707963267948966 rad
+      pos: -54.5,-20.5
+  - uid: 24134
+    components:
+    - type: Transform
+      parent: 15
+      rot: 3.141592653589793 rad
+      pos: -55.5,-23.5
+- proto: TurnstileGenpopEnter
+  entities:
+  - uid: 3743
+    components:
+    - type: Transform
+      parent: 15
+      rot: 3.141592653589793 rad
+      pos: -52.5,15.5
+    - type: AccessReader
+      accessListsOriginal:
+      - - GenpopEnter
+      - - Security
+- proto: TurnstileGenpopLeave
+  entities:
+  - uid: 5560
+    components:
+    - type: Transform
+      parent: 15
+      pos: -53.5,5.5
+  - uid: 10717
+    components:
+    - type: Transform
+      parent: 15
+      pos: -54.5,15.5
+    - type: AccessReader
+      accessListsOriginal:
+      - - GenpopLeave
+      - - Security
 - proto: TwoWayLever
   entities:
   - uid: 1268

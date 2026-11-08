@@ -2,9 +2,9 @@ meta:
   format: 7
   category: Map
   engineVersion: 290.0.0
-  forkId: ""
+  forkId: carpmosia
   forkVersion: ""
-  time: 09/22/2026 16:15:26
+  time: 11/08/2026 21:57:49
   entityCount: 25873
 maps:
 - 943
@@ -68255,19 +68255,7 @@ entities:
     - type: Transform
       parent: 60
       pos: 17.309816,-50.5843
-- proto: ClothingShoesSlippers
-  entities:
-  - uid: 1291
-    components:
-    - type: Transform
-      parent: 60
-      pos: -42.79365,7.17041
-  - uid: 7865
-    components:
-    - type: Transform
-      parent: 60
-      pos: 51.40455,-45.767857
-- proto: ClothingShoesTourist
+- proto: ClothingShoesSandalsBlack
   entities:
   - uid: 4540
     components:
@@ -68285,13 +68273,25 @@ entities:
     - type: Transform
       parent: 60
       pos: -44.517593,-34.836853
-- proto: ClothingShoesWizard
+- proto: ClothingShoesSandalsBrown
   entities:
   - uid: 2440
     components:
     - type: Transform
       parent: 60
       pos: -36.49547,-36.772636
+- proto: ClothingShoesSlippers
+  entities:
+  - uid: 1291
+    components:
+    - type: Transform
+      parent: 60
+      pos: -42.79365,7.17041
+  - uid: 7865
+    components:
+    - type: Transform
+      parent: 60
+      pos: 51.40455,-45.767857
 - proto: ClothingUnderSocksCoder
   entities:
   - uid: 6780
@@ -68749,13 +68749,6 @@ entities:
       parent: 60
       rot: -1.5707963267948966 rad
       pos: 24.5,-5.5
-- proto: CommandmentCircuitBoard
-  entities:
-  - uid: 24825
-    components:
-    - type: Transform
-      parent: 60
-      pos: -109.31948,8.323196
 - proto: CommsComputerCircuitboard
   entities:
   - uid: 15494
@@ -69177,14 +69170,6 @@ entities:
       parent: 60
       rot: -1.5707963267948966 rad
       pos: 42.5,-0.5
-- proto: ComputerSalvageJobBoard
-  entities:
-  - uid: 22153
-    components:
-    - type: Transform
-      parent: 60
-      rot: -1.5707963267948966 rad
-      pos: 42.5,0.5
 - proto: ComputerShuttleCargo
   entities:
   - uid: 19004
@@ -69198,6 +69183,14 @@ entities:
       parent: 60
       rot: 1.5707963267948966 rad
       pos: 49.5,11.5
+- proto: ComputerShuttleSalvage
+  entities:
+  - uid: 22153
+    components:
+    - type: Transform
+      parent: 60
+      rot: -1.5707963267948966 rad
+      pos: 42.5,0.5
 - proto: ComputerSolarControl
   entities:
   - uid: 3338
@@ -76901,53 +76894,6 @@ entities:
       parent: 18890
     - type: Physics
       canCollide: False
-- proto: EnergyGateAirtight
-  entities:
-  - uid: 5059
-    components:
-    - type: Transform
-      parent: 60
-      rot: 1.5707963267948966 rad
-      pos: -3.5,-70.5
-  - uid: 5168
-    components:
-    - type: Transform
-      parent: 60
-      rot: -1.5707963267948966 rad
-      pos: 4.5,-70.5
-  - uid: 5169
-    components:
-    - type: Transform
-      parent: 60
-      rot: -1.5707963267948966 rad
-      pos: 4.5,-63.5
-  - uid: 7345
-    components:
-    - type: Transform
-      parent: 60
-      rot: 1.5707963267948966 rad
-      pos: -3.5,-63.5
-- proto: EnergyGateGenpopEnter
-  entities:
-  - uid: 13624
-    components:
-    - type: Transform
-      parent: 60
-      pos: -17.5,-16.5
-- proto: EnergyGateGenpopLeave
-  entities:
-  - uid: 8271
-    components:
-    - type: Transform
-      parent: 60
-      rot: -1.5707963267948966 rad
-      pos: -21.5,-14.5
-  - uid: 13631
-    components:
-    - type: Transform
-      parent: 60
-      rot: 3.141592653589793 rad
-      pos: -19.5,-16.5
 - proto: ExosuitFabricator
   entities:
   - uid: 11432
@@ -83905,17 +83851,7 @@ entities:
       color: '#03FCD3FF'
     - type: Label
       currentLabel: Cryogenics
-- proto: GasPipeSensorDistribution
-  entities:
-  - uid: 14741
-    components:
-    - type: Transform
-      parent: 60
-      rot: -1.5707963267948966 rad
-      pos: -30.5,31.5
-    - type: AtmosPipeColor
-      color: '#0055CCFF'
-- proto: GasPipeSensorTEGCold
+- proto: GasPipeSensorColdLoop
   entities:
   - uid: 15439
     components:
@@ -83925,7 +83861,17 @@ entities:
       pos: -15.5,42.5
     - type: AtmosPipeColor
       color: '#03FCD3FF'
-- proto: GasPipeSensorTEGHot
+- proto: GasPipeSensorDistro
+  entities:
+  - uid: 14741
+    components:
+    - type: Transform
+      parent: 60
+      rot: -1.5707963267948966 rad
+      pos: -30.5,31.5
+    - type: AtmosPipeColor
+      color: '#0055CCFF'
+- proto: GasPipeSensorHotLoop
   entities:
   - uid: 15373
     components:
@@ -118226,6 +118172,13 @@ entities:
     - type: Transform
       parent: 60
       pos: 21.334734,-11.3924055
+- proto: LawbringerCircuitBoard
+  entities:
+  - uid: 24823
+    components:
+    - type: Transform
+      parent: 60
+      pos: -109.491356,8.541946
 - proto: LGBTQHandyFlag
   entities:
   - uid: 9548
@@ -132059,13 +132012,6 @@ entities:
     - type: Transform
       parent: 60
       pos: -40.494568,11.691846
-- proto: RobocopCircuitBoard
-  entities:
-  - uid: 24823
-    components:
-    - type: Transform
-      parent: 60
-      pos: -109.491356,8.541946
 - proto: RockGuitarInstrument
   entities:
   - uid: 21791
@@ -136175,6 +136121,13 @@ entities:
       parent: 60
       rot: -1.5707963267948966 rad
       pos: -41.5,-1.5
+- proto: SixCommandmentsCircuitBoard
+  entities:
+  - uid: 24825
+    components:
+    - type: Transform
+      parent: 60
+      pos: -109.31948,8.323196
 - proto: Skub
   entities:
   - uid: 6792
@@ -145145,6 +145098,53 @@ entities:
     - type: Transform
       parent: 60
       pos: 25.5,-13.5
+- proto: Turnstile
+  entities:
+  - uid: 5059
+    components:
+    - type: Transform
+      parent: 60
+      rot: 1.5707963267948966 rad
+      pos: -3.5,-70.5
+  - uid: 5168
+    components:
+    - type: Transform
+      parent: 60
+      rot: -1.5707963267948966 rad
+      pos: 4.5,-70.5
+  - uid: 5169
+    components:
+    - type: Transform
+      parent: 60
+      rot: -1.5707963267948966 rad
+      pos: 4.5,-63.5
+  - uid: 7345
+    components:
+    - type: Transform
+      parent: 60
+      rot: 1.5707963267948966 rad
+      pos: -3.5,-63.5
+- proto: TurnstileGenpopEnter
+  entities:
+  - uid: 13624
+    components:
+    - type: Transform
+      parent: 60
+      pos: -17.5,-16.5
+- proto: TurnstileGenpopLeave
+  entities:
+  - uid: 8271
+    components:
+    - type: Transform
+      parent: 60
+      rot: -1.5707963267948966 rad
+      pos: -21.5,-14.5
+  - uid: 13631
+    components:
+    - type: Transform
+      parent: 60
+      rot: 3.141592653589793 rad
+      pos: -19.5,-16.5
 - proto: TwoWayLever
   entities:
   - uid: 938

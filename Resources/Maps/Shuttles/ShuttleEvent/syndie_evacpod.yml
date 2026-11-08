@@ -1,10 +1,10 @@
 meta:
   format: 7
   category: Grid
-  engineVersion: 289.0.0
-  forkId: ""
+  engineVersion: 290.0.0
+  forkId: carpmosia
   forkVersion: ""
-  time: 08/22/2026 17:40:07
+  time: 11/08/2026 22:01:09
   entityCount: 203
 maps: []
 grids:
@@ -124,6 +124,7 @@ entities:
       chunkHistory: {}
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
+    - type: GridSplitNode
 - proto: AirCanister
   entities:
   - uid: 193

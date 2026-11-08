@@ -1,10 +1,10 @@
 meta:
   format: 7
   category: Grid
-  engineVersion: 283.1.3
+  engineVersion: 290.0.0
   forkId: carpmosia
   forkVersion: ""
-  time: 08/31/2026 22:07:07
+  time: 11/08/2026 22:01:13
   entityCount: 594
 maps: []
 grids:
@@ -14,7 +14,7 @@ orphans:
 nullspace: []
 tilemap:
   1: Space
-  22: FloorArcadeBlue2
+  22: FloorArcadeBlue
   14: FloorAstroGrass
   35: FloorBlue
   26: FloorBlueCircuit
@@ -25,16 +25,14 @@ tilemap:
   5: FloorDark
   49: FloorDarkMini
   6: FloorDarkMono
-  15: FloorDarkOffset
   50: FloorDarkPavement
   47: FloorDarkPavementVertical
   10: FloorDarkPlastic
-  44: FloorDarkSquiggly
+  44: FloorExoHorizontal
   31: FloorGlass
   29: FloorGold
   32: FloorGrass
   45: FloorGreenCircuit
-  40: FloorHydro
   36: FloorKitchen
   46: FloorLaundry
   9: FloorLino
@@ -42,7 +40,6 @@ tilemap:
   17: FloorMime
   41: FloorPlastic
   19: FloorRGlass
-  4: FloorShowroom
   55: FloorShuttleBlack
   53: FloorShuttleBlue
   52: FloorShuttleGrey
@@ -50,16 +47,13 @@ tilemap:
   56: FloorShuttleRed
   51: FloorShuttleWhite
   30: FloorSilver
-  2: FloorSteel
+  40: FloorSteel
   7: FloorSteelCheckerDark
   8: FloorSteelCheckerLight
-  24: FloorSteelDirty
   43: FloorSteelMini
   34: FloorSteelMono
-  48: FloorSteelOffset
   38: FloorSteelPavement
-  28: FloorTechMaint
-  23: FloorTechMaint2
+  28: FloorTechMaint2
   42: FloorTechMaint3
   37: FloorTechMaintDark
   18: FloorWhite
@@ -115,10 +109,6 @@ entities:
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
         path: /Audio/Effects/alert.ogg
-    - type: DecalGrid
-      chunkCollection:
-        version: 2
-        nodes: []
     - type: GridAtmosphere
       version: 2
       data:
@@ -193,6 +183,9 @@ entities:
     - type: TileHistory
       chunkHistory: {}
     - type: ExplosionAirtightGrid
+    - type: GridSplitNode
+    - type: ChunkContainer
+      chunkEntities: []
 - proto: AirAlarm
   entities:
   - uid: 131
@@ -2865,7 +2858,7 @@ entities:
     - type: Transform
       parent: 18697
       pos: -3.5,-0.5
-- proto: PlasmaWindoorSecureSecurityLocked
+- proto: PlasmaWindoorSecurityLocked
   entities:
   - uid: 11
     components:

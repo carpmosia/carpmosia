@@ -1,10 +1,10 @@
 meta:
   format: 7
   category: Grid
-  engineVersion: 289.0.0
-  forkId: ""
+  engineVersion: 290.0.0
+  forkId: carpmosia
   forkVersion: ""
-  time: 08/23/2026 12:27:52
+  time: 11/08/2026 21:58:51
   entityCount: 600
 maps: []
 grids:
@@ -218,6 +218,7 @@ entities:
       chunkHistory: {}
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
+    - type: GridSplitNode
 - proto: AirlockExternal
   entities:
   - uid: 82
@@ -350,6 +351,13 @@ entities:
       parent: 2
       rot: 1.5707963267948966 rad
       pos: -0.5,2.5
+- proto: BoxBeanbag
+  entities:
+  - uid: 539
+    components:
+    - type: Transform
+      parent: 2
+      pos: 21.62893,-0.4529693
 - proto: CableApcExtension
   entities:
   - uid: 102
@@ -2396,6 +2404,13 @@ entities:
     - type: Transform
       parent: 2
       pos: -0.49980903,-0.4061787
+- proto: ClothingHeadHatUshanka
+  entities:
+  - uid: 540
+    components:
+    - type: Transform
+      parent: 2
+      pos: 21.309292,-0.5621033
 - proto: Cobweb1
   entities:
   - uid: 574
@@ -3105,7 +3120,7 @@ entities:
     - type: Transform
       parent: 2
       pos: 6.5,1.5
-- proto: IntercomCommon # Carpmosia-edit - Decontraing salv
+- proto: IntercomCommon
   entities:
   - uid: 70
     components:
@@ -3113,20 +3128,6 @@ entities:
       parent: 2
       rot: 3.141592653589793 rad
       pos: 0.5,-1.5
-- proto: BoxBeanbag # Carpmosia-edit - Decontraing salv
-  entities:
-  - uid: 539
-    components:
-    - type: Transform
-      parent: 2
-      pos: 21.62893,-0.4529693
-- proto: ClothingHeadHatUshanka # Carpmosia-edit - Decontraing salv
-  entities: # Carpmosia-edit - Decontraing salv
-  - uid: 540
-    components:
-    - type: Transform
-      parent: 2
-      pos: 21.309292,-0.5621033
 - proto: NitrogenCanister
   entities:
   - uid: 532

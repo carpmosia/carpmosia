@@ -1,10 +1,10 @@
 meta:
   format: 7
   category: Grid
-  engineVersion: 282.0.0
-  forkId: ""
+  engineVersion: 290.0.0
+  forkId: carpmosia
   forkVersion: ""
-  time: 07/17/2026 15:34:58
+  time: 11/08/2026 21:58:53
   entityCount: 453
 maps: []
 grids:
@@ -79,10 +79,6 @@ entities:
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
         path: /Audio/Effects/alert.ogg
-    - type: DecalGrid
-      chunkCollection:
-        version: 2
-        nodes: []
     - type: GridAtmosphere
       version: 2
       data:
@@ -200,6 +196,9 @@ entities:
       chunkHistory: {}
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
+    - type: GridSplitNode
+    - type: ChunkContainer
+      chunkEntities: []
 - proto: AltarSatana
   entities:
   - uid: 236
@@ -1429,7 +1428,27 @@ entities:
     - type: Transform
       parent: 1
       pos: -1.5354606,-1.3923677
-- proto: MiningWindow
+- proto: OrganHumanHeart
+  entities:
+  - uid: 348
+    components:
+    - type: Transform
+      parent: 1
+      pos: 0.8969749,10.398597
+- proto: RailingCorner
+  entities:
+  - uid: 238
+    components:
+    - type: Transform
+      parent: 1
+      pos: 1.5,8.5
+  - uid: 239
+    components:
+    - type: Transform
+      parent: 1
+      rot: -1.5707963267948966 rad
+      pos: -0.5,8.5
+- proto: ReinforcedWindow
   entities:
   - uid: 246
     components:
@@ -1551,26 +1570,6 @@ entities:
     - type: Transform
       parent: 1
       pos: 6.5,10.5
-- proto: OrganHumanHeart
-  entities:
-  - uid: 348
-    components:
-    - type: Transform
-      parent: 1
-      pos: 0.8969749,10.398597
-- proto: RailingCorner
-  entities:
-  - uid: 238
-    components:
-    - type: Transform
-      parent: 1
-      pos: 1.5,8.5
-  - uid: 239
-    components:
-    - type: Transform
-      parent: 1
-      rot: -1.5707963267948966 rad
-      pos: -0.5,8.5
 - proto: RitualDagger
   entities:
   - uid: 347
@@ -1849,7 +1848,7 @@ entities:
       parent: 1
       rot: -1.5707963267948966 rad
       pos: -1.28125,3.7008743
-- proto: WallBasaltCobblebrick
+- proto: WallConcrete
   entities:
   - uid: 2
     components:
