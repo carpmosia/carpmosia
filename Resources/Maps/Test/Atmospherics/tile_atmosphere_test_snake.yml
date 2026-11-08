@@ -1,10 +1,10 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 267.3.0
-  forkId: ""
+  engineVersion: 290.0.0
+  forkId: carpmosia
   forkVersion: ""
-  time: 11/01/2025 12:21:19
+  time: 11/08/2026 22:26:55
   entityCount: 45
 maps:
 - 1
@@ -28,13 +28,15 @@ entities:
     - type: GridTree
     - type: Broadphase
     - type: OccluderTree
+    - type: ChunkContainer
+      chunkEntities: []
   - uid: 2
     components:
     - type: MetaData
       name: grid
     - type: Transform
-      pos: -0.48958334,-0.51563644
       parent: 1
+      pos: -0.48958334,-0.51563644
     - type: MapGrid
       chunks:
         0,0:
@@ -47,9 +49,9 @@ entities:
           version: 7
     - type: Broadphase
     - type: Physics
-      bodyStatus: InAir
       fixedRotation: False
       bodyType: Dynamic
+      bodyStatus: InAir
     - type: Fixtures
       fixtures: {}
     - type: OccluderTree
@@ -61,37 +63,39 @@ entities:
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
         path: /Audio/Effects/alert.ogg
-    - type: DecalGrid
-      chunkCollection:
-        version: 2
-        nodes: []
     - type: GridAtmosphere
       version: 2
       data:
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
+    - type: GridSplitNode
+    - type: ChunkContainer
+      chunkEntities: []
+    - type: TileHistory
+      chunkHistory: {}
+    - type: ExplosionAirtightGrid
 - proto: IntegrationTestMarker
   entities:
   - uid: 29
     components:
     - type: Transform
-      pos: 1.5,-0.5
       parent: 2
+      pos: 1.5,-0.5
     - type: TestMarker
       id: point1
   - uid: 44
     components:
     - type: Transform
-      pos: 4.5,-0.5
       parent: 2
+      pos: 4.5,-0.5
     - type: TestMarker
       id: source
   - uid: 45
     components:
     - type: Transform
-      pos: 7.5,-0.5
       parent: 2
+      pos: 7.5,-0.5
     - type: TestMarker
       id: point2
 - proto: WallSolid
@@ -99,201 +103,201 @@ entities:
   - uid: 3
     components:
     - type: Transform
-      pos: 1.5,-5.5
       parent: 2
+      pos: 1.5,-5.5
   - uid: 4
     components:
     - type: Transform
-      pos: 0.5,-5.5
       parent: 2
+      pos: 0.5,-5.5
   - uid: 5
     components:
     - type: Transform
-      pos: 0.5,-4.5
       parent: 2
+      pos: 0.5,-4.5
   - uid: 6
     components:
     - type: Transform
-      pos: 0.5,-3.5
       parent: 2
+      pos: 0.5,-3.5
   - uid: 7
     components:
     - type: Transform
-      pos: 0.5,-2.5
       parent: 2
+      pos: 0.5,-2.5
   - uid: 8
     components:
     - type: Transform
-      pos: 0.5,-1.5
       parent: 2
+      pos: 0.5,-1.5
   - uid: 9
     components:
     - type: Transform
-      pos: 0.5,-0.5
       parent: 2
+      pos: 0.5,-0.5
   - uid: 10
     components:
     - type: Transform
-      pos: 0.5,0.5
       parent: 2
+      pos: 0.5,0.5
   - uid: 11
     components:
     - type: Transform
-      pos: 1.5,0.5
       parent: 2
+      pos: 1.5,0.5
   - uid: 12
     components:
     - type: Transform
-      pos: 2.5,0.5
       parent: 2
+      pos: 2.5,0.5
   - uid: 13
     components:
     - type: Transform
-      pos: 2.5,-0.5
       parent: 2
+      pos: 2.5,-0.5
   - uid: 14
     components:
     - type: Transform
-      pos: 2.5,-1.5
       parent: 2
+      pos: 2.5,-1.5
   - uid: 15
     components:
     - type: Transform
-      pos: 2.5,-2.5
       parent: 2
+      pos: 2.5,-2.5
   - uid: 16
     components:
     - type: Transform
-      pos: 2.5,-3.5
       parent: 2
+      pos: 2.5,-3.5
   - uid: 17
     components:
     - type: Transform
-      pos: 2.5,-5.5
       parent: 2
+      pos: 2.5,-5.5
   - uid: 18
     components:
     - type: Transform
-      pos: 3.5,-5.5
       parent: 2
+      pos: 3.5,-5.5
   - uid: 19
     components:
     - type: Transform
-      pos: 4.5,-5.5
       parent: 2
+      pos: 4.5,-5.5
   - uid: 20
     components:
     - type: Transform
-      pos: 4.5,-4.5
       parent: 2
+      pos: 4.5,-4.5
   - uid: 21
     components:
     - type: Transform
-      pos: 4.5,-3.5
       parent: 2
+      pos: 4.5,-3.5
   - uid: 22
     components:
     - type: Transform
-      pos: 4.5,-2.5
       parent: 2
+      pos: 4.5,-2.5
   - uid: 23
     components:
     - type: Transform
-      pos: 4.5,-1.5
       parent: 2
+      pos: 4.5,-1.5
   - uid: 24
     components:
     - type: Transform
-      pos: 3.5,0.5
       parent: 2
+      pos: 3.5,0.5
   - uid: 25
     components:
     - type: Transform
-      pos: 4.5,0.5
       parent: 2
+      pos: 4.5,0.5
   - uid: 26
     components:
     - type: Transform
-      pos: 5.5,0.5
       parent: 2
+      pos: 5.5,0.5
   - uid: 27
     components:
     - type: Transform
-      pos: 6.5,0.5
       parent: 2
+      pos: 6.5,0.5
   - uid: 28
     components:
     - type: Transform
-      pos: 6.5,-0.5
       parent: 2
+      pos: 6.5,-0.5
   - uid: 30
     components:
     - type: Transform
-      pos: 7.5,0.5
       parent: 2
+      pos: 7.5,0.5
   - uid: 31
     components:
     - type: Transform
-      pos: 8.5,-5.5
       parent: 2
+      pos: 8.5,-5.5
   - uid: 32
     components:
     - type: Transform
-      pos: 7.5,-5.5
       parent: 2
+      pos: 7.5,-5.5
   - uid: 33
     components:
     - type: Transform
-      pos: 5.5,-5.5
       parent: 2
+      pos: 5.5,-5.5
   - uid: 34
     components:
     - type: Transform
-      pos: 6.5,-5.5
       parent: 2
+      pos: 6.5,-5.5
   - uid: 35
     components:
     - type: Transform
-      pos: 6.5,-1.5
       parent: 2
+      pos: 6.5,-1.5
   - uid: 36
     components:
     - type: Transform
-      pos: 6.5,-2.5
       parent: 2
+      pos: 6.5,-2.5
   - uid: 37
     components:
     - type: Transform
-      pos: 6.5,-3.5
       parent: 2
+      pos: 6.5,-3.5
   - uid: 38
     components:
     - type: Transform
-      pos: 8.5,-3.5
       parent: 2
+      pos: 8.5,-3.5
   - uid: 39
     components:
     - type: Transform
-      pos: 8.5,-2.5
       parent: 2
+      pos: 8.5,-2.5
   - uid: 40
     components:
     - type: Transform
-      pos: 8.5,-1.5
       parent: 2
+      pos: 8.5,-1.5
   - uid: 41
     components:
     - type: Transform
-      pos: 8.5,-0.5
       parent: 2
+      pos: 8.5,-0.5
   - uid: 42
     components:
     - type: Transform
-      pos: 8.5,0.5
       parent: 2
+      pos: 8.5,0.5
   - uid: 43
     components:
     - type: Transform
-      pos: 8.5,-4.5
       parent: 2
+      pos: 8.5,-4.5
 ...

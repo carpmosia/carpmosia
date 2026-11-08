@@ -1,10 +1,10 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 277.0.0
-  forkId: ""
+  engineVersion: 290.0.0
+  forkId: carpmosia
   forkVersion: ""
-  time: 05/17/2026 04:58:27
+  time: 11/08/2026 22:26:55
   entityCount: 22
 maps:
 - 1
@@ -28,13 +28,15 @@ entities:
     - type: GridTree
     - type: Broadphase
     - type: OccluderTree
+    - type: ChunkContainer
+      chunkEntities: []
   - uid: 2
     components:
     - type: MetaData
       name: grid
     - type: Transform
-      pos: 2.754969,-0.5660831
       parent: 1
+      pos: 2.754969,-0.5660831
     - type: MapGrid
       chunks:
         0,0:
@@ -43,9 +45,9 @@ entities:
           version: 7
     - type: Broadphase
     - type: Physics
-      bodyStatus: InAir
       fixedRotation: False
       bodyType: Dynamic
+      bodyStatus: InAir
     - type: Fixtures
       fixtures: {}
     - type: OccluderTree
@@ -59,33 +61,32 @@ entities:
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
         path: /Audio/Effects/alert.ogg
-    - type: DecalGrid
-      chunkCollection:
-        version: 2
-        nodes: []
     - type: GridAtmosphere
       version: 2
       data:
-        tiles:
-          0,0:
-            0: 61152
         uniqueMixes:
-        - volume: 2500
-          temperature: 293.15
+        - temperature: 293.15
+          volume: 2500
           moles:
             Oxygen: 21.824879
             Nitrogen: 82.10312
+        tiles:
+          0,0:
+            0: 61152
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: ExplosionAirtightGrid
+    - type: GridSplitNode
+    - type: ChunkContainer
+      chunkEntities: []
 - proto: DebugAPCRecharging
   entities:
   - uid: 22
     components:
     - type: Transform
-      pos: 2.5,4.5
       parent: 2
+      pos: 2.5,4.5
     - type: Fixtures
       fixtures: {}
 - proto: GasMixer
@@ -93,20 +94,20 @@ entities:
   - uid: 21
     components:
     - type: Transform
-      pos: 3.5,3.5
       parent: 2
+      pos: 3.5,3.5
     - type: GasMixer
+      targetPressure: 180
       inletTwoConcentration: 0.9
       inletOneConcentration: 0.1
-      targetPressure: 180
       enabled: True
 - proto: GasPressurePump
   entities:
   - uid: 19
     components:
     - type: Transform
-      pos: 1.5,3.5
       parent: 2
+      pos: 1.5,3.5
     - type: GasPressurePump
       targetPressure: 180
       enabled: True
@@ -115,8 +116,8 @@ entities:
   - uid: 20
     components:
     - type: Transform
-      pos: 2.5,3.5
       parent: 2
+      pos: 2.5,3.5
     - type: GasVolumePump
       transferRate: 180
       enabled: True
@@ -125,81 +126,81 @@ entities:
   - uid: 3
     components:
     - type: Transform
-      pos: 0.5,4.5
       parent: 2
+      pos: 0.5,4.5
   - uid: 4
     components:
     - type: Transform
-      pos: 0.5,3.5
       parent: 2
+      pos: 0.5,3.5
   - uid: 5
     components:
     - type: Transform
-      pos: 0.5,2.5
       parent: 2
+      pos: 0.5,2.5
   - uid: 6
     components:
     - type: Transform
-      pos: 0.5,1.5
       parent: 2
+      pos: 0.5,1.5
   - uid: 7
     components:
     - type: Transform
-      pos: 0.5,0.5
       parent: 2
+      pos: 0.5,0.5
   - uid: 8
     components:
     - type: Transform
-      pos: 1.5,0.5
       parent: 2
+      pos: 1.5,0.5
   - uid: 9
     components:
     - type: Transform
-      pos: 2.5,0.5
       parent: 2
+      pos: 2.5,0.5
   - uid: 10
     components:
     - type: Transform
-      pos: 3.5,0.5
       parent: 2
+      pos: 3.5,0.5
   - uid: 11
     components:
     - type: Transform
-      pos: 4.5,0.5
       parent: 2
+      pos: 4.5,0.5
   - uid: 12
     components:
     - type: Transform
-      pos: 4.5,1.5
       parent: 2
+      pos: 4.5,1.5
   - uid: 13
     components:
     - type: Transform
-      pos: 4.5,2.5
       parent: 2
+      pos: 4.5,2.5
   - uid: 14
     components:
     - type: Transform
-      pos: 4.5,3.5
       parent: 2
+      pos: 4.5,3.5
   - uid: 15
     components:
     - type: Transform
-      pos: 4.5,4.5
       parent: 2
+      pos: 4.5,4.5
   - uid: 16
     components:
     - type: Transform
-      pos: 3.5,4.5
       parent: 2
+      pos: 3.5,4.5
   - uid: 17
     components:
     - type: Transform
-      pos: 2.5,4.5
       parent: 2
+      pos: 2.5,4.5
   - uid: 18
     components:
     - type: Transform
-      pos: 1.5,4.5
       parent: 2
+      pos: 1.5,4.5
 ...
