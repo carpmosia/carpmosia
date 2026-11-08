@@ -51,7 +51,7 @@ public sealed partial class ShockThresholdsSystem : EntitySystem
     {
         var state = ent.Comp.MobThresholds.HighestMatch(shock) ?? MobState.Alive;
 
-        if (state == ent.Comp.CurrentMobState)
+        if (state == ent.Comp.CurrentMobState || _mobState.IsDead(ent.Owner))
             return;
 
         var ev = new ShockStateChangedEvent
