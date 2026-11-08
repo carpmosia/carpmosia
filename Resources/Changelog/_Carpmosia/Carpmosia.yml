@@ -2866,4 +2866,15 @@
   id: 417
   time: '2026-10-24T21:50:12.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/663
+- author: CMuncey
+  changes:
+  - message: Added section to health analyzer ui to display the reagents present in
+      the patients bloodstream
+    type: Add
+  - message: Moved damage indicator list in the health analyzer ui to beside the new
+      reagent list (functionality was not changed)
+    type: Tweak
+  id: 418
+  time: '2026-11-08T21:21:41.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/384
 Order: -1
