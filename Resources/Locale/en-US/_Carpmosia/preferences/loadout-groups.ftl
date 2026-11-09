@@ -16,3 +16,4 @@ loadout-group-base-pets = Pocket pets
 loadout-group-primary-lawsets = Primary lawsets
 loadout-group-secondary-lawsets = Secondary lawsets
 loadout-group-tertiary-lawsets = Tertiary lawsets
+loadout-group-quaternary-lawsets = Quaternary lawsets
