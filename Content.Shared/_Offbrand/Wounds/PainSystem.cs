@@ -1,5 +1,6 @@
 using Content.Shared.Body.Events;
 using Content.Shared.FixedPoint;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Rejuvenate;
 using Robust.Shared.Timing;
 
@@ -8,6 +9,7 @@ namespace Content.Shared._Offbrand.Wounds;
 public sealed partial class PainSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
 
     public override void Update(float frameTime)
     {
@@ -16,7 +18,7 @@ public sealed partial class PainSystem : EntitySystem
         var query = EntityQueryEnumerator<PainComponent>();
         while (query.MoveNext(out var uid, out var pain))
         {
-            if (pain.LastUpdate is not { } last || last + pain.AdjustedUpdateInterval >= _timing.CurTime)
+            if (pain.LastUpdate is not { } last || last + pain.AdjustedUpdateInterval >= _timing.CurTime || _mobState.IsDead(uid))
                 continue;
 
             var delta = _timing.CurTime - last;
