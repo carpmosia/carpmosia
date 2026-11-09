@@ -49,6 +49,15 @@ public sealed partial class BrainDamageThresholdsSystem : EntitySystem
         var overlays = new PotentiallyUpdateDamageOverlayEvent(ent);
         RaiseLocalEvent(ent, ref overlays, true);
 
+        var ev = new BrainStateChangedEvent
+        {
+            OldMobState = ent.Comp.CurrentState,
+            NewMobState = state,
+            Component = ent.Comp,
+            Target = ent.Owner,
+        };
+        RaiseLocalEvent(ev.Target, ev);
+
         ent.Comp.CurrentState = state;
         Dirty(ent);
     }
@@ -100,4 +109,15 @@ public sealed partial class BrainDamageThresholdsSystem : EntitySystem
         var overlays = new PotentiallyUpdateDamageOverlayEvent(ent);
         RaiseLocalEvent(ent, ref overlays, true);
     }
+
+    /// <summary>
+    /// Event that is raised whenever a BrainDamageThresholds State changes on an entity
+    /// </summary>
+    /// <param name="Target">The Entity whose MobState is changing</param>
+    /// <param name="Component">The MobState Component owned by the Target entity</param>
+    /// <param name="OldMobState">The previous MobState</param>
+    /// <param name="NewMobState">The new MobState</param>
+    /// <param name="Origin">The Entity that caused this state change</param>
+    public record struct BrainStateChangedEvent(EntityUid Target, BrainDamageThresholdsComponent Component, MobState OldMobState,
+        MobState NewMobState, EntityUid? Origin = null);
 }

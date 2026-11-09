@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Server.Chat.Systems;
 using Content.Shared._Offbrand.Wounds;
+using Content.Shared.Mobs.Systems;
 
 namespace Content.Server._Offbrand.Wounds;
 
@@ -8,10 +9,14 @@ public sealed partial class ShockGaspThresholdsSystem : EntitySystem
 {
     [Dependency] private ChatSystem _chat = default!;
     [Dependency] private PainSystem _pain = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
 
     [SubscribeLocalEvent]
     private void OnAfterShockChange(Entity<ShockGaspThresholdsComponent> ent, ref AfterShockChangeEvent args)
     {
+        if (_mobState.IsDead(ent.Owner))
+            return;
+
         var shock = _pain.GetShock(ent.Owner);
 
         var message = ent.Comp.MessageThresholds.HighestMatch(shock);
