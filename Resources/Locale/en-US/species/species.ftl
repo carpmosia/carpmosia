@@ -3,10 +3,14 @@
 species-name-human = Human
 species-name-dwarf = Dwarf
 species-name-reptilian = Reptilian
-## species-name-slime = Slime Person
+# Carpmosia-start - Remove people
+species-name-slime = Slime
+# Carpmosia-end - Remove people
 species-name-diona = Diona
 species-name-arachnid = Arachnid
-## species-name-moth = Moth Person
+# Carpmosia-start - Remove people
+species-name-moth = Moth
+# Carpmosia-end - Remove people
 species-name-skeleton = Skeleton
 species-name-vox = Vox
 species-name-gingerbread = delicious baked good
