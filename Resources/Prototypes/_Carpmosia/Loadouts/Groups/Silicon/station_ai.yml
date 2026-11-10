@@ -1,7 +1,7 @@
 - type: loadoutGroup
   id: StationAiPrimaryLawsets
   name: loadout-group-primary-lawsets
-  groupWeight: 55
+  groupWeight: 60
   minLimit: 2
   maxLimit: 0
   defaultSelected: 3
@@ -13,7 +13,7 @@
 - type: loadoutGroup
   id: StationAiSecondaryLawsets
   name: loadout-group-secondary-lawsets
-  groupWeight: 20
+  groupWeight: 25
   minLimit: 0
   maxLimit: 0
   loadouts:
@@ -32,14 +32,14 @@
   - GameMasterLawset
   - LiveLetLiveLawset
 
-- type: loadoutGroup
-  id: StationAiQuaternaryLawsets
-  name: loadout-group-quaternary-lawsets
-  groupWeight: 10
-  minLimit: 0
-  maxLimit: 0
-  loadouts:
-  - ConspiracyLawset
-  - MotivationalLawset
-  - GhostLawset
-  - SilenceLawset
+# - type: loadoutGroup
+#   id: StationAiQuaternaryLawsets
+#   name: loadout-group-quaternary-lawsets
+#   groupWeight: 10
+#   minLimit: 0
+#   maxLimit: 0
+#   loadouts:
+#   - ConspiracyLawset
+#   - MotivationalLawset
+#   - GhostLawset
+#   - SilenceLawset
