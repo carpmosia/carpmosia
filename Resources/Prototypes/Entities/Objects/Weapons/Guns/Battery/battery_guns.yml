@@ -149,36 +149,49 @@
     slots:
     - Belt
 
-# Carpmosia-start - svalinn rework
-#- type: entity
-#  name: svalinn laser pistol
-#  parent: [BaseWeaponPowerCellSmall, BaseSecurityContraband]
-#  id: WeaponLaserSvalinn
-#  description: A cheap and widely used laser pistol.
-#  components:
-#  - type: Sprite
-#    sprite: Objects/Weapons/Guns/Battery/svalinn.rsi
-#    layers:
-#    - state: base
-#      map: ["enum.GunVisualLayers.Base"]
-#    - state: mag-unshaded-4
-#      map: ["enum.GunVisualLayers.MagUnshaded"]
-#      shader: unshaded
-#  - type: Item
-#    shape:
-#    - 0,0,1,0
-#    - 0,1,0,1
-#    storedOffset: 0,-7
-#    sprite: Objects/Weapons/Guns/Battery/svalinn.rsi
-#  - type: MagazineVisuals
-#    magState: mag
-#    steps: 5
-#    zeroVisible: true
-#  - type: Tag
-#    tags:
-#    - Sidearm
-#    - LaserWeapon
-# Carpmosia-start - svalinn rework
+# Carpmodia-start - svalinn rework
+- type: entity
+  name: svalinn laser pistol
+  parent: [BaseWeaponPowerCellSmall, BaseSecurityContraband]
+  id: WeaponLaserSvalinn
+  description: A cheap and widely used security laser pistol, offering a window-piercing alternative to the commonly used mk 58, at the cost of a lower damage output. Feeds from power cells.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Battery/svalinn.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Item
+    shape:
+    - 0,0,1,0
+    - 0,1,0,1
+    storedOffset: 0,-7
+    sprite: Objects/Weapons/Guns/Battery/svalinn.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: true
+  - type: Gun # added spread
+    minAngle: 1
+    maxAngle: 8
+    angleIncrease: 2
+    angleDecay: 6
+    fireRate: 2
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+  - type: BatteryAmmoProvider # svalinn projectile rework
+    proto: BulletLaserSvalinn
+    fireCost: 50
+  - type: Tag
+    tags:
+    - Sidearm
+    - LaserWeapon
+  - type: StealTarget # svalinns now count towards the thief handgun objective
+    stealGroup: OfficerHandgun
+# Carpmodia-end - svalinn rework
 
 - type: entity
   name: retro laser blaster
