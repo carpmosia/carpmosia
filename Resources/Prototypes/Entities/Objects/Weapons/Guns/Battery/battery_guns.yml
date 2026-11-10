@@ -149,7 +149,7 @@
     slots:
     - Belt
 
-# Carpmodia-start - svalinn rework
+# Carpmodia-start - sec loadout and svalinn rework
 - type: entity
   name: svalinn laser pistol
   parent: [BaseWeaponPowerCellSmall, BaseSecurityContraband]
@@ -174,7 +174,7 @@
     magState: mag
     steps: 5
     zeroVisible: true
-  - type: Gun # added spread
+  - type: Gun
     minAngle: 1
     maxAngle: 8
     angleIncrease: 2
@@ -182,16 +182,16 @@
     fireRate: 2
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
-  - type: BatteryAmmoProvider # svalinn projectile rework
-    proto: BulletLaserSvalinn
+  - type: BatteryAmmoProvider
+    proto: BulletLaserSvalinn # svalinn projectile rework
     fireCost: 50
   - type: Tag
     tags:
     - Sidearm
     - LaserWeapon
-  - type: StealTarget # svalinns now count towards the thief handgun objective
+  - type: StealTarget
     stealGroup: OfficerHandgun
-# Carpmodia-end - svalinn rework
+# Carpmodia-end - sec loadout and svalinn rework
 
 - type: entity
   name: retro laser blaster
