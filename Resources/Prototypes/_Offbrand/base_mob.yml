@@ -96,8 +96,6 @@
     etco2GasName: reagent-name-carbon-dioxide
     spo2Name: spo2-oxygen
     spo2GasName: reagent-name-oxygen
-    # TODO: heartstop
-    # heartStoppedEffect: StatusEffectHeartStopped
   - type: PainMetabolicRate
     quadraticFactor: 0.00005
     linearFactor: -0.0025

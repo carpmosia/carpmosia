@@ -1,6 +1,7 @@
 using Content.Shared.Body;
 using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Offbrand.Organs;
 
@@ -46,6 +47,12 @@ public sealed partial class OffbrandHeartOrganComponent : Component
 
     [DataField, AutoNetworkedField]
     public bool Beating = true;
+
+    /// <summary>
+    ///  Effect to apply when heart is stopped.
+    /// </summary>
+    [DataField]
+    public EntProtoId HeartStoppedEffect = "StatusEffectHeartStopped";
 }
 
 [RegisterComponent]

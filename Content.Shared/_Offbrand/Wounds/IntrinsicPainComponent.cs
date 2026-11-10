@@ -2,11 +2,12 @@ using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Content.Shared._Offbrand.StatusEffects;
 
 namespace Content.Shared._Offbrand.Wounds;
 
 [RegisterComponent, NetworkedComponent]
-[Access(typeof(IntrinsicPainSystem))]
+[Access(typeof(IntrinsicPainSystem), typeof(PainModifyingStatusEffectSystem))]
 public sealed partial class IntrinsicPainComponent : Component
 {
     /// <summary>

@@ -324,9 +324,12 @@
   id: StatusEffectHeartStopped
   name: stopped heart
   components:
+  - type: CardiacArrestStatusEffect
   - type: PopupOnAppliedStatusEffect
     message: own-heart-has-stopped-beating
     visualType: LargeCaution
+  - type: PainModifyingStatusEffect
+    amount: 120
 
 - type: entity
   parent: MobStatusEffectBase

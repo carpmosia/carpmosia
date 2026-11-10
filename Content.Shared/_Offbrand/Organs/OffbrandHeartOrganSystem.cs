@@ -6,6 +6,7 @@ using Content.Shared.Medical;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Rejuvenate;
 using Content.Shared.StatusEffectNew;
+using Content.Shared.StatusEffectNew.Components;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
@@ -157,6 +158,9 @@ public sealed partial class OffbrandHeartOrganSystem : EntitySystem
 
         var stoppedEvt = new HeartStoppedEvent();
         RaiseLocalEvent(body, ref stoppedEvt);
+
+        if(!_statusEffects.TrySetStatusEffectDuration(Transform(ent).ParentUid, ent.Comp.HeartStoppedEffect))
+            throw new InvalidOperationException("Failed to apply cardiac arrest status effect.");
     }
 
     public void TryRestartHeart(Entity<OffbrandHeartOrganComponent?, DamageableOrganComponent?> ent)
@@ -177,6 +181,10 @@ public sealed partial class OffbrandHeartOrganSystem : EntitySystem
 
         if (Comp<OrganComponent>(ent).Body is not { } body)
             return;
+
+        if (_statusEffects.TryEffectsWithComp<CardiacArrestStatusEffectComponent>(Transform(ent).ParentUid, out var effects))
+            foreach(var effect in effects)
+                QueueDel(effect);
 
         var evt = new HeartStartedEvent();
         RaiseLocalEvent(body, ref evt);
