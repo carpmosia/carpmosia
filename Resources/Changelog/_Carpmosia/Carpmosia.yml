@@ -2877,4 +2877,17 @@
   id: 418
   time: '2026-11-08T21:21:41.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/384
+- author: pannocatto
+  changes:
+  - message: new gun loadout option for security officers and wardens, letting them
+      pick between a mk, a shell gun and a svalinn
+    type: Add
+  - message: svalinns now shoot 14 heat laser projectiles instead of 7 heat hitscans
+    type: Tweak
+  - message: svalinns and security shell guns now count towards the thief's handgun
+      objective, making the objective completable on any map
+    type: Tweak
+  id: 419
+  time: '2026-11-11T01:03:39.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/674
 Order: -1
