@@ -19,3 +19,26 @@
     proto: BulletLaserWindowPiercingShotgun
     count: 4
     spread: 9
+
+- type: entity
+  parent: BulletLaser
+  id: BulletLaserSvalinn
+  categories: [ HideSpawnMenu ]
+  name: svalinn laser bolt
+  components:
+  - type: PointLight
+    enabled: true
+    color: "#ff4300"
+  - type: Projectile
+    impactEffect: BulletImpactEffectOrangeDisabler
+    damage:
+      types:
+        Heat: 12
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape: !type:PhysShapeAabb
+          bounds: "-0.1,-0.1,0.1,0.1"
+        hard: false
+        mask:
+        - Opaque

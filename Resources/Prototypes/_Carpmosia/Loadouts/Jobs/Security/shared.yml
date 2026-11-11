@@ -24,3 +24,30 @@
     proto: CompetentDetective
   equipment:
     eyes: ClothingEyesGlassesNoir
+
+- type: loadout
+  id: SecurityPistol
+  dummyEntity: WeaponPistolMk58
+  equipment:
+    pocket1: WeaponPistolMk58
+  storage:
+    back:
+    - MagazinePistol
+
+- type: loadout
+  id: SecurityShell
+  dummyEntity: WeaponFlareGunSecurity
+  equipment:
+    pocket1: WeaponFlareGunSecurity
+  storage:
+    back:
+    - MagazineShotgun
+
+- type: loadout
+  id: SecuritySvalinn
+  dummyEntity: WeaponLaserSvalinn
+  equipment:
+    pocket1: WeaponLaserSvalinn
+  storage:
+    back:
+    - PowerCellSmall

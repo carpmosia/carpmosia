@@ -153,7 +153,7 @@
   name: svalinn laser pistol
   parent: [BaseWeaponPowerCellSmall, BaseSecurityContraband]
   id: WeaponLaserSvalinn
-  description: A cheap and widely used laser pistol.
+  description: A cheap and widely used security laser pistol, offering a window-piercing alternative to the commonly used mk 58, at the cost of a lower damage output. Feeds from power cells. # Carpmosia-edit - sec loadout and svalinn rework
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/svalinn.rsi
@@ -177,6 +177,21 @@
     tags:
     - Sidearm
     - LaserWeapon
+  # Carpmosia-start - sec loadout and svalinn rework
+  - type: Gun
+    minAngle: 1
+    maxAngle: 8
+    angleIncrease: 2
+    angleDecay: 6
+    fireRate: 2
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+  - type: BatteryAmmoProvider
+    proto: BulletLaserSvalinn
+    fireCost: 50
+  - type: StealTarget
+    stealGroup: OfficerHandgun
+  # Carpmosia-end - sec loadout and svalinn rework
 
 - type: entity
   name: retro laser blaster

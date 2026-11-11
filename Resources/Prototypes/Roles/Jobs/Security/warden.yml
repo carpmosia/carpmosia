@@ -35,11 +35,11 @@
     # eyes: ClothingEyesGlassesSecurity # Carpmosia-edit - crew visors
     id: WardenPDA
     ears: ClothingHeadsetSecurity
-    pocket1: WeaponPistolMk58
+    #pocket1: WeaponPistolMk58 # Carpmosia-edit - sec loadout and svalinn rework
   storage:
     back:
     - Flash
-    - MagazinePistol
+    #- MagazinePistol # Carpmosia-edit - sec loadout and svalinn rework
 
 - type: chameleonOutfit
   id: WardenChameleonOutfit
