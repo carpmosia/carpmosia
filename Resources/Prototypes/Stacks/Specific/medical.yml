@@ -1,28 +1,28 @@
 # Topical medicines
 
 - type: stack
-  parent: BaseSmallStack
+  parent: BaseMediumStack # Carpmosia-edit - Offmed port
   id: Ointment
   name: stack-ointment
   icon: { sprite: "/Textures/Objects/Specific/Medical/medical.rsi", state: ointment }
   spawn: Ointment
 
 - type: stack
-  parent: BaseSmallStack
+  parent: BaseMediumStack  # Carpmosia-edit - Offmed port
   id: AloeCream
   name: stack-aloe-cream
   icon: { sprite: "/Textures/Objects/Specific/Hydroponics/aloe.rsi", state: cream }
   spawn: AloeCream
 
 - type: stack
-  parent: BaseSmallStack
+  parent: BaseMediumStack # Carpmosia-edit - Offmed port
   id: Gauze
   name: stack-gauze
   icon: { sprite: "/Textures/Objects/Specific/Medical/medical.rsi", state: gauze }
   spawn: Gauze
 
 - type: stack
-  parent: BaseSmallStack
+  parent: BaseMediumStack # Carpmosia-edit - Offmed port
   id: Brutepack
   name: stack-brutepack
   icon: { sprite: "/Textures/Objects/Specific/Medical/medical.rsi", state: gauze }

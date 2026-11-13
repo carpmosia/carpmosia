@@ -1,0 +1,38 @@
+- type: entity
+  parent: PrefilledSyringe
+  id: SyringeParacetamol
+  suffix: paracetamol
+  components:
+  - type: Label
+    localizedLabel: reagent-name-paracetamol
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Paracetamol
+        Quantity: 15
+
+- type: entity
+  parent: PrefilledSyringe
+  id: SyringeTramadol
+  suffix: tramadol
+  components:
+  - type: Label
+    localizedLabel: reagent-name-tramadol
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Tramadol
+        Quantity: 15
+
+- type: entity
+  parent: PrefilledSyringe
+  id: SyringeOxycodone
+  suffix: oxycodone
+  components:
+  - type: Label
+    localizedLabel: reagent-name-oxycodone
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Oxycodone
+        Quantity: 15

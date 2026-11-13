@@ -1,11 +1,11 @@
 - type: vendingMachineInventory
   id: NanoMedInventory
   startingInventory:
-    HandheldHealthAnalyzer: 1
+    HandheldVitalsMonitor: 1 # Carpmosia-edit - Offmed port
     Gauze: 3
     Brutepack: 3
     Ointment: 3
-    Bloodpack: 3
+    ChemistryBottleParacetamol: 3 # Offbrand
     ChemistryBottleEpinephrine: 3
     Syringe: 3
     PillCanisterTricordrazine: 2
@@ -16,12 +16,13 @@
 - type: vendingMachineInventory
   id: NanoMedCivilianWallInventory
   startingInventory:
-    HandheldHealthAnalyzer: 1
+    HandheldVitalsMonitor: 1 # Carpmosia-edit - Offmed port
     Tourniquet: 3
     Brutepack: 3
     AloeCream: 3 # Currently just a reskin of Ointment but it's something
     Bloodpack: 3
     ChemistryBottleInaprovaline: 3
+    ChemistryBottleParacetamol: 3 # Offbrand
     Syringe: 3
     PillTricordrazine: 10
   contrabandInventory:
@@ -32,7 +33,7 @@
   id: NanoMedPlusInventory
   startingInventory:
     # Shared Essential
-    HandheldHealthAnalyzer: 3
+    HandheldVitalsMonitor: 3 # Carpmosia-edit - Offmed port
     JetInjector: 3
     ClothingBeltMedical: 2 # Carpmosia-edit - Dingus bags
     # Paramed Essential Gear
@@ -70,7 +71,7 @@
 - type: vendingMachineInventory
   id: NanoMedCivilianInventory
   startingInventory:
-    HandheldHealthAnalyzer: 3
+    HandheldVitalsMonitor: 3 # Carpmosia-edit - Offmed port
     Tourniquet: 5
     Brutepack: 5
     AloeCream: 5

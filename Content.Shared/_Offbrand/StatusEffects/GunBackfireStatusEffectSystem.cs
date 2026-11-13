@@ -1,0 +1,50 @@
+using Content.Shared.Popups;
+using Content.Shared.Random.Helpers;
+using Content.Shared.StatusEffectNew.Components;
+using Content.Shared.StatusEffectNew;
+using Content.Shared.Stunnable;
+using Content.Shared.Weapons.Ranged.Events;
+using Robust.Shared.Audio.Systems;
+using Robust.Shared.Timing;
+
+namespace Content.Shared._Offbrand.StatusEffects;
+
+public sealed partial class GunBackfireStatusEffectSystem : EntitySystem
+{
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedStunSystem _stun = default!;
+
+    [SubscribeLocalEvent]
+    private void OnGunBackfireStun(GunBackfireStunEvent args)
+    {
+        _stun.TryUpdateParalyzeDuration(args.Target, args.Duration);
+    }
+
+    [SubscribeLocalEvent]
+    private void OnSelfBeforeGunShot(Entity<GunBackfireStatusEffectComponent> ent, ref StatusEffectRelayedEvent<SelfBeforeGunShotEvent> args)
+    {
+        if (Comp<StatusEffectComponent>(ent).AppliedTo is not { } target)
+            return;
+
+        if (args.Args.Cancelled)
+            return;
+
+        if (!SharedRandomExtensions.PredictedProb(_timing, ent.Comp.Probability, GetNetEntity(args.Args.Gun)))
+            return;
+
+        QueueLocalEvent(new GunBackfireStunEvent(target, ent.Comp.BackfireStunTime));
+        _audio.PlayPvs(ent.Comp.BackfireSound, target);
+        _popup.PopupEntity(Loc.GetString(ent.Comp.BackfireMessage), target, target);
+
+        args.Args.Cancel();
+    }
+
+}
+
+public sealed class GunBackfireStunEvent(EntityUid uid, TimeSpan duration) : EntityEventArgs
+{
+    public readonly EntityUid Target = uid;
+    public readonly TimeSpan Duration = duration;
+}

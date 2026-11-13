@@ -15,7 +15,7 @@
         icon:
           sprite: Objects/Specific/Medical/healthanalyzer.rsi
           state: analyzer
-        name: construction-graph-tag-health-analyzer
+        name: construction-graph-tag-vitals-monitor # Carpmosia-edit - Offmed Port
         doAfter: 2
       - tag: ProximitySensor
         icon:

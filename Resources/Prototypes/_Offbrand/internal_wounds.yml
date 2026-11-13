@@ -1,0 +1,71 @@
+- type: entity
+  abstract: true
+  id: WoundInternalBase
+  components:
+  - type: StatusEffect
+  - type: Sprite
+    drawdepth: Effects
+  - type: RejuvenateRemovedStatusEffect
+  - type: Wound
+
+- type: entity
+  parent: WoundInternalBase
+  id: WoundFracture
+  name: fracture wound
+  components:
+  - type: Wound
+    maximumDamage: 0
+  - type: AnalyzableWound
+    descriptions:
+      0: wound-internal-fracture
+  - type: PopupOnAppliedStatusEffect
+    message: fracture-applied
+    visualType: MediumCaution
+  - type: HandIncapacitationStatusEffect
+  - type: PalpationDescription
+    description: palpation-broken-bone
+
+# - type: entity
+#   parent: WoundInternalBase
+#   id: WoundCutTendon
+#   name: cut tendon
+#   components:
+#   - type: Wound
+#     maximumDamage: 0
+#   - type: AnalyzableWound
+#     descriptions:
+#       0: wound-internal-cut-tendon
+#   - type: PopupOnAppliedStatusEffect
+#     message: cut-tendon-applied
+#     visualType: MediumCaution
+#   - type: HandIncapacitationStatusEffect
+#   - type: PalpationDescription
+#     description: palpation-cut-tendon
+
+- type: entity
+  parent: WoundInternalBase
+  id: WoundArterialBleeding
+  name: arterial bleeding
+  components:
+  - type: Wound
+    damage:
+      types:
+        Slash: 5
+    maximumDamage: 5
+  - type: BleedingWound
+    bleedingCoefficients:
+      Slash: 0.2
+    bleedingDurationCoefficients:
+      Slash: 1
+    startsBleedingAbove: 0
+    requiresTendingAbove: 0
+  - type: AnalyzableWound
+    descriptions:
+      0: wound-arterial-bleeding
+  - type: StethoscopeDescription
+    description: stethoscope-arterial-bleeding
+  - type: PopupOnAppliedStatusEffect
+    message: arterial-bleeding-applied
+    visualType: MediumCaution
+  - type: PalpationDescription
+    description: palpation-arterial-bleeding

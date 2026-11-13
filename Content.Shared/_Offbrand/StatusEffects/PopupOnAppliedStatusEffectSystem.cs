@@ -1,0 +1,15 @@
+using Content.Shared.Popups;
+using Content.Shared.StatusEffectNew;
+
+namespace Content.Shared._Offbrand.StatusEffects;
+
+public sealed partial class PopupOnAppliedStatusEffectSystem : EntitySystem
+{
+    [Dependency] private SharedPopupSystem _popup = default!;
+
+    [SubscribeLocalEvent]
+    private void OnStatusEffectApplied(Entity<PopupOnAppliedStatusEffectComponent> ent, ref StatusEffectAppliedEvent args)
+    {
+        _popup.PopupEntity(Loc.GetString(ent.Comp.Message), args.Target, args.Target, ent.Comp.VisualType);
+    }
+}

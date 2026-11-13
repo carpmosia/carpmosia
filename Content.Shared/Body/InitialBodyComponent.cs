@@ -17,7 +17,7 @@ public sealed partial class InitialBodyComponent : Component
     public Dictionary<ProtoId<OrganCategoryPrototype>, EntProtoId<OrganComponent>> Organs;
 
     /// <summary>
-    /// Organ relationships, based on their categories. Keys are parents to their values.
+    /// Offbrand - Organ relationships, based on their categories.
     /// </summary>
     [DataField]
     public Dictionary<ProtoId<OrganCategoryPrototype>, HashSet<ProtoId<OrganCategoryPrototype>>>? Relationships;

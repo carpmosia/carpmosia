@@ -2,6 +2,7 @@ using Content.Shared.DeviceNetwork;
 using Content.Shared.DoAfter;
 using Robust.Shared.Map;
 using Robust.Shared.Serialization;
+using Content.Shared._Offbrand.Analyzers; // Offbrand
 
 namespace Content.Shared.Medical.SuitSensors;
 
@@ -35,9 +36,12 @@ public partial struct SuitSensorStatus : IEquatable<SuitSensorStatus>
     public string JobIcon;
     public List<string> JobDepartments;
     public bool IsAlive;
-    public int? TotalDamage;
-    public int? TotalDamageThreshold;
-    public float? DamagePercentage => TotalDamageThreshold == null || TotalDamage == null ? null : TotalDamage / (float) TotalDamageThreshold;
+    // Begin Offbrand Changes
+    // public int? TotalDamage;
+    // public int? TotalDamageThreshold;
+    // public float? DamagePercentage => TotalDamageThreshold == null || TotalDamage == null ? null : TotalDamage / (float) TotalDamageThreshold;
+    public VitalsData? VitalsData;
+    // End Offbrand Changes
     public NetCoordinates? Coordinates;
 
     public bool Equals(SuitSensorStatus other)
@@ -49,8 +53,8 @@ public partial struct SuitSensorStatus : IEquatable<SuitSensorStatus>
                && Job == other.Job
                && JobIcon == other.JobIcon
                && IsAlive == other.IsAlive
-               && TotalDamage == other.TotalDamage
-               && TotalDamageThreshold == other.TotalDamageThreshold
+            //    && TotalDamage == other.TotalDamage
+            //    && TotalDamageThreshold == other.TotalDamageThreshold
                && Nullable.Equals(Coordinates, other.Coordinates);
     }
 
@@ -69,8 +73,8 @@ public partial struct SuitSensorStatus : IEquatable<SuitSensorStatus>
         hashCode.Add(Job);
         hashCode.Add(JobIcon);
         hashCode.Add(IsAlive);
-        hashCode.Add(TotalDamage);
-        hashCode.Add(TotalDamageThreshold);
+        // hashCode.Add(TotalDamage);
+        // hashCode.Add(TotalDamageThreshold);
         hashCode.Add(Coordinates);
         return hashCode.ToHashCode();
     }
@@ -108,6 +112,26 @@ public enum SuitSensorMode : byte
     /// Sensor sends vitals status and GPS position
     /// </summary>
     SensorCords = 3
+}
+
+public static class SuitSensorConstants
+{
+    public const string NET_OWNER_UID = "ownerUid";
+    public const string NET_NAME = "name";
+    public const string NET_JOB = "job";
+    public const string NET_JOB_ICON = "jobIcon";
+    public const string NET_JOB_DEPARTMENTS = "jobDepartments";
+    public const string NET_IS_ALIVE = "alive";
+    // Begin Offbrand Changes
+    // public const string NET_TOTAL_DAMAGE = "vitals";
+    // public const string NET_TOTAL_DAMAGE_THRESHOLD = "vitalsThreshold";
+    public const string NET_COORDINATES = "coords";
+    public const string NET_WOUNDABLE_DATA = "woundableData";
+    public const string NET_SUIT_SENSOR_UID = "uid";
+    // End Offbrand Changes
+
+    ///Used by the CrewMonitoringServerSystem to send the status of all connected suit sensors to each crew monitor
+    public const string NET_STATUS_COLLECTION = "suit-status-collection";
 }
 
 [Serializable, NetSerializable]

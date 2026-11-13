@@ -1,0 +1,65 @@
+# Carpmed poison status effects
+
+# - type: entity
+#   parent: MobStatusEffectDebuff
+#   id: StatusEffectOmnizpoison
+#   name: organ damage over time
+#   components:
+#   - type: OrganDamageOverTimeStatusEffect
+#     amount: 0.5
+#     categories: ["Heart", "Stomach", "Lungs"]
+
+- type: entity
+  parent: MobStatusEffectDebuff
+  id: StatusEffectPoison
+  name: organ damage over time
+  components:
+  - type: OrganDamageOverTimeStatusEffect
+    amount: 0.5
+    categories: ["Heart", "Lungs"]
+
+- type: entity
+  parent: MobStatusEffectDebuff
+  id: StatusEffectSlowPoison
+  name: slow organ damage over time
+  components:
+  - type: OrganDamageOverTimeStatusEffect
+    amount: 0.25
+    categories: ["Heart", "Lungs"]
+
+- type: entity
+  parent: MobStatusEffectDebuff
+  id: StatusEffectPoisonHeart
+  name: heart damage over time
+  components:
+  - type: OrganDamageOverTimeStatusEffect
+    amount: 0.5
+    categories: ["Heart"]
+
+- type: entity
+  parent: MobStatusEffectDebuff
+  id: StatusEffectPoisonLungs
+  name: lung damage over time
+  components:
+  - type: OrganDamageOverTimeStatusEffect
+    amount: 0.5
+    categories: ["Lungs"]
+
+- type: entity
+  parent: MobStatusEffectDebuff
+  id: StatusEffectRapidPoisonHeart
+  name: rapid heart damage over time
+  components:
+  - type: OrganDamageOverTimeStatusEffect
+    amount: 1
+    categories: ["Heart"]
+
+- type: entity
+  parent: MobStatusEffectDebuff
+  id: StatusEffectSlowPoisonHeart
+  name: rapid heart damage over time
+  components:
+  - type: OrganDamageOverTimeStatusEffect
+    amount: 0.25
+    categories: ["Heart"]
+
