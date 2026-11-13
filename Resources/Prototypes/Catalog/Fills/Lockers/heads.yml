@@ -48,6 +48,7 @@
     - id: WeaponDisabler
     - id: ClothingEyesGlassesCommand
     - id: OrganSkeletonPersonHead # A skull to accompany your skeleton crew
+    - id: WalletCaptain # Carpmosia-edit - Wallets
       conditions:
       - !type:PlayerCountCondition
         max: 15
