@@ -18,6 +18,10 @@ bounty-console-flavor-right = v1.4
 
 bounty-manifest-header = [font size=14][bold]Official cargo bounty manifest[/bold] (ID#{$id})[/font]
 bounty-manifest-list-start = Item manifest:
+# Carpmosia-start - Cargo reagent bounties
+bounty-console-manifest-entry-reagent = {$amount}u of {$reagent}
+bounty-manifest-list-start-reagents = Reagent manifest:
+# Carpmosia-end - Cargo reagent bounties
 
 bounty-console-tab-available-label = Available
 bounty-console-tab-history-label = History
