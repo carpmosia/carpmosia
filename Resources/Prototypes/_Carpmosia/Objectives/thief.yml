@@ -1,3 +1,14 @@
+#New base steal objective type for when an objective is to steal just one of a list of items
+- type: entity
+  abstract: true
+  parent: [BaseThiefObjective, BaseThiefStealObjective]
+  id: BaseThiefStealChoiceObjective
+  components:
+  - type: StealCondition
+    verifyMapExistence: true
+    descriptionText: objective-condition-thief-choice-description
+
+#Salvage Shuttle Circuit board
 - type: entity
   parent: BaseThiefStealObjective
   id: SalvageShuttleCircuitboardStealObjective
@@ -8,3 +19,15 @@
     stealGroup: SalvageShuttleConsoleCircuitboard
   - type: Objective
     difficulty: 0.7
+
+#Departmental head Fax machine steal objectives
+- type: entity
+  parent: BaseThiefStealChoiceObjective #technically this is kinda a steal structure objective, but steal choice works better for the description
+  id: HeadFaxMachinesStealObjective
+  components:
+  - type: NotJobRequirement
+    jobs: [ HeadOfPersonnel, HeadOfSecurity, Quartermaster, ChiefEngineer, ResearchDirector, ChiefMedicalOfficer ]
+  - type: StealCondition
+    stealGroup: HeadFaxMachines
+  - type: Objective
+    difficulty: 2
