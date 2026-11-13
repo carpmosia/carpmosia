@@ -24,6 +24,7 @@ using Robust.Shared.Utility;
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.GameTicking.Rules.Components;
 using Content.Shared.Mindshield;
+using Content.Shared.Changeling.Components;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -269,6 +270,12 @@ public sealed partial class ServerBloodBoundRuleSystem : BloodBoundRuleSystem
                 continue;
 
             errorMessage = "blood-bound-convert-failed-target";
+            return false;
+        }
+        // Target is a Changeling
+        if (_roleSystem.MindHasRole<ChangelingRoleComponent>(targetMindId, out _))
+        {
+            errorMessage = "blood-bound-convert-failed-changeling";
             return false;
         }
 

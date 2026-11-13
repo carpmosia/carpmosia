@@ -24,6 +24,7 @@ blood-bound-convert-failed-no-mind = {CAPITALIZE(THE($converted))} does not have
 blood-bound-convert-failed-already-bound = {CAPITALIZE(THE($converted))} is already a blood bound.
 blood-bound-convert-failed-target = {CAPITALIZE(THE($converted))} is your target.
 blood-bound-convert-failed-zombie = {CAPITALIZE(THE($converted))} is a zombie.
+blood-bound-convert-failed-changeling = {CAPITALIZE(THE($converted))}'s mind is unaffected by the conversion.
 blood-bound-convert-failed-shielded = {CAPITALIZE(THE($converted))}'s mind is too protected.
 blood-bound-convert-failed-dead = {CAPITALIZE(THE($converted))} is dead.
 blood-bound-convert-failed-preference = {CAPITALIZE(THE($converted))}'s mind is unaffected by the conversion.
