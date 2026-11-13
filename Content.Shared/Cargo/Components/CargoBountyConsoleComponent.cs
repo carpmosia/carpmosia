@@ -1,3 +1,4 @@
+using Content.Shared.Access; // Carpmosia-edit - Cargo bookkeeping
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -55,6 +56,14 @@ public sealed partial class CargoBountyConsoleComponent : Component
     /// </summary>
     [DataField]
     public TimeSpan DenySoundDelay = TimeSpan.FromSeconds(2);
+
+    // Carpmosia-start - Cargo bookkeeping
+    /// <summary>
+    /// Access level required for claiming bounties
+    /// </summary>
+    [DataField]
+    public ProtoId<AccessLevelPrototype>? ClaimAccess;
+    // Carpmosia-end - Cargo bookkeeping
 }
 
 [NetSerializable, Serializable]
@@ -93,3 +102,28 @@ public sealed class BountySkipMessage : BoundUserInterfaceMessage
         BountyId = bountyId;
     }
 }
+// Carpmosia-start - Cargo bookkeeping
+[Serializable, NetSerializable]
+public sealed class BountyClaimMessage : BoundUserInterfaceMessage
+{
+    public string BountyId;
+
+    public BountyClaimMessage(string bountyId)
+    {
+        BountyId = bountyId;
+    }
+}
+
+[Serializable, NetSerializable]
+public sealed class BountyDeliveryStatusMessage : BoundUserInterfaceMessage
+{
+    public string BountyId;
+    public CargoBountyData.CargoBountyStatus Status;
+
+    public BountyDeliveryStatusMessage(string bountyId, CargoBountyData.CargoBountyStatus status)
+    {
+        BountyId = bountyId;
+        Status = status;
+    }
+}
+// Carpmosia-end - Cargo bookkeeping
