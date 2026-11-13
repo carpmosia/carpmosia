@@ -13,3 +13,52 @@
   targetNode: mesonDiagnostic
   category: construction-category-clothing
   objectType: Item
+
+- type: construction
+  id: GlassesSecurityPrescription
+  graph: GlassesSecurityPrescription
+  startNode: start
+  targetNode: done
+  category: construction-category-clothing
+  objectType: Item
+
+- type: construction
+  id: GlassesMedicalPrescription
+  graph: GlassesMedicalPrescription
+  startNode: start
+  targetNode: done
+  category: construction-category-clothing
+  objectType: Item
+
+- type: construction
+  id: GlassesCommandPrescription
+  graph: GlassesCommandPrescription
+  startNode: start
+  targetNode: done
+  category: construction-category-clothing
+  objectType: Item
+
+- type: construction
+  id: GlassesMedSecPrescription
+  graph: GlassesMedSecPrescription
+  startNode: start
+  targetNode: done
+  category: construction-category-clothing
+  objectType: Item
+
+- type: construction
+  id: GlassesChemicalPrescription
+  graph: GlassesChemicalPrescription
+  startNode: start
+  targetNode: done
+  category: construction-category-clothing
+  objectType: Item
+
+- type: construction
+  id: GlassesMesonPrescription
+  graph: GlassesMesonPrescription
+  startNode: start
+  targetNode: done
+  category: construction-category-clothing
+  objectType: Item
+
