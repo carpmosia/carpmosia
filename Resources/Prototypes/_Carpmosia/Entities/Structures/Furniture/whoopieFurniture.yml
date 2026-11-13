@@ -1,0 +1,135 @@
+- type: entity #whoopie component. adding this as additional parent and then we have haha-fartbuckle.
+  abstract: true
+  id: WhoopieBase
+  suffix: whoopie
+  components:
+  - type: Strap
+    buckleSound:
+      collection: Parp
+      params:
+        variation: 0.125
+
+# Seats
+- type: entity
+  parent: !type:CreateVariants
+    sequences:
+    - [ WhoopieBase, Chair ]
+    - [ WhoopieBase, ChairGreyscale ]
+    - [ WhoopieBase, Stool ]
+    - [ WhoopieBase, StoolBar ]
+    - [ WhoopieBase, ChairBrass ]
+    - [ WhoopieBase, ChairOfficeLight ]
+    - [ WhoopieBase, ChairOfficeDark ]
+    - [ WhoopieBase, ComfyChair ]
+    - [ WhoopieBase, ChairPilotSeat ]
+    - [ WhoopieBase, ChairWood ]
+    - [ WhoopieBase, ChairMeat ]
+    - [ WhoopieBase, SteelBench ]
+    - [ WhoopieBase, CardStool ]
+    - [ WhoopieBase, WoodenBench ]
+    - [ WhoopieBase, ChairXeno ]
+  id: !type:CreateVariants
+    values:
+    - WhoopieChair
+    - WhoopieChairGreyscale
+    - WhoopieStool
+    - WhoopieBarStool
+    - WhoopieChairBrass
+    - WhoopieChairOfficeLight
+    - WhoopieChairOfficeDark
+    - WhoopieComfyChair
+    - WhoopieChairPilotSeat
+    - WhoopieChairWood
+    - WhoopieChairMeat
+    - WhoopieSteelBench
+    - WhoopieCardStool
+    - WhoopieWoodenBench
+    - WhoopieChairXeno
+  suffix: !type:CreateVariants
+    values:
+    - whoopie
+    - White, whoopie
+    - whoopie
+    - whoopie
+    - whoopie
+    - whoopie
+    - whoopie
+    - whoopie
+    - whoopie
+    - whoopie
+    - whoopie
+    - whoopie
+    - whoopie
+    - whoopie
+    - whoopie
+  components:
+  - type: Construction
+    graph: Seat
+    node: !type:CreateVariants
+      values:
+      - chairWhoopie
+      - chairGreyscaleWhoopie
+      - stoolWhoopie
+      - stoolBarWhoopie
+      - chairBrassWhoopie
+      - chairOfficeWhoopie
+      - chairOfficeDarkWhoopie
+      - chairComfyWhoopie
+      - chairPilotSeatWhoopie
+      - chairWoodWhoopie
+      - chairMeatWhoopie
+      - chairSteelBenchWhoopie
+      - stoolCardWhoopie
+      - chairWoodBenchWhoopie
+      - chairXenoWhoopie
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: !type:CreateVariants
+          values: [ 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 5, 40, 40 ]
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          WhoopieCushion:
+            min: 1
+            max: 1
+
+# Beds
+- type: entity
+  parent: !type:CreateVariants
+    sequences:
+    - [ WhoopieBase, Bed ]
+    - [ WhoopieBase, MedicalBed ]
+    - [ WhoopieBase, DogBed ]
+    - [ WhoopieBase, Mattress ]
+    - [ WhoopieBase, PsychBed ]
+  id: !type:CreateVariants
+    values:
+    - WhoopieBed
+    - WhoopieMedicalBed
+    - WhoopieDogBed
+    - WhoopieMattress
+    - WhoopiePsychBed
+  components:
+  - type: Construction # has to come BEFORE 'PlaceableSurface' or constructing won't work
+    graph: bed
+    node: !type:CreateVariants
+      values:
+      - bedWhoopie
+      - medicalbedWhoopie
+      - dogbedWhoopie
+      - mattressWhoopie
+      - psychbedWhoopie
+  - type: PlaceableSurface
+    placeCentered: true
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: !type:CreateVariants
+          values: [ 40, 40, 40, 40, 80 ]
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          WhoopieCushion:
+            min: 1
+            max: 1
