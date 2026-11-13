@@ -1,6 +1,8 @@
 - type: loadoutGroup
   parent: [ EngineeringHead, CommonHead ]
   id: AtmosphericTechnicianHead
+  loadouts:
+  - AtmosphericTechnicianBeret
 
 - type: loadoutGroup
   parent: [ EngineeringGlasses, CommonGlasses ]
