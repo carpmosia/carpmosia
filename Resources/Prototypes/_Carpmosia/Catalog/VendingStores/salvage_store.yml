@@ -321,3 +321,13 @@
   - SalvageStoreFun
   conditions:
   - !type:BuyerAccessCondition
+
+- type: listing
+  id: SalvageStoreWaterBottle
+  productEntity: DrinkMREFlask
+  cost:
+    SalvageTicket: 200
+  categories:
+  - SalvageStoreConsumables
+  conditions:
+  - !type:BuyerAccessCondition
