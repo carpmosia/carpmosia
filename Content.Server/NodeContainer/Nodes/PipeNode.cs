@@ -36,6 +36,7 @@ namespace Content.Server.NodeContainer.Nodes
         public PipeDirection CurrentPipeDirection { get; private set; }
 
         private HashSet<PipeNode>? _alwaysReachable;
+        public HashSet<PipeNode>? GetAlwaysReachable() => _alwaysReachable; // Carpmosia-edit - Starlight cable/pipe docking
 
         public void AddAlwaysReachable(PipeNode pipeNode)
         {
@@ -143,7 +144,17 @@ namespace Content.Server.NodeContainer.Nodes
         public override void OnAnchorStateChanged(IEntityManager entityManager, bool anchored)
         {
             if (!anchored)
+            // Carpmosia-start - Starlight cable/pipe docking
+            {
+                if (_alwaysReachable != null)
+                {
+                    _alwaysReachable.Clear();
+                    if (NodeGroup != null)
+                        entityManager.System<NodeGroupSystem>().QueueRemakeGroup((BaseNodeGroup) NodeGroup);
+                }
                 return;
+            }
+            // Carpmosia-end - Starlight cable/pipe docking
 
             // update valid pipe directions
 
@@ -164,6 +175,11 @@ namespace Content.Server.NodeContainer.Nodes
             Entity<MapGridComponent>? grid,
             IEntityManager entMan)
         {
+            // Carpmosia-start - Starlight cable docking
+            if (!xform.Comp.Anchored || grid is not { } gridEnt)
+                yield break;
+            // Carpmosia-end - Starlight cable docking
+
             if (_alwaysReachable != null)
             {
                 var remQ = new RemQueue<PipeNode>();
@@ -182,8 +198,10 @@ namespace Content.Server.NodeContainer.Nodes
                 }
             }
 
-            if (!xform.Comp.Anchored || grid is not { } gridEnt)
-                yield break;
+            // Carpmosia-start - Starlight cable docking
+            // if (!xform.Comp.Anchored || grid is not { } gridEnt)
+            //     yield break;
+            // Carpmosia-end - Starlight cable docking
 
             var mapSystem = entMan.System<SharedMapSystem>();
             var pos = mapSystem.TileIndicesFor(gridEnt, xform.Comp.Coordinates);
