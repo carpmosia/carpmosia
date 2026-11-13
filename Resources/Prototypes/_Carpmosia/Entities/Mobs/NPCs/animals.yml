@@ -171,3 +171,32 @@
       - ReagentId: Water
         Quantity: 12
   - type: ZombieImmune
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobBeeAngry
+  name: Angry Bee Spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: 0
+      sprite: Mobs/Animals/bee.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - MobAngryBee
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobBeeAngrySwarm
+  name: Angry Bee Swarm
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: 0
+      sprite: Mobs/Animals/bee.rsi
+  - type: EntityTableSpawner
+    table:
+      id: SpawnMobBeeAngry
+      amount: 20

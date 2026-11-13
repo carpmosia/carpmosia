@@ -1,0 +1,18 @@
+- type: entity
+  parent: BaseSubdermalImplant
+  id: NekrometamorphoImplant
+  name: nekrometamorpho implant
+  description: This implant either on command or after death will morph your body into a swarm of bees. No more revivals, just one chance.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+    implantAction: ActionActivateNekrometamorphoImplant
+  - type: TriggerOnMobstateChange
+    mobState:
+    - Dead
+  - type: TriggerOnActivateImplant
+  - type: SpawnOnTrigger
+    proto: SpawnMobBeeAngrySwarm
+  - type: DeleteOnTrigger
+  - type: GibOnTrigger
+    targetUser: true
