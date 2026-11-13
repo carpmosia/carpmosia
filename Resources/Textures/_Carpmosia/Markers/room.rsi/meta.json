@@ -1,0 +1,56 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made by Atakku (github)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "arrow",
+            "directions": 4
+        },
+        {
+            "name": "cargo"
+        },
+        {
+            "name": "command"
+        },
+        {
+            "name": "engineering"
+        },
+        {
+            "name": "medical"
+        },
+        {
+            "name": "science"
+        },
+        {
+            "name": "security"
+        },
+        {
+            "name": "service"
+        },
+        {
+            "name": "start"
+        },
+        {
+            "name": "center"
+        },
+        {
+            "name": "arrivals"
+        },
+        {
+            "name": "evac"
+        },
+        {
+            "name": "left",
+            "directions": 4
+        },
+        {
+            "name": "right",
+            "directions": 4
+        }
+    ]
+}
