@@ -2,7 +2,7 @@
 
 #BaseSword
 - type: entity
-  parent: [ BaseItem, BasePointerDagger ] # Carpmosia-edit - Pointing modifier
+  parent: [ BaseItem, BasePointerSharp ] # Carpmosia-edit - Pointing modifier
   id: BaseSword
   abstract: true
   components:

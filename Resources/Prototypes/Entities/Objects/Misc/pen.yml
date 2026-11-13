@@ -1,6 +1,6 @@
 - type: entity
   name: pen
-  parent: [ BaseItem, BasePointerDagger ] # Carpmosia-edit - Pointing modifier
+  parent: [ BaseItem, BasePointerSharp ] # Carpmosia-edit - Pointing modifier
   id: Pen
   description: A dark ink pen.
   components:

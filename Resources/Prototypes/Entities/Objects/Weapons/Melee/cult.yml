@@ -1,6 +1,6 @@
 - type: entity
   name: ritual dagger
-  parent: [ BaseItem, BasePointerDagger ] # Carpmosia-edit - Pointing modifier
+  parent: [ BaseItem, BasePointerSharp ] # Carpmosia-edit - Pointing modifier
   id: RitualDagger
   description: A strange dagger used by sinister groups for rituals and sacrifices.
   components:
@@ -26,7 +26,7 @@
 
 - type: entity
   name: eldritch blade
-  parent: [ BaseItem, BasePointerDagger ] # Carpmosia-edit - Pointing modifier
+  parent: [ BaseItem, BasePointerSharp ] # Carpmosia-edit - Pointing modifier
   id: EldritchBlade
   description: A sword humming with unholy energy.
   components:
@@ -52,7 +52,7 @@
 
 - type: entity
   name: unholy halberd
-  parent: [ BaseItem, BasePointerDagger ] # Carpmosia-edit - Pointing modifier
+  parent: [ BaseItem, BasePointerSharp ] # Carpmosia-edit - Pointing modifier
   id: UnholyHalberd
   description: A poleaxe that seems to be linked to its wielder.
   components:
