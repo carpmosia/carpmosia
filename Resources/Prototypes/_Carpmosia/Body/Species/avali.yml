@@ -323,13 +323,13 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganAvaliInternal, OrganAvaliMetabolizer ]
   id: OrganAvaliLungs
-  description: The oxygen breathing lungs of an avali.
+  description: The nitrogen breathing lungs of an avali. Not hindered by oxygen.
   components:
   - type: Metabolizer
     # not making lungs metabolize faster because that might get janky as fuck
     updateInterval: 0.7
   - type: Lung
-    alert: LowOxygen
+    alert: LowNitrogen
   #- type: Item
   #  size: Small
 
