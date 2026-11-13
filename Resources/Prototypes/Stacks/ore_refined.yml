@@ -19,12 +19,12 @@
   parent: BaseMediumStack
   id: Gold
   name: stack-gold
-  icon: { sprite: "/Textures/Objects/Materials/ingots.rsi", state: gold }
+  icon: { sprite: "/Textures/_Carpmosia/Objects/Materials/ingots.rsi", state: gold } # Carpmosia-edit - Material resprite
   spawn: IngotGold1
 
 - type: stack
   parent: BaseMediumStack
   id: Silver
   name: stack-silver
-  icon: { sprite: "/Textures/Objects/Materials/ingots.rsi", state: silver }
+  icon: { sprite: "/Textures/_Carpmosia/Objects/Materials/ingots.rsi", state: silver } # Carpmosia-edit - Material resprite
   spawn: IngotSilver1

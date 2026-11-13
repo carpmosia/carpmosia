@@ -7,7 +7,7 @@
   - type: Edible
     utensil: Spoon
   - type: Sprite
-    sprite: Objects/Tools/bucket.rsi
+    sprite: _Carpmosia/Objects/Tools/bucket.rsi # Carpmosia-edit - Material resprite
   - type: Item
     size: Large
     shape:
@@ -16,7 +16,7 @@
     solution:
       maxVol: 360 # 3 litres
   - type: Clothing
-    sprite: Objects/Tools/bucket.rsi
+    sprite: _Carpmosia/Objects/Tools/bucket.rsi # Carpmosia-edit - Material resprite
     slots:
     - HEAD
     quickEquip: false
