@@ -481,7 +481,13 @@ public sealed partial class BloodstreamSystem : EntitySystem
         // Removes blood from the bloodstream based on bleed amount (bleed rate)
         // as well as stop their bleeding to a certain extent.
         if (bleedLevel <= 0) // Offbrand
+        {
+            // Offbrand: This also exists in TryModifyBleedAmount but there seems to be some race condition that means it never runs, so we're putting it here, at least for now
+            // TODO: fix race condition
+            _alertsSystem.ClearAlert(entity.Owner, entity.Comp.BleedingAlert);
+
             return;
+        }
 
         var ev = new BleedModifierEvent(bleedLevel, entity.Comp.BleedReductionAmount); // Offbrand
         RaiseLocalEvent(entity, ref ev);
