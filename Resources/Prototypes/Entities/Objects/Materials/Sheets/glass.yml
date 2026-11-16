@@ -11,24 +11,6 @@
     sprite: Objects/Materials/Sheets/glass.rsi
   - type: Damageable
     damageModifierSet: Glass
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 50
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: GlassBreak
-          params:
-            volume: -4
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          ShardGlass:
-            min: 1
-            max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
 
 - type: entity
   parent: SheetGlassBase
@@ -67,6 +49,22 @@
   - type: TicketValue
     ticketValue: 10
   # Carpmosia-end - Salvage Tickets
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+          params:
+            volume: -4
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ShardGlass:
+            min: 1
+            max: 1
 
 - type: entity
   parent: SheetGlass
@@ -136,8 +134,6 @@
           ShardGlassReinforced:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
   - type: Solution
     solution:
       maxVol: 15
@@ -208,8 +204,6 @@
           ShardGlassPlasma:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
   - type: Solution
     solution:
       maxVol: 20
@@ -334,8 +328,6 @@
           ShardGlassUranium:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
   - type: Solution
     solution:
       maxVol: 20
@@ -459,18 +451,14 @@
           ShardGlassClockwork:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
   - type: Solution
     solution:
       maxVol: 20
       reagents:
       - ReagentId: Silicon
         Quantity: 10
-      - ReagentId: Zinc
-        Quantity: 3.3
-      - ReagentId: Copper
-        Quantity: 6.7
+      - ReagentId: Brass
+        Quantity: 10
 
 - type: entity
   parent: SheetClockworkGlass

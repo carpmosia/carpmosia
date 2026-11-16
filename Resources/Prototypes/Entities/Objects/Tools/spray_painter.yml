@@ -1,7 +1,8 @@
 - type: entity
   parent: BaseItem
-  id: SprayPainter
+  id: SprayPainterRecharging
   name: spray painter
+  suffix: Admeme
   description: A spray painter for painting airlocks, pipes, and other items.
   components:
   - type: Sprite
@@ -27,12 +28,13 @@
       white: '#ffffff'
       black: '#333333'
       # standard colors
-      waste: '#ad46ff'
-      distro: '#7ccf00'
-      teg-hot: '#ff637e'
-      teg-cold: '#00d5Be'
-      teg-fuel: '#ff8904'
-      teg-failsafe: '#00d492'
+      waste: '#e69f00'
+      distro: '#56b4e9'
+      teg-hot: '#cc79a7'
+      teg-cold: '#009e73'
+      teg-fuel: '#d55e00'
+      teg-failsafe: '#f0e442'
+      cryogenics: '#0072b2'
       # gas colors
       oxygen: '#2887e8'
       nitrogen: '#da1010'
@@ -46,20 +48,18 @@
       # Carpmosia-end - Better pipe palette
   - type: StaticPrice
     price: 40
-  - type: LimitedCharges
-    maxCharges: 15
-    lastCharges: 15
   - type: PhysicalComposition
     materialComposition:
       Steel: 100
 
 - type: entity
-  parent: SprayPainter
-  id: SprayPainterRecharging
-  suffix: Admeme
+  parent: SprayPainterRecharging
+  id: SprayPainter
+  suffix: ""
   components:
-  - type: AutoRecharge
-    rechargeDuration: 1
+  - type: LimitedCharges
+    maxCharges: 15
+    lastCharges: 15
 
 - type: entity
   parent: SprayPainter
@@ -78,6 +78,8 @@
   components:
   - type: LimitedCharges
     lastCharges: -1
+
+# Ammo
 
 - type: entity
   parent: BaseItem

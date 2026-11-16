@@ -2733,4 +2733,200 @@
   id: 400
   time: '2026-08-31T10:17:54.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/605
+- author: wavesneglected
+  changes:
+  - message: Changed the handcuff delay to be 7 seconds instead of the previous 3
+      seconds.
+    type: Tweak
+  id: 401
+  time: '2026-09-27T12:17:56.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/626
+- author: Atakku
+  changes:
+  - message: Added "Lexorin" lobby art by Safireeye
+    type: Add
+  id: 402
+  time: '2026-10-05T16:10:35.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/630
+- author: Atakku
+  changes:
+  - message: All emergency and ERT shuttles as well as the salvage's reclaimer got
+      cleaned up
+    type: Tweak
+  id: 403
+  time: '2026-10-05T18:23:03.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/613
+- author: CDWimmer
+  changes:
+  - message: A few more emoticons now get automatically converted into emotes
+    type: Tweak
+  id: 404
+  time: '2026-10-05T21:56:40.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/628
+- author: CDWimmer
+  changes:
+  - message: Closet Skeletons ghost role rules encourage roleplay to justify antagging
+      instead of NRP
+    type: Tweak
+  id: 405
+  time: '2026-10-06T00:01:06.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/559
+- author: Atakku
+  changes:
+  - message: Removed the old EoRG popup as it's been merged into the Round End Summary
+    type: Remove
+  - message: Round End Summary now features a tab that reminds you that End of Round
+      Griefing is not allowed
+    type: Tweak
+  id: 406
+  time: '2026-10-06T00:32:05.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/552
+- author: TunayAdaKaracan
+  changes:
+  - message: Mothroaches can now smoke.
+    type: Tweak
+  id: 407
+  time: '2026-10-06T07:20:57.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/627
+- author: CDWimmer
+  changes:
+  - message: Carp Cigs
+    type: Add
+  - message: Resprited Nomad cigarette packet+carton
+    type: Tweak
+  id: 408
+  time: '2026-10-06T07:59:58.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/625
+- author: Atakku
+  changes:
+  - message: 'On Lampocteis: cleaned up all the piping and used inline scrubbers/vents
+      where viable'
+    type: Tweak
+  id: 409
+  time: '2026-10-06T16:35:33.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/603
+- author: imatsoup
+  changes:
+  - message: Temporarily disabled Rat King's Domain ability due to it's interactions
+      with airlocks
+    type: Remove
+  - message: Added Sacrifice ability to Rat King, allowing them to trade rat servants
+      for a heal
+    type: Add
+  id: 410
+  time: '2026-10-06T17:06:28.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/585
+- author: Atakku
+  changes:
+  - message: Most remaining walls and windows have been reverted to the old classic
+      sprites
+    type: Fix
+  id: 411
+  time: '2026-10-12T08:44:55.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/654
+- author: Kingwawa & GlupiyBrush
+  changes:
+  - message: Defibrillator cabinets now show the charger states.
+    type: Tweak
+  id: 412
+  time: '2026-10-09T00:09:41.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/537
+- author: Atakku
+  changes:
+  - message: Inline devices are no longer broken
+    type: Fix
+  id: 413
+  time: '2026-10-12T09:29:40.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/656
+- author: Atakku
+  changes:
+  - message: Fixed missing lv cable in Amber's SAI core
+    type: Fix
+  id: 414
+  time: '2026-10-12T09:28:58.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/657
+- author: SnappingOpossum
+  changes:
+  - message: Fixed mindshielded crew members being convertible by blood bounds.
+    type: Fix
+  id: 415
+  time: '2026-10-13T10:56:45.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/660
+- author: SnappingOpossum
+  changes:
+  - message: Strawberry ice has been removed.
+    type: Remove
+  id: 416
+  time: '2026-10-13T19:37:14.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/655
+- author: malyhob
+  changes:
+  - message: Time requirements have been lowered or removed for certain roles.
+    type: Tweak
+  id: 417
+  time: '2026-10-24T21:50:12.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/663
+- author: CMuncey
+  changes:
+  - message: Added section to health analyzer ui to display the reagents present in
+      the patients bloodstream
+    type: Add
+  - message: Moved damage indicator list in the health analyzer ui to beside the new
+      reagent list (functionality was not changed)
+    type: Tweak
+  id: 418
+  time: '2026-11-08T21:21:41.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/384
+- author: pannocatto
+  changes:
+  - message: new gun loadout option for security officers and wardens, letting them
+      pick between a mk, a shell gun and a svalinn
+    type: Add
+  - message: svalinns now shoot 14 heat laser projectiles instead of 7 heat hitscans
+    type: Tweak
+  - message: svalinns and security shell guns now count towards the thief's handgun
+      objective, making the objective completable on any map
+    type: Tweak
+  id: 419
+  time: '2026-11-11T01:03:39.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/674
+- author: CDWimmer
+  changes:
+  - message: '4 new rare lawsets: Conspiracy, Motivational Speaker, Ghost, and Silence.
+      These can appear rarely as ion storm laws, or selected as a round-start loadout
+      option with a low chance to roll.'
+    type: Add
+  id: 420
+  time: '2026-11-11T01:42:44.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/673
+- author: malyhob
+  changes:
+  - message: The word people has been removed from Moth and Slime species' names.
+    type: Tweak
+  id: 421
+  time: '2026-11-11T04:25:43.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/667
+- author: pannocatto
+  changes:
+  - message: Wheelchair added as an assistive item in loadouts
+    type: Add
+  id: 422
+  time: '2026-11-13T07:42:51.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/668
+- author: pannocatto, RozuZaniwa
+  changes:
+  - message: Added new emotes for Avali's
+    type: Add
+  id: 423
+  time: '2026-11-14T08:28:49.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/676
+- author: pannocatto, RozuZaniwa
+  changes:
+  - message: Added new Avali Sprites, Organs, Hardsuit Sprites, Gas Mask Sprites
+    type: Add
+  - message: Removed old Avali Sprites
+    type: Remove
+  id: 424
+  time: '2026-11-14T19:27:58.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/675
 Order: -1

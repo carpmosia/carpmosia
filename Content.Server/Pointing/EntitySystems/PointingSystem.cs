@@ -5,8 +5,8 @@ using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Content.Shared.Examine;
 using Content.Shared.Eye;
-using Content.Shared.Ghost;
 using Content.Shared.Hands.EntitySystems; // Carpmosia-edit - Pointing modifier
+using Content.Shared.Ghost.Components;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Input;
 using Content.Shared.Interaction;

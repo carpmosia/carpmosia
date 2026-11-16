@@ -345,6 +345,26 @@
   products:
     Stimulants: 2
 
+# Carpmosia-start - Disable strawberry ice
+#- type: reaction
+#  id: StrawberryIce
+#  impact: Medium
+#  minTemp: 370
+#  reactants:
+#    Desoxyephedrine:
+#      amount: 1
+#    UnstableMutagen:
+#      amount: 1
+#    Benzene:
+#      amount: 1
+#    SodiumPolyacrylate:
+#      amount: 1
+#    Ice:
+#      amount: 1
+#  products:
+#    StrawberryIce: 4
+# Carpmosia-end - Disable strawberry ice
+
 - type: reaction
   id: Ephedrine
   impact: Medium
@@ -556,3 +576,45 @@
       amount: 1
   products:
     Lye: 2
+
+- type: reaction
+  id: PhosphoricAcid
+  minTemp: 373.15
+  reactants:
+    Phosphorus:
+      amount: 2
+    Oxygen:
+      amount: 5
+    Water:
+      amount: 3
+  products:
+    PhosphoricAcid: 10
+
+- type: reaction
+  id: Nyctalon
+  reactants:
+    Oculine:
+      amount: 1
+    Radium:
+      amount: 1
+    Uranium:
+      amount: 1
+      catalyst: true
+    Phosphorus:
+      amount: 1
+  products:
+    Nyctalon: 2
+
+- type: reaction
+  id: TearGas
+  reactants:
+    CapsaicinOil:
+      amount: 1
+    Phosphorus:
+      amount: 1
+    Chlorine:
+      amount: 1
+  products:
+    TearGas: 3
+
+

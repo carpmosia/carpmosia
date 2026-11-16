@@ -114,6 +114,7 @@
   - type: Damageable
     damageModifierSet: Slime
   - type: PassiveDamage # Around 8 damage a minute healed
+    intervalHaltOnDamageTaken: 5s
     allowedStates:
     - Alive
     damage:
@@ -177,7 +178,7 @@
   parent: OrganBaseOrganic
   id: OrganSlimePerson
   abstract: true
-  suffix: slime person
+  suffix: slime # Carpmosia-edit - Remove people
 
 - type: entity
   id: OrganSlimePersonMetabolizer

@@ -1,11 +1,14 @@
 using System.Linq;
 using Content.Server.Administration;
 using Content.Shared.Administration;
+using Content.Shared.Maps; // Carpmosia-edit - Resave variantize
 using Robust.Shared.Console;
 using Robust.Shared.ContentPack;
 using Robust.Shared.EntitySerialization;
 using Robust.Shared.EntitySerialization.Components;
 using Robust.Shared.EntitySerialization.Systems;
+using Robust.Shared.Map; // Carpmosia-edit - Resave variantize
+using Robust.Shared.Map.Components; // Carpmosia-edit - Resave variantize
 using Robust.Shared.Utility;
 
 namespace Content.Server.Maps;
@@ -36,6 +39,13 @@ public sealed partial class ResaveCommand : LocalizedCommands
             }
         };
 
+        // Carpmosia-start - Resave variantize
+        var variantize = args.Length > 0 && args[0] == "true";
+        var mapsSystem = _entManager.System<SharedMapSystem>();
+        var tileSystem = _entManager.System<TileSystem>();
+        var turfSystem = _entManager.System<TurfSystem>();
+        // Carpmosia-end - Resave variantize
+
         var log = _log.GetSawmill(Command);
         var files = _res.ContentFindFiles(new ResPath("/Maps/_Carpmosia/")).ToList(); // Carpmosia-edit - Mapping
 
@@ -54,6 +64,27 @@ public sealed partial class ResaveCommand : LocalizedCommands
                 loader.Delete(result);
                 continue;
             }
+
+            // Carpmosia-start - Resave variantize
+            if (variantize)
+            {
+                foreach (var grid in result.Grids)
+                {
+                    if (!_entManager.TryGetComponent(grid, out MapGridComponent? gridComp))
+                    {
+                        shell.WriteError($"Euid '{grid}' does not exist or is not a grid.");
+                        return;
+                    }
+
+                    foreach (var tile in mapsSystem.GetAllTiles(grid, gridComp))
+                    {
+                        var def = turfSystem.GetContentTileDefinition(tile);
+                        var newTile = new Tile(tile.Tile.TypeId, tile.Tile.Flags, tileSystem.PickVariant(def), tile.Tile.RotationMirroring);
+                        mapsSystem.SetTile(grid, gridComp, tile.GridIndices, newTile);
+                    }
+                }
+            }
+            // Carpmosia-end - Resave variantize
 
             var map = result.Maps.First();
 

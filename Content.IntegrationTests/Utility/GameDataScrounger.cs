@@ -221,6 +221,11 @@ public static partial class GameDataScrounger
                 var entryMapping = (YamlMappingNode)entry;
 
                 var id = entryMapping[IdNode];
+
+                // TODO: Add handling for prototype variants
+                if (id is YamlMappingNode)
+                    continue;
+
                 var type = entryMapping[TypeNode];
                 var @abstract = ignored;
                 if (entryMapping.TryGetNode("abstract", out YamlScalarNode? abstractNode))
@@ -307,6 +312,77 @@ public static partial class GameDataScrounger
         }
     }
 
+    // Carpmosia-start - Data Scrounger Bruh Moment 45963
+    private static readonly string[] FuckThisShit =
+    {
+        "GasVentPumpAlt4",
+        "GasVentScrubberAlt3",
+        "GasVentPumpAlt2",
+        "GasPipeStraight",
+        "GasPipeBend",
+        "GasPipeTJunction",
+        "GasOutletInjector",
+        "GasPressurePump",
+        "GasPipeSensor",
+        "GasPipeStraightAlt4",
+        "GasPipeBendAlt4",
+        "GasPassiveVentAlt4",
+        "GasPressureRegulatorAlt4",
+        "GasPipeStraightAlt3",
+        "GasPipeBendAlt3",
+        "GasPipeTJunctionAlt3",
+        "GasPipeFourwayAlt3",
+        "GasPassiveVentAlt3",
+        "GasOutletInjectorAlt3",
+        "GasPressurePumpAlt3",
+        "GasPassiveGateAlt3",
+        "GasValveAlt3",
+        "GasPortAlt3",
+        "GasPipeSensorAlt3",
+        "GasVentScrubberInlineAlt3",
+        "GasFilterAlt3",
+        "GasFilterFlippedAlt3",
+        "GasPipeTJunctionAlt4",
+        "GasPipeFourwayAlt4",
+        "GasPressurePumpAlt4",
+        "GasValveAlt4",
+        "GasPortAlt4",
+        "GasPipeSensorAlt4",
+        "GasVentPumpInlineAlt4",
+        "GasFilterAlt4",
+        "GasFilterFlippedAlt4",
+        "GasMixer",
+        "GasMixerFlipped",
+        "GasPipeFourway",
+        "GasThermoMachineFreezerEnabled",
+        "GasPort",
+        "GasFilter",
+        "GasFilterFlipped",
+        "GasPipeStraightAlt1",
+        "GasPipeBendAlt1",
+        "GasPipeTJunctionAlt1",
+        "GasPipeFourwayAlt1",
+        "GasPressurePumpAlt1",
+        "GasVolumePumpAlt1",
+        "GasValveAlt1",
+        "GasPortAlt1",
+        "HeatExchangerAlt1",
+        "HeatExchangerBendAlt1",
+        "GasPipeSensorAlt1",
+        "GasPipeStraightAlt2",
+        "GasPipeBendAlt2",
+        "GasPipeTJunctionAlt2",
+        "GasPipeFourwayAlt2",
+        "GasPressurePumpAlt2",
+        "GasValveAlt2",
+        "GasPortAlt2",
+        "GasVolumePumpAlt2",
+        "HeatExchangerAlt2",
+        "HeatExchangerBendAlt2",
+        "GasPipeSensorAlt2",
+    };
+    // Carpmosia-end - Data Scrounger Bruh Moment 45963
+
     /// <summary>
     ///     Visits the given entity, potentially recursively in order to discover all of its components.
     /// </summary>
@@ -320,6 +396,10 @@ public static partial class GameDataScrounger
 
         foreach (var parent in entity.Parents)
         {
+            // Carpmosia-start - Data Scrounger Bruh Moment 45963
+            if (FuckThisShit.Contains(parent))
+                continue;
+            // Carpmosia-end - Data Scrounger Bruh Moment 45963
             var parentMeta = _entitiesMetaIndex![parent];
             VisitEntity(parentMeta, visitedEntities);
 

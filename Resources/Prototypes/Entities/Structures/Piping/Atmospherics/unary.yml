@@ -22,11 +22,14 @@
 
 - type: entity
   parent: [GasUnaryBase, AirSensorBase]
-  id: GasVentPump
+  id: !type:CreateVariants
+    values: [ GasVentPump, GasVentPumpAlt1, GasVentPumpAlt2, GasVentPumpAlt3, GasVentPumpAlt4 ] # Carpmosia-edit - 5 pipe layers
   name: air vent
   description: Has a valve and a pump attached to it.
+  categories: !type:CreateVariants
+    sequences: [ [ ], [ HideSpawnMenu ], [ HideSpawnMenu ], [ HideSpawnMenu ], [ HideSpawnMenu ] ] # Carpmosia-edit - 5 pipe layers
   placement:
-    mode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
+    mode: AlignAtmosPipeLayers
   components:
     - type: ApcPowerReceiver
     - type: ExtensionCableReceiver
@@ -43,20 +46,15 @@
       drawdepth: FloorObjects
       sprite: Structures/Piping/Atmospherics/vent.rsi
       layers:
-        - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Carpmosia-edit - 5 pipe layers
+        - sprite: !type:CreateVariants
+            values: [ Structures/Piping/Atmospherics/pipe.rsi, Structures/Piping/Atmospherics/pipe_alt1.rsi, Structures/Piping/Atmospherics/pipe_alt2.rsi, _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi, _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi ] # Carpmosia-edit - 5 pipe layers
           state: pipeUnaryConnectors
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: vent_off
           map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
-    # Carpmosia-start - Atmos Alt Prototypes
     - type: AtmosPipeLayers
-      alternativePrototypes:
-        Primary: GasVentPump
-        Secondary: GasVentPumpAlt1
-        Tertiary: GasVentPumpAlt2
-        Quaternary: GasVentPumpAlt3
-        Quinary: GasVentPumpAlt4
-    # Carpmosia-end - Atmos Alt Prototypes
+      pipeLayer: !type:CreateVariants
+        values: [ 0, 1, 2, 3, 4 ] # Carpmosia-edit - 5 pipe layers
     - type: Appearance
     - type: PipeColorVisuals
     - type: GenericVisualizer
@@ -70,7 +68,8 @@
             Lockout: { state: vent_lockout }
     - type: GasVentPump
     - type: Construction
-      graph: GasUnary
+      graph: !type:CreateVariants
+        values: [ GasUnary, GasUnaryAlt1, GasUnaryAlt2, GasUnaryAlt3, GasUnaryAlt4 ] # Carpmosia-edit - 5 pipe layers
       node: ventpump
     - type: VentCritterSpawnLocation
     - type: AmbientSound
@@ -89,11 +88,14 @@
 
 - type: entity
   parent: GasUnaryBase
-  id: GasPassiveVent
+  id: !type:CreateVariants
+    values: [ GasPassiveVent, GasPassiveVentAlt1, GasPassiveVentAlt2, GasPassiveVentAlt3, GasPassiveVentAlt4 ] # Carpmosia-edit - 5 pipe layers
   name: passive vent
   description: It's an open vent.
+  categories: !type:CreateVariants
+    sequences: [ [ ], [ HideSpawnMenu ], [ HideSpawnMenu ], [ HideSpawnMenu ], [ HideSpawnMenu ] ] # Carpmosia-edit - 5 pipe layers
   placement:
-    mode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
+    mode: AlignAtmosPipeLayers
   components:
     - type: SubFloorHide
       visibleLayers:
@@ -102,25 +104,21 @@
       drawdepth: FloorObjects
       sprite: Structures/Piping/Atmospherics/vent.rsi
       layers:
-        - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Carpmosia-edit - 5 pipe layers
+        - sprite: !type:CreateVariants
+            values: [ Structures/Piping/Atmospherics/pipe.rsi, Structures/Piping/Atmospherics/pipe_alt1.rsi, Structures/Piping/Atmospherics/pipe_alt2.rsi, _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi, _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi ] # Carpmosia-edit - 5 pipe layers
           state: pipeUnaryConnectors
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: vent_passive
           map: [ "enum.SubfloorLayers.FirstLayer" ]
-    # Carpmosia-start - Atmos Alt Prototypes
     - type: AtmosPipeLayers
-      alternativePrototypes:
-        Primary: GasPassiveVent
-        Secondary: GasPassiveVentAlt1
-        Tertiary: GasPassiveVentAlt2
-        Quaternary: GasPassiveVentAlt3
-        Quinary: GasPassiveVentAlt4
-    # Carpmosia-end - Atmos Alt Prototypes
+      pipeLayer: !type:CreateVariants
+        values: [ 0, 1, 2, 3, 4 ] # Carpmosia-edit - 5 pipe layers
     - type: Appearance
     - type: PipeColorVisuals
     - type: GasPassiveVent
     - type: Construction
-      graph: GasUnary
+      graph: !type:CreateVariants
+        values: [ GasUnary, GasUnaryAlt1, GasUnaryAlt2, GasUnaryAlt3, GasUnaryAlt4 ] # Carpmosia-edit - 5 pipe layers
       node: passivevent
     - type: AtmosMonitoringConsoleDevice
       navMapBlip: GasVentOpening
@@ -130,11 +128,14 @@
 
 - type: entity
   parent: [GasUnaryBase, AirSensorBase]
-  id: GasVentScrubber
+  id: !type:CreateVariants
+    values: [ GasVentScrubber, GasVentScrubberAlt1, GasVentScrubberAlt2, GasVentScrubberAlt3, GasVentScrubberAlt4 ] # Carpmosia-edit - 5 pipe layers
   name: air scrubber
   description: Has a valve and pump attached to it.
+  categories: !type:CreateVariants
+    sequences: [ [ ], [ HideSpawnMenu ], [ HideSpawnMenu ], [ HideSpawnMenu ], [ HideSpawnMenu ] ] # Carpmosia-edit - 5 pipe layers
   placement:
-    mode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
+    mode: AlignAtmosPipeLayers
   components:
     - type: ApcPowerReceiver
     - type: ExtensionCableReceiver
@@ -151,20 +152,15 @@
       drawdepth: FloorObjects
       sprite: Structures/Piping/Atmospherics/scrubber.rsi
       layers:
-        - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Carpmosia-edit - 5 pipe layers
+        - sprite: !type:CreateVariants
+            values: [ Structures/Piping/Atmospherics/pipe.rsi, Structures/Piping/Atmospherics/pipe_alt1.rsi, Structures/Piping/Atmospherics/pipe_alt2.rsi, _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi, _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi ] # Carpmosia-edit - 5 pipe layers
           state: pipeUnaryConnectors
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: scrub_off
           map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
-    # Carpmosia-start - Atmos Alt Prototypes
     - type: AtmosPipeLayers
-      alternativePrototypes:
-        Primary: GasVentScrubber
-        Secondary: GasVentScrubberAlt1
-        Tertiary: GasVentScrubberAlt2
-        Quaternary: GasVentScrubberAlt3
-        Quinary: GasVentScrubberAlt4
-    # Carpmosia-end - Atmos Alt Prototypes
+      pipeLayer: !type:CreateVariants
+        values: [ 0, 1, 2, 3, 4 ] # Carpmosia-edit - 5 pipe layers
     - type: Appearance
     - type: PipeColorVisuals
     - type: GenericVisualizer
@@ -179,7 +175,8 @@
     - type: AtmosDevice
     - type: GasVentScrubber
     - type: Construction
-      graph: GasUnary
+      graph: !type:CreateVariants
+        values: [ GasUnary, GasUnaryAlt1, GasUnaryAlt2, GasUnaryAlt3, GasUnaryAlt4 ] # Carpmosia-edit - 5 pipe layers
       node: ventscrubber
     - type: AmbientSound
       enabled: true
@@ -197,18 +194,22 @@
 
 - type: entity
   parent: GasUnaryBase
-  id: GasOutletInjector
+  id: !type:CreateVariants
+    values: [ GasOutletInjector, GasOutletInjectorAlt1, GasOutletInjectorAlt2, GasOutletInjectorAlt3, GasOutletInjectorAlt4 ] # Carpmosia-edit - 5 pipe layers
   name: air injector
   description: Has a valve and pump attached to it.
+  categories: !type:CreateVariants
+    sequences: [ [ ], [ HideSpawnMenu ], [ HideSpawnMenu ], [ HideSpawnMenu ], [ HideSpawnMenu ] ] # Carpmosia-edit - 5 pipe layers
   placement:
-    mode: AlignAtmosPipeLayers # Carpmosia-edit - Atmos Alt Prototypes
+    mode: AlignAtmosPipeLayers
   components:
     - type: Sprite
       drawdepth: FloorObjects
-      sprite: _Carpmosia/Structures/Piping/Atmospherics/outletinjector.rsi # Carpmosia-edit - 5 pipe layers
+      sprite: Structures/Piping/Atmospherics/outletinjector.rsi
       layers:
         - state: pipeUnaryConnectors
-          sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi # Carpmosia-edit - 5 pipe layers
+          sprite: !type:CreateVariants
+            values: [ Structures/Piping/Atmospherics/pipe.rsi, Structures/Piping/Atmospherics/pipe_alt1.rsi, Structures/Piping/Atmospherics/pipe_alt2.rsi, _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi, _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi ] # Carpmosia-edit - 5 pipe layers
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: injector
           map: [ "enum.SubfloorLayers.FirstLayer" ]
@@ -216,15 +217,9 @@
           shader: unshaded
           map: [ "enum.LightLayers.Unshaded" ]
           color: "#990000"
-    # Carpmosia-start - Atmos Alt Prototypes
     - type: AtmosPipeLayers
-      alternativePrototypes:
-        Primary: GasOutletInjector
-        Secondary: GasOutletInjectorAlt1
-        Tertiary: GasOutletInjectorAlt2
-        Quaternary: GasOutletInjectorAlt3
-        Quinary: GasOutletInjectorAlt4
-    # Carpmosia-end - Atmos Alt Prototypes
+      pipeLayer: !type:CreateVariants
+        values: [ 0, 1, 2, 3, 4 ] # Carpmosia-edit - 5 pipe layers
     - type: Appearance
     - type: GenericVisualizer
       visuals:
@@ -236,7 +231,8 @@
     - type: PipeColorVisuals
     - type: GasOutletInjector
     - type: Construction
-      graph: GasUnary
+      graph: !type:CreateVariants
+        values: [ GasUnary, GasUnaryAlt1, GasUnaryAlt2, GasUnaryAlt3, GasUnaryAlt4 ] # Carpmosia-edit - 5 pipe layers
       node: outletinjector
     - type: SubFloorHide
       visibleLayers:
@@ -249,7 +245,7 @@
       - AirInjector
 
 - type: entity
-  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  parent: [ BaseMachinePowered, ConstructibleMachine, BaseConstructibleMachineDestructible ]
   id: BaseGasThermoMachine
   name: thermomachine
   abstract: true
@@ -264,16 +260,6 @@
     - type: Rotatable
     - type: GasThermoMachine
     - type: AtmosPipeColor
-    - type: AtmosPipeLayers
-      spriteLayersRsiPaths:
-        enum.PipeVisualLayers.Pipe:
-          # Carpmosia-start - 5 pipe layers
-          Primary: _Carpmosia/Structures/Piping/Atmospherics/thermomachine.rsi
-          Secondary: _Carpmosia/Structures/Piping/Atmospherics/thermomachine_alt1.rsi
-          Tertiary: _Carpmosia/Structures/Piping/Atmospherics/thermomachine_alt2.rsi
-          Quaternary: _Carpmosia/Structures/Piping/Atmospherics/thermomachine_alt3.rsi
-          Quinary: _Carpmosia/Structures/Piping/Atmospherics/thermomachine_alt4.rsi
-          # Carpmosia-end - 5 pipe layers
     - type: AtmosDevice
     - type: UserInterface
       interfaces:
@@ -309,11 +295,14 @@
 
 - type: entity
   parent: BaseGasThermoMachine
-  id: GasThermoMachineFreezer
+  id: !type:CreateVariants
+    values: [ GasThermoMachineFreezer, GasThermoMachineFreezerAlt1, GasThermoMachineFreezerAlt2, GasThermoMachineFreezerAlt3, GasThermoMachineFreezerAlt4 ] # Carpmosia-edit - 5 pipe layers
   name: freezer
   description: Cools gas in connected pipes.
+  categories: !type:CreateVariants
+    sequences: [ [ ], [ HideSpawnMenu ], [ HideSpawnMenu ], [ HideSpawnMenu ], [ HideSpawnMenu ] ] # Carpmosia-edit - 5 pipe layers
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers
   components:
     - type: StationAiWhitelist
     - type: Sprite
@@ -323,9 +312,30 @@
           map: [ "enum.PowerDeviceVisualLayers.Powered" ]
         - state: freezerPanelOpen
           map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-        - state: pipe
+        - sprite: !type:CreateVariants
+            values: 
+            - Structures/Piping/Atmospherics/thermomachine.rsi
+            - Structures/Piping/Atmospherics/thermomachine_alt1.rsi
+            - Structures/Piping/Atmospherics/thermomachine_alt2.rsi
+            # Carpmosia-start - 5 pipe layers
+            - _Carpmosia/Structures/Piping/Atmospherics/thermomachine_alt3.rsi
+            - _Carpmosia/Structures/Piping/Atmospherics/thermomachine_alt4.rsi
+            # Carpmosia-end - 5 pipe layers
+          state: pipe
           map: [ "enum.PipeVisualLayers.Pipe" ]
           renderingStrategy: Default
+    - type: AtmosPipeLayers
+      pipeLayer: !type:CreateVariants
+        values: [ 0, 1, 2, 3, 4 ] # Carpmosia-edit - 5 pipe layers
+      spriteLayersRsiPaths:
+        enum.PipeVisualLayers.Pipe:
+          Primary: Structures/Piping/Atmospherics/thermomachine.rsi
+          Secondary: Structures/Piping/Atmospherics/thermomachine_alt1.rsi
+          Tertiary: Structures/Piping/Atmospherics/thermomachine_alt2.rsi
+          # Carpmosia-start - 5 pipe layers
+          Quaternary: _Carpmosia/Structures/Piping/Atmospherics/thermomachine_alt3.rsi
+          Quinary: _Carpmosia/Structures/Piping/Atmospherics/thermomachine_alt4.rsi
+          # Carpmosia-end - 5 pipe layers
     - type: GenericVisualizer
       visuals:
         enum.PowerDeviceVisuals.Powered:
@@ -344,22 +354,29 @@
       stealGroup: FreezerHeater
 
 - type: entity
-  parent: GasThermoMachineFreezer
-  id: GasThermoMachineFreezerEnabled
+  parent: !type:CreateVariants
+    values: [ GasThermoMachineFreezer, GasThermoMachineFreezerAlt1, GasThermoMachineFreezerAlt2, GasThermoMachineFreezerAlt3, GasThermoMachineFreezerAlt4 ] # Carpmosia-edit - 5 pipe layers
+  id: !type:CreateVariants
+    values: [ GasThermoMachineFreezerEnabled, GasThermoMachineFreezerEnabledAlt1, GasThermoMachineFreezerEnabledAlt2, GasThermoMachineFreezerEnabledAlt3, GasThermoMachineFreezerEnabledAlt4 ] # Carpmosia-edit - 5 pipe layers
   suffix: Enabled
+  categories: !type:CreateVariants
+    sequences: [ [ ], [ HideSpawnMenu ], [ HideSpawnMenu ], [ HideSpawnMenu ], [ HideSpawnMenu ] ] # Carpmosia-edit - 5 pipe layers
   components:
   - type: GasThermoMachine
-    targetTemperature: 235 # Carpmosia-edit - Freezer atmos
+    targetTemperature: 235 # Carpmosia-edit - Pipe presets
   - type: ApcPowerReceiver
     powerDisabled: false
 
 - type: entity
   parent: BaseGasThermoMachine
-  id: GasThermoMachineHeater
+  id: !type:CreateVariants
+    values: [ GasThermoMachineHeater, GasThermoMachineHeaterAlt1, GasThermoMachineHeaterAlt2, GasThermoMachineHeaterAlt3, GasThermoMachineHeaterAlt4 ] # Carpmosia-edit - 5 pipe layers
   name: heater
   description: Heats gas in connected pipes.
+  categories: !type:CreateVariants
+    sequences: [ [ ], [ HideSpawnMenu ], [ HideSpawnMenu ], [ HideSpawnMenu ], [ HideSpawnMenu ] ] # Carpmosia-edit - 5 pipe layers
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers
   components:
     - type: StationAiWhitelist
     - type: Sprite
@@ -369,9 +386,30 @@
           map: [ "enum.PowerDeviceVisualLayers.Powered" ]
         - state: heaterPanelOpen
           map: ["enum.WiresVisualLayers.MaintenancePanel"]
-        - state: pipe
+        - sprite: !type:CreateVariants
+            values: 
+            - Structures/Piping/Atmospherics/thermomachine.rsi
+            - Structures/Piping/Atmospherics/thermomachine_alt1.rsi
+            - Structures/Piping/Atmospherics/thermomachine_alt2.rsi
+            # Carpmosia-start - 5 pipe layers
+            - _Carpmosia/Structures/Piping/Atmospherics/thermomachine_alt3.rsi
+            - _Carpmosia/Structures/Piping/Atmospherics/thermomachine_alt4.rsi
+            # Carpmosia-end - 5 pipe layers
+          state: pipe
           map: [ "enum.PipeVisualLayers.Pipe" ]
           renderingStrategy: Default
+    - type: AtmosPipeLayers
+      pipeLayer: !type:CreateVariants
+        values: [ 0, 1, 2, 3, 4 ] # Carpmosia-edit - 5 pipe layers
+      spriteLayersRsiPaths:
+        enum.PipeVisualLayers.Pipe:
+          Primary: Structures/Piping/Atmospherics/thermomachine.rsi
+          Secondary: Structures/Piping/Atmospherics/thermomachine_alt1.rsi
+          Tertiary: Structures/Piping/Atmospherics/thermomachine_alt2.rsi
+          # Carpmosia-start - 5 pipe layers
+          Quaternary: _Carpmosia/Structures/Piping/Atmospherics/thermomachine_alt3.rsi
+          Quinary: _Carpmosia/Structures/Piping/Atmospherics/thermomachine_alt4.rsi
+          # Carpmosia-end - 5 pipe layers
     - type: GenericVisualizer
       visuals:
         enum.PowerDeviceVisuals.Powered:
@@ -390,19 +428,27 @@
       stealGroup: FreezerHeater
 
 - type: entity
-  parent: GasThermoMachineHeater
-  id: GasThermoMachineHeaterEnabled
+  parent: !type:CreateVariants
+    values: [ GasThermoMachineHeater, GasThermoMachineHeaterAlt1, GasThermoMachineHeaterAlt2, GasThermoMachineHeaterAlt3, GasThermoMachineHeaterAlt4 ] # Carpmosia-edit - 5 pipe layers
+  id: !type:CreateVariants
+    values: [ GasThermoMachineHeaterEnabled, GasThermoMachineHeaterEnabledAlt1, GasThermoMachineHeaterEnabledAlt2, GasThermoMachineHeaterEnabledAlt3, GasThermoMachineHeaterEnabledAlt4 ] # Carpmosia-edit - 5 pipe layers
   suffix: Enabled
+  categories: !type:CreateVariants
+    sequences: [ [ ], [ HideSpawnMenu ], [ HideSpawnMenu ], [ HideSpawnMenu ], [ HideSpawnMenu ] ] # Carpmosia-edit - 5 pipe layers
   components:
   - type: GasThermoMachine
   - type: ApcPowerReceiver
     powerDisabled: false
 
 - type: entity
-  parent: GasThermoMachineFreezer
-  id: GasThermoMachineHellfireFreezer
+  parent: !type:CreateVariants
+    values: [ GasThermoMachineFreezer, GasThermoMachineFreezerAlt1, GasThermoMachineFreezerAlt2, GasThermoMachineFreezerAlt3, GasThermoMachineFreezerAlt4 ] # Carpmosia-edit - 5 pipe layers
+  id: !type:CreateVariants
+    values: [ GasThermoMachineHellfireFreezer, GasThermoMachineHellfireFreezerAlt1, GasThermoMachineHellfireFreezerAlt2, GasThermoMachineHellfireFreezerAlt3, GasThermoMachineHellfireFreezerAlt4 ] # Carpmosia-edit - 5 pipe layers
   name: hellfire freezer
   description: An advanced machine that cools gas in connected pipes. Has the side effect of chilling the surrounding area. Cold as Hell!
+  categories: !type:CreateVariants
+    sequences: [ [ ], [ HideSpawnMenu ], [ HideSpawnMenu ], [ HideSpawnMenu ], [ HideSpawnMenu ] ] # Carpmosia-edit - 5 pipe layers
   components:
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/hellfirethermomachine.rsi
@@ -414,10 +460,14 @@
     board: HellfireFreezerMachineCircuitBoard
 
 - type: entity
-  parent: GasThermoMachineHeater
-  id: GasThermoMachineHellfireHeater
+  parent: !type:CreateVariants
+    values: [ GasThermoMachineHeater, GasThermoMachineHeaterAlt1, GasThermoMachineHeaterAlt2, GasThermoMachineHeaterAlt3, GasThermoMachineHeaterAlt4 ] # Carpmosia-edit - 5 pipe layers
+  id: !type:CreateVariants
+    values: [ GasThermoMachineHellfireHeater, GasThermoMachineHellfireHeaterAlt1, GasThermoMachineHellfireHeaterAlt2, GasThermoMachineHellfireHeaterAlt3, GasThermoMachineHellfireHeaterAlt4 ] # Carpmosia-edit - 5 pipe layers
   name: hellfire heater
   description: An advanced machine that heats gas in connected pipes. Has the side effect of leaking heat into the surrounding area. Hot as Hell!
+  categories: !type:CreateVariants
+    sequences: [ [ ], [ HideSpawnMenu ], [ HideSpawnMenu ], [ HideSpawnMenu ], [ HideSpawnMenu ] ] # Carpmosia-edit - 5 pipe layers
   components:
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/hellfirethermomachine.rsi
@@ -429,12 +479,15 @@
     board: HellfireHeaterMachineCircuitBoard
 
 - type: entity
-  parent: [ SolutionTank, SolutionHuge, BaseMachinePowered, SmallConstructibleMachine ]
-  id: BaseGasCondenser
+  parent: [ SolutionTank, SolutionHuge, BaseMachinePowered, SmallConstructibleMachine, BaseSmallConstructibleMachineDestructible ]
+  id: !type:CreateVariants
+    values: [ BaseGasCondenser, BaseGasCondenserAlt1, BaseGasCondenserAlt2, BaseGasCondenserAlt3 , BaseGasCondenserAlt4 ] # Carpmosia-edit - 5 pipe layers
   name: condenser
   description: Condenses gases into liquids. Now we just need some plumbing.
+  categories: !type:CreateVariants
+    sequences: [ [ ], [ HideSpawnMenu ], [ HideSpawnMenu ], [ HideSpawnMenu ], [ HideSpawnMenu ] ] # Carpmosia-edit - 5 pipe layers
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers
   components:
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/condenser.rsi
@@ -445,7 +498,9 @@
       map: [ "enum.PowerDeviceVisualLayers.Powered" ]
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-    - state: pipe
+    - sprite: !type:CreateVariants
+        values: [ Structures/Piping/Atmospherics/condenser.rsi, Structures/Piping/Atmospherics/condenser_alt1.rsi, Structures/Piping/Atmospherics/condenser_alt2.rsi, _Carpmosia/Structures/Piping/Atmospherics/condenser_alt3.rsi, _Carpmosia/Structures/Piping/Atmospherics/condenser_alt4.rsi ]
+      state: pipe
       map: [ "enum.PipeVisualLayers.Pipe" ]
       renderingStrategy: Default
     - state: fill-1
@@ -467,12 +522,14 @@
   - type: GasCondenser
   - type: AtmosPipeColor
   - type: AtmosPipeLayers
+    pipeLayer: !type:CreateVariants
+      values: [ 0, 1, 2, 3, 4 ] # Carpmosia-edit - 5 pipe layers
     spriteLayersRsiPaths:
       enum.PipeVisualLayers.Pipe:
+        Primary: Structures/Piping/Atmospherics/condenser.rsi
+        Secondary: Structures/Piping/Atmospherics/condenser_alt1.rsi
+        Tertiary: Structures/Piping/Atmospherics/condenser_alt2.rsi
         # Carpmosia-start - 5 pipe layers
-        Primary: _Carpmosia/Structures/Piping/Atmospherics/condenser.rsi
-        Secondary: _Carpmosia/Structures/Piping/Atmospherics/condenser_alt1.rsi
-        Tertiary: _Carpmosia/Structures/Piping/Atmospherics/condenser_alt2.rsi
         Quaternary: _Carpmosia/Structures/Piping/Atmospherics/condenser_alt3.rsi
         Quinary: _Carpmosia/Structures/Piping/Atmospherics/condenser_alt4.rsi
         # Carpmosia-end - 5 pipe layers
@@ -490,8 +547,6 @@
         !type:DamageTrigger
         damage: 100
       behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
       - !type:SpillBehavior
         solution: tank
       - !type:PlaySoundBehavior

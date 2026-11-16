@@ -22,7 +22,7 @@ public sealed partial class AntagPrototype : IPrototype
     public string ID { get; private set; } = default!;
 
     // Carpmosia-start - Antag playtimes
-    [DataField("playTimeTracker", customTypeSerializer: typeof(PrototypeIdSerializer<PlayTimeTrackerPrototype>))]
+    [DataField("playTimeTracker", customTypeSerializer: typeof(ProtoId<PlayTimeTrackerPrototype>))]
     public string? PlayTimeTracker { get; private set; }
 
     [DataField("color")]
@@ -68,4 +68,25 @@ public sealed partial class AntagPrototype : IPrototype
     /// </summary>
     [DataField]
     public List<ProtoId<GuideEntryPrototype>>? Guides;
+
+    /// <summary>
+    /// The tags of this antagonist.
+    /// Can be used to specify the type of gameplay loop they follow.
+    /// Used for filtering purposes.
+    /// </summary>
+    [DataField]
+    public HashSet<ProtoId<AntagTagPrototype>> Tags = [];
+}
+
+/// <summary>
+/// Used to describe the type of gameplay loop some antagonists follow.
+/// Such as whether they are on-station antags or off-station.
+/// </summary>
+[Prototype]
+public sealed partial class AntagTagPrototype : IPrototype
+{
+    [IdDataField]
+    public string ID { get; private set; } = default!;
+
+    // Can potentially be expanded in the future to show up in things like guidebooks etc.
 }

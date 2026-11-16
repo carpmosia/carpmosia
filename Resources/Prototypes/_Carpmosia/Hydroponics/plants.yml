@@ -1,0 +1,21 @@
+- type: entity
+  parent: CocoaPlants
+  id: CrudcoaPlants
+  name: crudcoa plant
+  components:
+  - type: Sprite
+    sprite: _Carpmosia/Objects/Specific/Hydroponics/crudcoa.rsi
+  - type: PlantData
+    name: seeds-crudcoa-name
+    packetPrototype: CrudcoaSeeds
+    productPrototypes: [ FoodCrudcoaPod ]
+  - type: PlantChemicals
+    chemicals:
+      Oil:
+        min: 5
+        max: 10
+        potencyDivisor: 20
+      Phosphorus:
+        min: 5
+        max: 10
+        potencyDivisor: 20

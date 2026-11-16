@@ -84,165 +84,71 @@
 
 - type: construction
   parent: BaseAtmos
-  id: GasPipeSensor
+  id: !type:CreateVariants
+    values: [ GasPipeSensor, GasPipeSensorAlt1, GasPipeSensorAlt2, GasPipeSensorAlt3, GasPipeSensorAlt4 ] # Carpmosia-edit - 5 pipe layers
   placementMode: AlignAtmosPipeLayers
-  graph: GasPipeSensor
+  hide: !type:CreateVariants
+    values: [ false, true, true, true, true ] # Carpmosia-edit - 5 pipe layers
+  graph: !type:CreateVariants
+    values: [ GasPipeSensor, GasPipeSensorAlt1, GasPipeSensorAlt2, GasPipeSensorAlt3, GasPipeSensorAlt4 ] # Carpmosia-edit - 5 pipe layers
   targetNode: sensor
-  alternativePrototypes:
-  - GasPipeSensor
-  - GasPipeSensorAlt1
-  - GasPipeSensorAlt2
-  # Carpmosia-start - 5 pipe layers
-  - GasPipeSensorAlt3
-  - GasPipeSensorAlt4
-  # Carpmosia-end - 5 pipe layers
-
-- type: construction
-  parent: GasPipeSensor
-  id: GasPipeSensorAlt1
-  hide: true
-  targetNode: sensorAlt1
-
-- type: construction
-  parent: GasPipeSensor
-  id: GasPipeSensorAlt2
-  hide: true
-  targetNode: sensorAlt2
 # endregion Machines
 
 # region Pipes
 - type: construction
   parent: BaseGasPipe
-  id: GasPipeHalf
-  name: construction-recipe-gas-pipe-half
+  id: !type:CreateVariants
+    values: [ GasPipeHalf, GasPipeHalfAlt1, GasPipeHalfAlt2, GasPipeHalfAlt3, GasPipeHalfAlt4 ] # Carpmosia-edit - 5 pipe layers
+  hide: !type:CreateVariants
+    values: [ false, true, true, true, true ] # Carpmosia-edit - 5 pipe layers
+  graph: !type:CreateVariants
+    values: [ GasPipe, GasPipeAlt1, GasPipeAlt2, GasPipeAlt3, GasPipeAlt4 ] # Carpmosia-edit - 5 pipe layers
   targetNode: half
-  alternativePrototypes:
-  - GasPipeHalf
-  - GasPipeHalfAlt1
-  - GasPipeHalfAlt2
-  # Carpmosia-start - 5 pipe layers
-  - GasPipeHalfAlt3
-  - GasPipeHalfAlt4
-  # Carpmosia-end - 5 pipe layers
-
-- type: construction
-  parent: GasPipeHalf
-  id: GasPipeHalfAlt1
-  hide: true
-  targetNode: halfAlt1
-
-- type: construction
-  parent: GasPipeHalf
-  id: GasPipeHalfAlt2
-  hide: true
-  targetNode: halfAlt2
 
 - type: construction
   parent: BaseGasPipe
-  id: GasPipeStraight
+  id: !type:CreateVariants
+    values: [ GasPipeStraight, GasPipeStraightAlt1, GasPipeStraightAlt2, GasPipeStraightAlt3, GasPipeStraightAlt4 ] # Carpmosia-edit - 5 pipe layers
+  hide: !type:CreateVariants
+    values: [ false, true, true, true, true ] # Carpmosia-edit - 5 pipe layers
+  graph: !type:CreateVariants
+    values: [ GasPipe, GasPipeAlt1, GasPipeAlt2, GasPipeAlt3, GasPipeAlt4 ] # Carpmosia-edit - 5 pipe layers
   targetNode: straight
-  alternativePrototypes:
-  - GasPipeStraight
-  - GasPipeStraightAlt1
-  - GasPipeStraightAlt2
-  # Carpmosia-start - 5 pipe layers
-  - GasPipeStraightAlt3
-  - GasPipeStraightAlt4
-  # Carpmosia-end - 5 pipe layers
-
-- type: construction
-  parent: GasPipeStraight
-  id: GasPipeStraightAlt1
-  hide: true
-  targetNode: straightAlt1
-
-- type: construction
-  parent: GasPipeStraight
-  id: GasPipeStraightAlt2
-  hide: true
-  targetNode: straightAlt2
 
 - type: construction
   parent: BaseGasPipe
-  id: GasPipeBend
-  name: construction-recipe-gas-pipe-bend
+  id: !type:CreateVariants
+    values: [ GasPipeBend, GasPipeBendAlt1, GasPipeBendAlt2, GasPipeBendAlt3, GasPipeBendAlt4 ] # Carpmosia-edit - 5 pipe layers
+  hide: !type:CreateVariants
+    values: [ false, true, true, true, true ] # Carpmosia-edit - 5 pipe layers
+  graph: !type:CreateVariants
+    values: [ GasPipe, GasPipeAlt1, GasPipeAlt2, GasPipeAlt3, GasPipeAlt4 ] # Carpmosia-edit - 5 pipe layers
   targetNode: bend
-  alternativePrototypes:
-  - GasPipeBend
-  - GasPipeBendAlt1
-  - GasPipeBendAlt2
-  # Carpmosia-start - 5 pipe layers
-  - GasPipeBendAlt3
-  - GasPipeBendAlt4
-  # Carpmosia-end - 5 pipe layers
-
-- type: construction
-  parent: GasPipeBend
-  id: GasPipeBendAlt1
-  hide: true
-  targetNode: bendAlt1
-
-- type: construction
-  parent: GasPipeBend
-  id: GasPipeBendAlt2
-  hide: true
-  targetNode: bendAlt2
 
 - type: construction
   parent: BaseGasPipe
-  id: GasPipeTJunction
-  name: construction-recipe-gas-pipe-t-junction
+  id: !type:CreateVariants
+    values: [ GasPipeTJunction, GasPipeTJunctionAlt1, GasPipeTJunctionAlt2, GasPipeTJunctionAlt3, GasPipeTJunctionAlt4 ] # Carpmosia-edit - 5 pipe layers
+  hide: !type:CreateVariants
+    values: [ false, true, true, true, true ] # Carpmosia-edit - 5 pipe layers
+  graph: !type:CreateVariants
+    values: [ GasPipe, GasPipeAlt1, GasPipeAlt2, GasPipeAlt3, GasPipeAlt4 ] # Carpmosia-edit - 5 pipe layers
   targetNode: tjunction
-  alternativePrototypes:
-  - GasPipeTJunction
-  - GasPipeTJunctionAlt1
-  - GasPipeTJunctionAlt2
-  # Carpmosia-start - 5 pipe layers
-  - GasPipeTJunctionAlt3
-  - GasPipeTJunctionAlt4
-  # Carpmosia-end - 5 pipe layers
-
-- type: construction
-  parent: GasPipeTJunction
-  id: GasPipeTJunctionAlt1
-  hide: true
-  targetNode: tjunctionAlt1
-
-- type: construction
-  parent: GasPipeTJunction
-  id: GasPipeTJunctionAlt2
-  hide: true
-  targetNode: tjunctionAlt2
 
 - type: construction
   parent: BaseGasPipe
-  id: GasPipeFourway
-  name: construction-recipe-gas-pipe-fourway
+  id: !type:CreateVariants
+    values: [ GasPipeFourway, GasPipeFourwayAlt1, GasPipeFourwayAlt2, GasPipeFourwayAlt3, GasPipeFourwayAlt4 ] # Carpmosia-edit - 5 pipe layers
+  hide: !type:CreateVariants
+    values: [ false, true, true, true, true ] # Carpmosia-edit - 5 pipe layers
+  graph: !type:CreateVariants
+    values: [ GasPipe, GasPipeAlt1, GasPipeAlt2, GasPipeAlt3, GasPipeAlt4 ] # Carpmosia-edit - 5 pipe layers
   targetNode: fourway
-  alternativePrototypes:
-  - GasPipeFourway
-  - GasPipeFourwayAlt1
-  - GasPipeFourwayAlt2
-  # Carpmosia-start - 5 pipe layers
-  - GasPipeFourwayAlt3
-  - GasPipeFourwayAlt4
-  # Carpmosia-end - 5 pipe layers
-
-- type: construction
-  parent: GasPipeFourway
-  id: GasPipeFourwayAlt1
-  hide: true
-  targetNode: fourwayAlt1
-
-- type: construction
-  parent: GasPipeFourway
-  id: GasPipeFourwayAlt2
-  hide: true
-  targetNode: fourwayAlt2
 
 - type: construction
   parent: BaseGasPipe
   id: GasPipeManifold
+  graph: GasPipeSpecial
   targetNode: manifold
   placementMode: SnapgridCenter
 # endregion Pipes
@@ -250,335 +156,208 @@
 # region Unary
 - type: construction
   parent: BaseGasUnary
-  id: GasVentPump
+  id: !type:CreateVariants
+    values: [ GasVentPump, GasVentPumpAlt1, GasVentPumpAlt2, GasVentPumpAlt3, GasVentPumpAlt4 ] # Carpmosia-edit - 5 pipe layers
+  hide: !type:CreateVariants
+    values: [ false, true, true, true, true ] # Carpmosia-edit - 5 pipe layers
+  graph: !type:CreateVariants
+    values: [ GasUnary, GasUnaryAlt1, GasUnaryAlt2, GasUnaryAlt3, GasUnaryAlt4 ] # Carpmosia-edit - 5 pipe layers
   targetNode: ventpump
-  # Carpmosia-start - 5 pipe layers
-  alternativePrototypes:
-  - GasVentPump
-  - GasVentPumpAlt1
-  - GasVentPumpAlt2
-  - GasVentPumpAlt3
-  - GasVentPumpAlt4
-  # Carpmosia-end - 5 pipe layers
 
 - type: construction
   parent: BaseGasUnary
-  id: GasPassiveVent
+  id: !type:CreateVariants
+    values: [ GasPassiveVent, GasPassiveVentAlt1, GasPassiveVentAlt2, GasPassiveVentAlt3, GasPassiveVentAlt4 ] # Carpmosia-edit - 5 pipe layers
+  hide: !type:CreateVariants
+    values: [ false, true, true, true, true ] # Carpmosia-edit - 5 pipe layers
+  graph: !type:CreateVariants
+    values: [ GasUnary, GasUnaryAlt1, GasUnaryAlt2, GasUnaryAlt3, GasUnaryAlt4 ] # Carpmosia-edit - 5 pipe layers
   targetNode: passivevent
-  # Carpmosia-start - 5 pipe layers
-  alternativePrototypes:
-  - GasPassiveVent
-  - GasPassiveVentAlt1
-  - GasPassiveVentAlt2
-  - GasPassiveVentAlt3
-  - GasPassiveVentAlt4
-  # Carpmosia-end - 5 pipe layers
 
 - type: construction
   parent: BaseGasUnary
-  id: GasVentScrubber
+  id: !type:CreateVariants
+    values: [ GasVentScrubber, GasVentScrubberAlt1, GasVentScrubberAlt2, GasVentScrubberAlt3, GasVentScrubberAlt4 ] # Carpmosia-edit - 5 pipe layers
+  hide: !type:CreateVariants
+    values: [ false, true, true, true, true ] # Carpmosia-edit - 5 pipe layers
+  graph: !type:CreateVariants
+    values: [ GasUnary, GasUnaryAlt1, GasUnaryAlt2, GasUnaryAlt3, GasUnaryAlt4 ] # Carpmosia-edit - 5 pipe layers
   targetNode: ventscrubber
-  # Carpmosia-start - 5 pipe layers
-  alternativePrototypes:
-  - GasVentScrubber
-  - GasVentScrubberAlt1
-  - GasVentScrubberAlt2
-  - GasVentScrubberAlt3
-  - GasVentScrubberAlt4
-  # Carpmosia-end - 5 pipe layers
 
 - type: construction
   parent: BaseGasUnary
-  id: GasOutletInjector
+  id: !type:CreateVariants
+    values: [ GasOutletInjector, GasOutletInjectorAlt1, GasOutletInjectorAlt2, GasOutletInjectorAlt3, GasOutletInjectorAlt4 ] # Carpmosia-edit - 5 pipe layers
+  hide: !type:CreateVariants
+    values: [ false, true, true, true, true ] # Carpmosia-edit - 5 pipe layers
+  graph: !type:CreateVariants
+    values: [ GasUnary, GasUnaryAlt1, GasUnaryAlt2, GasUnaryAlt3, GasUnaryAlt4 ] # Carpmosia-edit - 5 pipe layers
   targetNode: outletinjector
-  # Carpmosia-start - 5 pipe layers
-  alternativePrototypes:
-  - GasOutletInjector
-  - GasOutletInjectorAlt1
-  - GasOutletInjectorAlt2
-  - GasOutletInjectorAlt3
-  - GasOutletInjectorAlt4
-  # Carpmosia-end - 5 pipe layers
 # endregion Unary
 
 # region Binary
 - type: construction
   parent: BaseGasBinary
-  id: GasPressurePump
+  id: !type:CreateVariants
+    values: [ GasPressurePump, GasPressurePumpAlt1, GasPressurePumpAlt2, GasPressurePumpAlt3, GasPressurePumpAlt4 ] # Carpmosia-edit - 5 pipe layers
+  hide: !type:CreateVariants
+    values: [ false, true, true, true, true ] # Carpmosia-edit - 5 pipe layers
+  graph: !type:CreateVariants
+    values: [ GasBinary, GasBinaryAlt1, GasBinaryAlt2, GasBinaryAlt3, GasBinaryAlt4 ] # Carpmosia-edit - 5 pipe layers
   targetNode: pressurepump
-  alternativePrototypes:
-  - GasPressurePump
-  - GasPressurePumpAlt1
-  - GasPressurePumpAlt2
-  # Carpmosia-start - 5 pipe layers
-  - GasPressurePumpAlt3
-  - GasPressurePumpAlt4
-  # Carpmosia-end - 5 pipe layers
-
-- type: construction
-  parent: GasPressurePump
-  id: GasPressurePumpAlt1
-  hide: true
-  targetNode: pressurepumpAlt1
-
-- type: construction
-  parent: GasPressurePump
-  id: GasPressurePumpAlt2
-  hide: true
-  targetNode: pressurepumpAlt2
 
 - type: construction
   parent: BaseGasBinary
-  id: GasVolumePump
+  id: !type:CreateVariants
+    values: [ GasVolumePump, GasVolumePumpAlt1, GasVolumePumpAlt2, GasVolumePumpAlt3, GasVolumePumpAlt4 ] # Carpmosia-edit - 5 pipe layers
+  hide: !type:CreateVariants
+    values: [ false, true, true, true, true ] # Carpmosia-edit - 5 pipe layers
+  graph: !type:CreateVariants
+    values: [ GasBinary, GasBinaryAlt1, GasBinaryAlt2, GasBinaryAlt3, GasBinaryAlt4 ] # Carpmosia-edit - 5 pipe layers
   targetNode: volumepump
-  alternativePrototypes:
-  - GasVolumePump
-  - GasVolumePumpAlt1
-  - GasVolumePumpAlt2
-  # Carpmosia-start - 5 pipe layers
-  - GasVolumePumpAlt3
-  - GasVolumePumpAlt4
-  # Carpmosia-end - 5 pipe layers
-
-- type: construction
-  parent: GasVolumePump
-  id: GasVolumePumpAlt1
-  hide: true
-  targetNode: volumepumpAlt1
-
-- type: construction
-  parent: GasVolumePump
-  id: GasVolumePumpAlt2
-  hide: true
-  targetNode: volumepumpAlt2
 
 - type: construction
   parent: BaseGasBinary
-  id: GasPassiveGate
+  id: !type:CreateVariants
+    values: [ GasPassiveGate, GasPassiveGateAlt1, GasPassiveGateAlt2, GasPassiveGateAlt3, GasPassiveGateAlt4 ] # Carpmosia-edit - 5 pipe layers
+  hide: !type:CreateVariants
+    values: [ false, true, true, true, true ] # Carpmosia-edit - 5 pipe layers
+  graph: !type:CreateVariants
+    values: [ GasBinary, GasBinaryAlt1, GasBinaryAlt2, GasBinaryAlt3, GasBinaryAlt4 ] # Carpmosia-edit - 5 pipe layers
   targetNode: passivegate
-  alternativePrototypes:
-  - GasPassiveGate
-  - GasPassiveGateAlt1
-  - GasPassiveGateAlt2
-  # Carpmosia-start - 5 pipe layers
-  - GasPassiveGateAlt3
-  - GasPassiveGateAlt4
-  # Carpmosia-end - 5 pipe layers
-
-- type: construction
-  parent: GasPassiveGate
-  id: GasPassiveGateAlt1
-  hide: true
-  targetNode: passivegateAlt1
-
-- type: construction
-  parent: GasPassiveGate
-  id: GasPassiveGateAlt2
-  hide: true
-  targetNode: passivegateAlt2
 
 - type: construction
   parent: BaseGasBinary
-  id: GasPressureRegulator
+  id: !type:CreateVariants
+    values: [ GasPressureRegulator, GasPressureRegulatorAlt1, GasPressureRegulatorAlt2, GasPressureRegulatorAlt3, GasPressureRegulatorAlt4 ] # Carpmosia-edit - 5 pipe layers
+  hide: !type:CreateVariants
+    values: [ false, true, true, true, true ] # Carpmosia-edit - 5 pipe layers
+  graph: !type:CreateVariants
+    values: [ GasBinary, GasBinaryAlt1, GasBinaryAlt2, GasBinaryAlt3, GasBinaryAlt4 ] # Carpmosia-edit - 5 pipe layers
   targetNode: pressureregulator
-  alternativePrototypes:
-  - GasPressureRegulator
-  - GasPressureRegulatorAlt1
-  - GasPressureRegulatorAlt2
-  # Carpmosia-start - 5 pipe layers
-  - GasPressureRegulatorAlt3
-  - GasPressureRegulatorAlt4
-  # Carpmosia-end - 5 pipe layers
-
-- type: construction
-  parent: GasPressureRegulator
-  id: GasPressureRegulatorAlt1
-  hide: true
-  targetNode: pressureregulatorAlt1
-
-- type: construction
-  parent: GasPressureRegulator
-  id: GasPressureRegulatorAlt2
-  hide: true
-  targetNode: pressureregulatorAlt2
 
 - type: construction
   parent: BaseGasBinary
-  id: GasValve
+  id: !type:CreateVariants
+    values: [ GasValve, GasValveAlt1, GasValveAlt2, GasValveAlt3, GasValveAlt4 ] # Carpmosia-edit - 5 pipe layers
+  hide: !type:CreateVariants
+    values: [ false, true, true, true, true ] # Carpmosia-edit - 5 pipe layers
+  graph: !type:CreateVariants
+    values: [ GasBinary, GasBinaryAlt1, GasBinaryAlt2, GasBinaryAlt3, GasBinaryAlt4 ] # Carpmosia-edit - 5 pipe layers
   targetNode: valve
-  alternativePrototypes:
-  - GasValve
-  - GasValveAlt1
-  - GasValveAlt2
-  # Carpmosia-start - 5 pipe layers
-  - GasValveAlt3
-  - GasValveAlt4
-  # Carpmosia-end - 5 pipe layers
-
-- type: construction
-  parent: GasValve
-  id: GasValveAlt1
-  hide: true
-  targetNode: valveAlt1
-
-- type: construction
-  parent: GasValve
-  id: GasValveAlt2
-  hide: true
-  targetNode: valveAlt2
 
 - type: construction
   parent: BaseGasBinary
-  id: SignalControlledValve
+  id: !type:CreateVariants
+    values: [ SignalControlledValve, SignalControlledValveAlt1, SignalControlledValveAlt2, SignalControlledValveAlt3, SignalControlledValveAlt4 ] # Carpmosia-edit - 5 pipe layers
+  hide: !type:CreateVariants
+    values: [ false, true, true, true, true ] # Carpmosia-edit - 5 pipe layers
+  graph: !type:CreateVariants
+    values: [ GasBinary, GasBinaryAlt1, GasBinaryAlt2, GasBinaryAlt3, GasBinaryAlt4 ] # Carpmosia-edit - 5 pipe layers
   targetNode: signalvalve
-  alternativePrototypes:
-  - SignalControlledValve
-  - SignalControlledValveAlt1
-  - SignalControlledValveAlt2
-  # Carpmosia-start - 5 pipe layers
-  - SignalControlledValveAlt3
-  - SignalControlledValveAlt4
-  # Carpmosia-end - 5 pipe layers
-
-- type: construction
-  parent: SignalControlledValve
-  id: SignalControlledValveAlt1
-  hide: true
-  targetNode: signalvalveAlt1
-
-- type: construction
-  parent: SignalControlledValve
-  id: SignalControlledValveAlt2
-  hide: true
-  targetNode: signalvalveAlt2
 
 - type: construction
   parent: BaseGasBinary
-  id: GasPort
+  id: !type:CreateVariants
+    values: [ GasPort, GasPortAlt1, GasPortAlt2, GasPortAlt3, GasPortAlt4 ] # Carpmosia-edit - 5 pipe layers
+  hide: !type:CreateVariants
+    values: [ false, true, true, true, true ] # Carpmosia-edit - 5 pipe layers
+  graph: !type:CreateVariants
+    values: [ GasBinary, GasBinaryAlt1, GasBinaryAlt2, GasBinaryAlt3, GasBinaryAlt4 ] # Carpmosia-edit - 5 pipe layers
   targetNode: port
-  # Carpmosia-start - 5 pipe layers
-  # placementMode: SnapgridCenter
-  alternativePrototypes:
-  - GasPort
-  - GasPortAlt1
-  - GasPortAlt2
-  - GasPortAlt3
-  - GasPortAlt4
-  # Carpmosia-end - 5 pipe layers
 
 - type: construction
   parent: BaseGasBinary
-  id: GasDualPortVentPump
+  id: !type:CreateVariants
+    values: [ GasDualPortVentPump, GasDualPortVentPumpAlt1, GasDualPortVentPumpAlt2, GasDualPortVentPumpAlt3, GasDualPortVentPumpAlt4 ] # Carpmosia-edit - 5 pipe layers
+  hide: !type:CreateVariants
+    values: [ false, true, true, true, true ] # Carpmosia-edit - 5 pipe layers
+  graph: !type:CreateVariants
+    values: [ GasBinary, GasBinaryAlt1, GasBinaryAlt2, GasBinaryAlt3, GasBinaryAlt4 ] # Carpmosia-edit - 5 pipe layers
   targetNode: dualportventpump
-  # Carpmosia-start - 5 pipe layers
-  # placementMode: SnapgridCenter
-  alternativePrototypes:
-  - GasDualPortVentPump
-  - GasDualPortVentPumpAlt1
-  - GasDualPortVentPumpAlt2
-  - GasDualPortVentPumpAlt3
-  - GasDualPortVentPumpAlt4
-  # Carpmosia-end - 5 pipe layers
 
 - type: construction
   parent: BaseGasBinaryStackable
-  id: HeatExchanger
+  # Carpmosia-start - 5 pipe layers
+  id: !type:CreateVariants
+    values: [ HeatExchanger, HeatExchangerAlt1, HeatExchangerAlt2, HeatExchangerAlt3, HeatExchangerAlt4 ]
+  hide: !type:CreateVariants
+    values: [ false, true, true, true, true ]
+  graph: !type:CreateVariants
+    values: [ GasBinary, GasBinaryAlt1, GasBinaryAlt2, GasBinaryAlt3, GasBinaryAlt4 ]
+  # Carpmosia-end - 5 pipe layers
   targetNode: radiator
-  # Carpmosia-start - 5 pipe layers
-  # placementMode: SnapgridCenter
-  alternativePrototypes:
-  - HeatExchanger
-  - HeatExchangerAlt1
-  - HeatExchangerAlt2
-  - HeatExchangerAlt3
-  - HeatExchangerAlt4
-  # Carpmosia-end - 5 pipe layers
+  # placementMode: SnapgridCenter # Carpmosia-edit - 5 pipe layers
 
 - type: construction
   parent: BaseGasBinaryStackable
-  id: HeatExchangerBend
-  name: construction-recipe-heat-exchanger-bend
-  targetNode: bendradiator
   # Carpmosia-start - 5 pipe layers
-  # placementMode: SnapgridCenter
-  alternativePrototypes:
-  - HeatExchangerBend
-  - HeatExchangerBendAlt1
-  - HeatExchangerBendAlt2
-  - HeatExchangerBendAlt3
-  - HeatExchangerBendAlt4
+  id: !type:CreateVariants
+    values: [ HeatExchangerBend, HeatExchangerBendAlt1, HeatExchangerBendAlt2, HeatExchangerBendAlt3, HeatExchangerBendAlt4 ]
+  name: construction-recipe-heat-exchanger-bend
+  hide: !type:CreateVariants
+    values: [ false, true, true, true, true ] # Carpmosia-edit - 5 pipe layers
+  graph: !type:CreateVariants
+    values: [ GasBinary, GasBinaryAlt1, GasBinaryAlt2, GasBinaryAlt3, GasBinaryAlt4 ]
   # Carpmosia-end - 5 pipe layers
+  targetNode: bendradiator
+  # placementMode: SnapgridCenter # Carpmosia-edit - 5 pipe layers
 # endregion Binary
 
 # region Trinary
 - type: construction
   parent: BaseGasTrinary
-  id: GasFilter
+  id: !type:CreateVariants
+    values: [ GasFilter, GasFilterAlt1, GasFilterAlt2, GasFilterAlt3, GasFilterAlt4 ] # Carpmosia-edit - 5 pipe layers
+  hide: !type:CreateVariants
+    values: [ false, true, true, true, true ] # Carpmosia-edit - 5 pipe layers
+  graph: !type:CreateVariants
+    values: [ GasTrinary, GasTrinaryAlt1, GasTrinaryAlt2, GasTrinaryAlt3, GasTrinaryAlt4 ] # Carpmosia-edit - 5 pipe layers
   targetNode: filter
-  mirror: GasFilterFlipped
-  # Carpmosia-start - 5 pipe layers
-  alternativePrototypes:
-  - GasFilter
-  - GasFilterAlt1
-  - GasFilterAlt2
-  - GasFilterAlt3
-  - GasFilterAlt4
-  # Carpmosia-end - 5 pipe layers
+  mirror: !type:CreateVariants
+    values: [ GasFilterFlipped, GasFilterFlippedAlt1, GasFilterFlippedAlt2, GasFilterFlippedAlt3, GasFilterFlippedAlt4 ] # Carpmosia-edit - 5 pipe layers
 
 - type: construction
-  parent: GasFilter
-  id: GasFilterFlipped
+  parent: BaseGasTrinary
+  id: !type:CreateVariants
+    values: [ GasFilterFlipped, GasFilterFlippedAlt1, GasFilterFlippedAlt2, GasFilterFlippedAlt3, GasFilterFlippedAlt4 ] # Carpmosia-edit - 5 pipe layers
   hide: true
+  graph: !type:CreateVariants
+    values: [ GasTrinary, GasTrinaryAlt1, GasTrinaryAlt2, GasTrinaryAlt3, GasTrinaryAlt4 ] # Carpmosia-edit - 5 pipe layers
   targetNode: filterflipped
-  mirror: GasFilter
-  # Carpmosia-start - 5 pipe layers
-  alternativePrototypes:
-  - GasFilterFlipped
-  - GasFilterFlippedAlt1
-  - GasFilterFlippedAlt2
-  - GasFilterFlippedAlt3
-  - GasFilterFlippedAlt4
-  # Carpmosia-end - 5 pipe layers
+  mirror: !type:CreateVariants
+    values: [ GasFilter, GasFilterAlt1, GasFilterAlt2, GasFilterAlt3, GasFilterAlt4 ] # Carpmosia-edit - 5 pipe layers
 
 - type: construction
   parent: BaseGasTrinary
-  id: GasMixer
+  id: !type:CreateVariants
+    values: [ GasMixer, GasMixerAlt1, GasMixerAlt2, GasMixerAlt3, GasMixerAlt4 ] # Carpmosia-edit - 5 pipe layers
+  hide: !type:CreateVariants
+    values: [ false, true, true, true, true ] # Carpmosia-edit - 5 pipe layers
+  graph: !type:CreateVariants
+    values: [ GasTrinary, GasTrinaryAlt1, GasTrinaryAlt2, GasTrinaryAlt3, GasTrinaryAlt4 ] # Carpmosia-edit - 5 pipe layers
   targetNode: mixer
-  mirror: GasMixerFlipped
-  # Carpmosia-start - 5 pipe layers
-  alternativePrototypes:
-  - GasMixer
-  - GasMixerAlt1
-  - GasMixerAlt2
-  - GasMixerAlt3
-  - GasMixerAlt4
-  # Carpmosia-end - 5 pipe layers
-
-- type: construction
-  parent: GasMixer
-  id: GasMixerFlipped
-  hide: true
-  targetNode: mixerflipped
-  mirror: GasMixer
-  # Carpmosia-start - 5 pipe layers
-  alternativePrototypes:
-  - GasMixerFlipped
-  - GasMixerFlippedAlt1
-  - GasMixerFlippedAlt2
-  - GasMixerFlippedAlt3
-  - GasMixerFlippedAlt4
-  # Carpmosia-end - 5 pipe layers
+  mirror: !type:CreateVariants
+    values: [ GasMixerFlipped, GasMixerFlippedAlt1, GasMixerFlippedAlt2, GasMixerFlippedAlt3, GasMixerFlippedAlt4 ] # Carpmosia-edit - 5 pipe layers
 
 - type: construction
   parent: BaseGasTrinary
-  id: PressureControlledValve
+  id: !type:CreateVariants
+    values: [ GasMixerFlipped, GasMixerFlippedAlt1, GasMixerFlippedAlt2, GasMixerFlippedAlt3, GasMixerFlippedAlt4 ] # Carpmosia-edit - 5 pipe layers
+  hide: true
+  graph: !type:CreateVariants
+    values: [ GasTrinary, GasTrinaryAlt1, GasTrinaryAlt2, GasTrinaryAlt3, GasTrinaryAlt4 ] # Carpmosia-edit - 5 pipe layers
+  targetNode: mixerflipped
+  mirror: !type:CreateVariants
+    values: [ GasMixer, GasMixerAlt1, GasMixerAlt2, GasMixerAlt3, GasMixerAlt4 ] # Carpmosia-edit - 5 pipe layers
+
+- type: construction
+  parent: BaseGasTrinary
+  id: !type:CreateVariants
+    values: [ PressureControlledValve, PressureControlledValveAlt1, PressureControlledValveAlt2, PressureControlledValveAlt3, PressureControlledValveAlt4 ] # Carpmosia-edit - 5 pipe layers
+  hide: !type:CreateVariants
+    values: [ false, true, true, true, true ] # Carpmosia-edit - 5 pipe layers
+  graph: !type:CreateVariants
+    values: [ GasTrinary, GasTrinaryAlt1, GasTrinaryAlt2, GasTrinaryAlt3, GasTrinaryAlt4 ] # Carpmosia-edit - 5 pipe layers
   targetNode: pneumaticvalve
-  # Carpmosia-start - 5 pipe layers
-  alternativePrototypes:
-  - PressureControlledValve
-  - PressureControlledValveAlt1
-  - PressureControlledValveAlt2
-  - PressureControlledValveAlt3
-  - PressureControlledValveAlt4
-  # Carpmosia-end - 5 pipe layers
 # endregion Trinary

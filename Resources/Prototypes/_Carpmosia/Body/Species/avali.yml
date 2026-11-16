@@ -83,41 +83,46 @@
   - type: Inventory
     speciesId: avali
     displacements:
-#      jumpsuit:
-#        sizeMaps:
-#          32:
-#            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Starlight sprites
-#            state: jumpsuit
-#      back:
-#        sizeMaps:
-#          32:
-#            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Starlight sprites
-#            state: back
-#      outerClothing:
-#        sizeMaps:
-#          32:
-#            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Starlight sprites
-#            state: outerwear
-#      gloves:
-#        sizeMaps:
-#          32:
-#            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Starlight sprites
-#            state: hand
-#      shoes:
-#        sizeMaps:
-#          32:
-#            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Starlight sprites
-#            state: shoes
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Starlight sprites
+            state: jumpsuit
+      back:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Starlight sprites
+            state: back
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Starlight sprites
+            state: outerclothing
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Starlight sprites
+            state: gloves
+      hand:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi #Starlight sprites
+            state: hand
+      shoes:
+        sizeMaps:
+          32:
+            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Starlight sprites
+            state: shoes
       head:
         sizeMaps:
           32:
-            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Starlight sprites
+            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Starlight Sprites
             state: head
-      mask:
-        sizeMaps:
-          32:
-            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Starlight sprites
-            state: mask
+#      mask:
+#        sizeMaps:
+#          32:
+#            sprite: _Carpmosia/Mobs/Species/Avali/displacement.rsi # Starlight sprites
+#            state: mask
 #      neck:
 #        sizeMaps:
 #          32:
@@ -145,8 +150,6 @@
     spawned:
     - id: FoodMeatChicken
       amount: 3
-  - type: Hunger
-    baseDecayRate: 0.03 # Slightly lower decay-rate than scurrets
   - type: Fixtures
     fixtures:
       fix1:
@@ -162,6 +165,7 @@
   - type: Speech
     speechVerb: Parrot # RMC did it right.
     speechSounds: MaleAvali
+    allowedEmotes: ['Call', 'Squawk', 'Scree', 'Chirp', 'Trill', 'Hiss', 'Purr']
   - type: Vocal
     emoteSounds: MaleAvali
   - type: Damageable
@@ -176,9 +180,6 @@
     damage:
       types:
         Slash: 5
-  - type: Temperature
-    currentTemperature: 296.15
-    specificHeat: 48
   - type: TemperatureDamage
     heatDamageThreshold: 310
     coldDamageThreshold: 223
@@ -234,7 +235,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Mobs/Species/Human/organs.rsi
+    sprite: _Carpmosia/Mobs/Species/Avali/organs.rsi
 
 - type: entity
   id: OrganAvaliVisual
@@ -301,7 +302,7 @@
   id: OrganAvaliFootRight
 
 - type: entity
-  parent: [ OrganBaseBrain, OrganSpriteHumanInternal, OrganAvaliInternal ]
+  parent: [ OrganBaseBrain, OrganAvaliInternal ]
   id: OrganAvaliBrain
 
 - type: entity

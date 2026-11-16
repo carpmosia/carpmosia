@@ -1,7 +1,7 @@
 using System.Linq;
-using Content.Server.Botany.Components;
 using Content.Server.Materials.Components;
 using Content.Server.Power.EntitySystems;
+using Content.Shared.Botany.Items.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.DoAfter; // Carpmosia-edit - Insert storage contents into biogenerator
 using Content.Shared.Interaction;
@@ -51,7 +51,7 @@ public sealed partial class ProduceMaterialExtractorSystem : EntitySystem
             if (!TryComp<ProduceComponent>(args.Used, out var produce))
                 return;
 
-            if (!_solutionContainer.TryGetSolution(args.Used, produce.SolutionName, out var solution))
+            if (!_solutionContainer.TryGetSolution(args.Used, produce.TargetSolution, out var solution))
                 return;
 
             // Can produce even have fractional amounts? Does it matter if they do?
@@ -98,7 +98,7 @@ public sealed partial class ProduceMaterialExtractorSystem : EntitySystem
             if (!TryComp<ProduceComponent>(item, out var produce))
                 continue;
 
-            if (!_solutionContainer.TryGetSolution(item, produce.SolutionName, out var solution))
+            if (!_solutionContainer.TryGetSolution(item, produce.TargetSolution, out var solution))
                 continue;
 
             var matAmount = solution.Value.Comp.Solution.Contents

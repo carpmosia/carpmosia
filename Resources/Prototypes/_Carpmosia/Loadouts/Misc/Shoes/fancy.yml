@@ -65,12 +65,23 @@
   groupBy: "fancyShoes"
 
 - type: loadout
-  id: TouristShoes
+  id: SandalsBlackShoes
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement: !type:RoleTimeRequirement
       role: JobPassenger
       time: 1h
   equipment:
-    shoes: ClothingShoesTourist
+    shoes: ClothingShoesSandalsBlack
   groupBy: "fancyShoes"
+
+# - type: loadout
+#   id: SandalsBrownShoes
+#   effects:
+#   - !type:JobRequirementLoadoutEffect
+#     requirement: !type:RoleTimeRequirement
+#       role: ????
+#       time: 1h
+#   equipment:
+#     shoes: ClothingShoesSandalsBrown
+#   groupBy: "fancyShoes"

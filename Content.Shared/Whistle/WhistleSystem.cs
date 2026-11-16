@@ -1,7 +1,8 @@
 // Carpmosia-start - Whistle action
 using Content.Shared.Actions;
 using Content.Shared.Inventory;
-using Content.Shared.Timing;
+using Content.Shared.Timing.Systems;
+using Content.Shared.Timing.Components;
 // Carpmosia-end - Whistle action
 using Content.Shared.Coordinates;
 using Content.Shared.Humanoid;

@@ -53,6 +53,11 @@
   parent: [ PrioritySecurityShoes, CommonShoes, SecurityShoes ]
   id: WardenShoes
 
+- type: loadoutGroup
+  parent: [ SecurityGun ]
+  id: WardenGun
+  minLimit: 1
+
 # - type: loadoutGroup
 #   parent: BaseSpecial
 #   id: WardenSpecial

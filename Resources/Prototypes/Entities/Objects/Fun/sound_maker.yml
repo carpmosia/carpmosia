@@ -223,6 +223,9 @@
   # Carpmosia-end - Whistle action
   - type: Whistle
     distance: 3
+  - type: Tag
+    tags:
+    - MonkeyWearable
 
 - type: entity
   parent: BaseWhistle
@@ -268,7 +271,7 @@
 
 - type: entity
   abstract: true
-  parent: [BaseItem, BaseStash]
+  parent: BaseItem
   id: BaseRubberToy
   components:
   - type: Tag
@@ -324,7 +327,7 @@
     - ToyRubberDuck
 
 - type: entity
-  parent: BaseRubberToy
+  parent: [BaseRubberToy, BaseStashPlushie]
   id: RubberChicken
   name: rubber chicken
   description: A stress inducing parody of nature's most delectable avian.

@@ -5,6 +5,11 @@
   description: You gotta have money.
   components:
   - type: Cash
+  # Carpmosia-start - Space cash
+  - type: Currency
+    price:
+      SpaceCash: 1
+  # Carpmosia-end - Space cash
   - type: Item
     shape:
     - 0,0,1,0

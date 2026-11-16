@@ -1,0 +1,39 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from CEV-Eris at commit 15748b71a1e6d2c547588c653d7c42f18011f7c5, modified by ThunderBear2006 (github) for Space Station 14, modified further by rosieposieeee (github). Modified by Atakku.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "base",
+            "directions": 4
+        },
+        {
+            "name": "lock-locked",
+            "directions": 4
+        },
+        {
+            "name": "lock-unlocked",
+            "directions": 4
+        },
+        {
+            "name": "lock-locked-unshaded",
+            "directions": 4
+        },
+        {
+            "name": "lock-unlocked-unshaded",
+            "directions": 4
+        },
+        {
+            "name": "button",
+            "directions": 4
+        },
+        {
+            "name": "button-unshaded",
+            "directions": 4
+        }
+    ]
+}

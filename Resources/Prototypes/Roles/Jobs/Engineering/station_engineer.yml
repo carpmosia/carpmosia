@@ -4,13 +4,18 @@
   description: job-description-engineer
   playTimeTracker: JobStationEngineer
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Engineering
-      time: 2.5h
+  # Carpmosia-start - New time requirements
+  # - !type:DepartmentTimeRequirement
+  #   department: Engineering
+  #   time: 2.5h
+  - !type:OverallPlaytimeRequirement
+    time: 1h
+  # Carpmosia-end - New time requirements
   displayWeight: 30 # Carpmosia-edit - Reorder jobs
   startingGear: StationEngineerGear
   icon: "JobIconStationEngineer"
   supervisors: job-supervisors-ce
+  guides: [ Engineering ] # TODO: should have a more specific guidebook page instead of using the department itself
   access:
   - Maintenance
   - Engineering

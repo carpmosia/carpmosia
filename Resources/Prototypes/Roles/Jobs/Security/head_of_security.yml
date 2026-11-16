@@ -4,23 +4,25 @@
   description: job-description-hos
   playTimeTracker: JobHeadOfSecurity
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobWarden
-      time: 3h
-    - !type:RoleTimeRequirement
-      role: JobDetective
-      time: 1h # knowing how to use the tools is important
-    - !type:RoleTimeRequirement
-      role: JobSecurityOfficer
-      time: 5h
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 10h
-  # weight: 10 # Carpmosia-edit - Job priority rebalance
+  # Carpmosia-start - New time requirements
+  # - !type:RoleTimeRequirement
+  #   role: JobWarden
+  #   time: 3h
+  # - !type:RoleTimeRequirement
+  #   role: JobDetective
+  #   time: 1h # knowing how to use the tools is important
+  # - !type:RoleTimeRequirement
+  #   role: JobSecurityOfficer
+  #   time: 5h
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 6h
+  # Carpmosia-end - New time requirements
   displayWeight: 97 # Carpmosia-edit - Reorder jobs
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"
   supervisors: job-supervisors-captain
+  guides: [ Command ] # TODO: should have a more specific guidebook page instead of using the department itself
   access:
   - HeadOfSecurity
   - Command

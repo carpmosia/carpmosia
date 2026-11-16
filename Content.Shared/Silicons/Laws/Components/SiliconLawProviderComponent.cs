@@ -1,13 +1,13 @@
-﻿using Content.Shared.Station; // Carpmosia-edit - Lawset loadouts
 using Robust.Shared.Prototypes;
 using Robust.Shared.Audio;
+using Content.Shared.Station.Systems; // Carpmosia-edit - Lawset loadouts
 
 namespace Content.Shared.Silicons.Laws.Components;
 
 /// <summary>
 /// This is used for an entity which grants laws to a <see cref="SiliconLawBoundComponent"/>
 /// </summary>
-[RegisterComponent, Access(typeof(SharedSiliconLawSystem), typeof(SharedStationSpawningSystem))] // Carpmosia-edit - Lawset loadouts
+[RegisterComponent, Access(typeof(SharedSiliconLawSystem), typeof(StationSpawningSystem))] // Carpmosia-edit - Lawset loadouts
 public sealed partial class SiliconLawProviderComponent : Component
 {
     /// <summary>

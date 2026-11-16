@@ -10,11 +10,11 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 10h
-  # weight: 5 # Carpmosia-edit - Job priority rebalance
   displayWeight: 75 # Carpmosia-edit - Reorder jobs
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos
+  guides: [ Security ] # TODO: should have a more specific guidebook page instead of using the department itself
   access:
   - Security
   - Brig
@@ -35,11 +35,11 @@
     # eyes: ClothingEyesGlassesSecurity # Carpmosia-edit - crew visors
     id: WardenPDA
     ears: ClothingHeadsetSecurity
-    pocket1: WeaponPistolMk58
+    #pocket1: WeaponPistolMk58 # Carpmosia-edit - sec loadout and svalinn rework
   storage:
     back:
     - Flash
-    - MagazinePistol
+    #- MagazinePistol # Carpmosia-edit - sec loadout and svalinn rework
 
 - type: chameleonOutfit
   id: WardenChameleonOutfit

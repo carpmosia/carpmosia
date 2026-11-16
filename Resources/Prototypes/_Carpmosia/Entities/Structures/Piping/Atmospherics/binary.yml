@@ -1,6 +1,10 @@
 - type: entity
-  parent: GasVentPump
-  id: GasVentPumpInline
+  parent: !type:CreateVariants
+    values: [ GasVentPump, GasVentPumpAlt1, GasVentPumpAlt2, GasVentPumpAlt3, GasVentPumpAlt4 ]
+  id: !type:CreateVariants
+    values: [ GasVentPumpInline, GasVentPumpInlineAlt1, GasVentPumpInlineAlt2, GasVentPumpInlineAlt3, GasVentPumpInlineAlt4 ]
+  categories: !type:CreateVariants
+    sequences: [ [ ], [ HideSpawnMenu ], [ HideSpawnMenu ], [ HideSpawnMenu ], [ HideSpawnMenu ] ]
   suffix: Inline
   components:
   - type: NodeContainer
@@ -10,28 +14,25 @@
         nodeGroupID: Pipe
         pipeDirection: Longitudinal
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/vent.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi
+      - sprite: !type:CreateVariants
+          values: [ Structures/Piping/Atmospherics/pipe.rsi, Structures/Piping/Atmospherics/pipe_alt1.rsi, Structures/Piping/Atmospherics/pipe_alt2.rsi, _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi, _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi ]
         state: pipeBinaryConnectors
         map: [ "enum.PipeVisualLayers.Pipe" ]
       - state: vent_off
         map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
-  - type: AtmosPipeLayers
-    alternativePrototypes:
-      Primary: GasVentPumpInline
-      Secondary: GasVentPumpInlineAlt1
-      Tertiary: GasVentPumpInlineAlt2
-      Quaternary: GasVentPumpInlineAlt3
-      Quinary: GasVentPumpInlineAlt4
-    spriteRsiPaths: {}
   - type: Construction
-    graph: GasBinary
+    graph: !type:CreateVariants
+        values: [ GasBinary, GasBinaryAlt1, GasBinaryAlt2, GasBinaryAlt3, GasBinaryAlt4 ]
     node: ventpumpInline
 
 - type: entity
-  parent: GasVentScrubber
-  id: GasVentScrubberInline
+  parent: !type:CreateVariants
+    values: [ GasVentScrubber, GasVentScrubberAlt1, GasVentScrubberAlt2, GasVentScrubberAlt3, GasVentScrubberAlt4 ]
+  id: !type:CreateVariants
+    values: [ GasVentScrubberInline, GasVentScrubberInlineAlt1, GasVentScrubberInlineAlt2, GasVentScrubberInlineAlt3, GasVentScrubberInlineAlt4 ]
+  categories: !type:CreateVariants
+    sequences: [ [ ], [ HideSpawnMenu ], [ HideSpawnMenu ], [ HideSpawnMenu ], [ HideSpawnMenu ] ]
   suffix: Inline
   components:
   - type: NodeContainer
@@ -41,21 +42,14 @@
         nodeGroupID: Pipe
         pipeDirection: Longitudinal
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/scrubber.rsi
     layers:
-      - sprite: _Carpmosia/Structures/Piping/Atmospherics/pipe.rsi
+      - sprite: !type:CreateVariants
+          values: [ Structures/Piping/Atmospherics/pipe.rsi, Structures/Piping/Atmospherics/pipe_alt1.rsi, Structures/Piping/Atmospherics/pipe_alt2.rsi, _Carpmosia/Structures/Piping/Atmospherics/pipe_alt3.rsi, _Carpmosia/Structures/Piping/Atmospherics/pipe_alt4.rsi ]
         state: pipeBinaryConnectors
         map: [ "enum.PipeVisualLayers.Pipe" ]
       - state: scrub_off
         map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
-  - type: AtmosPipeLayers
-    alternativePrototypes:
-      Primary: GasVentScrubberInline
-      Secondary: GasVentScrubberInlineAlt1
-      Tertiary: GasVentScrubberInlineAlt2
-      Quaternary: GasVentScrubberInlineAlt3
-      Quinary: GasVentScrubberInlineAlt4
-    spriteRsiPaths: {}
   - type: Construction
-    graph: GasBinary
+    graph: !type:CreateVariants
+        values: [ GasBinary, GasBinaryAlt1, GasBinaryAlt2, GasBinaryAlt3, GasBinaryAlt4 ]
     node: ventscrubberInline

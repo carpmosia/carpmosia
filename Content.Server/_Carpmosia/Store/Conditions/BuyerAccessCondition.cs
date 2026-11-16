@@ -1,51 +1,72 @@
-using System.Linq;
-using Content.Shared.Store;
+using Content.Shared.Access;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
-using Content.Shared.Emag.Components;
-using Content.Shared.Popups;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Set;
-using Content.Server.Mind;
+using Content.Shared.Emag.Systems;
 using Content.Shared.Mind;
+using Content.Shared.Store;
+using Robust.Shared.Prototypes;
+//using Robust.Shared.Utility;
 
 namespace Content.Server.Store.Conditions;
 
+// TODO: Have emagging an AccessReader actually leave an EmagComponent so this can properly check that.
+
 /// <summary>
 /// Allows a store entry to be filtered out based on the user's access.
-/// Supports only AccessReader
+/// Supports entities without an <see cref="AccessReaderComponent"/> if this has an access set.
 /// </summary>
 public sealed partial class BuyerAccessCondition : ListingCondition
 {
-    [DataField("access", required: false)]
-    public string? access = null;
+    private AccessReaderSystem? _accessReader;
+    private EmagSystem? _emag;
+
+    /// <summary>
+    /// The access needed for this condition to pass. If null, uses the <see cref="AccessReaderComponent"/> if it's there, otherwise defaults to true.
+    /// </summary>
+    [DataField]
+    public ProtoId<AccessLevelPrototype>? Access;
+
+    ///// <summary>
+    ///// Wether or not this should break when access broken. Needs an access set to work. If left null, defaults first to the value on <see cref="AccessReaderComponent"/>, then to true.
+    ///// </summary>
+    //[DataField]
+    //public bool? BreakOnAccessBreaker;
 
     public override bool Condition(ListingConditionArgs args)
     {
-        var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
+        if (args.StoreEntity == null)
+            return true;
+
         var ent = args.EntityManager;
 
-        if (!ent.TryGetComponent<MindComponent>(args.Buyer, out var mind)
-            || mind.CurrentEntity is null) return false;
-        var buyer = mind.CurrentEntity.Value;
-
-        var _accessReader = ent.System<AccessReaderSystem>();
-
-        if (args.StoreEntity == null
-            || !ent.TryGetComponent<AccessReaderComponent>(args.StoreEntity, out var accessReader))
+        if (!ent.TryGetComponent<MindComponent>(args.Buyer, out var mind) || mind.CurrentEntity is null) // Buyer either as no mind or no attached entity, handle elsewhere.
             return true;
 
-        if (access != null)
+
+        _accessReader ??= ent.System<AccessReaderSystem>();
+        _emag ??= ent.System<EmagSystem>(); // Has a public Sawmill so I figured I'd keep it for now.
+
+        var buyer = mind.CurrentEntity.Value;
+        _accessReader.GetMainAccessReader(args.StoreEntity.Value, out var accessReader);
+
+        //DebugTools.Assert(BreakOnAccessBreaker == null || Access != null, "BuyerAccessCondtion set BreakOnAccessBreaker but not Access.");
+
+        if (Access != null)
         {
-            var accesses = _accessReader.FindAccessTags(buyer);
-            if (accesses.Any(a => a.ToString() == access))
-                return true;
+            //var checkEmag = BreakOnAccessBreaker ?? accessReader == null || accessReader.Value.Comp.BreakOnAccessBreaker;
+
+            //return checkEmag && _emag.CheckFlag(args.StoreEntity.Value, EmagType.Access)
+            //       || _accessReader.FindAccessTags(buyer).Contains(Access.Value);
+
+            return _accessReader.FindAccessTags(buyer).Contains(Access.Value);
         }
 
-        else if (_accessReader.IsAllowed(buyer, args.StoreEntity.Value, accessReader)
-                || ent.HasComponent<EmaggedComponent>(args.StoreEntity.Value))
-            return true;
+        if (accessReader != null)
+        {
+            return _accessReader.IsAllowed(buyer, accessReader.Value, accessReader);
+        }
 
-        return false;
+        _emag.Log.Error("BuyerAccessCondition couldn't find an access to check against.");
+        return true;
     }
 }
