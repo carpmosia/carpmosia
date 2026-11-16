@@ -27,7 +27,8 @@
   - type: Action
     itemIconStyle: BigAction
   - type: Sprite
-    sprite: Interface/VerbIcons/vv.svg.192dpi.png # eye icon
+    layers:
+    - texture: Interface/VerbIcons/vv.svg.192dpi.png # eye icon
   - type: TargetAction
   - type: EntityTargetAction
     event: !type:BloodBoundCheckConvertActionEvent

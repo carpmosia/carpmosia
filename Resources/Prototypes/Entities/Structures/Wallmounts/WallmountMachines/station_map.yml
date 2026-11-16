@@ -7,7 +7,7 @@
   components:
   - type: Sprite
     sprite: Structures/Wallmounts/station-map.rsi
-    offset: 0, -0.25
+    # offset: 0, -0.25 # Carpmosia-edit - Respritening
     drawdepth: WallMountedItems
     layers:
     - state: broken
@@ -42,7 +42,7 @@
   - type: StationMap
   - type: Sprite
     sprite: Structures/Wallmounts/station-map.rsi
-    offset: 0, -0.25
+    # offset: 0, -0.25 # Carpmosia-edit - Respritening
     layers:
     - state: base
     - state: unshaded
@@ -115,7 +115,7 @@
     arc: 360
   - type: Sprite
     sprite: Structures/Wallmounts/station-map.rsi
-    offset: 0, -0.25
+    # offset: 0, -0.25 # Carpmosia-edit - Respritening
     layers:
     - state: frame0
       map: [ "enum.ConstructionVisuals.Layer" ]

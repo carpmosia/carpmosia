@@ -265,8 +265,10 @@
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/shuttle-base.rsi
     layers:
-    - state: docking-clamp
-      offset: 0, -1
+    # Carpmosia-start - Respritening
+    # - state: docking-clamp
+    #   offset: 0, -1
+    # Carpmosia-end - Respritening
     - state: assembly
 
 - type: entity

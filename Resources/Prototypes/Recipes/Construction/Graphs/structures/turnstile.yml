@@ -17,7 +17,7 @@
         doAfter: 6
 
   - node: energyGate
-    entity: EnergyGate
+    entity: Turnstile # Carpmosia-edit - Respritening
     edges:
     - to: start
       completed:

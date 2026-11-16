@@ -14,7 +14,6 @@ using Content.Shared.Database;
 using Content.Shared.Humanoid;
 using Content.Shared.IdentityManagement;
 using Content.Shared.GameTicking.Rules;
-using Content.Shared.Mindshield.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Popups;
@@ -24,6 +23,7 @@ using Robust.Server.Player;
 using Robust.Shared.Utility;
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.GameTicking.Rules.Components;
+using Content.Shared.Mindshield;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -35,6 +35,7 @@ public sealed partial class ServerBloodBoundRuleSystem : BloodBoundRuleSystem
     [Dependency] private ActionsSystem _actionsSystem = default!;
     [Dependency] private AntagSelectionSystem _antagSystem = default!;
     [Dependency] private MindSystem _mindSystem = default!;
+    [Dependency] private MindShieldSystem _mindShield = default!;
     [Dependency] private MobStateSystem _mobStateSystem = default!;
     [Dependency] private NpcFactionSystem _npcFactionSystem = default!;
     [Dependency] private ObjectivesSystem _objectivesSystem = default!;
@@ -42,6 +43,12 @@ public sealed partial class ServerBloodBoundRuleSystem : BloodBoundRuleSystem
     [Dependency] private RoleSystem _roleSystem = default!;
     [Dependency] private StunSystem _stunSystem = default!;
     [Dependency] private TargetObjectiveSystem _targetObjectiveSystem = default!;
+
+    [Dependency] private EntityQuery<BloodBoundComponent> _boundQuery;
+    [Dependency] private EntityQuery<BloodBoundTargetComponent> _boundTargetQuery;
+    [Dependency] private EntityQuery<ZombieComponent> _zombieQuery;
+    [Dependency] private EntityQuery<HumanoidProfileComponent> _humanoidQuery;
+    [Dependency] private EntityQuery<TargetObjectiveComponent> _targetObjectiveQuery;
 
     [SubscribeLocalEvent]
     private void OnObjectivesTextPrepend(Entity<BloodBoundRuleComponent> entity, ref ObjectivesTextPrependEvent args)
@@ -84,7 +91,7 @@ public sealed partial class ServerBloodBoundRuleSystem : BloodBoundRuleSystem
         ref BloodBoundConvertActionEvent args)
     {
         // Check if convertible
-        if (!TryComp<BloodBoundComponent>(entity, out var originalComponent))
+        if (!_boundQuery.TryComp(entity, out var originalComponent))
             return;
 
         if (!CanConvert(entity, args.Target, out var failureMessage))
@@ -112,7 +119,7 @@ public sealed partial class ServerBloodBoundRuleSystem : BloodBoundRuleSystem
 
         EntityManager.AddComponents(args.Target, def.Components);
 
-        if (!TryComp<BloodBoundComponent>(args.Target, out var convertedComp))
+        if (!_boundQuery.TryComp(args.Target, out var convertedComp))
             return;
 
         _npcFactionSystem.AddFaction(args.Target, entity.Comp.BloodBoundFaction);
@@ -156,17 +163,19 @@ public sealed partial class ServerBloodBoundRuleSystem : BloodBoundRuleSystem
 
         foreach (var objective in mind.Objectives)
         {
-            if (!HasComp<BloodBoundTargetComponent>(objective))
+            if (!_boundTargetQuery.HasComp(objective))
                 continue;
 
             _targetObjectiveSystem.SetTarget(objective, args.Target);
         }
 
         if (def.Briefing?.Text != null)
+        {
             _antagSystem.SendBriefing(args.Target,
                 Loc.GetString(def.Briefing.Value.Text),
                 def.Briefing.Value.Color,
                 def.Briefing.Value.Sound);
+        }
 
         _popupSystem.PopupEntity(
             Loc.GetString(
@@ -235,7 +244,7 @@ public sealed partial class ServerBloodBoundRuleSystem : BloodBoundRuleSystem
         }
 
         // Target is already a blood bound
-        if (HasComp<BloodBoundComponent>(target))
+        if (_boundQuery.HasComp(target))
         {
             errorMessage = "blood-bound-convert-failed-already-bound";
             return false;
@@ -253,7 +262,7 @@ public sealed partial class ServerBloodBoundRuleSystem : BloodBoundRuleSystem
         // Stop the blood bound from converting a target.
         foreach (var objective in converterMind.Objectives)
         {
-            if (!TryComp<TargetObjectiveComponent>(objective, out var targetObjective))
+            if (!_targetObjectiveQuery.TryComp(objective, out var targetObjective))
                 continue;
 
             if (targetObjective.Target != targetMindId)
@@ -263,13 +272,13 @@ public sealed partial class ServerBloodBoundRuleSystem : BloodBoundRuleSystem
             return false;
         }
 
-        if (targetMind.UserId == null || !HasComp<HumanoidProfileComponent>(target))
+        if (targetMind.UserId == null || !_humanoidQuery.HasComp(target))
         {
             errorMessage = "blood-bound-convert-failed-no-mind";
             return false;
         }
 
-        if (HasComp<ZombieComponent>(target))
+        if (_zombieQuery.HasComp(target))
         {
             errorMessage = "blood-bound-convert-failed-zombie";
             return false;
@@ -281,7 +290,8 @@ public sealed partial class ServerBloodBoundRuleSystem : BloodBoundRuleSystem
             return false;
         }
 
-        if (HasComp<MindShieldComponent>(target))
+        _mindShield.GetMindshieldStatus(target, out var shielded, out _);
+        if (shielded)
         {
             errorMessage = "blood-bound-convert-failed-shielded";
             return false;

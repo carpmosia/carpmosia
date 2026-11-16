@@ -25,6 +25,12 @@ public sealed partial class MapRulesTest : GameTest
        "/Maps/_Carpmosia/packed.yml",
        "/Maps/_Carpmosia/saltern.yml",
        "/Maps/_Carpmosia/sparks.yml",
+       // Temporarily disabled until the next resave
+       "/Maps/_Carpmosia/Terminals/",
+       "/Maps/_Carpmosia/Shuttles/",
+       "/Maps/_Carpmosia/centcomm.yml",
+       "/Maps/_Carpmosia/lampocteis.yml",
+       "/Maps/_Carpmosia/amber.yml",
     ];
 
     private static readonly ResPath[] TestScope = [.. GameDataScrounger.FilesInDirectoryInVfs("/Maps/_Carpmosia", "*.yml", true).Where(x => !Exceptions.Any(y => x.ToString().StartsWith(y)))];

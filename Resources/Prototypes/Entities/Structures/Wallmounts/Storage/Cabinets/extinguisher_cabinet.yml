@@ -11,7 +11,7 @@
     - ItemCabinet
   - type: Sprite
     sprite: Structures/Wallmounts/extinguisher-cabinet.rsi
-    offset: 0, -0.25
+    # offset: 0, -0.25 # Carpmosia-edit - Respritening
     layers:
     - state: frame
     - state: extinguisher

@@ -9,14 +9,20 @@
   components:
   - type: Sprite
     sprite: Structures/Wallmounts/defib-cabinet.rsi
-    offset: 0, -0.25
+    # offset: 0, -0.25 # Carpmosia-edit - Respritening
     layers:
     - state: frame
+      map: ["enum.PowerChargerVisualLayers.Base"] # Carpmosia-edit - Defib Rechargers
     - state: fill
       map: ["enum.ItemCabinetVisuals.Layer"]
       visible: true
     - state: closed
       map: ["enum.OpenableVisuals.Layer"]
+    # Carpmosia-start - Defib Rechargers
+    - map: ["enum.PowerChargerVisualLayers.Light"]
+      state: "light-off"
+      shader: unshaded
+    # Carpmosia-end - Defib Rechargers
   - type: ItemSlots
     slots:
       ItemCabinet:
@@ -37,6 +43,9 @@
         sound:
           collection: MetalGlassBreak
   # Carpmosia-start - Defib Rechargers
+  - type: PowerChargerVisuals
+    occupiedState: fill
+    emptyState: frame
   - type: Charger
     slotId: ItemCabinet
   - type: ApcPowerReceiver

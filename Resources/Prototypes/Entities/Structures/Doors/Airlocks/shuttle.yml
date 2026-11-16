@@ -25,9 +25,12 @@
         hard: false
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/shuttle-base.rsi
+    snapCardinals: false # Carpmosia-edit - Respritening
     layers:
-    - state: docking-clamp
-      offset: 0, -1
+    # Carpmosia-start - Respritening
+    # - state: docking-clamp
+    #   offset: 0, -1
+    # Carpmosia-end - Respritening
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
     - state: closed_unlit
@@ -155,8 +158,10 @@
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/shuttle-xenoborg.rsi
     layers:
-    - state: docking-clamp
-      offset: 0, -1
+    # Carpmosia-start - Respritening
+    # - state: docking-clamp
+    #   offset: 0, -1
+    # Carpmosia-end - Respritening
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
     - state: closed_unlit

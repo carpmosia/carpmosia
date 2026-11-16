@@ -4,6 +4,9 @@ chat-emote-name-hiss = Hiss
 chat-emote-name-meow = Meow
 chat-emote-name-purr = Purr
 chat-emote-name-trill = Trill
+chat-emote-name-squawk = Squawk
+chat-emote-name-call = Call
+chat-emote-name-scree = Scree
 
 # Emote Messages
 chat-emote-msg-mew = mews.
@@ -11,3 +14,6 @@ chat-emote-msg-hiss = hisses.
 chat-emote-msg-meow = meows.
 chat-emote-msg-purr = purrs.
 chat-emote-msg-trill = trills.
+chat-emote-msg-squawk = squawks.
+chat-emote-msg-call = calls.
+chat-emote-msg-scree = screes.

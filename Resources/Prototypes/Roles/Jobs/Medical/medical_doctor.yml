@@ -3,10 +3,12 @@
   name: job-name-doctor
   description: job-description-doctor
   playTimeTracker: JobMedicalDoctor
-  requirements:
-    - !type:DepartmentTimeRequirement
-      department: Medical
-      time: 2.5h
+  # Carpmosia-start - New time requirements
+  # requirements:
+  #   - !type:DepartmentTimeRequirement
+  #     department: Medical
+  #     time: 2.5h
+  # Carpmosia-end - New time requirements
   displayWeight: 50 # Carpmosia-edit - Reorder jobs
   startingGear: DoctorGear
   icon: "JobIconMedicalDoctor"

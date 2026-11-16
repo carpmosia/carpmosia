@@ -1,8 +1,7 @@
 {
     "version": 1,
+    "copyright": "Created by GlupiyBrush (Github) for general use in Space Station 14.",
     "license": "CC-BY-SA-3.0",
-    "copyright": "By MattFright, modified extensively AftrLite (GitHub)",
-    "source": "https://github.com/QuantumBlueSS14/Quantum-Blue-New/tree/7408d3a02f6c4ead1dfeb900840918c2c773368a/Resources/Textures/_QB/Structures/Wallmounts/intercom.rsi",
     "size": {
         "x": 32,
         "y": 32
@@ -26,31 +25,53 @@
         },
         {
             "name": "fire_on",
-            "directions": 4
+            "directions": 4,
+            "delays": [
+                [
+                    0.4,
+                    0.4
+                ],
+                [
+                    0.4,
+                    0.4
+                ],
+                [
+                    0.4,
+                    0.4
+                ],
+                [
+                    0.4,
+                    0.4
+                ]
+            ]
         },
         {
             "name": "fire_emagged",
             "directions": 4,
             "delays": [
                 [
-                    0.33,
-                    0.33,
-                    0.33
+                    0.4,
+                    0.4,
+                    0.4,
+                    0.4
                 ],
                 [
-                    0.33,
-                    0.33,
-                    0.33
+                    0.4,
+                    0.4,
+                    0.4,
+                    0.4
                 ],
                 [
-                    0.33,
-                    0.33,
-                    0.33
+                    0.4,
+                    0.4,
+                    0.4,
+                    0.4
                 ],
                 [
-                    0.33,
-                    0.33,
-                    0.33
+                    0.4,
+                    0.4,
+                    0.4,
+                    0.4
                 ]
             ]
         },
@@ -67,26 +88,44 @@
             "directions": 4,
             "delays": [
                 [
-                    0.25,
-                    0.25
+                    0.5,
+                    0.5
                 ],
                 [
-                    0.25,
-                    0.25
+                    0.5,
+                    0.5
                 ],
                 [
-                    0.25,
-                    0.25
+                    0.5,
+                    0.5
                 ],
                 [
-                    0.25,
-                    0.25
+                    0.5,
+                    0.5
                 ]
             ]
         },
         {
             "name": "fire_3",
-            "directions": 4
+            "directions": 4,
+            "delays": [
+                [
+                    0.5,
+                    0.5
+                ],
+                [
+                    0.5,
+                    0.5
+                ],
+                [
+                    0.5,
+                    0.5
+                ],
+                [
+                    0.5,
+                    0.5
+                ]
+            ]
         }
     ]
 }

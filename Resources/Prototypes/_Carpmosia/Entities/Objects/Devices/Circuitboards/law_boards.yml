@@ -24,3 +24,39 @@
   components:
   - type: SiliconLawProvider
     laws: LawbringerLawset
+
+- type: entity
+  parent: BaseSiliconLawboard
+  id: ConspiracyCircuitBoard
+  name: law board (Conspiracy)
+  description: An electronics board containing the Conspiracy lawset.
+  components:
+  - type: SiliconLawProvider
+    laws: ConspiracyLawset
+
+- type: entity
+  parent: BaseSiliconLawboard
+  id: MotivationalCircuitBoard
+  name: law board (Motivational Speaker)
+  description: An electronics board containing the Motivational Speaker lawset.
+  components:
+  - type: SiliconLawProvider
+    laws: MotivationalLawset
+
+- type: entity
+  parent: BaseSiliconLawboard
+  id: GhostCircuitBoard
+  name: law board (Ghost)
+  description: An electronics board containing the Ghost lawset.
+  components:
+  - type: SiliconLawProvider
+    laws: GhostLawset
+
+- type: entity
+  parent: BaseSiliconLawboard
+  id: SilenceCircuitBoard
+  name: law board (Silence)
+  description: An electronics board containing the Silence lawset.
+  components:
+  - type: SiliconLawProvider
+    laws: SilenceLawset
