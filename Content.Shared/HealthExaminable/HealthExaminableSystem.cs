@@ -33,7 +33,7 @@ public sealed partial class HealthExaminableSystem : EntitySystem
             Act = () =>
             {
                 var markup = CreateMarkup(uid, component, damage);
-                _examineSystem.SendExamineTooltip(args.User, uid, markup, false, false, true); // Offbrand
+                _examineSystem.SendExamineTooltip(args.User, uid, markup, false, false, true, true); // Offbrand
             },
             Text = Loc.GetString("health-examinable-verb-text"),
             Category = VerbCategory.Examine,

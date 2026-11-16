@@ -52,7 +52,7 @@ namespace Content.Shared.Examine
         /// <summary>
         ///     Creates a new examine tooltip with arbitrary info.
         /// </summary>
-        public abstract void SendExamineTooltip(EntityUid player, EntityUid target, FormattedMessage message, bool getVerbs, bool centerAtCursor, bool showBody = false); // Offbrand
+        public abstract void SendExamineTooltip(EntityUid player, EntityUid target, FormattedMessage message, bool getVerbs, bool centerAtCursor, bool showBody = false, bool pinnable = false); // Offbrand
 
         /// <summary>
         ///     Offbrand - Updates an already-open examine tooltip with an additional message.

@@ -25,7 +25,7 @@ namespace Content.Server.Examine
             SubscribeNetworkEvent<ExamineSystemMessages.RequestExamineInfoMessage>(ExamineInfoRequest);
         }
 
-        public override void SendExamineTooltip(EntityUid player, EntityUid target, FormattedMessage message, bool getVerbs, bool centerAtCursor, bool showBody) // Offbrand
+        public override void SendExamineTooltip(EntityUid player, EntityUid target, FormattedMessage message, bool getVerbs, bool centerAtCursor, bool showBody, bool pinnable = false) // Offbrand
         {
             if (!TryComp<ActorComponent>(player, out var actor))
                 return;
@@ -37,7 +37,7 @@ namespace Content.Server.Examine
                 verbs = _verbSystem.GetLocalVerbs(target, player, typeof(ExamineVerb));
 
             var ev = new ExamineSystemMessages.ExamineInfoResponseMessage(
-                GetNetEntity(target), 0, message, verbs?.ToList(), centerAtCursor, showBody: showBody // Offbrand
+                GetNetEntity(target), 0, message, verbs?.ToList(), centerAtCursor, showBody: showBody, pinnable: pinnable // Offbrand
             );
 
             RaiseNetworkEvent(ev, session.Channel);
@@ -66,14 +66,14 @@ namespace Content.Server.Examine
                 || !Exists(entity))
             {
                 RaiseNetworkEvent(new ExamineSystemMessages.ExamineInfoResponseMessage(
-                    request.NetEntity, request.Id, _entityNotFoundMessage), channel);
+                    request.NetEntity, request.Id, _entityNotFoundMessage, pinnable: request.Pinnable), channel); // Offbrand - Pinnable examine
                 return;
             }
 
             if (!CanExamine(playerEnt, entity))
             {
                 RaiseNetworkEvent(new ExamineSystemMessages.ExamineInfoResponseMessage(
-                    request.NetEntity, request.Id, _entityOutOfRangeMessage, knowTarget: false), channel);
+                    request.NetEntity, request.Id, _entityOutOfRangeMessage, knowTarget: false, pinnable: request.Pinnable), channel); // Offbrand - Pinnable examine
                 return;
             }
 
@@ -83,7 +83,7 @@ namespace Content.Server.Examine
 
             var text = GetExamineText(entity, player.AttachedEntity);
             RaiseNetworkEvent(new ExamineSystemMessages.ExamineInfoResponseMessage(
-                request.NetEntity, request.Id, text, verbs?.ToList()), channel);
+                request.NetEntity, request.Id, text, verbs?.ToList(), pinnable: request.Pinnable), channel); // Offbrand - Pinnable examine
         }
     }
 }

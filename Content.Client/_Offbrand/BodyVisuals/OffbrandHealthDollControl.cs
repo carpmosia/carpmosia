@@ -174,7 +174,7 @@ public sealed class OffbrandHealthDollControl : SpriteView
         {
             if (_body is { } body)
             {
-                _examine.DoExamine(_hoveredOrgan.Value, displayTarget: body);
+                _examine.DoExamine(_hoveredOrgan.Value, displayTarget: body, pinnable: true); // Offbrand - Pinnable examine
                 args.Handle();
             }
 
