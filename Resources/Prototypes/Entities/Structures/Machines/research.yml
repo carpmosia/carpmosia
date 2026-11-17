@@ -29,6 +29,24 @@
     - Arsenal
     - Experimental
     - CivilianServices
+  # Carpmosia-start - FH research tree
+  - type: FHResearchTree
+    tree: ResearchTreeNT
+    maxQueueSize: 3
+    bankCapacity: 15000
+    pointBleed: 1000 #When current amount of banked poins more than bankCapacity, this much is removed every second
+    warningFrequency: 60
+    announceTo:
+      - Science
+  - type: ActiveRadio
+    channels:
+    - Security
+    - Science
+    - Service
+    - Supply
+    - Medical
+    - Engineering
+    # Carpmosia-end - FH research tree
   - type: ApcPowerReceiver
     powerLoad: 200
   - type: ExtensionCableReceiver
