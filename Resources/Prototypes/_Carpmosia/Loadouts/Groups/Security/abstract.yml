@@ -79,6 +79,15 @@
 
 - type: loadoutGroup
   abstract: true
+  parent: BaseSpecial
+  id: SecurityGun
+  loadouts:
+  - SecurityPistol
+  - SecurityShell
+  - SecuritySvalinn
+  
+- type: loadoutGroup
+  abstract: true
   parent: BaseTrinkets
   id: SecurityTrinkets
 

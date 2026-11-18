@@ -2866,4 +2866,81 @@
   id: 417
   time: '2026-10-24T21:50:12.0000000+00:00'
   url: https://github.com/carpmosia/carpmosia/pull/663
+- author: CMuncey
+  changes:
+  - message: Added section to health analyzer ui to display the reagents present in
+      the patients bloodstream
+    type: Add
+  - message: Moved damage indicator list in the health analyzer ui to beside the new
+      reagent list (functionality was not changed)
+    type: Tweak
+  id: 418
+  time: '2026-11-08T21:21:41.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/384
+- author: pannocatto
+  changes:
+  - message: new gun loadout option for security officers and wardens, letting them
+      pick between a mk, a shell gun and a svalinn
+    type: Add
+  - message: svalinns now shoot 14 heat laser projectiles instead of 7 heat hitscans
+    type: Tweak
+  - message: svalinns and security shell guns now count towards the thief's handgun
+      objective, making the objective completable on any map
+    type: Tweak
+  id: 419
+  time: '2026-11-11T01:03:39.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/674
+- author: CDWimmer
+  changes:
+  - message: '4 new rare lawsets: Conspiracy, Motivational Speaker, Ghost, and Silence.
+      These can appear rarely as ion storm laws, or selected as a round-start loadout
+      option with a low chance to roll.'
+    type: Add
+  id: 420
+  time: '2026-11-11T01:42:44.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/673
+- author: malyhob
+  changes:
+  - message: The word people has been removed from Moth and Slime species' names.
+    type: Tweak
+  id: 421
+  time: '2026-11-11T04:25:43.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/667
+- author: pannocatto
+  changes:
+  - message: Wheelchair added as an assistive item in loadouts
+    type: Add
+  id: 422
+  time: '2026-11-13T07:42:51.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/668
+- author: pannocatto, RozuZaniwa
+  changes:
+  - message: Added new emotes for Avali's
+    type: Add
+  id: 423
+  time: '2026-11-14T08:28:49.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/676
+- author: pannocatto, RozuZaniwa
+  changes:
+  - message: Added new Avali Sprites, Organs, Hardsuit Sprites, Gas Mask Sprites
+    type: Add
+  - message: Removed old Avali Sprites
+    type: Remove
+  id: 424
+  time: '2026-11-14T19:27:58.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/675
+- author: microfiche
+  changes:
+  - message: Slightly changed how jumpsuits look on Vulpkanin.
+    type: Tweak
+  id: 425
+  time: '2026-11-17T03:04:10.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/677
+- author: SnappingOpossum
+  changes:
+  - message: Removed the ATS hijack objective from the traitor objective pool.
+    type: Remove
+  id: 426
+  time: '2026-11-17T20:53:17.0000000+00:00'
+  url: https://github.com/carpmosia/carpmosia/pull/678
 Order: -1
