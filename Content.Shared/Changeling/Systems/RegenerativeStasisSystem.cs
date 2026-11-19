@@ -33,7 +33,8 @@ public sealed partial class RegenerativeStasisSystem : EntitySystem
     [Dependency] private StatusEffectsSystem _statusEffects = default!; // Carpmosia-edit - Offmed Port
     [Dependency] private OffbrandHeartOrganSystem _heart = default!; // Carpmosia-edit - Offmed Port
 
-    [Dependency] private EntityQuery<OffbrandHeartOrganComponent> _heartQuery; // Carpmosia-edit - Offmed Port
+    [Dependency] private EntityQuery<BodyComponent> _bodyQuery = default!; // Carpmosia-edit - Offmed Port
+    [Dependency] private EntityQuery<DamageableOrganComponent> _damageableQuery; // Carpmosia-edit - Offmed Port
 
     [SubscribeLocalEvent]
     private void OnMapInit(Entity<RegenerativeStasisActionComponent> ent, ref MapInitEvent args)
@@ -155,28 +156,23 @@ public sealed partial class RegenerativeStasisSystem : EntitySystem
 
         // Carpmosia-start - Offmed Port
         // Offmed
+        if (_bodyQuery.TryGetComponent(target, out var body))
+            foreach (var organ in body.Organs?.ContainedEntities ?? [])
+            {
+                if (_damageableQuery.TryGetComponent(organ, out var damageable))
+                    _damageableOrgan.ChangeDamage(organ, -damageable.Damage);
 
-        var damageableOrgans = _body.EnumerateOrgans<DamageableOrganComponent>(target);
-        var woundableOrgans = _body.EnumerateOrgans<WoundableOrganComponent>(target);
+                if (HasComp<OffbrandHeartOrganComponent>(organ))
+                    _heart.TryRestartHeart(organ);
 
-        foreach(var organ in damageableOrgans)
-        {
-            _damageableOrgan.ChangeDamage((organ.Owner, organ.Comp2), -organ.Comp2.Damage);
-
-            if (_heartQuery.TryGetComponent(organ, out var heart))
-                _heart.TryRestartHeart(heart.Owner);
-        }
-        foreach(var organ in woundableOrgans)
-        {
-            if (_statusEffects.TryEffectsWithComp<WoundComponent>(organ, out var effects))
-                {
-                    foreach(var effect in effects)
+                if (_statusEffects.TryEffectsWithComp<WoundComponent>(organ, out var effects))
                     {
-                        QueueDel(effect);
+                        foreach(var effect in effects)
+                        {
+                            PredictedQueueDel(effect);
+                        }
                     }
-                }
-        }
-
+            }
         // Carpmosia-end - Offmed Port
 
         // Revive.
