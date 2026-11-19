@@ -1,3 +1,4 @@
+using Content.Shared.Changeling.Systems;
 using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
@@ -24,7 +25,7 @@ public sealed partial class PainComponent : Component
     /// The current amount of shock, which follows to <see cref="PainMultiplier"> times the amount of pain from the entity.
     /// </summary>
     [DataField, AutoNetworkedField]
-    [Access(typeof(PainSystem), Other = AccessPermissions.None)]
+    [Access(typeof(PainSystem), typeof(RegenerativeStasisSystem), Other = AccessPermissions.None)]
     public FixedPoint2 Shock = FixedPoint2.Zero;
 
     /// <summary>

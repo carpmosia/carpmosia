@@ -1,4 +1,5 @@
 using Content.Shared.Actions;
+using Content.Shared.Body; // Carpmosia-edit - Offmed Port
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared.Changeling.Components;
@@ -9,6 +10,10 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
+using Content.Shared.StatusEffectNew; // Carpmosia-edit - Offmed Port
+using Content.Shared.StatusEffectNew.Components; // Carpmosia-edit - Offmed Port
+using Content.Shared._Offbrand.Organs; // Carpmosia-edit - Offmed Port
+using Content.Shared._Offbrand.Wounds; // Carpmosia-edit - Offmed Port
 using Robust.Shared.Audio.Systems;
 
 namespace Content.Shared.Changeling.Systems;
@@ -23,6 +28,12 @@ public sealed partial class RegenerativeStasisSystem : EntitySystem
     [Dependency] private DamageableSystem _damage = default!;
     [Dependency] private BloodstreamSystem _bloodstream = default!;
     [Dependency] private SharedDeathgaspSystem _deathgasp = default!;
+    [Dependency] private BodySystem _body = default!; // Carpmosia-edit - Offmed Port
+    [Dependency] private DamageableOrganSystem _damageableOrgan = default!; // Carpmosia-edit - Offmed Port
+    [Dependency] private StatusEffectsSystem _statusEffects = default!; // Carpmosia-edit - Offmed Port
+    [Dependency] private OffbrandHeartOrganSystem _heart = default!; // Carpmosia-edit - Offmed Port
+
+    [Dependency] private EntityQuery<OffbrandHeartOrganComponent> _heartQuery; // Carpmosia-edit - Offmed Port
 
     [SubscribeLocalEvent]
     private void OnMapInit(Entity<RegenerativeStasisActionComponent> ent, ref MapInitEvent args)
@@ -89,7 +100,18 @@ public sealed partial class RegenerativeStasisSystem : EntitySystem
         // Die temporarily until we revive.
         // Ghosting will be blocked while in stasis.
         if (!_mobs.IsDead(target))
+        {
             _mobs.ChangeMobState(target, MobState.Dead);
+
+            // Carpmosia-start - Offmed Port
+            // Offmed
+            var damageableOrgans = _body.EnumerateOrgans<DamageableOrganComponent>(target);
+            foreach(var organ in damageableOrgans)
+            {
+                _damageableOrgan.ChangeDamage((organ.Owner, organ.Comp2), organ.Comp2.MaxDamage);
+            }
+            // Carpmosia-end - Offmed Port
+        }
 
         _popup.PopupEntity(Loc.GetString("changeling-stasis-enter"), target, target, PopupType.MediumCaution);
 
@@ -130,6 +152,32 @@ public sealed partial class RegenerativeStasisSystem : EntitySystem
             _bloodstream.TryRegulateBloodLevel((target, bloodstream), bloodstream.BloodReferenceSolution.MaxVolume);
             _bloodstream.TryModifyBleedAmount((target, bloodstream), -bloodstream.BleedAmount);
         }
+
+        // Carpmosia-start - Offmed Port
+        // Offmed
+
+        var damageableOrgans = _body.EnumerateOrgans<DamageableOrganComponent>(target);
+        var woundableOrgans = _body.EnumerateOrgans<WoundableOrganComponent>(target);
+
+        foreach(var organ in damageableOrgans)
+        {
+            _damageableOrgan.ChangeDamage((organ.Owner, organ.Comp2), -organ.Comp2.Damage);
+
+            if (_heartQuery.TryGetComponent(organ, out var heart))
+                _heart.TryRestartHeart(heart.Owner);
+        }
+        foreach(var organ in woundableOrgans)
+        {
+            if (_statusEffects.TryEffectsWithComp<WoundComponent>(organ, out var effects))
+                {
+                    foreach(var effect in effects)
+                    {
+                        QueueDel(effect);
+                    }
+                }
+        }
+
+        // Carpmosia-end - Offmed Port
 
         // Revive.
         _mobs.ChangeMobState(target, MobState.Alive);
