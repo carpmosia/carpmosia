@@ -232,7 +232,7 @@ public sealed partial class ChangelingDevourSystem : EntitySystem
             return false;
         }
 
-        if (checkDead && !_mobState.IsDead(victim))
+        if (checkDead && !_mobState.IsCritical(victim)) // Carpmosia-edit - Offbrand port
         {
             if (showPopup)
                 _popupSystem.PopupEntity(Loc.GetString("changeling-devour-attempt-failed-not-dead"), changeling.Owner, changeling.Owner, PopupType.Medium);

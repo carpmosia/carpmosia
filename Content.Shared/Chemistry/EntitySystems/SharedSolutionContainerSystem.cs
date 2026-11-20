@@ -340,7 +340,7 @@ public abstract partial class SharedSolutionContainerSystem : EntitySystem
         return fill != null;
     }
 
-    protected void UpdateAppearance(Entity<AppearanceComponent?> container, Entity<SolutionComponent> soln)
+    public void UpdateAppearance(Entity<AppearanceComponent?> container, Entity<SolutionComponent> soln) // Offbrand - make it public
     {
         var (uid, appearanceComponent) = container;
         if (!HasComp<SolutionContainerVisualsComponent>(uid) || !Resolve(uid, ref appearanceComponent, logMissing: false))

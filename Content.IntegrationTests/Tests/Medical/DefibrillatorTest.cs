@@ -31,8 +31,7 @@ public sealed class DefibrillatorTest : InteractionTest
     protected override string PlayerPrototype => "MobHuman";
 
     private static readonly EntProtoId DefibrillatorProtoId = "Defibrillator";
-    private static readonly EntProtoId TargetProtoId = "MobHuman";
-    private static readonly EntProtoId BedProtoId = "Bed";
+    private static readonly EntProtoId TargetProtoId = "MobSlimesPet"; // Offbrand - we have more complex behaviour
     private static readonly ProtoId<DamageTypePrototype> BluntDamageTypeId = "Blunt";
 
     /// <summary>

@@ -15,13 +15,31 @@ namespace Content.Shared.Examine
 
             public readonly bool GetVerbs;
 
-            public RequestExamineInfoMessage(NetEntity netEntity, int id, bool getVerbs=false)
+            public readonly bool Pinnable; // Offbrand - Pinnable examine
+
+            public RequestExamineInfoMessage(NetEntity netEntity, int id, bool getVerbs=false, bool pinnable=false)
             {
                 NetEntity = netEntity;
                 Id = id;
                 GetVerbs = getVerbs;
+                Pinnable = pinnable; // Offbrand - Pinnable examine
             }
         }
+
+        // Begin Offbrand - examine elaboration
+        [Serializable, NetSerializable]
+        public sealed class ElaborateExamineTooltipMessage : EntityEventArgs
+        {
+            public readonly Enum Key;
+            public readonly FormattedMessage Message;
+
+            public ElaborateExamineTooltipMessage(Enum key, FormattedMessage message)
+            {
+                Key = key;
+                Message = message;
+            }
+        }
+        // End Offbrand - examine elaboration
 
         [Serializable, NetSerializable]
         public sealed class ExamineInfoResponseMessage : EntityEventArgs
@@ -34,11 +52,13 @@ namespace Content.Shared.Examine
 
             public readonly bool CenterAtCursor;
             public readonly bool OpenAtOldTooltip;
+            public readonly bool ShowBody; // Offbrand
+            public readonly bool Pinnable; // Offbrand - Pinnable examine
 
             public readonly bool KnowTarget;
 
             public ExamineInfoResponseMessage(NetEntity entityUid, int id, FormattedMessage message, List<Verb>? verbs=null,
-                bool centerAtCursor=true, bool openAtOldTooltip=true, bool knowTarget = true)
+                bool centerAtCursor=true, bool openAtOldTooltip=true, bool knowTarget = true, bool showBody = false, bool pinnable = false) // Offbrand
             {
                 EntityUid = entityUid;
                 Id = id;
@@ -47,6 +67,8 @@ namespace Content.Shared.Examine
                 CenterAtCursor = centerAtCursor;
                 OpenAtOldTooltip = openAtOldTooltip;
                 KnowTarget = knowTarget;
+                ShowBody = showBody;
+                Pinnable = pinnable; // Offbrand - Pinnable examine
             }
         }
     }

@@ -1,0 +1,37 @@
+using Content.Shared.Chemistry.Events;
+using Content.Shared.Popups;
+using Content.Shared.Random.Helpers;
+using Content.Shared.StatusEffectNew.Components;
+using Content.Shared.StatusEffectNew;
+using Content.Shared.Stunnable;
+using Robust.Shared.Audio.Systems;
+using Robust.Shared.Timing;
+
+namespace Content.Shared._Offbrand.StatusEffects;
+
+public sealed partial class HyposprayBackfireStatusEffectSystem : EntitySystem
+{
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedStunSystem _stun = default!;
+
+    [SubscribeLocalEvent]
+    private void OnSelfBeforeInjects(Entity<HyposprayBackfireStatusEffectComponent> ent, ref StatusEffectRelayedEvent<SelfBeforeInjectEvent> args)
+    {
+        if (Comp<StatusEffectComponent>(ent).AppliedTo is not { } target)
+            return;
+
+        if (args.Args.TargetGettingInjected == args.Args.EntityUsingInjector)
+            return;
+
+        if (!SharedRandomExtensions.PredictedProb(_timing, ent.Comp.Probability, GetNetEntity(ent)))
+            return;
+
+        args.Args.TargetGettingInjected = args.Args.EntityUsingInjector;
+
+        _stun.TryUpdateParalyzeDuration(target, ent.Comp.BackfireStunTime);
+        _audio.PlayPvs(ent.Comp.BackfireSound, target);
+        _popup.PopupEntity(Loc.GetString(ent.Comp.BackfireMessage), target, target);
+    }
+}

@@ -1,0 +1,44 @@
+using Content.Shared._Offbrand.Maths;
+using Content.Shared._Offbrand.Wounds;
+using Content.Shared.Body;
+
+namespace Content.Shared._Offbrand.Organs;
+
+public sealed partial class OffbrandBrainOrganSystem : EntitySystem
+{
+    [Dependency] private BrainDamageThresholdsSystem _thresholds = default!;
+
+    [SubscribeLocalEvent]
+    private void OnOrganOxygenChanged(Entity<OffbrandBrainOrganComponent> ent, ref OrganOxygenChangedEvent args)
+    {
+        if (Comp<OrganComponent>(ent).Body is { } body)
+            _thresholds.OnAfterBrainOxygenChanged(body, (ent, Comp<DamageableOrganComponent>(ent), Comp<OxygenatableOrganComponent>(ent)));
+    }
+
+    [SubscribeLocalEvent]
+    private void OnOrganDamageChanged(Entity<OffbrandBrainOrganComponent> ent, ref OrganDamageChangedEvent args)
+    {
+        if (Comp<OrganComponent>(ent).Body is { } body)
+            _thresholds.OnAfterBrainDamageChanged(body, (ent, Comp<DamageableOrganComponent>(ent), Comp<OxygenatableOrganComponent>(ent)));
+    }
+
+    [SubscribeLocalEvent]
+    private void OnBaseVascularTone(Entity<OffbrandBrainOrganComponent> ent, ref BodyRelayedEvent<BaseVascularToneEvent> args)
+    {
+        var damage = Comp<DamageableOrganComponent>(ent);
+        args.Args = args.Args with
+        {
+            Tone = ent.Comp.VascularToneCurve.Clamped(damage.Damage.Float() / damage.MaxDamage.Float()),
+        };
+    }
+
+    [SubscribeLocalEvent]
+    private void OnGotInserted(Entity<OffbrandBrainOrganComponent> ent, ref OrganGotInsertedEvent args)
+    {
+        var damageable = Comp<DamageableOrganComponent>(ent);
+        var oxygenatable = Comp<OxygenatableOrganComponent>(ent);
+
+        _thresholds.OnAfterBrainDamageChanged(args.Target, (ent, damageable, oxygenatable));
+        _thresholds.OnAfterBrainOxygenChanged(args.Target, (ent, damageable, oxygenatable));
+    }
+}

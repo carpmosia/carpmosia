@@ -73,6 +73,7 @@ GasVentScrubberVoxAlt2: GasVentScrubberNitrogen
 GasVentScrubberVoxAlt3: GasVentScrubberNitrogen
 GasVentScrubberVoxAlt4: GasVentScrubberNitrogen
 
+
 # 2026-08-19 - Remove Deathsquad
 ClothingBackpackDeathSquad: ClothingBackpackERTSecurity
 ClothingHeadHelmetHardsuitDeathsquad: ClothingHeadHelmetHardsuitERTSecurity
@@ -83,6 +84,10 @@ RandomHumanoidSpawnerDeathSquad: RandomHumanoidSpawnerERTSecurity
 DeathsquadPDA: ERTSecurityPDA
 CentcomIDCardDeathsquad: ERTSecurityIDCard
 
+# Offmed
+HandheldHealthAnalyzer: HandheldVitalsMonitor
+HandheldHealthAnalyzerUnpowered: HandheldVitalsMonitor
+HandheldHealthAnalyzerEmpty: HandheldVitalsMonitor
 # 2026-08-29 - Upstream migration fixes
 LightReplacerEmpty: LightReplacer
 

@@ -3,10 +3,13 @@
   parent:
   - BaseMob
   - MobCombat
-  - MobDamageable
+  # - MobDamageable # Offbrand - no thresholds
   - MobPolymorphable
   - StripableInventoryBase
   - BaseSpeciesAppearance
+  - BaseMobWoundable # Offbrand
+  - BaseMobPain # Offbrand
+  - BaseMobSurgery # Offbrand
   id: BaseSpeciesMob
   save: false
   components:
@@ -72,6 +75,8 @@
   - type: StatusEffects
     allowed:
     - Electrocution
+    - PressureImmunity
+    - Muted
     - Pacified
     - Flashed
     - Adrenaline
@@ -128,6 +133,8 @@
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
+      enum.SurgeryGuideUiKey.Key: # Offbrand
+        type: SurgeryGuideBoundUserInterface
   - type: Puller
   - type: Speech
     speechSounds: Alto
@@ -156,13 +163,15 @@
 - type: entity
   abstract: true
   parent:
-  - MobBloodstream
+  # - MobBloodstream - Offbrand - we're doing our own thign with this
   - MobRespirator
   - MobAtmosStandard
   - MobFlammable
   - BaseSpeciesMob
-  - BaseMobDestructible
-  - BaseHungerThirstSlowdown
+  - BaseMobPerfusion # Offbrand
+  - BaseMobBrain # Offbrand
+  - BaseMobCryostasis # Offbrand
+  - BaseMobLungDamage # Offbrand
   id: BaseSpeciesMobOrganic
   save: false
   components:
@@ -177,22 +186,25 @@
       types:
         Blunt: 0.50
         Heat: 0.1
-  - type: PassiveDamage
-    intervalHaltOnDamageTaken: 5s
-    allowedStates:
-    - Alive
-    damage:
-      types:
-        Heat: -0.07
-        Blunt: -0.05
-        Piercing: -0.05
-        Slash: -0.05
+  # Start Offbrand - we handle this
+  # - type: PassiveDamage
+  #   allowedStates:
+  #   - Alive
+  #   damage:
+  #     types:
+  #       Heat: -0.07
+  #       Blunt: -0.05
+  #       Piercing: -0.05
+  #       Slash: -0.05
+  # End Offbrand - we handle this
   - type: Fingerprint
   - type: Blindable
   - type: Temperature
+    currentTemperature: 310.15
+    specificHeat: 42
   - type: TemperatureDamage
-    heatDamageThreshold: 316.15
-    coldDamageThreshold: 273.15
+    heatDamageThreshold: 325
+    coldDamageThreshold: 260
     coldDamage:
       types:
         Cold: 0.1 #per second, scales with temperature & other constants

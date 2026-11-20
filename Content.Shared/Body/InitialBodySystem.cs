@@ -8,7 +8,7 @@ namespace Content.Shared.Body;
 public sealed partial class InitialBodySystem : EntitySystem
 {
     [Dependency] private SharedContainerSystem _container = default!;
-    [Dependency] private OrganRelationSystem _organRelation = default!;
+    [Dependency] private OrganRelationSystem _organRelation = default!; // Offbrand
 
     public override void Initialize()
     {
@@ -33,9 +33,9 @@ public sealed partial class InitialBodySystem : EntitySystem
 
         var xform = Transform(ent);
         var coords = new EntityCoordinates(ent, Vector2.Zero);
-        var spawned = new Dictionary<ProtoId<OrganCategoryPrototype>, EntityUid>();
+        var spawned = new Dictionary<ProtoId<OrganCategoryPrototype>, EntityUid>(); // Offbrand
 
-        foreach (var (part, proto) in ent.Comp.Organs)
+        foreach (var (part, proto) in ent.Comp.Organs) // Offbrand
         {
             // TODO: When e#6192 is merged replace this all with TrySpawnInContainer...
             var spawn = Spawn(proto, coords);
@@ -44,12 +44,13 @@ public sealed partial class InitialBodySystem : EntitySystem
             {
                 Log.Error($"Entity {ToPrettyString(ent)} with a {nameof(InitialBodyComponent)} failed to insert an entity: {ToPrettyString(spawn)}.\n");
                 Del(spawn);
-                continue;
+                continue; // Offbrand
             }
 
-            spawned[part] = spawn;
+            spawned[part] = spawn; // Offbrand
         }
 
+        // Begin Offbrand
         if (ent.Comp.Relationships is null)
             return;
 
@@ -66,5 +67,6 @@ public sealed partial class InitialBodySystem : EntitySystem
                 _organRelation.Relate(parentUid, childUid);
             }
         }
+        // End Offbrand
     }
 }

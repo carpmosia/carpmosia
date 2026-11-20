@@ -49,6 +49,8 @@ public sealed partial class IdentitySystem : EntitySystem
         SubscribeLocalEvent<IdentityBlockerComponent, SeeIdentityAttemptEvent>(OnSeeIdentity);
         SubscribeLocalEvent<IdentityBlockerComponent, InventoryRelayedEvent<SeeIdentityAttemptEvent>>(OnRelaySeeIdentity);
         SubscribeLocalEvent<IdentityBlockerComponent, ItemMaskToggledEvent>(OnMaskToggled);
+        SubscribeLocalEvent<IdentityBlockerComponent, StatusEffectNew.StatusEffectAppliedEvent>((_, _, ev) => QueueIdentityUpdate(ev.Target)); // Offbrand
+        SubscribeLocalEvent<IdentityBlockerComponent, StatusEffectNew.StatusEffectRemovedEvent>((_, _, ev) => QueueIdentityUpdate(ev.Target)); // Offbrand
 
         SubscribeLocalEvent<IdentityComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<IdentityComponent, ComponentInit>(OnComponentInit);
@@ -63,6 +65,16 @@ public sealed partial class IdentitySystem : EntitySystem
 
         SubscribeLocalEvent<IdentityBlockerComponent, GetVerbsEvent<ExamineVerb>>(OnDetailedExamine);
     }
+
+    // Begin Offbrand
+    [SubscribeLocalEvent]
+    private void OnRelayedSeeIdentity(Entity<IdentityBlockerComponent> ent, ref StatusEffectNew.StatusEffectRelayedEvent<SeeIdentityAttemptEvent> args)
+    {
+        var argsArgs = args.Args;
+        OnSeeIdentity(ent, ref argsArgs);
+        args.Args = argsArgs;
+    }
+    // End Offbrand
 
     /// <summary>
     /// Iterates through all identities that need to be updated.

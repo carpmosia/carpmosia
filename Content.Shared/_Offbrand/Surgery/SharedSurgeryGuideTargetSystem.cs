@@ -1,0 +1,51 @@
+using Content.Shared.Popups;
+using Content.Shared.Verbs;
+
+namespace Content.Shared._Offbrand.Surgery;
+
+public abstract partial class SharedSurgeryGuideTargetSystem : EntitySystem
+{
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedUserInterfaceSystem _userInterface = default!;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        Subs.BuiEvents<SurgeryGuideTargetComponent>(SurgeryGuideUiKey.Key,
+                sub =>
+                {
+                    sub.Event<SurgeryGuideStartSurgeryMessage>(OnStartSurgery);
+                    sub.Event<SurgeryGuideStartCleanupMessage>(OnStartCleanup);
+                });
+    }
+
+    [SubscribeLocalEvent]
+    private void OnGetVerbs(Entity<SurgeryToolComponent> ent, ref GetVerbsEvent<UtilityVerb> args)
+    {
+        if (!args.CanAccess || !args.CanInteract || !HasComp<SurgeryGuideTargetComponent>(args.Target))
+            return;
+
+        var @event = args;
+        args.Verbs.Add(new UtilityVerb()
+        {
+            Act = () =>
+            {
+                _userInterface.OpenUi(@event.Target, SurgeryGuideUiKey.Key, @event.User);
+            },
+            Text = Loc.GetString("verb-perform-surgery"),
+        });
+    }
+
+    protected virtual void OnStartSurgery(Entity<SurgeryGuideTargetComponent> ent, ref SurgeryGuideStartSurgeryMessage args)
+    {
+        _userInterface.CloseUi(ent.Owner, SurgeryGuideUiKey.Key, args.Actor);
+        _popup.PopupCursor(Loc.GetString("surgery-examine-for-instructions"), args.Actor);
+    }
+
+    protected virtual void OnStartCleanup(Entity<SurgeryGuideTargetComponent> ent, ref SurgeryGuideStartCleanupMessage args)
+    {
+        // _userInterface.CloseUi(ent.Owner, SurgeryGuideUiKey.Key, args.Actor);
+        _popup.PopupCursor(Loc.GetString("surgery-examine-for-instructions"), args.Actor, PopupType.Large);
+    }
+}

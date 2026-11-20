@@ -1,0 +1,108 @@
+<BoxContainer xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    Orientation="Vertical"
+    SeparationOverride="9">
+
+    <Label
+        Name="NoPatientPlaceholder"
+        Text="{Loc health-analyzer-window-no-patient-data-text}"
+        HorizontalExpand="True"
+        VerticalExpand="True"
+        Align="Center"/>
+
+    <BoxContainer Name="Sections"
+                  Orientation="Horizontal"
+                  Visible="False"
+                  Margin="10"
+                  SeparationOverride="16">
+        <BoxContainer Name="VitalSection"
+                      VerticalExpand="True"
+                      Orientation="Vertical"
+                      MinWidth="250"
+                      >
+
+                <BoxContainer Orientation="Vertical"
+                SeparationOverride="10"
+                Margin="8 0 0 8">
+                    <BoxContainer Orientation="Vertical" HorizontalAlignment="Left">
+                        <PanelContainer SetSize="32 32">
+                            <SpriteView OverrideDirection="South" Scale="2 2" Name="PatientView" SetSize="32 32" />
+                            <TextureRect Name="OutOfRange" Access="Public" SetSize="32 32" Visible="false" Stretch="KeepAspectCentered" TexturePath="/Textures/Interface/Misc/health_analyzer_out_of_range.png"/>
+                        </PanelContainer>
+                    </BoxContainer>
+                    <BoxContainer Orientation="Vertical" VerticalAlignment="Center">
+                        <Label Name="NameLabel" />
+                        <Label Name="SpeciesLabel" VerticalAlignment="Top" StyleClasses="LabelSubText" />
+                    </BoxContainer>
+                </BoxContainer>
+
+            <PanelContainer HorizontalExpand="True" VerticalExpand="True" MinWidth="350"
+                    >
+                <PanelContainer.PanelOverride>
+                        <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" BorderThickness="1" BorderColor="#3B3E56" />
+                </PanelContainer.PanelOverride>
+
+                <BoxContainer Orientation="Horizontal" SeparationOverride="20" Margin="4">
+                    <BoxContainer Orientation="Vertical" >
+                        <BoxContainer Orientation="Horizontal">
+                            <Label StyleClasses="field-label" Text="{Loc 'offbrand-vitals-brain-activity'}" MouseFilter="Pass" ToolTip="{Loc health-analyzer-brain-health-tooltip}" />
+                            <TextureRect Access="Public" SetSize="12 12" Visible="true" Stretch="KeepAspectCentered" TexturePath="/Textures/Interface/NavMap/beveled_circle.png" Margin="1"/>
+                        </BoxContainer>
+                        <Label Name="BrainActivityValue" StyleClasses="field-value" />
+                        <Label StyleClasses="field-blood" Text="{Loc 'offbrand-vitals-blood-volume'}" MouseFilter="Pass" ToolTip="{Loc health-analyzer-blood-tooltip}" />
+                        <RichTextLabel Name="BloodVolumeValue" StyleClasses="field-value" />
+                        <Label Name="SpO2Label" StyleClasses="field-air" MouseFilter="Pass" ToolTip="{Loc health-analyzer-spo2-tooltip}" />
+                        <Label Name="SpO2Value" StyleClasses="field-value" />
+                    </BoxContainer>
+
+                    <BoxContainer Orientation="Vertical" >
+                        <Label StyleClasses="field-heart" Text="{Loc 'offbrand-vitals-heart-rate'}" MouseFilter="Pass" ToolTip="{Loc health-analyzer-heart-rate-tooltip}" />
+                        <RichTextLabel Name="HeartRateValue" StyleClasses="field-value" />
+                        <Label StyleClasses="field-blood" Text="{Loc 'offbrand-vitals-blood-pressure'}" MouseFilter="Pass" ToolTip="{Loc health-analyzer-blood-pressure-tooltip}" />
+                        <RichTextLabel Name="BloodPressureValue" StyleClasses="field-value" />
+                    </BoxContainer>
+
+                    <BoxContainer Orientation="Vertical" >
+
+                        <Label StyleClasses="field-air" Text="{Loc 'offbrand-vitals-respiratory-rate'}" MouseFilter="Pass" ToolTip="{Loc health-analyzer-respiratory-rate-tooltip}" />
+                        <RichTextLabel Name="RespiratoryRateValue" StyleClasses="field-value" />
+                        <Label Name="EtCO2Label" StyleClasses="field-air" MouseFilter="Pass" ToolTip="{Loc health-analyzer-etco2-tooltip}" />
+                        <RichTextLabel Name="EtCO2Value" StyleClasses="field-value" />
+                    </BoxContainer>
+                </BoxContainer>
+            </PanelContainer>
+        </BoxContainer>
+
+        <BoxContainer Name="WoundSection"
+                      VerticalExpand="True"
+                      Orientation="Vertical"
+                      MinWidth="250"
+                      MaxWidth="400">
+
+            <BoxContainer Orientation="Vertical" VerticalAlignment="Center" Margin="10 0 0 10">
+                <Label Text="Emergency Health Alerts" StyleClasses="field-label" />
+            </BoxContainer>
+
+            <PanelContainer HorizontalExpand="True" VerticalExpand="True" Margin="10 0 0 0" MinWidth="350"
+                    >
+                <PanelContainer.PanelOverride>
+                        <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" BorderThickness="1" BorderColor="#3B3E56" />
+                </PanelContainer.PanelOverride>
+                <BoxContainer Orientation="Horizontal">
+                    <BoxContainer Name="AlertsContainer"
+                                    Visible="False"
+                                    Orientation="Vertical"
+                                    VerticalExpand="True"
+                                    HorizontalExpand="True"
+                                    />
+                </BoxContainer>
+            </PanelContainer>
+        </BoxContainer>
+    </BoxContainer>
+
+        <BoxContainer Orientation="Vertical">
+            <controls:Separator StyleClasses="LowDivider"/>
+
+        </BoxContainer>
+</BoxContainer>

@@ -1,5 +1,6 @@
 using Content.Server.Medical.Components;
 using Content.Shared.CartridgeLoader;
+using Content.Shared._Offbrand.Analyzers; // Carpmosia-edit - Offmed Port
 
 namespace Content.Server.CartridgeLoader.Cartridges;
 
@@ -17,7 +18,11 @@ public sealed partial class MedTekCartridgeSystem : EntitySystem
 
     private void OnCartridgeAdded(Entity<MedTekCartridgeComponent> ent, ref CartridgeAddedEvent args)
     {
-        EnsureComp<HealthAnalyzerComponent>(args.Loader);
+        // Carpmosia-start - Offmed Port
+        EnsureComp<AnalyzerComponent>(args.Loader);
+        EnsureComp<VitalsAnalyzerComponent>(args.Loader);
+        EnsureComp<HandheldAnalyzerComponent>(args.Loader);
+        // Carpmosia-end - Offmed Port
     }
 
     private void OnCartridgeRemoved(Entity<MedTekCartridgeComponent> ent, ref CartridgeRemovedEvent args)
@@ -25,7 +30,11 @@ public sealed partial class MedTekCartridgeSystem : EntitySystem
         // only remove when the program itself is removed
         if (!_cartridgeLoaderSystem.HasProgram<MedTekCartridgeComponent>(args.Loader.AsNullable()))
         {
-            RemComp<HealthAnalyzerComponent>(args.Loader);
+            // Carpmosia-start - Offmed Port
+            RemComp<AnalyzerComponent>(args.Loader);
+            RemComp<VitalsAnalyzerComponent>(args.Loader);
+            RemComp<HandheldAnalyzerComponent>(args.Loader);
+            // Carpmosia-end - Offmed Port
         }
     }
 }

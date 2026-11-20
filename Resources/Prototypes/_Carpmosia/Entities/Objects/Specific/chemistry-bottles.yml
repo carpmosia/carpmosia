@@ -24,18 +24,18 @@
       - ReagentId: Stelloxadone
         Quantity: 30
 
-- type: entity
-  parent: BaseChemistryBottleFilled
-  id: ChemistryBottleTetracordrazine
-  suffix: tetracordrazine
-  components:
-  - type: Label
-    localizedLabel: reagent-name-tetracordrazine
-  - type: Solution
-    solution:
-      reagents:
-      - ReagentId: Tetracordrazine
-        Quantity: 30
+# - type: entity
+#   parent: BaseChemistryBottleFilled
+#   id: ChemistryBottleTetracordrazine
+#   suffix: tetracordrazine
+#   components:
+#   - type: Label
+#     localizedLabel: reagent-name-tetracordrazine
+#   - type: Solution
+#     solution:
+#       reagents:
+#       - ReagentId: Tetracordrazine
+#         Quantity: 30
 
 - type: entity
   parent: BaseChemistryBottleFilled
