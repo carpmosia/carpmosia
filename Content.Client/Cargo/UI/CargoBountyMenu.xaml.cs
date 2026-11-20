@@ -11,6 +11,10 @@ public sealed partial class CargoBountyMenu : FancyWindow
 {
     public Action<string>? OnLabelButtonPressed;
     public Action<string>? OnSkipButtonPressed;
+    // Carpmosia-start - Cargo bookkeeping
+    public Action<string>? OnClaimButtonPressed;
+    public Action<string, CargoBountyData.CargoBountyStatus>? OnDeliveryStatusChanged;
+    // Carpmosia-end - Cargo bookkeeping
 
     public CargoBountyMenu()
     {
@@ -28,6 +32,10 @@ public sealed partial class CargoBountyMenu : FancyWindow
             var entry = new BountyEntry(b, untilNextSkip);
             entry.OnLabelButtonPressed += () => OnLabelButtonPressed?.Invoke(b.Id);
             entry.OnSkipButtonPressed += () => OnSkipButtonPressed?.Invoke(b.Id);
+            // Carpmosia-start - Cargo bookkeeping
+            entry.OnClaimButtonPressed += () => OnClaimButtonPressed?.Invoke(b.Id);
+            entry.OnDeliveryStatusChanged += status => OnDeliveryStatusChanged?.Invoke(b.Id, status);
+            // Carpmosia-end - Cargo bookkeeping
 
             BountyEntriesContainer.AddChild(entry);
         }

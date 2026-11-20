@@ -30,6 +30,18 @@ public sealed class CargoBountyConsoleBoundUserInterface : BoundUserInterface
         {
             SendMessage(new BountySkipMessage(id));
         };
+
+        // Carpmosia-start - Cargo bookkeeping
+        _menu.OnClaimButtonPressed += id =>
+        {
+            SendMessage(new BountyClaimMessage(id));
+        };
+
+        _menu.OnDeliveryStatusChanged += (id, status) =>
+        {
+            SendMessage(new BountyDeliveryStatusMessage(id, status));
+        };
+        // Carpmosia-end - Cargo bookkeeping
     }
 
     protected override void UpdateState(BoundUserInterfaceState message)
