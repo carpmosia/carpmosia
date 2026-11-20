@@ -4,6 +4,7 @@ using Content.Server.Cargo.Components;
 using Content.Server.Cargo.Systems;
 using Content.Server.Radio.EntitySystems;
 using Content.Server.Station.Systems;
+using Content.Shared.Cargo; // Carpmosia-edit - Cargo reagent bounties
 using Content.Shared.Cargo.Components;
 using Content.Shared.Cargo.Prototypes;
 using Content.Shared.Labels.EntitySystems;
@@ -272,9 +273,7 @@ public sealed partial class SalvageJobBoardSystem : EntitySystem
         var target = new List<string>();
         foreach (var entry in job.Entries)
         {
-            target.Add(Loc.GetString("bounty-console-manifest-entry",
-                ("amount", entry.Amount),
-                ("item", Loc.GetString(entry.Name))));
+            target.Add(CargoBountyLocalisationHelpers.GetManifestText(entry)); // Carpmosia-edit - Cargo reagent bounties
         }
         _paper.SetContent(label, Loc.GetString("job-board-label-text", ("target", string.Join(',', target)), ("reward", job.Reward)));
 
