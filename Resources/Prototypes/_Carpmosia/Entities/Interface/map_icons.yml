@@ -19,6 +19,15 @@
 - type: entity
   parent: BaseMapPreview
   categories: [ HideSpawnMenu ]
+  id: MapPreviewCompress
+  name: Compress
+  components:
+  - type: Sprite
+    state: compress
+
+- type: entity
+  parent: BaseMapPreview
+  categories: [ HideSpawnMenu ]
   id: MapPreviewFeint
   name: Feint
   components:
