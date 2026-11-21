@@ -35,3 +35,15 @@
   - !type:BuyerAntagCondition
     whitelist:
     - NukeopsCommander
+
+- type: listing
+  id: UplinkWalletSyndicate
+  name: uplink-syndicate-wallet-name
+  description: uplink-syndicate-wallet-desc
+  icon: { sprite: _Carpmosia/Clothing/Wallet/Wallets/wallet-syndicate.rsi, state: closed }
+  productEntity: WalletSyndicate
+  categories:
+  - UplinkPointless
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1

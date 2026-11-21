@@ -26,6 +26,7 @@ public enum SlotFlags
     LEGS = 1 << 13,
     FEET = 1 << 14,
     SUITSTORAGE = 1 << 15,
+    WALLET = 1 << 16,  // Carpmosia-edit - Wallets
     All = ~NONE,
 
     WITHOUT_POCKET = All & ~POCKET
