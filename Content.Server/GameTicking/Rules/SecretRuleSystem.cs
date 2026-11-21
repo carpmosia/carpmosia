@@ -25,7 +25,6 @@ public sealed partial class SecretRuleSystem : GameRuleSystem<SecretRuleComponen
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private IConfigurationManager _configurationManager = default!;
     [Dependency] private IAdminLogManager _adminLogger = default!;
-    [Dependency] private ServerGameTicker _serverTicker = default!; // Carpmosia-edit - Dynamic player count
 
     public override void Initialize()
     {
@@ -84,7 +83,7 @@ public sealed partial class SecretRuleSystem : GameRuleSystem<SecretRuleComponen
     private bool TryPickPreset(ProtoId<WeightedRandomPrototype> weights, [NotNullWhen(true)] out GamePresetPrototype? preset)
     {
         var options = ProtoMan.Index(weights).Weights.ShallowClone();
-        var players = _serverTicker.DynamicPlayerCount(); // Carpmosia-edit - Dynamic player count
+        var players = GameTicker.ReadyPlayerCount();
 
         GamePresetPrototype? selectedPreset = null;
         var sum = options.Values.Sum();
@@ -142,7 +141,7 @@ public sealed partial class SecretRuleSystem : GameRuleSystem<SecretRuleComponen
     /// </summary>
     public bool CanPickAny(IEnumerable<ProtoId<GamePresetPrototype>> protos)
     {
-        var players = _serverTicker.DynamicPlayerCount(); // Carpmosia-edit - Dynamic player count
+        var players = GameTicker.ReadyPlayerCount();
         foreach (var id in protos)
         {
             if (!ProtoMan.TryIndex(id, out var selectedPreset))
