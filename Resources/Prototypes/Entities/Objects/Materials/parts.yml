@@ -4,10 +4,10 @@
   id: PartBase
   components:
   - type: Sprite
-    sprite: Objects/Materials/parts.rsi
+    sprite: _Carpmosia/Objects/Materials/parts.rsi # Carpmosia-edit - Material resprite
     state: rods
   - type: Item
-    sprite: Objects/Materials/parts.rsi
+    sprite: _Carpmosia/Objects/Materials/parts.rsi # Carpmosia-edit - Material resprite
   - type: Damageable
     damageModifierSet: FlimsyMetallic
   - type: Tag
