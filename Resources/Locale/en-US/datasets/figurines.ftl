@@ -109,7 +109,7 @@ figurines-rd-5 = The cake is a lie!
 figurines-rd-6 = The trait I look for in a scientist is expendability.
 
 figurines-scientist-1 = Someone else must have made those bombs!
-figurines-scientist-2 = He asked to be borged!
+figurines-scientist-2 = They asked to be borged!
 figurines-scientist-3 = Carp at sci!
 figurines-scientist-4 = Explosion at sci!
 figurines-scientist-5 = Anyone seen an anomaly?
@@ -140,12 +140,12 @@ figurines-security-8 = I love donuts.
 figurines-security-9 = Greytide this, motherfucker.
 figurines-security-10 = Do not resist.
 
-figurines-warden-1 = Execute him for breaking in!
+figurines-warden-1 = Execute them for breaking in!
 figurines-warden-2 = Perma the fucker for insulting me!
 figurines-warden-3 = We totally treat everyone fairly and do NOT mistreat our prisoners.
 figurines-warden-4 = Brig is my home. My home is brig. My brig is home. Stop, what?
 figurines-warden-5 = Soap is now contraband.
-figurines-warden-6 = You're going away for a long time, buddy.
+figurines-warden-6 = You're going away for a long time.
 
 # Service
 
@@ -166,7 +166,7 @@ figurines-bartender-6 = Read the room.
 figurines-bartender-7 = I've got a shotgun.
 
 figurines-botanist-1 = I don't have any weed, officer!
-figurines-botanist-2 = Dude, I see colors...
+figurines-botanist-2 = Woah, I see colors...
 figurines-botanist-3 = Is it just me, or is that weed glowing?
 figurines-botanist-4 = 50 more units of mutagen. That should be enough.
 figurines-botanist-5 = More bananas for my favorite clown!
@@ -174,7 +174,7 @@ figurines-botanist-5 = More bananas for my favorite clown!
 figurines-boxer-1 = The first rule of Fight Club is...
 figurines-boxer-2 = We settle this in the ring, alright?
 figurines-boxer-3 = I. AM. THE. CHAMPION!!
-figurines-boxer-4 = Don't look at me; he was shot, not punched.
+figurines-boxer-4 = Don't look at me; they were shot, not punched.
 figurines-boxer-5 = 1v1 me, captain.
 figurines-boxer-6 = I only make special appearances these days.
 
@@ -201,7 +201,7 @@ figurines-clown-6 = Do I annoy you?
 figurines-clown-7 = Can I have AA? Please?
 figurines-clown-8 = I'm a clown, but you're the whole circus!
 
-figurines-greytider-1 = Man, this party stinks. I fucking hate these people.
+figurines-greytider-1 = This party stinks. I fucking hate these people.
 figurines-greytider-2 = Uh-oh, who's lost their stunbaton?
 figurines-greytider-3 = Robust.
 figurines-greytider-4 = I'm not me without a toolbox.
@@ -260,7 +260,7 @@ figurines-musician-1 = Never gonna give you up!
 figurines-musician-2 = Never gonna let you down!
 figurines-musician-3 = Music is an art.
 figurines-musician-4 = Thank you, I'll be here all night.
-figurines-musician-5 = I'm a one man band.
+figurines-musician-5 = I'm the whole band.
 
 figurines-passenger-1 = Insuls please.
 figurines-passenger-2 = Call evac.
@@ -280,7 +280,7 @@ figurines-AI-7 = { law-nutimov-4 }
 
 # Antagonists
 
-figurines-footsoldier-1 = I'm an evil boy. Less boy every day, more evil every day.
+figurines-footsoldier-1 = I'm an evil person. Less person every day, more evil every day.
 figurines-footsoldier-2 = Who will you choose? Them or us? Us or them?
 figurines-footsoldier-3 = Glory to the Syndicate!
 figurines-footsoldier-4 = Down with Nanotrasen!
@@ -308,7 +308,7 @@ figurines-nukie-commander-5 = Whoops.
 
 figurines-nukie-elite-1 = Not a word in Nanotrasen.
 figurines-nukie-elite-2 = THAT'S A KEG!
-figurines-nukie-elite-3 = Guys, are you alive?
+figurines-nukie-elite-3 = Is anyone else alive?
 figurines-nukie-elite-4 = Breach and clear!
 figurines-nukie-elite-5 = Leave no survivors.
 figurines-nukie-elite-6 = Good work, team.
