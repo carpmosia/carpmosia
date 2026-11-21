@@ -316,6 +316,13 @@ public sealed partial class ServerGameTicker
             total++;
         }
 
+        // Carpmosia-start - Dynamic player count
+        var unreadiedPlayerWeight = Cfg.GetCVar(CCVars.GameRulesUnreadiedPlayerWeight);
+        var unreadied = _playerManager.PlayerCount - total;
+        var unreadiedWeighted = (int) Math.Ceiling(unreadied * unreadiedPlayerWeight);
+        total += unreadiedWeighted;
+        // Carpmosia-end - Dynamic player count
+        
         return total;
     }
 
@@ -375,7 +382,7 @@ public sealed partial class ServerGameTicker
             readyPlayerProfiles.Add(userId, profile);
         }
 
-        DebugTools.AssertEqual(readyPlayers.Count, ReadyPlayerCount());
+        //DebugTools.AssertEqual(readyPlayers.Count, ReadyPlayerCount()); // Carpmosia-edit : Dynamic player count
 
         // Just in case it hasn't been loaded previously we'll try loading it.
         LoadMaps();
