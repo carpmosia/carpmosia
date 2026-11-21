@@ -104,7 +104,7 @@ public sealed partial class ServerGameTicker
             var minPlayers = gameRule.MinPlayers;
             var name = ToPrettyString(uid);
 
-            if (args.Players.Length >= minPlayers)
+            if (DynamicPlayerCount() >= minPlayers) // Carpmosia-edit - Dynamic player count
                 continue;
 
             if (gameRule.CancelPresetOnTooFewPlayers)
