@@ -1,0 +1,25 @@
+- type: dungeonRoom
+  id: PrefabCommandCenter1
+  size: 57,57
+  atlas: /Maps/_Carpmosia/Procedural/prefab.yml
+  offset: 59,1
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PrefabCommandCenter
+
+- type: Tag
+  id: PrefabCommandCenter
+
+- type: entity
+  id: PrefabCommandCenterMarker
+  parent: BasePrefabCenterMarker
+  suffix: Command, Center
+  components:
+  - type: RoomFill
+    roomWhitelist:
+      tags:
+      - PrefabCommandCenter
+  - type: Sprite
+    layers:
+      - state: center
+      - state: command

@@ -1,0 +1,25 @@
+- type: dungeonRoom
+  id: PrefabServiceCenter1
+  size: 57,57
+  atlas: /Maps/_Carpmosia/Procedural/prefab.yml
+  offset: 407,1
+  ignoreTile: FloorShuttleOrange
+  tags:
+  - PrefabServiceCenter
+
+- type: Tag
+  id: PrefabServiceCenter
+
+- type: entity
+  id: PrefabServiceCenterMarker
+  parent: BasePrefabCenterMarker
+  suffix: Service, Center
+  components:
+  - type: RoomFill
+    roomWhitelist:
+      tags:
+      - PrefabServiceCenter
+  - type: Sprite
+    layers:
+      - state: center
+      - state: service

@@ -1,0 +1,55 @@
+- type: entity
+  abstract: true
+  parent: BaseRoomMarker
+  id: BasePrefabMarker
+  name: Prefab room marker
+  components:
+  - type: RoomFill
+    rotation: false
+    inheritRotation: true
+  - type: Sprite
+    sprite: _Carpmosia/Markers/room.rsi
+    layers:
+      - state: arrow
+  - type: Tag
+    tags:
+    - ForceNoFixRotations
+
+- type: entity
+  abstract: true
+  parent: BasePrefabMarker
+  id: BasePrefabDepMarker
+  name: Prefab department marker
+  components:
+  - type: RoomFill
+    minSize: 57, 57
+    maxSize: 57, 57
+
+- type: entity
+  abstract: true
+  parent: BasePrefabDepMarker
+  id: BasePrefabCenterMarker
+  components:
+  - type: RoomFill
+    rotation: true
+    inheritRotation: false
+    offset: 0, 0
+  - type: Tag
+    tags:
+    - ForceFixRotations
+
+- type: entity
+  abstract: true
+  parent: BasePrefabDepMarker
+  id: BasePrefabLeftMarker
+  components:
+  - type: RoomFill
+    offset: 28, 49
+
+- type: entity
+  abstract: true
+  parent: BasePrefabDepMarker
+  id: BasePrefabRightMarker
+  components:
+  - type: RoomFill
+    offset: 49, 28
