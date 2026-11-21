@@ -35,3 +35,113 @@
     tags:
     - PetWearable
     - WhitelistChameleon
+
+# Prescription Security
+- type: entity
+  parent: ClothingEyesHudSecurity
+  id: ClothingEyesGlassesSecurityPrescription
+  name: prescription security glasses
+  description: Upgraded glasses that provide a security HUD. These ones have prescription lenses.
+  components:
+  - type: VisionCorrection
+  - type: Sprite
+    sprite: _Carpmosia/Clothing/Eyes/Glasses/secglassesprescription.rsi
+  - type: Clothing
+    sprite: _Carpmosia/Clothing/Eyes/Glasses/secglassesprescription.rsi
+  - type: Construction
+    graph: GlassesSecurityPrescription
+    node: done
+  # - type: Tag
+  #   tags:
+  #   - GlassesSecurityPrescription
+
+# Prescription Medical
+- type: entity
+  parent: ClothingEyesHudMedical
+  id: ClothingEyesGlassesMedicalPrescription
+  name: prescription medical glasses
+  description: Upgraded glasses that scan the humanoids in view and provide accurate data about their health status. These ones have prescription lenses.
+  components:
+  - type: VisionCorrection
+  - type: Sprite
+    sprite: _Carpmosia/Clothing/Eyes/Glasses/medglassesprescription.rsi
+  - type: Clothing
+    sprite: _Carpmosia/Clothing/Eyes/Glasses/medglassesprescription.rsi
+  - type: Construction
+    graph: GlassesMedicalPrescription
+    node: done
+  # - type: Tag
+  #   tags:
+  #   - GlassesMedicalPrescription
+
+# Prescription Command
+- type: entity
+  parent: ClothingEyesHudCommand
+  id: ClothingEyesGlassesCommandPrescription
+  name: prescription administration glasses
+  description: Upgraded glasses that provide ID card status. These ones have prescription lenses.
+  components:
+  - type: VisionCorrection
+  - type: Sprite
+    sprite: _Carpmosia/Clothing/Eyes/Glasses/commandglassesprescription.rsi
+  - type: Clothing
+    sprite: _Carpmosia/Clothing/Eyes/Glasses/commandglassesprescription.rsi
+  - type: Construction
+    graph: GlassesCommandPrescription
+    node: done
+  # - type: Tag
+  #   tags:
+  #   - GlassesCommandPrescription
+
+# Prescription MedSec
+- type: entity
+  parent: ClothingEyesHudMedSec
+  id: ClothingEyesGlassesMedSecPrescription
+  name: prescription medsec glasses
+  description: Upgraded glasses that display medical data and provide a security HUD. These ones have prescription lenses.
+  components:
+  - type: VisionCorrection
+  - type: Sprite
+    sprite: _Carpmosia/Clothing/Eyes/Glasses/medsecglassesprescription.rsi
+  - type: Clothing
+    sprite: _Carpmosia/Clothing/Eyes/Glasses/medsecglassesprescription.rsi
+  - type: Construction
+    graph: GlassesMedSecPrescription
+    node: done
+  # - type: Tag
+  #   tags:
+  #   - GlassesMedSecPrescription
+
+# Prescription Chemical Goggles
+
+- type: entity
+  parent: ClothingEyesGlassesChemical
+  id: ClothingEyesGlassesChemicalPrescription
+  name: prescription chemical analysis goggles
+  description: Goggles that can scan the chemical composition of a solution. These ones have prescription lenses.
+  components:
+  - type: VisionCorrection
+  - type: Sprite
+    sprite: _Carpmosia/Clothing/Eyes/Glasses/scienceprescription.rsi
+  - type: Clothing
+    sprite: _Carpmosia/Clothing/Eyes/Glasses/scienceprescription.rsi
+  - type: Construction
+    graph: GlassesChemicalPrescription
+    node: done
+
+# Prescription Engineering Goggles
+
+- type: entity
+  parent: ClothingEyesGlassesMeson
+  id: ClothingEyesGlassesMesonPrescription
+  name: prescription engineering goggles
+  description: Green-tinted goggles using a proprietary polymer that provides protection from eye damage of all types. These ones have prescription lenses.
+  components:
+  - type: VisionCorrection
+  - type: Sprite
+    sprite: _Carpmosia/Clothing/Eyes/Glasses/mesonprescription.rsi
+  - type: Clothing
+    sprite: _Carpmosia/Clothing/Eyes/Glasses/mesonprescription.rsi
+  - type: Construction
+    graph: GlassesMesonPrescription
+    node: done

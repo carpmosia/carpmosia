@@ -1,0 +1,150 @@
+# Security
+- type: constructionGraph
+  id: GlassesSecurityPrescription
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: done
+      steps:
+      - tag: GlassesPrescription
+        name: construction-graph-tag-glasses
+        icon:
+          sprite: Clothing/Eyes/Glasses/glasses.rsi
+          state: icon
+      - tag: HudSecurity
+        name: construction-graph-tag-security-hud
+        icon:
+          sprite: Clothing/Eyes/Hud/sec.rsi
+          state: icon
+      - material: Cable
+        amount: 5
+        doAfter: 5
+  - node: done
+    entity: ClothingEyesGlassesSecurityPrescription
+
+# Medical
+- type: constructionGraph
+  id: GlassesMedicalPrescription
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: done
+      steps:
+      - tag: GlassesPrescription
+        name: construction-graph-tag-glasses
+        icon:
+          sprite: Clothing/Eyes/Glasses/glasses.rsi
+          state: icon
+      - tag: HudMedical
+        name: construction-graph-tag-command-hud
+        icon:
+          sprite: Clothing/Eyes/Hud/command.rsi
+          state: icon
+      - material: Cable
+        amount: 5
+        doAfter: 5
+  - node: done
+    entity: ClothingEyesGlassesMedicalPrescription
+
+# Command
+- type: constructionGraph
+  id: GlassesCommandPrescription
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: done
+      steps:
+      - tag: GlassesPrescription
+        name: construction-graph-tag-glasses
+        icon:
+          sprite: Clothing/Eyes/Glasses/glasses.rsi
+          state: icon
+      - tag: HudCommand
+        name: construction-graph-tag-command-hud
+        icon:
+          sprite: Clothing/Eyes/Hud/command.rsi
+          state: icon
+      - material: Cable
+        amount: 5
+        doAfter: 5
+  - node: done
+    entity: ClothingEyesGlassesCommandPrescription
+
+ # MedSec
+- type: constructionGraph
+  id: GlassesMedSecPrescription
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: done
+      steps:
+      - tag: GlassesPrescription
+        name: construction-graph-tag-glasses
+        icon:
+          sprite: Clothing/Eyes/Glasses/glasses.rsi
+          state: icon
+      - tag: HudMedSec
+        name: construction-graph-tag-medsec-hud
+        icon:
+          sprite: Clothing/Eyes/Hud/medsec.rsi
+          state: icon
+      - material: Cable
+        amount: 5
+        doAfter: 5
+  - node: done
+    entity: ClothingEyesGlassesMedSecPrescription
+
+# Chemical
+- type: constructionGraph
+  id: GlassesChemicalPrescription
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: done
+      steps:
+      - tag: GlassesPrescription
+        name: construction-graph-tag-glasses
+        icon:
+          sprite: Clothing/Eyes/Glasses/glasses.rsi
+          state: icon
+      - tag: ChemicalGoggles
+        name: construction-graph-tag-chemical-glasses
+        icon:
+          sprite: Clothing/Eyes/Glasses/science.rsi
+          state: icon
+      - material: Cable
+        amount: 5
+        doAfter: 5
+  - node: done
+    entity: ClothingEyesGlassesChemicalPrescription
+
+# Meson (Engineering)
+- type: constructionGraph
+  id: GlassesMesonPrescription
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: done
+      steps:
+      - tag: GlassesPrescription
+        name: construction-graph-tag-glasses
+        icon:
+          sprite: Clothing/Eyes/Glasses/glasses.rsi
+          state: icon
+      - tag: MesonGoggles
+        name: construction-graph-tag-meson
+        icon:
+          sprite: Clothing/Eyes/Glasses/meson.rsi
+          state: icon
+        doAfter: 3
+      - material: Cable
+        amount: 5
+        doAfter: 5
+  - node: done
+    entity: ClothingEyesGlassesMesonPrescription
