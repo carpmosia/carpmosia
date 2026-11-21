@@ -55,9 +55,24 @@
   - type: FitsInDispenser
     solution: drink
 
+# Carpmosia-start - Empty water bottle
+- type: entity
+  parent: [DrinkVisualsAllFilled, DrinkBottlePlasticSmallBaseFull]
+  id: DrinkWaterBottleEmpty
+  suffix: Empty
+  name: water bottle
+  description: Simple clean water of unknown origin. You think that maybe you dont want to know it.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/waterbottle.rsi
+  - type: Label
+    localizedLabel: reagent-name-water
+# Carpmosia-end - Empty water bottle
+
 - type: entity
   parent: [DrinkVisualsAllFilled, DrinkBottlePlasticSmallBaseFull]
   id: DrinkWaterBottleFull
+  suffix: Full # Carpmosia-edit - Empty water bottle
   name: water bottle
   description: Simple clean water of unknown origin. You think that maybe you dont want to know it.
   components:

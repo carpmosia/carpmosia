@@ -24,3 +24,12 @@
       prob: 0.02
     - id: PlushieLizardJobScientist
       prob: 0.02
+    # Carpmosia-start - Easier water bottles
+    - !type:GroupSelector
+      prob: 0.4
+      children:
+      - id: DrinkWaterBottleFull
+        weight: 0.4
+      - id: DrinkWaterBottleEmpty
+        weight: 0.6
+    # Carpmosia-end - Easier water bottles
