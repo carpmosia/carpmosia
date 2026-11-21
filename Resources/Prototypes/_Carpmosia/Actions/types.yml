@@ -1,0 +1,19 @@
+# base actions
+
+- type: entity
+  parent: BaseImplantAction
+  id: ActionActivateNekrometamorphoImplant
+  name: Activate Nekrometamorpho
+  description: Triggers your corpse to morph into a swarm of bees.
+  components:
+  - type: DangerousAction
+  - type: Action
+    checkCanInteract: false
+    useDelay: 5
+    itemIconStyle: BigAction
+    priority: -20
+  - type: Sprite
+    layers:
+    - state: green
+    - state: 0
+      sprite: Mobs/Animals/bee.rsi
