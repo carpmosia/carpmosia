@@ -23,17 +23,17 @@
 
 - type: entity
   parent: PointerBase
-  id: PointerDagger
+  id: PointerSharp
   components:
   - type: Sprite
     state: dagger
 
 - type: entity
   parent: PointerBase
-  id: PointerHammer
+  id: PointerBlunt
   components:
   - type: Sprite
-    state: hammer
+    state: crowbar
 
 - type: entity
   parent: PointerBase
@@ -44,7 +44,7 @@
 
 - type: entity
   parent: PointerBase
-  id: PointerMicrophone
+  id: PointerMusic
   components:
   - type: Sprite
-    state: microphone
+    state: note
